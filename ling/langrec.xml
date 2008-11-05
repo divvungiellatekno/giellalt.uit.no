@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document>
+  <header>
+    <title>Language recognition using <code>text_cat</code></title>
+
+    <authors>
+      <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen" />
+    </authors>
+
+    <abstract>To be able to identify sections within a document not in the
+    main language, we need automatic language reqognition. We have now
+    installed an open-source package that performs such a task, and this page
+    documents its usage and origin.</abstract>
+  </header>
+
+  <body>
+    <section>
+      <title>Source</title>
+
+      <p>The home page of the package TextCat is found at the <a
+      href="http://odur.let.rug.nl/~vannoord/TextCat/">University of
+      Groningen</a>, and the source code is also <a
+      href="http://odur.let.rug.nl/~vannoord/TextCat/text_cat.tgz">available
+      there</a>. The package is lisenced under a GPL license — see the home
+      page for details — and it is developed by <a href="mailto:vannoord@let.rug.nl"
+      >Gertjan van Noord</a>. The home page does also
+      include links to a background article, a list of supported languages
+      coming with the tools, and also a list of competitors. Here's also
+      another <a
+      href="http://odur.let.rug.nl/~vannoord/TextCat/Demo/textcat.html">link
+      to a demo page</a>, with e-mail address of the author.</p>
+
+      <p>We have a local copy of the original source found at
+      <code>/opt/sami/tools/src/text_cat.tgz</code>, in case the original
+      becomes unavailable.</p>
+    </section>
+
+    <section>
+      <title>Usage</title>
+
+      <p>The tool is installed in <code>gt/scripts/</code>, and basic usage is
+      explained by:</p>
+
+      <source>text_cat -h</source>
+
+      <p>Typical usage will be something like:</p>
+
+      <source>text_cat -l "What language is this"</source>
+
+      <p>Or:</p>
+
+      <source>text_cat &lt;input-file&gt;</source>
+
+      <p>In both cases <code>text_cat</code> will return one or more strings
+      with the name of the language(s) the script believes the text to be
+      in.</p>
+    </section>
+
+    <section>
+      <title>Adding a new recognizable language</title>
+
+      <p>Adding a new language to be recognized requires a suitable training
+      corpus to be built. This is most easily done with the accompanying tool
+      <code>random_lines</code>:</p>
+
+      <source>&gt;$ random_lines &lt; some-text-file &gt; ShortTexts/language-name.txt</source>
+
+      <p>This commando extracts random lines of text from the input file, and
+      stores them in the output file. It also cleans the file a bit. The file
+      created is used to build a language model like this:</p>
+
+      <source>&gt;$ text_cat -n &lt; ShortTexts/language-name.txt &gt; LM/language-name.lm</source>
+
+      <p>After this, the language recognition tool <code>text_cat</code> is
+      ready for use with another language as shown in the previous
+      section.</p>
+    </section>
+  </body>
+</document>

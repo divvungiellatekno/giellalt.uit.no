@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+    <header>
+	<title>Adding users to svn</title>
+
+	<authors>
+	<person email="borre.gaup@samediggi.no" name="Børre Gaup" />
+	</authors>
+    </header>
+
+    <body>
+	<section>
+	    <title>Adding a user</title>
+	    <p>Add a user to the file <code>/etc/subversion/svn-authz</code>, then give that user a password as described below. A suitable command could be  <code>sudo vim /etc/subversion/svn-authz</code> or <code>sudo emacs /etc/subversion/svn-authz</code>.</p>
+	</section>
+	<section>
+	    <title>Adding or changing password for a user</title>
+	    <source>
+	sudo htpasswd -m /etc/subversion/svn-auth-file sally
+New password: *******
+Re-type new password: *******
+Adding password for user sally
+	    </source>
+	</section>
+	<section>
+		<title>Adding users to the svn mailing alias</title>
+		<p>Optionally, add the user to the group <em>samicvs</em> in the file <code>/etc/aliases</code>, and <em>run the program newaliases</em>.
+		</p>
+	</section>
+	
+    <p class="last_modified">Last modified: $Date: 2008/06/20 12:05:39 $</p>
+  </body>
+</document>

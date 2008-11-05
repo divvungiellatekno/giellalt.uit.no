@@ -1,0 +1,164 @@
+!!!The Sámi Parliament's Proofing Tools
+
+Welcome as a user of the Proofing Tools of the Sámi Parliament. This is the first public version. We know there are errors in this version (see list below), and there are for sure more bugs we haven't detected. The paragraph Known errors and shortcomings explains how to report bugs.
+
+The usage of these tools is explained [in a separate document|usage.html].
+
+!!Compatibility with Microsoft Office and Operating System versions
+
+The basic requirement is that the Microsoft Office applications and the OS have full support for Unicode - the Divvun project does ''not'' support older Sámi character sets such as WinSam, Levi or MacSami.
+
+!Windows
+
+Windows XP SP2 is the first version of Windows with explicit support for Sámi locales. In addition, Windows 2000 with the keyboard solution from the Sámi Parliament should work fine.
+
+Similarly, Office 2000 is the first MS Office version with support for Unicode, and is thus the minimum requirement for the proofing tools.
+
+We have tested the proofing tools with the following Windows and Microsoft Office versions:
+* Windows XP SP2
+* Windows Vista
+* Microsoft Office Professional 2007
+* Microsoft Office Professional 2003
+
+We would like to receive feedback from users about other Windows/Microsoft Office versions working well with the Sámi proofing tools.
+
+!Mac
+
+MacOS X 10.3 is the first version of MacOS with explicit support for Sámi (it included a Sámi keyboard, and the option to choose North Sámi as a user interface language if available). In principle all versions of MacOS X has support for Unicode, but older versions have more limited keyboard setup facilities, and might be problematic.
+
+There is __no__ support for MacOS 9 and older, due to lack of support for Unicode.
+
+MS Office 2004/Mac is so far the only version of MS Office for Mac with support for Unicode, and thus the only version supported by the Divvun project. Older versions are thus __not__ supported.
+
+We have tested the following OS and MS Office versions on the Mac:
+* MacOS X 10.4.x
+* MS Office 2004
+
+We would very much like feedback regarding using the proofing tools on older versions of MacOS X.
+
+!!!New installation
+
+__NB!__ If you have installed an earlier version of these tools, follow the instructions in the paragraph ''Upgrading'' at the end of this document.
+
+!!Mac
+
+The installation should start by itself shortly after the [installation package|http://www.divvun.no/static_files/sami-proofing-tools.dmg] has been downloaded - just follow the instructions on the screen.
+
+In case it doesn't install by itself, or one needs to install manually later, do as follows:
+
+# Double-click on the file {{sami-proofing-tools.dmg}}
+# In the window popping up after a few seconds, double-click on the installation package ({{sami_installer.pkg}})
+# Follow the instructions in the installer
+
+
+!!Windows
+
+# Download the [installation  file|http://www.divvun.no/static_files/DivvunInstaller.exe], and allow the file to __Run__.
+# Choose language, and click __OK__.
+# Click __Run__ again.
+# Click __Next__ until the installation is finished.
+
+!!!Installed files
+
+What is being installed:
+
+* Proofing tools for Northern Sámi
+* Proofing tools for Lule Sámi
+* Hyphenation for Northern Sámi
+* Hyphenation for Lule Sámi (new)
+
+A complete list of all installed files may be found [here|http://www.divvun.no/doc/proof/spelling/msoff/installed-files.txt].
+
+
+!!!Known errors and shortcomings
+
+Below you will find a list over known errors in the proofing tools. The Divvun-project will deliver updates on a regular basis with corrections and more words.
+
+The full list of corrections can be found [here|/doc/proof/spelling/msoff/changes.html].
+
+!! Speller
+
+* acronyms longer than 3 chars will get suggestions with case endings in capital letters. The correct form with lower case case endings will of course be accepted (and the forms with upper case case endings is of course correct in places where the whole text is in upper case). This is a compromise to be able to also correct words like "SáMI" to "SÁMI". Earlier "SáMI" was corrected to "Sámi". The speller behaviour in this case will be evaluated based on user feedback.
+* when upgrading on Windows, the installer language choice have no effect - the language choice of the previous installation will be used. If you want to run the installer in another language, then please first deinstall the previous installation, then install again, choosing your preferred language.
+* when upgrading on Windows, the installation is NOT upgraded. The only solution is to first deinstall, either using the installer or the regular software removal tool, and then install regularly. See instructions at the end of the document.
+* in Windows, it may look like you also have proofing tools for Skolt, Inari and South Sámi. This is not the case. Due to Microsoft's way of grouping the Sámi languages together (which might be good in some cases), Office will automatically fall back to proofing tools for other variants in a group when nothing is found for a specific language. This leads to Office falling back to Lule or North (most likely the alphabetically first language, ie Lule) for the Sámi languages which do not have proofing tools of their own. It doesn't do any harm, but it can be annoying if you have told MS Word that the language is one of the three mentioned above, and you get a lot of red underlinings. One long-term solution is to develop proofing tools even for these languages. South Sámi is already planned.
+* roman numerals are not recognised
+* spelling suggestions for erroneous compounds could have been better - spell checkers are known to have problems with long compounds. To get tips on how to correct long compounds that don't get suggestions, have a look at the document [how to use the spell checker]
+* some suggestions contain hyphens. The spell checker doesn't know if you wanted to write "buss- og drosjestreik" or just "buss" if you have written "bss", and therefore suggests both. Choose the one that is relevant.
+* missing words, specially in the Lule Sámi speller, even if we have added the words that we have found. The best way to help us is that users send us texts. Have a look at our [homepage|http://www.divvun.no] for details.
+
+!!Hyphenation
+
+* some endings lack proper hyphenation
+* some hyphenation-points might be wrong
+
+
+!!!Feedback
+
+We would very much like to get feedback from you on how the spell checker works, both positive and negative. In order to know what version you use, write ''nuvviDspeller''. This word won't be recognised. If you right click (Mac: Ctrl click) this word one of the suggestions is something akin to:
+
+{{{
+Divvun
+Davvisámi, version 1.0, 2007-12-05
+}}}
+
+Attach this suggestion when sending feedback, to know what version of the spell checker has the problem.
+
+!!E-mail
+
+Feedback may be returned via e-mail to this address:
+* [feedback@divvun.no|mailto:feedback@divvun.no]
+
+
+!!Bugzilla
+
+You may also make your own account in the [bug report system|http://giellatekno.uit.no/bugzilla/] for the Divvun project and the language technology project at the University of Tromsø, and make your own reports of errors you find in the spellers. Such error messages will automatically be forwarded to the relevant person.
+
+!!What to report
+
+Here is a short list of what to remember before sending in feedback:
+
+* __always__ remember the version number (type ''nuvviDspeller'' and right-click) when you report errors or shortcomings
+* always remember the version of MS Office and the operating system you use
+* check that the error you want to report is not already found in the list of known errors
+* it may be useful sending in your own user dictionary now and then, i.e., the list of words one makes when the proofing tool does not accept correct words. Check that the list does not contain "private" words. The standard user list is found here on Windows: {{C:\Documents and Settings\<user>\Application Data\Microsoft\UProof\CUSTOM.DIC}} (if you don't find it, search for *.dic in the search dialog), and on the Mac it can be found here: {{/Users/<user>/Library/Preferences/Microsoft/Custom Dictionary}}
+* if you have texts that you are willing to share with us, we are more than willing to receive them - a larger collection of texts is the most important tool for making a better speller. Both corrected and uncrrected text is of interest to us. You may either send the text as an attachment to an e-mail, or you may use [the internet page made to upload documents to the project|/upload/upload_corpus_file.html]
+
+
+
+!!!Access to the source code, copyright issues
+
+The Divvun project works according to the principles of open source code. This means, that with some exceptions, it is possible to download all source code and all programs needed for self being able to modifying and making the spell checker. The most important exceptions are:
+
+* in order to generate analysers from the wordlists in the Divvun project, you will need proprietary software from Xerox. The easiest way of acquiring this software is to buy the book "[ Finite State Morphology|http://www.fsmbook.com/]", the accompanying CD contains the relevant software.
+* the programs needed to make the proofing tools for Microsoft Office belongs to Polderland, and is not available. ''It is thus not possible to make your own versions of the proofing tools for Microsoft Office.'' The proofing tools for OpenOffice.org will not have such limitations, and it will use an open source speller engine (proofing tools for OOo will be released a bit later).
+
+
+More information on how to download and install the source code for the Divvun project is found on [this page|/doc/infra/anonymous-cvs.html].
+
+!!!Upgrading
+
+If you have installed a prior version of the Divvun proofing tools, you need to completely remove the previous version before installing the new one. To de-install, follow the instructions below, then go on to install as for a new installation (see above).
+
+!!Mac
+
+# go to the folder {{/Applications/SamiProofingTools/}}
+# double-click ''Remove SamiProofingTools''
+# type an administrator user name and password when prompted
+
+Please double-check that all files beginning with __Sami__ are removed from the folder {{/Applications/Microsoft Office 2004/Shared Applications/Proofing Tools/}}. If not, manually move any remaining such files to the thrash.
+
+
+!!Windows
+
+Either:
+
+# open __Control panels__ (in the __Start__ menu)
+# double click on __Add/Remove Software__
+# select ''Sámi Proofing Tools''
+# click __Remove__
+
+Or:
+
+# start Sami installer
+# when the options __Modify / Repair / Remove__ are presented, always choose remove and finish; then re-install (see above)

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+                          "http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en"> 
+    <header> 
+        <title>Forrest i18n effort</title>
+
+	<authors>
+	  <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen" />
+	  <person email="tomi.pieski@samediggi.no" name="Tomi Pieski" />
+	  <person email="borre.gaup@samediggi.no" name="Børre Gaup" />
+	</authors>
+
+    </header> 
+    <body> 
+        <section>
+            <title>Forrest i18n subproject</title>
+            <p>We need to get Forrest i18n to work to present users and the 
+            general audience with a decent and working language menu that
+            reflects the list of available languages.</p>
+
+            <p>Tasks:</p>
+            <ul>
+              <li>Define the wanted behaviour</li>
+              <li>Collect the pieces available presently in Forrest, and test 
+                  the present implementation</li>
+              <li>Identify the problems with the existing version</li>
+              <li>Make our own changes to get Forrest to behave like we want it
+                  to</li>
+              <li>Present the solution to the Forrest list (dev), and hopefully
+                  get it accepted.
+                  <note>All of us should start subscribing to
+                  the Forrest dev list!</note></li>
+              <li>Install a new version of the Forrest-doc on divvun.no.</li>
+            </ul>
+        </section>
+        <section>
+            <title>The wanted behaviour</title>
+            <p>Have a look at
+               <a href="http://www.risten.no/exist/risten">risten.no</a>.
+               The available languages are listed to the top right, and one can 
+               change the interface language by clicking the links (which is 
+               just the server address augmented with ?locale=xx, see next 
+               section).</p>
+            <p>For a document centric site, we would like to have the language 
+               menu generated dynamically, and reflect the available 
+               language versions for the document in question. For pages
+               available in only one language, the lang menu should reflect
+               this by displaying the language of the document.
+            </p>
+            <p>In cases where the browser requests an unavailable locale or no
+               locale, Forrest should return the default locale as specified
+               in either forrest.properties or skinconf.xml. That is, a request
+               for index.html should be turned into a request for index_se.xml
+               if <code>default-lang=se</code>.
+            </p>
+            <p>The language (override) menu should be configurable from skinconf.xml,
+               with the default rendering being a horizontal list along the
+               top of the page. Both appearance (list, menu) and location (top,
+               tabs, other location?) should be configurable independently.
+            </p>
+            <p>The menu texts and all tabs and other text elements outside the
+               content proper should be translated into the specified locale
+               using standard Cocoon/Forrest translation dictionaries. If a
+               locale is available for the document itself, but not all text
+               elements to be translated, the fallback (and eventually the
+               default) language should be used.
+            </p>
+            <p>
+            </p>
+        </section>
+        <section>
+            <title>Current situation (Forrest svn version as of May 25, 2005)
+               </title>
+            <p>A very <a
+               href="http://casa.che-che.com/blog/2005/05/10/internalization-a-site-using-forrest-07-dev/"
+               >recent blog</a> describes the steps to turn on and utilise
+               i18n. Unfortunately, it doesn't completely match what we have
+               found - read on (what is good is that Forrest now degrades
+               gracefully, without a 404 error).</p>
+            <p>Forrest uses its internationalisation features when they are
+               enabled in forrest.properties: <code>project.i18n=true</code></p>
+            <p>It is able to specify the wanted locale using 
+               <code>http://localhost:8888/index.html?locale=se</code>, or by 
+               letting the browser decide the locale. Forrest then chooses 
+               index_se.xml, and falls back to the default language when the
+               locale isn't found.</p>
+            <p>If the tabs_se.xml and site_se.xml files exist in 
+               <code>translation</code> directory, the menus and tabs are 
+               translated as well, but only if the requested locale is specified
+               by the browser.</p>
+            <p>What is still missing from the present Forrest version is a
+               language override menu. Also, the menus and tabs aren't
+               translated if a locale is specified within a URL (as <code>
+               index.html?locale=sme</code>).</p>
+            <p>Problem summary:</p>
+            <ul>
+                <li>Forrest menu translation works only if locale is coming
+                    from browser - the same might be the case with the tabs,
+                    but that is not yet tested</li>
+                <li>Document locale is disregarded if locale is taken from
+                    browser</li>
+                <li>There's no documented way of specifying the default
+                    language, or generating the language override menu from
+                    the content of whatever.xml (without any locale in the
+                    filename) to make the default language listed among all
+                    languages</li>
+                <li>No language override menu is generated</li>
+                <li>Since no language override menu is generated, our requests
+                    for override menu configuration can not be evaluated
+                    further</li>
+            </ul>
+        </section>
+	    <p>Last modified: $Date$, by $Author$</p>
+    </body>
+</document>

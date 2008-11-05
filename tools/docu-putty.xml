@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>How to use PuTTY.exe</title>
+    <authors>
+      <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
+    </authors>
+  </header>
+
+  <body>
+    <p>PuTTY is a program that makes it possible to work on a remote Linux
+    machine from a Windows PC computer.</p>
+
+    <section>
+      <title>How to use PuTTY.exe</title>
+
+      <p>You need two files, PuTTY.exe and psftp.exe. They can both be found
+      and downloaded from the same site.</p>
+
+      <section>
+        <title>What is PuTTY.exe and psftp.exe?</title>
+
+        <p><strong>PuTTY.exe</strong> is a program that makes Windows users
+        establish a secure connection to Unix (and Linux) terminals, among
+        other things. <strong>psftp.exe</strong> is a program that makes it
+        possible to copy files from victorio to your local machine and vice
+        versa.</p>
+      </section>
+
+      <section>
+        <title>How to get the programs</title>
+
+        <p>They are found may places, a.o. at <a
+        href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">here</a>,
+        earlier also <a
+        href="http://putty.gyron.net/">here</a>. Search for "putty
+        download" if the links are broken. Go to the Download page,
+        download both PuTTY.exe and psftp.exe, and put them in a
+        folder where you store your programs. Make an alias somewhere
+        (e.g. on the desktop, or drag them to the taskbar on the
+        bottom of your screen) so that you can find it later.</p>
+
+        <section>
+          <title>How to set up PuTTY and connect to victorio</title>
+
+          <p>Doubleclick on the PuTTY.exe icon, and get a small box in
+          return.  To the right, you are prompted for "Host
+          Name". Write <em>user@victorio.uit.no </em>(where
+          <em>user</em> is your username).  Give the connection a
+          name, e.g. "victorio" (in the space one field down). Then,
+          click <code>Terminal</code> to the left, and choose UTF-8
+          (or, in recent versions: In the leftmost box
+          (<code>Category</code>) of the Putty settings box, under
+          <code>Window</code> choose <code>Translation</code>. The
+          default translation is <code>ISO-8859-1</code>, you should
+          open the list and choose <code>UTF-8</code>. Font size 8
+          gives you a normal amount on text, and most monitors give
+          you 50 lines of text. After having made these choices, go
+          back to the first (or rightmost) menu, and click on
+          <em>save</em> in the menu to the rignt. Make sure
+          <strong>SSH</strong> is chosen under "Protocol", and click
+          on "Open" at the bottom of the window.</p>
+
+          <p>If everything is ok, you will find a new window in front of you,
+          prompting for your user name. Write it, and then press the ENTER
+          key, and write your password, followed by ENTER. Then you are logged
+          in.</p>
+
+          <p>This presupposes that you have a Sámi keyboard on your PC. From
+          2004 onwards all new Windows XP systems have Sámi keyboards
+          installed, you may find it by right-clicking the keyboard symbol, or
+          via the Control Panel.</p>
+
+          <p><strong>NOTE!</strong> There is a bug in the present PuTTY
+          version: All Sámi characters work perfectly, except the č character
+          (c-caron), for some strange reason (what you get is plain c), even
+          though č works in other programs. TODO: Report and fix. </p>
+
+          <p>After the session, remember logging out by writing
+          <strong>logout</strong>. Also, remember that you may have several
+          windows open at the same time (just open the second, third etc. in the same way as the first).</p>
+        </section>
+      </section>
+
+      <section>
+        <title>How to copy files between victorio and your own machine</title>
+
+        <p>On the gyron download page referred to above, doubleclick
+        on the psftp.exe icon. Write "open victorio.uit.no" at the
+        prompt. Give your user name and password. To get files from
+        victorio, you write "get", and to copy files to victorio, you
+        write "put". The syntax is "get sourcefile resultfile" (and
+        the same for put). In order to copy e.g. the file
+        gt/sme/src/noun-sme-lex.txt, write this command:</p>
+
+        <p>get gt/sme/src/noun-sme-lex.txt noun.txt</p>
+
+        <p>Since it easy to get confused with the get and put commands, I
+        always use another filename for the file I copy to. If you use the
+        same name twice, and copy the wrong direction, then the old file will
+        replace the new one, and your work will be lost.</p>
+
+        <p>Note that psftp.exe makes it possible to use standard unix
+        commands. Cf. <a href="http://putty.gyron.net/...">the psftp.exe
+        help file</a> for a list of commands.</p>
+      </section>
+
+      <section>
+        <title>Copy many files at the same time with psftp.exe</title>
+
+        <p>The psftp.exe program cannot use the * notation when copying files,
+        one must write the name of each file separately. The way of copying
+        many files in one operation is to use putty.exe to lump them together
+        in one archive file, and then use psftp.exe to move that file to your
+        local machine, and unpack it there. We give two actual examples. The
+        first copies all the html files from the doc catalog, and the other
+        one copies all the txt file from the sme/src catalog. The first step
+        is to open a window with putty.exe, and make two archive files. We
+        assume that you stand in your home directory, and write the following
+        commands, the first to copy the html files, the second to copy the
+        program's source files.</p>
+
+        <p>tar cf - gt/doc/*html | gzip &gt; d.tar.gz<br />tar cf -
+        gt/sme/src/*txt | gzip &gt; s.tar.gz</p>
+
+        <p>The file names d and s are chosen arbitrarily in order to avoid
+        writing long names, the suffixes .tar and .gz indicates the file type
+        (the files are compressed twice, first by tar and then by gzip). If
+        you want to actually see what files you copy, you may write
+        <strong>cvf</strong> instead of <strong>cf</strong> after
+        <strong>tar</strong>, the v instructs the tar command to tell what it
+        does. If you only copy small files, or have a very fast computer, the
+        gzip part is not necessary, then a simpler "tar cf d.tar gt/doc/*html"
+        will do, the gzip part of the command just makes download time 1/3
+        shorter than tar only).</p>
+
+        <p>Then you must copy the files to your local machine. In order to do
+        that, open a window in psftp.exe, and give the following command, just
+        as described before (note that s.tar is so big that it might take some
+        time to download it.):</p>
+
+        <p>get d.tar.gz d2.tar.gz<br />get s.tar.gz s2.tar.gz</p>
+
+        <p>The files d2.tar and s2.tar may then be opened on your local
+        Windows machine with the winzip program (doubleclick on the d2.tar and
+        s2.tar files, and Winzip will open. Answer <strong>yes</strong> to
+        open the .gz file, then select all the files that will appear as a
+        list (ctrl-A) and click on "Extract"), and as a result you have all
+        the documentation files, and all the source text files, on your local
+        Windows PC.</p>
+
+      </section>
+      <p class="last_modified">Last modified: $Date$, by $Author$</p>
+    </section>
+  </body>
+</document>

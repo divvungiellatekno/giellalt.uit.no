@@ -1,0 +1,167 @@
+!!!Saamelaiskäräjien oikolukuohjelmat
+
+Tervetuloa Norjan Saamelaiskäräjien oikolukuohjelmien käyttäjäksi. Tämä on ohjelmien ensimmäinen virallinen versio. Tiedämme, että siinä on virheitä (vrt. alla oleva lista), ja oletettavasti siinä on niiden lisäksi myös monia muita virheitä. Toivomme täten saavamme palautetta puuttuvista sanoista ja muista virheistä.
+
+Ohjelmien käyttöopas on omassa [dokumentissaan|usage.html].
+
+!!Ohjelman yhteensopivuus Office- ja käyttöjärjestelmien kanssa
+
+Perusvaatimus on, että käyttäjän ohjelma ja käyttöjärjestelmä tukee Unicodea. Divvun-projekti ei tue vanhempia saamelaisia kooditaulukoita, kuten esim. WinSam, Levi tai MacSami.
+
+!Windows
+
+Windows XP SP2 on ensimmäinen saamea tukeva Windows-versio. Sen lisäksi pitäisi myös Windows 2000:n toimia Saamelaiskäräjien jakamalla näppäimistöllä.
+
+Vastaavasti Office 2000 on ensimmäinen Unicodea tukeva Office-versio. Nämä versiot ovat siis ohjelmien minimivaatimukset.
+
+Olemme testanneet ohjelman seuraavilla  Windows-käyttöjärjestelmillä ja MS Office-versioilla:
+
+* Windows XP SP2
+* Windows Vista
+* Office Professional 2007
+* Office Professional 2003
+
+Otamme mielellään vastaan palautetta käyttäjiltä, jotka ovat testanneet ohjelmia muilla kuin yllämainituilla Windows/Office-yhdistelmillä.
+
+!Mac
+
+MacOS X 10.3 on ensimmäinen eksplisiittisesti saamea tukeva MacOS-versio (saamen näppäinjärjestelmä, mahdollisuus käyttää saamea käyttöjärjestelmäkielenä sitä tukeville ohjelmille). Periaatteessa kaikki MacOS X-versiot tukevat Unicodea, mutta saamenkielinen näppäinjärjestelmä täytyy asentaa itse.
+
+Ohjelmat __eivät__ tue  MacOS 9 eikä vanhempia MacOs-versioita niistä puuttuvan Unicode-tuen takia.
+
+MS Office 2004/Mac on toistaiseksi ainoa Unicodea tukeva Macille tarkoitettu MS Office-versio ja siis ainoa versio, jota Divvun-projekti tukee. Vanhempia MS Office versioita __ei__ siis tueta.
+
+Olemme testanneet ohjelmia seuraavilla MacOS-käyttöjärjestelmillä ja MS Office-versioilla:
+* MacOS X 10.4.x
+* MacOS X 10.5.
+* MS Office 2004
+
+Otamme mielellään vastaan palautetta käyttäjiltä, jotka ovat testanneet ohjelmia muilla kuin yllämainituilla MacOS/Office-yhdistelmillä.
+
+!!!Uusi asennus
+
+__HUOM!__ Jos olet asentanut aiemman version tästä ohjelmasta, lue tämän tiedoston lopussa kohdassa ''Päivittäminen'' annettuja ohjeita ja tee niiden mukaisesti.
+
+!!Mac
+
+Asennusohjelman tulee käynnistyä itsestään ilman erillisiä toimenpiteitä [haun|http://www.divvun.no/static_files/sami-proofing-tools.dmg], jälkeen. Käyttäjän tulee vain seurata ohjelman antamia ohjeita.
+
+Jos asennusohjelma ei käynnisty itsestään, tai jos halutaan käynnistää asennus myöhemmin uudelleen, käyttäjän tulee:
+
+# Kaksoisklikata tiedostoa {{sami-proofing-tools.dmg}}
+# Avatussa ikkunassa kaksoisklikata asennuspakettia (sami_installer.pkg)
+# Seurata näyttöön ilmestyviä ohjeita
+
+
+!!Windows
+
+# Hae ja tallenna [asennuspaketti|http://www.divvun.no/static_files/DivvunInstaller.exe], ja klikkaa __Aja__.
+# Hyväksy tiedoston asennus.
+# Valitse kieli ja paina __OK__.
+# Paina uudelleen __Aja__ (tai vastaavaa).
+# Paina __Seuraava__ kunnes asennus on valmis.
+
+
+!!!Asennuksen yhteydessä tulevat tiedostot
+
+Asennuksen yhteydessä tulevat seuraavat ohjelmat:
+
+* Pohjoissaamen oikolukuohjelma
+* Luulajansaamen oikolukuohjelma
+* Pohjoissaamen tavutusohjelma
+* Luulajansaamen tavutusohjelma
+
+Kattava lista kaikista asennuksen yhteydessä tulevista tiedostoista löytyy [täältä|installed-files.txt].
+
+!!!Tiedossa olevat virheet and puutteet
+
+Alla on lista nykyisen version tiedossa olevista virheistä. Ne luonnollisesti korjataan tulevissa päivityksissä.
+
+Kattava lista korjauksista, katso [dokumentti|/doc/proof/spelling/msoff/changes.html].
+
+!!Oikoluku
+
+* kolmea kirjainta pidempien akronyymien sijapäätteeiden ehdotukset on kirjoitettu isoilla kirjaimilla. Ohjelma hyväksyy pienellä kirjoitetut sijapäätteet (ja isoilla kirjaimilla olevat sijapäätteet ovat oikein siinä tapauksessa kun itse sana on kirjoitettu isolla). Tämä on kompromissi, jotta sanat kuten "SáMI" voidaan korjata muotoon "SÁMI". Aiemmin "SáMI" korjattiin muotoon "Sámi". Ohjelman toimintaa arvioidaan tässä tapauksessa käyttäjien antaman palautteen mukaan.
+* kun päivitetään Windows:issa olevaa oikolukuohjelmaa, asennusohjelman kielen valinnalla ei ole vaikutusta - edellisellä kerralla valittu asennuskieli valitaan automaattisesti. Jos haluat asentaa ohjelman käyttäen jotakin toista kieltä, poista aiempi asennus, jonka jälkeen voit asentaa ohjelman käyttäen haluamaasi kieltä.
+* kun päivität ohjelman Windows:issa, asennus EI päivity. Ainoa ratkaisu on ensin poistaa aiempi asennus, käyttäen joko asennusohjelmaa tai tavanomaista ohjelmien poisto-ohjelmaa, jonka jälkeen asennus voidaan suorittaa normaalisti. Katso tarkemmat ohjeet dokumentin alaosasta.
+* Windows:issa voi näyttää siltä kuin se sisältäisi oikolukuohjelman myös koltan-, inarin- ja eteläsaamelle. Näin ei kuitenkaan ole. Johtuen Microsoftin tavasta ryhmittää saamen kielet yhteen (mikä voi olla hyvä käytäntö joissakin tapauksissa), Office vaihtaa automaattisesti saman ryhmän jonkin toisen jäsenen oikolukijaan, jos valitulle kielelle ei löydy mitään. Tämä johtaa siihen, että  jos valitaan kieli johon ei löydy oikolukuohjelmaa, Office vaihtaa luulajan- tai pohjoissaamen kieleen (luultavimmin luulajansaameen, koska se on aakkosjärjestyksessä ensimmäinen). Tämä ei aiheuta ongelmia, mutta voi häiritä kirjoittamista, jos käyttäjä on määritellyt MS Word:in käyttämään jotakin yllä mainituista kolmesta kielestä, ja tekstiin tulee paljon punaisia alleviivauksia. Yksi pitkän aikavälin parannus ongelmaan on kehittää oikolukuohjelmia myös näille kielille. Eteläsaamelle oikolukuohjelma on jo suunnitelmissa.
+* roomalaisia numeroita ei tunnisteta
+* Yhdyssanojen ehdotukset voisivat olla parempia - oikolukuohjelmilla on yleensä vaikeuksia korjata pitkiä yhdyssanoja. Ohjeita yhdyssanojen korjaamiseksi löytyy [ohjelmien käytöstä|usage.html].
+* Joissakin ehdotetuissa sanoissa on tavuviiva. Oikolukuohjelma ei tiedä, onko pyritty kirjoittamaan ''biila- ja bussevuoddji'' vai ainoastaan ''biila'', jos korjattava sana on ''bila'', joten ehdotuksissa on molemmat vaihtoehdot. Vaihtoehdoista voi valita sopivamman.
+* Luulajansaamen oikolukuohjelmassa on edelleen liian vähän sanoja; niitä on huomattavasti vähemmän kuin pohjoissaamessa. Tämän pulman korjaamiseksi olisi hyvä, jos käyttäjät lähettäisivät meille tekstejä. Ks. lisätietoja nettisivuiltamme [http://www.divvun.no/].
+
+!!Tavutus
+
+* joistakin sanapäätteistä puuttuu tavutus
+* osa tavurajoista voi olla virheellisiä
+
+!!!Palaute
+
+Otamme mielellämme vastaan palautetta oikolukuohjelmien toiminnasta; sekä positiivista että negatiivista. Käyttämänne version numero käy ilmi kirjoittamalla ''nuvviDspeller'' ja klikkaamalla hiiren oikealla painikkeella (Mac: ctrl-klikkaamalla) kyseistä sanaa. Vastauksena tulee mm. oikolukuohjelman päivämäärä seuraavanlaisessa muodossa:
+
+{{{
+Divvun
+Davvisámi, version 1.0, 2007-12-05
+}}}
+
+
+!!Sähköpostiosoite
+
+Palautetta voi lähettää osoitteeseen:
+* [palaute@divvun.no|mailto:palaute@divvun.no]
+
+
+!!Bugzilla
+
+On myös mahdollista avata oma tili Divvun-projektin ja Tromssan yliopiston kieliteknologiaprojektin [virhetietokannassa|http://giellatekno.uit.no/bugzilla/], ja ilmoittaa virheistä suoraan siihen. Ilmoitukset ohjataan suoraan oikealle vastuuhenkilölle.
+
+!!Mitä kannattaa ilmoittaa
+
+Tässä on lyhyt muistilista ennen kuin lähettää palautetta:
+
+* muista __aina__ laittaa tiedot käyttämästäsi versiosta (kirjoita ''nuvviDspeller'' ja klikkaa hiiren oikeaa painiketta), kun kerrot virheistä tai puutteista
+* muista myös ilmoittaa, mitä MS Office-versiota ja käyttöjärjestelmää käytät
+* tarkista, että ilmoittamasi virhe ei löydy tiedossa olevien virheiden listasta
+* Voi olla hyödyllistä lähettää meille oma sanalista silloin tällöin, siis sanat, jotka olet lisännyt silloin, kun oikolukuohjelma ei ole tunnistanut sitä - tarkista kuitenkin, että lista ei sisällä "yksityisiä sanoja". Lista niistä löytyy Windowsissa tästä: {{C:\Documents and Settings\<user>\Application Data\Microsoft\UProof\CUSTOM.DIC}} (jos et löydä, hae *.dic Käynnistä-valikon ''etsi''-toiminnolla), ja Macissa tästä: {{/Köyttäjiä/<käyttäjä>/Kirjasto/Preferences/Microsoft/Custom Dictionary}}
+* Jos sinulla on kokonaisia tekstejä, joiden kopioita olet valmis antamaan meille, otamme niitä vastaan mielellämme - suuri tekstikokoelma on paras apuneuvo paremman oikolukuohjelman tekemisessä. Sekä oikoluetut että oikolukemattomat tekstit ovat hyödyllisiä. Voit lähettää ne meille joko sähköpostin liitteenä tai käyttää [siihen tarkoituksen tehtyä nettisivua|/upload/upload_corpus_file.html]
+
+
+
+!!!Lähdekoodin ja työkalujen saatavuus
+
+Divvun-projekti työskentelee avoimen lähdekoodin periaatteiden mukaan, ts. paria poikkeusta lukuun ottamatta on mahdollista ladata kaikki oikolukuohjelman tekemiseen tai muokkaamiseen tarvittavat tiedostot ja ohjelmat. Tärkeimmät poikkeukset ovat:
+
+* Jos halutaan rakentaa ohjelmia lähdetiedostojemme perusteella, tarvitaan Xeroxin tekemiä suljettuja ohjelmia. Ne saa helposti ostamalla kirjan "[ Finite State Morphology|http://www.fsmbook.com/]". Ohjelmat löytyvät kirjaan liitetystä CD:stä.
+* Ohjelmat Microsoft Officelle tarkoitettujen ohjelmien tekemiseen kuuluvat ohjelmatalolle Polderland, ja niitä ei ole saatavilla. ''Näistä korjausohjelmista ei siis ole mahdollista tehdä omia versioita.''  OpenOffice.org:ille tarkoitetuissa oikolukuohjelmissa ei tule olemaan tällaisia rajoituksia, vaan ne tulevat perustumaan avoimeen lähdekoodiin myös oikolukuohjelmakoodin osalta (oikolukuohjelma OOo:ta varten tulee myöhemmin).
+
+Lisää tietoa Divvun-projektin lähdekoodin lataamisesta ja asennuksesta löytyy [tästä|/doc/infra/anonymous-cvs.html].
+
+
+!!!Päivittäminen
+
+Jos koneeseen on jo asennettuna Divvun aiempi versio, se tulee poistaa kokonaan ennen tämän virallisen version asentamista. Alla seuraavat poisto-ohjeet. Tämän jälkeen voidaan jatkaa asennusta kohdasta ''Uusi asennus''.
+
+!!Mac
+
+# mene hakemistoon {{/Applications/SamiProofingTools/}}
+# kaksoisklikkaa ''Remove SamiProofingTools''
+# syötä administraattorin käyttönimi ja salasana kysyttäessä
+
+Tarkista vielä, että kaikki __Sámi__ -nimellä alkavat tiedostot on poistettu hakemistosta {{/Applications/Microsoft Office 2004/Shared Applications/Proofing Tools/}}. Jos näin ei ole, poista kyseiset tiedostot.
+
+
+!!Windows
+
+Joko: 
+
+# avaa __Ohjauspaneeli__ (__Käynnistä__ -valikosta)
+# kaksoisosoita __Asenna/Poista ohjelmisto__
+# valitse ''Sámi Proofing Tools''
+# osoita __Poista__
+
+tai:
+
+# käynnistä asetusohjelmaa
+# kun saat vaihtoehdot ''Vaihda'', ''Korjaa'', ''Poistaa'', valitse ''Poistaa''
+
+Saara: katso l 85, viimeinen lause

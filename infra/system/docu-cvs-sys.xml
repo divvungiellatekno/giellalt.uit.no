@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>CVS administration</title>
+    <authors>
+      <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
+    </authors>
+  </header>
+  <body>
+    <section>
+      <title>CVS administration</title>
+      <ul>
+        <li>Where is the repository? Type <code>locate repository</code> to see repository location.</li>
+      </ul>
+      <p>As part of the installation routine, every new user is assigned to the group &quot;cvs&quot;. Add the new user to the group cvs.</p>
+      <p>Run the command</p>
+      <p>cvs -d /usr/local/cvs/repository/ co gt</p>
+      <p>(This might work for the user, without root privileges, I am not sure). What does work is the following:</p>
+      <p>Be root. Go to the home directory of the new user. Write &quot;cvs get gt&quot;.</p>
+      <p>Cf. Eero's explanation:</p>
+      <p/>
+      <source>[root@gitek cvsrep]# groups sjur
+sjur : sjur
+Aha. Sjur ei ole ryhmässä lingsoft, jolla on oikeudet gt-hakemistoon.
+
+[root@gitek cvsrep]# groups kristin
+kristin : kristin
+[root@gitek cvsrep]# /usr/sbin/usermod -G lingsoft kristin
+[root@gitek cvsrep]# groups kristin
+kristin : kristin lingsoft
+
+Nyt pitäisi toimia:
+
+[root@gitek cvsrep]# su -l sjur
+[sjur@gitek sjur]$ cvs get gt
+cvs checkout: Updating gt
+cvs checkout: Updating gt/doc
+&lt;......>
+
+Jep, toimii. Nyt Kristinin pitäisi saada tiedostot ulos komentamalla
+cvs get gt
+
+
+</source>
+      <source>
+        <br/>This is a command that perhaps is irrelevant?
+
+</source>
+      <source>[root@gitek cvsrep]# ls -lart gt
+drwxrwsr-x   10 trond    lingsoft     4096 feb 15 17:42 gt
+</source>
+      <source/>
+      <p>Eero Taipale</p>
+      <p class="last_modified">Last modified: $Date$, by $Author$</p>
+    </section>
+  </body>
+</document>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
+  <header>
+    <title>Hyphenator Test Results for:
+          «tmp/hy-wordtypes-pl-sme.txt»
+        </title>
+  </header>
+  <body>
+    <section>
+      <title>Overview</title>
+      <section>
+        <title>Technical data</title>
+        <p>Language tested:
+          <strong>sme</strong></p>
+        <p>Document tested: 
+          <strong>tmp/hy-wordtypes-pl-sme.txt</strong></p>
+        <p>Hyphenation tool:
+          <strong>Polderland command line tool</strong></p>
+        <p>Hyphenation tool version:
+          <strong>SamiNortHyphMac version 103.3.0.2, Apr 14 2008, 16:16:34</strong></p>
+        <p>Hyphenation lexicon version:
+          <strong>Davvisámi, version 1.0.1, 2008-10-16</strong></p>
+        <p>Test Date:
+          <strong>20081017</strong></p>
+        <p>Test Type:
+          <strong>wordtypes</strong></p>
+      </section>
+      <section>
+        <title>Result summary</title>
+        <p>Number of input words:
+        <strong>43</strong></p>
+        <table>
+          <caption>Precision and Recall</caption>
+          <tr>
+            <td colspan="2" rowspan="2"/>
+            <th colspan="2">Speller view</th>
+          </tr>
+          <tr>
+            <td>Speller Positive<br/>
+              (number of flagged words):<br/><strong>0</strong></td>
+            <td>Speller Negative<br/>
+              (number of accepted words):<br/><strong>0</strong></td>
+          </tr>
+          <tr>
+            <th rowspan="2">Reality</th>
+            <td>Number of real errors:<br/><strong>43</strong></td>
+            <td>Number of true positives<br/>
+              (detected real errors):<br/><strong>0</strong></td>
+            <td>Number of false negatives<br/>
+              (unflagged spelling errors):<br/><strong>0</strong></td>
+          </tr>
+          <tr>
+            <td>Number of real correct words:<br/><strong>0</strong></td>
+            <td>Number of false positives<br/>
+              (incorrectly flagged words):<br/><strong>0</strong></td>
+            <td>Number of true negatives<br/>
+              (unflagged correct words):<br/><strong>0</strong></td>
+          </tr>
+        </table>
+        <dl>
+          <dt>Precision (tp/(tp+fp)):</dt>
+          <dd>NaN %</dd>
+          <dt>Recall (tp/(tp+fn)):</dt>
+          <dd>NaN %</dd>
+          <dt>Accuracy ((tp+tn)/words):</dt>
+          <dd>NaN %</dd>
+        </dl>
+      </section>
+      <section>
+        <title>Colour Codes</title>
+        <dl>
+          <dt>Uncoloured table rows</dt>
+          <dd>Test passed</dd>
+          <dt>Table row with pink background</dt>
+          <dd class="broken">Test failed - either missing or wrong (or both) hyphenation points</dd>
+          <dt>Yellow hyphen</dt>
+          <dd><span class="missing">-</span> Missing hyphenation point (found in the correct string, but not in the hyphenated string)</dd>
+          <dt>Red hyphen</dt>
+          <dd><span class="error">-</span> Wrong hyphenation point (found in the hyphenated string, but not in the correct string)</dd>
+        </dl>
+        <note>Some of the test data may contain deliberate typos, to test the
+        performance of the hyphenator in such cases. These contain almost
+        always one error or more. This is expected, perfect hyphenation can
+        <strong>not</strong> be guaranteed on misspelled text. Typos are always clearly marked at
+        the beginning of the comment field. So please check the comment before
+        judging the hyphenation test result.</note>
+      </section>
+    </section>
+    <section>
+      <title>Tests for different word constructions</title>
+      <table>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="correct">
+          <td>AP-rávvagat</td>
+          <td>AP-ráv^va^gat</td>
+          <td>AP-ráv^va^gat</td>
+          <td>0</td>
+          <td>Acro + noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>ANC-reahccut</td>
+          <td>ANC-reahc^cut</td>
+          <td>ANC-reahc^cut</td>
+          <td>0</td>
+          <td>Acro + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>10-jahkásačča</td>
+          <td>10<span class="missing">-</span>jah<span class="missing">^</span>ká<span class="missing">^</span>sač<span class="missing">^</span>ča</td>
+          <td>10<span class="error">^</span>jahkásačča</td>
+          <td>4</td>
+          <td>Digit + noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>máŋggasoarttagiiguin</td>
+          <td>máŋg^ga^soart^ta^gii^guin</td>
+          <td>máŋg^ga^soart^ta^gii^guin</td>
+          <td>0</td>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr class="broken">
+          <td>guovttenuppelotčoarvvagiin</td>
+          <td>guovt^te<span class="missing">^</span>nup^pe<span class="missing">^</span>lot<span class="missing">^</span>čoarv^va^giin</td>
+          <td>guovt^tenup^pelotčoarv^va^gi<span class="error">^</span>in</td>
+          <td>4</td>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr class="correct">
+          <td>barggahaddat</td>
+          <td>barg^ga^had^dat</td>
+          <td>barg^ga^had^dat</td>
+          <td>0</td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr class="correct">
+          <td>barggahattalinban</td>
+          <td>barg^ga^hat^ta^lin^ban</td>
+          <td>barg^ga^hat^ta^lin^ban</td>
+          <td>0</td>
+          <td>Deverbal verb + clitic</td>
+        </tr>
+        <tr class="correct">
+          <td>duolmmasteastit</td>
+          <td>duolm^mas^teas^tit</td>
+          <td>duolm^mas^teas^tit</td>
+          <td>0</td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr class="correct">
+          <td>árjjátluovihiidda</td>
+          <td>árj^ját^luo^vi^hiid^da</td>
+          <td>árj^ját^luo^vi^hiid^da</td>
+          <td>0</td>
+          <td>Derivated noun - from name</td>
+        </tr>
+        <tr class="correct">
+          <td>jávrrálaččaid</td>
+          <td>jávr^rá^lač^čaid</td>
+          <td>jávr^rá^lač^čaid</td>
+          <td>0</td>
+          <td>Denominal adj</td>
+        </tr>
+        <tr class="correct">
+          <td>nieiddažaččas</td>
+          <td>nieid^da^žač^čas</td>
+          <td>nieid^da^žač^čas</td>
+          <td>0</td>
+          <td>Denominal noun</td>
+        </tr>
+        <tr class="correct">
+          <td>čájetmeahttun</td>
+          <td>čá^jet^meaht^tun</td>
+          <td>čá^jet^meaht^tun</td>
+          <td>0</td>
+          <td>Deverbal adj</td>
+        </tr>
+        <tr class="correct">
+          <td>seammalágán</td>
+          <td>seam^ma^lá^gán</td>
+          <td>seam^ma^lá^gán</td>
+          <td>0</td>
+          <td>Pron + adj compound</td>
+        </tr>
+        <tr class="correct">
+          <td>čalmmástuvvamuš</td>
+          <td>čalm^más^tuv^va^muš</td>
+          <td>čalm^más^tuv^va^muš</td>
+          <td>0</td>
+          <td>Deverbal noun</td>
+        </tr>
+        <tr class="correct">
+          <td>čalmmástuvvamušago</td>
+          <td>čalm^más^tuv^va^mu^ša^go</td>
+          <td>čalm^más^tuv^va^mu^ša^go</td>
+          <td>0</td>
+          <td>Deverbal noun + clitic</td>
+        </tr>
+        <tr class="correct">
+          <td>birgegoađán</td>
+          <td>bir^ge^goa^đán</td>
+          <td>bir^ge^goa^đán</td>
+          <td>0</td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr class="correct">
+          <td>birgegoađáledjenai</td>
+          <td>bir^ge^goa^đá^led^je^nai</td>
+          <td>bir^ge^goa^đá^led^je^nai</td>
+          <td>0</td>
+          <td>Deverbal verb + clitic</td>
+        </tr>
+        <tr class="correct">
+          <td>máistinhuksemuš</td>
+          <td>mái^stin^huk^se^muš</td>
+          <td>mái^stin^huk^se^muš</td>
+          <td>0</td>
+          <td>Noun + deverbal noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>dolkisáhka</td>
+          <td>dol^ki^sáh^ka</td>
+          <td>dol^ki^sáh^ka</td>
+          <td>0</td>
+          <td>Derverbal noun + noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>cielastuvvanbárteuksa</td>
+          <td>cie^las^tuv^van^bár^te^uk^sa</td>
+          <td>cie^las^tuv^van^bár^te^uk^sa</td>
+          <td>0</td>
+          <td>Deverbal deverbal noun + noun + noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>cielastuvvanbárteuvssaiguinge</td>
+          <td>cie^las^tuv^van^bár^te^uvs^sai^guin^ge</td>
+          <td>cie^las^tuv^van^bár^te^uvs^sai^guin^ge</td>
+          <td>0</td>
+          <td>Deverbal deverbal noun + noun + noun + clitic</td>
+        </tr>
+        <tr class="correct">
+          <td>gálvoguođáhaddanidja</td>
+          <td>gál^vo^guo^đá^had^dan^id^ja</td>
+          <td>gál^vo^guo^đá^had^dan^id^ja</td>
+          <td>0</td>
+          <td>Typo:Noun + deverbal deverbal noun + noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>gálvoguođahaddanidja</td>
+          <td>gál^vo^guo^đa^had^dan^id^ja</td>
+          <td>gál^vo^guo^đa^had^dan^id^ja</td>
+          <td>0</td>
+          <td>Noun + deverbal deverbal noun + noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>gielddosolbmuidbargováža</td>
+          <td>gield^dos^ol^bmuid^bar^go^vá^ža</td>
+          <td>gield^dos^ol^bmuid^bar^go^vá^ža</td>
+          <td>0</td>
+          <td>Adj + noun + noun + noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>Gaskavággeerratrášša</td>
+          <td>Gas^ka^vág^ge^er^rat^ráš^ša</td>
+          <td>Gas^ka^vág^ge^er^rat^ráš^ša</td>
+          <td>0</td>
+          <td>Name</td>
+        </tr>
+        <tr class="correct">
+          <td>Svartnæskilen</td>
+          <td>Svart^næs^ki^len</td>
+          <td>Svart^næs^ki^len</td>
+          <td>0</td>
+          <td>Name</td>
+        </tr>
+        <tr class="correct">
+          <td>Svartnæskilenishal</td>
+          <td>Svart^næs^ki^le^nis^hal</td>
+          <td>Svart^næs^ki^le^nis^hal</td>
+          <td>0</td>
+          <td>Name + clitic</td>
+        </tr>
+        <tr class="correct">
+          <td>Davimušaláš-geađggit</td>
+          <td>Da^vi^muš^a^láš-geađg^git</td>
+          <td>Da^vi^muš^a^láš-geađg^git</td>
+          <td>0</td>
+          <td>Name + noun compound</td>
+        </tr>
+        <tr class="correct">
+          <td>Koskivuori-plánenreaiddut</td>
+          <td>Kos^ki^vuo^ri-plá^nen^reaid^dut</td>
+          <td>Kos^ki^vuo^ri-plá^nen^reaid^dut</td>
+          <td>0</td>
+          <td>Name + noun + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>heajosvuođaláhkaroadda</td>
+          <td>hea^jos^vuo<span class="missing">^</span>đa<span class="missing">^</span>láh^ka^road^da</td>
+          <td>hea^jos^vuođaláh^ka^ro<span class="error">^</span>ad^da</td>
+          <td>3</td>
+          <td>Deadjectival noun + noun + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>heajosvuođaláhkaroattaidegis</td>
+          <td>hea^jos^vuo<span class="missing">^</span>đa<span class="missing">^</span>láh^ka^roat^tai^de^gis</td>
+          <td>hea^jos^vuođaláh^ka^ro<span class="error">^</span>at^tai^de^gis</td>
+          <td>3</td>
+          <td>Deadjectival noun + noun + noun compound + clitic</td>
+        </tr>
+        <tr class="broken">
+          <td>guovttenuppelotnamat</td>
+          <td>guovt^te<span class="missing">^</span>nup^pe<span class="missing">^</span>lot^na^mat</td>
+          <td>guovt^tenup^pelot^na^mat</td>
+          <td>2</td>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr class="broken">
+          <td>guoktenuppelotnamat</td>
+          <td>guok^te<span class="missing">^</span>nup^pe<span class="missing">^</span>lot^na^mat</td>
+          <td>guok^tenup^pelot^na^mat</td>
+          <td>2</td>
+          <td>Typo: Number + adj compound</td>
+        </tr>
+        <tr class="correct">
+          <td>cielastuvvat</td>
+          <td>cie^las^tuv^vat</td>
+          <td>cie^las^tuv^vat</td>
+          <td>0</td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr class="broken">
+          <td>čielestuvvat</td>
+          <td>čie^les<span class="missing">^</span>tuv^vat</td>
+          <td>čie^le<span class="error">^</span>stuv^vat</td>
+          <td>2</td>
+          <td>Typo: Deverbal verb</td>
+        </tr>
+        <tr class="correct">
+          <td>goađátcielastuvvanbárteuksa</td>
+          <td>goa^đát^cie^las^tuv^van^bár^te^uk^sa</td>
+          <td>goa^đát^cie^las^tuv^van^bár^te^uk^sa</td>
+          <td>0</td>
+          <td>Noun + deverbal deverbal noun + noun + noun</td>
+        </tr>
+        <tr class="broken">
+          <td>guođáčielastuvvanbárteuksa</td>
+          <td>guo<span class="missing">^</span>đá<span class="missing">^</span>čie^las<span class="missing">^</span>tuv^van^bár^te<span class="missing">^</span>uk^sa</td>
+          <td>guođáčie^lastuv^van^bár^teuk^sa</td>
+          <td>4</td>
+          <td>Typo: Noun + deverbal deverbal noun + noun + noun</td>
+        </tr>
+        <tr class="correct">
+          <td>reahccut</td>
+          <td>reahc^cut</td>
+          <td>reahc^cut</td>
+          <td>0</td>
+          <td>Adverb</td>
+        </tr>
+        <tr class="broken">
+          <td>rahccut</td>
+          <td>rahc^cut</td>
+          <td>rah<span class="error">^</span>c^cut</td>
+          <td>1</td>
+          <td>Typo: adverb</td>
+        </tr>
+        <tr class="correct">
+          <td>olbmuidbargovissir</td>
+          <td>ol^bmuid^bar^go^vis^sir</td>
+          <td>ol^bmuid^bar^go^vis^sir</td>
+          <td>0</td>
+          <td>Noun + noun + noun</td>
+        </tr>
+        <tr class="broken">
+          <td>olbmuidbargovisir</td>
+          <td>ol^bmuid^bar^go^vi^sir</td>
+          <td>ol^b<span class="error">^</span>muid^bar^go^vi^sir</td>
+          <td>1</td>
+          <td>Typo: Noun + noun + noun</td>
+        </tr>
+        <tr class="correct">
+          <td>diktemeahttun</td>
+          <td>dik^te^meaht^tun</td>
+          <td>dik^te^meaht^tun</td>
+          <td>0</td>
+          <td>Deverbal adj</td>
+        </tr>
+        <tr class="correct">
+          <td>divttemeahttun</td>
+          <td>divt^te^meaht^tun</td>
+          <td>divt^te^meaht^tun</td>
+          <td>0</td>
+          <td>Typo: Deverbal adj</td>
+        </tr>
+      </table>
+    </section>
+  </body>
+</document>

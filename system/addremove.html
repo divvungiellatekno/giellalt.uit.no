@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Adding and removing users</title>
+</head>
+
+<body>
+<h1>Adding and removing users</h1>
+
+<p>Be root. To add a new user named Laila Sara with laila as the user
+name, do the following:</p>
+
+<p>You will need <i>nnnnn</i>, the next free uid number, the numbers start with
+10000 for trond. Check out the next number by typing <code>tail
+/etc/passwd</code>. Say it is 501.<p>
+
+<p>Then make the group laila:</p>
+
+<p><code>/usr/sbin/groupadd -g 501 laila</code></p>
+
+<p>Then make the new user. Write the following command.  It shall be written in one line,
+but is here written on multiple lines for readability. </p>
+<p>
+<pre>
+ /usr/sbin/useradd
+ -u 501 
+ -g 501 
+ -G cvs 
+ -c "Laila Sara, Samisk inst."  
+ laila
+</pre></p>
+
+<p>The user must own her own catalogue, but others may want to read it. This is achieved by writing:</p>
+
+<p><code>chown laila:laila /home/laila</code></p>
+<p><code>chmod 0755 /home/laila</code></p>
+
+<p>Then assign the new user a password, by writing:</p>
+
+<p><code>passwd laila</code></p>
+
+<p>Remember to copy the .bashrc, .bash_profile and .emacs files to the
+laila account while you are still a root user. Remember to run the
+initial "cvs get" command.</p>
+
+<p>If the user has forgot his/her own password, log in as root, and enter
+the command "passwd laila". You will not be prompted for the old
+password, and the new one you enters will erase the old one.</p>
+
+<h3>Removing users</h3>
+
+<p>For removing (in this example the user laila), be root, and use this
+command (-r removes the files of the user al well):</p>
+
+<p><pre>
+/usr/sbin/userdel -r laila
+rm -r /export/home/laila
+cd /var/yp
+make 
+</pre></p>
+
+<p>A general warning: The commands that the manuals say should work, do
+work, if you just write /sbin/ in front of them, i.e. prbably
+/sbin/userdel instead of userdel.</p>
+
+
+
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Fri Nov 26 15:50:23 2004
+<!-- hhmts end -->
+</body> </html>

@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+    <header>
+        <title>Adding and removing users</title>
+        <authors>
+            <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
+        </authors>
+    </header>
+    <body>
+        <section>
+            <title>Adding users</title>
+            <p>To add a new user named Laila Sara with laila as the user name, do the following:</p>
+    
+            <p>Write the following command. It shall be written in one line, but is here written on multiple lines for readability.</p>
+            <source>sudo /usr/sbin/adduser
+-G cvs
+-c &quot;Laila Sara, Samisk inst.&quot;
+laila
+</source>
+            <p>Then assign the new user a password, by writing:</p>
+            <p><code>passwd laila</code></p>
+
+            <p>In order to add <code>laila</code> to another group, use this command:</p>
+            <p><code>usermod -G corpus,cvs laila</code></p>
+            <p>Note that here, <code>laila</code> was already member of the group cvs, and we wanted to make her member of corpus. We still had to give all intended group memberships (except the personal group), otherwise she would have been kicked out of cvs.</p>
+
+            <p>Remember to copy the <code>.bashrc, .bash_profile</code> and <code>.emacs</code> files to the laila account while you are still a root user. Remember to run the initial <code>cvs get</code> command.</p> 
+
+            <p>If the user has forgot his/her own password, log in as root, and enter the command <code>passwd laila</code>. You will not be prompted for the old password, and the new one you enters will erase the old one.</p>
+        </section>
+        <section>
+            <title>Removing users</title>
+
+            <p>For removing (in this example the user laila), be root, and use this command (<code>-r</code> removes the files of the user as well):</p>
+
+            <source>/usr/sbin/userdel -r laila
+rm -r /export/home/laila
+cd /var/yp
+make
+</source>
+            <p>A general warning: The commands that the manuals say should work, do work, if you just write /sbin/ in front of them, i.e. probably /sbin/userdel instead of userdel.</p>
+        
+            <p class="last_modified">Last modified: $Date$, by $Author$</p>
+        </section>
+    </body>
+</document>

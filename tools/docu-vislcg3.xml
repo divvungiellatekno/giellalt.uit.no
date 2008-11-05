@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document>
+  <header>
+    <title>Documentation for vislcg3</title>
+  </header>
+
+  <body>
+    <p>Vislcg3 is the newest parser generation from Odense. As its predecessor,
+    vislcg, it is open source. Vislcg3 is licensend under GPL.</p>
+
+    <p>Starting on March 5th 2008, we have migrated to vislcg3. Rule
+    files for vislcg are still available in older revisions.
+    For vislcg3 documentation we recommend the online
+    documentation at <a
+    href="http://beta.visl.sdu.dk/cg3.html">beta.visl.sdu.dk/cg3.html</a>. Here, we only document installation and basic usage.</p>
+
+    <section>
+      <title>Preparations before you install vislcg3</title>
+
+    <p>The MacOS needs certain libraries to be able to run vislcg3. They can be found by downloading the latest
+    version of <em>ICU</em> <a href="http://icu-project.org/download/">here</a>. The folder should be
+    saved in the home catalogue and run with the commands:</p>
+    <source>
+cd ~/icu/source
+./runConfigureICU MacOSX
+gnumake # (or make or gmake; gnumake on the G5, make locally)
+gnumake check
+sudo gnumake install</source>
+    </section>
+
+    <section>
+      <title>Commands to check out, install and update the vislcg3 program</title>
+       
+      <p>vislcg3 may be checked out, and later on updated, from Odense via <code>svn</code>, or it may be downloaded from sourceforge. Here, we assume you download it from Odense. Run the following commands:</p>
+
+    <section>
+      <title>Commands to check out and install</title>
+       
+      <source>
+svn co --username anonymous --password anonymous http://beta.visl.sdu.dk/svn/visl/tools/vislcg3/trunk vislcg3
+cd vislcg3/
+./autogen.sh
+make
+test/runall.pl
+sudo make install</source>
+
+    <p>Now <code>vislcg3</code> is installed in <code>/usr/local/bin/</code>, and is ready to be used.</p>
+
+    <note>If you are logged in as a non-admin user, you need to switch to an admin user before you run the last command (the <code>sudo</code> command):
+
+      <code>su [admin-username]</code>
+
+    Replace <code>[admin-username]</code> with a username with administrative privileges.
+    Then type in the corresponding password, and continue with the final step above.</note>
+
+    <p>Note that on the G5 machine, there is a bug, so that we must compile with the old compiler (the old compiler complains it is deprecated, but will still wok). Note that if you switch from new to old compiler method, you should remove the vislcg3 file in the src/ catalogue. Here is the old command:</p>
+
+      <source>
+cd vislcg3
+./compile-mac.sh # (or: ./compile-linux.sh)
+test/runall.pl
+mv vislcg3 ~/bin/</source>
+
+    <p>Using this method, <code>vislcg3</code> is installed in your home dir, in <code>~/bin/</code>.</p>
+
+    <note>If you are using this method, there is no need to do the <code>su + sudo</code>
+    steps outlined in the first case.</note>
+
+    </section>
+
+    <section>
+      <title>Commands to update</title>
+
+      <p>If you already have checked out <code>vislcg3</code>, then you can simply do the
+      following:</p>
+
+      <source>
+cd vislcg3/
+svn up
+./autogen.sh
+make
+test/runall.pl
+sudo make install</source>
+    <p>Tips: The vislcg3 is downloaded automatically to victorio every night. If you have access to the svn you can check whether you have the latest version (compare <code>vislcg3 --version</code> on your machine and on victorio, and repeat the steps above if your version is older).</p>    
+    </section>
+    </section>
+
+    <section>
+      <title>Usage</title>
+
+      <p>Vislcg3 can be run with this command:</p>
+
+<p><code>... | vislcg3 -g src/sme-dis.rle | ...</code></p>
+
+</section>
+      <section>
+        <title>Flags</title>
+
+        <p>The list of flags can be obtained by vislcg3 --help. That command
+        prints something like this (use the newest version rather than this list):</p>
+
+        <source>
+-bash-3.00$ vislcg3 -h
+VISL CG-3 Disambiguator version 0.9.2.3279
+Usage: vislcg3 [OPTIONS]
+
+Options:
+ -h or -? or --help       Displays this list.
+ -V or --version          Prints version number.
+ -g or --grammar          Specifies the grammar file to use for disambiguation.
+ -p or --vislcg-compat    Tells the grammar compiler to be compatible with older VISLCG syntax.
+ --grammar-out            Writes the compiled grammar back out in textual form to a file.
+ --grammar-bin            Writes the compiled grammar back out in binary form to a file.
+ --grammar-info           Writes the compiled grammar back out in textual form to a file, with lots of statistics and information.
+ --grammar-only           Compiles the grammar only.
+ --trace                  Prints debug output alongside with normal output.
+ --prefix                 Sets the prefix for mapping. Defaults to @.
+ --sections               Number of sections to run. Defaults to running all sections.
+ --single-run             Only runs each section once.
+ --no-mappings            Disables running any MAP, ADD, or REPLACE rules.
+ --no-corrections         Disables running any SUBSTITUTE or APPEND rules.
+ --no-before-sections     Disables running rules from BEFORE-SECTIONS.
+ --no-sections            Disables running rules from any SECTION.
+ --no-after-sections      Disables running rules from AFTER-SECTIONS.
+
+ --num-windows            Number of windows to keep in before/ahead buffers. Defaults to 2.
+ --always-span            Forces all scanning tests to always span across window boundaries.
+ --soft-limit             Number of cohorts after which the SOFT-DELIMITERS kick in. Defaults to 300.
+ --hard-limit             Number of cohorts after which the window is delimited forcefully. Defaults to 500.
+ --no-magic-readings      Prevents running rules on magic readings.
+ --dep-allow-loops        Allows the creation of circular dependencies.
+
+ -O or --stdout           A file to print output to instead of stdout.
+ -I or --stdin            A file to read input from instead of stdin.
+ -E or --stderr           A file to print errors to instead of stderr.
+
+ -C or --codepage-all     The codepage to use for grammar, input, and output streams. Auto-detects default from environment.
+ --codepage-grammar       Codepage to use for grammar. Overrides --codepage-all.
+ --codepage-input         Codepage to use for input. Overrides --codepage-all.
+ --codepage-output        Codepage to use for output and errors. Overrides --codepage-all.
+
+ -L or --locale-all       The locale to use for grammar, input, and output streams. Defaults to en_US_POSIX.
+ --locale-grammar         Locale to use for grammar. Overrides --locale-all.
+ --locale-input           Locale to use for input. Overrides --locale-all.
+ --locale-output          Locale to use for output and errors. Overrides --locale-all.
+</source>
+
+    </section>
+  </body>
+</document>

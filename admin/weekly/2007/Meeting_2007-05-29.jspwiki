@@ -1,0 +1,577 @@
+!!!Meeting setup
+
+* Date: 29.05.2007
+* Time: 09.30 Norw. time
+* Place: Internet
+* Tools: SubEthaEdit, iChat
+
+!!!Agenda
+
+# Opening, agenda review
+# Reviewing the task list from last week
+# Documentation - divvun.no
+# Corpus gathering
+# Corpus infrastructure
+# Infrastructure
+# Linguistics
+# name lexicon infrastructure
+# Spellers
+# Other issues
+# Summary, task lists
+# Closing
+
+!!!1. Opening, agenda review, participants
+
+Opened at 12:50.
+
+Present: __Børre, Maaren, Per-Eric, Sjur, Steinar, Thomas, Tomi, Trond__
+
+Absent: __Saara__
+
+Agenda accepted as is.
+
+!!!2. Updated task status since last meeting
+
+!! Boerre
+* add {{sma}} texts to the corpus repository
+* run all known spelling errors in the prooftest corpus through the speller
+* add extraction of all known spelling errors in the regular corpus (not the
+  {{prooftest}} corpus), and check that they are properly corrected
+* update and fix our documentation and infrastructure as __Steinar__ finds
+  problem areas - low priority
+* study the Hunspell formalism in detail - after beta release
+* test the {{typos.txt}} list, and check that all entries are properly corrected
+* add info to front page (incl. download links)
+* write separate page with detailed info (incl. download links)
+** a separate page for the beta speller, with installation instructions, etc.
+* translate press release, web pages
+* contact ''Davvi Girji / Mikal Aase''
+* include improved numbers in beta release speller
+* test download and installation of beta release candidate on all platforms
+* test deinstallation of beta release candidate on all platforms
+* linguistic testing of speller beta release candidate
+* update Win installer package with latest speller lexicons
+* write and prepare README file
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Maaren
+* lexicalise actio compounds
+* Manually mark speller test documents for typos
+
+
+!! Per-Eric
+* expand the smj typos list
+* add missing smj words
+
+
+!! Saara
+* improve cgi-bin scripts
+** add new features to the paradigm generator
+** paradigm generator for Lule Sámi
+* add new XSL/XML headers for proofing test docs
+* compilation of verb lists
+* read the manual for graphical corpus interface and try to add files with Lars.
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Sjur
+* finish press release for the beta
+* run all known spelling errors in the corpus through the speller
+* document the AppleScript testing tool
+* integrate regression self tests with the make file
+* improve speller test bench
+* integrate the ccat speller testing options in the make file
+* fix internet setup for __Per-Eric's__ satelite modem
+* look over the Bugzilla status mails
+* contact ''Davvi Girji / Mikal Aase''
+* ask Xerox for a commercial lisense for the xfst tools on the G5
+* check with Sámi publishing houses whether support for CS2 is still needed
+* send Beta RC Win and Mac installers to __Polderland__ for testing
+* __ń__ not considered word char in {{smj}}, not corrected to __ŋ__
+* forward list of PR recipients to __SD__
+* update Mac installer package with latest speller lexicons
+* write and prepare README file
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Steinar
+* test actio compounds before public beta release
+* test download and installation on all platforms, following our instructions
+* test deinstallation
+* Beta testing: Align manually (shorter texts)
+* Manually mark speller test texts for typos (making them into gold standards),
+  add the texts to the orig/catalogue
+* Complete the semantic sets in sme-dis.rle
+* missing lists
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Thomas
+* work with compounding
+* Lack of lowering before hyphen: Twol rewrite.
+* translate beta release docs to {{sme}} and {{smj}}
+* implement ''–k'' ending in twol
+* Test Actio compounds in speller beta release candidate
+* linguistic testing of speller beta release candidate
+* {{smj}}: __öä__ not accepted, only __øæ__ (except for lexicalised names)
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Tomi
+* add compounding restrictions to the PLX convertion
+* make PLX conversion test sample; add conversion testing to the make file
+* improve prefix and middle-noun PLX conversion
+* integrate the {{ccat}} speller testing options in the Makefile
+* fix clitics in beta release {{sme}} speller
+* first part of multiword expressions not accepted
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Trond
+* Work on the web corpus issues
+* Postpone these tasks to after the beta:
+** update the {{smj}} proper noun lexicon, and refine the morphological
+   analysis, cf. the propernoun-smj-lex.txt
+** Go through the Num bugs
+* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+
+
+!!!3. Documentation
+
+The open documentation issues fall into these three categories:
+* Beta documentation for testers
+* Documentation for the online corpora
+* General documentation improvement after Steinar's test (for open-source
+  release)
+
+
+TODO:
+* write form to request corpus user account (__Børre, Sjur, Trond__)
+** delayed till after the beta release
+* document how to apply for access to closed corpus, and details on the corpus
+  and its use in general (__Børre, Sjur, Trond__)
+** delayed till after the beta release
+* correct and improve it based on feedback from __Steinar__ (__Børre__)
+** low priority
+* beta documentation (see separate beta section below)
+
+
+
+!!!4. Corpus gathering
+
+TODO:
+* {{sme}} texts: no new additions, fix corpus errors during this month
+  (__Børre, Trond, Saara__)
+* missing {{nob}} parallel texts should be added if such holes are found
+  (__Børre, Trond__)
+* Go through the list of missing or errouneous {{nob}} texts, based upon
+  __Saara's__ perfect list (__Børre, Trond__)
+* add {{sma}} texts to the corpus repository (__Børre__)
+* contact ''Davvi Girji / Mikal Aase'' (__Børre, Sjur__)
+
+
+
+!!!5. Corpus infrastructure
+
+Nothing?
+
+!!!6. Infrastructure
+
+__TODO:__
+* update and fix our documentation and infrastructure as __Steinar__ finds
+  problem areas (__Børre__)
+* fix internet setup for __Per-Eric's__ satelite modem (__Sjur, Børre__)
+** this influences iChat, SEE sharing, and ARD connetions
+* Translate the paradigm pages to Sámi, fix all the {{se}} links
+  (__Børre, Trond__)
+
+
+
+!!!7. Linguistics
+
+!!North Sámi
+
+TODO:
+* lexicalise actio compounds. Example: ''vuolggasadji''  vs. ''vuolginsadji''
+  (__Maaren__)
+** possibly turn on free compounding as part of the PLX conversions (ie free
+   compounding in the spellers, but not in the analyzers/transducers)
+* fix stuorra-oslolaš lower case {{o}} (__Sjur, Thomas, Trond__)
+** postponed till after the public beta
+
+
+!!Lule Sámi
+
+TODO:
+* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
+  (__Thomas, Trond__)
+* write two-level rules to handle -ge/-k clitic alternation (__Thomas__)
+
+
+
+!!!8. Name lexicon infrastructure
+
+Decisions made in Tromsø can be found in [this meeting
+memo.|/doc/admin/physical_meetings/tromso-2006-08-propnoun.html]
+
+__TODO:__
+# fix bugs in lexc2xml; add comments to the log element (__Saara__)
+# finish first version of the editing (__Sjur__)
+# test editing of the xml files. If ok, then: (__Sjur, Thomas, Trond__)
+# make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
+  well) (the morphological section should be kept intact, in e.g.
+  propernoun-sme-morph.txt) (__Sjur, Saara__)
+# convert propernoun-($lang)-lex.txt to a derived file from common xml files
+  (__Sjur, Tomi, Saara__)
+# implement data synchronisation between [risten.no|http://www.risten.no] and
+   the cvs repo, and possibly other servers (ie the G5 as an alternative server
+   to the public risten.no - it might be faster and better suited than the
+   official one; also local installations could be treated the same way)
+# start to use the xml file as source file
+# clean terms-sme.xml such that all names have the correct tag for their use
+  (e.g. @type=secondary) (__Thomas, Maaren, linguists__)
+# merge placenames which are errouneously in different entries: e.g. Helsinki,
+  Helsingfors, Helsset (__linguists__)
+# publish the name lexicon on risten.no (__Sjur__)
+# add missing parallel names for placenames (__linguists__)
+# add informative links between first names like Niillas and Nils
+  (__linguists__)
+
+
+!!!9. Spellers
+
+!!OOo speller(s)
+
+TODO after the MS Office Beta is delivered:
+* add Hunspell data generation to the lexc2xspell (__Tomi__ - after the
+  PLX data generation is finished)
+* study the Hunspell formalism in detail (__Børre, Sjur, Tomi__)
+
+
+!!Testing
+
+!Spelling Error Markup
+
+__TODO:__
+* Manually mark test texts for typos (making them into gold standards)
+  (__Steinar__)
+* Set up ways of adding meta-information (source info, used in testing or not,
+  added to lexicon or not)
+* Conduct tests on new beta versions on the basis of the unspoiled gold standard
+  documents (__whoever has time__), and fill in data from testing (the testers: 
+  __who?__)
+* include the files already publically tested into the {{prooftest}} cataloge
+  (__Steinar, Trond__)
+* test each version before beta release
+
+
+!Testing tools
+
+__TODO:__
+* document the AppleScript testing tool (__Sjur__)
+* improve speller test bench (__Sjur__)
+** integrate the ccat speller testing options in the Makefile (__Sjur, Tomi__)
+
+
+!Regression tests
+
+__TODO:__
+* add extraction of all known spelling errors in the corpus (not the
+  {{prooftest}} corpus), and check that they are properly corrected
+  (__Børre, Sjur__)
+* test the {{typos.txt}} list, and check that all entries are properly corrected
+  (__Børre, Sjur__)
+* consider how to do a regression __self-test__, ie, how to test the full
+  wordlist (__Børre, Sjur__)
+** extract all the base forms in the lexicon, and run them through the speller
+** extract all SUB-marked entries, and run them through the lexicon
+*** integrate these in the make file (__Sjur__)
+
+
+
+!!Localisation
+
+We need to translate the info added to our front page (and a separate page)
+regarding the beta release. Also the press release needs to be translated.
+
+TODO:
+* translate beta release docs to {{sme}} (__Thomas__)
+* translate beta release docs to {{smj}} (__Thomas__)
+
+
+
+!!Lexicon conversion to the PLX format
+
+__TODO:__
+* install larger disks, new RAM on the G5 when they arrive (__Børre__)
+* ask for mklex for Linux (victorio) from Polderland (__Sjur__)
+* ask Xerox for a commercial lisense for the xfst tools on the G5 (__Sjur__)
+* add compounding restrictions to the PLX convertion (__Tomi__)
+
+
+
+!Compounding restrictions
+
+How to include compounding restriction comment tags in the transducers:
+{{{
+giv0ri:giv'ri ALBMI ; !+SgNomCmp +SgGenCmp +PlGenCmp
+=> (using a perl script or similar)
++SgNomCmp+SgGenCmp+PlGenCmpgiv0ri:giv'ri ALBMI ; !+SgNomCmp +SgGenCmp +PlGenCmp
+}}}
+
+__TODO:__
+# improve prefix conversion to PLX (__Tomi__)
+# improve middle noun conversion to PLX (__Tomi__)
+# improve noun + adjective PLX conversion: (__Tomi__)
+## compounding stems - how do we generate them? Using the java client?
+    {{+SgNomCmp+Cmpnd}} = {{sáme–}}, should give the correct compounding stem,
+    shouldn't it? We want to __optionally__ go from: {{sáme-	NLI}} to
+    {{sáme	NL}}: {{-	NLI (->) 	NL}}, which means we should be able to
+    extract correct compounding stems using xfst methods only.
+## compounding tags - we need to obey them when making the transducers. 
+    Suggestion - see above.
+# make conversion test sample; add conversion testing to the make file
+  (__Tomi__)
+## to regression test / QA the PLX conversion.
+# improve number conversion (__Børre, Tomi__)
+# ask for larger disk for the web server (__Trond, Børre__)
+
+
+!!Errors in latest speller build
+
+__TODO__ ''after'' the final public beta:
+* first part of multiword expressions not accepted (__Tomi__)
+* compound restrictions/rules not yet integrated in speller fsts (but the tags
+  necessary to do this can now be included in the transducer) (__Tomi__)
+* suomasápmelaš vs suopmasápmelaš - now both are accepted (which is an
+  improvement - earlier only suopmasápmelaš was accepted). What is correct?
+  Only the first one. The second one should be banned by the compound
+  restrictions.
+* {{smj}}: __öä__ not accepted, only __øæ__ (except for lexicalised names)
+  (__Thomas__)
+* ŋ and ñ and ń in {{smj}} (__Sjur, Polderland__)
+
+
+
+!!Public Beta release
+
+Schedule:
+May 22, evening: deadline for linguistic fixes and updates
+May 23, morning: Release Candidate (RC) spellers ready for testing
+May 23: press release, untranslated
+        web pages
+        README
+May 24: Linguistic testing finished
+May 25: translation of press release
+        web pages translated
+        README translated
+
+
+__DEADLINE/RELEASE:__ Tuesday May 29.
+
+__TEST__ before public beta release:
+* Actio compounds (__Thomas, Steinar__)
+* download and installation on all platforms, following our instructions
+  (__Steinar, Børre__)
+* deinstallation (__Steinar, Børre__)
+* linguistic testing (typos, at least one of the documents marked up by
+  __Steinar__) (__Thomas, Børre__)
+
+
+__TODO:__
+* fix clitics (__Tomi__)
+* include improved numbers (__Børre__)
+* finish press release (__Sjur__)
+* add info to front page (incl. download links) (__Børre__)
+** download page made, only needs to add the speller beta when it is ready.
+* write separate page with detailed info (incl. download links) (__Børre__)
+** a separate page for the beta speller, with installation instructions, etc.
+* translate press release, web pages (__Børre, Thomas, whoever__)
+* forward list of PR recipients to __Berit Karen Paulsen__
+  (__Sjur__)
+** update: the persons to contact are:  __Pål Hivand__ or
+   __John Markus Kuhmunen__
+* update installer packages with latest speller lexicons (__Børre__ (Win),
+  __Sjur__ (Mac))
+* README file: (__Børre, Sjur__)
+** list of known issues
+** how to give us feedback
+** what to give us feedback about (including: send in your user dictionary after
+   a month or so)
+** inform about the rights to the source, as well as the availability of the
+   speller
+** needs to be written in all languages
+** make a PDF of the readme, to avoid encoding problems; text versions should be
+   included too
+
+
+
+!!!10. Other
+
+!!Summer vacation
+
+When are we taking it? Please fill in the table below:
+
+|| Name   || Starting || Ending
+| Børre    |          x|x
+| Maaren   |          x|x
+| Per-Eric |          x|x
+| Saara    |          x|x
+| Sjur     |          x|x
+| Steinar  |          x|x
+| Thomas   |  9.7.    | 12.8.
+| Tomi     |  9.7.    |  5.8.
+| Trond    | 25.6.    |x 
+
+Divvun people also need to send the dates to __Julie Eira__.
+
+!!Corpus contracts
+
+TODO:
+* publish corpus contracts and project infra as open-source on NoDaLi-sta
+  (__Sjur__)
+** __delayed__ until the public beta is out the door
+
+
+!!Bug fixing
+
+__41__ open Divvun/Disamb bugs, and __23__ risten.no bugs
+
+__TODO:__
+* look over the Bugzilla status mails (__Børre__)
+
+
+
+!!!11. Next meeting, closing
+
+The next meeting is 4.6.2007, 10:30 Norwegian time.
+
+The meeting was closed at 11:56.
+
+!!!Appendix - task lists for the next week
+
+!! Boerre
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Boerre.ics]
+* add {{sma}} texts to the corpus repository
+* run all known spelling errors in the prooftest corpus through the speller
+* add extraction of all known spelling errors in the regular corpus (not the
+  {{prooftest}} corpus), and check that they are properly corrected
+* update and fix our documentation and infrastructure as __Steinar__ finds
+  problem areas - low priority
+* study the Hunspell formalism in detail - after beta release
+* test the {{typos.txt}} list, and check that all entries are properly corrected
+* add info to front page (incl. download links)
+* write separate page with detailed info (incl. download links)
+** a separate page for the beta speller, with installation instructions, etc.
+* translate press release, web pages
+* contact ''Davvi Girji / Mikal Aase''
+* include improved numbers in beta release speller
+* test download and installation of beta release candidate on all platforms
+* test deinstallation of beta release candidate on all platforms
+* linguistic testing of speller beta release candidate
+* update Win installer package with latest speller lexicons
+* write and prepare README file
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Maaren
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Maaren.ics]
+* lexicalise actio compounds
+* Manually mark speller test documents for typos
+
+
+!! Per-Eric
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Per-Eric.ics]
+* expand the smj typos list
+* add missing smj words
+
+
+!! Saara
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Saara.ics]
+* improve cgi-bin scripts
+** add new features to the paradigm generator
+** paradigm generator for Lule Sámi
+* add new XSL/XML headers for proofing test docs
+* compilation of verb lists
+* read the manual for graphical corpus interface and try to add files with Lars.
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Sjur
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Sjur.ics]
+* finish press release for the beta
+* run all known spelling errors in the corpus through the speller
+* document the AppleScript testing tool
+* integrate regression self tests with the make file
+* improve speller test bench
+* integrate the ccat speller testing options in the make file
+* fix internet setup for __Per-Eric's__ satelite modem
+* look over the Bugzilla status mails
+* contact ''Davvi Girji / Mikal Aase''
+* ask Xerox for a commercial lisense for the xfst tools on the G5
+* check with Sámi publishing houses whether support for CS2 is still needed
+* send Beta RC Win and Mac installers to __Polderland__ for testing
+* __ń__ not considered word char in {{smj}}, not corrected to __ŋ__
+* forward list of PR recipients to __SD__
+* update Mac installer package with latest speller lexicons
+* write and prepare README file
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Steinar
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Steinar.ics]
+* test actio compounds before public beta release
+* test download and installation on all platforms, following our instructions
+* test deinstallation
+* Beta testing: Align manually (shorter texts)
+* Manually mark speller test texts for typos (making them into gold standards),
+  add the texts to the orig/catalogue
+* Complete the semantic sets in sme-dis.rle
+* missing lists
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Thomas
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Thomas.ics]
+* work with compounding
+* Lack of lowering before hyphen: Twol rewrite.
+* translate beta release docs to {{sme}} and {{smj}}
+* implement ''–k'' ending in twol
+* Test Actio compounds in speller beta release candidate
+* linguistic testing of speller beta release candidate
+* {{smj}}: __öä__ not accepted, only __øæ__ (except for lexicalised names)
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Tomi
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Tomi.ics]
+* add compounding restrictions to the PLX convertion
+* make PLX conversion test sample; add conversion testing to the make file
+* improve prefix and middle-noun PLX conversion
+* integrate the {{ccat}} speller testing options in the Makefile
+* fix clitics in beta release {{sme}} speller
+* first part of multiword expressions not accepted
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Trond
+[iCal|/doc/admin/weekly/2007/Tasks_2007-05-29_Trond.ics]
+* Work on the web corpus issues
+* Postpone these tasks to after the beta:
+** update the {{smj}} proper noun lexicon, and refine the morphological
+   analysis, cf. the propernoun-smj-lex.txt
+** Go through the Num bugs
+* [fix bugs!|http://giellatekno.uit.no/bugzilla].

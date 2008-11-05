@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>Localisation</title>
+
+    <authors>
+      <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
+    </authors>
+  </header>
+
+  <body>
+    <section>
+      <title>Localisation</title>
+
+      <p>Our projects are run in UTF-8, since the spring of 2005.</p>
+
+      <p>There are still some child diseases, they are documented in Bugzilla
+      and fixed as they appear. Some of them are harder to fix than others,
+      but all in all we are satisfied with our UTF-8 migration</p>
+
+      <section>
+        <title>Northern Sámi</title>
+
+        <p>The Northern Sámi parser is localised with UTF-8, as it should be.
+        Note that we in the alphabet section, as a legacy from the old Latin 1
+        -days, have defined all the Latin 1 letters, but not other letters. At
+        that time it was a sensible act, now the set looks a bit ad hoc (see
+        <code>twol-sme.txt</code>)</p>
+      </section>
+
+      <section>
+        <title>Lule Sámi </title>
+
+        <p>Lule Sámi can adequately be represented in 8-bit format, by Latin 1
+        (Lule Sámi files can use <em>ñ</em> for n-acute). In order to have
+        only one localisation interface for the languages we work on, Lule
+        Sámi has been moved to UTF-8 as well. There is a script,
+        <code>spell-relax.regex</code>, which makes it possible to use both ñ,
+        ń and ŋ.</p>
+      </section>
+
+      <section>
+        <title>Southern Sámi</title>
+
+        <p>Also Southern Sámi can be represented in 8-bit format, by Latin 1,
+        but just as for Lule Sámi, it is stored in UTF-8. The script 
+        <code>spell-relax.regex</code> is used for Southern Sámi as well, but 
+        with a slightly different purpose: It is used to accept the wide-spread
+        sloppy use of <em>i</em> for <em>ï</em>.</p>
+      </section>
+
+      <section>
+        <title>Inari and Skolt Sámi</title>
+
+        <p>Inari Sámi and Skolt Sámi are still represented in the old 8-bit
+        format, with the vowels directly in 8-bit Latin 1 and the consonants
+        as digraphs c1 etc. This is of course not a feasible solution,
+        especially not for Skolt Sámi. The only reason why they are not
+        migrated is that we have not been working on these languages after the
+        first 3-year period (2000-2003) ended. Should we want to take up our
+        work on these languages, UTF-8 localisation will be the first step to
+        take.</p>
+      </section>
+
+      <p class="last_modified">Last modified: $Date$, by
+      $Author$</p>
+    </section>
+  </body>
+</document>

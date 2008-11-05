@@ -1,0 +1,58 @@
+!!!Requirements
+
+The svn setup requires a few things on the server:
+
+* apache http server - that is, a full web server, and port 80 open
+* discusss the svn setup with the IT guys:
+** can we do it?
+** more external access - is that ok?
+* some additional httpd plugins
+* we want restricted access to some parts of the repo (basically the polderland directories, since some of the content there is under legal embargo)
+
+Access methods:
+* http://-tilgang for alle (dvs anonym) - visse katalogar blokkert - berre les
+
+* https://-tilgang for registrerte brukarar - visse katalogar ev. blokkert for nokre brukarar, les-skriv
+
+
+!!Users
+
+* from the OS (such that users in a certain group is automatically included)
+* from an AuthUser list/file (to allow "random" external users write access)
+
+Find out what httpd modules are needed to support such a setup.
+
+
+!!!Conversion from CVS to SVN
+
+What:
+* full package, whole repository, all of history and branches
+** full package, to preserve everything
+
+How:
+* test-conversion
+* set up users and make sure everything works:
+** check-out
+** diffs
+** commits
+** commit mails
+** clients (command line, graphic, other)
+** certainly other things as well...
+* write documentation for system maintainers and end users
+** administrators: how to add new users (via OS, or Auth list), access control etc.
+** users: linux, mac, windows users (Tortoisecvs > Tortoisesvn)
+* real conversion, everybody changes to svn
+
+
+
+
+!!cvs group members (72):
+
+{{{
+eero,sjur,trond,kristin,nils,pekka,boerre,laila,maja,royd,roya,torn,nilsjoh,
+biret,ove,lena,annebr,elaine,maren,berit,thomas,inga,risten,lailap,liv,nilsoh,
+imge,trost,aylijyra,jpaakkan,heli,tomi,larsnyg,marit,jaska,ida,ilona,per,linda,
+alona,saara,svein,lene,cvs,anonymous,peter,heini,terje,agnes,silja,mervi,bjarne,
+eira,kristian,gunn,irene,pia,per-eric,steinarn,mikko,eckhard,larsbor,kimme,svenne,
+solvar,erling,birgitta,marta,jovsset,karla,beatrine,kirsti
+}}}

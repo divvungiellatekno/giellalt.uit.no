@@ -1,0 +1,202 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+    <header>
+	<title>How to use SVN</title>
+    </header>
+    <body>
+	<p>
+	  SVN is a program which keeps track of all the different versions of our source files. People familiar with its predecessor, <em>cvs</em> should read on. If you have not heard of cvs, then read <a href="docu-cvs-user.html">this document</a> (concentrate on the big picture, and ignore the details). This documentation is written because of our transition to SVN. When the transition period is over, we will rewrite these pages. While waiting, this page will contain information useful for our present cvs users.
+	</p>
+	<p>
+	    Our subversion repository is at the address <a href="https://victorio.uit.no/repos">http://victorio.uit.no/repos</a>. Subversion documentation is available as a <a href="http://svnbook.red-bean.com/en/1.4/index.html">browsable book</a>. 
+	</p>
+
+	<section>
+	    <title>Use svn on the command line</title>
+	    <note>
+                This document describes how to check out and work with svn. For issues related to the conversion from cvs to svn, read <a href="svnconv_remember.html">this document</a>.
+            </note>
+            <p>
+                Some users may want to use a graphical interface instead. If you do, read the next chapter, on RapidSVN, instead
+            </p>
+	    <p>
+		To <em>check out</em> means that you copy all the documents that our projects are working on to your computer.
+	    </p>
+	    <section>
+		<title>The commands</title>
+		<p>Go to your home directory (write <code>cd</code>), and give the following command:</p>
+                <p>
+		    <code>svn co https://victorio.uit.no/repos/trunk gtsvn --username &lt;your_username&gt;</code>
+		</p>
+		<p>
+		    ... where you have replaced &lt;your_username&gt; with the username you have aquired from the admin. This will enable you to check in your work. If you don't have a user name or just want to browse our code just skip the username. Here, we have assumed you want to call your repository <code>gtsvn</code>. If you do, our scripts will work smoother for you. If you want another path, you must be aware that some scripts will perhaps need you to set an explicit (and new) path.
+		</p>
+		<p>
+                    You may also check out only a part of the repository. Let us say you want to check out only the catalogue <code>kvensk</code>, and that you have your old <code>kvensk</code> catalogue. First, give the old one a new name: <code>mv kvensk oldkvensk</code>, or whatever name you want. Then, do this:
+                </p>
+
+                <source>
+                    svn co https://victorio.uit.no/repos/trunk/kvensk kvensk --username &lt;your_username&gt; 
+                </source>
+
+		<p>
+                    Later on, you may move modified files from your <code>oldkvensk</code> folder to your new <code>kvensk</code> folder. This way, changes you made before the move to svn are now visible in svn too.
+                </p>
+	    </section>
+                <section>
+                <title>Daily work</title>
+                <p>
+                    Now that you have checked out your repository, you may use a set of commands which should be more or less well known to cvs users (<code>filename</code> to be replaced with the actual file name):
+                </p>
+                <dl>
+                    <dt>
+                        Update your working copy
+                    </dt>
+                    <dd>
+                        svn up
+                    </dd>
+                    <dt>
+                        Scedule a file for addition
+                    </dt>
+                    <dd>
+                        svn add filename
+                    </dd>
+                    <dt>
+                        Scedule a file for deletion</dt>
+                    <dd>
+                        svn delete filename
+                    </dd>
+                    <dt>
+                        You may also copy and move files and directories with these two commands, but read about them in the svn book first:
+                    </dt>
+                    <dd>
+                        svn copy filename<br />
+                        svn move filename
+                    </dd>
+                    <dt>
+                        Examine your changes
+                    </dt>
+                    <dd>
+                        svn status
+                    </dd>
+                    <dt>
+                        Examine the file history
+                    </dt>
+                    <dd>
+                        svn log filename
+                    </dd>
+                    <dt>
+                        Compare your modified file to the version in the repository
+                    </dt>
+                    <dd>
+                        svn diff filename
+                    </dd>
+                    <dt>
+                        Compare some earlier versions, say here versions 123 and 120
+                    </dt>
+                    <dd>
+                        svn diff -r 123:120 filename
+                    </dd>
+                    <dt>
+                        Possibly undo the changes you just checked in
+                    </dt>
+                    <dd>
+                        svn revert filename
+                    </dd>
+                    <dt>
+                        Resolve Conflicts (Merge Others' Changes)
+                    </dt>
+                    <dd>
+                        svn update<br />
+                        svn resolved
+                    </dd>
+                    <dt>
+                        Commit your changes
+                    </dt>
+                    <dd>
+                        svn ci -m "Your short message here" filename<br />
+                        (Note that the above changes, add, delete, copy, move, must all be committed by ci in order to take effect)
+                    </dd>
+                </dl>
+	    </section>
+        <section>
+        <title>Ignoring items</title>
+        <p>The Subversion <code>svn:ignore</code> property is very similar in syntax and function to
+        the CVS <code>.cvsignore</code> file. In fact, if you are migrating a CVS working copy to
+        Subversion, you can directly migrate the ignore patterns by using the
+        <code>.cvsignore</code> file as input file to the <code>svn propset</code> command:
+        </p>
+        <source>$ svn propset svn:ignore -F .cvsignore . 
+property 'svn:ignore' set on '.' 
+$</source>
+	    <p>More details about ignoring files can be found in <em>Chapter 3: Advanced Topics</em>, in
+	    the section <em>Ignoring Unversioned Items</em>, in the <a
+	    href="http://svnbook.red-bean.com/">SVN book</a>.
+	    </p>
+	    </section>
+	</section>
+	    <section>
+		<title>Using a graphical interface</title>
+	    <section>
+		<title>RapidSVN</title>
+	    <section>
+		<title>Basic usage</title>
+                <p>
+                    This is for users wanting a graphical user interface to svn, like the program CVL used for cvs. Users accustomed to the command line (and comments such as <code>cvs up</code> etc. may safely ignore this chapter, and stick to the previous one.
+                </p>
+		<p>
+		    Choose Repository->Checkout... <br />
+		    <img src="rapidsvn2.png" alt="checkout menu item" />
+		</p>
+		<p>
+		    Write <code>https://victorio.uit.no/repos</code> into the URL box. Choose the map where you would like to place the files in the Destination Directory box (we suggest adding <strong>repos</strong> to the end of the path, to keep svn maps in a separate place), then press OK.<br />
+		    <img src="rapidsvn3.png" alt="RapidSVN checkout dialog" />
+		</p>
+		<p>
+		    Press "Permanently" when the SSL Certificate dialog appears. <br />
+		    <img src="rapidsvn4.png" alt="SSL Certificate dialog" />
+		</p>
+	    </section>
+	<section>
+	    <title>Working with the repository</title>
+	    <p>
+		In the directory that you did the checkout you will now have a directory called repos, where all our code is contained. Usually the daily work goes on in the <code>repos/trunk</code> directory.<br />
+		<img src="rapidsvn5.png" alt="View of repos map" />
+	    </p>
+	    </section>
+	</section>
+	</section>
+
+	    <section>
+		<title>Daily work</title>
+		<p>
+		    We recommend to always <em>update</em> the repository before you begin to edit files inside the it. After having edited some files you usually want to have an overview of which files that have been <em>modified</em>. To share our work with the others we <em>check in</em> our work. We can also <em>add</em>, <em>delete</em>, <em>move</em> and <em>copy</em> files inside the repository. All the details of this will be explained below.
+		</p>
+	    </section>
+
+	    <section>
+		<title>How often do I check in?</title>
+		<p>
+		    Always check in the files at the end of the day. If you know that other people are working on the same file, you should check in more often than that. You should also check in after you have done major revisions. Remember to compile the program before you check in, so that you know you do not check in a defect file.
+		</p>
+	    </section>
+	    <section>
+		<title>What do I write in the log message</title>
+		<p>
+		    The best way to learn to write good log messages is to read other log messages. Pick a file (e.g. twol-sme.txt, sme-lex.fst), and read the log (the command is <strong>svn log filename | less</strong>). If the log message tells you what you want to know, then it is a good log message.
+		</p>
+	    </section>
+        <section>
+            <title>Further reading</title>
+            <p>
+                The <a href="http://svnbook.red-bean.com/en/1.4/svn.tour.cycle.html">Basic work cycle</a> in the <a href="http://svnbook.red-bean.com">SVN book</a> covers daily usage in great detail. <a href="http://svnbook.red-bean.com/en/1.4/svn.forcvs.html">Appendix B</a> covers some details for users accustomed to CVS.
+            </p>
+            <p>
+                The <a href="http://www.rapidsvn.org/index.php/Main_Page">RapidSVN wiki</a> has a <a href="http://www.rapidsvn.org/index.php/Documentation#Tutorial.2C_Part_1">tutorial</a> that covers our daily usage pattern.
+            </p>
+        </section>
+
+	<p class="last_modified">Last modified: $Date$, by $Author$</p>
+    </body>
+</document>

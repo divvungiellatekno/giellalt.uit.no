@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
+  <header>
+    <title>Hyphenator Test Results for:
+          «tmp/hy-regression-pl-smj.txt»
+        </title>
+  </header>
+  <body>
+    <section>
+      <title>Overview</title>
+      <section>
+        <title>Technical data</title>
+        <p>Language tested:
+          <strong>smj</strong></p>
+        <p>Document tested: 
+          <strong>tmp/hy-regression-pl-smj.txt</strong></p>
+        <p>Hyphenation tool:
+          <strong>Polderland command line tool</strong></p>
+        <p>Hyphenation tool version:
+          <strong>SamiLuleHyphMac version 103.3.0.2, Apr 14 2008, 16:17:35</strong></p>
+        <p>Hyphenation lexicon version:
+          <strong>Julevsáme, version 1.0.1, 2008-10-16</strong></p>
+        <p>Test Date:
+          <strong>20081017</strong></p>
+        <p>Test Type:
+          <strong>regression</strong></p>
+      </section>
+      <section>
+        <title>Result summary</title>
+        <p>Number of input words:
+        <strong>64</strong></p>
+        <table>
+          <caption>Precision and Recall</caption>
+          <tr>
+            <td colspan="2" rowspan="2"/>
+            <th colspan="2">Speller view</th>
+          </tr>
+          <tr>
+            <td>Speller Positive<br/>
+              (number of flagged words):<br/><strong>0</strong></td>
+            <td>Speller Negative<br/>
+              (number of accepted words):<br/><strong>0</strong></td>
+          </tr>
+          <tr>
+            <th rowspan="2">Reality</th>
+            <td>Number of real errors:<br/><strong>64</strong></td>
+            <td>Number of true positives<br/>
+              (detected real errors):<br/><strong>0</strong></td>
+            <td>Number of false negatives<br/>
+              (unflagged spelling errors):<br/><strong>0</strong></td>
+          </tr>
+          <tr>
+            <td>Number of real correct words:<br/><strong>0</strong></td>
+            <td>Number of false positives<br/>
+              (incorrectly flagged words):<br/><strong>0</strong></td>
+            <td>Number of true negatives<br/>
+              (unflagged correct words):<br/><strong>0</strong></td>
+          </tr>
+        </table>
+        <dl>
+          <dt>Precision (tp/(tp+fp)):</dt>
+          <dd>NaN %</dd>
+          <dt>Recall (tp/(tp+fn)):</dt>
+          <dd>NaN %</dd>
+          <dt>Accuracy ((tp+tn)/words):</dt>
+          <dd>NaN %</dd>
+        </dl>
+      </section>
+      <section>
+        <title>Colour Codes</title>
+        <dl>
+          <dt>Uncoloured table rows</dt>
+          <dd>Test passed</dd>
+          <dt>Table row with pink background</dt>
+          <dd class="broken">Test failed - either missing or wrong (or both) hyphenation points</dd>
+          <dt>Yellow hyphen</dt>
+          <dd><span class="missing">-</span> Missing hyphenation point (found in the correct string, but not in the hyphenated string)</dd>
+          <dt>Red hyphen</dt>
+          <dd><span class="error">-</span> Wrong hyphenation point (found in the hyphenated string, but not in the correct string)</dd>
+        </dl>
+        <note>Some of the test data may contain deliberate typos, to test the
+        performance of the hyphenator in such cases. These contain almost
+        always one error or more. This is expected, perfect hyphenation can
+        <strong>not</strong> be guaranteed on misspelled text. Typos are always clearly marked at
+        the beginning of the comment field. So please check the comment before
+        judging the hyphenation test result.</note>
+      </section>
+    </section>
+    <section>
+      <title>Grouped by bug #</title>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=545">545</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="correct">
+          <td>viessomguhkes</td>
+          <td>vies^som^guh^kes</td>
+          <td>vies^som^guh^kes</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>viessomvuohkáj</td>
+          <td>vies^som^vuoh^káj</td>
+          <td>vies^som^vuoh^káj</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>árvvovuodo</td>
+          <td>árv^vo^vuo^do</td>
+          <td>árv^vo^vuo^do</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>väráltárbbe</td>
+          <td>vä^rált^árb^be</td>
+          <td>vä^rált^árb^be</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>åhpadusorganisasjåvnån</td>
+          <td>åh^pa^dus^or^ga^ni^sa^sjåv^nån</td>
+          <td>åh^pa^dus^or^ga^ni^sa^sjåv^nån</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>häjmmadáfo</td>
+          <td>häjm^ma^dá^fo</td>
+          <td>häjm^ma^dá^fo</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>árbbedáhpe</td>
+          <td>árb^be^dáh^pe</td>
+          <td>árb^be^dáh^pe</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>barggovuogijt</td>
+          <td>barg^go^vuo^gijt</td>
+          <td>barg^go^vuo^gijt</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>rijkadajva</td>
+          <td>rij^ka^daj^va</td>
+          <td>rij^ka^daj^va</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>javllamáno</td>
+          <td>javl^la^má^no</td>
+          <td>javl^la^má^no</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>ássjedåbdde</td>
+          <td>ás^sje^dåbd^de</td>
+          <td>ás^sje^dåbd^de</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>láhkaásadimesa</td>
+          <td>láh^ka^á^sa^di^me^sa</td>
+          <td>láh^ka^á^sa^di^me^sa</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>giellalágajn</td>
+          <td>giel^la^lá^gajn</td>
+          <td>giel^la^lá^gajn</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>sámegiellaj</td>
+          <td>sá^me^giel^laj</td>
+          <td>sá^me^giel^laj</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>buorrelágásj</td>
+          <td>buor^re^lá^gásj</td>
+          <td>buor^re^lá^gásj</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>suomagiella</td>
+          <td>suo^ma^giel^la</td>
+          <td>suo^ma^giel^la</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>árbbedábálattjat</td>
+          <td>árb^be^dá^bá^lat^tjat</td>
+          <td>árb^be^dá^bá^lat^tjat</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>láhkatæksta</td>
+          <td>láh^ka^tæks^ta</td>
+          <td>láh^ka^tæks^ta</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>sierraláhkáj</td>
+          <td>sier^ra^láh^káj</td>
+          <td>sier^ra^láh^káj</td>
+          <td>0</td>
+          <td>bad hyphenation in compounds</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=546">546</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="correct">
+          <td>guosski</td>
+          <td>guoss^ki</td>
+          <td>guoss^ki</td>
+          <td>0</td>
+          <td>obligatory hyph rules seem to work in facultative manner</td>
+        </tr>
+        <tr class="correct">
+          <td>rijkalattjat</td>
+          <td>rij^ka^lat^tjat</td>
+          <td>rij^ka^lat^tjat</td>
+          <td>0</td>
+          <td>obligatory hyph rules seem to work in facultative manner</td>
+        </tr>
+        <tr class="correct">
+          <td>organisasjåvnån</td>
+          <td>or^ga^ni^sa^sjåv^nån</td>
+          <td>or^ga^ni^sa^sjåv^nån</td>
+          <td>0</td>
+          <td>obligatory hyph rules seem to work in facultative manner</td>
+        </tr>
+        <tr class="correct">
+          <td>hábbmidime</td>
+          <td>hább^mi^di^me</td>
+          <td>hább^mi^di^me</td>
+          <td>0</td>
+          <td>obligatory hyph rules seem to work in facultative manner</td>
+        </tr>
+        <tr class="correct">
+          <td>rábmakonvensjåvnå</td>
+          <td>ráb^ma^kon^ven^sjåv^nå</td>
+          <td>ráb^ma^kon^ven^sjåv^nå</td>
+          <td>0</td>
+          <td>obligatory hyph rules seem to work in facultative manner</td>
+        </tr>
+        <tr class="correct">
+          <td>árvvalasstet</td>
+          <td>árv^va^lass^tet</td>
+          <td>árv^va^lass^tet</td>
+          <td>0</td>
+          <td>obligatory hyph rules seem to work in facultative manner</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=547">547</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>Orgánajs</td>
+          <td>Or^gá<span class="missing">^</span>najs</td>
+          <td>Or^gánajs</td>
+          <td>1</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+        <tr class="broken">
+          <td>Jienastimnjuolgadusá</td>
+          <td>Jie^nas^tim^njuol^ga^du^sá</td>
+          <td>Jie^nas^tim^n<span class="error">^</span>juol^ga^du^sá</td>
+          <td>1</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+        <tr class="correct">
+          <td>ássjedåbddejuogos</td>
+          <td>ás^sje^dåbd^de^juo^gos</td>
+          <td>ás^sje^dåbd^de^juo^gos</td>
+          <td>0</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+        <tr class="correct">
+          <td>unneplågogielajt</td>
+          <td>un^nep^lå^go^gie^lajt</td>
+          <td>un^nep^lå^go^gie^lajt</td>
+          <td>0</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+        <tr class="correct">
+          <td>láhkaásadimesa</td>
+          <td>láh^ka^á^sa^di^me^sa</td>
+          <td>láh^ka^á^sa^di^me^sa</td>
+          <td>0</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+        <tr class="correct">
+          <td>sierralágásj</td>
+          <td>sier^ra^lá^gásj</td>
+          <td>sier^ra^lá^gásj</td>
+          <td>0</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+        <tr class="correct">
+          <td>orgánajs</td>
+          <td>or^gá^najs</td>
+          <td>or^gá^najs</td>
+          <td>0</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+        <tr class="correct">
+          <td>biejvveavijsav</td>
+          <td>biejv^ve^a^vij^sav</td>
+          <td>biejv^ve^a^vij^sav</td>
+          <td>0</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+        <tr class="correct">
+          <td>sámegiellaj</td>
+          <td>sá^me^giel^laj</td>
+          <td>sá^me^giel^laj</td>
+          <td>0</td>
+          <td>hyphen in front of vowel</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=548">548</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="correct">
+          <td>unneplågogielajn</td>
+          <td>un^nep^lå^go^gie^lajn</td>
+          <td>un^nep^lå^go^gie^lajn</td>
+          <td>0</td>
+          <td>mid syllable hyphenation</td>
+        </tr>
+        <tr class="correct">
+          <td>ministarjuohkusis</td>
+          <td>mi^nis^tar^juoh^ku^sis</td>
+          <td>mi^nis^tar^juoh^ku^sis</td>
+          <td>0</td>
+          <td>mid syllable hyphenation</td>
+        </tr>
+        <tr class="correct">
+          <td>biejvveavijsav</td>
+          <td>biejv^ve^a^vij^sav</td>
+          <td>biejv^ve^a^vij^sav</td>
+          <td>0</td>
+          <td>mid syllable hyphenation</td>
+        </tr>
+        <tr class="correct">
+          <td>guosski</td>
+          <td>guoss^ki</td>
+          <td>guoss^ki</td>
+          <td>0</td>
+          <td>mid syllable hyphenation</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=549">549</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="correct">
+          <td>ássjedåbddejuogos</td>
+          <td>ás^sje^dåbd^de^juo^gos</td>
+          <td>ás^sje^dåbd^de^juo^gos</td>
+          <td>0</td>
+          <td>Word divides without hyhpen - ássjedåbd dejuogos</td>
+        </tr>
+        <tr class="correct">
+          <td>Europarádeministarjuogos</td>
+          <td>Eu^ro^pa^rá^de^mi^nis^tar^juo^gos</td>
+          <td>Eu^ro^pa^rá^de^mi^nis^tar^juo^gos</td>
+          <td>0</td>
+          <td>TYPO: Word divides without hyhpen - Europaráde minista rjuogos - typo, the speller only accepts with a hard hyphen after "ráde"</td>
+        </tr>
+        <tr class="correct">
+          <td>Europaráde-ministarjuogos</td>
+          <td>Eu^ro^pa^rá^de-mi^nis^tar^juo^gos</td>
+          <td>Eu^ro^pa^rá^de-mi^nis^tar^juo^gos</td>
+          <td>0</td>
+          <td>Word divides without hyhpen - Europaráde minista rjuogos</td>
+        </tr>
+        <tr class="correct">
+          <td>biehtsemáno</td>
+          <td>bieh^tse^má^no</td>
+          <td>bieh^tse^má^no</td>
+          <td>0</td>
+          <td>Word divides without hyhpen - biehtsemán o</td>
+        </tr>
+        <tr class="correct">
+          <td>oajvvadusán</td>
+          <td>oajv^va^du^sán</td>
+          <td>oajv^va^du^sán</td>
+          <td>0</td>
+          <td>Word divides without hyhpen - oajvvad usán</td>
+        </tr>
+        <tr class="correct">
+          <td>giellalágajn</td>
+          <td>giel^la^lá^gajn</td>
+          <td>giel^la^lá^gajn</td>
+          <td>0</td>
+          <td>Word divides without hyhpen - giellalá gajn</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=570">570</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="correct">
+          <td>Dussnagiehtje</td>
+          <td>Duss^na^gieh^tje</td>
+          <td>Duss^na^gieh^tje</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Divtasvuodna</td>
+          <td>Div^tas^vuod^na</td>
+          <td>Div^tas^vuod^na</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Gåhpejávrre</td>
+          <td>Gåh^pe^jávr^re</td>
+          <td>Gåh^pe^jávr^re</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Gásluokta</td>
+          <td>Gás^luok^ta</td>
+          <td>Gás^luok^ta</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Helmukvuodna</td>
+          <td>Hel^muk^vuod^na</td>
+          <td>Hel^muk^vuod^na</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Ibboluokta</td>
+          <td>Ib^bo^luok^ta</td>
+          <td>Ib^bo^luok^ta</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Julevædno</td>
+          <td>Ju^lev^æd^no</td>
+          <td>Ju^lev^æd^no</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Jåhkmåhkke</td>
+          <td>Jåhk^måhk^ke</td>
+          <td>Jåhk^måhk^ke</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Jåkmåhkke</td>
+          <td>Jåk^måhk^ke</td>
+          <td>Jåk^måhk^ke</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+        <tr class="correct">
+          <td>Jåhkåmåhkke</td>
+          <td>Jåh^kå^måhk^ke</td>
+          <td>Jåh^kå^måhk^ke</td>
+          <td>0</td>
+          <td>some proper nouns does not get hyphened</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=633">633</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>10-bæjvvásattja</td>
+          <td>10<span class="missing">-</span>bæjv<span class="missing">^</span>vá<span class="missing">^</span>sat<span class="missing">^</span>tja</td>
+          <td>10<span class="error">^</span>bæjvvásattja</td>
+          <td>4</td>
+          <td>double hyphens in name/acro/num compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>AP-biedniga</td>
+          <td>AP-bied^ni^ga</td>
+          <td>AP-bied^ni^ga</td>
+          <td>0</td>
+          <td>double hyphens in name/acro/num compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>ANC-gáddjo</td>
+          <td>ANC-gád^djo</td>
+          <td>ANC-gád^djo</td>
+          <td>0</td>
+          <td>double hyphens in name/acro/num compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>Tullingtoppen-gierge</td>
+          <td>Tul^ling^top^pen-gier^ge</td>
+          <td>Tul^ling^top^pen-gier^ge</td>
+          <td>0</td>
+          <td>double hyphens in name/acro/num compounds</td>
+        </tr>
+        <tr class="correct">
+          <td>Koskivuori-plánimnævvo</td>
+          <td>Kos^ki^vuo^ri-plá^nim^næv^vo</td>
+          <td>Kos^ki^vuo^ri-plá^nim^næv^vo</td>
+          <td>0</td>
+          <td>double hyphens in name/acro/num compounds</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=636">636</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="correct">
+          <td>dábálasjvuodak</td>
+          <td>dá^bá^lasj^vuo^dak</td>
+          <td>dá^bá^lasj^vuo^dak</td>
+          <td>0</td>
+          <td>Hyphen in front of single consonant</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=670">670</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>10-biejvvásattja</td>
+          <td>10<span class="missing">-</span>biejv<span class="missing">^</span>vá<span class="missing">^</span>sat<span class="missing">^</span>tja</td>
+          <td>10<span class="error">^</span>biejvvásattja</td>
+          <td>4</td>
+          <td>Hard hyphen replaced with soft hyphen</td>
+        </tr>
+        <tr class="correct">
+          <td>Oarjjelij-Bájddárij</td>
+          <td>Oarj^je^lij-Bájd^dá^rij</td>
+          <td>Oarj^je^lij-Bájd^dá^rij</td>
+          <td>0</td>
+          <td>Hard hyphen replaced with soft hyphen</td>
+        </tr>
+        <tr class="correct">
+          <td>Norges-gruppenin</td>
+          <td>Nor^ges-grup^pe^nin</td>
+          <td>Nor^ges-grup^pe^nin</td>
+          <td>0</td>
+          <td>Hard hyphen replaced with soft hyphen</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=678">678</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Correct<br/>hyphenation</th>
+          <th>Actual<br/>hyphenation</th>
+          <th>Number of<br/>errors</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="correct">
+          <td>báŋŋkaautomáhtajn</td>
+          <td>báŋŋ^ka^au^to^máh^tajn</td>
+          <td>báŋŋ^ka^au^to^máh^tajn</td>
+          <td>0</td>
+          <td>báŋŋka- not correctly hyphenated</td>
+        </tr>
+      </table>
+    </section>
+  </body>
+</document>

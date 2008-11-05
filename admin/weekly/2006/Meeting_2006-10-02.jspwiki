@@ -1,0 +1,634 @@
+!!!Meeting setup
+
+* Date: 02.10.2006
+* Time: 09.30 Norw. time
+* Place: Where we are
+* Tools: SubEthaEdit, iChat
+
+!!!Agenda
+
+# Opening, agenda review
+# Reviewing the task list from two weeks ago
+# Documentation - divvun.no
+# Corpus gathering
+# Corpus infrastructure
+# Infrastructure
+# Linguistics
+# name lexicon infrastructure
+# Spellers
+# Other issues
+# Summary, task lists
+# Closing
+
+!!!1. Opening, agenda review, participants
+
+Opened at 09:39.
+
+Present: __Børre, Saara, Sjur, Thomas, Tomi__
+
+Absent: __Maaren, Trond__
+
+Agenda accepted as is.
+
+!!!2. Updated task status since last meeting
+
+!! Børre
+* corpus collection:
+** contact __Ája__ (Kåfjord), talk to __Lene__
+*** Got documents from Lene
+** send contracts to __Čálliid Lágádus__
+*** Done
+** contact __Richard Valkepää__ at NSI about older Min Áigi and Áššu files
+*** Not done
+* Move norwegian documents in Min Áigi from sme to nob
+** Will have to check for other folders than 2003 ...
+* corpus access:
+** possibly deploy the user account form as an HTML form
+** Write both user and admin documentation (__Børre__, review: __Sjur, Thomas__)
+*** Not done
+* set up Bugzilla automatic reminders for open issues
+** Not done
+* finish Forrest i18n and Sámi in PDF work
+** Some more done
+* Get more {{sma, smj}} texts to improve language recognition
+** Got lots of texts from Stig Gælok
+* set up Tomcat for use with eXist and the propnouns db on the G5
+** not done
+* add the new ''Words'' section to the site
+** Not done
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+** None fixed this week
+* Fixed a computer for Thomas
+
+
+!! Maaren
+* download and install latest Marratech
+
+
+
+!! Saara
+* Create a parallel corpora of the new testaments
+* add more texts to the graphical corpus interface
+* Implement parallel corpus upload in web upload script
+** I'll add this to the bug db.
+* remove headers and footers from pdf documents
+** the documents with multiple columns still not ready
+* Implement server of the analysis tools.
+** not yet ready
+* generate parallel corpus files manually (with __Trond__)
+** the routines are mostly done.
+* Improve text_cat
+** the new language models are still not done.
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+!! Sjur
+* finish the hyphenator clean-up script
+** done, but still too much output because we're using circular transducers
+* name lexicon:
+** implement editing functions
+*** waiting for the item below to be finished
+** finalise refactoring for multiple collections
+*** search interface ready and converted to the new code for SD-terms
+*** will add basic searching for the other collections as well, to demonstrate
+    and test
+** implement improvements decided upon in Tromsø
+* review user and admin documentation for corpus access
+* write user account form, probably ask for copy of existing ones from the IT
+  centre (with Trond)
+* start hiring process of linguist and programmer
+** nothing done last week, tried to move substantially forward with the name db
+   and the required changes to risten.no
+* finish i18n work of Forrest
+** what was done is now working completely as it should
+** but finishing it turned out to be not so simple because it needs to work with
+   the command-line client (CLI). And that one has no knowledge of locales and
+   how to handle them.
+* consider the problems of lexicalised derivations schewing analyses of
+  derivation patterns
+** awaits M4-implementation in Disamb
+* install eXist and our local copy of risten.no and propnouns on the G5
+** nothing
+* speller follow-up from the Tromsø meeting
+** done, planning and code design has started
+* get instructions on how to use Marratech, and test it
+** talked briefly with __Leif Åge__, asked him to push __Geir__ or __Roy__;
+   nothing received
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Thomas
+* work with Polderland phonetic rules
+** soon finished
+* bug-fixing!
+** worked some
+* refine smj proper noun lexica, cf. the propernoun-smj-lex.txt 
+** begun to look at it
+* review user documentation for corpus access
+** not done
+* find and study all derived verbs in our corpus (depends on __Trond__)
+** not done
+* suggest which derivations could be generated (depends on __Trond__)
+** not done
+* meeting with __Trond__ Wednesday on {{smj}} proper nouns
+** we did meet
+
+
+
+!! Tomi
+* new proper name lexicon
+** data synchronisation of proper nouns between risten.no and CVS
+*** not done
+** XQuery refactoring and code development for our proper noun editor
+*** not done
+** new version of xml2lexc (based on ccat), should handle complex names correct:
+   construct entries like we have now from the different parts of a complex name
+   entry
+*** partly
+** implement improvements decided upon in Tromsø
+*** not done
+* export corpus tools to {{/opt}} (with cron)
+** not done
+* make speller make targets using M4
+** not done
+* start to plan the implementation of the speller data conversion/generation
+** started
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Trond
+* better smj NT text
+** Will give our .doc text a second try with Børre.
+* get fin, swe, nob and nno NT and OT in __paratext__ format
+* fst gymnastics to add hyphenation and word boundary marks to hyphenation
+  transducer
+** We use Sjur and Saara's perl solution instead.
+* make shell script wrappers for the most common commands for user friendlyness
+** Issue passed on to __Tomi__
+* write user account form, probably ask for copy of existing ones from the IT
+  centre (with Sjur)
+** Discussed with Thor Øivind, this is up to us.
+* write documentation for our {{bound}} users, with pointers to the ordinary 
+  documentation  
+** Not done.
+* refine smj proper noun lexica, cf. the propernoun-smj-lex.txt
+** Gone through the lexicon with Thomas, done minor adjustments.
+* Get more {{sma, smj}} texts to improve language recognition
+** Have started working on sma, Børre works on smj.
+* study corpus for language recognition errors, as well as paragraphs with mixed
+  content
+* generate parallel corpus files manually (with __Saara__)
+** Worked with this issue, provided nob texts.
+* block out the CG rule(s) that remove(s) the Der readings using M4
+** Pseudocode written, issue passed on to M4 literates.
+* meeting with __Thomas__ Wednesday on {{smj}} proper nouns
+** Had short meeting, will return to the issue.
+* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+
+
+!!!3. Documentation
+
+TODO:
+* finish i18n work (__Børre__ and __Sjur__)
+** done when running in 'forrest run' mode - it works perfect now
+** does NOT work when running 'forrest site', instead it generates a heap of
+   errors
+** i18n does not work in PDF ("Table of Content" won't translate)
+* Write both user and admin documentation (__Børre__, review: __Sjur, Thomas__)
+** User documentation probably in several languages. This covers how to apply
+   for an account, on what grounds one can apply, and pointers to documentation
+   telling how to use the corpus.
+** Admin documentation, telling how we set the permissions to the corpus files,
+   and whatever other processes and tasks needed to set up a corpus account.
+* add the new ''Words'' section to the site (__Børre__)
+** not yet done
+
+
+
+!!!4. Corpus gathering
+
+__Børre__ got text from __Lene__ and __Stig Gælok__, now we have 24 000 words in
+smj/facta, up from 800! Have sent letters to Jovnna-Ánde Vest and Aage Solbakk.
+Will contact more authors this week.
+
+__TODO:__
+* contact NSI (__Børre__)
+* bug __Bård Eriksen__ about the book list (__Børre__)
+* continue to contact authors (__Børre__)
+
+
+
+!!!5. Corpus infrastructure
+
+!!General
+
+Our way of dealing with the conversion of input documents has now reached an
+advanced level. At some point we might consider to publish our results, to the
+benefit of the rest of the research community.
+
+__TODO:__
+* remove headers and footers in the PDF conversion (__Saara__)
+** improving, but still needs some work
+* consider an article on our corpus framework (__all__)
+
+
+
+!!User accounts and access
+
+For details, see a [previous meeting memo|Meeting_2006-06-19], as well as the
+memo from a [dedicated
+meeting|http://divvun.no/doc/infra/corpus_policy.html].
+
+!Shell access
+
+TODO:
+* export to {{/opt}} (with cron) tools that the project team members find in 
+  their cvs tree (the bound users do not have a cvs tree, and therefore need 
+  these tools in {{/opt}} in order to conduct linguistic analyses) (__Saara__)
+** Decision:
+*** compiled transducers to {{/opt}} also in the future
+*** scripts etc to {{/usr/local/share/bin/}}
+* make shell script wrappers for the most common commands for user friendliness
+  (we must think of what commands they are) (__Tomi__)?
+** (first version of first script, teaksta.sh, was checked in, but it is still
+   not working (the problem is a simple handling of input-output, some shell
+   script literates should have a look at it)
+* write user account form, probably ask for copy of existing ones from the IT
+  centre (__Trond__ and __Sjur__)
+* possibly deploy the user account form as an HTML form (__Børre__)
+* write documentation for our {{bound}} users, with pointers to the ordinary 
+  documentation (__Børre, Trond__)
+* write documentation for how to apply for a user account (where's the form, to
+  whom do I send the form, who needs it, etc.) (__Børre__)
+* make our own guidelines for the user application processing (__Børre__)
+* make a test user (__Børre__)
+* test corpus access as test user (__Trond__)
+
+
+
+!!More texts to the graphical corpus interface:
+
+TODO:
+* add text to the server (__Lars__)
+
+
+
+!!Aligner
+
+Next week: discuss NT parallel corpus
+
+Trond and Saara has tested manual alignment for testing.
+
+TODO:
+* use the present aligner to generate some initial input for Oslo to test.
+  (__Trond__ and __Saara__)
+** done
+* gather parallel texts (__Trond__)
+
+
+!!Language recognition
+
+TODO:
+* Get more text of the poorly covered languages: {{sma, smj}} (__Trond, Børre__)
+** {{sma:}} get the Bible texts (__Trond__)
+** we now have more {{smj}} texts, should be used to improve the {{smj}} LM
+   (__Saara__)
+* study the mistakes our recogniser makes today (__Trond__, __Ilona__)
+** done
+* what about paragraphs with mixed content? Build a corpus of such paragraphs
+  (__Trond__)
+
+
+
+!!!6. Infrastructure
+
+!!Xerox tools wrapped as servers
+
+Will continue this week, possible issues in the next meeting.
+
+Feature request:
+* option for XML output from server
+
+__TODO:__
+* improve and finish the present prototype (__Saara__)
+** done some, still more work to do
+
+
+
+!!Hyphenator
+
+Problem: we overgenerate because we are using a circular transducer:
+
+{{{
+A-fi^ná^laid#ea^me
+A-fi^ná^lai^dea^me
+A-fi^ná^lai^dea^me
+A-#fi^ná^laid#ea^me
+A-#fi^ná^lai^dea^me
+A-#fi^ná^lai^dea^me
+A-fi^ná^laid#ea^me
+A-fi^ná^lai^dea^me
+A-fi^ná^lai^dea^me
+}}}
+
+Pseudocode for hyph cleanup:
+{{{
+- read cohort
+- remove all but the readings with the least word boundaries
+- compare the rest with the input string, disregarding ^ and #:
+-- delete forms that do not correspond to the input string
+- unique the final set
+- print what is left (it should normally be only one form)
+}}}
+
+The input that correspond to the partially-cleaned data above:
+
+{{{
+A-finálaideame  A--fi^ná^laid-ea^mi
+A-finálaideame  A--fi^ná^laid-ea^me
+A-finálaideame  A--fi^ná^laid#ea^mi
+A-finálaideame  A--fi^ná^laid#ea^me
+A-finálaideame  A--fi^ná^lai^dea^mi
+A-finálaideame  A--fi^ná^lai^dea^me
+A-finálaideame  A--fi^ná^lai^dea^me
+A-finálaideame  A-fi^ná^laid-ea^mi
+A-finálaideame  A-fi^ná^laid-ea^me
+A-finálaideame  A-fi^ná^laid#ea^mi
+A-finálaideame  A-fi^ná^laid#ea^me
+A-finálaideame  A-fi^ná^lai^dea^mi
+A-finálaideame  A-fi^ná^lai^dea^me
+A-finálaideame  A-fi^ná^lai^dea^me
+A-finálaideame  A-#fi^ná^laid-ea^mi
+A-finálaideame  A-#fi^ná^laid-ea^me
+A-finálaideame  A-#fi^ná^laid#ea^mi
+A-finálaideame  A-#fi^ná^laid#ea^me
+A-finálaideame  A-#fi^ná^lai^dea^mi
+A-finálaideame  A-#fi^ná^lai^dea^me
+A-finálaideame  A-#fi^ná^lai^dea^me
+A-finálaideame  A-fi^ná^laid-ea^mi
+A-finálaideame  A-fi^ná^laid-ea^me
+A-finálaideame  A-fi^ná^laid#ea^mi
+A-finálaideame  A-fi^ná^laid#ea^me
+A-finálaideame  A-fi^ná^lai^dea^mi
+A-finálaideame  A-fi^ná^lai^dea^me
+A-finálaideame  A-fi^ná^lai^dea^me
+A-finálaideame  a--fi^ná^laid-ea^mi
+A-finálaideame  a--fi^ná^laid-ea^me
+A-finálaideame  a--fi^ná^laid#ea^mi
+A-finálaideame  a--fi^ná^laid#ea^me
+A-finálaideame  a--fi^ná^lai^dea^mi
+A-finálaideame  a--fi^ná^lai^dea^me
+A-finálaideame  a--fi^ná^lai^dea^me
+A-finálaideame  a-fi^ná^laid-ea^mi
+A-finálaideame  a-fi^ná^laid-ea^me
+A-finálaideame  a-fi^ná^laid#ea^mi
+A-finálaideame  a-fi^ná^laid#ea^me
+A-finálaideame  a-fi^ná^lai^dea^mi
+A-finálaideame  a-fi^ná^lai^dea^me
+A-finálaideame  a-fi^ná^lai^dea^me
+A-finálaideame  a-#fi^ná^laid-ea^mi
+A-finálaideame  a-#fi^ná^laid-ea^me
+A-finálaideame  a-#fi^ná^laid#ea^mi
+A-finálaideame  a-#fi^ná^laid#ea^me
+A-finálaideame  a-#fi^ná^lai^dea^mi
+A-finálaideame  a-#fi^ná^lai^dea^me
+A-finálaideame  a-#fi^ná^lai^dea^me
+}}}
+
+The fst used is:
+
+{{{
+sme/bin/hyph-sme.fst
+
+To make:
+make TARGET=sme hyph-sme.fst
+}}}
+
+TODO:
+* finish the hyphenator clean-up script (__Sjur__)
+** done, but multi-word expressions are not handled correctly. Change separator
+   from space to tab to fix it.
+** improve the clean-up script to remove more-complex word forms (__Saara__)
+* Update the sma hyphenator rule set with the insights gained from smj updates
+  (__Trond__ during weekends)
+
+
+!!Automatic Bugzilla reminder for untouched bugs
+
+Some perl-libraries needed by Bugzilla weren't in the path, causing it to not
+work. Adding them should fix the issue.
+
+TODO:
+* give mail reminders a second try (__Børre__)
+** investigated, but libraries or path not updated.
+
+
+!!M4
+
+__TODO:__
+* make speller make targets that utilise M4 to produce normative
+  and hyphenation transducers - postponed a while (__Tomi__ or __Sjur__)
+* disamb variants for derivations (see next) (__Saara__)
+
+
+
+!!!7. Linguistics
+
+!!Derivation and spellers like Aspell
+
+* revert the CG rule that preferres lexicalised forms over derivations with M4
+  (__Trond__ wrote the M4 pseudocode, __M4-literates__ to translate).
+  In the beginning of sme-dis.rle there is an explanation of the pseudocode.
+  Just search for the rules as explained there.
+* find and study all derived verbs in our corpus (__Thomas__)
+* suggest which derivations could be generated (__Thomas__)
+* lexicalise the rest (__Thomas__)
+
+
+!!North Sámi
+
+Nothing this week? No.
+
+!!Lule Sámi
+
+TODO:
+* refine smj proper noun lexica, cf. the propernoun-smj-lex.txt
+  (__Thomas, Trond__) 
+** started
+* Schedule a T-T meeting this week - Wednesday.
+** done
+
+
+
+!!!8. Name lexicon infrastructure
+
+Decided in Tromsø:
+* add logging facilities to the interface
+* add option to download local copies of the lexicon files directly from the db
+* batch editing (change all entries in the found set), should later be enhanced
+  to allow selection of exceptions (the found set minus deselected items)
+* tag for excluding/including a name from certain applications
+* future epxansion: choose what info to display in the single language browser
+* display existing language entries when adding a new language to a record
+* add editor to change single, existing entries
+
+
+Details can be found in [the meeting
+memo.|/doc/admin/physical_meetings/tromso-2006-08-propnoun.html]
+
+TODO:
+* finish refactoring for multiple collections in the search interfarce
+  (__Sjur__)
+** almost done - SD-terms now converted and working, still needs additions for a
+   couple of other collections (our name lexicon, and the mechanical collection)
+** worked on a specification (in the new CVSROOT/words/ section)
+*** finished
+* develop the needed XQueries and UI (__Sjur, Tomi__)
+* turn Tomcat on on the G5; send admin username and password to __Sjur__
+  (__Børre__)
+* add eXist and the proper noun interface to the G5 (__Sjur__)
+* data synchronisation between risten.no and the cvs repo - postponed
+* new version of xml2lexc (based on ccat), should handle complex names correct:
+  construct entries like we have now from the different parts of a complex name
+  entry - postponed
+
+
+!!!9. Tromsø meeting follow-up
+
+TODO:
+* speller development - see the [meeting
+  memo|/doc/admin/physical_meetings/tromso-2006-08-lexc2xspell.html]. Separate
+  follow-up next week.
+** done
+* Lule Sámi linguist (__Sjur__)
+** nothing done last week, but __Børre__ has another possible candidate
+
+
+!!Speller data generation
+
+__TODO:__
+* start to plan the implementation of the speller data conversion/generation
+  (__Tomi__)
+** started; plan documents should be added to {{gt/doc/proof/}}
+
+!!!10. Other
+
+!!Bug fixing
+
+__64__ open Divvun/Disamb bugs (two down!), and __25__ risten.no bugs
+
+Guess: 1/3 of the bugs are fixed already (?)
+
+
+!!Meetings and Marratech
+
+__TODO:__
+* download and install newest Marratech
+  (__Maaren__)
+* we need instructions on how to use it, and test it (__Sjur__)
+
+
+!!Task lists as iCal entries
+
+TODO:
+* update Maaren's and Saara's installations to r430284 (__Børre__)
+
+
+!!!11. Next meeting, closing
+
+Next meeting 9.10.2006 at 9:30.
+
+Closed at 10:38.
+
+!!!Appendix - task lists for the next week
+
+!! Børre
+[iCal|/doc/admin/weekly/2006/Tasks_2006-10-02_Boerre.ics]
+* corpus collection:
+** contact __Ája__ (Kåfjord)
+** contact __Richard Valkepää__ at NSI about older Min Áigi and Áššu files
+** remind __Bård Eriksen__ about the book catalogue
+* Move norwegian documents in Min Áigi from sme to nob
+* corpus access:
+** possibly deploy the user account form as an HTML form
+** Write both user and admin documentation (__Børre__, review: __Sjur, Thomas__)
+* set up Bugzilla automatic reminders for open issues
+* finish Forrest i18n work (pdf)
+* Get more {{sma, smj}} texts to improve language recognition
+* set up Tomcat for use with eXist and the propnouns db on the G5
+* add the new ''Words'' section to the site
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Maaren
+* download and install latest Marratech
+
+
+
+!! Saara
+[iCal|/doc/admin/weekly/2006/Tasks_2006-10-02_Saara.ics]
+* add more texts to the graphical corpus interface
+* remove headers and footers from pdf documents
+* Implement server of the analysis tools.
+* generate parallel corpus files manually (with __Trond__)
+* Improve text_cat
+* export corpus tools to location available to all (with cron), cf news disc.
+* Write a script for cleaning sme-hyph-output.
+* Implement M4-rules for sme-dis.rle
+* improve {{smj}} LM based on the new, larger corpus
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Sjur
+[iCal|/doc/admin/weekly/2006/Tasks_2006-10-02_Sjur.ics]
+* finish the hyphenator clean-up script
+* name lexicon:
+** implement editing functions
+** finalise refactoring for multiple collections
+** implement improvements decided upon in Tromsø
+** XQuery refactoring and code development for our proper noun editor
+* review user and admin documentation for corpus access
+* write user account form, probably ask for copy of existing ones from the IT
+  centre (with Trond)
+* start hiring process of linguist and programmer
+* finish i18n work of Forrest
+* consider the problems of lexicalised derivations schewing analyses of
+  derivation patterns
+* install eXist and our local copy of risten.no and propnouns on the G5
+* speller follow-up from the Tromsø meeting
+* get instructions on how to use Marratech, and test it
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Thomas
+[iCal|/doc/admin/weekly/2006/Tasks_2006-10-02_Thomas.ics]
+* work with Polderland phonetic rules
+* refine smj proper noun lexica, cf. the propernoun-smj-lex.txt 
+* find and study all derived verbs in our corpus (depends on __Trond__)
+* suggest which derivations could be generated (depends on __Trond__)
+
+
+
+!! Tomi
+[iCal|/doc/admin/weekly/2006/Tasks_2006-10-02_Tomi.ics]
+* start to plan the implementation of the speller data conversion/generation
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+
+
+!! Trond
+[iCal|/doc/admin/weekly/2006/Tasks_2006-10-02_Trond.ics]
+* make shell script wrappers for the most common commands for user friendlyness
+* write user account form, probably ask for copy of existing ones from the IT
+  centre (with Sjur)
+* write documentation for our {{bound}} users, with pointers to the ordinary 
+  documentation  
+* refine smj proper noun lexica, cf. the propernoun-smj-lex.txt
+* Get more {{sma}} texts to improve language recognition
+* study paragraphs with mixed content
+* [fix bugs!|http://giellatekno.uit.no/bugzilla].

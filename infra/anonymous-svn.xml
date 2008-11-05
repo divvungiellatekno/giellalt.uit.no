@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>Anonymous SVN</title>
+
+    <authors>
+      <person email="boerre.gaup@samediggi.no" name="Børre Gaup" />
+
+      <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen" />
+    </authors>
+  </header>
+
+  <body>
+    <note>
+      The source code and the documentation is distributed under the 
+      GPL-license. You will find the license text in xtdoc/LISENS.txt
+      and gt/LISENS.txt.
+    </note>
+    <note>Preparation and Check-out you will only have to do once</note>
+
+    <section>
+      <title>Preparation</title>
+
+      <p>Anyone can download the source code via anonymous SVN, but will not
+      be able to contribute with modifications.</p>
+
+      <p>To get the files, do the following: Open a terminal and use the following command to fetch the files:</p>
+
+      <source>svn co https://victorio.uit.no/repos/trunk</source>
+
+      <p>The files will then be copied to your machine (you will see a row of filenames, preceeded by the letter A).</p>
+
+    </section>
+
+    <section>
+      <title>Building, compiling and running</title>
+
+      <p>When everything is checked out and residing on your computer, you
+      probably want to compile and run our linguistic analysers. For this you
+      need to install the required tools. They are:</p>
+
+      <ul>
+        <li><strong>Xerox morphological transducer tools</strong>, for
+        morphological analysis. This is proprietary software, and not
+        available for download, but it is included with the book Finite State
+        Morphology by <a
+        href="http://www.xrce.xerox.com/people/beesley/home.html">Kenneth R.
+        Beesley</a> and <a
+        href="http://www2.parc.com/istl/members/karttune/">Lauri
+        Karttunen</a>. <a
+        href="http://csli-publications.stanford.edu/site/1575864347.html">The
+        book</a> has its own <a href="http://www.fsmbook.com/">home page</a>.
+        Unfortunately we do not have an open source alternative for compiling
+        our morphological analysers, basically because there are none
+        compatible with our source, and almost none able to handle Sámi in a
+        decent way. One possible open-source alternative would be <a
+        href="http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html">SFST</a>,
+        but it would require major reworking of our lexicons, and a lot of
+        other work as well.</li>
+
+        <li><strong>vislcg</strong>, for disambiguation. This is open source,
+        but has no documentation accompanying the software (there are
+        references to external/printed documentation). You need to <a
+        href="http://sourceforge.net/projects/vislcg/">download the source
+        code</a> and compile it yourself, using a GCC 2.9x compiler (or update
+        the source code to compile with newer versions of GCC:-) ). Basic user
+        documentation can be <a href="/doc/tools/cgii-usage.html">found on our
+        pages</a>.</li>
+      </ul>
+
+      <p>Other tools (perl scripts, shell scripts, etc.) should have been
+      included in the SVN check-out, but might require some environment setups
+      (PATHs etc). See our <a href="workenvironment.html">technical
+      documentation</a> and the subsection in the corresponding menu.</p>
+    </section>
+
+    <section>
+      <title>Reading the documentation off-line</title>
+
+      <p>The full documentation is available online on <a
+      href="http://www.divvun.no/">divvun.no</a>, but if you want to read the
+      documentation off-line, you are best off installing and running
+      <strong><a href="http://forrest.apache.org/">Forrest</a></strong>. You 
+      will find it at 
+      <a href="http://divvun.no/static_files/divvun_forrest.tar.bz2">our
+       server</a>.</p>
+
+      <p>We have made a <a href="forrest-howto.html">document</a> on how to 
+      install and use forrest, follow the instructions there on how to use 
+      forrest on your private machine</p>
+      
+    </section>
+
+    <section>
+      <title>Sending feedback and patches</title>
+
+      <p>If you have improvements to our code, be it linguistic corrections,
+      C-code bug fixes, documentation enhancements or whatever, we would
+      welcome your contribution. Please make a cvs diff, gzip it, and send it
+      <a href="mailto:divvun@samediggi.no">to us</a>.</p>
+
+      <warning>This e-mail address may change in the future!</warning>
+
+      <section>
+        <title>Interactive feedback and discussions</title>
+
+        <p>The whole team is available on AIM, and we frequently keep
+        discussions through our favourite AIM client(s). Our AIM addresses can
+        be found on our <a href="/doc/admin/people.html">contact page</a>.</p>
+
+        <p>We also use <a
+        href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a> (SEE)
+        a lot to do collaborative development, but SEE is Mac only, and
+        commercial (version 2.2 is available for free for non-commercial
+        purposes). A rather new cross-platform alternative is <a
+        href="http://gobby.0x539.de/">Gobby</a> (please see the <a
+        href="http://darcs.0x539.de/trac/obby/cgi-bin/trac.cgi/wiki/InstallationGuide">installation
+        notes</a>, especially Mac users - the Mac version only installs
+        through <a href="http://darwinports.opendarwin.org/">DarwinPorts</a>).
+        Try it, or SEE - realtime collaborative development is both very fun
+        and productive, and creates a whole new feeling of working together,
+        even when sitting in different countries! Much of what we have done
+        would have taken 10 x the time, or not been possible at all without
+        SEE.</p>
+
+        <p>If you have questions or problems, either e-mail us, or start a
+        chat. Further investigation can be done collaboratively and
+        interactively using SEE or Gobby. If you are using a Mac with a recent
+        OS version (10.4.x, aka Tiger), you can even invite us to (group)
+        voice or video chats using <a
+        href="http://www.apple.com/ichat/">iChat</a>. Non-group voice and
+        video chats should also work with earlier versions of MacOS, as well as
+        with a recent version of the AIM client for Windows (we haven't tried
+        voice or video chats with Windows users).</p>
+      </section>
+    </section>
+
+    <p class="last_modified">Last modified: $Date$, by
+    $Author$</p>
+  </body>
+</document>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>Morphological disambiguation</title>
+
+    <authors>
+      <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
+    </authors>
+  </header>
+
+  <body>
+    <section>
+      <title>Morphological disambiguation</title>
+
+      <p>The project uses <strong>vislcg</strong>, an implementation of
+      constraint grammar, as developed by a.o. Fred Karlsson and Pasi
+      Tapanainen at the University of Helsinki.</p>
+
+      <ul>
+        <li><a href="../tools/cgii-usage.html">How to use the disambiguator
+        vislcg</a></li>
+
+        <li><a href="../tools/vislcg.html">Differences between vislcg and
+        CG-2</a></li>
+
+        <li><a href="cgii-writing.html">How to write disambiguation
+        files</a></li>
+      </ul>
+
+      <p>So far, we have a disambiguation file
+      <code>sme-dis.rle</code>, for Northern Sámi, and a file
+      <code>smj-dis.rle</code> for Lule Sámi. In addition to that, we
+      are working on beta versions for Greenlandic and Faroese. The
+      content of the North Sámi file is documented <a
+      href="../lang/sme/docu-sme-dis.html">here</a>. </p>
+
+      <section>
+        <title>Other versions of constraint grammar</title>
+
+        <p>The philosophy behind constraint grammar is relatively simple, and
+        the programming algorithms are found in several different version.</p>
+
+        <ol>
+          <li>The original CG formalism was developed by Fred Karlsson, at <a
+          href="http://www.ling.helsinki.fi">Dept. of Linguistics in
+          Helsinki</a></li>
+
+          <li>Bart Jongejan's C++ version of the original CG</li>
+
+          <li>A new version of CG, called CG-2, was developed by Pasi
+          Tapanainen, cf. Tapanainen 1996. It is maintained by <a
+          href="http://www.connexor.com">Connexor</a></li>
+
+          <li>vislcg, an open source implementation of CG-2, at <a
+          href="http://visl.hum.sdu.dk/visl/">http://visl.hum.sdu.dk/visl/</a>. This
+          parser is available for download ad sourceforge, <a
+          href="http://sourceforge.net/projects/vislcg/">here</a>.</li>
+
+          <li>vislcg3, a new generation version ov the open source
+          vislcg is currently being developed at <a
+          href="http://visl.hum.sdu.dk/visl/">http://visl.hum.sdu.dk/visl/</a>.</li>
+
+        </ol>
+      </section>
+
+      <section>
+        <title>Other disambiguation tools</title>
+
+        <section>
+          <title>Grammar-based disambiguation tools</title>
+
+          <ul>
+            <li><a
+            href="http://www.xrce.xerox.com/competencies/content-analysis/fssoft/docs/disamb-97/disamb97.html">disamb</a>,
+            at Xerox</li>
+
+            <li>FSIG (Finite-state intersection grammar), at <a
+            href="http://www.ling.helsinki.fi">Dept. of Linguistics in
+            Helsinki</a></li>
+
+            <li>LFG and HPSG-based tools ??</li>
+          </ul>
+
+          <p>For various reasons, do not use these tools, but have chosen
+          constraint grammar instead.</p>
+        </section>
+
+        <section>
+          <title>Statistically-based disambiguation tools</title>
+
+          <p>This is the dominating approach to disambiguation. Here, we think
+          the grammar-based approach is on the right track, and we thus do not
+          use statistically-based tools. In the future it still may be
+          relevant to have a look at what statixtically-based tools may
+          achieve when applied on the top of grammar-based disambiguation
+          tools, in order to resolve on statistical grounds such open cases
+          that cannot be dealt with by grammatical tools alone.</p>
+
+          <p>Thus, we should at some point start orientating ourself in the
+          world of statistically-based disambiguation tools.</p>
+        </section>
+      </section>
+
+      <section>
+        <title>A disambiguation bibliography</title>
+
+        <p>Forthcoming...</p>
+      </section>
+
+      <p class="last_modified">Last modified: $Date$, by
+      $Author$</p>
+    </section>
+  </body>
+</document>

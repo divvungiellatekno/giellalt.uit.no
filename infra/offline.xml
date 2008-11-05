@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>Connecting to the main computer <em>victorio</em></title>
+    <authors>
+      <person email="trond.trosterud" name="Trond Trosterud" />
+    </authors>
+  </header>
+
+  <body>
+    <section>
+      <title>Should I work on victorio or on my own machine?</title>
+
+      <p>If you have one of the project macs set up for you, you have all
+      tools on your own machine, and you may as well work offline. In that
+      case, you use the <a href="../tools/docu-cvs-user.xml">CVL program</a>
+      to get the latest versions of the files from the central computer
+      victorio, and thereafter you use the tools on your own machine, as
+      described in the Tools section.</p>
+
+      <p>If you do not have the Xerox tools installed on your local machine,
+      you must be connected to victorio in order to compile the program, and in
+      order to use it.</p>
+
+      <section>
+        <title>Connecting to victorio</title>
+
+        <p>All platforms will need a few initial tweaks to make them handle
+        the Sámi characters, but if you already write Sámi on your computer it
+        may be that it is set up correctly already. See the <a
+        href="docu-localisation.xml">localisation page</a> if you have
+        problems.</p>
+
+        <section>
+          <title>Mac users</title>
+
+          <p>Mac users using Mac OS X have built-in SSH and a terminal
+          application. Just open the terminal, and type <code>ssh
+          username@victorio.uit.no</code> at your prompt (where 'username' is
+          your own user name at victorio).</p>
+
+          <p>Mac users using OS 9 or earlier may access victorio via a program
+          called NiftyTelnet (downloadable from the <a
+          href="http://asg.web.cmu.edu/andrew2/dist/niftytelnet.html">NiftyTelnet
+          Homepage</a>). But note that OS 9 does not handle Unicode</p>
+        </section>
+
+        <section>
+          <title>Linux users</title>
+
+          <p>Linux users use the same ssh command as was described for Mac OSX
+          above.</p>
+        </section>
+
+        <section>
+          <title>Windows users</title>
+
+          <p>Windows users may e.g. use <a
+          href="../tools/docu-putty.xml">putty.exe</a>. <strong>Remember to
+          connect via ssh</strong>, not via Telnet. After we switched to Sámi
+          letters internally, putty is not an ideal solution, since it for
+          some reason is not able to write the letter č (all other Sámi
+          letters work). (<strong>TODO</strong>: Check other terminal programs
+          for Windows)</p>
+        </section>
+      </section>
+
+      <section>
+        <title>Reading the documentation</title>
+
+        <p>In order to read the documentation offline, you must have a program
+        called forrest installed (se separate forrest documentation). </p>
+
+        <p>If you don't have forrest installed on your own machine, you may
+        read the documentation online, on victorio (NB! forrest is not
+        installed there yet).</p>
+      </section>
+
+      <section>
+        <title>Editing files</title>
+
+        <p>Do <strong>not</strong> use Microsoft Word or any other word
+        processor. Word processors and text editors are two different things.
+        Word processors are made to let the text look nice, text editors are
+        made to edit text. In this project, we edit text. Word processors add
+        secret code that makes text nice, but this code only crashes our
+        programs and hampers our work.</p>
+
+        <p>There is separate documentation on editors on the <a
+        href="../tools/tools.xml">Tools page</a>.</p>
+      </section>
+
+      <section>
+        <title>Downloading files</title>
+
+        <p>For downloading files on <strong>Windows</strong>, see the
+        description on the <a href="../tools/docu-putty.xml">putty page</a>.</p>
+
+        <p>For downloading files on <strong>Linux and Mac</strong>, use the
+        scp procedure. On the command line on your local Linux PC, write
+        (supposing your user name is trond) and you want to copy this file to
+        your local machine and call it off.xml:</p>
+
+        <p>scp trond@victorio.uit.no:gt/doc/offline.xml off.xml</p>
+
+        <p>In order to copy files to victorio, just switch the arguments.</p>
+      </section>
+
+      <section>
+        <title>Troubleshooting</title>
+
+        <p>What may go wrong?</p>
+
+        <dl>
+          <dt>I connect via putty or NiftyTelnet, but do not get any
+          "username" prompt</dt>
+
+          <dd><ol>
+              <li>There may be a firewall active. Contact your system
+              administrator</li>
+
+              <li>Perhaps you forgot to use SSH instead of Telnet</li>
+
+              <li>Perhaps you are not on the internet</li>
+            </ol></dd>
+
+          <dt>More trouble..?</dt>
+
+          <dd>..must be</dd>
+        </dl>
+      </section>
+      <p class="last_modified">Last modified: $Date$, by $Author$</p>
+
+    </section>
+  </body>
+</document>

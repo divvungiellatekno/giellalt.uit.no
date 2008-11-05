@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>The cgi-bin environment</title>
+
+    <authors>
+      <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
+
+      <person email="saara.huhmarniemi@helsinki.fi" name="Saara Huhmarniemi" />
+    </authors>
+  </header>
+
+  <body>
+    <section>
+      <title>CGI-setup</title>
+
+      <p>There are webdemos available for analyzing and generating wordforms
+      and paradigms for different languages. The tools can be called from
+      pages on <a
+      href="http://giellatekno.uit.no/cgi">http://giellatekno.uit.no/cgi</a>.</p>
+
+      <p>Pages are available for calling the tools in different languages. For
+      the time being, the supported user interface languages are English,
+      North Sámi and Norwegian. The tools are available to varying extend for
+      North, Lule and South Sámi, Greenlandish and Faroese.</p>
+
+      <p>The cgi-bin scripts include scripts for analysing and generating
+      words and sentences. The setup is divided between two systems, the
+      cgi-bin and forrest documentation. For example, when adding a new
+      language to the system, changes have to be made both in cgi-bin and
+      forrest documentation.</p>
+
+      <section>
+        <title>CGI-scripts</title>
+
+        <p>The relevant scripts cgi-bin scripts are:</p>
+
+        <ul>
+          <li>smi.cgi<br /> Language-independent cgi-script for calling
+          different language technology applications: analysis,
+          disambiguation, hyphenation and paradigm generation.</li>
+
+          <li>conf.pl<br /> Configuration file that contains most of the
+          variable definitons and their initial values.</li>
+
+          <li>sme-num.cgi, smj-num.cgi, sma-num.cgi<br /> Generates Northern,
+          Lule and Southern Sámi numerals, respectively.</li>
+        </ul>
+
+        <p>All the scripts are developed in cvs-directory, under the module
+        <code>gt/scripts/cgi-scripts</code>. The official location of
+        cg-scripts is on victorio, at the cgi-bin directory. The latest
+        versions are moved to the official directory by script
+        <code>cgi-export</code>. The script exports the latest version of the
+        release-tagged cgi-scripts to the directory. The user must have root
+        privileges to be able to run the script.</p>
+
+        <p>The cgi-bin script smi.cgi is located on victorio, at the cgi-bin
+        directory. The script processes input sentences from the html scheme
+        by the user, and then sends it on to the transducers sme.fst for
+        analysis and isme.fst for generation. The language, charset and the
+        action taken are configured by the parameters given to the script.</p>
+
+        <p>The transducers are located at
+        <code>/opt/smi/lang/bin/</code>and<code>/opt/smi/common/bin/</code></p>
+
+        <p>The minimum requirements for an analyzer to work is the
+        file<code>lang.fst.</code></p>
+      </section>
+
+      <p></p>
+    </section>
+
+    <section>
+      <title>Forrest documentation and cgi-bin</title>
+
+      <p>The cgi-interface is integrated with Forrest documentation and the
+      pages are generated when needed. The pages are named after the language
+      technology application, the language of the application and the user
+      interface language. The prefixes <code>d- g- p- </code>stand for
+      disambiguation (and analysis and hyphenation), generation and paradigm
+      generation. For example the file d-sme.sme.html calls analysis tools for
+      North Sámi and the user interface is in North Sámi. The file
+      p-sme.eng.html calls paradigm generation for North Sámi, the language of
+      the user interface beign English. Finally the file g-sme.nor.html calls
+      generator for North Sámi with Norwegian as the user interface
+      language.</p>
+
+      <p>The texts for different user interface languages are stored in
+      XML-files in the documentation under name:
+      <code>xtdoc/gtuit/src/documentation/content/xdocs/cgi/cgi-lang.xml</code>.
+      There is an xsl-script for creating the html-pages for different
+      language technology applications and transferring the texts from the
+      XML-files to the page. The Forrest documentation does not pose a limit
+      to the languages that are used for the documentation.</p>
+
+      <p>After the cgi-script is called the user interface to the cgi is
+      regenerated together with the results of the query by smi.cgi. The same
+      XML-file that contains the texts for the user interface is used for
+      generating the new html-page.</p>
+    </section>
+
+    <section>
+      <title>An example: how to add new language to the documentation</title>
+
+      <p>To add a new language, changes have to be made both in the server
+      side and in forrest documentation.</p>
+
+      <section>
+        <title>Changes to cgi-bin</title>
+
+        <p>Compile relevant transducers and abbr.txt and copy them to the
+        transducer dir</p>
+
+        <source>mkdir -p /opt/smi/lang/bin
+cp lang.fst abbr.txt /opt/smi/lang/bin
+chgrp cvs /opt/smi/lang/bin/*
+chmod 775 /opt/smi/lang/bin/*</source>
+
+        <p>If you want these files to be updated automatically each day, then
+        add the language code to the script <code>fst2opt</code>.</p>
+      </section>
+
+      <section>
+        <title>Changes to forrest documentation</title>
+
+        <p>First create a page for the language, e.g. lang.xml and store it
+        to<code>xtdoc/gtuit/src/documentation/content/xdocs/</code>. Then add
+        links to the analysis pages:</p>
+
+        <source>&lt;a href="cgi/d-ipk.eng.html"&gt;Analyzing&lt;/a&gt;
+&lt;a href="cgi/g-ipk.eng.html"&gt;Generating&lt;/a&gt;</source>
+
+        <p>The pages are generated automatically by forrest. However, first
+        versions are quite reduced, since there are no language specific texts
+        automatically available. To add text to the page, edit the different
+        interface texts, e.g. for English the file:</p>
+
+        <source>xtdoc/gtuit/src/documentation/content/xdocs/cgi/cgi-eng.xml</source>
+      </section>
+    </section>
+
+    <section>
+      <title>Updating the transducers</title>
+
+      <p>The transducers and other relevant files are updated daily using
+      <code>cron</code> facility. The script <code>gt/script/fst2opt</code> is
+      responsible for retrieving the latest version from cvs, compiling the
+      binaries and copying them to the relevant directories. The crontab is
+      set up by the person who is responsible of the cgi-bin setup.</p>
+    </section>
+
+    <section>
+      <title>The cgi-bin scripts</title>
+
+      <p>The cgi-bin files are written in Perl and use the Perl module CGI.pm.
+      The file smi.cgi is used for analysing and disambiguating as well as
+      generating for different sámi languages. It can be used for other
+      languages without any additional configuration, when the tools that are
+      used by the script (lang.fst etc.) are in place.</p>
+
+      <p>The script contains a conversion from digraphs c1, s1, etc. to some
+      utf-8 characters: č, š, etc. for those who don't have sámi characters in
+      the keyboard. The latin-1 can be chosen as an input language as well,
+      but the page that is generated is utf-8 encoded. The option is tested at
+      the moment and it may turn out that it's not useful.</p>
+
+      <p>The files contain a very good documentation themselves (thanks to Ken
+      Beesley, their original author). For info on how to maintain them, see
+      available books on perl and cgi-bin.</p>
+
+      <ol>
+        <li>Edit the files in cvs-module
+        <code>gt/script/cgi-scripts</code></li>
+
+        <li>Commit the changes to cvs</li>
+
+        <li>If the version is ready for release, tag the version with
+        release-tag using command <code>cvs tag -F release filename1 filename2
+        ..</code>.</li>
+
+        <li>execute the script <code>cgi-export</code>. The tagged files are
+        exported from the cvs to the official directory.</li>
+      </ol>
+    </section>
+
+    <section>
+      <title>Linking due to security</title>
+
+      <p>For security reasons, the webserver on victorio.uit.no is run via
+      symbolic links. The files themselves are not where they seem to be, but
+      in a more secure environment.</p>
+
+      <p>The url to the cgi-bin scripts is:
+      <code>http://sami-cgi-bin.uit.no/cgi-bin/smi/</code></p>
+
+      <p class="last_modified">Last modified $Date$, by
+      $Author$</p>
+    </section>
+  </body>
+</document>

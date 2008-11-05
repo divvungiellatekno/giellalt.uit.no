@@ -1,0 +1,689 @@
+!!!Meeting setup
+
+* Date: 22.9.2008
+* Time: 09.30 Norw. time
+* Place: Internet
+* Tools: SubEthaEdit, iChat
+
+!!!Agenda
+
+Cf. one of the following, depending on context:
+* the upper bar of the SEE window (provided you use the JSPWiki syntax mode)
+* the TOC in Forrest-rendered output, like HTML and PDF
+
+!!!Opening, agenda review, participants
+
+Opened at 10:04.
+
+Present: __Børre, Ciprian, David, Jovsset, Sjur, Thomas, Tomi, Trond__
+
+Absent: __none__
+
+Agenda accepted as is.
+
+!!!Updated task status since last meeting
+
+!!Børre
+* add South Sami texts to the repository
+** done!
+* install Saxon9 on XServe, Victorio
+** __Ciprian__ did it on victorio, __Børre__ did it on XServe
+* fix the remaining hunspell conversion bugs
+** lot's done last week, compounding working as it should
+* Make a divvun-tools download log
+** not done
+* setup Jabber accounts in Tromsø
+** done
+* setup iCal server on the XServe
+** not done
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Ciprian
+* close the open SVN repository at requested paths
+** deperately tried again, without success: we will do the way Sjur proposed
+* meeting with Saara
+* installed the latest version of Saxon on victorio, Lene's and Linda's mac
+* make a test-all target that runs all tests we have (with Sjur and Trond)
+* define and document testing routines (with Sjur and Trond)
+* look at our existing dictionaries
+** done, and the first version of the Norsk-Samisk-Ordbok is coming soon
+** had a look at other free dictionaries on the web for other platforms
+* sketch suggestions for improved dictionary infrastructure
+* continue the dictionary infrastructure discussion (with __Sjur, Trond__)
+* lern how to add texts to the corpus repository, see Corpus gathering (with
+  __Børre___)
+** done
+
+!!Jovsset
+* get the ''Verbh'' manuscript in electronic form
+** Sjur and I composed a letter and sent it to the publisher. Still no answer,
+   they want economic compensentation for the manuscript.
+* Write and translate leaflet text
+** Work in progress. 
+* distribute CD version through the library bus, the language centres and common
+  sami centres in all of Sápmi.
+** no progress still.
+* Talk to translator of ''Gåessie dah jeatjebh åerieminie''
+** Translator is very reluctant to share here translation.
+* ask Sámi newspapers about the best way to inform potential users in Sweden
+** Not done.
+
+!!Lene
+* Work on test routine with __Trond__ and __Sjur__
+
+!!Per-Eric
+* follow-up on the {{smj}} texts from __Kurt Tore__
+* follow-up contracts from ''Nord-Salten avis'' and __Lena Davidsson__ 
+* Work with missing list same_dutkama_pgr.txt
+* Plan a {{smj}} pr tour for our tools
+* contact __Ulf Stefan Winka__ for {{smj}} texts
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Saara
+* add new XSL/XML headers for proofing test docs
+* Set up ways of adding meta-information for proofing correct corpus docs
+  (source info, used in testing or not, added to lexicon or not)
+* implement the ped UI and functionality
+
+!!Sjur
+* follow up on {{sma}} corpus texts
+** tasks now handed over to David (in cooperation with Joseph)
+* name db/risten.no
+** nothing new
+* update the ''Changes'' document
+** nothing new
+* follow-up on some Polderland-related bugs: 621, 630, 652
+** nothing new
+* InDesign documentation
+** nothing new
+* make a test-all target that runs all tests we have (with Trond and Ciprian)
+** nothing new
+* define and document testing routines (with Trond and Ciprian)
+** nothing new
+* write leaflet text
+** much work on the Mac graphics and text, some reorganisation
+* continue the dictionary infrastructure discussion (with __Ciprian, Trond__)
+** Trond and I discussed this a bit
+* make make target for MS Office 2008 spellers
+** not done
+* set up environment for David, our new {{sma}} linguist
+** unix accounts, chat and e-mail working
+** waiting for his Mac
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Thomas
+* look at test cases still not behaving properly
+** nothing this week
+* translate leaflet text
+** not yet
+* install Saxon for XSLT2 and XQuery 1 support
+** done
+* work with presentation at Guovgageaidnu-symposia
+** not yet
+* {{sme->smj}} lexicon conversion to build bilingual lexicon resources, and
+  increase {{smj}} coverage
+** not yet
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+** nothing this week
+
+!!Tomi
+* document how compounding is controlled in the PLX conversion
+** not done
+* compile a new set of speller and hyphenator lexicons Thursday
+** done
+* run speller and hyphenator tests on Friday
+** done
+* fix double hyphen bugs
+** not done
+* fix PL hyphenator errors
+** not done
+* fix PL and Hunspell conversion bugs
+** working
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Trond
+* Hunspell QA README and installation docs
+** Still not done
+* install Saxon for XSLT2 and XQuery 1 support
+** Done
+* (No dictionaries this week)
+** Well, actually: Reordered the smesmj files to a certain extent, and 
+   started working on smesmj MT.
+* Plan recording for text-to-speech
+** Planned, yes, and improved on the rule set and text to be recorded,
+    but no recordings yet.
+* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+** The highlight here was the correction of the past tense umlaut
+   error for South Sámi.
+   
+
+!!!Pedagogical software online
+
+The ped team has added feedback and error pages. They are also using CG to
+analyse the answers from users.
+
+Meeting memos can be found at 
+[http://giellatekno.uit.no/ped/index.html#Meeting+memos]
+
+__TODO:__
+* implement the UI and functionality (__Saara__)
+* get an easy-to-remember URL (__UiT/IT__) 
+* More thorough skin, layout, ... (__External person within the Ped team__,
+  __Internal forrest expert__) This we will postponed until later
+
+!!!Corpus gathering
+
+Processing steps for Sámi-Norwegian place name pairs from SK:
+* convert to xml - retain all data, and a source mark (conversion script in both
+  directions?)
+* include in:
+** bilingual dictionaries
+** risten.no
+** monolingual transducers
+** subset in ped games (manual selection)
+* add inflection etc (using existing data)
+
+__TODO:__
+* continue gathering {{sma}} corpus texts (__David, Jovsset__)
+* follow-up on the {{smj}} texts from __Kurt Tore__ (__Per-Eric__)
+* other contacts: ''Nord-Salten avis'' (__Børge Strandskog__), Lena Davidsson
+  daughter to Lars-Matto Tuolja
+* __Ulf Stefan Winka__ has a lot of {{smj}} texts (__Per-Eric__)
+** __Thomas__ has discussed this with __Per-Eric__
+* plan a {{smj}} pr tour for our tools (__Per-Eric, Thomas__)
+* meet with the Sámi publishers (meeting delayed) (__Jovsset__)
+* add {{sma}} texts to the corpus rep (__Børre, Ciprian__)
+** done except for three documents
+** Ciprian would like to add some more automatisation to the corpus processing
+
+!!!Promoting Divvun
+
+__TODO:__
+* Make a download log (__Børre__)
+** nothing new
+* use a newspaper or something to write about the tools from an end-user point
+  of view (a review in Š, Ávvir, Nordsalten avis?)
+** __Tomi__ will make one contact to Finland
+** forwarded to __Thomas__, the journalist will contact __Thomas__ this week
+** ask the newspapers above about the best way to inform potential users in
+   Sweden (__Jovsset__)
+* Prepare for a coordinated info campaign when Ped is ready (inform teachers
+  about Divvun as well as Ped when we inform about Ped) - next year
+* Tour de Divvun (smj info tour) (__Thomas, Per-Eric__)
+** fix the date
+** make sure the leaflet is ready (see below)
+** bring some CD's
+* make leaflet to inform about the project (__Jovsset__)
+** first draft available at
+   {{xtdoc/sd/src/documentation/content/xdocs/leaflet/leaflet.sv.jspwiki}}
+** translate text when it is finished (__Thomas, Jovsset__)
+* distribute CD version through the library bus, the language centres and common
+  sami centres in all of Sápmi. Gaaltije in Östersund for example.
+  (__Leif Åge, Jovsset__)
+
+!!!Future plans, directions and ideas
+
+See a separate document in {{plan/strat/5year.jspwiki}}.
+
+!!!Infrastructure
+
+Please install [saxon|http://saxon.sourceforge.net/]
+
+In .bashrc:
+{{{
+export CLASSPATH=$CLASSPATH:~/lib/saxon9.jar
+
+alias saxonXQ="java net.sf.saxon.Query"
+alias saxonXSL="java net.sf.saxon.Transform"
+alias xslt2="saxonXSL"
+alias xquery="saxonXQ" <= preferred
+alias xsl2="saxonXSL" <= preferred
+}}}
+
+This is what is on victorio and XServe:
+{{{
+alias saxonxsl="java net.sf.saxon.Transform"
+alias saxonxq="java net.sf.saxon.Query"
+}}}
+
+To accomodate future enhancements in different directions (in rough order of
+importance):
+
+# test bench for all parts of our language technology efforts
+## test bench enhanced, but not yet complete
+# close certain parts of the svn code repository
+## on the todo list
+# more modularised make / build infra (prepare for smn, sms, sjd, others)
+# merge gt, kt and st into one
+# set up the Leopard Server features for collaborative support:
+## permanent chat rooms
+## stored (and indexed) chat transcripts of the chat rooms
+## iCal server / group calendars
+## wiki
+# wiki?  on G5 (is part of Leopard Server) or other web-based documentation
+# improve Forrest stability and i18n support ( the divvun crashes)
+## __Sjur__ has been working on better i18n and pdf rendering
+## __Børre__ has some ideas for getting back to serving static html files
+# reorganise the documentation:
+## differ between target groups
+## get better grouping
+## decide what to write in forrest and what in wiki
+   (cf. Apertium (http://www.apertium.org/ and 
+   http://xixona.dlsi.ua.es/apertium/) for a similar split)
+## update/add missing parts
+# migrate lexc lexicons to XML, splitting the task
+## Name lexica (the Name project)
+## Dictionaries (already in XML, task is to integrate them)
+## At least migrate the lexc open POSes (Komi as a pilot case)
+# change the look of the documentation web
+# sfst? Both as replacement for xfst and for hunspell/open-source proofing tools
+# investigate the NSIS installer, potentially replacing the InstallShield
+  package from Polderland
+# corpus content moved to Max Planck repositories?
+# update infrastructure to allow content-restricted spellers for special target
+  groups
+
+SVN issues:
+* http access not yet available (https only at the moment, but it works as
+  anonymous checkout if the user is ''not'' specified)
+* read access to the whole repo is working, BUT:
+** {{gt/*/polderland}} should be protected
+** {{plan}} should be protected
+* everything will be google-able by default if the repo URL is posted
+* certain users need to be on the UiT VPN to be able to commit (bug #705)
+* UTF-8 problem in svn commit mails: the commit log text is garbled
+
+__TODO:__
+* make a test-all target that runs all tests we have (__Ciprian, Sjur, Trond__)
+* define and document testing routines (__Ciprian, Sjur, Trond__)
+* re-setup Jabber accounts in iChat (__all, Børre__)
+** all but Biret Anne is done, Lene is a question mark
+* follow-up migration to svn:
+** close the open SVN repository at requested paths (__Ciprian__)
+** prepare and discuss with external users: Jack Ruether (__Trond__)
+* setup iCal Server (on XServe) (__Børre__)
+** working on it
+* repair the G5 (__Børre__)
+** has been sent to repair
+* install Saxon for XSLT2 and XQuery 1 support (__all__)
+** XServe (__Børre__)
+*** done
+** victorio (__Børre, Saara__)
+*** Ciprian did it
+** make sure all have updated CLASSPATHs in their {{.bashrc/.profile}}
+*** the relevant aliases has been added in /etc/bashrc
+** install it on the local machines, UiT gang (__Ciprian__)
+** install it on the local machines, Divvun team (__Børre__)
+
+!!!Linguistics
+
+!!North Sámi
+
+(nothing new, see proofing bugs below)
+
+http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=711
+
+!!Lule Sámi
+
+(nothing new, see proofing bugs below)
+
+__TODO:__
+* {{sme->smj}} lexicon conversion to build bilingual lexicon resources, and
+  increase {{smj}} coverage (__Trond__). 
+* Add the words when all words are ready.
+
+!!South Sámi
+
+__TODO:__
+* get the Verbh manuscript in electronic form (__Jovsset__)
+* get __David__ properly set up (__Sjur__)
+
+!!!Name lexicon/risten.no infrastructure
+
+__TODO:__
+# fix i18n bug in risten.no/G5 (so they will work without the proper locale
+  request) (__Sjur__)
+# fix bugs in lexc2xml; add comments to the log element (__Saara__)
+# finish first version of the editing (__Sjur__)
+# test editing of the xml files. If ok, then: (__Sjur, Thomas, Trond__)
+# make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add {{nob}}
+  as well) (the morphological section should be kept intact, in e.g.
+  propernoun-sme-morph.txt) (__Sjur, Saara__)
+# convert propernoun-($lang)-lex.txt to a derived file from common xml files
+  (__Sjur, Tomi, Saara__)
+# implement data synchronisation between [risten.no|http://www.risten.no] and
+   the cvs repo, and possibly other servers (ie the G5 as an alternative server
+   to the public risten.no - it might be faster and better suited than the
+   official one; also local installations could be treated the same way)
+# start to use the xml file as source file
+# clean terms-sme.xml such that all names have the correct tag for their use
+  (e.g. @type=secondary) (__Thomas, linguists__)
+# merge placenames which are errouneously in different entries: e.g. Helsinki,
+  Helsingfors, Helsset (__linguists__)
+# publish the name lexicon on risten.no (__Sjur__)
+# add missing parallel names for placenames (__linguists__)
+# add informative links between first names like Niillas and Nils
+  (__linguists__)
+
+!!Dictionaries
+
+September:
+
+* content revision of smenob: 
+** split in noun, propernoun, adj, verb, other
+** make better content
+* fix the frontend issue (windows, linux)
+** Evaluate dictionary providers (Stardict, ...)
+** Platform?
+
+__TODO:__
+* look at our existing dictionaries (__Ciprian__)
+* sketch suggestions  (__Ciprian__)
+* Continue the dictionary infrastructure discussion (__Ciprian, Sjur, Trond__)
+* clean up and generalise the make infrastructure
+* make Linux and Windows local/integrated versions
+* make simple installer applications
+* make a public release
+** Make a homepage with instructions for dictionary use:
+   {{xtdoc/gtuit/src/documentation/content/xdocs/dict.eng.xml}}
+** Clarify the difference between local and online dictionaries:
+*** Plugin for Firefox and Internet Explorer (online dictionaries)
+
+!!!Proofing tools
+
+!!Hunspell
+
+__Børre__ made a new set of speller files at the end of last week. They are
+available for download 
+[here|http://www.divvun.no/static_files/se.2008-09-20.tar.gz].
+
+__TODO:__
+* QA README and installation docs - report (__Trond__)
+* fix the remaining conversion bugs (__Børre, Tomi__)
+* add suggestion tuning parallell to the PL speller (__Børre__)
+* test the latest hunspell speller files (__Sjur__)
+
+!!Testing
+
+!Spelling Error Markup
+
+__TODO:__
+* Set up ways of adding meta-information (source info, used in testing or not,
+  added to lexicon or not) (__Saara__)
+* test new and nested error markup (__Sjur__)
+
+!!Speller updates
+
+__TODO:__
+* buy MS Office 2008 to all members of the Divvun team (__Børre__)
+** ordered and received
+** installed for Thomas
+* test the spellers (__Divvun team__)
+** __Sjur__ tested very briefly, it seems to work as it should
+* new make target for Office 2008 (__Sjur__)
+* waiting for hyphenation updates for 2008 (__Polderland__)
+** in the pipeline
+
+!!Speller bugs
+
+List of bugs returned from Polderland: 621, 630, 652, 656, 676.
+
+Open issues based on test results:
+
+!sme
+Version: __Davvisámi, version 1.0.1, 2008-06-02__
+* 426 - comp words from Divvun.no - ''guoktedássásaš'' accepted - still __OPEN__
+* 435 - roman numbers - inflection of single letter numbers
+        rejected, as well as some complex numbers (but is ok in {{smj}}) - still
+        __OPEN__
+** we should pregenerate all numbers once and for all, and store them in a
+   separate lexicon file
+* 595 - prefix+name wihtout hyphen (''ovdaLot'' instead of ''ovda-Lot'') - still
+        __OPEN__
+* 600 - gen+hyph compound ''sámi-dáru'' - still __OPEN__
+* 603 - suomabealdi accepted - still __OPEN__
+* 606 - speller accepts VUOHTA compound - still __OPEN__
+* 611 - double hyphen sugg still accepted - still __OPEN__
+* 613 - short gen. as second compound part - still __OPEN__
+* 619 - numerals and pronouns to NAMÁK and SASJ fails - still __OPEN__
+* 627 - prefix + hyhpen does not get accepted - __FIXED__
+* 629 - ''a'' taking part in compounding without hyphen - still __OPEN__
+* 633 - __REGRESSION:__ double hyphens accepted
+* 634 - PropGen+hyph+PropGen - still __OPEN__
+* 641 - numeral+noun compounds - still __OPEN__
+* 642 - noun/adj/proper + hyphen + ain - still __OPEN__
+* 644 - cased numeral+numeral compund - still __OPEN__
+* 646 - adverb + hyphen + noun - still __OPEN__
+* 647 - numerals+NOUN - still __OPEN__
+* 648 - unmotivated suggestions with numeral+noun - still __OPEN__
+* 649 - name + adj compound without hyphen - still __OPEN__
+* 654 - speller does not recognize ordinals on -nuppelogát - still __OPEN__
+* 655 - pron + nai - still __OPEN__
+* 658 - Suggestion saame - still __OPEN__ - won't fix
+* 666 - guovtte- and njealje- - __FIXED__
+* 676 - triple-hyphen - __FIXED__, but double hyphen is still accepted
+* other __regressions:__
+** ''skuvlajagin'' now accepted
+** ''skierranis'' now accepted
+
+!smj
+Version: __Julevsáme, version 1.0.1, 2008-06-02__
+* 435 - roman number - single letter numbers now recognised
+**      we should pregenerate all numbers once and for all, and store them in a
+        separate lexicon file
+**      please note that ''inflection'' of single letter numerals is __fine__ in
+        {{smj}}, as opposed to {{sme}}
+* 595 - prefix+name wihtout hyphen (''tsåhkeLot'' instead of ''tsåhke-Lot'') -
+        still __OPEN__
+* 599 - __REGRESSION:__ numeral attr:s on lot
+* 600 - gen+hyph compound ''sáme-dáro'' - still __OPEN__
+* 616 - Bispadime-me-ráden - still __OPEN__, try to find an acro or abbr ''me''
+* 619 - numerals and pronouns to NAMÁK and SASJ fails - still __OPEN__
+* 629 - ''a'' taking part in compound - still __OPEN__
+* 634 - rop gen + hyphen + Prop gen - still __OPEN__
+* 641 - numeral+noun compounds - still __OPEN__
+* 644 - cased numeral+numeral compund - still __OPEN__
+* 647 - numerals+NOUN - still __OPEN__
+* 648 - unmotivated suggestions with numeral+noun - still __OPEN__
+* 649 - name + adj compound without hyphen - still __OPEN__
+* 650 - noun prefix+name compound without hyphen - still __OPEN__
+* 658 - Suggestion saame - still __OPEN__, won't fix
+* 692 - __NEW:__ - numeral-variants
+* other __regressions:__
+** ''gus'' NOT accepted anymore
+
+__TODO:__
+* compile new speller lexicons (__Tomi__)
+** finally succeeded :) - available in XServe
+** tested, test results soon in svn
+* document how compounding is controlled in the PLX conversion (__Tomi__)
+
+!!Hyphenator bugs
+
+Open issues based on test results :
+
+!sme
+Lexicon version: __Davvisámi, version 1.0.1, 2008-04-01__
+* 468 - __REGRESSION:__''Márkomeanu''
+* 547 - __REGRESSION:__ hyphen in front of vowel: ''Lotnolasealáhusas''
+* 548 - __REGRESSION:__ mid syllable hyphenation: ''Háliidivččen''
+* 549 - __REGRESSION:__ division without hyph: ''Váccedettiin''
+* 673 - adj-derivations: ''guovttenuppelotčoarvvagiin'' (the word is not rec.)
+* 677 - __NEW:__ Wrongly hyphenated ending -danidja - invalid
+
+!smj
+Lexicon version: __Julevsáme, version 1.0.1, 2008-04-01__
+* 545 - __REGRESSION:__ bad hyphenation in compounds: ''åhpadusorganisásjåvnån''
+         (not recognised)
+* 546 - __REGRESSION:__ obligatory hyph rules seem to work in facultative
+        manner: ''organisásjåvnån'' (not recognised)
+* 547 - __REGRESSION:__ hyphen in front of vowel: ''Jienastimnjuolgadusá'' and
+        ''Orgánajs''
+
+__TODO:__
+* fix hyphenator errors (__Tomi__)
+* test hyphenator with new speller lexicons (__Tomi__)
+
+!!InDesign tools
+
+Nothing new.
+
+!!Releases
+
+__TODO:__
+* update the ''Changes'' document (__Sjur__)
+* InDesign documentation (__Sjur__)
+** Norwegian translation received from Davvi Girji
+* prepare 1.1 release soon
+
+!!!Other
+
+!!Forthcoming Sámi allaskuvla conference
+
+Info on the
+[conference site|http://www.samiskhs.no/index.php?c=304&kat=Giellasymposia].
+
+Title submitted is: ''Goallosteapmi ja suorggideapmi Divvun-reaidduin''
+
+Registration:
+[http://www.viaregi.no/registration/deltagerweb.aspx?kid=3440&aid=8700]
+
+Registration deadline is September 10.
+
+__TODO:__
+* write presentation (__Thomas, Tomi__)
+** transferred to Tomi, since __Thomas__ isn't able to go there
+
+!!Text to speech
+
+We are planning a North Sámi text to speech. Work on the text-to-transcription
+(ttt) component has begun, and for the transcription-to-sound we cooperate with
+U Hki. For a forthcoming october demo we have two alternative tracks:
+
+# Do the ttt with quasi-Finnish orthography as output, and plug it onto the
+  Finnish ttt (the Sámi-as-a-Finnish-priest solution)  (pro: the web demo is
+  there, so the demo is within reach; con: several phonemes are missing)
+# Do the ttt with SAMPA as output, and read in 200 sentences, and have Hki
+  generate a voice based upon that (pro: probably better result, head start on
+  the project; con: we risk that is not be done by
+# Do both in parallel. (pro: safety first, not much double work; con: well, 
+  the double work in the phon-sme.xfst file)
+
+The best thing would probably be to do both tracks, to be on the safe side.
+
+{{{
+echo "23847 ja de mun ipmirdán ja 12° ja §12 ja 23,2 ja 23,- ja 23-23" | jietna.sh
+kuokː.hte.lo.gi kolə.bmɑ tuː.hɑːh kɑːvht.tsiː tʃuo.ðiː ɲeæl.lje lo.giː tʃie.dʃɑ 
+jɑ te mun ip.mir.dɑːn jɑ kuokː.hte nup.pe.lohː.kɑːj grɑː.dɑ jɑ pɑ.rɑː.grɑː.fɑ...
+}}}
+
+__TODO:__
+* Technical issues on the ttt automata (__Trond, ...__)
+* Moving input to required xml format (__Helsinki__)
+* Read in the 200 sentences (__Biret Ánne__)
+* Make sounds out of them (__Helsinki__)
+
+
+!!Corpus contracts + open source
+
+Postponed until the svn repository is fully functional (it is too open now).
+
+!!!Next meeting, closing
+
+The next meeting is 29.9.2008, 9.30 Norwegian time.
+
+The meeting was closed at 11:25.
+
+!!!Appendix - task lists for the next five days
+
+!!Boerre
+[iCal|/doc/admin/weekly/2008/Tasks_2008-09-22_Boerre.ics]
+* fix the remaining hunspell conversion bugs
+* Make a divvun-tools download log
+* setup iCal server on the XServe
+* install saxon on the local machines, Divvun team
+** Fixed it for __Thomas__ and __Jovsset__
+* add suggestion tuning parallell to the PL speller
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Ciprian
+[iCal|/doc/admin/weekly/2008/Tasks_2008-09-22_Ciprian.ics]
+* close the open SVN repository at requested paths
+* make a test-all target that runs all tests we have (with Sjur and Trond)
+* define and document testing routines (with Sjur and Trond)
+* look at our existing dictionaries
+* sketch suggestions for improved dictionary infrastructure
+* continue the dictionary infrastructure discussion (with __Sjur, Trond__)
+* add three more texts to the corpus
+
+!!David
+[iCal|/doc/admin/weekly/2008/Tasks_2008-09-22_David.ics]
+* continue gathering {{sma}} corpus texts
+
+!!Jovsset
+[iCal|/doc/admin/weekly/2008/Tasks_2008-09-22_Jovsset.ics]
+* get the ''Verbh'' manuscript in electronic form
+* Write and translate leaflet text, add pictures.
+* Find a suitable infrastructure for the distribution of the CD version.
+  Possible  through the library bus, the language centres and common
+  sami centres in all of Sápmi.
+* Talk to person who can talkt to translator of
+  ''Gåessie dah jeatjebh åerieminie''
+* ask Sámi newspapers about the best way to inform potential users in Sweden
+
+!!Lene
+* Work on test routine with __Trond__ and __Sjur__
+
+!!Per-Eric
+[iCal|/doc/admin/weekly/2008/Tasks_2008-09-22_Per-Eric.ics]
+* follow-up on the {{smj}} texts from __Kurt Tore__
+* follow-up contracts from ''Nord-Salten avis'' and __Lena Davidsson__ 
+* Work with missing list same_dutkama_pgr.txt
+* Plan a {{smj}} pr tour for our tools
+* contact __Ulf Stefan Winka__ for {{smj}} texts
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Saara
+* add new XSL/XML headers for proofing test docs
+* Set up ways of adding meta-information for proofing correct corpus docs
+  (source info, used in testing or not, added to lexicon or not)
+* implement the ped UI and functionality
+
+!!Sjur
+[iCal|/doc/admin/weekly/2008/Tasks_2008-09-22_Sjur.ics]
+* name db/risten.no
+* update the ''Changes'' document
+* follow-up on some Polderland-related bugs: 621, 630, 652
+* InDesign documentation
+* make a test-all target that runs all tests we have (with Trond and Ciprian)
+* define and document testing routines (with __Trond, Ciprian__)
+* write leaflet text
+* continue the dictionary infrastructure discussion (with __Ciprian, Trond__)
+* make make target for MS Office 2008 spellers
+* set up environment for David, our new {{sma}} linguist
+* get __David__ properly set up
+* test the latest hunspell speller files
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Thomas
+* look at test cases still not behaving properly
+* translate leaflet text
+* work with presentation at Guovgageaidnu-symposia
+* {{sme->smj}} lexicon conversion to build bilingual lexicon resources, and
+  increase {{smj}} coverage
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Tomi
+* document how compounding is controlled in the PLX conversion
+* fix double hyphen bugs
+* fix PL hyphenator errors
+* fix PL and Hunspell conversion bugs
+* work with presentation at Guovgageaidnu-symposia
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Trond
+[iCal|/doc/admin/weekly/2008/Tasks_2008-09-22_Trond.ics]
+* Hunspell QA README and installation docs
+* (No dictionaries this week)
+* Plan recording for text-to-speech
+* [fix bugs!|http://giellatekno.uit.no/bugzilla].

@@ -1,0 +1,5588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
+  <header>
+    <title>Speller Test Results for:
+          «tmp/smj-regression.txt»
+        </title>
+  </header>
+  <body>
+    <section>
+      <title>Overview</title>
+      <section>
+        <title>Technical data</title>
+        <p>Language tested: <code>smj</code></p>
+        <p>Document tested: tmp/smj-regression.txt</p>
+        <p>Speller tool:
+          
+            Polderland command line tool
+            </p>
+        <p>Speller lexicon version:
+          Julevsáme, public beta 2, 2007-09-15</p>
+        <p>Test Date:
+        20070916</p>
+        <p>Test Type:
+        regression</p>
+      </section>
+      <section>
+        <title>Result summary</title>
+        <p>Number of input words:
+        <strong>173</strong></p>
+        <table>
+          <caption>Precision and Recall</caption>
+          <tr>
+            <td colspan="2" rowspan="2"/>
+            <th colspan="2">Speller view</th>
+          </tr>
+          <tr>
+            <td>Speller Positive<br/>
+              (number of flagged words):<br/><strong>98</strong></td>
+            <td>Speller Negative<br/>
+              (number of accepted words):<br/><strong>75</strong></td>
+          </tr>
+          <tr>
+            <th rowspan="2">Reality</th>
+            <td>Number of real errors:<br/><strong>19</strong></td>
+            <td>Number of true positives<br/>
+              (detected real errors):<br/><strong>12</strong></td>
+            <td>Number of false negatives<br/>
+              (unflagged spelling errors):<br/><strong>7</strong></td>
+          </tr>
+          <tr>
+            <td>Number of real correct words:<br/><strong>154</strong></td>
+            <td>Number of false positives<br/>
+              (incorrectly flagged words):<br/><strong>86</strong></td>
+            <td>Number of true negatives<br/>
+              (unflagged correct words):<br/><strong>68</strong></td>
+          </tr>
+        </table>
+        <dl>
+          <dt>Precision (tp/(tp+fp)):</dt>
+          <dd>12.24 %</dd>
+          <dt>Recall (tp/(tp+fn)):</dt>
+          <dd>63.16 %</dd>
+          <dt>Accuracy ((tp+tn)/words):</dt>
+          <dd>46.24 %</dd>
+        </dl>
+        <section>
+          <title>Suggestion statistics</title>
+          <ul>
+            <li>Number of spelling errors with <span class="correct">correct
+            suggestion</span>:
+          4</li>
+            <li>Number of spelling errors with <span class="correct">correct
+           suggestion</span> in top 5:
+          4</li>
+            <li>Number of spelling errors with only wrong suggestions:
+          4</li>
+            <li>Number of spelling errors with no suggestions at all:
+          2</li>
+          </ul>
+        </section>
+        <section>
+          <title>Spelling error statistics</title>
+          <ul>
+            <li>Number of spelling errors :
+          19</li>
+            <li>Number of simple spelling errors :
+          12</li>
+            <li>Number of spelling errors with editing distance 2:
+          3</li>
+            <li>Number of spelling errors with editing distance 3 or more:
+          4</li>
+          </ul>
+        </section>
+      </section>
+    </section>
+    <section>
+      <title>True positives (12)
+        </title>
+      <section>
+        <title>Spelling errors with correct suggestions (4)</title>
+        <table>
+          <tr>
+            <th>Input<br/>word</th>
+            <th>Expected<br/>correction</th>
+            <th>Editing<br/>distance</th>
+            <th>Suggestions</th>
+            <th>Bug ID</th>
+            <th>Comment</th>
+          </tr>
+          <tr>
+            <td>Galileajávrregáttev</td>
+            <td>Galilea-jávrregáttev</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (225)
+        </span>Galilea-jávrregáttev</li>
+                <li><span class="score">
+          (217)
+        </span>Galileak-jávrregáttev</li>
+                <li><span class="score">
+          (217)
+        </span>Galileaj-jávrregáttev</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td/>
+          </tr>
+          <tr>
+            <td>vidjor9jit</td>
+            <td>vidjurijt</td>
+            <td>3</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (229)
+        </span>vidjurijt</li>
+                <li><span class="score">
+          (227)
+        </span>vidjuriját</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=398">398</a>
+            </td>
+            <td>vidjor9jit vs vidjurijt</td>
+          </tr>
+          <tr>
+            <td>maññel</td>
+            <td>maŋŋel</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (251)
+        </span>maŋŋel</li>
+                <li><span class="score">
+          (243)
+        </span>maŋŋela</li>
+                <li><span class="score">
+          (243)
+        </span>maŋelt</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=427">427</a>
+            </td>
+            <td>ń not part of word</td>
+          </tr>
+          <tr>
+            <td>1983:aj</td>
+            <td>1983:j</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (245)
+        </span>1983:j</li>
+                <li><span class="score">
+          (243)
+        </span>11983:j</li>
+                <li><span class="score">
+          (243)
+        </span>19833:j</li>
+                <li><span class="score">
+          (243)
+        </span>19883:j</li>
+                <li><span class="score">
+          (243)
+        </span>19983:j</li>
+                <li><span class="score">
+          (241)
+        </span>111983:j</li>
+                <li><span class="score">
+          (241)
+        </span>119833:j</li>
+                <li><span class="score">
+          (241)
+        </span>119883:j</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=509">509</a>
+            </td>
+            <td>accepts SUB-ed entries</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <title>Spelling errors with only incorrect suggestions (6)</title>
+        <table>
+          <tr>
+            <th>Input<br/>word</th>
+            <th>Expected<br/>correction</th>
+            <th>Editing<br/>distance</th>
+            <th>Suggestions</th>
+            <th>Bug ID</th>
+            <th>Comment</th>
+          </tr>
+          <tr>
+            <td>Barggomárnanin</td>
+            <td>Barggomárnánin</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (220)
+        </span>Barggoártanis</li>
+                <li><span class="score">
+          (216)
+        </span>Barggoártanam</li>
+                <li><span class="score">
+          (216)
+        </span>Barggoártanat</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>compound with errors, no suggestion</td>
+          </tr>
+          <tr>
+            <td>barrnev</td>
+            <td>barnev</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>bárnev</li>
+                <li><span class="score">
+          (244)
+        </span>Bjarnev</li>
+                <li><span class="score">
+          (243)
+        </span>bårrev</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td/>
+          </tr>
+          <tr>
+            <td>mańńel</td>
+            <td>maŋŋel</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (249)
+        </span>le</li>
+                <li><span class="score">
+          (247)
+        </span>Bel</li>
+                <li><span class="score">
+          (247)
+        </span>Del</li>
+                <li><span class="score">
+          (247)
+        </span>Hel</li>
+                <li><span class="score">
+          (247)
+        </span>Sel</li>
+                <li><span class="score">
+          (247)
+        </span>bel</li>
+                <li><span class="score">
+          (246)
+        </span>Eli</li>
+                <li><span class="score">
+          (246)
+        </span>Elo</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=427">427</a>
+            </td>
+            <td>ń not part of word</td>
+          </tr>
+          <tr>
+            <td>bullar--dutkamin</td>
+            <td>polardutkamin</td>
+            <td>5</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (225)
+        </span>bullar-dutkamin</li>
+                <li><span class="score">
+          (221)
+        </span>bullar-dutkamijn</li>
+                <li><span class="score">
+          (217)
+        </span>bullara-dutkamin</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=482">482</a>
+            </td>
+            <td>double hyphen</td>
+          </tr>
+          <tr>
+            <td>Nuorttaalij--guovlojn</td>
+            <td>Nuorttalijguovlojn</td>
+            <td>3</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (224)
+        </span>Nuorttaalij-guovlojn</li>
+                <li><span class="score">
+          (216)
+        </span>Nuorttalalij-guovlojn</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=482">482</a>
+            </td>
+            <td>double hyphen</td>
+          </tr>
+          <tr>
+            <td>1983:as</td>
+            <td>1983:s</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>1983:js</li>
+                <li><span class="score">
+          (241)
+        </span>11983:js</li>
+                <li><span class="score">
+          (241)
+        </span>19833:js</li>
+                <li><span class="score">
+          (241)
+        </span>19883:js</li>
+                <li><span class="score">
+          (241)
+        </span>19983:js</li>
+                <li><span class="score">
+          (239)
+        </span>111983:js</li>
+                <li><span class="score">
+          (239)
+        </span>119833:js</li>
+                <li><span class="score">
+          (239)
+        </span>119883:js</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=509">509</a>
+            </td>
+            <td>accepts SUB-ed entries</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <title>Spelling errors without suggestions (2)</title>
+        <table>
+          <tr>
+            <th>Input<br/>word</th>
+            <th>Expected<br/>correction</th>
+            <th>Editing<br/>distance</th>
+            <th>Bug ID</th>
+            <th>Comment</th>
+          </tr>
+          <tr>
+            <td>Allaskåvllådåjmadagas</td>
+            <td>Allaskåvllådåjmadagás</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td/>
+          </tr>
+          <tr>
+            <td>álggoálmmug--sisálggoálmmugij</td>
+            <td>álggoálmmugis-álggoálmmugij</td>
+            <td>4</td>
+            <td>
+              <ol/>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=482">482</a>
+            </td>
+            <td>double hyphen</td>
+          </tr>
+        </table>
+      </section>
+    </section>
+    <section>
+      <title>False positives (86)</title>
+      <section>
+        <title>False positives with suggestions (68)</title>
+        <table>
+          <tr>
+            <th>Input<br/>word</th>
+            <th>Suggestions</th>
+            <th>Bug ID</th>
+            <th>Comment</th>
+          </tr>
+          <tr>
+            <td>Skåvllådåjmadak</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (240)
+        </span>Skåvllåtijmadak</li>
+                <li><span class="score">
+          (238)
+        </span>Skåvllåtijmmadak</li>
+                <li><span class="score">
+          (232)
+        </span>Skåvllåtijmajdak</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>compound</td>
+          </tr>
+          <tr>
+            <td>Svierigadárogielan</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (225)
+        </span>Svieriga-dárogielan</li>
+                <li><span class="score">
+          (223)
+        </span>Svieriga-dárogiellan</li>
+                <li><span class="score">
+          (217)
+        </span>Svieriga-dárogielajn</li>
+                <li><span class="score">
+          (217)
+        </span>Svierigak-dárogielan</li>
+                <li><span class="score">
+          (217)
+        </span>Svierikga-dárogielan</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>name compound i Kintel och Korhon=vuonadár...med liten bok</td>
+          </tr>
+          <tr>
+            <td>alvvásláhkáj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>alvváslágásj</li>
+                <li><span class="score">
+          (241)
+        </span>alvosláhkáj</li>
+                <li><span class="score">
+          (239)
+        </span>alvváslahkak</li>
+                <li><span class="score">
+          (239)
+        </span>alvváslágán</li>
+                <li><span class="score">
+          (235)
+        </span>alvváslágátja</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>adj+noun</td>
+          </tr>
+          <tr>
+            <td>buorredagojt</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (223)
+        </span>boarre-dagojt</li>
+                <li><span class="score">
+          (223)
+        </span>boarredagojt</li>
+                <li><span class="score">
+          (222)
+        </span>Boaresárkujt</li>
+                <li><span class="score">
+          (219)
+        </span>huorrudagájt</li>
+                <li><span class="score">
+          (219)
+        </span>nuorrudagájt</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>adj+noun</td>
+          </tr>
+          <tr>
+            <td>mælggatåhpadusán</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (212)
+        </span>Mælga-åhpadusán</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>adj+noun</td>
+          </tr>
+          <tr>
+            <td>skihpahuodnahijn</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (217)
+        </span>skihpaluottagijn</li>
+                <li><span class="score">
+          (217)
+        </span>skihpam-huodnahijn</li>
+                <li><span class="score">
+          (217)
+        </span>skihpamhuodnahijn</li>
+                <li><span class="score">
+          (213)
+        </span>skihppám-huodnahijn</li>
+                <li><span class="score">
+          (213)
+        </span>skihppámhuodnahijn</li>
+                <li><span class="score">
+          (213)
+        </span>skihpavuobdagijn</li>
+                <li><span class="score">
+          (213)
+        </span>skáhpa-huodnahijn</li>
+                <li><span class="score">
+          (213)
+        </span>skáhpahuodnahijn</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>adj+noun</td>
+          </tr>
+          <tr>
+            <td>skihpasujtár</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (241)
+        </span>skihppijsujtár</li>
+                <li><span class="score">
+          (241)
+        </span>skihppijsujtár-</li>
+                <li><span class="score">
+          (233)
+        </span>skihppijsujtára</li>
+                <li><span class="score">
+          (233)
+        </span>skihppijsujtára-</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>adj+noun</td>
+          </tr>
+          <tr>
+            <td>älla</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (253)
+        </span>ällá</li>
+                <li><span class="score">
+          (251)
+        </span>älá</li>
+                <li><span class="score">
+          (245)
+        </span>bällá</li>
+                <li><span class="score">
+          (245)
+        </span>dällá</li>
+                <li><span class="score">
+          (245)
+        </span>gällá</li>
+                <li><span class="score">
+          (245)
+        </span>sällá</li>
+                <li><span class="score">
+          (245)
+        </span>ällák</li>
+                <li><span class="score">
+          (245)
+        </span>älláj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>strange suggestions</td>
+          </tr>
+          <tr>
+            <td>åbmudaksiebrre</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (223)
+        </span>åbmudak-sæbrre</li>
+                <li><span class="score">
+          (223)
+        </span>åbmudaksæbrre</li>
+                <li><span class="score">
+          (219)
+        </span>åbmudakværro</li>
+                <li><span class="score">
+          (219)
+        </span>åbmudakværro-</li>
+                <li><span class="score">
+          (217)
+        </span>åbmudakværo</li>
+                <li><span class="score">
+          (217)
+        </span>åbmudakværo-</li>
+                <li><span class="score">
+          (215)
+        </span>åbmudak-sæbrrek</li>
+                <li><span class="score">
+          (215)
+        </span>åbmudak-sæbrrem</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id="/>
+            </td>
+            <td>missing compound</td>
+          </tr>
+          <tr>
+            <td>Nárvijkan</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>Narvikan</li>
+                <li><span class="score">
+          (241)
+        </span>Narvijga</li>
+                <li><span class="score">
+          (239)
+        </span>Narvijgen</li>
+                <li><span class="score">
+          (235)
+        </span>Narvikajn</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=407">407</a>
+            </td>
+            <td>missing smj names</td>
+          </tr>
+          <tr>
+            <td>däbbaga</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (247)
+        </span>dä9bbaga</li>
+                <li><span class="score">
+          (247)
+        </span>dä9bbaga-</li>
+                <li><span class="score">
+          (245)
+        </span>däbbobaga</li>
+                <li><span class="score">
+          (245)
+        </span>däbbubaga</li>
+                <li><span class="score">
+          (243)
+        </span>däbboga</li>
+                <li><span class="score">
+          (243)
+        </span>däbbuga</li>
+                <li><span class="score">
+          (243)
+        </span>dæbbaga</li>
+                <li><span class="score">
+          (243)
+        </span>dæbbaga-</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=411">411</a>
+            </td>
+            <td>ä not recognised</td>
+          </tr>
+          <tr>
+            <td>gähtjáj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (253)
+        </span>gähttjáj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=411">411</a>
+            </td>
+            <td>ä not recognised</td>
+          </tr>
+          <tr>
+            <td>gæhtjáj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (253)
+        </span>gæhttjáj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=411">411</a>
+            </td>
+            <td>ä not recognised</td>
+          </tr>
+          <tr>
+            <td>vällahit</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>vellahit</li>
+                <li><span class="score">
+          (243)
+        </span>vællahit</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=411">411</a>
+            </td>
+            <td>ä not recognised</td>
+          </tr>
+          <tr>
+            <td>lågenanniellja</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (241)
+        </span>lågenannælját</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=418">418</a>
+            </td>
+            <td>missing numeral</td>
+          </tr>
+          <tr>
+            <td>bielleájggeåhpadussaj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (211)
+        </span>bællájgeåhpadussaj</li>
+                <li><span class="score">
+          (209)
+        </span>bielkájgeåhpadussaj</li>
+                <li><span class="score">
+          (209)
+        </span>bielljerájgge-åhpadussaj</li>
+                <li><span class="score">
+          (209)
+        </span>bielljerájggeåhpadussaj</li>
+                <li><span class="score">
+          (208)
+        </span>Bielajge-åhpadussaj</li>
+                <li><span class="score">
+          (207)
+        </span>bielljerájge-åhpadussaj</li>
+                <li><span class="score">
+          (207)
+        </span>bielljerájgeåhpadussaj</li>
+                <li><span class="score">
+          (207)
+        </span>iellemájgge-åhpadussaj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=419">419</a>
+            </td>
+            <td>3-part compound</td>
+          </tr>
+          <tr>
+            <td>gievramuorra</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (221)
+        </span>fiervvámuorra</li>
+                <li><span class="score">
+          (221)
+        </span>fiervvámuorra-</li>
+                <li><span class="score">
+          (221)
+        </span>gievra-moarrá</li>
+                <li><span class="score">
+          (221)
+        </span>gievramoarrá</li>
+                <li><span class="score">
+          (219)
+        </span>fiervvámuora</li>
+                <li><span class="score">
+          (219)
+        </span>fiervvámuora-</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=421">421</a>
+            </td>
+            <td>adj-nom+noun</td>
+          </tr>
+          <tr>
+            <td>gievrasalmasj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (235)
+        </span>gievrastalásj</li>
+                <li><span class="score">
+          (227)
+        </span>gievrastallamijs</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=421">421</a>
+            </td>
+            <td>adj-attr+noun</td>
+          </tr>
+          <tr>
+            <td>gievrasmuorra</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (233)
+        </span>gievrassuorak</li>
+                <li><span class="score">
+          (227)
+        </span>gievrapsuorak</li>
+                <li><span class="score">
+          (225)
+        </span>gievrassuorgak</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=421">421</a>
+            </td>
+            <td>adj-attr+noun</td>
+          </tr>
+          <tr>
+            <td>lågenanniellja</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (241)
+        </span>lågenannælját</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=481">481</a>
+            </td>
+            <td>missing numerals</td>
+          </tr>
+          <tr>
+            <td>milliåvnnå</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (237)
+        </span>millijåvnåt</li>
+                <li><span class="score">
+          (235)
+        </span>milijåvnåt</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=481">481</a>
+            </td>
+            <td>missing numerals</td>
+          </tr>
+          <tr>
+            <td>milliåvnå</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (239)
+        </span>millijåvnåt</li>
+                <li><span class="score">
+          (237)
+        </span>milijåvnåt</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=481">481</a>
+            </td>
+            <td>missing numerals</td>
+          </tr>
+          <tr>
+            <td>NSR</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (255)
+        </span>NSR-</li>
+                <li><span class="score">
+          (247)
+        </span>NSR-N-</li>
+                <li><span class="score">
+          (247)
+        </span>NSR:</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=483">483</a>
+            </td>
+            <td>missing bare abbrs</td>
+          </tr>
+          <tr>
+            <td>PDF</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>BD-</li>
+                <li><span class="score">
+          (241)
+        </span>BD:</li>
+                <li><span class="score">
+          (241)
+        </span>BOF-</li>
+                <li><span class="score">
+          (240)
+        </span>BD.</li>
+                <li><span class="score">
+          (237)
+        </span>DFD-</li>
+                <li><span class="score">
+          (237)
+        </span>DSF-</li>
+                <li><span class="score">
+          (237)
+        </span>PFK-</li>
+                <li><span class="score">
+          (237)
+        </span>PFL-</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=483">483</a>
+            </td>
+            <td>missing bare abbrs</td>
+          </tr>
+          <tr>
+            <td>PDF:</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>BD-</li>
+                <li><span class="score">
+          (241)
+        </span>BD:</li>
+                <li><span class="score">
+          (241)
+        </span>BOF-</li>
+                <li><span class="score">
+          (240)
+        </span>BD.</li>
+                <li><span class="score">
+          (237)
+        </span>DFD-</li>
+                <li><span class="score">
+          (237)
+        </span>DSF-</li>
+                <li><span class="score">
+          (237)
+        </span>PFK-</li>
+                <li><span class="score">
+          (237)
+        </span>PFL-</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=483">483</a>
+            </td>
+            <td>missing bare abbrs</td>
+          </tr>
+          <tr>
+            <td>USA</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (255)
+        </span>USA-</li>
+                <li><span class="score">
+          (249)
+        </span>OSA</li>
+                <li><span class="score">
+          (247)
+        </span>USA:</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=483">483</a>
+            </td>
+            <td>missing bare abbrs</td>
+          </tr>
+          <tr>
+            <td>Áila</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (253)
+        </span>Aila</li>
+                <li><span class="score">
+          (249)
+        </span>Aili</li>
+                <li><span class="score">
+          (247)
+        </span>Aalla</li>
+                <li><span class="score">
+          (245)
+        </span>Alila</li>
+                <li><span class="score">
+          (245)
+        </span>Arila</li>
+                <li><span class="score">
+          (245)
+        </span>Avila</li>
+                <li><span class="score">
+          (245)
+        </span>Ailak</li>
+                <li><span class="score">
+          (245)
+        </span>Ailaj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áile</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (253)
+        </span>Aile</li>
+                <li><span class="score">
+          (245)
+        </span>Ailek</li>
+                <li><span class="score">
+          (245)
+        </span>Ailen</li>
+                <li><span class="score">
+          (245)
+        </span>Ailes</li>
+                <li><span class="score">
+          (245)
+        </span>Ailev</li>
+                <li><span class="score">
+          (245)
+        </span>Haile</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áilegas</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>Ailega</li>
+                <li><span class="score">
+          (239)
+        </span>Amalekas</li>
+                <li><span class="score">
+          (237)
+        </span>Mielgas</li>
+                <li><span class="score">
+          (237)
+        </span>Mielgas-</li>
+                <li><span class="score">
+          (236)
+        </span>Ájllegis</li>
+                <li><span class="score">
+          (235)
+        </span>Aileenis</li>
+                <li><span class="score">
+          (235)
+        </span>Ailenga</li>
+                <li><span class="score">
+          (235)
+        </span>Ailesga</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áilegasjohka</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (226)
+        </span>Ájllegasjga</li>
+                <li><span class="score">
+          (223)
+        </span>Mielgasjga</li>
+                <li><span class="score">
+          (221)
+        </span>Gielasjohka</li>
+                <li><span class="score">
+          (221)
+        </span>Bielegasjga</li>
+                <li><span class="score">
+          (219)
+        </span>Ealgajohka</li>
+                <li><span class="score">
+          (219)
+        </span>Bielkásjga</li>
+                <li><span class="score">
+          (219)
+        </span>Giegasjga</li>
+                <li><span class="score">
+          (219)
+        </span>Gilgasjga</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áilegasjávri</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (225)
+        </span>Hallagasjávri</li>
+                <li><span class="score">
+          (223)
+        </span>Gielkájávri</li>
+                <li><span class="score">
+          (223)
+        </span>Jiegajávri</li>
+                <li><span class="score">
+          (221)
+        </span>Bieggajávri</li>
+                <li><span class="score">
+          (221)
+        </span>Gielasjávri</li>
+                <li><span class="score">
+          (221)
+        </span>Hallagasjávrij</li>
+                <li><span class="score">
+          (221)
+        </span>Lieđasjávri</li>
+                <li><span class="score">
+          (221)
+        </span>Pierasjávri</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áilegasvárri</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (225)
+        </span>Cielkavárri</li>
+                <li><span class="score">
+          (223)
+        </span>Cielkavári</li>
+                <li><span class="score">
+          (221)
+        </span>Bieggavárri</li>
+                <li><span class="score">
+          (221)
+        </span>Cielkavárrij</li>
+                <li><span class="score">
+          (221)
+        </span>Gielasvárri</li>
+                <li><span class="score">
+          (221)
+        </span>Gilkavárri</li>
+                <li><span class="score">
+          (221)
+        </span>Lieđasvárri</li>
+                <li><span class="score">
+          (219)
+        </span>Alggávárri</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áilegasčohkka</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (221)
+        </span>Bieggačohkka</li>
+                <li><span class="score">
+          (219)
+        </span>Bieggačohka</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áili</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (253)
+        </span>Aili</li>
+                <li><span class="score">
+          (249)
+        </span>Ailij</li>
+                <li><span class="score">
+          (249)
+        </span>Aila</li>
+                <li><span class="score">
+          (245)
+        </span>Ailik</li>
+                <li><span class="score">
+          (245)
+        </span>Ailio</li>
+                <li><span class="score">
+          (245)
+        </span>Ailin</li>
+                <li><span class="score">
+          (245)
+        </span>Ailis</li>
+                <li><span class="score">
+          (245)
+        </span>Ailiv</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áillohaš</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (229)
+        </span>Ailoga</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áillonieida</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (225)
+        </span>Paloniemijda</li>
+                <li><span class="score">
+          (225)
+        </span>Saloniemijda</li>
+                <li><span class="score">
+          (223)
+        </span>Sielonieda</li>
+                <li><span class="score">
+          (223)
+        </span>Sielonieda-</li>
+                <li><span class="score">
+          (221)
+        </span>Allonenijda</li>
+                <li><span class="score">
+          (221)
+        </span>Salonikijda</li>
+                <li><span class="score">
+          (221)
+        </span>Sieloniedada</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áilloš</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (241)
+        </span>Ailo</li>
+                <li><span class="score">
+          (239)
+        </span>Ailok</li>
+                <li><span class="score">
+          (239)
+        </span>Ailoj</li>
+                <li><span class="score">
+          (239)
+        </span>Ailon</li>
+                <li><span class="score">
+          (239)
+        </span>Ailos</li>
+                <li><span class="score">
+          (239)
+        </span>Ailov</li>
+                <li><span class="score">
+          (237)
+        </span>Ailu</li>
+                <li><span class="score">
+          (235)
+        </span>Ailuk</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>Áillun</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>Ailun</li>
+                <li><span class="score">
+          (247)
+        </span>Ailon</li>
+                <li><span class="score">
+          (243)
+        </span>Ailujn</li>
+                <li><span class="score">
+          (243)
+        </span>Allun</li>
+                <li><span class="score">
+          (243)
+        </span>Gillun</li>
+                <li><span class="score">
+          (243)
+        </span>Jillun</li>
+                <li><span class="score">
+          (243)
+        </span>Sillun</li>
+                <li><span class="score">
+          (243)
+        </span>Villun</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+            </td>
+            <td>missing names</td>
+          </tr>
+          <tr>
+            <td>dakkirge</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (248)
+        </span>Dakarge</li>
+                <li><span class="score">
+          (241)
+        </span>Makirge</li>
+                <li><span class="score">
+          (241)
+        </span>dåkkijge</li>
+                <li><span class="score">
+          (241)
+        </span>dággige</li>
+                <li><span class="score">
+          (241)
+        </span>dákkárge</li>
+                <li><span class="score">
+          (240)
+        </span>Dakargen</li>
+                <li><span class="score">
+          (240)
+        </span>Dakarage</li>
+                <li><span class="score">
+          (240)
+        </span>Dakiage</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=496">496</a>
+            </td>
+            <td>unrecognised clitics</td>
+          </tr>
+          <tr>
+            <td>munjik</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (245)
+        </span>munji</li>
+                <li><span class="score">
+          (244)
+        </span>Munik</li>
+                <li><span class="score">
+          (238)
+        </span>Munijga</li>
+                <li><span class="score">
+          (238)
+        </span>Munijge</li>
+                <li><span class="score">
+          (238)
+        </span>Munkak</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=496">496</a>
+            </td>
+            <td>unrecognised clitics</td>
+          </tr>
+          <tr>
+            <td>måjge</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (247)
+        </span>måjege</li>
+                <li><span class="score">
+          (245)
+        </span>måje</li>
+                <li><span class="score">
+          (245)
+        </span>måje-</li>
+                <li><span class="score">
+          (243)
+        </span>Håjge</li>
+                <li><span class="score">
+          (243)
+        </span>Nåjge</li>
+                <li><span class="score">
+          (243)
+        </span>måjve</li>
+                <li><span class="score">
+          (243)
+        </span>måjve-</li>
+                <li><span class="score">
+          (242)
+        </span>Mujege</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=496">496</a>
+            </td>
+            <td>unrecognised clitics</td>
+          </tr>
+          <tr>
+            <td>månge</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (247)
+        </span>månage</li>
+                <li><span class="score">
+          (245)
+        </span>månnige</li>
+                <li><span class="score">
+          (245)
+        </span>månnuge</li>
+                <li><span class="score">
+          (243)
+        </span>Hånge</li>
+                <li><span class="score">
+          (243)
+        </span>Nånge</li>
+                <li><span class="score">
+          (242)
+        </span>Munige</li>
+                <li><span class="score">
+          (242)
+        </span>Munkge</li>
+                <li><span class="score">
+          (242)
+        </span>Mange</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=496">496</a>
+            </td>
+            <td>unrecognised clitics</td>
+          </tr>
+          <tr>
+            <td>VG</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (255)
+        </span>VG-</li>
+                <li><span class="score">
+          (247)
+        </span>VG:</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=503">503</a>
+            </td>
+            <td>nom and comp of acro</td>
+          </tr>
+          <tr>
+            <td>Visa-</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (246)
+        </span>Ovisa</li>
+                <li><span class="score">
+          (246)
+        </span>Vipsa</li>
+                <li><span class="score">
+          (246)
+        </span>Vipsa-</li>
+                <li><span class="score">
+          (244)
+        </span>Visjá</li>
+                <li><span class="score">
+          (244)
+        </span>Viská</li>
+                <li><span class="score">
+          (244)
+        </span>Viská-</li>
+                <li><span class="score">
+          (243)
+        </span>Lisa</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>allaskåvllåj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (224)
+        </span>Allasuolluj</li>
+                <li><span class="score">
+          (223)
+        </span>hållåmståvllåj</li>
+                <li><span class="score">
+          (221)
+        </span>hållåmståvlåj</li>
+                <li><span class="score">
+          (221)
+        </span>hållåmståvlåj-</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>biehtse</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (249)
+        </span>biehtes</li>
+                <li><span class="score">
+          (247)
+        </span>biehttes</li>
+                <li><span class="score">
+          (247)
+        </span>biehtseg-</li>
+                <li><span class="score">
+          (247)
+        </span>biehtsek</li>
+                <li><span class="score">
+          (245)
+        </span>biehte</li>
+                <li><span class="score">
+          (245)
+        </span>iehtse</li>
+                <li><span class="score">
+          (244)
+        </span>Biedes</li>
+                <li><span class="score">
+          (243)
+        </span>biehtte</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>biehtsemánno</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (231)
+        </span>miehtemanno</li>
+                <li><span class="score">
+          (231)
+        </span>miehtemanno-</li>
+                <li><span class="score">
+          (229)
+        </span>miehtemano</li>
+                <li><span class="score">
+          (229)
+        </span>miehtemano-</li>
+                <li><span class="score">
+          (225)
+        </span>miehtemanon</li>
+                <li><span class="score">
+          (223)
+        </span>miehtemannon</li>
+                <li><span class="score">
+          (223)
+        </span>miehtemannok</li>
+                <li><span class="score">
+          (223)
+        </span>miehtemannos</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>biele</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>bælle-</li>
+                <li><span class="score">
+          (247)
+        </span>bieleg-</li>
+                <li><span class="score">
+          (247)
+        </span>bielek</li>
+                <li><span class="score">
+          (247)
+        </span>bielen</li>
+                <li><span class="score">
+          (247)
+        </span>bieles</li>
+                <li><span class="score">
+          (247)
+        </span>bieles-</li>
+                <li><span class="score">
+          (247)
+        </span>bielge</li>
+                <li><span class="score">
+          (247)
+        </span>bielge-</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>báŋkas</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (245)
+        </span>báŋas</li>
+                <li><span class="score">
+          (243)
+        </span>beŋkas</li>
+                <li><span class="score">
+          (243)
+        </span>báhkas</li>
+                <li><span class="score">
+          (243)
+        </span>báhkas-</li>
+                <li><span class="score">
+          (243)
+        </span>báskas</li>
+                <li><span class="score">
+          (241)
+        </span>Láŋkás</li>
+                <li><span class="score">
+          (241)
+        </span>bajkas</li>
+                <li><span class="score">
+          (241)
+        </span>baskas</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>báŋŋka</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (247)
+        </span>báŋak</li>
+                <li><span class="score">
+          (243)
+        </span>báŋa</li>
+                <li><span class="score">
+          (243)
+        </span>báŋaga</li>
+                <li><span class="score">
+          (243)
+        </span>bæŋŋka</li>
+                <li><span class="score">
+          (243)
+        </span>bæŋŋka-</li>
+                <li><span class="score">
+          (241)
+        </span>beŋka</li>
+                <li><span class="score">
+          (241)
+        </span>beŋka-</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>báŋŋkaj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>báŋaj</li>
+                <li><span class="score">
+          (243)
+        </span>bæŋŋkaj</li>
+                <li><span class="score">
+          (241)
+        </span>beŋkaj</li>
+                <li><span class="score">
+          (241)
+        </span>beŋkaj-</li>
+                <li><span class="score">
+          (241)
+        </span>fáŋŋgaj</li>
+                <li><span class="score">
+          (241)
+        </span>máŋŋgaj</li>
+                <li><span class="score">
+          (239)
+        </span>Láŋkáj</li>
+                <li><span class="score">
+          (239)
+        </span>båŋkåj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>dile</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>dale</li>
+                <li><span class="score">
+          (250)
+        </span>Dale</li>
+                <li><span class="score">
+          (249)
+        </span>dalle</li>
+                <li><span class="score">
+          (247)
+        </span>diele</li>
+                <li><span class="score">
+          (247)
+        </span>diele-</li>
+                <li><span class="score">
+          (247)
+        </span>dilbe</li>
+                <li><span class="score">
+          (247)
+        </span>dilbe-</li>
+                <li><span class="score">
+          (247)
+        </span>dilse</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>fámon</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>Amon</li>
+                <li><span class="score">
+          (243)
+        </span>fálon</li>
+                <li><span class="score">
+          (243)
+        </span>fáron</li>
+                <li><span class="score">
+          (243)
+        </span>gámon</li>
+                <li><span class="score">
+          (243)
+        </span>hámon</li>
+                <li><span class="score">
+          (241)
+        </span>Ammon</li>
+                <li><span class="score">
+          (241)
+        </span>gamon</li>
+                <li><span class="score">
+          (241)
+        </span>hamon</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>guossa</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (253)
+        </span>goassa</li>
+                <li><span class="score">
+          (251)
+        </span>Kuosa</li>
+                <li><span class="score">
+          (251)
+        </span>goassá</li>
+                <li><span class="score">
+          (251)
+        </span>guossi</li>
+                <li><span class="score">
+          (249)
+        </span>goassi</li>
+                <li><span class="score">
+          (247)
+        </span>Kuosas</li>
+                <li><span class="score">
+          (245)
+        </span>Kousa</li>
+                <li><span class="score">
+          (245)
+        </span>kruossa</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>isetábnas</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (229)
+        </span>Astanas</li>
+                <li><span class="score">
+          (225)
+        </span>jiestanis</li>
+                <li><span class="score">
+          (225)
+        </span>stánas</li>
+                <li><span class="score">
+          (225)
+        </span>stábnásj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>mierredimájgijt</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (219)
+        </span>mierredimijat</li>
+                <li><span class="score">
+          (217)
+        </span>mieredimijat</li>
+                <li><span class="score">
+          (217)
+        </span>mierredimijdat</li>
+                <li><span class="score">
+          (217)
+        </span>mierredimijnat</li>
+                <li><span class="score">
+          (217)
+        </span>mierredim-dájgijt</li>
+                <li><span class="score">
+          (217)
+        </span>mierredim-lájgijt</li>
+                <li><span class="score">
+          (217)
+        </span>mierredim-rájgijt</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>muorra</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>moarrá</li>
+                <li><span class="score">
+          (251)
+        </span>moarrá-</li>
+                <li><span class="score">
+          (251)
+        </span>muorri</li>
+                <li><span class="score">
+          (246)
+        </span>Muorral</li>
+                <li><span class="score">
+          (245)
+        </span>muorrára</li>
+                <li><span class="score">
+          (245)
+        </span>muorrár</li>
+                <li><span class="score">
+          (244)
+        </span>Muuri</li>
+                <li><span class="score">
+          (243)
+        </span>guorra</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>siebrijs</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>sæbrrijs</li>
+                <li><span class="score">
+          (245)
+        </span>siebburijs</li>
+                <li><span class="score">
+          (245)
+        </span>siebijs</li>
+                <li><span class="score">
+          (243)
+        </span>diebrijs</li>
+                <li><span class="score">
+          (243)
+        </span>giebrijs</li>
+                <li><span class="score">
+          (243)
+        </span>sæbrrijis</li>
+                <li><span class="score">
+          (243)
+        </span>siebdijs</li>
+                <li><span class="score">
+          (243)
+        </span>sierrijs</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>siebrre</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (253)
+        </span>sæbrre</li>
+                <li><span class="score">
+          (253)
+        </span>sæbrre-</li>
+                <li><span class="score">
+          (245)
+        </span>sæbrrek</li>
+                <li><span class="score">
+          (245)
+        </span>sæbrrem</li>
+                <li><span class="score">
+          (245)
+        </span>sæbrren</li>
+                <li><span class="score">
+          (245)
+        </span>sæbrres</li>
+                <li><span class="score">
+          (245)
+        </span>sæbrret</li>
+                <li><span class="score">
+          (245)
+        </span>sæbrrev</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>skåvlås</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>ståvlås</li>
+                <li><span class="score">
+          (241)
+        </span>skåvvalus</li>
+                <li><span class="score">
+          (241)
+        </span>skåvllis</li>
+                <li><span class="score">
+          (241)
+        </span>ståvllås</li>
+                <li><span class="score">
+          (239)
+        </span>skåvvus</li>
+                <li><span class="score">
+          (239)
+        </span>skållus</li>
+                <li><span class="score">
+          (237)
+        </span>skuovllus</li>
+                <li><span class="score">
+          (237)
+        </span>skåjvås</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>skåvlåsj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>ståvlåsj</li>
+                <li><span class="score">
+          (241)
+        </span>skåvllisj</li>
+                <li><span class="score">
+          (237)
+        </span>skuovllusj</li>
+                <li><span class="score">
+          (237)
+        </span>ståvlåjs</li>
+                <li><span class="score">
+          (235)
+        </span>skoavvusj</li>
+                <li><span class="score">
+          (235)
+        </span>skoallusj</li>
+                <li><span class="score">
+          (235)
+        </span>skullusj</li>
+                <li><span class="score">
+          (235)
+        </span>skuvdusj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>suohkanin</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>suohkadin</li>
+                <li><span class="score">
+          (243)
+        </span>suohkunin</li>
+                <li><span class="score">
+          (239)
+        </span>suohkadijn</li>
+                <li><span class="score">
+          (239)
+        </span>suohkunijn</li>
+                <li><span class="score">
+          (236)
+        </span>ståganin</li>
+                <li><span class="score">
+          (235)
+        </span>sjuohkadin</li>
+                <li><span class="score">
+          (235)
+        </span>sjuohpanin</li>
+                <li><span class="score">
+          (235)
+        </span>skuolkanin</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>vissa</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (249)
+        </span>vijssá</li>
+                <li><span class="score">
+          (247)
+        </span>visspa</li>
+                <li><span class="score">
+          (247)
+        </span>visspa-</li>
+                <li><span class="score">
+          (245)
+        </span>Ovisa</li>
+                <li><span class="score">
+          (245)
+        </span>vipsa</li>
+                <li><span class="score">
+          (245)
+        </span>vipsa-</li>
+                <li><span class="score">
+          (245)
+        </span>vissjá</li>
+                <li><span class="score">
+          (245)
+        </span>visská</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>vuojnno</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>vuojnnu</li>
+                <li><span class="score">
+          (247)
+        </span>vuojnnon</li>
+                <li><span class="score">
+          (247)
+        </span>vuojnnop</li>
+                <li><span class="score">
+          (245)
+        </span>vuojnos</li>
+                <li><span class="score">
+          (243)
+        </span>vuojn</li>
+                <li><span class="score">
+          (243)
+        </span>vuojnnuk</li>
+                <li><span class="score">
+          (243)
+        </span>vuojnnuj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>ájge</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (254)
+        </span>Ájge</li>
+                <li><span class="score">
+          (252)
+        </span>Ájgge</li>
+                <li><span class="score">
+          (247)
+        </span>ajeg-</li>
+                <li><span class="score">
+          (247)
+        </span>dájge</li>
+                <li><span class="score">
+          (247)
+        </span>dájge-</li>
+                <li><span class="score">
+          (247)
+        </span>lájge</li>
+                <li><span class="score">
+          (247)
+        </span>lájge-</li>
+                <li><span class="score">
+          (247)
+        </span>rájge</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>ájgev</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (254)
+        </span>Ájgev</li>
+                <li><span class="score">
+          (247)
+        </span>dájgev</li>
+                <li><span class="score">
+          (247)
+        </span>lájgev</li>
+                <li><span class="score">
+          (247)
+        </span>rájgev</li>
+                <li><span class="score">
+          (247)
+        </span>sájgev</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>ájgij</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (254)
+        </span>Ájgij</li>
+                <li><span class="score">
+          (247)
+        </span>dájgij</li>
+                <li><span class="score">
+          (247)
+        </span>dájgij-</li>
+                <li><span class="score">
+          (247)
+        </span>lájgij</li>
+                <li><span class="score">
+          (247)
+        </span>lájgij-</li>
+                <li><span class="score">
+          (247)
+        </span>rájgij</li>
+                <li><span class="score">
+          (247)
+        </span>rájgij-</li>
+                <li><span class="score">
+          (247)
+        </span>sájgij</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+            </td>
+            <td>unrec words</td>
+          </tr>
+          <tr>
+            <td>muoralasj</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>moarálasj</li>
+                <li><span class="score">
+          (245)
+        </span>muorkálasj</li>
+                <li><span class="score">
+          (243)
+        </span>morálasj</li>
+                <li><span class="score">
+          (243)
+        </span>muvralasj</li>
+              </ol>
+            </td>
+            <td>
+              <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=512">512</a>
+            </td>
+            <td>deriv -lasj not recognised</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <title>False positives without suggestions (18)</title>
+        <p>stivrrimássjetjállagij oahppambiednikvuogádagá allaskåvllågähttjalus Iednegiellaoahppaábnnasa Allaskåvllågähttjalus Allaskåvllådievnastusdåjmadahka lågenanguokta Áillehašvádjájohka Áillehašnjunni Áilegasvuopmi Áilegasmuotki VG-kafean VG-biebbmo álmmukallaskåvlån joarkkaskåvlåv niehkkealmasjvuorro merragálvvogárvvo goasskemrájddohadde </p>
+      </section>
+    </section>
+    <section>
+      <title>False negatives (7)</title>
+      <table>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th>Editing<br/>distance</th>
+          <th>Bug ID</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>VG:an</td>
+          <td>VG:n</td>
+          <td>1</td>
+          <td>
+            <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=503">503</a>
+          </td>
+          <td>acro inflection</td>
+        </tr>
+        <tr>
+          <td>varresvuohtastasjåvnnå</td>
+          <td>varresvuodastasjåvnnå</td>
+          <td>2</td>
+          <td>
+            <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=506">506</a>
+          </td>
+          <td>doesn't follow comp-tags</td>
+        </tr>
+        <tr>
+          <td>VG:aj</td>
+          <td>VG:j</td>
+          <td>1</td>
+          <td>
+            <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=509">509</a>
+          </td>
+          <td>accepts SUB-ed entries</td>
+        </tr>
+        <tr>
+          <td>VG:as</td>
+          <td>VG:s</td>
+          <td>1</td>
+          <td>
+            <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=509">509</a>
+          </td>
+          <td>accepts SUB-ed entries</td>
+        </tr>
+        <tr>
+          <td>Nijbegoasskem</td>
+          <td>Nijbbegoasskem</td>
+          <td>1</td>
+          <td>
+            <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=511">511</a>
+          </td>
+          <td>doesn't follow comp tags</td>
+        </tr>
+        <tr>
+          <td>bievdedåhpe</td>
+          <td>bievddedåhpe</td>
+          <td>1</td>
+          <td>
+            <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=511">511</a>
+          </td>
+          <td>doesn't follow comp tags</td>
+        </tr>
+        <tr>
+          <td>uvsagáldo</td>
+          <td>uksagáldo</td>
+          <td>1</td>
+          <td>
+            <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=511">511</a>
+          </td>
+          <td>doesn't follow comp tags</td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <title>True negatives (68)</title>
+      <p>The correctly accepted words are listed here for easy copy&amp;paste
+         into Word to quick check regressions in new versions of the speller:
+         No correctly spelled words accepted by an earlier speller should be
+         rejected by later spellers. To check, just copy and paste these words
+         to Word, and see if you get any red underlines. Duplicate words are not
+         repeated, unless one is followed by some punctuation. The words are
+         reverse sorted according to Unicode character code.</p>
+      <p>åvdåstibmáj åvddånimev ållo vællahit vuostasj vuolgadime vuojnávge varresvuodastasjåvnnå snuhpalasj siellosujtov sebrudakalmasj riegádimgånågis riegádibme oahppamdiededimev nælggot nälggot nuppev  máhkak mige mierredimijt mavga lånudim- jærjálasj jållåribme jáddamahtes juohkkahasj juoga ietjá ienebuv gus guovtekultuvralasj guokta guhtis guhkaájggásattjat grámmalasj goalmát gievrrak gievrrage gaskostibme garrasabmusit dæbbaga dålusjájggásasj dáv dát dássta dájt dájs divna dasi danna dan dakkirijt bijllak bijllage bajedimij avtak akta Vuostasj Svieriga NSR: NSR- Malmöj Dát Dálásjájggásasj Dajna Daj Barggogaskostime </p>
+    </section>
+    <section>
+      <title>Grouped by bug #</title>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=398">398</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>vidjor9jit</td>
+          <td>vidjurijt</td>
+          <td>3</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (229)
+        </span>vidjurijt</li>
+              <li><span class="score">
+          (227)
+        </span>vidjuriját</li>
+            </ol>
+          </td>
+          <td>vidjor9jit vs vidjurijt</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=407">407</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>Nárvijkan</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>Narvikan</li>
+              <li><span class="score">
+          (241)
+        </span>Narvijga</li>
+              <li><span class="score">
+          (239)
+        </span>Narvijgen</li>
+              <li><span class="score">
+          (235)
+        </span>Narvikajn</li>
+            </ol>
+          </td>
+          <td>missing smj names</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=411">411</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>däbbaga</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (247)
+        </span>dä9bbaga</li>
+              <li><span class="score">
+          (247)
+        </span>dä9bbaga-</li>
+              <li><span class="score">
+          (245)
+        </span>däbbobaga</li>
+              <li><span class="score">
+          (245)
+        </span>däbbubaga</li>
+              <li><span class="score">
+          (243)
+        </span>däbboga</li>
+              <li><span class="score">
+          (243)
+        </span>däbbuga</li>
+              <li><span class="score">
+          (243)
+        </span>dæbbaga</li>
+              <li><span class="score">
+          (243)
+        </span>dæbbaga-</li>
+            </ol>
+          </td>
+          <td>ä not recognised</td>
+        </tr>
+        <tr>
+          <td>dæbbaga</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>ä not recognised</td>
+        </tr>
+        <tr class="broken">
+          <td>gähtjáj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (253)
+        </span>gähttjáj</li>
+            </ol>
+          </td>
+          <td>ä not recognised</td>
+        </tr>
+        <tr class="broken">
+          <td>gæhtjáj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (253)
+        </span>gæhttjáj</li>
+            </ol>
+          </td>
+          <td>ä not recognised</td>
+        </tr>
+        <tr>
+          <td>nälggot</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>ä not recognised</td>
+        </tr>
+        <tr>
+          <td>nælggot</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>ä not recognised</td>
+        </tr>
+        <tr class="broken">
+          <td>vällahit</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>vellahit</li>
+              <li><span class="score">
+          (243)
+        </span>vællahit</li>
+            </ol>
+          </td>
+          <td>ä not recognised</td>
+        </tr>
+        <tr>
+          <td>vællahit</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>ä not recognised</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=418">418</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>akta</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing numeral</td>
+        </tr>
+        <tr>
+          <td>guokta</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing numeral</td>
+        </tr>
+        <tr class="broken">
+          <td>lågenanguokta</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>missing numeral</td>
+        </tr>
+        <tr class="broken">
+          <td>lågenanniellja</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (241)
+        </span>lågenannælját</li>
+            </ol>
+          </td>
+          <td>missing numeral</td>
+        </tr>
+        <tr>
+          <td>ållo</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing numeral</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=419">419</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>bielleájggeåhpadussaj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (211)
+        </span>bællájgeåhpadussaj</li>
+              <li><span class="score">
+          (209)
+        </span>bielkájgeåhpadussaj</li>
+              <li><span class="score">
+          (209)
+        </span>bielljerájgge-åhpadussaj</li>
+              <li><span class="score">
+          (209)
+        </span>bielljerájggeåhpadussaj</li>
+              <li><span class="score">
+          (208)
+        </span>Bielajge-åhpadussaj</li>
+              <li><span class="score">
+          (207)
+        </span>bielljerájge-åhpadussaj</li>
+              <li><span class="score">
+          (207)
+        </span>bielljerájgeåhpadussaj</li>
+              <li><span class="score">
+          (207)
+        </span>iellemájgge-åhpadussaj</li>
+            </ol>
+          </td>
+          <td>3-part compound</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=420">420</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>åvddånimev</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing 3-syllabic actio</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=421">421</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>gievramuorra</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (221)
+        </span>fiervvámuorra</li>
+              <li><span class="score">
+          (221)
+        </span>fiervvámuorra-</li>
+              <li><span class="score">
+          (221)
+        </span>gievra-moarrá</li>
+              <li><span class="score">
+          (221)
+        </span>gievramoarrá</li>
+              <li><span class="score">
+          (219)
+        </span>fiervvámuora</li>
+              <li><span class="score">
+          (219)
+        </span>fiervvámuora-</li>
+            </ol>
+          </td>
+          <td>adj-nom+noun</td>
+        </tr>
+        <tr class="broken">
+          <td>gievrasalmasj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (235)
+        </span>gievrastalásj</li>
+              <li><span class="score">
+          (227)
+        </span>gievrastallamijs</li>
+            </ol>
+          </td>
+          <td>adj-attr+noun</td>
+        </tr>
+        <tr class="broken">
+          <td>gievrasmuorra</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (233)
+        </span>gievrassuorak</li>
+              <li><span class="score">
+          (227)
+        </span>gievrapsuorak</li>
+              <li><span class="score">
+          (225)
+        </span>gievrassuorgak</li>
+            </ol>
+          </td>
+          <td>adj-attr+noun</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=422">422</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>garrasabmusit</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>adj-&gt;adv</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=427">427</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>maññel</td>
+          <td>maŋŋel</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (251)
+        </span>maŋŋel</li>
+              <li><span class="score">
+          (243)
+        </span>maŋŋela</li>
+              <li><span class="score">
+          (243)
+        </span>maŋelt</li>
+            </ol>
+          </td>
+          <td>ń not part of word</td>
+        </tr>
+        <tr>
+          <td>mańńel</td>
+          <td>maŋŋel</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (249)
+        </span>le</li>
+              <li><span class="score">
+          (247)
+        </span>Bel</li>
+              <li><span class="score">
+          (247)
+        </span>Del</li>
+              <li><span class="score">
+          (247)
+        </span>Hel</li>
+              <li><span class="score">
+          (247)
+        </span>Sel</li>
+              <li><span class="score">
+          (247)
+        </span>bel</li>
+              <li><span class="score">
+          (246)
+        </span>Eli</li>
+              <li><span class="score">
+          (246)
+        </span>Elo</li>
+            </ol>
+          </td>
+          <td>ń not part of word</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=481">481</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>lågenanniellja</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (241)
+        </span>lågenannælját</li>
+            </ol>
+          </td>
+          <td>missing numerals</td>
+        </tr>
+        <tr class="broken">
+          <td>milliåvnnå</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (237)
+        </span>millijåvnåt</li>
+              <li><span class="score">
+          (235)
+        </span>milijåvnåt</li>
+            </ol>
+          </td>
+          <td>missing numerals</td>
+        </tr>
+        <tr class="broken">
+          <td>milliåvnå</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (239)
+        </span>millijåvnåt</li>
+              <li><span class="score">
+          (237)
+        </span>milijåvnåt</li>
+            </ol>
+          </td>
+          <td>missing numerals</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=482">482</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>bullar--dutkamin</td>
+          <td>polardutkamin</td>
+          <td>5</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (225)
+        </span>bullar-dutkamin</li>
+              <li><span class="score">
+          (221)
+        </span>bullar-dutkamijn</li>
+              <li><span class="score">
+          (217)
+        </span>bullara-dutkamin</li>
+            </ol>
+          </td>
+          <td>double hyphen</td>
+        </tr>
+        <tr>
+          <td>álggoálmmug--sisálggoálmmugij</td>
+          <td>álggoálmmugis-álggoálmmugij</td>
+          <td>4</td>
+          <td>
+            <ol/>
+          </td>
+          <td>double hyphen</td>
+        </tr>
+        <tr>
+          <td>Nuorttaalij--guovlojn</td>
+          <td>Nuorttalijguovlojn</td>
+          <td>3</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (224)
+        </span>Nuorttaalij-guovlojn</li>
+              <li><span class="score">
+          (216)
+        </span>Nuorttalalij-guovlojn</li>
+            </ol>
+          </td>
+          <td>double hyphen</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=483">483</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>NSR</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (255)
+        </span>NSR-</li>
+              <li><span class="score">
+          (247)
+        </span>NSR-N-</li>
+              <li><span class="score">
+          (247)
+        </span>NSR:</li>
+            </ol>
+          </td>
+          <td>missing bare abbrs</td>
+        </tr>
+        <tr>
+          <td>NSR-</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing bare abbrs</td>
+        </tr>
+        <tr>
+          <td>NSR:</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing bare abbrs</td>
+        </tr>
+        <tr class="broken">
+          <td>PDF</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>BD-</li>
+              <li><span class="score">
+          (241)
+        </span>BD:</li>
+              <li><span class="score">
+          (241)
+        </span>BOF-</li>
+              <li><span class="score">
+          (240)
+        </span>BD.</li>
+              <li><span class="score">
+          (237)
+        </span>DFD-</li>
+              <li><span class="score">
+          (237)
+        </span>DSF-</li>
+              <li><span class="score">
+          (237)
+        </span>PFK-</li>
+              <li><span class="score">
+          (237)
+        </span>PFL-</li>
+            </ol>
+          </td>
+          <td>missing bare abbrs</td>
+        </tr>
+        <tr class="broken">
+          <td>PDF:</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>BD-</li>
+              <li><span class="score">
+          (241)
+        </span>BD:</li>
+              <li><span class="score">
+          (241)
+        </span>BOF-</li>
+              <li><span class="score">
+          (240)
+        </span>BD.</li>
+              <li><span class="score">
+          (237)
+        </span>DFD-</li>
+              <li><span class="score">
+          (237)
+        </span>DSF-</li>
+              <li><span class="score">
+          (237)
+        </span>PFK-</li>
+              <li><span class="score">
+          (237)
+        </span>PFL-</li>
+            </ol>
+          </td>
+          <td>missing bare abbrs</td>
+        </tr>
+        <tr class="broken">
+          <td>USA</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (255)
+        </span>USA-</li>
+              <li><span class="score">
+          (249)
+        </span>OSA</li>
+              <li><span class="score">
+          (247)
+        </span>USA:</li>
+            </ol>
+          </td>
+          <td>missing bare abbrs</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=484">484</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>Áila</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (253)
+        </span>Aila</li>
+              <li><span class="score">
+          (249)
+        </span>Aili</li>
+              <li><span class="score">
+          (247)
+        </span>Aalla</li>
+              <li><span class="score">
+          (245)
+        </span>Alila</li>
+              <li><span class="score">
+          (245)
+        </span>Arila</li>
+              <li><span class="score">
+          (245)
+        </span>Avila</li>
+              <li><span class="score">
+          (245)
+        </span>Ailak</li>
+              <li><span class="score">
+          (245)
+        </span>Ailaj</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áile</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (253)
+        </span>Aile</li>
+              <li><span class="score">
+          (245)
+        </span>Ailek</li>
+              <li><span class="score">
+          (245)
+        </span>Ailen</li>
+              <li><span class="score">
+          (245)
+        </span>Ailes</li>
+              <li><span class="score">
+          (245)
+        </span>Ailev</li>
+              <li><span class="score">
+          (245)
+        </span>Haile</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áilegas</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>Ailega</li>
+              <li><span class="score">
+          (239)
+        </span>Amalekas</li>
+              <li><span class="score">
+          (237)
+        </span>Mielgas</li>
+              <li><span class="score">
+          (237)
+        </span>Mielgas-</li>
+              <li><span class="score">
+          (236)
+        </span>Ájllegis</li>
+              <li><span class="score">
+          (235)
+        </span>Aileenis</li>
+              <li><span class="score">
+          (235)
+        </span>Ailenga</li>
+              <li><span class="score">
+          (235)
+        </span>Ailesga</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áilegasjohka</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (226)
+        </span>Ájllegasjga</li>
+              <li><span class="score">
+          (223)
+        </span>Mielgasjga</li>
+              <li><span class="score">
+          (221)
+        </span>Gielasjohka</li>
+              <li><span class="score">
+          (221)
+        </span>Bielegasjga</li>
+              <li><span class="score">
+          (219)
+        </span>Ealgajohka</li>
+              <li><span class="score">
+          (219)
+        </span>Bielkásjga</li>
+              <li><span class="score">
+          (219)
+        </span>Giegasjga</li>
+              <li><span class="score">
+          (219)
+        </span>Gilgasjga</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áilegasjávri</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (225)
+        </span>Hallagasjávri</li>
+              <li><span class="score">
+          (223)
+        </span>Gielkájávri</li>
+              <li><span class="score">
+          (223)
+        </span>Jiegajávri</li>
+              <li><span class="score">
+          (221)
+        </span>Bieggajávri</li>
+              <li><span class="score">
+          (221)
+        </span>Gielasjávri</li>
+              <li><span class="score">
+          (221)
+        </span>Hallagasjávrij</li>
+              <li><span class="score">
+          (221)
+        </span>Lieđasjávri</li>
+              <li><span class="score">
+          (221)
+        </span>Pierasjávri</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áilegasmuotki</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áilegasvuopmi</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áilegasvárri</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (225)
+        </span>Cielkavárri</li>
+              <li><span class="score">
+          (223)
+        </span>Cielkavári</li>
+              <li><span class="score">
+          (221)
+        </span>Bieggavárri</li>
+              <li><span class="score">
+          (221)
+        </span>Cielkavárrij</li>
+              <li><span class="score">
+          (221)
+        </span>Gielasvárri</li>
+              <li><span class="score">
+          (221)
+        </span>Gilkavárri</li>
+              <li><span class="score">
+          (221)
+        </span>Lieđasvárri</li>
+              <li><span class="score">
+          (219)
+        </span>Alggávárri</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áilegasčohkka</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (221)
+        </span>Bieggačohkka</li>
+              <li><span class="score">
+          (219)
+        </span>Bieggačohka</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áili</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (253)
+        </span>Aili</li>
+              <li><span class="score">
+          (249)
+        </span>Ailij</li>
+              <li><span class="score">
+          (249)
+        </span>Aila</li>
+              <li><span class="score">
+          (245)
+        </span>Ailik</li>
+              <li><span class="score">
+          (245)
+        </span>Ailio</li>
+              <li><span class="score">
+          (245)
+        </span>Ailin</li>
+              <li><span class="score">
+          (245)
+        </span>Ailis</li>
+              <li><span class="score">
+          (245)
+        </span>Ailiv</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áillehašnjunni</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áillehašvádjájohka</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áillohaš</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (229)
+        </span>Ailoga</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áillonieida</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (225)
+        </span>Paloniemijda</li>
+              <li><span class="score">
+          (225)
+        </span>Saloniemijda</li>
+              <li><span class="score">
+          (223)
+        </span>Sielonieda</li>
+              <li><span class="score">
+          (223)
+        </span>Sielonieda-</li>
+              <li><span class="score">
+          (221)
+        </span>Allonenijda</li>
+              <li><span class="score">
+          (221)
+        </span>Salonikijda</li>
+              <li><span class="score">
+          (221)
+        </span>Sieloniedada</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áilloš</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (241)
+        </span>Ailo</li>
+              <li><span class="score">
+          (239)
+        </span>Ailok</li>
+              <li><span class="score">
+          (239)
+        </span>Ailoj</li>
+              <li><span class="score">
+          (239)
+        </span>Ailon</li>
+              <li><span class="score">
+          (239)
+        </span>Ailos</li>
+              <li><span class="score">
+          (239)
+        </span>Ailov</li>
+              <li><span class="score">
+          (237)
+        </span>Ailu</li>
+              <li><span class="score">
+          (235)
+        </span>Ailuk</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+        <tr class="broken">
+          <td>Áillun</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>Ailun</li>
+              <li><span class="score">
+          (247)
+        </span>Ailon</li>
+              <li><span class="score">
+          (243)
+        </span>Ailujn</li>
+              <li><span class="score">
+          (243)
+        </span>Allun</li>
+              <li><span class="score">
+          (243)
+        </span>Gillun</li>
+              <li><span class="score">
+          (243)
+        </span>Jillun</li>
+              <li><span class="score">
+          (243)
+        </span>Sillun</li>
+              <li><span class="score">
+          (243)
+        </span>Villun</li>
+            </ol>
+          </td>
+          <td>missing names</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=496">496</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>bijllage</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr>
+          <td>bijllak</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr class="broken">
+          <td>dakkirge</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (248)
+        </span>Dakarge</li>
+              <li><span class="score">
+          (241)
+        </span>Makirge</li>
+              <li><span class="score">
+          (241)
+        </span>dåkkijge</li>
+              <li><span class="score">
+          (241)
+        </span>dággige</li>
+              <li><span class="score">
+          (241)
+        </span>dákkárge</li>
+              <li><span class="score">
+          (240)
+        </span>Dakargen</li>
+              <li><span class="score">
+          (240)
+        </span>Dakarage</li>
+              <li><span class="score">
+          (240)
+        </span>Dakiage</li>
+            </ol>
+          </td>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr>
+          <td>gievrrage</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr>
+          <td>gievrrak</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr class="broken">
+          <td>munjik</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (245)
+        </span>munji</li>
+              <li><span class="score">
+          (244)
+        </span>Munik</li>
+              <li><span class="score">
+          (238)
+        </span>Munijga</li>
+              <li><span class="score">
+          (238)
+        </span>Munijge</li>
+              <li><span class="score">
+          (238)
+        </span>Munkak</li>
+            </ol>
+          </td>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr>
+          <td>máhkak</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr class="broken">
+          <td>måjge</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (247)
+        </span>måjege</li>
+              <li><span class="score">
+          (245)
+        </span>måje</li>
+              <li><span class="score">
+          (245)
+        </span>måje-</li>
+              <li><span class="score">
+          (243)
+        </span>Håjge</li>
+              <li><span class="score">
+          (243)
+        </span>Nåjge</li>
+              <li><span class="score">
+          (243)
+        </span>måjve</li>
+              <li><span class="score">
+          (243)
+        </span>måjve-</li>
+              <li><span class="score">
+          (242)
+        </span>Mujege</li>
+            </ol>
+          </td>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr class="broken">
+          <td>månge</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (247)
+        </span>månage</li>
+              <li><span class="score">
+          (245)
+        </span>månnige</li>
+              <li><span class="score">
+          (245)
+        </span>månnuge</li>
+              <li><span class="score">
+          (243)
+        </span>Hånge</li>
+              <li><span class="score">
+          (243)
+        </span>Nånge</li>
+              <li><span class="score">
+          (242)
+        </span>Munige</li>
+              <li><span class="score">
+          (242)
+        </span>Munkge</li>
+              <li><span class="score">
+          (242)
+        </span>Mange</li>
+            </ol>
+          </td>
+          <td>unrecognised clitics</td>
+        </tr>
+        <tr>
+          <td>vuojnávge</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>unrecognised clitics</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=503">503</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>VG:an</td>
+          <td>VG:n</td>
+          <td>1</td>
+          <td/>
+          <td>acro inflection</td>
+        </tr>
+        <tr class="broken">
+          <td>VG</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (255)
+        </span>VG-</li>
+              <li><span class="score">
+          (247)
+        </span>VG:</li>
+            </ol>
+          </td>
+          <td>nom and comp of acro</td>
+        </tr>
+        <tr class="broken">
+          <td>VG-biebbmo</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>nom and comp of acro</td>
+        </tr>
+        <tr class="broken">
+          <td>VG-kafean</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>nom and comp of acro</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=506">506</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>varresvuohtastasjåvnnå</td>
+          <td>varresvuodastasjåvnnå</td>
+          <td>2</td>
+          <td/>
+          <td>doesn't follow comp-tags</td>
+        </tr>
+        <tr>
+          <td>varresvuodastasjåvnnå</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>doesn't follow comp-tags</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=507">507</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>Visa-</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (246)
+        </span>Ovisa</li>
+              <li><span class="score">
+          (246)
+        </span>Vipsa</li>
+              <li><span class="score">
+          (246)
+        </span>Vipsa-</li>
+              <li><span class="score">
+          (244)
+        </span>Visjá</li>
+              <li><span class="score">
+          (244)
+        </span>Viská</li>
+              <li><span class="score">
+          (244)
+        </span>Viská-</li>
+              <li><span class="score">
+          (243)
+        </span>Lisa</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>allaskåvllåj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (224)
+        </span>Allasuolluj</li>
+              <li><span class="score">
+          (223)
+        </span>hållåmståvllåj</li>
+              <li><span class="score">
+          (221)
+        </span>hållåmståvlåj</li>
+              <li><span class="score">
+          (221)
+        </span>hållåmståvlåj-</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>biehtse</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (249)
+        </span>biehtes</li>
+              <li><span class="score">
+          (247)
+        </span>biehttes</li>
+              <li><span class="score">
+          (247)
+        </span>biehtseg-</li>
+              <li><span class="score">
+          (247)
+        </span>biehtsek</li>
+              <li><span class="score">
+          (245)
+        </span>biehte</li>
+              <li><span class="score">
+          (245)
+        </span>iehtse</li>
+              <li><span class="score">
+          (244)
+        </span>Biedes</li>
+              <li><span class="score">
+          (243)
+        </span>biehtte</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>biehtsemánno</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (231)
+        </span>miehtemanno</li>
+              <li><span class="score">
+          (231)
+        </span>miehtemanno-</li>
+              <li><span class="score">
+          (229)
+        </span>miehtemano</li>
+              <li><span class="score">
+          (229)
+        </span>miehtemano-</li>
+              <li><span class="score">
+          (225)
+        </span>miehtemanon</li>
+              <li><span class="score">
+          (223)
+        </span>miehtemannon</li>
+              <li><span class="score">
+          (223)
+        </span>miehtemannok</li>
+              <li><span class="score">
+          (223)
+        </span>miehtemannos</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>biele</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>bælle-</li>
+              <li><span class="score">
+          (247)
+        </span>bieleg-</li>
+              <li><span class="score">
+          (247)
+        </span>bielek</li>
+              <li><span class="score">
+          (247)
+        </span>bielen</li>
+              <li><span class="score">
+          (247)
+        </span>bieles</li>
+              <li><span class="score">
+          (247)
+        </span>bieles-</li>
+              <li><span class="score">
+          (247)
+        </span>bielge</li>
+              <li><span class="score">
+          (247)
+        </span>bielge-</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>báŋkas</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (245)
+        </span>báŋas</li>
+              <li><span class="score">
+          (243)
+        </span>beŋkas</li>
+              <li><span class="score">
+          (243)
+        </span>báhkas</li>
+              <li><span class="score">
+          (243)
+        </span>báhkas-</li>
+              <li><span class="score">
+          (243)
+        </span>báskas</li>
+              <li><span class="score">
+          (241)
+        </span>Láŋkás</li>
+              <li><span class="score">
+          (241)
+        </span>bajkas</li>
+              <li><span class="score">
+          (241)
+        </span>baskas</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>báŋŋka</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (247)
+        </span>báŋak</li>
+              <li><span class="score">
+          (243)
+        </span>báŋa</li>
+              <li><span class="score">
+          (243)
+        </span>báŋaga</li>
+              <li><span class="score">
+          (243)
+        </span>bæŋŋka</li>
+              <li><span class="score">
+          (243)
+        </span>bæŋŋka-</li>
+              <li><span class="score">
+          (241)
+        </span>beŋka</li>
+              <li><span class="score">
+          (241)
+        </span>beŋka-</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>báŋŋkaj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>báŋaj</li>
+              <li><span class="score">
+          (243)
+        </span>bæŋŋkaj</li>
+              <li><span class="score">
+          (241)
+        </span>beŋkaj</li>
+              <li><span class="score">
+          (241)
+        </span>beŋkaj-</li>
+              <li><span class="score">
+          (241)
+        </span>fáŋŋgaj</li>
+              <li><span class="score">
+          (241)
+        </span>máŋŋgaj</li>
+              <li><span class="score">
+          (239)
+        </span>Láŋkáj</li>
+              <li><span class="score">
+          (239)
+        </span>båŋkåj</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>dile</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>dale</li>
+              <li><span class="score">
+          (250)
+        </span>Dale</li>
+              <li><span class="score">
+          (249)
+        </span>dalle</li>
+              <li><span class="score">
+          (247)
+        </span>diele</li>
+              <li><span class="score">
+          (247)
+        </span>diele-</li>
+              <li><span class="score">
+          (247)
+        </span>dilbe</li>
+              <li><span class="score">
+          (247)
+        </span>dilbe-</li>
+              <li><span class="score">
+          (247)
+        </span>dilse</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>fámon</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>Amon</li>
+              <li><span class="score">
+          (243)
+        </span>fálon</li>
+              <li><span class="score">
+          (243)
+        </span>fáron</li>
+              <li><span class="score">
+          (243)
+        </span>gámon</li>
+              <li><span class="score">
+          (243)
+        </span>hámon</li>
+              <li><span class="score">
+          (241)
+        </span>Ammon</li>
+              <li><span class="score">
+          (241)
+        </span>gamon</li>
+              <li><span class="score">
+          (241)
+        </span>hamon</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>guossa</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (253)
+        </span>goassa</li>
+              <li><span class="score">
+          (251)
+        </span>Kuosa</li>
+              <li><span class="score">
+          (251)
+        </span>goassá</li>
+              <li><span class="score">
+          (251)
+        </span>guossi</li>
+              <li><span class="score">
+          (249)
+        </span>goassi</li>
+              <li><span class="score">
+          (247)
+        </span>Kuosas</li>
+              <li><span class="score">
+          (245)
+        </span>Kousa</li>
+              <li><span class="score">
+          (245)
+        </span>kruossa</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>isetábnas</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (229)
+        </span>Astanas</li>
+              <li><span class="score">
+          (225)
+        </span>jiestanis</li>
+              <li><span class="score">
+          (225)
+        </span>stánas</li>
+              <li><span class="score">
+          (225)
+        </span>stábnásj</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>joarkkaskåvlåv</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>mierredimájgijt</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (219)
+        </span>mierredimijat</li>
+              <li><span class="score">
+          (217)
+        </span>mieredimijat</li>
+              <li><span class="score">
+          (217)
+        </span>mierredimijdat</li>
+              <li><span class="score">
+          (217)
+        </span>mierredimijnat</li>
+              <li><span class="score">
+          (217)
+        </span>mierredim-dájgijt</li>
+              <li><span class="score">
+          (217)
+        </span>mierredim-lájgijt</li>
+              <li><span class="score">
+          (217)
+        </span>mierredim-rájgijt</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>muorra</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>moarrá</li>
+              <li><span class="score">
+          (251)
+        </span>moarrá-</li>
+              <li><span class="score">
+          (251)
+        </span>muorri</li>
+              <li><span class="score">
+          (246)
+        </span>Muorral</li>
+              <li><span class="score">
+          (245)
+        </span>muorrára</li>
+              <li><span class="score">
+          (245)
+        </span>muorrár</li>
+              <li><span class="score">
+          (244)
+        </span>Muuri</li>
+              <li><span class="score">
+          (243)
+        </span>guorra</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>siebrijs</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>sæbrrijs</li>
+              <li><span class="score">
+          (245)
+        </span>siebburijs</li>
+              <li><span class="score">
+          (245)
+        </span>siebijs</li>
+              <li><span class="score">
+          (243)
+        </span>diebrijs</li>
+              <li><span class="score">
+          (243)
+        </span>giebrijs</li>
+              <li><span class="score">
+          (243)
+        </span>sæbrrijis</li>
+              <li><span class="score">
+          (243)
+        </span>siebdijs</li>
+              <li><span class="score">
+          (243)
+        </span>sierrijs</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>siebrre</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (253)
+        </span>sæbrre</li>
+              <li><span class="score">
+          (253)
+        </span>sæbrre-</li>
+              <li><span class="score">
+          (245)
+        </span>sæbrrek</li>
+              <li><span class="score">
+          (245)
+        </span>sæbrrem</li>
+              <li><span class="score">
+          (245)
+        </span>sæbrren</li>
+              <li><span class="score">
+          (245)
+        </span>sæbrres</li>
+              <li><span class="score">
+          (245)
+        </span>sæbrret</li>
+              <li><span class="score">
+          (245)
+        </span>sæbrrev</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>skåvlås</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>ståvlås</li>
+              <li><span class="score">
+          (241)
+        </span>skåvvalus</li>
+              <li><span class="score">
+          (241)
+        </span>skåvllis</li>
+              <li><span class="score">
+          (241)
+        </span>ståvllås</li>
+              <li><span class="score">
+          (239)
+        </span>skåvvus</li>
+              <li><span class="score">
+          (239)
+        </span>skållus</li>
+              <li><span class="score">
+          (237)
+        </span>skuovllus</li>
+              <li><span class="score">
+          (237)
+        </span>skåjvås</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>skåvlåsj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>ståvlåsj</li>
+              <li><span class="score">
+          (241)
+        </span>skåvllisj</li>
+              <li><span class="score">
+          (237)
+        </span>skuovllusj</li>
+              <li><span class="score">
+          (237)
+        </span>ståvlåjs</li>
+              <li><span class="score">
+          (235)
+        </span>skoavvusj</li>
+              <li><span class="score">
+          (235)
+        </span>skoallusj</li>
+              <li><span class="score">
+          (235)
+        </span>skullusj</li>
+              <li><span class="score">
+          (235)
+        </span>skuvdusj</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>suohkanin</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>suohkadin</li>
+              <li><span class="score">
+          (243)
+        </span>suohkunin</li>
+              <li><span class="score">
+          (239)
+        </span>suohkadijn</li>
+              <li><span class="score">
+          (239)
+        </span>suohkunijn</li>
+              <li><span class="score">
+          (236)
+        </span>ståganin</li>
+              <li><span class="score">
+          (235)
+        </span>sjuohkadin</li>
+              <li><span class="score">
+          (235)
+        </span>sjuohpanin</li>
+              <li><span class="score">
+          (235)
+        </span>skuolkanin</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>vissa</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (249)
+        </span>vijssá</li>
+              <li><span class="score">
+          (247)
+        </span>visspa</li>
+              <li><span class="score">
+          (247)
+        </span>visspa-</li>
+              <li><span class="score">
+          (245)
+        </span>Ovisa</li>
+              <li><span class="score">
+          (245)
+        </span>vipsa</li>
+              <li><span class="score">
+          (245)
+        </span>vipsa-</li>
+              <li><span class="score">
+          (245)
+        </span>vissjá</li>
+              <li><span class="score">
+          (245)
+        </span>visská</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>vuojnno</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>vuojnnu</li>
+              <li><span class="score">
+          (247)
+        </span>vuojnnon</li>
+              <li><span class="score">
+          (247)
+        </span>vuojnnop</li>
+              <li><span class="score">
+          (245)
+        </span>vuojnos</li>
+              <li><span class="score">
+          (243)
+        </span>vuojn</li>
+              <li><span class="score">
+          (243)
+        </span>vuojnnuk</li>
+              <li><span class="score">
+          (243)
+        </span>vuojnnuj</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>ájge</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (254)
+        </span>Ájge</li>
+              <li><span class="score">
+          (252)
+        </span>Ájgge</li>
+              <li><span class="score">
+          (247)
+        </span>ajeg-</li>
+              <li><span class="score">
+          (247)
+        </span>dájge</li>
+              <li><span class="score">
+          (247)
+        </span>dájge-</li>
+              <li><span class="score">
+          (247)
+        </span>lájge</li>
+              <li><span class="score">
+          (247)
+        </span>lájge-</li>
+              <li><span class="score">
+          (247)
+        </span>rájge</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>ájgev</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (254)
+        </span>Ájgev</li>
+              <li><span class="score">
+          (247)
+        </span>dájgev</li>
+              <li><span class="score">
+          (247)
+        </span>lájgev</li>
+              <li><span class="score">
+          (247)
+        </span>rájgev</li>
+              <li><span class="score">
+          (247)
+        </span>sájgev</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>ájgij</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (254)
+        </span>Ájgij</li>
+              <li><span class="score">
+          (247)
+        </span>dájgij</li>
+              <li><span class="score">
+          (247)
+        </span>dájgij-</li>
+              <li><span class="score">
+          (247)
+        </span>lájgij</li>
+              <li><span class="score">
+          (247)
+        </span>lájgij-</li>
+              <li><span class="score">
+          (247)
+        </span>rájgij</li>
+              <li><span class="score">
+          (247)
+        </span>rájgij-</li>
+              <li><span class="score">
+          (247)
+        </span>sájgij</li>
+            </ol>
+          </td>
+          <td>unrec words</td>
+        </tr>
+        <tr class="broken">
+          <td>álmmukallaskåvlån</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>unrec words</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=509">509</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>1983:aj</td>
+          <td>1983:j</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (245)
+        </span>1983:j</li>
+              <li><span class="score">
+          (243)
+        </span>11983:j</li>
+              <li><span class="score">
+          (243)
+        </span>19833:j</li>
+              <li><span class="score">
+          (243)
+        </span>19883:j</li>
+              <li><span class="score">
+          (243)
+        </span>19983:j</li>
+              <li><span class="score">
+          (241)
+        </span>111983:j</li>
+              <li><span class="score">
+          (241)
+        </span>119833:j</li>
+              <li><span class="score">
+          (241)
+        </span>119883:j</li>
+            </ol>
+          </td>
+          <td>accepts SUB-ed entries</td>
+        </tr>
+        <tr>
+          <td>1983:as</td>
+          <td>1983:s</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>1983:js</li>
+              <li><span class="score">
+          (241)
+        </span>11983:js</li>
+              <li><span class="score">
+          (241)
+        </span>19833:js</li>
+              <li><span class="score">
+          (241)
+        </span>19883:js</li>
+              <li><span class="score">
+          (241)
+        </span>19983:js</li>
+              <li><span class="score">
+          (239)
+        </span>111983:js</li>
+              <li><span class="score">
+          (239)
+        </span>119833:js</li>
+              <li><span class="score">
+          (239)
+        </span>119883:js</li>
+            </ol>
+          </td>
+          <td>accepts SUB-ed entries</td>
+        </tr>
+        <tr class="broken">
+          <td>VG:aj</td>
+          <td>VG:j</td>
+          <td>1</td>
+          <td/>
+          <td>accepts SUB-ed entries</td>
+        </tr>
+        <tr class="broken">
+          <td>VG:as</td>
+          <td>VG:s</td>
+          <td>1</td>
+          <td/>
+          <td>accepts SUB-ed entries</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=510">510</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>goasskemrájddohadde</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>3-part compound</td>
+        </tr>
+        <tr class="broken">
+          <td>merragálvvogárvvo</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>3-part compound</td>
+        </tr>
+        <tr class="broken">
+          <td>niehkkealmasjvuorro</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>3-part compound</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=511">511</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr class="broken">
+          <td>Nijbegoasskem</td>
+          <td>Nijbbegoasskem</td>
+          <td>1</td>
+          <td/>
+          <td>doesn't follow comp tags</td>
+        </tr>
+        <tr class="broken">
+          <td>bievdedåhpe</td>
+          <td>bievddedåhpe</td>
+          <td>1</td>
+          <td/>
+          <td>doesn't follow comp tags</td>
+        </tr>
+        <tr class="broken">
+          <td>uvsagáldo</td>
+          <td>uksagáldo</td>
+          <td>1</td>
+          <td/>
+          <td>doesn't follow comp tags</td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <caption>
+          <a href="http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=512">512</a>
+        </caption>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>grámmalasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>deriv -lasj not recognised</td>
+        </tr>
+        <tr>
+          <td>jærjálasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>deriv -lasj not recognised</td>
+        </tr>
+        <tr class="broken">
+          <td>muoralasj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>moarálasj</li>
+              <li><span class="score">
+          (245)
+        </span>muorkálasj</li>
+              <li><span class="score">
+          (243)
+        </span>morálasj</li>
+              <li><span class="score">
+          (243)
+        </span>muvralasj</li>
+            </ol>
+          </td>
+          <td>deriv -lasj not recognised</td>
+        </tr>
+        <tr>
+          <td>snuhpalasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>deriv -lasj not recognised</td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <title>Testpairs not in bugs</title>
+      <table>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th width="4em">Editing<br/>distance</th>
+          <th width="25%">Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>Barggomárnanin</td>
+          <td>Barggomárnánin</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (220)
+        </span>Barggoártanis</li>
+              <li><span class="score">
+          (216)
+        </span>Barggoártanam</li>
+              <li><span class="score">
+          (216)
+        </span>Barggoártanat</li>
+            </ol>
+          </td>
+          <td>compound with errors, no suggestion</td>
+        </tr>
+        <tr>
+          <td>Allaskåvllådåjmadagas</td>
+          <td>Allaskåvllådåjmadagás</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Galileajávrregáttev</td>
+          <td>Galilea-jávrregáttev</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (225)
+        </span>Galilea-jávrregáttev</li>
+              <li><span class="score">
+          (217)
+        </span>Galileak-jávrregáttev</li>
+              <li><span class="score">
+          (217)
+        </span>Galileaj-jávrregáttev</li>
+            </ol>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>barrnev</td>
+          <td>barnev</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>bárnev</li>
+              <li><span class="score">
+          (244)
+        </span>Bjarnev</li>
+              <li><span class="score">
+          (243)
+        </span>bårrev</li>
+            </ol>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>dan</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>dáv</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>dát</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>Daj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>Dajna</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>dájs</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>dasi</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>Dát</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>dájt</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>dássta</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>danna</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>divna</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>ietjá</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>guhtis</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>avtak</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>juoga</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>nuppev</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>mige</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>mavga</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>dakkirijt</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>juohkkahasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>ienebuv</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing pronoun</td>
+        </tr>
+        <tr>
+          <td>vuostasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing ordinal</td>
+        </tr>
+        <tr>
+          <td>Vuostasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing ordinal</td>
+        </tr>
+        <tr>
+          <td>nuppev</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing ordinal</td>
+        </tr>
+        <tr>
+          <td>goalmát</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing ordinal</td>
+        </tr>
+        <tr>
+          <td>alvvásláhkáj</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>alvváslágásj</li>
+              <li><span class="score">
+          (241)
+        </span>alvosláhkáj</li>
+              <li><span class="score">
+          (239)
+        </span>alvváslahkak</li>
+              <li><span class="score">
+          (239)
+        </span>alvváslágán</li>
+              <li><span class="score">
+          (235)
+        </span>alvváslágátja</li>
+            </ol>
+          </td>
+          <td>adj+noun</td>
+        </tr>
+        <tr>
+          <td>buorredagojt</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (223)
+        </span>boarre-dagojt</li>
+              <li><span class="score">
+          (223)
+        </span>boarredagojt</li>
+              <li><span class="score">
+          (222)
+        </span>Boaresárkujt</li>
+              <li><span class="score">
+          (219)
+        </span>huorrudagájt</li>
+              <li><span class="score">
+          (219)
+        </span>nuorrudagájt</li>
+            </ol>
+          </td>
+          <td>adj+noun</td>
+        </tr>
+        <tr>
+          <td>Dálásjájggásasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>adj+noun</td>
+        </tr>
+        <tr>
+          <td>dålusjájggásasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>adj+noun</td>
+        </tr>
+        <tr>
+          <td>guhkaájggásattjat</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>lexicalized compound</td>
+        </tr>
+        <tr>
+          <td>mælggatåhpadusán</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (212)
+        </span>Mælga-åhpadusán</li>
+            </ol>
+          </td>
+          <td>adj+noun</td>
+        </tr>
+        <tr>
+          <td>skihpahuodnahijn</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (217)
+        </span>skihpaluottagijn</li>
+              <li><span class="score">
+          (217)
+        </span>skihpam-huodnahijn</li>
+              <li><span class="score">
+          (217)
+        </span>skihpamhuodnahijn</li>
+              <li><span class="score">
+          (213)
+        </span>skihppám-huodnahijn</li>
+              <li><span class="score">
+          (213)
+        </span>skihppámhuodnahijn</li>
+              <li><span class="score">
+          (213)
+        </span>skihpavuobdagijn</li>
+              <li><span class="score">
+          (213)
+        </span>skáhpa-huodnahijn</li>
+              <li><span class="score">
+          (213)
+        </span>skáhpahuodnahijn</li>
+            </ol>
+          </td>
+          <td>adj+noun</td>
+        </tr>
+        <tr>
+          <td>skihpasujtár</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (241)
+        </span>skihppijsujtár</li>
+              <li><span class="score">
+          (241)
+        </span>skihppijsujtár-</li>
+              <li><span class="score">
+          (233)
+        </span>skihppijsujtára</li>
+              <li><span class="score">
+          (233)
+        </span>skihppijsujtára-</li>
+            </ol>
+          </td>
+          <td>adj+noun</td>
+        </tr>
+        <tr>
+          <td>bajedimij</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>3-syllable actio</td>
+        </tr>
+        <tr>
+          <td>gaskostibme</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>3-syllable actio</td>
+        </tr>
+        <tr>
+          <td>jållåribme</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>3-syllable actio</td>
+        </tr>
+        <tr>
+          <td>mierredimijt</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>3-syllable actio</td>
+        </tr>
+        <tr>
+          <td>åvdåstibmáj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>3-syllable actio N+Sg+Ill</td>
+        </tr>
+        <tr>
+          <td>jáddamahtes</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing actio forms</td>
+        </tr>
+        <tr>
+          <td>riegádibme</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing actio forms</td>
+        </tr>
+        <tr>
+          <td>vuolgadime</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing actio forms</td>
+        </tr>
+        <tr>
+          <td>lånudim-</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>actio compound form</td>
+        </tr>
+        <tr>
+          <td>oahppamdiededimev</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>actio compound</td>
+        </tr>
+        <tr>
+          <td>riegádimgånågis</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>actio compound</td>
+        </tr>
+        <tr>
+          <td>Allaskåvllådievnastusdåjmadahka</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>3-part compound</td>
+        </tr>
+        <tr>
+          <td>oahppambiednikvuogádagá</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>3-part compound</td>
+        </tr>
+        <tr>
+          <td>stivrrimássjetjállagij</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>3-part compound</td>
+        </tr>
+        <tr>
+          <td>Iednegiellaoahppaábnnasa</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>3-part compound</td>
+        </tr>
+        <tr>
+          <td>Allaskåvllågähttjalus</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Swedish ä</td>
+        </tr>
+        <tr>
+          <td>allaskåvllågähttjalus</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Swedish ä</td>
+        </tr>
+        <tr>
+          <td>guovtekultuvralasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>no hash at compound border</td>
+        </tr>
+        <tr>
+          <td>gus</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing particles</td>
+        </tr>
+        <tr>
+          <td>Barggogaskostime</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing compound</td>
+        </tr>
+        <tr>
+          <td>sebrudakalmasj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing compound</td>
+        </tr>
+        <tr>
+          <td>siellosujtov</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing compound</td>
+        </tr>
+        <tr>
+          <td>åbmudaksiebrre</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (223)
+        </span>åbmudak-sæbrre</li>
+              <li><span class="score">
+          (223)
+        </span>åbmudaksæbrre</li>
+              <li><span class="score">
+          (219)
+        </span>åbmudakværro</li>
+              <li><span class="score">
+          (219)
+        </span>åbmudakværro-</li>
+              <li><span class="score">
+          (217)
+        </span>åbmudakværo</li>
+              <li><span class="score">
+          (217)
+        </span>åbmudakværo-</li>
+              <li><span class="score">
+          (215)
+        </span>åbmudak-sæbrrek</li>
+              <li><span class="score">
+          (215)
+        </span>åbmudak-sæbrrem</li>
+            </ol>
+          </td>
+          <td>missing compound</td>
+        </tr>
+        <tr>
+          <td>Svieriga</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing names</td>
+        </tr>
+        <tr>
+          <td>Malmöj</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>missing names</td>
+        </tr>
+        <tr>
+          <td>Svierigadárogielan</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (225)
+        </span>Svieriga-dárogielan</li>
+              <li><span class="score">
+          (223)
+        </span>Svieriga-dárogiellan</li>
+              <li><span class="score">
+          (217)
+        </span>Svieriga-dárogielajn</li>
+              <li><span class="score">
+          (217)
+        </span>Svierigak-dárogielan</li>
+              <li><span class="score">
+          (217)
+        </span>Svierikga-dárogielan</li>
+            </ol>
+          </td>
+          <td>name compound i Kintel och Korhon=vuonadár...med liten bok</td>
+        </tr>
+        <tr>
+          <td>älla</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (253)
+        </span>ällá</li>
+              <li><span class="score">
+          (251)
+        </span>älá</li>
+              <li><span class="score">
+          (245)
+        </span>bällá</li>
+              <li><span class="score">
+          (245)
+        </span>dällá</li>
+              <li><span class="score">
+          (245)
+        </span>gällá</li>
+              <li><span class="score">
+          (245)
+        </span>sällá</li>
+              <li><span class="score">
+          (245)
+        </span>ällák</li>
+              <li><span class="score">
+          (245)
+        </span>älláj</li>
+            </ol>
+          </td>
+          <td>strange suggestions</td>
+        </tr>
+        <tr>
+          <td>Skåvllådåjmadak</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (240)
+        </span>Skåvllåtijmadak</li>
+              <li><span class="score">
+          (238)
+        </span>Skåvllåtijmmadak</li>
+              <li><span class="score">
+          (232)
+        </span>Skåvllåtijmajdak</li>
+            </ol>
+          </td>
+          <td>compound</td>
+        </tr>
+      </table>
+    </section>
+  </body>
+</document>

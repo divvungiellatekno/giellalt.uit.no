@@ -1,0 +1,371 @@
+!!!Meeting setup
+
+* Date: 17.12.2007
+* Time: 09.30 Norw. time
+* Place: Internet
+* Tools: SubEthaEdit, iChat/Skype
+
+!!!Agenda
+
+# Opening, agenda review
+# Reviewing the task list from last week
+# Documentation - divvun.no
+# Corpus gathering
+# Corpus infrastructure
+# Infrastructure
+# Linguistics
+# name lexicon infrastructure
+# Spellers
+# Other issues
+# Summary, task lists
+# Closing
+
+!!!1. Opening, agenda review, participants
+
+Opened at 12:34.
+
+Present: __Børre, Ilona, Sjur, Thomas__
+
+Absent: __Risten, Per-Eric, Trond, Tomi__
+
+Agenda accepted as is.
+
+!!!2. Updated task status since last meeting
+
+!!Børre
+* finalise InDesign hyphenator
+** not done
+* new/updated front page (old front page to history page)
+** done
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Ilona
+* lexicalise {{smj}} missing words.
+** Not this week anymore, but this is never done.
+* Help Trond with the {{smj}} dictionary.
+** Done?
+* Translation, language checking.
+** Done
+* Typo 494, sme
+** fixed the typos list in false negatives.
+
+!!Maaren
+* lexicalise actio compounds
+
+!!Per-Eric
+* check some unusual and missing words from the last Olavi missing list 071123.txt which still are not lexicalised
+** started with it
+* [fix bugs!|http://giellatekno.uit.no/bugzilla] 
+** worked with it
+
+!!Risten
+* Print 50 CDs, take them to Oslo as backup
+** done
+
+!!Saara
+* add new XSL/XML headers for proofing test docs
+* Set up ways of adding meta-information for proofing correct corpus docs
+  (source info, used in testing or not, added to lexicon or not)
+* add nested error markup to xml conversion
+* discuss more parallel texts
+
+!!Sjur
+* document Windows CD installation work-around
+** done
+* finalise InDesign hyphenator
+** not done
+* update usage and installation documentation
+** done
+* new/updated front page (old front page to history page)
+** done
+* press release
+** done
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+** done
+
+!!Thomas
+* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
+** not any this week
+* test hyphenation
+** not any this week
+* analyse hyphenation test results
+** not any this week
+* look at test cases still not behaving properly
+** worked some
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+** worked some
+
+
+!!Tomi
+* Hunspell lexicon conversion
+** not done
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Trond
+* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
+** Worked on this issues, better conversion now, errors corrected.
+* analyse hyphenation test results
+** Not done
+* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+** Not done
+
+
+!!!3. Documentation
+
+InDesign documentation is needed.
+
+__TODO:__
+* update InDesign documentation (__Børre, Sjur__)
+* translate InDesign documentation (__Thomas, Sjur, Ilona__)
+* proofread the translated/written documentation (__Børre, Per-Eric, Tomi__)
+
+!!!4. Corpus infrastructure
+
+Nothing.
+
+!!!5. Infrastructure
+
+__TODO:__
+* add Jabber account in iChat (__all__)
+
+!!!6. Linguistics
+
+!!North Sámi
+
+Hyphenation bugs found in Polderland code, update expected this week, should fix
+everything.
+
+__Ilona__ fixed the {{sme}} false negatives in bug 494.
+
+!!Lule Sámi
+
+Hyphenation: same as for {{sme}}.
+
+__TODO:__
+* {{sme->smj}} lexicon conversion to build bilingual lexicon resources, and
+  increase {{smj}} coverage (__Trond, Thomas, Svenne__). Add the words.
+
+!!!7. Name lexicon infrastructure
+
+Delayed till Divvun2 (or after release of Divvun1).
+
+Decisions made in Tromsø can be found in [this meeting
+memo.|/doc/admin/physical_meetings/tromso-2006-08-propnoun.html]
+
+__TODO:__
+# fix bugs in lexc2xml; add comments to the log element (__Saara__)
+# finish first version of the editing (__Sjur__)
+# test editing of the xml files. If ok, then: (__Sjur, Thomas, Trond__)
+# make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
+  well) (the morphological section should be kept intact, in e.g.
+  propernoun-sme-morph.txt) (__Sjur, Saara__)
+# convert propernoun-($lang)-lex.txt to a derived file from common xml files
+  (__Sjur, Tomi, Saara__)
+# implement data synchronisation between [risten.no|http://www.risten.no] and
+   the cvs repo, and possibly other servers (ie the G5 as an alternative server
+   to the public risten.no - it might be faster and better suited than the
+   official one; also local installations could be treated the same way)
+# start to use the xml file as source file
+# clean terms-sme.xml such that all names have the correct tag for their use
+  (e.g. @type=secondary) (__Thomas, Maaren, linguists__)
+# merge placenames which are errouneously in different entries: e.g. Helsinki,
+  Helsingfors, Helsset (__linguists__)
+# publish the name lexicon on risten.no (__Sjur__)
+# add missing parallel names for placenames (__linguists__)
+# add informative links between first names like Niillas and Nils
+  (__linguists__)
+
+
+!!!8. Proofing tools
+
+!!Hunspell
+
+Proper nouns not yet working, and they do not contain anything to clearly
+identify the end of the stem. This makes it harder to generate proper HUNSPELL
+entries.
+
+TODO:
+* Hunspell lexicon conversion (__Tomi, Børre__)
+
+!!Testing
+
+!Spelling Error Markup
+
+This will wait till after the release.
+
+__TODO:__
+* Set up ways of adding meta-information (source info, used in testing or not,
+  added to lexicon or not) (__Saara__)
+* move __Steinar's__ error markup in the xml files to (a copy of) the original
+  (__Børre, Kimme__)
+* add nested error markup to xml conversion (__Saara__)
+* test new and nested error markup (__Sjur__)
+
+!Automated testing
+
+Paradigm testing not yet working as expected.
+
+__TODO:__
+* improve hyphenation testing (__Sjur__)
+* fix paradigm testing (__Sjur__)
+
+!MS Office
+
+Proofing tools do not work in Office 2003 when language is set to North Sámi
+(Finland/Sweden), and hyphenation doesn't work in Office 2007 under the same
+circumstances. This is reported to Polderland, and a fix is expected soon.
+
+!!Lexicon conversion to the PLX format
+
+Open issues based on test results:
+
+sámi-dáru - not accepted => Gen+hyph compound, is not allowed with hyphen. We
+can allow such compounds without too much overgeneration by adding the hyphen to
+the last part, ie ''-dáru'' in the PLX entry. => Bugzilla as feature request.
+
+!smj
+* 419 - fixed
+* 518 - regression - Fuoskok = pl+clitic as well as derivation = won't fix
+* 575 - fixed - no double hyphens
+* 584 - fixed
+* 589 - fixed
+* 596 - C-giella
+
+!sme
+* 425 - roman number - will not be fixed in 1.0 release
+* 518 - regression - plural same as derivation, won't fix
+* 588 - regression - ''r.'' accepted as final part
+** __Tomi__ knows where is the problem, but because verb compilation takes much
+   time, haven't tackled it yet
+* 592 - fixed
+* 593 - missing words in beta2, still a few
+* 595 - prefix+name wihtout hyphen (''ovdaLot'' instead of ''ovda-Lot'')
+
+__TODO:__
+* look at test cases still not behaving properly (__Thomas, Tomi__)
+
+!!InDesign tools
+
+Almost finished, found a bug (reported to Polderland).
+
+__TODO:__
+* improve hyphenation testing (__Sjur__)
+* upload (__Sjur__)
+* documentation (__Børre, Sjur__)
+
+
+!!Hyphenators
+
+Waiting for the last bug fixes from Polderland.
+
+!!Final release
+
+Released!
+
+!!Update
+
+* update the list of changes/fixes (__Børre__)
+* update the front page (__Sjur, all__)
+* include latest fixes, update from Polderland (__Sjur, Tomi__)
+* update list of installed files (__Sjur, Børre__)
+
+!!!9. Other
+
+!!Christmas vacation
+
+|| who     || when
+| Børre    | away 20th, 21st, working from home on 27th, 28th
+| Ilona    | Not working: 22.-26.12. and 31.12.-4.1. (well, next year at all? My contract ends at 31.12.)
+| Per-Eric | work some of the days in christmas, no vacation
+| Sjur     | 22-1, possibly working 27-28
+| Thomas   | 21-28
+| Tomi     | don't know yet, work some days
+| Trond    | 24.12, 31.12. Work some of the days. Also prepare lectures at home...
+
+
+!!Corpus contracts
+
+Delayed till after final release.
+
+TODO:
+* publish corpus contracts and project infra as open-source on NoDaLi-sta
+  (__Sjur__)
+
+!!Bug fixing
+
+When fixing bugs, record the version number containing the fix in the Bugzilla
+bug report, such that for each bug, we know exactly when it should have been
+fixed, in what file(s) and what version.
+
+__83__ open Divvun/Disamb bugs (__45__ of these 83 are speller-related bugs,
+__38__ are other bugs), and __23__ risten.no bugs
+
+
+!!!10. Next meeting, closing
+
+The next meeting is 7.1.2008, 09:30 Norwegian time.
+
+The meeting was closed at 13:41.
+
+!!!Appendix - task lists for the next week
+
+!!Boerre
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Boerre.ics]
+* finalise InDesign hyphenator
+* new/updated front page (old front page to history page)
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Ilona
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Ilona.ics]
+* Continue the bug 494
+* Still something to translate/proofread in Finnish?
+
+!!Maaren
+* lexicalise actio compounds
+
+!!Per-Eric
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Per-Eric.ics]
+* check some unusual and missing words from the last Olavi missing list 071123.txt which still are not lexicalised
+* proofread the translated/written documentation
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Risten
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Risten.ics]
+* Print 50 CDs, take them to Oslo as backup
+
+!!Saara
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Saara.ics]
+* add new XSL/XML headers for proofing test docs
+* Set up ways of adding meta-information for proofing correct corpus docs
+  (source info, used in testing or not, added to lexicon or not)
+* add nested error markup to xml conversion
+* discuss more parallel texts
+
+!!Sjur
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Sjur.ics]
+* document Windows CD installation work-around
+* finalise InDesign hyphenator
+* update usage and installation documentation
+* new/updated front page (old front page to history page)
+* press release
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Thomas
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Thomas.ics]
+* translate InDesign documentation
+* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
+* test hyphenation
+* analyse hyphenation test results
+* look at test cases still not behaving properly 
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Tomi
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Tomi.ics]
+* Hunspell lexicon conversion
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+
+!!Trond
+[iCal|/doc/admin/weekly/2007/Tasks_2007-12-17_Trond.ics]
+* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
+* analyse hyphenation test results
+* [fix bugs!|http://giellatekno.uit.no/bugzilla].

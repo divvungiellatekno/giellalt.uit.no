@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document>
+  <header>
+    <title>Testing the disambiguator</title>
+  </header>
+
+  <body>
+    <p></p>
+
+    <source>Tokens =    Number of tokens in the text 
+            (cat file.txt | preprocess --abbr=bin/abbr.txt | wc -l)
+            (or: "catxml -i" instead of "cat")
+Parses =    Number of parses given (number of the following command, minus the
+            number of tokens)
+            (cat file.txt | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT
+            -utf8 bin/sme.fst | lookup2cg | vislcg --grammar=src/sme-dis.rle | wc -l
+CorrTag =   Number of tokens that did not have their correct tag removed
+            (This number must be manually arrived at: Tokens - errouneous_analyses
+Ambiguity = #Parses / #Tokens
+Precision = #CorrTag / # Parses
+Recall =    #CorrTag / # Tokens</source>
+
+    <p></p>
+  </body>
+</document>

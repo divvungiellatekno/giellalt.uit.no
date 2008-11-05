@@ -1,0 +1,165 @@
+!!!Sametingets rettskrivingsverktøy
+
+Velkommen som bruker av Sametingets korrekturverktøy. Dette er den første offisielle versjonen av disse verktøyene. Det finnes en del feil i denne versjonen som vi vet om (se liste lenger ned), og helt sikkert finnes det feil vi ikke er klar over. Avsnittet feil og mangler lenger nede forklarer hvordan man kan rapportere disse feilene.
+
+Bruken av dette verktøyet forklares i [et eget dokument|usage.html].
+
+!!Kompatibilitet med operativsystem- og Microsoft Office-versjoner
+
+Det grunnleggende kravet er at Microsoft Office-programmene og operativsystemet har full støtte for Unicode - Divvun-prosjektet støtter ''ikke'' eldre samiske tegnsett som WinSam, Levi eller MacSami.
+
+!Windows
+
+Windows XP SP2 er den første versjonen av Windows med eksplisitt støtte for samisk. I tillegg er det mulig at Windows 2000 med Sametingets samiske tastatur fungerer.
+
+Tilsvarende er Office 2000 den første Office-versjonen med støtte for Unicode, og dermed minimum for Divvun-verktøyene.
+
+Vi har testet under følgende operativsystem og MS Office-versjoner for Windows:
+* Windows XP SP2
+* Windows Vista
+* Office Professional 2007
+* Office Professional 2003
+
+Vi vil gjerne ha tilbakemeldinger fra brukerne om andre Windows/Microsoft Office-kombinasjoner enn de som er listet opp over hvor Divvun-korrekturprogrammene fungerer.
+
+!Mac
+
+MacOS X 10.3 er den første versjonen av MacOS med eksplisitt støtte for samisk (samisk tastatur, og mulighet til å velge samisk som grensesnittspråk dersom det finnes). I prinsipp har alle versjoner av MacOS X støtte for Unicode, men med mer begrensede muligheter til å installere samiske tastaturoppsett.
+
+Det finnes __ikke__ støtte for MacOS 9 og eldre, pga. manglende støtte for Unicode.
+
+MS Office 2004/Mac er inntil videre den eneste versjonen av MS Office for Mac med støtte for Unicode, og dermed den eneste versjonen Divvun-prosjektet støtter. Eldre versjoner støttes altså __ikke__.
+
+Vi har testet under følgende operativsystem og MS Office-versjoner for Mac:
+* MacOS X 10.4.x
+* MS Office 2004
+
+Vi vil gjerne ha tilbakemeldinger fra brukerne om verktøyene fungerer under andre MacOS-versjoner enn den som er listet opp over.
+
+!!!Ny installering
+
+__OBS!__ Om du har installert en tidligere versjon av disse verktøyene, må du følge instruksene under avsnittet ''Oppgradering'', sist i dokumentet.
+
+!!Mac
+
+Installeringsprogrammet skal starte av seg selv etter [nedlastingen|http://www.divvun.no/static_files/sami-proofing-tools.dmg], og det er bare å følge anvisningene på skjermen.
+
+I tilfelle installeringsprogrammet ikke starter av seg selv, eller man vil kjøre installeringen på nytt senere, gjør følgende:
+
+# Dobbeltklikk på filen {{sami-proofing-tools.dmg}}
+# I vinduet som kommer opp, dobbeltklikk på installeringspakken ({{sami_installer.pkg}})
+# Følg instruksjonene på skjermen
+
+
+!!Windows
+
+# [Last ned installasjonspakken|http://www.divvun.no/static_files/DivvunInstaller.exe], og godkjenn at fila skal __Kjøres__.
+# Velg språk og trykk __OK__.
+# Trykk __Kjør__ igjen.
+# Trykk __Neste__ til installasjonen er ferdig.
+
+!!!Installerte filer
+
+Det som blir installert er:
+
+* Stavekontroll for nordsamisk
+* Stavekontroll for lulesamisk
+* Orddeling for nordsamisk
+* Orddeling for lulesamisk
+
+Fullstendig liste over alle installerte filer finnes [her
+|http://www.divvun.no/doc/proof/spelling/msoff/installed-files.txt].
+
+!!!Kjente feil og mangler
+
+Nedenfor følger en liste over kjente feil i korrekturverktøyene. Divvun-prosjektet vil levere oppdateringer med jevne mellomrom med korrigeringer og flere ord.
+
+For en fullstendig liste over rettinger, se [dette dokumentet|/doc/proof/spelling/msoff/changes.html].
+
+!!Stavekontroll
+
+* akronymer lenger enn 3 bokstaver vil få forslag der kasusendelsene står med store bokstaver. Den korrekte varianten med små bokstaver vil selvsagt bli akseptert (og formene med store bokstaver er jo korrekte i sammenhenger der hele teksten står med store bokstaver). Dette er et kompromiss for å kunne korrigere ord som «SáMI» til «SÁMI». Tidligere ble «SáMI» rettet til «Sámi». Oppførselen til stavekontrollen i dette henseende vil bli vurdert i framtida basert på tilbakemeldinger fra brukerne.
+* når man oppgraderer på Windows, så spiller installasjonsspråket ingen rolle - språkvalget fra forrige installasjon vil bli brukt. Hvis du vil kjøre installasjonen på et annet språk, må du først deinstallere den forrige installasjonen, og deretter installere på nytt med det valgte språket.
+* når man oppgraderer på Windows, så blir IKKE installasjonen oppgradert. Man må først deinstallere, enten med installereren eller med det vanlige Windows-programmet for å fjerne programvare, og deretter installere på vanlig vis. Se instruksjoner nederst i dokumentet.
+* i Windows kan det se ut som om det finnes stavekontroller for skolte-, enare- og sydsamisk. Dette er ikke tilfellet. Pga Microsofts måte å gruppere de samiske språkene sammen på (som kan ha sine fordeler i visse sammenhenger) vil Office automatisk falle tilbake til korrekturverktøy for andre «varianter» innenfor en gruppe, om et spesifikt språk ikke har egne. Dette fører til at Office vil falle tilbake på nord- og lulesamiske verktøy (mest sannsynlig lulesamisk, ettersom det kommer først alfabetisk) for samiske språk som ikke har egne verktøy. Dette gjør egentlig ingen ting, men kan være irriterende dersom du har fortalt MS Word at du skriver på et av disse språkene, og får store mengder røde streker. En mulig løsning for å fjerne de røde streken er jo å lage korrekturverktøy for disse språkene også. Sydsamisk er allerede planlagt.
+* romertall blir ikke gjenkjent
+* rettingsforslag på feilstavede sammensetninger kunne vært bedre - sammensetning er vanskelig for stavekontroller. For å få tips om hvordan man kan  korrigere lange, sammensatte ord som i utgangspunktet ikke får (relevante) forslag, se dokumentet om [hvordan du bruker stavekontrollen|usage.html].
+* forslag kan iblant inneholde bindestrek. Stavekontrollen vet ikke om du egentlig har tenkt å skrive ''buss– og drosjestreik'' eller bare ''buss'' om du har skrevet ''bss'', og den foreslår derfor begge. Du velger en av dem ut i fra hva som er rett i sammenhengen.
+* det mangler ord, spesielt i den lulesamiske stavekontrollen, selv om vi har lagt til alle ord vi har funnet. Den beste hjelpen vi kan få for å rette på dette er at brukere sender oss tekst. Se vår  [framside|http://www.divvun.no/] for detaljer.
+
+!!Orddeling
+
+* det kan mangle orddeling ved visse ordendelser
+* visse orddelingspunkt kan bli feil
+
+
+!!!Tilbakemeldinger
+
+Vi vil gjerne ha tilbakemeldinger om hvordan stavekontrollen fungerer, både ros og ris. For å vite hvilken versjon dere bruker, skriv inn ''nuvviDspeller''.
+Dette ordet blir ikke godkjent. Dersom man  høyreklikker (Mac: kontroll-klikker) på ordet vil forslagene bli noe i stil med:
+
+{{{
+Divvun
+Davvisámi, version 1.0, 2007-12-05
+}}}
+
+Legg ved det nederste «forslaget» når dere sender tilbakemeldinger, så vet vi eksakt hvilken versjon av stavekontrollen problemet gjelder.
+
+!!E-post
+
+Tilbakemeldinger kan sendes pr e-post til:
+* [feedback@divvun.no|mailto:feedback@divvun.no]
+
+
+!!Bugzilla
+
+Man kan også opprette en egen konto i [feilmeldingssystemet|http://giellatekno.uit.no/bugzilla/] for Divvun-prosjektet og språkteknologiprosjektet ved Universitetet i Tromsø, og der lage egne rapporter om feil man finner i korrekturprogrammene. Slike feilmeldinger vil bli automatisk sendt videre til rette ansvarsperson.
+
+!!Hva bør rapporteres
+
+Her er en kort huskeliste før man sender inn tilbakemeldinger:
+
+* husk __alltid__ versjonsteksten (skriv inn ''nuvviDspeller'' og høyreklikk) når du rapporterer feil eller mangler
+* husk også versjon av MS Office og operativsystemet du bruker
+* sjekk at feilen du vil melde fra om ikke alt finnes i listen over kjente feil
+* det er nyttig å sende inn din egen brukerordliste av og til, dvs. listen med ord du selv har lagt til når Sametingets korrekturprogram ikke godkjenner korrekte ord - men sjekk at ordlisten ikke inneholder "private" ord og navn før du sender den inn! Standardbrukerordlisten finner du her på Windows: {{C:\Documents and Settings\<user>\Application Data\Microsoft\UProof\CUSTOM.DIC}} (om du ikke finner den, let etter *.dic i søkedialogen), og på Mac her: {{/Brukere/<bruker>/Bibliotek/Preferences/Microsoft/Custom Dictionary}}
+* om du har hele tekster som du er villig til å gi fra deg, tar vi gjerne i mot - en større samling tekster er det viktigste hjelpemiddelet for å lage en bedre stavekontroll. Både korrekturlest og ukorrigert tekst er svært nyttig for oss. Du kan enten sende teksten som vedlegg til en e-post, eller bruke [nettsiden som er spesielt laget for å gi dokumenter til prosjektet|/upload/upload_corpus_file.html]
+
+
+
+!!!Tilgang til kildekoden, opphavsrett til kildekode og verktøy
+
+Divvun-prosjektet arbeider etter prinsippene om åpen kildekode. Dvs. at det med noen få unntak er mulig å laste ned all kildekode og all programvare som behøvs for selv å kunne lage eller modifisere stavekontrollene. De viktigste unntakene er:
+
+* for å generere dataprogram fra ordlistene i Divvun-prosjektet, behøver man proprietær programvare fra Xerox. Man kan enklest skaffe denne programvaren ved å kjøpe boken "[ Finite State Morphology|http://www.fsmbook.com/]", hvor det medfølger en CD med programvaren på.
+* programvaren for å lage korrekturprogram til Microsoft Office tilhører Polderland, og er ikke tilgjengelig. ''Det er derfor ikke mulig å lage egne versjoner av disse korrekturprogrammene.'' Korrekturprogrammene for OpenOffice.org vil derimot ikke ha slike begrensninger, og vil bruke en stavekontrollmotor basert på åpen kildekode (korrekturprogram for OOo vil komme litt senere).
+
+
+Mer informasjon om hvordan man laster ned og installerer kildekoden for Divvun-prosjektet finnes på [denne siden|/doc/infra/anonymous-cvs.html].
+
+!!!Oppgradering
+
+Om du har installert en tidligere versjon av Divvun-verktøyene, må du fjerne disse helt før du kan installere den nye versjonen. For å fjerne dem, følg instruksjonene nedenfor, og gå deretter til avsnittet ''Ny installasjon''.
+
+!!Mac
+
+# gå til mappen {{/Applications/SamiProofingTools/}}
+# dobbeltklikk ''Remove SamiProofingTools''
+# skriv et administratorbrukernavn og -passord i vinduet som kommer opp
+
+Dobbeltsjekk at det ikke finnes filer som begynner med __Sami__ i mappen {{/Applications/Microsoft Office 2004/Shared Applications/Proofing Tools/}}. Dersom det gjør det, bør du kaste dem i papirkorga manuelt.
+
+
+!!Windows
+
+Enten:
+
+# åpne __Kontrollpanel__ (i __Start__-menyen)
+# dobbeltklikk på __Legg til/Ta bort programmer__
+# marker ''Sámi Proofing Tools''
+# klikk __Ta bort__
+
+Eller:
+
+# start installeringsprogrammet
+# når du får alternativene __Endre, Reparer, Fjern__, skal du velge __Fjern__

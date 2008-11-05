@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+    <header>
+        <title>Forrest howto</title>
+        <authors>
+            <person email="borre.gaup@samediggi.no" name="Børre Gaup" />
+        </authors>
+    </header>
+    <body>
+        <section>
+            <title>Introduction</title>
+            <p>
+                The documentation (the websites) for both <a href="http://divvun.no">Divvun.no</a> and <a href="http://giellatekno.uit.no">Giellatekno</a> is served to the public via <a href="http://forrest.apache.org">forrest</a>, and is renewed very often. When you are offline you can read this documentation if you install forrest on your own machine.
+            </p>
+            <note>
+                In this document we assume that your username is <em>niillas</em>, that you checkout svn trunk and place forrest into the map <em>/Users/niillas/Documents</em>. <em>/Users/niillas/Documents</em> is also referred to as <em>$HOME/Documents</em> throughout this document.
+            </note>
+        </section>
+        <section>
+            <title>Fetching and unpacking forrest</title>
+            <p>
+                We have done some changes to the internationalisation code in forrest, so we have made our own package of forrest <a href="http://divvun.no/static_files/divvun_forrest.tar.bz2">availabe</a> on our website. Press the link to download our package.
+            </p>
+            <p>
+                After a while you will have downloaded the file to the Desktop. Double-click the file divvun_forrest.tar.bz2, and it will be unpacked. A folder name <code>forrest</code> will appear on the desktop. Lift this folder to the <code>Documents</code> folder.
+            </p>
+        </section>
+        <section>
+            <title>Setting up environment variables</title>
+            <p>
+                Open the file .bash_profile using this command in the terminal
+            </p>
+            <p>
+                <code>open -a subethaedit ~/.bash_profile</code>
+            </p>
+            <p>
+                Write the following into that file: <code>export FORREST_HOME=$HOME/Documents/forrest</code>
+            </p>
+            <p>
+                Then go to the line that starts with PATH (It reads something like this: PATH="/usr/bin:/usr/sbin:/usr/local/bin:$PATH"). If it doesn't have the entry <em>$FORREST_HOME/bin</em>, then add the text <code>$FORREST_HOME/bin:</code> <em>between</em> the colon and $PATH (This is how our example line will look like after having done the change: PATH="/usr/bin:/usr/sbin:/usr/local/bin:<strong>$FORREST_HOME/bin:</strong>$PATH")
+            </p>
+            <p>
+                Close all terminals. Next time you open a terminal the changes will be working. Or, if you hate closing terminals to make these kind of changes write this command in your terminal(s):
+            </p>
+            <p>
+                <code>. $HOME/.bash_profile</code>
+            </p>
+        </section>
+        <section>
+            <title>Installing the documentation</title>
+            <p>
+                Follow the instructions on <a href="/doc/tools/docu-svn-user.html">svn checkout</a> to get our documentation.
+            </p>
+            <note>
+                To keep your documentation up to date, you will have to do a <code>svn up</code> regularly in the directory were you have checked out our repository.
+            </note>
+        </section>
+        <section>
+            <title>Setting up fonts for pdf versions the documentations</title>
+            <p>
+                Open the file <code>$FORREST_HOME/plugins/org.apache.forrest.plugin.output.pdf/output.xmap</code> for editing. The line that reads:
+            </p>
+            <source>
+                &lt;user-config&gt;/Users/sd/trunk/xtdoc/sd/src/documentation/resources/fonts/config.xml&lt;/user-config&gt;
+            </source> 
+            <p>
+                has to be changed so that forrest will find the config.xml file. Assuming that svn has been checked out to <code>$HOME/Documents</code> and that your username is niillas, the correct replacement will be:
+            </p>
+            <source>
+                &lt;user-config&gt;/Users/niillas/Documents/trunk/xtdoc/sd/src/documentation/resources/fonts/config.xml&lt;/user-config&gt;
+            </source> 
+            <p>
+                Save and close the file.
+            </p>
+            <p>
+                The next step is to edit the file <code>$HOME/Documents/trunk/xtdoc/sd/src/documentation/resources/fonts/config.xml</code>. All instances of <code>/Users/sd/trunk/xtdoc/sd/src/documentation/resources/fonts/</code> with <code>/Users/niillas/Documents/trunk/xtdoc/sd/src/documentation/resources/fonts/</code>. When this is done, save and close the file.
+            </p>
+        </section>
+        <section>
+            <title>Reading the documentation</title>
+            <p>
+                Now that everything is in place, you will have to start up forrest. Open a terminal, and issue this command:
+            </p>
+            <p>
+                <code>cd $HOME/Documents/trunk/xtdoc/sd; forrest run</code>
+            </p>
+            <p>
+                Forrest outputs a lot of messages, and the last stanza before it goes live begins with:
+            </p>
+            <p>
+                <code>run_default_jetty:</code>
+            </p>
+            <p>
+                and ends with a line that goes something like this:
+            </p>
+            <p>
+                <code>10:02:27.301 EVENT Started org.mortbay.jetty.Server@290fbc</code>
+            </p>
+            <p>
+                where the important part is <strong>org.mortbay.jetty</strong> (what's before that is the time, and what's behind varies from machine to machine).
+            </p>
+            <p>
+                Open a web browser, and go to the address <a href="http://localhost:8888">http://localhost:8888</a>
+            </p>
+        </section>
+        <section>
+            <title>Running Forrest on a different port</title>
+            <p>
+                If you want to run two different instances of Forrest (e.g. both the <code>xtdoc/sd/</code> and <code>xtdoc/gtuit/</code> at the same time, or there is already another one running Forrest on victorio, and you want to run your own instance), you have to specify a different port for Forrest to listen to. You do that by adding an argument to the <code>forrest run</code> command as shown below:
+            </p>
+            <source>forrest run -Dforrest.jvmargs="-Djetty.port=8889"</source>
+            <p>
+                More help and hints can be found at Forrest's <a href="http://forrest.apache.org/faq.html">FAQ page</a>.
+            </p>
+        </section>
+        <section>
+            <title>Forrest, jspwiki and UTF-8</title>
+            <p>
+                When running Forrest in MacOS X, the Java VM takes an 8-bit encoding as its default file encoding. This breaks the parsing of the JSPWiki pages, since the parser grammar is using the Java default (and thus OS default) encoding to interpret the jspwiki files. To specify another default encoding for Java, give Forrest the following startup argument:
+            </p>
+            <source>forrest run -Dforrest.jvmargs="-Dfile.encoding=utf-8"</source>
+            <p>
+                To run forrest on a different port with correct handling of utf-8 encoded jspwiki files, use the following command:
+            </p>
+            <source>forrest run -Dforrest.jvmargs="-Dfile.encoding=utf-8 -Djetty.port=8889"</source>
+            <p>
+                For some notes on the lack of a global setting for things like this (e.g. a global setting of Java file encoding), see <a href="http://lists.apple.com/archives/java-dev/2002/Feb/msg00413.html"> this reply</a> from Apple's e-mail list for Java developers.
+            </p>
+        </section>
+        <section>
+            <title>Updating Forrest from svn</title>
+            <p>
+                If you would like to update Forrest from svn, then you can issue these commands:</p>
+            <source>cd $FORREST_HOME
+svn up
+cd main
+./build.sh clean
+./build.sh
+            </source>
+        </section>
+        <p class="last_modified">
+            Last modified: $Date$, by $Author$
+        </p>
+    </body>
+</document>

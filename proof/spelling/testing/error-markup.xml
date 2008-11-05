@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document>
+  <header>
+    <title>Error markup</title>
+  </header>
+
+  <body>
+    <p>We want to extend (some of) the corpus files with markup for spelling
+    and other errors, to use them as gold standards for testing our spellers
+    (and in the future other tools as well). The markup is done manually, and
+    needs to follow certain rules.</p>
+
+    <section>
+      <title>Markup types</title>
+
+      <p>We differentiate between three types of errors that people make,
+      depending on the type of analysis needed to detect and correct the
+      error:</p>
+
+      <dl>
+        <dt>spelling errors - wrong§correct - ()</dt>
+
+        <dd>traditional misspellings confined to single (error) strings, that
+        is, errors that don't need an analysis of the surrounding words to be
+        detected and corrected</dd>
+
+        <dt>(morpho)syntactic errors - {wrong}£{correct} - {}</dt>
+
+        <dd>errors that require a partial or full analysis of (parts of) the
+        sentence or surrounding words to be detected and corrected. The error
+        itself can be restricted to a single word (such as wrong case after a
+        certain verb, or wrong person-number agreements in verbs), or to
+        larger constituents</dd>
+
+        <dt>lexical/terminological errors - wrong€correct - []</dt>
+
+        <dd>errors where the real error is only in the chosen word used, that
+        is, another word would be better or correct; to be able to detect and
+        correct such errors, we need in addition to syntactic analysis also a
+        dictionary component with sufficiently rich syntactic and semantic
+        markup of the entries, as well as syntactic and semantic
+        disambiguation. The possibility to detect and correct this type of
+        errors is probably not in the nearest future, but the need to mark up
+        texts for these errors is real now.</dd>
+      </dl>
+
+      <p>The three types can be nested, with the spelling error being the
+      innermost one. That is, the following nesting is allowed:
+      <code>syntactic &gt; lexical &gt; spelling</code>.</p>
+
+      <p>When needed, parentheses can be used to identify the range of the
+      error. We use one type of parenthesis for each error type, as indicated
+      above. When <em>nesting</em> error markup, <strong>parentheses are
+      required</strong>.</p>
+    </section>
+
+    <section>
+      <title>Markup examples</title>
+
+      <p>Here are some examples of error/correction markup of the different
+      types:</p>
+
+      <source>muitlat§muitalat
+{mun muitalat}£{mun muitalan}
+guossodimieddne€biebbmoieddne</source>
+
+      <p>And some more complex examples with nesting:</p>
+
+      <source>{mun (muitlat§muitalat)}£{mun muitalan}
+(guossodmieddne§guossodimieddne)€biebbmoieddne</source>
+    </section>
+
+    <section>
+      <title>Markup rules</title>
+
+      <p>The following rules should be followed when marking up texts:</p>
+
+      <ol>
+        <li><strong>The correction is always done in the original format -
+        never in the xml file!</strong> That is, make a copy of the original
+        <code>doc</code>, <code>txt</code> or <code>html</code> file, and name
+        it <code>corr.doc</code>, <code>corr.txt</code>, or
+        <code>corr.html</code>, and add the correction markup in this new
+        file. This will create a "new" original, which is identical to the
+        "real" original, except for the additional correction markup. The
+        "new" original will be converted to xml by the script
+        <code>convert2xml.pl</code>, which is run automatically every night.
+        Corrections done to the converted xml files will be lost upon next
+        conversion.</li>
+
+        <li><strong>§ is the spelling correction mark</strong> - use it
+        directly after the wrongly spelled word, followed by the correction,
+        as in error§correction. Example: <em>volvo§Volvo</em>. NB! there
+        should be <strong>NO space</strong> on either side of the correction
+        mark §.</li>
+
+        <li><strong>skip foreign text</strong> - we assume that text in other
+        languages are properly detected, or manually marked in the xsl file.
+        That is: DON'T add spelling error markup to passages in Norwegian -
+        instead, try to enforce or add xml markup designating the passage as
+        being in Norwegian. Single words used as part of a sami sentence (in
+        situ loans), should NOT be marked, either, since we can't know what
+        the correction should be (and in principle the word isn't a
+        misspelling if it is correctly spelled Norwegian).</li>
+
+        <li><strong>enclose multiword corrections in parenthesis</strong> -
+        since the conversion to xml needs a way of knowing where the
+        correction ends, we need to tell it if it is not at the end of the
+        first word after the correction symbol. Example:
+        <em>Norggabealde§(Norgga bealde)</em></li>
+
+        <li><strong>separate punctuation that is not part of the
+        correction</strong> with a space, or use parentheses around the
+        correction. Example: "<em>buolasta§(buolašta).</em>" or
+        "<em>buolasta§buolašta .</em>" (the example text is the text within
+        the quotes, <strong>including</strong> the punctuation).</li>
+
+        <li><strong>remember the case</strong> - the correction should have
+        the same case pattern as the spelling error. Example:
+        <em>Mannjá§Maŋŋá</em>, <strong>NOT</strong> <em>Mannjá§maŋŋá</em>
+        (note the case of the initial letter).</li>
+
+        <li><strong>always provide a correction!</strong> The markup is
+        useless if it isn't complete.</li>
+
+        <li><strong>Both</strong> the <strong>untouched original</strong> and
+        the <strong>corrected "original"</strong> should be stored in
+        <code>$CORPUSHOME/prooftest/orig/$LANG/$GENRE/</code>. The converted
+        xml file(s) will be found in
+        <code>$CORPUSHOME/prooftest/$CONTRACT/$LANG/$GENRE/</code>. It is
+        important that the untouched original is also stored in the
+        <code>prooftest/</code> hierarchy, otherwise it can easily be included
+        when making new missing lists, which means that the coverage testing
+        will become misleading without us noticing it.</li>
+      </ol>
+    </section>
+
+    <p>By following these guidelines the resulting files should be readily
+    useable for (speller) testing, as soon as they are converted to xml.</p>
+  </body>
+</document>

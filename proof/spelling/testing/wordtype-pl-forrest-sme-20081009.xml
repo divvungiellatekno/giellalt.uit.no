@@ -1,0 +1,2903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <header>
+    <title>Speller Test Results for:
+          «tmp/sp-wordtype-pl-sme.txt»
+        </title>
+  </header>
+  <body>
+    <section>
+      <title>Overview</title>
+      <section>
+        <title>Technical data</title>
+        <p>Language tested:
+          <strong>sme</strong></p>
+        <p>Document tested: 
+          <strong>tmp/sp-wordtype-pl-sme.txt</strong></p>
+        <p>Speller tool:
+          <strong>Polderland command line tool</strong></p>
+        <p>Speller tool version:
+          <strong>spellSamiNort version 103.3.0.2, Apr 14 2008, 13:12:18</strong></p>
+        <p>Speller lexicon version:
+          <strong>Davvisámi, version 1.0.1, 2008-09-25</strong></p>
+        <p>Test Date:
+          <strong>20081009</strong></p>
+        <p>Test Type:
+          <strong>wordtype</strong></p>
+      </section>
+      <section>
+        <title>Result summary</title>
+        <p>Number of input words:
+        <strong>118</strong></p>
+        <table>
+          <caption>Precision and Recall</caption>
+          <tr>
+            <td colspan="2" rowspan="2"/>
+            <th colspan="2">Speller view</th>
+            <th>Wrong tokenisation</th>
+          </tr>
+          <tr>
+            <td>Speller Positive<br/>
+              (number of flagged words):<br/><strong>72</strong></td>
+            <td>Speller Negative<br/>
+              (number of accepted words):<br/><strong>46</strong></td>
+            <th>All tokenisation<br/>
+              errors:<br/><strong>0</strong></th>
+          </tr>
+          <tr>
+            <th rowspan="2">Reality</th>
+            <td>Number of real errors:<br/><strong>59</strong></td>
+            <td>Number of true positives<br/>
+              (detected real errors):<br/><strong>57</strong></td>
+            <td>Number of false negatives<br/>
+              (unflagged spelling errors):<br/><strong>2</strong></td>
+            <td>Number of errouneously<br/>
+              tokenized spelling errors:<br/><strong>0</strong></td>
+          </tr>
+          <tr>
+            <td>Number of real correct words:<br/><strong>59</strong></td>
+            <td>Number of false positives<br/>
+              (incorrectly flagged words):<br/><strong>15</strong></td>
+            <td>Number of true negatives<br/>
+              (unflagged correct words):<br/><strong>44</strong></td>
+            <td>Number of errouneously<br/>
+              tokenized correct words:<br/><strong>0</strong></td>
+          </tr>
+        </table>
+        <dl>
+          <dt>Precision (tp/(tp+fp)):</dt>
+          <dd>79.17 %</dd>
+          <dt>Recall (tp/(tp+fn)):</dt>
+          <dd>96.61 %</dd>
+          <dt>Accuracy ((tp+tn)/words):</dt>
+          <dd>85.59 %</dd>
+        </dl>
+        <table>
+          <caption>Suggestion statistics</caption>
+          <tr>
+            <td>Number of detected spelling errors with <span class="correct">correct
+                suggestion</span>:</td>
+            <td>33</td>
+            <td>(57.89 %)</td>
+          </tr>
+          <tr>
+            <td>Number of detected spelling errors with <span class="correct">correct
+                suggestion</span> in top 5:</td>
+            <td>33</td>
+            <td>(57.89 %)</td>
+          </tr>
+          <tr>
+            <td>Number of detected spelling errors with only wrong suggestions:</td>
+            <td>6</td>
+            <td>(10.53 %)</td>
+          </tr>
+          <tr>
+            <td>Number of detected spelling errors with no suggestions at all:</td>
+            <td>18</td>
+            <td>(31.58 %)</td>
+          </tr>
+        </table>
+        <p/>
+        <table>
+          <caption>Spelling error statistics</caption>
+          <tr>
+            <th>Spelling errors:</th>
+            <th>59</th>
+            <th>100 %</th>
+          </tr>
+          <tr>
+            <td>Simple spelling errors:</td>
+            <td>45</td>
+            <td>(76.27 %)</td>
+          </tr>
+          <tr>
+            <td>Spelling errors with editing distance 2:</td>
+            <td>14</td>
+            <td>(23.73 %)</td>
+          </tr>
+          <tr>
+            <td>Spelling errors with editing distance 3 or more:</td>
+            <td>0</td>
+            <td>(0 %)</td>
+          </tr>
+        </table>
+      </section>
+    </section>
+    <section>
+      <title>True positives (57)
+        </title>
+      <section>
+        <title>Spelling errors with correct suggestions (33)</title>
+        <table>
+          <tr>
+            <th>Input<br/>word</th>
+            <th>Expected<br/>correction</th>
+            <th>Editing<br/>distance</th>
+            <th>Suggestions</th>
+          </tr>
+          <tr>
+            <td>seammalagana</td>
+            <td>seammalágána</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (251)
+        </span>seammalágana</li>
+                <li><span class="score">
+          (247)
+        </span>seammálágana</li>
+                <li class="correct"><span class="score">
+          (247)
+        </span>seammalágána</li>
+                <li><span class="score">
+          (243)
+        </span>seammaláganan</li>
+                <li><span class="score">
+          (243)
+        </span>seammaláganat</li>
+              </ol>
+            </td>
+            <td>Pron + adj compound</td>
+          </tr>
+          <tr>
+            <td>Svartneskilenas</td>
+            <td>Svartnæskilenis</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (233)
+        </span>Svartnæskilena</li>
+                <li><span class="score">
+          (231)
+        </span>Svartnæskilenat</li>
+                <li class="correct"><span class="score">
+          (231)
+        </span>Svartnæskilenis</li>
+                <li><span class="score">
+          (230)
+        </span>Svartnæskilenlaš</li>
+              </ol>
+            </td>
+            <td>Name</td>
+          </tr>
+          <tr>
+            <td>barggahaddalinban</td>
+            <td>barggahattalinban</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (225)
+        </span>barggahaddamiinnán</li>
+                <li class="correct"><span class="score">
+          (217)
+        </span>barggahattalinban</li>
+              </ol>
+            </td>
+            <td>Deverbal verb + clitic</td>
+          </tr>
+          <tr>
+            <td>reahččut</td>
+            <td>reahccut</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (249)
+        </span>reahcut</li>
+                <li class="correct"><span class="score">
+          (247)
+        </span>reahccut</li>
+                <li><span class="score">
+          (245)
+        </span>rahččut</li>
+                <li><span class="score">
+          (243)
+        </span>geahččut</li>
+                <li><span class="score">
+          (243)
+        </span>reahccot</li>
+                <li><span class="score">
+          (243)
+        </span>roahččut</li>
+                <li><span class="score">
+          (241)
+        </span>geahčut</li>
+                <li><span class="score">
+          (241)
+        </span>rahččot</li>
+                <li><span class="score">
+          (241)
+        </span>reahcuht</li>
+                <li><span class="score">
+          (241)
+        </span>reahcult</li>
+                <li><span class="score">
+          (241)
+        </span>reahcust</li>
+                <li><span class="score">
+          (241)
+        </span>ráhččut</li>
+              </ol>
+            </td>
+            <td>Adverb</td>
+          </tr>
+          <tr>
+            <td>divttemeahttumat</td>
+            <td>diktemeahttumat</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (243)
+        </span>sivttemeahttumat</li>
+                <li class="correct"><span class="score">
+          (241)
+        </span>diktemeahttumat</li>
+                <li><span class="score">
+          (241)
+        </span>diltemeahttumat</li>
+                <li><span class="score">
+          (237)
+        </span>tiltemeahttumat</li>
+                <li><span class="score">
+          (237)
+        </span>bivdemeahttumat</li>
+                <li><span class="score">
+          (237)
+        </span>diidemeahttumat</li>
+                <li><span class="score">
+          (237)
+        </span>duvdemeahttumat</li>
+                <li><span class="score">
+          (237)
+        </span>livdemeahttumat</li>
+                <li><span class="score">
+          (235)
+        </span>bivttesmeahttumat</li>
+                <li><span class="score">
+          (235)
+        </span>divotmeahttumat</li>
+                <li><span class="score">
+          (235)
+        </span>divutmeahttumat</li>
+                <li><span class="score">
+          (235)
+        </span>čivttesmeahttumat</li>
+              </ol>
+            </td>
+            <td>Deverbal adj</td>
+          </tr>
+          <tr>
+            <td>reavggáhattot</td>
+            <td>reavggáhaddot</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>reavggáhaddot</li>
+                <li><span class="score">
+          (243)
+        </span>reavggáhaddut</li>
+                <li><span class="score">
+          (243)
+        </span>reavggáhattat</li>
+              </ol>
+            </td>
+            <td>Deverbal verb</td>
+          </tr>
+          <tr>
+            <td>garvelesttáledje</td>
+            <td>garvileasttáledje</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (235)
+        </span>garvileasttáledje</li>
+                <li><span class="score">
+          (231)
+        </span>gárveheasttáledje</li>
+                <li><span class="score">
+          (231)
+        </span>garvilasttáledje</li>
+                <li><span class="score">
+          (229)
+        </span>garvilestoledje</li>
+                <li><span class="score">
+          (229)
+        </span>gavreheasttáledje</li>
+                <li><span class="score">
+          (227)
+        </span>garvileasttáledjen</li>
+                <li><span class="score">
+          (227)
+        </span>garvileasttáledjet</li>
+              </ol>
+            </td>
+            <td>Deverbal verb</td>
+          </tr>
+          <tr>
+            <td>Orjješ-láhppoluobbalis</td>
+            <td>Orjješ-Láhpoluobbalis</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (222)
+        </span>Orjješ-Láhpoluobbalis</li>
+              </ol>
+            </td>
+            <td>Prefix + Name</td>
+          </tr>
+          <tr>
+            <td>almmehemiidduostumiin</td>
+            <td>almmihemiidduostumiin</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (221)
+        </span>álmmehemiidduostumiin</li>
+                <li><span class="score">
+          (217)
+        </span>lamehemiidduostumiin</li>
+                <li><span class="score">
+          (217)
+        </span>čalmmehemiidduostumiin</li>
+                <li><span class="score">
+          (217)
+        </span>šalmmehemiidduostumiin</li>
+                <li class="correct"><span class="score">
+          (213)
+        </span>almmihemiidduostumiin</li>
+                <li><span class="score">
+          (213)
+        </span>almmuhemiidduostumiin</li>
+                <li><span class="score">
+          (213)
+        </span>fálmmehemiidduostumiin</li>
+                <li><span class="score">
+          (213)
+        </span>gálmmehemiidduostumiin</li>
+                <li><span class="score">
+          (213)
+        </span>ulmmehemiidduostumiin</li>
+              </ol>
+            </td>
+            <td>Derived adj + derived noun compound</td>
+          </tr>
+          <tr>
+            <td>dildddahkamiinnis</td>
+            <td>dilddedahkamiinnis</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (217)
+        </span>bilddaheapminis</li>
+                <li><span class="score">
+          (217)
+        </span>dielddáheapminis</li>
+                <li><span class="score">
+          (217)
+        </span>diiddaheapminis</li>
+                <li><span class="score">
+          (217)
+        </span>dilddeheapminis</li>
+                <li class="correct"><span class="score">
+          (217)
+        </span>dilddedahkamiinnis</li>
+                <li><span class="score">
+          (217)
+        </span>dilddiheapminis</li>
+                <li><span class="score">
+          (217)
+        </span>dilddidahkamiinnis</li>
+                <li><span class="score">
+          (217)
+        </span>dilddoheapminis</li>
+                <li><span class="score">
+          (217)
+        </span>dilddodahkamiinnis</li>
+                <li><span class="score">
+          (217)
+        </span>dildduheapminis</li>
+                <li><span class="score">
+          (217)
+        </span>dilddudahkamiinnis</li>
+                <li><span class="score">
+          (217)
+        </span>vilddaheapminis</li>
+                <li><span class="score">
+          (213)
+        </span>tiiddaheapminis</li>
+                <li><span class="score">
+          (213)
+        </span>dildedahkamiinnis</li>
+                <li><span class="score">
+          (213)
+        </span>dildodahkamiinnis</li>
+                <li><span class="score">
+          (211)
+        </span>dáiddaheapminis</li>
+                <li><span class="score">
+          (211)
+        </span>vilddáskemiinis</li>
+                <li><span class="score">
+          (209)
+        </span>dilotdahkamiinnis</li>
+                <li><span class="score">
+          (209)
+        </span>dielddádahkamiinnis</li>
+                <li><span class="score">
+          (209)
+        </span>divttaheapminis</li>
+              </ol>
+            </td>
+            <td>Gen noun + derivated noun compound</td>
+          </tr>
+          <tr>
+            <td>Svartnæskilenashal</td>
+            <td>Svartnæskilenishal</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (215)
+        </span>Svartnæskilenahal</li>
+                <li><span class="score">
+          (213)
+        </span>Svartnæskilenathal</li>
+                <li class="correct"><span class="score">
+          (213)
+        </span>Svartnæskilenishal</li>
+                <li><span class="score">
+          (212)
+        </span>SvartnæskilenAsdal</li>
+                <li><span class="score">
+          (212)
+        </span>Svartnæskilenlašhal</li>
+                <li><span class="score">
+          (207)
+        </span>SvartnæskilenNasha</li>
+                <li><span class="score">
+          (207)
+        </span>SvartnæskilenWasha</li>
+              </ol>
+            </td>
+            <td>Name + clitic</td>
+          </tr>
+          <tr>
+            <td>allonbiernaiguin</td>
+            <td>allonbiertnaiguin</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (224)
+        </span>allonBiernaiguin</li>
+                <li><span class="score">
+          (218)
+        </span>Alosbergaiguin</li>
+                <li class="correct"><span class="score">
+          (217)
+        </span>allonbiertnaiguin</li>
+              </ol>
+            </td>
+            <td>Infinite verb + noun</td>
+          </tr>
+          <tr>
+            <td>bearjdatáigge</td>
+            <td>bearjadatáigge</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (217)
+        </span>bearjadatváriga</li>
+                <li class="correct"><span class="score">
+          (217)
+        </span>bearjadatáigge</li>
+              </ol>
+            </td>
+            <td>Noun + noun with shortened genitive compound</td>
+          </tr>
+          <tr>
+            <td>máŋgasoarttagiiguin</td>
+            <td>máŋggasoarttagiiguin</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>máŋggasoarttagiiguin</li>
+              </ol>
+            </td>
+            <td>Number + adj compound</td>
+          </tr>
+          <tr>
+            <td>bargahaddat</td>
+            <td>barggahaddat</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>barggahaddat</li>
+                <li><span class="score">
+          (243)
+        </span>bargaladdat</li>
+                <li><span class="score">
+          (243)
+        </span>bargohaddat</li>
+                <li><span class="score">
+          (239)
+        </span>baggáhaddat</li>
+                <li><span class="score">
+          (239)
+        </span>barfáhaddat</li>
+                <li><span class="score">
+          (239)
+        </span>bargaladdát</li>
+                <li><span class="score">
+          (239)
+        </span>barggahattat</li>
+                <li><span class="score">
+          (239)
+        </span>borgáhaddat</li>
+              </ol>
+            </td>
+            <td>Deverbal verb</td>
+          </tr>
+          <tr>
+            <td>duolmmastestit</td>
+            <td>duolmmasteastit</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>duolmmasteastit</li>
+                <li><span class="score">
+          (243)
+        </span>duolmmastastit</li>
+                <li><span class="score">
+          (243)
+        </span>duolmmastestet</li>
+                <li><span class="score">
+          (243)
+        </span>duolmmastestot</li>
+                <li><span class="score">
+          (241)
+        </span>duolmmasteastti</li>
+              </ol>
+            </td>
+            <td>Deverbal verb</td>
+          </tr>
+          <tr>
+            <td>árjjátlovihiidda</td>
+            <td>árjjátluovihiidda</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>árjjátluovihiidda</li>
+              </ol>
+            </td>
+            <td>Derivated noun - from name</td>
+          </tr>
+          <tr>
+            <td>divtasvuonagadoalvu</td>
+            <td>divttasvuonagadoalvu</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (217)
+        </span>divttasvuonagadoalvu</li>
+              </ol>
+            </td>
+            <td>Derivated noun - from name + derivated noun compound</td>
+          </tr>
+          <tr>
+            <td>jávrralaččaid</td>
+            <td>jávrrálaččaid</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (251)
+        </span>jávrrálaččaid</li>
+                <li><span class="score">
+          (243)
+        </span>gávrralaččaid</li>
+                <li><span class="score">
+          (243)
+        </span>jávrrálaččaide</li>
+                <li><span class="score">
+          (243)
+        </span>jávrrášlaččaid</li>
+                <li><span class="score">
+          (243)
+        </span>lávrralaččaid</li>
+                <li><span class="score">
+          (243)
+        </span>rávrralaččaid</li>
+              </ol>
+            </td>
+            <td>Denominal adj</td>
+          </tr>
+          <tr>
+            <td>nieidažaččas</td>
+            <td>nieiddažaččas</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>nieiddažaččas</li>
+                <li><span class="score">
+          (243)
+        </span>nieidalaččas</li>
+                <li><span class="score">
+          (243)
+        </span>nieiddažažžas</li>
+                <li><span class="score">
+          (239)
+        </span>nieidalažžas</li>
+                <li><span class="score">
+          (239)
+        </span>nieidalaččaš</li>
+              </ol>
+            </td>
+            <td>Denominal noun</td>
+          </tr>
+          <tr>
+            <td>čájetmeahtun</td>
+            <td>čájetmeahttun</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>čájetmeahttun</li>
+              </ol>
+            </td>
+            <td>Deverbal adj</td>
+          </tr>
+          <tr>
+            <td>čalmástuvvamuššii</td>
+            <td>čalmmástuvvamuššii</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>čalmmástuvvamuššii</li>
+                <li><span class="score">
+          (243)
+        </span>čalmmastuvvamuššii</li>
+                <li><span class="score">
+          (241)
+        </span>čalastuvvamuššii</li>
+              </ol>
+            </td>
+            <td>Deverbal noun</td>
+          </tr>
+          <tr>
+            <td>čalmmástuvamušago</td>
+            <td>čalmmástuvvamušago</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (217)
+        </span>čalmmástuvvamušago</li>
+                <li><span class="score">
+          (213)
+        </span>čalmmastuvvamušago</li>
+                <li><span class="score">
+          (209)
+        </span>čalmmástuvvamušasgo</li>
+                <li><span class="score">
+          (209)
+        </span>čalmmástuvvamušatgo</li>
+              </ol>
+            </td>
+            <td>Deverbal noun + clitic</td>
+          </tr>
+          <tr>
+            <td>birgegoadán</td>
+            <td>birgegoađán</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (251)
+        </span>birgegoađán</li>
+                <li><span class="score">
+          (243)
+        </span>birgegoahtán</li>
+                <li><span class="score">
+          (243)
+        </span>birgešgoađán</li>
+              </ol>
+            </td>
+            <td>Deverbal verb</td>
+          </tr>
+          <tr>
+            <td>birgegoađaledjenai</td>
+            <td>birgegoađáledjenai</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (221)
+        </span>birgegoađáledjenai</li>
+                <li><span class="score">
+          (213)
+        </span>birgegoađáledjetnai</li>
+                <li><span class="score">
+          (213)
+        </span>birgešgoađáledjenai</li>
+              </ol>
+            </td>
+            <td>Deverbal verb + clitic</td>
+          </tr>
+          <tr>
+            <td>cielástuvvanbárteuvssaiguinge</td>
+            <td>cielastuvvanbárteuvssaiguinge</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (221)
+        </span>cielastuvvanbárteuvssaiguinge</li>
+              </ol>
+            </td>
+            <td>Deverbal deverbal noun + noun + noun + clitic</td>
+          </tr>
+          <tr>
+            <td>Gaskavággerratráššan</td>
+            <td>Gaskavággeerratráššan</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>Gaskavággeerratráššan</li>
+                <li><span class="score">
+          (239)
+        </span>Gaskavággeerratráššain</li>
+              </ol>
+            </td>
+            <td>Name</td>
+          </tr>
+          <tr>
+            <td>čielastuvažit</td>
+            <td>cielastuvažit</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (251)
+        </span>cielastuvažit</li>
+                <li><span class="score">
+          (243)
+        </span>dielastuvažit</li>
+                <li><span class="score">
+          (243)
+        </span>gielastuvažit</li>
+                <li><span class="score">
+          (243)
+        </span>jielastuvažit</li>
+                <li><span class="score">
+          (243)
+        </span>mielastuvažit</li>
+                <li><span class="score">
+          (243)
+        </span>čiegastuvažit</li>
+                <li><span class="score">
+          (243)
+        </span>čierastuvažit</li>
+              </ol>
+            </td>
+            <td>Deverbal verb</td>
+          </tr>
+          <tr>
+            <td>suhtastuvvabeahti</td>
+            <td>suhtastuvvabeahtti</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>suhtastuvvabeahtti</li>
+              </ol>
+            </td>
+            <td>Deverbal verb</td>
+          </tr>
+          <tr>
+            <td>gáttebuidda</td>
+            <td>gáttibuidda</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (243)
+        </span>gáttibuidda</li>
+              </ol>
+            </td>
+            <td>Noun comparative</td>
+          </tr>
+          <tr>
+            <td>bárggakeahttá</td>
+            <td>barggakeahttá</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (251)
+        </span>barggakeahttá</li>
+                <li><span class="score">
+          (243)
+        </span>barggaskeahttá</li>
+                <li><span class="score">
+          (243)
+        </span>barggatkeahttá</li>
+                <li><span class="score">
+          (243)
+        </span>borggakeahttá</li>
+                <li><span class="score">
+          (243)
+        </span>bálggakeahttá</li>
+                <li><span class="score">
+          (243)
+        </span>bárggátkeahttá</li>
+                <li><span class="score">
+          (243)
+        </span>bárggokeahttá</li>
+                <li><span class="score">
+          (243)
+        </span>bárggukeahttá</li>
+              </ol>
+            </td>
+            <td>Nominal verbform</td>
+          </tr>
+          <tr>
+            <td>dustlassan</td>
+            <td>dustolassan</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (247)
+        </span>dustolassan</li>
+                <li><span class="score">
+          (239)
+        </span>duostalassan</li>
+              </ol>
+            </td>
+            <td>Derived adj</td>
+          </tr>
+          <tr>
+            <td>geagugeahčai</td>
+            <td>geagugeahčái</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct"><span class="score">
+          (221)
+        </span>geagugeahčái</li>
+              </ol>
+            </td>
+            <td>Gen noun + noun compound</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <title>Spelling errors with only incorrect suggestions (6)</title>
+        <table>
+          <tr>
+            <th>Input<br/>word</th>
+            <th>Expected<br/>correction</th>
+            <th>Editing<br/>distance</th>
+            <th>Suggestions</th>
+          </tr>
+          <tr>
+            <td>AP-rávagat</td>
+            <td>AP-rávvagat</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (221)
+        </span>Abrahamat</li>
+              </ol>
+            </td>
+            <td>Acro + noun compound</td>
+          </tr>
+          <tr>
+            <td>anti-dábalaččaide</td>
+            <td>anti-dábálaččaide</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (219)
+        </span>animálalaččaide</li>
+                <li><span class="score">
+          (219)
+        </span>manitobalaččaide</li>
+                <li><span class="score">
+          (217)
+        </span>antsirabelaččaide</li>
+                <li><span class="score">
+          (217)
+        </span>antsiranalaččaide</li>
+                <li><span class="score">
+          (215)
+        </span>ahtialalaččaide</li>
+                <li><span class="score">
+          (215)
+        </span>indiánalaččaide</li>
+                <li><span class="score">
+          (211)
+        </span>indianalaččaide</li>
+              </ol>
+            </td>
+            <td>Prefix + derivated adj</td>
+          </tr>
+          <tr>
+            <td>dolkesáhkasat</td>
+            <td>dolkisáhkasat</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (219)
+        </span>dolkaslahkagat</li>
+              </ol>
+            </td>
+            <td>Derverbal noun + noun compound</td>
+          </tr>
+          <tr>
+            <td>láhppemeahtungarasvuođaid</td>
+            <td>láhppemeahttungarasvuođaid</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (235)
+        </span>láhppemeahttungaratvuođaid</li>
+                <li><span class="score">
+          (227)
+        </span>láhppemeahttungaratvuođaide</li>
+              </ol>
+            </td>
+            <td>Deverbal adj + derivated noun compound</td>
+          </tr>
+          <tr>
+            <td>máistenhuksemušaset</td>
+            <td>máistinhuksemušaset</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (214)
+        </span>Mistenhuksemušaset</li>
+                <li><span class="score">
+          (213)
+        </span>máistánhuksemušaset</li>
+              </ol>
+            </td>
+            <td>Noun + deverbal noun compound</td>
+          </tr>
+          <tr>
+            <td>st.dieđravgalastin</td>
+            <td>st.dieđ-ravgalastin</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (213)
+        </span>st.dieđ-ravgadastin</li>
+                <li><span class="score">
+          (213)
+        </span>st.dieđ-ravgalasain</li>
+                <li><span class="score">
+          (213)
+        </span>st.dieđ-ravgalastán</li>
+                <li><span class="score">
+          (213)
+        </span>st.dieđ-ravgulastin</li>
+                <li><span class="score">
+          (213)
+        </span>st.dieđ-raŋgalastin</li>
+                <li><span class="score">
+          (213)
+        </span>st.dieđ-ruvgalastin</li>
+                <li><span class="score">
+          (213)
+        </span>st.dieđ-čavgalastin</li>
+                <li><span class="score">
+          (209)
+        </span>st.dieđ-lávgalastin</li>
+                <li><span class="score">
+          (209)
+        </span>st.dieđ-ráigalastin</li>
+                <li><span class="score">
+          (209)
+        </span>st.dieđ-rávdalastin</li>
+                <li><span class="score">
+          (209)
+        </span>st.dieđ-rávkalastin</li>
+                <li><span class="score">
+          (209)
+        </span>st.dieđ-rávralastin</li>
+              </ol>
+            </td>
+            <td>Abbr + derivated noun compound</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <title>Spelling errors without suggestions (18)</title>
+        <table>
+          <tr>
+            <th>Input<br/>word</th>
+            <th>Expected<br/>correction</th>
+            <th>Editing<br/>distance</th>
+          </tr>
+          <tr>
+            <td>10-jahkasacča</td>
+            <td>10-jahkásačča</td>
+            <td>2</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Digit + noun compound</td>
+          </tr>
+          <tr>
+            <td>goadatcielastuvvanbárteuvsa</td>
+            <td>goađátcielastuvvanbárteuvsa</td>
+            <td>2</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Noun + deverbal deverbal noun + noun + noun</td>
+          </tr>
+          <tr>
+            <td>guoktenuppelotčoarvvagiin</td>
+            <td>guovttenuppelotčoarvvagiin</td>
+            <td>2</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Number + adj compound</td>
+          </tr>
+          <tr>
+            <td>guovttenuplotnamagiid</td>
+            <td>guovttenuppelotnamagiid</td>
+            <td>2</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Number + adj compound</td>
+          </tr>
+          <tr>
+            <td>heajosvuohtaláhkaroaddan</td>
+            <td>heajosvuođaláhkaroaddan</td>
+            <td>2</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Deadjectival noun + noun + noun compound</td>
+          </tr>
+          <tr>
+            <td>heajosvuohtaláhkaroattaidegis</td>
+            <td>heajosvuođaláhkaroattaidegis</td>
+            <td>2</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Deadjectival noun + noun + noun compound + clitic</td>
+          </tr>
+          <tr>
+            <td>ANC-reahcut</td>
+            <td>ANC-reahccut</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Acro + noun compound</td>
+          </tr>
+          <tr>
+            <td>Davimusaláš-geađggát</td>
+            <td>Davimušaláš-geađggát</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Name + noun compound</td>
+          </tr>
+          <tr>
+            <td>Guovdageainu-Romssa</td>
+            <td>Guovdageainnu-Romssa</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Name gen + name compound</td>
+          </tr>
+          <tr>
+            <td>Koskkivuori-plánenreaiddut</td>
+            <td>Koskivuori-plánenreaiddut</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Name + noun + noun compound</td>
+          </tr>
+          <tr>
+            <td>doppe-garadastimis</td>
+            <td>doppe-garradastimis</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Adverb + derivated noun compound</td>
+          </tr>
+          <tr>
+            <td>gálvoguodahaddanidjagárvvuin</td>
+            <td>gálvoguođahaddanidjagárvvuin</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Noun + deverbal deverbal noun + noun + noun compound</td>
+          </tr>
+          <tr>
+            <td>masti-NRK:as</td>
+            <td>masti-NRK:s</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Derivated noun + acro compound</td>
+          </tr>
+          <tr>
+            <td>muorrageasgahpirii</td>
+            <td>muorrageašgahpirii</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Noun + noun + noun compound</td>
+          </tr>
+          <tr>
+            <td>njealječuođiduhátgávccičuođiviđainnuppelogiin</td>
+            <td>njeallječuođiduhátgávccičuođiviđainnuppelogiin</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Number compound</td>
+          </tr>
+          <tr>
+            <td>njealječuođiduhátgávccičuođiviđanuppelotlágániidda</td>
+            <td>njeallječuođiduhátgávccičuođiviđanuppelotlágániidda</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Number compound + adj compound</td>
+          </tr>
+          <tr>
+            <td>st.dieđ-láikesbiro</td>
+            <td>st.dieđ-láikkesbiro</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Abbr + adj + noun compound</td>
+          </tr>
+          <tr>
+            <td>čielastuvvanbárteuksa</td>
+            <td>cielastuvvanbárteuksa</td>
+            <td>1</td>
+            <td>
+              <ol/>
+            </td>
+            <td>Deverbal deverbal noun + noun + noun compound</td>
+          </tr>
+        </table>
+      </section>
+    </section>
+    <section>
+      <title>False positives (15)</title>
+      <section>
+        <title>False positives with suggestions (2)</title>
+        <table>
+          <tr>
+            <th>Input<br/>word</th>
+            <th>Suggestions</th>
+          </tr>
+          <tr>
+            <td>anti-dábálaččaide</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (217)
+        </span>antsirabelaččaide</li>
+                <li><span class="score">
+          (215)
+        </span>animálalaččaide</li>
+                <li><span class="score">
+          (215)
+        </span>manitobalaččaide</li>
+                <li><span class="score">
+          (213)
+        </span>antsiranalaččaide</li>
+                <li><span class="score">
+          (211)
+        </span>ahtialalaččaide</li>
+                <li><span class="score">
+          (211)
+        </span>indiánalaččaide</li>
+              </ol>
+            </td>
+            <td>Prefix + derivated adj</td>
+          </tr>
+          <tr>
+            <td>doppe-garradastimis</td>
+            <td>
+              <ol>
+                <li><span class="score">
+          (207)
+        </span>DBE-garradastimis</li>
+              </ol>
+            </td>
+            <td>Adverb + derivated noun compound</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <title>False positives without suggestions (13)</title>
+        <p>st.dieđ-láikkesbiro njeallječuođiduhátgávccičuođiviđanuppelotlágániidda njeallječuođiduhátgávccičuođiviđainnuppelogiin masti-NRK:s heajosvuođaláhkaroattaidegis heajosvuođaláhkaroaddan guovttenuppelotčoarvvagiin guovttenuppelotnamagiid goađátcielastuvvanbárteuvsa Koskivuori-plánenreaiddut Guovdageainnu-Romssa Davimušaláš-geađggát 10-jahkásačča </p>
+      </section>
+    </section>
+    <section>
+      <title>False negatives (2)</title>
+      <table>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th>Editing<br/>distance</th>
+        </tr>
+        <tr>
+          <td>gielddosolbmuidbarggováhčamiidda</td>
+          <td>gielddosolbmuidbargováhčamiidda</td>
+          <td>1</td>
+          <td/>
+          <td>Adj + noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>olbmuidbarggovissir</td>
+          <td>olbmuidbargovissir</td>
+          <td>1</td>
+          <td/>
+          <td>Noun + noun + noun</td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <title>True negatives (44)</title>
+      <p>The correctly accepted words are listed here for easy copy&amp;paste
+         into Word to quick check regressions in new versions of the speller:
+         No correctly spelled words accepted by an earlier speller should be
+         rejected by later spellers. To check, just copy and paste these words
+         to Word, and see if you get any red underlines. Duplicate words are not
+         repeated, unless one is followed by some punctuation. The words are
+         reverse sorted according to Unicode character code.</p>
+      <p id="truenegatives">čájetmeahttun čalmmástuvvamuššii čalmmástuvvamušago árjjátluovihiidda suhtastuvvabeahtti st.dieđ-ravgalastin seammalágána reavggáhaddot reahccut olbmuidbargovissir nieiddažaččas máŋggasoarttagiiguin máistinhuksemušaset muorrageašgahpirii láhppemeahttungarasvuođaid jávrrálaččaid gáttibuidda gálvoguođahaddanidjagárvvuin gielddosolbmuidbargováhčamiidda geagugeahčái garvileasttáledje dustolassan duolmmasteastit dolkisáhkasat divttasvuonagadoalvu dilddedahkamiinnis diktemeahttumat cielastuvvanbárteuvssaiguinge cielastuvvanbárteuksa cielastuvažit birgegoađán birgegoađáledjenai bearjadatáigge barggakeahttá barggahattalinban barggahaddat almmihemiidduostumiin allonbiertnaiguin Svartnæskilenishal Svartnæskilenis Orjješ-Láhpoluobbalis Gaskavággeerratráššan AP-rávvagat ANC-reahccut </p>
+    </section>
+    <section>
+      <title>All test data</title>
+      <table>
+        <tr>
+          <th>Input<br/>word</th>
+          <th>Expected<br/>correction</th>
+          <th>Editing<br/>distance</th>
+          <th>Suggestions</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td>st.dieđ-láikesbiro</td>
+          <td>st.dieđ-láikkesbiro</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Abbr + adj + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>st.dieđ-láikkesbiro</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Abbr + adj + noun compound</td>
+        </tr>
+        <tr>
+          <td>st.dieđ-ravgalastin</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Abbr + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>st.dieđravgalastin</td>
+          <td>st.dieđ-ravgalastin</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (213)
+        </span>st.dieđ-ravgadastin</li>
+              <li><span class="score">
+          (213)
+        </span>st.dieđ-ravgalasain</li>
+              <li><span class="score">
+          (213)
+        </span>st.dieđ-ravgalastán</li>
+              <li><span class="score">
+          (213)
+        </span>st.dieđ-ravgulastin</li>
+              <li><span class="score">
+          (213)
+        </span>st.dieđ-raŋgalastin</li>
+              <li><span class="score">
+          (213)
+        </span>st.dieđ-ruvgalastin</li>
+              <li><span class="score">
+          (213)
+        </span>st.dieđ-čavgalastin</li>
+              <li><span class="score">
+          (209)
+        </span>st.dieđ-lávgalastin</li>
+              <li><span class="score">
+          (209)
+        </span>st.dieđ-ráigalastin</li>
+              <li><span class="score">
+          (209)
+        </span>st.dieđ-rávdalastin</li>
+              <li><span class="score">
+          (209)
+        </span>st.dieđ-rávkalastin</li>
+              <li><span class="score">
+          (209)
+        </span>st.dieđ-rávralastin</li>
+            </ol>
+          </td>
+          <td>Abbr + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>ANC-reahccut</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Acro + noun compound</td>
+        </tr>
+        <tr>
+          <td>ANC-reahcut</td>
+          <td>ANC-reahccut</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Acro + noun compound</td>
+        </tr>
+        <tr>
+          <td>AP-rávagat</td>
+          <td>AP-rávvagat</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (221)
+        </span>Abrahamat</li>
+            </ol>
+          </td>
+          <td>Acro + noun compound</td>
+        </tr>
+        <tr>
+          <td>AP-rávvagat</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Acro + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>gielddosolbmuidbarggováhčamiidda</td>
+          <td>gielddosolbmuidbargováhčamiidda</td>
+          <td>1</td>
+          <td/>
+          <td>Adj + noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>gielddosolbmuidbargováhčamiidda</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Adj + noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>reahccut</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Adverb</td>
+        </tr>
+        <tr>
+          <td>reahččut</td>
+          <td>reahccut</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (249)
+        </span>reahcut</li>
+              <li class="correct"><span class="score">
+          (247)
+        </span>reahccut</li>
+              <li><span class="score">
+          (245)
+        </span>rahččut</li>
+              <li><span class="score">
+          (243)
+        </span>geahččut</li>
+              <li><span class="score">
+          (243)
+        </span>reahccot</li>
+              <li><span class="score">
+          (243)
+        </span>roahččut</li>
+              <li><span class="score">
+          (241)
+        </span>geahčut</li>
+              <li><span class="score">
+          (241)
+        </span>rahččot</li>
+              <li><span class="score">
+          (241)
+        </span>reahcuht</li>
+              <li><span class="score">
+          (241)
+        </span>reahcult</li>
+              <li><span class="score">
+          (241)
+        </span>reahcust</li>
+              <li><span class="score">
+          (241)
+        </span>ráhččut</li>
+            </ol>
+          </td>
+          <td>Adverb</td>
+        </tr>
+        <tr>
+          <td>doppe-garadastimis</td>
+          <td>doppe-garradastimis</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Adverb + derivated noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>doppe-garradastimis</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (207)
+        </span>DBE-garradastimis</li>
+            </ol>
+          </td>
+          <td>Adverb + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>heajosvuohtaláhkaroaddan</td>
+          <td>heajosvuođaláhkaroaddan</td>
+          <td>2</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Deadjectival noun + noun + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>heajosvuođaláhkaroaddan</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Deadjectival noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>heajosvuohtaláhkaroattaidegis</td>
+          <td>heajosvuođaláhkaroattaidegis</td>
+          <td>2</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Deadjectival noun + noun + noun compound + clitic</td>
+        </tr>
+        <tr class="broken">
+          <td>heajosvuođaláhkaroattaidegis</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Deadjectival noun + noun + noun compound + clitic</td>
+        </tr>
+        <tr>
+          <td>jávrralaččaid</td>
+          <td>jávrrálaččaid</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (251)
+        </span>jávrrálaččaid</li>
+              <li><span class="score">
+          (243)
+        </span>gávrralaččaid</li>
+              <li><span class="score">
+          (243)
+        </span>jávrrálaččaide</li>
+              <li><span class="score">
+          (243)
+        </span>jávrrášlaččaid</li>
+              <li><span class="score">
+          (243)
+        </span>lávrralaččaid</li>
+              <li><span class="score">
+          (243)
+        </span>rávrralaččaid</li>
+            </ol>
+          </td>
+          <td>Denominal adj</td>
+        </tr>
+        <tr>
+          <td>jávrrálaččaid</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Denominal adj</td>
+        </tr>
+        <tr>
+          <td>nieidažaččas</td>
+          <td>nieiddažaččas</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>nieiddažaččas</li>
+              <li><span class="score">
+          (243)
+        </span>nieidalaččas</li>
+              <li><span class="score">
+          (243)
+        </span>nieiddažažžas</li>
+              <li><span class="score">
+          (239)
+        </span>nieidalažžas</li>
+              <li><span class="score">
+          (239)
+        </span>nieidalaččaš</li>
+            </ol>
+          </td>
+          <td>Denominal noun</td>
+        </tr>
+        <tr>
+          <td>nieiddažaččas</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Denominal noun</td>
+        </tr>
+        <tr>
+          <td>masti-NRK:as</td>
+          <td>masti-NRK:s</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Derivated noun + acro compound</td>
+        </tr>
+        <tr class="broken">
+          <td>masti-NRK:s</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Derivated noun + acro compound</td>
+        </tr>
+        <tr>
+          <td>árjjátlovihiidda</td>
+          <td>árjjátluovihiidda</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>árjjátluovihiidda</li>
+            </ol>
+          </td>
+          <td>Derivated noun - from name</td>
+        </tr>
+        <tr>
+          <td>árjjátluovihiidda</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Derivated noun - from name</td>
+        </tr>
+        <tr>
+          <td>divtasvuonagadoalvu</td>
+          <td>divttasvuonagadoalvu</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (217)
+        </span>divttasvuonagadoalvu</li>
+            </ol>
+          </td>
+          <td>Derivated noun - from name + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>divttasvuonagadoalvu</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Derivated noun - from name + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>dustlassan</td>
+          <td>dustolassan</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>dustolassan</li>
+              <li><span class="score">
+          (239)
+        </span>duostalassan</li>
+            </ol>
+          </td>
+          <td>Derived adj</td>
+        </tr>
+        <tr>
+          <td>dustolassan</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Derived adj</td>
+        </tr>
+        <tr>
+          <td>almmehemiidduostumiin</td>
+          <td>almmihemiidduostumiin</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (221)
+        </span>álmmehemiidduostumiin</li>
+              <li><span class="score">
+          (217)
+        </span>lamehemiidduostumiin</li>
+              <li><span class="score">
+          (217)
+        </span>čalmmehemiidduostumiin</li>
+              <li><span class="score">
+          (217)
+        </span>šalmmehemiidduostumiin</li>
+              <li class="correct"><span class="score">
+          (213)
+        </span>almmihemiidduostumiin</li>
+              <li><span class="score">
+          (213)
+        </span>almmuhemiidduostumiin</li>
+              <li><span class="score">
+          (213)
+        </span>fálmmehemiidduostumiin</li>
+              <li><span class="score">
+          (213)
+        </span>gálmmehemiidduostumiin</li>
+              <li><span class="score">
+          (213)
+        </span>ulmmehemiidduostumiin</li>
+            </ol>
+          </td>
+          <td>Derived adj + derived noun compound</td>
+        </tr>
+        <tr>
+          <td>almmihemiidduostumiin</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Derived adj + derived noun compound</td>
+        </tr>
+        <tr>
+          <td>dolkesáhkasat</td>
+          <td>dolkisáhkasat</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (219)
+        </span>dolkaslahkagat</li>
+            </ol>
+          </td>
+          <td>Derverbal noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>dolkisáhkasat</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Derverbal noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>diktemeahttumat</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal adj</td>
+        </tr>
+        <tr>
+          <td>divttemeahttumat</td>
+          <td>diktemeahttumat</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (243)
+        </span>sivttemeahttumat</li>
+              <li class="correct"><span class="score">
+          (241)
+        </span>diktemeahttumat</li>
+              <li><span class="score">
+          (241)
+        </span>diltemeahttumat</li>
+              <li><span class="score">
+          (237)
+        </span>tiltemeahttumat</li>
+              <li><span class="score">
+          (237)
+        </span>bivdemeahttumat</li>
+              <li><span class="score">
+          (237)
+        </span>diidemeahttumat</li>
+              <li><span class="score">
+          (237)
+        </span>duvdemeahttumat</li>
+              <li><span class="score">
+          (237)
+        </span>livdemeahttumat</li>
+              <li><span class="score">
+          (235)
+        </span>bivttesmeahttumat</li>
+              <li><span class="score">
+          (235)
+        </span>divotmeahttumat</li>
+              <li><span class="score">
+          (235)
+        </span>divutmeahttumat</li>
+              <li><span class="score">
+          (235)
+        </span>čivttesmeahttumat</li>
+            </ol>
+          </td>
+          <td>Deverbal adj</td>
+        </tr>
+        <tr>
+          <td>čájetmeahttun</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal adj</td>
+        </tr>
+        <tr>
+          <td>čájetmeahtun</td>
+          <td>čájetmeahttun</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>čájetmeahttun</li>
+            </ol>
+          </td>
+          <td>Deverbal adj</td>
+        </tr>
+        <tr>
+          <td>láhppemeahttungarasvuođaid</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal adj + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>láhppemeahtungarasvuođaid</td>
+          <td>láhppemeahttungarasvuođaid</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (235)
+        </span>láhppemeahttungaratvuođaid</li>
+              <li><span class="score">
+          (227)
+        </span>láhppemeahttungaratvuođaide</li>
+            </ol>
+          </td>
+          <td>Deverbal adj + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>cielastuvvanbárteuvssaiguinge</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal deverbal noun + noun + noun + clitic</td>
+        </tr>
+        <tr>
+          <td>cielástuvvanbárteuvssaiguinge</td>
+          <td>cielastuvvanbárteuvssaiguinge</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (221)
+        </span>cielastuvvanbárteuvssaiguinge</li>
+            </ol>
+          </td>
+          <td>Deverbal deverbal noun + noun + noun + clitic</td>
+        </tr>
+        <tr>
+          <td>cielastuvvanbárteuksa</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal deverbal noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>čielastuvvanbárteuksa</td>
+          <td>cielastuvvanbárteuksa</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Deverbal deverbal noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>čalmmástuvvamuššii</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal noun</td>
+        </tr>
+        <tr>
+          <td>čalmástuvvamuššii</td>
+          <td>čalmmástuvvamuššii</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>čalmmástuvvamuššii</li>
+              <li><span class="score">
+          (243)
+        </span>čalmmastuvvamuššii</li>
+              <li><span class="score">
+          (241)
+        </span>čalastuvvamuššii</li>
+            </ol>
+          </td>
+          <td>Deverbal noun</td>
+        </tr>
+        <tr>
+          <td>čalmmástuvamušago</td>
+          <td>čalmmástuvvamušago</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (217)
+        </span>čalmmástuvvamušago</li>
+              <li><span class="score">
+          (213)
+        </span>čalmmastuvvamušago</li>
+              <li><span class="score">
+          (209)
+        </span>čalmmástuvvamušasgo</li>
+              <li><span class="score">
+          (209)
+        </span>čalmmástuvvamušatgo</li>
+            </ol>
+          </td>
+          <td>Deverbal noun + clitic</td>
+        </tr>
+        <tr>
+          <td>čalmmástuvvamušago</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal noun + clitic</td>
+        </tr>
+        <tr>
+          <td>bargahaddat</td>
+          <td>barggahaddat</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>barggahaddat</li>
+              <li><span class="score">
+          (243)
+        </span>bargaladdat</li>
+              <li><span class="score">
+          (243)
+        </span>bargohaddat</li>
+              <li><span class="score">
+          (239)
+        </span>baggáhaddat</li>
+              <li><span class="score">
+          (239)
+        </span>barfáhaddat</li>
+              <li><span class="score">
+          (239)
+        </span>bargaladdát</li>
+              <li><span class="score">
+          (239)
+        </span>barggahattat</li>
+              <li><span class="score">
+          (239)
+        </span>borgáhaddat</li>
+            </ol>
+          </td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>barggahaddat</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>birgegoadán</td>
+          <td>birgegoađán</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (251)
+        </span>birgegoađán</li>
+              <li><span class="score">
+          (243)
+        </span>birgegoahtán</li>
+              <li><span class="score">
+          (243)
+        </span>birgešgoađán</li>
+            </ol>
+          </td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>birgegoađán</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>cielastuvažit</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>duolmmasteastit</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>duolmmastestit</td>
+          <td>duolmmasteastit</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>duolmmasteastit</li>
+              <li><span class="score">
+          (243)
+        </span>duolmmastastit</li>
+              <li><span class="score">
+          (243)
+        </span>duolmmastestet</li>
+              <li><span class="score">
+          (243)
+        </span>duolmmastestot</li>
+              <li><span class="score">
+          (241)
+        </span>duolmmasteastti</li>
+            </ol>
+          </td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>garvelesttáledje</td>
+          <td>garvileasttáledje</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (235)
+        </span>garvileasttáledje</li>
+              <li><span class="score">
+          (231)
+        </span>gárveheasttáledje</li>
+              <li><span class="score">
+          (231)
+        </span>garvilasttáledje</li>
+              <li><span class="score">
+          (229)
+        </span>garvilestoledje</li>
+              <li><span class="score">
+          (229)
+        </span>gavreheasttáledje</li>
+              <li><span class="score">
+          (227)
+        </span>garvileasttáledjen</li>
+              <li><span class="score">
+          (227)
+        </span>garvileasttáledjet</li>
+            </ol>
+          </td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>garvileasttáledje</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>reavggáhaddot</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>reavggáhattot</td>
+          <td>reavggáhaddot</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>reavggáhaddot</li>
+              <li><span class="score">
+          (243)
+        </span>reavggáhaddut</li>
+              <li><span class="score">
+          (243)
+        </span>reavggáhattat</li>
+            </ol>
+          </td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>suhtastuvvabeahti</td>
+          <td>suhtastuvvabeahtti</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>suhtastuvvabeahtti</li>
+            </ol>
+          </td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>suhtastuvvabeahtti</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>čielastuvažit</td>
+          <td>cielastuvažit</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (251)
+        </span>cielastuvažit</li>
+              <li><span class="score">
+          (243)
+        </span>dielastuvažit</li>
+              <li><span class="score">
+          (243)
+        </span>gielastuvažit</li>
+              <li><span class="score">
+          (243)
+        </span>jielastuvažit</li>
+              <li><span class="score">
+          (243)
+        </span>mielastuvažit</li>
+              <li><span class="score">
+          (243)
+        </span>čiegastuvažit</li>
+              <li><span class="score">
+          (243)
+        </span>čierastuvažit</li>
+            </ol>
+          </td>
+          <td>Deverbal verb</td>
+        </tr>
+        <tr>
+          <td>barggahaddalinban</td>
+          <td>barggahattalinban</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (225)
+        </span>barggahaddamiinnán</li>
+              <li class="correct"><span class="score">
+          (217)
+        </span>barggahattalinban</li>
+            </ol>
+          </td>
+          <td>Deverbal verb + clitic</td>
+        </tr>
+        <tr>
+          <td>barggahattalinban</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb + clitic</td>
+        </tr>
+        <tr>
+          <td>birgegoađaledjenai</td>
+          <td>birgegoađáledjenai</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (221)
+        </span>birgegoađáledjenai</li>
+              <li><span class="score">
+          (213)
+        </span>birgegoađáledjetnai</li>
+              <li><span class="score">
+          (213)
+        </span>birgešgoađáledjenai</li>
+            </ol>
+          </td>
+          <td>Deverbal verb + clitic</td>
+        </tr>
+        <tr>
+          <td>birgegoađáledjenai</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Deverbal verb + clitic</td>
+        </tr>
+        <tr>
+          <td>10-jahkasacča</td>
+          <td>10-jahkásačča</td>
+          <td>2</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Digit + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>10-jahkásačča</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Digit + noun compound</td>
+        </tr>
+        <tr>
+          <td>dildddahkamiinnis</td>
+          <td>dilddedahkamiinnis</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (217)
+        </span>bilddaheapminis</li>
+              <li><span class="score">
+          (217)
+        </span>dielddáheapminis</li>
+              <li><span class="score">
+          (217)
+        </span>diiddaheapminis</li>
+              <li><span class="score">
+          (217)
+        </span>dilddeheapminis</li>
+              <li class="correct"><span class="score">
+          (217)
+        </span>dilddedahkamiinnis</li>
+              <li><span class="score">
+          (217)
+        </span>dilddiheapminis</li>
+              <li><span class="score">
+          (217)
+        </span>dilddidahkamiinnis</li>
+              <li><span class="score">
+          (217)
+        </span>dilddoheapminis</li>
+              <li><span class="score">
+          (217)
+        </span>dilddodahkamiinnis</li>
+              <li><span class="score">
+          (217)
+        </span>dildduheapminis</li>
+              <li><span class="score">
+          (217)
+        </span>dilddudahkamiinnis</li>
+              <li><span class="score">
+          (217)
+        </span>vilddaheapminis</li>
+              <li><span class="score">
+          (213)
+        </span>tiiddaheapminis</li>
+              <li><span class="score">
+          (213)
+        </span>dildedahkamiinnis</li>
+              <li><span class="score">
+          (213)
+        </span>dildodahkamiinnis</li>
+              <li><span class="score">
+          (211)
+        </span>dáiddaheapminis</li>
+              <li><span class="score">
+          (211)
+        </span>vilddáskemiinis</li>
+              <li><span class="score">
+          (209)
+        </span>dilotdahkamiinnis</li>
+              <li><span class="score">
+          (209)
+        </span>dielddádahkamiinnis</li>
+              <li><span class="score">
+          (209)
+        </span>divttaheapminis</li>
+            </ol>
+          </td>
+          <td>Gen noun + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>dilddedahkamiinnis</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Gen noun + derivated noun compound</td>
+        </tr>
+        <tr>
+          <td>geagugeahčai</td>
+          <td>geagugeahčái</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (221)
+        </span>geagugeahčái</li>
+            </ol>
+          </td>
+          <td>Gen noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>geagugeahčái</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Gen noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>allonbiernaiguin</td>
+          <td>allonbiertnaiguin</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (224)
+        </span>allonBiernaiguin</li>
+              <li><span class="score">
+          (218)
+        </span>Alosbergaiguin</li>
+              <li class="correct"><span class="score">
+          (217)
+        </span>allonbiertnaiguin</li>
+            </ol>
+          </td>
+          <td>Infinite verb + noun</td>
+        </tr>
+        <tr>
+          <td>allonbiertnaiguin</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Infinite verb + noun</td>
+        </tr>
+        <tr>
+          <td>Gaskavággeerratráššan</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Name</td>
+        </tr>
+        <tr>
+          <td>Gaskavággerratráššan</td>
+          <td>Gaskavággeerratráššan</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>Gaskavággeerratráššan</li>
+              <li><span class="score">
+          (239)
+        </span>Gaskavággeerratráššain</li>
+            </ol>
+          </td>
+          <td>Name</td>
+        </tr>
+        <tr>
+          <td>Svartneskilenas</td>
+          <td>Svartnæskilenis</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (233)
+        </span>Svartnæskilena</li>
+              <li><span class="score">
+          (231)
+        </span>Svartnæskilenat</li>
+              <li class="correct"><span class="score">
+          (231)
+        </span>Svartnæskilenis</li>
+              <li><span class="score">
+          (230)
+        </span>Svartnæskilenlaš</li>
+            </ol>
+          </td>
+          <td>Name</td>
+        </tr>
+        <tr>
+          <td>Svartnæskilenis</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Name</td>
+        </tr>
+        <tr>
+          <td>Svartnæskilenashal</td>
+          <td>Svartnæskilenishal</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (215)
+        </span>Svartnæskilenahal</li>
+              <li><span class="score">
+          (213)
+        </span>Svartnæskilenathal</li>
+              <li class="correct"><span class="score">
+          (213)
+        </span>Svartnæskilenishal</li>
+              <li><span class="score">
+          (212)
+        </span>SvartnæskilenAsdal</li>
+              <li><span class="score">
+          (212)
+        </span>Svartnæskilenlašhal</li>
+              <li><span class="score">
+          (207)
+        </span>SvartnæskilenNasha</li>
+              <li><span class="score">
+          (207)
+        </span>SvartnæskilenWasha</li>
+            </ol>
+          </td>
+          <td>Name + clitic</td>
+        </tr>
+        <tr>
+          <td>Svartnæskilenishal</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Name + clitic</td>
+        </tr>
+        <tr class="broken">
+          <td>Koskivuori-plánenreaiddut</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Name + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>Koskkivuori-plánenreaiddut</td>
+          <td>Koskivuori-plánenreaiddut</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Name + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>Davimusaláš-geađggát</td>
+          <td>Davimušaláš-geađggát</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Name + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>Davimušaláš-geađggát</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Name + noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>Guovdageainnu-Romssa</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Name gen + name compound</td>
+        </tr>
+        <tr>
+          <td>Guovdageainu-Romssa</td>
+          <td>Guovdageainnu-Romssa</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Name gen + name compound</td>
+        </tr>
+        <tr>
+          <td>barggakeahttá</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Nominal verbform</td>
+        </tr>
+        <tr>
+          <td>bárggakeahttá</td>
+          <td>barggakeahttá</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (251)
+        </span>barggakeahttá</li>
+              <li><span class="score">
+          (243)
+        </span>barggaskeahttá</li>
+              <li><span class="score">
+          (243)
+        </span>barggatkeahttá</li>
+              <li><span class="score">
+          (243)
+        </span>borggakeahttá</li>
+              <li><span class="score">
+          (243)
+        </span>bálggakeahttá</li>
+              <li><span class="score">
+          (243)
+        </span>bárggátkeahttá</li>
+              <li><span class="score">
+          (243)
+        </span>bárggokeahttá</li>
+              <li><span class="score">
+          (243)
+        </span>bárggukeahttá</li>
+            </ol>
+          </td>
+          <td>Nominal verbform</td>
+        </tr>
+        <tr>
+          <td>goadatcielastuvvanbárteuvsa</td>
+          <td>goađátcielastuvvanbárteuvsa</td>
+          <td>2</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Noun + deverbal deverbal noun + noun + noun</td>
+        </tr>
+        <tr class="broken">
+          <td>goađátcielastuvvanbárteuvsa</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Noun + deverbal deverbal noun + noun + noun</td>
+        </tr>
+        <tr>
+          <td>gálvoguodahaddanidjagárvvuin</td>
+          <td>gálvoguođahaddanidjagárvvuin</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Noun + deverbal deverbal noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>gálvoguođahaddanidjagárvvuin</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Noun + deverbal deverbal noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>máistenhuksemušaset</td>
+          <td>máistinhuksemušaset</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (214)
+        </span>Mistenhuksemušaset</li>
+              <li><span class="score">
+          (213)
+        </span>máistánhuksemušaset</li>
+            </ol>
+          </td>
+          <td>Noun + deverbal noun compound</td>
+        </tr>
+        <tr>
+          <td>máistinhuksemušaset</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Noun + deverbal noun compound</td>
+        </tr>
+        <tr class="broken">
+          <td>olbmuidbarggovissir</td>
+          <td>olbmuidbargovissir</td>
+          <td>1</td>
+          <td/>
+          <td>Noun + noun + noun</td>
+        </tr>
+        <tr>
+          <td>olbmuidbargovissir</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Noun + noun + noun</td>
+        </tr>
+        <tr>
+          <td>muorrageasgahpirii</td>
+          <td>muorrageašgahpirii</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>muorrageašgahpirii</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Noun + noun + noun compound</td>
+        </tr>
+        <tr>
+          <td>bearjadatáigge</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Noun + noun with shortened genitive compound</td>
+        </tr>
+        <tr>
+          <td>bearjdatáigge</td>
+          <td>bearjadatáigge</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (217)
+        </span>bearjadatváriga</li>
+              <li class="correct"><span class="score">
+          (217)
+        </span>bearjadatáigge</li>
+            </ol>
+          </td>
+          <td>Noun + noun with shortened genitive compound</td>
+        </tr>
+        <tr>
+          <td>gáttebuidda</td>
+          <td>gáttibuidda</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (243)
+        </span>gáttibuidda</li>
+            </ol>
+          </td>
+          <td>Noun comparative</td>
+        </tr>
+        <tr>
+          <td>gáttibuidda</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Noun comparative</td>
+        </tr>
+        <tr>
+          <td>guoktenuppelotčoarvvagiin</td>
+          <td>guovttenuppelotčoarvvagiin</td>
+          <td>2</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr>
+          <td>guovttenuplotnamagiid</td>
+          <td>guovttenuppelotnamagiid</td>
+          <td>2</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr class="broken">
+          <td>guovttenuppelotnamagiid</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr class="broken">
+          <td>guovttenuppelotčoarvvagiin</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr>
+          <td>máŋgasoarttagiiguin</td>
+          <td>máŋggasoarttagiiguin</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (247)
+        </span>máŋggasoarttagiiguin</li>
+            </ol>
+          </td>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr>
+          <td>máŋggasoarttagiiguin</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Number + adj compound</td>
+        </tr>
+        <tr>
+          <td>njealječuođiduhátgávccičuođiviđainnuppelogiin</td>
+          <td>njeallječuođiduhátgávccičuođiviđainnuppelogiin</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Number compound</td>
+        </tr>
+        <tr class="broken">
+          <td>njeallječuođiduhátgávccičuođiviđainnuppelogiin</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Number compound</td>
+        </tr>
+        <tr>
+          <td>njealječuođiduhátgávccičuođiviđanuppelotlágániidda</td>
+          <td>njeallječuođiduhátgávccičuođiviđanuppelotlágániidda</td>
+          <td>1</td>
+          <td>
+            <ol/>
+          </td>
+          <td>Number compound + adj compound</td>
+        </tr>
+        <tr class="broken">
+          <td>njeallječuođiduhátgávccičuođiviđanuppelotlágániidda</td>
+          <td/>
+          <td/>
+          <td>
+            <ol/>
+          </td>
+          <td>Number compound + adj compound</td>
+        </tr>
+        <tr>
+          <td>Orjješ-Láhpoluobbalis</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Prefix + Name</td>
+        </tr>
+        <tr>
+          <td>Orjješ-láhppoluobbalis</td>
+          <td>Orjješ-Láhpoluobbalis</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li class="correct"><span class="score">
+          (222)
+        </span>Orjješ-Láhpoluobbalis</li>
+            </ol>
+          </td>
+          <td>Prefix + Name</td>
+        </tr>
+        <tr>
+          <td>anti-dábalaččaide</td>
+          <td>anti-dábálaččaide</td>
+          <td>1</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (219)
+        </span>animálalaččaide</li>
+              <li><span class="score">
+          (219)
+        </span>manitobalaččaide</li>
+              <li><span class="score">
+          (217)
+        </span>antsirabelaččaide</li>
+              <li><span class="score">
+          (217)
+        </span>antsiranalaččaide</li>
+              <li><span class="score">
+          (215)
+        </span>ahtialalaččaide</li>
+              <li><span class="score">
+          (215)
+        </span>indiánalaččaide</li>
+              <li><span class="score">
+          (211)
+        </span>indianalaččaide</li>
+            </ol>
+          </td>
+          <td>Prefix + derivated adj</td>
+        </tr>
+        <tr class="broken">
+          <td>anti-dábálaččaide</td>
+          <td/>
+          <td/>
+          <td>
+            <ol>
+              <li><span class="score">
+          (217)
+        </span>antsirabelaččaide</li>
+              <li><span class="score">
+          (215)
+        </span>animálalaččaide</li>
+              <li><span class="score">
+          (215)
+        </span>manitobalaččaide</li>
+              <li><span class="score">
+          (213)
+        </span>antsiranalaččaide</li>
+              <li><span class="score">
+          (211)
+        </span>ahtialalaččaide</li>
+              <li><span class="score">
+          (211)
+        </span>indiánalaččaide</li>
+            </ol>
+          </td>
+          <td>Prefix + derivated adj</td>
+        </tr>
+        <tr>
+          <td>seammalagana</td>
+          <td>seammalágána</td>
+          <td>2</td>
+          <td>
+            <ol>
+              <li><span class="score">
+          (251)
+        </span>seammalágana</li>
+              <li><span class="score">
+          (247)
+        </span>seammálágana</li>
+              <li class="correct"><span class="score">
+          (247)
+        </span>seammalágána</li>
+              <li><span class="score">
+          (243)
+        </span>seammaláganan</li>
+              <li><span class="score">
+          (243)
+        </span>seammaláganat</li>
+            </ol>
+          </td>
+          <td>Pron + adj compound</td>
+        </tr>
+        <tr>
+          <td>seammalágána</td>
+          <td/>
+          <td/>
+          <td/>
+          <td>Pron + adj compound</td>
+        </tr>
+      </table>
+    </section>
+  </body>
+</document>

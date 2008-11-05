@@ -1,0 +1,102 @@
+!!!Introduction
+
+This is a short check-point list for setting up new users in our teams. Please add missing points as needed.
+
+!!!Hardware
+
+* a portable Mac is our standard platform (portable because we do travel, Mac
+  for a number of very good reasons, among them
+  [SEE|http://www.codingmonkeys.de/subethaedit/index.html])
+* preferably an external monitor
+* headphone w. mic
+* a backpack or similar for the computer
+* possibly an external HD for TimeMachine/backup purposes (that extra security
+  is definitely worth the money!)
+
+!!!Accounts needed
+
+* e-mail at SD/UiT
+* accounts on the following servers:
+** victorio
+** XServe
+** G5
+* Bugzilla account
+
+!!!Services to enable:
+
+* svn
+* iCal Server (Jabber) on G5
+
+!!!Software to install
+
+!!Commercial software, local shop
+* MS Office
+* Divvun additions, for testing purposes:
+** Parallells Desktop
+** Windows XP
+** Windows Vista
+** MS Office for Windows
+
+!!Commercial software, Internet download
+* [SEE|http://www.codingmonkeys.de/subethaedit/index.html]
+* [Unison|http://www.panic.com/unison/] for reading news
+
+!!Free or open-source software
+* [XMLEditor|install-xxe.html] (personal edition)
+* [Skype|http://www.skype.com/]
+* [Thunderbird|http://www.mozilla.com/en-US/thunderbird/]
+   - alternative to Unison
+* [svnX|http://www.lachoseinteractive.net/en/community/subversion/svnx/]
+* Xerox tools (no public link available, ask the administrator)
+* [CG3|/doc/tools/docu-vislcg3.html]
+* [Forrest|forrest-howto.html] - we need our own tailored version at the moment,
+  but work is going on to make us able to use the standard distribution
+* [Saxon B|http://saxon.sourceforge.net/]
+* [QuickSilver|http://www.blacktree.com/]
+* [Cisco VPN client|http://helpdesk.ugent.be/vpn/en/akkoord.php]
+* [OpenOffice.org|http://www.openoffice.org/]
+* XCode (on the CD that came with the computer, or available from
+  [Apple|http://developer.apple.com] - registration (free) required)
+
+!!Proofing tools to install
+* our latest MS and OOo/hunspell tools / lexicons (see our
+  [home page|/index.html])
+* [Aspell|http://aspell.net/] / [Cocoaspell|http://cocoaspell.leuski.net/]
+** speller lexicons for the required languages
+* [hunspell|http://hunspell.sourceforge.net/] command line tool (use MacPort,
+  see instructions on the OpenXSpell home page)
+* [OpenXSPell|http://www.cygnusblack.co.uk/openxspell/index.html] - does also install Enchant, a multi-engine speller middle-man.
+* [Soikko|http://users.tkk.fi/~pry/soikko/] (Finnish speller, good)
+  - [Mac version here|http://www.cs.helsinki.fi/u/oarasane/soikko/]
+* [Voikko|http://voikko.sourceforge.net/] (another Finnish speller,
+  interesting comparison)
+* for the Divvun team: PL command line tools
+
+!!!Configurations
+
+* Unix environment:
+** [.bashrc|docu-setup-bash.html]
+** ([.inputrc|docu-setup-bash.html#Setting+up+8-bit+input] - this is only
+   required when setting up old computers running Tiger/MacOS X 10.4.x or older,
+   in Leopard/10.5.x and newer, UTF-8 input/output is working properly in
+   Terminal)
+** [.emacs|setup-emacs-howto.html]
+* SEE-modes - see {{gtsvn/gt/src/see-tools/}}
+* XMLEditor - forrestdoc config available
+  [here|http://divvun.no/static_files/XXE_forrest_config-1.4.zip]
+* VPN setup - get the config file from your network admin
+
+!!!Other setups
+
+* [check out|/doc/tools/docu-svn-user.html] our svn repository
+* set up svn mail
+* iChat
+* Mail
+* admin and user accounts on the Mac
+** for security reasons it is better to have a separate admin account
+** which means that the regular user account should be non-admin
+** it is ok that the user __knows__ the admin account name and password, to
+   be able to install software, updates, tweak system settings etc. (the
+   security benefit is that the normal processes, downloads, etc are done in a
+   restricted user space, not in an administrative account; in the case of
+   malware downloads, it will only affect that user, not the whole system)
