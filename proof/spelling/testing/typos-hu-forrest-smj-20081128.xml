@@ -17,9 +17,9 @@
         <p>Speller tool:
           <strong>Hunspell, command line version</strong></p>
         <p>Speller tool version:
-          <strong>@(#) International Ispell Version 3.2.06 (but really Hunspell 1.2.6)</strong></p>
+          <strong>@(#) International Ispell Version 3.2.06 (but really Hunspell 1.2.2)</strong></p>
         <p>Speller lexicon version:
-          <strong>1.0beta5</strong></p>
+          <strong>1.0beta6</strong></p>
         <p>Test Date:
           <strong>20081128</strong></p>
         <p>Test Type:
@@ -28,9 +28,9 @@
       <section>
         <title>Result summary</title>
         <p>Number of input words:
-        <strong>1836</strong></p>
+        <strong>1837</strong></p>
         <p>Number of spelling errors:
-        <strong>889</strong> (48.42 % of all words)</p>
+        <strong>890</strong> (48.45 % of all words)</p>
         <table>
           <caption>Precision and Recall</caption>
           <tr>
@@ -40,58 +40,58 @@
           </tr>
           <tr>
             <td>Speller Positive<br/>
-              (number of flagged words):<br/><strong>892</strong></td>
+              (number of flagged words):<br/><strong>834</strong></td>
             <td>Speller Negative<br/>
-              (number of accepted words):<br/><strong>91</strong></td>
+              (number of accepted words):<br/><strong>133</strong></td>
             <th>All tokenisation<br/>
-              errors:<br/><strong>853</strong></th>
+              errors:<br/><strong>870</strong></th>
           </tr>
           <tr>
             <th rowspan="2">Reality</th>
-            <td>Number of real errors:<br/><strong>889</strong></td>
+            <td>Number of real errors:<br/><strong>890</strong></td>
             <td>Number of true positives<br/>
-              (detected real errors):<br/><strong>832</strong></td>
+              (detected real errors):<br/><strong>799</strong></td>
             <td>Number of false negatives<br/>
-              (unflagged spelling errors):<br/><strong>52</strong></td>
+              (unflagged spelling errors):<br/><strong>90</strong></td>
             <td>Number of errouneously<br/>
-              tokenized spelling errors:<br/><strong>5</strong></td>
+              tokenized spelling errors:<br/><strong>1</strong></td>
           </tr>
           <tr>
             <td>Number of real correct words:<br/><strong>947</strong></td>
             <td>Number of false positives<br/>
-              (incorrectly flagged words):<br/><strong>60</strong></td>
+              (incorrectly flagged words):<br/><strong>35</strong></td>
             <td>Number of true negatives<br/>
-              (unflagged correct words):<br/><strong>39</strong></td>
+              (unflagged correct words):<br/><strong>43</strong></td>
             <td>Number of errouneously<br/>
-              tokenized correct words:<br/><strong>848</strong></td>
+              tokenized correct words:<br/><strong>869</strong></td>
           </tr>
         </table>
         <dl>
           <dt>Precision (tp/(tp+fp)):</dt>
-          <dd>93.27 %</dd>
+          <dd>95.8 %</dd>
           <dt>Recall (tp/(tp+fn)):</dt>
-          <dd>94.12 %</dd>
+          <dd>89.88 %</dd>
           <dt>Accuracy ((tp+tn)/words):</dt>
-          <dd>88.61 %</dd>
+          <dd>87.07 %</dd>
         </dl>
         <table>
           <caption>Suggestion statistics</caption>
           <tr>
             <td>Number of detected spelling errors with <span class="correct">correct
                 suggestion</span>:</td>
-            <td>649</td>
-            <td>(78 %)</td>
+            <td>657</td>
+            <td>(82.23 %)</td>
           </tr>
           <tr>
             <td>Number of detected spelling errors with <span class="correct">correct
                 suggestion</span> in top 5:</td>
-            <td>627</td>
-            <td>(75.36 %)</td>
+            <td>634</td>
+            <td>(79.35 %)</td>
           </tr>
           <tr>
             <td>Number of detected spelling errors with only wrong suggestions:</td>
-            <td>183</td>
-            <td>(22 %)</td>
+            <td>142</td>
+            <td>(17.77 %)</td>
           </tr>
           <tr>
             <td>Number of detected spelling errors with no suggestions at all:</td>
@@ -104,18 +104,18 @@
           <caption>Spelling error statistics</caption>
           <tr>
             <th>Spelling errors:</th>
-            <th>889</th>
+            <th>890</th>
             <th>100 %</th>
           </tr>
           <tr>
             <td>Simple spelling errors / all spelling errors:</td>
-            <td>711</td>
-            <td>(79.98 %)</td>
+            <td>712</td>
+            <td>(80 %)</td>
           </tr>
           <tr>
             <td>Spelling errors with editing distance 2 / all spelling errors:</td>
             <td>142</td>
-            <td>(15.97 %)</td>
+            <td>(15.96 %)</td>
           </tr>
           <tr>
             <td>Spelling errors with editing distance 3 or more / all spelling errors:</td>
@@ -126,10 +126,10 @@
       </section>
     </section>
     <section>
-      <title>True positives (832)
+      <title>True positives (799)
         </title>
       <section>
-        <title>Spelling errors with correct suggestions (649)</title>
+        <title>Spelling errors with correct suggestions (657)</title>
         <table>
           <tr>
             <th>Input<br/>word</th>
@@ -199,13 +199,31 @@
             </td>
           </tr>
           <tr>
+            <td>dákkáraha</td>
+            <td>dákkára</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li>dákkárada</li>
+                <li>dákkár aha</li>
+                <li>dákkára ha</li>
+                <li>dákkárSaha</li>
+                <li>dákkárNaha</li>
+                <li>dákkáraho</li>
+                <li>dákkárasj</li>
+                <li>dákkárattja</li>
+                <li class="correct">dákkára</li>
+                <li>dákkár</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>båndorij</td>
             <td>bånndurij</td>
             <td>2</td>
             <td>
               <ol>
                 <li>båndor ij</li>
-                <li>båndor-ij</li>
                 <li>båndormij</li>
                 <li>båndorijá</li>
                 <li>båndorsijda</li>
@@ -231,6 +249,24 @@
             </td>
           </tr>
           <tr>
+            <td>vuor∫et</td>
+            <td>vuorŋŋet</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li>vuorŋet</li>
+                <li>vuorret</li>
+                <li>vuordet</li>
+                <li>vuorbet</li>
+                <li>vuorvet</li>
+                <li class="correct">vuorŋŋet</li>
+                <li>vuorddet</li>
+                <li>vuornot</li>
+                <li>vuornut</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>Árjakluoven</td>
             <td>Árjepluoven</td>
             <td>2</td>
@@ -245,19 +281,6 @@
                 <li>Árjepluovven</li>
                 <li>Árjepluove</li>
                 <li>Árjepluovve</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>maññel</td>
-            <td>maŋŋel</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>Mariel</li>
-                <li>Marcel</li>
-                <li>Manuel</li>
-                <li class="correct">maŋŋel</li>
               </ol>
             </td>
           </tr>
@@ -346,19 +369,6 @@
             </td>
           </tr>
           <tr>
-            <td>jarñña</td>
-            <td>jarŋŋa</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>Jaruma</li>
-                <li class="correct">jarŋŋa</li>
-                <li>Jareda</li>
-                <li>Jarena</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>jiegñarabadan</td>
             <td>jiegŋarabdan</td>
             <td>2</td>
@@ -386,7 +396,7 @@
             </td>
           </tr>
           <tr>
-            <td>maññet</td>
+            <td>ma∫∫et</td>
             <td>maŋŋet</td>
             <td>2</td>
             <td>
@@ -419,7 +429,6 @@
             <td>
               <ol>
                 <li>alás bielen</li>
-                <li>alás-bielen</li>
                 <li>alábielen</li>
                 <li>nalásbielen</li>
                 <li>valásbielen</li>
@@ -432,27 +441,6 @@
                 <li>assásbieljen</li>
                 <li>dårusbielen</li>
                 <li>assásbielljen</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>dákkáraha</td>
-            <td>dákkára</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>dákkárada</li>
-                <li>dákkár aha</li>
-                <li>dákkár-aha</li>
-                <li>dákkára ha</li>
-                <li>dákkára-ha</li>
-                <li>dákkárSaha</li>
-                <li>dákkárNaha</li>
-                <li>dákkáraho</li>
-                <li>dákkárasj</li>
-                <li>dákkárattja</li>
-                <li class="correct">dákkára</li>
-                <li>dákkár</li>
               </ol>
             </td>
           </tr>
@@ -476,9 +464,6 @@
             <td>
               <ol>
                 <li class="correct">Iŋŋgá</li>
-                <li>Ingá</li>
-                <li>Iŋgá</li>
-                <li>Iridagá</li>
               </ol>
             </td>
           </tr>
@@ -489,9 +474,6 @@
             <td>
               <ol>
                 <li class="correct">Maŋŋelasj</li>
-                <li>Almmelasj</li>
-                <li>Sábmelasj</li>
-                <li>Ulmmelasj</li>
               </ol>
             </td>
           </tr>
@@ -515,6 +497,19 @@
                 <li>Porsáŋgu</li>
                 <li>Porsgrunn</li>
                 <li>Porslijnnas</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>Vuoj∫∫anis</td>
+            <td>Vuojŋŋanis</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct">Vuojŋŋanis</li>
+                <li>Vuojatjisánis</li>
+                <li>Vuojnnalisj</li>
+                <li>Vuojnnalisá</li>
               </ol>
             </td>
           </tr>
@@ -578,6 +573,16 @@
             </td>
           </tr>
           <tr>
+            <td>garññelijn</td>
+            <td>garŋŋelijn</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct">garŋŋelijn</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>guovkkis</td>
             <td>guovggis</td>
             <td>2</td>
@@ -597,7 +602,6 @@
               <ol>
                 <li class="correct">gáttevuolen</li>
                 <li>gádde vuolen</li>
-                <li>gádde-vuolen</li>
               </ol>
             </td>
           </tr>
@@ -622,9 +626,6 @@
             <td>
               <ol>
                 <li class="correct">gäŋŋgul</li>
-                <li>gärssul</li>
-                <li>gädtsulak</li>
-                <li>gågulappo</li>
               </ol>
             </td>
           </tr>
@@ -656,9 +657,19 @@
             <td>
               <ol>
                 <li class="correct">jáhkasa</li>
-                <li>jahkáda</li>
                 <li>jahkesa</li>
+                <li>jahkáda</li>
                 <li>jahkáma</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>jarñña</td>
+            <td>jarŋŋa</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct">jarŋŋa</li>
               </ol>
             </td>
           </tr>
@@ -669,9 +680,6 @@
             <td>
               <ol>
                 <li class="correct">jarŋŋá</li>
-                <li>jarrá</li>
-                <li>jará</li>
-                <li>jarŋŋe</li>
               </ol>
             </td>
           </tr>
@@ -777,9 +785,6 @@
             <td>
               <ol>
                 <li class="correct">maŋŋegietjen</li>
-                <li>davvegietjen</li>
-                <li>maŋŋegietje</li>
-                <li>vuollegietjen</li>
               </ol>
             </td>
           </tr>
@@ -790,9 +795,6 @@
             <td>
               <ol>
                 <li class="correct">maŋŋegietjes</li>
-                <li>davvegietjes</li>
-                <li>maŋŋegietje</li>
-                <li>vuollegietjes</li>
               </ol>
             </td>
           </tr>
@@ -803,9 +805,6 @@
             <td>
               <ol>
                 <li class="correct">maŋŋegietjev</li>
-                <li>davvegietjev</li>
-                <li>maŋŋegietje</li>
-                <li>Gárddegietjev</li>
               </ol>
             </td>
           </tr>
@@ -816,9 +815,6 @@
             <td>
               <ol>
                 <li class="correct">maŋŋegähtjáj</li>
-                <li>davvegähtjáj</li>
-                <li>vuollegähtjáj</li>
-                <li>Gárddegähtjáj</li>
               </ol>
             </td>
           </tr>
@@ -829,9 +825,50 @@
             <td>
               <ol>
                 <li class="correct">maŋŋeiehket</li>
-                <li>mánnániehket</li>
-                <li>ednamniehket</li>
-                <li>åbmudakniehket</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>maññel</td>
+            <td>maŋŋel</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct">maŋŋel</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>maññela</td>
+            <td>maŋŋela</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct">maŋŋela</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>maññet</td>
+            <td>maŋŋet</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct">maŋŋet</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>maññetjaktjagiese</td>
+            <td>maŋŋetjaktjagiese</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct">maŋŋetjaktjagiese</li>
+                <li>tjaktjagiese</li>
+                <li>tjaktjagiesse</li>
+                <li>maŋŋetjaktja</li>
+                <li>sjkilltjagiergge</li>
               </ol>
             </td>
           </tr>
@@ -842,9 +879,6 @@
             <td>
               <ol>
                 <li class="correct">maŋŋáj</li>
-                <li>masstáj</li>
-                <li>mannjáj</li>
-                <li>malssjáj</li>
               </ol>
             </td>
           </tr>
@@ -960,6 +994,16 @@
             </td>
           </tr>
           <tr>
+            <td>tjaññgasit</td>
+            <td>tjaŋŋgasit</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li class="correct">tjaŋŋgasit</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>tjáhjte</td>
             <td>tjáhtje</td>
             <td>2</td>
@@ -1005,23 +1049,21 @@
             </td>
           </tr>
           <tr>
-            <td>siesstevas</td>
-            <td>siesstevasj</td>
+            <td>bálkaj</td>
+            <td>bálgaj</td>
             <td>1</td>
             <td>
               <ol>
-                <li>siesste vas</li>
-                <li>siesste-vas</li>
-                <li>siesstev as</li>
-                <li>siesstev-as</li>
-                <li>siessteEvas</li>
-                <li>siessteAas</li>
-                <li>siessteRas</li>
-                <li>siessteLas</li>
-                <li class="correct">siesstevasj</li>
-                <li>siesstevattja</li>
-                <li>siesstevadtjas</li>
-                <li>siesstes</li>
+                <li>bálkáj</li>
+                <li>báljak</li>
+                <li>gálkaj</li>
+                <li>kálkaj</li>
+                <li>báskaj</li>
+                <li>báŋkaj</li>
+                <li>báhkaj</li>
+                <li>bávkaj</li>
+                <li class="correct">bálgaj</li>
+                <li>bálkoj</li>
               </ol>
             </td>
           </tr>
@@ -1049,9 +1091,9 @@
             <td>1</td>
             <td>
               <ol>
-                <li>duohtat</li>
                 <li>suhtat</li>
                 <li>ruohtat</li>
+                <li>duohtat</li>
                 <li>muohtat</li>
                 <li>suottat</li>
                 <li>suohpat</li>
@@ -1106,6 +1148,25 @@
             </td>
           </tr>
           <tr>
+            <td>siesstevas</td>
+            <td>siesstevasj</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>siesste vas</li>
+                <li>siesstev as</li>
+                <li>siessteEvas</li>
+                <li>siessteAas</li>
+                <li>siessteRas</li>
+                <li>siessteLas</li>
+                <li class="correct">siesstevasj</li>
+                <li>siesstevattja</li>
+                <li>siesstevadtjas</li>
+                <li>siesstes</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>Ájllekiehkada</td>
             <td>Ájllekiehkeda</td>
             <td>1</td>
@@ -1122,22 +1183,6 @@
                 <li>Ájllegada</li>
                 <li>Låddetjiehkarada</li>
                 <li>Njieladahkada</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Juobbmuj</td>
-            <td>Juobmuj</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Juobbmoj</li>
-                <li>Duobbmuj</li>
-                <li>Guobbmuj</li>
-                <li>Juobbmij</li>
-                <li>Jubbmuj</li>
-                <li class="correct">Juobmuj</li>
-                <li>Tjuobbmuj</li>
               </ol>
             </td>
           </tr>
@@ -1204,6 +1249,24 @@
             </td>
           </tr>
           <tr>
+            <td>gåbdidin</td>
+            <td>gåbdijdin</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>gåbddidin</li>
+                <li>dåbdidin</li>
+                <li>gåbdedin</li>
+                <li>gåbdodin</li>
+                <li>gåbdudin</li>
+                <li class="correct">gåbdijdin</li>
+                <li>gåbdijdibá</li>
+                <li>gåbdijdisá</li>
+                <li>gåbdijdisj</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>oajedit</td>
             <td>bajedit</td>
             <td>1</td>
@@ -1240,30 +1303,6 @@
             </td>
           </tr>
           <tr>
-            <td>Alu</td>
-            <td>Álu</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Ali</li>
-                <li>Au</li>
-                <li>Al</li>
-                <li>Ailu</li>
-                <li class="correct">Álu</li>
-                <li>Olu</li>
-                <li>Anu</li>
-                <li>Abu</li>
-                <li>Als</li>
-                <li>Ala</li>
-                <li>Alm</li>
-                <li>Alf</li>
-                <li>Alv</li>
-                <li>Al-</li>
-                <li>Al u</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>Dájnas</td>
             <td>Dajnas</td>
             <td>1</td>
@@ -1286,34 +1325,35 @@
             </td>
           </tr>
           <tr>
-            <td>Muhttijin</td>
-            <td>Muhttijn</td>
+            <td>Juobbmuj</td>
+            <td>Juobmuj</td>
             <td>1</td>
             <td>
               <ol>
-                <li>Muhtitjin</li>
-                <li>Mihttijin</li>
-                <li>Muhttujin</li>
-                <li>Muhttijim</li>
-                <li class="correct">Muhttijn</li>
-                <li>Muhttijis</li>
-                <li>Muhttijit</li>
+                <li>Juobbmoj</li>
+                <li>Duobbmuj</li>
+                <li>Guobbmuj</li>
+                <li>Jubbmuj</li>
+                <li class="correct">Juobmuj</li>
+                <li>Tjuobbmuj</li>
+                <li>Juobbmij</li>
               </ol>
             </td>
           </tr>
           <tr>
-            <td>ani</td>
-            <td>åni</td>
+            <td>Jårgit</td>
+            <td>Jårgijt</td>
             <td>1</td>
             <td>
               <ol>
-                <li>ain</li>
-                <li>ano</li>
-                <li>Tani</li>
-                <li>adni</li>
-                <li class="correct">åni</li>
-                <li>ane</li>
-                <li>aná</li>
+                <li>Jårrit</li>
+                <li>Jårgot</li>
+                <li>Jårgut</li>
+                <li>Jårgåt</li>
+                <li class="correct">Jårgijt</li>
+                <li>Jårgijdit</li>
+                <li>Jårgistim</li>
+                <li>Jårgudit</li>
               </ol>
             </td>
           </tr>
@@ -1368,23 +1408,6 @@
             </td>
           </tr>
           <tr>
-            <td>gujtti</td>
-            <td>guojtti</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>gujddi</li>
-                <li>gijttu</li>
-                <li>gijtti</li>
-                <li>guhtti</li>
-                <li class="correct">guojtti</li>
-                <li>sujtti</li>
-                <li>mujtti</li>
-                <li>bujtti</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>hálidin</td>
             <td>hálijdin</td>
             <td>1</td>
@@ -1402,32 +1425,37 @@
             </td>
           </tr>
           <tr>
-            <td>ibmeda</td>
-            <td>ibmáda</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>ibmesa</li>
-                <li>imeda</li>
-                <li>iemeda</li>
-                <li>ilmeda</li>
-                <li class="correct">ibmáda</li>
-                <li>ibme da</li>
-                <li>ibme-da</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>irges</td>
             <td>irkes</td>
             <td>1</td>
             <td>
               <ol>
-                <li>ieges</li>
                 <li>virges</li>
                 <li>Sirges</li>
                 <li>irgges</li>
+                <li>ieges</li>
                 <li class="correct">irkes</li>
+                <li>Irgens</li>
+                <li>irgge</li>
+                <li>Sierges</li>
+                <li>virge</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>jårgit</td>
+            <td>jårgijt</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>jårrit</li>
+                <li>jårgot</li>
+                <li>jårgut</li>
+                <li>jårgåt</li>
+                <li class="correct">jårgijt</li>
+                <li>jårgijdit</li>
+                <li>jårgistim</li>
+                <li>jårgudit</li>
               </ol>
             </td>
           </tr>
@@ -1442,7 +1470,6 @@
                 <li>målasta</li>
                 <li>mådasta</li>
                 <li class="correct">måj asta</li>
-                <li>måj-asta</li>
                 <li>måjåstak</li>
                 <li>måjåstagá</li>
                 <li>måjådaste</li>
@@ -1507,14 +1534,38 @@
             </td>
           </tr>
           <tr>
+            <td>Alu</td>
+            <td>Álu</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>Au</li>
+                <li>Al</li>
+                <li>Ailu</li>
+                <li class="correct">Álu</li>
+                <li>Olu</li>
+                <li>Anu</li>
+                <li>Abu</li>
+                <li>Als</li>
+                <li>Ali</li>
+                <li>Ala</li>
+                <li>Alm</li>
+                <li>Alf</li>
+                <li>Alv</li>
+                <li>Al-</li>
+                <li>Al u</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>Barggibelludagá</td>
             <td>Barggijbelludagá</td>
             <td>1</td>
             <td>
               <ol>
                 <li>Barggi belludagá</li>
-                <li>Barggobelludagá</li>
                 <li>Barggebelludagá</li>
+                <li>Barggobelludagá</li>
                 <li class="correct">Barggijbelludagá</li>
                 <li>Barggijbelludak</li>
                 <li>Barggijbelludahka</li>
@@ -1542,18 +1593,33 @@
             </td>
           </tr>
           <tr>
-            <td>berri</td>
-            <td>bierri</td>
+            <td>ani</td>
+            <td>åni</td>
             <td>1</td>
             <td>
               <ol>
-                <li>verri</li>
-                <li>nerri</li>
-                <li>beri</li>
-                <li class="correct">bierri</li>
-                <li>lerri</li>
-                <li>ferri</li>
-                <li>bårri</li>
+                <li>ain</li>
+                <li>Tani</li>
+                <li>adni</li>
+                <li class="correct">åni</li>
+                <li>ane</li>
+                <li>aná</li>
+                <li>ano</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>ibmeda</td>
+            <td>ibmáda</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>imeda</li>
+                <li>iemeda</li>
+                <li>ilmeda</li>
+                <li class="correct">ibmáda</li>
+                <li>ibmesa</li>
+                <li>ibme da</li>
               </ol>
             </td>
           </tr>
@@ -1578,26 +1644,6 @@
             </td>
           </tr>
           <tr>
-            <td>lahttot</td>
-            <td>lahtot</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>láhttot</li>
-                <li>lahttut</li>
-                <li>lajttot</li>
-                <li class="correct">lahtot</li>
-                <li>lahtto</li>
-                <li>lihttot</li>
-                <li>lahttát</li>
-                <li>lahttos</li>
-                <li>lahtton</li>
-                <li>lahttok</li>
-                <li>lahtto t</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>sávtssa</td>
             <td>sávttsa</td>
             <td>1</td>
@@ -1611,16 +1657,15 @@
             </td>
           </tr>
           <tr>
-            <td>vátsij</td>
-            <td>vádtsij</td>
+            <td>vierrtiji</td>
+            <td>vierttiji</td>
             <td>1</td>
             <td>
               <ol>
-                <li>bátsij</li>
-                <li>vásij</li>
-                <li>váttsij</li>
-                <li class="correct">vádtsij</li>
-                <li>vássij</li>
+                <li>vierritji</li>
+                <li>vierriji</li>
+                <li>vierrijit</li>
+                <li class="correct">vierttiji</li>
               </ol>
             </td>
           </tr>
@@ -1758,11 +1803,11 @@
                 <li>Av:s</li>
                 <li>Avon</li>
                 <li>Asov</li>
-                <li>Avis</li>
                 <li>Savos</li>
                 <li>Davos</li>
                 <li>Alvos</li>
                 <li>Savo</li>
+                <li>Asos</li>
               </ol>
             </td>
           </tr>
@@ -1796,115 +1841,6 @@
             </td>
           </tr>
           <tr>
-            <td>buoredut</td>
-            <td>buorebut</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>buoredit</li>
-                <li>buoredu</li>
-                <li class="correct">buorebut</li>
-                <li>buoredus</li>
-                <li>buoredum</li>
-                <li>buoredup</li>
-                <li>buoreduk</li>
-                <li>buoredu t</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>båldojga</td>
-            <td>båltojga</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>båldijga</li>
-                <li>bårdojga</li>
-                <li class="correct">båltojga</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>båldojma</td>
-            <td>båltojma</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>båldijma</li>
-                <li>bårdojma</li>
-                <li class="correct">båltojma</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>dutkámráde</td>
-            <td>dutkamráde</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>dutkám ráde</li>
-                <li>dutkám-ráde</li>
-                <li class="correct">dutkamráde</li>
-                <li>dutkumráde</li>
-                <li>dutkampládna</li>
-                <li>dutkamplána</li>
-                <li>dutkamprográmma</li>
-                <li>dutkatjibá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>dálkkádakrievddamij</td>
-            <td>dálkádakrievddamij</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>dálkkádak rievddamij</li>
-                <li>dálkkádak-rievddamij</li>
-                <li class="correct">dálkádakrievddamij</li>
-                <li>dálkádakrievddadimij</li>
-                <li>dálkádakrievddadibmáj</li>
-                <li>dálkádakrievddadime</li>
-                <li>dálkádakrievddadibme</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>dálkkádakrievddamijt</td>
-            <td>dálkádakrievddamijt</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>dálkkádak rievddamijt</li>
-                <li>dálkkádak-rievddamijt</li>
-                <li class="correct">dálkádakrievddamijt</li>
-                <li>dálkádakrievddadimijt</li>
-                <li>sebrudakrievddamijt</li>
-                <li>dálkádakrievddadimet</li>
-                <li>dálkádakrievddadimát</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>giesej</td>
-            <td>giesij</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>giesek</li>
-                <li>giese</li>
-                <li class="correct">giesij</li>
-                <li>giesaj</li>
-                <li>gieses</li>
-                <li>giesen</li>
-                <li>gieset</li>
-                <li>giesem</li>
-                <li>giesev</li>
-                <li>giese j</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>gitjit</td>
             <td>gitjijt</td>
             <td>1</td>
@@ -1920,6 +1856,23 @@
             </td>
           </tr>
           <tr>
+            <td>gujtti</td>
+            <td>guojtti</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>gujddi</li>
+                <li>gijttu</li>
+                <li class="correct">guojtti</li>
+                <li>sujtti</li>
+                <li>mujtti</li>
+                <li>bujtti</li>
+                <li>gijtti</li>
+                <li>guhtti</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>gåhttjojma</td>
             <td>gåhtjojma</td>
             <td>1</td>
@@ -1931,7 +1884,6 @@
                 <li>gåhttjoma</li>
                 <li>gåhttjojda</li>
                 <li>gåhttjoj ma</li>
-                <li>gåhttjoj-ma</li>
               </ol>
             </td>
           </tr>
@@ -1963,19 +1915,6 @@
             </td>
           </tr>
           <tr>
-            <td>irgev</td>
-            <td>irggev</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>iegev</li>
-                <li>virgev</li>
-                <li class="correct">irggev</li>
-                <li>virge</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>jådunij</td>
             <td>jådånij</td>
             <td>1</td>
@@ -1993,6 +1932,21 @@
             </td>
           </tr>
           <tr>
+            <td>jårgidam</td>
+            <td>jårgijdam</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>jårgodam</li>
+                <li>jårgudam</li>
+                <li class="correct">jårgijdam</li>
+                <li>jårgistimijdam</li>
+                <li>jårgijduska</li>
+                <li>jårgistim</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>labudattjin</td>
             <td>labudahtjin</td>
             <td>1</td>
@@ -2001,6 +1955,25 @@
                 <li>labudattijn</li>
                 <li>labudittjin</li>
                 <li class="correct">labudahtjin</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>lahttot</td>
+            <td>lahtot</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>láhttot</li>
+                <li>lahttut</li>
+                <li class="correct">lahtot</li>
+                <li>lahtto</li>
+                <li>lihttot</li>
+                <li>lahttát</li>
+                <li>lahttos</li>
+                <li>lahtton</li>
+                <li>lahttok</li>
+                <li>lahtto t</li>
               </ol>
             </td>
           </tr>
@@ -2114,37 +2087,6 @@
             </td>
           </tr>
           <tr>
-            <td>spánnjoj</td>
-            <td>spánjoj</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>spánnjuj</li>
-                <li>spánnjok</li>
-                <li class="correct">spánjoj</li>
-                <li>spánnjo</li>
-                <li>spánjojn</li>
-                <li>spánnjos</li>
-                <li>spánnjon</li>
-                <li>spánnjo j</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>sádjim</td>
-            <td>sáddjim</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>sádjum</li>
-                <li>sádim</li>
-                <li class="correct">sáddjim</li>
-                <li>sáddim</li>
-                <li>sádjám</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>såhkåra</td>
             <td>såhkkåra</td>
             <td>1</td>
@@ -2157,6 +2099,18 @@
                 <li>såhkåda</li>
                 <li>såhkåma</li>
                 <li>såhkår a</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>tjieg∫alap</td>
+            <td>tjiegŋalap</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>tjiegalap</li>
+                <li>tjiegnalap</li>
+                <li class="correct">tjiegŋalap</li>
               </ol>
             </td>
           </tr>
@@ -2185,23 +2139,6 @@
                 <li>vájasta</li>
                 <li>vajásta</li>
                 <li class="correct">vaj asta</li>
-                <li>vaj-asta</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>vidnudaksuorgen</td>
-            <td>viddnudaksuorgen</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>vidnudak suorgen</li>
-                <li>vidnudak-suorgen</li>
-                <li class="correct">viddnudaksuorgen</li>
-                <li>viddnudaktjåhkalvis</li>
-                <li>oahppijviddnudak</li>
-                <li>værbbasuorgudimen</li>
-                <li>värbbasuorgudimen</li>
               </ol>
             </td>
           </tr>
@@ -2218,6 +2155,20 @@
                 <li>luohtedahtte</li>
                 <li>vuodaldahtte</li>
                 <li>vuorŋedihtte</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>vátsij</td>
+            <td>vádtsij</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>vásij</li>
+                <li>váttsij</li>
+                <li class="correct">vádtsij</li>
+                <li>bátsij</li>
+                <li>vássij</li>
               </ol>
             </td>
           </tr>
@@ -2248,32 +2199,6 @@
                 <li>ålggusin</li>
                 <li>ålggolij</li>
                 <li>ålggolis</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>ållugasj</td>
-            <td>ållagasj</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>ålgulasj</li>
-                <li>ålluhasj</li>
-                <li class="correct">ållagasj</li>
-                <li>ållulasj</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>ållugasj</td>
-            <td>ållagasj</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>ålgulasj</li>
-                <li>ålluhasj</li>
-                <li class="correct">ållagasj</li>
-                <li>ållulasj</li>
               </ol>
             </td>
           </tr>
@@ -2344,6 +2269,20 @@
             </td>
           </tr>
           <tr>
+            <td>Iesh</td>
+            <td>Iesj</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>Iese</li>
+                <li class="correct">Iesj</li>
+                <li>Iesse</li>
+                <li>Iestev</li>
+                <li>Iesski</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>Lettji</td>
             <td>Littji</td>
             <td>1</td>
@@ -2355,17 +2294,18 @@
             </td>
           </tr>
           <tr>
-            <td>Nystøa</td>
-            <td>Nystø</td>
+            <td>Muhttijin</td>
+            <td>Muhttijn</td>
             <td>1</td>
             <td>
               <ol>
-                <li>Nystøs</li>
-                <li class="correct">Nystø</li>
-                <li>Nystøn</li>
-                <li>Nystøv</li>
-                <li>Nystøk</li>
-                <li>Nystø a</li>
+                <li>Muhtitjin</li>
+                <li class="correct">Muhttijn</li>
+                <li>Mihttijin</li>
+                <li>Muhttujin</li>
+                <li>Muhttijis</li>
+                <li>Muhttijit</li>
+                <li>Muhttijim</li>
               </ol>
             </td>
           </tr>
@@ -2418,7 +2358,6 @@
               <ol>
                 <li>Sågan</li>
                 <li class="correct">SÅG:n</li>
-                <li>Sågam</li>
                 <li>Såga</li>
                 <li>Stågan</li>
                 <li>Rågan</li>
@@ -2429,6 +2368,7 @@
                 <li>Ságan</li>
                 <li>Sågas</li>
                 <li>Sågat</li>
+                <li>Sågam</li>
                 <li>Sågav</li>
               </ol>
             </td>
@@ -2453,19 +2393,6 @@
                 <li>Såbav</li>
                 <li>Sågiv</li>
                 <li>Sågas</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Såppijin</td>
-            <td>Såppijn</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Såppijim</li>
-                <li class="correct">Såppijn</li>
-                <li>Såppijis</li>
-                <li>Såppijit</li>
               </ol>
             </td>
           </tr>
@@ -2571,28 +2498,18 @@
             </td>
           </tr>
           <tr>
-            <td>biebbmojt</td>
-            <td>biebmojt</td>
+            <td>berri</td>
+            <td>bierri</td>
             <td>1</td>
             <td>
               <ol>
-                <li>biebbmijt</li>
-                <li class="correct">biebmojt</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>bielljebielli</td>
-            <td>bielljebielle</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>bielljebiello</li>
-                <li class="correct">bielljebielle</li>
-                <li>bielljelibjja</li>
-                <li>bielljegietje</li>
-                <li>bielljelibja</li>
-                <li>bielljegiehtje</li>
+                <li>beri</li>
+                <li class="correct">bierri</li>
+                <li>nerri</li>
+                <li>lerri</li>
+                <li>ferri</li>
+                <li>verri</li>
+                <li>bårri</li>
               </ol>
             </td>
           </tr>
@@ -2606,6 +2523,23 @@
                 <li class="correct">boahtá</li>
                 <li>bahta</li>
                 <li>boahto</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>buoredut</td>
+            <td>buorebut</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>buoredu</li>
+                <li class="correct">buorebut</li>
+                <li>buoredit</li>
+                <li>buoredus</li>
+                <li>buoredum</li>
+                <li>buoredup</li>
+                <li>buoreduk</li>
+                <li>buoredu t</li>
               </ol>
             </td>
           </tr>
@@ -2627,6 +2561,38 @@
                 <li>bálkkám</li>
                 <li>bálkkák</li>
                 <li>bálkká v</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>båldojga</td>
+            <td>båltojga</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>bårdojga</li>
+                <li class="correct">båltojga</li>
+                <li>båldijga</li>
+                <li>bålditjibá</li>
+                <li>badojgattsak</li>
+                <li>bålbadisj</li>
+                <li>bålditjihppe</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>båldojma</td>
+            <td>båltojma</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>bårdojma</li>
+                <li class="correct">båltojma</li>
+                <li>båldijma</li>
+                <li>bålditjibá</li>
+                <li>bålbadisj</li>
+                <li>bålditjihppe</li>
+                <li>bålbadinno</li>
               </ol>
             </td>
           </tr>
@@ -2660,18 +2626,18 @@
             </td>
           </tr>
           <tr>
-            <td>dugátja</td>
-            <td>duogátja</td>
+            <td>dutkámráde</td>
+            <td>dutkamráde</td>
             <td>1</td>
             <td>
               <ol>
-                <li>sugátja</li>
-                <li class="correct">duogátja</li>
-                <li>rugátja</li>
-                <li>dagátja</li>
-                <li>dunátja</li>
-                <li>dudátja</li>
-                <li>dumátja</li>
+                <li>dutkám ráde</li>
+                <li class="correct">dutkamráde</li>
+                <li>dutkumráde</li>
+                <li>dutkampládna</li>
+                <li>dutkamplána</li>
+                <li>dutkamprográmma</li>
+                <li>dutkatjibá</li>
               </ol>
             </td>
           </tr>
@@ -2709,6 +2675,36 @@
                 <li>dájddatjähppudagá</li>
                 <li>dájddatjæhppudagá</li>
                 <li>dájddavuosádusá</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>dálkkádakrievddamij</td>
+            <td>dálkádakrievddamij</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>dálkkádak rievddamij</li>
+                <li class="correct">dálkádakrievddamij</li>
+                <li>dálkádakrievddadimij</li>
+                <li>dálkádakrievddadibmáj</li>
+                <li>dálkádakrievddadime</li>
+                <li>dálkádakrievddadibme</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>dálkkádakrievddamijt</td>
+            <td>dálkádakrievddamijt</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>dálkkádak rievddamijt</li>
+                <li class="correct">dálkádakrievddamijt</li>
+                <li>dálkádakrievddadimijt</li>
+                <li>sebrudakrievddamijt</li>
+                <li>dálkádakrievddadimet</li>
+                <li>dálkádakrievddadimát</li>
               </ol>
             </td>
           </tr>
@@ -2781,15 +2777,21 @@
             </td>
           </tr>
           <tr>
-            <td>gihtta</td>
-            <td>gitta</td>
+            <td>giesej</td>
+            <td>giesij</td>
             <td>1</td>
             <td>
               <ol>
-                <li>guhtta</li>
-                <li class="correct">gitta</li>
-                <li>vihtta</li>
-                <li>kihtta</li>
+                <li>giese</li>
+                <li class="correct">giesij</li>
+                <li>giesaj</li>
+                <li>gieses</li>
+                <li>giesen</li>
+                <li>gieset</li>
+                <li>giesem</li>
+                <li>giesev</li>
+                <li>giesek</li>
+                <li>giese j</li>
               </ol>
             </td>
           </tr>
@@ -2802,18 +2804,6 @@
                 <li>guoktáladdek</li>
                 <li class="correct">guoktálattak</li>
                 <li>guoktá lattek</li>
-                <li>guoktá-lattek</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>hapsit</td>
-            <td>happsit</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>hapsot</li>
-                <li class="correct">happsit</li>
               </ol>
             </td>
           </tr>
@@ -2858,6 +2848,23 @@
             </td>
           </tr>
           <tr>
+            <td>irgev</td>
+            <td>irggev</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>virgev</li>
+                <li class="correct">irggev</li>
+                <li>virge</li>
+                <li>iegev</li>
+                <li>Irgens</li>
+                <li>irgge</li>
+                <li>Siergev</li>
+                <li>viergev</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>jahkegirjji</td>
             <td>jahkegirjje</td>
             <td>1</td>
@@ -2866,7 +2873,6 @@
                 <li>jahkegirjij</li>
                 <li class="correct">jahkegirjje</li>
                 <li>jahke girjji</li>
-                <li>jahke-girjji</li>
               </ol>
             </td>
           </tr>
@@ -2882,6 +2888,22 @@
             </td>
           </tr>
           <tr>
+            <td>jie∫a</td>
+            <td>jieŋa</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>jiena</li>
+                <li class="correct">jieŋa</li>
+                <li>jiela</li>
+                <li>jieppa</li>
+                <li>jierta</li>
+                <li>jierva</li>
+                <li>jierma</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>jåhtemja</td>
             <td>jåhtem ja</td>
             <td>1</td>
@@ -2889,7 +2911,6 @@
               <ol>
                 <li>jåhtema</li>
                 <li class="correct">jåhtem ja</li>
-                <li>jåhtem-ja</li>
               </ol>
             </td>
           </tr>
@@ -2969,40 +2990,6 @@
             </td>
           </tr>
           <tr>
-            <td>milla-</td>
-            <td>milla</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>mill-</li>
-                <li class="correct">milla</li>
-                <li>millas</li>
-                <li>millan</li>
-                <li>millat</li>
-                <li>millam</li>
-                <li>millak</li>
-                <li>mill a-</li>
-                <li>mill-a-</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>muorjjeda</td>
-            <td>muorjeda</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>muorjjesa</li>
-                <li class="correct">muorjeda</li>
-                <li>luorjjeda</li>
-                <li>muorjjida</li>
-                <li>muorjjáda</li>
-                <li>muorjje da</li>
-                <li>muorjje-da</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>murkodam</td>
             <td>murkkodam</td>
             <td>1</td>
@@ -3060,21 +3047,6 @@
                 <li>mánnám</li>
                 <li>mánnák</li>
                 <li>mánná v</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>nielljes</td>
-            <td>nieljes</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>bielljes</li>
-                <li class="correct">nieljes</li>
-                <li>niellje</li>
-                <li>njielles</li>
-                <li>nielljen</li>
-                <li>niellje s</li>
               </ol>
             </td>
           </tr>
@@ -3160,30 +3132,6 @@
             </td>
           </tr>
           <tr>
-            <td>ristalasj</td>
-            <td>risstalasj</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>rustalasj</li>
-                <li class="correct">risstalasj</li>
-                <li>listalasj</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>ristalasjvuodav</td>
-            <td>risstalasjvuodav</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>rustalasjvuodav</li>
-                <li class="correct">risstalasjvuodav</li>
-                <li>listalasjvuodav</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>roma</td>
             <td>Roma</td>
             <td>1</td>
@@ -3226,17 +3174,6 @@
             </td>
           </tr>
           <tr>
-            <td>ruhttsuhit</td>
-            <td>ruhtsuhit</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>rujttsuhit</li>
-                <li class="correct">ruhtsuhit</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>soaggodahttjá</td>
             <td>soaggodahtjá</td>
             <td>1</td>
@@ -3253,6 +3190,23 @@
             </td>
           </tr>
           <tr>
+            <td>spánnjoj</td>
+            <td>spánjoj</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>spánnjuj</li>
+                <li class="correct">spánjoj</li>
+                <li>spánnjo</li>
+                <li>spánjojn</li>
+                <li>spánnjos</li>
+                <li>spánnjon</li>
+                <li>spánnjok</li>
+                <li>spánnjo j</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>subtsasij</td>
             <td>subtsastij</td>
             <td>1</td>
@@ -3261,7 +3215,6 @@
                 <li>subttsasij</li>
                 <li class="correct">subtsastij</li>
                 <li>subtsas ij</li>
-                <li>subtsas-ij</li>
                 <li>subtsasmij</li>
                 <li>subtsasijá</li>
                 <li>subesasij</li>
@@ -3269,6 +3222,20 @@
                 <li>subtsastallij</li>
                 <li>subtsastibá</li>
                 <li>subtsastisá</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>sádjim</td>
+            <td>sáddjim</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>sádim</li>
+                <li class="correct">sáddjim</li>
+                <li>sáddim</li>
+                <li>sádjám</li>
+                <li>sádjum</li>
               </ol>
             </td>
           </tr>
@@ -3334,29 +3301,17 @@
             </td>
           </tr>
           <tr>
-            <td>vierrtiji</td>
-            <td>vierttiji</td>
+            <td>vidnudaksuorgen</td>
+            <td>viddnudaksuorgen</td>
             <td>1</td>
             <td>
               <ol>
-                <li>vierritji</li>
-                <li class="correct">vierttiji</li>
-                <li>vierriji</li>
-                <li>vierrijit</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>vuojnojdisáj</td>
-            <td>vuojnojdisá</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>vuojnojdisák</li>
-                <li class="correct">vuojnojdisá</li>
-                <li>vuojnojdisát</li>
-                <li>vuojnojdisám</li>
-                <li>vuojnojdisá j</li>
+                <li>vidnudak suorgen</li>
+                <li class="correct">viddnudaksuorgen</li>
+                <li>viddnudaktjåhkalvis</li>
+                <li>oahppijviddnudak</li>
+                <li>værbbasuorgudimen</li>
+                <li>värbbasuorgudimen</li>
               </ol>
             </td>
           </tr>
@@ -3371,18 +3326,6 @@
                 <li>luostedam</li>
                 <li>vuohtedam</li>
                 <li>vuosvedam</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>vuotjin</td>
-            <td>vuohtjin</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>vuotjon</li>
-                <li class="correct">vuohtjin</li>
-                <li>vuodjin</li>
               </ol>
             </td>
           </tr>
@@ -3485,6 +3428,32 @@
             </td>
           </tr>
           <tr>
+            <td>ållugasj</td>
+            <td>ållagasj</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>ålgulasj</li>
+                <li class="correct">ållagasj</li>
+                <li>ållulasj</li>
+                <li>ålluhasj</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>ållugasj</td>
+            <td>ållagasj</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li>ålgulasj</li>
+                <li class="correct">ållagasj</li>
+                <li>ållulasj</li>
+                <li>ålluhasj</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>åtsåmav</td>
             <td>åhtsåmav</td>
             <td>1</td>
@@ -3495,7 +3464,6 @@
                 <li>åtsådav</li>
                 <li>åtsåmak</li>
                 <li>åtså mav</li>
-                <li>åtså-mav</li>
                 <li>åtsåma v</li>
               </ol>
             </td>
@@ -3579,26 +3547,6 @@
                 <li>låssot</li>
                 <li>låssut</li>
                 <li class="correct">låssåt</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>bálkaj</td>
-            <td>bálgaj</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>bálkáj</li>
-                <li>báljak</li>
-                <li>báljaj</li>
-                <li>gálkaj</li>
-                <li>kálkaj</li>
-                <li>báskaj</li>
-                <li>báŋkaj</li>
-                <li>báhkaj</li>
-                <li>bávkaj</li>
-                <li class="correct">bálgaj</li>
-                <li>bálkoj</li>
               </ol>
             </td>
           </tr>
@@ -3789,19 +3737,8 @@
             <td>
               <ol>
                 <li class="correct">Hásstalus</li>
-                <li>Hásstális</li>
                 <li>Hásstelus</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Iesh</td>
-            <td>Iesj</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li class="correct">Iesj</li>
-                <li>Iese</li>
+                <li>Hásstális</li>
               </ol>
             </td>
           </tr>
@@ -3828,6 +3765,20 @@
               <ol>
                 <li class="correct">Italian</li>
                 <li>Itálian</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>Jieg∫ahállan</td>
+            <td>Jiegŋahállan</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">Jiegŋahállan</li>
+                <li>Jiegŋahálla</li>
+                <li>Jiegŋasállan</li>
+                <li>Jiegŋasálla</li>
+                <li>Jiegŋasálan</li>
               </ol>
             </td>
           </tr>
@@ -3918,6 +3869,20 @@
             </td>
           </tr>
           <tr>
+            <td>Ma∫emus</td>
+            <td>Maŋemus</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">Maŋemus</li>
+                <li>Maŋŋemus</li>
+                <li>Maximus</li>
+                <li>Sademus</li>
+                <li>Davemus</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>Miehttjejávrráj</td>
             <td>Miehttsejávrráj</td>
             <td>1</td>
@@ -3964,6 +3929,21 @@
             <td>
               <ol>
                 <li class="correct">Noadehierge</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>Nystøa</td>
+            <td>Nystø</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">Nystø</li>
+                <li>Nystøs</li>
+                <li>Nystøn</li>
+                <li>Nystøv</li>
+                <li>Nystøk</li>
+                <li>Nystø a</li>
               </ol>
             </td>
           </tr>
@@ -4085,8 +4065,8 @@
                 <li class="correct">Svierigin</li>
                 <li>Sverigen</li>
                 <li>Sv erigin</li>
-                <li>Sv-erigin</li>
                 <li>Siverigin</li>
+                <li>Sv-erigin</li>
                 <li>Serigin</li>
                 <li>Sverigegin</li>
                 <li>Sverige</li>
@@ -4129,7 +4109,6 @@
                 <li>Sámenit</li>
                 <li>Sámenat</li>
                 <li>Sámen et</li>
-                <li>Sámen-et</li>
                 <li>Samenet</li>
               </ol>
             </td>
@@ -4151,6 +4130,19 @@
             <td>
               <ol>
                 <li class="correct">Sámeministara</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>Såppijin</td>
+            <td>Såppijn</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">Såppijn</li>
+                <li>Såppijis</li>
+                <li>Såppijit</li>
+                <li>Såppijim</li>
               </ol>
             </td>
           </tr>
@@ -4372,7 +4364,6 @@
                 <li>Ájge</li>
                 <li>ajpe</li>
                 <li>aj ge</li>
-                <li>aj-ge</li>
               </ol>
             </td>
           </tr>
@@ -4395,7 +4386,6 @@
             <td>
               <ol>
                 <li class="correct">aktan barggat</li>
-                <li>aktan-barggat</li>
                 <li>aktatbirggat</li>
                 <li>aktisasjbarggo</li>
                 <li>aktisasjbarggut</li>
@@ -4564,6 +4554,10 @@
             <td>
               <ol>
                 <li class="correct">smávva</li>
+                <li>amástuvve</li>
+                <li>amástuvvá</li>
+                <li>amásta</li>
+                <li>amástuvá</li>
               </ol>
             </td>
           </tr>
@@ -4664,7 +4658,6 @@
             <td>
               <ol>
                 <li class="correct">bále</li>
-                <li>vale</li>
                 <li>ale</li>
                 <li>boale</li>
                 <li>balle</li>
@@ -4672,6 +4665,7 @@
                 <li>balde</li>
                 <li>oale</li>
                 <li>dale</li>
+                <li>vale</li>
                 <li>Tale</li>
                 <li>Dale</li>
                 <li>base</li>
@@ -4703,13 +4697,13 @@
             <td>
               <ol>
                 <li class="correct">barggá</li>
-                <li>vargga</li>
                 <li>barga</li>
                 <li>bargoga</li>
                 <li>barggat</li>
                 <li>barggal</li>
                 <li>barggam</li>
                 <li>barggap</li>
+                <li>vargga</li>
                 <li>barega</li>
                 <li>bariga</li>
                 <li>bargge</li>
@@ -4743,6 +4737,17 @@
             </td>
           </tr>
           <tr>
+            <td>biebbmojt</td>
+            <td>biebmojt</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">biebmojt</li>
+                <li>biebbmijt</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>biehtár</td>
             <td>Biehtár</td>
             <td>1</td>
@@ -4763,6 +4768,21 @@
             </td>
           </tr>
           <tr>
+            <td>bielljebielli</td>
+            <td>bielljebielle</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">bielljebielle</li>
+                <li>bielljebiello</li>
+                <li>bielljelibjja</li>
+                <li>bielljegietje</li>
+                <li>bielljelibja</li>
+                <li>bielljegiehtje</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>biktiasijt</td>
             <td>biktasijt</td>
             <td>1</td>
@@ -4770,7 +4790,6 @@
               <ol>
                 <li class="correct">biktasijt</li>
                 <li>bikti asijt</li>
-                <li>bikti-asijt</li>
               </ol>
             </td>
           </tr>
@@ -4791,9 +4810,9 @@
             <td>
               <ol>
                 <li class="correct">bivddám</li>
-                <li>buvddam</li>
                 <li>bivdedam</li>
                 <li>bivdodam</li>
+                <li>buvddam</li>
                 <li>bivádam</li>
                 <li>bivddem</li>
                 <li>bivddim</li>
@@ -5093,11 +5112,30 @@
                 <li class="correct">duvdagá</li>
                 <li>mudagá</li>
                 <li>du dagá</li>
-                <li>du-dagá</li>
                 <li>rádudagá</li>
                 <li>bádudagá</li>
                 <li>nådudagá</li>
                 <li>irdudagá</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>dugátja</td>
+            <td>duogátja</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">duogátja</li>
+                <li>sugátja</li>
+                <li>rugátja</li>
+                <li>dagátja</li>
+                <li>dunátja</li>
+                <li>dudátja</li>
+                <li>dumátja</li>
+                <li>duolátja</li>
+                <li>jagátja</li>
+                <li>sugátjibá</li>
+                <li>jugátjibá</li>
               </ol>
             </td>
           </tr>
@@ -5163,7 +5201,6 @@
                 <li class="correct">dádjadahtesvuohta</li>
                 <li>dádjadahtesvuoda</li>
                 <li>dádjadahteshuova</li>
-                <li>dádjadahtesvuoja</li>
                 <li>dádjadahtesvuohpa</li>
                 <li>dádjadahtesvuosa</li>
                 <li>dádjadahtesvuona</li>
@@ -5184,13 +5221,13 @@
               <ol>
                 <li class="correct">dahkam</li>
                 <li>sáhkam</li>
-                <li>fáhkam</li>
                 <li>ráhkam</li>
                 <li>láhkam</li>
                 <li>máhkam</li>
                 <li>páhkam</li>
                 <li>háhkam</li>
                 <li>báhkam</li>
+                <li>fáhkam</li>
                 <li>dehkam</li>
                 <li>dáhpam</li>
               </ol>
@@ -5271,7 +5308,6 @@
               <ol>
                 <li class="correct">dálkádakrievddadibmáj</li>
                 <li>dálkkádak rievddadibmáj</li>
-                <li>dálkkádak-rievddadibmáj</li>
               </ol>
             </td>
           </tr>
@@ -5489,9 +5525,6 @@
             <td>
               <ol>
                 <li class="correct">fálaldagájn</li>
-                <li>fáladarájn</li>
-                <li>fáladagojn</li>
-                <li>fáladagujn</li>
                 <li>fálaldagán</li>
                 <li>fálaldagá</li>
               </ol>
@@ -5574,7 +5607,6 @@
                 <li>gaskada</li>
                 <li>gaskama</li>
                 <li>gaska la</li>
-                <li>gaska-la</li>
                 <li>gaskaAla</li>
                 <li>gaskaOla</li>
                 <li>gaskaUla</li>
@@ -5594,7 +5626,6 @@
                 <li class="correct">gatjálvisáj</li>
                 <li>gatjálvissaj</li>
                 <li>gatjálvis aj</li>
-                <li>gatjálvis-aj</li>
               </ol>
             </td>
           </tr>
@@ -5618,7 +5649,6 @@
             <td>
               <ol>
                 <li class="correct">gehtjas vaden</li>
-                <li>gehtjas-vaden</li>
                 <li>gehtjastimen</li>
                 <li>gehtjastallen</li>
                 <li>gehtjastagán</li>
@@ -5645,16 +5675,6 @@
                 <li class="correct">geŋgas</li>
                 <li>gegas</li>
                 <li>gergas</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>giella-guovlov</td>
-            <td>giellaguovlov</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li class="correct">giellaguovlov</li>
               </ol>
             </td>
           </tr>
@@ -5686,7 +5706,6 @@
                 <li class="correct">gieldagis</li>
                 <li>gielldasis</li>
                 <li>giellda gis</li>
-                <li>giellda-gis</li>
               </ol>
             </td>
           </tr>
@@ -5719,6 +5738,19 @@
             </td>
           </tr>
           <tr>
+            <td>gihtta</td>
+            <td>gitta</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">gitta</li>
+                <li>vihtta</li>
+                <li>kihtta</li>
+                <li>guhtta</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>ginndalav</td>
             <td>ginntalav</td>
             <td>1</td>
@@ -5739,7 +5771,6 @@
             <td>
               <ol>
                 <li class="correct">girje baktu</li>
-                <li>girje-baktu</li>
                 <li>Girjegiisá</li>
                 <li>girjaduhtu</li>
                 <li>Girjáluokta</li>
@@ -5825,7 +5856,6 @@
                 <li>gálaj</li>
                 <li>guloj</li>
                 <li>gul aj</li>
-                <li>gul-aj</li>
               </ol>
             </td>
           </tr>
@@ -5838,7 +5868,6 @@
                 <li class="correct">gulunagá</li>
                 <li>gullunagi</li>
                 <li>gullu nagá</li>
-                <li>gullu-nagá</li>
               </ol>
             </td>
           </tr>
@@ -5894,8 +5923,8 @@
             <td>
               <ol>
                 <li class="correct">gahttunijn</li>
-                <li>gáhttumijn</li>
                 <li>gáhttudijn</li>
+                <li>gáhttumijn</li>
               </ol>
             </td>
           </tr>
@@ -6002,6 +6031,21 @@
                 <li>væsstá</li>
                 <li>gisstá</li>
                 <li>gæsste</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>hapsit</td>
+            <td>happsit</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">happsit</li>
+                <li>hapsot</li>
+                <li>hapsijt</li>
+                <li>hapsijdit</li>
+                <li>hapsodit</li>
+                <li>hapsijdisj</li>
               </ol>
             </td>
           </tr>
@@ -6145,7 +6189,6 @@
             <td>
               <ol>
                 <li class="correct">iehtjáda muv</li>
-                <li>iehtjáda-muv</li>
                 <li>ietjájdahttuv</li>
                 <li>iehkeduhtjá</li>
                 <li>iehkedutjáv</li>
@@ -6192,29 +6235,19 @@
             </td>
           </tr>
           <tr>
-            <td>ietja-sa</td>
-            <td>ietjasa</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li class="correct">ietjasa</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>ietjan</td>
             <td>ietján</td>
             <td>1</td>
             <td>
               <ol>
                 <li class="correct">ietján</li>
-                <li>ietjam</li>
                 <li>ietja</li>
                 <li>gietjan</li>
                 <li>tiejan</li>
                 <li>ihtjan</li>
                 <li>ietjas</li>
                 <li>ietjat</li>
+                <li>ietjam</li>
                 <li>ietja n</li>
               </ol>
             </td>
@@ -6286,7 +6319,6 @@
             <td>
               <ol>
                 <li class="correct">ja bagát</li>
-                <li>ja-bagát</li>
                 <li>Rabagát</li>
                 <li>Babagát</li>
                 <li>jaŋádagát</li>
@@ -6682,7 +6714,6 @@
             <td>
               <ol>
                 <li class="correct">lamá juosik</li>
-                <li>lamá-juosik</li>
                 <li>lamátjibák</li>
                 <li>lamátjihppek</li>
                 <li>lamátjibá</li>
@@ -6895,10 +6926,10 @@
             <td>
               <ol>
                 <li class="correct">låvdagådij</li>
+                <li>båvdågådij</li>
                 <li>kåvdågådij</li>
                 <li>låbdågådij</li>
                 <li>låvsågådij</li>
-                <li>båvdågådij</li>
                 <li>låvkågådij</li>
                 <li>lågådimij</li>
                 <li>lågådiddjij</li>
@@ -6948,10 +6979,10 @@
             <td>
               <ol>
                 <li class="correct">máhtti</li>
-                <li>mahtto</li>
                 <li>rahtti</li>
                 <li>mihtti</li>
                 <li>muhtti</li>
+                <li>mahtto</li>
               </ol>
             </td>
           </tr>
@@ -6963,7 +6994,6 @@
               <ol>
                 <li class="correct">majdik</li>
                 <li>majt ik</li>
-                <li>majt-ik</li>
                 <li>Majalahtik</li>
                 <li>majalahtik</li>
                 <li>Majurik</li>
@@ -7150,6 +7180,21 @@
             </td>
           </tr>
           <tr>
+            <td>muorjjeda</td>
+            <td>muorjeda</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">muorjeda</li>
+                <li>luorjjeda</li>
+                <li>muorjjida</li>
+                <li>muorjjáda</li>
+                <li>muorjjesa</li>
+                <li>muorjje da</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>murkodit</td>
             <td>murkkodit</td>
             <td>1</td>
@@ -7201,7 +7246,6 @@
                 <li>mága</li>
                 <li>máno</li>
                 <li>má na</li>
-                <li>má-na</li>
               </ol>
             </td>
           </tr>
@@ -7297,6 +7341,21 @@
                 <li>nielggebednagijda</li>
                 <li>nielggeniedajda</li>
                 <li>nielggeniedada</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>nielljes</td>
+            <td>nieljes</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">nieljes</li>
+                <li>niellje</li>
+                <li>njielles</li>
+                <li>bielljes</li>
+                <li>nielljen</li>
+                <li>niellje s</li>
               </ol>
             </td>
           </tr>
@@ -7402,8 +7461,8 @@
             <td>
               <ol>
                 <li class="correct">nubbáj</li>
-                <li>nibbaj</li>
                 <li>Snubbaj</li>
+                <li>nibbaj</li>
               </ol>
             </td>
           </tr>
@@ -7414,7 +7473,6 @@
             <td>
               <ol>
                 <li class="correct">nahkárij</li>
-                <li>báhkárij</li>
                 <li>áhkárij</li>
                 <li>áhkárijn</li>
                 <li>ráhkárij</li>
@@ -7422,6 +7480,7 @@
                 <li>dáhkárij</li>
                 <li>gáhkárij</li>
                 <li>háhkárij</li>
+                <li>báhkárij</li>
                 <li>nákkárij</li>
                 <li>náhpárij</li>
                 <li>n áhkárij</li>
@@ -7446,7 +7505,10 @@
               <ol>
                 <li class="correct">oajvvadimrievtesvuohta</li>
                 <li>oajvvadin rievtesvuohta</li>
-                <li>oajvvadin-rievtesvuohta</li>
+                <li>oajvvadittjabihtte</li>
+                <li>oajvvaduvvabihtte</li>
+                <li>oajvvadinno</li>
+                <li>oajvvadihtte</li>
               </ol>
             </td>
           </tr>
@@ -7507,7 +7569,6 @@
                 <li>rassjolij</li>
                 <li>rassjomij</li>
                 <li>rassjo dij</li>
-                <li>rassjo-dij</li>
               </ol>
             </td>
           </tr>
@@ -7570,6 +7631,38 @@
             </td>
           </tr>
           <tr>
+            <td>ristalasj</td>
+            <td>risstalasj</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">risstalasj</li>
+                <li>listalasj</li>
+                <li>rustalasj</li>
+                <li>humanistalasj</li>
+                <li>gånstalasj</li>
+                <li>ristagisásj</li>
+                <li>ristaädnásj</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>ristalasjvuodav</td>
+            <td>risstalasjvuodav</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">risstalasjvuodav</li>
+                <li>listalasjvuodav</li>
+                <li>rustalasjvuodav</li>
+                <li>almulasjvuodalágav</li>
+                <li>gállasjvuodalihto</li>
+                <li>almulasjvuodalága</li>
+                <li>gállasjvuodalihtto</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
             <td>ristatäjgáda</td>
             <td>ristaäjgáda</td>
             <td>1</td>
@@ -7592,12 +7685,12 @@
             </td>
           </tr>
           <tr>
-            <td>roavát-</td>
-            <td>roavát</td>
+            <td>ruhttsuhit</td>
+            <td>ruhtsuhit</td>
             <td>1</td>
             <td>
               <ol>
-                <li class="correct">roavát</li>
+                <li class="correct">ruhtsuhit</li>
               </ol>
             </td>
           </tr>
@@ -7657,13 +7750,13 @@
             <td>
               <ol>
                 <li class="correct">sáhkat</li>
-                <li>dahkat</li>
                 <li>tsahkat</li>
                 <li>stahkat</li>
                 <li>svahkat</li>
                 <li>stahka</li>
                 <li>nahkat</li>
                 <li>rahkat</li>
+                <li>dahkat</li>
                 <li>sehkat</li>
                 <li>suhkat</li>
                 <li>saskat</li>
@@ -7703,7 +7796,6 @@
             <td>
               <ol>
                 <li class="correct">sihtá</li>
-                <li>suhta</li>
                 <li>sihtsa</li>
                 <li>sihtat</li>
                 <li>sihtal</li>
@@ -7713,6 +7805,7 @@
                 <li>rihta</li>
                 <li>kihta</li>
                 <li>sehta</li>
+                <li>suhta</li>
                 <li>sivta</li>
                 <li>sikta</li>
                 <li>sihte</li>
@@ -7802,8 +7895,8 @@
             <td>
               <ol>
                 <li class="correct">skihppijsujtár</li>
-                <li>skuhpijsujtár</li>
                 <li>skáhpijsujtár</li>
+                <li>skuhpijsujtár</li>
                 <li>skåhpijsujtár</li>
                 <li>skihppijgoahte</li>
                 <li>skihppujihtte</li>
@@ -7839,13 +7932,13 @@
             <td>
               <ol>
                 <li class="correct">sláddo</li>
-                <li>skáddu</li>
-                <li>sláddi</li>
                 <li>láddu</li>
                 <li>sáddu</li>
                 <li>sláddut</li>
                 <li>sláddum</li>
                 <li>láddus</li>
+                <li>skáddu</li>
+                <li>sláddi</li>
                 <li>s láddu</li>
               </ol>
             </td>
@@ -7917,7 +8010,6 @@
             <td>
               <ol>
                 <li class="correct">sunji ja</li>
-                <li>sunji-ja</li>
                 <li>Suonjila</li>
                 <li>Sunniva</li>
                 <li>skinjijda</li>
@@ -8034,8 +8126,8 @@
             <td>
               <ol>
                 <li class="correct">sámásta</li>
-                <li>dámasta</li>
                 <li>slámasta</li>
+                <li>dámasta</li>
                 <li>semasta</li>
                 <li>sárasta</li>
                 <li>sálasta</li>
@@ -8221,7 +8313,6 @@
             <td>
               <ol>
                 <li class="correct">tjuovuda vadnasijn</li>
-                <li>tjuovuda-vadnasijn</li>
                 <li>tjuovdavadnasijn</li>
                 <li>tjuovudamvadnasijn</li>
                 <li>tjuovddavadnasijn</li>
@@ -8271,7 +8362,6 @@
               <ol>
                 <li class="correct">tjáhtjelådde</li>
                 <li>tjáhtje låddi</li>
-                <li>tjáhtje-låddi</li>
                 <li>tjáhtjelåddim</li>
                 <li>tjáhtjelåtte</li>
                 <li>tjáhtjelihte</li>
@@ -8379,7 +8469,6 @@
                 <li class="correct">tsábbmemin</li>
                 <li>tsábmedin</li>
                 <li>tsábme min</li>
-                <li>tsábme-min</li>
                 <li>tsábmestin</li>
                 <li>tsábmestibá</li>
                 <li>tsábmestisj</li>
@@ -8407,9 +8496,9 @@
             <td>
               <ol>
                 <li class="correct">vájkkut</li>
+                <li>gajkkut</li>
                 <li>bajkkut</li>
                 <li>vahkkut</li>
-                <li>gajkkut</li>
               </ol>
             </td>
           </tr>
@@ -8468,7 +8557,6 @@
                 <li>ventagijda</li>
                 <li>venagijdak</li>
                 <li>venagij dat</li>
-                <li>venagij-dat</li>
                 <li>venagijda t</li>
               </ol>
             </td>
@@ -8584,9 +8672,23 @@
             <td>
               <ol>
                 <li class="correct">vuododus</li>
-                <li>buodudus</li>
                 <li>guodudus</li>
+                <li>buodudus</li>
                 <li>vuodadus</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>vuojnojdisáj</td>
+            <td>vuojnojdisá</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">vuojnojdisá</li>
+                <li>vuojnojdisát</li>
+                <li>vuojnojdisám</li>
+                <li>vuojnojdisák</li>
+                <li>vuojnojdisá j</li>
               </ol>
             </td>
           </tr>
@@ -8673,16 +8775,6 @@
             </td>
           </tr>
           <tr>
-            <td>vuostasj-vuosádus</td>
-            <td>vuostasjvuosádus</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li class="correct">vuostasjvuosádus</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>vuostemielav</td>
             <td>vuosstemielav</td>
             <td>1</td>
@@ -8696,6 +8788,22 @@
                 <li>vuosstemiella</li>
                 <li>vuostasjgielav</li>
                 <li>vuosteldimev</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>vuotjin</td>
+            <td>vuohtjin</td>
+            <td>1</td>
+            <td>
+              <ol>
+                <li class="correct">vuohtjin</li>
+                <li>vuodjin</li>
+                <li>vuotjon</li>
+                <li>vuotjitjin</li>
+                <li>vuotjotjin</li>
+                <li>vuotjatjin</li>
+                <li>vuotjitjibá</li>
               </ol>
             </td>
           </tr>
@@ -8722,13 +8830,13 @@
               <ol>
                 <li class="correct">vaddá</li>
                 <li>ávddá</li>
-                <li>báddá</li>
                 <li>vádá</li>
                 <li>várddá</li>
                 <li>ráddá</li>
                 <li>láddá</li>
                 <li>gáddá</li>
                 <li>máddá</li>
+                <li>báddá</li>
                 <li>fáddá</li>
                 <li>váldá</li>
               </ol>
@@ -8751,9 +8859,9 @@
             <td>
               <ol>
                 <li class="correct">váhkkátjiekkav</li>
-                <li>báhkkatjiekkav</li>
                 <li>máhkkatjiekkav</li>
                 <li>páhkkatjiekkav</li>
+                <li>báhkkatjiekkav</li>
                 <li>várkkatjiekkav</li>
                 <li>tsiekkatjihppe</li>
                 <li>tjiekkav</li>
@@ -8851,6 +8959,12 @@
             <td>
               <ol>
                 <li class="correct">värrodit</li>
+                <li>värroLot</li>
+                <li>värroHot</li>
+                <li>värrodáset</li>
+                <li>värrodását</li>
+                <li>värroduhtu</li>
+                <li>värrodimet</li>
               </ol>
             </td>
           </tr>
@@ -9050,16 +9164,6 @@
             </td>
           </tr>
           <tr>
-            <td>ájá-dallá</td>
-            <td>ájádallá</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li class="correct">ájádallá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>ájádalak</td>
             <td>ájádalák</td>
             <td>1</td>
@@ -9199,7 +9303,6 @@
             <td>
               <ol>
                 <li class="correct">ælo lahka</li>
-                <li>ælo-lahka</li>
                 <li>æloláhka</li>
                 <li>æloløhka</li>
                 <li>ælolåhka</li>
@@ -9211,20 +9314,10 @@
               </ol>
             </td>
           </tr>
-          <tr>
-            <td>æládus-organisasjåvnåjt</td>
-            <td>æládusorganisasjåvnåjt</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li class="correct">æládusorganisasjåvnåjt</li>
-              </ol>
-            </td>
-          </tr>
         </table>
       </section>
       <section>
-        <title>Spelling errors with only incorrect suggestions (183)</title>
+        <title>Spelling errors with only incorrect suggestions (142)</title>
         <table>
           <tr>
             <th>Input<br/>word</th>
@@ -9267,8 +9360,8 @@
                 <li>dábegis</li>
                 <li>gabedis</li>
                 <li>sabegis</li>
-                <li>davegis</li>
                 <li>dalegis</li>
+                <li>davegis</li>
               </ol>
             </td>
           </tr>
@@ -9329,7 +9422,6 @@
               <ol>
                 <li>vidálågek</li>
                 <li>vidá lågev</li>
-                <li>vidá-lågev</li>
                 <li>vidálågenan</li>
                 <li>vidájlågenan</li>
                 <li>vidánlågenan</li>
@@ -9435,7 +9527,6 @@
               <ol>
                 <li>bastidievva</li>
                 <li>basti dieva</li>
-                <li>basti-dieva</li>
                 <li>bastidievá</li>
                 <li>bastidievas</li>
                 <li>bastigieva</li>
@@ -9456,7 +9547,6 @@
             <td>
               <ol>
                 <li>dagu duodje</li>
-                <li>dagu-duodje</li>
                 <li>dagoduodje</li>
                 <li>dájddaduodje</li>
                 <li>gujnnaduodje</li>
@@ -9479,19 +9569,6 @@
             </td>
           </tr>
           <tr>
-            <td>dålkkum-åhpadadusáv</td>
-            <td>dålkkumåhpadusáv</td>
-            <td>3</td>
-            <td>
-              <ol>
-                <li>dålkkumdievnastusáv</li>
-                <li>dålkkumdievnastusá</li>
-                <li>dålkkumdievnastus</li>
-                <li>ållessjattukåhpadusáv</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>dåmåjdam</td>
             <td>dåjmadam</td>
             <td>3</td>
@@ -9503,19 +9580,6 @@
                 <li>atåvmåjdam</li>
                 <li>diplåvmåjdam</li>
                 <li>kondåvmåjdam</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>irássuoddjim-minisstar</td>
-            <td>Birássuoddjimministar</td>
-            <td>3</td>
-            <td>
-              <ol>
-                <li>sisássjijministeriddja</li>
-                <li>birássuodjalibme</li>
-                <li>sisássjijministeridja</li>
-                <li>birássuodjalime</li>
               </ol>
             </td>
           </tr>
@@ -9554,13 +9618,13 @@
             <td>3</td>
             <td>
               <ol>
-                <li>siejvvin</li>
                 <li>iejvvim</li>
                 <li>siejvvi</li>
                 <li>giejvvim</li>
                 <li>biejvvim</li>
                 <li>siejvvem</li>
                 <li>siejvvis</li>
+                <li>siejvvin</li>
                 <li>siejvvit</li>
                 <li>siejvviv</li>
                 <li>siejvvik</li>
@@ -9602,19 +9666,6 @@
             </td>
           </tr>
           <tr>
-            <td>vidnudak-åhadusán</td>
-            <td>viddnudakåhpadusán</td>
-            <td>3</td>
-            <td>
-              <ol>
-                <li>viddnudaktjåhkalvisán</li>
-                <li>viddnudaktjåhkalvisá</li>
-                <li>viddnudaktjåhkalvis</li>
-                <li>virggeåhpadusán</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>ålosa</td>
             <td>oallosa</td>
             <td>3</td>
@@ -9629,77 +9680,6 @@
                 <li>Olosa</li>
                 <li>årosa</li>
                 <li>ålos a</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>CD-aj</td>
-            <td>CD:j</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>CD- aj</li>
-                <li>CD--aj</li>
-                <li>CD-Maj</li>
-                <li>CD-Kaj</li>
-                <li>Cd- aj</li>
-                <li>Cd--aj</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>CD-ajn</td>
-            <td>CD:jn</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>CD-ain</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>CD-an</td>
-            <td>CD:n</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>CD-San</li>
-                <li>CD-Ian</li>
-                <li>CD-Nan</li>
-                <li>CD-Dan</li>
-                <li>CD-Gan</li>
-                <li>CD-Man</li>
-                <li>CD-Pan</li>
-                <li>CD-Van</li>
-                <li>CD-ain</li>
-                <li>CD-ano</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>CD-as</td>
-            <td>CD:s</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>CD- as</li>
-                <li>CD--as</li>
-                <li>CD-Aas</li>
-                <li>CD-Ras</li>
-                <li>CD-Las</li>
-                <li>CD-ase</li>
-                <li>Cd- as</li>
-                <li>Cd--as</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>CD-av</td>
-            <td>CD:v</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>CD-ave</li>
               </ol>
             </td>
           </tr>
@@ -9743,26 +9723,13 @@
             <td>2</td>
             <td>
               <ol>
-                <li>Ibnáhkko</li>
                 <li>Ibbááhkko</li>
+                <li>Ibnáhkko</li>
                 <li>IbbáOkko</li>
                 <li>Báhkko</li>
                 <li>Báhkkanibá</li>
                 <li>Báhkkijinno</li>
                 <li>Báhkkijunno</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Jönsson-rávgge</td>
-            <td>Jönsson-rávkke</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>Jönssonge</li>
-                <li>Jönsson</li>
-                <li>Radisson-SASge</li>
-                <li>Radisson-sasge</li>
               </ol>
             </td>
           </tr>
@@ -9854,19 +9821,6 @@
             </td>
           </tr>
           <tr>
-            <td>birássuoddjim-ministtar</td>
-            <td>birássuoddjimministar</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>birássuodjalibme</li>
-                <li>birássuodjalime</li>
-                <li>birássuodjalim</li>
-                <li>sisássjijministeriddja</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>buohtastáhtá</td>
             <td>buohtastahttá</td>
             <td>2</td>
@@ -9952,19 +9906,6 @@
             </td>
           </tr>
           <tr>
-            <td>garññelijn</td>
-            <td>garŋŋelijn</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>garŋŋeladdijn</li>
-                <li>gobelijnan</li>
-                <li>gobelijnna</li>
-                <li>gobelijna</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>gájkáj</td>
             <td>gájkkaj</td>
             <td>2</td>
@@ -10008,11 +9949,11 @@
             <td>
               <ol>
                 <li>garvvi</li>
-                <li>gárvvo</li>
                 <li>gávvi</li>
                 <li>gárvvit</li>
                 <li>gårvvi</li>
                 <li>gálvvi</li>
+                <li>gárvvo</li>
               </ol>
             </td>
           </tr>
@@ -10023,10 +9964,10 @@
             <td>
               <ol>
                 <li>garvvij</li>
-                <li>gárvvuj</li>
                 <li>gávvij</li>
                 <li>gårvvij</li>
                 <li>gálvvij</li>
+                <li>gárvvuj</li>
                 <li>gárvvit</li>
               </ol>
             </td>
@@ -10109,8 +10050,12 @@
             <td>2</td>
             <td>
               <ol>
-                <li>jårgudi</li>
                 <li>jårgodi</li>
+                <li>jårgudi</li>
+                <li>jårgijdi</li>
+                <li>jårgijt</li>
+                <li>jårgistim</li>
+                <li>jårgijdusá</li>
               </ol>
             </td>
           </tr>
@@ -10179,7 +10124,6 @@
             <td>
               <ol>
                 <li>man gela</li>
-                <li>man-gela</li>
                 <li>Mangelsen</li>
                 <li>Mangera</li>
                 <li>Mangena</li>
@@ -10201,7 +10145,21 @@
             </td>
           </tr>
           <tr>
-            <td>maññela</td>
+            <td>maŋemusboahtte</td>
+            <td>maŋŋemus boahtte</td>
+            <td>2</td>
+            <td>
+              <ol>
+                <li>maŋemus boahtte</li>
+                <li>áttjasboahtte</li>
+                <li>maŋemusát</li>
+                <li>maŋemussaj</li>
+                <li>maŋemusás</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>ma∫∫ela</td>
             <td>maŋŋela</td>
             <td>2</td>
             <td>
@@ -10210,34 +10168,6 @@
                 <li>Mandela</li>
                 <li>Mannela</li>
                 <li>Manuela</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>maññetjaktjagiese</td>
-            <td>maŋŋetjaktjagiese</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>tjaktjagiese</li>
-                <li>tjaktjagiesse</li>
-                <li>maŋŋetjaktja</li>
-                <li>sjkilltjagiergge</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>maŋemusboahtte</td>
-            <td>maŋŋemus boahtte</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>maŋemus boahtte</li>
-                <li>maŋemus-boahtte</li>
-                <li>áttjasboahtte</li>
-                <li>maŋemusát</li>
-                <li>maŋemussaj</li>
-                <li>maŋemusás</li>
               </ol>
             </td>
           </tr>
@@ -10286,8 +10216,8 @@
             <td>
               <ol>
                 <li>sinon</li>
-                <li>bison</li>
                 <li>nisson</li>
+                <li>bison</li>
               </ol>
             </td>
           </tr>
@@ -10316,26 +10246,13 @@
             </td>
           </tr>
           <tr>
-            <td>sassnekonfeksjåvnnå-linjav</td>
-            <td>sassnekonfeksjåvnnålinjáv</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>konfeksjåvnnå</li>
-                <li>desinfeksjåvnnå</li>
-                <li>konfeksjåvnåv</li>
-                <li>nuppepotænssafunksjåvnnå</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>soademim</td>
             <td>oademin</td>
             <td>2</td>
             <td>
               <ol>
-                <li>soadenim</li>
                 <li>oademim</li>
+                <li>soadenim</li>
                 <li>s oademim</li>
               </ol>
             </td>
@@ -10352,19 +10269,6 @@
                 <li>Stuorgáhttunis</li>
                 <li>stuorrásabmusis</li>
                 <li>stuorrásubmusis</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>tjaññgasit</td>
-            <td>tjaŋŋgasit</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>tjavggasit</li>
-                <li>tjavggasisj</li>
-                <li>tjavggasibá</li>
-                <li>tjavggasisá</li>
               </ol>
             </td>
           </tr>
@@ -10399,12 +10303,12 @@
             <td>
               <ol>
                 <li>rievtet</li>
-                <li>viettet</li>
-                <li>vierret</li>
                 <li>vieret</li>
                 <li>riertet</li>
                 <li>liertet</li>
                 <li>viestet</li>
+                <li>viettet</li>
+                <li>vierret</li>
                 <li>vierdet</li>
                 <li>vierget</li>
                 <li>viermet</li>
@@ -10424,24 +10328,6 @@
                 <li>vuosstemannam</li>
                 <li>vuosstemielan</li>
                 <li>vuosstemannon</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>væráltdoaro-ájge</td>
-            <td>væráltdoarroájge</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>væráltdoaroájge</li>
-                <li>væráltdoarosájge</li>
-                <li>væráltdoarorájge</li>
-                <li>væráltdoarolájge</li>
-                <li>væráltdoarodájge</li>
-                <li>væráltdoarojge</li>
-                <li>væráltdoaroge</li>
-                <li>væráltdoarroge</li>
-                <li>væráltdoaro</li>
               </ol>
             </td>
           </tr>
@@ -10508,19 +10394,6 @@
             </td>
           </tr>
           <tr>
-            <td>æládus-ávijssa</td>
-            <td>æládusavijssa</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>æládussisboadosa</li>
-                <li>æládussisboado</li>
-                <li>æládustjerdasa</li>
-                <li>æládussisboahtosa</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>Demografia</td>
             <td>Demografija</td>
             <td>1</td>
@@ -10567,69 +10440,9 @@
                 <li>Gausaj</li>
                 <li>Gafsaj</li>
                 <li>Gaksaj</li>
-                <li>Garsaj</li>
                 <li>Gartsaj</li>
                 <li>Gattsaj</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gejr-áddjá</td>
-            <td>Gejrá-áddjá</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Ger-áddjá</li>
-                <li>Ger-áddjáj</li>
-                <li>Gejrááddjá</li>
-                <li>Áddjá-rávke</li>
-                <li>Máttaráddjá</li>
-                <li>Giellarádjá</li>
-                <li>Áddjá-rávkke</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gejr-ádjá</td>
-            <td>Gejrá-ádjá</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Ger-ádjá</li>
-                <li>Ger-ádjáj</li>
-                <li>Gejráádjá</li>
-                <li>Gejrrá</li>
-                <li>Giellarádjá</li>
-                <li>Gejnudagá</li>
-                <li>Gejrá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gáddj-ibme</td>
-            <td>Gáddjá-ibme</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Gáddjáibme</li>
-                <li>Gáddalibme</li>
-                <li>Gádjusibme</li>
-                <li>Gáddalime</li>
-                <li>Gártjedibme</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gáddj-ime</td>
-            <td>Gáddjá-ime</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Gáddjáime</li>
-                <li>Gáddalime</li>
-                <li>Gáddalibme</li>
-                <li>Gádjusime</li>
-                <li>Gáddje</li>
+                <li>Gadtsaj</li>
               </ol>
             </td>
           </tr>
@@ -10640,11 +10453,11 @@
             <td>
               <ol>
                 <li>Hilát</li>
-                <li>Hálut</li>
-                <li>Hálot</li>
                 <li>Hállit</li>
                 <li>Hálet</li>
                 <li>Hálat</li>
+                <li>Hálot</li>
+                <li>Hálut</li>
               </ol>
             </td>
           </tr>
@@ -10658,90 +10471,6 @@
                 <li>Bievllá</li>
                 <li>Suvllá</li>
                 <li>Návllá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Ibb-áhkko</td>
-            <td>Ibbá-áhkko</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sbb-áhkko</li>
-                <li>Fbb-áhkko</li>
-                <li>Kbb-áhkko</li>
-                <li>Ibm-áhkko</li>
-                <li>Ibk-áhkko</li>
-                <li>Ibbááhkko</li>
-                <li>Ilmmeráhkko</li>
-                <li>Iehpejáhkko</li>
-                <li>Báhkkosavoj</li>
-                <li>Jáhkkogabbo</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Ibb-áhko</td>
-            <td>Ibbá-áhko</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sbb-áhko</li>
-                <li>Fbb-áhko</li>
-                <li>Kbb-áhko</li>
-                <li>Ibm-áhko</li>
-                <li>Ibk-áhko</li>
-                <li>Ibbááhko</li>
-                <li>Báhkolista</li>
-                <li>Báhkogirje</li>
-                <li>Ilmmeráhko</li>
-                <li>Iehpejáhko</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Ibb-áhkov</td>
-            <td>Ibbá-áhkov</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sbb-áhkov</li>
-                <li>Fbb-áhkov</li>
-                <li>Kbb-áhkov</li>
-                <li>Ibm-áhkov</li>
-                <li>Ibk-áhkov</li>
-                <li>Ibbááhkov</li>
-                <li>Báhkovajás</li>
-                <li>Báhkovuorká</li>
-                <li>Báhkovuorkká</li>
-                <li>Báhkogåvå</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Jårgit</td>
-            <td>Jårgijt</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Jårgut</li>
-                <li>Jårgot</li>
-                <li>Jårrit</li>
-                <li>Jårgåt</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Laponia-stipennda</td>
-            <td>Laponia-stipænnda</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Laponiastipennda</li>
-                <li>Stipenndada</li>
-                <li>Laponiahálla</li>
-                <li>Stipennda</li>
-                <li>Stipendiáhttada</li>
               </ol>
             </td>
           </tr>
@@ -10819,165 +10548,8 @@
             </td>
           </tr>
           <tr>
-            <td>Sunn-ibme</td>
-            <td>Sunná-ibme</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sunneibme</li>
-                <li>Sunnaibme</li>
-                <li>Sunnáibme</li>
-                <li>Sunn-risstin</li>
-                <li>Sunn-Risstin</li>
-                <li>Sunnissma</li>
-                <li>Sunnisma</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunn-ibmes</td>
-            <td>Sunná-ibmes</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sunneibmes</li>
-                <li>Sunnaibmes</li>
-                <li>Sunnáibmes</li>
-                <li>Sunn-risstin</li>
-                <li>Sunn-Risstin</li>
-                <li>Unnedibmes</li>
-                <li>Surodibmes</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunn-ime</td>
-            <td>Sunná-ime</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sunneime</li>
-                <li>Sunnaime</li>
-                <li>Sunnáime</li>
-                <li>Sunn-risstin</li>
-                <li>Sunn-Risstin</li>
-                <li>Sunnmøre</li>
-                <li>Sunnisma</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunn-áhkko</td>
-            <td>Sunná-áhkko</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sunneáhkko</li>
-                <li>Sunnaáhkko</li>
-                <li>Sunnááhkko</li>
-                <li>Sunn-risstin</li>
-                <li>Sunn-Risstin</li>
-                <li>Sáhkkujunno</li>
-                <li>Sáhkkudunno</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunn-áhko</td>
-            <td>Sunná-áhko</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sunneáhko</li>
-                <li>Sunnaáhko</li>
-                <li>Sunnááhko</li>
-                <li>Sunn-risstin</li>
-                <li>Sunn-Risstin</li>
-                <li>Sunnfjord</li>
-                <li>Sunnseth</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunn-áhkon</td>
-            <td>Sunná-áhkon</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Sunneáhkon</li>
-                <li>Sunnaáhkon</li>
-                <li>Sunnááhkon</li>
-                <li>Sunn-risstin</li>
-                <li>Sunn-Risstin</li>
-                <li>Suihkonen</li>
-                <li>Suohkodunno</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Viera-Jåvvå</td>
-            <td>Viera Jåvvå</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>VieraJåvvå</li>
-                <li>VierakJåvvå</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Viera-Jåvvåv</td>
-            <td>Viera Jåvvåv</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>VieraJåvvåv</li>
-                <li>VierakJåvvåv</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Viera-Ánná</td>
-            <td>Viera Ánná</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>VieraÁnná</li>
-                <li>VierakÁnná</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Vuoll-áddjá</td>
-            <td>Vuollá-áddjá</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Vuolleáddjá</li>
-                <li>Vuolliáddjá</li>
-                <li>Vuollááddjá</li>
-                <li>Vuolloáddjá</li>
-                <li>Vuolládagá</li>
-                <li>Vuolládahka</li>
-                <li>Vuollájtjálá</li>
-                <li>Vuollájtjála</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>Váhtera</td>
             <td>Váhtjera</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>Vahtera</li>
-                <li>Vihtera</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Váhtjera-Jånni</td>
-            <td>Váhtjera Jånni</td>
             <td>1</td>
             <td>
               <ol>
@@ -11044,9 +10616,13 @@
             <td>1</td>
             <td>
               <ol>
-                <li>bårgudij</li>
-                <li>bårgodij</li>
                 <li>bårgijdi</li>
+                <li>bårgodij</li>
+                <li>bårgudij</li>
+                <li>bårgijdusá</li>
+                <li>bårgijt</li>
+                <li>bårgij</li>
+                <li>bårggådij</li>
               </ol>
             </td>
           </tr>
@@ -11069,7 +10645,6 @@
               <ol>
                 <li>demografija</li>
                 <li>demografi aj</li>
-                <li>demografi-aj</li>
               </ol>
             </td>
           </tr>
@@ -11140,10 +10715,14 @@
             <td>1</td>
             <td>
               <ol>
-                <li>gurgodij</li>
                 <li>gurgijdi</li>
                 <li>gurridij</li>
                 <li>gurgadij</li>
+                <li>gurgodij</li>
+                <li>gurgijdusá</li>
+                <li>gurgijt</li>
+                <li>gurgijdunno</li>
+                <li>gurgijduhtu</li>
               </ol>
             </td>
           </tr>
@@ -11153,28 +10732,14 @@
             <td>1</td>
             <td>
               <ol>
-                <li>gåbdudij</li>
-                <li>gåbdodij</li>
                 <li>gåbddij</li>
                 <li>gåbddidij</li>
                 <li>gåbddiji</li>
                 <li>gåbdijdi</li>
                 <li>dåbdidij</li>
                 <li>gåbdedij</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>gåbdidin</td>
-            <td>gåbdijdin</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>gåbdudin</li>
-                <li>gåbdodin</li>
-                <li>gåbddidin</li>
-                <li>dåbdidin</li>
-                <li>gåbdedin</li>
+                <li>gåbdodij</li>
+                <li>gåbdudij</li>
               </ol>
             </td>
           </tr>
@@ -11184,12 +10749,12 @@
             <td>1</td>
             <td>
               <ol>
-                <li>gåbdudit</li>
-                <li>gåbdodit</li>
                 <li>gåbddit</li>
                 <li>gåbddidit</li>
                 <li>dåbdidit</li>
                 <li>gåbdedit</li>
+                <li>gåbdodit</li>
+                <li>gåbdudit</li>
               </ol>
             </td>
           </tr>
@@ -11199,14 +10764,14 @@
             <td>1</td>
             <td>
               <ol>
-                <li>gåbdut</li>
-                <li>gåbdot</li>
                 <li>gådit</li>
                 <li>gåbddit</li>
                 <li>gåbådit</li>
                 <li>dåbdit</li>
                 <li>gåddit</li>
                 <li>gåbdet</li>
+                <li>gåbdot</li>
+                <li>gåbdut</li>
               </ol>
             </td>
           </tr>
@@ -11236,7 +10801,6 @@
                 <li>gålgådij</li>
                 <li>gålgidis</li>
                 <li>gålgi dij</li>
-                <li>gålgi-dij</li>
                 <li>gålgimij</li>
                 <li>gålgijdusá</li>
                 <li>gålgijt</li>
@@ -11281,11 +10845,11 @@
             <td>
               <ol>
                 <li>hilát</li>
-                <li>hálut</li>
-                <li>hálot</li>
                 <li>hállit</li>
                 <li>hálet</li>
                 <li>hálat</li>
+                <li>hálot</li>
+                <li>hálut</li>
               </ol>
             </td>
           </tr>
@@ -11351,25 +10915,18 @@
             </td>
           </tr>
           <tr>
-            <td>jårgidam</td>
-            <td>jårgijdam</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>jårgudam</li>
-                <li>jårgodam</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>jårgidij</td>
             <td>jårgijdij</td>
             <td>1</td>
             <td>
               <ol>
-                <li>jårgudij</li>
-                <li>jårgodij</li>
                 <li>jårgijdi</li>
+                <li>jårgodij</li>
+                <li>jårgudij</li>
+                <li>jårgijdusá</li>
+                <li>jårgijt</li>
+                <li>jårgistim</li>
+                <li>jårgijduhtu</li>
               </ol>
             </td>
           </tr>
@@ -11379,22 +10936,13 @@
             <td>1</td>
             <td>
               <ol>
-                <li>jårgudime</li>
                 <li>jårgodime</li>
+                <li>jårgudime</li>
                 <li>jårgådime</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>jårgit</td>
-            <td>jårgijt</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>jårgut</li>
-                <li>jårgot</li>
-                <li>jårrit</li>
-                <li>jårgåt</li>
+                <li>jårgistime</li>
+                <li>jårgistibme</li>
+                <li>jårbbidime</li>
+                <li>jårgistim</li>
               </ol>
             </td>
           </tr>
@@ -11443,9 +10991,13 @@
             <td>1</td>
             <td>
               <ol>
-                <li>låŋudij</li>
-                <li>låŋodij</li>
                 <li>låŋijdi</li>
+                <li>låŋodij</li>
+                <li>låŋudij</li>
+                <li>låggŋidij</li>
+                <li>låŋijdusá</li>
+                <li>låŋijt</li>
+                <li>låŋijduska</li>
               </ol>
             </td>
           </tr>
@@ -11495,9 +11047,9 @@
             <td>
               <ol>
                 <li>Nanit</li>
-                <li>nanut</li>
-                <li>nanot</li>
                 <li>nannit</li>
+                <li>nanot</li>
+                <li>nanut</li>
               </ol>
             </td>
           </tr>
@@ -11509,19 +11061,6 @@
               <ol>
                 <li>njuovvat</li>
                 <li>njuovav</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>panel-dágástallam</td>
-            <td>paneldágástallam</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>doargástallam</li>
-                <li>dálvvevalástallam</li>
-                <li>giessevalástallam</li>
-                <li>doargástallabihtte</li>
               </ol>
             </td>
           </tr>
@@ -11564,10 +11103,14 @@
             <td>1</td>
             <td>
               <ol>
-                <li>risjudij</li>
-                <li>risjodij</li>
                 <li>risjijdi</li>
                 <li>risjádij</li>
+                <li>risjodij</li>
+                <li>risjudij</li>
+                <li>risjijdusá</li>
+                <li>risjijt</li>
+                <li>risjijduska</li>
+                <li>risjijduhtu</li>
               </ol>
             </td>
           </tr>
@@ -11577,9 +11120,14 @@
             <td>1</td>
             <td>
               <ol>
-                <li>risjudimes</li>
-                <li>risjodimes</li>
                 <li>risjádimes</li>
+                <li>risjodimes</li>
+                <li>risjudimes</li>
+                <li>resjidimes</li>
+                <li>risjijdisj</li>
+                <li>risjijdisá</li>
+                <li>risjijdihtte</li>
+                <li>risjijdihppe</li>
               </ol>
             </td>
           </tr>
@@ -11590,7 +11138,6 @@
             <td>
               <ol>
                 <li>San</li>
-                <li>dan</li>
                 <li>Esan</li>
                 <li>Isan</li>
                 <li>Asan</li>
@@ -11598,6 +11145,7 @@
                 <li>Usan</li>
                 <li>Åsan</li>
                 <li>tan</li>
+                <li>dan</li>
                 <li>man</li>
                 <li>ban</li>
                 <li>Ian</li>
@@ -11712,19 +11260,6 @@
             </td>
           </tr>
           <tr>
-            <td>vihttatuvsán-vihttatjuodes</td>
-            <td>vihttatuvsánvihttatjuodes</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>vihttatjuodeguhttalåkgávtses</li>
-                <li>vihttatjuodegáktsalåkgudán</li>
-                <li>vihttatjuodegáktsájlågenan</li>
-                <li>vihttatjuodegáktsalåknieljes</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>vuojŋŋanisavuodjeliddjijs</td>
             <td>vuojŋŋanisávuodjeliddjijs</td>
             <td>1</td>
@@ -11745,7 +11280,6 @@
               <ol>
                 <li>vuosádalle</li>
                 <li>vuosa dálle</li>
-                <li>vuosa-dálle</li>
               </ol>
             </td>
           </tr>
@@ -11815,24 +11349,13 @@
       </section>
     </section>
     <section>
-      <title>False positives (60)</title>
+      <title>False positives (35)</title>
       <section>
-        <title>False positives with suggestions (60)</title>
+        <title>False positives with suggestions (35)</title>
         <table>
           <tr>
             <th>Input<br/>word</th>
             <th>Suggestions</th>
-          </tr>
-          <tr>
-            <td>400-jageávvudallama</td>
-            <td>
-              <ol>
-                <li>hedjaávvudallama</li>
-                <li>ávvudallambiejvema</li>
-                <li>ávvudallambæjvváma</li>
-                <li>ávvudallambäjvváma</li>
-              </ol>
-            </td>
           </tr>
           <tr>
             <td>Birássuoddjimministar</td>
@@ -11858,318 +11381,6 @@
             </td>
           </tr>
           <tr>
-            <td>Gejrá-áddjá</td>
-            <td>
-              <ol>
-                <li>Gejrááddjá</li>
-                <li>GejráGáddjá</li>
-                <li>GejráMáddjá</li>
-                <li>Áddjá-rávke</li>
-                <li>Áddjá-rávkke</li>
-                <li>Máttaráddjá</li>
-                <li>Giellarádjá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gejrá-áddjá</td>
-            <td>
-              <ol>
-                <li>Gejrááddjá</li>
-                <li>GejráGáddjá</li>
-                <li>GejráMáddjá</li>
-                <li>Áddjá-rávke</li>
-                <li>Áddjá-rávkke</li>
-                <li>Máttaráddjá</li>
-                <li>Giellarádjá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gejrá-ádjá</td>
-            <td>
-              <ol>
-                <li>Gejráádjá</li>
-                <li>Gejrásádjá</li>
-                <li>Gejrárádjá</li>
-                <li>GejráGádjá</li>
-                <li>GejráMádjá</li>
-                <li>Gejrá</li>
-                <li>Giellarádjá</li>
-                <li>Álot-gejrá</li>
-                <li>Gejrrá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gáddjá-ibme</td>
-            <td>
-              <ol>
-                <li>Gáddjáibme</li>
-                <li>Gáddjádibme</li>
-                <li>Gáddjágibme</li>
-                <li>Gáddalibme</li>
-                <li>Gádjusibme</li>
-                <li>Gáddjá</li>
-                <li>Gártjedibme</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gáddjá-ibme</td>
-            <td>
-              <ol>
-                <li>Gáddjáibme</li>
-                <li>Gáddjádibme</li>
-                <li>Gáddjágibme</li>
-                <li>Gáddalibme</li>
-                <li>Gádjusibme</li>
-                <li>Gáddjá</li>
-                <li>Gártjedibme</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Gáddjá-ime</td>
-            <td>
-              <ol>
-                <li>Gáddjáime</li>
-                <li>Gáddjágime</li>
-                <li>GáddjáTime</li>
-                <li>GáddjáMime</li>
-                <li>Gáddjá</li>
-                <li>Gáddalime</li>
-                <li>Gáddalibme</li>
-                <li>Áddjá-rávke</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Harrok-Iŋŋgá</td>
-            <td>
-              <ol>
-                <li>HarrokIŋŋgá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Ibbá-áhkko</td>
-            <td>
-              <ol>
-                <li>Ibbááhkko</li>
-                <li>Ibbásáhkko</li>
-                <li>Ibbáráhkko</li>
-                <li>Ibbáláhkko</li>
-                <li>Ibbágáhkko</li>
-                <li>IbbáBáhkko</li>
-                <li>Báhkkosavoj</li>
-                <li>Iehpejáhkko</li>
-                <li>Ilmmeráhkko</li>
-                <li>Báhkkosavvoj</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Ibbá-áhkko</td>
-            <td>
-              <ol>
-                <li>Ibbááhkko</li>
-                <li>Ibbásáhkko</li>
-                <li>Ibbáráhkko</li>
-                <li>Ibbáláhkko</li>
-                <li>Ibbágáhkko</li>
-                <li>IbbáBáhkko</li>
-                <li>Báhkkosavoj</li>
-                <li>Iehpejáhkko</li>
-                <li>Ilmmeráhkko</li>
-                <li>Báhkkosavvoj</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Ibbá-áhko</td>
-            <td>
-              <ol>
-                <li>Ibbááhko</li>
-                <li>Ibbásáhko</li>
-                <li>Ibbáráhko</li>
-                <li>Ibbáláhko</li>
-                <li>Ibbágáhko</li>
-                <li>Ibbábáhko</li>
-                <li>IbbáBáhko</li>
-                <li>Vieresbáhko</li>
-                <li>Báhkolista</li>
-                <li>Báhkogirje</li>
-                <li>Bessambáhko</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Ibbá-áhkov</td>
-            <td>
-              <ol>
-                <li>Ibbááhkov</li>
-                <li>Ibbásáhkov</li>
-                <li>Ibbáláhkov</li>
-                <li>Ibbágáhkov</li>
-                <li>IbbáBáhkov</li>
-                <li>Báhkovajás</li>
-                <li>Báhkovuorká</li>
-                <li>Báhkovuorkká</li>
-                <li>Báhkolistav</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Jönsson-rávkke</td>
-            <td>
-              <ol>
-                <li>Jönssonrávkke</li>
-                <li>Ieddne-rávkke</li>
-                <li>Jönsson</li>
-                <li>Áhttje-rávkke</li>
-                <li>Áddjá-rávkke</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Laponia-stipænnda</td>
-            <td>
-              <ol>
-                <li>Laponiastipænnda</li>
-                <li>Stipænndiáhttada</li>
-                <li>Stipænndiáhtada</li>
-                <li>Stipænnda-</li>
-                <li>Stipænndada</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunná-ibme</td>
-            <td>
-              <ol>
-                <li>Sunnáibme</li>
-                <li>Sunnádibme</li>
-                <li>Sunnágibme</li>
-                <li>Sunndegile</li>
-                <li>Sulástibme</li>
-                <li>Suonjardibme</li>
-                <li>Sunndegille</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunná-ibmes</td>
-            <td>
-              <ol>
-                <li>Sunnáibmes</li>
-                <li>Sunnágibmes</li>
-                <li>Sulástibmes</li>
-                <li>Suonjardibmes</li>
-                <li>Unnedibmes</li>
-                <li>Sárnnedibmes</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunná-ime</td>
-            <td>
-              <ol>
-                <li>Sunnáime</li>
-                <li>Sunnágime</li>
-                <li>SunnáTime</li>
-                <li>SunnáMime</li>
-                <li>Sunnissma</li>
-                <li>Sunnmøre</li>
-                <li>Sunndegile</li>
-                <li>Sunnisma</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunná-áhkko</td>
-            <td>
-              <ol>
-                <li>Sunnááhkko</li>
-                <li>Sunnásáhkko</li>
-                <li>Sunnáráhkko</li>
-                <li>Sunnáláhkko</li>
-                <li>Sunnágáhkko</li>
-                <li>SunnáBáhkko</li>
-                <li>Mánnájáhkko</li>
-                <li>Sáhkkujunno</li>
-                <li>Sáhkkudunno</li>
-                <li>Suhkkájunno</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunná-áhko</td>
-            <td>
-              <ol>
-                <li>Sunnááhko</li>
-                <li>Sunnásáhko</li>
-                <li>Sunnáráhko</li>
-                <li>Sunnáláhko</li>
-                <li>Sunnágáhko</li>
-                <li>Sunnábáhko</li>
-                <li>SunnáBáhko</li>
-                <li>Mánnájáhko</li>
-                <li>Suojnnálahka</li>
-                <li>Sunná</li>
-                <li>Sunnfjord</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sunná-áhkon</td>
-            <td>
-              <ol>
-                <li>Sunnááhkon</li>
-                <li>Sunnásáhkon</li>
-                <li>Sunnáráhkon</li>
-                <li>Sunnáláhkon</li>
-                <li>Sunnágáhkon</li>
-                <li>Sunnábáhkon</li>
-                <li>SunnáBáhkon</li>
-                <li>Mánnájáhkon</li>
-                <li>Suojnnálahkan</li>
-                <li>Suojnnálahka</li>
-                <li>Mánnájáhkkon</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Sámesiebrre-NSR</td>
-            <td>
-              <ol>
-                <li>Sunnááhkon</li>
-                <li>Sunnásáhkon</li>
-                <li>Sunnáráhkon</li>
-                <li>Sunnáláhkon</li>
-                <li>Sunnágáhkon</li>
-                <li>Sunnábáhkon</li>
-                <li>SunnáBáhkon</li>
-                <li>Mánnájáhkon</li>
-                <li>Suojnnálahkan</li>
-                <li>Suojnnálahka</li>
-                <li>Mánnájáhkkon</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Timoteos-vieljastimme</td>
-            <td>
-              <ol>
-                <li>Timoteosvieljastimme</li>
-                <li>Timokratijalattjastimme</li>
-                <li>Timokratidjastimme</li>
-                <li>Timokratijastimme</li>
-                <li>Timbarvettjastimme</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
             <td>Ulljonjuosskadim</td>
             <td>
               <ol>
@@ -12180,34 +11391,6 @@
                 <li>Oalljonjuosskadisj</li>
                 <li>Oalljonjuosskadisá</li>
                 <li>Oalljonjuosskadinno</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Vuollá-áddjá</td>
-            <td>
-              <ol>
-                <li>Vuollááddjá</li>
-                <li>VuolláGáddjá</li>
-                <li>VuolláMáddjá</li>
-                <li>Vuollájtjálá</li>
-                <li>Vuollájtjála</li>
-                <li>Vuollájtjále</li>
-                <li>Vuolládagá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Vuollá-áddjá</td>
-            <td>
-              <ol>
-                <li>Vuollááddjá</li>
-                <li>VuolláGáddjá</li>
-                <li>VuolláMáddjá</li>
-                <li>Vuollájtjálá</li>
-                <li>Vuollájtjála</li>
-                <li>Vuollájtjále</li>
-                <li>Vuolládagá</li>
               </ol>
             </td>
           </tr>
@@ -12238,7 +11421,6 @@
               <ol>
                 <li>biellenupjahke</li>
                 <li>biellenup jáhke</li>
-                <li>biellenup-jáhke</li>
               </ol>
             </td>
           </tr>
@@ -12262,7 +11444,6 @@
                 <li>bálltojda</li>
                 <li>bálltojge</li>
                 <li>bálltoj ga</li>
-                <li>bálltoj-ga</li>
               </ol>
             </td>
           </tr>
@@ -12279,7 +11460,6 @@
             <td>
               <ol>
                 <li>guoktalåkgietja jagák</li>
-                <li>guoktalåkgietja-jagák</li>
                 <li>guoktalåkgietja</li>
                 <li>guoktalåkgiehtja</li>
                 <li>guoktatjuodevihttalåkgietja</li>
@@ -12314,7 +11494,6 @@
             <td>
               <ol>
                 <li>iemeálmmuk girjálasjvuoda</li>
-                <li>iemeálmmuk-girjálasjvuoda</li>
                 <li>girjálasjvuodadiehtaga</li>
                 <li>girjálasjvuodadiedada</li>
                 <li>girjálasjvuodadieda</li>
@@ -12366,14 +11545,13 @@
             <td>lihter</td>
             <td>
               <ol>
-                <li>lijter</li>
-                <li>lihtet</li>
                 <li>lihte</li>
                 <li>vihter</li>
                 <li>Rihter</li>
                 <li>lihtar</li>
                 <li>lihtes</li>
                 <li>lihten</li>
+                <li>lihtet</li>
                 <li>lihtem</li>
                 <li>lihtev</li>
                 <li>lihtek</li>
@@ -12396,10 +11574,7 @@
             <td>maññela</td>
             <td>
               <ol>
-                <li>Marcela</li>
-                <li>Mandela</li>
-                <li>Mannela</li>
-                <li>Manuela</li>
+                <li>maŋŋela</li>
               </ol>
             </td>
           </tr>
@@ -12421,7 +11596,6 @@
             <td>
               <ol>
                 <li>panel dágástallam</li>
-                <li>panel-dágástallam</li>
                 <li>paneldágástallám</li>
                 <li>paneldagástallám</li>
                 <li>paneldágástallem</li>
@@ -12453,7 +11627,6 @@
             <td>
               <ol>
                 <li>varresvuoda fálaldagájt</li>
-                <li>varresvuoda-fálaldagájt</li>
                 <li>varresvuodaduodastusájt</li>
                 <li>varresvuodadievnastusájt</li>
                 <li>varresvuodaguoradallam</li>
@@ -12466,7 +11639,6 @@
             <td>
               <ol>
                 <li>vidá duhádav</li>
-                <li>vidá-duhádav</li>
                 <li>vidádav</li>
                 <li>duhádattav</li>
                 <li>vidátlågådav</li>
@@ -12479,7 +11651,6 @@
             <td>
               <ol>
                 <li>vidá tjuodev</li>
-                <li>vidá-tjuodev</li>
                 <li>vihttatjuodevidát</li>
                 <li>vihttatjuodevidá</li>
                 <li>vihttatjuodev</li>
@@ -12503,7 +11674,6 @@
             <td>
               <ol>
                 <li>vihtta tuvsánij</li>
-                <li>vihtta-tuvsánij</li>
                 <li>vihttatjuodevidán</li>
                 <li>vihttatjuohtáj</li>
                 <li>vihttatjuodij</li>
@@ -12516,7 +11686,6 @@
             <td>
               <ol>
                 <li>vihtta tuvsánij</li>
-                <li>vihtta-tuvsánij</li>
                 <li>vihttatjuodevidán</li>
                 <li>vihttatjuohtáj</li>
                 <li>vihttatjuodij</li>
@@ -12550,7 +11719,6 @@
             <td>
               <ol>
                 <li>vuojŋŋanisá vuodjeliddjijs</li>
-                <li>vuojŋŋanisá-vuodjeliddjijs</li>
                 <li>vuojŋŋanisájs</li>
                 <li>vuojŋŋanisás</li>
                 <li>vuojŋŋanisá</li>
@@ -12563,18 +11731,6 @@
             <td>
               <ol>
                 <li>vuosádalle</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Ámmá-tjiehtje</td>
-            <td>
-              <ol>
-                <li>Ámmátjiehtje</li>
-                <li>Tjiehtjerattja</li>
-                <li>Tjiehtjerasj</li>
-                <li>Tjiehtjev</li>
-                <li>Tjiehtjer</li>
               </ol>
             </td>
           </tr>
@@ -12606,7 +11762,6 @@
             <td>
               <ol>
                 <li>ællja viejddimin</li>
-                <li>ællja-viejddimin</li>
                 <li>viejddijinno</li>
                 <li>viejddijiska</li>
                 <li>viejddijunno</li>
@@ -12618,7 +11773,7 @@
       </section>
     </section>
     <section>
-      <title>False negatives (52)</title>
+      <title>False negatives (90)</title>
       <table>
         <tr>
           <th>Input<br/>word</th>
@@ -12636,8 +11791,58 @@
           <td>3</td>
         </tr>
         <tr>
+          <td>dålkkum-åhpadadusáv</td>
+          <td>dålkkumåhpadusáv</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>irássuoddjim-minisstar</td>
+          <td>Birássuoddjimministar</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>vidnudak-åhadusán</td>
+          <td>viddnudakåhpadusán</td>
+          <td>3</td>
+        </tr>
+        <tr>
           <td>400 jage-ávvudallama</td>
           <td>400-jageávvudallama</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>CD-aj</td>
+          <td>CD:j</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>CD-ajn</td>
+          <td>CD:jn</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>CD-an</td>
+          <td>CD:n</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>CD-as</td>
+          <td>CD:s</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>CD-av</td>
+          <td>CD:v</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Harrok-I∫∫gá</td>
+          <td>Harrok-Iŋŋgá</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Jönsson-rávgge</td>
+          <td>Jönsson-rávkke</td>
           <td>2</td>
         </tr>
         <tr>
@@ -12646,13 +11851,13 @@
           <td>2</td>
         </tr>
         <tr>
-          <td>Vuoj∫∫anis</td>
-          <td>Vuojŋŋanis</td>
+          <td>alladássásasj</td>
+          <td>alladásálasj</td>
           <td>2</td>
         </tr>
         <tr>
-          <td>alladássásasj</td>
-          <td>alladásálasj</td>
+          <td>birássuoddjim-ministtar</td>
+          <td>birássuoddjimministar</td>
           <td>2</td>
         </tr>
         <tr>
@@ -12671,6 +11876,16 @@
           <td>2</td>
         </tr>
         <tr>
+          <td>jieg∫a-instrumentaj</td>
+          <td>jiegŋainstrumentaj</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>jieg∫a-musijkka</td>
+          <td>jiegŋamusijkka</td>
+          <td>2</td>
+        </tr>
+        <tr>
           <td>kujnanulmusj</td>
           <td>kujnnaulmusj</td>
           <td>2</td>
@@ -12681,23 +11896,23 @@
           <td>2</td>
         </tr>
         <tr>
-          <td>ma∫∫ela</td>
-          <td>maŋŋela</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>ma∫∫et</td>
-          <td>maŋŋet</td>
-          <td>2</td>
-        </tr>
-        <tr>
           <td>oarjjel,-</td>
           <td>oarjjel-,</td>
           <td>2</td>
         </tr>
         <tr>
-          <td>vuor∫et</td>
-          <td>vuorŋŋet</td>
+          <td>sassnekonfeksjåvnnå-linjav</td>
+          <td>sassnekonfeksjåvnnålinjáv</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>væráltdoaro-ájge</td>
+          <td>væráltdoarroájge</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>æládus-ávijssa</td>
+          <td>æládusavijssa</td>
           <td>2</td>
         </tr>
         <tr>
@@ -12706,8 +11921,28 @@
           <td>1</td>
         </tr>
         <tr>
+          <td>Gejr-áddjá</td>
+          <td>Gejrá-áddjá</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Gejr-ádjá</td>
+          <td>Gejrá-ádjá</td>
+          <td>1</td>
+        </tr>
+        <tr>
           <td>Gejrááddjá</td>
           <td>Gejrá-áddjá</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Gáddj-ibme</td>
+          <td>Gáddjá-ibme</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Gáddj-ime</td>
+          <td>Gáddjá-ime</td>
           <td>1</td>
         </tr>
         <tr>
@@ -12716,8 +11951,23 @@
           <td>1</td>
         </tr>
         <tr>
-          <td>Ma∫emus</td>
-          <td>Maŋemus</td>
+          <td>Ibb-áhkko</td>
+          <td>Ibbá-áhkko</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Ibb-áhko</td>
+          <td>Ibbá-áhko</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Ibb-áhkov</td>
+          <td>Ibbá-áhkov</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Laponia-stipennda</td>
+          <td>Laponia-stipænnda</td>
           <td>1</td>
         </tr>
         <tr>
@@ -12746,6 +11996,36 @@
           <td>1</td>
         </tr>
         <tr>
+          <td>Sunn-ibme</td>
+          <td>Sunná-ibme</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Sunn-ibmes</td>
+          <td>Sunná-ibmes</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Sunn-ime</td>
+          <td>Sunná-ime</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Sunn-áhkko</td>
+          <td>Sunná-áhkko</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Sunn-áhko</td>
+          <td>Sunná-áhko</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Sunn-áhkon</td>
+          <td>Sunná-áhkon</td>
+          <td>1</td>
+        </tr>
+        <tr>
           <td>Sálto Sámesiebrre-NSRa</td>
           <td>Sálto Sámesiebrre-NSR</td>
           <td>1</td>
@@ -12756,8 +12036,28 @@
           <td>1</td>
         </tr>
         <tr>
+          <td>Viera-Jåvvå</td>
+          <td>Viera Jåvvå</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Viera-Jåvvåv</td>
+          <td>Viera Jåvvåv</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Viera-Ánná</td>
+          <td>Viera Ánná</td>
+          <td>1</td>
+        </tr>
+        <tr>
           <td>Vijnagárddeniehkke</td>
           <td>Vijnnagárddeniehkke</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Vuoll-áddjá</td>
+          <td>Vuollá-áddjá</td>
           <td>1</td>
         </tr>
         <tr>
@@ -12768,6 +12068,11 @@
         <tr>
           <td>Vuosedalle</td>
           <td>Vuosádalle</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Váhtjera-Jånni</td>
+          <td>Váhtjera Jånni</td>
           <td>1</td>
         </tr>
         <tr>
@@ -12786,6 +12091,11 @@
           <td>1</td>
         </tr>
         <tr>
+          <td>dij másj</td>
+          <td>dijmásj</td>
+          <td>1</td>
+        </tr>
+        <tr>
           <td>dálkkádak</td>
           <td>dálkádak</td>
           <td>1</td>
@@ -12801,6 +12111,11 @@
           <td>1</td>
         </tr>
         <tr>
+          <td>giella-guovlov</td>
+          <td>giellaguovlov</td>
+          <td>1</td>
+        </tr>
+        <tr>
           <td>goarssumis</td>
           <td>goarssomis</td>
           <td>1</td>
@@ -12811,8 +12126,8 @@
           <td>1</td>
         </tr>
         <tr>
-          <td>jie∫a</td>
-          <td>jieŋa</td>
+          <td>ietja-sa</td>
+          <td>ietjasa</td>
           <td>1</td>
         </tr>
         <tr>
@@ -12836,6 +12151,11 @@
           <td>1</td>
         </tr>
         <tr>
+          <td>milla-</td>
+          <td>milla</td>
+          <td>1</td>
+        </tr>
+        <tr>
           <td>måtso</td>
           <td>måttso</td>
           <td>1</td>
@@ -12856,6 +12176,11 @@
           <td>1</td>
         </tr>
         <tr>
+          <td>panel-dágástallam</td>
+          <td>paneldágástallam</td>
+          <td>1</td>
+        </tr>
+        <tr>
           <td>pressadiedádusán</td>
           <td>præssadiedádusán</td>
           <td>1</td>
@@ -12866,8 +12191,23 @@
           <td>1</td>
         </tr>
         <tr>
+          <td>roavát-</td>
+          <td>roavát</td>
+          <td>1</td>
+        </tr>
+        <tr>
           <td>sæmmibále</td>
           <td>sæmmi bále</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>vihttatuvsán-vihttatjuodes</td>
+          <td>vihttatuvsánvihttatjuodes</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>vuostasj-vuosádus</td>
+          <td>vuostasjvuosádus</td>
           <td>1</td>
         </tr>
         <tr>
@@ -12885,10 +12225,15 @@
           <td>åvddål</td>
           <td>1</td>
         </tr>
+        <tr>
+          <td>æládus-organisasjåvnåjt</td>
+          <td>æládusorganisasjåvnåjt</td>
+          <td>1</td>
+        </tr>
       </table>
     </section>
     <section>
-      <title>True negatives (39)</title>
+      <title>True negatives (43)</title>
       <p>The correctly accepted words are listed here for easy copy&amp;paste
          into Word to quick check regressions in new versions of the speller:
          No correctly spelled words accepted by an earlier speller should be
@@ -12896,14 +12241,14 @@
          to Word, and see if you get any red underlines. Duplicate words are not
          repeated, unless one is followed by some punctuation. The words are
          reverse sorted according to Unicode character code.</p>
-      <p id="truenegatives">åbbås åbbå Ávos Árvvedahtte Árrat Álu Ájnas Áhttje maññela maŋŋela ham Guoradallamviddnudahka Giessesajen Gierrisijn Gasska-Nordlánda Gahtsaj Fuoskos Eurohpás Dærnán Dájddavuosádus Dájdda Dutkamráde Duornoslieges Duobbmogirkkon Doarrooajvve Doajmmasiebrre Dijáv Didjij Demografija Dakkavide Dajnas CD:v CD:s CD:n CD:jn CD:j CD-singelav Bárnám Biehtár Barggijbelludagá Almulasj </p>
+      <p id="truenegatives">åbbås åbbå Ávos Árvvedahtte Árrat Álu Ájnas Áhttje maññela maŋŋela ham Guoradallamviddnudahka Giessesajen Gierrisijn Gejrá-ádjá Gejrá-áddjá  Gasska-Nordlánda Gahtsaj Fuoskos Eurohpás Dærnán Dájddavuosádus Dájdda Dutkamráde Duornoslieges Duobbmogirkkon Doarrooajvve Doajmmasiebrre Dijáv Didjij Demografija Dakkavide Dajnas CD:v CD:s CD:n CD:jn CD:j CD-singelav Bárnám Biehtár Barggijbelludagá Almulasj 400-jageávvudallama </p>
     </section>
     <section>
       <title>Tokenization Errors
-            (853)</title>
+            (870)</title>
       <section>
         <title>Tokenization Errors of Misspellings
-            (5)</title>
+            (1)</title>
         <table>
           <tr>
             <th>Input<br/>word</th>
@@ -12912,57 +12257,13 @@
             <th>Speller<br/>Tokens</th>
           </tr>
           <tr>
-            <td>Harrok-I∫∫gá</td>
-            <td>Harrok-Iŋŋgá</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>Harrok-I</li>
-                <li>gá</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>jieg∫a-instrumentaj</td>
-            <td>jiegŋainstrumentaj</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>jieg</li>
-                <li>a-instrumentaj</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>jieg∫a-musijkka</td>
-            <td>jiegŋamusijkka</td>
-            <td>2</td>
-            <td>
-              <ol>
-                <li>jieg</li>
-                <li>a-musijkka</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>Jieg∫ahállan</td>
-            <td>Jiegŋahállan</td>
+            <td>ájá-dallá</td>
+            <td>ájádallá</td>
             <td>1</td>
             <td>
               <ol>
-                <li>Jieg</li>
-                <li>ahállan</li>
-              </ol>
-            </td>
-          </tr>
-          <tr>
-            <td>tjieg∫alap</td>
-            <td>tjiegŋalap</td>
-            <td>1</td>
-            <td>
-              <ol>
-                <li>tjieg</li>
-                <li>alap</li>
+                <li>ájá</li>
+                <li>dallá</li>
               </ol>
             </td>
           </tr>
@@ -12970,7 +12271,7 @@
       </section>
       <section>
         <title>Tokenization Errors of Correct Words
-            (848)</title>
+            (869)</title>
         <table>
           <tr>
             <th>Input<br/>word</th>
@@ -13007,7 +12308,31 @@
             </td>
           </tr>
           <tr>
+            <td>Gáddjá-ibme</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Gáddjá-ibme</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Gáddjá-ime</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
             <td>Gárasavvuna</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Harrok-Iŋŋgá</td>
             <td>
               <ol/>
             </td>
@@ -13026,6 +12351,30 @@
           </tr>
           <tr>
             <td>Hásstalus</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Ibbá-áhkko</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Ibbá-áhkko</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Ibbá-áhko</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Ibbá-áhkov</td>
             <td>
               <ol/>
             </td>
@@ -13103,6 +12452,12 @@
             </td>
           </tr>
           <tr>
+            <td>Jönsson-rávkke</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
             <td>Katekesa</td>
             <td>
               <ol/>
@@ -13128,6 +12483,12 @@
           </tr>
           <tr>
             <td>Laestadiána</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Laponia-stipænnda</td>
             <td>
               <ol/>
             </td>
@@ -13409,6 +12770,42 @@
             </td>
           </tr>
           <tr>
+            <td>Sunná-ibme</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Sunná-ibmes</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Sunná-ime</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Sunná-áhkko</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Sunná-áhko</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Sunná-áhkon</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
             <td>Suoggŋooajvve</td>
             <td>
               <ol/>
@@ -13493,6 +12890,12 @@
             </td>
           </tr>
           <tr>
+            <td>Sámesiebrre-NSR</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
             <td>Sámij</td>
             <td>
               <ol/>
@@ -13512,6 +12915,12 @@
           </tr>
           <tr>
             <td>Tigern</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Timoteos-vieljastimme</td>
             <td>
               <ol/>
             </td>
@@ -13626,6 +13035,18 @@
           </tr>
           <tr>
             <td>Vuojŋŋanisá</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Vuollá-áddjá</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Vuollá-áddjá</td>
             <td>
               <ol/>
             </td>
@@ -17682,6 +17103,12 @@
           </tr>
           <tr>
             <td>Ámmav</td>
+            <td>
+              <ol/>
+            </td>
+          </tr>
+          <tr>
+            <td>Ámmá-tjiehtje</td>
             <td>
               <ol/>
             </td>
