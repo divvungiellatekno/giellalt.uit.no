@@ -1,0 +1,69 @@
+http://svnbook.red-bean.com/en/1.5/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering
+* dump the whole repository
+** svnadmin dump repos_backup > repos_backup_dumpfile
+*** No problem, reports on dumping from revision 1 to x
+
+* svndumpfilter --drop-empty-revs --renumber-revs include plan < repos_backup_dumpfile >plan_dumpfile
+** Gives a file with the size 3890 bytes
+* svndumpfilter --drop-empty-revs --renumber-revs include trunk/plan < repos_backup_dumpfile > plan_dumpfile2
+** gives a file with size 18049903. Contains the plan directory
+* bzip2 the dumpfile
+* copy it to my machine
+* sudo svnadmin create plan
+* svnadmin load --ignore-uuid plan < /home/boerre/klovn/plan_dumpfile2
+** svnadmin: Fant ikke filen: Transaksjon «12-c», sti «trunk/plan»
+     * legger til sti : trunk/plan ...
+*** so stops on revision 12. Last Revision-number: in the file is 263 ...
+
+New stab at producing a plan_dumpfile.
+* svndumpfilter include trunk/plan < repos_backup_dumpfile > plan_dumpfile3
+** Gives a file with size 21671787
+* svnadmin load --ignore-uuid plan < /home/boerre/klovn/plan_dumpfile3
+** svnadmin: Fant ikke filen: Transaksjon «5874-4j7», sti «trunk/plan»
+     * legger til sti : trunk/plan
+	 
+The reason for the error is that the trunk directory isn't made in the beginning. Adding the following block to the plan_dumpfile2 below Revision-number: 1 fixed the error (output of diff):
+
+33a34,41
+> Node-path: trunk
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+>
+> PROPS-END
+>
+
+* svnadmin load --ignore-uuid plan < /home/boerre/klovn/plan_dumpfile2
+** the command works perfectly
+
+Now exclude trunk/plan 
+* svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan < repos_backup_dumpfile > everything_else_dumpfile
+** this fails revision 21676 containing this:
+
+*** grep -n Revision-number: 21676: 281632738
+*** grep -n Revision-number: 21677: 281632760
+*** wc -l repos_backup_dumpfile: 360453542
+*** head -281632737 repos_backup_dumpfile > head_repos_backup_dumpfile
+*** tail -78820783 repos_backup_dumpfile > tail_repos_backup_dumpfile
+
+New try:
+* cat head_repos_backup_dumpfile tail_repos_backup_dumpfile | svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan > everything_else_dumpfile
+** fails the same place, revision 21677 contains this:
+Node-path: trunk/tts
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 21675
+Node-copyfrom-path: trunk/plan/tts
+
+Probably the two last lines are the culprit, when we exclude trunk/plan we can't copy from that place.
+
+removing them this way:
+* head -21 tail_repos_backup_dumpfile > tail1
+* tail -78820760 tail_repos_backup_dumpfile > tail2
+
+New try
+* cat head_repos_backup_dumpfile tail1 tail2 | svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan > everything_else_dumpfile
+** fail with:
+Revision 23604 committed as 23125.
+svndumpfilter: Invalid copy source path '/trunk/plan/mt'
