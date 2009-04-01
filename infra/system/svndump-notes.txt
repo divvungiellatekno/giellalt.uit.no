@@ -39,7 +39,29 @@ The reason for the error is that the trunk directory isn't made in the beginning
 
 Now exclude trunk/plan 
 * svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan < repos_backup_dumpfile > everything_else_dumpfile
-** this fails revision 21676 containing this:
+** this fails because revision 21676 contains this:
+Revision-number: 21676     
+Prop-content-length: 104   
+Content-length: 104
+
+K 7
+svn:log
+V 5
+moved
+K 10
+svn:author
+V 5
+trond
+K 8
+svn:date
+V 27
+2008-10-29T22:53:08.218285Z
+PROPS-END
+
+Node-path: trunk/plan/tts
+Node-action: delete
+
+Trying to delete a path that doesn't exist
 
 *** grep -n Revision-number: 21676: 281632738
 *** grep -n Revision-number: 21677: 281632760
@@ -67,3 +89,44 @@ New try
 ** fail with:
 Revision 23604 committed as 23125.
 svndumpfilter: Invalid copy source path '/trunk/plan/mt'
+
+Revision 23605 contains this:
+52484487:Revision-number: 23605                                                            
+52484488-Prop-content-length: 135                                                          
+52484489-Content-length: 135                                                               
+52484490-
+52484491-K 7
+52484492-svn:log
+52484493-V 35
+52484494-Moved the mt from plan to reality.
+52484495-
+52484496-K 10
+52484497-svn:author
+52484498-V 5
+52484499-trond
+52484500-K 8
+52484501-svn:date
+52484502-V 27
+52484503-2009-01-20T12:10:38.618571Z
+52484504-PROPS-END
+52484505-
+52484506-Node-path: trunk/mt
+52484507-Node-kind: dir
+52484508-Node-action: add
+52484509-Node-copyfrom-rev: 23598
+52484510-Node-copyfrom-path: trunk/plan/mt
+52484511-
+52484512-
+
+Lines 52484509 and 52484510 refers to a directory which doesn't exist, must be removed
+
+* head -52484508 tail2 > tail3
+tail3 now doesn't contain these lines
+
+* wc -l tail2: 78820760
+* tail -26336250 tail2 > tail4
+
+new try
+* cat head_repos_backup_dumpfile tail1 tail3 tail4 | svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan > everything_else_dumpfile 2> everything.log
+
+Now everything works
