@@ -5,6 +5,8 @@ http://svnbook.red-bean.com/en/1.5/svn.reposadmin.maint.html#svn.reposadmin.main
 
 * svndumpfilter --drop-empty-revs --renumber-revs include plan < repos_backup_dumpfile >plan_dumpfile
 ** Gives a file with the size 3890 bytes
+Nothing extracted, because I wrote the wrong path
+
 * svndumpfilter --drop-empty-revs --renumber-revs include trunk/plan < repos_backup_dumpfile > plan_dumpfile2
 ** gives a file with size 18049903. Contains the plan directory
 * bzip2 the dumpfile
@@ -130,3 +132,131 @@ new try
 * cat head_repos_backup_dumpfile tail1 tail3 tail4 | svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan > everything_else_dumpfile 2> everything.log
 
 Now everything works
+
+Now a more realistic scenario, pick out everything deemed secret from all paths, and dump it to private.dump
+
+* svndumpfilter --drop-empty-revs --renumber-revs include branches/make-redo/plan/admin branches/make-redo/plan/art branches/make-redo/plan/barents branches/make-redo/plan/cat branches/make-redo/plan/cooperation branches/make-redo/plan/dict branches/make-redo/plan/digivariet branches/make-redo/plan/faoproof branches/make-redo/plan/grc branches/make-redo/plan/mt branches/make-redo/plan/ped branches/make-redo/plan/strat branches/make-redo/plan/t9 trunk/plan/admin trunk/plan/art trunk/plan/barents trunk/plan/cat trunk/plan/cooperation trunk/plan/dict trunk/plan/digivariet trunk/plan/faoproof trunk/plan/grc trunk/plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt < repos_backup.dump > private.dump
+** failed with: Revision 20226 skipped.
+svndumpfilter: Invalid copy source path '/trunk/gt/doc/admin/applications/komsjdyrk.jspwiki'
+
+Include this path, as it won't matter if we include it.
+
+* svndumpfilter --drop-empty-revs --renumber-revs include branches/make-redo/plan/admin branches/make-redo/plan/art branches/make-redo/plan/barents branches/make-redo/plan/cat branches/make-redo/plan/cooperation branches/make-redo/plan/dict branches/make-redo/plan/digivariet branches/make-redo/plan/faoproof branches/make-redo/plan/grc branches/make-redo/plan/mt branches/make-redo/plan/ped branches/make-redo/plan/strat branches/make-redo/plan/t9 trunk/plan/admin trunk/plan/art trunk/plan/barents trunk/plan/cat trunk/plan/cooperation trunk/plan/dict trunk/plan/digivariet trunk/plan/faoproof trunk/plan/grc trunk/plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos_backup.dump > private.dump
+** This command worked
+
+Then, exclude these very paths. Try the first command, with exclude instead of include, without the --drop-empty-revs --renumber-revs options. This is done in the hope that this will work as a drop-in replacement for the original repos.
+
+* svndumpfilter exclude branches/make-redo/plan/admin branches/make-redo/plan/art branches/make-redo/plan/barents branches/make-redo/plan/cat branches/make-redo/plan/cooperation branches/make-redo/plan/dict branches/make-redo/plan/digivariet branches/make-redo/plan/faoproof branches/make-redo/plan/grc branches/make-redo/plan/mt branches/make-redo/plan/ped branches/make-redo/plan/strat branches/make-redo/plan/t9 trunk/plan/admin trunk/plan/art trunk/plan/barents trunk/plan/cat trunk/plan/cooperation trunk/plan/dict trunk/plan/digivariet trunk/plan/faoproof trunk/plan/grc trunk/plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt < repos_backup.dump > public2.dump
+** Worked without problems
+
+Next steps 
+* import the original repos from repos_backup.dump to /home/svn/repos
+* sudo svnadmin create repos
+* sudo svnadmin load --ignore-uuid repos < /home/boerre/klovn/repos_backup.dump
+** worked without a hitch
+* check out from that
+** works
+* delete the original /home/svn/repos, replace it by public.dump
+* sudo svn rm -rf repos
+* sudo svnadmin create repos
+* sudo svnadmin load --ignore-uuid repos < /home/boerre/klovn/public2.dump
+** 
+* update from that (go into repos, do a svn update, hope everything works)
+* import the private part to /home/svn/private
+* sudo svnadmin create private
+* sudo svnadmin load private < /home/boerre/klovn/private.dump
+** funker ikke
+
+The errors are caused by directories that don't exist. Added the following to the private.dump file, and then the load worked.
+
+280a281,297
+> Node-path: trunk
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> Node-path: trunk/plan
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+5181a5199,5244
+> Node-path: trunk/gt
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+> Node-path: trunk/gt/sme
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+> Node-path: trunk/gt/smj
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+> 
+> Node-path: trunk/gt/smj/polderland
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+> Node-path: trunk/gt/sme/polderland
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+25279a25343,25367
+> 
+> Node-path: trunk/gt/doc
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> Node-path: trunk/gt/doc/admin
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> Node-path: trunk/gt/doc/admin/applications
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
