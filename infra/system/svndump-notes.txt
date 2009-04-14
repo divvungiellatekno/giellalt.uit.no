@@ -260,3 +260,83 @@ The errors are caused by directories that don't exist. Added the following to th
 > 
 > PROPS-END
 > 
+
+3rd time:
+private according to tronds newsposting on the 2nd of April
+svndumpfilter --drop-empty-revs --renumber-revs include branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt branches/make-redo/plan/admin trunk/plan/admin branches/make-redo/plan/art trunk/plan/art branches/make-redo/plan/barents trunk/plan/barents branches/make-redo/plan/cat trunk/plan/cat branches/make-redo/plan/cooperation trunk/plan/cooperation branches/make-redo/plan/dict trunk/plan/dict branches/make-redo/plan/faoproof trunk/plan/faoproof branches/make-redo/plan/grc trunk/plan/grc branches/make-redo/plan/ped trunk/plan/ped branches/make-redo/plan/strat trunk/plan/strat branches/make-redo/plan/t9 trunk/plan/t9 /plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos_backup.dump > private.dump
+
+biggies:
+svndumpfilter --drop-empty-revs --renumber-revs include branches/make-redo/gt/sme/corp branches/gt-UTF-8-conversion-branch/gt/sme/corp trunk/gt/sme/corp tags/Root-of-gt-UTF-8-conversion/gt/sme/corp tags/gt-before-utf-8-merge/gt/sme/corp Root_gt-UTF-8-conversion-branch/gt/sme/corp branches/make-redo/techdoc/proof/testing branches/make-redo/gt/doc/proof/testing trunk/techdoc/proof/testing branches/make-redo/tts trunk/tts trunk/plan/tts trunk/gt/doc/admin/applications/smespeech.bib trunk/gt/doc/admin/applications/smespeechpre.tex trunk/gt/doc/admin/applications/.cvsignore trunk/gt/doc/proof/testing < repos_backup.dump > biggies.dump
+
+the rest, aka repos:
+svndumpfilter --drop-empty-revs --renumber-revs exclude  branches/make-redo/techdoc/proof/testing branches/make-redo/gt/doc/proof/testing trunk/techdoc/proof/testingbranches/make-redo/tts trunk/tts trunk/plan/tts trunk/gt/doc/admin/applications/smespeech.bib trunk/gt/doc/admin/applications/smespeechpre.tex trunk/gt/doc/admin/applications/.cvsignore trunk/gt/doc/proof/testing branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt branches/make-redo/plan/admin trunk/plan/admin branches/make-redo/plan/art trunk/plan/art branches/make-redo/plan/barents trunk/plan/barents branches/make-redo/plan/cat trunk/plan/cat branches/make-redo/plan/cooperation trunk/plan/cooperation branches/make-redo/plan/dict trunk/plan/dict branches/make-redo/plan/faoproof trunk/plan/faoproof branches/make-redo/plan/grc trunk/plan/grc branches/make-redo/plan/ped trunk/plan/ped branches/make-redo/plan/strat trunk/plan/strat branches/make-redo/plan/t9 trunk/plan/t9 /plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos_backup.dump > therest.dump
+
+
+Make the private repo
+sudo svnadmin create /usr/local/svn/private
+* Add the lacking dirs.
+* save them in private.add
+* find where revision 2 starts: grep -n "Revision-number: 2$" private.dump
+* find how many lines private.dump has: wc -l private.dump
+
+cat private.head private.add private.tail | svnadmin load --ignore-uuid private
+
+sudo svnadmin create /usr/local/svn/therest
+sudo svnadmin load --ignore-uuid /usr/local/svn/therest < 
+
+
+sudo svnadmin create /usr/local/svn/biggies
+cat biggies.head biggies.add biggies.tail | svnadmin load --ignore-uuid biggies
+* Add trunk/gt/sme using the method above
+* Add trunk/gt/doc/proof
+* Add trunk/gt/doc/admin
+* Add trunk/gt/doc/admin/applications
+* Add trunk/plan
+* Add trunk/techdoc
+
+The real deal:
+* Comment out the original part
+* Restart apache
+Now the original svn is closed down
+* svnadmin dump /usr/local/svn/repos > repos.dump
+* svndumpfilter --drop-empty-revs --renumber-revs include branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt branches/make-redo/plan/admin trunk/plan/admin branches/make-redo/plan/art trunk/plan/art branches/make-redo/plan/barents trunk/plan/barents branches/make-redo/plan/cat trunk/plan/cat branches/make-redo/plan/cooperation trunk/plan/cooperation branches/make-redo/plan/dict trunk/plan/dict branches/make-redo/plan/faoproof trunk/plan/faoproof branches/make-redo/plan/grc trunk/plan/grc branches/make-redo/plan/ped trunk/plan/ped branches/make-redo/plan/strat trunk/plan/strat branches/make-redo/plan/t9 trunk/plan/t9 /plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos.dump > private.dump
+* svndumpfilter --drop-empty-revs --renumber-revs include branches/make-redo/gt/sme/corp branches/gt-UTF-8-conversion-branch/gt/sme/corp trunk/gt/sme/corp tags/Root-of-gt-UTF-8-conversion/gt/sme/corp tags/gt-before-utf-8-merge/gt/sme/corp Root_gt-UTF-8-conversion-branch/gt/sme/corp branches/make-redo/techdoc/proof branches/make-redo/gt/doc/proof trunk/techdoc/proof branches/make-redo/tts trunk/tts trunk/plan/tts trunk/gt/doc/admin/applications/smespeech.bib trunk/gt/doc/admin/applications/smespeechpre.tex trunk/gt/doc/admin/applications/.cvsignore trunk/gt/doc/proof < repos.dump > biggies.dump
+* svndumpfilter --drop-empty-revs --renumber-revs exclude  trunk/gt/doc/proof branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt branches/make-redo/plan/admin trunk/plan/admin branches/make-redo/plan/art trunk/plan/art branches/make-redo/plan/barents trunk/plan/barents branches/make-redo/plan/cat trunk/plan/cat branches/make-redo/plan/cooperation trunk/plan/cooperation branches/make-redo/plan/dict trunk/plan/dict branches/make-redo/plan/faoproof trunk/plan/faoproof branches/make-redo/plan/grc trunk/plan/grc branches/make-redo/plan/ped trunk/plan/ped branches/make-redo/plan/strat trunk/plan/strat branches/make-redo/plan/t9 trunk/plan/t9 /plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos.dump > therest.dump
+* grep -n "Revision-number: 2$" private.dump
+** 34:Revision-number: 2
+* head -33 private.dump > private.head
+* wc -l private.dump
+* tail -738935 private.dump > private.tail
+* cp ../test_repo/private.add .
+* svnadmin create private
+* cat private.head private.add private.tail | svnadmin load --ignore-uuid private
+* grep -n "Revision-number: 2$" biggies.dump
+** 34:Revision-number: 2
+* head -33 biggies.dump > biggies.head
+* wc -l biggies.dump
+** 56640915 biggies.dump
+* tail -56640882 biggies.dump > biggies.tail
+* cp ../test_repo/biggies.add .
+* svnadmin create biggies
+* cat biggies.head biggies.add biggies.tail | svnadmin load --ignore-uuid biggies
+* grep -n "Revision-number: 11342$"  therest.dump
+** 133516992:Revision-number: 11342
+* head -133516991 therest.dump > therest.head
+* wc -l therest.dump
+** 303963966 therest.dump
+* tail -170446975 therest.dump > therest.tail
+* svnadmin create therest
+* cat therest.head therest.add therest.tail | svnadmin load --ignore-uuid therest
+
+* sudo mv biggies /usr/local/svn/.
+* sudo mv -v private /usr/local/svn/.
+
+Copied the /etc/subversion/svn-auth-file to /etc/subversion/svn-auth-file-private
+Removed every user except those belonging to the divvun and giellatekno projects.
+
+Edited /etc/httpd/conf.d/subversion.conf
+The private repository is authorized against /etc/subversion/svn-auth-file-private
+
+* sudo chown -R apache:apache /usr/local/svn/biggies/
+* sudo chown -R apache:apache /usr/local/svn/private/
+* sudo chown -R apache:apache /usr/local/svn/therest/
