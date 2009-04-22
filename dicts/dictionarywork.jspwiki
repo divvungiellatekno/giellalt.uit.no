@@ -1,0 +1,245 @@
+!!!Dictionary - noen punkter for lingvisten
+
+!!Leksikonfiler
+
+
+!Meningsgrupper
+Man skiller mellom synonymer og forskjellige meningsgrupper. 
+
+{{{   <e src="nj">
+      <lg>
+         <l pos="n" illpl="ok">sudja</l>
+         <lc>sujat</lc>
+      </lg>
+      <mg>
+         <tg>
+            <t pos="m">årsak</t>
+            <t pos="m">grunn</t>
+         </tg>
+      </mg>
+      <mg>
+         <tg>
+            <t pos="f">skyld</t>
+         </tg>
+      </mg>
+   </e>}}}
+
+
+!!Generere paradigme eller ikke
+Noen av filene er statiske og noen blir det generert paradigmer av - dette avgjøres av navnet på fila. F.eks. der det filer for pronomener med innskrevne paradigmer, og disse filenes navn avgjør at innholdet ikke blir generert (f.eks. pronDem_smenob.xml).
+
+I de andre filene er det POS-merkinga som avgjør om det blir generert paradigme eller ikke.
+
+
+!Genere paradigmer
+Alle entryene må være i leksikalisert i fst. Hvis ikke, vil de ikke bli generert. F.eks. så vil en entry med grunnform i plural, ikke bli generert hvis grunnformen er i singular i fst. Men man kan ha både sg og pl innføringer i fst for det samme leksemet.
+
+Det må ikke være noen homonyme entryer (lemma + POS)!
+
+sme-filer for generering:
+{{{nounActor_smenob.xml
+nounCommon_smenob.xml
+nounG3_smenob.xml
+nounProper_smenob.xml
+adjective_smenob.xml
+verb_smenob.xml}}}
+
+
+!Filer med statiske (innskrevne) paradigmer
+Her kan man velge hvilket grunnord de bøyde formene peker til. F.eks. når det gjelder refleksive pronomener i sme, har vi valgt å peke til akk/gen-formen som grunnform ('alccesan' peker til 'iežan' og til 'iehčan'). Det er fullt mulig å legge inn to eller flere grunnformer når det er sideformer, f.eks.:
+{{{         <lemma_ref lemmaID="iežan_pron_refl">iežan</lemma_ref>
+         <lemma_ref lemmaID="iehčan_pron_refl">iehčan</lemma_ref>}}}
+
+I entryene for de flekterte formene, blir det en entry for hver sideform.
+
+Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene. Dette kan unngås med å oppgi type (f.eks. 'dem') og sg/pl, f.eks.       
+{{{<l pos="pron" type="dem" nr="sg">dat</l> vs
+<l pos="pron" type="dem" nr="pl">dat</l> og
+<l pos="pron" type="pers" nr="sg">dat</l>}}}
+
+Dette må også tas hensyn til i lemma_ref, f.eks.
+{{{<lemma_ref lemmaID="dat_pron_pers_pl">dat</lemma_ref>}}}
+
+sme-filer med innskrevne paradigmer:
+{{{verbNeg_smenob.xml
+pronDem_smenob.xml
+pronIndef_smenob.xml
+pronPers_smenob.xml
+pronRec_smenob.xml
+pronRefl_smenob.xml
+pronRel_smenob.xml}}}
+
+!Filer for entryer uten paradigmer
+Disse filene blir først sortert for ikke-generering, men så genereres likevel de entryene som er merket med POS som vi ønsker generert, f.eks. nuemraler som er i other_smenob.xml
+
+sme-filer uten paradigmer:
+{{{other_smenob.xml
+adverb_smenob.xml}}}
+
+Men i other_smenob.xml blir numeraler (POS="num") likevel generert.
+
+!!Miniparadigmer
+Man må bestemme hvilke miniparadigmer man ønsker å gi i leksikonoppslaget som hjelp for brukeren. Det vil variere fra POS til POS. I sme har vi: 
+
+!nounCommon:
+{{{{Sg+Gen	
+Sg+Ill	
+Pl+Ill  (if marked with illpl="ok" )}}}
+
+!nounProper:
+{{{Sg+Gen
+Sg+Ill
+Pl+Ill   (if marked with illpl="ok" - det vil gjelde flertalls navn, og da vil ikke Sg formene bli generert )}}}
+
+For verb har vi lagt til kontekst til bøyningsformene. Det er merket i leksikonet hvilken type kontekst som skal brukes, f.eks. context:"mun" 
+
+!verb:
+										
+For verb som det er naturlig med human subjekt for:
+{{{context:"mun"							boahtit
+Ind+Prs+Sg1	  		(odne mun) X		(odne mun) boađán
+Ind+Prt+Sg1	  		(ikte mun) X 		(ikte mun) bohten	
+Ind+Prs+ConNeg    	      (in) X 		      (in) boađe
+
+For verb som det ikke er naturlig med human subjekt for:
+context:"dat"							ciellat
+Ind+Prs+Sg1	   		(Plural) 	X		  (Plural) cillet
+Ind+Prt+Sg1	  		(ikte dat) 	X 		(ikte dat) cielai	
+Ind+Prs+ConNeg   			(ii) X 			(ii) ciela
+
+For verb som bare brukes i Sg3 (vær-verb):						
+context:"up"							bieggat
+Ind+Prs+Sg1	  		(odne) X			(odne) bieggá	
+Ind+Prt+Sg1	  		(ikte) X 			(ikte) biekkai
+Ind+Prs+ConNeg    	(ii) X 				  (ii) biekka
+
+For resiproke verb :
+context:"sii"							deaivvadit
+Ind+Prs+Sg1	  		(odne sii) X		(odne sii) deaivvadit
+Ind+Prt+Sg1	 		(ikte sii) X 		(ikte sii) deaivvadedje		
+Ind+Prs+ConNeg   	(eai) X 			     (eai) deaivvat	}}}
+
+
+Neg: Hele paradigmet er skrevet inn. Verbet er i en egen fil.
+
+!adjektiver:
+For adjektiver har vi lagt til kontekst til attributtformen. Det er merket i leksikonet hvilken  kontekst som skal brukes, f.eks. context:"olmmoš". Hvis  context="", så vil det ikke bli oppgitt attributtform.
+
+{{{A+Attr  			X (olmmoš) 
+A+Pl+Nom		
+A+Comp+Sg+Nom   
+A+Superl+Sg+Nom	}}}
+
+
+
+!numeraler:
+For numeraler har vi lagt til kontekst til pl. Alle har den samme konteksten:
+
+{{{Num+Pl+Nom 	 X (gápmagat)
+Num+Pl+Gen	 X (gápmagiid)}}}
+
+
+!indef pron:
+(the same as for nounCommon)
+
+{{{Sg+Gen	 
+Sg+Ill	
+Pl+Ill		      (if marked with illpl="ok" )}}}
+
+!!Innskrevne paradigmer
+
+!pronomener:
+pron Pers, Refl, Rec, Rel og Dem . Vi skriver paradigmet inn i filen:
+
+{{{
+Singular for seg:
+Sg+Akk	
+Sg+Gen	
+Sg+Ill
+Sg+Loc
+Sg+Com
+Ess
+
+Plural for seg:
+Pl+Akk
+Pl+Gen
+Pl+Ill
+Pl+Loc
+Pl+Com
+Ess
+}}}
+
+!negasjonsverb:
+
+{{{
+Sg1
+Sg2
+Sg3
+Du1
+Du2
+Du3
+Pl1
+Pl2
+Pl3
+}}}
+
+
+
+
+!!Homonyme entrier
+Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene!
+ 
+!Systematisk homonomi
+ 
+{{{        Nom      Gen     Norwegian	 
+  1.   lohkki   lohki    lokk		  N
+  2.   lohkki   lohkki   lesar		  N+Actor}}}
+
+Her må den ene merkes med tag (actor) i genereringa fra fst. Med denne tagen kan de unngår man homonymi i dict:  
+
+{{{xml:
+1.
+<e>
+  <lemma pos="n"> 
+
+2.
+<e>
+  <lemma pos="actor"> }}}
+
+Alle actor følger samme mønster. I xml-filene:
+
+{{{lohkki+n+actor+sg+n
+lohkki+n+sg+n}}}
+
+The corresponding xml entries looks like:
+{{{
+1.
+   <e usage="ped" src="nj">
+      <lg>
+         <l pos="n">lohkki</l>
+         <lc>lohkit</lc>
+      </lg>
+      <mg>
+         <tg>
+            <t pos="n">lokk</t>
+
+2.
+   <e usage="ped" src="nj">
+      <lg>
+         <l pos="n" subclass="actor">lohkki</l>
+      </lg>
+      <mg>
+         <tg>
+            <t pos="m">leser</t> 
+}}}
+
+
+Vi har følgende tagger for substantiver:
+{{{N+Actor		nounActor_smenob.xml
+N			nounCommon_smenob.xml
+G3+N		nounG3_smenob.xml
+N+Prop		nounProper_smenob.xml}}}
+
+
+VÆR OBS på at det kan være homonymi med leksem som er med i fst, men ikke i dict! Disse må behandles på samme måte, selv om bare det ene leksemet er med i dict. Hvis problemer, er det mulig å kommentere ut bøyningsmønstre eller leksemer og lage en egen fst for dict.
+
