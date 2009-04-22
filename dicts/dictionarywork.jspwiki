@@ -1,7 +1,7 @@
 !!!Dictionary - noen punkter for lingvisten
 
 !!Leksikonfiler
-
+Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med enten src="nj" (fra Jernsletten) eller usage="ped" (brukt i pedleksikonet).
 
 !Meningsgrupper
 
@@ -33,9 +33,9 @@ Noen av filene er statiske og noen blir det generert paradigmer av - dette avgj�
 I de andre filene er det POS-merkinga som avgjør om det blir generert paradigme eller ikke.
 
 
-!Genere paradigmer
+!Generere paradigmer
 
-Alle entryene må være i leksikalisert i fst. Hvis ikke, vil de ikke bli generert. F.eks. så vil en entry med grunnform i plural, ikke bli generert hvis grunnformen er i singular i fst. Men man kan ha både sg og pl innføringer i fst for det samme leksemet.
+Alle entryene må være leksikalisert i fst. Hvis ikke, vil de ikke bli generert. F.eks. så vil en entry med grunnform i plural, ikke bli generert hvis grunnformen er i singular i fst. Men man kan ha både sg og pl innføringer i fst for det samme leksemet.
 
 Det må ikke være noen homonyme entryer (lemma + POS)!
 
@@ -52,7 +52,7 @@ verb_smenob.xml
 
 
 !Filer med statiske (innskrevne) paradigmer
-Her kan man velge hvilket grunnord de bøyde formene peker til. F.eks. når det gjelder refleksive pronomener i sme, har vi valgt å peke til akk/gen-formen som grunnform ('alccesan' peker til 'iežan' og til 'iehčan'). Det er fullt mulig å legge inn to eller flere grunnformer når det er sideformer, f.eks.:
+Her kan man velge hvilket grunnord de bøyde formene peker til. F.eks. når det gjelder refleksive pronomener i sme, har vi valgt å peke til akk/gen-formen som grunnform (''alccesan'' peker til ''iežan'' og til ''iehčan''). Det er fullt mulig å legge inn to eller flere grunnformer når det er sideformer, f.eks.:
 
 {{{
          <lemma_ref lemmaID="iežan_pron_refl">iežan</lemma_ref>
@@ -76,6 +76,7 @@ Dette må også tas hensyn til i lemma_ref, f.eks.
 }}}
 
 sme-filer med innskrevne paradigmer:
+
 {{{
 verbNeg_smenob.xml
 pronDem_smenob.xml
@@ -103,45 +104,51 @@ Men i other_smenob.xml blir numeraler (POS="num") likevel generert.
 Man må bestemme hvilke miniparadigmer man ønsker å gi i leksikonoppslaget som hjelp for brukeren. Det vil variere fra POS til POS. I sme har vi: 
 
 !nounCommon:
+|| Bøyning	|| Eksempel
+|        | viessu
+| Sg+Gen | viesu	
+| Sg+Ill | 	vissui
+| Pl+Ill |  viesuide (hvis illpl="ok" )
 
-{{{Sg+Gen	
-Sg+Ill	
-Pl+Ill  (if marked with illpl="ok" )
-}}}
 
 !nounProper:
-{{{Sg+Gen
-Sg+Ill
-Pl+Ill   (if marked with illpl="ok" - det vil gjelde flertalls navn, og da vil ikke Sg formene bli generert )}}}
+|| Bøyning	|| Eksempel
+|        | Norga
+| Sg+Gen | Norgga
+| Sg+Ill | Norgii
+| Pl+Ill |  (if marked with illpl="ok" - det vil gjelde flertalls navn, og da vil ikke Sg formene bli generert )
 
 For verb har vi lagt til kontekst til bøyningsformene. Det er merket i leksikonet hvilken type kontekst som skal brukes, f.eks. context:"mun" 
 
 !verb:
-										
 For verb som det er naturlig med human subjekt for:
 
-{{{context:"mun"							boahtit
-Ind+Prs+Sg1	  		(odne mun) X		(odne mun) boađán
-Ind+Prt+Sg1	  		(ikte mun) X 		(ikte mun) bohten	
-Ind+Prs+ConNeg    	      (in) X 		      (in) boađe
+|| Bøyning	|| Kontekst	|| Eksempel
+|                 |  context:"mun"      | boahtit
+| Ind+Prs+Sg1	  |     (odne mun) X    | (odne mun) boađán
+| Ind+Prt+Sg1	  |    (ikte mun) X     | (ikte mun) bohten	
+| Ind+Prs+ConNeg  |       (in) X        | (in) boađe
 
 For verb som det ikke er naturlig med human subjekt for:
-context:"dat"							ciellat
-Ind+Prs+Sg1	   		(Plural) 	X		  (Plural) cillet
-Ind+Prt+Sg1	  		(ikte dat) 	X 		(ikte dat) cielai	
-Ind+Prs+ConNeg   			(ii) X 			(ii) ciela
+|| Bøyning	|| Kontekst	|| Eksempel
+|                 | context:"dat"   | ciellat
+| Ind+Prs+Sg1     |  (Plural)  X    | (Plural) cillet
+| Ind+Prt+Sg1     |  (ikte dat)  X  | (ikte dat) cielai	
+| Ind+Prs+ConNeg  |  (ii) X         | (ii) ciela
 
-For verb som bare brukes i Sg3 (vær-verb):						
-context:"up"							bieggat
-Ind+Prs+Sg1	  		(odne) X			(odne) bieggá	
-Ind+Prt+Sg1	  		(ikte) X 			(ikte) biekkai
-Ind+Prs+ConNeg    	(ii) X 				  (ii) biekka
+For verb som bare brukes i Sg3 (vær-verb):
+|| Bøyning        || Kontekst      || Eksempel
+|                  | context:"up"   |  bieggat
+ | Ind+Prs+Sg1	   | (odne) X       | (odne) bieggá	
+ | Ind+Prt+Sg1	   | (ikte) X       | (ikte) biekkai
+ | Ind+Prs+ConNeg  | (ii) X         | (ii) biekka
 
 For resiproke verb :
-context:"sii"							deaivvadit
-Ind+Prs+Sg1	  		(odne sii) X		(odne sii) deaivvadit
-Ind+Prt+Sg1	 		(ikte sii) X 		(ikte sii) deaivvadedje		
-Ind+Prs+ConNeg   	(eai) X 			     (eai) deaivvat	}}}
+|| Bøyning        || Kontekst      || Eksempel
+|                  | context:"sii" | deaivvadit
+ | Ind+Prs+Sg1	   | (odne sii) X  | (odne sii) deaivvadit
+ | Ind+Prt+Sg1	   | (ikte sii) X  | (ikte sii) deaivvadedje
+ | Ind+Prs+ConNeg  | (eai) X       | (eai) deaivvat
 
 
 Neg: Hele paradigmet er skrevet inn. Verbet er i en egen fil.
@@ -150,31 +157,31 @@ Neg: Hele paradigmet er skrevet inn. Verbet er i en egen fil.
 
 For adjektiver har vi lagt til kontekst til attributtformen. Det er merket i leksikonet hvilken  kontekst som skal brukes, f.eks. context:"olmmoš". Hvis  context="", så vil det ikke bli oppgitt attributtform.
 
-{{{
-A+Attr  			X (olmmoš) 
-A+Pl+Nom		
-A+Comp+Sg+Nom   
-A+Superl+Sg+Nom
-}}}
-
+|| Bøyning	|| Kontekst	|| Eksempel
+|                     | context:"báddi" | guhkki
+ | A+Attr             | X (báddi)       | guhkes (báddi)
+ | A+Pl+Nom           |                 | guhkit
+ | A+Comp+Sg+Nom      |                 |  guhkit 
+ | A+Superl+Sg+Nom    |                 | guhkimus
 
 
 !numeraler:
 For numeraler har vi lagt til kontekst til pl. Alle har den samme konteksten:
 
-{{{
-Num+Pl+Nom 	 X (gápmagat)
-Num+Pl+Gen	 X (gápmagiid)
-}}}
+|| Bøyning	|| Kontekst	|| Eksempel
+|    | context:"gápmagat"	 | guokte
+ | Num+Pl+Nom  | X (gápmagat) | guovttit (gápmagat)
+ | Num+Pl+Gen | X (gápmagiid) | guvttiid (gápmagiid)
 
 
 !indef pron:
 
 (the same as for nounCommon)
-
-{{{Sg+Gen	 
-Sg+Ill	
-Pl+Ill		      (if marked with illpl="ok" )}}}
+|| Bøyning	|| Eksempel
+|    	 | muhtun
+ | Sg+Gen  | muhtuma	 
+ | Sg+Ill | muhtumii
+ | Pl+Ill | muhtumiidda     (hvis illpl="ok" )
 
 !!Innskrevne paradigmer
 
@@ -214,8 +221,6 @@ Pl3
 }}}
 
 
-
-
 !!Homonyme entrier
 Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene!
  
@@ -236,12 +241,13 @@ Her må den ene merkes med tag (actor) i genereringa fra fst. Med denne tagen ka
 <e>
   <lemma pos="actor"> }}}
 
-Alle actor følger samme mønster. I xml-filene:
+Alle Actor følger samme mønster. I xml-filene:
 
 {{{lohkki+n+actor+sg+n
 lohkki+n+sg+n}}}
 
 The corresponding xml entries looks like:
+
 {{{
 1.
    <e usage="ped" src="nj">
@@ -265,10 +271,11 @@ The corresponding xml entries looks like:
 
 
 Vi har følgende tagger for substantiver:
-{{{N+Actor		nounActor_smenob.xml
-N			nounCommon_smenob.xml
-G3+N		nounG3_smenob.xml
-N+Prop		nounProper_smenob.xml}}}
+|| tagger || fil
+| N+Actor |  nounActor_smenob.xml
+| N		  |  nounCommon_smenob.xml
+| G3+N	  |  nounG3_smenob.xml
+| N+Prop  |  nounProper_smenob.xml
 
 
 VÆR OBS på at det kan være homonymi med leksem som er med i fst, men ikke i dict! Disse må behandles på samme måte, selv om bare det ene leksemet er med i dict. Hvis problemer, er det mulig å kommentere ut bøyningsmønstre eller leksemer og lage en egen fst for dict.
