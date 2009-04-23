@@ -5,7 +5,7 @@ Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med
 
 !Meningsgrupper
 
-Man skiller mellom synonymer og forskjellige meningsgrupper. 
+Man skiller mellom synonymer og meningsgrupper. 
 
 {{{   <e src="nj">
       <lg>
@@ -28,7 +28,7 @@ Man skiller mellom synonymer og forskjellige meningsgrupper.
 
 !!Generere paradigme eller ikke
 
-Noen av filene er statiske og noen blir det generert paradigmer av - dette avgjøres av navnet på fila. F.eks. der det filer for pronomener med innskrevne paradigmer, og disse filenes navn avgjør at innholdet ikke blir generert (f.eks. pronDem_smenob.xml).
+Noen av filene er statiske og noen blir det generert paradigmer av. F.eks. der det filer for pronomener med innskrevne paradigmer, og disse filenes navn avgjør at innholdet ikke blir generert (f.eks. pronDem_smenob.xml).
 
 I de andre filene er det POS-merkinga som avgjør om det blir generert paradigme eller ikke.
 
@@ -117,7 +117,7 @@ Man må bestemme hvilke miniparadigmer man ønsker å gi i leksikonoppslaget som
 |        | Norga
 | Sg+Gen | Norgga
 | Sg+Ill | Norgii
-| Pl+Ill |  (if marked with illpl="ok" - det vil gjelde flertalls navn, og da vil ikke Sg formene bli generert )
+| Pl+Ill |  (hvis illpl="ok" - det vil gjelde flertalls navn, og da vil ikke Sg formene bli generert )
 
 For verb har vi lagt til kontekst til bøyningsformene. Det er merket i leksikonet hvilken type kontekst som skal brukes, f.eks. context:"mun" 
 
@@ -228,33 +228,17 @@ Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers a
 !Systematisk homonomi
  
 {{{        Nom      Gen     Norwegian	 
-  1.   lohkki   lohki    lokk		  N
-  2.   lohkki   lohkki   lesar		  N+Actor}}}
+  1.   lohkki   lohki    lokk		  lohkki+N+Sg+Nom
+  2.   lohkki   lohkki   lesar		  lohkki+N+Actor+Sg+Nom}}}
 
-Her må den ene merkes med tag (actor) i genereringa fra fst. Med denne tagen kan de unngår man homonymi i dict:  
+Her må den ene merkes med tag (actor) i genereringa fra fst. Med denne tagen kan de unngår man homonymi i dict. I xml-filene:
 
-{{{xml:
-1.
-<e>
-  <lemma pos="n"> 
-
-2.
-<e>
-  <lemma pos="actor"> }}}
-
-Alle Actor følger samme mønster. I xml-filene:
-
-{{{lohkki+n+actor+sg+n
-lohkki+n+sg+n}}}
-
-The corresponding xml entries looks like:
 
 {{{
 1.
    <e usage="ped" src="nj">
       <lg>
          <l pos="n">lohkki</l>
-         <lc>lohkit</lc>
       </lg>
       <mg>
          <tg>
@@ -263,12 +247,17 @@ The corresponding xml entries looks like:
 2.
    <e usage="ped" src="nj">
       <lg>
-         <l pos="n" subclass="actor">lohkki</l>
+         <l pos="actor">lohkki</l>
       </lg>
       <mg>
          <tg>
             <t pos="m">leser</t> 
 }}}
+
+En annen systematisk homonymi:
+|| Nom  	|| Gen  || norsk 	|| morf.analyse	 
+|  beassi 	| beasi  |  reir	| beassi+N+Sg+Nom
+|  beassi  	| beassi |  never	| beassi+G3+N+Sg+Nom
 
 
 Vi har følgende tagger for substantiver:
@@ -276,7 +265,7 @@ Vi har følgende tagger for substantiver:
 | N+Actor |  nounActor_smenob.xml
 | N		  |  nounCommon_smenob.xml
 | G3+N	  |  nounG3_smenob.xml
-| N+Prop  |  nounProper_smenob.xml
+| N+Prop  |  nounProper_smenob.xml 
 
 
 VÆR OBS på at det kan være homonymi med leksem som er med i fst, men ikke i dict! Disse må behandles på samme måte, selv om bare det ene leksemet er med i dict. Hvis problemer, er det mulig å kommentere ut bøyningsmønstre eller leksemer og lage en egen fst for dict.
