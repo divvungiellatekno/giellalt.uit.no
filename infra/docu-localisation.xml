@@ -14,20 +14,18 @@
     <section>
       <title>Localisation</title>
 
-      <p>Our projects are run in UTF-8, since the spring of 2005.</p>
+      <p>All our projects are run in UTF-8, since the spring of 2005.</p>
 
-      <p>There are still some child diseases, they are documented in Bugzilla
-      and fixed as they appear. Some of them are harder to fix than others,
-      but all in all we are satisfied with our UTF-8 migration</p>
+      <p>There is one exception, and it is not in-house: The Oslo web interface Glossa
+      handles only 8-bit code tables. Our texts at glossa are coded in 
+      <a href="http://www.hum.uit.no/a/trond/197.jpg">ISO-IR 197</a>.</p>
 
       <section>
         <title>Northern Sámi</title>
 
         <p>The Northern Sámi parser is localised with UTF-8, as it should be.
-        Note that we in the alphabet section, as a legacy from the old Latin 1
-        -days, have defined all the Latin 1 letters, but not other letters. At
-        that time it was a sensible act, now the set looks a bit ad hoc (see
-        <code>twol-sme.txt</code>)</p>
+        In our web interface there is a filter to let users feed in c1, d1, s1, etc,
+         instead of the correct Sámi letters. Output to the user is in UTF-8.</p>
       </section>
 
       <section>
@@ -52,18 +50,22 @@
       </section>
 
       <section>
-        <title>Inari and Skolt Sámi</title>
+        <title>Inari, Skolt and Kildin Sámi</title>
 
-        <p>Inari Sámi and Skolt Sámi are still represented in the old 8-bit
-        format, with the vowels directly in 8-bit Latin 1 and the consonants
-        as digraphs c1 etc. This is of course not a feasible solution,
-        especially not for Skolt Sámi. The only reason why they are not
-        migrated is that we have not been working on these languages after the
-        first 3-year period (2000-2003) ended. Should we want to take up our
-        work on these languages, UTF-8 localisation will be the first step to
-        take.</p>
+        <p>Inari Sámi, Skolt and Kildin Sámi are repesented in Unicode. For Kildin
+        Sámi, note that the latin-like letters we use are actually Cyrillic ones.</p>
       </section>
 
+
+      <section>
+        <title>Our other languages</title>
+
+        <p>All our other languages are in UTF-8 as well.</p>
+        <p>Note that for Iñupiaq, we do <em>not</em> use the wide-spread 8-bit
+        <em>Interactive IñupiaQ Dictionary</em> encoding, as it has placed the Iñupiaq
+        characters in the ASCII area. There is a converter on the Iñupiaq page.</p>
+      </section>
+      
       <p class="last_modified">Last modified: $Date$, by
       $Author$</p>
     </section>
