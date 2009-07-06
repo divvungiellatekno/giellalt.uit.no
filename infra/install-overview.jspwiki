@@ -1,6 +1,6 @@
 !!!Introduction
 
-This is a short check-point list for setting up new users in our teams. Please add missing points as needed. See also [the checklist |../admin/checklist.html] for what new users should know. There is some overlap, but this doc is for the sys admin, the other one is for the new user.
+This is a short check-point list for setting up new users in our teams. Please add missing points as needed. See also [the checklist|../admin/checklist.html] for what new users should know. There is some overlap, but this doc is for the sys admin, the other one is for the new user.
 
 !!!Hardware
 
@@ -39,44 +39,52 @@ This is a short check-point list for setting up new users in our teams. Please a
 
 !!Commercial software, Internet download
 * [SEE|http://www.codingmonkeys.de/subethaedit/index.html]
-* [Unison|http://www.panic.com/unison/] for reading news
+* [Unison|http://www.panic.com/unison/] for reading news (see below for an open
+  source alternative)
+* [Versions.app|http://www.versionsapp.com/] - commercial GUI front end for
+  [Subversion|http://subversion.tigris.org/]. It makes some operations much
+  easier. If you use this app, please ensure that you also install
+  {{$GTHOME/gt/src/filemerge-tools/FileMerge_SaveMergedToSecondFile.sh}} - just
+  run make in that directory. Then select that script as your diff tool in
+  Versions.app's preferences.
 
 !!Free or open-source software
-* [XMLEditor|install-xxe.html] (personal edition)
+* [XMLEditor|install-xxe.html] (personal edition)
 * [Skype|http://www.skype.com/]
-* [Thunderbird|http://www.mozilla.com/en-US/thunderbird/]
-   - alternative to Unison
-* [svnX|http://www.lachoseinteractive.net/en/community/subversion/svnx/]
+* [Thunderbird|http://www.mozilla.com/en-US/thunderbird/] - open source
+  alternative to Unison
+* [svnX|http://code.google.com/p/svnx/]
 * Xerox tools (no public link available, ask the administrator)
 * [CG3|/doc/tools/docu-vislcg3.html]
-* [Forrest|forrest-howto.html] - we need our own tailored version at the moment,
+* [Forrest|forrest-howto.html] - we need our own tailored version at the moment,
   but work is going on to make us able to use the standard distribution
 * [Saxon B|http://saxon.sourceforge.net/]
 * [QuickSilver|http://www.blacktree.com/]
 * [Cisco VPN client|http://helpdesk.ugent.be/vpn/en/akkoord.php]
 * [OpenOffice.org|http://www.openoffice.org/]
 * XCode (on the CD that came with the computer, or available from
-  [Apple|http://developer.apple.com] - registration (free) required)
+  [Apple|http://developer.apple.com] - registration (free) required)
+* [Mikogo|http://www.mikogo.com] - cross-plattform, multicast screen sharing
+  - [dmg file|http://www.mikogo.com/en/downloads/mikogo.dmg] for download
 
 !!Proofing tools to install
 * our latest MS and OOo/hunspell tools / lexicons (see our
   [home page|/index.html])
-* [Aspell|http://aspell.net/] / [Cocoaspell|http://cocoaspell.leuski.net/]
+* [Aspell|http://aspell.net/] / [Cocoaspell|http://cocoaspell.leuski.net/]
 ** speller lexicons for the required languages
-* [hunspell|http://hunspell.sourceforge.net/] command line tool (use MacPort,
+* [hunspell|http://hunspell.sourceforge.net/] command line tool (use MacPort,
   see instructions on the OpenXSpell home page)
-* [OpenXSPell|http://www.cygnusblack.co.uk/openxspell/index.html] - does also install Enchant, a multi-engine speller middle-man.
-* [Soikko|http://users.tkk.fi/~pry/soikko/] (Finnish speller, good)
+* [OpenXSPell|http://www.cygnusblack.co.uk/openxspell/index.html] - does also install Enchant, a multi-engine speller middle-man.
+* [Soikko|http://users.tkk.fi/~pry/soikko/] (Finnish speller, good)
   - [Mac version here|http://www.cs.helsinki.fi/u/oarasane/soikko/]
-* [Voikko|http://voikko.sourceforge.net/] (another Finnish speller,
+* [Voikko|http://voikko.sourceforge.net/] (another Finnish speller,
   interesting comparison)
-* for the Divvun team: PL command line tools
 
 !!!Configurations
 
 * Unix environment:
 ** [.bashrc|docu-setup-bash.html]
-** ([.inputrc|docu-setup-bash.html#Setting+up+8-bit+input] - this is only
+** ([.inputrc|docu-setup-bash.html#Setting+up+8-bit+input] - this is only
    required when setting up old computers running Tiger/MacOS X 10.4.x or older,
    in Leopard/10.5.x and newer, UTF-8 input/output is working properly in
    Terminal)
@@ -88,9 +96,10 @@ This is a short check-point list for setting up new users in our teams. Please a
 
 !!!Other setups
 
-* [check out|/doc/tools/docu-svn-user.html] our svn repository
-* set up svn mail, by adding the users' email address to the file
-  {{.forward}} under the users' home directory on victorio.
+* [check out|/doc/tools/docu-svn-user.html] our svn repository, then run
+  {{$GTHOME/gt/script/gtsetup.sh}}
+* set up svn mail, by adding the users' email address to the
+  {{.forward}} file under the users' home directory on victorio.
 * iChat
 * Mail
 * admin and user accounts on the Mac
@@ -100,4 +109,4 @@ This is a short check-point list for setting up new users in our teams. Please a
    be able to install software, updates, tweak system settings etc. (the
    security benefit is that the normal processes, downloads, etc are done in a
    restricted user space, not in an administrative account; in the case of
-   malware downloads, it will only affect that user, not the whole system)
+   malware downloads, it will only affect that user, not the whole machine)
