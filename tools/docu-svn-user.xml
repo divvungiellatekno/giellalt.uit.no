@@ -24,20 +24,32 @@
     <section>
       <title>Graphical Subversion clients</title>
 
-      <p>Some users may want to use a graphical interface instead. If you do,
-      please see the following pages for some possible clients:</p>
+      <p>If you want to use a graphical Subversion client, please see the
+      following pages for descriptions of some alternatives, and their setup for
+      our repositories:</p>
 
       <ul>
         <li><a href="docu-svn-user-rapidsvn.html">RapidSVN</a> - a
-        cross-plattform, open-source client (home page)</li>
+        multi-platform, open-source GUI front-end (<a
+        href="http://rapidsvn.tigris.org/">home page</a>)</li>
 
-        <li>Versions.app - a Mac only, commercial client</li>
+        <li><a href="docu-svn-user-versionsapp.html">Versions.app</a> - a Mac
+        only, commercial client (<a href="http://www.versionsapp.com/">home
+        page</a>)</li>
 
-        <li>SvnX - a Mac only, open-source client</li>
+        <li><a href="docu-svn-user-svnx.html">SvnX</a> - a Mac only, open-source
+        client (home page <a href="http://code.google.com/p/svnx/">here</a> and
+        <a
+        href="http://www.lachoseinteractive.net/en/community/subversion/svnx/features/">here</a>)</li>
       </ul>
 
-      <p>Even if you want to use a graphical client, please follow the
-      recommendations for daily routines at the end of this document.</p>
+      <p>Please follow the recommendations for daily routines at the end of this
+      document!</p>
+
+      <p>The major benefit of graphical clients is that they make some
+      operations that much easier and faster. YMMV, and you have to try to find
+      what suits your working habits best yourself. In the end, a combination of
+      graphical and command-line tools could be the best approach.</p>
     </section>
 
     <section>
@@ -51,7 +63,7 @@
       projects are working on to your computer.</p>
 
       <section>
-        <title>The commands</title>
+        <title>The first commands</title>
 
         <p>Go to your home directory (write <code>cd</code>), and give the
         following command:</p>
@@ -62,8 +74,8 @@ svn co https://victorio.uit.no/langtech/trunk main --username &lt;your_username&
 
         <p>... where you have replaced &lt;your_username&gt; with the username
         you have aquired from the admin. This will enable you to check in your
-        work. If you don't have a user name or just want to browse our code just
-        skip the username.</p>
+        work. If you don't have a user name or just want to browse our code,
+        just skip the username.</p>
 
         <p>After you have checked out, please run the following script, and
         follow the on-screen instructions:</p>
@@ -73,15 +85,22 @@ main/gt/script/gtsetup.sh
 </source>
 
         <p>With the above commands, you have now on your local computer a copy
-        of the core source code and many scripts to use with the code.</p>
+        of the source code and the environment is set up properly.</p>
       </section>
 
       <section>
-        <title>Daily work</title>
+        <title>Frequently used commands</title>
 
-        <p>Now that you have checked out your repository, you may use a set of
-        commands which should be more or less well known to cvs users
-        (<code>filename</code> to be replaced with the actual file name):</p>
+        <p>Now that you have checked out your repository, you can use a set of
+        commands to manipulate your copy of the source code. We recommend to
+        always <em>update</em> the repository before you begin to edit files
+        inside it. After having edited some files you usually want to have an
+        overview of which files have been <em>modified</em>. To share our work
+        with the others we <em>check in</em> our work. We can also <em>add</em>,
+        <em>delete</em>, <em>move</em> and <em>copy</em> files inside the
+        repository. A brief overview of the commands needed for these actions is
+        given below, for further details see the references at the end of this
+        document.</p>
 
         <dl>
           <dt>Update your working copy</dt>
@@ -151,18 +170,6 @@ $</source>
         Items</em>, in the <a href="http://svnbook.red-bean.com/">SVN
         book</a>.</p>
       </section>
-    </section>
-
-    <section>
-      <title>Daily work</title>
-
-      <p>We recommend to always <em>update</em> the repository before you begin
-      to edit files inside it. After having edited some files you usually want
-      to have an overview of which files have been <em>modified</em>. To share
-      our work with the others we <em>check in</em> our work. We can also
-      <em>add</em>, <em>delete</em>, <em>move</em> and <em>copy</em> files
-      inside the repository. All the details of this will be explained
-      below.</p>
     </section>
 
     <section>
