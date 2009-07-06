@@ -16,10 +16,29 @@
     pages. While waiting, this page will contain information useful for our
     present cvs users.</p>
 
-    <p>Our subversion repository is at the address <a
-    href="https://victorio.uit.no/repos">http://victorio.uit.no/repos</a>.
+    <p>Our main subversion repository is at the address <a
+    href="https://victorio.uit.no/langtech/">http://victorio.uit.no/langtech/</a>.
     Subversion documentation is available as a <a
     href="http://svnbook.red-bean.com/en/1.4/index.html">browsable book</a>.</p>
+
+    <section>
+      <title>Graphical Subversion clients</title>
+
+      <p>Some users may want to use a graphical interface instead. If you do,
+      please see the following pages for some possible clients:</p>
+
+      <ul>
+        <li><a href="docu-svn-user-rapidsvn.html">RapidSVN</a> - a
+        cross-plattform, open-source client (home page)</li>
+
+        <li>Versions.app - a Mac only, commercial client</li>
+
+        <li>SvnX - a Mac only, open-source client</li>
+      </ul>
+
+      <p>Even if you want to use a graphical client, please follow the
+      recommendations for daily routines at the end of this document.</p>
+    </section>
 
     <section>
       <title>Use svn on the command line</title>
@@ -27,9 +46,6 @@
       <note>This document describes how to check out and work with svn. For
       issues related to the conversion from cvs to svn, read <a
       href="svnconv_remember.html">this document</a>.</note>
-
-      <p>Some users may want to use a graphical interface instead. If you do,
-      read the next chapter, on RapidSVN, instead</p>
 
       <p>To <em>check out</em> means that you copy all the documents that our
       projects are working on to your computer.</p>
@@ -40,31 +56,24 @@
         <p>Go to your home directory (write <code>cd</code>), and give the
         following command:</p>
 
-        <p><code>svn co https://victorio.uit.no/repos/trunk gtsvn --username
-        &lt;your_username&gt;</code></p>
+        <source>
+svn co https://victorio.uit.no/langtech/trunk main --username &lt;your_username&gt;
+</source>
 
         <p>... where you have replaced &lt;your_username&gt; with the username
         you have aquired from the admin. This will enable you to check in your
         work. If you don't have a user name or just want to browse our code just
-        skip the username. Here, we have assumed you want to call your
-        repository <code>gtsvn</code>. If you do, our scripts will work smoother
-        for you. If you want another path, you must be aware that some scripts
-        will perhaps need you to set an explicit (and new) path.</p>
+        skip the username.</p>
 
-        <p>You may also check out only a part of the repository. Let us say you
-        want to check out only the catalogue <code>kvensk</code>, and that you
-        have your old <code>kvensk</code> catalogue. First, give the old one a
-        new name: <code>mv kvensk oldkvensk</code>, or whatever name you want.
-        Then, do this:</p>
+        <p>After you have checked out, please run the following script, and
+        follow the on-screen instructions:</p>
 
         <source>
-                    svn co https://victorio.uit.no/repos/trunk/kvensk kvensk --username &lt;your_username&gt; 
-                </source>
+main/gt/script/gtsetup.sh
+</source>
 
-        <p>Later on, you may move modified files from your
-        <code>oldkvensk</code> folder to your new <code>kvensk</code> folder.
-        This way, changes you made before the move to svn are now visible in svn
-        too.</p>
+        <p>With the above commands, you have now on your local computer a copy
+        of the core source code and many scripts to use with the code.</p>
       </section>
 
       <section>
@@ -145,52 +154,13 @@ $</source>
     </section>
 
     <section>
-      <title>Using a graphical interface</title>
-
-      <section>
-        <title>RapidSVN</title>
-
-        <section>
-          <title>Basic usage</title>
-
-          <p>This is for users wanting a graphical user interface to svn, like
-          the program CVL used for cvs. Users accustomed to the command line
-          (and comments such as <code>cvs up</code> etc. may safely ignore this
-          chapter, and stick to the previous one.</p>
-
-          <p>Choose Repository-&gt;Checkout... <br /> <img
-          alt="checkout menu item" src="rapidsvn2.png" /></p>
-
-          <p>Write <code>https://victorio.uit.no/repos</code> into the URL box.
-          Choose the map where you would like to place the files in the
-          Destination Directory box (we suggest adding <strong>repos</strong> to
-          the end of the path, to keep svn maps in a separate place), then press
-          OK.<br /> <img alt="RapidSVN checkout dialog"
-          src="rapidsvn3.png" /></p>
-
-          <p>Press "Permanently" when the SSL Certificate dialog appears. <br />
-          <img alt="SSL Certificate dialog" src="rapidsvn4.png" /></p>
-        </section>
-
-        <section>
-          <title>Working with the repository</title>
-
-          <p>In the directory that you did the checkout you will now have a
-          directory called repos, where all our code is contained. Usually the
-          daily work goes on in the <code>repos/trunk</code> directory.<br />
-          <img alt="View of repos map" src="rapidsvn5.png" /></p>
-        </section>
-      </section>
-    </section>
-
-    <section>
       <title>Daily work</title>
 
       <p>We recommend to always <em>update</em> the repository before you begin
-      to edit files inside the it. After having edited some files you usually
-      want to have an overview of which files that have been <em>modified</em>.
-      To share our work with the others we <em>check in</em> our work. We can
-      also <em>add</em>, <em>delete</em>, <em>move</em> and <em>copy</em> files
+      to edit files inside it. After having edited some files you usually want
+      to have an overview of which files have been <em>modified</em>. To share
+      our work with the others we <em>check in</em> our work. We can also
+      <em>add</em>, <em>delete</em>, <em>move</em> and <em>copy</em> files
       inside the repository. All the details of this will be explained
       below.</p>
     </section>
@@ -232,6 +202,6 @@ $</source>
     </section>
 
     <p class="last_modified">Last modified: $Date: 2008-11-05 19:52:54 +0200
-    (Wed, 05 Nov 2008) $, by $Author$</p>
+    (ons, 05 nov 2008) $, by $Author$</p>
   </body>
 </document>
