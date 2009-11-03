@@ -72,12 +72,33 @@ As long as you can use the multilingual spelling with automatic language detecti
 !!!Software with available updates
 
 The latest version available is tested and known to work fine on Snow Leopard, earlier versions are problematic:
+
 * [Version.app|http://versionsapp.com/] (graphical subversion client)
 * [SubEthaEdit|http://www.codingmonkeys.de/subethaedit/]
 * [iStat menus|http://www.islayer.com/apps/istatmenus/]
 * [Cisco VPN client|ftp://ftp.rrzn.uni-hannover.de//pub/local/vpn/macosx/10.4-10.5/vpnclient-darwin-4.9.01.0180-universal-k9.dmg]
 * [GROWL 1.2|http://growl.info/]
+* ICU - VISLCG3 requires the latest ICU package (possibly Xerox as well). Use MacPorts to install or upgrade, either using the command line {{sudo ports upgrade ICU}} or by using the GUI client [Porticus|http://porticus.alittledrop.com/]
+This disappeared after the new icu was installed.
 
 !!!Incompatible or unstable software
+
+!!Xerox FST tools
+
+It seems (?) that Xerox also would like to have the latest ICU. Under Snow Leopard, Xerox had an UTF-8 problem:
+
+{{{
+a automaton:
+a a
+b b ?
+á Segmentation fault
+
+á automaton:
+á á
+b b
+č Segmentation fault
+}}}
+
+!!Other software
 
 * [QuickSilver|http://www.blacktree.com/]
