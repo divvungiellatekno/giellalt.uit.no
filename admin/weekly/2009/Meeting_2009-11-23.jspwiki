@@ -1,6 +1,6 @@
 !!!Meeting setup
 
-* Date: 9.11.2009
+* Date: 23.11.2009
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat
@@ -13,35 +13,40 @@ Cf. one of the following, depending on context:
 
 !!!Opening, agenda review, participants
 
-Opened at 10:25.
+Opened at 11:13.
 
 Present:
 __Børre, Ciprian, Maja, Sjur, Thomas, Tomi, Trond__
 
 Absent: __none__
 
-Agenda accepted as is.
+Agenda accepted with the following additions:
+
+* Giellatekno usage evaluation -> Linguistics
+* Castl proposal to list us in their money application -> Other
+* hfst generation, and hfst generation ability, for MT purposes -> Infrastructure
+
 
 !!!Updated task status since last meeting
 
 !!Børre
+* install the HFST tools
 * set up Maja's old computer with Boot Camp or some virtualization software
-** not done
+** Not done, haven't seen the machine for a couple of weeks
 * order scanners (one book and one flatbed with sheet feeder)
-** not done
+** Done
 * implement language switch for static divvun site
-** not done
-* upgrade the XServe to Snow Leopard Server
-** not done
-* improve XSL script to transform leaflet Forrest XDocs to an OOo Draw document
-** not done
-* {{gt/Makefile}} remake
 ** Not done
+* upgrade the XServe to Snow Leopard Server
+** And still waiting for __Eplehuset__ to deliver it ...
+* improve XSL script to transform leaflet Forrest XDocs to an OOo Draw document
+* {{gt/Makefile}} remake
+** not done
 * get translations of thank-you letter
-** I have the South Sami one
+** not done
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 * other:
-** Trying to get bugzilla on it's feet on the XServe, but haven't succeded
+** attended the lexicography workshop last week
 
 !!Ciprian
 * MT - Autshumato:
@@ -75,65 +80,56 @@ Agenda accepted as is.
 ** Generate fin/xml/{nouns|verbs|adjectives}.xml, and implement the new Leksa
    dropdown menu (but first run the sb_oahpa test)
 *** todo
-* Lovozero Oahpa:
-** reinstall MySQL, python, and on __Lene__ and/or __Trond__ machine
-*** done, moreover, installed the Lovozero Oahpa on victorio
 * KomEngFin:
 ** split by pos and transform the actual format into gt_dict format
 ** compile only one version of dictionary and use css for user preferences
 ** generate the first StarDict version of komeng and komfin dictionary
 ** test the automatic sorting by Komi alphabet in xsl (as discussed
    with __Trond__)
-*** todo
+*** todo (Cip's internal deadline 30.11.2009)
 * SmeNob:
 ** the StarDict on Windows: try the HTML-plugin
 ** try to reduce the dict-size on mac: experiment with xPointer, etc.
 ** incorporate the passives into the last version of the sme:nob
+*** todo
 * SmaNobSwe:
 ** extend the smanobswe dictionary
 ** check all bug in the sma:nob-swe dictionary
 ** fix the bug with the string length in the popup window (sma:nob)
-*** todo
-* SmjNob:
-** start working at a Lule-Sami based on Bruce Moren's data
+*** todo (announcement: working on sma:nob in the first week of December; need help from sma linguists)
 * SjdRus:
 ** continue the work at the Kildin-Russian dictionary, next internal deadline is
    the lexicography workshop in November 2009 in Tromsø
-*** ongoing
+*** todo (discussed the format with Michael Riessler in the sjd-sje-sms meeting on 21.09.2009)
 * Corpus:
 ** check the processing of new corpus documents (error logging during
    conversion, conversion quality, documentation, etc.)
 *** todo
 * Lexicon workshop
-** prepare teaching materials
-** check the data sent by the course members
-*** ongoing
+** finish the preparation of the teaching materials
+** prepare the talk for the workshop
+*** done, additionally I had an extra meeting on sjd, sje and sms with Michael
+    Riessler, Lena Karvovskaya, and Josh Wilbur
 
 !!Maja
+* SGM letter meeting Tuesday 9:30 with __Sjur, Thomas__
 * work meeting on loan words and proper nouns
-** not done
 * Prepare text´s about normativity issue to SGL/SGM
-** not done, need some response to the text I have written - text about numerals
-   are ok, but the the text about loanwords is not ok yet. Meetinng about this?
 * more work on {{sma}} adjectives
-** ongoing, 
-* Work on missinglist
-** ongoing, 
+** done and to do 
 * contact Turi Aleksandersen about book signature follow-up from Joseph
-** she called me on wednesday and said that she hasn't found the contract yet,
-   she will look after it again, then call me. I can call her again :-| Call joseph again.
+** done, she will call me when she has recieved the contract from Karasjok
 * contact authors of {{sma}} aticles in 9-10 eds. of the yearbook
   ''Åarjel-saemieh''
-** ongoing, need to write the letters
-* Scan some books:
-** We have lots of books which should be scanned
-  
+** contacted some of them, and its ok - should to take som phonecalls
 
 !!Sjur
+* SGM letter meeting Tuesday 9:30 with __Maja, Thomas__
+** done
 * difftest for fst and PL speller
-** not yet
+** not
 * fix the {{sma}} installer build issues
-** not done
+** solved? no...
 * @Barents: plan a meeting/seminar with potential cooperation partners
 ** not done
 * @Barents: plan for The Real Thing
@@ -151,13 +147,13 @@ Agenda accepted as is.
 * make XSL script to transform leaflet Forrest XDocs to an OOo Drawer document
 ** not done
 * continue to write a proofing API & implementation specification
-** not continued last week
+** the Voikko train moves forward, details below
 * name db/risten.no
 ** not done
 * follow-up on some Polderland-related bugs: 621, 630, 652
 ** not done
 * support and maintenance contract for {{sme}} and {{smj}}, MS+Adobe tools
-** nothing new
+** Polderland is gone, new contract with new company
 * Sámi languages as part of ''Norsk språkbank''
 ** relevant?
 * find and contact the correct person in SD, to get the manuscript for all Sámi
@@ -165,24 +161,25 @@ Agenda accepted as is.
 ** not done
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 * other things:
-** a lot of testing, debugging and error reporting for the HFST tools - they are
-   improving all the time
-** meeting for planning the lexicon seminar next week
+** on well-fare leave most of last week
+** ssh access to the XServe has been blocked by the IT admin at UiT because some
+   Mac got hacked. Børre and I have written to the IT admin guys, waiting for
+   an answer.
 
 !!Thomas
 * work meeting on loan words and proper nouns
-** not done
+** done
 * prepare text´s about normativity issue to SGL/SGM
 ** nothing this week
 * {{sma}} adjectives
 ** nothing this week
 * Digitalize south saami books
-** worked
+** worked with the process
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** worked a lot with south saami
+** some sma work done
 
 !!Tomi
-* Compile a new version of spellers
+* install the HFST tools
 ** done
 * document how compounding is controlled in the PLX conversion
 ** not done
@@ -190,7 +187,7 @@ Agenda accepted as is.
 ** not done
 * fix PL {{smj}} hyphenator bug
 ** not done
-* fix PL conversion bugs
+* fix PL and Hunspell conversion bugs
 ** worked
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
@@ -203,6 +200,13 @@ Agenda accepted as is.
 
 !!!Oahpa!
 
+Three Oahpa! sites online now:
+* regular Oahpa!
+* [Russian Oahpa!|http://victorio.uit.no/sjd_oahpa/] (Kildin Sámi) with two
+  programs (Leksa, Numra)
+* [sandbox Oapha!|http://victorio.uit.no/sb_oahpa/] for experimenting and
+  playing around for devs
+
 Meeting memos can be found at
 [http://giellatekno.uit.no/ped/index.html#Meeting+memos]
 
@@ -210,16 +214,17 @@ __TODO__
 * Register oahpa.no (__Trond__)
 * Generate fin/xml/{nouns|verbs|adjectives}.xml, and implement the new Leksa
   dropdown menu (__Ciprian__).
+* Finding a volunteer to translate the sme Leksa lexicon to Swedish (__XXX__)
+* From the start: sjd_oahpa Leksa in deu and eng as well  
 * clock and date for Numra (__Trond, Ciprian__).
+* Numra for Skolt Sámi and Finnish (__Trond, Ciprian__)
+* implement the Bodø-Oahpa (__Ciprian, Trond, Lene__)
+* email notification when the server goes down (__Ciprian__)
 
 !!!Corpus gathering
 
-Risten has big problems finding the contract Jovsset left for her this
-summer__Maja__ will continue to push for the contract - there are too many
-signatures there already to let it go. We ''need'' to find it.
-
-Thomas has collected a multilingual text from the government. The text is
-written in {{sme, smj, sma, eng, nno}} and {{nob}}.
+__Maja__ has talked to Risten T. Aleksandersen, they have found the contract Jovsset
+left! Also talked to authors and translators.
 
 __TODO:__
 * Which books are digitized?
@@ -267,6 +272,65 @@ __TODO:__
 
 !!!Infrastructure
 
+!!SSH at UiT
+
+* the divvun.no server has been closed for SSH access by the UiT IT admin
+* we have not been informed about this
+* this is effectively stopping all access from the outside world
+* VCN/Remote Desktop access is still allowed
+* the reason is that one Mac has been compromised by a hacker
+
+!!HFST issues
+
+* HFST in apertium, to avoid conversion to the apertium automata thing
+
+{{{
+$ echo "ja+CC" | ./hfst-lookup smj-gen.hfst 
+ja+CC	@#@ja@#@
+ja+CC	@#@ja
+ja+CC	ja@#@
+ja+CC	ja
+
+Sjur-si-proffbok:gt sjur$ echo "ja+CC" | hfst-lookup smj/bin/smj-gen.hfst 
+ja+CC	ja
+}}}
+
+Yes, this was a bug, but it is fixed. Make sure everything is the latest version,
+including the transducer (recompile if needed).
+
+{{{
+Buorre+A+Sg+Nom	Buorre+A+Sg+Nom	+?
+
+liehket+V+Ind+Prt+Sg3	liehket+V+Ind+Prt+Sg3	+?
+
+gå+CS	gå@#@
+gå+CS	gå
+gå+CS	@#@gå@#@
+gå+CS	@#@gå
+
+boahtet+V+Ind+Prt+Sg2	boahtet+V+Ind+Prt+Sg2	+?
+
+Sjur-si-proffbok:gt sjur$ echo "boahtet+V+IV+Ind+Prt+Sg2" | hfst-lookup smj/bin/smj-gen.hfst 
+boahtet+V+IV+Ind+Prt+Sg2	båhti
+
+.+sent	.+sent	+?
+
+.+sent$	.+sent$	+?
+}}}
+
+HFST installation issues:
+* Trond
+* Thomas via Børre
+
+To check out from svn:
+{{{
+svn co https://hfst.svn.sourceforge.net/svnroot/hfst/trunk hfstsvn
+}}}
+
+Remove all old Fink (/sw/) and MacPorts (/opt/) installations, then compile under Snow Leopard.
+
+!!General list
+
 To accomodate future enhancements in different directions (in rough order of
 importance):
 
@@ -301,6 +365,7 @@ importance):
 
 __TODO:__
 * install the HFST tools (__Børre, Tomi__)
+** done
 ** usage: {{make h[w]fst TARGET=xxx}}
 ** fao: {{make hfst}}
 * upgrade the XServe to Snow Leopard Server (__Børre__)
@@ -324,6 +389,15 @@ __TODO:__
 
 !!!Linguistics
 
+!!Giellatekno usage evaluation
+
+Trond is presenting. Inspiring data:)
+
+Comments:
+* word form generation isn't possible to use unless you know the tags used as input
+* no colours for syntax analysis
+* we should redirect users who want MT or English analyses to appropriate sites
+
 !!North Sámi
 
 (nothing new, see proofing bugs below)
@@ -334,11 +408,10 @@ __TODO:__
 
 !!South Sámi
 
-__Maja__ really need some feedback on the SGM texts. A meeting this week?
-
 __TODO:__
 * Prepare text´s about normativity issue to SGL/SGM (__Maja, Thomas__)
 ** meeting Tuesday 9:30 (__Maja, Sjur, Thomas__)
+*** done, a bit delayed
 * adjectives (__Maja__ with __Thomas, Trond, Sjur__)
 ** two competing naming conventions of continuation lexicons
 *** One naming goes ATTRSUFF-PREDSUFF-STEMTYPE
@@ -400,7 +473,12 @@ __TODO:__
 
 !!Dictionaries
 
+The lexicography workshop was a great success. We should sum it all up, and 
+improve what can be improved. Also, computer illiteracy is a problem.
+
 __TODO:__
+* meeting to sum up experiences after the lexicography seminar, Tuesday
+  (__Børre, Ciprian, Lene, Sjur, Trond__)
 * set up risten.no on eXist/XServe (as a beta version site) (__Sjur__)
 * set up required infra for smenob on risten.no/XServe (__Sjur__)
 * Continue the dictionary infrastructure discussion (__Ciprian, Sjur, Trond__)
@@ -448,6 +526,16 @@ __TODO:__
 * fix sma installer bugs (__Sjur__)
 
 !!HFST-based proofing tools
+
+[Voikko|voikko.sf.net] will be our near future proofing solution, using HFST as
+the language technology core.
+
+Please join the [libvoikko|http://lists.puimula.org/listinfo/libvoikko] mailing list.
+
+One article linked:
+
+[http://voikko.svn.sourceforge.net/viewvc/voikko/trunk/libvoikko/doc/morphological-analysis.txt]
+
 
 __TODO:__
 * continue to write an API specification, and an implementation specification
@@ -654,17 +742,16 @@ __TODO:__
 
 !!!Next meeting, closing
 
-The next meeting is 16.11.2009, 9.30 Norwegian time.
+The next meeting is 30.11.2009, 9.30 Norwegian time.
 
-The meeting was closed at 11:00.
+The meeting was closed at 13:37.
 
 !!!Appendix - task lists for the next week
 
 !!Boerre
-[iCal|/doc/admin/weekly/2009/Tasks_2009-11-09_Boerre.ics]
-* install the HFST tools
+[iCal|/doc/admin/weekly/2009/Tasks_2009-11-23_Boerre.ics]
+* meeting to sum up experiences after the lexicography seminar, Tuesday
 * set up Maja's old computer with Boot Camp or some virtualization software
-* order scanners (one book and one flatbed with sheet feeder)
 * implement language switch for static divvun site
 * upgrade the XServe to Snow Leopard Server
 * improve XSL script to transform leaflet Forrest XDocs to an OOo Draw document
@@ -673,7 +760,10 @@ The meeting was closed at 11:00.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Ciprian
-[iCal|/doc/admin/weekly/2009/Tasks_2009-11-09_Ciprian.ics]
+[iCal|/doc/admin/weekly/2009/Tasks_2009-11-23_Ciprian.ics]
+* Linearization workshop in Berlin 2010 (deadline is end of Novermber):
+** priority -- very high: deliver the official version of the abstract in .txt
+  or .doc format
 * MT - Autshumato:
 ** test Autshumato Alpha version on Windows using Launcher
 ** make Autshumato run on Mac
@@ -686,18 +776,26 @@ The meeting was closed at 11:00.
 * GT web:
 ** coloring output of the disambiguation
 ** add a tree visualizer for the dependency trees
+** add input help for special characters on the tool sites
+** automatize the web statistics
+** filter (English, German, etc.) input using language detection tools
+** put a note on the sites that these are NOT MT tools
+** input help for generating wordforms (dropdown menus).
 * Bodø Oahpa:
 ** generalize for semantic classes and pos
 ** implement a login mechanism
-** implement a upload data mechanism
+** implement an upload data mechanism
 ** setup the Bodø version on victorio
 * Sandbox Oahpa:
 ** finish the db installation for sb_oahpa
-** implement and test the Finnish lemmata (and if it works transfer it to the official OAHPA implementation)
+** implement and test the Finnish lemmata (and if it works transfer it to the
+   official OAHPA implementation)
+* Numra for Skolt Sámi and Finnish
 * Running Oahpa:
 ** add an Oahpa clock and date excercise (cf. Numra)
 ** Generate fin/xml/{nouns|verbs|adjectives}.xml, and implement the new Leksa
    dropdown menu (but first run the sb_oahpa test)
+** email notification when the server goes down
 * KomEngFin:
 ** split by pos and transform the actual format into gt_dict format
 ** compile only one version of dictionary and use css for user preferences
@@ -712,8 +810,6 @@ The meeting was closed at 11:00.
 ** extend the smanobswe dictionary
 ** check all bug in the sma:nob-swe dictionary
 ** fix the bug with the string length in the popup window (sma:nob)
-* SmjNob:
-** start working at a Lule-Sami based on Bruce Moren's data
 * SjdRus:
 ** continue the work at the Kildin-Russian dictionary, next internal deadline is
    the lexicography workshop in November 2009 in Tromsø
@@ -721,22 +817,25 @@ The meeting was closed at 11:00.
 ** check the processing of new corpus documents (error logging during
    conversion, conversion quality, documentation, etc.)
 * Lexicon workshop
-** finish the preparation of the teaching materials
-** prepare the talk for the workshop
+** meeting to sum up experiences after the lexicography seminar, Tuesday
+** evaluate the participants' materials
+** write feedback emails to each of participant with an individual electronic
+   dictionary
+** contact people that might be willing to share data with us (Kimberly
+   Makarainen, Bruce Moren)
 
 !!Maja
-[iCal|/doc/admin/weekly/2009/Tasks_2009-11-09_Maja.ics]
+[iCal|/doc/admin/weekly/2009/Tasks_2009-11-23_Maja.ics]
 * SGM letter meeting Tuesday 9:30 with __Sjur, Thomas__
 * work meeting on loan words and proper nouns
 * Prepare text´s about normativity issue to SGL/SGM
 * more work on {{sma}} adjectives
-* contact Turi Aleksandersen about book signature follow-up from Joseph
 * contact authors of {{sma}} aticles in 9-10 eds. of the yearbook
   ''Åarjel-saemieh''
 
 !!Sjur
-[iCal|/doc/admin/weekly/2009/Tasks_2009-11-09_Sjur.ics]
-* SGM letter meeting Tuesday 9:30 with __Maja, Thomas__
+[iCal|/doc/admin/weekly/2009/Tasks_2009-11-23_Sjur.ics]
+* meeting to sum up experiences after the lexicography seminar, Tuesday
 * difftest for fst and PL speller
 * fix the {{sma}} installer build issues
 * @Barents: plan a meeting/seminar with potential cooperation partners
@@ -757,15 +856,12 @@ The meeting was closed at 11:00.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Thomas
-* SGM letter meeting Tuesday 9:30 with __Maja, Sjur__
-* work meeting on loan words and proper nouns
 * prepare text´s about normativity issue to SGL/SGM
 * {{sma}} adjectives
 * Digitalize south saami books
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Tomi
-* install the HFST tools
 * document how compounding is controlled in the PLX conversion
 * fix double hyphen bugs
 * fix PL {{smj}} hyphenator bug
@@ -773,9 +869,12 @@ The meeting was closed at 11:00.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Trond
-[iCal|/doc/admin/weekly/2009/Tasks_2009-11-09_Trond.ics]
-* work meeting on loan words and proper nouns
+[iCal|/doc/admin/weekly/2009/Tasks_2009-11-23_Trond.ics]
+* meeting to sum up experiences after the lexicography seminar, Tuesday
+* Komi sorting
+* sma evaluation
+* Basic numbers for fin and sms for Numra
 * Mikogo for Lene and Linda
 * clock and date for Numra
-* Kildin Sámi Keyboard for Windows
+* hfst installation
 * [fix bugs!|http://giellatekno.uit.no/bugzilla].
