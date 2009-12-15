@@ -1,6 +1,6 @@
 !!!Meeting setup
 
-* Date: 14.12.2009
+* Date: 21.12.2009
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat
@@ -31,25 +31,19 @@ Agenda accepted as is.
 * {{gt/Makefile}} remake
 * get translations of thank-you letter
 * install vislcg3 and hfst on __Majas__ and __Thomas'__ computers
-** __Thomas__ has hfst now
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-* other:
-** Fetched files from [http://klemetti.blogspot.com], added them to the corpus
-** __Harald Gaski__ signed the contracts
 
 !!Ciprian
+* discuss and decide upon tag format
 * MT - Autshumato:
-** test Autshumato ITE Beta version on Windows using Launcher
-*** todo (now, other tests are required, if at all, after the information we got
-    from the developers)
+** test Autshumato ITE Beta version on Windows
 * eXist:
 ** make eXist running with the SLT-DB
-*** todo
 * infrastructure
 ** make a schema/dtd description of the lexC-file (experiment with
   Komi and Romanian)
 ** transform sme-lexC files into XML format
-*** todo
+** restructure and clean the script catalogue as suggested in the newsgroup
 * GT web:
 ** coloring output of the disambiguation
 ** add a tree visualizer for the dependency trees
@@ -58,99 +52,70 @@ Agenda accepted as is.
 ** filter (English, German, etc.) input using language detection tools
 ** put a note on the sites that these are NOT MT tools
 ** input help for generating wordforms (dropdown menus).
-*** todo
 * Bodø Oahpa:
 ** generalize for semantic classes and pos
 ** implement a login mechanism
 ** implement an upload data mechanism
 ** setup the Bodø version on victorio
-*** todo
 * Sandbox Oahpa:
 ** finish the db installation for sb_oahpa
 ** implement and test the Finnish lemmata (and if it works transfer it to the
    official OAHPA implementation)
 ** Numra for Skolt Sámi and Finnish
-*** todo
 * Running Oahpa:
 ** add an Oahpa clock and date excercise (cf. Numra)
 ** Generate fin/xml/{nouns|verbs|adjectives}.xml, and implement the new Leksa
    dropdown menu (but first run the sb_oahpa test)
 ** email notification when the server goes down
-*** todo
+* dictionaries, generally:
+** synchronize the source language entries from a specific dictionary with the 
+   entries in the morphology component (now especially for sma):
+   that means nothing then put the entries from dict that are NOT analyzed
+   into the lexC files 
 * KomEngFin:
-** short term meeting with __Trond__
-*** done
 ** compile Komi dictionary for Mac
-*** ongoing
-** split by pos and transform the actual format into gt_dict format
-*** done
 ** compile only one version of dictionary and use css for user preferences
-*** todo
 ** generate the first StarDict version of komeng and komfin dictionary
-*** todo
 ** test the automatic sorting by Komi alphabet in xsl (as discussed
    with __Trond__)
-*** todo
 * Kvensk dictionary for Mac
-** internal deadline: mon. 07.12.2009
-*** this deadline would have hold IF the data contained no (or just a few)
-    multiplied entries
+** internal deadline: depending on the status of the multiplied entries
 * SmeNob:
 ** the StarDict on Windows: try the HTML-plugin
-*** todo
 ** try to reduce the dict-size on mac: experiment with xPointer, etc.
-*** todo
 ** incorporate the passives into the last version of the sme:nob
-*** todo
 * SmaNobSwe:
-** transformed Tronds data from Maja-Lisas diploma thesis into mac-specific XML
-   format and, after having tried the program NorrKross (got from Ove Lorentz)
-** extend the smanobswe dictionary
-*** at the moment, busy with getting rid of the hundreds of multiplied entries
+** finnish the cleaning up of multiplied entries
+** extend the smanobswe dictionary (incorporate the data from Maja-Lisa)
 ** check all bug in the sma:nob-swe dictionary
-*** ongoing
 ** fix the bug with the string length in the popup window (sma:nob)
-*** todo
 * SjdRus:
 ** continue the work at the Kildin-Russian dictionary, next internal deadline is
    the Bodø workshop in March 2010
-*** todo 
 * Corpus:
 ** check the processing of new corpus documents (error logging during
    conversion, conversion quality, documentation, etc.)
-*** todo
 * Lexicon workshop
 ** evaluate the participants' materials
-*** ongoing
 ** write feedback emails to each of participant with an individual electronic
    dictionary
-*** ongoing
-** contact people that might be willing to share data with us (Kimberly
-   Mäkäräinen, Bruce Moren again)
-*** done with Bruse: Kimberliy still todo
+** contact Kimberly Mäkäräinen and ask whether she might be willing to share
+   data with us
 
 !!Maja
+* discuss and decide upon tag format
 * SGM letter meeting Tuesday 9:30 with __Sjur, Thomas__
-** Not done
 * work meeting on loan words and proper nouns
-** Not done
 * Prepare text´s about normativity issue to SGL/SGM
-** ongoing
 * more work on {{sma}} adjectives
-** Not done 
 * contact authors of {{sma}} aticles in 9-10 eds. of the yearbook
   ''Åarjel-saemieh''
-** Not done
-* Sma-Nob
-** started to work with smadict
-* Bugzilla
-** Started some work here
+* correct Sma-Nob entries, add missing words to the analyzer lexicon
+* [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Sjur
+* discuss and decide upon tag format
 * difftest for fst and PL speller
-** no difftest yet
-* fix the {{sma}} installer build issues
-** fixed
 * @Barents: plan a meeting/seminar with potential cooperation partners
 * @Barents: plan for The Real Thing
 * @TTS: start public tender process
@@ -162,82 +127,46 @@ Agenda accepted as is.
 * continue to write a proofing API & implementation specification
 * name db/risten.no
 * follow-up on some Polderland-related bugs: 621, 630, 652
-* support and maintenance contract for {{sme}} and {{smj}}, MS+Adobe tools
-** not valid anymore, Polderland is bankrupt.
 * Sámi languages as part of ''Norsk språkbank''
 * find and contact the correct person in SD, to get the manuscript for all Sámi
   teaching material now being given out to the schools
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-* other things:
-** preparations for SD-dep meeting re permanent organisation
-** {{sma}} work
-** make-file modifications
-** svn repository cleanup
 
 !!Thomas
+* discuss and decide upon tag format
+* derivation bugs
+* look at buglist and decide whether to close bugs or not
 * look at incoming loanwords
-** incorporated most of these, a south sami has to look at the rest of them 
 * prepare text´s about normativity issue to SGL/SGM
-** nothing this week
-* {{sma}} adjectives
-** nothing this week
 * Digitalize south saami books
-** nothing this week
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** some work done
 
 !!Tomi
+* convert comment etc tags to real lexc tags when the tag discussion is over
 * document how compounding is controlled in the PLX conversion
-** not done
 * fix double hyphen bugs
-** not done
 * fix PL {{smj}} hyphenator bug
-** not done
 * fix PL and Hunspell conversion bugs
-** worked
 * install vislcg3
-** tried to install, but some problem with getting libraries linked
+* sma speller on Friday
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-* other
-** new sma speller compiled
 
 !!Trond
+* discuss and decide upon tag format
 * Komi
 ** Automaton work
-*** Done a lot. Automaton now compiling, and the number of
-    stupid End lexica is shrinking. Still much to do, but the
-    goal now is to at least let the automaton match the dict.
-** short term meeting with __Ciprian__
-*** Done.
 ** sorting
-*** Not done.
-* sma evaluation
-** Worked a lot on sma. 
 * Oahpa
 ** Basic numbers for sms for Numra
-*** Nope
 ** clock and date for Numra
-*** Nope
 ** Bodø-oahpa (longer-term)
-*** Nope
 * Infrastructure
 ** Mikogo for Lene and Linda
-*** Nope
 ** Make-remake, look at tags
-*** Nope
 * Look at the Kven dictionary before compilation
-** Done much on the Kven dict. Concentrating upon the fkvnob part
-   (with Verena).
 * [fix bugs!|http://giellatekno.uit.no/bugzilla].
-** Much work on Bugzilla: Now have it up and running, and I added products for
-   the sma speller. Down to 3 bugs on my part, but there are 120 open bugs. That
-   is too much, we should close obsolete ones.
 
 !!!Oahpa!
-
-Oahpa! in Swedish - lexicon or interface, or both?
-
-No money from Norgesuniversitetet, unfortunately.
 
 Meeting memos can be found at
 [http://giellatekno.uit.no/ped/index.html#Meeting+memos]
@@ -254,10 +183,6 @@ __TODO__
 * email notification when the server goes down (__Ciprian__)
 
 !!!Corpus gathering
-
-__Børre__ has finally got signed contracts from Harald Gaski - in Alta:). Also
-added texts from [klemetti.blogspot.com]. The sheet-feeder scanner has arrived.
-It works even under Linux:)
 
 __TODO:__
 * Which books are digitized?
@@ -307,20 +232,6 @@ __TODO:__
 
 !!HFST issues
 
-Sjur had discussions with Krister Linden on friday, KL working towards version
-hfst-3. The previous versions as follows: hfst-1 = a working version, hfst-2 =
-portable to other platforms. hfst-3 is planned jan 1st-ish. The main focus of
-hfst-3: abstraction and redesign in order to facilitate support for new
-transducer formalisms. Examples: support FOMA and/or other transducer formats.
-The point is to see hfst as an umbrella library framwork, where different
-compilers and libraries can be plugged in. This will give bigger flexibility.
-Hfst-3 will also be focusing upon speed. After this part (jan 1st) the focus
-will be upon implementing applications, e.g. spell checking
-
-HFST installation issues:
-* Thomas, Maja via Børre
-** Thomas has hfst
-
 To check out from svn:
 {{{
 svn co https://hfst.svn.sourceforge.net/svnroot/hfst/trunk hfstsvn
@@ -329,14 +240,16 @@ svn co https://hfst.svn.sourceforge.net/svnroot/hfst/trunk hfstsvn
 Remove all old Fink (/sw/) and MacPorts (/opt/) installations, then compile
 under Snow Leopard.
 
+__TODO:__
+* install HFST for Maja (__Børre__)
+
 !!VislCG 3
 
 Everyone should have this one installed as well.
 
-Missing installations:
-* Tomi
-* Thomas (__Børre__)
-* Maja (__Børre__)
+__TODO:__
+* install VislCG3 (__Tomi__)
+* install VislCG3 for Maja and Thomas (__Børre__)
 
 !!Makefile + tag simplification
 
@@ -416,10 +329,7 @@ importance):
   groups
 
 __TODO:__
-* install the HFST tools (__Børre__)
-** Thomas done, Maja left
 * upgrade the XServe to Snow Leopard Server (__Børre__)
-** software now in Tromsø
 * ask Lene, Linda to install Mikogo (__Trond__)
 * restructure and clean the script catalogue, using subdirs to categorise the
   scripts (__Ciprian__)
@@ -810,7 +720,7 @@ UiT: all days in between are half days.
 
 !!!Next meeting, closing
 
-The next meeting is 21.12.2009, 9.30 Norwegian time.
+The next meeting is 28.12.2009, 9.30 Norwegian time.
 
 The meeting was closed at 12:08.
 
