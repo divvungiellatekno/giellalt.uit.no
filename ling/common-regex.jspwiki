@@ -1,0 +1,54 @@
+!!!Utility regexes found in gt/common/src
+
+The following is the beginning of documentation of the different utility regexes found in {{$GTHOME/gt/common/src/}}. To be extended as more is found.
+
+{{{
+# In order to make pos.fst we need a binary tag-pos.fst
+# This goal depends on tag-pos.regex. The way it
+# is done is that all tags except the POS one are deleted.
+
+tag-pos.fst
+
+
+# We want to delete the +TV +IV tags for the generator (and other
+# tags later on. For that we need our tag-deleter.
+tag-not-save.fst
+
+
+hyphen-convert.fst
+
+
+hyphen-remove.fst
+
+
+tag-inclusion-filter.fst
+
+# In order to make n-$(TARGET).fst we need a binary tag-no.fst
+# This goal depends on tag-no.regex
+
+tag-no.fst: common/bin/tag-no.fst
+common/bin/tag-no.fst: common/src/tag-no.regex
+	@echo
+	@echo "*** Building tag-no.fst ***" ;
+	@echo
+	@printf "read regex < $< \n\
+	save stack $@ \n\
+	quit \n" > tmp/tag-no-script-$(TARGET)
+	$(XFST) < tmp/tag-no-script-$(TARGET)
+	@rm -f tmp/tag-no-script-$(TARGET)
+
+# This goal is to make a regex for filenames, urls and mail addresses
+webadr: webadr.fst
+webadr.fst: common/bin/webadr.fst
+common/bin/webadr.fst: common/src/webadr.regex
+	@echo
+	@echo "*** Building webadr.fst ***" ;
+	@echo
+	printf "source $< \n\
+	save stack $@ \n\
+	quit \n" > tmp/webadr-script-$(TARGET)
+	$(XFST) < tmp/webadr-script-$(TARGET)
+	rm -f tmp/webadr-script-$(TARGET)
+
+
+}}}
