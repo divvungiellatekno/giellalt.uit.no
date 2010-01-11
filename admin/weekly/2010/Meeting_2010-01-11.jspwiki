@@ -13,12 +13,12 @@ Cf. one of the following, depending on context:
 
 !!!Opening, agenda review, participants
 
-Opened at 09:47.
+Opened at 11:34.
 
 Present:
-__Børre, Ciprian, Maja, Sjur, Thomas, Tomi, Trond__
+__Børre, Ciprian, Maja, Sjur, Thomas, Tomi__
 
-Absent: __none__
+Absent: __Trond__
 
 Agenda accepted as is.
 
@@ -30,16 +30,19 @@ Agenda accepted as is.
 * {{gt/Makefile}} remake
 * get translations of thank-you letter
 * get Bugzilla and Jabber back on the net
+** set up bugzilla on the test computer
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Ciprian
 * eXist:
 ** make eXist running with the SLT-DB
+*** todo
 * infrastructure
 ** make a schema/dtd description of the lexC-file (experiment with
   Komi and Romanian)
 ** transform sme-lexC files into XML format
 ** restructure and clean the script catalogue as suggested in the newsgroup
+*** todo
 * GT web:
 ** coloring output of the disambiguation
 ** add a tree visualizer for the dependency trees
@@ -48,73 +51,101 @@ Agenda accepted as is.
 ** filter (English, German, etc.) input using language detection tools
 ** put a note on the sites that these are NOT MT tools
 ** input help for generating wordforms (dropdown menus).
+*** todo
 * Bodø Oahpa:
 ** generalize for semantic classes and pos
 ** implement a login mechanism
 ** implement an upload data mechanism
 ** setup the Bodø version on victorio
+*** todo (high priority)
 * Sandbox Oahpa:
 ** finish the db installation for sb_oahpa
 ** implement and test the Finnish lemmata (and if it works transfer it to the
    official OAHPA implementation)
 ** Numra for Skolt Sámi and Finnish
+*** todo
 * Running Oahpa:
 ** add an Oahpa clock and date excercise (cf. Numra)
 ** Generate fin/xml/{nouns|verbs|adjectives}.xml, and implement the new Leksa
    dropdown menu (but first run the sb_oahpa test)
 ** email notification when the server goes down
+*** todo
 * dictionaries, generally:
 ** synchronize the source language entries from a specific dictionary with the 
    entries in the morphology component (now especially for sma):
    that means nothing then put the entries from dict that are NOT analyzed
    into the lexC files 
+*** todo
 * KomEngFin:
 ** compile Komi dictionary for Mac
 ** compile only one version of dictionary and use css for user preferences
 ** generate the first StarDict version of komeng and komfin dictionary
 ** test the automatic sorting by Komi alphabet in xsl (as discussed
    with __Trond__)
+*** todo
 * Kvensk dictionary for Mac
 ** internal deadline: depending on the status of the multiplied entries
+*** todo
 * SmeNob:
 ** the StarDict on Windows: try the HTML-plugin
 ** try to reduce the dict-size on mac: experiment with xPointer, etc.
 ** incorporate the passives into the last version of the sme:nob
+*** todo
 * SmaNobSwe:
 ** extend the smanobswe dictionary: waiting for data (incorporate the data from Maja-Lisa)
 ** fix the bug with the string length in the popup window (sma:nob)
+*** working intensively with smanob: 
+*** implemented dash generation (still to test in the last transformation steps)
+*** corrected references for all pronouns, negation verbs and copula verbs
+*** filtered over-generation of double forms
+*** restarting generation with the new features
+*** still todo: spellrelax feature, pos too long in popup window
 * SjdRus:
 ** continue the work at the Kildin-Russian dictionary, next internal deadline is
    the Bodø workshop in March 2010
+*** todo
 * Corpus:
 ** check the processing of new corpus documents (error logging during
    conversion, conversion quality, documentation, etc.)
+*** todo
 * Lexicon workshop
 ** evaluate the participants' materials
 ** write feedback emails to each of participant with an individual electronic
    dictionary
 ** contact Kimberly Mäkäräinen and ask whether she might be willing to share
    data with us
+*** ongoing (high priority)
 
 !!Maja
 * discuss and decide upon tag format
+** todo
 * Prepare text´s about normativity issue to SGL/SGM
+** todo
 * more work on {{sma}} adjectives
+** todo
 * contact authors of {{sma}} aticles in 9-10 eds. of the yearbook
   ''Åarjel-saemieh''
+** todo
 * correct Sma-Nob entries, cf separate list under ''Dictionaries'' above
+** done for some files
 * look at incoming loanwords
+** todo
 * make a google-mail account
+** done
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
+** todo
 
 !!Sjur
 * discuss and decide upon tag format
+** no further comments in the news group - the discussion is closed. Next step
+   is Tomi's
 * difftest for fst and PL speller
 * @Barents: plan a meeting/seminar with potential cooperation partners
 * @Barents: plan for The Real Thing
 * @TTS: start public tender process
 * make __Leif Åge__ send out CD's to distribution points
 * start Nordplus Sprog project
+** some work on infrastructure things
 * send eXist log files to __Ciprian__
 * Write a formal letter to ''Davvi girji'' about electronic dictionaries
 * make XSL script to transform leaflet Forrest XDocs to an OOo Drawer document
@@ -124,22 +155,43 @@ Agenda accepted as is.
 * find and contact the correct person in SD, to get the manuscript for all Sámi
   teaching material now being given out to the schools
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* other things:
+** made {{kal}} foma compatible, and fixed a show-stopper bug
+** reading up on CMake
+** added proper support for hyphenation in the {{sma}} transducer
+** put together a very rough, partially manual Windows installer, based on the
+   NSIS installer made by Polderland last spring
+** further cleaning of the {{gt/Makefile}} - reduced the file size by ~500 lines
+** renamed the case handling regexes as part of the make file cleanup
+** experimenting with new build infrastructure for building proofing tools
 
 !!Thomas
 * make south saami numeral generator
+** done
 * discuss and decide upon tag format
+** not yet
 * prepare text´s about normativity issue to SGL/SGM
+** nothing this week
 * Digitalize south saami books
+** worked
 * add compound tags for {{sma}}
+** not yet
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
+** nothing this week
 
 !!Tomi
 * convert comment etc tags to real lexc tags when the tag discussion is over
+** started
 * document how compounding is controlled in the PLX conversion
+** not done
 * fix double hyphen bugs
+** not done
 * fix PL {{smj}} hyphenator bug
+** not done
 * fix PL conversion bugs
+** not done
 * install vislcg3
+** done
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Trond
@@ -167,6 +219,10 @@ __TODO__
 * email notification when the server goes down (__Ciprian__)
 
 !!!Corpus gathering
+
+OCR results with the new scanners are not too impressive. __Thomas__ will try to
+learn more on how to improve the quality, if not we'll look for alternative OCR
+software.
 
 Which books are digitized?
 * These books should be OCR'ed/digitized: Anna Jacobsens books
@@ -223,14 +279,24 @@ Everyone should have this one installed as well.
 __TODO:__
 * install VislCG3 (__Tomi__)
 ** try using the ICU package from MacPorts
+*** done; new version of MacPorts solved it (probably a 32/64 bit issue)
 
 !!Makefile + tag simplification
 
 See newsgroup postings.
 
 __TODO:__
-* discuss and decide upon tag format (__linguists__)
-* convert comment tags to real lexc tags when the discussion is over (__Tomi__)
+# discuss and decide upon tag format (__linguists__)
+## discussion closed - the last suggestion will be used
+# convert comment tags to real lexc tags when the discussion is over (__Tomi__)
+# adjust gt/Makefile to grep on the new tags such that the old make targets work
+  (__Tomi__)
+# add the new tags to the tags-not-save.regex file (this will remove them from
+  the regular analyzer) => the transducers and their output should be identical
+  to the earlier versions (__Tomi__)
+# write new build commands (__Sjur, Tomi__)
+# when the new build infrastructure works as it should, delete the old ones
+   (__Sjur, Tomi__)
 
 !!General list
 
@@ -262,8 +328,10 @@ importance):
 
 __TODO:__
 * get Bugzilla and Jabber back on the net (__Børre__)
+** working on it using a test machine to try out different solutions
 * consider making a GMail account for use as Jabber alternative
   (__Maja, Lene, Linda__)
+** Maja is done
 * ask Lene, Linda to install Mikogo (__Trond__)
 * restructure and clean the {{script/}} directory, using subdirs to categorise
   the scripts (__Ciprian__)
@@ -276,13 +344,17 @@ __TODO:__
 *** [SCons|http://www.scons.org/]
 *** [makepp|http://makepp.sourceforge.net/]
 *** [Maven|http://maven.apache.org/] (for java-projects)
-*** [CMake|http://www.cmake.org/]
+*** [CMake|http://www.cmake.org/] - __Sjur__ looked at it, and have started to
+    experiment
 * make a test-all target that runs all tests we have (__Ciprian, Sjur, Trond__)
 ** delayed until we have restructured the make/build process
 * define and document testing routines (__Ciprian, Sjur, Trond__)
 ** delayed until we have restructured the make/build process
 
 !!!Linguistics
+
+Hyphenation of loan words: __Thomas__ would like to have a meeting about this
+with __Maja, Trond, Lene__. He will send an e-mail about it.
 
 !!North Sámi
 
@@ -300,31 +372,14 @@ Numerals:
 * Tronds interpretation: Bergsland and Spiik do not reflect the norm, but a
   pedagogical convention to make it easier for readers to understand
 * Linguistically, joined writing is correct (ref: TO, the native southerner)
+** done
 
 Classification of pronouns etc:
 # personal: manne "I", dïhte "he/she/it"
 # demonstrative: daate "this one"
 # determiner: daennie gåetesne "to that house"
 
-Personal vs demonstrative:
-* dihte Pron Pers
-* dihte Pron Dem
-* Given that "dihte maana" is out, the analysis should be +Pron+Pers and
-  not +Det.
-* We do not want to disambiguate persons and things as referents,
-  therefore we do not want two analyses +Pron+Pers and +Pron+Dem.
-
-Anna Jacobsen:
-Dihte Kovlasaemiej åvtohke
-
-Demonstrative vs. determiners
-* daate "påpekende pronomen" demonstrative
-* gen: daen
-* ine: daesnie (Trond: pronoun, sma.fst: +Pron+Dem)
-* ine: daennie gåetesne (Trond: determiner, +Det) (sme: Gen)
-
-Here, we should have two paradigms, one pronominal +Pron+Dem, and one
-+Det, disambuguating to pre-nominal use.
+This was discussed, and the issue is clarified.
 
 Three types of problem areas:
 * missing closed POSes: errors in transducer, or in PL conversion
@@ -410,8 +465,8 @@ __TODO:__
    we are able to analyze everything from the dictonary (__Cip__: this should be 
    valuable for ALL dictionaries)
 ** __Maja__ priority list, in the following order:
-*** pronouns
-*** negation verb
+*** pronouns - done
+*** negation verb - not yet
 *** copula
 *** other closed POS'es?
 *** translations of examples
@@ -454,31 +509,20 @@ __TODO:__
 * Pick a text for proofreading (__Thomas__)
 * Proofread a text with tre eror$error notation (__Maja__)
 * difftest for fst and PL speller (__Sjur__)
-* Compile a new version by Friday (__Tomi__)
-** {{cd $GTHOME/prooftools/; sudo make mac-dmg}}
-* Look for external beta testers?
-** David and Jovsset will get the speller, for other people
-   we must wait.
+* External beta testers:
+** David
+** Jovsset
+** the Røros group
 * fix the installer build issues (__Sjur__)
+** done earlier
 * correct easter egg to say "South Sámi", not "North Sámi" (__Sjur__)
+** done earlier
 * fix sma installer bugs (__Sjur__)
+** done earlier
 
 !!HFST-based proofing tools
 
-[Voikko|voikko.sf.net] will be our near future proofing solution, using HFST as
-the language technology core.
-
-Please join the [libvoikko|http://lists.puimula.org/listinfo/libvoikko] mailing
-list.
-
-One article linked:
-
-[http://voikko.svn.sourceforge.net/viewvc/voikko/trunk/libvoikko/doc/morphological-analysis.txt]
-
-
-__TODO:__
-* continue to write an API specification, and an implementation specification
-  (__Sjur__)
+The work with Voikko+HFST is slowly moving forward.
 
 !!Testing
 
@@ -676,14 +720,12 @@ __TODO:__
 
 The next meeting is 18.1.2010, 9.30 Norwegian time.
 
-Trond will be in Røros.
-
-The meeting was closed at 10:48.
+The meeting was closed at 12:36.
 
 !!!Appendix - task lists for the next week
 
 !!Boerre
-[iCal|/doc/admin/weekly/2009/Tasks_2010-01-11_Boerre.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-01-11_Boerre.ics]
 * implement language switch for static divvun site
 * improve XSL script to transform leaflet Forrest XDocs to an OOo Draw document
 * {{gt/Makefile}} remake
@@ -692,7 +734,7 @@ The meeting was closed at 10:48.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Ciprian
-[iCal|/doc/admin/weekly/2009/Tasks_2010-01-11_Ciprian.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-01-11_Ciprian.ics]
 * eXist:
 ** make eXist running with the SLT-DB
 * infrastructure
@@ -743,6 +785,7 @@ The meeting was closed at 10:48.
 * SmaNobSwe:
 ** extend the smanobswe dictionary: waiting for data (incorporate the data from Maja-Lisa)
 ** fix the bug with the string length in the popup window (sma:nob)
+** implementing the spellrelax feature (i.e., spelling variant for ø,å, etc.)
 * SjdRus:
 ** continue the work at the Kildin-Russian dictionary, next internal deadline is
    the Bodø workshop in March 2010
@@ -757,19 +800,23 @@ The meeting was closed at 10:48.
    data with us
 
 !!Maja
-[iCal|/doc/admin/weekly/2009/Tasks_2010-01-11_Maja.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-01-11_Maja.ics]
 * discuss and decide upon tag format
 * Prepare text´s about normativity issue to SGL/SGM
 * more work on {{sma}} adjectives
 * contact authors of {{sma}} aticles in 9-10 eds. of the yearbook
   ''Åarjel-saemieh''
-* correct Sma-Nob entries, cf separate list under ''Dictionaries'' above
+* correct Sma-Nob entries
+** negation verb
+** copula
+** other closed POS'es?
+** translations of examples
 * look at incoming loanwords
-* make a google-mail account
+* make a goldstandard doc. av SÄPO-dok - korrektur 
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Sjur
-[iCal|/doc/admin/weekly/2009/Tasks_2010-01-11_Sjur.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-01-11_Sjur.ics]
 * discuss and decide upon tag format
 * difftest for fst and PL speller
 * @Barents: plan a meeting/seminar with potential cooperation partners
@@ -785,10 +832,12 @@ The meeting was closed at 10:48.
 * Sámi languages as part of ''Norsk språkbank''
 * find and contact the correct person in SD, to get the manuscript for all Sámi
   teaching material now being given out to the schools
+* write new build commands for make
+* when the new build infrastructure works as it should, delete the old ones
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Thomas
-* make south saami numeral generator
+* suggest a meeting on hyphenation in loan words with __Majja, Trond, Lene__
 * discuss and decide upon tag format
 * prepare text´s about normativity issue to SGL/SGM
 * Digitalize south saami books
@@ -797,15 +846,20 @@ The meeting was closed at 10:48.
 
 !!Tomi
 * convert comment etc tags to real lexc tags when the tag discussion is over
+* adjust gt/Makefile to grep on the new tags such that the old make targets work
+* add the new tags to the tags-not-save.regex file (this will remove them from
+  the regular analyzer) => the transducers and their output should be identical
+  to the earlier versions
+* write new build commands
+* when the new build infrastructure works as it should, delete the old ones
 * document how compounding is controlled in the PLX conversion
 * fix double hyphen bugs
 * fix PL {{smj}} hyphenator bug
 * fix PL conversion bugs
-* install vislcg3
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Trond
-[iCal|/doc/admin/weekly/2009/Tasks_2010-01-11_Trond.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-01-11_Trond.ics]
 * discuss and decide upon tag format
 * Infrastructure
 ** Mikogo for Lene and Linda
