@@ -1,6 +1,6 @@
 !!!Meeting setup
 
-* Date: 8.2.2010
+* Date: 15.2.2010
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat
@@ -25,28 +25,22 @@ Agenda accepted as is.
 !!!Updated task status since last meeting
 
 !!Børre
+* Jabber server and group chats: user name issues + lost chat history
 * implement language switch for static divvun site
 * improve XSL script to transform leaflet Forrest XDocs to an OOo Draw document
 * {{gt/Makefile}} remake
 * get translations of thank-you letter
 * make the new SL Server services functional:
 ** Wiki, group calendars
-* install missing tools on the XServe:
-** forrest
-*** installed
 * set up corpus mirroring on the XServe again
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Ciprian
-* eXist:
-** make eXist running with the SLT-DB
-*** todo
 * infrastructure
 ** make a schema/dtd description of the lexC-file (experiment with
   Komi and Romanian)
 ** transform sme-lexC files into XML format
 ** restructure and clean the script catalogue as suggested in the newsgroup
-*** todo
 * GT web:
 ** colouring output of the disambiguation
 ** add a tree visualizer for the dependency trees
@@ -55,53 +49,43 @@ Agenda accepted as is.
 ** filter (English, German, etc.) input using language detection tools
 ** put a note on the sites that these are NOT MT tools
 ** input help for generating wordforms (dropdown menus).
-*** todo
 * Bodø Oahpa:
 ** generalise for semantic classes and pos
 ** implement a login mechanism
 ** implement an upload data mechanism
 ** setup the Bodø version on victorio
-*** ongoing: high priority
 * Sandbox Oahpa:
 ** implement and test the Finnish lemmata (and if it works transfer it to the
    official OAHPA implementation: very important for the Bodø experiment)
 ** Numra for Skolt Sámi and Finnish
 ** finish the db installation for sb_oahpa
-*** todo
 * Running Oahpa:
 ** add an Oahpa clock and date excercise (cf. Numra)
 ** Generate fin/xml/{nouns|verbs|adjectives}.xml, and implement the new Leksa
    dropdown menu (but first run the sb_oahpa test)
 ** email notification when the server goes down
-*** todo
 * dictionaries, generally:
 ** synchronize the source language entries from a specific dictionary with the 
    entries in the morphology component (now especially for sma):
    that means nothing then put the entries from dict that are NOT analyzed
    into the lexC files
-*** todo
+** the StarDict on Windows: try the HTML-plugin (that means that users can use StarDict 3.2)
+** try to reduce the dict-size on mac: experiment with xPointer, etc.
 * KomEngFin:
 ** generate the first StarDict version of komeng and komfin dictionary
 ** test the automatic sorting by Komi alphabet in xsl (as discussed
    with __Trond__)
-*** todo
 * SmeNob:
-** the StarDict on Windows: try the HTML-plugin
-** try to reduce the dict-size on mac: experiment with xPointer, etc.
 ** incorporate the passives into the last version of the sme:nob
-*** todo
 * SmaNobSwe:
-** implemented all features for both Mac and StarDict
 ** extend the smanobswe dictionary: waiting for data (incorporate the data from
-   Maja-Lisa)... still waiting for data from Maja-Lisa, still waiting for testing results
+   Maja-Lisa)
 * SjdRus:
 ** continue the work at the Kildin-Russian dictionary, next internal deadline is
    the Bodø workshop in March 2010
-*** todo
 * Corpus:
 ** check the processing of new corpus documents (error logging during
    conversion, conversion quality, documentation, etc.)
-*** todo
 * Lexicon workshop
 ** evaluate the participants' materials
 ** write feedback emails to each of participant with an individual electronic
@@ -110,43 +94,21 @@ Agenda accepted as is.
    data with us
 * Linearization workshop
 ** make slides for the GfDS conference in Berlin
-*** ongoing: high priority
 
 !!Maja
 * Prepare text´s about normativity issue to SGL/SGM
-** todo
 * more work on {{sma}} adjectives
-** todo
 * contact authors of {{sma}} aticles in 9-10 eds. of the yearbook
   ''Åarjel-saemieh''
-** todo
-* correct Sma-Nob entries
-** done
-** other closed POS'es?
-*** done
-** translations of examples
-*** done
 * look at incoming loanwords
-** todo
 * make a goldstandard doc. av SÄPO-dok - korrektur 
-** todo
 * continue gathering {{sma}} corpus texts
-** todo
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** todo
 
 !!Sjur
 * gold standard testing for {{sma}}
-** have been working on the gold standard corpus files and infrastructure. Filed
-   one corpus conversion bug with Saara, which she promised to look into.
-   Haven't heard anything yet.
-** we're still missing the command line speller and hyphenator from Polderland
-   (or the successor to them). I have mailed first the responsible company, and
-   later to my contact person, but I have seen no software as of yet. We need
-   these tools to perform gold standard tests for {{sma}}
 * difftest for fst and PL speller
 * @Barents: plan a meeting/seminar with potential cooperation partners
-** checked one possible location in Finland, got prices.
 * @Barents: plan for The Real Thing
 * @TTS: start public tender process
 * make __Leif Åge__ send out CD's to distribution points
@@ -155,7 +117,6 @@ Agenda accepted as is.
 * Write a formal letter to ''Davvi girji'' about electronic dictionaries
 * make XSL script to transform leaflet Forrest XDocs to an OOo Drawer document
 * name db/risten.no
-** had a look at how to upgrade the official server to use the latest eXist code
 * follow-up on some Polderland-related bugs: 621, 630, 652
 * Sámi languages as part of ''Norsk språkbank''
 * find and contact the correct person in SD, to get the manuscript for all Sámi
@@ -163,66 +124,32 @@ Agenda accepted as is.
 * write new build commands for make
 * when the new build infrastructure works as it should, delete the old ones
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-* other things:
-** press release and web site updates for the __ÅVD__
-** some more experiments with CMake
-** found and reported a minor bug in xfst
 
 !!Thomas
 * work with ^-marking
-** worked
-* discuss and decide upon tag format
-** not done
-*** discussion closed, this task can be removed
 * prepare text´s about normativity issue to SGL/SGM
-** nothing this week
 * Digitalize south saami books
-** worked
 * add compound tags for {{sma}}
-** not yet
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** some work done
 
 !!Tomi
-* compile new spellers on the updated XServe, to make sure everything works
-** done
 * convert comment etc tags to real lexc tags when the tag discussion is over
-** done, but needs to check with __Sjur__(?)
-* adjust gt/Makefile to grep on the new tags such that the old make targets work
-** done (it works without adjustments)
-* add the new tags to the tags-not-save.regex file (this will remove them from
-  the regular analyzer) => the transducers and their output should be identical
-  to the earlier versions
-** done
 * write new build commands
-** todo
 * when the new build infrastructure works as it should, delete the old ones
-** todo
 * document how compounding is controlled in the PLX conversion
-** not done
 * fix double hyphen bugs
-** not done
 * fix PL {{smj}} hyphenator bug
-** not done
 * fix PL conversion bugs
-** worked
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Trond
-* Infrastructure
-** Yes, worked.
-** Mikogo for Lene and Linda
-** No.
-* Look at the Kven dictionary before compilation
-** The Kven dictionary is now compiled, demoed and works nice.
+* Northern areas
+* MT/Terminology
+* Bodø Oahpa
+* Finding a volunteer to translate the sme Leksa lexicon to Swedish
 * [fix bugs!|http://giellatekno.uit.no/bugzilla].
 
 !!!Oahpa!
-
-''Bodø Oahpa!'' is approaching, __Ciprian__ is working hard on it.
-
-We need to make a system for crowdsourcing of our lexical translations.
-We return to that when the wiki service on the XServe is functioning.
 
 Meeting memos can be found at
 [http://giellatekno.uit.no/ped/index.html#Meeting+memos]
@@ -239,10 +166,6 @@ __TODO__
 * Finding a volunteer to translate the sme Leksa lexicon to Swedish (__Trond__)
 
 !!!Corpus gathering
-
-Nothing new this week. __Linda__ would like to have more {{smj}} texts.
-Unfortunately, that can't be a priority right now, but whoever has anything can
-add to the corpus repository via our web interface.
 
 Which books are digitized?
 * These books should be OCR'ed/digitized: Anna Jacobsens books
@@ -333,14 +256,7 @@ __TODO:__
 ** Wiki, group calendars, address book server
 * Jabber server and group chats: user name issues + lost chat history
   (__Børre__)
-* install missing tools on the XServe: (__Børre__)
-** forrest
-*** done
 * set up corpus mirroring on the XServe again (__Børre__)
-* compile new spellers on XServe (__Tomi__)
-** done, working
-* ask Lene, Linda to install Mikogo (__Trond__)
-** not done, we'll do it when needed.
 * restructure and clean the {{script/}} directory, using subdirs to categorise
   the scripts (__Ciprian__)
 ** please act as suggested, cf comments in the news group
@@ -456,44 +372,7 @@ __TODO:__
 
 !!Dictionaries
 
-Everything done: StarDict, MacDict implementation. Our smanob Dictionary ÅVD is
-now released.
-
-Feedback on the online dictionaries
-MacDict: Working
-StarDict:
-
-Documentation, in some raw format, to be checked in.
-
-Acronyms:
-* DVD - Davvisámi Vuosttaš Digisánit
-* ÅVD - Åarjelsaemien Voestes Digibaakoeh
-* VD - Voestes/Vuosttaš Digibaakoeh/-sánit
-
-Test results:
-
-* Trond: Read two web documents both with MacDict and Stardict (Virtual XP). 
-  Both worked well. Checked words from all POS, and did not spot any technical 
-  errors.
-* Trond: Tested StarDict on two Vista machines. Scanning did not work on any of them. 
-  The dictionary window worked on one machine, but was unstable on the other (admittedly,
-  this last computer had an unstable Vista to begin with, and it is not clear
-  to what extent that result is generalisable, or due to that particular machine.
-
 __TODO:__
-* sma:nob-swe
-** ongoing: __Maja-Lisa__ is checking the entries on correctness
-*** done
-** ongoing: __Maja-Lisa__ is translating the missing words from her own diploma
-   thesis into nob
-*** done
-** ongoing: synchronize data from dictionary with that from lexC files so that
-   we are able to analyze everything from the dictonary (__Cip__: this should be 
-   valuable for ALL dictionaries)
-*** done
-** __Maja__ priority list, in the following order:
-*** other closed POS'es? Done
-*** translations of examples. Done
 * fkv:nob and nob:fkv
 * kom:fin-eng
 ** moved the original kom-lex.xml to the inc-dir and froze it
@@ -516,20 +395,10 @@ __TODO:__
 ** take out the doublets to a separate file (__Ciprian__)
 ** merge the doublets (__Jaska, Trond__)
 ** Completing the automaton to some state (__Trond, Jaska, Paula__)
-* compile Komi dictionary (__Cirian__)
-** done
-* compile Kven dictionary (__Cirian__)
-** done
-* correct {{sma:nob}} entries - see list above (__Maja__)
-** done
 
 !!!Proofing tools
 
 !!South Sámi
-
-We haven't received the remaining software pieces from the Polderland
-take-overs, meaning that the Beta version will be delayed. Beta release will be
-3-4 weeks after we receive those tools.
 
 __TODO:__
 * Go through the phonrules file (__Thomas__)
@@ -744,7 +613,7 @@ at the Sámi Parliament.
 
 !!!Next meeting, closing
 
-The next meeting is 15.2.2010, 9.30 Norwegian time.
+The next meeting is 22.2.2010, 9.30 Norwegian time.
 
 The meeting was closed at 11:45.
 
