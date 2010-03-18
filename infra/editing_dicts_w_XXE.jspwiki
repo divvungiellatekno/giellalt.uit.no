@@ -1,0 +1,28 @@
+!!!Using XMLMind XM Editor (XXE) to edit dictionary files
+
+A brief guide.
+
+!!!Preferences
+
+To avoid unneccessary noise in our commits, it is important that we use identical settings for whitespace handling. Choose __Preferences > Save__, and make sure that the following settings are as in the picture below:
+
+* Indent (=3)
+* Max. line length (140)
+* Add open lines (not checked)
+
+[XXE Whitespace settings|xxe-whitespace-settings.png]
+
+This is the basic setup to make things work good enough wrt our svn repository. Open a file and start editing (details below). When done, check in, and the commit will __only__ contain ''your'' changes - no changes in the whitespace of the document.
+
+If you don't have write access to the repository, you can instead [make a patch|http://ariejan.net/2007/07/03/how-to-create-and-apply-a-patch-with-subversion/] and [send it to us|mailto:divvun@samediggi.no].
+
+!!!XXE configuration for dictionary files
+
+If you are going to do more substantial editing, it would probably be helpful to install the XXE configuration for our dictionaries. It is found in your Subversion check-out, in {{$GTHOME/tools/xxe/gtdict-config/}}. To install it on the Mac or *nix systems, just run {{make}} in the parent directory. You can also install it manually on any system supported by XXE (including Windows), by manually copying the directory {{gtdict-config}} to the [XXE addon dir|http://www.xmlmind.com/xmleditor/_distrib/doc/configure/dtd_example.html] (see point 1.1 to get the path to the {{addon}} dir on various systems).
+
+!!!Editing
+
+* adding/changing attribute values
+* adding elements
+* transforming from one element to another
+* splitting an element into two (not really, but almost)
