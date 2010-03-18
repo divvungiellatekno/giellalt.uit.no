@@ -22,7 +22,29 @@ If you are going to do more substantial editing, it would probably be helpful to
 
 !!!Editing
 
+You can do almost all editing using point and click (demo, including showing the xpath path).
+
+But to work efficiently, you should switch to the keyboard. Here are the most important keyboard shortcuts:
+
 * adding/changing attribute values - ⌘E
-* adding elements - ⌘B, ⌘I, ⌘J
+* adding elements:
+** insert __Before__ - ⌘B
+** __Insert__ - ⌘I
+** insert after (j follows i) - ⌘J
 * transforming from one element to another - ⌘T
-* splitting an element into two (not really, but almost) - Esc-⏎
+* splitting an element into two (not really, but almost) - insertion point at splitting point, then ⌘↑ to select parent element, then Esc-⏎
+
+Specific points:
+* inserting new entries will give you a full template
+* inserting mg, tg, xg will also give you the complete subtree (ie all required elements, but only empty attributes)
+* when editing an empty but required attribute, the attribute will be automatically selected - you only have to type the first few characters of the attribute + return
+* splitting elements works only on elements with no required elements (restriction in XXE); this is unfortunate, since the most common splitting will be splitting t (translation) elements into several - which can't be done using the keyboard shortcut mentioned above because t requires @pos.
+
+The dictionary configuration automatically opens two views, one resembling a traditional dictionary article, and another with most elements on a line by itself. These are just ''views'' of the same underlying xml document, which means that changes in one view is immediately visible in the other. The same goes for selections.
+
+It is also possible to open a third view (and a fourth, and fifth) to the right (or top / bottom) e.g. with the regular tree view, but that should normally not be necessary. Most, if not all, tree structure operations can be done without that view, by clicking on the appropriate places, or using command+up arrow.
+
+Clicking the appropriate places means:
+* xpath bar
+* frames
+* generated content such as bullets and numbers in lists, attr. values, etc
