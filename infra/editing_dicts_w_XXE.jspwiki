@@ -7,7 +7,7 @@ A brief guide.
 To avoid unneccessary noise in our commits, it is important that we use identical settings for whitespace handling. Choose __Preferences > Save__, and make sure that the following settings are as in the picture below:
 
 * Indent (=3)
-* Max. line length (140)
+* Max. line length (120)
 * Add open lines (not checked)
 
 [XXE Whitespace settings|xxe-whitespace-settings.png]
@@ -18,7 +18,14 @@ If you don't have write access to the repository, you can instead [make a patch|
 
 !!!XXE configuration for dictionary files
 
-If you are going to do more substantial editing, it would probably be helpful to install the XXE configuration for our dictionaries. It is found in your Subversion check-out, in {{$GTHOME/tools/xxe/gtdict-config/}}. To install it on the Mac or *nix systems, just run {{make}} in the parent directory. You can also install it manually on any system supported by XXE (including Windows), by manually copying the directory {{gtdict-config}} to the [XXE addon dir|http://www.xmlmind.com/xmleditor/_distrib/doc/configure/dtd_example.html] (see point 1.1 to get the path to the {{addon}} dir on various systems).
+If you are going to do more substantial editing, it would probably be helpful to install the XXE configuration for our dictionaries. It is found in your Subversion check-out, in {{$GTHOME/tools/xxe/gtdict-config/}}. To install it on the Mac or *nix systems, just run {{make}} in the parent directory:
+
+{{{
+cd $GTHOME/tools/xxe
+make
+}}}
+
+You can also install it manually on any system supported by XXE (including Windows), by manually copying the directory {{gtdict-config}} to the [XXE addon dir|http://www.xmlmind.com/xmleditor/_distrib/doc/configure/dtd_example.html] (see point 1.1 to get the path to the {{addon}} dir on various systems).
 
 !!!Editing
 
@@ -26,19 +33,19 @@ You can do almost all editing using point and click (demo, including showing the
 
 But to work efficiently, you should switch to the keyboard. Here are the most important keyboard shortcuts:
 
-* adding/changing attribute values - ⌘E
+* adding/changing attribute values - ⌘E / ⌃E
 * adding elements:
-** insert __Before__ - ⌘B
-** __Insert__ - ⌘I
-** insert after (j follows i) - ⌘J
-* transforming from one element to another - ⌘T
-* splitting an element into two (not really, but almost) - insertion point at splitting point, then ⌘↑ to select parent element, then Esc-⏎
+** insert __Before__ - ⌘B / ⌃H (⌘H is reserved on the Mac)
+** __Insert__ - ⌘I / ⌃I
+** insert after (j follows i) - ⌘J / ⌃J
+* transforming from one element to another - ⌘T / ⌃T
+* splitting an element into two (only under certain conditions, see below) - insertion point at splitting point, then ⌘↑ / ⌃↑ to select parent element, then Esc-⏎
 
 Specific points:
 * inserting new entries will give you a full template
 * inserting mg, tg, xg will also give you the complete subtree (ie all required elements, but only empty attributes)
 * when editing an empty but required attribute, the attribute will be automatically selected - you only have to type the first few characters of the attribute + return
-* splitting elements works only on elements with no required elements (restriction in XXE); this is unfortunate, since the most common splitting will be splitting t (translation) elements into several - which can't be done using the keyboard shortcut mentioned above because t requires @pos.
+* splitting elements works only on elements with no required attributes (restriction in XXE); this is unfortunate, since proably the most common operation will be splitting t (translation) elements into several - which can't be done using the keyboard shortcut mentioned above because t requires @pos.
 
 The dictionary configuration automatically opens two views, one resembling a traditional dictionary article, and another with most elements on a line by itself. These are just ''views'' of the same underlying xml document, which means that changes in one view is immediately visible in the other. The same goes for selections.
 
@@ -50,3 +57,12 @@ Clicking the appropriate places means:
 * generated content such as bullets and numbers in lists, attr. values, etc
 
 The official quickstart guide is available at the [xmlmind site|http://www.xmlmind.com/xmleditor/_distrib/doc/help/quickstart.html].
+
+!!!Editing guideline for dictionaries
+
+* use the appropriate tag
+** re = domain restriction
+** t = translation (single words)
+** tf = translation phrase (multiword translations/phrase translations)
+** te = translation explanation
+* always add POS to single words
