@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+    <header>
+	<title>Sami spell checking in Linux</title>
+
+		<authors>
+			<person email="borre.gaup@samediggi.no" name="Børre Gaup" />
+		</authors>
+    </header>
+
+    <body>
+		<section>
+			<title>Sami spell checking in Linux</title>
+			<p>
+				If you install the North and Lule Sami hunspell dictionaries, you can get system wide spelling support for these two languages. This document tells you how to achieve this.
+			</p>
+		</section>
+		
+		<section>
+			<title>Installing and setting up spell checking</title>
+			<section>
+				<title>Install North Sami dictionaries</title>
+
+				<ul>
+					<li>Open a terminal</li>
+					<li>Download the tarball: <code>wget http://divvun.no/static_files/hunspell-se.tar.gz</code></li>
+					<li>Unpack the tarball: <code>tar zxvf hunspell-se.tar.gz</code> </li>
+					<li>Go in to the hunspell-se-&lt;version&gt; directory: <code>cd hunspell-se-&lt;version&gt;</code></li>
+					<li>Install the dictionaries: <code>sudo make install</code></li>
+					<li>To check if the North Sami dictionary is installed, type <code>hunspell -D</code>. In the list that appears, you should see these items:
+						<ul>
+							<li>/usr/share/myspell/dicts/se_FI</li>
+							<li>/usr/share/myspell/dicts/se_NO</li>
+							<li>/usr/share/myspell/dicts/se_SE</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			
+			<section>
+				<title>Install Lule Sami dictionaries</title>
+
+				<ul>
+					<li>Open a terminal</li>
+					<li>Download the tarball: <code>wget http://divvun.no/static_files/hunspell-smj.tar.gz</code></li>
+					<li>Unpack the tarball: <code>tar zxvf hunspell-smj.tar.gz</code> </li>
+					<li>Go in to the hunspell-smj-&lt;version&gt; directory: <code>cd hunspell-smj-&lt;version&gt;</code></li>
+					<li>Install the dictionaries: <code>sudo make install</code></li>
+					<li>To check if the Lule Sami dictionary is installed, type <code>hunspell -D</code>. In the list that appears, you should see these items:
+						<ul>
+							<li>/usr/share/myspell/dicts/smj_NO</li>
+							<li>/usr/share/myspell/dicts/smj_SE</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			
+			<section>
+				<title>Setting up Sami spell checking in KDE</title>
+				
+				<ul>
+					<li>
+						Open Systemsettings<br />
+						<img src="KDE-start-systemoppsett.png" alt="System settings from the startup menu" />
+					</li>
+					<li>
+						Choose «Country/Region and Language»<br />
+						<img src="KDE-systemoppsett.png" alt="KDE system settings" />
+					</li>
+					<li>
+						Choose «Spell Checking»<br />
+						<img src="KDE-stavekontroll.png" alt="KDE spell checking" />
+					</li>
+					<li>
+						The «Northern Sami» entry will give Northern Sami spell checking. <br />
+						<img src="KDE_nordsamisk.png" alt="Northern Sami entry" /> <br />
+						Choosing the empty entry will give Lule Sami spell checking. (The Lule Sami entry is empty because KDE doesn't know anything about Lule Sami.) <br />
+						<img src="KDE-lulesamisk.png" alt="Lule Sami entry" />
+					</li>
+				</ul>
+				
+				<p>
+					Every KDE application will now spell check in the chosen language. Try e.g. the mail application, KMail, <br />
+					<img src="kmail-nordsamisk.png" alt="KMail with Northern Sami spell checking" /><br />
+					or the chat application Kopete.<br />
+					<img src="kopete-nordsamisk.png" alt="Kopete with Northern Sami spell checking" /> <br />
+					Even the text fields in Konqueror (the web browser) will do spell checking. Here is a screenshot from gulesider.no, sending an SMS through the browser.<br />
+					<img src="konqueror-nordsamisk.png" alt="Konqueror with Northern Sami spell checking" /> <br />Pure magic!
+				</p>
+			</section>
+			
+			<section>
+				<title>Setting up Northern Sami spell checking in Gnome</title>
+				
+				<ul>
+					<li>
+						From the System menu, choose Administration->Language Support<br />
+						<img src="gnome-language-support.png" alt="Language support menu in Gnome" /><br />
+						<img src="gnome-language-support-windows.png" alt="Language support window in Gnome" />
+					</li>
+					<li>
+						In the window that appears, choose Northern Sami in the startup and login pulldown menu. <br />
+						<img src="gnome-language-support-nordsamisk.png" alt="Language support menu in Gnome" /> <br />
+						After this you will probably be asked to install some packages. Say yes to everything.<br />
+						
+					</li>
+				</ul>
+				
+				<p>
+					Every Gnome application now has spelling support for Northern Sami. Try e.g. the Outlook replacement Evolution, the chat application Pidgin or the text editor Gedit. Pure magic! Here are some examples from the chat program Pidgin.<br />
+					<img src="pidgin-nordsamisk.png" alt="Pidgin chat window" /> <br />
+					<img src="pidgin-nordsamisk1.png" alt="Sami spell checking in Pidgin" />
+				</p>
+			</section>
+		</section>
+	</body>
+</document>

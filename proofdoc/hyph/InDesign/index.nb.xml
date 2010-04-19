@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="nb">
+  <header>
+    <title>InDesign korrekturverktøy-dokumentasjon</title>
+  </header>
+
+  <body>
+    <p>Korrekturverktøykomponentene for InDesign er bygd på samme teknologi og
+    arkitektur som korrekturverktøyene for MS Office. Det finnes <a
+    href="../MSOff/index.html">en egen side</a> som dokumenterer hvordan
+    orddelinga fungerer.</p>
+
+    <p>Korrekturverktøy for InDesign leveres for både nord- og lulesamisk, og
+    virker både med Windows- og Macintosh-versjonene av InDesign
+    (Windows-versjonen kommer snart). Det kreves InDesign CS3 eller nyere.</p>
+
+    <section>
+      <title>Nedlasting og installering</title>
+
+      <p>Den siste versjonen er alltid tilgjengelig her:</p>
+
+      <ul>
+        <li><strong>Mac</strong>: <a
+        href="http://www.divvun.no/static_files/indesign-divvuntools.dmg">www.divvun.no/static_files/indesign-divvuntools.dmg</a></li>
+
+        <li><strong>Win</strong>: [kommer snart]</li>
+      </ul>
+
+      <section>
+        <title>Mac-installering</title>
+
+        <p>I instruksjonene nedenfor refererer teksten
+        <code>&lt;InDesignFolder&gt;</code> til mappa som inneholder det
+        installerte InDesign-programmet, vanligvis <code>/Applications/Adobe
+        InDesign CS3/</code>.</p>
+
+        <ol>
+          <li>Den nedlastede <code>.dmg</code>-fila åpnes automatisk i et nytt
+          vindu – hvis ikke, dobbeltklikk på <code>.dmg</code>-fila.</li>
+
+          <li>Kopier følgende filer til
+          <code>&lt;InDesignFolder&gt;/Plug-Ins/</code>-mappa — et alias til
+          mappa finnes ferdig i vinduet med Plugin-filene, bare dra og slipp
+          Plugin-ene på aliaset:<ul>
+              <li><code>PldHypSamiLule.InDesignPlugin</code></li>
+
+              <li><code>PldHypSamiNorthern.InDesignPlugin</code></li>
+
+              <li><code>PldSplSamiLule.InDesignPlugin</code></li>
+
+              <li><code>PldSplSamiNorthern.InDesignPlugin</code></li>
+            </ul></li>
+
+          <li>Kopier mappa <code>Polderland</code> til
+          <code>&lt;InDesignFolder&gt;/Plug-Ins/Dictionaries/</code>-mappa. Et
+          alias finnes også for denne mappa - bare dra og slipp.</li>
+        </ol>
+
+        <p>Det er det!</p>
+      </section>
+
+      <section>
+        <title>Windows-installering</title>
+
+        <p>[kommer snart]</p>
+      </section>
+
+      <section>
+        <title>Oppgradering fra en tidligere versjon</title>
+
+        <ul>
+          <li><strong>Mac:</strong> følg installeringsintruksene ovenfor, og
+          erstatt de gamle filene med nye når du blir spurt om det. Dersom det
+          ikke fungerer, avinstaller først (se neste punkt), og installer
+          deretter på nytt.</li>
+
+          <li><strong>Win:</strong> [kommer snart]</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Avinstallering</title>
+
+        <ul>
+          <li><strong>Mac:</strong> flytt de installerte filene og mappa til
+          papirkurven.</li>
+
+          <li><strong>Win:</strong> [kommer snart]</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <title>Bruk</title>
+
+      <p>Korrektur for samisk virker nøyaktig som for et hvilket som helst
+      annet språk. Følg InDesign-instruksene for å slå på automatisk orddeling
+      og løpende korrektur, og velg ett av språkene <code>Sami:
+      Northern</code> eller <code>Sami: Lule</code> i språklista. Teksten vil
+      tilpasses med automatisk innskutte orddelingstegn der det er nødvendig,
+      og feilskrevne ord vil bli merket med rød understrekning.</p>
+    </section>
+
+    <section>
+      <title>Tekniske krav</title>
+
+      <p>InDesign-korrekturverktøymodulene har følgende krav:</p>
+
+      <ul>
+        <li>InDesign CS3</li>
+
+        <li>MacOS X 10.4.8 eller nyere / Windows XP SP2 eller nyere (kreves av
+        InDesign CS3)</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Kjente problemer</title>
+
+      <section>
+        <title>Orddeling</title>
+
+        <p>De kjente problemene med InDesigns orddelingsmodul for samisk er de
+        samme som for MS Office-orddelingen, om ikke annet er nevnt. Det
+        finnes et fåtall kjente orddelingsproblemer - for en oppdatert liste
+        kan du se på lista over <a
+        href="http://giellatekno.uit.no/bugzilla/buglist.cgi?product=Hyphenation&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED">åpne
+        orddelingsfeil i Bugzilla</a> (kun på engelsk).</p>
+      </section>
+
+      <section>
+        <title>Stavekontroll</title>
+
+        <p>De kjente problemene med InDesigns stavekontroll <a
+        href="http://giellatekno.uit.no/bugzilla/buglist.cgi?product=Spell+checking+common&amp;product=Spell+checking+sme&amp;product=Spell+checking+smj&amp;component=Encoding+issues&amp;component=Missing+words&amp;component=MS+Office+speller&amp;component=PLX+conversion&amp;component=Speller+engine&amp;component=Suggestions&amp;component=Systematic+lexical+errors&amp;component=Transducers&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED">er
+        de samme som for stavekontrollen i MS Office</a>, om ikke annet er
+        nevnt. Det finnes noen kjente småproblemer spesifikt for InDesign, og
+        som er knyttet til brukerordlistene, men ingen vesentlige som hindrer
+        full bruk av stavekontrollen.</p>
+
+        <ul>
+          <li>endringer i UDC/UDR vises ikke med det samme i dokumentet
+          (f.eks. vil et ord som akkurat er lagt til AddedWords forbli merket
+          med rød understreking til noe blir endret i eller inntil ordet
+          (f.eks. ved å taste et mellomrom etter det) eller til dokumentet
+          blir korrekturlest på nytt.</li>
+
+          <li>om et ord blir fjernet fra lista RemovedWords vil ikke det bli
+          gjenspeilt på skjermen med det samme (det fungerer som det skal, det
+          er bare visningen som ikke blir oppdatert)</li>
+
+          <li>NonWords (ord som finnes i stavekontrollen men også i lista
+          RemovedWords (på harddisken som UsrDicNon)) vil ikke bli vurdert før
+          lista RemovedWords blir åpnet direkte av brukeren</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <title>Tilbakemelding</title>
+
+      <p>Vi setter pris på enhver tilbakemelding på korrekturverktøyene, slik
+      at vi hele tiden kan forbedre dem. Tilbakemelding kan sendes via e-post
+      til en av følgende adresser:</p>
+
+      <ul>
+        <li><a href="mailto:feedback@divvun.no">feedback@divvun.no</a></li>
+
+        <li><a href="mailto:divvun@samediggi.no">divvun@samediggi.no</a></li>
+      </ul>
+    </section>
+
+    <p class="last_modified">Last modified: $Date: 2008-11-05 19:52:54 +0200 (ons, 05 nov 2008) $, by
+    $Author: boerre $</p>
+  </body>
+</document>

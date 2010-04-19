@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>InDesign Proofing Tools Documentation</title>
+  </header>
+
+  <body>
+    <p>The InDesign proofing tools components are built on the same technology
+    and architecture as the proofing tools for MS Office. There is a <a
+    href="../MSOff/index.html">separate page</a> documenting how the
+    hyphenation works.</p>
+
+    <p>Proofing tools for InDesign are provided for both North and Lule Sámi,
+    and they work with both Windows and Macintosh versions of InDesign
+    (Windows version coming soon). They require InDesign CS3 or newer.</p>
+
+    <section>
+      <title>Download and installation</title>
+
+      <p>The latest version is always available here:</p>
+
+      <ul>
+        <li><strong>Mac:</strong> <a
+        href="http://www.divvun.no/static_files/indesign-divvuntools.dmg">www.divvun.no/static_files/indesign-divvuntools.dmg</a></li>
+
+        <li><strong>Win:</strong> [coming soon]</li>
+      </ul>
+
+      <section>
+        <title>Mac installation</title>
+
+        <p>In the instructions below, the text
+        <code>&lt;InDesignFolder&gt;</code> refers to the folder containing
+        the installed InDesign application, usually <code>/Applications/Adobe
+        InDesign CS3/</code>.</p>
+
+        <ol>
+          <li>The downloaded <code>.dmg</code> file should automatically open
+          in a new window - if not, double-click the <code>.dmg</code>
+          file.</li>
+
+          <li>Copy the following files to the
+          <code>&lt;InDesignFolder&gt;/Plug-Ins/</code> folder — an alias to
+          that folder is provided, just drag and drop the plug-ins on the
+          alias:<ul>
+              <li><code>PldHypSamiLule.InDesignPlugin</code></li>
+
+              <li><code>PldHypSamiNorthern.InDesignPlugin</code></li>
+
+              <li><code>PldSplSamiLule.InDesignPlugin</code></li>
+
+              <li><code>PldSplSamiNorthern.InDesignPlugin</code></li>
+            </ul></li>
+
+          <li>Copy the folder <code>Polderland</code> to the
+          <code>&lt;InDesignFolder&gt;/Plug-Ins/Dictionaries/</code> folder.
+          An alias is also provided for this folder, just drag and drop.</li>
+        </ol>
+
+        <p>That's it!</p>
+      </section>
+
+      <section>
+        <title>Windows installation</title>
+
+        <p>[forthcoming]</p>
+      </section>
+
+      <section>
+        <title>Upgrading from an earlier version</title>
+
+        <ul>
+          <li><strong>Mac:</strong> simply follow the installation
+          instructions above, and replace the old files with the new ones when
+          asked. If it doesn't work, first deinstall (see the next point),
+          then install anew.</li>
+
+          <li><strong>Win:</strong> [forthcoming]</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Deinstallation</title>
+
+        <ul>
+          <li><strong>Mac:</strong> just move the installed files and folder
+          to the thrash.</li>
+
+          <li><strong>Win:</strong> [forthcoming]</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <title>Usage</title>
+
+      <p>Proofing for Sámi works exactly as for any other language. Follow the
+      InDesign instructions for turning on automatic hyphenation and
+      continuous spell checking, and select one of the languages <code>Sami:
+      Northern</code> or <code>Sami: Lule</code> in the language list. The
+      text will reflow, with hyphens automatically inserted where needed, and
+      misspellings will be marked with a red underline.</p>
+    </section>
+
+    <section>
+      <title>Technical requirements</title>
+
+      <p>The InDesign proofing tools modules have the following
+      requirements:</p>
+
+      <ul>
+        <li>InDesign CS3</li>
+
+        <li>MacOS X 10.4.8 or newer / Windows XP SP2 or newer (as required by
+        InDesign CS3)</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Known issues</title>
+
+      <section>
+        <title>Hyphenator</title>
+
+        <p>The known issues for the InDesign hyphenators are the same as for
+        the MS Office hyphenators, unless otherwise noted. There are a few
+        known hyphenation issues - for an up-to-date listing, have a look at
+        the <a
+        href="http://giellatekno.uit.no/bugzilla/buglist.cgi?product=Hyphenation&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED">open
+        hyphenator bugs in our Bugzilla</a>.</p>
+      </section>
+
+      <section>
+        <title>Speller</title>
+
+        <p>The known issues for the InDesign spellers are <a
+        href="http://giellatekno.uit.no/bugzilla/buglist.cgi?product=Spell+checking+common&amp;product=Spell+checking+sme&amp;product=Spell+checking+smj&amp;component=Encoding+issues&amp;component=Missing+words&amp;component=MS+Office+speller&amp;component=PLX+conversion&amp;component=Speller+engine&amp;component=Suggestions&amp;component=Systematic+lexical+errors&amp;component=Transducers&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED">the
+        same as for the MS Office spellers</a>, unless otherwise noted.
+        Presently there are a few known speller issues specific to InDesign -
+        which relate to the use of the user dictionary - but none such that
+        they are critical to regular and full use of the speller.</p>
+
+        <ul>
+          <li>changes in UDC/UDR are not immediately reflected in the document
+          (e.g. a word just added to the AddedWords stays red underlined until
+          either a change is made to or near it (e.g., type a space after it)
+          or the document is rechecked.</li>
+
+          <li>removing a word from RemovedWords list is not reflected on the
+          screen immediately (functionality is OK, but displayed list on the
+          screen is not updated).</li>
+
+          <li>NonWords (words that are in the .lex but also in the
+          RemovedWords list (on disk as UsrDicNon)) are not considered before
+          the RemovedWords list is opened explicitly by user</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <title>Feedback</title>
+
+      <p>We would appreciate any feedback on the proofing tools, to always
+      make them better. Feedback can be sent via e-mail to one of the
+      following addresses:</p>
+
+      <ul>
+        <li><a href="mailto:feedback@divvun.no">feedback@divvun.no</a></li>
+
+        <li><a href="mailto:divvun@samediggi.no">divvun@samediggi.no</a></li>
+      </ul>
+    </section>
+
+    <p class="last_modified">Last modified: $Date: 2008-11-05 19:52:54 +0200 (ons, 05 nov 2008) $, by
+    $Author: boerre $</p>
+  </body>
+</document>

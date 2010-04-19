@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="nb">
+    <header>
+	<title>Samisk stavekontroll i Linux</title>
+
+		<authors>
+			<person email="borre.gaup@samediggi.no" name="Børre Gaup" />
+		</authors>
+    </header>
+
+    <body>
+		<section>
+			<title>Samisk stavekontroll i Linux</title>
+			<p>
+				Hvis du installerer de nord- og lulesamiske hunspell ordlistene, kan du få samisk stavekontroll for disse to språkene i hele systemet ditt. Dette dokumentet forteller hvordan du kan få det til.
+			</p>
+		</section>
+		
+		<section>
+			<title>Installere og sette opp stavekontroll</title>
+			<section>
+				<title>Installere nordsamisk stavekontroll</title>
+
+				<ul>
+					<li>Åpne en terminal</li>
+					<li>Last ned tarballen: <code>wget http://divvun.no/static_files/hunspell-se.tar.gz</code></li>
+					<li>Pakk opp tarballen: <code>tar zxvf hunspell-se.tar.gz</code> </li>
+					<li>Skift til hunspell-se-&lt;versjon&gt; katalogen: <code>cd hunspell-se-&lt;versjon&gt;</code></li>
+					<li>Installer stavekontrollen: <code>sudo make install</code></li>
+					<li>For å sjekke om den nordsamiske stavekontrollen er installert, skriv <code>hunspell -D</code>. I lista som dukker opp, burde disse oppslagene ses:
+						<ul>
+							<li>/usr/share/myspell/dicts/se_FI</li>
+							<li>/usr/share/myspell/dicts/se_NO</li>
+							<li>/usr/share/myspell/dicts/se_SE</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			
+			<section>
+				<title>Install lulesamisk stavekontroll</title>
+
+				<ul>
+					<li>Åpne en terminal</li>
+					<li>Last ned tarballen: <code>wget http://divvun.no/static_files/hunspell-smj.tar.gz</code></li>
+					<li>Pakk opp tarballen: <code>tar zxvf hunspell-smj.tar.gz</code> </li>
+					<li>Skift til hunspell-smj-&lt;versjon&gt; katalogen: <code>cd hunspell-smj-&lt;versjon&gt;</code></li>
+					<li>Installer stavekontrollen: <code>sudo make install</code></li>
+					<li>For å sjekke om den nordsamiske stavekontrollen er installert, skriv <code>hunspell -D</code>. I lista som dukker opp, burde disse oppslagene ses:
+						<ul>
+							<li>/usr/share/myspell/dicts/smj_NO</li>
+							<li>/usr/share/myspell/dicts/smj_SE</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			
+			<section>
+				<title>Sette opp samisk stavekontroll i KDE</title>
+				
+				<ul>
+					<li>
+						Åpen Systeminnstillinger<br />
+						<img src="KDE-start-systemoppsett.png" alt="Systeminnstillinger fra oppstartsmenyen" />
+					</li>
+					<li>
+						Velg «Land/region og språk»<br />
+						<img src="KDE-systemoppsett.png" alt="KDE systeminnstillinger" />
+					</li>
+					<li>
+						Velg «Stavekontroll»<br />
+						<img src="KDE-stavekontroll.png" alt="KDE stavekontroll" />
+					</li>
+					<li>
+						«Nordsamisk» setter opp nordsamisk stavekontroll. <br />
+						<img src="KDE_nordsamisk.png" alt="Nordsamisk" /> <br />
+						Om man velger den tomme linja får man lulesamisk stavekontroll. (Den lulesamiske linja er tom fordi KDE ikke vet noe om lulesamisk.) <br />
+						<img src="KDE-lulesamisk.png" alt="Lulesamisk" />
+					</li>
+				</ul>
+				
+				<p>
+					Alle KDE-programmene kan nå gjøre stavekontroll i det språket man har valgt. Prøv for eksempel e-postprogrammet KMail,  <br />
+					<img src="kmail-nordsamisk.png" alt="KMail med nordsamisk stavekontroll" /><br />
+					eller chatteprogrammet Kopete.<br />
+					<img src="kopete-nordsamisk.png" alt="Kopete med nordsamisk stavekontroll" /> <br />
+					Til og med tekstfeltene i Konqueror (nettleseren) har stavekontroll. Her ser vi et bilde fra gulesider.no, der man sender SMS fra nettleseren.<br />
+					<img src="konqueror-nordsamisk.png" alt="Konqueror med nordsamisk stavekontroll" /> <br />Ren magi!
+				</p>
+			</section>
+			
+			<section>
+				<title>Sette opp nordsamisk stavekontroll i Gnome</title>
+				
+				<ul>
+					<li>
+						I systemmenyen, velg Administrasjon->Språkstøtte<br />
+						<img src="gnome-language-support.png" alt="Språkstøttemenyen i Gnome" /><br />
+						<img src="gnome-language-support-windows.png" alt="Språkstøttevinduet i Gnome" />
+					</li>
+					<li>
+						I vinduet som dukker opp, velg «Nordsamisk» i nedtrekksmenyen under oppstart og innlogging. <br />
+						<img src="gnome-language-support-nordsamisk.png" alt="Språkstøttemenyen i Gnome" /> <br />
+						Etter dette blir du antakelig bedt om å installere noen pakker. Si ja til alt.<br />
+						
+					</li>
+				</ul>
+				
+				<p>
+					Alle Gnomeprogrammene har nå støtte for nordsamisk stavekontroll. Prøv for eksempel Outlook-erstatteren Evolution, chatteprogrammet Pidgin eller tekstredigereren Gedit. Ren magi! Her er noen bilder fra chatteprogrammet Pidgin.<br />
+					<img src="pidgin-nordsamisk.png" alt="Chatteprogrammet Pidgin" /> <br />
+					<img src="pidgin-nordsamisk1.png" alt="Nordsamisk stavekontroll i Pidgin" />
+				</p>
+			</section>
+		</section>
+	</body>
+</document>
