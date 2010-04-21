@@ -13,38 +13,98 @@
     needs to follow certain rules.</p>
 
     <section>
-      <title>Markup types</title>
+      <title>Markup TYPES</title>
 
-      <p>We differentiate between three types of errors that people make,
+      <p>We differentiate between different types of errors that people make,
       depending on the type of analysis needed to detect and correct the
-      error:</p>
+      error. We also use the annotation for errors in learner texts.</p>
 
-      <dl>
-        <dt>unclassified error - wrong§correct - ()</dt>
+    <section>
+      <title>Unclassified errors - wrong§correct</title>
 
-        <dd>errors of unknown type. By default such errors will be treated as
-        spelling errors (see below). In the resulting xml, there will be no
-        @type attribute.</dd>
 
-        <dt>spelling errors - wrong$correct - ()</dt>
 
-        <dd>traditional misspellings confined to single (error) strings, that
+        <p>errors of unknown type. By default such errors will be treated as
+        spelling errors (see below). In the resulting xml, the name of the element will be &lt;error&gt;.</p>
+</section>
+<section>
+<title>Orthographic errors - wrong$(pos,errtype,teacher|correct)</title>
+
+
+        <p>traditional misspellings confined to single (error) strings, that
         is, errors that don't need an analysis of the surrounding words to be
-        detected and corrected. In the resuling xml, the @type attribute will
-        be set to "ort".</dd>
+        detected and corrected. In the resulting xml, the element is named &lt;errorort&gt;.</p>
+<dl>        
+        <dt>Attributes:</dt>
+		<dd>pos ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem | resip | indef | pcle | prop | typo | x )<br />
+        errtype ( a | á | conc | svow | vowc | vow | con | mono | diph | lime | meta | cap | min | suf | mix | ascii | cmp )<br />
+        teacher ( yes | no ) - Is the error marked by a teacher? Default is "no". </dd>
+        
+        <dt>Some explanations:</dt>
+<dd>conc = consonant centre										 <br />
+vowc = vowel centre											 <br />
+svow = soggevokála											 <br />
+meta = methesis												 <br />
+cap = should be capital letter								 <br />
+min = should be minuscle									 <br />
+ascii = not used sámi letter								 <br />
+cmp = incorrect compounding, e.g. beavdiguorra or beavdi guorra vs beavdeguorra <br />
+mono = diphthong, but should be monophtong					 <br />
+diph = wrong diphthong										 <br />
+suf = wrong suffixing, eg. gievkani vs. gievkkanii			 <br />
+typo = typical typo											 </dd>
+</dl>        
 
-        <dt>(morpho)syntactic errors - {wrong}£{correct} - {}</dt>
+</section>
+<section>
+<title>Morphosyntactic errors - (context wrong)£(pos,const,cat,orig,errtype,teacher|context correct)</title>
 
-        <dd>errors that require a partial or full analysis of (parts of) the
-        sentence or surrounding words to be detected and corrected. The error
-        itself can be restricted to a single word (such as wrong case after a
-        certain verb, or wrong person-number agreements in verbs), or to
-        larger constituents. In the resuling xml, the @type attribute will
-        be set to "synt".</dd>
 
-        <dt>lexical/terminological errors - wrong€correct - []</dt>
+        <p>errors that require an analysis of (parts of) the
+        sentence or surrounding words to be detected and corrected. 
+         In the resulting xml, the element is named &lt;errormorphsyn&gt;.</p>
+<dl>        
+        <dt>Attributes:</dt>
+<dd>pos ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop |pers | refl | dem | resip | indef | x )<br />
+const ( subj | obj | advl | v | spred | opred  | pcle  | interj | app | conj | pph | x | attr )<br />
+cat ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | cmp | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br />
+orig ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | cmp | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br />
+errtype ( agr | case | tense | mode | nump | number | x  )<br />
+teacher ( yes | no )  - Is the error marked by a teacher? Default is "no".</dd>
 
-        <dd>errors where the real error is only in the chosen word used, that
+        <dt>Some explanations:</dt>
+<dd>pph - pp-phrase			<br />
+nump - numeral phrase	<br />
+gensg - acc/gen sg<br />
+genpl - acc/gen pl</dd>
+
+</dl>        
+
+</section>
+<section>
+<title>Syntactic errors - (context wrong)¥(pos,errtype,teacher|context correct)</title>
+        
+        <p>Also these errors require a partial or full analysis of (parts of) the
+        sentence or surrounding words to be detected and corrected. 
+         In the resulting xml, the element is named &lt;errorsyn&gt;.</p>
+<dl>        
+        <dt>Attributes:</dt>
+<dd>pos ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop |pers | refl | dem | resip | indef | punct | x )<br />
+errtype ( wo | pph | redun | missing | cmp | x )<br />
+teacher ( yes | no ) - Is the error marked by a teacher? Default is "no".</dd>
+
+        <dt>Some explanations:</dt>
+<dd>wo - word order			<br />
+pph - pp-phrase			<br />
+cmp - should be compound</dd>
+</dl>        
+
+
+</section>
+<section>
+<title>Lexical errors - (wrong)¥(pos,errtype,teacher|correct)</title>
+        
+        <p> errors where the real error is only in the chosen word used, that
         is, another word would be better or correct; to be able to detect and
         correct such errors, we need in addition to syntactic analysis also a
         dictionary component with sufficiently rich syntactic and semantic
@@ -52,8 +112,19 @@
         disambiguation. The possibility to detect and correct this type of
         errors is probably not in the nearest future, but the need to mark up
         texts for these errors is real now. In the resuling xml, the @type
-        attribute will be set to "lex".</dd>
+        attribute will be set to "lex".
+         In the resulting xml, the element is named &lt;errorlex&gt;.</p>
+<dl>
+        <dt>Attributes:</dt>
+<dd>pos ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop | pers | refl | dem | resip | indef | x )		   <br />
+orig ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop | pers | refl | dem | resip | indef | foreign | x )<br />
+errtype ( der | w | x  )   																									   <br />
+teacher ( yes | no ) - Is the error marked by a teacher? Default is "no".													</dd>
+
       </dl>
+</section>
+<section>
+<title>Nesting</title>
 
       <p>The three types can be nested, with the spelling error being the
       innermost one. That is, the following nesting is allowed:
@@ -69,23 +140,66 @@
     </section>
 
     <section>
-      <title>Markup examples</title>
+      <title>Markup EXAMPLES</title>
 
-      <p>Here are some examples of error/correction markup of the different
-      types:</p>
+      <p>Here are some examples of error/correction markup and how they are converted to xml:</p>
 
-      <source>muitlat§muitalat
+		<source>nourra$(a,meta|nuorra)
+		
+&lt;errorort pos="n" errtype="meta" teacher="no" corr="nuorra"&gt;nourra&lt;/errorort&gt; </source>
+
+<source>(Nieiddat leat nuorra)£(a,spred,nompl,nomsg,agr|Nieiddat leat nuorat).
+
+&lt;errormorphsyn pos="a" const="spred" cat="nompl" orig="nomsg" errtype="agr" teacher="no" corr="Nieiddat leat nuorat"&gt;
+Nieiddat leat nuorra&lt;/errormorphsyn&gt;.</source>
+
+<source>Mun (riŋgen nieidda lusa)¥(x,pph|riŋgen niidii) ihttin.
+
+Mun &lt;errorsyn pos="x" errtype="pph" teacher="no" corr="riŋgen niidii"&gt;riŋgen nieidda lusa&lt;/errorsyn&gt; ihttin.</source>
+
+<source>Son lei ovtta¥(num,redun| ) viesus.
+
+Son lei &lt;errorsyn pos="num" errtype="redun" teacher="no" corr=""&gt;ovtta&lt;/errorsyn&gt; viesus.</source>
+
+
+<source>Mun barggan nu dábálaš€(adv,adj,der|dábálaččat).
+
+Mun barggan nu &lt;errorlex pos="adv" orig="adj" errtype="der" teacher="no" corr="dábálaččat"&gt;dábálaš&lt;/errorlex&gt;.</source>
+
+
+<p>Nesting:</p>
+<source>(Nieiddat leat nourra$(adj,meta|nuorra))£(adj,spred,nompl,nomsg,agr|Nieiddat leat nuorat).
+
+&lt;errormorphsyn pos="adj" const="spred" cat="nompl" orig="nomsg" errtype="agr" teacher="no" corr="Nieiddat leat nuorat"&gt;
+Nieiddat leat &lt;errorort pos="adj" errtype="meta" corr="nuorra">nourra&lt;/errorort>&lt;/errormorphsyn&gt;.</source>
+
+
+<source>Mus leat (guokte (ganddat§(n,á|gánddat)£(n,spred,gensg,nompl,nump|guokte gándda)).
+  
+Mus leat &lt;errormorphsyn pos="n" const="spred" cat="gensg" orig="nompl" errtype="nump" teacher="no" corr="guokte gándda"&gt;
+guokte &lt;errorort pos="n" errtype="á" corr="gánddat">ganddat&lt;/errorort>&lt;/errormorphsyn&gt;.</source>
+
+
+<source>
+Mus (leat (okta máná£(n,spred,nomsg,gensg,case|okta mánná))£(v,v,sg3prs,pl3prs,agr|leat okta mánná).
+
+Mus &lt;errormorphsyn pos="v" const="v" cat="sg3prs" orig="pl3prs" errtype="agr" teacher="no" corr="leat okta mánná"&gt;
+leat &lt;errormorphsyn pos="n" const="spred" cat="nomsg" orig="gensg" errtype="case" teacher="no" corr="okta mánná">
+okta máná&lt;/errormorphsyn>&lt;/errormorphsyn&gt;.</source>
+
+
+<!--      <source>muitlat§muitalat
 {mun muitalat}£{mun muitalan}
 guossodimieddne€biebbmoieddne</source>
 
       <p>And some more complex examples with nesting:</p>
 
       <source>{mun (muitlat§muitalat)}£{mun muitalan}
-(guossodmieddne§guossodimieddne)€biebbmoieddne</source>
-    </section>
+(guossodmieddne§guossodimieddne)€biebbmoieddne</source> -->
+    </section></section>
 
     <section>
-      <title>Markup rules</title>
+      <title>Markup RULES</title>
 
       <p>The following rules should be followed when marking up texts:</p>
 
