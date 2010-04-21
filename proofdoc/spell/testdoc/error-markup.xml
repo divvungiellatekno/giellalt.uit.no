@@ -24,14 +24,14 @@
 
 
 
-        <p>errors of unknown type. By default such errors will be treated as
+        <p>Errors of unknown type. By default such errors will be treated as
         spelling errors (see below). In the resulting xml, the name of the element will be &lt;error&gt;.</p>
 </section>
 <section>
 <title>Orthographic errors - wrong$(pos,errtype,teacher|correct)</title>
 
 
-        <p>traditional misspellings confined to single (error) strings, that
+        <p>Traditional misspellings confined to single (error) strings, that
         is, errors that don't need an analysis of the surrounding words to be
         detected and corrected. In the resulting xml, the element is named &lt;errorort&gt;.</p>
 <dl>        
@@ -48,10 +48,10 @@ meta = methesis												 <br />
 cap = should be capital letter								 <br />
 min = should be minuscle									 <br />
 ascii = not used sámi letter								 <br />
-cmp = incorrect compounding, e.g. beavdiguorra or beavdi guorra vs beavdeguorra <br />
+cmp = incorrect compounding, e.g. <em>beavdiguorra</em> vs <em>beavdeguorra</em> <br />
 mono = diphthong, but should be monophtong					 <br />
 diph = wrong diphthong										 <br />
-suf = wrong suffixing, eg. gievkani vs. gievkkanii			 <br />
+suf = wrong suffixing, e.g. <em>gievkani</em> vs. <em>gievkkanii</em>			 <br />
 typo = typical typo											 </dd>
 </dl>        
 
@@ -60,7 +60,7 @@ typo = typical typo											 </dd>
 <title>Morphosyntactic errors - (context wrong)£(pos,const,cat,orig,errtype,teacher|context correct)</title>
 
 
-        <p>errors that require an analysis of (parts of) the
+        <p>Errors that require an analysis of (parts of) the
         sentence or surrounding words to be detected and corrected. 
          In the resulting xml, the element is named &lt;errormorphsyn&gt;.</p>
 <dl>        
@@ -111,9 +111,7 @@ cmp - should be compound</dd>
         markup of the entries, as well as syntactic and semantic
         disambiguation. The possibility to detect and correct this type of
         errors is probably not in the nearest future, but the need to mark up
-        texts for these errors is real now. In the resuling xml, the @type
-        attribute will be set to "lex".
-         In the resulting xml, the element is named &lt;errorlex&gt;.</p>
+        texts for these errors is real now. In the resulting xml, the element is named &lt;errorlex&gt;.</p>
 <dl>
         <dt>Attributes:</dt>
 <dd>pos ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop | pers | refl | dem | resip | indef | x )		   <br />
@@ -128,7 +126,7 @@ teacher ( yes | no ) - Is the error marked by a teacher? Default is "no".							
 
       <p>The three types can be nested, with the spelling error being the
       innermost one. That is, the following nesting is allowed:
-      <code>syntactic &gt; lexical &gt; spelling</code>.</p>
+      <code>syntactic &gt; morphosyntactic &gt; lexical &gt; spelling</code>.</p>
 
       <p>When needed, parentheses can be used to identify the range of the
       error. We use one type of parenthesis for each error type, as indicated
