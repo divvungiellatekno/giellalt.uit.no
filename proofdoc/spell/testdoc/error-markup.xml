@@ -37,22 +37,29 @@
 <dl>        
         <dt>Attributes:</dt>
 		<dd><strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem | resip | indef | pcle | prop | typo | x )<br />
-        <strong>errtype</strong> ( a | á | conc | svow | vowc | vow | con | mono | diph | lime | meta | cap | min | suf | mix | ascii | cmp )<br />
+        <strong>errtype</strong> ( a | á | conc | svow | vowc | vow | con | mono | diph | lime | meta | suf | cmp  | ascii | typo | cap | min | mix)<br />
         <strong>teacher</strong> ( yes | no ) - Is the error marked by a teacher? Default is "no". </dd>
         
         <dt>Some explanations:</dt>
-<dd>conc = consonant centre										 <br />
+<dd>
+a = should be a instead of á <br />
+á = should be á instead of a <br />
+conc = consonant centre										 <br />
 vowc = vowel centre											 <br />
 svow = soggevokála											 <br />
-meta = methesis												 <br />
-cap = should be capital letter								 <br />
-min = should be minuscle									 <br />
-ascii = not used sámi letter								 <br />
-cmp = incorrect compounding, e.g. <em>beavdiguorra</em> vs <em>beavdeguorra</em> <br />
+vow = some other wrong vowel <br />
+con = some other wrong consonant <br />
 mono = diphthong, but should be monophtong					 <br />
 diph = wrong diphthong										 <br />
+lime = consonant between two unstressed syllables, <em>vuovddášis</em> vs <em>vuovddážis</em> <br />
+meta = metathesis												 <br />
 suf = wrong suffixing, e.g. <em>gievkani</em> vs. <em>gievkkanii</em>			 <br />
-typo = typical typo											 </dd>
+cmp = incorrect compounding, e.g. <em>beavdiguorra</em> vs <em>beavdeguorra</em> <br />
+ascii = not used sámi letter								 <br />
+typo = typical typo											 <br />
+cap = should be capital letter								 <br />
+min = should be minuscle									 <br />
+mix = more than one errortype in the same word </dd>
 </dl>        
 
 </section>
@@ -66,17 +73,33 @@ typo = typical typo											 </dd>
 <dl>        
         <dt>Attributes:</dt>
 <dd><strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop |pers | refl | dem | resip | indef | x )<br />
-<strong>const</strong> ( subj | obj | advl | v | spred | opred  | pcle  | interj | app | conj | pph | x | attr )<br />
+<strong>gf</strong> ( subj | obj | advl | v | spred | opred  | pcle  | interj | app | conj | pph | x | attr )<br />
 <strong>cat</strong> ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | cmp | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br />
-<strong>orig</strong> ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | cmp | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br />
+<strong>orig</strong> ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br />
 <strong>errtype</strong> ( agr | case | tense | mode | nump | number | x  )<br />
 <strong>teacher</strong> ( yes | no )  - Is the error marked by a teacher? Default is "no".</dd>
 
         <dt>Some explanations:</dt>
-<dd>pph - pp-phrase			<br />
-nump - numeral phrase	<br />
-gensg - acc/gen sg<br />
-genpl - acc/gen pl</dd>
+
+<dd>
+gf = grammatical function <br />
+subj = subject <br />
+v = v		 <br />
+obj = object	 <br />
+spred = subjectpredicative 	 <br />
+opred = objectpredicative 	 <br />
+advl = adverbial, e.g. <em> Mun boađán 'sotnabeaivi'</em>  vs. <em> Mun boađán 'sotnabeaivve'.</em> 	<br />
+pph = pp phrace, e.g. <em>sullo guovdu</em>  vs. <em>guovdu sullo</em>	 <br />
+conj = conjunction/subjunction	 <br />
+pcle = particle 	 <br />
+interj = interjection	 <br />
+app = apposition 	 <br />
+attr = attribute	 <br />
+x = unknown		 <br />
+
+nump = numeral phrase	<br />
+gensg = acc/gen sg<br />
+genpl = acc/gen pl</dd>
 
 </dl>        
 
@@ -89,15 +112,18 @@ genpl - acc/gen pl</dd>
          In the resulting xml, the element is named &lt;errorsyn&gt;.</p>
 <dl>        
         <dt>Attributes:</dt>
-<dd><strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop |pers | refl | dem | resip | indef | punct | x )<br />
+<dd><strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop | pers | refl | dem | resip | indef | punct | x )<br />
 <strong>errtype</strong> ( wo | pph | redun | missing | cmp | x )<br />
 <strong>teacher</strong> ( yes | no ) - Is the error marked by a teacher? Default is "no".</dd>
 
-        <dt>Some explanations:</dt>
-<dd>wo - word order			<br />
-pph - pp-phrase			<br />
-cmp - should be compound</dd>
-</dl>        
+<dt>Some explanations:</dt>
+<dd>
+wo = word order			<br />
+pph = pp-phrase			<br />
+redun = redundant word <br />
+missing = missing word, or punctation when it is crucial for the interpretation <br />
+cmp = should be compound<br />
+x = unknown		 </dd></dl>        
 
 
 </section>
@@ -115,11 +141,20 @@ cmp - should be compound</dd>
 <dl>
         <dt>Attributes:</dt>
 <dd><strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop | pers | refl | dem | resip | indef | x )		   <br />
-<strong>orig</strong> ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop | pers | refl | dem | resip | indef | foreign | x )<br />
-<strong>errtype</strong> ( der | w | x  )   																									   <br />
+<strong>orig</strong> ( noun | verb | adj | adv | num | interj | pp |  cc | cs | pcle | prop | pers | refl | dem | resip | indef | x )<br />
+<strong>errtype</strong> ( der | w | foreign | x  )   																									   <br />
 <strong>teacher</strong> ( yes | no ) - Is the error marked by a teacher? Default is "no".													</dd>
 
-      </dl>
+<dt>Some explanations:</dt>
+<dd>
+der = wrong derivation <br />
+w = wrong word			<br />
+foreign = foreign word <br />
+x = unknown		 </dd>
+</dl>        
+
+
+
 </section>
 <section>
 <title>Nesting</title>
