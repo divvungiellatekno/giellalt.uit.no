@@ -1,6 +1,6 @@
 !!!Meeting setup
 
-* Date: 18.5.2010
+* Date: 26.5.2010
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat
@@ -32,12 +32,9 @@ Agenda accepted as is.
 ** not done
 * corpus infra:
 ** make the conversion scripts work with the new svn repository
-*** convert2xml.pl has been changed
-*** working on upload.cgi
+*** ongoing
 *** add check for almost empty content
 *** add processing of svg files
-* put the school history files into a properly named subdirectory
-** done
 * formulate license header
 ** not done
 * add license header to all files
@@ -46,9 +43,6 @@ Agenda accepted as is.
 ** not done
 * corpus access on the XServe
 ** not done
-* read access for the rest of our teams + outsiders who have signed the corpus
-  usage agreement
-** works
 * convert or move the files in the {{upload}} dir to the real corpus repo
 ** not done
 * turn on corpus summary crontab
@@ -71,25 +65,41 @@ Agenda accepted as is.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Ciprian
+* Lujavr-Oahpa:
+** merge previous entires with the Bodø version
+** update the localzation
+** deadline (by the end of May)
+*** ongoing
+* terminology:
+** prepare first a test file and show it to Ellen Ravna
+*** done
+** merged the 2 doc files with the xls file containing the 2006 law terminology
+   db (deadline 20. May)
+*** deadline postponed
+** prepare a StarDict test version of the merged data for demo
+** compile a dictionary in StarDict format with all data featuring the
+   properties wished by Ellen Ravna
+*** todo
 * add license header to all files
 ** todo
 * make restricted access to our svn repository work ({{fit}} adaption)
 ** todo
 * PhD-Projektbeskrivelse (internal deadline April/Mai 2010):
 ** search, read, write (execute): high priority!
-*** ongoing
+*** ongoing work
 * read and answer the newsgroups messages
 ** todo
 * update corpora (both monolingual and parallel) for Oslo (Glossa)
 ** check the correctness of parallelity between sme and nob files
 ** sentence-align sme with nob: fix tca2 problem
 ** analyse/disambiguate: todo -- waiting for the last version of FSTs
-** todo
+*** todo
 * corpus infra:
 ** make the conversion scripts work with the new svn repository
 *** add check for almost empty content
 *** add processing of svg files
 ** reorganise subdirs as needed
+*** todo
 * infrastructure
 ** test cwb
 ** continue with restructuring and cleaning the script catalogue as suggested
@@ -105,6 +115,7 @@ Agenda accepted as is.
 ** filter (English, German, etc.) input using language detection tools
 ** put a note on the sites that these are NOT MT tools
 ** input help for generating wordforms (dropdown menus).
+*** todo
 * Sandbox Oahpa:
 ** integrate reCAPTCHA into Django (as __Lene__ suggested)
 ** Numra for Skolt Sámi and Finnish
@@ -118,6 +129,8 @@ Agenda accepted as is.
 ** email notification when the server goes down
 ** check the XXX?
 *** todo
+* Komi-Oahpa:
+** first version of the Komi-Oahpa online
 * dictionaries, generally:
 ** synchronize the source language entries from a specific dictionary with the 
    entries in the morphology component (now especially for sma):
@@ -126,14 +139,10 @@ Agenda accepted as is.
 ** the StarDict on Windows: try the HTML-plugin (that means that users can use
    StarDict 3.2)
 ** try to reduce the dict-size on mac: experiment with xPointer, etc.
-* Fit:Swe:
-** cleaned up the xml files, merged doubled entries, split noun file into three
-   parts
-** transfered entries from csv into xml files
+*** todo
 * Fkv:Nob - Nob:Fkv:
-** compile the dictionaries for both directions and in both formats (internal
-   deadline depending on __Trond__ and __Verena__)
-*** done
+** re-compile the dictionaries incorporating the stem information
+*** todo (also, try to add the novel glossary to the dict)
 ** try to implement a web version of the dictionaries using the Odense method
 * KomEngFin:
 ** test the automatic sorting by Komi alphabet in xsl (as discussed
@@ -142,59 +151,54 @@ Agenda accepted as is.
 ** incorporate the passives into the last version of the sme:nob
 ** start a new compilation of SmeNob and improve it based on the experience
    gained with SmaNob
+*** todo
 * SmaNobSwe:
 ** extend the smanobswe dictionary: waiting for data (incorporate the data from
    Maja-Lisa)
+*** todo
 * SjdRus:
 ** continue the work at the Kildin-Russian dictionary, next internal deadline
    is the Bodø workshop in March 2010
+*** todo
 * Lexicon workshop
 ** contact Kimberly Mäkäräinen and ask whether she might be willing to share
    data with us
+*** todo
 * MT
-** add proper language pair (deadline by this Friday)
-*** done
 ** test A-ITE on Windows
+*** todo
 * Permanent education
 ** prepare/update XLS course materials
 ** learn UML
-
+*** low priority
 
 !!Maja
-* check in ''all'' local lexc changes in the {{gt/}} tree - Wednesday afternoon
-** Not done (Dont know what this is)
 * add missing sma verbs
-** Not done (study leave)
+**not done last week
 * Prepare text´s about normativity issue to SGL/SGM
-**Not done  (study leave)
+**almost done - just adj. left
 * more work on {{sma}} adjectives
-**not done  (study leave)
+** ongoing
 * look at incoming loanwords
-**not done  (study leave)
-* make a goldstandard doc. av SÄPO-dok - korrektur 
-**Not done (study leave)
+** not done last week
+* make a goldstandard doc. av SÄPO-dok - korrektur
+**almost done 
 * continue gathering {{sma}} corpus texts
-**not done (study leave)
-* look at Trond's XXX comments
-**Done! Finshed with this verb-discussion!
+**low prio. right now
 * finish compound tags for adjectives
-** Not done (study leave)
+**not done last week
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** Not done (study leave)
+** low prio. right now
 
 !!Sjur
+* test the {{sma}} speller on the gold standard document
+** waiting for gold standard document
 * formulate license header
-** not done
 * add voikko support to our proofing test bench
-** no progress since last week
 * add all our Sámi analysers and test them as spellers
-** no progress since last week
 * run tests using Hunspell, Voikko, Polderland for our Sámi lexicons
-** no progress since last week
 * install & configure the Unison news reader
-** not done
 * gold standard testing for {{sma}}
-** not done
 * difftest for fst and PL speller
 * @Barents: plan a meeting/seminar with potential cooperation partners
 * @Barents: plan for The Real Thing
@@ -209,40 +213,45 @@ Agenda accepted as is.
   teaching material now being given out to the schools
 * write new build commands for make
 * when the new build infrastructure works as it should, delete the old ones
-* read through and comment {{sma}} normative texts
-** delayed because of Maja's study leave 
+* read through and comment by Wednesday afternoon
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 * other things:
-** the week was dominated by the sudden invitation to meet with the minister of
-   innovation the coming Wednesday
-** also did some more speller testing for Lene, and through that added some
-   improvements to the speller test bench
+** travelled to Tromsø, and did the FAD presentation
+** talked with most members of the Divvun team
+** made Forrest work again for me (using the latest Forrest trunk)
+** made a test XXE configuration for working with terminology files, where the
+   concept entries are stored in one file, and the language specific info (i.e.
+   the terms) are stored in separate, cross-linked, language-specific files.
+   Cross-referencing works, and basic editing of existing entries is easy. The
+   question is whether adding new entries, deleting and moving around things
+   also can be made easy.
 
 !!Thomas
 * prepare text´s about normativity issue to SGL/SGM
 ** nothing this week
 * Digitalize south saami books
-** worked all week
+** worked
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 ** some work done
 
+
 !!Tomi
-* test latest proofing tools, compare results with previous version
+* compile a {{sma}} speller lexicon using the {{sme}} compiler
+** done
+* run the regular set of speller tests on {{sma}} using this special lexicon
 ** done
 * run tests using Hunspell, Voikko, Polderland for our Sámi lexicons
 ** not done
 * put together the TTS preprocessing transducers and scripts
 ** not done
 * write new build commands
-** working
+** not done
 * check out the voikko code
 ** not done
 * try to compile voikko
 ** not done
 * add all our Sámi analysers and test them as spellers
-** not done
 * when the new build infrastructure works as it should, delete the old ones
-** not done
 * document how compounding is controlled in the PLX conversion
 * fix double hyphen bugs
 * fix PL {{smj}} hyphenator bug
@@ -259,27 +268,34 @@ Agenda accepted as is.
 
 !!!Oahpa!
 
-Ciprian needs to merge the Lovosero version with the Bodø one.
+A lot of work with Oahpa, made a Komi version for presentation for Trond, and
+for Michael Rießler, who has some Komi persons working for him. Also worked
+quite a bit on the Kildin Sámi Oahpa. Planning to work on the Skolt Sámi Oahpa.
+
+There's also a bug in Morfa-S that needs to be fixed before Lene is presenting
+Oahpa at a school in Tromsø.
 
 __TODO__
 * Register oahpa.no (__Trond__)
 * Generate fin/xml/{nouns|verbs|adjectives}.xml, and implement the new Leksa
-  dropdown menu (__Ciprian__).
-* From the start: sjd_oahpa Leksa in deu and eng as well  
+  dropdown menu (__Ciprian__)
+** done long ago
+* From the start: sjd_oahpa Leksa in deu and eng as well (__Ciprian__)
+** delayed
 * clock and date for Numra (__Trond, Ciprian__)
 * Numra for Skolt Sámi (__Trond, Ciprian__)
 * implement the Bodø-Oahpa (__Ciprian, Trond, Lene__)
+** done long ago
 * email notification when the server goes down (__Ciprian__)
 * Finding a volunteer to translate the sme Leksa lexicon to Swedish (__Trond__)
+** found, but he has no time to do it
 * add capcha(?) for the feedback e-mail address (__Ciprian__)
 
 !!!Corpus gathering
 
-Børre has moved the school history files. Thomas has scanned even more texts.
+__Thomas__ still scanning.
 
 __TODO:__
-* put the school history files into a properly named subdirectory (__Børre__)
-** done
 * get all the latest Sámi Parliament protocolls into our repository (__Børre__)
 * contact the Sámi translators at the government and ministeries to get more
   parallell texts (__Børre__)
@@ -317,7 +333,7 @@ See a separate document in {{plan/strat/5year.jspwiki}}.
 
 !!Northern areas project
 
-Trip to Syktyvkar forthcoming. 
+Trip to Syktyvkar ongoing - Trond has just presented the Barents project. 
 
 __TODO:__
 * Attend a beginners' course in Russian (priority: the alphabet!) near you..
@@ -354,13 +370,21 @@ and some license info, pointing to the original.
 __TODO:__
 * make the conversion scripts work with the new svn repository
   (__Børre, Ciprian__)
+** done some
 ** add check for almost empty content
+*** already implemented in convert2xml.pl. Still empty or almost empty files
+    are converted. This is because of unexpected structure of content, so that
+    the conversion goes wrong, and leaves no real content in the resulting xml
+    file.
 ** add processing of svg files
+*** not done
 * reorganise subdirs as needed (__Ciprian, Trond__)
+** not yet done
 * identify parallel nob files - should be automatic, but needs to be checked
   (__Ciprian__)
 * sentence-align sme with nob (__Ciprian__)
 ** the aligner wasn't working, __Børre__ has tried to fix it
+*** not yet fixed - bug not found
 * analyse/disambiguate (__Ciprian__)
 * preferably also dep -> check with Oslo if it can be used (__Ciprian__)
 * install in Oslo (__Ciprian, Trond__)
@@ -371,6 +395,8 @@ __TODO:__
 __TODO:__
 * read access for the rest of our teams + outsiders who have signed the corpus
   usage agreement - presently only ''bound'' group has read access (__Børre__)
+** it works: we have a writer group, and a reader group, and no one else is
+   allowed access. All access is locally on victorio.
 * convert or move the files in the {{upload}} dir to the real corpus repo
   (__Børre__)
 * turn on corpus summary crontab (__Børre__)
@@ -502,6 +528,7 @@ __TODO:__
 __TODO:__
 * Prepare texts about normativity issue to SGL/SGM (__Maja__)
 ** look at Trond's XXX comments (__Maja__)
+*** done
 ** read through and comment by Wednesday afternoon (__Sjur__)
 * adjectives (__Maja__ with __Thomas, Trond, Sjur__)
 ** two competing naming conventions of continuation lexicons
@@ -514,6 +541,10 @@ __TODO:__
 * finish compound tags for adjectives (__Maja__)
 
 !!!Name lexicon/risten.no infrastructure
+
+__Sjur__ has experimenting with a XXE config for terminology. Needs to be
+tested, it is pretty rough now. It also do not support adding new entries in an
+easy way.
 
 __TODO:__
 * find already approved lists, in paper or electronic form (__term team__)
@@ -588,18 +619,15 @@ __TODO:__
 
 !!South Sámi
 
-Beta release: June 1. We should be getting the Polderland (now Knowledge
+Beta release: June 15. We should be getting the Polderland (now Knowledge
 Concepts - hereafter KC) binaries in the second half of May.
-
-We need to test our {{sma}} speller using our command line tools. Using the
-regular {{sma}} speller lexicon with the {{sme}} command line speller won't
-work, but if we compile the lexicon using the {{sme}} compiler, it should work.
-This is a temporary work-around till we get the proper tools from KC.
 
 __TODO:__
 * compile a {{sma}} speller lexicon using the {{sme}} compiler (__Tomi__)
+** done, test results need to be resortet a bit
 * run the regular set of speller tests on {{sma}} using this special lexicon
   (__Tomi__)
+** done
 * finish the error markup of at least one gold staqndard {{sma}} document
   (__Maja__)
 * test the {{sma}} speller on the gold standard document (__Sjur__)
@@ -611,6 +639,13 @@ __TODO:__
 * gold standard testing (__Sjur__)
 
 !!HFST- and Voikko-based proofing tools
+
+__Sjur__ met with the HFST people yesterday. Two things happening in parallell:
+# hfst3 - being made ready for public release, with proper inclusion of
+          autotools, and updated documentation
+# speller/lookup library:
+## speller/lookup library
+## voikko integration of this library
 
 __TODO:__
 * Change the license tag to GPL for voikko inclusion. (see above)
@@ -773,7 +808,7 @@ Content:
 
 !!Meeting with the FAD minister
 
-See separate document.
+We met and presented. It went fairly ok.
 
 !!Thursday inhouse seminar
 
@@ -791,7 +826,7 @@ Future seminars:
 # UML
 # other suggestions?
 
-!!Spring planning
+!!Summer planning
 
 Topics:
 
@@ -806,12 +841,8 @@ Topics:
 
 Dates:
 
-* May 4-5: Lene, Giellagiella
-* May: LREC Malta: WS: 17-18, Conf. 19-21, WS 22-23
-** Trond
-** Lene
-** Linda
-** Sjur?
+* June 17th: Sjur in Karasjok, presenting Autshumato, discussing risten.no and
+  terminology editing issues (using XXE?)
 * July: ACL Uppsala
 * August: IceTAL, Reykjavik
 * September 8: Konvens-workshop Saarbrücken: LT and text-technological methods
@@ -821,6 +852,8 @@ Dates:
 
 !!Text to speech
 
+There will be regular meetings in this project from now on, every second week.
+
 __TODO:__
 * put together the preprocessing transducers and scripts (__Tomi__)
 * refine syntax / dependency rules (__Biret Ánne__)
@@ -829,10 +862,12 @@ __TODO:__
 !!CAT
 
 __TODO:__
-* convert our dictionaries to A-ITE format, so that they can be used directly
-  in there (__???__)
+* make our dictionaries work in A-ITE (__Ciprian__)
+** OmegaT has basic support for Stardict dictionaries, but it seems it only
+   supports non-xml dictionaries.
 * add support for dynamicaly setting MT language pair based on translation 
   languages. Deadline: friday (__Ciprian__)
+** done, working nicely
 
 !!Norsk språkbank
 
@@ -843,24 +878,24 @@ presentation of Språkbanken.
 !!Summer vacations
 
 || Name   || Dates
-| Børre   | 28/6-11/6, 2/8-15/8
+| Børre   | 28/6-11/7, 2/8-15/8
 | Ciprian | Dates
 | Maja    | Dates
 | Sjur    | Dates
 | Thom    | 5 weeks between 21/6-13/8
-| Tomi    | Dates
+| Tomi    | 5 weeks between 21/6-13/8
 | Trond   | Dates
 
 !!!Next meeting, closing
 
-The next meeting is 25.5.2010, 09:30 Norwegian time.
+The next meeting is 31.5.2010, 09:30 Norwegian time.
 
-The meeting was closed at 12:00.
+The meeting was closed at 11:17.
 
 !!!Appendix - task lists for the next week
 
 !!Boerre
-[iCal|/doc/admin/weekly/2010/Tasks_2010-05-18_Boerre.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-05-26_Boerre.ics]
 * get all the latest Sámi Parliament protocolls into our repository
 * contact the Sámi translators at the government and ministeries to get more
   parallell texts
@@ -885,19 +920,20 @@ The meeting was closed at 12:00.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Ciprian
-[iCal|/doc/admin/weekly/2010/Tasks_2010-05-18_Ciprian.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-05-26_Ciprian.ics]
 * Lujavr-Oahpa:
-** merge previous entires with the Bodø version
+** finish merging and updating the content
 ** update the localzation
 ** deadline (by the end of May)
 * terminology:
-** prepare first a test file and show it to Ellen Ravna
-** merged the 2 doc files with the xls file containing the 2006 law terminology db (deadline 20. May)
+** merged the 2 doc files with the xls file containing the 2006 law terminology
+   db (deadline 20. May)
 ** prepare a StarDict test version of the merged data for demo
-** compile a dictionary in StarDict format with all data featuring the properties wished by Ellen Ravna 
+** compile a dictionary in StarDict format with all data featuring the
+   properties wished by Ellen Ravna 
 * add license header to all files
 * make restricted access to our svn repository work ({{fit}} adaption)
-* PhD-Projektbeskrivelse (internal deadline April/Mai 2010):
+* PhD-Projektbeskrivelse (internal deadline end of June 2010):
 ** search, read, write (execute): high priority!
 * read and answer the newsgroups messages
 * update corpora (both monolingual and parallel) for Oslo (Glossa)
@@ -943,7 +979,7 @@ The meeting was closed at 12:00.
    StarDict 3.2)
 ** try to reduce the dict-size on mac: experiment with xPointer, etc.
 * Fkv:Nob - Nob:Fkv:
-** re-compile the dictionaries incorporating the stem information
+** re-compile the dictionaries incorporating the stem information and novel glossary (deadline 7. June)
 ** try to implement a web version of the dictionaries using the Odense method
 * KomEngFin:
 ** test the automatic sorting by Komi alphabet in xsl (as discussed
@@ -962,16 +998,15 @@ The meeting was closed at 12:00.
 ** contact Kimberly Mäkäräinen and ask whether she might be willing to share
    data with us
 * MT
+** embed gt_dicts in A_ITE (deadline 10. June)
 ** test A-ITE on Windows
 * Permanent education
 ** prepare/update XLS course materials
 ** learn UML
 
-
 !!Maja
-[iCal|/doc/admin/weekly/2010/Tasks_2010-05-18_Maja.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-05-26_Maja.ics]
 * finish the error markup of at least one gold staqndard {{sma}} document
-* add missing sma verbs
 * Prepare text´s about normativity issue to SGL/SGM
 * more work on {{sma}} adjectives
 * look at incoming loanwords
@@ -981,7 +1016,7 @@ The meeting was closed at 12:00.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Sjur
-[iCal|/doc/admin/weekly/2010/Tasks_2010-05-18_Sjur.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-05-26_Sjur.ics]
 * test the {{sma}} speller on the gold standard document
 * formulate license header
 * add voikko support to our proofing test bench
@@ -1012,8 +1047,6 @@ The meeting was closed at 12:00.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Tomi
-* compile a {{sma}} speller lexicon using the {{sme}} compiler
-* run the regular set of speller tests on {{sma}} using this special lexicon
 * run tests using Hunspell, Voikko, Polderland for our Sámi lexicons
 * put together the TTS preprocessing transducers and scripts
 * write new build commands
@@ -1028,7 +1061,7 @@ The meeting was closed at 12:00.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Trond
-[iCal|/doc/admin/weekly/2010/Tasks_2010-05-18_Trond.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-05-26_Trond.ics]
 * corpus infra:
 ** reorganise subdirs as needed
 * Northern areas
