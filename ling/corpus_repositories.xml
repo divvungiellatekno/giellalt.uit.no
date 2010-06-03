@@ -55,6 +55,67 @@
 			</section>
 
 			<section>
+				<title>The directory structure</title>
+
+				<p>
+					The main directory in the corpus repository is <em>orig</em>.
+					<em>orig</em> contains the original files with the original names (bar
+					spaces replaced with _) and in the original format. The file-specific
+					xsl-files are in under the orig-hierarchy as well, in the same
+					subdirectory as the document itself.
+				</p>
+
+				<p>Inside these directories are directories for various languages. They
+				contain parallel translations to the sami documents. Below is an
+				outline of the directory structure.</p>
+
+				<source>
+
+orig/
+	eng/
+	fin/
+	nob/
+	sma/
+	sme/
+	smj/
+	swe/
+				</source>
+
+				<p>Inside each of the language directories the structure outlined below
+				is used.</p>
+
+				<source>
+admin/
+	depts/
+	guovda/
+	karas/
+	others/
+	sd/
+bible/
+	ot/
+	nt/
+facta/
+ficti/
+laws/
+news/
+	Assu
+	MinAigi
+	NRK
+	YLE
+	other
+				</source>
+				<p>
+					If you run the <a href="corpus_conversion.html">conversion process</a>
+					the directory <em>converted</em> is created. It has the same
+					structure as <em>orig</em>, but contains the files converted from the
+					original format to our internal xml-format. The converted directory
+					contains copies of all the files in the corpus database.
+				</p>
+
+			</section>
+
+
+			<section>
 				<title>Manually adding content</title>
 
 				<p>
