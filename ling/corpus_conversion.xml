@@ -2,157 +2,98 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
-  <header>
-    <title>Corpus collector's manual</title>
+   <header>
+      <title>Corpus collector's manual</title>
 
-    <authors>
-      <person email="tomi.pieski@hum.uit.no" name="Tomi Pieski" />
+      <authors>
+         <person email="tomi.pieski@hum.uit.no" name="Tomi Pieski" />
 
-      <person email="saara huhmarniemi @ helsinki fi" name="Saara Huhmarniemi" />
-    </authors>
-  </header>
+         <person email="saara huhmarniemi @ helsinki fi"
+                 name="Saara Huhmarniemi" />
+      </authors>
+   </header>
 
-  <body>
-    <section>
-      <title>Introduction</title>
-
-      <p>This file provides an overview of the corpus conversion process.
-      Basically, when a new document is recieved, it is classified according
-      the language and genre and stored as such to the directory structure for
-      the original files. All the original files are left untouched. The text
-      and structural information contained in the document is extracted by a
-      conversion script and transformed to an xml-file. Xml-files are stored
-      in separate directory hierarchy where they can be easily accessed and
-      used as a test material for grammar checkers and spellers. The
-      metainformation associated with the document, such as the name of the
-      author, is stored in an xsl-file and appended to the xml-file during the
-      conversion. The metainformation is used elsewhere, in different corpus
-      applications.</p>
-
-      <p>First section explains the conversion process step by step. It is
-      followed by more detailled descriptions of the directory structure and
-      the handling of the file-specific xsl-files. There is also a small
-      section of the log-files and the different uses of the convert2xml.pl
-      -script.</p>
-    </section>
-
-    <section>
-      <title>Basic conversion process</title>
-
-      <p>When you have a file that you want to add to our corpus directory,
-      you have two alternatives. You can either use the web upload script in
-      <a
-      href="http://www.divvun.no/upload/upload_corpus_file.html">http://www.divvun.no/upload/upload_corpus_file.html</a>
-      or insert the file manually.</p>
-
+   <body>
       <section>
-        <title>Web upload script</title>
+         <title>Introduction</title>
 
-        <p>Open the page <a
-        href="http://www.divvun.no/upload/upload_corpus_file.html">http://www.divvun.no/upload/upload_corpus_file.html</a>.</p>
+         <p>This file provides an overview of the corpus conversion process.
+         Basically, when a new document is recieved, it is classified according
+         to the language and genre and stored as such to the directory structure
+         for the original files. All the original files are left untouched. The
+         text and structural information contained in the document is extracted
+         by a conversion script and transformed to an xml-file. Xml-files are
+         stored in separate, parallel directory hierarchy where they can be
+         easily accessed and used as a test material for grammar checkers and
+         spellers. The metainformation associated with the document, such as the
+         name of the author, is stored in an xsl-file and appended to the
+         xml-file during the conversion. The metainformation is used elsewhere,
+         in different corpus applications.</p>
 
-        <ol>
-          <li>Choose the file you want to upload, or specify the url.</li>
-
-          <li>Choose the license type for the text: "free", which means that
-          the text is free to use by everyone, "standard" which denotes the
-          license that is specified in the contracts with text provides or
-          "other", when some other than the standard license will be used (the
-          information has to be added manually later).</li>
-
-          <li>Fill in the metainformation. The uploading takes a while
-          especially if the file is large or with lot of structure. After
-          submitting the form, a page will open with fields for filling the
-          metainformation. The fields "language" and "genre" are obligatory.
-          If you nevertheless feel unsecure about the genre of the document,
-          you may leave it open, but please inform the maintainers about
-          that.</li>
-
-          <li>If any problems persist, please contact the maintainers. You
-          will be informed on how the uploading succeeded.</li>
-        </ol>
+         <p>The first section explains the conversion process step by step. It
+         is followed by more detailled descriptions of the directory structure
+         and the handling of the file-specific xsl-files. There is also a small
+         section of the log-files and the different uses of the convert2xml.pl
+         -script.</p>
       </section>
 
       <section>
-        <title>Manual conversion</title>
+         <title>Basic conversion process</title>
 
-        <p>If you have a file that you want to add to the corpus repository by
-        hand</p>
+         <p>When you have a file that you want to add to our corpus directory,
+         you have two alternatives. You can either use the web upload script in
+         <a
+         href="http://www.divvun.no/upload/upload_corpus_file.html">http://www.divvun.no/upload/upload_corpus_file.html</a>
+         or insert the file manually.</p>
 
-        <ol>
-          <li>Start with determining the main language: <code>eng, fin, nno,
-          nob, sma, sme, smj, swe. </code>And genre: <code>admin, bible,
-          facta, ficti, laws, news.</code>See section directory structure for
-          details.</li>
+         <section>
+            <title>Manual conversion</title>
 
-          <li>Copy the file to the directory
-          /usr/local/share/corp/orig/$lang/$genre/. (Check that there isn't
-          already a file with the same name.) (there should perhaps be a
-          md5sum test for the files here as well, add it to convert2xml). For
-          example, a North Sámi document in genre "facta", copy the file to
-          directory /usr/local/share/corp/orig/sme/facta/. For news genre,
-          there are subdirectories for different sources of news, and for
-          bible texts, there are subdirectories for ot and nt.</li>
+            <ol>
+               <li><p>Run the convert2xml.pl script for the file. For example, a
+               MS Word document, with language and genre as above, is converted
+               with command (relative path is fine as well, but do not use
+               tilde.) Give the language as command line option.</p> <source>
+	convert2xml.pl --lang=sme --dir=/usr/local/share/corp/orig/sme/facta/file_name.doc
+	</source> <p>The conversion takes a while especially if the file is large or
+               with lot of structure. If you want to see all the error messages
+               generated during conversion, use option --nolog.</p></li>
 
-          <li><p>Run the convert2xml.pl script for the file. For example, a MS
-          Word document, with language and genre as above, is converted with
-          command (relative path is fine as well, but do not use tilde.) Give
-          the language as command line option.</p>
-<source>
-convert2xml.pl --lang=sme --dir=/usr/local/share/corp/orig/sme/facta/ file_name.doc
-</source>
-
-          <p>The
-          conversion takes a while especially if the file is large or with lot
-          of structure. If you want to see all the error messages generated
-          during conversion, use option --nolog.</p></li>
-
-          <li>Check out the resulting xml-file in the corresponding
-          bound-directory. If there are fatal errors during the conversion,
-          you will see an error message stating "ERROR &lt;something&gt;",
-          consult the maintainers of the corpus files or see the log file (in
-          /usr/local/share/corp/tmp) for details. The script informs you of
-          the character conversion and the original (or intermediate)
-          encoding.</li>
-
-          <li><p>Update the metainformation by editing the file
-          /usr/local/share/corp/orig/$lang/$genre/file_name.xsl. The file is
-          under version control, so check it out for writing with
-          command</p><source>     co -l file_name.xsl</source><p>Specify the
-          values for fields that are incorrect or missing by giving a value to
-          the corresponding variable. Check in your changes with
-          command:</p><source>     ci -m"your log message" xsl-file.xsl </source></li>
-
-          <li>Run the convert2xml.pl script once more to get the changes to
-          the xml-file.</li>
-        </ol>
+               <li>Check out the resulting xml-file in the corresponding
+               bound-directory. If there are fatal errors during the conversion,
+               you will see an error message stating "ERROR &lt;something&gt;",
+               consult the maintainers of the corpus files or see the log file
+               (in /usr/local/share/corp/tmp) for details. The script informs
+               you of the character conversion and the original (or
+               intermediate) encoding.</li>
+            </ol>
+         </section>
       </section>
-    </section>
 
-    <section>
-      <title>The directory structure</title>
+      <section>
+         <title>The directory structure</title>
 
-      <p>The corpus is situated on the machine victorio.uit.no. The two main
-      directories in the corpus are <em>orig</em> and <em>bound</em>.
-      <em>orig</em> contains the original files with the original names (bar
-      spaces replaced with _) and in the original format. The file-specific
-      xsl-files are in under the orig-hierarchy as well, in the same
-      subdirectory as the document itself.<em>bound</em> has the same
-      structure as <em>orig</em>, but contains the files converted from the
-      original format to our internal xml-format. The bound-directory contains
-      copies of all the files in the corpus database, with restricted access
-      only for the project team members. There is a directory
-      <code>free</code> for the xml-versions of the documents that are freely
-      available. If the access to the document is restricted, the conversion
-      updates only the version in the bound-hierarchy. If the document is
-      marked as publicly available, both bound- and free-directories are
-      updated.</p>
+         <p>The corpus is situated on the machine victorio.uit.no. The two main
+         directories in the corpus are <em>orig</em> and <em>bound</em>.
+         <em>orig</em> contains the original files with the original names (bar
+         spaces replaced with _) and in the original format. The file-specific
+         xsl-files are in under the orig-hierarchy as well, in the same
+         subdirectory as the document itself.<em>bound</em> has the same
+         structure as <em>orig</em>, but contains the files converted from the
+         original format to our internal xml-format. The bound-directory
+         contains copies of all the files in the corpus database, with
+         restricted access only for the project team members. There is a
+         directory <code>free</code> for the xml-versions of the documents that
+         are freely available. If the access to the document is restricted, the
+         conversion updates only the version in the bound-hierarchy. If the
+         document is marked as publicly available, both bound- and
+         free-directories are updated.</p>
 
-      <p>Inside these directories are directories for various languages. They
-      contain parallell translations to the sami documents. Below is an
-      outline of the directory structure.</p>
+         <p>Inside these directories are directories for various languages. They
+         contain parallel translations to the sami documents. Below is an
+         outline of the directory structure.</p>
 
-      <source>
+         <source>
                 
 /usr/local/share/corp/
                     orig/
@@ -173,10 +114,10 @@ convert2xml.pl --lang=sme --dir=/usr/local/share/corp/orig/sme/facta/ file_name.
                         swe/
             </source>
 
-      <p>Inside each of the language directories the structure outlined below
-      is used.</p>
+         <p>Inside each of the language directories the structure outlined below
+         is used.</p>
 
-      <source>
+         <source>
                 
 admin/
     depts/
@@ -196,303 +137,41 @@ news/
     NRK
     YLE
     other
-            </source>
-    </section>
-
-    <section>
-      <title>XSL-files</title>
-
-      <p>The subdirectories under orig contain the original documentes stored
-      to the corpus database in their original format (doc, pdf, txt, html and
-      paratext at the moment). During the conversion, the original documents
-      are transformed to text and stored in an xml-structure. The xml-files
-      are stored under bound-hierarchy, whereas the original documents stay
-      unthouched. The conversion from the original format to the xml-file can
-      be done any time, and should be done if e.g the tools improve or the
-      xml-structure changes.</p>
-
-      <p>The xml-document contains a header for the metainformation such as
-      the title of the document, author(s), publication info and so on. Since
-      we cannot edit the original document and do not want to edit the
-      xml-file, the changes to the metasection are done in an xsl-script,
-      which adds the metainformation to the xml-file during the conversion. In
-      addition to metainformation, the xsl-file may contain processing
-      instructions, such as the languages to which the text is categorized or
-      some information of the text layout.</p>
-
-      <p>The xsl-file is created during the conversion by the
-      convert2xml-script. When the corpus file is uploaded to the directory
-      hierarchy via web interface, the script xsl-process.cgi creates the
-      xsl-file. The xsl-file is stored to the same directory as the original
-      document, with the same name as the original document, and suffix
-      .xsl.</p>
-
-      <p>File specific xsl-file contains variables for main language and
-      metainformation of the corpus document. By changing or adding values on
-      these variables, we are able modify the the xml-file without touching
-      the original.</p>
-
-      <section>
-        <title>The variables in the xsl-file</title>
-
-        <p>The variables are defined by expressions as the following:</p>
-
-        <source>&lt;xsl:variable name="title" select="''"/&gt;
-&lt;xsl:variable name="author" select="''"/&gt;
-&lt;xsl:variable name="author-gender" select="'f'"/&gt;
-&lt;xsl:variable name="publisher" select="''"/&gt;
-&lt;xsl:variable name="translated-from" select="''"/&gt;
-
-&lt;xsl:variable name="mainlang" select="'sme'"/&gt;
-</source>
-
-        <p>The information is updated by adding the new value to the
-        "select"-field, inside single quotes. Most of the fields, such as the
-        title and the name of the author can contain free text, but the values
-        of some fields are restricted. The variables are explained in detail
-        in following.</p>
-
-        <section>
-          <title>General variables</title>
-
-          <dl>
-            <dt><code>filename</code></dt>
-
-            <dd>The original name of the file, that comes from the submitter
-            of the document. Sometimes the filename has to be changed e.g. for
-            the system requirements: no white spaces or special characters are
-            allowed in the filename.</dd>
-
-            <dt><code>author1_fn, author1_ln, author1_born,
-            author1_nat</code></dt>
-
-            <dd>Information of the first author: first name, last name, date
-            or year of birth, nationality. The variables for author2 etc.
-            respectively.</dd>
-
-            <dt><code>author1_gender</code></dt>
-
-            <dd>The gender is selected from the list: f, m or unknown.</dd>
-
-            <dt><code>translated_from</code></dt>
-
-            <dd>The original language of the document: select from the list:
-            sme, smj, sma, nob, nno, fin, ger, eng, .. and so on.</dd>
-
-            <dt><code>publChannel</code></dt>
-
-            <dd>The values are either: published or unpublished</dd>
-
-            <dt><code>publisher, place, collection, ISBN, ISSN</code></dt>
-
-            <dd>The name of the publisher, place, the name of the collection
-            etc. as free text.</dd>
-
-            <dt><code>year</code></dt>
-
-            <dd>Publishing year, or if the document is unpublished, the year
-            the document was written.</dd>
-
-            <dt><code>translator_fn, translator_ln, translator_gender,
-            translator_nat, translator_born</code></dt>
-
-            <dd>The values are similar as with the author1.</dd>
-
-            <dt><code>license_type</code></dt>
-
-            <dd>The availability of the document. Some documents are freely
-            available, some are under license. The type of the license is
-            either free, standard or other.</dd>
-
-            <dt><code>sub_name, sub_email</code></dt>
-
-            <dd>The name and email of the submitter.</dd>
-
-            <dt><code>wordcount</code></dt>
-
-            <dd>The wordcount for size estimates.</dd>
-
-            <dt><code>metadata</code></dt>
-
-            <dd>If the xsl-file is finished. The values are complete and
-            uncomplete</dd>
-
-            <dt><code>template_version, current_version</code></dt>
-
-            <dd>Version information of the original XSL-template and the
-            version number of the current xsl-file. This information is
-            provided automatically.</dd>
-
-            <dt><code>note</code></dt>
-
-            <dd>Free text field for notes.</dd>
-          </dl>
-        </section>
-
-        <section>
-          <title>The languages of the document</title>
-
-          <dl>
-            <dt><code>mainlang</code></dt>
-
-            <dd>The main language of the document: sme, smj, sma, nob, fin,
-            etc. The main language should be the same as the language
-            directory where the file is in.</dd>
-          </dl>
-
-          <dl>
-            <dt><code>monolingual, multilingual</code></dt>
-
-            <dd>Select "1" for either of these. If both are undefined, the
-            document is assumed to be multilingual.<dl>
-                <dt>mlang_sme, mlang_nob, mlang_fin, mlang_swe,..</dt>
-
-                <dd>The languages that appear in the document in addition to
-                the main language.</dd>
-              </dl></dd>
-          </dl>
-        </section>
-
-        <section>
-          <title>Parallel texts</title>
-
-          <dl>
-            <dt>parallel_texts</dt>
-
-            <dd>Select "1" if the document has parallel texts.</dd>
-          </dl>
-
-          <dl>
-            <dt>para_sme, para_nob, para_fin, para_swe</dt>
-
-            <dd>Give the names of the parallel documents. The parallel file is
-            assumed to be located in the corresponding subdirectory under the
-            selected language. E.g. the Bokmål paralle file of the
-            file<code>corp/orig/sme/facta/file.doc</code> is assumed to be
-            located in <code>corp/orig/nob/facta/</code>. If this is not the
-            case, give the full path to the file. If more than one document in
-            some language correspond the document, give the filenames
-            separated by comma (,).</dd>
-          </dl>
-        </section>
+				</source>
       </section>
 
       <section>
-        <title>Other processing instructions in the xsl-file.</title>
+         <title>Log files</title>
 
-        <section>
-          <title>Changing the language of a paragraph</title>
+         <p>The error messages, warnings and other information of the conversion
+         are stored in special logfile. The log file is named after current date
+         and time and stored to a temporary directory, by default the directory
+         tmp/ under corpdir. The directory can be given as a command line option
+         as well. The log file contains the information that was printed to
+         STDERR during the conversion. The errors that prevent some document to
+         be converted are still printed to the screen as well. If you want all
+         the errors to be printed to screen, use option --nolog. The log file is
+         for example:<code> tmp/Feb-10-8-57.log</code></p>
 
-          <p>It is possible to explicitely state that some element in the
-          xml-document is categorized to some language. The part of xsl-file
-          that specifies the block is the following:</p>
+         <p>The old log files are stored to a compact format under
+         /usr/local/share/corp/tmp/log/. There you can look for the log file
+         from the day the current xml-document was created. To examine the
+         tar-file from 10th of February, first copy the tar-file to your home
+         directory and then open it:</p>
 
-          <source>&lt;!-- Add all paragraphs that should have xml:lang=X--&gt;
-&lt;!-- Uncomment the following and add the paths, for example: --&gt;
-&lt;!-- &lt;xsl:template match="/root/section[2]/paragraph[5] |
-                      /root/section[3]/paragraph[2] "&gt; --&gt;
-
-&lt;xsl:template match=""&gt;
-    &lt;xsl:element name="p"&gt;
-    &lt;xsl:attribute name="xml:lang"&gt;
-        &lt;xsl:value-of select="$smelang"/&gt;
-    &lt;/xsl:attribute&gt;
-    &lt;xsl:apply-templates/&gt;
-&lt;/xsl:element&gt;
-&lt;/xsl:template&gt;</source>
-
-          <p>Change the value of "template match" to the XPath-expression of
-          the xml-element. Change the value of "select" to the desired
-          language.</p>
-        </section>
-
-        <section>
-          <title>Translating characters to other characters in the
-          text</title>
-
-          <p>The problematic characters in the document that cannot be reached
-          by the character conversion can be replaced by xsl-script. The line
-          of code is:</p>
-
-          <source>&lt;xsl:value-of select="translate($text,'ðq','đá') "/&gt;</source>
-
-          <p>In the example, the ð is translated to đ and q to á.</p>
-        </section>
-
-        <section>
-          <title>Excluding a file from conversion</title>
-
-          <p>The xsl-file contains line for including the processing
-          instructions:</p>
-
-          <source>&lt;xsl:include href="/usr/local/share/corp/bin/common.xsl"/&gt;</source>
-
-          <p>Sometimes the converted text does not fulfill the quality
-          requirements for some reason, e.g. the Sámi characters are missing
-          or encoded strangely. The file can be excluded from the conversion
-          by replacing "common.xsl" with "empty.xsl".</p>
-        </section>
-      </section>
-
-      <section>
-        <title>XSL-files and version control</title>
-
-        <p>xsl-files are under RCS version control, which is indicated by the
-        suffix <code>,v</code>. A revision must be checked out for reading and
-        processing as well as for editing. The relevant commands for handling
-        the version control are described in the following:</p>
-
-        <source>   co xsl-file.xsl     # Check out the file for reading or processing (the file is write protected).
-   co -l xsl-file.xsl  # Check out the file for editing, creates a lock.
-   ci -m"your log message" xsl-file.xsl     # Check in the file, remove the lock. </source>
-
-        <p>Sometimes people check out files and forget to check them in again,
-        thus keeping the file locked. If so, ask the owner of the lock to
-        remove it or it that is not possible, steal the lock with <code>rcs
-        -u</code>see the rcs man page for details. The RCS files can be
-        accessed by anyone belonging to the cvs group. The files can also be
-        deleted by persons belonging to the cvs group, so beware! Check the
-        permissions.. todo.</p>
-
-        <p>If you create an xsl-file manually, use the following command to
-        add the initial revision under version control:</p>
-
-        <source>   ci -t-"log message" -q -i xsl-file.xsl</source>
-      </section>
-    </section>
-
-    <section>
-      <title>Log files</title>
-
-      <p>The error messages, warnings and other information of the conversion
-      are stored in special logfile. The log file is named after current date
-      and time and stored to a temporary directory, by default the directory
-      tmp/ under corpdir. The directory can be given as a command line option
-      as well. The log file contains the information that was printed to
-      STDERR during the conversion. The errors that prevent some document to
-      be converted are still printed to the screen as well. If you want all
-      the errors to be printed to screen, use option --nolog. The log file is
-      for example:<code> tmp/Feb-10-8-57.log</code></p>
-
-      <p>The old log files are stored to a compact format under
-      /usr/local/share/corp/tmp/log/. There you can look for the log file from
-      the day the current xml-document was created. To examine the tar-file
-      from 10th of February, first copy the tar-file to your home directory
-      and then open it:</p>
-
-      <source>    cp tmp/log/2006-Feb/Feb-10.tar.gz ~/tmp/
+         <source>    cp tmp/log/2006-Feb/Feb-10.tar.gz ~/tmp/
     gunzip tmp/log/2006-Feb/Feb-10.tar.gz
     tar -xvf tmp/log/2006-Feb/Feb-10.tar.gz</source>
-    </section>
+      </section>
 
-    <section>
-      <title>convert2xml.pl</title>
+      <section>
+         <title>convert2xml.pl</title>
 
-      <p>There are several options available which control the conversion
-      process, it is e.g possible to skip the xsl-processing, the character
-      decoding, or the hyphenation. The available options:</p>
+         <p>There are several options available which control the conversion
+         process, it is e.g possible to skip the xsl-processing, the character
+         decoding, or the hyphenation. The available options:</p>
 
-      <source>
+         <source>
 Usage: convert2xml.pl [OPTIONS] [FILES]
 The available options:
     --xsl=&lt;file&gt;    The xsl-file which is used in the conversion.
@@ -513,57 +192,54 @@ The available options:
     --help          Print this message and exit.
 </source>
 
-      <p>The file to be converted is given to convert2xml.pl as command line
-      argument. The behaviour can be changed by giving the --dir, then the
-      directory specified is searched for files to be converted. The file
-      types that are supported at the moment are: doc, pdf, html, text and
-      paratext. The corresponding file suffixes are are .doc, .pdf, .html, txt
-      and .ptx. At the users' point of view, there is no difference between
-      the file types, the technical documentation is provided at <a
-      href="corpus_conversion_tech.html">corpus_conversion_tech.html</a>.</p>
+         <p>The file to be converted is given to convert2xml.pl as command line
+         argument. The behaviour can be changed by giving the --dir, then the
+         directory specified is searched for files to be converted. The file
+         types that are supported at the moment are: doc, pdf, html, text and
+         paratext. The corresponding file suffixes are are .doc, .pdf, .html,
+         txt and .ptx. At the users' point of view, there is no difference
+         between the file types, the technical documentation is provided at <a
+         href="corpus_conversion_tech.html">corpus_conversion_tech.html</a>.</p>
 
-      <p>The script convert2xml.pl is mainly used for the basic corpus
-      directory hierarchy, but it can be configured for other environments as
-      well. How this is done is explained in the following:</p>
+         <p>The script convert2xml.pl is mainly used for the basic corpus
+         directory hierarchy, but it can be configured for other environments as
+         well. How this is done is explained in the following:</p>
 
-      <p>Some documents get wrongly utf-8-encoded by the conversion tools and
-      they are fixed using a Perl module <code>samiChar::Decode.pm. </code>It
-      is installed in victorio, and you should not notice it's presence. If
-      you are converting files in some other machine, you should install the
-      module.. Another Perl module that is needed is XML::Twig. Instructions
-      for installing both modules can be found in <a
-      href="corpus_conversion_tech.html">corpus_conversion_tech.html.</a></p>
+         <p>Some documents get wrongly utf-8-encoded by the conversion tools and
+         they are fixed using a Perl module <code>samiChar::Decode.pm. </code>It
+         is installed in victorio, and you should not notice it's presence. If
+         you are converting files in some other machine, you should install the
+         module.. Another Perl module that is needed is XML::Twig. Instructions
+         for installing both modules can be found in <a
+         href="corpus_conversion_tech.html">corpus_conversion_tech.html.</a></p>
 
-      <p>Let the original file be <code>original.pdf</code>. Use for example
-      the command</p>
+         <p>Let the original file be <code>original.pdf</code>. Use for example
+         the command</p>
 
-      <source>
+         <source>
   $ perl convert2xml.pl --corpdir=/home/mydir/samipdf --tmpdir=mytmp original.pdf
 </source>
 
-      <p>Generally each file has only one character coding which may be
-      wrongly utf-8-encoded. The best way to decode the file is determined
-      statistically. By using the option --multi-coding, the file is assumed
-      to contain more than one character codings, which are decoded
-      paragraph-wise.</p>
+         <p>Generally each file has only one character coding which may be
+         wrongly utf-8-encoded. The best way to decode the file is determined
+         statistically. By using the option --multi-coding, the file is assumed
+         to contain more than one character codings, which are decoded
+         paragraph-wise.</p>
 
-      <p>The resulting file is fully converted xml-file <code>
-      original.pdf.xml </code>When working with the full directory hierarchy,
-      the original file is expected to be found in some subdirectory under
-      /usr/local/share/corp/orig. Then the resulting xml-file is generated to
-      the corresponding subdirectory under /usr/local/share/corp/bound. If you
-      have the same hierarchy in the corpdir given in commandline, the process
-      will be similar. You may use relative path names to the files and
-      directories but do not use tilde (~).</p>
+         <p>The resulting file is fully converted xml-file <code>
+         original.pdf.xml </code>When working with the full directory hierarchy,
+         the original file is expected to be found in some subdirectory under
+         /usr/local/share/corp/orig. Then the resulting xml-file is generated to
+         the corresponding subdirectory under /usr/local/share/corp/bound. If
+         you have the same hierarchy in the corpdir given in commandline, the
+         process will be similar. You may use relative path names to the files
+         and directories but do not use tilde (~).</p>
 
-      <p>The hyphenation points are tagged as <code>&lt;hyph/&gt; </code>. The
-      script tags hyphens that are found at line breaks or end of the
-      paragraphs followed by a suitable word. If all the hyphenation points
-      should be tagged, convert2xml.pl can be called with option
-      --all-hyph.</p>
-    </section>
-
-    <p class="last_modified">Last modified: $Date$, by
-    $Author$</p>
-  </body>
+         <p>The hyphenation points are tagged as <code>&lt;hyph/&gt; </code>.
+         The script tags hyphens that are found at line breaks or end of the
+         paragraphs followed by a suitable word. If all the hyphenation points
+         should be tagged, convert2xml.pl can be called with option
+         --all-hyph.</p>
+      </section>
+   </body>
 </document>
