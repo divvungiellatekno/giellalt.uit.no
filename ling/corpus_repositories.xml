@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+	<header>
+		<title>Corpus repositories</title>
+
+		<authors>
+		<person email="borre.gaup@samediggi.no" name="Børre Gaup" />
+		</authors>
+	</header>
+
+	<body>
+		<section>
+			<title>Corpus repositories</title>
+
+			<p>
+				The corpus is divided in a free part, where texts that we can redistribute are
+				gathered, and a bound part, where we gather texts that we can't redistribute.
+			</p>
+
+			<section>
+				<title>The free part</title>
+
+				<p>
+					The free part is available in an svn repository that is world readable
+					available on the address
+					<a href="https://victorio.uit.no/freecorpus/">https://victorio.uit.no/freecorpus/</a>.
+				</p>
+
+				<p>
+					Check out a working copy either by adding the above address to
+					your svn program, or use the command line program like this:
+					<code>svn checkout https://victorio.uit.no/freecorpus</code>.
+				</p>
+			</section>
+
+			<section>
+				<title>The bound part</title>
+
+				<p>
+					The bound part is available in an svn repository that is
+					accessible only from the machine victorio.uit.no. This
+					repository is readable by people that have signed
+					<a href="">our non disclosure agreement</a>, and is writable
+					by the corpus maintainers. The address to this repository is
+					svn://victorio.uit.no/boundcorpus.
+				</p>
+
+				<p>
+					To check out a working copy, first login to victorio. Then
+					issue the command <code>svn co svn://victorio.uit.no/boundcorpus
+					</code>.
+				</p>
+			</section>
+
+			<section>
+				<title>Manually adding content</title>
+
+				<p>
+					If you have a file that you want to add to the corpus
+					repository by hand you have to have a working copy of
+					either the free or bound part of our corpus.
+				</p>
+
+				<ol>
+					<li>
+						If it is a freely distributable document, add it to the
+						free part of our corpus. If not, add it to the bound part.
+					</li>
+
+					<li>
+						Determine the main language: <code>eng, fin, nno,
+						nob, sma, sme, smj, swe</code>, and then genre: <code>admin, bible,
+						facta, ficti, laws, news</code>.
+					</li>
+
+					<li>
+						Copy the file to the directory $working_copy/orig/$lang/$genre/. For
+						example, a North Sámi document in genre "facta", copy the file to
+						directory $working_copy/orig/sme/facta/ in your working copy. For
+						the news genre, there are subdirectories for different sources of
+						news, and for bible texts, there are subdirectories for ot and nt.
+					</li>
+
+					<li>
+						Copy the file <code>$GTHOME/gt/script/XSL-template.xsl</code> to
+						<code>$working_copy/orig/genre/$filename.xsl</code>. Update the metainformation by
+						editing this file.
+					</li>
+
+					<li>
+						Add and commit these files to the repository by either using the
+						svn command line tools or your usual graphical interface to svn.
+					</li>
+
+				</ol>
+			</section>
+
+			<p>
+				If you would like to have access our corpus, contact us at <a href="mailto:divvun@samediggi.no?subject=Corpus access">divvun@samediggi.no</a>
+			</p>
+		</section>
+
+	</body>
+</document>
