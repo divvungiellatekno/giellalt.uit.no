@@ -11,18 +11,18 @@
 
 Suggested tags:
 {{{
-+First (=non-last or first-only? in PLX format it means non-last)
-+Middle (not used in Sámi, +First = +First+Middle)
-+Last (only last)
-+None
-+All   (all positions, _default_, this tag does not have to be written)
-+CmpOnly (stems that only can appear in compounds, not in isolation, typically
++CmpN/First (=non-last or first-only? in PLX format it means non-last)
++CmpN/Middle (not used in Sámi, +CmpN/First = +CmpN/First+CmpN/Middle)
++CmpN/Last (only last)
++CmpN/None
++CmpN/All   (all positions, _default_, this tag does not have to be written)
++CmpN/CmpOnly (stems that only can appear in compounds, not in isolation, typically
           prefixes - see LEXICON Prefixes in sme-lex.txt)
 }}}
 
 !!Question
 
-Is {{+First = +Firt+Middle}} in {{sme}}? __Claim:__ there are no such words in
+Is {{+CmpN/First = +CmpN/Firt+CmpN/Middle}} in {{sme}}? __Claim:__ there are no such words in
 Sámi so short that they will create problems for the speller, when used as
 the middle part of a three-or-more-part compound.
 
@@ -80,7 +80,7 @@ aji
 Loan words:
 
 cup - kan inte se att denna skapar støy?
-duo - +last før denna? popduo, trombonduo, duo-? jf duomuge, duogáša, forsvinn med duo+Last
+duo - +CmpN/last før denna? popduo, trombonduo, duo-? jf duomuge, duogáša, forsvinn med duo+CmpN/Last
 kro - kan inte se att denna skapar støy? Kanskje
 pop - kan inte se att denna skapar støy?
 rap - kan inte se att denna skapar støy?
@@ -113,7 +113,7 @@ __TODO:__
 !!Conclusion
 
 With a few lexical adjustments, and corrections in the analyzer, there are no
-problematic short words. Thus, for North Sámi,  {{+First = +First+Middle}}. We
+problematic short words. Thus, for North Sámi,  {{+CmpN/First = +CmpN/First+CmpN/Middle}}. We
 need to repeat the same investigation for Lule Sámi, but it is unlikely that
 the conclusion will be different. It is important, though, to know which lexical
 items we need to be aware of for potential compound problems.
@@ -127,11 +127,11 @@ added as comments (see examples below).
 Suggested tags (these are all the same as presently used in the analyzer):
 
 {{{
-+SgCmp    (=sealg-) i prinsippet kultur- kultuvra 
-+SgNomCmp (alternations between full and redused final vowel is coded
++CmpN/SgCmp    (=sealg-) i prinsippet kultur- kultuvra 
++CmpN/SgNCmp (alternations between full and redused final vowel is coded
            in the lexicon / twolc)
-+SgGenCmp (alternations between full and redused final vowel is free)
-+PlGenCmp
++CmpN/SgGCmp (alternations between full and redused final vowel is free)
++CmpN/PlGCmp
 }}}
 
 
@@ -142,7 +142,7 @@ partly in the two-level rules. Thus, there is no need to specify those.
 In addition, it is useful to have a shortcut tag for all variants applied to one
 entry:
 {{{
-+AllCmp (= all four above)
++CmpN/AllCmp (= all four above)
 }}}
 
 The tags should be entered as comments after each lexical entry that needs it,
@@ -153,7 +153,7 @@ needed).
 How should we specify deviations from the default? Example:
 
 {{{
-jávri:jáv'ri GOAHTI ; !+SgGenCmp +SgNomCmp
+jávri:jáv'ri GOAHTI ; !+CmpN/SgGCmp +CmpN/SgNCmp
 jávre- (nom)
 jávrre- (gen)
 }}}
@@ -163,11 +163,11 @@ only specify additions to the default:
 
 {{{
 1) all variants:
-mánná GOAHTI ; !+SgGenCmp +SgNomCmp +PlGenCmp
+mánná GOAHTI ; !+CmpN/SgGCmp +CmpN/SgNCmp +CmpN/PlGCmp
 
 2) only additions:
-mánná GOAHTI ; !+SgGenCmp
-mánná GOAHTI ; !+SgGenCmp -SgNomCmp (see comment below about negation)
+mánná GOAHTI ; !+CmpN/SgGCmp
+mánná GOAHTI ; !+CmpN/SgGCmp -SgNCmp (see comment below about negation)
 }}}
 
 The second alternative implies that we need negation, as we need to be able to
@@ -178,23 +178,23 @@ option, then all possibilities need to be listed, including the default.
 We then end up with the following possible tag combinations:
 
 {{{
-mánná GOAHTI ; !+AllCmp (= +SgGenCmp +SgNomCmp +PlGenCmp +SgCmp)
-mánná GOAHTI ; !+SgGenCmp +SgNomCmp +PlGenCmp
-mánná GOAHTI ; !+SgGenCmp +SgNomCmp
-mánná GOAHTI ; !+SgGenCmp +PlGenCmp
-mánná GOAHTI ; !+PlGenCmp +SgNomCmp
-mánná GOAHTI ; !+PlGenCmp +SgGenCmp
-mánná GOAHTI ; !+SgGenCmp
-mánná GOAHTI ; !+PlGenCmp
-mánná GOAHTI ; !+SgCmp +SgGenCmp +SgNomCmp
-mánná GOAHTI ; !+SgCmp +SgGenCmp +PlGenCmp
-mánná GOAHTI ; !+SgCmp +PlGenCmp +SgNomCmp
-mánná GOAHTI ; !+SgCmp +PlGenCmp +SgGenCmp
-mánná GOAHTI ; !+SgCmp +SgGenCmp
-mánná GOAHTI ; !+SgCmp +PlGenCmp
-mánná GOAHTI ; !+SgCmp
+mánná GOAHTI ; !+CmpN/AllCmp (= +CmpN/SgGCmp +CmpN/SgNCmp +CmpN/PlGCmp +CmpN/SgCmp)
+mánná GOAHTI ; !+CmpN/SgGCmp +CmpN/SgNCmp +CmpN/PlGCmp
+mánná GOAHTI ; !+CmpN/SgGCmp +CmpN/SgNCmp
+mánná GOAHTI ; !+CmpN/SgGCmp +CmpN/PlGCmp
+mánná GOAHTI ; !+CmpN/PlGCmp +CmpN/SgNCmp
+mánná GOAHTI ; !+CmpN/PlGCmp +CmpN/SgGCmp
+mánná GOAHTI ; !+CmpN/SgGCmp
+mánná GOAHTI ; !+CmpN/PlGCmp
+mánná GOAHTI ; !+CmpN/SgCmp +CmpN/SgGCmp +CmpN/SgNCmp
+mánná GOAHTI ; !+CmpN/SgCmp +CmpN/SgGCmp +CmpN/PlGCmp
+mánná GOAHTI ; !+CmpN/SgCmp +CmpN/PlGCmp +CmpN/SgNCmp
+mánná GOAHTI ; !+CmpN/SgCmp +CmpN/PlGCmp +CmpN/SgGCmp
+mánná GOAHTI ; !+CmpN/SgCmp +CmpN/SgGCmp
+mánná GOAHTI ; !+CmpN/SgCmp +CmpN/PlGCmp
+mánná GOAHTI ; !+CmpN/SgCmp
 ----
-mánná GOAHTI ; !+SgNomCmp <==== Default
+mánná GOAHTI ; !+CmpN/SgNCmp <==== Default
 }}}
 
 To ease the work with marking up the lexicon, we should make an
@@ -204,35 +204,35 @@ Search ;
 Replace with:
 EITHER:
 ENTER = ;
-G     = ; ! +SgGenCmp
-P     = ; ! +PlGenCmp
-B     = ; ! +SgGenCmp +PlGenCmp
-C     = ; ! +SgGenCmp +PlGenCmp +SgNomCmp
-A     = ; ! +AllCmp
+G     = ; ! +CmpN/SgGCmp
+P     = ; ! +CmpN/PlGCmp
+B     = ; ! +CmpN/SgGCmp +CmpN/PlGCmp
+C     = ; ! +CmpN/SgGCmp +CmpN/PlGCmp +CmpN/SgNCmp
+A     = ; ! +CmpN/AllCmp
 ... for all combinations
 OR:
 One or more of: NGPSA  
-N = ; ! +SgNomCmp
-G = ; ! +SgGenCmp
-P = ; ! +PlGenCmp
-S = ; ! +SgCmp
-A = ; ! +AllCmp
+N = ; ! +CmpN/SgNCmp
+G = ; ! +CmpN/SgGCmp
+P = ; ! +CmpN/PlGCmp
+S = ; ! +CmpN/SgCmp
+A = ; ! +CmpN/AllCmp
 }}}
 
 !!Defaults
 
 The following was decided as defaults for compound stems:
 
-* {{+SgNomCmp}}
-* {{+SgGenCmp}} (using the PLX class Ga)
-* {{+PlGenCmp}} (using the PLX class Gp)
+* {{+CmpN/SgNCmp}}
+* {{+CmpN/SgGCmp}} (using the PLX class Ga)
+* {{+CmpN/PlGCmp}} (using the PLX class Gp)
 
 
 The defaults are never written. This is important, to be able to override the
 default behaviour - see discussion further down.
 
-Please note, that the {{+PlGenCmp}} form is always identical to the regular
-{{+PlGen}} case. Thus, there is no need to regenerate this form for inclusion in
+Please note, that the {{+CmpN/PlGCmp}} form is always identical to the regular
+{{+CmpN/PlGen}} case. Thus, there is no need to regenerate this form for inclusion in
 the set of compounding stems, only to make sure it is specified for compounding
 in the output format.
 
@@ -254,9 +254,9 @@ of the right part. Such cases are discussed in the next section.
 Suggested tags:
 
 {{{
-+SgNomLeft (default, usually not written =0 PLX class N)
-+SgGenLeft (implies +SgNomLeft = PLX class Na)
-+PlGenLeft (excludes the other alternatives unless explicitly overridden =
++CmpN/SgNomLeft (default, usually not written =0 PLX class N)
++CmpN/SgGenLeft (implies +CmpN/SgNomLeft = PLX class Na)
++CmpN/PlGenLeft (excludes the other alternatives unless explicitly overridden =
             PLX class Np)
 }}}
 
@@ -274,9 +274,9 @@ Left-part-tag  <=> Right-part-tag
 when used as    |  when used as
 the left part   |  the right part
 ----------------+----------------
-+SgNomCmp      <=> +SgNomLeft
-+SgGenCmp      <=> +SgGenLeft
-+PlGenCmp      <=> +PlGenLeft
++CmpN/SgNCmp      <=> +CmpN/SgNomLeft
++CmpN/SgGCmp      <=> +CmpN/SgGenLeft
++CmpN/PlGCmp      <=> +CmpN/PlGenLeft
 }}}
 
 Or to put it in other words: the default is to let the last part govern.
@@ -284,7 +284,7 @@ Or to put it in other words: the default is to let the last part govern.
 One can let the first (i.e. left) part govern by explicitly adding left-part compounding tags to the lexical entry. An example:
 
 {{{
-nuorra NUORRA; +AllCmp [=left-part tag] +SgGenLeft [=right-part tag]
+nuorra NUORRA; +CmpN/AllCmp [=left-part tag] +CmpN/SgGenLeft [=right-part tag]
 }}}
 
 This will let nuorra form compounds with other words in all forms (as in
@@ -296,20 +296,20 @@ GenSg when forming compounds with nuorra (as in -nuorra, ie GenSg+nuorra).
 The tags for the left/first part of a compound can then be split in two groups:
 {{{
 Implicit defaults, never specified:
-+SgNomCmp
-+SgGenCmp (default as PLX Ga, can only be combined with words requiring GenSg)
-+PlGenCmp (default as PLX Gp, can only be combined with words requiring GenPl)
++CmpN/SgNCmp
++CmpN/SgGCmp (default as PLX Ga, can only be combined with words requiring GenSg)
++CmpN/PlGCmp (default as PLX Gp, can only be combined with words requiring GenPl)
 
 Explicit overrides:
-+SgGenCmp - can combine with both words requiring GenSg and other words
-+PlGenCmp - can combine with both words requiring GenPl and other words
++CmpN/SgGCmp - can combine with both words requiring GenSg and other words
++CmpN/PlGCmp - can combine with both words requiring GenPl and other words
 }}}
 
 Second part:
 {{{
-+SgNomLeft (default, implicit)
-+SgGenLeft (Ga, requires GenSg as first/left part)
-+PlGenLeft (Gp, requires GenPl as first/left part)
++CmpN/SgNomLeft (default, implicit)
++CmpN/SgGenLeft (Ga, requires GenSg as first/left part)
++CmpN/PlGenLeft (Gp, requires GenPl as first/left part)
 }}}
 
 Thus, explicit tags for the compound-as-first-part form overrules the default compounding behaviour.
@@ -319,18 +319,18 @@ Thus, explicit tags for the compound-as-first-part form overrules the default co
 In the following example we need open compounding in GenSg, but default
 compounding otherwise:
 {{{
-nuorra NUORRA ; +SgGenCmp +DefCmp
+nuorra NUORRA ; +CmpN/SgGCmp +CmpN/DefCmp
 }}}
 
-We can resolve that by adding a special tag {{+DefCmp}} that enforces default
+We can resolve that by adding a special tag {{+CmpN/DefCmp}} that enforces default
 compounding behaviour in addition to the override. That is, we get the full
 default pattern, __plus__ the override behaviour for the override tag.
 
 The following tags are presently __NOT__ used, but might be put to use if
 we find that we need more specific overrides of overrides:
 {{{
-+DefSgGenCmp
-+DefPlGenCmp
++CmpN/DefSgGCmp
++CmpN/DefPlGCmp
 }}}
 
 These tags would give default compounding behaviour for the specific cases.
@@ -366,7 +366,7 @@ Nouns denoting:
 
 
 
-!!!What kind of words get +Left compound-tags?
+!!!What kind of words get +CmpN/Left compound-tags?
 
 * Some very few specific words where the meaning of the compound alters with the case of the first part (for example Ahki, Dilli, Heahti, Duohki, Vuolli, Geahči. 
 Skuvlaahki vs. Skuvllaahki = school-age vs. age of school, 
