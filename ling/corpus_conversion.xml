@@ -7,7 +7,6 @@
 
       <authors>
          <person email="tomi.pieski@hum.uit.no" name="Tomi Pieski" />
-
          <person email="saara huhmarniemi @ helsinki fi"
                  name="Saara Huhmarniemi" />
       </authors>
@@ -42,28 +41,29 @@
 
          <p>When you have a file that you want to add to our corpus directory,
          you have two alternatives. You can either use the web upload script in
-         <a
-         href="http://www.divvun.no/upload/upload_corpus_file.html">http://www.divvun.no/upload/upload_corpus_file.html</a>
-         or insert the file manually.</p>
+         <a href="http://www.divvun.no/upload/upload_corpus_file.html">
+		 http://www.divvun.no/upload/upload_corpus_file.html</a>
+         or add the file manually to the corpus subversion repositories.</p>
 
          <section>
             <title>Manual conversion</title>
 
             <ol>
+				<li>Copy the file to the correct place in your working copy of
+					the corpus repositores.</li>
                <li><p>Run the convert2xml.pl script for the file. For example, a
                MS Word document, with language and genre as above, is converted
                with command (relative path is fine as well, but do not use
                tilde.) Give the language as command line option.</p> <source>
-	convert2xml.pl --lang=sme --dir=/usr/local/share/corp/orig/sme/facta/file_name.doc
+	convert2xml.pl --lang=sme file_name.doc
 	</source> <p>The conversion takes a while especially if the file is large or
                with lot of structure. If you want to see all the error messages
                generated during conversion, use option --nolog.</p></li>
 
-               <li>Check out the resulting xml-file in the corresponding
-               bound-directory. If there are fatal errors during the conversion,
+               <li>If there are fatal errors during the conversion,
                you will see an error message stating "ERROR &lt;something&gt;",
                consult the maintainers of the corpus files or see the log file
-               (in /usr/local/share/corp/tmp) for details. The script informs
+			   (in &lt;path-to-your-working-copy&gt;/tmp) for details. The script informs
                you of the character conversion and the original (or
                intermediate) encoding.</li>
             </ol>
@@ -83,26 +83,20 @@
          the errors to be printed to screen, use option --nolog. The log file is
          for example:<code> tmp/Feb-10-8-57.log</code></p>
 
-         <p>The old log files are stored to a compact format under
-         /usr/local/share/corp/tmp/log/. There you can look for the log file
-         from the day the current xml-document was created. To examine the
-         tar-file from 10th of February, first copy the tar-file to your home
-         directory and then open it:</p>
+		<section>
+			<title>convert2xml.pl</title>
 
-         <source>    cp tmp/log/2006-Feb/Feb-10.tar.gz ~/tmp/
-    gunzip tmp/log/2006-Feb/Feb-10.tar.gz
-    tar -xvf tmp/log/2006-Feb/Feb-10.tar.gz</source>
-      </section>
-
-      <section>
-         <title>convert2xml.pl</title>
-
+			<p>This script needs <a href="/doc/admin/MacPorts.html">MacPorts on OS X</a> and
+				<a href="/doc/admin/perl-twig.html">the Perl::Twig module</a>. You will also have
+				to run the <a href="/doc/infra/anonymous-svn.html">gtsetup.sh</a>
+				script to set up the running environment correctly.
+			</p>
          <p>There are several options available which control the conversion
          process, it is e.g possible to skip the xsl-processing, the character
          decoding, or the hyphenation. The available options:</p>
 
          <source>
-Usage: convert2xml.pl [OPTIONS] [FILES]
+Usage: convert2xml.pl [OPTIONS] [FILE|DIR]
 The available options:
     --xsl=&lt;file&gt;    The xsl-file which is used in the conversion.
                     If not specified, the default values are used.
@@ -110,33 +104,28 @@ The available options:
                     If not given, only FILE is processed.
     --tmpdir=&lt;dir&gt;  The directory where the log and other temporary files are stored.
     --nolog         Print error messages to screen, not to log files.
-    --corpdir=&lt;dir&gt; The corpus directory, default is /usr/local/share/corp.
+    --corpdir=&lt;dir&gt; The corpus directory, default is where you have checked out your working copy.
     --no-decode     Do not decode the characters.
     --multi-coding  Resolve the character coding separately for each paragraph.
     --no-hyph       Do not add &lt;hyph/&gt; tags.
     --no-xsl        Skip the file-specific xsl-processing.
     --all-hyph      Tag all hyphens (default is at the end of the line).
-    --no-hyph       Do not tag hyphens.
     --upload        Do conversion in the upload-directory.
     --lang          The main language of the document.
     --help          Print this message and exit.
 </source>
 
          <p>The file to be converted is given to convert2xml.pl as command line
-         argument. The behaviour can be changed by giving the --dir, then the
-         directory specified is searched for files to be converted. The file
+         argument. If a directory is the argument, all files in the given directory
+		 and the directories inside it are converted. The file
          types that are supported at the moment are: doc, pdf, html, text and
          paratext. The corresponding file suffixes are are .doc, .pdf, .html,
          txt and .ptx. At the users' point of view, there is no difference
          between the file types, the technical documentation is provided at <a
          href="corpus_conversion_tech.html">corpus_conversion_tech.html</a>.</p>
 
-         <p>The script convert2xml.pl is mainly used for the basic corpus
-         directory hierarchy, but it can be configured for other environments as
-         well. How this is done is explained in the following:</p>
-
          <p>Some documents get wrongly utf-8-encoded by the conversion tools and
-         they are fixed using a Perl module <code>samiChar::Decode.pm. </code>It
+         they are fixed using a Perl module <code>samiChar::Decode.pm.</code> It
          is installed in victorio, and you should not notice it's presence. If
          you are converting files in some other machine, you should install the
          module.. Another Perl module that is needed is XML::Twig. Instructions
@@ -171,5 +160,6 @@ The available options:
          should be tagged, convert2xml.pl can be called with option
          --all-hyph.</p>
       </section>
+  </section>
    </body>
 </document>

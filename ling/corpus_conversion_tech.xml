@@ -7,7 +7,6 @@
 
     <authors>
       <person email="borre.gaup@samediggi.no" name="Børre Gaup" />
-
       <person email="saara huhmarniemi@ helsinki fi" name="Saara Huhmarniemi" />
     </authors>
   </header>
@@ -17,24 +16,23 @@
       <title>Conversion process</title>
 
       <p>This document describes the more technical side of the corpus
-      infrastructure. The document <a
-      href="corpus_conversion.html">corpus_conversion.html </a> contains the
+      infrastructure. The document <a href="corpus_conversion.html">
+		  corpus_conversion.html </a> contains the
       user documentation as well as the description of the basic
       infrastructure. The usage of the script convert2xml.pl is documented
       there, this document describes the contents of the script.</p>
 
       <p>All the binaries and scripts used in the corpus conversion process
-      are stored under /usr/local/share/corp/bin/, except the tools that are
+	  are stored under $GTHOME/gt/script, except the tools that are
       already installed to some common bin. The xsl-files which transfer the
       structural information of different source files (docbook2xml.xsl and
       xhtml2xml.xsl) and the template for file specific xsl-files
       (XSL-template.xsl) are also stored in the bin-directory under the corpus
-      directory. The directory /usr/local/share/corp/tmp/ is reserved for
-      temporary files and lof files that are created during the conversion.
+      directory. The directory <code>&lt;path-to-your-working-copy&gt;/tmp/</code> is reserved for
+      temporary files and log files that are created during the conversion.
       The log files contain the system commands executed during the conversion
       as well as the warnings and error messages. The log file is named after
-      the current date and time. (There should be an automatic system for
-      removing the old log files.)</p>
+      the current date and time.</p>
 
       <p>The next sections describe the conversion processes for each document
       type and the tools used. The conversion includes hyphen-detection and
@@ -58,7 +56,7 @@
         depending on the structure of the document. The default is<a
         href="http://www.bluem.net/downloads/pdftotext_en/">pdftotext</a>.
         Pdftohtml is part of the <a
-        href="http://www.foolabs.com/xpdf/">Xpdf-package. </a></p>
+        href="http://poppler.freedesktop.org/">poppler-package. </a></p>
 
         <p>The text comes basically in the right order and the characters are
         coded correctly. There are however problems with page numbers,
@@ -97,8 +95,8 @@
       <section>
         <title>Web -document</title>
 
-        <p>Web documents are first cleaned using the program HTML Tidy <a
-        href="http://tidy.sourceforge.net/">download</a>, using several
+        <p>Web documents are first cleaned using the program
+		<a href="http://tidy.sourceforge.net/">HTML Tidy </a>, using several
         command line options.. The output is converted to xml using the
         xsl-file <code>xhtml2xml.xsl</code>.</p>
       </section>
