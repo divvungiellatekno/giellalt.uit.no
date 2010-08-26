@@ -16,25 +16,13 @@
       <title>Introduction</title>
 
       <p>This document describes the overall process of processing the xml
-      corpus into plain text for the needs of testing the languega tools.</p>
-
-      <p><code>catxml</code> is a perl script that takes either a file(s) or a
-      directory as input and outputs plain text. It has a funtionality to
-      include certain xml elements in output or it can be used to produce an
-      analysis of the corpus text.</p>
-    </section>
-
+      corpus into plain text for the needs of testing the language tools.</p>
+  </section>
     <section>
       <title>ccat</title>
 
-      <p>ccat replaces the catxml-script. It is now installed in victorio to
-      <code>/usr/local/bin </code>so you may try it out. All the relevant
-      functionality is not yet implemented, such as selecting the language of
-      the text. The -analyze option which was present in catxml is not
-      implemented either. The basic function of ccat is to print paragraphs
-      that have text type (empty type in our xml-files), that is the default.
-      In addition to text paragraphs, it is possible to print titles, lists
-      and tables and to traverse directories recursively. Usage: </p>
+      <p>ccat replaces the catxml-script. The basic function of ccat is to print paragraphs that have text type (empty type in our xml-files), that is the default. In addition to text paragraphs, it is possible to print titles,
+	  lists and tables and to traverse directories recursively. Usage: </p>
 
       <source>    Usage: ccat &lt;options&gt; [FileName]
     Print the contents of a corpus file in XML format.
@@ -51,24 +39,23 @@
 
       <p>The basic type of usage is for example to print out the contents of
       text paragraphs in all the files under
-      /usr/local/share/corp/gt/sme/admin/:</p>
+	  /home/apache_corpus/boundcorpus/converted/sme:</p>
 
-      <source>    $ ccat -r /usr/local/share/corp/gt/sme/admin</source>
+      <source>$ ccat -r /home/apache_corpus/boundcorpus/converted/sme</source>
 
       <p>If you want to use ccat in your own computer do the following: </p>
 
-      <source>    $ cvs co gt
-    $ cd gt/script/samiXMLparser/
-    $ make
-    $ cp ccat ~/bin/
-</source>
+   <ol>
+	   <li>If you haven't done so already, <a href="http://giellatekno.uit.no/doc/infra/anonymous-svn.html">check out our repository</a>. Then open a terminal and write the following there:</li>
+	   <li><code>cd $GTHOME/gt/script/ccat</code></li>
+	   <li><code>make</code></li>
+		<li><code>cp ccat ~/bin/</code></li>
+	</ol>
 
       <p>Assuming that you have bin directory under your home directory, and
       it is along PATH. The program is under development, so you will be later
       asked to update your version of the ccat.</p>
     </section>
 
-    <p class="last_modified">Last modified: $Date$, by
-    $Author$</p>
   </body>
 </document>
