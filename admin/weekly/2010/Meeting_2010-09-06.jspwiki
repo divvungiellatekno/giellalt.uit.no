@@ -1,6 +1,6 @@
 !!!Meeting setup
 
-* Date: 23.8.2010
+* Date: 6.9.2010
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat
@@ -21,97 +21,65 @@ Cf. one of the following, depending on context:
 !!!Updated task status since last meeting
 
 !!Børre
-* get all the latest Sámi Parliament protocolls into our repository
-** Found protocols in nob-sme versions up to 2005, have added most of them.
-   Protocols from 2006 up to the second protocol in 2010 don't seem to have
-   been translated, so they are lacking.
+* get the 2006-2010 Sámi Parliament protocolls into our repository
 * contact the Sámi translators at the government and ministeries to get more
   parallell texts
-** not done
 * corpus access on the XServe
-** not done
 * turn on corpus summary crontab
-** not done
+* add updates of free & bound to the svnup alias
+* add Apertium to the XServe
 * implement language switch for static divvun site
-** not done
 * improve XSL script to transform leaflet Forrest XDocs to an OOo Draw document
-** not done
 * get translations of thank-you letter
-** not done
 * make the new SL Server services functional:
 ** group calendars
-*** not done
 * set up corpus mirroring on the XServe again
-** not done
 * give Maja a WEbSak intro
-** not done
 * add checkout of the free corpus to the gtsetup.sh script
-** not done
 * add checkout of the bound corpus when on victorio
-** not done
 * {{sma}} seminar in August/September:
 ** test installation of all needed software
 ** test XMLEditor on Windows, including plugin installation
 ** test svn checkout and patch creation on Windows, using a GUI client
-*** not done
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** Fixed #860
 
 !!Ciprian
-* make risten2 budget proposal to the SD with __Sjur__
-** done
 * {{sma}} seminar in August/September:
 ** prepare slides
-*** ongoing
 ** test XMLEditor plugin installation
-*** todo
 ** augment the  dictionary DTD with oahpa features and requirements
-*** waiting for Sjur's counterarguments (__Trond__ and __Lene__ agree on the intermediate solution proposed by __Cip__)
 ** finnish the setup of the sma-oahpa on victorio
-*** ongoing
 ** build a preliminary data set for sma-Leksa (based on the DTD)
-*** ongoing
+* add 15 entires per pos n, v, a to sma-oahpa lexa
 * Skolt-Oahpa:
 ** fine tuning of semantic tags
 ** finish localization
-*** todo
 * terminology:
 ** merged the 2 doc files with the xls file containing the 2006 law terminology
    db
 ** prepare a StarDict test version of the merged data for demo
 ** compile a dictionary in StarDict format with all data featuring the
    properties wished by Ellen Ravna 
-*** todo
 * add license header to all files
 * PhD-Projektbeskrivelse (internal deadline end of June 2010):
 ** search, read, write (execute): high priority!
 * read and answer the newsgroups messages
-*** reading Performace Grammar and Nunberg's Linguistics of Punctuation
 * update corpora (both monolingual and parallel) for Oslo (Glossa)
 ** check the correctness of parallelity between sme and nob files
-*** after setting up the whole conversion pipeline
 ** sentence-align sme with nob: fix tca2 problem
-*** todo
 ** analyse/disambiguate: todo -- waiting for the last version of FSTs
 * corpus infra:
 ** check the conversion from old rcs corpus repository to new svn-based
 ** make the conversion scripts work with the new svn repository
-*** adjusted paths to scrips after reorganizing script-dir
-*** add check for almost empty content: todo
-*** add processing of svg files: todo
-** reorganise subdirs as needed
-*** created a subdir corpus and moved all (check with __Børre__, __Trond__ and __Sjur__) relevant file there
-*** ajsusted paths in the analye file, now checking the convert script
+*** add check for almost empty content
+*** add processing of svg files
 * infrastructure
 ** test cwb
 ** continue with restructuring and cleaning the script catalogue as suggested
    in the newsgroup
-*** done for corpus-related stuff
 ** transform sme-lexC files into XML format
-*** apparently, there is a script that does exactly that (ask __Tomi__)
 ** make a schema/dtd description of the lexC-file (experiment with
    Komi and Romanian)
-*** todo
 * GT web:
 ** add a tree visualizer for the dependency trees
 ** add input help for special characters on the tool sites
@@ -119,19 +87,16 @@ Cf. one of the following, depending on context:
 ** filter (English, German, etc.) input using language detection tools
 ** put a note on the sites that these are NOT MT tools
 ** input help for generating wordforms (dropdown menus).
-*** all here: todo
 * Sandbox Oahpa:
 ** integrate reCAPTCHA into Django (as __Lene__ suggested)
 ** debug the installed sb_oahpa
 ** update and correct the Oapha docu site
-*** all here: todo
 * Running Oahpa:
 ** implement a testbench for Vasta (as __Lene__ needs)
 ** integrate reCAPTCHA after the SB-test
 ** add an Oahpa clock and date excercise (cf. Numra)
 ** email notification when the server goes down
 ** check the XXX?
-*** all here: todo
 * Sjd/Kom/Sms/Etc-Oahpa
 ** try to implement and embed virtual keyboards for each specific Oahpa
 ** try to learn something about compiling keyboard in general
@@ -159,120 +124,65 @@ Cf. one of the following, depending on context:
 * SjdRus:
 ** continue the work at the Kildin-Russian dictionary, next internal deadline
    is after finishing the PhD project description
-*** all dict-related work: todo
 * MT
 ** test A-ITE on Windows
-*** todo
 
 
 !!Maja
 * prepare: Drøfting og diskusjon om lånord i sørsamisk
-**ongoing - with Ove Lorentz - lage oppgaver for gruppearbeid
 * more work on {{sma}} adjectives
-**not prio
 * look at incoming loanwords
-**not prio
 * continue gathering {{sma}} corpus texts
-**not prio
 * finish compound tags for adjectives
-** Ongoing
 * Rette goldstandard doc - så mange som mulig - high prio! - min. 1000 (helst
   5000) ord løpende tekst
-**ongoing
-* make a list of participants in {{$GTPRIV/}}
-**done
-* call a select few that have not answered but that we want there 
-**done
-* fix goldstandard files (location)
-**ongoing
-** free documents: {{$FREECORP/goldstandard/orig/sma}}
-** bound documents: {{$BOUNDCORP/goldstandard/orig/sma}}
-* test conversion to xml to ensure there are no markup errors
+* test conversion to xml to ensure there are no markup errors in goldstandards
 * continue gathering {{sma}} corpus texts
 ** get {{sma}} articles in Š-bláđđi
 ** the Gun Utsi book is almost there - one contract missing
-***not prio
 * Corpus gathering: 
 ** contact Inga Margrethe Bjørn Eira
-**not prio
 **follow up the yearbook-articles
-**not prio
 ** restart the letter mailing thing using WebSak
-**not done
 * adjectives
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Sjur
-* make risten2 budget proposal to the SD
-** done
 * add checkout of the free corpus to the gtsetup.sh script
-** not yet
 * add checkout of the bound corpus when on victorio
-** not yet
-* test the {{sma}} speller on the gold standard document
-** done, committed, and sent to Thomas and Maja for checking
 * add voikko support to our proofing test bench
-** not yet
-* add all our Sámi analysers to voikko and test them as spellers
-** not yet
-* run speller tests using Hunspell, Voikko, Polderland for our Sámi lexicons
-** not yet
+* add all our Sámi analysers and test them as spellers
+* run tests using Hunspell, Voikko, Polderland for our Sámi lexicons
 * install & configure the Unison news reader
-** not yet
 * difftest for fst and PL speller
-** not yet
 * Northern areas
 ** plan a meeting/seminar in Tromsø
 ** make a plan for the first two years, update overall plan
 * @TTS: continue public tender process
 * make __Leif Åge__ send out CD's to distribution points
 * contintue Nordplus Sprog project
-** more work on the test bench
 * Write a formal letter to ''Davvi girji'' about electronic dictionaries
 * make XSL script to transform leaflet Forrest XDocs to an OOo Drawer document
-* name db/risten.no
-** budget for risten2, see above
 * follow-up on some Polderland-related bugs: 621, 630, 652
 * find and contact the correct person in SD, to get the manuscript for all Sámi
   teaching material now being given out to the schools
-* when the new build infrastructure works as it should, delete the old ones
-** done? (should be by Tomi)
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Thomas
 * prepare: Drøfting og diskusjon om lånord i sørsamisk
-** not done
-* test the new build commands and their fst's: {{make NEW-fst TARGET=sme}} etc.
-** done
 * check extra hyphens in the lexc continuations with Trond
-** not done
-* check for a new computer
-** done, it should be here this week
-* fix goldstandard files (location)
-** maybe
 * test conversion to xml to ensure there are no markup errors
-** just begun
 * prepare text´s about normativity issue to SGL/SGM
-** not done
 * Digitalize south saami books
-** done
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not done
-
 
 !!Tomi
 * run tests using Hunspell, Voikko, Polderland for our Sámi lexicons
-** not done
 * put together the TTS preprocessing transducers and scripts
-** not done
 * try to compile voikko
-** not working
 * add all our Sámi analysers and test them as spellers
-** not done
 * when the new build infrastructure works as it should, delete the old ones
-** deleting now
 * document how compounding is controlled in the PLX conversion
-** not done
 * fix double hyphen bugs
 * fix PL {{smj}} hyphenator bug
 * fix PL conversion bugs
@@ -280,26 +190,15 @@ Cf. one of the following, depending on context:
 
 !!Trond
 * check extra hyphens in the lexc continuations with Thomas
-** Done some, but no meeting with Thomas yet
 * Course plan for Barents meeting/seminar, october. Financing must be in place.
-** Awaiting
-* Northern areas
+** check the time needed to tet visas with the UiT admin
+** call the ministry
 ** plan a meeting/seminar in Tromsø
-** Awaiting
 ** make a plan for the first two years, update overall plan
-** Awaiting
 * MT/Terminology
-** Much work here, both on smenob, finsme and smesma
 * [fix bugs!|http://giellatekno.uit.no/bugzilla].
-** Done 2.
 
 !!!Oahpa!
-Status:
-* sma-oahpa already started, installation will be done by this friday
-* __Ciprian__ should add just 15 entires per pos n, v, a
-* the interim lexicon format as already proposed via email:
-** the current gt_dict lexicon having each relevant meaning group
-   extended with application relevant slots.
 
 __TODO__
 * add 15 entires per pos n, v, a to sma-oahpa lexa (__Ciprian__)
@@ -335,9 +234,7 @@ but there are a number of other secondary goals and positive side effects of
 this as well.
 
 __TODO:__
-* get all the latest Sámi Parliament protocolls into our repository (__Børre__)
-** mostly done, protocolls from the period 2006-2010/1 do not seem to be
-   translated into {{sme}} - Børre will check this
+* get the 2006-2010 Sámi Parliament protocolls into our repository (__Børre__)
 * contact the Sámi translators at the government and ministeries to get more
   parallell texts (__Børre__)
 * continue gathering {{sma}} corpus texts (__Maja__)
@@ -467,9 +364,6 @@ __TODO:__
 
 !!Corpus infra remake
 
-__Ciprian__ has moved all code relating to {{convert2xml.pl}} to a subfolder.
-Still needs testing especially on victorio.
-
 __TODO:__
 * convert or move the files in the {{upload}} dir to the real corpus repo
   (__Børre__)
@@ -481,6 +375,7 @@ __TODO:__
 * add checkout of the free corpus to the gtsetup.sh script (__Børre, Sjur__)
 * add checkout of the bound corpus when on victorio (__Børre, Sjur__)
 * add updates of free & bound to the svnup alias (__Børre__)
+* test {{convert2xml.pl}}, especially on victorio (__Børre, Sjur__)
 
 !!License
 
@@ -632,8 +527,6 @@ __TODO:__
 
 !!!Name lexicon/risten.no infrastructure
 
-__Sjur__ made a budget for risten2 with great help from Ciprian and Trond.
-
 __TODO:__
 * make budget proposal to the SD (__Ciprian, Sjur__)
 * find already approved lists, in paper or electronic form (__term team__)
@@ -730,15 +623,8 @@ There are no goldstandard files in the correct location in the corpus
 repository. This needs to be fixed before we start testing the {{sma}} speller.
 
 __TODO:__
-* fix goldstandard files (location) (__Maja, Sjur, Thomas__)
-** free documents: {{$FREECORP/goldstandard/orig/sma}}
-** bound documents: {{$BOUNDCORP/goldstandard/orig/sma}}
-*** done
 * test conversion to xml to ensure there are no markup errors
   (__Maja, Sjur, Thomas__)
-** done for some
-* test the {{sma}} speller on the gold standard document (__Sjur__)
-** done
 * difftest for fst and PL speller (__Sjur__)
 * External beta testers:
 ** David
@@ -1016,10 +902,6 @@ Theme:
 
 __TODO:__
 * book lunch, coffee
-* make a list of participants (12 + 5 + 3) in {{$GTPRIV/}} (__Maja__)
-** done
-* call a select few that have not answered but that we want there (__Maja__)
-** done
 * preparations:
 ** test installation of all needed software (__Ciprian, Børre__)
 ** test XMLEditor on Windows, including plugin installation
@@ -1053,7 +935,7 @@ Future seminars:
 # UML
 # other suggestions?
 
-!!Summer planning
+!!Fall planning
 
 Topics:
 
@@ -1076,14 +958,15 @@ Dates:
 
 !!!Next meeting, closing
 
-The next meeting is 6.9.2010, 09:30 Norwegian time.
+The next meeting is 13.9.2010, 09:30 Norwegian time.
 
 The meeting was closed at 10:47.
 
 !!!Appendix - task lists for the next week
 
 !!Boerre
-[iCal|/doc/admin/weekly/2010/Tasks_2010-08-23_Boerre.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-09-06_Boerre.ics]
+* test {{convert2xml.pl}}, especially on victorio
 * get the 2006-2010 Sámi Parliament protocolls into our repository
 * contact the Sámi translators at the government and ministeries to get more
   parallell texts
@@ -1107,7 +990,7 @@ The meeting was closed at 10:47.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Ciprian
-[iCal|/doc/admin/weekly/2010/Tasks_2010-08-23_Ciprian.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-09-06_Ciprian.ics]
 * {{sma}} seminar in August/September:
 ** prepare slides
 ** test XMLEditor plugin installation
@@ -1193,7 +1076,7 @@ The meeting was closed at 10:47.
 
 
 !!Maja
-[iCal|/doc/admin/weekly/2010/Tasks_2010-08-23_Maja.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-09-06_Maja.ics]
 * prepare: Drøfting og diskusjon om lånord i sørsamisk
 * more work on {{sma}} adjectives
 * look at incoming loanwords
@@ -1213,7 +1096,8 @@ The meeting was closed at 10:47.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Sjur
-[iCal|/doc/admin/weekly/2010/Tasks_2010-08-23_Sjur.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-09-06_Sjur.ics]
+* test {{convert2xml.pl}}, especially on victorio
 * add checkout of the free corpus to the gtsetup.sh script
 * add checkout of the bound corpus when on victorio
 * add voikko support to our proofing test bench
@@ -1255,7 +1139,7 @@ The meeting was closed at 10:47.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Trond
-[iCal|/doc/admin/weekly/2010/Tasks_2010-08-23_Trond.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-09-06_Trond.ics]
 * check extra hyphens in the lexc continuations with Thomas
 * Course plan for Barents meeting/seminar, october. Financing must be in place.
 ** check the time needed to tet visas with the UiT admin
