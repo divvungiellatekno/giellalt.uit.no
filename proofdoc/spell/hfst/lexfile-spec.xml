@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="https://svn.apache.org/repos/asf/forrest/trunk/tools/xxe/css/document2x.css"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document>
@@ -162,15 +163,17 @@ errmodeln.hfst</source>
             <code>id</code> attribute.</dd>
             <dt>id</dt>
             <dd>is the name of the transducer file in the zip archive</dd>
+            <dt>vcsrev</dt>
+            <dd>the revision number in the producer's version control system</dd>
          </dl>
       </section>
       <section>
          <title>Acceptance transducer</title>
-         <p>The default acceptance transducer is a one-level automaton. All complying implementations must support
-         this.</p>
-         <p>It is also possible to use a two-level, analysing transducer. The analysis output could be used to support
-         concext-based filtering of suggestions (ie only present suggestions with a POS that fits in the given context).
-         Other usage scenarios are also possible.</p>
+         <p>The default acceptance transducer is a one-level automaton, weighted. All complying implementations must
+         support this.</p>
+         <p>It is also possible to use a two-level, weighted analysing transducer. The analysis output could be used to
+         support concext-based filtering of suggestions (ie only present suggestions with a POS that fits in the given
+         context). Other usage scenarios are also possible.</p>
          <p>Support for analysing transducers is optional. When the use of such a transducer is specified in the
          index.xml file, an implementation that does not support it may choose to flag an error or silently ignore the
          speller zip archive.</p>
@@ -185,6 +188,9 @@ errmodeln.hfst</source>
             <li>only apply one at a time, at the users choice through a user configuration interface</li>
             <li>apply all the requested error models together, as if they were joined</li>
          </ul>
+         <p>Supporting multiple error models is optional. An implementation that does not support more than one error
+         model must use the error model named <code>errmodel1.hfst</code>, and silently ignore the other error models
+         when opening a speller file containing multiple error models.</p>
       </section>
    </body>
 </document>
