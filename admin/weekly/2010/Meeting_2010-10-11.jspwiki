@@ -1,6 +1,6 @@
 !!!Meeting setup
 
-* Date: 4.10.2010
+* Date: 11.10.2010
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat
@@ -22,86 +22,59 @@ Cf. one of the following, depending on context:
 
 !!Børre
 * try to compile again hfst and all dependencies, Mac and Linux
-** not done
 * get the 2006-2010 Sámi Parliament protocols into our repository
 ** ask the SD archive to publish the final protocolls
-*** not done
 * find and contact the correct person in SD, to get the manuscript for all Sámi
   teaching material now being given out to the schools
-** not done
 * fix the upload script after the corpus infra remake
-** not done
 * forrest makeover:
-** upgrade the forrest installation on all computers (head of svn trunk)
-*** done for my machine, victorio and divvun. Where else should I do it?
-** make sure Unicode in Forrest pdf is working (no ? for "eng"/ŋ)
-*** not done
+** upgrade the forrest installation on Maja's and Thomas' computers
+** make sure Unicode in Forrest pdf is working (no "?" for "eng"/ŋ)
 ** check that pdf and text versions of readme files are available
-*** not done
 ** implement language switch for static divvun site
-*** not done
 * contact the Sámi translators at the government and ministeries to get more
   parallell texts
-** not done
 * turn on corpus summary crontab
-** not done
 * improve XSL script to transform leaflet Forrest XDocs to an OOo Draw document
-** not done
 * get translations of thank-you letter
-** not done
 * make the new SL Server services functional:
 ** group calendars
-*** not done
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-* other
-** improved a script that fetches pages from samediggi.no, regjeringen.no and 
-   avvir.no
 
 !!Ciprian
+* change the tca2 code so that the output files should not be generated in the
+  same directory as the input files
 * upgrade the forrest installation on everybody's computers (head of svn trunk)
-** todo
-* compile a db with parallel texts sme-nob for Autsch
-** done: both for NOB-SME and for SME-NOB (NB: however, in the meantime we got again a lot of paralell texts)
-** there are a couple of problems related to this pipeline to solve
+* re-compile the TMX resources for both sme-nob and nob-sme for Autsch
+* test TMX files, if ok, forward link to SD
+* prepare the data for the sma-oahpa meeting next week:
+** convert data from csv to xml 
+** set up a the morpha component for sma oahpa
 * refine the dict sorting script to indent like XXE
 * 'Nachwehen' of the Sma-lex Workshop:
 ** xml-ize all data from the Excel, Word, etc. files received from the
    different participants
 ** enrich the data for the duodje terminology for users' need
-*** todo
+* merge Excel file for the jus terminology for Ellen Ravna
+* check the list of verbs in csv and xml in fitswe
 * Kildin-Oahpa:
 ** fix the localization bug (the sjd text doesn't show up)
-*** todo
 * fitswe: check verbs from the csv-files and if needed put them into the xml
   format
-*** todo
 * Skolt-Oahpa:
 ** fine tuning of semantic tags
 ** finish localization
-*** todo
-* PhD-Projektbeskrivelse (internal deadline end of September 2010):
-** search, read, write (execute): high priority!
-*** dormant
+* PhD-Projektbeskrivelse (internal deadline end of October 2010):
+** search, read, write (execute): very high priority!
 * update corpora (both monolingual and parallel) for Oslo (Glossa)
-** check the correctness of parallelity between sme and nob files
-*** done
-** sentence-align sme with nob: fix tca2 problem or search for a working
-   solution (a different aligner): high priority
-*** done
-** fixed the ugly bug with ill-formed xml output from tca2
-** analyse/disambiguate: todo -- waiting for the last version of FSTs
-*** todo
+** go on with the analysis of the whole (at the moment just) free corpus
 * infrastructure
 ** test cwb
-*** todo
 ** continue with restructuring and cleaning the script catalogue as suggested
    in the newsgroup
-*** ongoing
 ** transform sme-lexC files into XML format
-*** todo: low priority
 ** make a schema/dtd description of the lexC-file (experiment with
    Komi and Romanian)
-*** todo: low priority
 * GT web:
 ** add a tree visualizer for the dependency trees
 ** add input help for special characters on the tool sites
@@ -109,165 +82,99 @@ Cf. one of the following, depending on context:
 ** filter (English, German, etc.) input using language detection tools
 ** put a note on the sites that these are NOT MT tools
 ** input help for generating wordforms (dropdown menus).
-*** dormant for all sub-issues
 * Sandbox Oahpa:
 ** integrate reCAPTCHA into Django (as __Lene__ suggested)
 ** debug the installed sb_oahpa
 ** update and correct the Oapha docu site
-*** dormant for all sub-issues
+** add GPL license to all of the Oahpa and webdict sites 
 * Running Oahpa:
 ** implement a testbench for Vasta (as __Lene__ needs)
 ** integrate reCAPTCHA after the SB-test
 ** add an Oahpa clock and date excercise (cf. Numra)
 ** check the ped dictionary coverage for German and Swedish and if possible
    update the database and Oahpa code to add those two languages to the Leksa
-*** dormant for all sub-issues
 * dictionaries:
 ** compile different dict formats with specific content as discussed with
    __Trond and Lene__
-*** ongoing: updated for Sjd-Rus.
 ** formats: offline versions (VD for Mac and StarDict), mobile dicts
    (iPhone/iPod, other OSs), online webdicts
-*** ongoing
 ** synchronize the source language entries from a specific dictionary with the 
    entries in the morphology component (now especially for sma):
    that means nothing then put the entries from dict that are NOT analyzed
    into the lexC files
-*** ongoing
 ** the StarDict on Windows: try the HTML-plugin (that means that users can use
    StarDict 3.2)
-*** ongoing
 ** try to reduce the dict-size on mac: experiment with xPointer, etc.
-*** ongoing
 * Fkv:Nob - Nob:Fkv:
 ** incorporate novel glossary into the dict
-*** todo
 * SmeNob:
 ** incorporate the passives into the last version of the sme:nob
 ** start a new compilation of SmeNob and improve it based on the experience
    gained with SmaNob
-*** ongoing
 * SmaNobSwe:
 ** extend the smanobswe dictionary: waiting for data (incorporate the data from
-   __Maja-Lisa__)
-*** still waiting for feedback from __Maja-Lisa__
+   Maja-Lisa)
 * MT
 ** test A-ITE on Windows
-*** todo
 
 !!Maja
-* upgrade the forrest installation on everybody's computers (head of svn trunk)
-**?
 * more work on {{sma}} adjectives
-**ongoing
 * go through the lexicon and add for all loan words a form corresponding to the
   suggestion from Ove Lorentz (other forms should be SUB-marked)
-** 50 words left
 * continue gathering {{sma}} corpus texts
-**not done
 * finish compound tags for adjectives
-**not done
 * Rette goldstandard doc - så mange som mulig - high prio! - min. 1000 (helst
   5000) ord løpende tekst
-**not done
 * test conversion to xml to ensure there are no markup errors in goldstandards
 * continue gathering {{sma}} corpus texts
 ** get {{sma}} articles in Š-bláđđi
-*** take some phonecalls again + send mail
 ** the Gun Utsi book is almost there - one contract missing
-*** gived up this one
 * Corpus gathering: 
 ** contact Inga Margrethe Bjørn Eira
-*** not done yet (?)
 **follow up the yearbook-articles
-*** send contracts
 ** restart the letter mailing thing using WebSak
 * adjectives
-**ongoing
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-**not done
 
 !!Sjur
+* test TMX files, if ok, forward link to SD
 * forrest makeover:
-** upgrade the forrest installation on all computers (head of svn trunk)
-*** upgraded mine, nothing else
-** make sure Unicode in Forrest pdf is working (no ? for "eng"/ŋ)
-*** this needs to be tested on the other computers - I have had a working setup
-    for a while now
-* Complete the letter to NB, suggesting a way forward
-** done
+** make sure Unicode in Forrest pdf is working (no "?" for "eng"/ŋ)
 * arrange a meeting with the hfst group if necessary to make HFST3 compile
-** not done
 * document updating XXE configurations; announce the upgrade
-** not done
 * write sma beta readme file
-** not done
-* convert M4 twolc processing to transducer manipulation
-** Tomi did this for descriptive/normative dichotomy
 * add voikko support to our proofing test bench
-** not yet
 * add all our Sámi analysers to voikko and test them as spellers
-** depends on the previous task
 * run tests using Hunspell, Voikko, Polderland for our Sámi lexicons
-** depends on the previous task
 * difftest for fst and PL speller
-** not done
 * Northern areas
-** nothing since last week
 ** plan a meeting/seminar in Tromsø
 ** make a plan for the first two years, update overall plan
 * @TTS: continue public tender process
-** nothing since last week
 * make __Leif Åge__ send out CD's to distribution points
-** this task needs to be revisited - we need a better routine for CD distrib.
 * continue Nordplus Sprog project
-** continuously working on the infrastructure part of the project - last week:
-   thursday (actually friday) seminar
 * make XSL script to transform leaflet Forrest XDocs to an OOo Drawer document
-** hm, this long-time task needs to be reviewed, together with the rest of the
-   user documentation for our proofing tools
 * follow-up on some Polderland-related bugs: 621, 630, 652
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-* other things:
-** work on the parallel corpus - metadata corrections
-** zhfst speller lexicon specification
-** corpus meeting
-** administrative tasks
-** thursday seminar on ocr spellers, hfst spellers and the test bench
 
 !!Thomas
-* upgrade the forrest installation on everybody's computers (head of svn trunk)
-** not done
 * go through sma loanwords and change according to Trondheim findings
-** soon finished
 * write sma readme file
-** not done
 * check extra hyphens in the lexc continuations with Trond
-** not done
 * Digitalize south saami books
-** worked
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** worked some
 
 !!Tomi
-* upgrade the forrest installation on everybody's computers (head of svn trunk)
-** not done
-* move the new M4-less code to a separate branch; share and cooperate
-** didn't create branch, solved the problem anyhow
+* upgrade the forrest installation (head of svn trunk)
 * new {{sma}} beta on Friday, September 17; compilation to start Thursday 17:00
-** new speller lexicons in all three languages
 * run tests using Hunspell, Voikko, Polderland for our Sámi lexicons
-** not done
 * put together the TTS preprocessing transducers and scripts
-** not done
 * try to compile voikko
-** nothing this week
 * add all our Sámi analysers and test them as spellers
-** not done
-* convert M4 twolc processing to transducer manipulation
-** done, except hyphenation
+* convert hyphenation M4 twolc processing to transducer manipulation
+* cleanup {{+Use/Sub}} tag for twolc rules - the tag should be on the upper
+  side of the final transducer
 * write sma beta readme file
-** not done
 * document how compounding is controlled in the PLX conversion
 * fix double hyphen bugs
 * fix PL {{smj}} hyphenator bug
@@ -276,29 +183,16 @@ Cf. one of the following, depending on context:
 
 !!Trond
 * upgrade the forrest installation on everybody's computers (head of svn trunk)
-** Not done.
 * check extra hyphens in the lexc continuations with Thomas
-** No.
-* Course plan for Barents meeting/seminar, october. Financing must be in place.
-** Financing in place, planning has started.
-** check the time needed to get visas with the UiT admin
-*** Done. 10 days! (We don't believe that...)
+* Course plan for Barents meeting/seminar, february.
 ** plan a meeting/seminar in Tromsø
-*** Work has started. February seems a good month
 ** make a plan for the first two years, update overall plan
-*** Not yet
 * Follow up the issue of Windows test machines with IT dept
-** Done. Work underway in the IT dept.
 * Discuss testbench setup with Francis
-** Not done
 * Follow up NB
-** Done, sent a long letter to NB. Now awaiting answer from them.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla].
 
 !!!Oahpa!
-
-License and copyright discussions for Oahpa. GPL for the non-linguistic parts?
-What about the linguistic part? CC-BY license?
 
 __TODO__
 * add GPL license to all of the Oahpa sites (__Ciprian__)
@@ -322,19 +216,9 @@ __TODO__
 Letter is sent, we are waiting for an answer.
 
 __TODO__
-* Complete the letter to NB, suggesting a way forward. (__Sjur, Trond__)
-** done
+* nothing
 
 !!!Corpus gathering
-
-A large amount of new corpus files from SD and the government has been added by
-__Børre__ and his atom-reader script. It is all bilingual.
-
-__Trond__ has added two files to
-{{orig/nob/facta/depts/ NOU200120010035000DDDPDFA.pdf}},
-{{NOU199419940021000DDDPDFA.pdf}}, they are linked from the relevant files in
-{{sme/facta/depts/}} (the files are  {{NAC_2001_35.pdf.xsl}} and
-{{NAC_1994_21.pdf.xsl}}), but the nob files have no .xsl files themselves.
 
 __TODO:__
 * get the 2006-2010 Sámi Parliament protocolls into our repository (__Børre__)
@@ -374,10 +258,6 @@ __TODO:__
 See a separate document in {{plan/strat/5year.jspwiki}}.
 
 !!Northern areas project
-
-We got financing for the kick-off / intro seminar, 218 000 NOK. We will arrange
-the seminar in February probably. The keyboard project was not funded, needs to
-be part of the real project instead.
 
 __TODO:__
 * Course plan for meeting/seminar, february. Financing is in place.
@@ -436,8 +316,7 @@ __TODO:__
   (__Ciprian__)
 ** almost done: an exhaustive check of the parallelity based on the existing
    non-Saami files is required (__Ciprian__)
-* sentence-align {{sme}} with {{nob}} and {{nob}} with {{sme}} (__Ciprian__)
-** done: we should perhaps update our anchor file for the tca2 tool.
+* update our anchor file for the tca2 tool (__XXX__)
 * fix the upload script after the corpus infra remake (__Børre__)
 * turn on corpus summary crontab (__Børre__)
 * needs to check the conversion from old rcs corpus repository to new svn-based
@@ -454,10 +333,6 @@ __TODO:__
 ** fall
 
 !!Makefile + tag simplification
-
-In the lexc files do: {{+Use/Sub:W5}}, in twolc: use {{W5:0}} as anchor for the
-sloppy rules (Tomi rules). Please rename the rules to something more
-descriptive.
 
 __TODO:__
 * convert M4 twolc processing to transducer manipulation (__Tomi, Sjur__)
@@ -588,8 +463,6 @@ __TODO:__
 !!!Dictionaries
 
 !!Net-/browser-based interface
-
-__Ciprian__ is compiling a new set of dictionaries.
 
 __TODO:__
 * set up risten.no on eXist/XServe (as a beta version site) (__Sjur__)
@@ -907,10 +780,6 @@ projects.
 
 !!!CAT
 
-__Ciprian__ has updated the translation memory based on our parallel corpus.
-It is based on 923 parallel files. It needs to be tested, but it looks
-promising.
-
 __TODO:__
 * make intelligent nobsme risten.no - requires {{nob}} morphology
 ** nob.fst a la Trond
@@ -993,7 +862,7 @@ The meeting was closed at 10:53.
 !!!Appendix - task lists for the next week
 
 !!Boerre
-[iCal|/doc/admin/weekly/2010/Tasks_2010-10-04_Boerre.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-10-11_Boerre.ics]
 * try to compile again hfst and all dependencies, Mac and Linux
 * get the 2006-2010 Sámi Parliament protocols into our repository
 ** ask the SD archive to publish the final protocolls
@@ -1015,7 +884,7 @@ The meeting was closed at 10:53.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Ciprian
-[iCal|/doc/admin/weekly/2010/Tasks_2010-10-04_Ciprian.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-10-11_Ciprian.ics]
 * change the tca2 code so that the output files should not be generated in the
   same directory as the input files
 * upgrade the forrest installation on everybody's computers (head of svn trunk)
@@ -1092,7 +961,7 @@ The meeting was closed at 10:53.
 ** test A-ITE on Windows
 
 !!Maja
-[iCal|/doc/admin/weekly/2010/Tasks_2010-10-04_Maja.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-10-11_Maja.ics]
 * more work on {{sma}} adjectives
 * go through the lexicon and add for all loan words a form corresponding to the
   suggestion from Ove Lorentz (other forms should be SUB-marked)
@@ -1112,7 +981,7 @@ The meeting was closed at 10:53.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Sjur
-[iCal|/doc/admin/weekly/2010/Tasks_2010-10-04_Sjur.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-10-11_Sjur.ics]
 * test TMX files, if ok, forward link to SD
 * forrest makeover:
 ** make sure Unicode in Forrest pdf is working (no "?" for "eng"/ŋ)
@@ -1158,7 +1027,7 @@ The meeting was closed at 10:53.
 * [fix bugs!|http://giellatekno.uit.no/bugzilla]
 
 !!Trond
-[iCal|/doc/admin/weekly/2010/Tasks_2010-10-04_Trond.ics]
+[iCal|/doc/admin/weekly/2010/Tasks_2010-10-11_Trond.ics]
 * upgrade the forrest installation on everybody's computers (head of svn trunk)
 * check extra hyphens in the lexc continuations with Thomas
 * Course plan for Barents meeting/seminar, february.
