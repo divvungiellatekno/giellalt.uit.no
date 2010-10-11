@@ -1,0 +1,23 @@
+!!!Setting up the XMLMind XML Editor (XXE)
+
+
+Every time the gt_dictionary dtd or css are updated, the 
+following procedure must be gone through:
+
+!!!For the one maintaining the xmlmind configuration
+
+# Change the dtd and/or css in {{$GTHOME/words/dicts/scripts}} and check in
+# {{cd $GTHOME/tools/xxe/}}
+# Add new version number and version change descriptions in the file {{gtdict-config/gtdict-config.xxe_addon}} and check in the new version of the gtdict-config.xxe_addon file
+# in {{$GTHOME/tools/xxe/}}, give the command {{make}}
+ - __NB!__ requires password for the sd user on divvun.no
+
+
+!!!For all users
+
+# open XmlMind
+# In the almost-rightmost menu {{Options}}, select {{Install Add-ons}}
+# Scroll down till you find the plugin ''Configuration: Giellatekno/Divvun dictionaries'' with two arrows in a circle in front (the arrows indicate that there is an update available for the configuration).
+# Click in the check box to the left of the configuration, and click __Ok__.
+# Restart XXE
+
