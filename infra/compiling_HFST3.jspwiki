@@ -1,0 +1,32 @@
+!!!Compiling HFST3
+
+Download SFST 1.4
+Replace Makefile with [this one.|Makefile]
+make
+make install
+make maninstall
+make libinstall
+
+Download OpenFST 1.2.4
+./configure
+make
+make install
+
+Download Foma source tarball
+make
+make install
+
+NB! Foma is now in svn, but that code does NOT build on the Mac!
+
+cd HFST3
+
+autoreconf -i
+./configure
+
+checking for main in -lsfst... no
+configure: error: in `/Users/sjur/hfst/trunk/hfst3':
+configure: error: sfst test failed (--without-sfst to disable)
+See `config.log' for more details
+
+make
+make install
