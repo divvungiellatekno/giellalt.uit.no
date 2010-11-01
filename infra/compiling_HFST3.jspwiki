@@ -1,32 +1,49 @@
 !!!Compiling HFST3
 
-Download SFST 1.4
-Replace Makefile with [this one.|Makefile]
-make
-make install
-make maninstall
-make libinstall
+This is a receipt for setting up HFST3 with all supported backends on MacOSX Snow Leopard. See the HFST3 README file for further details, and how to turn off specific backens if needed or wanted.
 
-Download OpenFST 1.2.4
+Presently, HFST3 supports three different backends:
+* __SFST__ - unweighted transducers and rule compiler (is the HFST twol compiler built on this one?)
+* __OpenFST__ - weighted transducers
+* __Foma__ - xfst-compatible lexc and regex compiler
+
+The backends need to be installed separately, with full linking support (libraries and header files) for HFST3 to be able to make use of them. The following sections describe how to do that, with notes on required versions etc.
+
+HFST3 abstracts over the different backends, and will make it easy to add support for new backends in the future, to support even more FST source code and transducer conversion options. The abstraction is becoming quite clean, but necessitates that the wanted backends are installed separately. This also makes it easier to handle backends with incompatible licenses, as each backend is compiled and installed as separate entities.
+
+The bottom line: use the latest version, and follow the receipts below, and you should be fine (barring issues in the HFST3 source code itself).
+
+!!Install SFST
+* Download [SFST 1.4|http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html]
+* Replace Makefile with [this one.|src/Makefile]
+* {{make}}
+* {{make install}}
+* {{make maninstall}} - optional (installs man pages)
+* {{make libinstall}}
+
+__NB!__ Please note that you have to download SFST 1.4 ''even if you already have SFST 1.4 on your computer!'' This is because the SFST 1.4 tarball has been updated without a corresponding change in the version number. The original 1.4 tarball did not compile on the Mac, the newest one does.
+
+!!Install OpenFST
+* Download [OpenFST 1.2.4|http://www.openfst.org/] or newer (at least version 1.2.2 does NOT compile on the Mac)
+* {{./configure}}
+* {{make}}
+* {{make install}}
+
+!!Install Foma
+* Download [Foma|http://foma.sourceforge.net/] source
+[tarball|http://www.ling.helsinki.fi/~mhulden/foma-0.9.13alpha.tar.gz]
+* {{make}}
+* {{make install}}
+
+__NB!__ Foma is now in svn, but that code does NOT presently build on the Mac! Thus the need to download and use the tarball. I will update this page with info on how to build from svn when it actually does build. Just for reference, the Foma svn repository is at [/foma.svn.sourceforge.net/svnroot/foma/].
+
+!!Build HFST3
+
+Please note that HFST3 requires rather new versions of flex and bison. The versions shipping with the latest XCode should be ok. This XCode version is the one coming with Snow Leopard (MacOS X 10.6), with subsequent updates. For older MacOS versions, you probably will have to install updated versions of these tools using [MacPorts|http://www.macports.org/] or [Fink|http://www.finkproject.org/]. See the HFST3 README file for further details.
+
+{{{
+./autogen.sh
 ./configure
 make
 make install
-
-Download Foma source tarball
-make
-make install
-
-NB! Foma is now in svn, but that code does NOT build on the Mac!
-
-cd HFST3
-
-autoreconf -i
-./configure
-
-checking for main in -lsfst... no
-configure: error: in `/Users/sjur/hfst/trunk/hfst3':
-configure: error: sfst test failed (--without-sfst to disable)
-See `config.log' for more details
-
-make
-make install
+}}}
