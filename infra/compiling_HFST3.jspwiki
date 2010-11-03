@@ -27,12 +27,22 @@ The bottom line: use the latest version, and follow the receipts below, and you 
 * {{make install}}
 
 !!Install Foma
+
 * Download [Foma|http://foma.sourceforge.net/] source
-[tarball|http://www.ling.helsinki.fi/~mhulden/foma-0.9.13alpha.tar.gz]
+  [tarball|http://www.ling.helsinki.fi/~mhulden/foma-0.9.13alpha.tar.gz]
+* modify {{fomalibconf.h}} - see below
 * {{make}}
 * {{make install}}
 
-__NB!__ Foma is now in svn, but that code does NOT presently build on the Mac! Thus the need to download and use the tarball. I will update this page with info on how to build from svn when it actually does build. Just for reference, the Foma svn repository is at [/foma.svn.sourceforge.net/svnroot/foma/].
+For the time being (ie Foma 0.9.13alpha) you should add FEXPORT in front of functions:
+
+* {{sigma_create}} (line 168)
+* {{sigma_max}} (line 170)
+* {{xxmalloc}} (line 198)
+
+in the file {{fomalibconf.h}} (see other functions with this prefix to ensure you do it correctly). This is necessary for HFST to build cleanly against Foma. Hopefully the next update to Foma will include this change.
+
+__NB!__ The Foma source code is now in svn, but that code does NOT presently build on the Mac! Thus the need to download and use the tarball. I will update this page with info on how to build from svn when it actually does build. Just for reference, the Foma svn repository is at [/foma.svn.sourceforge.net/svnroot/foma/].
 
 !!Build HFST3
 
