@@ -13,20 +13,22 @@ HFST3 abstracts over the different backends, and will make it easy to add suppor
 
 The bottom line: use the latest version, and follow the receipts below, and you should be fine (barring issues in the HFST3 source code itself).
 
-!!Install SFST
+!!!Install SFST
 * Download [SFST 1.4.1|http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html] or newer - version 1.4 does NOT compile on MacOSX
 * {{make}}
 * {{make install}}
 * {{make maninstall}} - optional (installs man pages)
 * {{make libinstall}}
 
-!!Install OpenFST
+!!!Install OpenFST
 * Download [OpenFST 1.2.4|http://www.openfst.org/] or newer (at least version 1.2.2 does NOT compile on the Mac)
 * {{./configure}}
 * {{make}}
 * {{make install}}
 
-!!Install Foma
+!!!Install Foma
+
+!!From downloaded tarball
 
 * Download [Foma|http://foma.sourceforge.net/] source
   [tarball|http://www.ling.helsinki.fi/~mhulden/foma-0.9.13alpha.tar.gz]
@@ -42,9 +44,14 @@ For the time being (ie Foma 0.9.13alpha) you should add FEXPORT in front of func
 
 in the file {{fomalibconf.h}} (see other functions with this prefix to ensure you do it correctly). This is necessary for HFST to build cleanly against Foma. Hopefully the next update to Foma will include this change.
 
-__NB!__ The Foma source code is now in svn, but that code does NOT presently build on the Mac! Thus the need to download and use the tarball. I will update this page with info on how to build from svn when it actually does build. Just for reference, the Foma svn repository is at [/foma.svn.sourceforge.net/svnroot/foma/].
+!!From svn source code
 
-!!Build HFST3
+The Foma svn repository is at [/foma.svn.sourceforge.net/svnroot/foma/]. Since r11 it builds without problems, and contains the above changes. The process is just:
+
+* {{make}}
+* {{make install}}
+
+!!!Build HFST3
 
 Please note that HFST3 requires rather new versions of flex and bison. The versions shipping with the latest XCode should be ok. This XCode version is the one coming with Snow Leopard (MacOS X 10.6), with subsequent updates. For older MacOS versions, you probably will have to install updated versions of these tools using [MacPorts|http://www.macports.org/] or [Fink|http://www.finkproject.org/]. See the HFST3 README file for further details.
 
