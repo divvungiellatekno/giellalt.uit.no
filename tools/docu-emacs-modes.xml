@@ -11,17 +11,18 @@
     <section>
       <title>Special Emacs modes</title>
       <p>The Emacs mode definitions are located in project directory
-      <code>gt/scripts/emacs</code> under svn. Copy the relevant files
-      to your <code>emacs</code> directory in your home directory (or
-      use direct path). Load the file by adding the command to your
+      <code>$GTHOME/tools/emacs</code> under svn. Copy the relevant files
+      to your <code>emacs</code> directory in your home directory (or better:
+      use a direct path). Load the file by adding the command to your
       <code>.emacs</code> file: </p>
-      <source>(load &quot;~/emacs/file-name&quot;) 
-</source>
-
+      <p>
+<ul>
+<li><source>(load &quot;$GTHOME/tools/emacs/file-name&quot;)</source></li>
+      </ul>      </p>
       <section>
         <title>correct-corpus-mode</title>
         <p>The file containing the mode definitions is <code>correct.el</code>. Command to add to your <code>.emacs</code> file:</p>
-        <source>(load &quot;~/emacs/correct&quot;)
+        <source>(load &quot;$GTHOME/tools/emacs/correct&quot;)
 </source>
 <p>Start the mode by typing</p>
         <source>M-x correct-corpus-mode
@@ -42,7 +43,7 @@
       <section>
         <title>namelex-mode</title>
         <p>The file containing the mode definitions is <code>namelex.el</code>. Command to add to your <code>.emacs</code> file:</p>
-        <source>(load &quot;~/gt/script/emacs/namelex&quot;)
+        <source>(load &quot;$GTHOME/tools/emacs/namelex&quot;)
 </source>
 <p>Start the mode by typing</p>
         <source>M-x namelex-mode
@@ -76,6 +77,30 @@
 anything else (since the characters are reserved for tagging). Change
 the mode for example to text-mode to do some other editing than
 tagging and then back to namelex-mode for tagging.</p>
+      </section>
+
+      <section>
+        <title>gender-assign-mode</title>
+        <p>The file containing the mode definitions is <code>genderassign.el</code>. The purpose of the 
+mode is to make it easier to assign gender to lexicon files.
+	</p>
+<p>Command to add to your <code>.emacs</code> file:</p>
+        <source>(load &quot;$GTHOME/tools/emacs/genderassign&quot;)
+</source>
+<p>Start the mode by typing</p>
+        <source>M-x genderassign-mode
+</source>
+        <p>The keystrokes are:</p>
+        <dl>
+          <dt>f</dt>
+          <dd>feminines</dd>
+          <dt>m</dt>
+          <dd>masculines</dd>
+          <dt>n</dt>
+          <dd>Neuters</dd>
+          <dt>x</dt>
+          <dd>next xxx string</dd>
+        </dl>
       </section>
       <p class="last_modified">Last modified: $Date$, by $Author$</p>
     </section>
