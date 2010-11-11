@@ -57,7 +57,6 @@ sudo make install</source>
     Replace <code>[admin-username]</code> with a username with administrative privileges.
     Then type in the corresponding password, and continue with the final step above.</note>
 
-<!--    <p>Note that on the G5 machine, there is a bug, so that we must compile with the old compiler (the old compiler complains it is deprecated, but will still wok). Note that if you switch from new to old compiler method, you should remove the vislcg3 file in the src/ catalogue. Here is the old command:</p>
 
       <source>      
 cd vislcg3/trunk/
@@ -68,10 +67,9 @@ mv vislcg3 ~/bin/</source>
     <p>Using this method, <code>vislcg3</code> is installed in your home dir, in <code>~/bin/</code>.</p>
 
     <note>If you are using this method, there is no need to do the <code>su + sudo</code>
-    steps outlined in the first case.</note>-->
+    steps outlined in the first case.</note>
 
     </section>
-
     <section>
       <title>Commands to update</title>
 
@@ -90,11 +88,16 @@ sudo make install</source>
     </section>
 
     <section>
-      <title>Usage</title>
+      <title>Compilation and usage of CG files</title>
+
+      <p>The CG .rle files can be run as text files, or comiled. They will be compiled with the <code>make TARGET=$LANG</code> command d:</p>
+
+<p><code>... | vislcg3 -g src/sme-dis.rle | ...</code></p>
 
       <p>Vislcg3 can be run with this command:</p>
 
 <p><code>... | vislcg3 -g src/sme-dis.rle | ...</code></p>
+
 
 </section>
       <section>
