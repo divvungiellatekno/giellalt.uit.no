@@ -51,6 +51,16 @@ The Foma svn repository is at [/foma.svn.sourceforge.net/svnroot/foma/]. Since a
 * {{make}}
 * {{make install}}
 
+!!Possible errors & solutions
+
+If you get compilation errors like the following when make-ing HFST3:
+
+{{{
+Undefined symbols: "_sigma_max", [...] "_sigma_create", [...]
+}}}
+
+it means you have an older version of the foma library installed, and you need to manually delete all installed files, {{make clean}}, {{make}} and {{make install}} anew to get rid of the errors.
+
 !!!Build HFST3
 
 Please note that HFST3 requires rather new versions of flex and bison. The versions shipping with the latest XCode should be ok. This XCode version is the one coming with Snow Leopard (MacOS X 10.6), with subsequent updates. For older MacOS versions, you probably will have to install updated versions of these tools using [MacPorts|http://www.macports.org/] or [Fink|http://www.finkproject.org/]. See the HFST3 README file for further details.
@@ -61,3 +71,52 @@ Please note that HFST3 requires rather new versions of flex and bison. The versi
 make
 make install
 }}}
+
+HFST3 r756 is known to build properly on MacOS X with all the prerequisites installed as described above. HFST3 is presently in a (pre) alpha stage, and things may break an any moment. Please also note that not all command-line tools found in HFST2 are presently built by HFST3. The tools produced by HFST3 are:
+
+* hfst-calculate
+* hfst-compare
+* hfst-compose
+* hfst-compose-intersect
+* hfst-concatenate
+* hfst-conjunct
+* hfst-determinize
+* hfst-disjunct
+* hfst-format
+* hfst-fst2fst
+* hfst-fst2strings
+* hfst-fst2txt
+* hfst-head
+* hfst-invert
+* hfst-lexc
+* hfst-lookup
+* hfst-minimize
+* hfst-proc
+* hfst-project
+* hfst-push-weights
+* hfst-regexp2fst
+* hfst-remove-epsilons
+* hfst-repeat
+* hfst-reverse
+* hfst-split
+* hfst-strings2fst
+* hfst-strip-header (HFST3 only)
+* hfst-substitute
+* hfst-subtract
+* hfst-summarize
+* hfst-tail
+* hfst-txt2fst
+
+whereas HFST2 installs the following additional tools:
+
+* hfst-diff-test
+* hfst-flag-diacritics
+* hfst-fst2pairstrings
+* hfst-lookup-optimize
+* hfst-omor-evaluate
+* hfst-optimized-lookup
+* hfst-pair-test
+* hfst-symbols
+* hfst-twolc
+
+Of these, {{hfst-twolc}} is probably the most critical omission. It isn't yet known whether it is possible to mix HFST2 and HFST3 transducers.
