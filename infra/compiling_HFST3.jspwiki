@@ -72,7 +72,7 @@ make
 make install
 }}}
 
-HFST3 r756 is known to build properly on MacOS X with all the prerequisites installed as described above. HFST3 is presently in a (pre) alpha stage, and things may break an any moment. Please also note that not all command-line tools found in HFST2 are presently built by HFST3. The tools produced by HFST3 are:
+HFST3 r756 is known to build properly on MacOS X with all the prerequisites installed as described above. HFST3 is presently in a (pre) alpha stage, and things may break at any moment. Please also note that not all command-line tools found in HFST2 are presently built by HFST3 — but HFST3 adds support for the important xfst processor through Foma (command-line functionality available since r762). The tools produced by HFST3 are:
 
 * hfst-calculate
 * hfst-compare
@@ -100,12 +100,13 @@ HFST3 r756 is known to build properly on MacOS X with all the prerequisites inst
 * hfst-reverse
 * hfst-split
 * hfst-strings2fst
-* hfst-strip-header (HFST3 only)
+* hfst-strip-header (NEW! HFST3 only)
 * hfst-substitute
 * hfst-subtract
 * hfst-summarize
 * hfst-tail
 * hfst-txt2fst
+* hfst-xfst (NEW! HFST3 only)
 
 whereas HFST2 installs the following additional tools:
 
@@ -119,4 +120,4 @@ whereas HFST2 installs the following additional tools:
 * hfst-symbols
 * hfst-twolc
 
-Of these, {{hfst-twolc}} is probably the most critical omission. It isn't yet known whether it is possible to mix HFST2 and HFST3 transducers.
+Of these, {{hfst-twolc}} is probably the most critical omission. It isn't yet known whether it is possible to mix HFST2 and HFST3 transducers, or when {{hfst-twolc}} support will be added to HFST3.
