@@ -4,6 +4,7 @@
 
 !!!Ny plan for oppdatering til 24. januar 2011
 
+!!Plan
 # 272 ord ikkje i fst-norm (smanob/2011_dict/no-analysis_smanob/
 ) (__Thomas__)
 # inc/Todo_jan2011/20110113_001-200_noun_not_in_dict.csv  (__Cip__ til xml-format og legge til noun-fila) -- status=done
@@ -18,6 +19,7 @@
 ## pronRel (__Cip__) -- status=done
 ## VNeg (__Cip__) -- status=??? brackets are in examples like that. I don't know what to do about them.
 
+{{{
    <e>
       <lg>
          <l pos="v">idtjiden</l>
@@ -34,15 +36,17 @@
          </tg>
       </mg>
    </e>
+}}}
    
 # Gå gjennom beslekta lemma (f.eks. ''-sovvedh, -gåetedh'') og se på
   oversettelsene.
 # Eventuelt sjå meir på lukka ordklasser
 
-Cleaning up:
+!!Cleaning up:
 
-1. Paranteseners status:
+!Paranteseners status:
 
+{{{
 src>grep '(' *xml 
 po_smanob.xml:        example translation is exactly the same (naturally, lemma
 pronIndef_smanob.xml:               <xt>mor og barn (fast uttrykk) xxx_correct_me_xxx</xt>
@@ -53,12 +57,13 @@ vNeg_smanob.xml:               <xt>Vi (to) veit ikke.</xt>
 vNeg_smanob.xml:               <xt>Vi (to) visste ikke.</xt>
 vNeg_smanob.xml:               <xt>Dere (to) visste ikke.</xt>
 vNeg_smanob.xml:               <xt>Vi (to) visste ikke.</xt>
+}}}
 
+!Disjunction med 'eller', 'el.' eller '/' må riddes opp óg.
 
-2. Disjunction med 'eller', 'el.' eller '/' må riddes opp óg.
+!xxx
 
-3. xxx
-
+{{{
 src>grep xxx * | grep -v book 
 adv_smanob.xml:            <t dict="yes" pos="xxx">xxx</t>
 multiword_smanob.xml:         <l note="I am either in the wrong file or there is a space lacking in my string___xxx___"
@@ -85,8 +90,9 @@ v_smanob.xml:         <l class="xxx" pos="v">mentedh</l>
 v_smanob.xml:         <l class="xxx" pos="v">nåhtedh</l>
 v_smanob.xml:         <l class="xxx" pos="v">pleahkedh</l>
 v_smanob.xml:         <l class="xxx" pos="v" umlaut="full" vow="x">vearhkedh</l>
+}}}
 
-Tidsplan:
+!!Tidsplan:
 
 *Daglig routiner:
 ** hver natt skal paradimene for lemmaene genereres: resultatene skall sjekkes inn i svn daglig (__Cip__)
