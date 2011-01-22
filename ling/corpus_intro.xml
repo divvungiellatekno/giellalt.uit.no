@@ -1,42 +1,71 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
-    <header>
-        <title>Corpus infrastructure</title>
-        <authors>
-            <person email="tomi.pieski@hum.uit.no" name="Tomi Pieski"></person>
-        </authors>
-    </header>
-    <body>
-        <section>
-            <title>Intruduction</title>
-        </section>
-        <section>
-            <title>Gathering</title>
-            <p>Here is the discussion of what sort of corpus format we should be using and how to process the incoming texts into that format.</p>
-            <p>First we have to decide about the XML -format. What information do we want and how to represent it. Simplest way to define the
-                XML -format is to represent it with DTD. Other representation options include W3C Schema and Relax NG. We use DTD here and
-                transform into some of the schemas in the future.</p>
-             <p><a href="corpus_dtd.html">DTD -discussion</a></p>
-            <p>Second target is to figure out how to convert the incoming raw original files into our XML -format. Below are listed the formats
-                to be consisdered in the conversion process.</p>
-            <ul>
-                <li>Word document (.doc)</li>
-                <li>Adobe document (.pdf)</li>
-                <li>Web -documents (.html)</li>
-                <li>Plain text (.txt)</li>
-                <li>Other formats? (...)</li>
-            </ul>
-            <p><a href="corpus_conversion.html">Conversion</a></p>
-        </section>
-        <section>
-            <title>Storing</title>
-            <p>Filesystem</p>
-            <p>OpenOffice -format</p>
-        </section>
-        <section>
-            <title>Using</title>
-            <p class="last_modified">Last modified: $Date$, by $Author$</p>
-        </section>
-    </body>
+   <header>
+      <title>Corpus infrastructure</title>
+      <authors>
+         <person email="trond.trosterud@uit.no" name="Trond Trosterud" />
+      </authors>
+   </header>
+   <body>
+      <section>
+         <title>Introduction</title>
+         <warning>The corpus infrastructure documentation is partly outdated</warning>
+      </section>
+      <section>
+         <title>Short note on status quo</title>
+         <p>We are in the middle of rebuilding our conversion routines. The philosophy is the same as before, but the
+         actual conversion is different. Stay tuned.</p>
+         <p>While waiting for a documetation rewrite this intro document will contain some notes on how to convert the
+         corpus on your own machine. Eventually, the content below will be put in more appropriate places.</p>
+      </section>
+      <section>
+         <title>Conversion, notes on usage</title>
+         <p>The corpus is now under svn. Check out the original files, and convert to xml. The conversion process will
+         take a couple of hours. The command is as follows (issued when standing in the <code>freecorpus</code> (or on
+         victorio: the <code>boundcorpus</code>) catalogue.</p>
+         <p><code>find orig -type f | grep -v .svn | grep -v xsl | grep -v '~|xargs convert2xml2.pl 2&gt;/dev/null
+         </code></p>
+         <p>If you convert on mac, the following grep command should be added: | grep -v '.DS_Store', to give this
+         command:</p>
+         <p><code>find orig -type f | grep -v .svn | grep -v xsl | grep -v ~| grep -v '.DS_Store'|xargs convert2xml2.pl
+         2&gt;/dev/null </code></p>
+         <p>The graphical show that follows indicate lines looking like this: "...|......". Here, each symbol represents
+         a file. The dots indicate "(formally) successful conversion", and the pipe symbols indicate flawed conversion.
+         Note that the conversion will be flawed if you are offline while converting, as the conversion scripts takes
+         the dtd from the net (we should consider making this more robust). The conversion script converts some thousand
+         files at a time, it then looks as if it starts again, but in reality it just "takes a new bite" and carries on
+         the conversion. </p>
+         <p>Now, you might want to check the content. The converted xml files are found in the converted/ catalogue.
+         Scripts for more detailed checks are found in <code>$GTHOME/gt/scripts/corpus/</code>.</p>
+         <fixme author="Børre">Consider documenting them, or at least giving hints as to purpose (in case it does not
+         follow from the file name), and indicate which ones are obsolete.</fixme>
+      </section>
+      <section>
+         <title>Catches</title>
+         <p>This section should document the fixes needed in order to get the conversion working on your machine.</p>
+         <ul>
+            <li>Correct java versjon</li>
+            <li>New grep version</li>
+            <li>...</li>
+         </ul>
+         <p></p>
+      </section>
+      <section>
+         <title>Usage</title>
+         <p>The command for using the corpus is:</p>
+         <p><code>ccat -l sma -r converted/sma/ | less</code></p>
+         <p>This command will give you all the South Sami content of the converted South Sami files. The ccat utility is
+         documented somewhere.</p>
+         <p></p>
+         <p class="last_modified">Last modified: $Date$, by $Author:
+         boerre $</p>
+      </section>
+      <section>
+         <title>Old links (kept for now)</title>
+         <p><a href="corpus_dtd.html">DTD -discussion</a></p>
+         <p><a href="corpus_conversion.html">Conversion</a></p>
+      </section>
+   </body>
 </document>
