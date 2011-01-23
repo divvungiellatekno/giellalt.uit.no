@@ -25,11 +25,11 @@
          <p>The corpus is now under svn. Check out the original files, and convert to xml. The conversion process will
          take a couple of hours. The command is as follows (issued when standing in the <code>freecorpus</code> (or on
          victorio: the <code>boundcorpus</code>) catalogue.</p>
-         <p><code>find orig -type f | grep -v .svn | grep -v xsl | grep -v '~|xargs convert2xml2.pl 2&gt;/dev/null
+         <p><code>find orig -type f | grep -v .svn | grep -v xsl | grep -v '~'|xargs convert2xml2.pl 2&gt;/dev/null
          </code></p>
          <p>If you convert on mac, the following grep command should be added: | grep -v '.DS_Store', to give this
          command:</p>
-         <p><code>find orig -type f | grep -v .svn | grep -v xsl | grep -v ~| grep -v '.DS_Store'|xargs convert2xml2.pl
+         <p><code>find orig -type f | grep -v .svn | grep -v xsl | grep -v '~'| grep -v '.DS_Store'|xargs convert2xml2.pl
          2&gt;/dev/null </code></p>
          <p>The graphical show that follows indicate lines looking like this: "...|......". Here, each symbol represents
          a file. The dots indicate "(formally) successful conversion", and the pipe symbols indicate flawed conversion.
