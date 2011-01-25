@@ -23,16 +23,15 @@
       there, this document describes the contents of the script.</p>
 
       <p>All the binaries and scripts used in the corpus conversion process
-	  are stored under $GTHOME/gt/script, except the tools that are
+	  are stored under $GTHOME/gt/script/corpus, except the tools that are
       already installed to some common bin. The xsl-files which transfer the
       structural information of different source files (docbook2xml.xsl and
       xhtml2xml.xsl) and the template for file specific xsl-files
-      (XSL-template.xsl) are also stored in the bin-directory under the corpus
-      directory. The directory <code>&lt;path-to-your-working-copy&gt;/tmp/</code> is reserved for
+      (XSL-template.xsl) are also stored there. The directory <code>$GTFREE|$GTBOUND/tmp/</code> is reserved for
       temporary files and log files that are created during the conversion.
       The log files contain the system commands executed during the conversion
       as well as the warnings and error messages. The log file is named after
-      the current date and time.</p>
+      the file that is converted.</p>
 
       <p>The next sections describe the conversion processes for each document
       type and the tools used. The conversion includes hyphen-detection and
@@ -42,75 +41,57 @@
       <section>
         <title>Word documents</title>
 
-        <p>A Microsoft Word document is converted with the program
-        <code>antiword</code>to produce a docbook xml, and piped to the xslt
-        program xsltproc, that converts to our XML -format. We have an
+        <p>Microsoft Word documents are converted with the program
+        <code>antiword</code> to produce a docbook xml, and piped to the xslt
+        program xsltproc, that converts to our XML-format. We have an
         xsl-document docbook2corpus.xsl, that is used in converting the
         document.</p>
       </section>
 
-      <section>
-        <title>Adobe document</title>
+   <section>
+	   <title>RTF documents</title>
+	   
+	   <p>RTF documents are converted to html using <a href="http://www.gnu.org/software/unrtf/">unrtf</a>, then to our xml format using <a href="https://victorio.uit.no/langtech/trunk/gt/script/corpus/xhtml2corpus.xsl">xhtml2xml.xsl</a>.</p>
+   </section>
+   
+   <section>
+	   <title>Ávvir xml documents</title>
+	   
+	   <p>These documents are converted to our xml format using <a href="https://victorio.uit.no/langtech/trunk/gt/script/corpus/avvir2corpus.xsl">avvir2corpus.xsl</a></p>
+   </section>
 
-        <p>A pdf document can be converted using two different methods,
-        depending on the structure of the document. The default is<a
-        href="http://www.bluem.net/downloads/pdftotext_en/">pdftotext</a>.
-        Pdftohtml is part of the <a
-        href="http://poppler.freedesktop.org/">poppler-package. </a></p>
-
-        <p>The text comes basically in the right order and the characters are
-        coded correctly. There are however problems with page numbers,
-        footnotes and other elements that occur at the page brake. The text is
-        cleaned by Perl, in the script <code>convert2xml.pl</code></p>
-
-        <p>The pdftotext does not offer any markup and the same goes for the
-        other conversion tools tested (since pdf is not a markup language).
-        Some of the paragraphs and headings can be preserved by
-        postprocessing, this is done by <code>convert2xml.pl</code>.</p>
-
-        <p>The html-document is tidied using the HTML tidy and further
-        transformed to xml using the same xsl file as with other
-        html-documents, xhtml2xml.xsl.</p>
-
-        <p>Since pdftotext does not provide any structure for the output, all
-        the information of the layout of the document is lost during
-        conversion. For the purposes of morphological analysis and
-        disambiguation, e.g. the footnotes and indexes as well as the page
-        numbers are problematic if they occur in the middle of a sentence. The
-        alternative tool which is used in the project for preserving some of
-        the layout is <a href="http://www.jpedal.org/">JPedal</a>pdf text
-        extraction tool. JPedal returns the text with information of the font
-        size and location. The font size and style information is used for
-        deciding which parts of the text belong to the text body and which
-        parts are notes and indexes. The information of the different font
-        sizes in the current document is stored in the file-specific xsl-file.
-        </p>
-
-        <p> The problem with JPedal are the documents which have more
-        complicated layout, e.g more than one column. Also, it fails to
-        determine the correct character encoding in some cases. It's possible
-        to improve the tool if needed.</p>
-      </section>
-
-      <section>
-        <title>Web -document</title>
-
-        <p>Web documents are first cleaned using the program
-		<a href="http://tidy.sourceforge.net/">HTML Tidy </a>, using several
-        command line options.. The output is converted to xml using the
-        xsl-file <code>xhtml2xml.xsl</code>.</p>
-      </section>
-
-      <section>
+   <section>
+	   <title>SVG documents</title>
+	   
+	   <p>These documents are converted to our xml format using <a href="https://victorio.uit.no/langtech/trunk/gt/script/corpus/svg2corpus.xsl">svg2corpus.xsl</a></p>
+   </section>
+	
+	<section>
         <title>Plain text document</title>
 
         <p>Plain text documents that are stored to the database should have
-        the extension <code>.txt. </code>The encoding of a text document is
+        the extension <code>.txt</code>. The encoding of a text document is
         solved using the iconv -tool. If there are special markings for
         headings and paragraphs, like in some newspaper texts, they are used
         in creating the document structure. Otherwise, the empty lines mark
         paragraph breaks and short lines beginning with numbers are treated as
         titles.</p>
+      </section>
+
+      <section>
+        <title>Adobe document</title>
+
+        <p>Pdf documents are converted to plain text using <a
+			href="http://poppler.freedesktop.org/">pdftotext</a>, and then converted to our xml format using <a href="https://victorio.uit.no/langtech/trunk/gt/script/langTools/Corpus.pm">langTools::Corpus::txt_clean</a></p>
+      </section>
+
+      <section>
+        <title>Web-document</title>
+
+        <p>Web documents are first cleaned using the program
+		<a href="http://tidy.sourceforge.net/">HTML Tidy </a>, using several
+        command line options.. The output is converted to xml using the
+        xsl-file <code>xhtml2xml.xsl</code>.</p>
       </section>
 
       <section>
