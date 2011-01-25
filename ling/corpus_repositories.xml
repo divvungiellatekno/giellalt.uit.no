@@ -4,9 +4,6 @@
 <document xml:lang="en">
    <header>
       <title>Corpus repositories</title>
-      <authors>
-         <person email="borre.gaup@samediggi.no" name="Børre Gaup"/>
-      </authors>
    </header>
    <body>
       <p>The corpus is divided in a free part, where texts that we can redistribute are gathered (essentially, texts in
@@ -31,8 +28,7 @@
       <section>
          <title>The directory structure</title>
          <p>The main directory in the corpus repository is <em>orig</em>. <em>orig</em> contains the original files with
-         the original names (bar spaces replaced with _) and in the original format. The file-specific xsl-files are in
-         under the orig-hierarchy as well, in the same subdirectory as the document itself.</p>
+         the original names (bar spaces replaced with _) and in the original format. Metadata about the original file is in an xsl file in the same directory as the original file, and has the same name as the original file plus an .xsl extension.</p>
          <p>Inside these directories are directories for various languages. They contain parallel translations to the
          sami documents. Below is an outline of the directory structure.</p>
          <source>orig/
@@ -86,9 +82,8 @@ goldstandard/
          </section>
       </section>
       <section>
-         <title>Manually adding content</title>
-         <p>If you have a file that you want to add to the corpus repository by hand you have to have a working copy of
-         either the free or bound part of our corpus.</p>
+         <title>Adding content</title>
+         <p>If you have a file that you want to add to the corpus repository you have to have a working copy of either the free or bound part of our corpus.</p>
          <ol>
             <li>If it is a freely distributable document, add it to the free part of our corpus. If not, add it to the
             bound part.</li>
@@ -98,8 +93,8 @@ goldstandard/
             genre "facta", copy the file to directory $working_copy/orig/sme/facta/ in your working copy. For the news
             genre, there are subdirectories for different sources of news, and for bible texts, there are subdirectories
             for ot and nt.</li>
-            <li>Copy the file <code>$GTHOME/gt/script/XSL-template.xsl</code> to
-            <code>$working_copy/orig/genre/$filename.xsl</code>. Update the metainformation by editing this file.</li>
+			<li>Try to convert the document using the command <code>convert2xml.pl &gt;filename&lt;</code>. This command converts the original document to xml, and makes a default metadata document with empty values.</li>
+			<li>Open the metadata file, &gt;filename&lt;.xsl and add metadata to it.</li>
             <li>Add and commit these files to the repository by either using the svn command line tools or your usual
             graphical interface to svn.</li>
          </ol>
