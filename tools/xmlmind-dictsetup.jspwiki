@@ -1,4 +1,25 @@
-!!!Setting up the XMLMind XML Editor (XXE)
+!!!Setting up the XMLMind XMLEditor (XXE)
+
+In order to see the dictionary files in XMLMind, do the following:
+
+!!!For all users, first-time installation
+
+# open XmlMind
+# In the almost-rightmost menu {{Options}}, select {{Preferences}}
+# In the left part of the {{Preferences}} window, under {{Tools}}, select {{Install add-ons}}
+# For the window {{Download add-ons form these servers}}, click the {{Add}} button and add the following url:
+## ''http://divvun.no/static_files/list.xxe_addon''
+# restart XMLMind
+# Then go through the ''update'' procedure below:
+
+
+!!!For all users, update
+
+# open XmlMind
+## In the almost-rightmost menu {{Options}}, select {{Install Add-ons}}
+## Scroll down till you find the plugin ''Configuration: Giellatekno/Divvun dictionaries'' with two arrows in a circle in front (the arrows indicate that there is an update available for the configuration).
+## Click in the check box to the left of the configuration, and click __Ok__.
+# Restart XmlMind
 
 
 Every time the gt_dictionary dtd or css are updated, the 
@@ -12,13 +33,4 @@ following procedure must be gone through:
 # Add new version change descriptions in the file {{gtdict-config/gtdict-config.xxe_addon}} and check in the new version of the gtdict-config.xxe_addon file
 # in {{$GTHOME/tools/xxe/}}, give the command {{make}}
  - __NB!__ requires password for the sd user on divvun.no
-
-
-!!!For all users
-
-# open XmlMind
-# In the almost-rightmost menu {{Options}}, select {{Install Add-ons}}
-# Scroll down till you find the plugin ''Configuration: Giellatekno/Divvun dictionaries'' with two arrows in a circle in front (the arrows indicate that there is an update available for the configuration).
-# Click in the check box to the left of the configuration, and click __Ok__.
-# Restart XmlMind
 
