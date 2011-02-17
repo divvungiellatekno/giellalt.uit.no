@@ -537,8 +537,8 @@
       <title>Kopiere og flytte filer, gje nytt namn</title>
 
       <p>Filer blir kopiert med kommandoen <strong>cp</strong> (for "copy").
-      Viss du skal kopiere fila <em>namneliste</em> til ei ny fil, som du vil
-      kalle <em>kopiliste</em>, skriv du <strong>cp namneliste
+      Viss du skal kopiere fila <em>n-liste</em> til ei ny fil, som du vil
+      kalle <em>kopiliste</em>, skriv du <strong>cp n-liste
       kopiliste</strong>. Rekkefølgja er altså "cp frå til". Viss du vil gje
       ei fil eit nytt namn bruker du kommandoen <strong>mv</strong> (move).
       Syntaksen er den same: <strong>mv gammaltnamn nyttnamn</strong>. Namnet
@@ -561,7 +561,7 @@
 
       <source>Bargojoavku
 galgá
-c1ielggadit
+čielggadit
 ja
 mearridit
 mii
@@ -569,21 +569,21 @@ Finnmárkku
 fylkka
 eatnamiid
 ja
-c1áziid
-eaiggádus1s1an-
+čáziid
+eaiggáduššan-
 ja
-geavahanvuoigatvuod1aide
+geavahanvuoigatvuođaide
 dál
-fertes1ii
+fertešii
 leat
 gustojeaddji
 riekti.
 Bargojoavku
 galgá
 dán
-oktavuod1as
+oktavuođas
 bidjat
-vuod1d1un
+vuođđun
 lávdegotti
 mandáhtii
 addon
@@ -602,7 +602,7 @@ dál
 dán
 grep 'd$' liste
 eatnamiid
-c1áziid
+čáziid
 </source>
 
       <p>Symbolet . (punktum) tyder "kva symbol som helst". Med kommandoen
@@ -613,7 +613,7 @@ c1áziid
 
       <source>grep '^.ea' liste
 mearridit
-geavahanvuoigatvuod1aide
+geavahanvuoigatvuođaide
 leat
 </source>
 
@@ -623,7 +623,7 @@ leat
 
       <p></p>
 
-      <source>bash-2.05b$ grep 'n[aeiouá]' kortlist
+      <source>grep 'n[aeiouá]' liste
 eatnamiid
 </source>
 
@@ -632,17 +632,19 @@ eatnamiid
 
       <p></p>
 
-      <source>bash-2.05b$ grep 'o.[aeiouá]' kortlist
+      <source>grep 'o.[aeiouá]' liste
 Bargojoavku
+geavahanvuoigatvuođaide
 gustojeaddji
 Bargojoavku
+oktavuođas
 </source>
 
-      <p>Stor eller liten bokstav får vi fram på denne måten:</p>
+      <p>Stor eller liten bokstav som første bokstav i ordet får vi fram på denne måten:</p>
 
       <p></p>
 
-      <source>bash-2.05b$ grep '^[bB]' kortlist
+      <source>grep '^[bB]' liste
 Bargojoavku
 Bargojoavku
 bidjat
@@ -654,17 +656,17 @@ bidjat
 
       <p></p>
 
-      <source>bash-2.05b$ egrep 'ea|uo|ie' liste
-c1ielggadit
+      <source>egrep 'ea|uo|ie' liste
+čielggadit
 mearridit
 eatnamiid
-eaiggádus1s1an-
-geavahanvuoigatvuod1aide
+eaiggáduššan-
+geavahanvuoigatvuođaide
 leat
 gustojeaddji
 riekti.
-oktavuod1as
-vuod1d1un
+oktavuođas
+vuođđun
 njuolggadusaid.
 </source>
 
