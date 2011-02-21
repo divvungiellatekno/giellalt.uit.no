@@ -12,11 +12,12 @@ Dictionary for administrative language
 ** Conversion continues with incoming files, but outside this project. 
 * Parallel texts
 ** all is doable apart from the regjeringen.no files that have "?" in the path:
-** this is not fixed in the xslt scripts
+** this is not fixed in the xslt scripts (no need for that any longer, fixed the file names)
 *** Status (including samediggi protocols) nob2sme: 1022 file pairs. sme2nob: 1020 file pairs
-*** Missing in this number: the ? filename parallel files
+*** Status nob2sme: 2198 file pairs from the admin directory
+*** Missing in this number: the ? filename parallel files (fixed by Børre)
 *** Børre is changing the ? in the names, changing ? to _.
-*** Time frame: The name conversion is done before noon tomorrow.
+*** Time frame: The name conversion is done before noon tomorrow. -- status: done
 ** The anchor.txt
 *** cut -d"/" -f2,4 anchor.txt
 *** We might need less words and more words in the anchor list
@@ -25,18 +26,18 @@ Dictionary for administrative language
     on the todo list for after this process. (it will require testing on
     a gold corpus etc).
 * Sentence alignment
-** Not started
+** Not started -- status: done
 ** Problem1: ? in file names. Solution underway: Use _.
 ** Problem2: (encountered by @cip): sentences like 
    __<s id="asdfasd">/ /  //</s>__
    are not accepted by the tca2 sentence aligner and these should
    be filtered right after indexing. Solution: this is not
-   a problem.  
+   a problem. -- status: done manually (collecting patterns for a later filtering) 
 ** C and B to discuss the tca2 problems after this meeting., 
-   C sends B his aligner.
-** More steps to be discussed by B and C (file indexing etc.)   
+   C sends B his aligner. -- status: done, yet B still has problems with the aligner
+** More steps to be discussed by B and C (file indexing etc.) -- status: done
 * Word alignment
-** Input: tmx files. Fran needs the whole bunch.
+** Input: tmx files. Fran needs the whole bunch. -- status: done
 * Lexicographic work
 ** Not started, this is for the lexicographer, after the word alignment.
 
