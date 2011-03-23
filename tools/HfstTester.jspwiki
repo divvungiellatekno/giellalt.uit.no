@@ -1,0 +1,49 @@
+!!!Setup + requirements
+
+We have a new tool to test the integrity of our {{LexC}} lexicons: [HfstTester.py|http://www.bbqsrc.net/#hfsttester]. The original source code is from [Apertium|http://apertium.svn.sourceforge.net/svnroot/apertium/incubator/apertium-tgl-ceb/dev/verbs/HfstTester.py@28665], but we have our own copy in [the main repository|https://victorio.uit.no/langtech/trunk/gt/script/HfstTester.py].
+
+The test script requires Python 2.7, and won't run if that version isn't found. On the Mac you need to use MacPorts (possibly through Porticus) to install a recent Python version.
+
+In addition, it requires {{py-yaml}}, to be able to parse yaml-formatted test data files.
+
+Also, the script is presently only made for hfst-lookup, so there's no support for the Xerox tools (it should probably be easy to add, though).
+
+!!!Test data
+
+The test data is quite simple, and in the following form:
+
+{{{
+Config:
+  Gen: sma/bin/isma.hfstol
+  Morph: sma/bin/sma.hfstol
+
+Tests:
+  Noun - gåetie:
+    gåetie+N+Sg+Nom: gåetie
+    gåetie+N+Sg+Acc: gåetiem
+    gåetie+N+Sg+Gen: gåetien
+    gåetie+N+Sg+Ill: gåatan
+    gåetie+N+Sg+Ine: gåetesne
+    gåetie+N+Sg+Ela: gåeteste
+    gåetie+N+Sg+Com: gåetine
+    gåetie+N+Pl+Nom: gåetieh
+    gåetie+N+Pl+Acc: gåetide
+    gåetie+N+Pl+Gen: gåetiej
+    gåetie+N+Pl+Ill: gåetide
+    gåetie+N+Pl+Ine: gåetine
+    gåetie+N+Pl+Ela: gåetijste
+    gåetie+N+Pl+Com: gåetiejgujmie
+    gåetie+N+Ess: gåetine
+}}}
+
+Such test data can easily be generated using our paradigm generator (the output of course needs to be proofread and checked).
+
+!!!Usage
+
+Presently the only way to use it is by manually running the test script. In the future it will be integrated with our build environment, to automatically ensure that everything is working as it should.
+
+To manually run a test on a test file, do as follows:
+
+{{{
+HfstTester.py
+}}}
