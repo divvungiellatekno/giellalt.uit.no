@@ -18,22 +18,22 @@ Config:
   Morph: sma/bin/sma.hfstol
 
 Tests:
-  Noun - gåetie:
-    gåetie+N+Sg+Nom: gåetie
-    gåetie+N+Sg+Acc: gåetiem
-    gåetie+N+Sg+Gen: gåetien
-    gåetie+N+Sg+Ill: gåatan
-    gåetie+N+Sg+Ine: gåetesne
-    gåetie+N+Sg+Ela: gåeteste
-    gåetie+N+Sg+Com: gåetine
-    gåetie+N+Pl+Nom: gåetieh
-    gåetie+N+Pl+Acc: gåetide
-    gåetie+N+Pl+Gen: gåetiej
-    gåetie+N+Pl+Ill: gåetide
-    gåetie+N+Pl+Ine: gåetine
-    gåetie+N+Pl+Ela: gåetijste
-    gåetie+N+Pl+Com: gåetiejgujmie
-    gåetie+N+Ess: gåetine
+  Noun - gåata:
+    gåata+N+Sg+Nom: gåata
+    gåata+N+Sg+Acc: gåatam
+    gåata+N+Sg+Gen: gåatan
+    gåata+N+Sg+Ill: gåatese
+    gåata+N+Sg+Ine: gåatesne
+    gåata+N+Sg+Ela: gåateste
+    gåata+N+Sg+Com: gåatine
+    gåata+N+Pl+Nom: gåatah
+    gåata+N+Pl+Acc: gåatide
+    gåata+N+Pl+Gen: gåataj
+    gåata+N+Pl+Ill: gåatide
+    gåata+N+Pl+Ine: gåatine
+    gåata+N+Pl+Ela: gåatijste
+    gåata+N+Pl+Com: gåatajgujmie
+    gåata+N+Ess: gåatine
 }}}
 
 Such test data can easily be generated using our paradigm generator (the output of course needs to be proofread and checked).
@@ -45,5 +45,117 @@ Presently the only way to use it is by manually running the test script. In the 
 To manually run a test on a test file, do as follows:
 
 {{{
-HfstTester.py
+gt sjur$ HfstTester.py -c sma/testing/sma-tests.yaml
 }}}
+
+__-c__ indicates coloured output, {{sma/testing/sma-tests.yaml}} is the test data file. That file also contains a reference to the analysing and generating transducers to be used in the test.
+
+{{{gt sjur$ HfstTester.py -h}}}
+
+gives more details.
+
+!!!Output
+
+The output is a test report of the following form:
+
+{{{
+-----------------------------------------
+Test 0: Noun - gåata (Lexical/Generation)
+-----------------------------------------
+[FAIL] gåata+N+Pl+Gen => Expected: gåataj, Got: gåata+N+Pl+Gen+?
+[FAIL] gåata+N+Pl+Nom => Expected: gåatah, Got: gåata+N+Pl+Nom+?
+[FAIL] gåata+N+Sg+Acc => Expected: gåatam, Got: gåata+N+Sg+Acc+?
+[FAIL] gåata+N+Sg+Nom => Expected: gåata, Got: gåata+N+Sg+Nom+?
+[FAIL] gåata+N+Pl+Com => Expected: gåatajgujmie, Got: gåata+N+Pl+Com+?
+[FAIL] gåata+N+Sg+Ine => Expected: gåatesne, Got: gåata+N+Sg+Ine+?
+[FAIL] gåata+N+Sg+Ela => Expected: gåateste, Got: gåata+N+Sg+Ela+?
+[FAIL] gåata+N+Pl+Ine => Expected: gåatine, Got: gåata+N+Pl+Ine+?
+[FAIL] gåata+N+Sg+Ill => Expected: gåatese, Got: gåata+N+Sg+Ill+?
+[FAIL] gåata+N+Sg+Com => Expected: gåatine, Got: gåata+N+Sg+Com+?
+[FAIL] gåata+N+Pl+Acc => Expected: gåatide, Got: gåata+N+Pl+Acc+?
+[FAIL] gåata+N+Pl+Ill => Expected: gåatide, Got: gåata+N+Pl+Ill+?
+[FAIL] gåata+N+Pl+Ela => Expected: gåatijste, Got: gåata+N+Pl+Ela+?
+[FAIL] gåata+N+Ess => Expected: gåatine, Got: gåata+N+Ess+?
+[FAIL] gåata+N+Sg+Gen => Expected: gåatan, Got: gåata+N+Sg+Gen+?
+Test 0 - Passes: 0, Fails: 15, Total: 15
+
+---------------------------------------
+Test 1: Noun - gåata (Surface/Analysis)
+---------------------------------------
+[PASS] gåataj => gåata+N+Pl+Gen
+[PASS] gåatah => gåata+N+Pl+Nom
+[PASS] gåatam => gåata+N+Sg+Acc
+[PASS] gåata => gåata+N+Sg+Nom
+[PASS] gåatajgujmie => gåata+N+Pl+Com
+[FAIL] gåatajgujmie => Expected: gåata+N+Pl+Com, Got: gåata+N+PlGenCmpgujmie+CmpN/SgN+CmpN/SgG+CmpN/PlG+N+Sg+Nom
+[PASS] gåatesne => gåata+N+Sg+Ine
+[PASS] gåateste => gåata+N+Sg+Ela
+[PASS] gåatine => gåata+N+Ess
+[PASS] gåatine => gåata+N+Pl+Ine
+[PASS] gåatine => gåata+N+Sg+Com
+[PASS] gåatese => gåata+N+Sg+Ill
+[FAIL] gåatese => Expected: gåata+N+Sg+Ill, Got: gåata+N+Sg+Nom+PxSg3
+[PASS] gåatine => gåata+N+Ess
+[PASS] gåatine => gåata+N+Pl+Ine
+[PASS] gåatine => gåata+N+Sg+Com
+[PASS] gåatide => gåata+N+Pl+Acc
+[PASS] gåatide => gåata+N+Pl+Ill
+[PASS] gåatide => gåata+N+Pl+Acc
+[PASS] gåatide => gåata+N+Pl+Ill
+[PASS] gåatijste => gåata+N+Pl+Ela
+[PASS] gåatine => gåata+N+Ess
+[PASS] gåatine => gåata+N+Pl+Ine
+[PASS] gåatine => gåata+N+Sg+Com
+[PASS] gåatan => gåata+N+Sg+Gen
+[FAIL] gåatan => Expected: gåata+N+Sg+Gen, Got: gåetie+CmpN/SgN+CmpN/SgG+CmpN/PlG+N+Sg+Ill
+Test 1 - Passes: 23, Fails: 3, Total: 26
+}}}
+
+To get a more compact test report, run it as follows:
+
+{{{
+gt sjur$ HfstTester.py -c -f -p sma/testing/sma-tests.yaml
+-----------------------------------------
+Test 0: Noun - gåata (Lexical/Generation)
+-----------------------------------------
+Test 0 - Passes: 0, Fails: 15, Total: 15
+
+---------------------------------------
+Test 1: Noun - gåata (Surface/Analysis)
+---------------------------------------
+Test 1 - Passes: 23, Fails: 3, Total: 26
+}}}
+
+!!!Known limitations and shortcomings
+
+* at present the test script is not integrated with the makefile
+* there is no real test data for any language, only a demo test file for {{sma}}
+* you need to manually compile the transducers before running the tests
+* only analysis seems to work at the moment, but this is likely due to problems
+  with the hfst transducers, rather than shortcomings in the test script itself
+
+!!!Future improvements
+
+!!No fail on Analysis if at least one correct is found
+
+In the example above, the Analysis test has three fails, all because of stray homonymy in addition to the target analysis. Unless one is actively looking for such stray analyses, they are usually noise in the test reporting, and should be ignored. That is, as long as the target analysis is found among all analyses, the test should pass. This is especially important with compounds, derivations and some verbal forms (in Sámi), as the degree of homonymy can be quite large, and subsequently the noise level.
+
+This feature has already been discussed with the author, and he has promised to look into it. It will be provided as a new option.
+
+!!Really compact reporting
+
+As one builds up a large collection of tests, the main thing to know is whether they pass or fail. In this scenario a reporting format as follows would be more useful:
+
+{{{
+FAIL - Test 0: gåata, Generation
+OK   - Test 1: gåata, Analysis
+---------------------------------
+Total: 2 tests, 1 pass, 1 fail
+---------------------------------
+}}}
+
+Then it is easy to rerun only the broken test(s) with more verbose output, to see exactly what is broken.
+
+!!Support for Xerox lookup, other tools
+
+Presently {{HfstTester.py}} only supports {{hfst-lookup}}, but it would be useful to extend the tool to also be able to use the Xerox {{lookup}} tool as well as other tools (e.g. {{hfst-proc}}) for running the tests.
