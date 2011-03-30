@@ -8,7 +8,8 @@ To avoid unneccessary noise in our commits, it is important that we use identica
 
 * Indent (=3)
 * Max. line length (120)
-* Add open lines (not checked)
+* Add open lines - __not__ checked
+* Favor interoperability with HTML and SGML - __not__ checked
 
 [XXE Whitespace settings|images/xxe-whitespace-settings.png]
 
@@ -18,14 +19,33 @@ If you don't have write access to the repository, you can instead [make a patch|
 
 !!!XXE configuration for dictionary files
 
-If you are going to do more substantial editing, it would probably be helpful to install the XXE configuration for our dictionaries. It is found in your Subversion check-out, in {{$GTHOME/tools/xxe/gtdict-config/}}. To install it on the Mac or *nix systems, just run {{make}} in the parent directory:
+If you are going to do more substantial editing, it is very helpful to install the XXE configuration for our dictionaries. To do that, first add the following URL to the __Install add-ons__ section in the XXE preferences (once). Then install the add-on.
 
-{{{
-cd $GTHOME/tools/xxe
-make
-}}}
+{{{http://divvun.no/static_files/list.xxe_addon}}}
 
-You can also install it manually on any system supported by XXE (including Windows), by manually copying the directory {{gtdict-config}} to the [XXE addon dir|http://www.xmlmind.com/xmleditor/_distrib/doc/configure/dtd_example.html] (see point 1.1 to get the path to the {{addon}} dir on various systems).
+!!Add config URL to the XXE preferences
+
+First click the __Add…__ button:
+
+[XXE Add-on preferences|images/xxe-addon-prefs.png]
+
+Then paste the URL into the URL dialog:
+
+[XXE Add-on preferences|images/xxe-addon-site-dialog.png]
+
+The resulting preference pane should look like this:
+
+[XXE Add-on preferences|images/xxe-addon-prefs-with-gturl.png]
+
+!!Install/update the dictionary config
+
+Open the menu __Options > Install Add-ons…__, and click in the check box in front of the Giellatekno/Divvun dictionary configuration:
+
+[images/xxe-update-dictconfig.png]
+
+The two arrows in a circle in front of the check box indicates that there is an update available. If this is the first time you install the configuration, there are no such arrows there.
+
+When done, click OK, and restart XXE.
 
 !!!Editing
 
