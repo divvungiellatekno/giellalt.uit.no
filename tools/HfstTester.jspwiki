@@ -131,8 +131,6 @@ Test 1 - Passes: 23, Fails: 3, Total: 26
 * at present the test script is not integrated with the makefile
 * there is no real test data for any language, only a demo test file for {{sma}}
 * you need to manually compile the transducers before running the tests
-* only analysis seems to work at the moment, but this is likely due to problems
-  with the hfst transducers, rather than shortcomings in the test script itself
 
 !!!Future improvements
 
@@ -159,3 +157,21 @@ Then it is easy to rerun only the broken test(s) with more verbose output, to se
 !!Support for Xerox lookup, other tools
 
 Presently {{HfstTester.py}} only supports {{hfst-lookup}}, but it would be useful to extend the tool to also be able to use the Xerox {{lookup}} tool as well as other tools (e.g. {{hfst-proc}}) for running the tests.
+
+!!Preserve order of test data
+
+In my experience, word forms and/or paradigm setup usually follows a certain pattern, and test file data will naturally follow the same pattern. It would make reading the output faster and easier if that order was preserved when printing the test output.
+
+!!Ignore warnings and other irrelevant hfst output
+
+In some cases hfst-lookup will give warnings of the type:
+
+{{{
+[PASS] gåata+N+Sg+Ela => gåateste
+hfst-lookup: warning: Lookup not supported on this automaton format: converting to HFST basic transducer and trying
+
+Allowing all flag paths!
+[PASS] gåata+N+Pl+Ine => gåatine
+}}}
+
+These warnings are usually not relevant for the evaluation of the test results (although the flag paths warning can be), and they clutter the output quite a lot. It would be very nice to be able to ignore them. One possibility would of course be that these warnings are not printed at all when using the -q or -s flags with hfst-lookup, but at the moment these flags have no effects on them.
