@@ -158,7 +158,9 @@ These warnings are usually not relevant for the evaluation of the test results (
 
 !!Preserve order of test data
 
-In my experience, word forms and/or paradigm setup usually follows a certain pattern, and test file data will naturally follow the same pattern. It would make reading the output faster and easier if that order was preserved when printing the test output.
+In my experience, word forms and/or paradigm setup usually follows a certain pattern, and test file data will naturally follow the same pattern. It would make reading the output faster and easier if that order was preserved when printing the test output. Compare the test data and the test results above for an example of how the order of the test data has been changed.
+
+This random ordering thing is probably due to the random ordering of Python dictionaries. Alternatives could be using an OrderedDict or pairs of tuples.
 
 !!Really compact reporting
 
