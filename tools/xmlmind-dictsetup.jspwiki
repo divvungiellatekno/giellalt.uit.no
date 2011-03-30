@@ -43,3 +43,23 @@ following procedure must be gone through:
  - __NB!__ requires password for the sd user on divvun.no
 # Finally, go through the ''For all users, update'' section above
 
+!!During development
+
+During development of a new feature, it is best to work locally, and only publish the updates once you are satisfied with the changes. To work like that, do the following:
+
+# uninstall the configuration installed above
+# run the following commands:
+## {{cd $GTHOME/tools/xxe/}}
+## {{make install}}
+# restart XXE
+
+Now edit the CSS, DTD or whatever needs updates, and after each change, run {{make install}} and reload the open document used to test the configuration in XXE. For some changes (like dtd changes), you need to restart XXE to see the effect of the change.
+
+When you are satisfied with your local changes, do the following to publish and revert to the public version of the configuration (and remember to update the version info etc. as described above):
+
+# run the following commands:
+## {{cd $GTHOME/tools/xxe/}}
+## {{make uninstall}}
+## {{make distribute}}
+# install the configuration using the __Options > Install Add-ons…__ menu
+# restart XXE
