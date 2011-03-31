@@ -178,8 +178,12 @@ Then it is easy to rerun only the broken test(s) with more verbose output, to se
 
 !!Return value
 
-The script should return 0 if all tests have passed, and 1 or greater if at least one test has failed.
+The script should return 0 if all tests have passed, if not it should return the number of tests that have failed, along the same lines as other unix tools. This is useful when integrating {{HfstTester.py}} in a larger setting with automated testing and reporting.
 
 !!Support for Xerox lookup, other tools
 
 Presently {{HfstTester.py}} only supports {{hfst-lookup}}, but it would be useful to extend the tool to also be able to use the Xerox {{lookup}} tool as well as other tools (e.g. {{hfst-proc}}) for running the tests.
+
+!!Call hfst-lookup only once per test
+
+It looks like {{hfst-lookup}} is called once for each test case in a test. As the number of tests and test cases grow, this can become a serious bottleneck. The script should be rewritten to call the lookup tool only once pr test. Even better would be to set up two separate lookup threads, one for generation and another for analysis, and use them throughout the whole test run.
