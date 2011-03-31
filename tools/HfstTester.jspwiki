@@ -156,6 +156,8 @@ Allowing all flag paths!
 
 These warnings are usually not relevant for the evaluation of the test results (although the flag paths warning can be), and they clutter the output quite a lot. It would be very nice to be able to ignore them. One possibility would of course be that these warnings are not printed at all when using the -q or -s flags with hfst-lookup, but at the moment these flags have no effects on them.
 
+__DONE:__ all data on {{stderr}} is now captured in a separate variable, and can be printed or redirected to other places as needed. As a consequence, the printed test results are free from these warnings.
+
 !!Preserve order of test data
 
 In my experience, word forms and/or paradigm setup usually follows a certain pattern, and test file data will naturally follow the same pattern. It would make reading the output faster and easier if that order was preserved when printing the test output. Compare the test data and the test results above for an example of how the order of the test data has been changed.
