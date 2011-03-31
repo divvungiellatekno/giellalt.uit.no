@@ -156,7 +156,7 @@ Allowing all flag paths!
 
 These warnings are usually not relevant for the evaluation of the test results (although the flag paths warning can be), and they clutter the output quite a lot. It would be very nice to be able to ignore them. One possibility would of course be that these warnings are not printed at all when using the -q or -s flags with hfst-lookup, but at the moment these flags have no effects on them.
 
-__DONE:__ all data on {{stderr}} is now captured in a separate variable, and can be printed or redirected to other places as needed. As a consequence, the printed test results are free from these warnings.
+__⇒ DONE:__ all data on {{stderr}} is now captured in a separate variable, and can be printed or redirected to other places as needed. As a consequence, the printed test results are free from these warnings.
 
 !!Preserve order of test data
 
@@ -182,11 +182,25 @@ Then it is easy to rerun only the broken test(s) with more verbose output, to se
 
 The script should return 0 if all tests have passed, if not it should return the number of tests that have failed, along the same lines as other unix tools. This is useful when integrating {{HfstTester.py}} in a larger setting with automated testing and reporting.
 
-__DONE:__ the script now returns the number of failed tests as its exit value.
+__⇒ DONE:__ the script now returns the number of failed tests as its exit value.
 
 !!Support for Xerox lookup, other tools
 
 Presently {{HfstTester.py}} only supports {{hfst-lookup}}, but it would be useful to extend the tool to also be able to use the Xerox {{lookup}} tool as well as other tools (e.g. {{hfst-proc}}) for running the tests.
+
+__⇒ DONE:__ {{HfstTester.py}} does now support the Xerox {{lookup}} tool, by specifying the {{-x, --xerox}} option. The config section of the test files have been expanded as follows:
+
+{{{
+HfstConfig:
+  Lookup: hfst-lookup
+  Gen: sma/bin/sma-gen.hfst
+  Morph: sma/bin/sma.hfst
+
+XfstConfig:
+  Lookup: lookup
+  Gen: sma/bin/isma.fst
+  Morph: sma/bin/sma.fst
+}}}
 
 !!Call hfst-lookup only once per test
 
