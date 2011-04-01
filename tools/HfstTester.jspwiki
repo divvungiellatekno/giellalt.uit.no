@@ -154,22 +154,6 @@ When analysing the noun ''gåetie'', the fact that some forms are homonymous wit
 
 This feature has already been discussed with the author, and he has promised to look into it. It will be provided as a new option, perhaps {{-i / --ignore-extra-analyses}} or something along this line.
 
-!!Ignore warnings and other irrelevant hfst output
-
-In some cases hfst-lookup will give warnings of the type:
-
-{{{
-[PASS] gåata+N+Sg+Ela => gåateste
-hfst-lookup: warning: Lookup not supported on this automaton format: converting to HFST basic transducer and trying
-
-Allowing all flag paths!
-[PASS] gåata+N+Pl+Ine => gåatine
-}}}
-
-These warnings are usually not relevant for the evaluation of the test results (although the flag paths warning can be), and they clutter the output quite a lot. It would be very nice to be able to ignore them. One possibility would of course be that these warnings are not printed at all when using the -q or -s flags with hfst-lookup, but at the moment these flags have no effects on them.
-
-__⇒ DONE:__ all data on {{stderr}} is now captured in a separate variable, and can be printed or redirected to other places as needed. As a consequence, the printed test results are free from these warnings.
-
 !!Preserve order of test data
 
 In my experience, word forms and/or paradigm setup usually follows a certain pattern, and test file data will naturally follow the same pattern. It would make reading the output faster and easier if that order was preserved when printing the test output. Compare the test data and the test results above for an example of how the order of the test data has been changed.
@@ -191,6 +175,28 @@ Total: 2 tests, 1 pass, 1 fail
 }}}
 
 Then it is easy to rerun only the broken test(s) with more verbose output, to see exactly what is broken.
+
+!!Call hfst-lookup only once per test
+
+It looks like {{hfst-lookup}} is called once for each test case in a test. As the number of tests and test cases grow, this can become a serious bottleneck. The script should be rewritten to call the lookup tool only once pr test. Even better would be to set up two separate lookup threads, one for generation and another for analysis, and use them throughout the whole test run.
+
+!!!Improvements already implemented
+
+!!Ignore warnings and other irrelevant hfst output
+
+In some cases hfst-lookup will give warnings of the type:
+
+{{{
+[PASS] gåata+N+Sg+Ela => gåateste
+hfst-lookup: warning: Lookup not supported on this automaton format: converting to HFST basic transducer and trying
+
+Allowing all flag paths!
+[PASS] gåata+N+Pl+Ine => gåatine
+}}}
+
+These warnings are usually not relevant for the evaluation of the test results (although the flag paths warning can be), and they clutter the output quite a lot. It would be very nice to be able to ignore them. One possibility would of course be that these warnings are not printed at all when using the -q or -s flags with hfst-lookup, but at the moment these flags have no effects on them.
+
+__⇒ DONE:__ all data on {{stderr}} is now captured in a separate variable, and can be printed or redirected to other places as needed. As a consequence, the printed test results are free from these warnings.
 
 !!Return value
 
@@ -215,7 +221,3 @@ Config:
 }}}
 
 Adding support for other tools which give output data structured the same way as {{hfst-lookup}} and Xerox' {{lookup}} should be straightforward now that the code is already rewritten to support two variants.
-
-!!Call hfst-lookup only once per test
-
-It looks like {{hfst-lookup}} is called once for each test case in a test. As the number of tests and test cases grow, this can become a serious bottleneck. The script should be rewritten to call the lookup tool only once pr test. Even better would be to set up two separate lookup threads, one for generation and another for analysis, and use them throughout the whole test run.
