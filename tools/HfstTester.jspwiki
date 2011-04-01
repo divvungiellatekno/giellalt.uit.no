@@ -202,13 +202,13 @@ Presently {{HfstTester.py}} only supports {{hfst-lookup}}, but it would be usefu
 __⇒ DONE:__ {{HfstTester.py}} does now support the Xerox {{lookup}} tool, by specifying the {{-x, --xerox}} option. The config section of the test files have been expanded as follows:
 
 {{{
-HfstConfig:
-  Gen: sma/bin/sma-gen.hfst
-  Morph: sma/bin/sma.hfst
-
-XfstConfig:
-  Gen: sma/bin/isma.fst
-  Morph: sma/bin/sma.fst
+Config:
+  hfst:
+    Gen: sma/bin/sma-gen.hfst
+    Morph: sma/bin/sma.hfst
+  xerox:
+    Gen: sma/bin/isma.fst
+    Morph: sma/bin/sma.fst
 }}}
 
 !!Call hfst-lookup only once per test
