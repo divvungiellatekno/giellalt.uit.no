@@ -174,6 +174,8 @@ __⇒ DONE:__ all data on {{stderr}} is now captured in a separate variable, and
 
 In my experience, word forms and/or paradigm setup usually follows a certain pattern, and test file data will naturally follow the same pattern. It would make reading the output faster and easier if that order was preserved when printing the test output. Compare the test data and the test results above for an example of how the order of the test data has been changed.
 
+Along the same lines, the order of the tests (f.ex. each Noun test) should also be processed in the order they are listed in the test file. This will also help in reading the test results, as it is easier to compare the input and the output.
+
 This random ordering thing is probably due to the random ordering of Python dictionaries. Alternatives could be using an OrderedDict or pairs of tuples.
 
 !!Really compact reporting
