@@ -2,11 +2,11 @@
 
 We have a new tool to test the integrity of our {{LexC}} lexicons: [HfstTester.py|http://www.bbqsrc.net/#hfsttester]. The original source code is from [Apertium|http://apertium.svn.sourceforge.net/svnroot/apertium/incubator/apertium-tgl-ceb/dev/verbs/HfstTester.py@28665], but we have our own copy in [the main repository|https://victorio.uit.no/langtech/trunk/gt/script/HfstTester.py].
 
-The test script requires Python 2.7, and won't run if that version isn't found. On the Mac you need to use MacPorts (possibly through Porticus) to install a recent Python version.
-
-In addition, it requires {{py-yaml}}, to be able to parse yaml-formatted test data files.
+The test script __requires__ Python 2.7, and won't run if that version isn't found. On the Mac you need to use MacPorts (possibly through Porticus) to install a recent Python version (standard MacOS X 10.6 comes with Python 2.6). In addition, it __requires__ {{py-yaml}}, to be able to parse yaml-formatted test data files. Use MacPorts to install also this one.
 
 Also, the script is presently only made for hfst-lookup, so there's no support for the Xerox tools (it should probably be easy to add, though).
+
+__Update:__ Xerox support is now built in, see the end of this page for more details.
 
 !!!Test data
 
