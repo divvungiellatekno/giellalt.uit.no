@@ -138,7 +138,18 @@ The following list is in order of importance:
 
 !!No fail on Analysis if at least one correct is found
 
-In the example above, the Analysis test has three fails, all because of stray homonymy in addition to the target analysis. Unless one is actively looking for such stray analyses, they are usually noise in the test reporting, and should be ignored. That is, as long as the target analysis is found among all analyses, the test should pass. This is especially important with compounds, derivations and some verbal forms (in Sámi), as the degree of homonymy can be quite large, and subsequently the noise level.
+In the example above, the Analysis test has three fails, all because of stray homonymy in addition to the target analysis. Unless one is actively looking for such stray analyses, they are usually noise in the test reporting, and should be ignored. That is, as long as the target analysis is found among all analyses, the test should pass. This is especially important with compounds, derivations and some verbal forms (in Sámi), as the degree of homonymy can be quite large, and subsequently the noise level. Here's an example:
+
+{{{
+----------------------------------------
+Test 3: Noun - gåetie (Surface/Analysis)
+----------------------------------------
+...
+[FAIL] gööti => Expected: gåetie+N+Pl+Gen, Got: göötedh+V+IV+Ind+Prt+Sg3
+[PASS] gööti => gåetie+N+Pl+Gen
+}}}
+
+When analysing the noun ''gåetie'', the fact that some forms are homonymous with a verb reading is not a failure when testing it, and should just be ignored as long as the expected analysis is there. Otherwise there will always be failing tests, and we can't use the test bench to automatically report FAILs or PASSes for the whole morpho(phono)logy test set.
 
 This feature has already been discussed with the author, and he has promised to look into it. It will be provided as a new option.
 
