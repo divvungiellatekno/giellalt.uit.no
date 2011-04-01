@@ -54,6 +54,8 @@ __-c__ indicates coloured output, {{sma/testing/sma-tests.yaml}} is the test dat
 
 gives more details.
 
+The {{-t, --test}} option takes as argument a test ID, e.g. {{-t "Noun - gåata"}} in the test data above. Using this, the script will only run this test set, nothing else.
+
 !!!Output
 
 The output is a test report of the following form:
@@ -131,28 +133,33 @@ Test 1 - Passes: 23, Fails: 3, Total: 26
 * at present the test script is not integrated with the makefile
 * there is no real test data for any language, only a demo test file for {{sma}}
 * you need to manually compile the transducers before running the tests
-* __BUG:__ the {{-t / --test}} option does not seem to work
+
+!!!Bugs
+
+!!Lists of wordforms as strings
+
+Lists of wordforms are sometimes treated as strings instead of lists. This results in output of the following type:
+
+{{{
+------------------------------------------
+Test 0: Noun - gåetie (Lexical/Generation)
+------------------------------------------
+[FAIL] gåetie+N+Pl+Acc => Expected: [u'g\xe5etide', u'g\xf6\xf6tide'], Got: gåetie+N+Pl+Acc+?
+[FAIL] gåetie+N+Pl+Com => Expected: [u'g\xe5etiejgujmie', u'g\xf6\xf6tigujmie'], Got: gåetie+N+Pl+Com+?
+}}}
+
+corresponding to input of type:
+
+{{{
+    gåetie+N+Pl+Acc: [gåetide, göötide]
+    gåetie+N+Pl+Com: [gåetiejgujmie, göötigujmie]
+}}}
+
+This happens mostly when using the {{hfst-lookup}} tool, not when using the xerox {{lookup}} tool, although there has been some cases of this output also when using the xerox variant.
 
 !!!Future improvements
 
 The following list is in order of importance:
-
-!!No fail on Analysis if at least one correct is found
-
-In the example above, the Analysis test has three fails, all because of stray homonymy in addition to the target analysis. Unless one is actively looking for such stray analyses, they are usually noise in the test reporting, and should be ignored. That is, as long as the target analysis is found among all analyses, the test should pass. This is especially important with compounds, derivations and some verbal forms (in Sámi), as the degree of homonymy can be quite large, and subsequently the noise level. Here's an example:
-
-{{{
-----------------------------------------
-Test 3: Noun - gåetie (Surface/Analysis)
-----------------------------------------
-...
-[FAIL] gööti => Expected: gåetie+N+Pl+Gen, Got: göötedh+V+IV+Ind+Prt+Sg3
-[PASS] gööti => gåetie+N+Pl+Gen
-}}}
-
-When analysing the noun ''gåetie'', the fact that some forms are homonymous with a verb reading is not a failure when testing it, and should just be ignored as long as the expected analysis is there. Otherwise there will always be failing tests, and we can't use the test bench to automatically report FAILs or PASSes for the whole morpho(phono)logy test set.
-
-This feature has already been discussed with the author, and he has promised to look into it. It will be provided as a new option, perhaps {{-i / --ignore-extra-analyses}} or something along this line.
 
 !!Preserve order of test data
 
@@ -181,6 +188,25 @@ Then it is easy to rerun only the broken test(s) with more verbose output, to se
 It looks like {{hfst-lookup}} is called once for each test case in a test. As the number of tests and test cases grow, this can become a serious bottleneck. The script should be rewritten to call the lookup tool only once pr test. Even better would be to set up two separate lookup threads, one for generation and another for analysis, and use them throughout the whole test run.
 
 !!!Improvements already implemented
+
+!!No fail on Analysis if at least one correct is found
+
+In the example above, the Analysis test has three fails, all because of stray homonymy in addition to the target analysis. Unless one is actively looking for such stray analyses, they are usually noise in the test reporting, and should be ignored. That is, as long as the target analysis is found among all analyses, the test should pass. This is especially important with compounds, derivations and some verbal forms (in Sámi), as the degree of homonymy can be quite large, and subsequently the noise level. Here's an example:
+
+{{{
+----------------------------------------
+Test 3: Noun - gåetie (Surface/Analysis)
+----------------------------------------
+...
+[FAIL] gööti => Expected: gåetie+N+Pl+Gen, Got: göötedh+V+IV+Ind+Prt+Sg3
+[PASS] gööti => gåetie+N+Pl+Gen
+}}}
+
+When analysing the noun ''gåetie'', the fact that some forms are homonymous with a verb reading is not a failure when testing it, and should just be ignored as long as the expected analysis is there. Otherwise there will always be failing tests, and we can't use the test bench to automatically report FAILs or PASSes for the whole morpho(phono)logy test set.
+
+This feature has already been discussed with the author, and he has promised to look into it. It will be provided as a new option, perhaps {{-i, --ignore-extra-analyses}} or something along this line.
+
+__⇒ DONE:__ Since svn r41104 {{-i, --ignore-extra-analyses}} will suppress FAILs caused by spurious extra analyses of wordforms.
 
 !!Ignore warnings and other irrelevant hfst output
 
