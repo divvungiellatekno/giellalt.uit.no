@@ -131,7 +131,7 @@ Test 1 - Passes: 23, Fails: 3, Total: 26
 * at present the test script is not integrated with the makefile
 * there is no real test data for any language, only a demo test file for {{sma}}
 * you need to manually compile the transducers before running the tests
-* BUG: the {{-t / --test}} option does not seem to work
+* __BUG:__ the {{-t / --test}} option does not seem to work
 
 !!!Future improvements
 
@@ -152,7 +152,7 @@ Test 3: Noun - gåetie (Surface/Analysis)
 
 When analysing the noun ''gåetie'', the fact that some forms are homonymous with a verb reading is not a failure when testing it, and should just be ignored as long as the expected analysis is there. Otherwise there will always be failing tests, and we can't use the test bench to automatically report FAILs or PASSes for the whole morpho(phono)logy test set.
 
-This feature has already been discussed with the author, and he has promised to look into it. It will be provided as a new option.
+This feature has already been discussed with the author, and he has promised to look into it. It will be provided as a new option, perhaps {{-i / --ignore-extra-analyses}} or something along this line.
 
 !!Ignore warnings and other irrelevant hfst output
 
