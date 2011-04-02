@@ -189,6 +189,10 @@ Then it is easy to rerun only the broken test(s) with more verbose output, to se
 
 It looks like {{hfst-lookup}} is called once for each test case in a test. As the number of tests and test cases grow, this can become a serious bottleneck. The script should be rewritten to call the lookup tool only once pr test. Even better would be to set up two separate lookup threads, one for generation and another for analysis, and use them throughout the whole test run.
 
+!!Proper debug output support
+
+It is easy to implement with the logging module.
+
 !!!Improvements already implemented
 
 !!No fail on Analysis if at least one correct is found
