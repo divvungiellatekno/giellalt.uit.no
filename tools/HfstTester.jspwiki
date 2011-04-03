@@ -14,8 +14,8 @@ Config:
     Gen: sma/bin/sma-gen.hfst
     Morph: sma/bin/sma.hfst
   xerox:
-    Gen: sma/bin/isma.fst
-    Morph: sma/bin/sma.fst
+    Gen: sma/bin/isma-norm.fst
+    Morph: sma/bin/sma-norm.fst
 
 Tests:
   Noun - gåetie: # -ie stem, root vowel -åe-
@@ -57,6 +57,14 @@ __-c__ indicates coloured output, {{sma/testing/sma-tests.yaml}} is the test dat
 gives more details.
 
 The {{-t, --test}} option takes as argument a test ID, e.g. {{-t "Noun - gåata"}} in the test data above. Using this, the script will only run this test set, nothing else.
+
+To compile the normative transducers and run the test on them, just type:
+
+{{{
+make GTLANG=sma fsttest
+}}}
+
+__NB!__ At present, only a rudimentary test file exists for {{sma}} and nothing for the other languages. These files need to be created and populated with relevant test data. Use these tests to ensure that we get what we want from the morphological transducers, and nothing else.
 
 !!!Output
 
