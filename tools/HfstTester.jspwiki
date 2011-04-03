@@ -2,11 +2,7 @@
 
 We have a new tool to test the integrity of our {{LexC}} lexicons: [HfstTester.py|http://www.bbqsrc.net/#hfsttester]. The original source code is from [Apertium|http://apertium.svn.sourceforge.net/svnroot/apertium/incubator/apertium-tgl-ceb/dev/verbs/HfstTester.py@28665], but we have our own copy in [the main repository|https://victorio.uit.no/langtech/trunk/gt/script/HfstTester.py].
 
-The test script __requires__ Python 2.7, and won't run if that version isn't found. On the Mac you need to use MacPorts (possibly through Porticus) to install a recent Python version (standard MacOS X 10.6 comes with Python 2.6). In addition, it __requires__ {{py-yaml}}, to be able to parse yaml-formatted test data files. Use MacPorts to install also this one.
-
-The script is presently only made for hfst-lookup, there's no support for the Xerox tools (it should probably be easy to add, though).
-
-__Update:__ Xerox support is now built in, see the end of this page for more details.
+The script should run with all recent Python versions. It will check for required modules, and inform the user how to install them if they are missing. There are no requirements beyond that.
 
 !!!Test data
 
@@ -14,29 +10,35 @@ The test data is quite simple, and in the following form:
 
 {{{
 Config:
-  Gen: sma/bin/sma-gen.hfst
-  Morph: sma/bin/sma.hfstol
+  hfst:
+    Gen: sma/bin/sma-gen.hfst
+    Morph: sma/bin/sma.hfst
+  xerox:
+    Gen: sma/bin/isma.fst
+    Morph: sma/bin/sma.fst
 
 Tests:
-  Noun - gåata:
-    gåata+N+Sg+Nom: gåata
-    gåata+N+Sg+Acc: gåatam
-    gåata+N+Sg+Gen: gåatan
-    gåata+N+Sg+Ill: gåatese
-    gåata+N+Sg+Ine: gåatesne
-    gåata+N+Sg+Ela: gåateste
-    gåata+N+Sg+Com: gåatine
-    gåata+N+Pl+Nom: gåatah
-    gåata+N+Pl+Acc: gåatide
-    gåata+N+Pl+Gen: gåataj
-    gåata+N+Pl+Ill: gåatide
-    gåata+N+Pl+Ine: gåatine
-    gåata+N+Pl+Ela: gåatijste
-    gåata+N+Pl+Com: gåatajgujmie
-    gåata+N+Ess: gåatine
+  Noun - gåetie: # -ie stem, root vowel -åe-
+    gåetie+N+Sg+Nom: gåetie
+    gåetie+N+Sg+Acc: gåetiem
+    gåetie+N+Sg+Gen: gåetien
+    gåetie+N+Sg+Ill: gåatan
+    gåetie+N+Sg+Ine: gåetesne
+    gåetie+N+Sg+Ela: gåeteste
+    gåetie+N+Sg+Com: [gåetine, göötine]
+    gåetie+N+Pl+Nom: gåetieh
+    gåetie+N+Pl+Acc: [gåetide, göötide]
+    gåetie+N+Pl+Gen: [gåetiej, gööti]
+    gåetie+N+Pl+Ill: [gåetide, göötide]
+    gåetie+N+Pl+Ine: [gåetine, göötine]
+    gåetie+N+Pl+Ela: [gåetijste, göötijste]
+    gåetie+N+Pl+Com: [gåetiejgujmie, göötigujmie]
+    gåetie+N+Ess: [gåetine, göötine]
 }}}
 
-Such test data can easily be generated using our paradigm generator (the output of course needs to be proofread and checked).
+Note how a list of alternate forms are encapsulated by square brackets and separated by commas.
+
+Such test data can easily be generated using our paradigm generator (the output of course needs to be transformed a bit, proofread and checked).
 
 !!!Usage
 
@@ -128,128 +130,99 @@ Test 1: Noun - gåata (Surface/Analysis)
 Test 1 - Passes: 23, Fails: 3, Total: 26
 }}}
 
+To get the most compact test report, run it as follows:
+
+{{{
+$ HfstTester.py -C -x -i -c ./sma/testing/sma-tests.yaml 
+Testing Xerox FST dictionaries
+[PASS] - Test 0: Noun - gåetie (Lexical/Generation)
+[FAIL] - Test 1: Noun - gåetie (Surface/Analysis)
+[PASS] - Test 2: Noun - gåata (Lexical/Generation)
+[FAIL] - Test 3: Noun - gåata (Surface/Analysis)
+[PASS] - Test 4: Noun - maana (Lexical/Generation)
+[FAIL] - Test 5: Noun - maana (Surface/Analysis)
+[PASS] - Test 6: Noun - bearkoe (Lexical/Generation)
+[FAIL] - Test 7: Noun - bearkoe (Surface/Analysis)
+[FAIL] - Test 8: Noun - nïejte (Lexical/Generation)
+[FAIL] - Test 9: Noun - nïejte (Surface/Analysis)
+[PASS] - Test 10: Noun - gierehtse (Lexical/Generation)
+[FAIL] - Test 11: Noun - gierehtse (Surface/Analysis)
+[PASS] - Test 12: Noun - daktere (Lexical/Generation)
+[FAIL] - Test 13: Noun - daktere (Surface/Analysis)
+[PASS] - Test 14: Adj - noere (Lexical/Generation)
+[FAIL] - Test 15: Adj - noere (Surface/Analysis)
+[PASS] - Test 16: Verb - båetedh (Lexical/Generation)
+[FAIL] - Test 17: Verb - båetedh (Surface/Analysis)
+Total fails: 38
+}}}
+
+To see the details of why it failed in each test, rerun it as above using the {{-t, --test}} option and the test ID for the test you want to investigate. E.g.:
+
+{{{
+$ HfstTester.py -x -i -c -f -t "Noun - nïejte" ./sma/testing/sma-tests.yaml 
+Testing Xerox FST dictionaries
+------------------------------------------
+Test 0: Noun - nïejte (Lexical/Generation)
+------------------------------------------
+[FAIL] nïejte+N+Pl+Nom => Expected: nïejth, Got: nïejteh
+Test 0 - Passes: 15, Fails: 1, Total: 16
+
+----------------------------------------
+Test 1: Noun - nïejte (Surface/Analysis)
+----------------------------------------
+[FAIL] nïejtigujmie => Expected: nïejte+N+Pl+Com, Got: nïejte+N+PlGenCmp#gujmie+N+Sg+Nom
+Test 1 - Passes: 23, Fails: 1, Total: 24
+
+Total fails: 2
+}}}
+
+In  this case there's an extra generated Pl Nom form ''nïejteh'', which should be further investitaged, and an extra analysis for {{Pl Com}}, which merely demonstrates the bug with the {{-i, --ignore-extra-analyses}} option - the analysis should have been ignored, and no FAIL should have been reported.
+
+!!Exit value
+
+The exit value equals the number of FAILs in the whole test run. It will exit 0 if there were no FAILs.
+
 !!!Known limitations and shortcomings
 
 * at present the test script is not integrated with the makefile
 * there is no real test data for any language, only a demo test file for {{sma}}
 * you need to manually compile the transducers before running the tests
-
-!!!Bugs
-
-!!Lists of wordforms as strings
-
-Lists of wordforms are sometimes treated as strings instead of lists. This results in output of the following type:
-
-{{{
-------------------------------------------
-Test 0: Noun - gåetie (Lexical/Generation)
-------------------------------------------
-[FAIL] gåetie+N+Pl+Acc => Expected: [u'g\xe5etide', u'g\xf6\xf6tide'], Got: gåetie+N+Pl+Acc+?
-[FAIL] gåetie+N+Pl+Com => Expected: [u'g\xe5etiejgujmie', u'g\xf6\xf6tigujmie'], Got: gåetie+N+Pl+Com+?
-}}}
-
-corresponding to input of type:
-
-{{{
-    gåetie+N+Pl+Acc: [gåetide, göötide]
-    gåetie+N+Pl+Com: [gåetiejgujmie, göötigujmie]
-}}}
-
-This happens mostly when using the {{hfst-lookup}} tool, not when using the xerox {{lookup}} tool, although there has been some cases of this output also when using the xerox variant.
-
-__⇒ FIXED:__ Since svn r41140 this bug is fixed.
+* {{-i, --ignore-extra-analyses}} doesn't always work
 
 !!!Future improvements
 
 The following list is in order of importance:
 
-!!Preserve order of test data
-
-In my experience, word forms and/or paradigm setup usually follows a certain pattern, and test file data will naturally follow the same pattern. It would make reading the output faster and easier if that order was preserved when printing the test output. Compare the test data and the test results above for an example of how the order of the test data has been changed.
-
-Along the same lines, the order of the tests (f.ex. each Noun test) should also be processed in the order they are listed in the test file. This will also help in reading the test results, as it is easier to compare the input and the output.
-
-This random ordering thing is probably due to the random ordering of Python dictionaries. Alternatives could be using an OrderedDict or pairs of tuples.
-
-!!Really compact reporting
-
-As one builds up a large collection of tests, the main thing to know is whether they pass or fail. In this scenario a reporting format as follows would be more useful:
-
-{{{
-FAIL - Test 0: gåata, Generation
-PASS - Test 1: gåata, Analysis
----------------------------------
-Total: 2 tests, 1 pass, 1 fail
----------------------------------
-}}}
-
-Then it is easy to rerun only the broken test(s) with more verbose output, to see exactly what is broken.
-
-!!Call hfst-lookup only once per test
-
-It looks like {{hfst-lookup}} is called once for each test case in a test. As the number of tests and test cases grow, this can become a serious bottleneck. The script should be rewritten to call the lookup tool only once pr test. Even better would be to set up two separate lookup threads, one for generation and another for analysis, and use them throughout the whole test run.
-
 !!Proper debug output support
 
 It is easy to implement with the logging module.
 
-!!!Improvements already implemented
+!!!Version history
 
-!!No fail on Analysis if at least one correct is found
+!!1.4
 
-In the example above, the Analysis test has three fails, all because of stray homonymy in addition to the target analysis. Unless one is actively looking for such stray analyses, they are usually noise in the test reporting, and should be ignored. That is, as long as the target analysis is found among all analyses, the test should pass. This is especially important with compounds, derivations and some verbal forms (in Sámi), as the degree of homonymy can be quite large, and subsequently the noise level. Here's an example:
+* FEATURE: compatible with older versions of Python - the script will test for required modules, and exit gracefully and helpfully if not found. Installing the missing modules makes the script run without problems.
+* BUGFIX: fixed utf-8 problem
+* BUGFIX: fixed the remaining {{-C, --compact}} issues
 
-{{{
-----------------------------------------
-Test 3: Noun - gåetie (Surface/Analysis)
-----------------------------------------
-...
-[FAIL] gööti => Expected: gåetie+N+Pl+Gen, Got: göötedh+V+IV+Ind+Prt+Sg3
-[PASS] gööti => gåetie+N+Pl+Gen
-}}}
+!!1.3
 
-When analysing the noun ''gåetie'', the fact that some forms are homonymous with a verb reading is not a failure when testing it, and should just be ignored as long as the expected analysis is there. Otherwise there will always be failing tests, and we can't use the test bench to automatically report FAILs or PASSes for the whole morpho(phono)logy test set.
+* FEATURE: process the tests in the order given in the test file
 
-This feature has already been discussed with the author, and he has promised to look into it. It will be provided as a new option, perhaps {{-i, --ignore-extra-analyses}} or something along this line.
+!!1.2
 
-__⇒ DONE:__ Since svn r41104 {{-i, --ignore-extra-analyses}} will suppress FAILs caused by spurious extra analyses of wordforms.
+* FEATURE: added option {{-C, --compact}} for a really compact test report; atm buggy when combined with {{-i, ignore-extra analyses}}
+* SPEED: the lookup tool is called only once per test set. Should improve the speed of escpecially hfst testing a lot
+* bug fixes
 
-!!Ignore warnings and other irrelevant hfst output
+!!1.1
 
-In some cases hfst-lookup will give warnings of the type:
+* FEATURE: added option {{-i, --ignore-extra-analyses}} to ignore FAILs on extraneous analyses. With this option, surface tests will succeed if the expected analysis is found, irrespective of how many other analyses there are. It will FAIL only if the expected analysis is NOT found
+* FEATURE: added option {{-x, --xerox}} to use the Xerox lookup tool instead of the hfst_lookup tool. This enables testing of transducers compiled with the Xerox tools lexc, twolc and xfst.
+* FEATURE: the script will now exit with an exit value corresponding to the number of FAILed tests, including 0 for no fails (=the script succeeded). This should make it easier to integrate the script in a larger build system.
+* FEATURE/BUGFIX: {{stderr}} from the lookup tool(s) is now captured in a separate variable, and won't clutter the test results.
+* BUGFIX: value lists with UTF-8 strings were sometimes parsed as strings (ie the whole list was seen as one string)
 
-{{{
-[PASS] gåata+N+Sg+Ela => gåateste
-hfst-lookup: warning: Lookup not supported on this automaton format: converting to HFST basic transducer and trying
+!!1.0
 
-Allowing all flag paths!
-[PASS] gåata+N+Pl+Ine => gåatine
-}}}
-
-These warnings are usually not relevant for the evaluation of the test results (although the flag paths warning can be), and they clutter the output quite a lot. It would be very nice to be able to ignore them. One possibility would of course be that these warnings are not printed at all when using the -q or -s flags with hfst-lookup, but at the moment these flags have no effects on them.
-
-__⇒ DONE:__ all data on {{stderr}} is now captured in a separate variable, and can be printed or redirected to other places as needed. As a consequence, the printed test results are free from these warnings.
-
-!!Return value
-
-The script should return 0 if all tests have passed, if not it should return the number of tests that have failed, along the same lines as other unix tools. This is useful when integrating {{HfstTester.py}} in a larger setting with automated testing and reporting.
-
-__⇒ DONE:__ the script now returns the number of failed tests as its exit value.
-
-!!Support for Xerox lookup, other tools
-
-Presently {{HfstTester.py}} only supports {{hfst-lookup}}, but it would be useful to extend the tool to also be able to use the Xerox {{lookup}} tool as well as other tools (e.g. {{hfst-proc}}) for running the tests.
-
-__⇒ DONE:__ {{HfstTester.py}} does now support the Xerox {{lookup}} tool, by specifying the {{-x, --xerox}} option. The config section of the test files have been expanded as follows:
-
-{{{
-Config:
-  hfst:
-    Gen: sma/bin/sma-gen.hfst
-    Morph: sma/bin/sma.hfst
-  xerox:
-    Gen: sma/bin/isma.fst
-    Morph: sma/bin/sma.fst
-}}}
-
-Adding support for other tools which give output data structured the same way as {{hfst-lookup}} and Xerox' {{lookup}} should be straightforward now that the code is already rewritten to support two variants.
+Initial release by Brendan Molloy
