@@ -187,7 +187,9 @@ Test 1 - Passes: 23, Fails: 1, Total: 24
 Total fails: 2
 }}}
 
-In  this case there's an extra generated Pl Nom form ''nïejteh'', which should be further investitaged, and an extra analysis for {{Pl Com}}, which merely demonstrates the bug with the {{-i, --ignore-extra-analyses}} option - the analysis should have been ignored, and no FAIL should have been reported.
+In this case there's an extra generated Pl Nom form ''nïejteh'', which should be further investitaged, and an extra analysis for {{Pl Com}}, which merely demonstrates the bug with the {{-i, --ignore-extra-analyses}} option - the analysis should have been ignored, and no FAIL should have been reported.
+
+__Update:__ both the above issues have been attended to, but they are kept here in the documentation as a useful example of how to use the tool for effective bughunting in the transducer.
 
 !!Exit value
 
@@ -196,17 +198,17 @@ The exit value equals the number of FAILs in the whole test run. It will exit wi
 !!!Known limitations and shortcomings
 
 * there is limited test data for {{sma}}, and only demo test files for {{sme, smj}}
-* {{-i, --ignore-extra-analyses}} doesn't ignore unexpected analyses until after the first expected one is processed.
 
 !!!Future improvements
 
-The following list is in order of importance:
-
-!!Proper debug output support
-
-It is easy to implement with the logging module.
+* Proper debug output support - it should be easy to implement with the logging module.
 
 !!!Version history
+
+!!Svn trunk
+
+* FEATURE: added reporting of totals for PASSes and ignores as well as FAILs.
+* BUGFIX: fixed the bug with the {{-i, --ignore-extra-analyses}} option
 
 !!1.4
 
