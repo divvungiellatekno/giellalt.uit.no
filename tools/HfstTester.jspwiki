@@ -61,10 +61,13 @@ The {{-t, --test}} option takes as argument a test ID, e.g. {{-t "Noun - gåata"
 To compile the normative transducers and run the test on them, just type:
 
 {{{
-make GTLANG=sma fsttest
+make GTLANG=sma fsttest     # Xerox
+make GTLANG=sma hfsttest    # HFST
 }}}
 
-__NB!__ At present, only a rudimentary test file exists for {{sma}} and nothing for the other languages. These files need to be created and populated with relevant test data. Use these tests to ensure that we get what we want from the morphological transducers, and nothing else.
+If you run the testing script through {{make}} as above, {{make}} will ensure that you have up-to-date normative transducers before running the actual tests.
+
+__NB!__ Presently only rudimentary test files exists for {{sma, sme}} and {{smj}}. These files need to be populated with relevant test data. Use these tests to ensure that we get what we want from the morphological transducers, and nothing else, and that we don't break anything in the future.
 
 !!!Output
 
@@ -188,14 +191,12 @@ In  this case there's an extra generated Pl Nom form ''nïejteh'', which should 
 
 !!Exit value
 
-The exit value equals the number of FAILs in the whole test run. It will exit 0 if there were no FAILs.
+The exit value equals the number of FAILs in the whole test run. It will exit with 0 if there are no FAILs.
 
 !!!Known limitations and shortcomings
 
-* at present the test script is not integrated with the makefile
-* there is no real test data for any language, only a demo test file for {{sma}}
-* you need to manually compile the transducers before running the tests
-* {{-i, --ignore-extra-analyses}} doesn't always work
+* there is limited test data for {{sma}}, and only demo test files for {{sme, smj}}
+* {{-i, --ignore-extra-analyses}} doesn't ignore unexpected analyses until after the first expected one is processed.
 
 !!!Future improvements
 
