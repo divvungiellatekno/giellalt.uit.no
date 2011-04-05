@@ -1,0 +1,62 @@
+!!!Corpus maintenance
+
+This document discusses measures to improve the corpus conversion process.
+
+
+!!Algorithm for dealing with scanning errors
+
+!Finding these errors
+
+* Problem: There are document-specific conversion errors that result
+  in letters, not in garbage, errors that can be found only by linguistic
+  means.
+* Solution: identify the problematic files via error detection with fst
+
+__TODO__:
+
+Tne Error Detection Algorithm runs as follows:
+
+# For each file:
+## Analyse the main language text morphologically
+## Count the missing ones
+## Register the missing/total ratio, and pick the worst files
+# Look at the worst files, and figure out how to mend them, or move them,
+ e.g. to an OCR goldstandard 
+
+!Correcting scanning errors
+
+Develop algorithms for automatic correction of scanning errors. This 
+work must be done separately for each language.
+
+
+!!!Alignment
+
+Ensure that input files have been converted in an optimal manner
+Get TCA2 up and running
+Tune TCA2
+
+
+!!!Corpus conversion targets
+
+# Sentence-aligned bilingual corpus for CAT 
+# Analysed mono- and bilingual corpus
+## Lemmatised and wordaligned for terminology
+## Fully analysed and presented for linguistic work and terminology
+
+
+
+
+
+!!!Errors addressed so far:
+
+* dårlege originalfiler - gjev ugyldig xml
+** desse blir fanga opp i dag
+* kodefeil - desse gjev gyldig xml, men meiningslause bostavar
+** utf-som-macroman
+** utf-som-latin1
+** utf-som-hex-html
+** utf-som-html-entitet
+* skannefeil/ocr-feil - desse gjev meiningsfulle bokstavar, men meiningslaus tekst
+** đ-som ó, osv.
+* bad sentence-delimitation: one real sentence is one fragment in one language,
+  3 fragments in the other -> alignment goes bunk
