@@ -22,6 +22,11 @@ Tne Error Detection Algorithm runs as follows:
 ## Register the missing/total ratio, and pick the worst files
 # Look at the worst files, and figure out how to mend them, or move them,
  e.g. to an OCR goldstandard 
+ 
+!Finding catalogue errors:
+List all files in langX-catalogue with more non-langX content than
+langX-content.
+ 
 
 !Correcting scanning errors
 
@@ -44,7 +49,17 @@ Tune TCA2
 ## Fully analysed and presented for linguistic work and terminology
 
 
+!!!Cleaning up the catalogues
 
+Many documents are parallel with the parallell content in the same file.
+Other documents are simply placed in the wrong catalogues. Algorithm
+to fix this:
+
+# For each file, count the number of words
+# For each file, count the number of words marked with the language of
+  the catalogue
+# Estimate the ratio
+# Pick the files with a bad ratio, and investigate them.
 
 
 !!!Errors addressed so far:
