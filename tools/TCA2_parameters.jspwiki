@@ -49,13 +49,21 @@ We have no anchor phrases today. Investigate wether this is a good idea to have.
 !!!Setting the word length parameter
 
 # Estimate the average word-length of each language involved in alignment (sme, smj, sma, nob, nno, eng)
-# make a list of the fraction for each language:
-## sme:nob = ? ; sme:nno = ? ; sme:smj = ? ; sme:sma = ? ; sme:eng = ? 
-## smj:nob = ? ; smj:nno = ? 
-## sma:nob = ? ; sma:nno = ? ; 
+## ccat -l sme -r converted/sme/admin/ | preprocess --abbr=~/gtsvn/gt/sme/bin/abbr.txt |grep '[a-z]'|head -100000|wc
+## sme = 9,17864; sma = 9,39066; smj = 8,91339; nob = 6,33559; nno = 7,15580; eng = 6,08796
 
-* __Responsible__: 
-* __Deadline__:
+! List of the fraction for each language pair:
+
+* sme:nob = 1,449, inverse = 0,690
+* sme:nno = 1,836, inverse = 0,545
+* sme:smj = 1,030, inverse = 0,971
+* sme:sma = 0,977, inverse = 1,023
+* sme:eng = 1,508, inverse = 0,663
+* smj:nob = 1,407, inverse = 0,711
+* smj:nno = 1,246, inverse = 0,803
+* sma:nob = 1,482, inverse = 0,675
+* sma:nno = 1,312, inverse = 0,762
+
 
 !!!Weighting
 
