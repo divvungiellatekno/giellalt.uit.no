@@ -8,7 +8,7 @@ This document discusses ways of improving the sentence alignment results provide
 Our version is from 2006. Hopefully things have happened since then. We contact Bergen and investigate.
 
 * __Responsible__: Trond
-* __Deadline__: 6.4.
+* __Deadline__: 7.4. (no answer so far)
 
 !!Updating the documentation to the "for the rest of us" level
 
@@ -73,6 +73,14 @@ Investigate whether these values are sensible.
 
 * __Responsible__: 
 * __Deadline__:
+
+!!Dice similarity
+
+Quoting the documentation:
+
+:''If the first n (n is read as a parameter to the program) characters are equal for a word in an English and a Norwegian sentence, the two words are assumed to be cognates. For English/Norwegian a value of n=6 or 7 gives good results. Dice's similarity coefficient is the number of matching bigrams in the two words divided by the mean of the number of bigrams for the two words (2a/(b+c), where a is the matching number of bigrams, and b and c are the number of bigrams in the two words. For English and Norwegian, a value of more than 0.7 or 0.8 gives reasonable results. For other languages, the acceptable value for the coefficient can be less.''
+
+Now, the questino is how to find the coefficient. It is probably far smaller than for eng-nob.
 
 
 !!!Preprocessing
