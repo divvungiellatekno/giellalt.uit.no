@@ -14,11 +14,16 @@ Our version is from 2006. Hopefully things have happened since then. We contact 
 
 All involved parties need to have a look-and-feel of the alignment in order to see what is going on.
 
-* __Responsible__: Trond
-* __Deadline__: 6.4.
+* __Responsible__: 
+* __Deadline__: 
 
 
 !!!Improving the anchor list
+
+We might parametrise the anchor list into one general part, and one thematic 
+part, e.g. along the division in the corpus catalogue structure.
+
+The existing anchor list should be both trimmed and extended.
 
 !!Remove unused anchors
 
@@ -38,32 +43,38 @@ All involved parties need to have a look-and-feel of the alignment in order to s
 * __Responsible__: 
 * __Deadline__:
 
-!!Anchor phrases
+!!Open questions:
 
-We have no anchor phrases today. Investigate wether this is a good idea to have.
-
-* __Responsible__: 
-* __Deadline__:
-
+Is there an optimal length for the anchor list?
 
 !!!Setting the word length parameter
 
-# Estimate the average word-length of each language involved in alignment (sme, smj, sma, nob, nno, eng)
-## ccat -l sme -r converted/sme/admin/ | preprocess --abbr=~/gtsvn/gt/sme/bin/abbr.txt |grep '[a-z]'|head -100000|wc
-## sme = 9,17864; sma = 9,39066; smj = 8,91339; nob = 6,33559; nno = 7,15580; eng = 6,08796
+The average word-length of each language involved in alignment (sme, smj, sma, nob, nno, eng) is as follows:
 
-! List of the fraction for each language pair:
+ sme = 9,17864; sma = 9,39066; smj = 8,91339; nob = 6,33559; nno = 7,15580; eng = 6,08796
 
-* sme:nob = 1,449, inverse = 0,690
-* sme:nno = 1,836, inverse = 0,545
-* sme:smj = 1,030, inverse = 0,971
-* sme:sma = 0,977, inverse = 1,023
-* sme:eng = 1,508, inverse = 0,663
-* smj:nob = 1,407, inverse = 0,711
-* smj:nno = 1,246, inverse = 0,803
-* sma:nob = 1,482, inverse = 0,675
-* sma:nno = 1,312, inverse = 0,762
+The command used was:
 
+{{{
+  ccat -l sme -r converted/sme/admin/ | \
+  preprocess --abbr=~/gtsvn/gt/sme/bin/abbr.txt | \
+  grep '[a-z]'|head -100000|wc
+}}}
+
+!! List of the wordlength ratio for each language pair:
+
+|| Lg pair || Ratio || Inverse
+| sme : nob | 1,449 | 0,690
+| sme : nno | 1,836 | 0,545
+| sme : smj | 1,030 | 0,971
+| sme : sma | 0,977 | 1,023
+| sme : eng | 1,508 | 0,663
+| smj : nob | 1,407 | 0,711
+| smj : nno | 1,246 | 0,803
+| sma : nob | 1,482 | 0,675
+| sma : nno | 1,312 | 0,762
+
+This ratio should be given as a parameter when conducting the TCA2 alignment.
 
 !!!Weighting
 
@@ -86,9 +97,9 @@ Investigate whether these values are sensible.
 
 Quoting the documentation:
 
-:''If the first n (n is read as a parameter to the program) characters are equal for a word in an English and a Norwegian sentence, the two words are assumed to be cognates. For English/Norwegian a value of n=6 or 7 gives good results. Dice's similarity coefficient is the number of matching bigrams in the two words divided by the mean of the number of bigrams for the two words (2a/(b+c), where a is the matching number of bigrams, and b and c are the number of bigrams in the two words. For English and Norwegian, a value of more than 0.7 or 0.8 gives reasonable results. For other languages, the acceptable value for the coefficient can be less.''
+''If the first n (n is read as a parameter to the program) characters are equal for a word in an English and a Norwegian sentence, the two words are assumed to be cognates. For English/Norwegian a value of n=6 or 7 gives good results. Dice's similarity coefficient is the number of matching bigrams in the two words divided by the mean of the number of bigrams for the two words (2a/(b+c), where a is the matching number of bigrams, and b and c are the number of bigrams in the two words. For English and Norwegian, a value of more than 0.7 or 0.8 gives reasonable results. For other languages, the acceptable value for the coefficient can be less.''
 
-Now, the questino is how to find the coefficient. It is probably far smaller than for eng-nob.
+Now, the question is how to find the coefficient. It is probably far smaller than for eng-nob.
 
 
 !!!Preprocessing
