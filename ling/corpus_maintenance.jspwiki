@@ -2,6 +2,16 @@
 
 This document discusses measures to improve the corpus conversion process.
 
+Note also the [sentence alignment page|../tools/tca2.html], which looks
+into that specific sub-part of the corpus maintenance.
+
+
+!!Spring 2011 corpus improvement project meetings
+
+[Corpus meeting 7.4.2011|../admin/corpus/Meeting_2011-04-07.html]
+
+
+!!!Corpus errors
 
 !!Algorithm for dealing with scanning errors
 
@@ -34,19 +44,20 @@ Develop algorithms for automatic correction of scanning errors. This
 work must be done separately for each language.
 
 
-!!!Alignment
+!!Errors addressed so far:
 
-Ensure that input files have been converted in an optimal manner
-Get TCA2 up and running
-Tune TCA2
+* dårlege originalfiler - gjev ugyldig xml
+** desse blir fanga opp i dag
+* kodefeil - desse gjev gyldig xml, men meiningslause bostavar
+** utf-som-macroman
+** utf-som-latin1
+** utf-som-hex-html
+** utf-som-html-entitet
+* skannefeil/ocr-feil - desse gjev meiningsfulle bokstavar, men meiningslaus tekst
+** đ-som ó, osv.
+* bad sentence-delimitation: one real sentence is one fragment in one language,
+  3 fragments in the other -> alignment goes bunk
 
-
-!!!Corpus conversion targets
-
-# Sentence-aligned bilingual corpus for CAT 
-# Analysed mono- and bilingual corpus
-## Lemmatised and wordaligned for terminology
-## Fully analysed and presented for linguistic work and terminology
 
 
 !!!Cleaning up the catalogues
@@ -62,16 +73,15 @@ to fix this:
 # Pick the files with a bad ratio, and investigate them. Split and reallocate.
 
 
-!!!Errors addressed so far:
 
-* dårlege originalfiler - gjev ugyldig xml
-** desse blir fanga opp i dag
-* kodefeil - desse gjev gyldig xml, men meiningslause bostavar
-** utf-som-macroman
-** utf-som-latin1
-** utf-som-hex-html
-** utf-som-html-entitet
-* skannefeil/ocr-feil - desse gjev meiningsfulle bokstavar, men meiningslaus tekst
-** đ-som ó, osv.
-* bad sentence-delimitation: one real sentence is one fragment in one language,
-  3 fragments in the other -> alignment goes bunk
+!!!Corpus conversion targets
+
+As a reminder, this is what we aim at:
+
+# Sentence-aligned bilingual corpus for CAT 
+# Analysed mono- and bilingual corpus
+## Lemmatised and wordaligned for terminology
+## Fully analysed and presented for linguistic work and terminology
+
+
+
