@@ -14,7 +14,7 @@ Our version is from 2006. Hopefully things have happened since then. We contact 
 
 All involved parties need to have a look-and-feel of the alignment in order to see what is going on.
 
-* __Responsible__: 
+* __Responsible__: Return to this 
 * __Deadline__: 
 
 
@@ -31,7 +31,7 @@ The existing anchor list should be both trimmed and extended.
 # Run the fst against the parallel corpus.
 # Remove unused lines from the anchor list
 
-* __Responsible__: 
+* __Responsible__: Berit Merete, Trond
 * __Deadline__:
 
 !!Add onchors not in use
@@ -40,41 +40,38 @@ The existing anchor list should be both trimmed and extended.
 # Run the frequency list against the anchor.fst
 # Starting (almost?) from the top, and add anchors lacking from the anchor list.
 
-* __Responsible__: 
+* __Responsible__: Berit Merete, Trond
 * __Deadline__:
 
 !!Open questions:
 
 Is there an optimal length for the anchor list?
 
-!!!Setting the word length parameter
+!!!Setting the sentence length parameter
 
-The average word-length of each language involved in alignment (sme, smj, sma, nob, nno, eng) is as follows:
+This parameter should be given to TCA2. It is measured in characters, not in words.
 
- sme = 9,17864; sma = 9,39066; smj = 8,91339; nob = 6,33559; nno = 7,15580; eng = 6,08796
+Ciprian used the pre-set parameter for the last run.
 
-The command used was:
+# Take the corpus, 
+# divide it in sentences, 
+# count the number of sentences, 
+# count the number of characters, 
+# calculate number ov char / sent.
 
 {{{
+Sentences:
   ccat -l sme -r converted/sme/admin/ | \
   preprocess --abbr=~/gtsvn/gt/sme/bin/abbr.txt | \
-  grep '[a-z]'|head -100000|wc
+  (count the number of sentences = units given to TCA2)
+
+Characters:
+  ccat -l sme -r converted/sme/admin/ | wc -c
 }}}
 
-!! List of the wordlength ratio for each language pair:
+__TODO:__
 
-|| Lg pair || Ratio || Inverse
-| sme : nob | 1,449 | 0,690
-| sme : nno | 1,836 | 0,545
-| sme : smj | 1,030 | 0,971
-| sme : sma | 0,977 | 1,023
-| sme : eng | 1,508 | 0,663
-| smj : nob | 1,407 | 0,711
-| smj : nno | 1,246 | 0,803
-| sma : nob | 1,482 | 0,675
-| sma : nno | 1,312 | 0,762
-
-This ratio should be given as a parameter when conducting the TCA2 alignment.
+* Cip to count
 
 !!!Weighting
 
@@ -90,8 +87,8 @@ The weight of TCA2 is preset at the following values ("for no scientific reason"
 
 Investigate whether these values are sensible.
 
-* __Responsible__: 
-* __Deadline__:
+* __Responsible__: All
+* __Deadline__: First round, 
 
 !!Dice similarity
 
@@ -118,7 +115,7 @@ Investigate this.
 
 !!!Making a gold corpus for parameter tweaking
 
-* __Responsible__: 
+* __Responsible__: Return to this.
 * __Deadline__:
 
 
