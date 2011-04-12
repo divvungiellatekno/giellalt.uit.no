@@ -136,34 +136,35 @@ __Ultimate goal:__
 * move the file to e.g. the gold corpus for scanning errors or whatever, or
 * remove the file altogether
 
-
+{{{
 [dstroke]
 [dstr juoga
 oke]
-
+}}}
 
 !!Error reports
 
 !Scanning errors
 
+{{{
 I found this error yesterday:
 <tuv lang="sme-NO">
-            <seg>Sámediggi gávnnaha 1unddo1ažžan ahte __fy1kagielda__ váldá oasi giellanjuolggadusaid ovttastahttimii ja di1álašvuodaid __1 áhčimiidda__ gielddain mat gu11et doaibmaguv1ui Finnmárkku fylkkas .</seg>
+            <seg>Sámediggi gávnnaha 1unddo1ažžan ahte fy1kagielda váldá oasi giellanjuolggadusaid ovttastahttimii ja di1álašvuodaid 1 áhčimiidda gielddain mat gu11et doaibmaguv1ui Finnmárkku fylkkas .</seg>
 
 And this:          
  <tuv lang="sme-NO">
-            <seg>Dan lassin lea bálkkašumi vuoiti vuođđudan alccesis duodjefitnodaga , ja lea máhtolašvuođainis ja __hutkái ¬vuođainis__ ožžon alla árvvu duodjeealáhusas .</seg>
+            <seg>Dan lassin lea bálkkašumi vuoiti vuođđudan alccesis duodjefitnodaga , ja lea máhtolašvuođainis ja hutkái ¬vuođainis ožžon alla árvvu duodjeealáhusas .</seg>
          </tuv>
            
 And this - đ is missing:
 <tuv lang="sme-NO">
-            <seg>daid ektui , ja ahte gielddat ieža oidnet dárbbu doallat aktiivvalaš __oktavuo a__ Sámedikkiin go galgá bargat kulturhistorjjá sihkkarastimiin , __duo aštemiin__ , dutkamiin ja gaskkustemiin .</seg>
+            <seg>daid ektui , ja ahte gielddat ieža oidnet dárbbu doallat aktiivvalaš oktavuo a Sámedikkiin go galgá bargat kulturhistorjjá sihkkarastimiin , duo aštemiin , dutkamiin ja gaskkustemiin .</seg>
          </tuv>
 
 Same error - đ is missing: 
 <tuv lang="sme-NO">
-            <seg>Orru ahte dán gealdagasas dat lea sámi kultuvra vuoittahallan ja ahte eiseválddiid dáiddaáŋgiruššamat __vuo uduvvojit__ minoritehtakultuvrra siskilkeahtesvuhtii .</seg>
-
+            <seg>Orru ahte dán gealdagasas dat lea sámi kultuvra vuoittahallan ja ahte eiseválddiid dáiddaáŋgiruššamat vuo uduvvojit minoritehtakultuvrra siskilkeahtesvuhtii .</seg>
+}}}
 
 Son !! boahtán (!! pro ii)
 
@@ -174,17 +175,17 @@ Status quo:
 * Works on Linux
 * Mac:
 ** Has problems with perl version xyz
-** 
+
 
 !!WARNING - NO MATCH
 
-
+This message shows up when converting orig, and the issue is still open.
 
 !!!Sentence alignment
 
 !!New program
 
-Trond has talked to Knut Hofland. We will get a new TCA2.
+Trond has talked to Knut Hofland. We will get a new TCA2 version.
 
 __TODO__
 
@@ -218,6 +219,9 @@ __TODO__
 Make sure we have a fresh version on thursday. (__Børre__)
  
 
+Error report, have a look:
+
+{{{
 tmp/STM200720080028000DDDPDFS.pdf.log:Conversion failed: Couldn't convert /Users/cipriangerstenberger/extra_gtsvn/new_fad/orig/nob/admin/depts/other_files/STM200720080028000DDDPDFS.pdf to intermediate xml format
 tmp/STM200820090039000DDDPDFS.pdf.log:Conversion failed: Couldn't convert /Users/cipriangerstenberger/extra_gtsvn/new_fad/orig/nob/admin/depts/other_files/STM200820090039000DDDPDFS.pdf to intermediate xml format
 tmp/STM200820090043000DDDPDFS.pdf.log:Conversion failed: Wasn't able to categorize the language(s) inside the text /Users/cipriangerstenberger/extra_gtsvn/new_fad/orig/nob/admin/depts/other_files/STM200820090043000DDDPDFS.pdf
@@ -228,4 +232,4 @@ tmp/retningslinjerforverneplanarbeid_sametinget.pdf.log:Conversion failed: Wasn'
 
 drwxr-xr-x    4 cipriangerstenberger  staff   136  7 apr 22:54 orig
 drwxr-xr-x  201 cipriangerstenberger  staff  6834 11 apr 13:29 tmp
-
+}}}
