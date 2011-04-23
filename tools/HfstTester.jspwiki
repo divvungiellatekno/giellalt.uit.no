@@ -201,6 +201,10 @@ The exit value equals the number of FAILs in the whole test run. It will exit wi
 
 !!!Version history
 
+!!1.6:
+* CODE: cleanup, modularisation
+* FEATURE: generation/lexical tests will now always FAIL if the output doesn't match exactly the expected list, including when some forms are ''not'' generated — earlier, under-generation was not reported at all
+
 !!1.5
 
 * FEATURE: added reporting of totals for PASSes and ignores as well as FAILs. Available using the {{-v, --verbose}} flag
