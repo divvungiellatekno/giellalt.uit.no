@@ -1,0 +1,135 @@
+!!!Meeting setup
+
+* Date: 26.04.2011
+* Time: 9.30 Norw. time
+* Place: Internet 
+* Tools: SubEthaEdit, iChat
+
+
+!!!Agenda
+
+* Ordbøker (__Ciprian, Lene__)
+* Korpus (__Børre__)
+* Forvaltningsordboksprosjektet (__Berit__)
+* Bugzilla (__Sjur__)
+* sma-Oahpa (__Lene__)
+* Divvun 2.2 (__Tomi__)
+* Talesyntese (__Biret__)
+* Infrastrukturarbeidet (__Sjur__)
+* Vikar for Maja (__Sjur__)
+
+
+!!!Opening, agenda review, participants
+
+* Opened at 9.45.
+* Present: __Sjur, Biret-Ánne, Berit Merete, Børre, Ciprian, Lene, Tomi, Thomas__
+* Absent: __Maja, Trond__
+* Secretary: __Trond; Berit Merete__
+
+!!!Ordbøker
+__Ciprian, Lene__
+
+Status:
+* sme: berre småflikking, ikkje alle substantiver skal presenteres i plural i miniparadigme
+* Ciprian is just waiting for the start sign from Lene & Co to compile them!
+* smanob question: is the adj-fst modeling problem solved? Is a new generation run doable? 
+
+Deadlines:
+* May 8 - sme
+* May 20 - sma 
+
+__TODO:__
+* rewrite adj. lexc code i løpet av uka/helga (__Lene, Trond__)
+* teste sma adj fst i uka 9.-14. mai hvis vi finner en kompetent person
+  (__sma-morsmålsbruker__)
+* 16.-19.5 retting  (__Lene, Trond__)
+* kompilere 20. mai (__Ciprian__)
+
+
+Think of the following:
+Romsa (Tromsø) Conference, Riga, Árjjátlovvi (Arjeplog) Uni-folk are heavily involved in them.
+
+!!!Korpus
+__Børre__
+
+Tomi: I've been going through it and adding words to fst, correcting xsl's, etc.
+Will update analysis files as soon as I get svn updated.
+
+__TODO:__
+* separate GUI code from processing code in TCA2 (__Børre__)
+* build abbr. lists for europarl (__Berit__)
+** start from the swedish list, all is in svn
+* run the europarl aligner (__Tomi__)
+* continue to correct the corpus files and metadata, test for linguistic
+  coherence (__Tomi__)
+
+!!!Forvaltningsordboksprosjektet
+__Berit__
+
+Arbeider med ankerlista. Lite nytt sidan før påske.
+
+!!!Bugzilla
+ __Sjur__
+
+* bruk bugzilla
+* avslutt feilrapportar når dei er ferdige
+* ikkje avslutt utan testing, legg ved ein kort testrapport + versjonsnummer når du avsluttar
+
+__TODO:__
+* create account for Berit Merete (__Sjur__)
+* give Berit Merete training in using Bugzilla (__Tomi, Thomas__)
+
+!!!sma-Oahpa
+__Lene__
+
+Jobba hardt før påske, deretter dep-seminar. Skal prata med Ryan i dag -
+han har arbeidet med debugging av Morfa-C. Neste steg:
+
+* dialektmerking  (__Lene, Trond__)
+* NG-merking  (__Lene, Trond__)
+* Flere Morfa-C-oppgaver  (__Lene__)
+* Testing, finpussing
+* svensk oversetting - arbeid er underveis
+
+!!!Divvun 2.2
+__Tomi__
+
+Make process has stopped again for missing variable.
+{{{
+command: make ms-speller GTLANG=sma GTHOME=~/langtech
+make: prooftools/add-version-info.pl: No such file or directory
+}}}
+
+Sjur has written e-mail to Knowledge Concepts.
+
+__TODO:__
+* fix make process (__Tomi__)
+* evaluate present state of speller wrt known bugs (__Thomas, Tomi__)
+
+!!!Talesyntese
+__Biret__
+
+Vi har tatt opptak av omtrent 1400 setninger i påska, med mannlig stemme. Vi har flere timer med opptak. Nils Martin Kristensen skal klippe ut feillesninger og 'ekstramateriale' etter påska, og sende filene til meg etterhvert som de blir ferdige. Vi skal ha ca 2000 setninger, og resten av opptakene tar vi en helg i juni.
+
+__TODO:__
+* rette tekstene i forhold til opplesningene (__Biret Ánne__)
+* dele opp tekstene i forhold til lydfilene (__Biret Ánne__)
+* kontakte kvinnelig stemme om opptak (__Biret Ánne__)
+
+!!!Infrastrukturarbeidet
+__Sjur__
+
+Tommi Pirinen will be hired as a summer trainee to do the major part of this work.
+
+__TODO:__
+* accounts for Tommi on victorio, svn, Bugzilla, XServe (__Børre__)
+* add plan, documents to svn (__Sjur__)
+
+!!!Vikar for Maja
+__Sjur__
+
+David will not work as a step-in for Maja. Sjur has asked Aajege, hopefully they can.
+
+!!!Victorio and giellatekno.uit.no
+
+A commit made somewhere in the first week of April has made the building of the forrest sites extremely time consuming, which - together with the cron jobs - caused several processor intensive forrest processes to run simultaneously. This made victorio completely unresponsive in the end, so that it looked like it was dead. __Børre__ is investigating the problem.
