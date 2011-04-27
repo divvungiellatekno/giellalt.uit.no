@@ -111,6 +111,20 @@ The idea is to gather resources that are specific to the given language pairs wi
 
 In this scenario, resources for an MT application would then probably be divided among three dir trees: {{gtlangs/}} for the monolingual resources, {{gtlangpairs/}} for the transfer dictionaries, and {{gtlanggroups/}} for terminology resources.
 
+!!Filenames and extension
+
+Filenames need to be standardised, as well as the use of filename extensions. The extension should reflect the content type. A possible list of extensions could be:
+
+* {{.lexc}} - LexC source files
+* {{.xfst}} - xfst script file
+* {{.regex}} - xfst regex file
+* {{.twolc}} - twolc source file
+* {{.cg}} - constraint grammar (CG) file
+* {{.cg2}} - CG2 source file (probably not used anymore, but listed to ensure we can differentiate between major versions of the CG formalism)
+* {{.cg3}} - VISL CG3 constraint grammar source file
+
+There are probably more source code file types we need to handle, this list is just a start.
+
 !!Execution plan
 ''Small'' and ''big'' in the list below refers to the size of the linguistic resources. Simplifying a bit it is roughly equal to the number of {{lexc}} entries.
 
