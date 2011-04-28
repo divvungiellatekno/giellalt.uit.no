@@ -137,10 +137,10 @@ There are probably more source code file types we need to handle, this list is j
 
 !!Testing the remake
 
-We need to ensure that nothing changes in terms of the output of the transducers as part of the remake - unless there are some intended changes (e.g. streamlining tags). It is probably best to first do the infra remake, and then later do such streamlining in the output. So what we need for each language is:
+We need to ensure that nothing changes in terms of the output of the transducers as part of the remake - unless there are some intended changes (e.g. unifying tags across languages). It is probably best to first do the infra remake, and then later do such tag unifying in the output. So what we need for each language is:
 
 * a reference corpus
-** analysed using the different transducers built in the old build system
+** analysed using the different transducers built with the old build system
 ** analysed using the same transducers from the new build system
 
 The testing then amounts to ensuring that the output is the same from both the old and new transducers. This should guarantee stability in the output, and thus reliability from a linguistic point of view.
