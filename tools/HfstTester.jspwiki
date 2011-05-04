@@ -16,6 +16,7 @@ Config:
   xerox:
     Gen: sma/bin/isma-norm.fst
     Morph: sma/bin/sma-norm.fst
+    App: lookup
 
 Tests:
   Noun - gåetie: # -ie stem, root vowel -åe-
@@ -65,6 +66,12 @@ __-c__ indicates coloured output, {{sma/testing/sma-tests.yaml}} is the test dat
 gives more details.
 
 The {{-t, --test}} option takes as argument a test ID, e.g. {{-t "Noun - gåata"}} in the test data above. Using this, the script will only run this test set, nothing else.
+
+The {{-S, --section}} option takes as argument the name of a configuration section, e.g. xerox in the example config file above. Example: to test xerox-type transducers, you would call the tool as follows:
+
+{{{
+HfstTester.py -S xerox testfile.yaml
+}}}
 
 __NB!__ Presently only rudimentary test files exists for {{sma, sme}} and {{smj}}. These files need to be populated with relevant test data. Use these tests to ensure that we get what we want from the morphological transducers, and nothing else, and that we don't break anything in the future.
 
@@ -200,6 +207,12 @@ The exit value equals the number of FAILs in the whole test run. It will exit wi
 * Clean separation of the front-end and the back-end (library) part of HfstTester.py, such that the tester can be imported in other python projects and called from there.
 
 !!!Version history
+
+!!1.9999.1
+* even more modularised, very close to a 2.0 release
+* now up to ~30 times faster
+* replaced -x with -S <SectionName>, where <SectionName> is the name of a configuration section in yaml test files. This opens up for easier handling of new test types and tools in the future
+* added number of PASSed/FAILed/totals for each test set in the compact report
 
 !!1.6:
 * CODE: cleanup, modularisation
