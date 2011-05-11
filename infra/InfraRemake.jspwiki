@@ -111,6 +111,12 @@ The idea is to gather resources that are specific to the given language pairs wi
 
 In this scenario, resources for an MT application would then probably be divided among three dir trees: {{gtlangs/}} for the monolingual resources, {{gtlangpairs/}} for the transfer dictionaries, and {{gtlanggroups/}} for terminology resources.
 
+* Cip: As a matter of fact, Cip's dream is about how to model humans' language knowledge, i.e. humans don't have a list of Sami words,
+a list a Norwegian words, a list of Sami-Norwegian word pairs, a list of Norwegian-Sami word pairs, etc. If there is something like gtlangpairs directories
+then either as derived (generated from the individual gtlangs-dirs plus pointers from a language to another, this can be done as needed for
+some specific multilingual application) or as containing the pointers from one language to another, aka a modularization of bilingual information functioning as
+link between the pointer from one language into another, but this is just a technical issue. In Cip's dream all pointers -- both intralingual (to synonyms, antonyms, hyponyms, etc.) and interlingual (for ALL languages) -- reside in one and the same directory. But I stress it: POINTERS to meaning groups.
+
 !!Filenames and extension
 
 Filenames need to be standardised, as well as the use of filename extensions. The extension should reflect the content type. A possible list of extensions could be:
