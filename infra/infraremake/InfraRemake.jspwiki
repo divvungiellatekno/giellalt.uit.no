@@ -127,11 +127,15 @@ Filenames need to be standardised, as well as the use of filename extensions. Th
 * {{.xfst}} - xfst script file
 * {{.regex}} - xfst regex file
 * {{.twolc}} - twolc source file
-* {{.cg}} - constraint grammar (CG) file
+* {{.fst}} - compiled transducer, Xerox type
+* {{.hfst}} - compiled transducer, HFST type
+* {{.hfstol}} - compiled transducer, optimised HFST type
+* {{.cg}} - generic constraint grammar (CG) file
 * {{.cg2}} - CG2 source file (probably not used anymore, but listed to ensure we can differentiate between major versions of the CG formalism)
 * {{.cg3}} - VISL CG3 constraint grammar source file
+* {{.cg3bin}} - binary/compiled VISLCG3 constraint grammar file
 
-There are probably more source code file types we need to handle, this list is just a start.
+There are probably other file types we need to handle, add mmore extensions here as needed.
 
 !!Execution plan
 ''Small'' and ''big'' in the list below refers to the size of the linguistic resources. Simplifying a bit it is roughly equal to the number of {{lexc}} entries.
