@@ -43,8 +43,9 @@ sudo gnumake install</source>
       <source>
 svn co --username anonymous --password anonymous http://beta.visl.sdu.dk/svn/visl/tools/vislcg3/trunk vislcg3
 cd vislcg3/
-./autogen.sh
-make
+./get-boost.sh 
+./cmake.sh
+make -j3
 test/runall.pl
 sudo make install</source>
 
@@ -57,21 +58,9 @@ sudo make install</source>
     Replace <code>[admin-username]</code> with a username with administrative privileges.
     Then type in the corresponding password, and continue with the final step above.</note>
 
-
-      <source>      
-cd vislcg3/trunk/
-./compile-mac.sh # (or: ./compile-linux.sh)
-test/runall.pl
-mv vislcg3 ~/bin/</source>
-
-    <p>Using this method, <code>vislcg3</code> is installed in your home dir, in <code>~/bin/</code>.</p>
-
-    <note>If you are using this method, there is no need to do the <code>su + sudo</code>
-    steps outlined in the first case.</note>
-
     </section>
     <section>
-      <title>Commands to update</title>
+      <title>Commands to update vislcg3</title>
 
       <p>If you already have checked out <code>vislcg3</code>, then you can simply do the
       following:</p>
@@ -79,11 +68,10 @@ mv vislcg3 ~/bin/</source>
       <source>
 cd vislcg3/
 svn up
-./autogen.sh
-make
+./cmake.sh 
 test/runall.pl
 sudo make install</source>
-    <p>Tips: The vislcg3 is downloaded automatically to victorio every night. If you have access to the svn you can check whether you have the latest version (compare <code>vislcg3 --version</code> on your machine and on victorio, and repeat the steps above if your version is older).</p>    
+    <p>Tip: The vislcg3 is downloaded automatically to victorio every night. If you have access to the svn you can check whether you have the latest version (compare <code>vislcg3 --version</code> on your machine and on victorio, and repeat the steps above if your version is older).</p>    
     </section>
     </section>
 
