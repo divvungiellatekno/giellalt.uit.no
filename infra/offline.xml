@@ -15,7 +15,7 @@
 
       <p>If you have one of the project macs set up for you, you have all
       tools on your own machine, and you may as well work offline. In that
-      case, you use the <a href="../tools/docu-svn-user.xml">CVL program</a>
+      case, you use the <a href="../tools/docu-svn-user.xml">SVN program</a>
       to get the latest versions of the files from the central computer
       victorio, and thereafter you use the tools on your own machine, as
       described in the Tools section.</p>
@@ -27,24 +27,13 @@
       <section>
         <title>Connecting to victorio</title>
 
-        <p>All platforms will need a few initial tweaks to make them handle
-        the Sámi characters, but if you already write Sámi on your computer it
-        may be that it is set up correctly already. See the <a
-        href="docu-localisation.xml">localisation page</a> if you have
-        problems.</p>
-
         <section>
           <title>Mac users</title>
 
-          <p>Mac users using Mac OS X have built-in SSH and a terminal
+          <p>Mac users have built-in SSH and a terminal
           application. Just open the terminal, and type <code>ssh
           username@victorio.uit.no</code> at your prompt (where 'username' is
           your own user name at victorio).</p>
-
-          <p>Mac users using OS 9 or earlier may access victorio via a program
-          called NiftyTelnet (downloadable from the <a
-          href="http://asg.web.cmu.edu/andrew2/dist/niftytelnet.html">NiftyTelnet
-          Homepage</a>). But note that OS 9 does not handle Unicode</p>
         </section>
 
         <section>
@@ -64,6 +53,10 @@
           some reason is not able to write the letter č (all other Sámi
           letters work). (<strong>TODO</strong>: Check other terminal programs
           for Windows)</p>
+          <p>Note that Putty is set up with an 8-bit code page as default.
+          You have to change it to UTF-8, via the menu SETTINGS / ENCODING / UTF-8 / 
+          (finn fram ei Windowsmaskin og FIKS DENNE STIEN).
+	  </p>
         </section>
       </section>
 
@@ -72,10 +65,6 @@
 
         <p>In order to read the documentation offline, you must have a program
         called forrest installed (se separate forrest documentation). </p>
-
-        <p>If you don't have forrest installed on your own machine, you may
-        read the documentation online, on victorio (NB! forrest is not
-        installed there yet).</p>
       </section>
 
       <section>
