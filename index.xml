@@ -13,12 +13,11 @@
             <title>General information for new users</title>
 
             <p>
-                Here you find the technical documentation of the
+                Here you will find the technical documentation of the
                 <em>Sámi language technology project</em> (also called
-                <em>Giellatekno</em>), conducted at the University of
-                Tromsø, and its twin project <em>Divvun</em> (making
-                Sámi spellers), conducted at the Norwegian Sámi
-                Parliament.
+                <em>Giellatekno</em>), and its twin project
+                <em>Divvun</em> (making Sámi spellers), both conducted
+                at the University of Tromsø.
             </p>
             <p>
                 In the thin menu line above you see: 
@@ -46,15 +45,17 @@
                             preprocess files
                         </li>
                         <li>
-                            how to use the morphologial parsers
+                            use the morphologial parsers
                         </li>
                         <li>
-                            how to do disambiguation of sami texts
+                            do disambiguation of Saami texts
                         </li>
                     </ul>
                 </li>
+                <li>The <em>MT</em> tab documents our work on machine translation (together with <a href="http://wiki.apertium.org">Apertium</a>)</li>
                 <li>The <em>Ped</em> tab documents our pedagogical project</li>
                 <li>The <em>Tools</em> tab that gives an introduction on how to use the tools that are described under the Infrastructure tab</li>
+                <li>The <em>Dicts</em> tab links to documentation on our dictionary word.</li>
                 <li>The <em>Bugzilla</em> tab links directly to our bug database.</li>
             </ul>
             
@@ -64,128 +65,20 @@
             <p>
                 The source code and the documentation of these projects are under <a href="http://en.wikipedia.org/wiki/Revision_control" >version control</a>, using the program <a href="http://en.wikipedia.org/wiki/Subversion_%28software%29" >svn</a>.
             </p>
-            <p>
-                svn makes it possible for everyone to fetch our source code and documentation to their own machine, and tinker with it in peace and quiet. There are two methods of fetching the files to your own machine.
-            </p>
+            <p>svn makes it possible for everyone to fetch our source code and documentation to their own machine, and tinker with it in peace and quiet. There are several ways of fetching the files to your own machine.</p>
             <ul>
-                <li>
-                    Those who have an account on our svn server can both fetch files (called check out) and write back changed files (called check in) on this server. <a href="/doc/tools/docu-svn-user.html" >(Instructions)</a>
-                </li>
-                <li>
-                    Others who don't have an account at our server can only fetch files and don't write back changes. <a href="/doc/infra/anonymous-svn.html" >(Instructions)</a>. Note that these instructions still refer to our obsolete cvs system, they will be rewritten shorty.
-                </li>
+                <li>If you just want to browse through the file, or download them one by one, you may browse the <a href="https://victorio.uit.no/langtech/trunk/">source file directory</a></li>
+                <li>Those who have an account on our svn server can both fetch files (called check out) and write back changed files (called check in) on this server. <a href="/doc/tools/docu-svn-user.html" >(Instructions)</a></li>
+                <li>Others who don't have an account at our server can only fetch files and don't write back changes. <a href="/doc/infra/anonymous-svn.html" >(Instructions)</a>.</li>
+            <li>If you want to compile our source code you must have one of these two compilers for finite state automata (at the moment we recommend the Xerox compilers, our HFST setup is still not stable):
+<ul>
+<li>the <a href="http://www.xrce.xerox.com/competencies/content-analysis/fst/">Xerox finite state tools</a>. This is proprietary software which is bundled with the book <a href="http://csli-publications.stanford.edu/site/1575864347.html">Finite State Morphology</a>.</li>
+<li>Helsinki Finite State Transdocer, HFST. HFST is open software.</li>
+</ul></li>
+            <li> For syntactic disambiguation, you will need the <a href="tools/docu-vislcg3.html">vislcg3 program</a>.</li>
+<li><a href="docu-directorystructure.html">Directory structure for the source code</a></li>
             </ul>
             
-            <note>
-                If you want to compile our source code you <em>must</em> have the <a href="http://www.xrce.xerox.com/competencies/content-analysis/fst/">Xerox finite state tools</a>, which is the building stone of these projects. This is proprietary software which is bundled with the book <a href="http://csli-publications.stanford.edu/site/1575864347.html">Finite State Morphology</a>. For syntactic disambiguation, you will need the vislcg3 program.
-            </note>
-            
-            <section>
-                <title>Directory structure for the source code</title>
-                <p>
-                    The project specific documentation are in the xtdoc module, the divvun project's files are in the sd directory, the university project's files are in the gtuit directory. The common documentation and source code of these two projects is in the gt svn module.
-                </p>
-                <p>
-                    The project is located in the directory <em>gt/</em> (an acronym
-                    for <em>giellateknologiija</em>, language technology). These are the
-                    subdirectories (the abbreviations for the different languages are in
-                    accordance with the ISO 639-2 standard for language codes):
-                </p>
-                <ul>
-                    <li>
-                        <em>doc/</em> = Documentation directory, which contains this
-                        documentation, and has the following subdirectories: <ul>
-                            <li>
-                                <em>admin/</em> = Contains files related to project
-                                administration
-                            </li>
-                            <li>
-                                <em>infra/</em> = Documents how to set up users and machines
-                                and contains information on how the servers are set up.
-                            </li>
-                            <li>
-                                <em>lang/</em> = Contains documentation on the lexica and
-                                language files for the Sámi languages.
-                            </li>
-                            <li>
-                                <em>ling/</em> = Contains documentation on topics common to
-                                all languages.
-                            </li>
-                            <li>
-                                <em>tools/</em> = Howtos for the tools used by the
-                                project.
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <em>script/</em> = script files, with <em>cgi-bin</em>,
-                        <em>emacs</em> and <em>testing</em> as subdirectories, along with
-                        other script files
-                    </li>
-                    <li>
-                        <em>smi/</em> = files relevant to all the languages, e.g. proper
-                        names,
-                    </li>
-                    <li>
-                        <em>sme/</em> = Northern Sámi
-                    </li>
-                    <li>
-                        <em>smj/</em> = Lule Sámi
-                    </li>
-                    <li>
-                        <em>sma/</em> = Southern Sámi
-                    </li>
-                    <li>
-                        <em>smn/</em> = Inari Sámi
-                    </li>
-                    <li>
-                        <em>sms/</em> = Skolt Sámi
-                    </li>
-                    <li>
-                        <em>sjd/</em> = Kildin Sámi
-                    </li>
-                    <li>
-                        <em>www/</em> = directory for web-related issues
-                    </li>
-                    <li>
-                        <em>tmp/</em> = directory for temporary storing of script files
-                        under compilation.
-                    </li>
-                </ul>
-                <p>Each language directory has the following subdirectories:</p>
-                <ul>
-                    <li>
-                        <em>bin/</em> the program files, these are automatically
-                        generated by the <strong>make</strong> command
-                    </li>
-                    <li>
-                        <em>dev/</em> developer's file (store your own notes here if
-                        needed)
-                    </li>
-                    <li>
-                        <em>corp/</em> corpus files (cf. the README file in the corp/ 
-                        directory)
-                    </li>
-                    <li>
-                        <em>int/</em> intermediate binary files, not that relevant to
-                        the final parsers
-                    </li>
-                    <li>
-                        <em>src/</em>, the source files, our crown jewels
-                    </li>
-                    <li>
-                        <em>testing/</em>, containing files for morphology testing (how
-                        to conduct such testing is explained on the <a href="ling/docu-testing.html" >Testing tools</a> page)
-                    </li>
-                </ul>
-                <p>
-                    The <em>gt/</em> directory is copied to the home directory of each
-                    user by the <a href="tools/docu-svn-user.html" >svn program</a>.
-                </p>
-                <p class="last_modified" >Last changed: $Id: intro.xml,v 1.8 2005/06/21
-                    12:13:53 boerre Exp $
-                </p>
-            </section>
         </section>
     </body>
 </document>
