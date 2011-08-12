@@ -19,6 +19,9 @@
             The arrow in a syntactic tag points at the "parent", which means that the tag tells which kind of part of speech (N, A, P, Pron or Num) or syntactic constituent (like ADVL) the wordform modifies or is a complement to, and whether the "parent" is to the left of to the right.
             </p>
             <p>
+            Some tags do not have arrows. These are of two types. One type is the central verb tags @+FAUXV etc. They do not need direction indication, either it is obvious, or the node points to zero. The other type is the set tag type. For each tag pair @SUBJ>, @&lt;SUBJ, etc, there is a metatag @SUBJ, etc., so that @ means "either @SUBJ> or @&lt;SUBJ".
+            </p>
+            <p>
             Note that all syntactic tags are identified by an initial @ symbol, to distinguish them from morphological tags, which do not have such a prefix. In the analysis, the syntactic tags are printed at the end of the tag string.
             </p>
         </section>
@@ -39,7 +42,7 @@
             <section>
                 <title>The major function tags</title>
                 <ul>
-                <li>@&lt;SUBJ @SUBJ> @&lt;SPRED @SPRED> @&lt;OBJ @OBJ> @&lt;OPRED @OPRED></li>
+                <li>@&lt;SUBJ @SUBJ> (@SUBJ) @&lt;SPRED @SPRED> (@SPRED) @&lt;OBJ @OBJ> (@OBJ) @&lt;OPRED @OPRED> (@OPRED)</li>
                 </ul>
                 <p>
                 The four main functions for subject, object and their predicatives are obvious.
@@ -55,13 +58,16 @@
             <section>
                 <title>The adverbial tags</title>
                 <ul>
-                    <li>@ADVL @-FADVL @HAB</li>
+                    <li>@ADVL> @&lt;ADVL @ADVL</li> 
+                    <li>@-FADVL @HAB</li>
                     <li>@PCLE @COMPL-CS&lt;</li>
                     <li>@P&lt; @>P</li>
                     <li>@ADVL&lt; @>ADVL</li>
                 </ul>
                 <p>
-                The @ADVL tag marks adverbials (many, but not all of the adverbials are adverbs). The adverbial of an infinite verb outside the verbal gets @-FADVL. The @HAB tag marks the habitative construction.
+                The @ADVL> @&lt;ADVL @ADVL tags mark adverbials (many, but not all of the adverbials are adverbs). The two first ones indicate the direction to the mother node, the third is used to refer to both the former.
+                </p>
+                <p>The adverbial of an infinite verb outside the verbal gets @-FADVL. The @HAB tag marks the habitative construction.
                 </p>
                 <p>
                 The @PCLE tag marks particles, and the @COMPL-CS&lt; tag is for the complement of a @CS.
@@ -71,7 +77,7 @@
                 The two tags @>P and @P&lt; are for complements of post- and prepositions, respectively.
                 </p>
                 <p>
-                The two tags @>ADVL and @ADVL&lt;  modify the adverbial to the right, or is a complement of the adverbial to the left, respectively.
+                The two tags @>ADVL and @ADVL&lt;  modify the adverbial to the right, or is a complement of the adverbial to the left, respectively. Note that these tags mark modifyers of adverbials rather than adverbials themselves.
                 </p>
             </section>
             <section>
@@ -80,7 +86,7 @@
                 The other syntactic tags for modifiers tell which word they modify, and whether they modify to the left or to the right.
                 </p>
                 <ul>
-                    <li>@>N  @>A  @>Num </li>
+                    <li>@>N  @>A  @>Num @>Pron</li>
                     <li>@Pron&lt;  @N&lt;  @Num&lt;</li>
                 </ul>
 
@@ -114,7 +120,7 @@
                 <ul>
                     <li>@CNP @CVP</li>
                 </ul>
-                <p>Conjunction between NPs and VPs.</p>
+                <p>Conjunction connecting NPs and VPs.</p>
             </section>
             <section>
                 <title>Sentence-external tags</title>
@@ -133,11 +139,84 @@
                 </p>
             </section>
         </section>
+        
+        
+        
+        
         <section>
             <title>The tags, listed alphabetically</title>
             <p>Here is a list of the tags, with a definition or description, and one or more examples
             following each of them</p>
              <dl>                                   
+                <dt>@+FAUXV</dt>
+                <dd>Finite auxiliary verb.
+                    <dl>
+                        <dt>ferte (V)</dt>
+                        <dd class="ex" >
+                            <em>Sámi geavaheddjiid bálvalusaid vuođđun <em class="red">ferte</em> leat sámegielmáhttu ja sámi kulturmáhttu. - 'Sámi user services <em class="red">need</em> to be based on Sámi language competence and Sámi cultural competence.'</em>
+                        </dd>
+                    </dl>
+                </dd>
+                <dt>@+FMAINV</dt>
+                <dd>Finite main verb.
+                    <dl>
+                        <dt>Boađe (V)</dt>
+                        <dd class="ex" >
+                            <em><em class="red">Boađe</em> boahtte vahku. - '<em class="red">Come</em> next week.'</em>
+                        </dd>
+                    </dl>
+                </dd>
+
+            <dt>@-F&lt;ADVL</dt>
+                <dd>
+                    <dl>
+                        <dt>árbbolaččain (N)</dt>
+                        <dd>
+                            <em>Danne dárbbašit mii oažžut lobi Nils Aslak Valkeapää <em class="red">árbbolaččain</em> almmuhit dán guokte lávlaga min sálbma-CD:s. - 'Therefore we need to get permission from Nils Aslak Valkeapää's <em class="red">heirs</em> to release these two songs on our psalm-CD.'</em>
+                        </dd>
+                    </dl>
+                </dd>
+
+                <dt>@-F&lt;OBJ</dt>
+                <dd>Object of infinite verb outside the verbal.
+                    <dl>
+                        <dt>govaid (N)</dt>
+                        <dd>
+                            <em>Boađe mu lusa geahččat <em class="red">govaid</em>! - 'Come to me and look at<em class="red">the pictures</em>!'</em>
+                        </dd>
+                    </dl>
+                </dd>
+
+
+                <dt>@-F&lt;OPRED</dt>
+                <dd>Object predicative of infinite verb outside the verbal.
+                    <dl>
+                        <dt>xxx</dt>
+                        <dd>
+                            <em>xxx</em>
+                        </dd>
+                    </dl>
+                </dd>
+
+
+
+                <dt>@-F&lt;SPRED</dt>
+                <dd>Subject predicativeof infinite verb outside the verbal.
+                    <dl>
+                        <dt>xxx</dt>
+                        <dd>
+                            <em>xxx</em>
+                        </dd>
+                    </dl>
+                </dd>
+
+
+
+
+
+
+
+
                 <dt>@>A</dt>
                 <dd>Modifier of an adjective to the left.
                     <dl>
@@ -157,13 +236,7 @@
                     </dl>
                 </dd>
             <dt>@ADVL</dt>
-                <dd>Sentence adverbial.
-                    <dl> 
-                        <dt>dál (Adv)</dt>
-                        <dd>
-                            <em><em class="red">Dál</em> lea Bireha vuorru. - 'It is Biret's turn <em class="red">now</em>.'</em>
-                        </dd>
-                    </dl>
+                <dd>Sentence adverbial, @ADVL> or @&lt;ADVL.
                 </dd>
                 <dt>@>ADVL</dt>
                 <dd>Modifier of an adverbial.
@@ -314,39 +387,12 @@
                         </dd>
                     </dl>
                 </dd>
-                <dt>@+FAUXV</dt>
-                <dd>Finite auxiliary verb.
-                    <dl>
-                        <dt>ferte (V)</dt>
-                        <dd class="ex" >
-                            <em>Sámi geavaheddjiid bálvalusaid vuođđun <em class="red">ferte</em> leat sámegielmáhttu ja sámi kulturmáhttu. - 'Sámi user services <em class="red">need</em> to be based on Sámi language competence and Sámi cultural competence.'</em>
-                        </dd>
-                    </dl>
-                </dd>
-                <dt>@+FMAINV</dt>
-                <dd>Finite main verb.
-                    <dl>
-                        <dt>Boađe (V)</dt>
-                        <dd class="ex" >
-                            <em><em class="red">Boađe</em> boahtte vahku. - '<em class="red">Come</em> next week.'</em>
-                        </dd>
-                    </dl>
-                </dd>
                 <dt>@-FADVL</dt>
                 <dd>Object of infinite verb outside the verbal.
                     <dl>
                         <dt>várrogasat (Adv)</dt>
                         <dd>
                             <em>Dihkkadeaddji rávve skohtervuddjiid <em class="red">várrogasat</em> mátkkoštit. 'The roadman warns snowscooter drivers to drive <em class="red">carefully</em>.'</em>
-                        </dd>
-                    </dl>
-                </dd>
-            <dt>@-F&lt;ADVL</dt>
-                <dd>
-                    <dl>
-                        <dt>árbbolaččain (N)</dt>
-                        <dd>
-                            <em>Danne dárbbašit mii oažžut lobi Nils Aslak Valkeapää <em class="red">árbbolaččain</em> almmuhit dán guokte lávlaga min sálbma-CD:s. - 'Therefore we need to get permission from Nils Aslak Valkeapää's <em class="red">heirs</em> to release these two songs on our psalm-CD.'</em>
                         </dd>
                     </dl>
                 </dd>
@@ -364,18 +410,9 @@
                 <dl>
                     <dt>geargan (V)</dt>
                     <dd class="ex" >
-                        <em>Ja Biret-Elle lea easka skuvllas <em class="red">geargan</em>. - 'And Biret-Elle has just <em class="red">finnished</em> school.'</em>
+                        <em>Ja Biret-Elle lea easka skuvllas <em class="red">geargan</em>. - 'And Biret-Elle has just <em class="red">finished</em> school.'</em>
                     </dd>
                 </dl>
-                </dd>
-                <dt>@-F&lt;OBJ</dt>
-                <dd>Object of infinite verb outside the verbal.
-                    <dl>
-                        <dt>govaid (N)</dt>
-                        <dd>
-                            <em>Boađe mu lusa geahččat <em class="red">govaid</em>! - 'Come to me and look at<em class="red">the pictures</em>!'</em>
-                        </dd>
-                    </dl>
                 </dd>
             <dt>@-FOBJ></dt>
                 <dd>Object of infinite verb outside the verbal.
