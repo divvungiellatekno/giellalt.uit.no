@@ -40,9 +40,10 @@ sudo gnumake install</source>
             
             <source>
 svn co --username anonymous --password anonymous http://beta.visl.sdu.dk/svn/visl/tools/vislcg3/trunk vislcg3 
-cd vislcg3/ ./get-boost.sh 
+cd vislcg3/
+./get-boost.sh 
 ./cmake.sh 
-sudo make -j3 
+make -j3 
 test/runall.pl 
 sudo make install
 </source>
@@ -54,6 +55,7 @@ svn co --username anonymous --password anonymous http://beta.visl.sdu.dk/svn/vis
 cd vislcg3/ 
 ./get-boost.sh 
 cmake -DCMAKE_INSTALL_PREFIX=/opt/local . 
+make -j3 
 test/runall.pl 
 sudo make install
 </source>
@@ -73,6 +75,7 @@ sudo make install
 cd vislcg3/
 svn up
 ./cmake.sh 
+make -j3 
 test/runall.pl
 sudo make install</source>
             <p>Tip: The vislcg3 is downloaded automatically to victorio every night. If you have access to the svn you
