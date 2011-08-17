@@ -2,6 +2,8 @@
 
 This is a receipt for setting up HFST3 with all supported backends on MacOSX Snow Leopard. See the HFST3 README file for further details, and how to turn off specific backens if needed or wanted.
 
+__The info on this page can be outdated, consult the HFST README file to get up-to-date installation instructions and requirements! The same goes for the different backends!__
+
 Presently, HFST3 supports three different backends:
 * __SFST__ - unweighted transducers and rule compiler (is the HFST twol compiler built on this one?)
 * __OpenFST__ - weighted transducers
@@ -14,54 +16,34 @@ HFST3 abstracts over the different backends, and will make it easy to add suppor
 The bottom line: use the latest version, and follow the receipts below, and you should be fine (barring issues in the HFST3 source code itself).
 
 !!!Install SFST
-* Download [SFST 1.4.1|http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html] or newer - version 1.4 does NOT compile on MacOSX
+* Download [SFST|http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html] - version 1.4.6a is required for HFST 3.2 or newer.
 * {{make}}
-* {{make install}}
-* {{make maninstall}} - optional (installs man pages)
-* {{make libinstall}}
+* {{sudo make install}} - optional when building for the HFST package
+* {{sudo make maninstall}} - optional (installs man pages)
+* {{sudo make libinstall}} - required for sfst support in HFST
+
+!!Note! Buggy libinstall in SFST!
+
+SFST 1.4.6a has a bug when doing {{sudo make libinstall}} on MacOS X, such that it fails in the middle of the process. The dynamic library has been installed upon failure, but not the header files. To also install the header files do {{sudo make hfiles}}. That's it! Now HFST v3.2 and newer will compile with the SFST backend just fine also on the Mac.
 
 !!!Install OpenFST
 * Download [OpenFST 1.2.4|http://www.openfst.org/] or newer (at least version 1.2.2 does NOT compile on the Mac)
-* {{./configure}}
-* {{make}}
-* {{make install}}
+{{{
+./configure
+make
+sudo make install
+}}}
 
 !!!Install Foma
 
-!!From downloaded tarball
-
-* Download [Foma|http://foma.sourceforge.net/] source
-  [tarball|http://www.ling.helsinki.fi/~mhulden/foma-0.9.13alpha.tar.gz]
-* modify {{fomalibconf.h}} - see below
-* {{make}}
-* {{make install}}
-
-For the time being (ie Foma 0.9.13alpha) you should add FEXPORT in front of the functions:
-
-* {{sigma_create}} (line 168)
-* {{sigma_max}} (line 170)
-* {{xxmalloc}} (line 198)
-
-in the file {{fomalibconf.h}} (see other functions with this prefix to ensure you do it correctly). This is necessary for HFST to build cleanly against Foma. Hopefully the next update to Foma will include this change.
-
-!!From svn source code
-
-The Foma svn repository is at [/foma.svn.sourceforge.net/svnroot/foma/]. Since at least r12 (r11 not tested, r10 did not build) it builds without problems, and contains the above changes. The process is just:
-
-* {{make}}
-* {{make install}}
-
-!!Possible errors & solutions
-
-If you get compilation errors like the following when make-ing HFST3:
+See the [Foma home page|http://foma.sourceforge.net/dokuwiki/doku.php] for how to access the source code. Whether you download a tarball or check out svn, the steps are the same:
 
 {{{
-Undefined symbols: "_sigma_max", [...] "_sigma_create", [...]
+make
+sudo make install
 }}}
 
-it means you have an older version of the foma library installed, and you need to manually delete all installed files, {{make clean}}, {{make}} and {{make install}} anew to get rid of the errors.
-
-!!!Build HFST3
+!!!Building HFST3
 
 Please note that HFST3 requires rather new versions of flex and bison. The versions shipping with the latest XCode should be ok. This XCode version is the one coming with Snow Leopard (MacOS X 10.6), with subsequent updates. For older MacOS versions, you probably will have to install updated versions of these tools using [MacPorts|http://www.macports.org/] or [Fink|http://www.finkproject.org/]. See the HFST3 README file for further details.
 
@@ -69,55 +51,15 @@ Please note that HFST3 requires rather new versions of flex and bison. The versi
 ./autogen.sh
 ./configure
 make
-make install
+make install # use 'sudo' if required
 }}}
 
-HFST3 r756 is known to build properly on MacOS X with all the prerequisites installed as described above. HFST3 is presently in a (pre) alpha stage, and things may break at any moment. Please also note that not all command-line tools found in HFST2 are presently built by HFST3 — but HFST3 adds support for the important xfst processor through Foma (command-line functionality available since r762). The tools produced by HFST3 are:
+!!Building on Victorio
 
-* hfst-calculate
-* hfst-compare
-* hfst-compose
-* hfst-compose-intersect
-* hfst-concatenate
-* hfst-conjunct
-* hfst-determinize
-* hfst-disjunct
-* hfst-format
-* hfst-fst2fst
-* hfst-fst2strings
-* hfst-fst2txt
-* hfst-head
-* hfst-invert
-* hfst-lexc
-* hfst-lookup
-* hfst-minimize
-* hfst-proc
-* hfst-project
-* hfst-push-weights
-* hfst-regexp2fst
-* hfst-remove-epsilons
-* hfst-repeat
-* hfst-reverse
-* hfst-split
-* hfst-strings2fst
-* hfst-strip-header (NEW! HFST3 only)
-* hfst-substitute
-* hfst-subtract
-* hfst-summarize
-* hfst-tail
-* hfst-txt2fst
-* hfst-xfst (NEW! HFST3 only)
+Victorio lacks a few crucial tools to build from svn. One thus have to first build a distro on another machine, and move it to victorio, or use the prebuilt tarball from the hfst site. When the tarball is on victorio, untar, and follow the usual procedure:
 
-whereas HFST2 installs the following additional tools:
-
-* hfst-diff-test
-* hfst-flag-diacritics
-* hfst-fst2pairstrings
-* hfst-lookup-optimize
-* hfst-omor-evaluate
-* hfst-optimized-lookup
-* hfst-pair-test
-* hfst-symbols
-* hfst-twolc
-
-Of these, {{hfst-twolc}} is probably the most critical omission. It isn't yet known whether it is possible to mix HFST2 and HFST3 transducers, or when {{hfst-twolc}} support will be added to HFST3.
+{{{
+./configure
+make
+sudo make install
+}}}
