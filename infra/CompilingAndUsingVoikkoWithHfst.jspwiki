@@ -1,0 +1,53 @@
+!!!Compiling Voikko
+
+The instructions here are based on a shell script {{buildmac.sh}} found on the net (it seems to not be available any more).
+
+There are also somewhat outdated build instrcuctions on the [Voikko home pages|http://voikko.sourceforge.net/source-mac.html].
+
+These installation instructions assume we're using the svn codebase. First, check out voikko from svn, then run autogen.sh:
+
+{{{
+svn co https://voikko.svn.sourceforge.net/svnroot/voikko/trunk voikko
+cd voikko/libvoikko
+./autogen.sh
+}}}
+
+The voikko codebase contains a lot of other stuff as well, but we'll consentrate on the core in this installment, that is, the library and the corresponding command-line utitilies found in the {{libvoikko}} dir.
+
+__NB!!!__ The following setup has been working for me lately, but there are dependencies on malaga and possibly other things that are not covered here. I did a full compilation ages ago, and I haven't taken the time to check everything you need to do this time around. That is, ''the instructions below are probably incomplete!'' Please add and update as needed.
+
+Also, have a look at the file {{$GTHOME/tools/voikko/buildmac.sh}} for how to build the dependencies. You can copy this file to your voikko svn working directory, and run it from there to help build on MacOS X.
+
+!!Default install location of both HFST and Voikko
+
+In this case, the receipt is very close to the standard, with a couple of additional flags:
+
+{{{
+./configure --enable-hfst
+make LINK="gcc -framework CoreFoundation -framework Cocoa" \
+	  LDFLAGS="-framework CoreFoundation -framework Cocoa"
+make install
+}}}
+
+__NB!!!__ This configuration is not tested by me, but is a simplified version of my own setup. It ''should'' work, but you have been warned :D
+
+!!HFST install location = $HOME
+
+Installation in the default locations requires {{sudo}} power, which is not always available or desirable. A good alternative is to use {{$HOME}} as the install location. Below is the receipt for this alternative:
+
+{{{
+HFST_CFLAGS="-I$HOME/include" HFST_LIBS="-L$HOME/lib" \
+	CFLAGS="-I/Users/sjur/voikko/inst/include -L/Users/sjur/voikko/inst/lib" \
+	./configure --enable-hfst=$HOME
+make LINK="gcc -framework CoreFoundation -framework Cocoa" \
+	  LDFLAGS="-framework CoreFoundation -framework Cocoa"
+make install
+}}}
+
+This is the setup I (ie Sjur) have been using, and that is known to work on my (his) computer. Again - take this with a grain of salt, or rather: as inspiration.
+
+!!!Using Voikko
+
+{{{
+voikkospell -p DIR -s 
+}}}
