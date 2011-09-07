@@ -1,53 +1,133 @@
-!!!Compiling Voikko
+!!!Overview
 
-The instructions here are based on a shell script {{buildmac.sh}} found on the net (it seems to not be available any more).
+These instructions are based on LibVoikko 3.3 (svn trunk as of r3995) on Snow Leopard (MacOS X 10.6.8). Other systems and older versions of LibVoikko ''have not been tested!''
 
-There are also somewhat outdated build instrcuctions on the [Voikko home pages|http://voikko.sourceforge.net/source-mac.html].
+There are also somewhat older & outdated build instrcuctions on the [Voikko home pages|http://voikko.sourceforge.net/source-mac.html]. These were made for LibVoikko 2.x on Leopard (MacOS 10.5.x).
 
-These installation instructions assume we're using the svn codebase. First, check out voikko from svn, then run autogen.sh:
+These installation instructions assume we're using the svn codebase. Start the build process by checking out voikko from svn (this will include ''Suomimalaga'', see below).
 
 {{{
 svn co https://voikko.svn.sourceforge.net/svnroot/voikko/trunk voikko
+}}}
+
+!!!Install dependencies
+
+Install the following:
+* pkg-config ≥ 0.23 ({{sudo port install pkg-config}})
+* gettext ≥ 0.17 ({{sudo port install gettext}})
+* [Malaga|http://home.arcor.de/bjoern-beutel/malaga/]
+* Suomimalaga - part of the libvoikko checkout, see
+  [here|http://voikko.sourceforge.net/source-mac.html] for details
+* [hfst|compiling_HFST3.html]
+* hfst-ospell (see below)
+
+!!hfst-ospell
+
+{{hfst-ospell}} is a speller library (and testing frontent) to use hfst-based transducers as spellers. It is required for the hfst backend for Voikko to work. it is found in your hfst svn checkout in {{HFSTROOT/hfst-ospell/}}.
+
+Install hfst-ospell with the following {{./configure}} options (required to get the {{libarchive}} package from MacPorts visible for {{./configure}}):
+
+{{{
+CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure CXXFLAGS="-I/opt/local/include" LDFLAGS="-L/opt/local/lib"
+}}}
+
+followed by the usual:
+
+{{{
+make
+sudo make install
+}}}
+
+!!Install all but the hfst dependencies
+
+Somebody wrote a shell script {{buildmac.sh}} to configure and build everything for the Mac in one place, and make it available for inclusion in the LibVoikko build. It was found on the net but has since vanished. A commented and slightly reworked copy is available [here|https://victorio.uit.no/langtech/trunk/tools/voikko/buildmac.sh]).
+
+This shell script assumes all components are installed locally, but it does the job of getting LibVoikko and all its components built. It also requires some manual work on the shell script itself to adapt to the local environment. It might help, but you are on your own :)
+
+The {{hfst}} components are not covered by this script, and must be installed separately.
+
+!!!Install LibVoikko
+
+The receipt is the standard one, with one additional flag to turn on support for {{hfst}}:
+
+{{{
 cd voikko/libvoikko
 ./autogen.sh
-}}}
-
-The voikko codebase contains a lot of other stuff as well, but we'll consentrate on the core in this installment, that is, the library and the corresponding command-line utitilies found in the {{libvoikko}} dir.
-
-__NB!!!__ The following setup has been working for me lately, but there are dependencies on malaga and possibly other things that are not covered here. I did a full compilation ages ago, and I haven't taken the time to check everything you need to do this time around. That is, ''the instructions below are probably incomplete!'' Please add and update as needed.
-
-Also, have a look at the file {{$GTHOME/tools/voikko/buildmac.sh}} for how to build the dependencies. You can copy this file to your voikko svn working directory, and run it from there to help build on MacOS X.
-
-!!Default install location of both HFST and Voikko
-
-In this case, the receipt is very close to the standard, with a couple of additional flags:
-
-{{{
 ./configure --enable-hfst
-make LINK="gcc -framework CoreFoundation -framework Cocoa" \
-	  LDFLAGS="-framework CoreFoundation -framework Cocoa"
-make install
+make
+sudo make install
 }}}
 
-__NB!!!__ This configuration is not tested by me, but is a simplified version of my own setup. It ''should'' work, but you have been warned :D
+Installation in other locations using {{--prefix}} is not recommended, especially for the dependent components. I have not been able to get it to work.
 
-!!HFST install location = $HOME
+!!!Make a sme speller for Voikko+HFST
 
-Installation in the default locations requires {{sudo}} power, which is not always available or desirable. A good alternative is to use {{$HOME}} as the install location. Below is the receipt for this alternative:
+The present build setup for Voikko-based hfst spellers are floating, hfst support in Voikko is still not a completed feature. Especially support for the zfst speller format is lacking, but expected to be added in the near future.
+
+If you are satisfied with using the speller only as part of the speller testbench, the following instructions are enough:
 
 {{{
-HFST_CFLAGS="-I$HOME/include" HFST_LIBS="-L$HOME/lib" \
-	CFLAGS="-I/Users/sjur/voikko/inst/include -L/Users/sjur/voikko/inst/lib" \
-	./configure --enable-hfst=$HOME
-make LINK="gcc -framework CoreFoundation -framework Cocoa" \
-	  LDFLAGS="-framework CoreFoundation -framework Cocoa"
-make install
+cd $GTHOME/gt/
+make GTLANG=sme hfstspellers
 }}}
 
-This is the setup I (ie Sjur) have been using, and that is known to work on my (his) computer. Again - take this with a grain of salt, or rather: as inspiration.
+This may take some time. For instructions on how to run the resulting speller through the test bench, see below.
+
+!!!Install the Voikko+HFST speller
+
+To also be able to run voikkospell in other applications or independently of the speller test bench, do the following:
+
+{{{
+mkdir -p ~/.voikko/2/mor-se/  # Use two-letter codes here if available, e.g. 'se'
+cp sme/hfst/acceptor.default.hfstol ~/.voikko/2/mor-se/spl.hfstol
+cp sme/hfst/acceptor.default.hfstol ~/.voikko/2/mor-se/sug.hfstol
+cp sme/hfst/errmodel.default.hfstol ~/.voikko/2/mor-se/err.hfstol
+cp sme/voikko/2/mor-sme/alphabet.hfstol ~/.voikko/2/mor-se/alphabet.hfstol
+cp sme/voikko/2/mor-sme/voikko-fi_FI.pro ~/.voikko/2/mor-se/voikko-fi_FI.pro
+}}}
+
+Finally, edit the following line in {{~/.voikko/2/mor-se/voikko-fi_FI.pro}}:
+
+{{{
+info: Language-Code: se
+}}}
+
+to use the two-letter (ISO 639-1) code for the language in question (for North Sámi, change {{sme}} to {{se}}, etc for other languages with two-letter codes).
+
+Now you should have a working Voikko speller for {{sme}}, based on our hfst transducer!
 
 !!!Using Voikko
 
+!!Running the test bench with voikko+hfst
+
 {{{
-voikkospell -p DIR -s 
+cd $GTHOME/gt
+make <TESTTYPE> GTLANG=sme TESTTOOL=vkhfst
 }}}
+
+where {{<TESTTYPE>}} is one of:
+* regression-test
+* typos-test
+* wordtype-test
+* baseform-test
+* correct-test
+
+or use {{spelltest}} to run them all.
+
+!!Using voikko on the command line
+
+If you have followed the instructions above and installed the voikko+hfst speller in {{~/.voikko/2/}}, then just type:
+
+{{{
+voikkospell -s -d se
+}}}
+
+See {{man voikkospell}} for more details and options.
+
+If you ''haven't'' installed voikko+hfst per the above instructions, you can instead run the one in $GTHOME using this command:
+
+{{{
+voikkospell -s -d sme -p $GTHOME/gt/sme/voikko/
+}}}
+
+Eventually, we will get VoikkoSpellService on our computers, which will integrate the voikko speller in the system-wide speller. That one requires things to be installed in {{~/.voikko/2/}}, but when done, you will have transducer-based spell checking for our languages system-wide!
