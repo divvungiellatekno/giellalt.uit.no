@@ -131,3 +131,96 @@ voikkospell -s -d sme -p $GTHOME/gt/sme/voikko/
 }}}
 
 Eventually, we will get VoikkoSpellService on our computers, which will integrate the voikko speller in the system-wide speller. That one requires things to be installed in {{~/.voikko/2/}}, but when done, you will have transducer-based spell checking for our languages system-wide!
+
+!!!Gory details - how to compile hfst-ospell and libvoikko as universal binaries
+
+First, ensure that you have universal binaries of the things that both {{hfst-ospell}} and {{libvoikko}} depends on (specify the +universal option in MacPorts). For {{hfst-ospell}} that means the following libraries (some of these might be on your system already, just check that they are universal binaries):
+
+* libarchive
+* liblzma
+* libxml2
+* libz
+* libiconv
+* libcrypto
+* libstdc++
+
+!!Check the architecture of the installed libraries
+
+To check that they really are universal, first get a list of which installed libraries {{hfst-ospell}} is dependent on:
+
+{{{
+$ otool -L /usr/local/lib/libhfstospell.1.dylib
+}}}
+
+Then, for each library in that list, use the following command:
+
+{{{
+$ file /usr/local/lib/libhfstospell.1.dylib
+/usr/local/lib/libhfstospell.1.dylib: Mach-O universal binary with 2 architectures
+/usr/local/lib/libhfstospell.1.dylib (for architecture i386):	Mach-O dynamically linked shared library i386
+/usr/local/lib/libhfstospell.1.dylib (for architecture x86_64):	Mach-O 64-bit dynamically linked shared library x86_64
+}}}
+
+For those libraries that give the above output, all is fine. But if you get a message that there is only one architecture for a library, you have to recompile and reinstall that library as a universal binary.
+
+!!Build hfst-ospell as a universal binary
+
+Next, configure and make {{hfst-ospell}} using the following options (the text is linewrapped here for readability, all commands should be on one line):
+
+{{{
+# If you have run make before, run make distclean just to ensure you start from scratch:
+make distclean
+
+# HFST-ospell, working univ. binary config:
+CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
+	CFLAGS=" -arch i386 -arch x86_64" CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
+	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
+	CFLAGS="-I/usr/local/include -I/opt/local/include \
+		-L/usr/local/lib -L/opt/local/lib -isysroot \
+	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
+	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" --enable-static \
+	--disable-dependency-tracking
+
+# HFST-ospell, working univ. binary make:
+make CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot /Developer/SDKs/MacOSX10.5.sdk \
+	-arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
+	LINK="gcc -framework CoreFoundation -framework Cocoa -arch i386 -arch x86_64" \
+	LDFLAGS="-framework CoreFoundation -framework Cocoa"
+
+# Finaly, install the binaries:
+sudo make install CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
+	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
+	LINK="gcc -framework CoreFoundation -framework Cocoa -arch i386 -arch x86_64" \
+	LDFLAGS="-framework CoreFoundation -framework Cocoa"
+}}}
+
+It is possible that these can be simplified a bit, but at least they work. Please note that {{--disable-dependency-tracking}} is __required__ when configuring for a universal binary!
+
+!!Build libvoikko as a universal binary
+
+{{{
+# LibVoikko, working univ. binary + hfst  configure:
+./configure CXXFLAGS=" -arch i386 -arch x86_64" CPPFLAGS="-I/usr/local/include" \
+	CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
+	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 \
+	-mmacosx-version-min=10.5" LDFLAGS=" -arch i386 -arch x86_64" \
+	--enable-static --disable-dependency-tracking --enable-hfst
+
+# Libvoikko, working univ. binary + hfst make:
+make CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
+	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
+	LINK="gcc -framework CoreFoundation -framework Cocoa  -arch i386 -arch x86_64" \
+	LDFLAGS="-framework CoreFoundation -framework Cocoa"
+
+# Finally install the binaries:
+sudo make install CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
+	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
+	LINK="gcc -framework CoreFoundation -framework Cocoa  -arch i386 -arch x86_64" \
+	LDFLAGS="-framework CoreFoundation -framework Cocoa"
+}}}
+
+Now you should have in {{/usr/local/lib/}} a file named {{libvoikko.1.dylib}} as a universal library including hfst support. This is the last step before making the {{VoikkoSpellService}} component, giving system-wide Voikko spellers.
+
+!!Compiling the VoikkoSpellService
+
+Copy the file {{/usr/local/lib/libvoikko.1.dylib}} to your VoikkoSpellService source dir + {{Resources/voikko/}}. Then open the XCode project, and compile. Hopefully that should be enough.
