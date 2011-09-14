@@ -71,30 +71,9 @@ cd $GTHOME/gt/
 make GTLANG=sme hfstspellers
 }}}
 
-This may take some time. For instructions on how to run the resulting speller through the test bench, see below.
+This may take some time. Installation is done automatically as part of the make commands. When the making is finished you should have a working Voikko speller for {{sme}}, based on our hfst transducer!
 
-!!!Install the Voikko+HFST speller
-
-To also be able to run voikkospell in other applications or independently of the speller test bench, do the following:
-
-{{{
-mkdir -p ~/.voikko/2/mor-se/  # Use two-letter codes here if available, e.g. 'se'
-cp sme/hfst/acceptor.default.hfstol ~/.voikko/2/mor-se/spl.hfstol
-cp sme/hfst/acceptor.default.hfstol ~/.voikko/2/mor-se/sug.hfstol
-cp sme/hfst/errmodel.default.hfstol ~/.voikko/2/mor-se/err.hfstol
-cp sme/voikko/2/mor-sme/alphabet.hfstol ~/.voikko/2/mor-se/alphabet.hfstol
-cp sme/voikko/2/mor-sme/voikko-fi_FI.pro ~/.voikko/2/mor-se/voikko-fi_FI.pro
-}}}
-
-Finally, edit the following line in {{~/.voikko/2/mor-se/voikko-fi_FI.pro}}:
-
-{{{
-info: Language-Code: se
-}}}
-
-to use the two-letter (ISO 639-1) code for the language in question (for North Sámi, change {{sme}} to {{se}}, etc for other languages with two-letter codes).
-
-Now you should have a working Voikko speller for {{sme}}, based on our hfst transducer!
+For instructions on how to run the resulting speller through the test bench, see below.
 
 !!!Using Voikko
 
