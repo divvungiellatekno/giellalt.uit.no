@@ -1,8 +1,4 @@
-!!!Make a sme speller for Voikko+HFST
-
-The present build setup for Voikko-based hfst spellers are floating, hfst support in Voikko is still not a completed feature. Especially support for the zfst speller format is lacking, but expected to be added in the near future.
-
-If you are satisfied with using the speller only as part of the speller testbench, the following instructions are enough:
+!!!Make or update spellers for Voikko+HFST
 
 {{{
 cd $GTHOME/gt/
@@ -11,11 +7,48 @@ make GTLANG=sme hfstspellers
 
 This may take some time. Installation is done automatically as part of the make commands. When the making is finished you should have a working Voikko speller for {{sme}}, based on our hfst transducer!
 
-For instructions on how to run the resulting speller through the test bench, see below.
+The resulting spellers are available both for OpenOffice/LibreOffice, and for command-line tools. The command-line tools and the test bench require that you also [build and install libvoikko|../infra/CompilingVoikkoWithHfst.html].
 
-!!!Using Voikko
+!!!Using the spellers in OpenOffice / LibreOffice
 
-!!Running the test bench with voikko+hfst
+This can be done with a simple installation of an extesion. The steps are as follows:
+
+* download one of these:
+** [A Greenlandic speller|http://www.helsinki.fi/~tapirine/tmp/voikko-kl-macosx-i386-static.oxt] - __alpha__ quality, 51 Mb
+** [The default Finnish Voikko with HFST support|http://www.divvun.no/static_files/voikko-macosx106-i386-static.oxt] - 3 Mb
+** If you would like to test Voikko+HFST for OOo/LOffice on Windows or Linux,
+    see [this page|http://www.helsinki.fi/~tapirine/tmp/] and download the
+    relevant {{.oxt}} file
+
+* Installer tillegget i OpenOffice / LibreOffice
+
+** start OOo / LOffice
+** gå til Vertkøy > Utvidingar... (eller tilsvarande på andre språk)
+** klikk på "Legg til..." og vel oxt-fila du nettopp lasta ned, klikk "Opne" (eller tilsvarande)
+** for å sjekka at Voikko er installert og aktiv, gå til LibreOffice/OpenOffice > Innstillingar > Writing Aids. I lista rett under "Available language modules" sjekk at Voikko finst, og at Voikko har ei hake i sjekkboksen framfor seg. Marker Voikko, og klikk på Edit-knappen til høgre for lista. I menyen i dialogen skal du finna i det minste finsk eller grønlands avhengig av kva du lasta ned og installerte. Sjekk at Voikko ligg FØRE Hunspell i lista over tilgjengelege stavekontrollar for dei samiske språka!!! Om ikkje, vil Hunspell bli brukt i staden for Voikko!!! Ev. kan du fjerna Hunspell heilt.
+** avslutt OpenOffice/LibreOffice
+* compile your hfst spellers as described on the top of the page
+* ensure they are active in OpenOffice/LibreOffice (see above)
+
+That's it! Our own transducers directly applied as spellers!
+
+!!CAVEATS!!!
+
+This is __PRE-Alpha quality!!!__
+
+Både hfst som ein del av Voikko og hfst-transdusarane våre er langt i frå ferdige! Det kan finnast problem, og det er kjende feil. Alle lingvistiske problem skal meldast til Bugzilla (eller rettast direkte), alle tekniske feil med Voikko, HFST eller OOo-tillegget skal meldast til Sjur eller til Libvoikko-e-postlista (http://lists.puimula.org/listinfo/libvoikko).
+
+__Known errors:__
+* OOo-tillegget fungerer BERRE på snøleoparden, dvs MacOS X 10.6. Det er *ikkje* støtte for 10.5 (enno i alle fall)
+* hfst-stavekontrollen er *deskriptiv*, ikkje normativ - det vil altså vera ein god del ikkje-normativt som blir akseptert
+* hfst-stavekontrollen har ein svært rudimentær forslagsmekanisme - oftast vil det ikkje koma forslag i det heile, og når dei kjem er den korrekte rettinga nesten aldri fyrste forslag
+
+Kjende __forbetringar__ i høve til Hunspellstavekontrollane våre:
+* samansetjingar fungerer! (men overgenererer sidan transduseren er deskriptiv)
+
+!!!Running the test bench with voikko+hfst
+
+This requires [libvoikko|../infra/CompilingVoikkoWithHfst.html]. The commands are:
 
 {{{
 cd $GTHOME/gt
@@ -29,11 +62,11 @@ where {{<TESTTYPE>}} is one of:
 * baseform-test
 * correct-test
 
-or use {{spelltest}} to run them all.
+or {{spelltest}} to run them all.
 
-!!Using voikko on the command line
+!!!Using voikko on the command line
 
-If you have followed the instructions above and installed the voikko+hfst speller in {{~/.voikko/2/}}, then just type:
+This also requires [libvoikko|../infra/CompilingVoikkoWithHfst.html]. Just type:
 
 {{{
 voikkospell -s -d se
@@ -41,11 +74,8 @@ voikkospell -s -d se
 
 See {{man voikkospell}} for more details and options.
 
-If you ''haven't'' installed voikko+hfst per the above instructions, you can instead run the one in $GTHOME using this command:
+!!!System-wide speller
 
-{{{
-voikkospell -s -d sme -p $GTHOME/gt/sme/voikko/
-}}}
+__Not yet functional!__
 
-Eventually, we will get VoikkoSpellService on our computers, which will integrate the voikko speller in the system-wide speller. That one requires things to be installed in {{~/.voikko/2/}}, but when done, you will have transducer-based spell checking for our languages system-wide!
-
+Eventually, we will get [VoikkoSpellService|http://verteksi.net/lab/osxspell/] with support for HFST on our computers, which will integrate the voikko speller in the system-wide speller for all languages we compile and install. But at the moment only a single language can be installed, and only in a specific location.
