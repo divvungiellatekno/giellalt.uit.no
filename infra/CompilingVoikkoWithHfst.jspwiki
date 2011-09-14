@@ -4,6 +4,8 @@ These instructions are based on LibVoikko 3.3 (svn trunk as of r3995) on Snow Le
 
 There are also somewhat older & outdated build instrcuctions on the [Voikko home pages|http://voikko.sourceforge.net/source-mac.html]. These were made for LibVoikko 2.x on Leopard (MacOS 10.5.x).
 
+If you are looking for usage info, that can be found [here|../tools/UsingVoikkoWithHfst.html].
+
 These installation instructions assume we're using the svn codebase. Start the build process by checking out voikko from svn (this will include ''Suomimalaga'', see below).
 
 {{{
@@ -59,57 +61,6 @@ sudo make install
 }}}
 
 Installation in other locations using {{--prefix}} is not recommended, especially for the dependent components. I have not been able to get it to work.
-
-!!!Make a sme speller for Voikko+HFST
-
-The present build setup for Voikko-based hfst spellers are floating, hfst support in Voikko is still not a completed feature. Especially support for the zfst speller format is lacking, but expected to be added in the near future.
-
-If you are satisfied with using the speller only as part of the speller testbench, the following instructions are enough:
-
-{{{
-cd $GTHOME/gt/
-make GTLANG=sme hfstspellers
-}}}
-
-This may take some time. Installation is done automatically as part of the make commands. When the making is finished you should have a working Voikko speller for {{sme}}, based on our hfst transducer!
-
-For instructions on how to run the resulting speller through the test bench, see below.
-
-!!!Using Voikko
-
-!!Running the test bench with voikko+hfst
-
-{{{
-cd $GTHOME/gt
-make <TESTTYPE> GTLANG=sme TESTTOOL=vkhfst
-}}}
-
-where {{<TESTTYPE>}} is one of:
-* regression-test
-* typos-test
-* wordtype-test
-* baseform-test
-* correct-test
-
-or use {{spelltest}} to run them all.
-
-!!Using voikko on the command line
-
-If you have followed the instructions above and installed the voikko+hfst speller in {{~/.voikko/2/}}, then just type:
-
-{{{
-voikkospell -s -d se
-}}}
-
-See {{man voikkospell}} for more details and options.
-
-If you ''haven't'' installed voikko+hfst per the above instructions, you can instead run the one in $GTHOME using this command:
-
-{{{
-voikkospell -s -d sme -p $GTHOME/gt/sme/voikko/
-}}}
-
-Eventually, we will get VoikkoSpellService on our computers, which will integrate the voikko speller in the system-wide speller. That one requires things to be installed in {{~/.voikko/2/}}, but when done, you will have transducer-based spell checking for our languages system-wide!
 
 !!!Gory details - how to compile hfst-ospell and libvoikko as universal binaries
 
