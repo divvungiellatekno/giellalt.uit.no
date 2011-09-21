@@ -1,6 +1,6 @@
 !!!Corpus maintenance
 
-This document discusses measures to improve the corpus conversion process.
+This document keeps track of measures to improve the corpus conversion process.
 
 Note also the [sentence alignment page|../tools/tca2.html], which looks
 into that specific sub-part of the corpus maintenance.
@@ -16,49 +16,30 @@ into that specific sub-part of the corpus maintenance.
 
 ! Autumn 2011
 * [12.9.|../admin/corpus/Meeting_2011-09-12.html]  // 
-* [12.9.|../admin/corpus/Meeting_2011-09-12.html]  // 
+  [20.9.|../admin/corpus/Meeting_2011-09-20.html]  // 
 
-!!!Corpus errors
+
+!!!OCR and conversion errors leftover from spring 2011
 
 * [OCR error overview, May 2011|corpus_ocr_may11.html] (still open issues here)
+* [Conversion errors|corpus_conversionerrors_may11.html] (open issues here?)
 
-!!Errors addressed so far:
+!!!Task list, autumn 2011
 
-* dårlege originalfiler - gjev ugyldig xml
-** desse blir fanga opp i dag
-* kodefeil - desse gjev gyldig xml, men meiningslause bokstavar
-** utf-som-macroman
-** utf-som-latin1
-** utf-som-html-hex
-** utf-som-html-entitet
-* skannefeil/ocr-feil - desse gjev meiningsfulle bokstavar, men meiningslaus tekst
-** đ-som ó, osv.
-* bad sentence-delimitation: one real sentence is one fragment in one language,
-  3 fragments in the other -> alignment goes bunk
-* files {{freecorpus/converted/sme/admin/others/}} 
-** {{STM200420050011000SE_PDFS.pdf.xml}} 
-  {{STM200420050044000SE_PDFS.pdf.xml}}
-  have encoding errors that đ is represented as &nbsp; and the document is full of
-  &nbsp;'s; thus these files should be deleted
-** file {{OTP200620070025000SE_PDFS.pdf.xml}}
-  has paragraphs with content '--------' so it should be deleted.
-** file {{STM200320040010000SE_PDFA.pdf.xml}}
-  has so many errors, it should be rescanned
-** {{uito-ohpenplana.txt.xml}}
-  the original file is corrupted
+!!Conversion
+
+Issues related to conversion
+
+!!Coverage
+
+Issues related to 
+
+!!Parallel texts
+
+[Suggestions for detecting (flaws in) parallel texts|corpus_parallel_maintenance.html]
 
 
-!!!Cleaning up the catalogues
 
-Many documents are parallel with the parallel content in the same file.
-Other documents are simply placed in the wrong catalogues. Algorithm
-to fix this:
-
-# For each file, count the number of words
-# For each file, count the number of words marked with the language of
-  the catalogue
-# Estimate the ratio
-# Pick the files with a bad ratio, and investigate them. Split and reallocate.
 
 
 !!!Corpus conversion targets
@@ -69,5 +50,6 @@ As a reminder, this is what we aim at:
 # Analysed mono- and bilingual corpus
 ## Lemmatised and word-aligned for terminology
 ## Fully analysed and presented for linguistic work and terminology
+# Among other things, a one-click corpus like [europarl]
 
 
