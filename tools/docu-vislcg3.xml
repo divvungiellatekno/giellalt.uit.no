@@ -14,16 +14,12 @@
       basic usage.</p>
       <section>
          <title>Preparations before you install vislcg3</title>
-         <p>The MacOS needs certain libraries to be able to run vislcg3. They can be found by downloading the latest
-         version of <em>ICU</em> <a href="http://icu-project.org/download/">here</a>. The folder should be saved in the
-         home catalogue and run with the commands (if the machine does not like gnumake, try with make or gmake):</p>
-         <source>
-cd ~/icu/source
-./runConfigureICU MacOSX
-gnumake
-gnumake check
-sudo gnumake install</source>
-         <p>After installation, the <code>icu</code> folder may be deleted.</p>
+         <ul>
+            <li>
+                Check if you have <a href="http://giellatekno.uit.no/doc/infra/MacPorts.html">MacPort</a>. Issue the command <code>/opt/local/bin/port search twig</code> in a Terminal. If that is successfull, go on to the next step. If not <a href="http://www.macports.org/install.php">install MacPorts</a>, then continue
+            </li>
+            <li>Issue the command <code>sudo port install cmake icu boost</code>. This installs the libraries and programs that vislcg3 depends on. Next step is to fetch, install and build vislcg3.</li>
+         </ul>
       </section>
       <section>
          <title>Commands to check out, install and update the vislcg3 program</title>
@@ -33,11 +29,6 @@ sudo gnumake install</source>
              
             <title>Commands to check out and install vislcg3</title>
              
-            <p>Before starting, make sure you have <em>cmake</em> (write <code>which cmake</code>). If you get no
-            answer, fetch cmake <a href="http://www.cmake.org/cmake/resources/software.html">here</a>. Make sure to
-            click <em>yes</em> when asked whether you want to install command line links. When cmake is in place, run
-            the following commands:</p>
-            
             <source>
 svn co --username anonymous --password anonymous http://beta.visl.sdu.dk/svn/visl/tools/vislcg3/trunk vislcg3 
 cd vislcg3/
