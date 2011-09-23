@@ -1,30 +1,67 @@
 !!!Noen punkter for lingvisten under ordboksarbeidet
 
 !!Leksikonfiler
-Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med enten src="nj" (fra Jernsletten) eller usage="ped" (brukt i pedleksikonet).
+Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med usage="vd". Enkelte enrtyer er også merket med src="nj" (fra Jernsletten) eller usage="ped" (brukt i pedleksikonet).
 
 !Meningsgrupper
 
-Man skiller mellom synonymer og meningsgrupper. 
+Man skiller mellom synonymer og meningsgrupper. Synomyer har samme <mg> (meaning group) og samme <tg> (translation group). Hvis en entry har flere betydninger, så skilles disse som forskjellige <mg>.
 
-{{{   <e src="nj">
+{{{   <e src="nj" usage="vd">
       <lg>
-         <l pos="n" illpl="ok">sudja</l>
+         <l pos="n">sudja</l>
          <lc>sujat</lc>
       </lg>
       <mg>
          <tg>
-            <t pos="m">årsak</t>
-            <t pos="m">grunn</t>
+            <t pos="n">årsak</t>
+            <t pos="n">grunn</t>
          </tg>
       </mg>
       <mg>
          <tg>
-            <t pos="f">skyld</t>
+            <t pos="n">skyld</t>
          </tg>
       </mg>
    </e>}}}
+   
+!Oversettelsesgrupper
+En oversettelsesgruppe eller translation group <tg> kan inneholde enten:
 
+<t> - et ord
+{{{ <e usage="vd">
+      <lg>
+         <l pos="n">ristoabbá</l>
+      </lg>
+      <mg>
+         <tg>
+            <t pos="n">gudsøster</t>
+         </tg>
+      </mg>
+   </e>
+}}}
+<tf> - en frase
+{{{ <e usage="vd">
+      <lg>
+         <l pos="n">áššu</l>
+      </lg>
+      <mg>
+         <tg>
+            <tf dict="yes" oa="yes" pos="phrase_n">glødende vedstykke</tf>
+         </tg>
+      </mg>
+      }}}
+<te> - en forklaring. Denne brukes KUN hvis verken <t> eller <tf> kan brukes.
+{{{ <e usage="vd">
+      <lg>
+         <l pos="n">boaššobealle</l>
+      </lg>
+      <mg>
+         <tg>
+            <te>den side som vender mot boaššu, det vil si den innerste delen av telt, gamme eller hus</te>
+         </tg>
+      </mg>
+          }}}
 
 !!Generere paradigme eller ikke
 
@@ -238,7 +275,7 @@ Her må den ene merkes med tag (actor) i genereringa fra fst. Med denne tagen ka
 
 {{{
 1.
-   <e usage="ped" src="nj">
+    <e src="nj" usage="vd">
       <lg>
          <l pos="n">lohkki</l>
       </lg>
@@ -247,13 +284,13 @@ Her må den ene merkes med tag (actor) i genereringa fra fst. Med denne tagen ka
             <t pos="n">lokk</t>
 
 2.
-   <e usage="ped" src="nj">
+    <e src="nj" usage="vd">
       <lg>
          <l pos="actor">lohkki</l>
       </lg>
       <mg>
          <tg>
-            <t pos="m">leser</t> 
+            <t pos="n">leser</t> 
 }}}
 
 En annen systematisk homonymi:
