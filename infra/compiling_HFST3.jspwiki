@@ -1,65 +1,96 @@
 !!!Compiling HFST3
 
-This is a receipt for setting up HFST3 with all supported backends on MacOSX Snow Leopard. See the HFST3 README file for further details, and how to turn off specific backens if needed or wanted.
+This is a receipt for setting up HFST3, with the backends we need, on MacOSX Snow Leopard. See the HFST3 README file for further details, and how to turn on or off specific backens if needed or wanted.
 
 __The info on this page can be outdated, consult the HFST README file to get up-to-date installation instructions and requirements! The same goes for the different backends!__
 
 Presently, HFST3 supports three different backends:
-* __SFST__ - unweighted transducers and rule compiler (is the HFST twol compiler built on this one?)
-* __OpenFST__ - weighted transducers
-* __Foma__ - xfst-compatible lexc and regex compiler
+* __OpenFST__ - weighted transducers (''default'')
+* __Foma__ - xfst-compatible lexc and regex compiler, xfst scripts (''optional'')
+* __SFST__ - unweighted transducers, fast substitute (''optional'')
 
 The backends need to be installed separately, with full linking support (libraries and header files) for HFST3 to be able to make use of them. The following sections describe how to do that, with notes on required versions etc.
 
 HFST3 abstracts over the different backends, and will make it easy to add support for new backends in the future, to support even more FST source code and transducer conversion options. The abstraction is becoming quite clean, but necessitates that the wanted backends are installed separately. This also makes it easier to handle backends with incompatible licenses, as each backend is compiled and installed as separate entities.
 
-The bottom line: use the latest version, and follow the receipts below, and you should be fine (barring issues in the HFST3 source code itself).
+The bottom line: use the latest version, and follow the receipts below, and you should be fine.
 
-!!!Install SFST
-* Download [SFST|http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html] - version 1.4.6a is required for HFST 3.2 or newer.
-* {{make}}
-* {{sudo make install}} - optional when building for the HFST package
-* {{sudo make maninstall}} - optional (installs man pages)
-* {{sudo make libinstall}} - required for sfst support in HFST
+!!!Install OpenFST (default, required for GT/Divvun use of HFST)
+
+OpenFST is one of the FST backends used in HFST, and enabled by default. By following the receipt below, you will get version 1.2.7 of OpenFST. But you can also check the [OpenFST|http://www.openfst.org/] site to see whether there are newer releases.
+
+{{{
+wget http://openfst.cs.nyu.edu/twiki/pub/FST/FstDownload/openfst-1.2.7.tar.gz
+tar -xzvf openfst-1.2.7.tar.gz 
+cd openfst-1.2.7/
+./configure
+make
+sudo make install
+}}}
+
+!!!Install Foma (optional for HFST, but required for our use of HFST)
+
+__Note!__ It is strongly recommended that you use the latest svn source. There are several important bug fixes and enhancements committed lately (as of Oct. 20 2011).
+
+We use the svn checkout below. See the [Foma home page|http://foma.sourceforge.net/dokuwiki/doku.php] for the latest package release.
+
+{{{
+svn co http://foma.svn.sourceforge.net/svnroot/foma/trunk/foma
+cd foma
+make
+sudo make install
+}}}
+
+!!!Install SFST (optional, not required for Giellatekno/Divvun use)
+
+See the [SFST|http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html] home page for details and possible newer releases.
+
+{{{
+wget ftp://ftp.ims.uni-stuttgart.de/pub/corpora/SFST/SFST-1.4.6a.tar.gz
+tar -xzf SFST-1.4.6a.tar.gz
+cd SFST/src
+make
+sudo make install    # - optional when building for the HFST package
+sudo make maninstall # - optional (installs man pages)
+sudo make libinstall # - required for sfst support in HFST
+}}}
 
 !!Note! Buggy libinstall in SFST!
 
 SFST 1.4.6a has a bug when doing {{sudo make libinstall}} on MacOS X, such that it fails in the middle of the process. The dynamic library has been installed upon failure, but not the header files. To also install the header files do {{sudo make hfiles}}. That's it! Now HFST v3.2 and newer will compile with the SFST backend just fine also on the Mac.
 
-!!!Install OpenFST
-* Download [OpenFST 1.2.4|http://www.openfst.org/] or newer (at least version 1.2.2 does NOT compile on the Mac)
-{{{
-./configure
-make
-sudo make install
-}}}
-
-!!!Install Foma
-
-See the [Foma home page|http://foma.sourceforge.net/dokuwiki/doku.php] for how to access the source code. Whether you download a tarball or check out svn, the steps are the same:
-
-{{{
-make
-sudo make install
-}}}
-
 !!!Building HFST3
 
 Please note that HFST3 requires rather new versions of flex and bison. The versions shipping with the latest XCode should be ok. This XCode version is the one coming with Snow Leopard (MacOS X 10.6), with subsequent updates. For older MacOS versions, you probably will have to install updated versions of these tools using [MacPorts|http://www.macports.org/] or [Fink|http://www.finkproject.org/]. See the HFST3 README file for further details.
 
+I assume installation from svn here:
+
 {{{
+svn co https://hfst.svn.sourceforge.net/svnroot/hfst/trunk/hfst3
+cd hfst3/
 ./autogen.sh
-./configure
+./configure --with-foma --enable-proc --enable-lexc # This is the minimum we need
 make
-make install # use 'sudo' if required
+sudo make install
 }}}
+
+To check what other options there are for enabling other backends and functions, do {{./configure --help}}.
 
 !!Building on Victorio
 
-Victorio lacks a few crucial tools to build from svn. One thus have to first build a distro on another machine, and move it to victorio, or use the prebuilt tarball from the hfst site. When the tarball is on victorio, untar, and follow the usual procedure:
+Victorio lacks a few crucial tools to build from svn. One thus have to first build a distro on another machine, and move it to victorio, or use the prebuilt tarball from the hfst site. To build a tarball on your local machine, do:
 
 {{{
-./configure
+cd hfst3/
+make dist
+}}}
+
+When the tarball is on victorio, proceed as follows:
+
+{{{
+tar -xzf hfst-3.2.0.tar.gz
+cd hfst-3.2.0/
+./configure --with-foma --enable-proc --enable-lexc # as above
 make
 sudo make install
 }}}
