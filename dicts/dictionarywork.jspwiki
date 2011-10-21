@@ -1,11 +1,11 @@
 !!!Noen punkter for lingvisten under ordboksarbeidet
 
 !!Leksikonfiler
-Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med usage="vd". Enkelte enrtyer er også merket med src="nj" (fra Jernsletten) eller usage="ped" (brukt i pedleksikonet).
+Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med usage="vd" for sme og usage="dict" for sma. Enkelte enrtyer er også merket med src="nj" (fra Jernsletten) eller src="sk" (Statens Kartverk).
 
 !Meningsgrupper
 
-Man skiller mellom synonymer og meningsgrupper. Synomyer har samme <mg> (meaning group / meningsgruppe) og samme <tg> (translation group / oversettelsesgruppe). Hvis en entry har flere betydninger, så skilles disse som forskjellige <mg>.
+Man skiller mellom synonymer og meningsgrupper. Synonymer har samme <mg> (meaning group / meningsgruppe) og samme <tg> (translation group / oversettelsesgruppe). Hvis en entry har flere betydninger, så skilles disse som forskjellige <mg>.
 
 {{{   <e src="nj" usage="vd">
       <lg>
@@ -67,7 +67,7 @@ En oversettelsesgruppe eller translation group <tg> kan inneholde enten:
 
 Noen av filene er statiske og noen blir det generert paradigmer av. F.eks. der det filer for pronomener med innskrevne paradigmer, og disse filenes navn avgjør at innholdet ikke blir generert (f.eks. pronDem_smenob.xml).
 
-I de andre filene er det POS-merkinga som avgjør om det blir generert paradigme eller ikke.
+I de andre filene er det POS-merkinga som avgjør om det blir generert paradigme eller ikke. Lemmaer som ikke skal genereres, eller som bare har en form, merkes med pg="no".
 
 
 !Generere paradigmer
@@ -87,8 +87,25 @@ nounActor_smenob.xml
 nounCommon_smenob.xml
 nounG3_smenob.xml
 nounProper_smenob.xml
+nounRevProper_smenob.xml
+nounProperPl_smenob.xml
 adjective_smenob.xml
 verb_smenob.xml
+pronIndef_smenob.xml
+num_smenob.xml
+}}}
+
+sma-filer for generering:
+
+{{{
+nounActor_smenob.xml
+nounCommon_smenob.xml
+nounG3_smenob.xml
+nounProper_smenob.xml
+adjective_smenob.xml
+verb_smenob.xml
+pronIndef_smenob.xml
+num_smenob.xml
 }}}
 
 
