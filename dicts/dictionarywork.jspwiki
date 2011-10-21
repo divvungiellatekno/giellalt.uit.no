@@ -1,9 +1,9 @@
 !!!Noen punkter for lingvisten under ordboksarbeidet
 
 !!Leksikonfiler
-Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med usage="vd" for sme og usage="dict" for sma. Enkelte enrtyer er også merket med src="nj" (fra Jernsletten) eller src="sk" (Statens Kartverk).
+Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med usage="vd" for sme og usage="dict" for sma. Enkelte entryer er også merket med src="nj" (fra Jernsletten) eller src="sk" (Statens Kartverk).
 
-!Meningsgrupper
+!Meningsgrupper <mg>
 
 Man skiller mellom synonymer og meningsgrupper. Synonymer har samme <mg> (meaning group / meningsgruppe) og samme <tg> (translation group / oversettelsesgruppe). Hvis en entry har flere betydninger, så skilles disse som forskjellige <mg>.
 
@@ -25,8 +25,8 @@ Man skiller mellom synonymer og meningsgrupper. Synonymer har samme <mg> (meanin
       </mg>
    </e>}}}
    
-!Oversettelsesgrupper
-En oversettelsesgruppe eller translation group <tg> kan inneholde enten:
+!Oversettelsesgrupper <tg>
+Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller translation group) som igjen kan inneholde:
 
 <t> - et ord
 {{{ <e usage="vd">
@@ -40,7 +40,7 @@ En oversettelsesgruppe eller translation group <tg> kan inneholde enten:
       </mg>
    </e>
 }}}
-<tf> - en frase
+<tf> - en frase - pos-merkinga er phrase_pos
 {{{ <e usage="vd">
       <lg>
          <l pos="n">áššu</l>
@@ -63,20 +63,35 @@ En oversettelsesgruppe eller translation group <tg> kan inneholde enten:
       </mg>
           }}}
 
+!Bruk av <re> (restriksjon)
+* <re> gir restriksjon for oversettelsen. F.eks. oversettelsen ''vest'' har restriksjonen ''om klesplagg'', dvs at oversettelsen gjelder klesplagg, og ikke himmelretning.
+* for stedsnavn angir den kommune eller fylke
+
+!Lemmaet har ikke paradigme
+I filer som skal blir generert pga POS-merkinga, skal lemmaer som likevel ikke skal genereres, eller som bare har en form, merkes med attributten pg="no".
+
+!Bruk av lsub
+Elementet lsub legges til i <lg> for vanlige ikke-normative skrivemåter.
+
+!Bruk av l_ref
+Elementet l_ref legges til i <lg> for å vise til ander lemmaer som kan være nyttige for brukeren. Lemmaet skal merkes med POS, f.eks. seavagiella_n. F.eks.
+* vise til det lemmaet som bør brukes i følge termordlister etc.
+* gjøre brukeren oppmerksom på at det er en annen semantisk inndeling på samisk enn på oversettingsspråket. F.eks. ''vai'' vs. ''dahje'', eller ''dudno'' vs. ''din''.
+
 !!Generere paradigme eller ikke
 
-Noen av filene er statiske og noen blir det generert paradigmer av. F.eks. der det filer for pronomener med innskrevne paradigmer, og disse filenes navn avgjør at innholdet ikke blir generert (f.eks. pronDem_smenob.xml).
+Noen av filene er statiske og noen blir det generert paradigmer av. F.eks. er det filer for pronomener med innskrevne paradigmer, og disse filenes navn avgjør at innholdet ikke blir generert (f.eks. pronDem_smenob.xml).
 
 I de andre filene er det POS-merkinga som avgjør om det blir generert paradigme eller ikke. Lemmaer som ikke skal genereres, eller som bare har en form, merkes med pg="no".
 
 
 !Generere paradigmer
 
-Alle entryene må være leksikalisert i fst. Hvis ikke, vil de ikke bli generert. F.eks. så vil en entry med grunnform i plural, ikke bli generert hvis grunnformen er i singular i fst. Men man kan ha både sg og pl innføringer i fst for det samme leksemet.
+Alle entryene må være leksikalisert i norm-fst. Hvis ikke, vil de ikke bli generert. F.eks. så vil en entry med grunnform i plural, ikke bli generert hvis grunnformen er i singular i fst. Men man kan ha både sg og pl innføringer i fst for det samme leksemet hvis det har en annen oversettelse i plural enn i singular.
 
 Det må ikke være noen homonyme entryer (lemma + POS)!
 
-For å unngå at dict-filen blir for stor, kan man vurdere hvilke bøyningsformer som skal genereres, f.eks. px eller ikke.
+For å unngå at dict-fila blir for stor, kan man vurdere hvilke bøyningsformer som skal genereres, f.eks. px eller ikke.
 
 !Filer for generering
 
@@ -98,25 +113,18 @@ num_smenob.xml
 sma-filer for generering:
 
 {{{
-nounActor_smenob.xml
-nounCommon_smenob.xml
-nounG3_smenob.xml
-nounProper_smenob.xml
-adjective_smenob.xml
-verb_smenob.xml
-pronIndef_smenob.xml
-num_smenob.xml
+a_smanob.xml
+n_smanob.xml
+v_smanob.xml
+num_smanob.xml
+pronIndef_smanob.xml
+prop_smanob.xml
+propPl_smanob.xml
 }}}
 
 
 !Filer med statiske (innskrevne) paradigmer
-Her kan man velge hvilket grunnord de bøyde formene peker til. F.eks. når det gjelder refleksive pronomener i sme, har vi valgt å peke til akk/gen-formen som grunnform (''alccesan'' peker til ''iežan'' og til ''iehčan''). Det er fullt mulig å legge inn to eller flere grunnformer når det er sideformer, f.eks.:
-
-{{{
-         <lemma_ref lemmaID="iežan_pron_refl">iežan</lemma_ref>
-         <lemma_ref lemmaID="iehčan_pron_refl">iehčan</lemma_ref>
-}}}
-
+Her kan man velge hvilket grunnord de bøyde formene peker til. F.eks. når det gjelder refleksive pronomener i sme, har vi valgt å peke til akk/gen-formen som grunnform (''alccesan'' peker til ''iežan''). 
 I entryene for de flekterte formene, blir det en entry for hver sideform.
 
 Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene. Dette kan unngås med å oppgi type (f.eks. 'dem') og sg/pl, f.eks.       
@@ -136,7 +144,11 @@ Dette må også tas hensyn til i lemma_ref, f.eks.
 sme-filer med innskrevne paradigmer:
 
 {{{
+adjstatpar_smenob.xml
+div_statisk_smenob.xml
 verbNeg_smenob.xml
+verbCop_smenob.xml
+verbSupNeg_smenob.xml
 pronDem_smenob.xml
 pronIndef_smenob.xml
 pronPers_smenob.xml
@@ -145,42 +157,95 @@ pronRefl_smenob.xml
 pronRel_smenob.xml
 }}}
 
-!Andre filer
-I disse filene genereres de entryene som er merket med POS som vi ønsker generert, f.eks. POS="num" som er i other_smenob.xml
-
-sme-filer hvor alle eller de fleste entryene er uten paradigmer:
+sma-filer med innskrevne paradigmer:
 
 {{{
-other_smenob.xml
-adverb_smenob.xml
+misc_stat_smanob.xml
+pronPers_stat_smanob.xml
+pronRec_stat_smanob.xml
+pronRefl_stat_smanob.xml
+pronRel_stat_smanob.xml
+vCop_stat_smanob.xml
+vNeg_stat_smanob.xml
 }}}
 
 
+!Andre filer
+I disse filene genereres ikke lemmaene, og de behøver heller ikke være i norm-fst.
+
+sme-filer:
+{{{
+other_smenob.xml
+adverb_smenob.xml
+mwe_smenob.xml
+other_stat_smenob.xml
+}}}
+
+sma-filer:
+{{{
+adv_smanob.xml
+i_smanob.xml
+multiword_smanob.xml
+pcle_smanob.xml
+po_smanob.xml
+pr_smanob.xml
+}}}
+
 !!Miniparadigmer
 
-Man må bestemme hvilke miniparadigmer man ønsker å gi i leksikonoppslaget som hjelp for brukeren. Det vil variere fra POS til POS. I sme har vi: 
+Man må bestemme hvilke miniparadigmer man ønsker å gi i leksikonoppslaget som hjelp for brukeren. Det vil variere fra POS til POS. I sme og sma har vi: 
 
-!nounCommon:
+!noun:
 || Bøyning	|| Eksempel
 |        | viessu
 | Sg+Gen | viesu	
 | Sg+Ill | 	vissui
-| Pl+Ill |  viesuide (hvis illpl="ok" )
+| Pl+Ill |  viesuide (ikke hvis illpl="no" )
 
 
-!nounProper:
-|| Bøyning	|| Eksempel
-|        | Norga
-| Sg+Gen | Norgga
-| Sg+Ill | Norgii
-| Pl+Ill |  (hvis illpl="ok" - det vil gjelde flertalls navn, og da vil ikke Sg formene bli generert )
+!propernouns sme - sg:
+Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigmet
 
+|| Bøyning	|| Kontekst || Eksempel || Oversettelse
+|   -     |  - | Norga | Norge
+| Sg+Gen | X bokte	 | Norgga bokte | via Norge
+| Sg+Ill | 	- | Norgii | til Norge
+| Sg+Loc |  - | Norggas | i/fra Norge
+
+!propernouns sme - pl:
+Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigmet
+
+|| Bøyning	|| Kontekst	|| Eksempel 	|| Oversettelse
+| - 		| 		-	| Iččát 		| Ingøy
+| Pl+Gen 	| X bokte 	|  Iččáid bokte | via Ingøy
+| Pl+Ill 	| 	-		|  Iččáide 		| til Ingøy
+| Pl+Loc 	| 	-		|  Iččáin 		| i/fra Ingøy
+
+!propernouns sma - sg:
+Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigmet
+
+|| Bøyning	|| Kontekst	|| Eksempel 		|| Oversettelse
+| -		 	|	-		| Nöörje  			|  Norge
+| Sg+Gen 	| X baaktoe |  Nöörjen baaktoe 	| via Norge
+| Sg+Ill 	| 		-	|  Nöörjese 		| til Norge
+| Sg+Ine 	| 		-	|  Nöörjesne 		| i/på Norge
+| Sg+Ela 	| 	-		|  Nöörjeste 		| fra Norge
+
+!propernouns sma - pl:
+Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigmet
+
+|| Bøyning	|| Kontekst	|| Eksempel 			|| Oversettelse
+| - 		|		-	| Bealjehkh  			|  Sylan
+| Pl+Gen 	| X baaktoe |  Bealjehki baaktoe 	| via Sylan
+| Pl+Ill 	| 		-	|  Bealjehkidie 		| til Sylan
+| Pl+Ine 	| 		-	|  Bealjehkinie 		| i/på Sylan
+| Pl+Ela 	| 	-		|  Bealjehkijstie 		| fra Sylan
+
+
+!verb sme:
 For verb har vi lagt til kontekst til bøyningsformene. Det er merket i leksikonet hvilken type kontekst som skal brukes, f.eks. context:"mun" 
 
-!verb:
-For verb som det er naturlig med human subjekt for:
-
-|| Bøyning	|| Kontekst	|| Eksempel
+|| Bøyning			|| Kontekst			|| Eksempel
 |                 |  context:"mun"      | boahtit
 | Ind+Prs+Sg1	  |     (odne mun) X    | (odne mun) boađán
 | Ind+Prt+Sg1	  |    (ikte mun) X     | (ikte mun) bohten	
@@ -207,14 +272,24 @@ For resiproke verb :
  | Ind+Prt+Sg1	   | (ikte sii) X  | (ikte sii) deaivvadedje
  | Ind+Prs+ConNeg  | (eai) X       | (eai) deaivvat
 
+!verb sma:
+|| Bøyning			|| Kontekst					|| Eksempel
+| Inf              |   		-	        		| båetedh
+| Ind+Prs+Sg1	  | (daan biejjien manne) X    | (daan biejjien manne) båatam
+| Ind+Prs+Sg3	  | (daan biejjien dïhte) X    | (daan biejjien dïhte) båata
+| Ind+Prs+Pl3	  | (daan biejjien dat) X    	| (daan biejjien dat) båetieh
+| Ind+Prt+Sg1	  | (jååktan manne) X     		| (jååktan manne) böötim båetiejim	
+| Ind+Prs+ConNeg  | (ij) X        				| (ij) båetieh
+| PrfPrc		  | (lea) X 					| (lea) båateme
+| Ger			  | (lea) X  					| (lea) båetieminie 
+| VGen			  | X  							| båetien 
 
-Neg: Hele paradigmet er skrevet inn. Verbet er i en egen fil.
 
 !adjektiver:
 
-For adjektiver har vi lagt til kontekst til attributtformen. Det er merket i leksikonet hvilken  kontekst som skal brukes, f.eks. context:"olmmoš". Hvis  context="", så vil det ikke bli oppgitt attributtform.
+For adjektiver har vi lagt til kontekst til attributtformen bare for sme. Det er merket i leksikonet hvilken  kontekst som skal brukes, f.eks. context:"olmmoš". Hvis  context="", så vil det ikke bli oppgitt attributtform.
 
-|| Bøyning	|| Kontekst	|| Eksempel
+|| Bøyning	|| Kontekst bare for sme	|| Eksempel
 |                     | context:"báddi" | guhkki
  | A+Attr             | X (báddi)       | guhkes (báddi)
  | A+Pl+Nom           |                 | guhkit
@@ -223,9 +298,9 @@ For adjektiver har vi lagt til kontekst til attributtformen. Det er merket i lek
 
 
 !numeraler:
-For numeraler har vi lagt til kontekst til pl. Alle har den samme konteksten:
+For numeraler har vi lagt til kontekst til pl bare for sme. Alle har den samme konteksten:
 
-|| Bøyning	|| Kontekst	|| Eksempel
+|| Bøyning	|| Kontekst bare for sme	|| Eksempel
 |    | context:"gápmagat"	 | guokte
  | Num+Pl+Nom  | X (gápmagat) | guovttit (gápmagat)
  | Num+Pl+Gen | X (gápmagiid) | guvttiid (gápmagiid)
@@ -238,7 +313,7 @@ For numeraler har vi lagt til kontekst til pl. Alle har den samme konteksten:
 |    	 | muhtun
  | Sg+Gen  | muhtuma	 
  | Sg+Ill | muhtumii
- | Pl+Ill | muhtumiidda     (hvis illpl="ok" )
+ | Pl+Ill | muhtumiidda      
 
 !!Innskrevne paradigmer
 
