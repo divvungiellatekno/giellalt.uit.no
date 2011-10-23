@@ -64,7 +64,7 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
           }}}
 
 !Bruk av <re> (restriksjon)
-* <re> gir restriksjon for oversettelsen. F.eks. oversettelsen ''vest'' har restriksjonen ''om klesplagg'', dvs at oversettelsen gjelder klesplagg, og ikke himmelretning.
+* <re> gir restriksjon for oversettelsen. Oversettelsen ''vest'' har restriksjonen ''om klesplagg'', dvs at oversettelsen gjelder klesplagg, og ikke himmelretning.
 * for stedsnavn angir den kommune eller fylke
 
 !Lemmaet har ikke paradigme
@@ -74,24 +74,24 @@ I filer som skal blir generert pga POS-merkinga, skal lemmaer som likevel ikke s
 Elementet lsub legges til i <lg> for vanlige ikke-normative skrivemåter.
 
 !Bruk av l_ref
-Elementet l_ref legges til i <lg> for å vise til ander lemmaer som kan være nyttige for brukeren. Lemmaet skal merkes med POS, f.eks. seavagiella_n. F.eks.
+Elementet l_ref legges til i <lg> for å vise til ander lemmaer som kan være nyttige for brukeren. Lemmaet skal merkes med POS, f.eks. seavagiella_n. l_ref brukes for å
 * vise til det lemmaet som bør brukes i følge termordlister etc.
 * gjøre brukeren oppmerksom på at det er en annen semantisk inndeling på samisk enn på oversettingsspråket. F.eks. ''vai'' vs. ''dahje'', eller ''dudno'' vs. ''din''.
 
 !!Generere paradigme eller ikke
 
-Noen av filene er statiske og noen blir det generert paradigmer av. F.eks. er det filer for pronomener med innskrevne paradigmer, og disse filenes navn avgjør at innholdet ikke blir generert (f.eks. pronDem_smenob.xml).
+Noen av filene er statiske og noen blir det generert paradigmer av. Det er filer for pronomener med innskrevne paradigmer, og disse filenes navn avgjør at innholdet ikke blir generert.
 
 I de andre filene er det POS-merkinga som avgjør om det blir generert paradigme eller ikke. Lemmaer som ikke skal genereres, eller som bare har en form, merkes med pg="no".
 
 
 !Generere paradigmer
 
-Alle entryene må være leksikalisert i norm-fst. Hvis ikke, vil de ikke bli generert. F.eks. så vil en entry med grunnform i plural, ikke bli generert hvis grunnformen er i singular i fst. Men man kan ha både sg og pl innføringer i fst for det samme leksemet hvis det har en annen oversettelse i plural enn i singular.
+Alle entryene må være leksikalisert i norm-fst. Hvis ikke, vil de ikke bli generert. F.eks. så vil en entry med grunnform i plural, ikke bli generert hvis grunnformen er i singular i norm-fst. Men man kan ha både sg og pl innføringer i norm-fst for det samme lemmaet hvis det har en annen oversettelse i plural enn i singular.
 
 Det må ikke være noen homonyme entryer (lemma + POS)!
 
-For å unngå at dict-fila blir for stor, kan man vurdere hvilke bøyningsformer som skal genereres, f.eks. px eller ikke.
+For å unngå at dict-fila blir for stor, kan man vurdere hvilke bøyningsformer som skal genereres, f.eks. px eller ikke. Dette gjøres i testing/xcodes.txt-filene.
 
 !Filer for generering
 
@@ -193,7 +193,7 @@ pr_smanob.xml
 
 !!Miniparadigmer
 
-Man må bestemme hvilke miniparadigmer man ønsker å gi i leksikonoppslaget som hjelp for brukeren. Det vil variere fra POS til POS. I sme og sma har vi: 
+Miniparadigmene i leksikonoppslaget er hjelp for brukeren. De vil variere fra POS til POS. Substantiv kan få attributten illpl="no" hvis den ikke er så høvelig å presentere i flertall, f.eks. ''bargguhisvuohta''. I sme og sma har vi: 
 
 !noun:
 || Bøyning	|| Eksempel
@@ -204,7 +204,7 @@ Man må bestemme hvilke miniparadigmer man ønsker å gi i leksikonoppslaget som
 
 
 !propernouns sme - sg:
-Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigmet
+Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadigmet
 
 || Bøyning	|| Kontekst || Eksempel || Oversettelse
 |   -     |  - | Norga | Norge
@@ -213,7 +213,7 @@ Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigme
 | Sg+Loc |  - | Norggas | i/fra Norge
 
 !propernouns sme - pl:
-Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigmet
+Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadigmet
 
 || Bøyning	|| Kontekst	|| Eksempel 	|| Oversettelse
 | - 		| 		-	| Iččát 		| Ingøy
@@ -222,7 +222,7 @@ Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigme
 | Pl+Loc 	| 	-		|  Iččáin 		| i/fra Ingøy
 
 !propernouns sma - sg:
-Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigmet
+Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadigmet
 
 || Bøyning	|| Kontekst	|| Eksempel 		|| Oversettelse
 | -		 	|	-		| Nöörje  			|  Norge
@@ -232,7 +232,7 @@ Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigme
 | Sg+Ela 	| 	-		|  Nöörjeste 		| fra Norge
 
 !propernouns sma - pl:
-Hvis det er flere mg, brukes <t> fra den første som oversetting i miniparadigmet
+Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadigmet
 
 || Bøyning	|| Kontekst	|| Eksempel 			|| Oversettelse
 | - 		|		-	| Bealjehkh  			|  Sylan
@@ -251,7 +251,7 @@ For verb har vi lagt til kontekst til bøyningsformene. Det er merket i leksikon
 | Ind+Prt+Sg1	  |    (ikte mun) X     | (ikte mun) bohten	
 | Ind+Prs+ConNeg  |       (in) X        | (in) boađe
 
-For verb som det ikke er naturlig med human subjekt for:
+For verb som det ikke er naturlig med menneskelig subjekt for:
 || Bøyning	|| Kontekst	|| Eksempel
 |                 | context:"dat"   | ciellat
 | Ind+Prs+Sg1     |  (Plural)  X    | (Plural) cillet
@@ -308,7 +308,7 @@ For numeraler har vi lagt til kontekst til pl bare for sme. Alle har den samme k
 
 !indef pron:
 
-(the same as for nounCommon)
+(samme miniparadigme som for substantiver)
 || Bøyning	|| Eksempel
 |    	 | muhtun
  | Sg+Gen  | muhtuma	 
@@ -358,11 +358,11 @@ Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers a
  
 !Systematisk homonomi
  
-|| Nom  || Gen  	|| norsk 	|| fst-analyse	 
+|| Nom  || Gen  	|| norsk 	|| norm-fst-analyse	 
 | lohkki |  lohki  	|  lokk		| lohkki+N+Sg+Nom
 | lohkki |  lohkki 	|  lesar 	| lohkki+N+Actor+Sg+Nom
 
-Her må den ene merkes med tag (actor) i genereringa fra fst. Med denne tagen kan de unngår man homonymi i dict. I xml-filene:
+Her må den ene merkes med tag (actor) i genereringa fra norm-fst. Med denne tagen kan de unngår man homonymi i dict. I xml-filene:
 
 
 {{{
@@ -386,7 +386,7 @@ Her må den ene merkes med tag (actor) i genereringa fra fst. Med denne tagen ka
 }}}
 
 En annen systematisk homonymi:
-|| Nom  	|| Gen  || norsk 	|| fst-analyse	 
+|| Nom  	|| Gen  || norsk 	|| norm-fst-analyse	 
 |  beassi 	| beasi  |  reir	| beassi+N+Sg+Nom
 |  beassi  	| beassi |  never	| beassi+G3+N+Sg+Nom
 
@@ -399,5 +399,5 @@ Vi har følgende tagger for substantiver:
 | N+Prop  |  nounProper_smenob.xml 
 
 
-VÆR OBS på at det kan være homonymi med leksem som er med i fst, men ikke i dict! Disse må behandles på samme måte, selv om bare det ene leksemet er med i dict. Hvis problemer, er det mulig å kommentere ut bøyningsmønstre eller leksemer og lage en egen fst for dict.
+Vær OBS på at det kan være homonymi med lemmaer i norm-fst, uten at begge er med i dict. Disse må behandles på samme måte, selv om bare det ene lemmaer er med i dict. 
 
