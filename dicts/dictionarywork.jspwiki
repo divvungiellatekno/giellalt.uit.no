@@ -434,9 +434,14 @@ Pl3
 
 
 !!Homonyme entrier
-Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene!
+Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene! Vær OBS på at det kan være homonymi med lemmaer i norm-fst, uten at begge er med i dict. For å få generert riktig bøyningsparadigme til dict-entryen, må de behandles på samme måte, selv om bare det ene lemmaer er med i dict. 
+
  
-!Systematisk homonomi
+!Ikke-systematisk homonomi - eksempel fra sma
+<l> elementet får attributten hid="1" eller hid="2". Lemmaene er merka tilsvarende i norm-fst.
+ 
+ 
+!Systematisk homonomi - ekesmpler fra sme
  
 || Nom  || Gen  	|| norsk 	|| norm-fst-analyse	 
 | lohkki |  lohki  	|  lokk		| lohkki+N+Sg+Nom
@@ -479,5 +484,4 @@ Vi har følgende tagger for substantiver:
 | N+Prop  |  nounProper_smenob.xml 
 
 
-Vær OBS på at det kan være homonymi med lemmaer i norm-fst, uten at begge er med i dict. Disse må behandles på samme måte, selv om bare det ene lemmaer er med i dict. 
 
