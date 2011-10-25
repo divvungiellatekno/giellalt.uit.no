@@ -1,4 +1,3 @@
-!!!Noen punkter for lingvisten under ordboksarbeidet
 
 !!!Hva er målet med ordboksarbeidet?
 Sitat fra møte 23.8.11:
@@ -9,11 +8,16 @@ Sitat fra møte 23.8.11:
 
 
 !!Leksikonfiler
-Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med usage="vd" for sme og usage="dict" for sma. Enkelte entryer er også merket med src="nj" (fra Jernsletten) eller src="sk" (Statens Kartverk).
+Entryene er delt inn i filer etter POS. For sme er det ei fil other_smenob.xml med flere ordklasser.
 
 !!Flerordsuttrykk
 * Man kan legge til ord som bare er ord nr 2 i faste uttrykk, f.eks. ''hiluid háluid'', med hele uttrykket som eksempel.
-* Hvis hele uttrykket har annen mening enn hvert enkeltord har, bør man legge ordet i mwe-fila. 
+* Flerordsuttrykk som har annen mening enn hvert enkeltord har, bør man legge ordet i mwe-fila. 
+
+!!Entryenes struktur
+
+! <e> nivå
+De som er med i dictionary er merket med usage="vd" for sme og usage="dict" for sma. Enkelte entryer er også merket med kildehenvisning, f.eks. src="nj" (fra Jernsletten) eller src="sk" (Statens Kartverk).
 
 !Meningsgrupper <mg>
 
@@ -132,11 +136,12 @@ Initialt i <mg>:
 
 
 
-!!Eksempler
+!Eksempler
 Man kan legge inn kildetilvisning som attributt for x og xt, f.eks. hvis ordet ikke er vanlig i bruk:
 
 {{{
-<x src="S.B. Johansen 2010: Sárá beaivegirji s. 21">... dakkár ilgadis olmmošlágan filbmasivdnádus, mii lea eambbo robohtalágan go olbmolágan.</x>
+<x src="S.B. Johansen 2010: Sárá beaivegirji s. 21">... dakkár ilgadis 
+olmmošlágan filbmasivdnádus, mii lea eambbo robohtalágan go olbmolágan.</x>
 }}}
 
 
