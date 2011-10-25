@@ -169,7 +169,7 @@ I de andre filene er det POS-merkinga som avgjør om det blir generert paradigme
 
 Alle entryene må være leksikalisert i norm-fst. Hvis ikke, vil de ikke bli generert. F.eks. så vil en entry med grunnform i plural, ikke bli generert hvis grunnformen er i singular i norm-fst. Men man kan ha både sg og pl innføringer i norm-fst for det samme lemmaet hvis det har en annen oversettelse i plural enn i singular.
 
-Det må ikke være noen homonyme entryer (lemma + POS)!
+Det må ikke være noen homonyme entryer (lemma + POS + type + subtype + ... annen attributer)!
 
 For å unngå at dict-fila blir for stor, kan man vurdere hvilke bøyningsformer som skal genereres, f.eks. px eller ikke. Dette gjøres i testing/xcodes.txt-filene.
 
