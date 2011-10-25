@@ -12,7 +12,7 @@ Entryene er delt inn i filer etter POS. For sme er det ei fil other_smenob.xml m
 
 !!Flerordsuttrykk
 * Man kan legge til ord som bare er ord nr 2 i faste uttrykk, f.eks. ''hiluid háluid'', med hele uttrykket som eksempel.
-* Flerordsuttrykk som har annen mening enn hvert enkeltord har, bør man legge ordet i mwe-fila. 
+* Flerordsuttrykk som har annen mening enn hvert enkeltord har, bør man legge ordet i mwe-fila. Hvis uttrykkene skal bøyes, kan det lages statiske paradigmer.
 
 !!Entryenes struktur
 
@@ -90,8 +90,17 @@ F.eks. litterær, uhøflig etc.
 !Lemmaet har ikke paradigme
 I filer som skal blir generert pga POS-merkinga, skal lemmaer som likevel ikke skal genereres, eller som bare har en form, merkes med attributten pg="no".
 
+
+!Bruk av v1, v2 osv.
+* Ett lemma kan ha flere __normative__ skrivemåter. Disse merkes med felles lemma, men skilles ved hjelp av taggene v1, v2 osv i fst:
+** tunealla+v1:tunealla
+** tunealla+v2:tunnealla
+* Vi trenger ikke å merke i leksikonfila om lemmaet har flere skrivemåter. Det blir lagt til v1, v2 osv i genereringskommandoen.
+* Ved hjelp av v1, v2 taggene, kan man sortere ordformene til riktig oppslagsord (tunealla vs. tunnealla) og presentere reine miniparadigmer.
+
+
 !Bruk av lsub
-Elementet lsub legges til i <lg> for vanlige ikke-normative skrivemåter.
+Elementet lsub legges til i <lg> for vanlige __ikke-normative__ skrivemåter. Hvis forskjellen i skrivemåte bare er a vs. á, kan dette løses med regex. Hvis det skal genereres paradigme for ikke-normativ skrivemåte, må lemmaet være i fst. Vi skal ikke presentere miniparadigme for lsub. Det må gjøres klart for brukeren at dette er en ikke-normativ skrivemåte.
 
 {{{
    <e usage="vd">
@@ -115,6 +124,7 @@ Elementet lsub legges til i <lg> for vanlige ikke-normative skrivemåter.
          <lsub extrapage="no" pos="n">kántuvra</lsub>
       </lg>
 }}}
+
 
 
 !Bruk av l_ref
