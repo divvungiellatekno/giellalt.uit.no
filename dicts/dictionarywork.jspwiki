@@ -1,7 +1,19 @@
 !!!Noen punkter for lingvisten under ordboksarbeidet
 
+!!!Hva er målet med ordboksarbeidet?
+Sitat fra møte 23.8.11:
+* ordbøkene er nyttige for folk flest
+* vise kombinasjonen leksikografi/morfologi
+* vi kan samarbeide med de leksikografiske miljøene
+* vi trenger transferleksikon for MT
+
+
 !!Leksikonfiler
 Entryene er delt inn i filer etter POS. De som er med i dictionary er merket med usage="vd" for sme og usage="dict" for sma. Enkelte entryer er også merket med src="nj" (fra Jernsletten) eller src="sk" (Statens Kartverk).
+
+!!Flerordsuttrykk
+* Man kan legge til ord som bare er ord nr 2 i faste uttrykk, f.eks. ''hiluid háluid'', med hele uttrykket som eksempel.
+* Hvis hele uttrykket har annen mening enn hvert enkeltord har, bør man legge ordet i mwe-fila. 
 
 !Meningsgrupper <mg>
 
@@ -65,7 +77,11 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
 
 !Bruk av <re> (restriksjon)
 * <re> gir restriksjon for oversettelsen. Oversettelsen ''vest'' har restriksjonen ''om klesplagg'', dvs at oversettelsen gjelder klesplagg, og ikke himmelretning.
+* <re> kan også brukes for å markere kasusbetydning, f.ek.s ''bevegelse til''.
 * for stedsnavn angir den kommune eller fylke
+
+!Bruk av <style>
+F.eks. litterær, uhøflig etc.
 
 !Lemmaet har ikke paradigme
 I filer som skal blir generert pga POS-merkinga, skal lemmaer som likevel ikke skal genereres, eller som bare har en form, merkes med attributten pg="no".
@@ -73,10 +89,56 @@ I filer som skal blir generert pga POS-merkinga, skal lemmaer som likevel ikke s
 !Bruk av lsub
 Elementet lsub legges til i <lg> for vanlige ikke-normative skrivemåter.
 
+{{{
+   <e usage="vd">
+      <lg>
+         <l pos="n">balloŋŋa</l>
+         <lsub extrapage="yes" pos="n">balluvdna</lsub> 
+         <!-- extrapage="yes" er default -->
+      </lg>
+      <mg>
+         <tg>
+            <t pos="n">ballong</t>
+         </tg>
+      </mg>
+   </e>
+
+      <lg>
+         <l pos="n">kantuvra</l>
+         <lsub extrapage="no" pos="n">kántuvra</lsub>
+      </lg>
+}}}
+
+
 !Bruk av l_ref
 Elementet l_ref legges til i <lg> for å vise til ander lemmaer som kan være nyttige for brukeren. Lemmaet skal merkes med POS, f.eks. seavagiella_n. l_ref brukes for å
 * vise til det lemmaet som bør brukes i følge termordlister etc.
 * gjøre brukeren oppmerksom på at det er en annen semantisk inndeling på samisk enn på oversettingsspråket. F.eks. ''vai'' vs. ''dahje'', eller ''dudno'' vs. ''din''.
+
+
+
+
+!Evt. bruk av flere typer referanser - dette er tanker, og er ikke implementert
+{{{
+Initialt i <mg>:
+<syn lemmaID="buohccebiila" /> → vise til eit synonym
+<ant lemmaID=""> ↛ vise til eit antonym
+<hyponym> ↓ vise til eit meir spesifikt ord
+<hypernym> ↑ vise til eit meir overordna ord
+<obs> vær obs på dette (bajimussii -> bajimusas) !
+}}}
+
+
+
+
+
+!!Eksempler
+Man kan legge inn kildetilvisning som attributt for x og xt, f.eks. hvis ordet ikke er vanlig i bruk:
+
+{{{
+<x src="S.B. Johansen 2010: Sárá beaivegirji s. 21">... dakkár ilgadis olmmošlágan filbmasivdnádus, mii lea eambbo robohtalágan go olbmolágan.</x>
+}}}
+
 
 !!Generere paradigme eller ikke
 
