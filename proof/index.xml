@@ -1,22 +1,80 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
-                          "http://forrest.apache.org/dtd/document-v20.dtd">
-<document xml:lang="en"> 
-    <header> 
-        <title>Proofing Tools Technical Documentation</title>
-
-	<authors>
-	  <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen" />
-	</authors>
-
-    </header> 
-    <body> 
-	  
-	  <p>This is a placeholder document for the technical documentation
-	     of the proofing tools. An overview should be placed here.</p>
-
-	<p class="last_modified">Last modified: $Date: 2008-11-05 19:52:54 +0200 (ons, 05 nov 2008) $,
-	   by $Author: boerre $</p>
-
-    </body>
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+   <header>
+      <title>Proofing Tools Technical Documentation</title>
+      <authors>
+         <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen"/>
+      </authors>
+   </header>
+   <body>
+      <section>
+         <title>Admin</title>
+         <p>Meetings: <a href="admin/Meeting_2011-03-11.html">11.3</a>, <a
+         href="admin/Meeting_2011-03-17.html">17.3</a>, <a href="admin/Meeting_2011-08-23.html">23.8</a>, <a
+         href="admin/Meeting_2011-09-06.html">6.9</a>, <a href="admin/Meeting_2011-09-15.html">15.9</a>, </p>
+      </section>
+      <section>
+         <title>Testing</title>
+         <ul>
+            <li>Test data: we are marking up gold-standard documents with a relatively simple, plain-text <a
+            href="spelling/testdoc/error-markup.html">error markup</a>.</li>
+            <li>The test data is converted to xml and is stored in
+            <code>$GTFREE/stable/goldstandard/converted/</code></li>
+            <li>You run a speller test using the following command: <code>make GTLANG=sma TESTTOOL=pl
+            correct-test</code></li>
+            <li>We also have a <a href="spelling/testdoc/PLXConversionTesting.html">plan for creating Unit Tests for the
+            PLX conversion</a> used to build our MS Office tools</li>
+         </ul>
+      </section>
+      <section>
+         <title>Test results</title>
+         <p>The most important test results are linked here. See the menu to the left for all available test
+         results.</p>
+         <ul>
+            <li>SME:<ul>
+                  <li>MS Word/PLX: <a
+                  href="spelling/testing/sme/pl/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a>, <a
+                  href="spelling/testing/sme/pl/regression/latest-regression.summary.html">regression</a></li>
+                  <li>Voikko+HFST: <a
+                  href="spelling/testing/sme/vkhfst/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a></li>
+                  <li>Hunspell: <a
+                  href="spelling/testing/sme/hu/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a></li>
+               </ul></li>
+            <li>SMJ:<ul>
+                  <li>MS Word/PLX: <a
+                  href="spelling/testing/smj/pl/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a>, <a
+                  href="spelling/testing/smj/pl/regression/latest-regression.summary.html">regression</a></li>
+                  <li>Voikko+HFST: <a
+                  href="spelling/testing/smj/vkhfst/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a></li>
+                  <li>Hunspell: <a
+                  href="spelling/testing/smj/hu/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a></li>
+               </ul></li>
+            <li>SMA:<ul>
+                  <li>MS Word/PLX: <a
+                  href="spelling/testing/sma/pl/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a>, <a
+                  href="spelling/testing/sma/pl/regression/latest-regression.summary.html">regression</a></li>
+                  <li>Voikko+HFST: <a
+                  href="spelling/testing/sma/vkhfst/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a></li>
+                  <li>Hunspell: <a
+                  href="spelling/testing/sma/hu/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a></li>
+               </ul></li>
+            <li>NOB:<ul>
+                  <li>Hunspell: <a
+                  href="spelling/testing/nob/hu/goldstandard/latest-GoldstandardTexts.txt.summary.html">Gold
+                  standard</a></li>
+               </ul></li>
+         </ul>
+      </section>
+   </body>
 </document>
