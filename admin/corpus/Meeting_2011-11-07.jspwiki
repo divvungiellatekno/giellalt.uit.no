@@ -1,0 +1,124 @@
+!!!Corpus meeting
+
+* conversion status
+** what is (not) included in prestable
+** what does it look like
+* next tasks:
+** sentence alignment
+* targets:
+** forvaltningsordbok
+** Autshumato/translation memory
+
+!!!conversion status
+
+!!What is (not) included
+
+In prestable:
+
+* included in sme: admin/ facta/ laws/
+* at least 85 % analysable by the main language analyser - this percentage is
+  based on inspection of texts
+* parallel documents with at least 30 words, and where the word count diff
+  between the parallel docs are between 73% and 110%
+* all parallel pointers are ok (in all directions)
+
+Here we count sme words.
+
+Prestable total is 1 612 856.
+
+|| Catalogue                                || prestable ||converted ||apache
+| admin/sd/samediggi.no/                     |   197 676 |  xxx      |   233 667
+| admin/sd/other_files/                      |   335 543 | 1 925 954 | 1 935 348
+| admin/depts/other_files                    |   571 250 | 1 573 658 | 1 311 716
+| admin/depts/regjeringen.no                 |   218 730 | 1 592 557 | 1 613 487
+| prestable/converted/sme/admin/others/laws  |    13 521 |   631 361 |   649 426
+|| Total                                    || 1 336 720 ||      xxx ||  649 426
+
+This is enough to start doing sentence alignment.
+
+!!What does it look like
+
+!Document structure
+
+
+!Text 
+
+For sme, ligatures represent 400 errors. Others?
+
+Of 1.6 mill words, appr. 1/3 is pdf.
+
+All words divided in pdf are still lost.
+
+Sjur and Trond to look at all-caps xfst script.
+
+
+Vuo oskuvlla ja joatkkaoahpahusa oktasaš
+
+
+~/freecorpus$ccat prestable/converted/sme/laws/other_files/finnmarkkulahka_lov_web.pdf.xml |preprocess|usme|grep '?'|l
+
+{{{
+Bántideapmi     Bántideapmi     +?
+aktivan aktivan +?
+váﬁstit váﬁstit +?
+ﬁnnmárkkulága   ﬁnnmárkkulága   +?
+mear    mear    +?    <=================================== hyph error
+rida    rida    +?
+ﬁdnet   ﬁdnet   +?
+}}}
+
+
+!!!next tasks
+
+!!sentence alignment
+
+Børre has initiated the parallelisation of the entire prestable parallelised corpus.
+TCA2 was run with default sentences, and the anchor file in GTHOME/common/.
+
+!!!Targets
+
+* forvaltningsordbok
+* Autshumato/translation memory
+
+{{{
+cd GTLANG/st/nob/src
+make abbr
+and that's it.
+cat nobtext | preprocess --abbr=st/nob/bin/abbr.txt
+}}}
+
+
+
+!!!Todo
+
+* sentence alignment (already started) (__Børre__)
+* testing the alignment output (__Berit Merete, Børre__)
+* nob morphological analysis, look at ob.fst vs. nob.fst (__Trond, Sjur__)
+* Look through [http://giellatekno.uit.no/doc/tools/tca2.html|list of TCA2 improvements]
+* Improve anchor file.
+* giza / word aligment incl. documentation of the process (__Trond, Francis__)
+* pdf conversion improvements, incl. hyphenation (__Børre__)
+* improving conversion of dirty documents (__Børre__)
+
+!!!Milestones
+
+* __8.11.__ First sentence parallellisation done
+* __11.11.__ Testing first sentence parallellisation
+** økdnjfg
+* __11.11.__ Improve document conversion (?) and sentence parallellisation
+** Issues: Ligature, Hyphens, others… 
+* Improve nob fst
+** __11.11.__ Status quo and some attempts to improvements
+*** Choose between ob.fst and nob.fst
+*** Look at missing, add words
+*** Look at compounding
+** __Before Giza:__ Deliver a for-now optimal fst for nob.
+* __Before Giza:__ Convert xml parallel to tmx.
+* Set up giza
+* First word parallellisation
+* Testing
+
+
+!!!Next meeting
+
+Friday at 10.
