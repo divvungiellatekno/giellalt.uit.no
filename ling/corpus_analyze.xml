@@ -7,6 +7,7 @@
 
     <authors>
       <person email="saara.huhmarniemi@helsinki.fi" name="Saara Huhmarniemi" />
+      <person email="borre.gaup@uit.no" name="Børre Gaup" />
     </authors>
   </header>
 
@@ -32,6 +33,38 @@
     </section>
 
     <section>
+        <title>How to parallelize documents</title>
+        
+        <p>Files that are ready to be parellellised exist in <code>$GTFREE/prestable/converted</code>. The steps to 
+            parallelize between sme and nob are:</p>
+        <ol>
+            <li>Compile the tools needed for further refinement of the input files: 
+                <ol>
+                    <li><code>cd $GTHOME/gt</code></li>
+                    <li><code>make GTLANG=sme</code></li>
+                    <li><code>make GTLANG=sme abbr</code></li>
+                    <li><code>cd $GTHOME/st/nob/src</code></li>
+                    <li><code>make</code></li>
+                </ol>
+            </li>
+            <li>Make an anchor file using the command: 
+                <code>generate-anchor-list.pl --lang1=sme --lang2=nob --outdir=$GTFREE $GTHOME/gt/common/src/anchor.txt</code></li>
+            <li>Compile TCA2, the sentence aligner, using these commands: 
+                <code>cd $GTHOME/tools/alignment-tools/tca2</code> and <code>ant</code></li>
+            <li>Parallelise the files in <code>$GTFREE/prestable/converted/sme</code> 
+                and <code>$GTFREE/prestable/converted/nob</code> using this command: 
+                    <code>for file in `find $GTFREE/prestable/converted/sme -name \*.xml | grep -v .svn`; 
+                        do $GTHOME/gt/script/corpus/corpus-parallel.pl --lang1=sme --lang2=nob $file ; 
+                        done</code>
+            </li>
+            <li>The output is found in <code>$GTFREE/prestable/tmx/smenob/&lt;sme-filename&gt;-&lt;nob-filename&gt;.tmx</code></li>
+        </ol>
+        
+        <p>To parallelize the other way, exchange the values for lang1 and lang2 in step 2 and 4, and change the find command in step 4 to <code>find $GTFREE/prestable/converted/nob</code>
+        </p>
+    </section>
+    
+    <section>
       <title id="database">Analyzing the corpus text.</title>
 
       <section>
@@ -54,7 +87,7 @@
         are indicated with suffix <code>.sent.xml</code>, e.g.
         <code>file.doc.sent.xml.</code></p>
 
-        <p>The xml-files reside in<code>corp/bound</code></p>
+        <p>The xml-files reside in either <code>$GTFREE/converted</code> or  <code>$GTBOUND/converted</code></p>
       </section>
 
       <section>
@@ -65,10 +98,10 @@
         <source>&lt;p&gt;
  &lt;s&gt;
   &lt;w form="The"&gt;
-  &lt;reading&gt; lemma="the" POS="DET" /&gt;
+  &lt;reading lemma="the" POS="DET" /&gt;
   &lt;/w&gt;
   &lt;w form="flies"&gt; 
-  &lt;reading&gt;lemma="fly" POS="N" /&gt;
+  &lt;reading lemma="fly" POS="N" /&gt;
   &lt;/w&gt;
  &lt;/s&gt;
 &lt;/p&gt;
@@ -121,12 +154,12 @@
                      Do not analyze.
 -n</source>
 
-        <p>For example, to analyze file
-        <code>corp/bound/sme/admin/sd/file.doc.xml</code></p>
+        <p>For example, to analyze the file
+        <code>$GTFREE/sme/admin/sd/file.doc.xml</code></p>
 
         <p>use the following command:</p>
 
-        <source>corpus-analyze.pl --add_sentences --lang=sme --output=file.doc.analyzed.xml corp/bound/sme/admin/sd/file.doc.xml</source>
+        <source>corpus-analyze.pl --add_sentences --lang=sme --output=file.doc.analyzed.xml $GTFREE/sme/admin/sd/file.doc.xml</source>
 
         <p>The files in the corpus hierarchy do not contain sentence elements
         (&lt;s&gt;). Sentence elements are the basic units of analysis and
@@ -134,7 +167,7 @@
         given, the &lt;s&gt; tags are assumed to be already added. The
         &lt;s&gt;-elements may be added without analysis, with command:</p>
 
-        <source>corpus-analyze.pl --only_add_sentences --lang=sme --output=file.doc.sent.xml corp/bound/sme/admin/sd/file.doc.xml</source>
+        <source>corpus-analyze.pl --only_add_sentences --lang=sme --output=file.doc.sent.xml $GTFREE/sme/admin/sd/file.doc.xml</source>
 
         <p>At the same time when &lt;s&gt;-tags are added, the sentences are
         numbered and given id's. These id's are used in alignment process.</p>
@@ -188,18 +221,18 @@
         <p>The parallel documents in some directory may be listed with
         command:</p>
 
-        <source>corpus-parallel.pl --list --lang=sme --dir=corp/bound/sme/admin &gt; file-list.txt</source>
+        <source>corpus-parallel.pl --list --lang=sme --dir=$GTFREE/sme/admin &gt; file-list.txt</source>
 
         <p>The parallel files are preprocessed for alignment by detecting
         sentence boundaries, numbering each sentence and placing it inside
         &lt;s&gt;-element. The command to use is:</p>
 
-        <source>corpus-parallel.pl --lang=sme --plang=nob corp/bound/sme/admin/file.doc.xml</source>
+        <source>corpus-parallel.pl --lang=sme --plang=nob $GTFREE/sme/admin/file.doc.xml</source>
 
         <p>The script calls the Perl script corpus-analyze.pl for adding the
         sentence-elements. The tools that are used for sentence boundary
         detection have to be changed in that script. The resulting files are
-        stored in <code>corp/tmp</code>, the resulting file names are:
+        stored in <code>$GTFREE/tmp</code>, the resulting file names are:
         <code>file.doc.sent.xml, file_n.doc.sent.xml.</code></p>
       </section>
 
@@ -213,10 +246,18 @@
 
         <p>The program gets as input the files that contain numbered
         s-elements:<code>file.doc.sent.xml</code> and
-        <code>file_n.doc.sent.xml </code>The output is a file that contains
-        the pairings of the sentence-id's. The file name is generally
-        <code>file.doc.sent.xml_file_n.doc.sent.xml.xml</code> which indicates
-        the order of the paired id lists.</p>
+        <code>file_n.doc.sent.xml</code>.</p>
+        
+        <p>The program outputs three files:</p>
+        <ul>
+            <li>one file that contains
+            the pairings of the sentence-id's. The file name is generally
+            <code>file.doc.sent.xml_file_n.doc.sent.xml.xml</code> which indicates
+            the order of the paired id lists.</li>
+            <li>a file pair where each line corresponds to the parellellised content in the other file.
+            These files are named <code>file.doc.sent_new.txt</code> and <code>file_n.doc.sent_new.txt</code></li>
+        </ul>
+                    
       </section>
     </section>
 
