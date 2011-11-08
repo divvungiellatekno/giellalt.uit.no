@@ -51,7 +51,7 @@
                 <code>generate-anchor-list.pl --lang1=sme --lang2=nob --outdir=$GTFREE $GTHOME/gt/common/src/anchor.txt</code></li>
             <li>Compile TCA2, the sentence aligner, using these commands: 
                 <code>cd $GTHOME/tools/alignment-tools/tca2</code> and <code>ant</code></li>
-            <li>Parallelise the files in <code>$GTFREE/prestable/converted/sme</code> 
+            <li>Parallelize the files in <code>$GTFREE/prestable/converted/sme</code> 
                 and <code>$GTFREE/prestable/converted/nob</code> using this command: 
                     <code>for file in `find $GTFREE/prestable/converted/sme -name \*.xml | grep -v .svn`; 
                         do $GTHOME/gt/script/corpus/corpus-parallel.pl --lang1=sme --lang2=nob $file ; 
