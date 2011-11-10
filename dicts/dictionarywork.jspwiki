@@ -81,6 +81,14 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
 
 !Bruk av <re> (restriksjon)
 * <re> gir restriksjon for oversettelsen. Oversettelsen ''vest'' har restriksjonen ''om klesplagg'', dvs at oversettelsen gjelder klesplagg, og ikke himmelretning.
+{{{
+      <mg>
+         <tg>
+            <re>om klesplagg</re>
+            <t pos="n">vest</t>
+         </tg>
+      </mg>
+}}}
 * <re> kan også brukes for å markere kasusbetydning, f.ek.s ''bevegelse til''.
 * for stedsnavn angir den kommune eller fylke
 
@@ -92,10 +100,18 @@ I filer som skal blir generert pga POS-merkinga, skal lemmaer som likevel ikke s
 
 
 !Bruk av v1, v2 osv.
-* Ett lemma kan ha flere __normative__ skrivemåter. Disse merkes med felles lemma, men skilles ved hjelp av taggene v1, v2 osv i fst:
+* Ett lemma kan ha flere __normative__ skrivemåter. I fst merkes disse med felles lemma, men skilles ved hjelp av taggene v1, v2 osv:
 ** tunealla+v1:tunealla
 ** tunealla+v2:tunnealla
-* Vi trenger ikke å merke i leksikonfila om lemmaet har flere skrivemåter. Det blir lagt til v1, v2 osv i genereringskommandoen.
+* Til ordboksfilene legges kun det lemmaet som er valgt som felles lemma i fst. I tillegg må man merke hvor mange v-merkinger den har i fst. Dette gjøres ved å legge attributten vmax="" til <l>:
+
+{{{
+      <lg>
+         <l pos="g3" vmax="2">tunealla</l>
+      </lg>
+}}}
+
+
 * Ved hjelp av v1, v2 taggene, kan man sortere ordformene til riktig oppslagsord (tunealla vs. tunnealla) og presentere reine miniparadigmer.
 
 
@@ -129,9 +145,28 @@ Elementet lsub legges til i <lg> for vanlige __ikke-normative__ skrivemåter. Hv
 
 !Bruk av l_ref
 Elementet l_ref legges til i <lg> for å vise til ander lemmaer som kan være nyttige for brukeren. Lemmaet skal merkes med POS, f.eks. seavagiella_n. l_ref brukes for å
-* vise til det lemmaet som bør brukes i følge termordlister etc.
-* gjøre brukeren oppmerksom på at det er en annen semantisk inndeling på samisk enn på oversettingsspråket. F.eks. ''vai'' vs. ''dahje'', eller ''dudno'' vs. ''din''.
+* vise til det lemmaet som bør brukes i følge termordlister etc. I slike tilfeller merkes kun det lemmaet som man vil vise fra, og ikke det lemmaet som man viser til:
 
+{{{
+      <lg>
+         <l pos="n">giehtagiella</l>
+         <l_ref>seavagiella_n</l_ref>
+      </lg>
+}}}
+
+* gjøre brukeren oppmerksom på at det er en annen semantisk inndeling på samisk enn på oversettingsspråket. F.eks. ''vai'' vs. ''dahje'', eller ''dudno'' vs. ''din''. I slike tilfeller merkes begge lemmaene med l_ref:
+
+{{{
+      <lg>
+         <l pos="cc">dahje</l>
+         <l_ref>vai_cc</l_ref>
+      </lg>
+og
+      <lg>
+         <l pos="cc">vai</l>
+         <l_ref>dahje_cc</l_ref>
+      </lg>
+}}}
 
 
 
@@ -255,7 +290,6 @@ I disse filene genereres ikke lemmaene, og de behøver heller ikke være i norm-
 
 sme-filer:
 {{{
-other_smenob.xml
 adverb_smenob.xml
 mwe_smenob.xml
 other_stat_smenob.xml
@@ -343,7 +377,7 @@ For verb som det ikke er naturlig med menneskelig subjekt for:
 
 For verb som bare brukes i Sg3 (vær-verb):
 || Bøyning        || Kontekst      || Eksempel
-|                  | context:"up"   |  bieggat
+|                  | context:"upers"   |  bieggat
  | Ind+Prs+Sg1	   | (odne) X       | (odne) bieggá	
  | Ind+Prt+Sg1	   | (ikte) X       | (ikte) biekkai
  | Ind+Prs+ConNeg  | (ii) X         | (ii) biekka
@@ -372,13 +406,23 @@ For resiproke verb :
 
 Ved å legge til +Use/NVD i fst, kan man velge bort en del bøyningsformer når man ikke vil presentere alle i miniparadigmet. Dette er ikke minst aktuelt for adjektiver.
 
+|| Bøyning	|| Uten +Use/NVD	|| Med +Use/NVD
+|  A+Sg+Nom           | heittot | heittot
+ | A+Attr             | heittogis heittohis (bivttas) | heittogis (bivttas)
+ | A+Pl+Nom           | heittogat heittohat | heittogat
+ | A+Comp+Attr        | heittogit heittogut heittoget heittogat heittohit heittohut heittohet heittohat | heittoget heittogat 
+ | A+Comp+Sg+Nom      | heittogit heittogut heittoget heittogeabbo heittogat heittogabbo heittohit heittohut heittohet heittoheabbo heittohat heittohabbo | heittogeabbo heittogabbo 
+ | A+Superl+Sg+Nom    | heittogeamos heittogamos heittoheamos heittohamos | heittogeamos heittogamos
+
+
 For adjektiver har vi lagt til kontekst til attributtformen bare for sme. Det er merket i leksikonet hvilken  kontekst som skal brukes, f.eks. context:"olmmoš". Hvis  context="", så vil det ikke bli oppgitt attributtform.
 
 || Bøyning	|| Kontekst bare for sme	|| Eksempel
 |                     | context:"báddi" | guhkki
  | A+Attr             | X (báddi)       | guhkes (báddi)
  | A+Pl+Nom           |                 | guhkit
- | A+Comp+Sg+Nom      |                 |  guhkit 
+ | A+Comp+Attr        |                 | guhkit 
+ | A+Comp+Sg+Nom      |                 | guhkit 
  | A+Superl+Sg+Nom    |                 | guhkimus
 
 
