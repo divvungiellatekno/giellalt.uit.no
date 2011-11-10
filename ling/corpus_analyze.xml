@@ -54,7 +54,7 @@
             <li>Parallelize the files in <code>$GTFREE/prestable/converted/sme</code> 
                 and <code>$GTFREE/prestable/converted/nob</code> using this command: 
                 <code>for file in `find $GTFREE/prestable/converted/sme -name \*.xml | grep -v .svn`; 
-                do corpus/corpus-parallel.pl --lang1=sme --lang2=nob $file ; 
+                do corpus-parallel.pl --lang1=sme --lang2=nob $file ; 
                 done</code>
             </li>
             <li>The output is found in <code>$GTFREE/prestable/tmx/smenob/&lt;sme-filename&gt;-&lt;nob-filename&gt;.tmx</code></li>
