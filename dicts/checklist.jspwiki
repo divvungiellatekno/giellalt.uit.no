@@ -1,7 +1,8 @@
 !!!Sjekkliste før ordboka genereres og kompileres
 * det skal ikke være dubletter
 * at alle lemmaene som skal genereres lemma i norm-fst
-* at alle lemmaer (adjektiver, verb, substantiver, numeraler, pronIndef og propernouns) som genererer med enn en grunnform, merkes med v1 osv i fst og vmax i dict-filene. Eksempel på kommando for å sjekke dette:
+* at alle lemmaer (adjektiver, verb, substantiver, numeraler, pronIndef og propernouns) som genererer med enn en grunnform, merkes med v1 osv i fst og vmax i dict-filene. Eksempel på kommando for å sjekke dette. Pass på at isme-norm.fst er kompilert med at v1-taggene går til 0 i tag-not-save.regex før kommandoene:
+
 {{{
 grep '<l ' adjective_smenob.xml | grep -v vmax | tr "<" ">" | cut -d ">" -f3 |
  sed 's/$/+A+Sg+Nom/' | dsmeNorm | grep -v "?" | sed 's/^$/€/' | tr "\n" " " | 
