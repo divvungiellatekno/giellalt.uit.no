@@ -1,0 +1,93 @@
+!!!Møte om parallellisering, 25.11.
+
+
+Børre, Sjur, Trond.
+
+
+!!!Lage gullkorpus
+
+
+!!!Teste
+
+Mål:
+
+# Kor bra er parallelliseringa av gullkorpuset
+# Deretter parameterjustering
+
+Metode:
+
+# Ta filer
+# Ta problematiske avsnitt "parallellisere manglande avsnitt"
+
+Måle med diff?
+
+Lage gullstandard ved hjelp av det grafiske grensesnittet. Dokumenta skal vera:
+
+* Tilfeldige dokument
+** Alle sjangrar: ''admin, facta, law''
+** Alle filtyper: ''doc, html, pdf''
+* Evt. også problemdokument
+** Dokument som vi ser inneheld feil i dag
+** Dels regjeringen.no (manglande avsnitt), dels sametingsprotokollar (forkortingar)
+
+
+Gullstandardfilene blir lagra i {{$GTFREE/prestable/tmx/goldstandard/}}
+
+* tmx/sme2nob/ (for visse facta)
+* tmx/nob2sme/katalogstruktur_som_i_orig.tmx (for alle admin, law, og visse facta)
+
+__TODO__
+* Plukke ut filer (__Trond__)
+* Lage gullstandarden (__Børre, Trond__)
+* setja opp testinfrastruktur, slik at vi får ja-nei-svar ut (__Børre__)
+
+
+
+!!!Dokumentasjon
+
+Nok til å sparke i gang den grafiske klienten
+
+Dokumentasjon ligg i [README.txt|../../tools/alignment-tools/tca2/README.txt]
+
+java -jar dist/lib/alignment-<date-when-built>.jar
+
+Dette vart fiksa under møtet.
+
+!!!Forbetring av parallelliseringa
+
+!!Ankerfilene
+
+Med effektiviseringa rett bak oss er storleiken på
+ankerfilene ikkje noko problem.
+
+Derimot kan feiltreff vere det.
+
+# Gjev ankerpar misvisande par?
+# Er fila så lang at prossesseringstid blir eit problem
+# Er det ordpar som ikkje finst i ankerlista?
+
+Dette ser vi på etter at gullkorpuset er på plass.
+
+!!Parameter for setningslengde
+
+# Take the corpus,
+# divide it in sentences,
+# count the number of sentences,
+# count the number of characters,
+# calculate number of char / sent.
+
+__TODO__
+* Finn parametret (__Børre__)
+
+
+!!Andre parameter
+
+* Proper names
+* Forkortingar
+* Dice
+* …
+
+Dette kjem etter kvart som vi ser.
+
+
+
