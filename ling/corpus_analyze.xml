@@ -47,18 +47,61 @@
                     <li><code>make</code></li>
                 </ol>
             </li>
-            <li>Make an anchor file using the command: 
-                <code>generate-anchor-list.pl --lang1=sme --lang2=nob --outdir=$GTFREE $GTHOME/gt/common/src/anchor.txt</code></li>
+            <li>Make an anchor file using the command (note that different text domains may have different additional anchor files): 
+                <ul>
+                	<li>
+                		<code>generate-anchor-list.pl --lang1=sme --lang2=nob --outdir=$GTFREE $GTHOME/gt/common/src/anchor.txt $GTHOME/gt/common/src/anchor_admin.txt
+                		</code>
+                	</li>
+                </ul>
+             </li>
             <li>Compile TCA2, the sentence aligner, using these commands: 
-                <code>cd $GTHOME/tools/alignment-tools/tca2</code> and <code>ant</code></li>
+              	<ul>
+              		<li>  
+              			<code>cd $GTHOME/tools/alignment-tools/tca2</code>
+              		</li>
+              		<li>
+              		<code>ant</code>
+            		</li>
+            	</ul>
+            </li>	
+       </ol>
+         
+         <p>The files may be parallellised in commandline mode.</p>
+            <ol>
             <li>Parallelize the files in <code>$GTFREE/prestable/converted/sme</code> 
                 and <code>$GTFREE/prestable/converted/nob</code> using this command: 
-                <code>for file in `find $GTFREE/prestable/converted/sme -name \*.xml | grep -v .svn`; 
+                <ul><li><code>
+                for file in `find $GTFREE/prestable/converted/sme -name \*.xml | grep -v .svn`; 
                 do corpus-parallel.pl --lang1=sme --lang2=nob $file ; 
-                done</code>
+                done
+                </code></li></ul>
             </li>
             <li>The output is found in <code>$GTFREE/prestable/tmx/smenob/&lt;sme-filename&gt;.tmx</code></li>
         </ol>
+
+
+         <p>The files may also be parallellised in graphical mode.</p>
+         <ol>
+            <li>Issue the command  
+             	<ul>
+             		<li>
+             			<code>
+            java -jar $GTHOME/tools/alignment-tools/tca2/dist/lib/alignment.jar
+             			</code>
+             		</li>
+             	</ul>
+            </li>
+            <li>To load files when starting tca2 in gui mode, issue this command:
+            	<ul>
+            		<li>
+            			<code>
+            	java -jar $GTHOME/tools/alignment-tools/tca2/dist/lib/alignment.jar -anchor=&lt;anchorfilename&gt; -in1=&lt;thefirstfileofapairtoalign&gt; -in2=&lt;thesecondfileofapairtoalign&gt;
+            	 		</code>
+            	 	</li>
+            	</ul>
+            </li>
+   	    </ol>
         
         <p>To parallelize the other way, exchange the values for lang1 and lang2 in step 2 and 4, and change the find command in step 4 to <code>find $GTFREE/prestable/converted/nob</code>
         </p>
