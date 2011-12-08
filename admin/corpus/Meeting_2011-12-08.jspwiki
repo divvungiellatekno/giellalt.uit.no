@@ -122,12 +122,58 @@ arbeid kvar dag og ny parallellføring kvar natt.
 
 Børre: Det beste er å gjere tmx om til rein tekst, og så diffe tekstane
 
-Eit dokument med 1000 <tu>-element vil resultere i to reine tekstfiler, kvar på 1000 linjer.
+Eit dokument med 1000 <tu>-element vil resultere i ei tekstfil på 1000 linjer, der kvar line er:
 
-Testbenken får fram 
+{{{
+origspråksetning<TAB>omsetjingsspråksetning
+}}}
+
+Testbenken bør gje som resultat / rapport:
+
+{{{
+Resultat finnmarkulahka_web_letters.pdf.tmx: 1 - 84/632 = 86.7 %
+Resultat Fil2:                               1 - 84/632 = 86.7 %
+Resultat Fil3:                               1 - 84/632 = 86.7 %
+Resultat Fil4:                               1 - 84/632 = 86.7 %
+...
+}}}
+
+pakka inn i eit passande xml-format. XML-formatet bør likna på det som blir brukt
+for stavekontrolltestbenken.
+For å få tidsdimensjonen vil vi ha ei xml-fil per køyring, dato- og tidsmerka.
+
+
+__TILTAK__
+* Filformat for testing (__Sjur__)
+* Script for testing … (__Børre__)
+* og for å putte dei i xml-fil (__Børre__)
+* Side for presentasjon av data (__Sjur__)
+* Lenkje til presentasjon frå techdoc&tools/tca2.jspwiki
 
 
 !!! Arbeid framover
 
+# Runde 1 - fredag
+## Gjere ferdig dei 9 filene i gullkorpus (__Berit Merete, Trond__)
+## Setje opp testbed for gullkorpus (__Børre, Sjur__)
+# Runde 2 - fredag em
+## Skaffe første runde av testresultat (__Børre__)
+# Runde 3
+## Forbetre preprosesseringa
+### abbr.txt (__Berit Merete, Trond__)
+### anchor.txt, (__Berit Merete, Trond__)
+### parametrisering av tca2  (__Børre__)
+# Runde 3x - måndag em
+## Skaffe andre runde av testresultat (__Børre__)
+# Runde 4
+## Ord-parallellisering
+
+Mål før møtet tysdag 13.12:
+* Testresultat
+* Ein forbetra versjon av preprossesseringsverktya (abbr.txt, anchor.txt, parametrisering av tca2)
+* Resuktat frå to runder med testing
 
 !!! Neste møte
+
+Tirsdag formiddag 13.12. kl 10
+
