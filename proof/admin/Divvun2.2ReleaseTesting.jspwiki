@@ -32,13 +32,15 @@ Any problems should be reported to [divvun@samediggi.no|mailto:divvun@samediggi.
 !!Speller
 || Office version || Windows XP || Windows Vista || Windows 7 32bit || Windows 7 64bit
 |  Office 2000    |      —      |      —         |      —           |      —     
+|  Word   2002    |    PASS     |      —         |      —           |     FAIL
 |  Office 2003    |    PASS     |      —         |      —           |      —     
 |  Office 2007    |      —      |      —         |      —           |     PASS (?)
-|  Office 2010    |    PASS     |      —         |     PASS         |     PASS
+|  Office 2010    |    PASS     |      —         |     PASS         |     PASS/FAIL
 
 !!Hyphenator
 || Office version || Windows XP || Windows Vista || Windows 7 32bit || Windows 7 64bit
 |  Office 2000    |      —      |      —         |      —           |      —     
+|  Word   2002    |    PASS     |      —         |      —           |     FAIL
 |  Office 2003    |    PASS     |      —         |      —           |      —     
 |  Office 2007    |      —      |      —         |      —           |      —     
 |  Office 2010    |      —      |      —         |     FAIL         |      —     
@@ -60,3 +62,15 @@ test fails.
 |  Office 2004    |      —      |      —      |      —      |    PASS     |     N/A
 |  Office 2008    |     N/A     |      —      |      —      |    PASS     |     PASS
 |  Office 2011    |     N/A     |     N/A     |      —      |    PASS     |     PASS
+
+!!!Known issues
+
+!!Divvun 2.2
+
+Divvun 2.2 was tested and found to work on a number of Windows systems before the release. Nevertheless there are several reports of non-working installations and configurations.
+
+* Office 2010 Home & Student edition - Divvun does not work, at least not on a Win7 64 bit system
+* On 64 bit Windows 7, if installed by an admin, the tools do not work for regular user accounts
+** in some cases it has been possible to work around this issue by empowering the user to become local admin during the installation, and letting the user install from his/her own user account. Then the tools will work, also after the user has been depowered to a regular user. But there are also cases where this workaround has ''not'' helped
+
+We are investigating these issues, and will release an update as soon as possible.
