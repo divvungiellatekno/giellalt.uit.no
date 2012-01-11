@@ -7,6 +7,8 @@ This is a short check-point list for setting up new users in our teams. Please a
 * a portable Mac is our standard platform (portable because we do travel, Mac
   for a number of very good reasons, among them
   [SEE|http://www.codingmonkeys.de/subethaedit/index.html])
+** 8 Gb RAM needed for hfst transducer compilation
+** fast harddisk prefered
 * preferably an external monitor
 * headphone w. mic
 * a backpack or similar for the computer
@@ -25,7 +27,7 @@ This is a short check-point list for setting up new users in our teams. Please a
 !!!Services to enable:
 
 * svn
-* iCal Server (Jabber) on G5
+* iCal Server & Jabber on XServe
 
 !!!Software to install
 
@@ -35,18 +37,19 @@ This is a short check-point list for setting up new users in our teams. Please a
 ** Parallells Desktop
 ** Windows XP
 ** Windows Vista
-** MS Office for Windows
+** Windows 7
+** MS Office for Windows: at least 2007 and 2010
 
 !!Commercial software, Internet download
 * [SEE|http://www.codingmonkeys.de/subethaedit/index.html]
-* [Unison|http://www.panic.com/unison/] for reading news (see below for an open
-  source alternative)
 * [Versions.app|http://www.versionsapp.com/] - commercial GUI front end for
   [Subversion|http://subversion.tigris.org/]. It makes some operations much
   easier. If you use this app, please ensure that you also install
   {{$GTHOME/gt/src/filemerge-tools/FileMerge_SaveMergedToSecondFile.sh}} - just
   run make in that directory. Then select that script as your diff tool in
   Versions.app's preferences.
+* [Unison|http://www.panic.com/unison/] for reading news (see below for an open
+  source alternative)
 
 !!Free or open-source software
 * XCode (on the CD that came with the computer, or available from
@@ -55,9 +58,7 @@ This is a short check-point list for setting up new users in our teams. Please a
 * [Skype|http://www.skype.com/]
 * [Thunderbird|http://www.mozilla.com/en-US/thunderbird/] - open source
   alternative to Unison
-* [svnX|http://code.google.com/p/svnx/]
-* [HFST tools|http://www.ling.helsinki.fi/kieliteknologia/tutkimus/hfst/index.shtml]
-** Download from [the HFST download at SourceForge|http://hfst.sourceforge.net]
+* [HFST tools|compiling_HFST3.html]
 * [Xerox tools|http://www.fsmbook.com]
 * [Visl CG3|/doc/tools/docu-vislcg3.html]
 * [Forrest|forrest-howto.html] - we need our own tailored version at the moment,
@@ -72,16 +73,14 @@ This is a short check-point list for setting up new users in our teams. Please a
 
 !!Proofing tools to install
 * our latest MS and OOo/hunspell tools / lexicons (see our
-  [home page|/index.html])
-* [Aspell|http://aspell.net/] / [Cocoaspell|http://cocoaspell.leuski.net/]
-** speller lexicons for the required languages
+  [home page|http://www.divvun.no/])
 * [hunspell|http://hunspell.sourceforge.net/] command line tool (use MacPort,
   see instructions on the OpenXSpell home page)
-* [OpenXSPell|http://www.cygnusblack.co.uk/openxspell/index.html] - does also install Enchant, a multi-engine speller middle-man.
+* [Voikko|http://voikko.sourceforge.net/] - The base for using hfst as spellers
 * [Soikko|http://users.tkk.fi/~pry/soikko/] (Finnish speller, good)
   - [Mac version here|http://www.cs.helsinki.fi/u/oarasane/soikko/]
-* [Voikko|http://voikko.sourceforge.net/] (another Finnish speller,
-  interesting comparison)
+* [Aspell|http://aspell.net/] / [Cocoaspell|http://cocoaspell.leuski.net/]
+** speller lexicons for the required languages
 
 !!!Configurations
 
@@ -94,7 +93,7 @@ This is a short check-point list for setting up new users in our teams. Please a
 ** [.emacs|setup-emacs-howto.html]
 * SEE-modes - see {{gtsvn/gt/src/see-tools/}}
 * XMLEditor - forrestdoc config available
-  [here|http://divvun.no/static_files/XXE_forrest_config-1.4.zip]
+  [here|http://divvun.no/static_files/XXE_forrest_config-1.4.zip] and editing settings described [here|editing_dicts_w_XXE.html]
 * VPN setup - get the config file from your network admin
 
 !!!Other setups
@@ -105,7 +104,7 @@ This is a short check-point list for setting up new users in our teams. Please a
   {{.forward}} file under the users' home directory on victorio.
 * iChat
 * Mail
-* admin and user accounts on the Mac
+* __separate__ admin and user accounts on the Mac
 ** for security reasons it is better to have a separate admin account
 ** which means that the regular user account should be non-admin
 ** it is ok that the user __knows__ the admin account name and password, to
