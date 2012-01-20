@@ -1,6 +1,6 @@
 !!!Outline
 
-__1.__ Edit {{$GTHOME/newinfra/gtlangs/Makefile.am}} to list the language(s) you want to add on the following line:
+__1.__ Edit {{$GTHOME/newinfra/gtlangs/Makefile.am}} to list the code(s) of language(s) you want to add on the following line, multiple languages separated with a space:
 
 {{{
 NEW_LANGS=
@@ -10,3 +10,24 @@ __2.__ Then run make (assuming you have built other languages earlier - if not, 
 
 !!!Result
 
+The above command will create a new dir for each specified language, and populate it with the required makefiles, autoconf files and template source files.
+
+If you want to add the new language source files to svn, do the following now for each language you want to add:
+
+{{{
+svn add $LANGUAGE_CODE
+}}}
+
+You want to do this ''before you do anything else,'' to avoid adding temporary and auto-generated files to svn. Such files are generated in the next step, and it can be hard to differentiate essential from temporary files later.
+
+Now, to start doing real work, you must do one set of preparations still:
+
+{{{
+cd 
+./autogen.sh
+./configure
+make
+make check
+}}}
+
+Now you can start editing the source files, and whenever you want to make sure everything compiles, run {{make}} again. Run {{make check}} to ensure that all defined tests are passed. Remember to update the test suits as you enhance the linguistic model!
