@@ -228,7 +228,15 @@ Copy the file {{/usr/local/lib/libvoikko.1.dylib}} to your VoikkoSpellService so
 
 !!Building the LibreOffice extension
 
-Follow the guidelines in the {{Makefile}}, pointing {{LIBVOIKKO_PATH}} to our static library dir. If you want a static build (which you want if you intend to distribute the extension), you also need to enable {{STANDALONE_EXTENSION_PATH}}, pointing it to a dir containing the required voikko dir structure and files for at least one supported language. One possible setup, using the default Malaga-based Finnish proofing tools is:
+The first time you're compiling, you need to prepare your environment:
+* download the LibreOffice SDK
+* cd into the SDK dir
+* run {{perl ./configure.pl `hostname` `pwd`}}
+
+Then, each time you want to compile again, you need to do the following:
+* in your home dir, source {{. $HOSTNAME/setsdkenv_unix.sh"}}
+
+Then, follow the guidelines in the {{Makefile}}, pointing {{LIBVOIKKO_PATH}} to our static library dir. If you want a static build (which you want if you intend to distribute the extension), you also need to enable {{STANDALONE_EXTENSION_PATH}}, pointing it to a dir containing the required voikko dir structure and files for at least one supported language. One possible setup, using the default Malaga-based Finnish proofing tools is:
 
 {{{
 lib/
