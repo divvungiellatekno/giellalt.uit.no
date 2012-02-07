@@ -1,0 +1,80 @@
+!!!Parallelliseringsmøte 7.2.2012
+
+Berit Merete, Børre, Sjur, Ciprian, Trond
+
+!!!Saksliste
+
+* status for gullkorpus
+* status for parallellføringa
+* status for ordparallellisering
+* status for fase 1
+* arbeid framover
+
+!!!Status for gullkorpus
+
+BM: korleis blir typos-lista brukt? Korleis skal data som ligg i 
+fila sjå ut? Kan ein bruka regulære uttrykk i oppføringane? 
+Svar: nei + kort historikk for typos-fila.
+
+__Status:__ 528 feil (7 færre feil enn førre bestenotering med same 
+data, 95,82 % rett most tidlegare 95,74 %)
+
+__TILTAK__
+* Doble eller fleire mellomrom som output av preprosessor må skvisast
+  til eitt, for å sikre konsistens. Gullkorpus må dermed også
+  kontrollerast for evt. doble mellomrom.
+* "sør" + punktum
+* "su" + punktum
+* flytte unnimuspenšonista lenger opp i anchor-lista 
+* sjekka matsjealgoritmen for ankerlista - er det fyrste treff som
+  gjeld, eller noko anna? Det bør vera lengste treff som vinn, men
+  fyrste treff er ok - då kan vi sortera på lengde (dvs lengst fyrst)
+* skråstrek / treng betre handtering - dvs punktum + skråstrek
+** men ikkje gjer noko med A/S (eller D/S ol.)
+* "dr.polit.-utdanningen" - feil segmentering
+* Det same gjeld punktum pluss alle desse symbola:
+
+{{{
+/-"«»‹›“”‘’)(][}{=
+}}}
+
+!!!Status for parallellføringa
+
+Gullstandardtalet i dag er 95,82.
+
+
+!!!Status for ordparallellisering
+
+Enno ikkje dokumentert, men vi har fått [ei lenke|http://wiki.apertium.org/wiki/Extracting_bilingual_dictionaries_with_Giza++]
+
+__TILTAK__
+* Pipeline klar til 13.2.
+* sjå på Giza (__Ciprian__)
+* diskuter med Francis (__Trond__)
+
+!!!Status for fase 1
+
+Fase 1: Setningsparallellisere
+# forbetre parallelliseringa (__Børre__) - kontinuerleg
+# leggje til nye tekstar (__Børre__) - kontinuerleg (og automatisk)
+# teste tmx i Autshumato (__Sjur__) - gjort, ser bra ut, krev rein tmx
+# setje strek og ordparallellisere - dato: __10.2.__
+
+Skal vere ferdig på fredag.
+
+!!!Arbeid framover
+
+* 10.2. parallellisering
+* 10.2. tidsestimat for ordparallellisering
+* 13.2. setningsparallellisert korpus
+* 13.2. pipeline for ordparallellisering
+* konvertera pseudo-tmx til ekte tmx (dvs utan ekstra mellomrom)
+* testa og dokumentera bruken av Autshumato med TMX
+** særleg bruken av sentrale tmx-lager
+* sjekka tmx-krava til Trados
+* laga ferdige TMX-pakker til nedlasting?
+* frist for TMX: 1.3. (samtidig som rapporten)
+
+!!!Neste møte
+
+Mandag 13.2.2012 kl 10
