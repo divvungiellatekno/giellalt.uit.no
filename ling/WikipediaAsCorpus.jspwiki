@@ -1,0 +1,20 @@
+
+In order to use the raw text of Wikipedia editions as test corpora, do the following:
+
+# Go to [the Wikipedia download page|http://en.wikipedia.org/wiki/Wikipedia:Database_download]
+# Go to the language you want. [http://dumps.wikimedia.org/sewiki/|http://dumps.wikimedia.org/koiwiki/] will give you North Sámi, exchange the __se__ in ''sewiki'' with the language code you want.
+# In the list that follows, choose the last one __before__ ''latest/''. The
+  latest one is ok, but download headers are not formatted yet.
+# Download the .bz2 file found under the header 
+  __Articles, templates, image descriptions, and primary meta-pages.__
+  This will give you the articles. If you want revision history (e.g. if you
+  want to use the corpus as spellchecker data), you need 
+  ''All pages with complete edit history''.
+# When downloaded, open the .bz2 file
+# Extract it with the script ''WikiExtractor.py'' (which is in your
+  path, in $GTHOME/gt/script/corpus/. The script has a --help option explaining
+  usage.
+ 
+Note that we, for the Uralic languages of Russia, already have corpus files
+in biggies/kt/$LANG/corp/$LANGwiki.txt
+
