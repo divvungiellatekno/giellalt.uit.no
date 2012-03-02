@@ -1,0 +1,48 @@
+!!!Møte om neste versjon av InDesign-verktya
+
+Saksliste
+* status for Hunspell-konverteringa
+* oppgåver for å laga automatisk orddeling
+
+!!!Hunspell-konverteringa
+
+Noverande system:
+* støttar seg på PLX-kodane for samansetjingsreguleringa
+* bruker PLX-transducer + morfemgrensemerke
+
+Ny Hunspell-versjon:
+* ingen samansetjingar
+* bør basera seg heilt på ei rein ordliste med morfemgrenser, ingen PLX-kodar
+* noverande PLX-konvertering er heilt transducer-basert (kanskje med unnatak av sifferdelen)
+* vi treng berre ordliste med morfemgrense, ingen andre ting
+
+Døme på inndeling i ulike Hunspell-leksikon:
+{{{
+viessu
+viesu
+viesu>ide
+viesu>iguin
+sdfaf>asdfaf>asfdasdf>adsfasdf>dafaf>in
+sdfaf>asdfaf>asfdasdf>adsfasdf>dafaf>n
+sdfaf>asdfaf>asfdasdf>adsfasdf>dafaf>iguin
+sdfaf>asdfaf>asfdasdf>adsfasdf>dafaf>iguingo
+}}}
+
+Algoritme:
+* Del ved fyrste og siste morfemgrense, ignorer grense framfor klitika
+ (=dei går til 0 allereie i transduceren).
+
+__OPPGÅVER:__
+* oppdater make-fila til å ta med morfemgrense ved stavekontrollkompilering for PLX og Hunspell
+* morfem-grense til 0 før den ekte PLX-prosesseringa
+* skriv ut stavekontrolltransduser som ordliste før Hunspell-prosessering
+
+!!!Automatisk orddeling
+
+* laga orddelingstransduser utan abbr, acro, siffer og hard bindestrek
+* skriv ut ordliste med alle orddelingspunkt, og ordgrense for samansette ord
+* kompilera OPatGen, fiksa buggar
+* integrera OPatGen i byggjesystema våre
+* postprosessera for OOo
+
+Sjå lenker [på eiga side|../NyeVerktyForInDesignCS55.html].
