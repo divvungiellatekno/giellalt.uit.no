@@ -1,0 +1,91 @@
+!!!Requirements
+
+You need to have installed both [HFST|../infra/compiling_HFST3.html] and [Apertium|http://wiki.apertium.org/wiki/Installation] at the moment.
+
+!!!Usage
+
+The command pipeline is as follows:
+
+{{{
+ccat -l sme -a -r $GTFREE/prestable/converted/sme/ | apertium-destxt | \
+    hfst-proc -C -e -q --weight-classes 1 sme/bin/sme.hfstol | l}}}
+
+The result of that pipeline is e.g. the following:
+
+{{{
+"<Norggas>"
+        "Norga" Norga+N+Prop+Plc+Sg+Loc ∏∏      N Prop Plc Sg Loc
+        "Norga" Norga+N+Sg+Acc+PxSg3 ∏∏ N Sg Acc PxSg3
+        "Norga" Norga+N+Sg+Gen+PxSg3 ∏∏ N Sg Gen PxSg3
+        "Norga" Norga+N+Sg+Loc ∏∏       N Sg Loc
+"<lea>"
+        "leat"  leat+V+IV+Ind+Prs+Sg3 ∏∏        V IV Ind Prs Sg3
+"<erenoamáš>"
+        "erenoamáš"     erenoamáš+A+Attr ∏∏     A Attr
+        "erenoamáš"     erenoamáš+A+Sg+Acc ∏∏   A Sg Acc
+        "erenoamáš"     erenoamáš+A+Sg+Gen ∏∏   A Sg Gen
+        "erenoamáš"     erenoamáš+A+Sg+Nom ∏∏   A Sg Nom
+        "erenoamáš"     erenoamáš+Adv ∏∏        Adv
+"<ovddasvástádus>"
+        "ovddasvástádus"        ovddasvástádus+N+Sg+Nom ∏∏      N Sg Nom
+"<ovddidit>"
+        "ovddidit"      ovddidit+V+TV+Ind+Prs+Pl1 ∏∏    V TV Ind Prs Pl1
+        "ovddidit"      ovddidit+V+TV+Ind+Prs+Pl3 ∏∏    V TV Ind Prs Pl3
+        "ovddidit"      ovddidit+V+TV+Ind+Prt+Sg2 ∏∏    V TV Ind Prt Sg2
+        "ovddidit"      ovddidit+V+TV+Inf ∏∏    V TV Inf
+"<sámi>"
+        "sápmi" sápmi+Hum+N+Sg+Acc ∏∏   Hum N Sg Acc
+        "sápmi" sápmi+Hum+N+Sg+Gen ∏∏   Hum N Sg Gen
+        "sápmi" sápmi+N+Sg+Acc ∏∏       N Sg Acc
+        "sápmi" sápmi+N+Sg+Gen ∏∏       N Sg Gen
+"<giela>"
+        "giella"        giella+N+Sg+Acc ∏∏      N Sg Acc
+        "giella"        giella+N+Sg+Gen ∏∏      N Sg Gen
+        "giellat"       giellat+V+TV+Imprt+ConNeg ∏∏    V TV Imprt ConNeg
+        "giellat"       giellat+V+TV+Imprt+Sg2 ∏∏       V TV Imprt Sg2
+        "giellat"       giellat+V+TV+Ind+Prs+ConNeg ∏∏  V TV Ind Prs ConNeg
+        "giellat"       giellat+V+TV+VGen ∏∏    V TV VGen
+"<,>"
+        ","     ,+CLB ∏∏        CLB
+"<kultuvrra>"
+        "kultuvra"      kultuvra+N+Sg+Acc ∏∏    N Sg Acc
+        "kultuvra"      kultuvra+N+Sg+Gen ∏∏    N Sg Gen
+"<ja>"
+        "ja"    ja+CC ∏∏        CC
+"<eallinlági>"
+        "eallinláhki"   eallinláhki+N+Sg+Acc ∏∏ N Sg Acc
+        "eallinláhki"   eallinláhki+N+Sg+Gen ∏∏ N Sg Gen
+"<.>"
+        "."     .+CLB ∏∏        CLB
+}}}
+
+!!The commands explained
+
+{{{
+ccat -l sme -a -r $GTFREE/prestable/converted/sme/
+}}}
+
+Extracts all North Sami texts from our open corpus repository, returning it as newline-separated paragraphs.
+
+{{{
+apertium-destxt
+}}}
+
+Deformats pure text input. This is needed because the following tool ({{hfst-proc}}) presently is unable to handle certain characters that are reserved in the apertium system. Most importanly, strings containing forward slash ("/") will not break the analysis as long as we use this apertium tool.
+
+{{{
+hfst-proc -C -e -q --weight-classes 1 sme/bin/sme.hfstol
+}}}
+
+Tokenises and analyses the input text, and outputting it in a Constraint Grammar-friendly format. It outputs only the best analyses with the same weight, and will output the simplest compound available (by counting # symbols).
+
+!!!Benefits
+
+Since tokenisation and analysis is done in one step using the same transducer, multiword expressions will be correctly tokenised and analysed, included fully inflected forms. This will generally give a better and linguistically more coherent analysis than using {{preprocess.pl}} as we are required to do with the Xerox tools.
+
+!!!Issues
+
+There are still a couple of open issues with the HFST tools and tranducers that we need to deal with:
+
+* the transducers need to start using weights to avoid superfluous derivation analyses in the output
+* the tokenisation is sometimes not what you would expect because of some apertium-specific treatment of special chars in the lookup tool {{hfst-proc}}
