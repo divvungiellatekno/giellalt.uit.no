@@ -8,55 +8,71 @@ The command pipeline is as follows:
 
 {{{
 ccat -l sme -a -r $GTFREE/prestable/converted/sme/ | apertium-destxt | \
-    hfst-proc -C -e -q --weight-classes 1 sme/bin/sme.hfstol | l}}}
+    hfst-proc -C -e -q -w sme/bin/sme.hfstol | l}}}
 
 The result of that pipeline is e.g. the following:
 
 {{{
-"<Norggas>"
-        "Norga" Norga+N+Prop+Plc+Sg+Loc ∏∏      N Prop Plc Sg Loc
-        "Norga" Norga+N+Sg+Acc+PxSg3 ∏∏ N Sg Acc PxSg3
-        "Norga" Norga+N+Sg+Gen+PxSg3 ∏∏ N Sg Gen PxSg3
-        "Norga" Norga+N+Sg+Loc ∏∏       N Sg Loc
+"<Sámedikkis>"
+        "Sámediggi"     N Prop Org Sg Loc
+        "sámediggi"     Org Build N Sg Acc PxSg3
+        "sámediggi"     Org Build N Sg Gen PxSg3
+        "sámediggi"     Org Build N Sg Loc
 "<lea>"
-        "leat"  leat+V+IV+Ind+Prs+Sg3 ∏∏        V IV Ind Prs Sg3
-"<erenoamáš>"
-        "erenoamáš"     erenoamáš+A+Attr ∏∏     A Attr
-        "erenoamáš"     erenoamáš+A+Sg+Acc ∏∏   A Sg Acc
-        "erenoamáš"     erenoamáš+A+Sg+Gen ∏∏   A Sg Gen
-        "erenoamáš"     erenoamáš+A+Sg+Nom ∏∏   A Sg Nom
-        "erenoamáš"     erenoamáš+Adv ∏∏        Adv
-"<ovddasvástádus>"
-        "ovddasvástádus"        ovddasvástádus+N+Sg+Nom ∏∏      N Sg Nom
-"<ovddidit>"
-        "ovddidit"      ovddidit+V+TV+Ind+Prs+Pl1 ∏∏    V TV Ind Prs Pl1
-        "ovddidit"      ovddidit+V+TV+Ind+Prs+Pl3 ∏∏    V TV Ind Prs Pl3
-        "ovddidit"      ovddidit+V+TV+Ind+Prt+Sg2 ∏∏    V TV Ind Prt Sg2
-        "ovddidit"      ovddidit+V+TV+Inf ∏∏    V TV Inf
-"<sámi>"
-        "sápmi" sápmi+Hum+N+Sg+Acc ∏∏   Hum N Sg Acc
-        "sápmi" sápmi+Hum+N+Sg+Gen ∏∏   Hum N Sg Gen
-        "sápmi" sápmi+N+Sg+Acc ∏∏       N Sg Acc
-        "sápmi" sápmi+N+Sg+Gen ∏∏       N Sg Gen
-"<giela>"
-        "giella"        giella+N+Sg+Acc ∏∏      N Sg Acc
-        "giella"        giella+N+Sg+Gen ∏∏      N Sg Gen
-        "giellat"       giellat+V+TV+Imprt+ConNeg ∏∏    V TV Imprt ConNeg
-        "giellat"       giellat+V+TV+Imprt+Sg2 ∏∏       V TV Imprt Sg2
-        "giellat"       giellat+V+TV+Ind+Prs+ConNeg ∏∏  V TV Ind Prs ConNeg
-        "giellat"       giellat+V+TV+VGen ∏∏    V TV VGen
-"<,>"
-        ","     ,+CLB ∏∏        CLB
-"<kultuvrra>"
-        "kultuvra"      kultuvra+N+Sg+Acc ∏∏    N Sg Acc
-        "kultuvra"      kultuvra+N+Sg+Gen ∏∏    N Sg Gen
+        "leat"  V IV Ind Prs Sg3
+"<dasa lassin>"
+        "dasa lassin"   Adv
+"<váldi>"
+        "váldi" Hum Org N Actor Sg Acc
+        "váldi" Hum Org N Actor Sg Gen
+        "váldi" Hum Org N Actor Sg Nom
+        "váldi" Org N Sg Nom
+        "váldit"        V TV Imprt Du2
+        "váldit"        V TV PrsPrc
+        "váldit"        V TV ‡ Actor N Sg Acc
+        "váldit"        V TV ‡ Actor N Sg Gen
+        "váldit"        V TV ‡ Actor N Sg Nom
 "<ja>"
-        "ja"    ja+CC ∏∏        CC
-"<eallinlági>"
-        "eallinláhki"   eallinláhki+N+Sg+Acc ∏∏ N Sg Acc
-        "eallinláhki"   eallinláhki+N+Sg+Gen ∏∏ N Sg Gen
+        "ja"    CC
+"<váikkuhanfápmu>"
+        "váikkuhanfápmu"        N Sg Nom
+"<go>"
+        "go"    CS
+        "go"    Qst Pcle
+"<oassálastá>"
+        "oassálastit"   V IV Ind Prs Sg3
+"<ja>"
+        "ja"    CC
+"<go>"
+        "go"    CS
+        "go"    Qst Pcle
+"<ovddastuvvo>"
+        "ovddastit"     V TV ‡ Der/PassL V Imprt ConNeg
+        "ovddastit"     V TV ‡ Der/PassL V Imprt Sg2
+        "ovddastit"     V TV ‡ Der/PassL V Ind Prs ConNeg
+        "ovddastit"     V TV ‡ Der/PassL V Ind Prs Sg3
+        "ovddastit"     V TV ‡ Der/PassL V VGen
+"<iešguđet>"
+        "iešguhtet"     Pron Indef Acc
+        "iešguhtet"     Pron Indef Gen
+        "iešguđet"      Pron Indef
+"<ge>"
+        "ge"    Pcle
+"<lávdegottiin>"
+        "lávdegoddi"    Org N Pl Loc
+        "lávdegoddi"    Org N Sg Com
+"<,>"
+        ","     CLB
+"<stivrrain>"
+        "stivra"        Org N Pl Loc
+        "stivra"        Org N Sg Com
+"<ja>"
+        "ja"    CC
+"<ráđiin>"
+        "ráđđi" Org N Pl Loc
+        "ráđđi" Org N Sg Com
 "<.>"
-        "."     .+CLB ∏∏        CLB
+        "."     CLB
 }}}
 
 !!The commands explained
