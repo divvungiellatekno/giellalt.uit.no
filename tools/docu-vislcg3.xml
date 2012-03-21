@@ -45,7 +45,7 @@ sudo make install
 svn co --username anonymous --password anonymous http://beta.visl.sdu.dk/svn/visl/tools/vislcg3/trunk vislcg3 
 cd vislcg3/ 
 ./get-boost.sh 
-cmake -DCMAKE_INSTALL_PREFIX=/opt/local . 
+cmake -DCMAKE_INSTALL_PREFIX=/opt/local 
 make -j3 
 test/runall.pl 
 sudo make install
