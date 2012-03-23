@@ -19,22 +19,42 @@
 	    <li><a href="http://wiki.services.openoffice.org/wiki/Dictionaries">OOo
 	       Dictionary Wiki</a>, with link to hyphenation dictionary creation
 	       tool</li>
-	    <li>We have a copy of a pdf file <a href="userguide-p.pdf">userguide-p.pdf</a> written for <a href="http://www.fi.muni.cz/~xantos/patlib/">patlib</a></li>
+	    <li>A copy of the <a href="userguide-p.pdf">user manual</a> for <a
+	       href="http://www.fi.muni.cz/~xantos/patlib/">OPatGen</a> (see below)
+	       is available.</li>
 	  </ul>
 
-	  <p>Basically, the task of creating TeX hyphenation files consist of the
-	  following steps:</p>
+	  <p>Basically, the task of creating TeX hyphenation pattern files consis
+	  of the following steps:</p>
 	  <ol>
 	    <li>print the lower side of a hyphenated, normative transducer to
 	       produce a correctly hyphenated word list</li>
 	    <li>run that list through OPatGen (see PatLib above) and associated
-	       scripts</li>
+	       scripts - see the user documentation above</li>
 	    <li>test the result</li>
 	  </ol>
-	  <p>Steps to take to install patlib:</p>
+	  <p>We need to install OPatGen first, which in turn needs
+	  <code>cweave</code>.</p>
+
+	  <p>Steps to install <code>cweave</code>:</p>
+	  <pre>sudo port install texlive-bin-extra</pre>
+	  
+	  <p>Steps to install <code>opatgen</code> (we have a local copy of the
+	  code):</p>
 	  <ol>
-	     <li>wget -r http://www.fi.muni.cz/~xantos/patlib/src/</li>
-	     <li></li>
+	     <li><code>cd $GTHOME/tools/patlib</code></li>
+	     <li><p><code>make</code><br/>
+	       <strong>NB!</strong> At the moment the C compilation is broken,
+	       because the code rely on a number of old, non-conformant coding
+	       practices. <code>gcc 2.95</code> is required, which is not available
+	       on any modern systems anymore. We either need to upgrade the code,
+	       or find an alternative solution.</p>
+	       <p>We have successfully modernised the code of
+	       <code>tools/dic2traskelet.C</code> (a helper tool), but the C code
+	       of the main application is a bit more complex to cover.</p>
+	     </li>
+	     <li><code></code></li>
+	     <li><code></code></li>
 	  </ol>
 
     </body>
