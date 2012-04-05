@@ -1,8 +1,16 @@
 !!!Make or update spellers for Voikko+HFST
 
+For the languages in the {{gt}} directory:
+
 {{{
 cd $GTHOME/gt/
 make GTLANG=sme hfstspellers
+}}}
+
+For other languages:
+
+{{{
+make -f Makefile.hfst
 }}}
 
 This may take some time. Installation is done automatically as part of the make commands. When the making is finished you should have a working Voikko speller for {{sme}}, based on our hfst transducer!
