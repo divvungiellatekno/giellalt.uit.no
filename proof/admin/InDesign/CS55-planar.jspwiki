@@ -33,16 +33,26 @@ Algoritme:
  (=dei går til 0 allereie i transduceren).
 
 __OPPGÅVER:__
-* oppdater make-fila til å ta med morfemgrense ved stavekontrollkompilering for PLX og Hunspell
-* morfem-grense til 0 før den ekte PLX-prosesseringa
-* skriv ut stavekontrolltransduser som ordliste før Hunspell-prosessering
+* oppdater make-fila til å ta med morfemgrense ved stavekontrollkompilering for PLX og Hunspell - __gjort__
+* morfem-grense til 0 før den ekte PLX-prosesseringa - __gjort__
+* skriv ut stavekontrolltransduser som ordliste før Hunspell-prosessering - __gjort__
 
 !!!Automatisk orddeling
 
-* laga orddelingstransduser utan abbr, acro, siffer og hard bindestrek
-* skriv ut ordliste med alle orddelingspunkt, og ordgrense for samansette ord
-* kompilera OPatGen, fiksa buggar
-* integrera OPatGen i byggjesystema våre
-* postprosessera for OOo
+* laga orddelingstransduser utan abbr, acro, siffer og hard bindestrek - __gjort__
+* skriv ut ordliste med alle orddelingspunkt, og ordgrense for samansette ord - __gjort__
+* kompilera OPatGen, fiksa buggar - __gjort__
+* integrera OPatGen i byggjesystema våre - __gjort__ med {{patgen}}
+* postprosessera for OOo - __gjort__ med {{patgen}}
 
 Sjå lenker [på eiga side|../NyeVerktyForInDesignCS55.html].
+
+!!!Installering
+
+Installeringa er ganske enkel:
+* kopier filene til ei mappe definert av Adobe
+* legg til språkkodar i ei plist-fil
+
+Den største utfordringa blir å leggja til språkkodane i plist-fila. På Mac-en finst det eit program {{/usr/libexec/PlistBuddy}} som kan brukast til å manipulera plist-filer direkte.
+
+For Windows finst det ingen slike kommandolineprogram som ein kan lita på finst installert, men i og med at plist-filer er xml-filer, kan ein bruka ein [xml-plugg til NSIS|http://nsis.sourceforge.net/XML_plug-in] for å manipulera den råe xml-en, og på det viset gjera det som må gjerast.
