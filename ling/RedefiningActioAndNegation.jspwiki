@@ -19,6 +19,39 @@ Notes from an ad-hoc discussion 19.4.2012
   cases (the fact that Plural and some cases are not used in a verbal context
   (=the old Actio) is a reflection of the syntactic context, and not an
   indication of a defective paradigm)
+
+Lene:
+{{{
+  borran	borrat+V+TV+Der/Actio+N+Sg+Nom
+  borran	borrat+V+TV+Der/ActioS+N+Sg+Gen   <=== slik ??   hva med N?
+  borran	borrat+V+TV+Der/Actio+Short+N+Sg+Gen   <=== slik ??    hva med N?
+}}}
+
+Sjur:
+{{{
+  borran	borrat+V+TV+Der/Actio+N+Sg+Gen+Short   <=== slik vil eg ha det
+}}}
+
+__Trond:__
+Problemet med å kalle ei infinitt verbform for +N kan samanliknast med
+å kalle ein infinitiv for +N (å synge / vitsen er artig men også
+eg skal synge), eller eit partisipp for +A (mies on laulanut -- laulanut mies)
+I desse tilfella har vi to analyser: ein med +N, +A og ein utan.
+Så skal vi ha same analyse må enten det komplekse verbalet eller 
+substantivet kompromisse.
+
+__Sjur:__
+Eg trudde nettopp at det var det komplekse verbalet som måtte vike. Vi var samde om at morfologisk er desse formene alle same paradigme, med veksling kort/lang form i visse tilfelle. Resten er ulik syntaks. Altså er det ei ordklasse (+Der/Actio+N), der det nye substantivet kan brukast i ein syntaktisk kontekst som er meir verbal enn dei andre. Ordklassen blir gjeve ut i frå paradigmet til det deriverte ordet, som er eit standard substantivparadigme (men der ikkje fleirtal og alle kasus gjev meining når derivasjonen blir brukt verbalt).
+
+Eventuelt er dette eit argument for å halda oppe skiljet mellom +Actio (dvs som verbal-konstituent) og +Der/Actio (som substantiv).
+
+Døme med ''lágideapmi'':
+{{{
+  lágideapmi	lágidit+V+TV+Der/Actio+N+Sg+Nom  <====  
+  lágideami	lágidit+V+TV+Der/Actio+N+Sg+Gen  <====  
+  lágidan	lágidit+V+TV+Der/Actio+N+Sg+Gen+Short  <====  
+}}}
+
 * change the CG files at the same time to reflect the new Der/Actio, and the
   need to disambiguate between verbal and nominal use of the derivation.
 
@@ -32,6 +65,16 @@ Up until now negated preterite sentences in SME have not had a preteritum tag. T
 * We duplicate the hitherto perfectum participle, giving the twin form
   a reading containing the tag +Prt in addition to the reading containing
   +PrfPrc. The pair ''lean/leamaš'' get one tag each (Prt/PrfPrc).
+
+{{{
+  borran	borrat+V+TV+PrfPrc
+  borran	borrat+V+TV+Ind+Prt+ConNeg  <=== new
+  bora	    borrat+V+TV+Ind+Prs+ConNeg
+  leamaš	leat+V+IV+PrfPrc
+  lean	    leat+V+IV+PrfPrc <== remove
+  lean	    leat+V+IV+Ind+Prt+ConNeg  <=== new
+}}}
+
 * CG rules are changed accordingly.
 
 
@@ -43,5 +86,10 @@ One is enough. We follow the morphology.
 
 !!Actions
 * remove the +Imprt tag on the main verb
+
+{{{
+boađe	boahtit+V+IV+Imprt+ConNeg <== remove
+}}}
+
 * follow-up on the CG to check that the removed tag doesn't create changed
   output
