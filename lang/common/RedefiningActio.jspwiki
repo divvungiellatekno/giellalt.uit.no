@@ -2,7 +2,7 @@ Notes from an ad-hoc discussion 19.4.2012
 
 !!!Merging Actio, Der/n and Der/eapmi
 
-!!Motivation
+!!Reason for discussion
 * Der/n and Der/eapmi are in complementary distribution, and express the same
   = they are the same = Der/Actio
 * Actio and Der/Actio are the same thing as well, just used in different syntactic contexts
@@ -13,12 +13,14 @@ Notes from an ad-hoc discussion 19.4.2012
   use the short form, further underlining the fact that the short and long
   forms are really variants of the same
 
-!!Actions
+!!Change it like this?
 * Der/n, Der/eapmi and Actio in the present tagset is changed to Der/Actio
 * the new Der/Actio gets a full noun paradigm, with both Sg and Pl, and all
   cases (the fact that Plural and some cases are not used in a verbal context
   (=the old Actio) is a reflection of the syntactic context, and not an
   indication of a defective paradigm)
+
+!!Discussion
 
 Lene:
 {{{
@@ -124,6 +126,64 @@ lágideamen	lágidit+V+TV+Actio+Ess
 }}}
 
 
-* change the CG files at the same time to reflect the new Der/Actio, and the
-  need to disambiguate between verbal and nominal use of the derivation.
+!Fra korpus:
+{{{
+
+"<Son>"
+        "son" Pron Pers Sg3 Nom @SUBJ>
+"<lei>"
+        "leat" V IV Ind Prt Sg3 @+FAUXV
+"<merkestemiinis>"
+        "merket" V* TV Der/st Der/eapmi N Pl Loc PxSg3 @ADVL>  <======= Px
+"<hui>"
+        "hui" Adv @>ADVL
+"<vuollegaččat>"
+        "vuollegaččat" Adv @ADVL>
+"<govvidan>"
+        "govvidit" V TV PrfPrc @-FMAINV
+"<dán>"
+        "dát" Pron Dem Sg Acc @>N
+"<ártegis>"
+        "ártet" A Sg Gen PxSg3 @>N
+"<olmmošgaskavuođa>"
+        "olmmoš#gaskavuohta" N Sg Acc @<OBJ
+"<,>"
+}}}
+
+!Nickel/Sammallahti:
+
+1) Innafor verbalet:
+(leat) čállime/čállimin							Actio Ess
+(heaitit) čállimis								Actio Loc
+
+2) Utafor verbalet:
+áhči čállin girji - en bok som far har skrevet - Actio Nom
+čállin dihte - 									Actio Gen <--
+čállimiin										Actio Com
+
+>>>>>>>>>>> čállit+V+TV+Actio+Acc  <<<<<<<<<<<<<<  dette er den problematiske
+>>>>>>>>>>> lágidan	lágidit+V+TV+Der/NomAct+N+Sg+Gen  <<<<<<<<< kortform, berre i sms
+            lágideami	lágidit+V+TV+Der/NomAct+N+Sg+Gen
+
+
+(čállin girji) skal samskrives slik: - čállingirji - skrivebok 		+Der/NomAct+N
+
+296:
+divvunmiella áiddi
+mus lea čállinmiella girjji.
+
+3) Avleiing
+čállin čállimat								Der/NomAct N Sg Acc -- likestava
+lágideapmi                                 Der/NomAct N Sg Kasus    -- ulikestava
+finnes i Sg on Pl, og alle kasus
+
+
+
+!!Actions
+# hiva ut actio acc och ill, och in alla andra (og fjern alle Use/Sub)
+# hiva in alla px:ar igen, ja ved derivasjonane
+# lágidan Der/NomAct ska bara gå till R
+# follow-up on the CG to check that the removed tag doesn't create changed
+  output
+
 
