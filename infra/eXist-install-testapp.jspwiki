@@ -42,6 +42,28 @@ Don't fill in anything
 
 Press Done
 
-!! Next step
-
 Open the start page of this new application by entering http://http://localhost:8080/exist/apps/searchtmx/index.html into the webbrowsers address field
+
+!! Add the app to svn
+
+* Make a directory searchtmx in svn
+* Goto Application->Download in eXide, you'll end up with searchtmx-0.1.xar in Downloads
+* Goto the searchtmx dir, unzip the downloaded .xar file in this directory
+* svn add searchtmx, then svn ci
+
+!! Adding changes in searchtmx to svn
+
+* Make the changes you want in eXide to the searchtmx app
+* Goto Application->Download in eXide, you'll end up with searchtmx-0.1.xar.1 in Downloads
+* Goto the searchtmx dir, unzip the downloaded .xar file in this directory
+* svn stat to see the changes
+* svn ci to check in the changes
+
+!! Syncing the svn version of searchtmx to eXist
+
+* Goto the searchtmx directory
+* Write ant to build the app. You'll now have a .xar file in build
+* Goto to the app-repository (see documentation in http://exist-db.org/exist/quickstart.xml#app-repository)
+* Click the upload tab 
+* Click the Choose file button, browse your way to the searchtmx-0.1.xar file, then click Upload. The page changes focus to the Installed tab, the app exists as Searchtmx (0.1). (if an error is reported, repeat the previous and this step)
+* Click the Paper box icon above the label Searchtmx (0.1), then click the local url and you are presented with the startup page of the app.
