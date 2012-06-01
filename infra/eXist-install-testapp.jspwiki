@@ -8,3 +8,40 @@
 * Click the upload tab
 * Click the Choose file button, browse your way to the greatapp-0.1.xar file, then click Upload. The page changes focus to the Installed tab, the app exists as Templates (0.1).
 * Click the Paper box icon above the label Templates (0.1), then click the local url, and voilá,  you are presented with the startup page of the app. It shows some info, and all entries from the file data/fellesliste.xml
+
+!!! Create an eXist-app, searchtmx
+
+* Open eXide
+* Choose the Application->New Application
+* A dialog (Deployment Editor) appears, fill out the values
+
+!! Application properties (First screen)
+
+These are the values I filled out:
+
+* Template: HTML-template (default)
+* Target collection: /db/searchtmx
+* Name: http://divvun.no/apps/searchtmx
+* Abbreviation: searchtmx
+* Title: Search TMX
+* Version: 0.1 (default)
+* Status: Alpha (default)
+* Pre-install XQuery: pre-install.xql (default)
+
+Press Next
+
+!! Description (Second screen)
+
+* Author: Børre Gaup
+* Description: Search for words in tmx-files
+* Website: http://divvun.no
+
+!! Default Permission (Third screen)
+
+Don't fill in anything
+
+Press Done
+
+!! Next step
+
+Open the start page of this new application by entering http://http://localhost:8080/exist/apps/searchtmx/index.html into the webbrowsers address field
