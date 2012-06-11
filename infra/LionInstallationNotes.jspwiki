@@ -7,6 +7,29 @@
 # after the renaming installation went smooth
 # copied system preferences, applications and the admin user, nothing more
 
+!!!Xcode installation
+
+Xcode for Lion needs to be "bought" from the Mac App Store (store application is included in Lion). The tool is free, but requires an AppleID/iTunes account, which usually requires a credit card associated with it. But there are ways to set up an iTunes account without specifying a credit card, search the Internet for more info.
+
+With a working iTunes account (with or without credit card info), just install the free Xcode application from the Mac App Store.
+
+After installation, zero or more of the following steps might be necessary:
+# install the command line tools by opening Xcode, and go to the menu:
+  __Xcode > Preferences… > Downloads__, and intall the command-line tools
+## please note that the command line tools are already on your machine, and might not need to be installed explicitly - test before you install!
+# use {{xcode-select}} to set the path to the Xcode installation (requires root
+  power=sudo):
+  {{sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer}}
+
+!!MacPorts additions
+
+If you are upgrading from earlier OSX installations, and have an old MacPorts installation (most likely if you have done work with our languages earlier), you also need to do the following:
+
+# update macports to the latest version: {{sudo port selfupdate}}
+# run the MacPorts migration described [here|https://trac.macports.org/wiki/Migration] to reinstall all ports. This is painful but required to get back to a working state.
+
+Further discussion and details can be found in the discussion [here|http://stackoverflow.com/questions/9323738/unable-to-get-macport-functionality-after-installing-xcode-4-3].
+
 !!!Language-related observations
 
 * many more languages are now recognised by the system, but still only one Sámi language; this means that Lule and South Sámi web pages are STILL NOT recognised/-able by e.g. the Safari browser
