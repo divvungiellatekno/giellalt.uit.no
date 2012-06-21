@@ -1,0 +1,27 @@
+There are two scenarios:
+
+* your language is mostly up-to-date
+* your language does not include recent changes to the core, and running {{merge-templates.sh}} doesn't change anything
+
+!!!Your language is mostly up-to-date
+
+Steps to take for the language {{$LANG}}:
+
+# {{cd $GTHOME/newinfra/langs/$LANG/}}
+# {{../../gtcore/scripts/merge-templates.sh}}
+# check and resolve conflicts, if any
+# check all modifications made
+# commit
+
+!!!Your language is not automatically updated
+
+Steps to take for the language {{$LANG}}:
+
+# identify the revision just before the commit whose content you want to merge from core to your language
+# {{cd $GTHOME/newinfra/langs/$LANG/}}
+# {{svn up -r NNNN und.timestamp}} (NNNN = the revision number obtained in the first step)
+# {{../../gtcore/scripts/merge-templates.sh}}
+# {{svn up und.timestamp}}
+# check and resolve conflicts, if any
+# check all modifications made
+# commit
