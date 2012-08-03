@@ -96,19 +96,24 @@ For those libraries that give the above output, all is fine. But if you get a me
 
 Next, configure and make {{hfst-ospell}} using the following options (the text is linewrapped here for readability, all commands should be on one line):
 
+!Snow Leopard or earlier(?) (≤ 10.6) build
+
 {{{
 # If you have run make before, run make distclean just to ensure you start from scratch:
 make distclean
 
 # HFST-ospell, working univ. binary config:
 CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
-	CFLAGS=" -arch i386 -arch x86_64" CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
+	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
 	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
 	CFLAGS="-I/usr/local/include -I/opt/local/include \
 		-L/usr/local/lib -L/opt/local/lib -isysroot \
-	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" --enable-static \
-	--disable-dependency-tracking --disable-shared
+		/Developer/SDKs/MacOSX10.5.sdk \
+		-arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
+	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" \
+	--enable-static \
+	--disable-dependency-tracking \
+	--disable-shared
 
 # HFST-ospell, working univ. binary make:
 make CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot /Developer/SDKs/MacOSX10.5.sdk \
@@ -124,6 +129,28 @@ sudo make install CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
 }}}
 
 It is possible that these can be simplified a bit, but at least they work. Please note that {{--disable-dependency-tracking}} is __required__ when configuring for a universal binary!
+
+!Lion and later(?) (≥ 10.7) build
+
+The XCode development tool, libraries etc was moved in Lion, thus the SDK path has to be changed for the build to work. In addition, the lowest OS version supported is 10.6. The updated configure command looks like the following:
+
+{{{
+CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
+	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
+	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
+	CFLAGS="-I/usr/local/include -I/opt/local/include \
+		-L/usr/local/lib -L/opt/local/lib -lstdc++-static -isysroot \
+		/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk \
+		-arch i386 -arch x86_64 -mmacosx-version-min=10.6" \
+	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" \
+	--enable-static \
+	--disable-dependency-tracking \
+	--disable-shared
+}}}
+
+Similar changes need to be made to the make command.
+
+!!Build hfst-ospell as a STATIC universal binary
 
 If you want to build {{hfst-ospell}} as a __static__ library (e.g. as part of another component made for external distribution), there are a couple of changes. First, copy the following files to a separate dir (I have used {{/Users/sjur/alibs/}}):
 
