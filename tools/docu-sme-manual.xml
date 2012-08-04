@@ -45,13 +45,16 @@
                sms, sjd).</li>
                <li>then write the words that shall be analysed, one word at a time, followed by RETURN.</li>
                <li>To leave lookup mode, press "ctrl C".</li>
+               <li>If your environment is set up correctly, there is an alias <code>usme</code> for North Sami (and usma etc.) 
+                   to use instead of the long command described above.</li>
             </ol>
             <p>For testing, you may also write a file with one wordform on each line, and then feed that to
             <code>lookup</code> (example here is for Inari Sámi, with a file <code>testfile.txt</code>):</p>
             <ul>
                <li><code>cat testfile.txt | lookup -flags mbTT smn/bin/smn.fst | less</code></li>
+               <li>or, equivalently, <code>cat testfile.txt | usmn | less</code></li>
             </ul>
-            <p>(again, to leave lookup mode, press "ctrl C".)</p>
+	    <p>(again, to leave lookup mode, press "ctrl C", and to leave less, press q)</p>
          </section>
          <section>
             <title>Generating words</title>
@@ -62,6 +65,7 @@
                given in the table in the file <a href="../lang/sme/docu-sme-grammartags.html">The grammatical
                tags</a>.Note that the South Sámi <code>sma.fst</code> handles capital letters and ï-i variation, but
                that it only accepts correct "ïquot; when you write in the base forms in the generator.</li>
+               <li>Also here, there is an alias, <code>dsme</code>, and dsma, etc.</li>
                <li>Again, to leave lookup mode, press "ctrl C".</li>
             </ol>
             <p>A good way of working is to have two windows open, one for analysing and one for generating (and probably
