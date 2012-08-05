@@ -11,11 +11,11 @@
 
     <source>Tokens =    Number of tokens in the text 
             (cat file.txt | preprocess --abbr=bin/abbr.txt | wc -l)
-            (or: "catxml -i" instead of "cat")
+            (or: "ccat -l sme -r" instead of "cat", if input is corpus files in our xml format)
 Parses =    Number of parses given (number of the following command, minus the
             number of tokens)
             (cat file.txt | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT
-            -utf8 bin/sme.fst | lookup2cg | vislcg --grammar=src/sme-dis.rle | wc -l
+            -utf8 bin/sme.fst | lookup2cg | vislcg3 --g=src/sme-dis.rle | wc -l
 CorrTag =   Number of tokens that did not have their correct tag removed
             (This number must be manually arrived at: Tokens - errouneous_analyses
 Ambiguity = #Parses / #Tokens
