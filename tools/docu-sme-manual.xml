@@ -36,17 +36,20 @@
             <title>Analysing one word at a time:</title>
             <p>Note that the source files are in src/, the binary files are in bin/. The exact commands depend upon
             where you are. In order to compile new versions of the analysers, you must be in <code>gt/</code>, and the
-            write <strong>make TARGET=sme</strong> (for North Sámi, and smj, sma, smn for Lule, South and Inari Sámi).
+            write <code>make TARGET=sme</code> (for North Sámi, and smj, sma, smn for Lule, South and Inari Sámi).
             We assume that you have a separate window for analysis, and that you are in the gt/ catalogue when you
-            analyse.</p>
+            analyse. If you have set up your machine correctly, you have ready-defined functions for analysing
+            and generating text (to check, write <code>alias usme</code>, if the terminal does not answer that it
+            is not found, you are ok)</p>
             <ol>
-               <li>For North Sámi, write "<code>lookup -flags mbTT sme/bin/sme.fst RETURN</code>"</li>
-               <li>For Lule Sámi, write "<code>lookup -flags TT smj/bin/smj.fst RETURN</code>" (etc. for sma, sje, smn,
-               sms, sjd).</li>
-               <li>then write the words that shall be analysed, one word at a time, followed by RETURN.</li>
+               <li>For analysis, write <code>u</code> and then the 3-letter language code, e.g. for North Sami,
+               write "<code>usme</code>"</li>
+               <li>Then write the words that shall be analysed, one word at a time, followed by RETURN.</li>
                <li>To leave lookup mode, press "ctrl C".</li>
-               <li>If your environment is set up correctly, there is an alias <code>usme</code> for North Sami (and usma etc.) 
-                   to use instead of the long command described above.</li>
+               <li>For generation, write <code>d</code> and then the 3-letter language code, e.g. for North Sami,
+               write "<code>dsme</code>"</li>
+               <li>Then write lemma and grammatical tags (in the same form as was given as output, followed by RETURN.</li>
+
             </ol>
             <p>For testing, you may also write a file with one wordform on each line, and then feed that to
             <code>lookup</code> (example here is for Inari Sámi, with a file <code>testfile.txt</code>):</p>
