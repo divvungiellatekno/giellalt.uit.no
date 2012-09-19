@@ -15,13 +15,13 @@
             <li>If you work on victorio, then log in with your own user name and password. If you work on your own
             machine, make sure the Xerox tools are available and in your path (see the <a
             href="../admin/checklist.html">installation list</a> for programs to install).</li>
-            <li>Remember to write <code>svnup</code> and press the return key (from now on indicated by "RETURN"). (This
+            <li>Remember to write <code>svnup</code> and press the return key (from now on indicated by &lt;ENTER&gt;). (This
             also works on your machine, if you have SVN access to victorio). By doing that, you check out whatever new
             catalogues or files that have been added since last time. For more info on svn and the messages it may give
             you, see <a href="docu-svn-user.html">Introduction to svn</a>. If you work on files checked out from
             anonymous svn, you only need the Xerox tools.</li>
-            <li>Change to the directory gt (<code>cd main/gt RETURN</code>) In order to compile North Sámi, write
-            <code>make TARGET=sme</code>. The target is sma for Sourthern, sje for Pite, smj for Lule, sms for Skolt,
+            <li>Change to the directory gt (<code>cd main/gt</code> &lt;ENTER&gt;) In order to compile North Sámi, write
+            <code>make GTLANG=sme</code>. The target is sma for Sourthern, sje for Pite, smj for Lule, sms for Skolt,
             smn for Inari and sjd for Kildin.</li>
             <li>The machine will then for the next 3 to 30 minutes (depending upon how many parts of the parser it must
             rebuild, on what language it is, and on how quick your computer is) write cryptic messages on the screen,
@@ -36,7 +36,7 @@
             <title>Analysing one word at a time:</title>
             <p>Note that the source files are in src/, the binary files are in bin/. The exact commands depend upon
             where you are. In order to compile new versions of the analysers, you must be in <code>gt/</code>, and then
-            write <code>make TARGET=sme</code> (for North Sámi, change sme to  smj, sma, smn, sms, sjd, sje for Lule, South,
+            write <code>make GTLANG=sme</code> (for North Sámi, change sme to  smj, sma, smn, sms, sjd, sje for Lule, South,
             Inari, Skolt, Kildin and Pite Sámi).
             We assume that you have a separate window for analysis, and that you are in the gt/ catalogue when you
             analyse. If you have set up your machine correctly, you have ready-defined functions for analysing
@@ -45,11 +45,11 @@
             <ol>
                <li>For analysis, write <code>u</code> and then the 3-letter language code, e.g. for North Sami,
                write "<code>usme</code>"</li>
-               <li>Then write the words that shall be analysed, one word at a time, followed by RETURN.</li>
+               <li>Then write the words that shall be analysed, one word at a time, followed by &lt;ENTER&gt;.</li>
                <li>To leave lookup mode, press "ctrl C".</li>
                <li>For generation, write <code>d</code> and then the 3-letter language code, e.g. for North Sami,
                write "<code>dsme</code>"</li>
-               <li>Then write lemma and grammatical tags (in the same form as was given as output, followed by RETURN.</li>
+               <li>Then write lemma and grammatical tags (in the same form as was given as output, followed by &lt;ENTER&gt;.</li>
 
             </ol>
             <p>For testing, you may also write a file with one wordform on each line, and then feed that to
@@ -133,12 +133,12 @@ ccat -l sme -r zcorp/bound | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT
          <ul>
             <li><code>grep '+N+Pl' &gt; plnouns</code><br/> (to get all plural nouns and save them to the file
             <code>plnouns</code>)</li>
-            <li><code>grep -v '\?' | cut -f2 | sort | uniq -c | sort -nr | less RETURN</code><br/> (to get a frequency
+            <li><code>grep -v '\?' | cut -f2 | sort | uniq -c | sort -nr | less &lt;ENTER&gt;</code><br/> (to get a frequency
             list of the lexemes that the parser recognizes, note that this requires that the flag TT is turned off, i.e.
             not mentioned.)</li>
-            <li><code>grep '\?' | sort | uniq -c | sort -nr | less RETURN</code> <br/> (to get a frequency list of the
+            <li><code>grep '\?' | sort | uniq -c | sort -nr | less &lt;ENTER&gt;</code> <br/> (to get a frequency list of the
             <strong>words</strong> that the parser does not recognize)</li>
-            <li><code>grep '\+\?' | sort | uniq -c | sort -nr | less RETURN</code> <br/> (to get a frequency list of the
+            <li><code>grep '\+\?' | sort | uniq -c | sort -nr | less &lt;ENTER&gt;</code> <br/> (to get a frequency list of the
             <strong>word forms</strong> that the parser does not recognize)</li>
          </ul>
          <p>To analyse more files at the same time, write their names one after another after the <code>cat</code>
