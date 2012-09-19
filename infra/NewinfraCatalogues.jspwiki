@@ -1,0 +1,94 @@
+
+This document gives an overview of our new infrastructure, i.e.
+over the folder newinfra located under our main catalogue.
+
+Newinfra contains README, and the catalogues {{gtcore, langs}}
+
+!! gtcore
+
+The catalogue {{gtcore}} contains scripts used for all languages.
+
+* gtshared
+** src
+*** filter (parts of old gt/common/src)
+* scripts
+** xsl
+* schemas (for languages having their lexica in xml)
+* templates
+** und (the iso code for an undefined language)
+*** 
+
+There is a script adding additions from ''und'' to each language
+catalogue. So, when a new moment comes in, it can come in via ''und''.
+
+
+!! langs
+
+Each language has its own folder, the naming convention
+is from [ISO 639-3|http://en.wikipedia.org/wiki/List_of_ISO_639-3_codes].
+
+The folder (here smj) contains the following
+
+* am-shared (automake shared; never changed here, only in gtcore/templates)
+* doc (folder for language-specific documentation)
+* m4 (support files for compilation)
+* src (this is where the linguistics files are)
+** filters (language-specific filters)
+** hyphenation (each phenomenon its folder)
+** inc
+** morphology
+** orthography
+** phonetics
+** phonology
+** syntax
+* test
+* tools
+
+
+!! The morphology folder under langs/$LANG/
+
+* affixes (here we find the lexc morphology files)
+* stems (lexc stem files, the lists of words)
+
+clitics.lexc
+
+! The morphology Makefile.am
+
+
+The makefile defines two, perhaps four variables (the two first must be defined)
+
+# GT_LEXC_ROOT=root.lexc (defining the root of lexc)
+# GT_LEXC_SRC= (defining all the other files)
+# GENERATED_LEXC_SRCS= (defining šhat še get out
+# GT_XML_SRC= (defining eventual xml files)
+
+We define all the files we need.
+
+include $(top_srcdir)/am-shared/lesc-include.am
+
+
+! The folder orthography
+
+Here we take care if initial capitalisation, and of spellrelax. Note that
+spellrelax now will be language-specific.
+
+! phonetics
+
+This is conversion to IPA.
+
+
+!! The test catalogue under langs/$LANG
+
+* 0 = success
+* 77 = skipped test
+* 
+
+
+
+!! Transducers
+
+dictionary.default.xfst (this is an automaton, which creates wordforms)
+analyser.
+
+
+
