@@ -1,0 +1,240 @@
+
+
+We want to use the noncommercial compilers on victorio.
+In order to do list, we must change the compilers, the lookup program,
+and recompile the fsts.
+
+When they are all in place we move the reference to compilers
+and lookup in {{conf.pl}}.
+
+here is an overviwe.
+
+* /opt/smi/bxr/bin/:  
+**  bxr.fst -- 
+**  ibxr.fst -- 
+
+* /opt/smi/ciw/bin/:  
+**  ciw.fst -- 
+**  iciw.fst -- 
+
+
+* /opt/smi/common/bin/:  
+**  allcaps.fst -- 
+**  geo.fst -- 
+**  lookupserv.py -- 
+**  old_geo.fst -- 
+**  ped-sme.fst -- 
+**  server.py -- 
+**  vislcg3 -- 
+**  vislcg3_july -- 
+
+* /opt/smi/cor/bin/:  
+**  cor-dis.bin -- 
+**  cor-dis.rle -- 
+**  cor.fst -- 
+**  icor.fst -- 
+**  ikor.fst -- 
+**  orth-cor.fst -- 
+**  orth-kor.fst -- 
+**  tok.fst -- 
+
+* /opt/smi/fao/bin/:  
+**  fao-dep.bin -- 
+**  fao-dep.rle -- 
+**  fao-dis.bin -- 
+**  fao-dis.bin_opt -- 
+**  fao-dis.rle -- 
+**  fao.fst -- 
+**  fin-dep.rle -- 
+**  ifao.fst -- 
+**  twol-fao.bin -- 
+
+* /opt/smi/fin/bin/:  
+**  clock-fin.fst -- 
+**  fin.cg.hfstol -- 
+**  fin.cg.hfst.ol -- 
+**  fin-dis.bin -- 
+**  fin.fst -- 
+**  fin-inum.fst -- 
+**  fin-num.fst -- 
+**  iclock-fin.fst -- 
+**  ifin.fst -- 
+
+* /opt/smi/ipk/bin/:  
+**  iipk.fst -- 
+**  ipk.fst -- 
+**  orth-ipk.fst -- 
+
+* /opt/smi/kal/bin/:  
+**  2009 hyph-kal.fst -- 
+**  2010 ikal.fst -- 
+**  2009 ikal.fst.april -- 
+**  2012 kal-dep.bin -- 
+**  2010 kal-dep.rle -- 
+**  2012 kal-dis.bin -- 
+**  2009 kal-dis.rle -- 
+**  2010 kal.fst -- 
+**  2009 kal.fst.april -- 
+**  2009 orth-kal.fst -- 
+**  2009 phon-kal.fst -- 
+
+* /opt/smi/kom/bin/:  
+**  ikom.fst -- 
+**  kom.fst -- 
+**  kom-num.fst -- 
+
+* /opt/smi/mhr/bin/:  
+** imhr.fst -- 
+** mhr.fst -- 
+** mhr-num.fst -- 
+
+* /opt/smi/myv/bin/:  
+** imyv.fst -- 
+** latintag-myv.fst -- 
+** myv.fst -- 
+** myv-num.fst -- 
+
+* /opt/smi/nno/bin/:  
+** nno-num.fst -- 
+
+* /opt/smi/rus/bin/:  
+** clock-rus.fst -- 
+** clock-rus.fst.nostressmark -- 
+** date-rus.fst -- 
+** date-rus.fst.nostressmark -- 
+** iclock-rus.fst -- 
+** iclock-rus.fst.nostressmark -- 
+** idate-rus.fst -- 
+** idate-rus.fst.nostressmark -- 
+** rus-inum.fst -- 
+** rus-inum.fst.nostressmark -- 
+** rus-num.fst -- 
+** rus-num.fst.nostressmark -- 
+
+* /opt/smi/sjd/bin/:  
+** clock-sjd.fst -- 
+** date-sjd.fst -- 
+** iclock-sjd.fst -- 
+** idate-sjd.fst -- 
+** isjd.fst -- 
+** sjd.fst -- 
+** sjd-inum.fst -- 
+** sjd-num.fst -- 
+
+* /opt/smi/sje/bin/:  
+** isje.fst -- 
+** sje.fst -- 
+** sje-num.fst -- 
+
+* /opt/smi/sma/bin/:  
+** clock-sma.fst -- 
+** date-sma.fst -- 
+** derivation-filter.fst -- 
+** hyphrules-sma.fst -- 
+** hyph-sma.fst -- 
+** hyph-sma.save -- 
+** iclock-sma.fst -- 
+** idate-sma.fst -- 
+** isma.fst -- 
+** isma-L.restr.fst -- 
+** isma-norm.fst -- 
+** isma-SO.restr.fst -- 
+** missing -- 
+** ped-sma.fst -- 
+** phon-sma.fst -- 
+** sma-dep.bin -- 
+** sma-dis.bin -- 
+** sma-dis.rle -- 
+** sma.fst -- 
+** sma-hyph-twolc.save -- 
+** sma-inum.fst -- 
+** sma-lexc.save -- 
+** sma-L.restr.save -- 
+** sma-norm.fst -- 
+** sma-norm.save -- 
+** sma-num.fst -- 
+** sma.save -- 
+** sma-SO.restr.save -- 
+** sma-twolc.save -- 
+** smi-dep.bin -- 
+** twol-hyph-sma.bin -- 
+** twol-sma.bin -- 
+** twol-sma-descriptive.bin -- 
+** typos.fst -- 
+
+* /opt/smi/sme/bin/:  
+** allcaps.fst -- 
+** cap-sme -- 
+** clock-sme.fst -- 
+** date-sme.fst -- 
+** derivation-filter.fst -- 
+** focus-filter.fst -- 
+** hisme-norm.fst -- 
+** hunspell-sme.fst -- 
+** hyphrules-sme.fst -- 
+** hyph-sme.fst -- 
+** iclock-sme.fst -- 
+** idate-sme.fst -- 
+** i-hunspell-sme.fst -- 
+** isma.fst -- 
+** isme.fst -- 
+** isme-GG.restr.fst -- 
+** isme-KJ.restr.fst -- 
+** isme-norm.fst -- 
+** isme-restr.fst -- 
+** oahpa-isme-norm.fst -- 
+** ped-sme.fst -- 
+** phon-sme.fst -- 
+** pos-sme.fst -- 
+** sme-dep.bin -- 
+** sme-dis.bin -- 
+** sme-dis.rle -- 
+** sme.fst -- 
+** sme.hfstol -- 
+** sme-inum.fst -- 
+** smenob.fst -- 
+** smenob.fst.bu -- 
+** sme-norm.fst -- 
+** sme-num.fst -- 
+** sme-ped.cg3 -- 
+** sme-ped.cg3.bin -- 
+** smi-dep.bin -- 
+** s-sme.fst -- 
+** typos.fst -- 
+** valency-sme.fst -- 
+** val-sme.fst -- 
+
+* /opt/smi/smj/bin/:  
+** hismj-norm.fst -- 
+** hyph-smj.fst -- 
+** iclock-smj.fst -- 
+** ismj.fst -- 
+** ismj-norm.fst -- 
+** smj-dep.bin -- 
+** smj-dep.rle -- 
+** smj-dis.bin -- 
+** smj-dis.rle -- 
+** smj.fst -- 
+** smj-num.fst -- 
+** typos.fst -- 
+
+* /opt/smi/smn/bin/:  
+** clock-smn.fst -- 
+** iclock-smn.fst -- 
+** idate-smn.fst -- 
+** ismn.fst -- 
+** smn.fst -- 
+** smn-num.fst -- 
+
+* /opt/smi/sms/bin/:  
+** isms.fst -- 
+** sms.fst -- 
+** sms-num.fst -- 
+
+* /opt/smi/udm/bin/:  
+** iudm.fst -- 
+** udm.fst -- 
+
+* /opt/smi/yrk/bin/:  
+** yrk-num.fst -- ok
+** yrk-num.fst.commercial -- ok
