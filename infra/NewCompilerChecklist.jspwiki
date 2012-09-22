@@ -2,20 +2,26 @@
 
 We want to use the noncommercial compilers on victorio.
 In order to do list, we must change the compilers, the lookup program,
-and recompile the fsts.
+and recompile the fsts. The process is:
+
+# Compile files with new compilers and move to /opt/newcompiler_smi
+# Change path to compiler in conf.pl from c-fsm to /usr/local/bin
+# Move opt/newcompiler_smi to opt/smi
 
 When they are all in place we move the reference to compilers
 and lookup in {{conf.pl}}.
 
-here is an overviwe.
+here is an overview. Files in newcompiler_smi newer than 22 07:02
+have been updated (and marked {{ok}} below).
+
 
 * /opt/smi/bxr/bin/:  
-**  bxr.fst -- 
-**  ibxr.fst -- 
+**  bxr.fst -- ok
+**  ibxr.fst -- ok
 
 * /opt/smi/ciw/bin/:  
-**  ciw.fst -- 
-**  iciw.fst -- 
+**  ciw.fst -- ok
+**  iciw.fst -- ok
 
 
 * /opt/smi/common/bin/:  
@@ -29,52 +35,32 @@ here is an overviwe.
 **  vislcg3_july -- 
 
 * /opt/smi/cor/bin/:  
-**  cor-dis.bin -- 
-**  cor-dis.rle -- 
-**  cor.fst -- 
-**  icor.fst -- 
-**  ikor.fst -- 
-**  orth-cor.fst -- 
-**  orth-kor.fst -- 
-**  tok.fst -- 
+**  cor.fst -- ok
+**  icor.fst -- ok
+**  orth-cor.fst -- ok
+**  orth-kor.fst -- ok
 
 * /opt/smi/fao/bin/:  
-**  fao-dep.bin -- 
-**  fao-dep.rle -- 
-**  fao-dis.bin -- 
-**  fao-dis.bin_opt -- 
-**  fao-dis.rle -- 
-**  fao.fst -- 
-**  fin-dep.rle -- 
-**  ifao.fst -- 
-**  twol-fao.bin -- 
+**  fao.fst -- ok
+**  ifao.fst -- ok
 
 * /opt/smi/fin/bin/:  
-**  clock-fin.fst -- 
-**  fin.cg.hfstol -- 
-**  fin.cg.hfst.ol -- 
-**  fin-dis.bin -- 
-**  fin.fst -- 
+**  clock-fin.fst -- ok
+**  fin.fst -- ok
 **  fin-inum.fst -- 
-**  fin-num.fst -- 
+**  fin-num.fst -- ok
 **  iclock-fin.fst -- 
-**  ifin.fst -- 
+**  ifin.fst -- ok
 
 * /opt/smi/ipk/bin/:  
-**  iipk.fst -- 
-**  ipk.fst -- 
-**  orth-ipk.fst -- 
+**  iipk.fst -- ok
+**  ipk.fst -- ok
+**  orth-ipk.fst -- ok
 
 * /opt/smi/kal/bin/:  
 **  2009 hyph-kal.fst -- 
 **  2010 ikal.fst -- 
-**  2009 ikal.fst.april -- 
-**  2012 kal-dep.bin -- 
-**  2010 kal-dep.rle -- 
-**  2012 kal-dis.bin -- 
-**  2009 kal-dis.rle -- 
 **  2010 kal.fst -- 
-**  2009 kal.fst.april -- 
 **  2009 orth-kal.fst -- 
 **  2009 phon-kal.fst -- 
 
