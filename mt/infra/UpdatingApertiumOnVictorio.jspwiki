@@ -1,1 +1,143 @@
-Not yet written.
+!!!INSTALLATION/UPDATE OF A SINGLE TRANSLATOR ON VICTORIO
+
+!!a) Log in
+
+If you’re not already, add your user to the MT group
+{{{
+$ /usr/bin/usermod -a -G mt <username>
+}}}
+You’ll need ‘sudo’ for this.
+
+----
+
+!!b) make a directory in your home directory for the MT source
+
+{{{
+mkdir mt/
+cd mt/
+}}}
+
+----
+
+!!c) check out the necessary source code (e.g. for sme-nob)
+{{{
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-sme-nob
+}}}
+
+----
+
+!!d) compile it
+{{{
+$ export LD_LIBRARY_PATH=/opt/mt/lib
+$ export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
+$ export PATH=/opt/mt/bin:$PATH
+
+$ cd apertium-sme-nob
+$ ./autogen.sh --prefix=/opt/mt
+$ ./configure --prefix=/opt/mt
+$ make
+$ make install
+$ cd ..
+}}}
+
+----
+
+!!e) test it installed ok:
+{{{
+$ echo “ja” | apertium -d /opt/mt/share/apertium/ sme-nob
+og
+}}}
+
+----
+
+!!!INSTALLATION OF TRANSLATORS ON VICTORIO
+
+!!a) Log in
+
+If you’re not already, add your user to the MT group
+{{{
+$ /usr/bin/usermod -a -G mt <username>
+}}}
+You’ll need ‘sudo’ for this.
+
+----
+
+!!b) make a directory in your home directory for the MT source
+{{{
+mkdir mt/
+cd mt/
+}}}
+
+----
+
+!!c) check out the necessary source code
+{{{
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/nursery/apertium-sme-fin
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/nursery/apertium-sme-smj
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-nn-nb
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-sme-nob
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/lttoolbox
+}}}
+
+----
+
+!!d) compile it
+{{{
+$ export LD_LIBRARY_PATH=/opt/mt/lib
+$ export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
+$ export PATH=/opt/mt/bin:$PATH
+
+$ cd lttoolbox
+$ ./autogen.sh --prefix=/opt/mt
+$ ./configure --prefix=/opt/mt
+$ make
+$ make install
+$ cd ..
+
+$ export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
+$ export LD_LIBRARY_PATH=/opt/mt/lib/
+$ export PATH=/opt/mt/bin:$PATH
+
+$ cd apertium
+$ ./autogen.sh --prefix=/opt/mt
+$ ./configure --prefix=/opt/mt
+$ make
+$ make install
+$ cd ..
+
+$ cd apertium-sme-nob
+$ ./autogen.sh --prefix=/opt/mt
+$ make
+$ make install
+$ cd ..
+
+$ cd apertium-nn-nb
+$ ./autogen.sh --prefix=/opt/mt
+$ make
+$ make install
+$ cd ..
+
+$ cd apertium-sme-smj/
+$ ./autogen.sh --prefix=/opt/mt
+$ make
+$ make install
+$ cd ..
+
+$ cd apertium-sme-fin/
+$ ./autogen.sh --prefix=/opt/mt
+$ make
+$ make install
+$ cd ..
+}}}
+
+----
+
+!!e) test it installed ok:
+{{{
+$ echo “ja” | apertium -d /opt/mt/share/apertium/ sme-nob
+og
+
+$ echo “ja” | apertium -d /opt/mt/share/apertium/ fin-sme
+ja
+}}}
