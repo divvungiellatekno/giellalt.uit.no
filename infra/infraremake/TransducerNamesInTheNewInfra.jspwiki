@@ -1,0 +1,65 @@
+The new infrastructure produces transducers with a different naming scheme than in the old infra. The names are longer and more descriptive.
+
+!!!Regular transducers
+
+!!The information we want to encode
+
+When there are suggestions for strings to represent each value, the suggestion is given first before a single hyphen - .
+
+basictype:
+* analyser
+* generator
+* automaton (single-level)
+
+application:
+* morphological analysis/generation (default)
+* error analysis
+* spellers
+** hfst (just a transducer)
+** plx (needs fullform conversion)
+** hunspell (needs fullform conversion)
+* hyphenation
+* oahpa
+* dictionaries
+* MT/apertium
+
+tagset:
+* gt (default)
+* gterror (gt tags with additional error tags)
+* apert - apertium
+* GTLANG - tags in the target language
+* some other language
+
+normativity:
+* desc - descriptive
+* norm - normative
+* restr - restricted
+
+dialect:
+* whatever set of dialects are relevant for the language
+
+fst-type:
+* hfst
+* xfst (Xerox)
+
+!!Naming scheme
+
+Based on the above list, we get something like this:
+
+{{{
+basictype-application-tagset-normativity[-dialect].fst-type
+}}}
+
+This should give transducers with names like:
+
+analyser-oahpa-gt-desc.hfst
+
+!!!Transcription transducers
+
+These are not fully lexical transducers, they just convert between one representational format and another, like between dates written as text and dates written with digits. The names of these transducers follow the old infra convention, and is just:
+
+* date
+* clock
+* numbers
+
+Conversion to IPA is a special case of this type of transducers. The naming of that one is still open.
