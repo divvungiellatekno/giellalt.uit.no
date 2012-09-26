@@ -12,33 +12,32 @@ basictype:
 * automaton (single-level)
 
 application:
-* morphological analysis/generation (default)
-* error analysis
-* spellers
-** hfst (just a transducer)
-** plx (needs fullform conversion)
+* morphological analysis/generation (default, not specified)
+* spellers (one application tag name for each):
+** hfstspell (just a transducer/automaton)
+** plxspell (needs fullform conversion)
 ** hunspell (needs fullform conversion)
-* hyphenation
-* oahpa
-* dictionaries
-* MT/apertium
+* hyph - hyphenation
+* oahpa - oahpa/error (more tags, broader coverage than standard)
+* dict - dictionaries (more visible tags, same content as standard)
+* apert - MT/apertium (both restricted to the set of lemmas in the transfer lexicons)
 
 tagset:
 * gt (default)
-* gterror (gt tags with additional error tags)
 * apert - apertium
 * GTLANG - tags in the target language
-* some other language
+* XLANG - tags in some other language, typically a majority language
 
 normativity:
 * desc - descriptive
 * norm - normative
-* restr - restricted
+* restr - restricted (usually only used together with dialect)
+* single - only one word form pr analysis, always
 
 dialect:
 * whatever set of dialects are relevant for the language
 
-fst-type:
+fsttype:
 * hfst
 * xfst (Xerox)
 
@@ -47,12 +46,14 @@ fst-type:
 Based on the above list, we get something like this:
 
 {{{
-basictype-application-tagset-normativity[-dialect].fst-type
+basictype-application-tagset-normativity[-dialect].fsttype
 }}}
 
 This should give transducers with names like:
 
-analyser-oahpa-gt-desc.hfst
+* {{analyser-oahpa-gt-desc.hfst}}
+* {{generator-apert-apert-single.hfst}}
+* {{analyser-gt-desc.xfst}}
 
 !!!Transcription transducers
 
