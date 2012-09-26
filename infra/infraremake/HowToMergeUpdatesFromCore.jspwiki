@@ -1,27 +1,34 @@
-There are two scenarios:
+There are merging two scenarios and one problem case:
 
-* your language is mostly up-to-date
-* your language does not include recent changes to the core, and running {{merge-templates.sh}} doesn't change anything
+* updating a single language
+* updating all languages in one go
+* your language does not include recent changes to the core
 
-!!!Your language is mostly up-to-date
+!!!Updating a single language
 
-Steps to take for the language {{$LANG}}:
+Steps to take for language {{$GTLANG}}:
 
-# {{cd $GTHOME/newinfra/langs/$LANG/}}
+# {{cd $GTHOME/langs/$GTLANG/}}
 # {{../../gtcore/scripts/merge-templates.sh}}
+## one can try to add the option {{--unsafe}} to get the script to try to merge some more files than default
+# check and resolve conflicts, if any
+# check all modifications made
+# commit
+
+!!!Updating all languages in one go
+
+# {{cd $GTHOME/langs/}}
+# {{./update-all-languages.sh}}
+## one can try to add the option {{--unsafe}} to get the script to try to merge some more files than default
 # check and resolve conflicts, if any
 # check all modifications made
 # commit
 
 !!!Your language is not automatically updated
 
-Steps to take for the language {{$LANG}}:
+Make sure that the language code is listed in:
 
-# identify the revision just before the commit whose content you want to merge from core to your language
-# {{cd $GTHOME/newinfra/langs/$LANG/}}
-# {{svn up -r NNNN und.timestamp}} (NNNN = the revision number obtained in the first step)
-# {{../../gtcore/scripts/merge-templates.sh}}
-# {{svn up und.timestamp}}
-# check and resolve conflicts, if any
-# check all modifications made
-# commit
+* {{$GTHOME/langs/configure.ac}}
+* {{$GTHOME/langs/Makefile.am }}
+
+If not, add it to the list of language codes in those files.
