@@ -8,8 +8,6 @@ $ /usr/bin/usermod -a -G mt <username>
 }}}
 You’ll need ‘sudo’ for this.
 
-----
-
 !!b) make a directory in your home directory for the MT source
 
 {{{
@@ -17,14 +15,10 @@ mkdir mt/
 cd mt/
 }}}
 
-----
-
 !!c) check out the necessary source code (e.g. for sme-nob)
 {{{
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-sme-nob
 }}}
-
-----
 
 !!d) compile it
 {{{
@@ -40,15 +34,11 @@ $ make install
 $ cd ..
 }}}
 
-----
-
 !!e) test it installed ok:
 {{{
 $ echo “ja” | apertium -d /opt/mt/share/apertium/ sme-nob
 og
 }}}
-
-----
 
 !!!INSTALLATION OF TRANSLATORS ON VICTORIO
 
@@ -60,15 +50,11 @@ $ /usr/bin/usermod -a -G mt <username>
 }}}
 You’ll need ‘sudo’ for this.
 
-----
-
 !!b) make a directory in your home directory for the MT source
 {{{
 mkdir mt/
 cd mt/
 }}}
-
-----
 
 !!c) check out the necessary source code
 {{{
@@ -79,8 +65,6 @@ $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-sm
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/lttoolbox
 }}}
-
-----
 
 !!d) compile it
 {{{
@@ -130,8 +114,6 @@ $ make
 $ make install
 $ cd ..
 }}}
-
-----
 
 !!e) test it installed ok:
 {{{
