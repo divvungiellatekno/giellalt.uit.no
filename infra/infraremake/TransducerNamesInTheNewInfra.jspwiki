@@ -4,14 +4,14 @@ The new infrastructure produces transducers with a different naming scheme than 
 
 !!The information we want to encode
 
-When there are suggestions for strings to represent each value, the suggestion is given first before a single hyphen - .
+The strings to represent the value for each class is given first. The order of the info classes represent the order in the filename.
 
-basictype:
+!basictype
 * analyser
 * generator
 * automaton (single-level)
 
-application:
+!application
 * morphological analysis/generation (default, not specified)
 * spellers (one application tag name for each):
 ** hfstspell (just a transducer/automaton)
@@ -22,28 +22,28 @@ application:
 * dict - dictionaries (more visible tags, same content as standard)
 * apert - MT/apertium (both restricted to the set of lemmas in the transfer lexicons)
 
-tagset:
+!tagset
 * gt (default)
 * apert - apertium
 * GTLANG - tags in the target language
 * XLANG - tags in some other language, typically a majority language
 
-normativity:
+!normativity
 * desc - descriptive
 * norm - normative
 * restr - restricted (usually only used together with dialect)
 * single - only one word form pr analysis, always
 
-dialect:
+!dialect
 * whatever set of dialects are relevant for the language
 
-fsttype:
+!fsttype
 * hfst
 * xfst (Xerox)
 
 !!Naming scheme
 
-Based on the above list, we get something like this:
+Based on the above list, we get this:
 
 {{{
 basictype-application-tagset-normativity[-dialect].fsttype
@@ -62,5 +62,14 @@ These are not fully lexical transducers, they just convert between one represent
 * date
 * clock
 * numbers
+
+The inverted variants of these transducers are named ("analysis" and "generation" doesn't make sense for these transducers):
+
+* -inv
+
+Beyond that, the fsttype is specified. This gives the following names:
+
+* {{clock.hfst}}
+* {{date-inv.xfst}}
 
 Conversion to IPA is a special case of this type of transducers. The naming of that one is still open.
