@@ -57,19 +57,22 @@ This should give transducers with names like:
 
 !!!Transcription transducers
 
-These are not fully lexical transducers, they just convert between one representational format and another, like between dates written as text and dates written with digits. The names of these transducers follow the old infra convention, and is just:
+These are not fully lexical transducers, they just convert between one representational format and another, like between dates written as text and dates written with digits. Still, they follow the same naming scheme as above. The __analyser__ takes as input ''what is usually found in running text'', and the __generator__ generates what is usually found in running text: the arabic numeral form of these expressions.
 
-* date
-* clock
-* numbers
+That is, to go from numerals to strings, you __analyse__, and to go from strings to numerals, you __generate__.
 
-The inverted variants of these transducers are named ("analysis" and "generation" doesn't make sense for these transducers):
+The application name is:
 
-* -inv
+* date2text
+* clock2text
+* number2text
 
-Beyond that, the fsttype is specified. This gives the following names:
+Conversion to IPA is a special case of this type of transducers, and is named:
 
-* {{clock.hfst}}
-* {{date-inv.xfst}}
+* text2ipa
 
-Conversion to IPA is a special case of this type of transducers. The naming of that one is still open.
+!!File name examples
+
+* {{analyser-date2text-gt-desc.hfst}}
+* {{generator-clock2text-gt-norm.xfst}}
+* {{analyser-text2ipa-gt-desc.hfst}}
