@@ -1,8 +1,8 @@
 !!!Compiling HFST3
 
-This is a receipt for setting up HFST3, with the backends we need, on MacOSX Snow Leopard. See the HFST3 README file for further details, and how to turn on or off specific backens if needed or wanted.
+This is a receipt for setting up HFST3, with the backends we need. See the HFST3 README file for further details, and how to turn on or off specific backens if needed or wanted.
 
-__The info on this page can be outdated, consult the HFST README file to get up-to-date installation instructions and requirements! The same goes for the different backends!__
+__Up-to-date as of 2012-10-10__
 
 Presently, HFST3 supports three different backends:
 * __OpenFST__ - weighted transducers (''default'')
@@ -17,12 +17,12 @@ The bottom line: use the latest version, and follow the receipts below, and you 
 
 !!!Install OpenFST (default, required for GT/Divvun use of HFST)
 
-OpenFST is one of the FST backends used in HFST, and enabled by default. By following the receipt below, you will get version 1.2.7 of OpenFST. But you can also check the [OpenFST|http://www.openfst.org/] site to see whether there are newer releases.
+OpenFST is one of the FST backends used in HFST, and enabled by default. By following the receipt below, you will get version 1.3.1 of OpenFST. But you can also check the [OpenFST|http://www.openfst.org/] site to see whether there are newer releases.
 
 {{{
-wget http://openfst.cs.nyu.edu/twiki/pub/FST/FstDownload/openfst-1.2.7.tar.gz
-tar -xzvf openfst-1.2.7.tar.gz 
-cd openfst-1.2.7/
+wget http://openfst.cs.nyu.edu/twiki/pub/FST/FstDownload/openfst-1.3.1.tar.gz
+tar -xzvf openfst-1.3.1.tar.gz 
+cd openfst-1.3.1/
 ./configure
 make
 sudo make install
@@ -70,6 +70,8 @@ svn co https://hfst.svn.sourceforge.net/svnroot/hfst/trunk/hfst3
 cd hfst3/
 ./autogen.sh
 ./configure --with-foma --enable-proc --enable-lexc # This is the minimum we need
+# For some reason .yy files must be built explicitely on MacOS X
+for yy_file in `find . -name '*.yy'`; do basedir=`pwd`; cd `dirname $yy_file`; make `basename $yy_file .yy`.cc; cp -v `basename $yy_file .yy`.hh `basename $yy_file .yy`.h; cd $basedir; done
 make
 sudo make install
 }}}
