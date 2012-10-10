@@ -71,7 +71,7 @@ cd hfst3/
 ./autogen.sh
 ./configure --with-foma --enable-proc --enable-lexc # This is the minimum we need
 # For some reason .yy files must be built explicitely on MacOS X
-for yy_file in `find . -name '*.yy'`; do basedir=`pwd`; cd `dirname $yy_file`; make `basename $yy_file .yy`.cc; cp -v `basename $yy_file .yy`.hh `basename $yy_file .yy`.h; cd $basedir; done
+ for yy_file in `find . -name '*.yy'`; do pushd `dirname $yy_file`; make `basename $yy_file .yy`.cc; cp -v `basename $yy_file .yy`.hh `basename $yy_file .yy`.h; popd; done
 make
 sudo make install
 }}}
