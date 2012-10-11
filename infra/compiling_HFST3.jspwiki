@@ -70,8 +70,26 @@ svn co https://hfst.svn.sourceforge.net/svnroot/hfst/trunk/hfst3
 cd hfst3/
 ./autogen.sh
 ./configure --with-foma --enable-proc --enable-lexc # This is the minimum we need
+}}}
+
+For MacOS X
+
+{{{
 # For some reason .yy files must be built explicitely on MacOS X
  for yy_file in `find . -name '*.yy'`; do pushd `dirname $yy_file`; make `basename $yy_file .yy`.cc; cp -v `basename $yy_file .yy`.hh `basename $yy_file .yy`.h; popd; done
+}}}
+
+You will get this error message at the end of the output:
+
+{{{
+~/lingsvn/hfst3/tools/src/parsers ~/lingsvn/hfst3
+make: *** No rule to make target `xfst-parser.cc'.  Stop.
+cp: xfst-parser.hh: No such file or directory
+}}}
+
+Don't care about it, it won't stop hfst3 from building.
+
+{{{
 make
 sudo make install
 }}}
