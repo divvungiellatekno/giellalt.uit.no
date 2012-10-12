@@ -18,7 +18,7 @@ Choose the norwegian version of the saami document and double click it. The docu
 
 (You now have the saami pages in the left tab and the norwegian pages in the right tab)
 
-!!3. Open a new window in SEE (cmd+n)
+!!3. Open a new window in SubEthaEdit (cmd+n)
 - paste (cmd+v) the link of the saami document
 - press cmd+f and replace & with \& (replace all)
 - copy (cmd+c) the link
@@ -37,7 +37,7 @@ convert2xml.pl dc2012-2.pdf
 
 !!5. Go back to Safari and copy the link to the norwegian document.
 
-!!6. Goto the SEE window
+!!6. Go to the SubEthaEdit window
 - paste (cmd+v) the link of the norwegian document
 - press cmd+f and replace & with \& (replace all)
 - copy (cmd+c) the link
@@ -67,18 +67,23 @@ see sp2012-2.pdf.xsl
 
 !!11. You have to fill in these entries:
 This entry has to be entered in the saami xsl file (don't fill in "translated from" in the norwegian xsl file):
+{{{
 <xsl:variable name="filename" select="'http://innsyn.e-kommune.no/innsyn_sametinget_samisk/wfdocument.aspx?journalpostid=2012006934&amp;dokid=368243&amp;versjon=1&amp;variant=P&amp;ct=RA-PDF'"/>
+}}}
 
--->NB!! This is the full link, note that you have to replace some characters in the link. (Paste the link into a clean SEE document, use the search and replace function and replace & with (&amp;). Don't include the paranthesis). Copy the link and paste it into the Terminal. IMPORTANT: replace & with &amp;
+-->NB!! This is the full link, note that you have to replace some characters in the link. (Paste the link into a clean SubEthaEdit document, use the search and replace function and replace & with (&amp;). Don't include the paranthesis). Copy the link and paste it into the Terminal. IMPORTANT: replace & with &amp;
 
+{{{
 <xsl:variable name="title" select="'Sámedikki dievasčoahkkin Čoahkkingirji 001/12'"/>
 <xsl:variable name="publisher" select="'Norgga Sámediggi'"/>
 <xsl:variable name="year" select="'2012'"/>
 <xsl:variable name="genre" select="'admin'"/>
 <xsl:variable name="translated_from" select="'nob'"/>
+}}}
 
 --->NB! Only use translated_from if it is a translated document!
 
+{{{
 <xsl:variable name="license_type" select="'free'"/>
 <xsl:variable name="sub_name" select="'Berit Eskonsipo'"/>
 <xsl:variable name="sub_email" select="'berit.nystad.eskonsipo@uit.no'"/>
@@ -86,7 +91,7 @@ This entry has to be entered in the saami xsl file (don't fill in "translated fr
 <xsl:variable name="monolingual" select="'1'"/> <!--lg rec is off!-->
 <xsl:variable name="parallel_texts" select="'1'"/>
 <xsl:variable name="para_nob" select="'sp2012-1.pdf'"/>
-
+}}}
 
 Save!
 
@@ -109,7 +114,7 @@ svn add (cmd+v) (cmd+v+.+tab)
 !!15. Write:
 svn ci -m "your svn message" 
 
-!!16. Rerun convert2xml in the NOB Terminal window(note that you can press up in the Terminal untill the right command appears. Add --debug to it.):
+!!16. Rerun convert2xml in the NOB Terminal window (note that you can press up in the Terminal untill the right command appears. Add --debug to it.):
 
 convert2xml.pl --debug sp2012-2.pdf
 
