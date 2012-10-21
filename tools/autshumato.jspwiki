@@ -3,36 +3,60 @@
 * [Autshumato on SourceForge|http://autshumato.sourceforge.net/]
 * Quick reference: [The current Autshumato ReadMe.txt file|Autshumato_ReadMe.txt]
 
-Download the last Authsumato version. 
-
-__Note: The 1.1 version does not work for mac. Use 1.0 (from 13.5.2010) while waiting for fix.__
-
-(Trond has a version of 1.0, and has sent error report for 1.1)
+[Download the last Authsumato version|http://sourceforge.net/projects/autshumatoite/files/latest/download]. 
 
 Start the program by doubleclicking
 the __Autshumato.jar__ file. Help files are behind the __?__ symbol to the right.
 
+For the impatient: 
 
-For the impatient: After having opened the program, these are the steps:
-
-# Specify Source and Target languages
-# Select document (in OpenOffice 3.0 or higher format)
+# Install translation memory
+# Make a new translation project
+# Import files into the translation project
 # Translate
 # Create the translated document
-# View and edit the translated document in the Target window
-# Exit or Restart with a new document
+# Exit, import a new file into the translation project or start a new translation project
 
-!!!Translation memory
+!! Translation memory
 
-You need an __AutshumatoITE__ folder somewhere (on your home dir, eg.)
-In that, Autshumato excpects a folder omegat/tm, where you shall store
-aligned LANG1.LANG2.name.tmx translation memory files.
+# Make a folder, name it tm.
+# [Download our translation memory files|http://divvun.no/static_files/nob2sme-2012-10-21.zip]
+# Unpack this file inside the folder tm
 
-The Giellatekno tmx memory may be downloaded from:
+!! Make a new translation project
 
-* [http://www.divvun.no/static_files/NOB.SME.gt-sd_free-20101003.tmx.gz]
+# Go to Project->New
+# A dialog appears, write the name of your translation project.
+# Press Save
+# The New Project dialog appears
+# Specify Source and Target languages
+# Specify the folder tm that you made in the above steps as the Translation Memory Folder
+# Press
 
+!! Import files into the translation project
 
+# The Project Files dialog appears
+# Press Import Source Files...
+# Choose the file that you want to translate
+# Press Close in the Project Files dialog
+
+!! Translate
+
+# Translate the first segment.
+# Go to the next segment by pressing enter or press cmd-n
+
+To navigate in the document, use the Goto-menu
+
+!! Using the translation memory
+
+Suggestions from the translation memory appears in the Fuzzy Matches part
+Chose one of the suggestions by pressing cmd+1-5. Use the suggestion by pressing cmd+r
+
+!! Create the translated document
+
+Goto Project->Create Translated Documents
+
+The translated documents appears in the folder target inside the Translation Project folder
 
 !!!Machine translation
 
@@ -41,9 +65,3 @@ To be documented.
 !!!Wordlists
 
 To be documented.
-
-!!!Troubleshooting
-
-The buttom row might be grey. If so, load the document to be translated again. 
-
-
