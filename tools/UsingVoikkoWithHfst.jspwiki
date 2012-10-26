@@ -1,13 +1,60 @@
 !!!Make or update spellers for Voikko+HFST
 
-For the languages in the {{gt}} directory:
+!! For the languages in the {{gt}} directory:
 
 {{{
 cd $GTHOME/gt/
 make GTLANG=sme hfstspellers
 }}}
 
-For other languages:
+See "old documentation" below.
+
+
+!! For the languages in the {{langs}} directory:
+
+(Languages with analysers working to a variable degree are: 
+South Saami, Lule Saami, Komi Zyrian, Erzya Mordvin, Meadow Mari, Faroese, Greenlandic)
+
+
+* Download and install LibreOffice 3.6.2 (newest) - it knows about several FU languages,
+  e.g. both Komi Zyrian, Komi Permyak, Erzya Mordvin (but not Meadow Mari, it seems) 
+* If you already have this LibreOffice, make sure you do not have Voikko from 2010 
+  installed, if you do, uninstall it from the menu 
+  Tools > Extension manager > Voikko (Remove)
+* Download and install Voikko LibreOffice plugin with hfst support - downloadable from: 
+  [divvun.no/static_files/voikko-prealpha-20120125.oxt|http://divvun.no/static_files/voikko-prealpha-20120125.oxt]
+
+This is enough to enable hfst-based spell-checkers in LibreOffice (tested).
+
+To build and test:
+
+1. Compile your language with hfst support (here: kpv as example)
+
+{{{
+    cd $GTHOME/langs/kpv
+    ./configure --with-hfst
+    make
+    sudo make install
+}}}
+
+2. in LibreOffice, open {{Preferences > Language Settings > Voikko}}
+   and check that the newly installed language is listed 
+   (and thus known to Voikko+LibreOffice).
+
+Known problem:
+
+At the moment (26.10.2012), the kvp speller does not work (although it did yesterday).
+To ensure that the pipeline works, install with e.g. {{sma}} instead.
+
+
+
+
+
+
+
+!!! Old documentation
+
+For other languages not in newinfra:
 
 {{{
 make -f Makefile.hfst
@@ -28,13 +75,18 @@ This can be done with a simple installation of an extesion. The steps are as fol
     see [this page|http://www.helsinki.fi/~tapirine/tmp/] and download the
     relevant {{.oxt}} file
 
-* Installer tillegget i OpenOffice / LibreOffice
+* Install the addition in OpenOffice / LibreOffice
 
-** start OOo / LOffice
-** gå til Vertkøy > Utvidingar... (eller tilsvarande på andre språk)
-** klikk på "Legg til..." og vel oxt-fila du nettopp lasta ned, klikk "Opne" (eller tilsvarande)
-** for å sjekka at Voikko er installert og aktiv, gå til LibreOffice/OpenOffice > Innstillingar > Writing Aids. I lista rett under "Available language modules" sjekk at Voikko finst, og at Voikko har ei hake i sjekkboksen framfor seg. Marker Voikko, og klikk på Edit-knappen til høgre for lista. I menyen i dialogen skal du finna i det minste finsk eller grønlands avhengig av kva du lasta ned og installerte. Sjekk at Voikko ligg FØRE Hunspell i lista over tilgjengelege stavekontrollar for dei samiske språka!!! Om ikkje, vil Hunspell bli brukt i staden for Voikko!!! Ev. kan du fjerna Hunspell heilt.
-** avslutt OpenOffice/LibreOffice
+** start OpenOffice / LibreOffice
+** go to Tools > Extention manager... (exact names depends on your language version)
+** Click "Add..." and choose the oxt-file you just downloaded click "Open" (or similarly)
+** in order to check that Voikko is installed and active, go to the menu
+   LibreOffice/OpenOffice > Preferences > Writing Aids. In the list right under
+   "Available language modules", check that Voikko is listed, and that it is checked
+   as active in the checkbox. Mark Voikko, and click the Edit button to th right of
+   the list. In the dialogue menu you should find at least Finnish. Check that Voikko
+   is BEFORE  Hunspell in the list of accessible spellcheckers.
+** close OpenOffice/LibreOffice
 * compile your hfst spellers as described on the top of the page
 * ensure they are active in OpenOffice/LibreOffice (see above)
 
