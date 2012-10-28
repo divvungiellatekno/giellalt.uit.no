@@ -34,36 +34,42 @@
       <section>
         <title>Morphological analysis</title>
 
-        <p>The project uses the following Xerox tools: <strong>twolc</strong>
+        <p>The project uses a set of morphological compilers which exists in
+        two versions, the <strong>xerox</strong> and the <strong>hfst</strong> tools.
+        The xerox tools are the original ones, they are robust and well documented, 
+        they are freely available for research, but they are not open source. The
+        hfst tools are open source with no restrictions, but they are still quite
+        new (with version numbers like 0.6). Both compilers compile the same
+        source files, and at Giellatekno we use both compilers.</p>
+        
+        
+        <p>The Xerox tools are: <strong>twolc</strong>
         (for morphophonology), <strong>lexc</strong> (for morphology),
         <strong>xfst</strong> (for compiling the final transducer) , and
         <strong>lookup</strong> (for analysis and generation).</p>
 
-        <p>The link list below refers to the Xerox documentation pages for
-        these tools, these and other links are found <a
-        href="http://www.xrce.xerox.com/competencies/content-analysis/fssoft/">here</a>:</p>
+        <p>The xerox tools can be found at <a href="http://www.fsmbook.com">fsmbook.com</a>. They are 
+        documented in the book referred to on that page, we we find the book a prerequisite for
+        work on morphological transducers, both for xerox and hfst.</p>
 
         <ol>
-          <li><a
-          href="http://www.xrce.xerox.com/competencies/content-analysis/fssoft/docs/twolc-92/twolc92.html">twolc</a>,
-          for phonological and morphophonological rules</li>
+          <li><strong>twolc</strong>,
+          for phonological and morphophonological rules (cf. a <a href="http://www.cis.upenn.edu/~cis639/docs/twolc.html">shorter</a>
+          and <a href="http://www.stanford.edu/~laurik/.book2software/twolc.pdf">longer</a> documentation).</li>
 
-          <li><a
-          href="http://www.xrce.xerox.com/competencies/content-analysis/fssoft/docs/lexc-93/lexc93.html">lexc</a>,
-          for representing the Sami stems and the affix lexica</li>
+          <li><strong>lexc</strong>, for representing the Sami stems and the affix lexica (<a
+          href="http://www.cis.upenn.edu/~cis639/docs/lexc.html">documentation</a>.</li>
 
-          <li><a
-          href="http://www.xrce.xerox.com/competencies/content-analysis/fssoft/docs/fst-97/xfst97.html">xfst</a>,
+          <li><strong>xfst</strong> <a
+          href="http://www.cis.upenn.edu/~cis639/docs/xfst.html">xfst</a>,
           the finite-state transducer tool, for integratingthe different parts
           of the program, and for compiling the preprocessor</li>
 
-          <li><a
-          href="http://www.xrce.xerox.com/competencies/content-analysis/fssoft/docs/tokenize-97/tokenize97.html">tokenize</a>,
+          <li><a href="http://www.cis.upenn.edu/~cis639/docs/tokenize.html">tokenize</a>,
           for tokenization and processing (note that we do not use tokenize
           for preprocessing at the moment, but perl)</li>
 
-          <li><a
-          href="http://www.xrce.xerox.com/competencies/content-analysis/fssoft/docs/lookup-97/lookup97.html">lookup</a>,
+          <li><a href="http://www.cis.upenn.edu/~cis639/docs/lookup.html">lookup</a>,
           an interface to the morphological analyser. NB! cf. our <a
           href="docu-lookup.html">lookup notes</a></li>
         </ol>
@@ -75,6 +81,12 @@
         installed on your own machine, be it on Mac OSX, Linux or Windows. One
         version of the software is found on the CD accompanying the book, for
         the latest version, ask Trond for reference.</p>
+
+<p>The hfst tools can be found at 
+<a href="https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstDownloads">the hfst download page</a>. Documentation is found
+at <a href="https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstAllPages">the hfst wiki</a>. For installation, see also our
+<a href="../infra/compiling_HFST3.html">hfst3 installation page</a>.</p>
+
       </section>
 
       <section>
