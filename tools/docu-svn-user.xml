@@ -131,18 +131,15 @@ $</source>
          <title>Digging out svn deleted files from the repository</title>
          <p>After you did <code>svn rm file, svn ci -m removed file</code>, the file is still there. To get it, do the following:</p>
          <ul>
-         <li></li>
-First find the number of the deletion, by logging the parent folder, with the flag -v:
-svn log -v parentfollder/ |less
+         <li>First find the number of the deletion, by logging the parent folder, with the flag -v:
+svn log -v parentfollder/ |less 
+(Deletion was some number, say r61000) </li>
 
-Deletion was some number, say r61000 
+<li>Then get the deleted file with the command: svn cat url/of/file@lastrevisionthefileexisted -r latrevisionthefileexisted > file</li>
 
-Then get the deleted file with the command
-svn cat url/of/file@lastrevisionthefileexisted -r latrevisionthefileexisted > file
+<li>thus:
 
-thus:
-
-svn cat https://victorio.uit.no/langtech/trunk/kt/mhr/src/mhr-num.txt@62505 -r 62505 > asdf
+svn cat https://victorio.uit.no/langtech/trunk/kt/mhr/src/mhr-num.txt@62505 -r 62505 > asdf</li>
          </ul>
       </section>
       <section>
