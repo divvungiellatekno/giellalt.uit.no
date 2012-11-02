@@ -2,14 +2,16 @@
 
 !! Compiling the spellers
 
+
+The resulting spellers are available both for OpenOffice/LibreOffice, and for command-line tools. The command-line tools and the test bench require that you also [build and install libvoikko|../infra/CompilingVoikkoWithHfst.html].
+
+
 ! For the languages in the gt directory:
 
 {{{
 cd $GTHOME/gt/
-make GTLANG=sme hfstspellers
+make GTLANG=sme hfst
 }}}
-
-See "old documentation" below.
 
 
 ! For the languages in the langs directory:
@@ -51,17 +53,12 @@ At the moment (26.10.2012), the kvp speller does not work (although it did yeste
 To ensure that the pipeline works, install with e.g. {{sma}} instead.
 
 
-! Old documentation
-
-For other languages not in newinfra:
+! For other languages not in the langs directory:
 
 {{{
 make -f Makefile.hfst
 }}}
 
-This may take some time. Installation is done automatically as part of the make commands. When the making is finished you should have a working Voikko speller for {{sme}}, based on our hfst transducer!
-
-The resulting spellers are available both for OpenOffice/LibreOffice, and for command-line tools. The command-line tools and the test bench require that you also [build and install libvoikko|../infra/CompilingVoikkoWithHfst.html].
 
 !!Using the spellers in OpenOffice / LibreOffice
 
