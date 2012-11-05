@@ -14,6 +14,8 @@ In order to use the raw text of Wikipedia editions as test corpora, do the follo
 # Extract it with the script ''WikiExtractor.py'' (which is in your
   path, in $GTHOME/gt/script/corpus/. The script has a --help option explaining
   usage.
+# The output is xml. If you want clean text, you may strip the tags with the command
+  {{... | sed 's/<[^>]*>//g;' | ... }}  
  
 Note that we, for the Uralic languages of Russia, already have corpus files
 in biggies/kt/$LANG/corp/$LANGwiki.txt
