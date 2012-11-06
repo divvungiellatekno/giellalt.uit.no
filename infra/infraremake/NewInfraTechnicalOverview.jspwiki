@@ -1,0 +1,83 @@
+!!!The new infra - a technical overview
+
+Main components:
+* autotools
+* gtcore
+* templates
+
+!!!Autotools
+
+* all languages are independent "projects/products"
+* building is done with the familiar:
+
+{{{
+./autogen.sh # only required if building from svn source
+./configure
+make
+sudo make install
+}}}
+
+And the same goes for the overall {{langs/}} dir, if one wants to build and
+install all languages.
+
+The basic layout of each language:
+
+{{{
+<lang>/doc/  # more or less unused for now, will contain language-specific
+             # documentation, both hand-made and extracted from source.
+      src/   # pretty obvious
+      test/  # here we add tests for everything
+      tools/ # here we build spell checkers etc.
+}}}
+
+Build and configure dirs:
+
+{{{
+<lang>/am-shared/ # shared build instructions - the real build stuff
+       m4/        # configuration macros
+}}}
+
+__NEVER TOUCH THESE DIRS AND FILES!!!___
+
+These files (and dirs) are always updated by merging in changes from the
+templates (see below). Such changes should only be done by the infrastructure
+maintainers.
+
+!!!Gtcore
+
+{{$GTHOME/gtcore/}} - contains core:
+* scripts
+* xsl files
+* common filters - sub filter, morpheme boundary mark filter, etc.
+* templates (see below)
+
+!!!Templates
+
+Two templates defined so far (6.11.2012):
+* und - the full basic infrastructure for all languages
+* smi - contains lexicon(s) and features specific to the sami languages
+
+The infrastructure of all languages are updated by merging in changes in the
+templates. Only languages with a corresonding {{*.timestamp}} file will be
+merged.
+
+Template updates __MUST__ be coordinated - the merging is relatively fragile,
+and at the same time modifies many files.
+
+!!!Testing
+
+There's a separate {{test/}} dir that contains a mirror hierarchy to the other
+dirs, and which contains a couple of test shell script. The basic requirements
+for the test scripts are:
+
+* they must be executable
+* the must return with an exit value of zero for success
+* any other value indicates a failed test
+* the exit value 77 indicates a test that was skipped (neither fail nor pass)
+* the exit value 99 indicates a hard fail (ie a real crash of the tested
+  process)
+* the test scripts must be listed in a {{TESTS}} variable in one of the
+  {{Makefile.am}} files
+
+As long as these requirements are met, the test scripts can be written in any
+language - even C!
