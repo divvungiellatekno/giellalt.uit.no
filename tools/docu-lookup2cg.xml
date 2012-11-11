@@ -19,7 +19,7 @@
 
         <p>The script <em>lookup2cg</em> reformats the <code>lookup</code>
         output so that it can be interpreted as input to CG, the
-        tool<code>vislcg</code> input. lookup2cg is a perl script, and as all
+        tool <code>vislcg3</code> input. lookup2cg is a perl script, and as all
         other scripts, it is located in the gt/script directory.</p>
       </section>
 
@@ -29,7 +29,7 @@
         <p>The input to the script is the output of <code>lookup.</code> The
         command to produce the input is, e.g:</p>
 
-        <source>$ echo "Dán" | lookup -flags mbTT -utf8 ~gt/sme/bin/sme.fst
+        <source>$ echo "Dán" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst
 0%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;100%
 Dán     dát+Pron+Dem+Sg+Acc
 Dán     dát+Pron+Dem+Sg+Gen
@@ -69,7 +69,7 @@ Dán     dát+Pron+Dem+Sg+Gen
           respect; in the lookup output, the analysis of a compound expression
           contains also the complete analyses of its parts. For example, </p>
 
-          <source>$ echo "bohccobuktaga" | lookup -flags mbTT -utf8 ../sme/bin/sme.fst 
+          <source>$ echo "bohccobuktaga" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst 
 0%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;100%
 bohccobuktaga   boazu+N+SgGenCmp#buvtta+N+Sg+Acc
 bohccobuktaga   boazu+N+SgGenCmp#buvtta+N+Sg+Gen
@@ -111,7 +111,7 @@ bohccobuktaga   boazu+N+SgGenCmp#buvtta+N+Sg+Gen
           not to mention a string of only one letter. For example the compound
           "sierravuoigatvuođaid" has among others the following reading:</p>
 
-          <source>sierravuoigatvuođaid    sierra#vuoigat+A+vuohta+N+Pl+Acc</source>
+          <source>sierravuoigatvuođaid    sierra+A+Attr+Cmp#vuoigat+A+Der/vuohta+N+Pl+Acc</source>
 
           <p>Now when the base form "vuohta" is searched from the analyzed
           form "sierravuoigatvuođaid" by first comparing the first 4 letters
@@ -123,14 +123,14 @@ bohccobuktaga   boazu+N+SgGenCmp#buvtta+N+Sg+Gen
           resulting base form is thus:</p>
 
           <source>"&lt;sierravuoigatvuođaid&gt;"
-        "sierra#vuoigatvuohta" N Pl Acc</source>
+        "sierravuoigatvuohta" N Pl Acc</source>
 
           <p>(This is not completely true, since the derivational tags (here
           A) are not removed in the lookup2cg, but if they were.) The word
           form "sierravuoigatvuođaid" has another analysis as well, namely one
           which does not involve the derivational tag:</p>
 
-          <source>sierravuoigatvuođaid    sierra+A+Attr#vuoigatvuohta+N+Pl+Acc</source>
+          <source>sierravuoigatvuođaid    sierra+A+Attr+Cmp#vuoigatvuohta+N+Pl+Acc</source>
 
           <p>Now the base form of the last part is "vuoigatvuohta". The first
           4 letters "vuoi" are found from the analyzed form. Importantly, the
@@ -141,8 +141,8 @@ bohccobuktaga   boazu+N+SgGenCmp#buvtta+N+Sg+Gen
           "sierravuoigatvuoigatvuohta". Consider the word "sealgeetniin" which
           has among others the following readings:</p>
 
-          <source>sealgeetniin    sealgi+N+SgNomCmp#eadni+N+Sg+Com
-sealgeetniin    sealgi+N+SgNomCmp#eadni+N+Pl+Loc</source>
+          <source>sealgeetniin    sealgi+N+SgNomCmp+Cmp#eadni+N+Sg+Com
+sealgeetniin    sealgi+N+SgNomCmp+Cmp#eadni+N+Pl+Loc</source>
 
           <p>The strings that are to be searched from the form "sealgeetniin"
           are the following "eadn", "ead", "ea" and "e", from the base form of
@@ -154,6 +154,10 @@ sealgeetniin    sealgi+N+SgNomCmp#eadni+N+Pl+Loc</source>
           <source>"&lt;sealgeetniin&gt;"
        "s#eadni" N Pl Loc
        "s#eadni" N Sg Com</source>
+<p>This bug is now solved by lexicalizing the word.</p>       
+       "sealgeeadni" N Sg Com
+	   "sealgeeadni" N Pl Loc
+
 
           <p>Clearly, the basic string-comparison operations are not
           satisfactory method for producing base forms for compounds. The
@@ -164,8 +168,8 @@ sealgeetniin    sealgi+N+SgNomCmp#eadni+N+Pl+Loc</source>
           <p>Note that dropping the analyses of the compound parts also make
           it possible to get rid of "ambiguities" like the following:</p>
 
-          <source>rámmaeaktu      rámma+N+SgNomCmp#eaktu+N+Sg+Nom
-rámmaeaktu      rámma+N+SgGenCmp#eaktu+N+Sg+Nom</source>
+          <source>rámmaeaktu      rámma+N+SgNomCmp+Cmp#eaktu+N+Sg+Nom
+rámmaeaktu      rámma+N+SgGenCmp+Cmp#eaktu+N+Sg+Nom</source>
 
           <p>And to produce only one one analysis for CG:</p>
 
@@ -183,12 +187,10 @@ rámmaeaktu      rámma+N+SgGenCmp#eaktu+N+Sg+Nom</source>
 
           <p>For example, the following input to the lookup2cg:</p>
 
-          <source>$ echo "bohccobuktagiid" | lookup -flags mbTT -utf8 ../sme/bin/sme.fst
+          <source>$ echo "bohccobuktagiid" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst
 0%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;100%
-bohccobuktagiid boazu+N+SgGenCmp#buktu+N+SgNomCmp#ahki+N+Pl+Acc
-bohccobuktagiid boazu+N+SgGenCmp#buktu+N+SgNomCmp#ahki+N+Pl+Gen
-bohccobuktagiid boazu+N+SgGenCmp#buvtta+N+Pl+Acc
-bohccobuktagiid boazu+N+SgGenCmp#buvtta+N+Pl+Gen</source>
+bohccobuktagiid boazu+N+SgGenCmp+Cmp#buvtta+N+Pl+Acc
+bohccobuktagiid boazu+N+SgGenCmp+Cmp#buvtta+N+Pl+Gen</source>
 
           <p>The compounds are rated straight after they arrive to the
           lookup2cg. Only the readings with the fewest compounding points are
@@ -208,23 +210,25 @@ bohccobuktagiid boazu+N+SgGenCmp#buvtta+N+Pl+Gen</source>
           in the parsing process is given as well. thus, we have "ambiguities"
           like the following:</p>
 
-          <source>$ echo "mearkkašupmi" | lookup -flags mbTT -utf8 ../sme/bin/sme.fst
+          <source>$ echo "mearkkašupmi" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst
 0%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;100%
-mearkkašupmi    mearkkašit+V+TV+Pass+upmi+N+Sg+Nom
+mearkkašupmi    mearkkašit+V+TV+Der/PassL+V+Der/upmi+N+Sg+Nom
 mearkkašupmi    mearkkašupmi+N+Sg+Nom
 
-$ echo "ealáhusheiveheapmi" | lookup -flags mbTT -utf8 ../sme/bin/sme.fst
+$ echo "ealáhusheiveheapmi" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst
 0%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;100%
-ealáhusheiveheapmi      ealáhus+N+SgNomCmp#heivet+V+IV+h+eapmi+N+Actio+Sg+Nom
-ealáhusheiveheapmi      ealáhus+N+SgNomCmp#heivehit+V+TV+eapmi+N+Actio+Sg+Nom
+ealáhusheiveheapmi	ealáhus+N+SgNomCmp+Cmp#heivet+V+IV+Der/h+V+Der/NomAct+N+Sg+Nom
+ealáhusheiveheapmi	ealáhus+N+SgNomCmp+Cmp#heivehit+V+TV+Der/NomAct+N+Sg+Nom
+ealáhusheiveheapmi	ealáhus+N+SgNomCmp+Cmp#heiveheapmi+N+Sg+Nom
+ealáhusheiveheapmi	ealáhusheiveheapmi+N+Sg+Nom
 </source>
 
           <p>Here is the list of the derivational tags for North Sámi:</p>
 
-          <source> +adda +ahtti +alla +asti +d +eaddji +eamos1 +eapmi +g +geahtes +h
- +heapmi +hudda +huhtti +huvva +j +l +las1
- +meahttun +mus1 +n +s1 +st +stuvva +us +vuohta +goahti +lágan
- +Dimin  +Pass</source>
+          <source> +Der/adda +Der/ahtti +Der/alla +Der/asti +Der/d +Der/NomAct +Der/eamoš +Der/eapmi +Der/g +Der/geahtes +Der/h
+ +Der/heapmi +Der/hudda +Der/huhtti +Der/huvva +Der/j +Der/l +Der/laš
+ Der/+meahttun +Der/muš +Der/n +Der/š +Der/st +Der/stuvva +Der/us +Der/vuohta +Der/goahti +Der/lágan
+ +Der/Dimin  +Der/PassL  +Der/PassS</source>
 
           <p>The derivational tags are associated with at least a POS tag (N,
           V, Adv, A). The POS tags are marked with asterisk (*) to distinguish
@@ -232,12 +236,11 @@ ealáhusheiveheapmi      ealáhus+N+SgNomCmp#heivehit+V+TV+eapmi+N+Actio+Sg+Nom
           for is the following:</p>
 
           <source>"&lt;mearkkašupmi&gt;"
-         "mearkkašit" V* TV Pass upmi N Sg Nom
+         "mearkkašit" V* TV Der/PassL V* Der/upmi N Sg Nom
          "mearkkašupmi" N Sg Nom
 
-"&lt;ealáhusheiveheapmi&gt;"
-         "ealáhus#heivet" V* IV h eapmi N Actio Sg Nom
-         "ealáhus#heivehit" V* TV eapmi N Actio Sg Nom</source>
+"&lt;ealáhusjurddašeapmi&gt;"
+         "ealáhus#jurddašit" V* TV Der/NomAct N Sg Nom</source>
 
           <p>The marking of the tags and constructing the base form of a word
           with derivational suffixes has to be reconsidered. More of
@@ -256,8 +259,8 @@ ealáhusheiveheapmi      ealáhus+N+SgNomCmp#heivehit+V+TV+eapmi+N+Actio+Sg+Nom
         found as a noun in the lexicon.</p>
 
         <source>"bargiin" S:1995
-        "bargat" V N Actor Sg Com
-        "bargi" N Sg Com
+        "bargat" V* TV Der/NomAg N Sg Com
+        "bargi" N NomAg Sg Com
 </source>
 
         <p>What we want is thus to treat all Actor nouns as if they were found
@@ -265,10 +268,10 @@ ealáhusheiveheapmi      ealáhus+N+SgNomCmp#heivehit+V+TV+eapmi+N+Actio+Sg+Nom
         morphological process, and find the stem.</p>
 
         <section>
-          <title>Actio</title>
+          <title>Der/NomAct</title>
 
           <source>"lohkamat" S:631, 631, 631
-        "lohkat" V n N Actio Pl Nom
+        "lohkat" V* TV Der/NomAct N Pl Nom
         "lohkan" N Pl Nom
 </source>
         </section>
@@ -281,31 +284,31 @@ ealáhusheiveheapmi      ealáhus+N+SgNomCmp#heivehit+V+TV+eapmi+N+Actio+Sg+Nom
           <p></p>
 
           <dl>
-            <dt>alla</dt>
+            <dt>Der/alla</dt>
 
             <dd>Remove the -it part from the basic form and the and insert
             "alla"</dd>
 
-            <dt>ahtti</dt>
+            <dt>Der/ahtti</dt>
 
             <dd>Remove the -it part from the basic form and the and insert
             "ahtti"</dd>
 
-            <dt>eaddji</dt>
+            <dt>Der/NomAg</dt>
 
             <dd>Remove the -it part from the basic form and the and insert
             "eaddji"</dd>
 
-            <dt>eapmi</dt>
+            <dt>Der/NomAct</dt>
 
             <dd>Remove the -it part from the basic form and the and insert
             "eapmi"</dd>
 
-            <dt>l</dt>
+            <dt>Der/l</dt>
 
             <dd>Remove the -t part from the basic form and insert "l"</dd>
 
-            <dt>vuohta</dt>
+            <dt>Der/vuohta</dt>
 
             <dd>Just add vuohta to the basic form, removing the intervening A
             tag. Problem: there is often a tag 'las1' to the left of 'vuohta',
@@ -316,30 +319,30 @@ ealáhusheiveheapmi      ealáhus+N+SgNomCmp#heivehit+V+TV+eapmi+N+Actio+Sg+Nom
           <p>These ones do:</p>
 
           <ul>
-            <li>heapmi</li>
+            <li>Der/heapmi</li>
 
-            <li>d</li>
+            <li>Der/d</li>
 
-            <li>h</li>
+            <li>Der/h</li>
           </ul>
 
           <p>For the non-gradating verb-to-noun suffixes, remove the V label
           preceeding the N.</p>
 
           <source>"" S:1708
-        "c1uovvut" V l eapmi N Sg Acc
-        "c1uovvulit" V eapmi N Sg Acc
+        "čuovvut" V* TV Der/l V* Der/NomAct N Sg Nom
+        "čuovvulit" V* TV Der/NomAct N Sg Nom
 
 ""
-        "iskat" V d eapmi N Sg Acc
-        "iskat" V d eapmi N Sg Gen
+        "vuodjat" V* IV Der/d V* Der/NomAct N Sg Acc
+        "vuodjat" V* IV Der/d V* Der/NomAct N Sg Gen
 
 ""
-        "jorgalit" V ahtti n N Actio Sg Ill
-        "jorgalahttit" V n N Actio Sg Ill
+        "jorgalit" V* TV Der/ahtti V* TV Der/NomAct N Sg Ill
+        "jorgalahttit" V* TV Der/NomAct N Sg Ill
 
 "" S:662
-        "mearridit" V eaddji N Pl Ill
+        "mearridit" V Der/NomAg N Pl Ill
 
 </source>
 
@@ -347,7 +350,7 @@ ealáhusheiveheapmi      ealáhus+N+SgNomCmp#heivehit+V+TV+eapmi+N+Actio+Sg+Nom
           anything.</p>
 
           <source>"" S:636, 1479
-        "lassi" N heapmi A Comp Sg Nom
+        "lassi" N* Der/heapmi A Sg Nom
 </source>
         </section>
       </section>
