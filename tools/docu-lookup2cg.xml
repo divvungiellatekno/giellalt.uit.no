@@ -69,10 +69,10 @@ Dán     dát+Pron+Dem+Sg+Gen
           respect; in the lookup output, the analysis of a compound expression
           contains also the complete analyses of its parts. For example, </p>
 
-          <source>$ echo "bohccobuktaga" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst 
+          <source>$ echo "bohccobiergobuktagiid" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst 
 0%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;100%
-bohccobuktaga   boazu+N+SgGenCmp#buvtta+N+Sg+Acc
-bohccobuktaga   boazu+N+SgGenCmp#buvtta+N+Sg+Gen
+bohccobiergobuktagiid   boazu+N+SgGenCmp+Cmp#buvtta+N+Sg+Acc
+bohccobiergobuktagiid   boazu+N+SgGenCmp+Cmp#buvtta+N+Sg+Gen
 </source>
 
           <p>However, in CG, only the tags of the last compounding word are
@@ -189,17 +189,26 @@ rámmaeaktu      rámma+N+SgGenCmp+Cmp#eaktu+N+Sg+Nom</source>
 
           <p>For example, the following input to the lookup2cg:</p>
 
-          <source>$ echo "bohccobuktagiid" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst
+          <source>$ echo "bohccobiergobuktagiid" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst
 0%&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;100%
-bohccobuktagiid boazu+N+SgGenCmp+Cmp#buvtta+N+Pl+Acc
-bohccobuktagiid boazu+N+SgGenCmp+Cmp#buvtta+N+Pl+Gen</source>
+bohccobiergobuktagiid	boazu+Ani+N+SgGenCmp+Cmp#biergu+N+SgNomCmp+Cmp#buvtta+N+Pl+Gen
+bohccobiergobuktagiid	boazu+Ani+N+SgGenCmp+Cmp#biergu+N+SgNomCmp+Cmp#buvtta+N+Pl+Acc
+bohccobiergobuktagiid	boazu+Ani+N+SgGenCmp+Cmp#biergobuvtta+N+Pl+Gen
+bohccobiergobuktagiid	boazu+Ani+N+SgGenCmp+Cmp#biergobuvtta+N+Pl+Acc
+bohccobiergobuktagiid	bohccobiergu+N+SgNomCmp+Cmp#buvtta+N+Pl+Gen
+bohccobiergobuktagiid	bohccobiergu+N+SgNomCmp+Cmp#buvtta+N+Pl+Acc
+</source>
 
           <p>The compounds are rated straight after they arrive to the
           lookup2cg. Only the readings with the fewest compounding points are
           subject to further processing, in this example the lines:</p>
 
-          <source>bohccobuktagiid boazu+N+SgGenCmp#buvtta+N+Pl+Acc
-bohccobuktagiid boazu+N+SgGenCmp#buvtta+N+Pl+Gen</source>
+          <source>
+"bohccobiergo#buvtta" N Pl Acc
+"bohccobiergo#buvtta" N Pl Gen
+"bohcco#biergobuvtta" N Pl Gen
+"bohcco#biergobuvtta" N Pl Acc
+</source>
         </section>
 
         <section>
