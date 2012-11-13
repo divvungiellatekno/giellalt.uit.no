@@ -1,0 +1,49 @@
+!!!The basic outline
+
+* create [a new language directory|HowToAddANewLanguage.html]
+* commit your new language dir
+* svn-move the files from the old infra to the new (details below)
+* update makefile source file definitions
+* run {{make check}} to see that everything compiles and passes the tests
+* commit your changes
+
+!!!Details regarding moving the source files
+
+The [directory structure|NewinfraCatalogues.html] contains more levels than in the old infra, and some source files are now split into several source files. Also, many filenames have changed, hopefully such that it is easier to get an idea of what the content is just based on the filename.
+
+All of this means that you need to be a bit careful when moving files from the old infra. Here are some points to remember:
+
+!!The .lexc files
+
+The main morphology {{lexc}} file, typically named {{LANG-lex.txt}} in the old infra, is split into several files:
+
+* {{root.lexc}} in the {{morphology/}} dir - it contains only the {{Root}} lexicon and the {{Multichar_Symbols}} definitions.
+* {{compounding.lexc}} - also in the {{morphology/}} dir - contains the {{{Rxxx}} lexicons to control compounding
+* {{POS.lexc}} - one file each for the affix morphology of each POS described in the old file - are placed in the {{morphology/affixes/}} dir:
+** {{affixes/adjectives.lexc}}
+** {{affixes/nouns.lexc}}
+** {{affixes/verbs.lexc}}
+
+Other lexc files are renamed as follows:
+* full POS name
+* they always end in {{.lexc}}
+
+Remember to update the source file definitions in {{src/morphology/Makefile.am}} to contain all and only the actual source files.
+
+!!The disambiguation and dependency files
+
+The language-specific disambiguation file is placed within {{src/syntax/}}, and now has the suffix {{.cg3}}. The full filename is {{disambiguation.cg3}}.
+
+The language-independent dependency file is ''currently'' placed in the same directory, but should probably be moved to a shared directory.
+
+!!Twolc files / phonological xfst script files
+
+These are placed in {{src/phonology/}} and end in {{.twolc}} or {{.xfscript}} respectively. The filename is {{LANG-phon.twolc}} or {{LANG-phon.xfscript}}.
+
+!!The clock, numbers and date files
+
+These go into {{src/transcriptions/}} and are named the same as earlier.
+
+!!Yaml files
+
+If there are any yaml test files defined for a language, they should go into {{test/src/morphology/}} where they will be picked up automatically.
