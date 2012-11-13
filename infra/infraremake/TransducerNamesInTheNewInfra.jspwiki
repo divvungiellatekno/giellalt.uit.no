@@ -9,6 +9,7 @@ The strings to represent the value for each class is given first. The order of t
 !basictype
 * analyser
 * generator
+* transformer (transducer )
 * automaton (single-level acceptor)
 
 !application
@@ -57,22 +58,28 @@ This should give transducers with names like:
 
 !!!Transcription transducers
 
-These are not fully lexical transducers, they just convert between one representational format and another, like between dates written as text and dates written with digits. Still, they follow the same naming scheme as above. The __analyser__ takes as input ''what is usually found in running text'', and the __generator__ generates what is usually found in running text: the arabic numeral form of these expressions.
+These are not lexical transducers, instead they convert between one representational format and another, like between dates written as text and dates written with digits. For this type of transducers there is a separate basic transducertype: __transformer__. The application name specifies what type of transformation is being done by the transducer.
 
-That is, to go from numerals to strings, you __analyse__, and to go from strings to numerals, you __generate__.
-
-The application name is:
+Possible application names are:
 
 * date2text
 * clock2text
 * number2text
 
-Conversion to IPA is a special case of this type of transducers, and is named:
+Or in the other direction
+
+* text2date
+* text2clock
+* text2number
+
+Conversion to IPA is just another case of this type of transducers, and is named:
 
 * text2ipa
 
+Since no tags are involved in these types of transducers, __the tagset is left out.__
+
 !!File name examples
 
-* {{analyser-date2text-gt-desc.hfst}}
-* {{generator-clock2text-gt-norm.xfst}}
-* {{analyser-text2ipa-gt-desc.hfst}}
+* {{transformer-date2text-desc.hfst}}
+* {{transformer-text2clock-norm.xfst}}
+* {{transformer-text2ipa-desc.hfst}}
