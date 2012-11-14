@@ -1,0 +1,46 @@
+!!!New infra - infra maintenance
+
+Task: add __plx__ and __Hunspell__ conversion to the new infra, but only for a limited set of languages (sma, smj, later sme).
+
+Steps:
+# create a new template, and populate it
+# add template timestamp to the relevant languages
+# add a plx option to the automake and autoconf files
+# merge the template
+# build and test
+# fix bugs in the template, rerun from 3
+
+!!!The steps in detail
+
+!!create a new template, and populate it
+
+We want a new template named {{plxtools}}.
+
+Then, we need to fill that template with the following content:
+
+{{{
+plxtools.timestamp
+am-shared/plx-include.am            # this is the real build file
+tools/spellcheckers/plx/
+                        Makefile.am # includes plx-include.am
+                        src/        # shared src files - rsrc, rev, version
+                        tmp/        # large plx files, make clean safe
+}}}
+
+The __Hunspell__ conversion is common to all languages, and is thus part of the {{und/}} template. These parts need to be added to that template:
+
+{{{
+am-shared/regex-include.am           # this is the real build file
+tools/spellcheckers/filters/            # move common filters in here
+                            Makefile.am # includes the usual regex-include.am
+}}}
+
+!!add template timestamp to the relevant languages
+
+!!add a plx option to the automake and autoconf files
+
+!!merge the template
+
+!!build and test
+
+!!fix bugs in the template, rerun from 3
