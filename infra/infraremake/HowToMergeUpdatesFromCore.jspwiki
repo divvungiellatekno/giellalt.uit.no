@@ -1,10 +1,40 @@
-There are merging two scenarios and one problem case:
+!!!Linguistic updates
 
-* updating a single language
-* updating all languages in one go
-* your language does not include recent changes to the core
+There are a couple of templates used to share linguistic resources among a subset of the languages:
 
-!!!Updating a single language
+* {{smi}} - used to share proper nouns among the Sámi languages
+* {{urj-Cyrl}} - used to share proper nouns among the Uralic languages written
+  with the Cyrillic script
+
+These lexical resources should be edited within their templates, and the template merged with the languages using that template.
+
+!!Merging a single language
+
+Let's say we want to update myv. The command for that is:
+
+{{{
+cd $GTHOME/langs/myv/
+../../gtcore/scripts/merge-templates.sh --unsafe -t urj-Cyrl
+}}}
+
+We need to turn on the {{--unsafe}} option, otherwise {{.lexc}} files will be ignored. And we should ''always'' specify the template to be merged using the {{-t}} option, to avoid mering in unintended changes.
+
+!!Merging all languages sharing a linguistic resource
+
+To update all languages using a specific template, we run the merge script via another shell script, as follows:
+
+{{cd $GTHOME/langs/}}
+{{./update-all-languages.sh --unsafe -t urj-Cyrl}}
+
+This script will iterate over all language dirs, and merge the changes in the {{urj-Cyrl}} template for every language that contains the file {{urj-Cyrl.timestamp}}. All other languages will be ignored.
+
+!!!Infrastructure updates
+
+The infrastructure is updated using the {{und}} template, and is otherwise done as above.
+
+__NB! Do NOT update the infrastructure without checking with the core developers!!!__ You should usually not need to touch the infrastructure at all. The core maintainers will take care of these things, and the updates will be propagated automatically via the svn repository.
+
+!!Updating a single language
 
 Steps to take for language {{$GTLANG}}:
 
@@ -15,7 +45,7 @@ Steps to take for language {{$GTLANG}}:
 # check all modifications made
 # commit
 
-!!!Updating all languages in one go
+!!Updating all languages in one go
 
 # {{cd $GTHOME/langs/}}
 # {{./update-all-languages.sh}}
