@@ -16,6 +16,8 @@ $GTHOME/gtcore/templates/TEMPLATENAME/TEMPLATENAME.timestamp
 
 and commit that change. Without an updated timestamp file, the merge script has nothing to base its merging range (version and date info) on, and in practice nothing will be merged.
 
+__Best practice:__ commit your resource updates and the timestamp at the same time, in the same commit. Let the comment in the timestamp file be the same as the commit message. This will make the timestamp file an svn log, which makes it easy to see whether one language is up-to-date or not.
+
 !!Merging a single language
 
 Let's say we want to update myv. The command for that is:
