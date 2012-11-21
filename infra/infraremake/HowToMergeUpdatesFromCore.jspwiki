@@ -8,6 +8,14 @@ There are a couple of templates used to share linguistic resources among a subse
 
 These lexical resources should be edited within their templates, and the template merged with the languages using that template.
 
+__NB!!__ After editing the template resources, you __must__ add a note about the edits in the file:
+
+{{{
+$GTHOME/gtcore/templates/TEMPLATENAME/TEMPLATENAME.timestamp
+}}}
+
+and commit that change. Without an updated timestamp file, the merge script has nothing to base its merging range (version and date info) on, and in practice nothing will be merged.
+
 !!Merging a single language
 
 Let's say we want to update myv. The command for that is:
