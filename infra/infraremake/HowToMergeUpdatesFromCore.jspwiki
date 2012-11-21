@@ -23,8 +23,10 @@ We need to turn on the {{--unsafe}} option, otherwise {{.lexc}} files will be ig
 
 To update all languages using a specific template, we run the merge script via another shell script, as follows:
 
-{{cd $GTHOME/langs/}}
-{{./update-all-languages.sh --unsafe -t urj-Cyrl}}
+{{{
+cd $GTHOME/langs/
+./update-all-from-core.sh --unsafe -t urj-Cyrl
+}}}
 
 This script will iterate over all language dirs, and merge the changes in the {{urj-Cyrl}} template for every language that contains the file {{urj-Cyrl.timestamp}}. All other languages will be ignored.
 
@@ -48,7 +50,7 @@ Steps to take for language {{$GTLANG}}:
 !!Updating all languages in one go
 
 # {{cd $GTHOME/langs/}}
-# {{./update-all-languages.sh}}
+# {{./update-all-from-core.sh}}
 ## one can try to add the option {{--unsafe}} to get the script to try to merge some more files than default
 # check and resolve conflicts, if any
 # check all modifications made
