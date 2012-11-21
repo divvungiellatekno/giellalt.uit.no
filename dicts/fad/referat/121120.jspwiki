@@ -98,12 +98,13 @@ Cip har analysert bokmåplswikipedia med OBT-stat.
 
 Først analyse med 300 ord, det gjekk fint.
 
+{{{
 new_analysis_wiki>wc -l input_00_wiki/*
      300 input_00_wiki/p-a_01_test.txt
      300 input_00_wiki/p-a_02_test.txt
      300 input_00_wiki/p-a_03_test.txt
      300 input_00_wiki/p-a_04_test.txt
-
+}}}
 Så analyse med heile wikipedia (60 mill ord, 7,3 mill linjer), det gjekk ikkje.
 
 
@@ -135,15 +136,16 @@ new_analysis_wiki>wc -l ../../../../nob/corp/*.txt
 ...
 }}}
 
+{{{
 main/st/nob/obt
 echo "jeg gjør det" | $GTHOME/st/nob/bin/mtag-osx64 -wxml  | vislcg3 -g $GTHOME/st/nob/src/nob_morf-prestat.cg3 --no-pass-origin -e $GTHOME/st/nob/OBT-Stat/bin/run_obt_stat.rb
 
 perl -ne 'print if /\S/'
+}}}
 
-
-
+{{{
 $GTHOME/st/nob/obt/bin/mtag-osx64  -wxml < $INTERIM_1  vislcg3 -C latin1 --codepage-input \ utf-8 -g $CGF --codepage-output utf-8 --no-pass-origin -e | $GTHOME/st/nob/obt/OBT-Stat/run_obt_stat.rb | perl -ne 'print if /\S/' > $INTERIM_2
-
+}}}
 
 {{{
 #!/bin/sh
@@ -186,13 +188,13 @@ Det finst dublettar mellom src og new_entries2add
 
 If you put together n/v_nobsme from source with that from new_entries2add you get
 
-
+{{{
 work_in_prog>grep '<l ' n_nobsme.xml | sort | uniq -c | sort -nr | grep '2' | wc -l
     319
 
 work_in_prog>grep '<l ' v_nobsme.xml | sort | uniq -c | sort -nr | grep '2' | wc -l
      17
-
+}}}
 Dublettar: 319 av 717 substantiv, 17 av 59 verb.
 
 {{{
