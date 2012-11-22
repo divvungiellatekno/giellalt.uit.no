@@ -29,7 +29,7 @@ The list was made in the following way:</p>
 should be used, the two other ones are intermediate files.</p>
       <p>
         <code>foreign.fst</code> should be used as follows: When investigating
-Sámi words that the parser cannot cope with, foreign words are just noise.
+Saami words that the parser cannot cope with, foreign words are just noise.
 They can be removed with this command line:</p>
       <source>cat text | preprocess ... | lookup -flags mbTT sme.fst | grep \?' |
 cut -f1 | foreign.fst | grep '\?' | cut -f1 | ...

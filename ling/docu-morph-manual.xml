@@ -2,7 +2,7 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
   <header>
-    <title>How to use the Sámi morphological parsers</title>
+    <title>How to use the Saami morphological parsers</title>
   </header>
   <body>
     <section>
@@ -15,7 +15,7 @@
       </ol>
       <section>
         <title>Analysing and generating words</title>
-        <p>Letters: The NorthSámi letters are rendered as <em>á, c1, d1, n1, s1, t1, z1</em>. Thus write <em>mánná</em>, but <em>Kárás1johka</em> (with &quot;s1&quot; for s-caron) for the place name. Lule and South Sámi are written with the letters found in the Lule and South Sámi alphabets (the Lule Sámi [ng] sound is written as <em>ñ</em>).</p>
+        <p>Letters: The NorthSaami letters are rendered as <em>á, c1, d1, n1, s1, t1, z1</em>. Thus write <em>mánná</em>, but <em>Kárás1johka</em> (with &quot;s1&quot; for s-caron) for the place name. Lule and South Saami are written with the letters found in the Lule and South Saami alphabets (the Lule Saami [ng] sound is written as <em>ñ</em>).</p>
         <section>
           <title>Analysing one word at a time:</title>
           <p>Note that the source files are in src/, the binary files are in bin/. The exact commands depend upon where you are. In order to write <strong>make</strong>, you must be in src/, we assume that you have a separate window for analysis, and that you are in the sme/ (etc.) catalogue when you analyse.</p>
@@ -32,7 +32,7 @@
           <title>Generating words</title>
           <ol>
             <li>Write exactly the same commands as you do when you analyse words, except that you change 'sme.fst' to 'isme.fst', 'sma.fst' to 'isma.fst', etc.</li>
-            <li>Then write Saami words in their dictionary forms, followed by grammatical information. The format is given in the table in the file <a href="docu-sme-grammartags.html" >The grammatical tags</a>.Note that the SouthSámi sma.fst handles capital letters and ï-i variation, but that it only accepts correct &quot;ïquot; when you write in the base forms in the generator.</li>
+            <li>Then write Saami words in their dictionary forms, followed by grammatical information. The format is given in the table in the file <a href="docu-sme-grammartags.html" >The grammatical tags</a>.Note that the SouthSaami sma.fst handles capital letters and ï-i variation, but that it only accepts correct &quot;ïquot; when you write in the base forms in the generator.</li>
             <li>Again, to leave lookup mode, press &quot;ctrl C&quot;.</li>
           </ol>
           <p>A good way of working is to have two windows open, one for analysing and one for generating (and probably also addidtional windows, for documentation, for the source files, etc.).</p>
@@ -50,7 +50,7 @@
 cat <em>filename</em> | preprocess --abbr=bin/abbr.txt | lookup -flags TT bin/smj.fst | less
 cat <em>filename</em> | preprocess --abbr=bin/abbr.txt | lookup -flags TT bin/sma.fst | less
 </source>
-        <p>Note that new NorthSámi testfiles must be converted to the á, c1, d1 etc. format (there is a perl script to do that, and a better preprocessor is on the TODO list). The sme, sma and smj directories all contain a subdirectory called <em>corp</em> (so far, only sme/corp has testfiles).</p>
+        <p>Note that new North Saami testfiles must be converted to the á, c1, d1 etc. format (there is a perl script to do that, and a better preprocessor is on the TODO list). The sme, sma and smj directories all contain a subdirectory called <em>corp</em> (so far, only sme/corp has testfiles).</p>
         <p>There are now preprocessors that handle various sámi encodings. (They exist in the gt/script directory). They convert the input to the databases internal format. The files utf8-, ws2-, linmac- and latin6-sme are lookup scripts that turn the input and output to and from the internal format, and could be used like this:</p>
         <source>cat <em>utf8-filename</em> | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT -f utf8-sme | less
 cat <em>ws2-filename</em> | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT -f ws2-sme | less
