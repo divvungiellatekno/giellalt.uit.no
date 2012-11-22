@@ -14,7 +14,7 @@
       <p>The discussion was mostly about the technical details of the corpus interface. Also some other issues such as treebanks and cg were mentioned.</p>
       <p>Treebanks: It is easy to create treebanks with VISL Phrase Structure Grammar Compiler, vislpsg. There are pedagocical programs, where the vislpsg is used: <a href="http://www.visl.sdu.dk/visl/" >Word of VISL</a>, Visual Interactive Syntax Learning and for Norwegian: <a href="http://www.tekstlab.uio.no/grei/GREI-portal.htm" >GREI</a>.</p>
       <p>The Text Laboratory is using cg1 instead of cg2 and vislcg as we are, so there is not much to share.</p>
-      <p>It was agreed that the tools developed for corpus interface in Textlab are available for the Sami project. Sami project offers help in testing and developing the tools. We decided to share the access to each others' projects.</p>
+      <p>It was agreed that the tools developed for corpus interface in Textlab are available for the Saami project. Saami project offers help in testing and developing the tools. We decided to share the access to each others' projects.</p>
       <p>The conversion of the plain corpus text to web-searchable format involves three steps:</p>
       <p>text ----> xml -----> ims -----> web</p>
       <section>
@@ -27,7 +27,7 @@
       <section>
         <title>XML to IMS</title>
         <p>The disadvantage of having all the analyses in one column is that all the searches are based on regular expressions, which slows down the search, but not unthinkably much. The other possibility suggested was to store the unambiguous words in tag-per-column format and the ambiguous in string format and having one attribute indicating the ambiguity. This would reduce the amount of time-consuming searches but complicate the queries (anyway hidden from the basic user).</p>
-        <p>Another thing which ims does not support is the searches to header information. Ims offers &quot;structural attributes&quot; which indicate e.g. clause boundaries, but does not offer searches to them. The meta-information of the corpus text is however important especially in the Sami project where we have diverse sources of texts e.g. produced by Sami speaking people in different countries.</p>
+        <p>Another thing which ims does not support is the searches to header information. Ims offers &quot;structural attributes&quot; which indicate e.g. clause boundaries, but does not offer searches to them. The meta-information of the corpus text is however important especially in the Saami project where we have diverse sources of texts e.g. produced by Saami speaking people in different countries.</p>
         <p>One way to solve the problem would be to extract the header information from the xml-file and store it as a string in one attribute in the ims-format. Another solution is to have an attribute for each piece of header information, when the searches can be done straight to the attributes and not by regexps.</p>
         <p>Lars has tool for xml-to-ims conversion which can be modified for our needs. There is a perl-module xmltwig for easy parsing xml.</p>
       </section>
