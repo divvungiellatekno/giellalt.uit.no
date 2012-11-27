@@ -6,6 +6,20 @@ What is needed for a new release:
 
 !!!Installer
 
+Variablar for installeraren:
+
+* Variablar relevante for om ting funkar i det heile:
+** Office-versjon: 2003, 2007, 2010, 2013
+** Windows-versjon: XP, Vista, W7, W8
+** språkkode: ISO (se-NO) vs LCID (1083)
+** bit-versjon for Windows: 32b vs 64b
+* variablar uavhengig av grunnleggjande funksjonalitet:
+** Office-utgåve: home/student vs pro/full
+** installeringsmodus: admin/rot/nett vs lokal brukar vs terminalserver
+
+Verkty for debugging:
+* dependencywalker
+
 __DONE:__
 * __Børre__ has looked more at the registry entries.
 
@@ -14,6 +28,10 @@ __TODO:__
   (__UiT/IT, Sjur__)
 * compare different sets of registry entries, to try to find differences tbat
   can explain the terminal server bug (__Børre__)
+* check with Geir Tore whether we can get a couple of Windows and Office
+  versions for testing (__Børre__)
+* run dependencywalker on our dll's to check what the dependencies are, and
+  possibly add dependency reqiurements to the MSI package (__Børre__)
 
 __POSTPONED:__
 * find an outsourcing option (__Børre, Sjur__)
