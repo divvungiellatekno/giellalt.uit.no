@@ -44,29 +44,29 @@
 
         <section>
           <title>How to set up PuTTY and connect to victorio</title>
-
+          <p>(putty can connect to any server, just replace victorio.uit.no
+          with the server name you want)</p>
           <p>Doubleclick on the PuTTY.exe icon, and get a small box in
-          return.  To the right, you are prompted for "Host
-          Name". Write <em>user@victorio.uit.no </em>(where
-          <em>user</em> is your username).  Give the connection a
-          name, e.g. "victorio" (in the space one field down). Then,
-          click <code>Terminal</code> to the left, and choose UTF-8
-          (or, in recent versions: In the leftmost box
-          (<code>Category</code>) of the Putty settings box, under
-          <code>Window</code> choose <code>Translation</code>. The
+          return.  The <strong>first</strong> time you use putty with a new
+          terminal, the following, in this order:</p>
+          <ol>
+          <li>Click on <code>Translation</code> in the category Window in the leftmost box.</li>
+          <li>The
           default translation is <code>ISO-8859-1</code>, you should
-          open the list and choose <code>UTF-8</code>. Font size 8
-          gives you a normal amount on text, and most monitors give
-          you 50 lines of text. After having made these choices, go
-          back to the first (or rightmost) menu, and click on
-          <em>save</em> in the menu to the rignt. Make sure
-          <strong>SSH</strong> is chosen under "Protocol", and click
-          on "Open" at the bottom of the window.</p>
+          open the list and choose <code>UTF-8</code></li>
+          <li>Thereafter, click <code>Session</code> (the topmost node)</li>
+          <li>To the right, under  "Host
+          Name", write <em>user@victorio.uit.no </em>(where
+          <em>user</em> is your username).</li>
+          <li>Make sure Connection type is <code>SSH</code></li>
+          <li>Give the connection a
+          name, e.g. "victorio" (in the space one field down).</li>
+          <li>Click the <code>Save</code> button</li>
+          <li>Now, the name ("victorio") appears on the list of predefined
+          servers. To log in, double click on it (or select and click 
+          <code>Open</code>.</li>
+          </ol>
 
-          <p>If everything is ok, you will find a new window in front of you,
-          prompting for your user name. Write it, and then press the ENTER
-          key, and write your password, followed by ENTER. Then you are logged
-          in.</p>
 
           <p>This presupposes that you have a Saami keyboard on your PC. From
           2004 onwards all new Windows XP systems have Saami keyboards
@@ -74,9 +74,13 @@
           via the Control Panel.</p>
 
           <p><strong>NOTE!</strong> There is a bug in the present PuTTY
-          version: All Saami characters work perfectly, except the č character
+          version: The Sami keyboard is able to write all characters, except 
+          the č character
           (c-caron), for some strange reason (what you get is plain c), even
-          though č works in other programs. TODO: Report and fix. </p>
+          though č works in other programs. There are also problems with ŋ and ŧ.
+          All characters are displayed on the screen, though, and you can copy
+          in the problematic čŋŧ.</p>
+          <p>TODO: Report and fix. </p>
 
           <p>After the session, remember logging out by writing
           <strong>logout</strong>. Also, remember that you may have several
