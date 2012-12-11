@@ -22,9 +22,11 @@
       <section>
         <title>What is PuTTY.exe and psftp.exe?</title>
 
-        <p><strong>PuTTY.exe</strong> is a program that makes Windows users
+        <p>Use the terminal: <strong>PuTTY.exe</strong> is a program that makes Windows users
         establish a secure connection to Unix (and Linux) terminals, among
-        other things. <strong>psftp.exe</strong> is a program that makes it
+        other things.</p>
+        
+        <p>Copy files to and from the terminal: <strong>psftp.exe</strong> is a program that makes it
         possible to copy files from victorio to your local machine and vice
         versa.</p>
       </section>
@@ -32,20 +34,12 @@
       <section>
         <title>How to get the programs</title>
 
-        <p>They are found may places, a.o. at <a
-        href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">here</a>,
-        earlier also <a
-        href="http://putty.gyron.net/">here</a>. Search for "putty
-        download" if the links are broken. Go to the Download page,
-        download both PuTTY.exe and psftp.exe, and put them in a
-        folder where you store your programs. Make an alias somewhere
-        (e.g. on the desktop, or drag them to the taskbar on the
-        bottom of your screen) so that you can find it later.</p>
-
+        <p>Go to the <a
+        href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY Download Page</a>. 
+        Download both <strong>PuTTY.exe</strong> and <strong>psftp.exe</strong>.</p>
+      </section>
         <section>
-          <title>How to set up PuTTY and connect to victorio</title>
-          <p>(putty can connect to any server, just replace victorio.uit.no
-          with the server name you want)</p>
+          <title>How to set up PuTTY and connect to the terminal</title>
           <p>Doubleclick on the PuTTY.exe icon, and get a small box in
           return.  The <strong>first</strong> time you use putty with a new
           terminal, the following, in this order:</p>
@@ -56,8 +50,7 @@
           open the list and choose <code>UTF-8</code></li>
           <li>Thereafter, click <code>Session</code> (the topmost node)</li>
           <li>To the right, under  "Host
-          Name", write <em>user@victorio.uit.no </em>(where
-          <em>user</em> is your username).</li>
+          Name", write <em>victorio.uit.no</em>(or whatever terminal you log on to).</li>
           <li>Make sure Connection type is <code>SSH</code></li>
           <li>Give the connection a
           name, e.g. "victorio" (in the space one field down).</li>
@@ -67,47 +60,30 @@
           <code>Open</code>.</li>
           </ol>
 
-
-          <p>This presupposes that you have a Saami keyboard on your PC. From
-          2004 onwards all new Windows XP systems have Saami keyboards
-          installed, you may find it by right-clicking the keyboard symbol, or
-          via the Control Panel.</p>
-
           <p><strong>NOTE!</strong> There is a bug in the present PuTTY
           version: The Sami keyboard is able to write all characters, except 
-          the č character
-          (c-caron), for some strange reason (what you get is plain c), even
-          though č works in other programs. There are also problems with ŋ and ŧ.
+           č,  ŋ and ŧ.
           All characters are displayed on the screen, though, and you can copy
           in the problematic čŋŧ.</p>
-          <p>TODO: Report and fix. </p>
 
-          <p>After the session, remember logging out by writing
-          <strong>logout</strong>. Also, remember that you may have several
-          windows open at the same time (just open the second, third etc. in the same way as the first).</p>
         </section>
-      </section>
 
       <section>
-        <title>How to copy files between victorio and your own machine</title>
+        <title>How to copy files between the terminal and your own machine</title>
 
-        <p>On the gyron download page referred to above, doubleclick
+        <p>On <a
+        href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">the PuTTY download page</a>, doubleclick
         on the psftp.exe icon. Write "open victorio.uit.no" at the
         prompt. Give your user name and password. To get files from
-        victorio, you write "get", and to copy files to victorio, you
-        write "put". The syntax is "get sourcefile resultfile" (and
+        the terminal, you write "get", and to copy files to victorio, you
+        write "put". The command is <code>get sourcefile resultfile</code> (and
         the same for put). In order to copy e.g. the file
-        gt/sme/src/noun-sme-lex.txt, write this command:</p>
+        main/gt/sme/src/noun-sme-lex.txt to your own machine, write this command:</p>
 
         <p>get gt/sme/src/noun-sme-lex.txt noun.txt</p>
 
-        <p>Since it easy to get confused with the get and put commands, I
-        always use another filename for the file I copy to. If you use the
-        same name twice, and copy the wrong direction, then the old file will
-        replace the new one, and your work will be lost.</p>
-
         <p>Note that psftp.exe makes it possible to use standard unix
-        commands. Cf. <a href="http://putty.gyron.net/...">the psftp.exe
+        commands. Cf. <a href="http://the.earth.li/~sgtatham/putty/0.52/htmldoc/Chapter6.html">the psftp.exe
         help file</a> for a list of commands.</p>
       </section>
 
@@ -126,19 +102,11 @@
         commands, the first to copy the html files, the second to copy the
         program's source files.</p>
 
-        <p>tar cf - gt/doc/*html | gzip &gt; d.tar.gz<br />tar cf -
+        <p>tar cvf - gt/doc/*html | gzip &gt; d.tar.gz<br />tar cvf -
         gt/sme/src/*txt | gzip &gt; s.tar.gz</p>
 
         <p>The file names d and s are chosen arbitrarily in order to avoid
-        writing long names, the suffixes .tar and .gz indicates the file type
-        (the files are compressed twice, first by tar and then by gzip). If
-        you want to actually see what files you copy, you may write
-        <strong>cvf</strong> instead of <strong>cf</strong> after
-        <strong>tar</strong>, the v instructs the tar command to tell what it
-        does. If you only copy small files, or have a very fast computer, the
-        gzip part is not necessary, then a simpler "tar cf d.tar gt/doc/*html"
-        will do, the gzip part of the command just makes download time 1/3
-        shorter than tar only).</p>
+        writing long names.</p>
 
         <p>Then you must copy the files to your local machine. In order to do
         that, open a window in psftp.exe, and give the following command, just
