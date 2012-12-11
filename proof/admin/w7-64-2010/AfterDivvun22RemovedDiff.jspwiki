@@ -1,0 +1,1469 @@
+{{{
+--- afterdivvun22installed.reg	2012-12-11 01:29:50.000000000 +0100
++++ afterdivvun22removed.reg	2012-12-11 01:32:31.000000000 +0100
+@@ -760646,9 +760646,6 @@
+ "FindAllWordFormsFiles_1036"=""
+ "OCR_1036"=""
+ 
+-[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Features\57CB6F3B98FBBB64A855473F371F97EB]
+-"Sami_F"=""
+-
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Features\DFC90B5F2B0FFA63D84FD16F6BF37C4B]
+ "NetFx_Core_x86"=""
+ "NetFx_Core_amd64"=""
+@@ -1360816,6 +1360813,9 @@
+ "C:\\Program Files (x86)\\Common Files\\InstallShield\\Driver\\"="1"
+ "C:\\Program Files (x86)\\Common Files\\InstallShield\\"="1"
+ 
++[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\InProgress]
++@="C:\\Windows\\Installer\\87a8b.ipi"
++
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\Secure]
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UpgradeCodes]
+@@ -1564700,7 +1564700,7 @@
+   f5,ea,03,00,00
+ "ProfileLoadTimeLow"=dword:00000000
+ "ProfileLoadTimeHigh"=dword:00000000
+-"RefCount"=dword:00000005
++"RefCount"=dword:00000006
+ "RunLogonScriptSync"=dword:00000000
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\S-1-5-21-4242609267-1877866684-4123670283-1003]
+@@ -1564858,6 +1564858,8 @@
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{09F06BFE-A3C8-40E3-846A-6E6F4000C238}]
+ 
++[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{0A57F3E6-0565-49CD-BB8B-773214B9F789}]
++
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{0CFA3400-50C1-496A-9DE1-834C16FFE0AC}]
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{15C633FD-7D9B-4026-A185-1100A69CFD3C}]
+@@ -1564890,6 +1564892,8 @@
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{67ACC19F-AE1C-40AC-85D6-568228DC8CBA}]
+ 
++[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{67D01672-FB48-44AA-8DD7-49F595368583}]
++
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{6B17AD46-4AD2-4D22-A0D1-56F4AE4D9F9C}]
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{753C47AE-EC5E-44B3-95A9-2C8E553F0E39}]
+@@ -1564910,8 +1564914,6 @@
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{9C996C58-9732-4A52-9C09-99D07D5F34A2}]
+ 
+-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{9FCFAD31-EA29-4966-B4E1-3722BA615423}]
+-
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{A48CABBF-24C8-4B87-B00F-9261807C3B43}]
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{A6AF9377-77CE-47AB-AD7D-EC32CAD0C82D}]
+@@ -1564942,8 +1564944,6 @@
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{CEE64558-E1A7-4D9D-80A7-2001912BE5B5}]
+ 
+-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{D1CADD88-60E7-404A-BCF3-9F886CBE1CE7}]
+-
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{D322EED4-A526-4E4E-91B8-390A8CFCA859}]
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{DA41DE71-8431-42FB-9DB0-EB64A961DEAD}]
+@@ -1565050,6 +1565050,25 @@
+ "Hash"=hex:4d,3c,72,ee,9b,73,1b,fc,fc,70,22,53,1b,28,70,de,f2,8f,f1,3f,f8,e0,\
+   f0,89,00,3e,02,aa,0f,40,c0,5d
+ 
++[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{0A57F3E6-0565-49CD-BB8B-773214B9F789}]
++"Path"="\\Microsoft\\Windows Defender\\MP Scheduled Scan"
++"Hash"=hex:26,f3,d6,b7,e7,4f,ec,b7,75,89,9c,a7,43,a8,85,63,1e,7a,0d,c5,47,ae,\
++  7c,99,bc,6a,8f,30,bb,e9,a3,eb
++"Triggers"=hex:15,00,00,00,00,00,00,00,01,8d,93,01,00,00,00,00,00,4f,7e,8d,08,\
++  54,bf,01,01,8d,93,01,00,00,00,00,00,00,64,77,63,71,2f,02,52,21,c2,03,48,48,\
++  48,48,8a,a8,f4,f6,48,48,48,48,00,48,48,48,48,48,48,48,00,48,48,48,48,48,48,\
++  48,05,00,00,00,48,48,48,48,0c,00,00,00,48,48,48,48,01,01,00,00,00,00,00,05,\
++  12,00,00,00,48,48,48,48,00,00,00,00,48,48,48,48,38,00,00,00,48,48,48,48,3c,\
++  00,00,00,40,38,00,00,80,f4,03,00,ff,ff,ff,ff,07,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,dd,dd,00,00,00,00,00,00,01,8d,93,01,00,00,00,00,00,4f,7e,8d,\
++  08,54,bf,01,01,8d,93,01,00,00,00,00,00,00,64,77,63,71,2f,02,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,ff,ff,ff,ff,01,00,\
++  00,00,01,00,00,00,00,00,00,00,00,01,00,00,01,00,00,00,00,00,00,00,00,00,00,\
++  00
++"DynamicInfo"=hex:03,00,00,00,43,71,ef,b4,36,d7,cd,01,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00
++
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{0CFA3400-50C1-496A-9DE1-834C16FFE0AC}]
+ "Path"="\\Microsoft\\Windows\\Media Center\\PBDADiscovery"
+ "Triggers"=hex:15,00,00,00,00,00,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,ff,ff,ff,ff,\
+@@ -1565527,6 +1565546,24 @@
+ "Hash"=hex:21,f0,c7,10,01,fd,ad,40,60,d1,34,f2,91,4f,03,6d,1d,aa,81,4d,9c,f6,\
+   20,6b,8b,be,a1,d0,9a,c5,12,5b
+ 
++[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{67D01672-FB48-44AA-8DD7-49F595368583}]
++"Path"="\\Microsoft\\Windows Defender\\MpIdleTask"
++"Hash"=hex:12,2c,f5,7c,b5,93,0e,95,51,99,40,3a,c9,47,0b,a1,e9,ab,8d,36,06,aa,\
++  72,63,0c,b6,7d,6d,c8,d0,97,a3
++"Triggers"=hex:15,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,3e,21,c2,03,48,48,\
++  48,48,0f,52,48,91,48,48,48,48,00,48,48,48,48,48,48,48,00,48,48,48,48,48,48,\
++  48,05,00,00,00,48,48,48,48,0c,00,00,00,48,48,48,48,01,01,00,00,00,00,00,05,\
++  12,00,00,00,48,48,48,48,00,00,00,00,48,48,48,48,38,00,00,00,48,48,48,48,3c,\
++  00,00,00,00,00,00,00,80,f4,03,00,ff,ff,ff,ff,07,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,ee,ee,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,00,00,00,00,ff,\
++  ff,ff,ff,00,00,00,00,00,00,00,00,00,00,00,00,00,07,00,00,01,00,64,00,6c,00,\
++  6c,00,2c,00,2d,00,35,00,30,00
++"DynamicInfo"=hex:03,00,00,00,ff,30,5f,b0,36,d7,cd,01,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00
++
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{697E3BA9-CB51-4BB7-A83C-CC9BD64735E4}]
+ "Path"="\\Microsoft\\Windows\\Windows Activation Technologies\\ValidationTask"
+ "Hash"=hex:9a,d0,8a,74,ba,eb,9c,49,eb,d6,2e,05,ee,da,d8,90,be,5a,0c,7b,fb,c8,\
+@@ -1565829,24 +1565866,6 @@
+ "DynamicInfo"=hex:03,00,00,00,99,b9,cb,86,d1,d3,cd,01,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00
+ 
+-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{9FCFAD31-EA29-4966-B4E1-3722BA615423}]
+-"Path"="\\Microsoft\\Windows Defender\\MpIdleTask"
+-"Hash"=hex:12,2c,f5,7c,b5,93,0e,95,51,99,40,3a,c9,47,0b,a1,e9,ab,8d,36,06,aa,\
+-  72,63,0c,b6,7d,6d,c8,d0,97,a3
+-"Triggers"=hex:15,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,3e,21,c2,03,48,48,\
+-  48,48,0f,52,48,91,48,48,48,48,00,48,48,48,48,48,48,48,00,48,48,48,48,48,48,\
+-  48,05,00,00,00,48,48,48,48,0c,00,00,00,48,48,48,48,01,01,00,00,00,00,00,05,\
+-  12,00,00,00,48,48,48,48,00,00,00,00,48,48,48,48,38,00,00,00,48,48,48,48,3c,\
+-  00,00,00,00,00,00,00,80,f4,03,00,ff,ff,ff,ff,07,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,ee,ee,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,00,00,00,00,ff,\
+-  ff,ff,ff,00,00,00,00,00,00,00,00,00,00,00,00,00,07,00,00,01,00,64,00,6c,00,\
+-  6c,00,2c,00,2d,00,35,00,30,00
+-"DynamicInfo"=hex:03,00,00,00,92,74,fb,ac,62,d4,cd,01,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00
+-
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{A35BB7A6-5F0C-4C9F-8450-2B3BED532D51}]
+ "Path"="\\Microsoft\\Windows\\WindowsColorSystem\\Calibration Loader"
+ "Triggers"=hex:15,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+@@ -1566209,25 +1566228,6 @@
+ "Hash"=hex:6e,b7,d5,0a,0f,0e,81,3e,f3,90,52,14,6b,2a,b5,86,92,ed,68,d8,2e,0e,\
+   8e,73,30,43,ec,c9,33,4d,16,d1
+ 
+-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{D1CADD88-60E7-404A-BCF3-9F886CBE1CE7}]
+-"Path"="\\Microsoft\\Windows Defender\\MP Scheduled Scan"
+-"Hash"=hex:f5,6d,40,e6,ad,31,5d,49,7c,95,1e,c0,04,e9,6c,39,50,63,8e,7c,89,33,\
+-  3a,23,f5,26,0c,ae,2d,a3,23,38
+-"Triggers"=hex:15,00,00,00,00,00,00,00,01,66,74,01,00,00,00,00,80,1a,d8,b4,0e,\
+-  54,bf,01,01,66,74,01,00,00,00,00,00,00,64,77,63,71,2f,02,52,21,c2,03,48,48,\
+-  48,48,42,f1,47,4f,48,48,48,48,00,48,48,48,48,48,48,48,00,48,48,48,48,48,48,\
+-  48,05,00,00,00,48,48,48,48,0c,00,00,00,48,48,48,48,01,01,00,00,00,00,00,05,\
+-  12,00,00,00,48,48,48,48,00,00,00,00,48,48,48,48,38,00,00,00,48,48,48,48,3c,\
+-  00,00,00,40,38,00,00,80,f4,03,00,ff,ff,ff,ff,07,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,dd,dd,00,00,00,00,00,00,01,66,74,01,00,00,00,00,80,1a,d8,b4,\
+-  0e,54,bf,01,01,66,74,01,00,00,00,00,00,00,64,77,63,71,2f,02,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,ff,ff,ff,ff,01,00,\
+-  00,00,01,00,00,00,00,00,00,00,00,01,00,00,01,00,00,00,00,00,00,00,00,00,00,\
+-  00
+-"DynamicInfo"=hex:03,00,00,00,be,a7,fc,b0,62,d4,cd,01,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00
+-
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{D322EED4-A526-4E4E-91B8-390A8CFCA859}]
+ "Path"="\\Microsoft\\Windows\\Media Center\\ActivateWindowsSearch"
+ "Triggers"=hex:15,00,00,00,00,00,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,ff,ff,ff,ff,\
+@@ -1567006,11 +1567006,11 @@
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows Defender]
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows Defender\MP Scheduled Scan]
+-"Id"="{D1CADD88-60E7-404A-BCF3-9F886CBE1CE7}"
++"Id"="{0A57F3E6-0565-49CD-BB8B-773214B9F789}"
+ "Index"=dword:00000003
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows Defender\MpIdleTask]
+-"Id"="{9FCFAD31-EA29-4966-B4E1-3722BA615423}"
++"Id"="{67D01672-FB48-44AA-8DD7-49F595368583}"
+ "Index"=dword:00000003
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\OfficeSoftwareProtectionPlatform]
+@@ -1717933,11 +1717933,6 @@
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products]
+ 
+-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products\57CB6F3B98FBBB64A855473F371F97EB]
+-
+-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products\57CB6F3B98FBBB64A855473F371F97EB\Features]
+-"Sami_F"=""
+-
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Internet Settings]
+ "EnablePunycode"=dword:00000001
+ "CodeBaseSearchPath"="CODEBASE"
+@@ -1722687,11 +1722682,6 @@
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\DirectDrawEx]
+ 
+-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Divvun_Sámi_Proofing_Tools_for_MS_Office1.5]
+-"DisplayName"="Divvun_Sámi_Proofing_Tools_for_MS_Office1.5"
+-"UninstallString"="C:\\WINDOWS\\Installer\\{B3F6BC75-BF89-46BB-8A55-74F373F179BE}\\Uninstall.exe"
+-"NoModify"=dword:00000001
+-
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Fontcore]
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\IE40]
+@@ -1810610,7 +1810600,7 @@
+   f5,ea,03,00,00
+ "ProfileLoadTimeLow"=dword:00000000
+ "ProfileLoadTimeHigh"=dword:00000000
+-"RefCount"=dword:00000005
++"RefCount"=dword:00000006
+ "RunLogonScriptSync"=dword:00000000
+ 
+ [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\ProfileList\S-1-5-21-4242609267-1877866684-4123670283-1003]
+@@ -2067108,7 +2067098,7 @@
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\MUI\Settings\LanguageConfiguration]
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\MUI\StringCacheSettings]
+-"StringCacheGeneration"=dword:00000045
++"StringCacheGeneration"=dword:00000046
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\MUI\UILanguages]
+ 
+@@ -2080461,7 +2080451,19 @@
+   00,73,00,5c,00,4d,00,53,00,4f,00,46,00,46,00,32,00,7e,00,31,00,5c,00,41,00,\
+   70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,00,6f,00,63,00,61,00,6c,00,5c,\
+   00,54,00,65,00,6d,00,70,00,5c,00,7e,00,6e,00,73,00,75,00,2e,00,74,00,6d,00,\
+-  70,00,00,00,00,00,00,00
++  70,00,00,00,00,00,5c,00,3f,00,3f,00,5c,00,43,00,3a,00,5c,00,55,00,73,00,65,\
++  00,72,00,73,00,5c,00,4d,00,53,00,4f,00,46,00,46,00,32,00,7e,00,31,00,5c,00,\
++  41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,00,6f,00,63,00,61,00,6c,\
++  00,5c,00,54,00,65,00,6d,00,70,00,5c,00,7e,00,6e,00,73,00,75,00,2e,00,74,00,\
++  6d,00,70,00,5c,00,41,00,75,00,5f,00,2e,00,65,00,78,00,65,00,00,00,00,00,5c,\
++  00,3f,00,3f,00,5c,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,\
++  4d,00,53,00,4f,00,46,00,46,00,32,00,7e,00,31,00,5c,00,41,00,70,00,70,00,44,\
++  00,61,00,74,00,61,00,5c,00,4c,00,6f,00,63,00,61,00,6c,00,5c,00,54,00,65,00,\
++  6d,00,70,00,5c,00,7e,00,6e,00,73,00,75,00,2e,00,74,00,6d,00,70,00,00,00,00,\
++  00,5c,00,3f,00,3f,00,5c,00,43,00,3a,00,5c,00,50,00,72,00,6f,00,67,00,72,00,\
++  61,00,6d,00,44,00,61,00,74,00,61,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,\
++  00,6f,00,66,00,74,00,20,00,48,00,65,00,6c,00,70,00,5c,00,52,00,67,00,73,00,\
++  74,00,72,00,74,00,6e,00,2e,00,6c,00,63,00,6b,00,00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\AppCompatCache]
+ "AppCompatCache"=hex:ee,0f,dc,ba,b2,00,00,00,78,00,00,00,e7,19,00,00,00,00,00,\
+@@ -2124314,6 +2124316,14 @@
+   00,00,bd,49,ed,91,36,d7,cd,01,1c,02,00,00,34,08,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,6d,8a,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,6d,8a,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\VSS\Diag\Lovelace]
+ "OPEN_VOLUME_HANDLE (Enter)"=hex:48,00,00,00,00,00,00,00,5c,92,fb,86,36,d7,cd,\
+@@ -2124452,6 +2124462,14 @@
+   00,00,65,a5,d6,95,36,d7,cd,01,fc,06,00,00,00,0b,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,73,c8,d4,bb,36,d7,cd,01,\
++  fc,06,00,00,a0,09,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,73,c8,d4,bb,36,d7,cd,01,\
++  fc,06,00,00,a0,09,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\VSS\Diag\Registry Writer]
+ "IDENTIFY (Enter)"=hex:48,00,00,00,00,00,00,00,3e,72,09,43,36,d7,cd,01,1c,02,\
+@@ -2124538,6 +2124556,14 @@
+   00,00,17,ac,ef,91,36,d7,cd,01,1c,02,00,00,34,08,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,6d,8a,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,6d,8a,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\VSS\Diag\Shadow Copy Optimization Writer]
+ "IDENTIFY (Enter)"=hex:48,00,00,00,00,00,00,00,98,d4,0b,43,36,d7,cd,01,1c,02,\
+@@ -2124616,6 +2124642,22 @@
+   02,00,00,34,08,00,00,f5,03,00,00,01,00,00,00,04,00,00,00,00,00,00,00,2a,6e,\
+   de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00
++"POSTSNAPSHOT (Leave)"=hex:48,00,00,00,00,00,00,00,a1,06,4a,ad,36,d7,cd,01,1c,\
++  02,00,00,34,08,00,00,f5,03,00,00,00,00,00,00,04,00,00,00,00,00,00,00,2a,6e,\
++  de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00
++"VSS_WS_WAITING_FOR_BACKUP_COMPLETE (SetCurrentState)"=hex:48,00,00,00,00,00,\
++  00,00,a1,06,4a,ad,36,d7,cd,01,1c,02,00,00,34,08,00,00,05,00,00,00,01,00,00,\
++  00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
++  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,93,b0,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,93,b0,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\VSS\Diag\SwProvider_{b5946137-7b9f-4925-af80-51abd60b20d5}]
+ "PROVIDER_BEGINPREPARE (Enter)"=hex:48,00,00,00,00,00,00,00,a0,5c,db,7a,36,d7,\
+@@ -2124666,6 +2124708,14 @@
+   d7,cd,01,1c,02,00,00,84,07,00,00,06,04,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00
++"PROVIDER_POSTFINALCOMMIT (Enter)"=hex:48,00,00,00,00,00,00,00,a1,06,4a,ad,36,\
++  d7,cd,01,1c,02,00,00,84,07,00,00,07,04,00,00,01,00,00,00,00,00,00,00,00,00,\
++  00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00
++"PROVIDER_POSTFINALCOMMIT (Leave)"=hex:48,00,00,00,00,00,00,00,39,6c,5d,ba,36,\
++  d7,cd,01,1c,02,00,00,84,07,00,00,07,04,00,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\VSS\Diag\System Writer]
+ "IDENTIFY (Enter)"=hex:48,00,00,00,00,00,00,00,c8,c1,f8,42,36,d7,cd,01,34,04,\
+@@ -2124752,6 +2124802,14 @@
+   00,00,8f,93,58,92,36,d7,cd,01,34,04,00,00,a4,0a,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,37,81,d1,bb,36,d7,cd,01,\
++  34,04,00,00,a4,0a,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,37,81,d1,bb,36,d7,cd,01,\
++  34,04,00,00,a4,0a,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\VSS\Diag\VolSnap]
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}DiscoverSnapshots (Enter)"=hex:48,\
+@@ -2124771,11 +2124829,11 @@
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}ComputeIgnorableProduct (Enter)"=hex:48,\
+-  00,00,00,00,00,00,00,a6,4a,63,8b,36,d7,cd,01,00,00,00,00,00,00,00,00,0c,00,\
++  00,00,00,00,00,00,00,7b,66,ff,bb,36,d7,cd,01,00,00,00,00,00,00,00,00,0c,00,\
+   00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}ComputeIgnorableProduct (Leave)"=hex:48,\
+-  00,00,00,00,00,00,00,ca,47,a1,8b,36,d7,cd,01,00,00,00,00,00,00,00,00,0d,00,\
++  00,00,00,00,00,00,00,28,20,03,bc,36,d7,cd,01,00,00,00,00,00,00,00,00,0d,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}DeleteProcess (Enter)"=hex:48,00,\
+@@ -2124799,7 +2124857,7 @@
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}AdjustBitmap (Enter)"=hex:48,00,\
+-  00,00,00,00,00,00,96,ec,03,8b,36,d7,cd,01,00,00,00,00,00,00,00,00,04,00,00,\
++  00,00,00,00,00,00,5b,32,43,ba,36,d7,cd,01,00,00,00,00,00,00,00,00,04,00,00,\
+   00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}ValidateDiffAreaFiles (Enter)"=hex:48,\
+@@ -2124823,7 +2124881,7 @@
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}AdjustBitmap (Leave)"=hex:48,00,\
+-  00,00,00,00,00,00,8c,33,ad,8b,36,d7,cd,01,00,00,00,00,00,00,00,00,05,00,00,\
++  00,00,00,00,00,00,46,a5,69,bc,36,d7,cd,01,00,00,00,00,00,00,00,00,05,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}PrepareForSnapshot (Enter)"=hex:48,\
+@@ -2124962,6 +2125020,18 @@
+   02,00,00,84,07,00,00,f5,03,00,00,01,00,00,00,00,00,00,00,00,00,00,00,2a,6e,\
+   de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00
++"POSTSNAPSHOT (Leave)"=hex:48,00,00,00,00,00,00,00,a1,06,4a,ad,36,d7,cd,01,1c,\
++  02,00,00,84,07,00,00,f5,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,2a,6e,\
++  de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,2e,e3,a6,bb,36,d7,cd,01,\
++  1c,02,00,00,84,07,00,00,fb,03,00,00,01,00,00,00,00,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,98,ee,d4,bb,36,d7,cd,01,\
++  1c,02,00,00,84,07,00,00,fb,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\VSS\Diag\WMI Writer]
+ "IDENTIFY (Enter)"=hex:48,00,00,00,00,00,00,00,14,fd,f3,42,36,d7,cd,01,b0,03,\
+@@ -2125048,6 +2125118,14 @@
+   00,00,8d,5c,00,92,36,d7,cd,01,b0,03,00,00,c0,01,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,3e,8c,d2,bb,36,d7,cd,01,\
++  b0,03,00,00,c0,01,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,3e,8c,d2,bb,36,d7,cd,01,\
++  b0,03,00,00,c0,01,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\VSS\Providers]
+ 
+@@ -2228177,7 +2228255,7 @@
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MUI\Settings\LanguageConfiguration]
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MUI\StringCacheSettings]
+-"StringCacheGeneration"=dword:00000045
++"StringCacheGeneration"=dword:00000046
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MUI\UILanguages]
+ 
+@@ -2241530,7 +2241608,19 @@
+   00,73,00,5c,00,4d,00,53,00,4f,00,46,00,46,00,32,00,7e,00,31,00,5c,00,41,00,\
+   70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,00,6f,00,63,00,61,00,6c,00,5c,\
+   00,54,00,65,00,6d,00,70,00,5c,00,7e,00,6e,00,73,00,75,00,2e,00,74,00,6d,00,\
+-  70,00,00,00,00,00,00,00
++  70,00,00,00,00,00,5c,00,3f,00,3f,00,5c,00,43,00,3a,00,5c,00,55,00,73,00,65,\
++  00,72,00,73,00,5c,00,4d,00,53,00,4f,00,46,00,46,00,32,00,7e,00,31,00,5c,00,\
++  41,00,70,00,70,00,44,00,61,00,74,00,61,00,5c,00,4c,00,6f,00,63,00,61,00,6c,\
++  00,5c,00,54,00,65,00,6d,00,70,00,5c,00,7e,00,6e,00,73,00,75,00,2e,00,74,00,\
++  6d,00,70,00,5c,00,41,00,75,00,5f,00,2e,00,65,00,78,00,65,00,00,00,00,00,5c,\
++  00,3f,00,3f,00,5c,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,\
++  4d,00,53,00,4f,00,46,00,46,00,32,00,7e,00,31,00,5c,00,41,00,70,00,70,00,44,\
++  00,61,00,74,00,61,00,5c,00,4c,00,6f,00,63,00,61,00,6c,00,5c,00,54,00,65,00,\
++  6d,00,70,00,5c,00,7e,00,6e,00,73,00,75,00,2e,00,74,00,6d,00,70,00,00,00,00,\
++  00,5c,00,3f,00,3f,00,5c,00,43,00,3a,00,5c,00,50,00,72,00,6f,00,67,00,72,00,\
++  61,00,6d,00,44,00,61,00,74,00,61,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,\
++  00,6f,00,66,00,74,00,20,00,48,00,65,00,6c,00,70,00,5c,00,52,00,67,00,73,00,\
++  74,00,72,00,74,00,6e,00,2e,00,6c,00,63,00,6b,00,00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache]
+ "AppCompatCache"=hex:ee,0f,dc,ba,b2,00,00,00,78,00,00,00,e7,19,00,00,00,00,00,\
+@@ -2285383,6 +2285473,14 @@
+   00,00,bd,49,ed,91,36,d7,cd,01,1c,02,00,00,34,08,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,6d,8a,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,6d,8a,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS\Diag\Lovelace]
+ "OPEN_VOLUME_HANDLE (Enter)"=hex:48,00,00,00,00,00,00,00,5c,92,fb,86,36,d7,cd,\
+@@ -2285521,6 +2285619,14 @@
+   00,00,65,a5,d6,95,36,d7,cd,01,fc,06,00,00,00,0b,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,73,c8,d4,bb,36,d7,cd,01,\
++  fc,06,00,00,a0,09,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,73,c8,d4,bb,36,d7,cd,01,\
++  fc,06,00,00,a0,09,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS\Diag\Registry Writer]
+ "IDENTIFY (Enter)"=hex:48,00,00,00,00,00,00,00,3e,72,09,43,36,d7,cd,01,1c,02,\
+@@ -2285607,6 +2285713,14 @@
+   00,00,17,ac,ef,91,36,d7,cd,01,1c,02,00,00,34,08,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,6d,8a,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,6d,8a,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS\Diag\Shadow Copy Optimization Writer]
+ "IDENTIFY (Enter)"=hex:48,00,00,00,00,00,00,00,98,d4,0b,43,36,d7,cd,01,1c,02,\
+@@ -2285685,6 +2285799,22 @@
+   02,00,00,34,08,00,00,f5,03,00,00,01,00,00,00,04,00,00,00,00,00,00,00,2a,6e,\
+   de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00
++"POSTSNAPSHOT (Leave)"=hex:48,00,00,00,00,00,00,00,a1,06,4a,ad,36,d7,cd,01,1c,\
++  02,00,00,34,08,00,00,f5,03,00,00,00,00,00,00,04,00,00,00,00,00,00,00,2a,6e,\
++  de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00
++"VSS_WS_WAITING_FOR_BACKUP_COMPLETE (SetCurrentState)"=hex:48,00,00,00,00,00,\
++  00,00,a1,06,4a,ad,36,d7,cd,01,1c,02,00,00,34,08,00,00,05,00,00,00,01,00,00,\
++  00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
++  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,93,b0,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,93,b0,c4,bb,36,d7,cd,01,\
++  1c,02,00,00,34,08,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS\Diag\SwProvider_{b5946137-7b9f-4925-af80-51abd60b20d5}]
+ "PROVIDER_BEGINPREPARE (Enter)"=hex:48,00,00,00,00,00,00,00,a0,5c,db,7a,36,d7,\
+@@ -2285735,6 +2285865,14 @@
+   d7,cd,01,1c,02,00,00,84,07,00,00,06,04,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00
++"PROVIDER_POSTFINALCOMMIT (Enter)"=hex:48,00,00,00,00,00,00,00,a1,06,4a,ad,36,\
++  d7,cd,01,1c,02,00,00,84,07,00,00,07,04,00,00,01,00,00,00,00,00,00,00,00,00,\
++  00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00
++"PROVIDER_POSTFINALCOMMIT (Leave)"=hex:48,00,00,00,00,00,00,00,39,6c,5d,ba,36,\
++  d7,cd,01,1c,02,00,00,84,07,00,00,07,04,00,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS\Diag\System Writer]
+ "IDENTIFY (Enter)"=hex:48,00,00,00,00,00,00,00,c8,c1,f8,42,36,d7,cd,01,34,04,\
+@@ -2285821,6 +2285959,14 @@
+   00,00,8f,93,58,92,36,d7,cd,01,34,04,00,00,a4,0a,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,37,81,d1,bb,36,d7,cd,01,\
++  34,04,00,00,a4,0a,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,37,81,d1,bb,36,d7,cd,01,\
++  34,04,00,00,a4,0a,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS\Diag\VolSnap]
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}DiscoverSnapshots (Enter)"=hex:48,\
+@@ -2285840,11 +2285986,11 @@
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}ComputeIgnorableProduct (Enter)"=hex:48,\
+-  00,00,00,00,00,00,00,a6,4a,63,8b,36,d7,cd,01,00,00,00,00,00,00,00,00,0c,00,\
++  00,00,00,00,00,00,00,7b,66,ff,bb,36,d7,cd,01,00,00,00,00,00,00,00,00,0c,00,\
+   00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}ComputeIgnorableProduct (Leave)"=hex:48,\
+-  00,00,00,00,00,00,00,ca,47,a1,8b,36,d7,cd,01,00,00,00,00,00,00,00,00,0d,00,\
++  00,00,00,00,00,00,00,28,20,03,bc,36,d7,cd,01,00,00,00,00,00,00,00,00,0d,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}DeleteProcess (Enter)"=hex:48,00,\
+@@ -2285868,7 +2286014,7 @@
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}AdjustBitmap (Enter)"=hex:48,00,\
+-  00,00,00,00,00,00,96,ec,03,8b,36,d7,cd,01,00,00,00,00,00,00,00,00,04,00,00,\
++  00,00,00,00,00,00,5b,32,43,ba,36,d7,cd,01,00,00,00,00,00,00,00,00,04,00,00,\
+   00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}ValidateDiffAreaFiles (Enter)"=hex:48,\
+@@ -2285892,7 +2286038,7 @@
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}AdjustBitmap (Leave)"=hex:48,00,\
+-  00,00,00,00,00,00,8c,33,ad,8b,36,d7,cd,01,00,00,00,00,00,00,00,00,05,00,00,\
++  00,00,00,00,00,00,46,a5,69,bc,36,d7,cd,01,00,00,00,00,00,00,00,00,05,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+ "Volume{560e95cb-3b3e-11e2-aafd-806e6f6e6963}PrepareForSnapshot (Enter)"=hex:48,\
+@@ -2286031,6 +2286177,18 @@
+   02,00,00,84,07,00,00,f5,03,00,00,01,00,00,00,00,00,00,00,00,00,00,00,2a,6e,\
+   de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,00,\
+   00,00,00,00,00
++"POSTSNAPSHOT (Leave)"=hex:48,00,00,00,00,00,00,00,a1,06,4a,ad,36,d7,cd,01,1c,\
++  02,00,00,84,07,00,00,f5,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,2a,6e,\
++  de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,2e,e3,a6,bb,36,d7,cd,01,\
++  1c,02,00,00,84,07,00,00,fb,03,00,00,01,00,00,00,00,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,98,ee,d4,bb,36,d7,cd,01,\
++  1c,02,00,00,84,07,00,00,fb,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS\Diag\WMI Writer]
+ "IDENTIFY (Enter)"=hex:48,00,00,00,00,00,00,00,14,fd,f3,42,36,d7,cd,01,b0,03,\
+@@ -2286117,6 +2286275,14 @@
+   00,00,8d,5c,00,92,36,d7,cd,01,b0,03,00,00,c0,01,00,00,05,00,00,00,01,00,00,\
+   00,04,00,00,00,00,00,00,00,2a,6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
++"BACKUPSHUTDOWN (Enter)"=hex:48,00,00,00,00,00,00,00,3e,8c,d2,bb,36,d7,cd,01,\
++  b0,03,00,00,c0,01,00,00,fb,03,00,00,01,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
++"BACKUPSHUTDOWN (Leave)"=hex:48,00,00,00,00,00,00,00,3e,8c,d2,bb,36,d7,cd,01,\
++  b0,03,00,00,c0,01,00,00,fb,03,00,00,00,00,00,00,05,00,00,00,00,00,00,00,2a,\
++  6e,de,35,2b,ed,66,4b,bb,6f,0f,b4,b2,6c,19,f9,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,00
+ 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS\Providers]
+ 
+@@ -2289122,244 +2289288,11 @@
+ 
+ [HKEY_USERS\.DEFAULT\Software\Classes\Local Settings\MuiCache]
+ 
+-[HKEY_USERS\.DEFAULT\Software\Classes\Local Settings\MuiCache\45]
++[HKEY_USERS\.DEFAULT\Software\Classes\Local Settings\MuiCache\46]
+ 
+-[HKEY_USERS\.DEFAULT\Software\Classes\Local Settings\MuiCache\45\52C64B7E]
++[HKEY_USERS\.DEFAULT\Software\Classes\Local Settings\MuiCache\46\52C64B7E]
+ "LanguageList"=hex(7):65,00,6e,00,2d,00,55,00,53,00,00,00,65,00,6e,00,00,00,00,\
+   00
+-"@C:\\Program Files\\Common Files\\system\\wab32res.dll,-10100"="Contacts"
+-"@C:\\Windows\\System32\\ieframe.dll,-12385"="Favorites Bar"
+-"@C:\\Windows\\eHome\\ehepgres.dll,-304"="Public Recorded TV"
+-"@C:\\Windows\\eHome\\ehepgres.dll,-312"="Sample Media"
+-"@C:\\Windows\\System32\\msimsg.dll,-34"="Windows Installer Package"
+-"@C:\\Windows\\System32\\msxml3r.dll,-1"="XML Document"
+-"@C:\\Windows\\system32\\unregmp2.exe,-9905"="Video Clip"
+-"@%SystemRoot%\\system32\\aelupsvc.dll,-1"="Application Experience"
+-"@%systemroot%\\system32\\drivers\\afd.sys,-1000"="Ancillary Function Driver for Winsock"
+-"@%SystemRoot%\\system32\\Alg.exe,-112"="Application Layer Gateway Service"
+-"@%systemroot%\\system32\\appidsvc.dll,-102"="AppID Driver"
+-"@%systemroot%\\system32\\appidsvc.dll,-100"="Application Identity"
+-"@%systemroot%\\system32\\appinfo.dll,-100"="Application Information"
+-"@appmgmts.dll,-3250"="Application Management"
+-"@%systemroot%\\system32\\rascfg.dll,-32000"="RAS Asynchronous Media Driver"
+-"@%SystemRoot%\\system32\\audiosrv.dll,-204"="Windows Audio Endpoint Builder"
+-"@%SystemRoot%\\system32\\audiosrv.dll,-200"="Windows Audio"
+-"@%SystemRoot%\\system32\\AxInstSV.dll,-103"="ActiveX Installer (AxInstSV)"
+-"@%SystemRoot%\\system32\\bdesvc.dll,-100"="BitLocker Drive Encryption Service"
+-"@%SystemRoot%\\system32\\bfe.dll,-1001"="Base Filtering Engine"
+-"@%SystemRoot%\\system32\\qmgr.dll,-1000"="Background Intelligent Transfer Service"
+-"@%systemroot%\\system32\\browser.dll,-102"="Browser Support Driver"
+-"@%systemroot%\\system32\\browser.dll,-100"="Computer Browser"
+-"@%SystemRoot%\\System32\\bthserv.dll,-101"="Bluetooth Support Service"
+-"@%SystemRoot%\\System32\\certprop.dll,-11"="Certificate Propagation"
+-"@%SystemRoot%\\system32\\clfs.sys,-100"="Common Log (CLFS)"
+-"@comres.dll,-947"="COM+ System Application"
+-"@%SystemRoot%\\system32\\cryptsvc.dll,-1001"="Cryptographic Services"
+-"@%systemroot%\\system32\\cscsvc.dll,-202"="Offline Files Driver"
+-"@%systemroot%\\system32\\cscsvc.dll,-200"="Offline Files"
+-"@oleres.dll,-5012"="DCOM Server Process Launcher"
+-"@%SystemRoot%\\system32\\defragsvc.dll,-101"="Disk Defragmenter"
+-"@%systemroot%\\system32\\drivers\\dfsc.sys,-101"="DFS Namespace Client Driver"
+-"@%SystemRoot%\\system32\\dhcpcore.dll,-100"="DHCP Client"
+-"@%systemroot%\\system32\\drivers\\discache.sys,-102"="System Attribute Cache"
+-"@%SystemRoot%\\System32\\dnsapi.dll,-101"="DNS Client"
+-"@%systemroot%\\system32\\dot3svc.dll,-1102"="Wired AutoConfig"
+-"@%systemroot%\\system32\\dps.dll,-500"="Diagnostic Policy Service"
+-"@%systemroot%\\system32\\eapsvc.dll,-1"="Extensible Authentication Protocol"
+-"@%SystemRoot%\\system32\\efssvc.dll,-100"="Encrypting File System (EFS)"
+-"@%SystemRoot%\\ehome\\ehrecvr.exe,-101"="Windows Media Center Receiver Service"
+-"@%SystemRoot%\\ehome\\ehsched.exe,-101"="Windows Media Center Scheduler Service"
+-"@%SystemRoot%\\system32\\wevtsvc.dll,-200"="Windows Event Log"
+-"@comres.dll,-2450"="COM+ Event System"
+-"@%systemroot%\\system32\\fxsresm.dll,-118"="Fax"
+-"@%systemroot%\\system32\\fdPHost.dll,-100"="Function Discovery Provider Host"
+-"@%systemroot%\\system32\\fdrespub.dll,-100"="Function Discovery Resource Publication"
+-"@%SystemRoot%\\system32\\drivers\\fileinfo.sys,-100"="File Information FS MiniFilter"
+-"@%SystemRoot%\\system32\\drivers\\filetrace.sys,-10001"="FileTrace"
+-"@%SystemRoot%\\system32\\drivers\\fltmgr.sys,-10001"="FltMgr"
+-"@%systemroot%\\system32\\FntCache.dll,-100"="Windows Font Cache Service"
+-"@%SystemRoot%\\system32\\PresentationHost.exe,-3309"="Windows Presentation Foundation Font Cache 3.0.0.0"
+-"@%SystemRoot%\\system32\\drivers\\fsdepends.sys,-10001"="File System Dependency Minifilter"
+-"@%SystemRoot%\\system32\\drivers\\fvevol.sys,-100"="Bitlocker Drive Encryption Filter Driver"
+-"@gpapi.dll,-112"="Group Policy Client"
+-"@%SystemRoot%\\System32\\hidserv.dll,-101"="Human Interface Device Access"
+-"@%SystemRoot%\\system32\\kmsvc.dll,-6"="Health Key and Certificate Management"
+-"@%SystemRoot%\\System32\\ListSvc.dll,-100"="HomeGroup Listener"
+-"@%SystemRoot%\\System32\\provsvc.dll,-100"="HomeGroup Provider"
+-"@%SystemRoot%\\system32\\drivers\\http.sys,-1"="HTTP"
+-"@%systemroot%\\system32\\drivers\\hwpolicy.sys,-101"="Hardware Policy Driver"
+-"@%systemroot%\\Microsoft.NET\\Framework64\\v3.0\\Windows Communication Foundation\\ServiceModelInstallRC.dll,-8193"="Windows CardSpace"
+-"@%SystemRoot%\\system32\\ikeext.dll,-501"="IKE and AuthIP IPsec Keying Modules"
+-"@%systemroot%\\system32\\IPBusEnum.dll,-102"="PnP-X IP Bus Enumerator"
+-"@%systemroot%\\system32\\rascfg.dll,-32013"="IP Traffic Filter Driver"
+-"@%SystemRoot%\\system32\\iphlpsvc.dll,-500"="IP Helper"
+-"@%SystemRoot%\\system32\\drivers\\irenum.sys,-100"="IR Bus Enumerator"
+-"@keyiso.dll,-100"="CNG Key Isolation"
+-"@comres.dll,-2946"="KtmRm for Distributed Transaction Coordinator"
+-"@%systemroot%\\system32\\srvsvc.dll,-100"="Server"
+-"@%systemroot%\\system32\\wkssvc.dll,-100"="Workstation"
+-"@%SystemRoot%\\system32\\lltdres.dll,-1"="Link-Layer Topology Discovery Mapper"
+-"@%SystemRoot%\\system32\\lmhsvc.dll,-101"="TCP/IP NetBIOS Helper"
+-"@%systemroot%\\system32\\drivers\\luafv.sys,-100"="UAC File Virtualization"
+-"@%SystemRoot%\\ehome\\ehres.dll,-15501"="Media Center Extender Service"
+-"@%systemroot%\\system32\\mmcss.dll,-100"="Multimedia Class Scheduler"
+-"@%SystemRoot%\\system32\\drivers\\mountmgr.sys,-100"="Mount Point Manager"
+-"@%SystemRoot%\\system32\\FirewallAPI.dll,-23092"="Windows Firewall Authorization Driver"
+-"@%SystemRoot%\\system32\\FirewallAPI.dll,-23090"="Windows Firewall"
+-"@%systemroot%\\system32\\webclnt.dll,-104"="WebDav Client Redirector Driver"
+-"@%systemroot%\\system32\\wkssvc.dll,-1002"="SMB MiniRedirector Wrapper and Engine"
+-"@%systemroot%\\system32\\wkssvc.dll,-1004"="SMB 1.x MiniRedirector"
+-"@%systemroot%\\system32\\wkssvc.dll,-1006"="SMB 2.0 MiniRedirector"
+-"@comres.dll,-2797"="Distributed Transaction Coordinator"
+-"@%SystemRoot%\\system32\\drivers\\mshidkmdf.sys,-100"="Pass-through HID to KMDF Filter Driver"
+-"@%SystemRoot%\\system32\\iscsidsc.dll,-5000"="Microsoft iSCSI Initiator Service"
+-"@%SystemRoot%\\system32\\msimsg.dll,-27"="Windows Installer"
+-"@%systemroot%\\system32\\drivers\\mup.sys,-101"="MUP"
+-"@%SystemRoot%\\system32\\qagentrt.dll,-6"="Network Access Protection Agent"
+-"@%SystemRoot%\\system32\\drivers\\ndis.sys,-200"="NDIS System Driver"
+-"@%systemroot%\\system32\\rascfg.dll,-32001"="Remote Access NDIS TAPI Driver"
+-"@%systemroot%\\system32\\rascfg.dll,-32002"="Remote Access NDIS WAN Driver"
+-"@%SystemRoot%\\system32\\drivers\\netbt.sys,-2"="NETBT"
+-"@%SystemRoot%\\System32\\netlogon.dll,-102"="Netlogon"
+-"@%SystemRoot%\\system32\\netman.dll,-109"="Network Connections"
+-"@%SystemRoot%\\system32\\netprofm.dll,-202"="Network List Service"
+-"@%systemroot%\\Microsoft.NET\\Framework64\\v3.0\\Windows Communication Foundation\\ServiceModelInstallRC.dll,-8201"="Net.Tcp Port Sharing Service"
+-"@%SystemRoot%\\System32\\nlasvc.dll,-1"="Network Location Awareness"
+-"@%SystemRoot%\\system32\\nsisvc.dll,-200"="Network Store Interface Service"
+-"@%SystemRoot%\\system32\\drivers\\nsiproxy.sys,-2"="NSI proxy service driver."
+-"@%SystemRoot%\\system32\\pnrpsvc.dll,-8004"="Peer Networking Identity Manager"
+-"@%SystemRoot%\\system32\\p2psvc.dll,-8006"="Peer Networking Grouping"
+-"@%SystemRoot%\\system32\\drivers\\partmgr.sys,-100"="Partition Manager"
+-"@%SystemRoot%\\system32\\pcasvc.dll,-1"="Program Compatibility Assistant Service"
+-"@%SystemRoot%\\system32\\peerdistsvc.dll,-9000"="BranchCache"
+-"@%systemroot%\\sysWow64\\perfhost.exe,-2"="Performance Counter DLL Host"
+-"@%systemroot%\\system32\\pla.dll,-500"="Performance Logs & Alerts"
+-"@%SystemRoot%\\system32\\umpnpmgr.dll,-100"="Plug and Play"
+-"@%SystemRoot%\\system32\\pnrpauto.dll,-8002"="PNRP Machine Name Publication Service"
+-"@%SystemRoot%\\system32\\pnrpsvc.dll,-8000"="Peer Name Resolution Protocol"
+-"@%SystemRoot%\\System32\\polstore.dll,-5010"="IPsec Policy Agent"
+-"@%SystemRoot%\\system32\\umpo.dll,-100"="Power"
+-"@%systemroot%\\system32\\rascfg.dll,-32006"="WAN Miniport (PPTP)"
+-"@%systemroot%\\system32\\profsvc.dll,-300"="User Profile Service"
+-"@%systemroot%\\system32\\psbase.dll,-300"="Protected Storage"
+-"@%SystemRoot%\\System32\\drivers\\pacer.sys,-101"="QoS Packet Scheduler"
+-"@%SystemRoot%\\system32\\qwave.dll,-1"="Quality Windows Audio Video Experience"
+-"@%SystemRoot%\\system32\\drivers\\qwavedrv.sys,-1"="QWAVE driver"
+-"@%Systemroot%\\system32\\rasauto.dll,-200"="Remote Access Auto Connection Manager"
+-"@%systemroot%\\system32\\rascfg.dll,-32005"="WAN Miniport (L2TP)"
+-"@%Systemroot%\\system32\\rasmans.dll,-200"="Remote Access Connection Manager"
+-"@%systemroot%\\system32\\rascfg.dll,-32007"="Remote Access PPPOE Driver"
+-"@%systemroot%\\system32\\sstpsvc.dll,-202"="WAN Miniport (SSTP)"
+-"@%systemroot%\\system32\\wkssvc.dll,-1000"="Redirected Buffering Sub Sysytem"
+-"@%systemroot%\\system32\\DRIVERS\\RDPCDD.sys,-100"="RDPCDD"
+-"@%systemroot%\\system32\\drivers\\RDPENCDD.sys,-101"="RDP Encoder Mirror Driver"
+-"@%systemroot%\\system32\\drivers\\RdpRefMp.sys,-101"="Reflector Display Driver used to gain access to graphics data"
+-"@%Systemroot%\\system32\\mprdim.dll,-200"="Routing and Remote Access"
+-"@regsvc.dll,-1"="Remote Registry"
+-"@%windir%\\system32\\RpcEpMap.dll,-1001"="RPC Endpoint Mapper"
+-"@%systemroot%\\system32\\Locator.exe,-2"="Remote Procedure Call (RPC) Locator"
+-"@oleres.dll,-5010"="Remote Procedure Call (RPC)"
+-"@%SystemRoot%\\system32\\samsrv.dll,-1"="Security Accounts Manager"
+-"@%SystemRoot%\\System32\\SCardSvr.dll,-1"="Smart Card"
+-"@%SystemRoot%\\System32\\drivers\\scfilter.sys,-11"="Smart card PnP Class Filter Driver"
+-"@%SystemRoot%\\system32\\schedsvc.dll,-100"="Task Scheduler"
+-"@%SystemRoot%\\System32\\certprop.dll,-13"="Smart Card Removal Policy"
+-"@%SystemRoot%\\system32\\sdrsvc.dll,-107"="Windows Backup"
+-"@%SystemRoot%\\system32\\seclogon.dll,-7001"="Secondary Logon"
+-"@%SystemRoot%\\system32\\Sens.dll,-200"="System Event Notification Service"
+-"@%SystemRoot%\\System32\\sensrsvc.dll,-1000"="Adaptive Brightness"
+-"@%SystemRoot%\\System32\\SessEnv.dll,-1026"="Remote Desktop Configuration"
+-"@%SystemRoot%\\system32\\ipnathlp.dll,-106"="Internet Connection Sharing (ICS)"
+-"@%SystemRoot%\\System32\\shsvcs.dll,-12288"="Shell Hardware Detection"
+-"@%SystemRoot%\\system32\\tcpipcfg.dll,-50005"="Message-oriented TCP/IP and TCP/IPv6 Protocol (SMB session)"
+-"@%SystemRoot%\\system32\\snmptrap.exe,-3"="SNMP Trap"
+-"@%systemroot%\\system32\\spoolsv.exe,-1"="Print Spooler"
+-"@%SystemRoot%\\system32\\sppsvc.exe,-101"="Software Protection"
+-"@%SystemRoot%\\system32\\sppuinotify.dll,-103"="SPP Notification Service"
+-"@%systemroot%\\system32\\srvsvc.dll,-102"="Server SMB 1.xxx Driver"
+-"@%systemroot%\\system32\\srvsvc.dll,-104"="Server SMB 2.xxx Driver"
+-"@%systemroot%\\system32\\ssdpsrv.dll,-100"="SSDP Discovery"
+-"@%SystemRoot%\\system32\\sstpsvc.dll,-200"="Secure Socket Tunneling Protocol Service"
+-"@%SystemRoot%\\system32\\wiaservc.dll,-9"="Windows Image Acquisition (WIA)"
+-"@%SystemRoot%\\system32\\vmstorfltres.dll,-1000"="Disk Virtual Machine Bus Acceleration Filter Driver"
+-"@%SystemRoot%\\System32\\StorSvc.dll,-100"="Storage Service"
+-"@%SystemRoot%\\System32\\swprv.dll,-103"="Microsoft Software Shadow Copy Provider"
+-"@%SystemRoot%\\system32\\sysmain.dll,-1000"="Superfetch"
+-"@%SystemRoot%\\system32\\TabSvc.dll,-100"="Tablet PC Input Service"
+-"@%SystemRoot%\\system32\\tapisrv.dll,-10100"="Telephony"
+-"@%SystemRoot%\\system32\\tbssvc.dll,-100"="TPM Base Services"
+-"@%SystemRoot%\\system32\\tcpipcfg.dll,-50003"="TCP/IP Protocol Driver"
+-"@%SystemRoot%\\system32\\tcpipcfg.dll,-50004"="NetIO Legacy TDI Support Driver"
+-"@%SystemRoot%\\System32\\termsrv.dll,-268"="Remote Desktop Services"
+-"@%SystemRoot%\\System32\\themeservice.dll,-8192"="Themes"
+-"@%systemroot%\\system32\\mmcss.dll,-102"="Thread Ordering Server"
+-"@%SystemRoot%\\system32\\trkwks.dll,-1"="Distributed Link Tracking Client"
+-"@%SystemRoot%\\servicing\\TrustedInstaller.exe,-100"="Windows Modules Installer"
+-"@%SystemRoot%\\System32\\DRIVERS\\tssecsrv.sys,-101"="Remote Desktop Services Security Filter Driver"
+-"@%SystemRoot%\\system32\\ui0detect.exe,-101"="Interactive Services Detection"
+-"@%SystemRoot%\\system32\\umrdp.dll,-1000"="Remote Desktop Services UserMode Port Redirector"
+-"@%systemroot%\\system32\\upnphost.dll,-213"="UPnP Device Host"
+-"@%SystemRoot%\\system32\\dwm.exe,-2000"="Desktop Window Manager Session Manager"
+-"@%SystemRoot%\\system32\\vaultsvc.dll,-1003"="Credential Manager"
+-"@%SystemRoot%\\system32\\vds.exe,-100"="Virtual Disk"
+-"@%SystemRoot%\\system32\\vmbusres.dll,-1000"="Virtual Machine Bus"
+-"@%SystemRoot%\\system32\\drivers\\volmgrx.sys,-100"="Dynamic Volume Manager"
+-"@%systemroot%\\system32\\vssvc.exe,-102"="Volume Shadow Copy"
+-"@%SystemRoot%\\System32\\drivers\\vwifibus.sys,-257"="Virtual WiFi Bus Driver"
+-"@%SystemRoot%\\system32\\w32time.dll,-200"="Windows Time"
+-"@%systemroot%\\system32\\rascfg.dll,-32011"="Remote Access IP ARP Driver"
+-"@%systemroot%\\system32\\rascfg.dll,-32012"="Remote Access IPv6 ARP Driver"
+-"@%SystemRoot%\\system32\\Wat\\WatUX.exe,-601"="Windows Activation Technologies Service"
+-"@%systemroot%\\system32\\wbengine.exe,-104"="Block Level Backup Engine Service"
+-"@%systemroot%\\system32\\wbiosrvc.dll,-100"="Windows Biometric Service"
+-"@%SystemRoot%\\system32\\wcncsvc.dll,-3"="Windows Connect Now - Config Registrar"
+-"@%SystemRoot%\\system32\\WcsPlugInService.dll,-200"="Windows Color System"
+-"@%SystemRoot%\\system32\\drivers\\Wdf01000.sys,-1000"="Kernel Mode Driver Frameworks service"
+-"@%systemroot%\\system32\\wdi.dll,-502"="Diagnostic Service Host"
+-"@%systemroot%\\system32\\wdi.dll,-500"="Diagnostic System Host"
+-"@%systemroot%\\system32\\webclnt.dll,-100"="WebClient"
+-"@%SystemRoot%\\system32\\wecsvc.dll,-200"="Windows Event Collector"
+-"@%SystemRoot%\\System32\\wercplsupport.dll,-101"="Problem Reports and Solutions Control Panel Support"
+-"@%SystemRoot%\\System32\\wersvc.dll,-100"="Windows Error Reporting Service"
+-"@%ProgramFiles%\\Windows Defender\\MsMpRes.dll,-103"="Windows Defender"
+-"@%SystemRoot%\\system32\\winhttp.dll,-100"="WinHTTP Web Proxy Auto-Discovery Service"
+-"@%Systemroot%\\system32\\wbem\\wmisvc.dll,-205"="Windows Management Instrumentation"
+-"@%Systemroot%\\system32\\wsmsvc.dll,-101"="Windows Remote Management (WS-Management)"
+-"@%SystemRoot%\\System32\\wlansvc.dll,-257"="WLAN AutoConfig"
+-"@%Systemroot%\\system32\\wbem\\wmiapsrv.exe,-110"="WMI Performance Adapter"
+-"@%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe,-101"="Windows Media Player Network Sharing Service"
+-"@%SystemRoot%\\system32\\wpcsvc.dll,-100"="Parental Controls"
+-"@%SystemRoot%\\system32\\wpdbusenum.dll,-100"="Portable Device Enumerator Service"
+-"@%systemroot%\\System32\\drivers\\ws2ifsl.sys,-1000"="Winsock IFS Driver"
+-"@%SystemRoot%\\System32\\wscsvc.dll,-200"="Security Center"
+-"@%systemroot%\\system32\\SearchIndexer.exe,-103"="Windows Search"
+-"@%systemroot%\\system32\\wuaueng.dll,-105"="Windows Update"
+-"@%SystemRoot%\\system32\\drivers\\Wudfpf.sys,-1000"="User Mode Driver Frameworks Platform Driver"
+-"@%SystemRoot%\\system32\\wudfsvc.dll,-1000"="Windows Driver Foundation - User-mode Driver Framework"
+-"@%SystemRoot%\\System32\\wwansvc.dll,-257"="WWAN AutoConfig"
+-"@provsvc.dll,-202"="HomeGroup"
+-"@peerdistsh.dll,-9003"="BranchCache - Hosted Cache Client (Uses HTTPS)"
+-"@peerdistsh.dll,-9002"="BranchCache - Hosted Cache Server (Uses HTTPS)"
+-"@peerdistsh.dll,-9001"="BranchCache - Peer Discovery (Uses WSD)"
+-"@peerdistsh.dll,-9000"="BranchCache - Content Retrieval (Uses HTTP)"
+-"@%systemroot%\\system32\\provsvc.dll,-202"="HomeGroup"
+-"@snmptrap.exe,-3"="SNMP Trap"
+-"@netlogon.dll,-1010"="Netlogon Service"
+-"@sstpsvc.dll,-35001"="Secure Socket Tunneling Protocol"
+-"@%SystemRoot%\\system32\\p2pcollab.dll,-8042"="Peer to Peer Trust"
+-"@%SystemRoot%\\system32\\qagentrt.dll,-10"="System Health Authentication"
+-"@%SystemRoot%\\system32\\dnsapi.dll,-103"="Domain Name System (DNS) Server Trust"
+-"@%SystemRoot%\\System32\\fveui.dll,-843"="BitLocker Drive Encryption"
+-"@%SystemRoot%\\System32\\fveui.dll,-844"="BitLocker Data Recovery Agent"
+-"C:\\Windows\\system32,@elscore.dll,-2"="Microsoft Script Detection"
+-"C:\\Windows\\system32,@elscore.dll,-5"="Microsoft Transliteration Engine"
+-"C:\\Windows\\system32,@elscore.dll,-4"="Microsoft Simplified Chinese to Traditional Chinese Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-6"="Microsoft Cyrillic to Latin Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-3"="Microsoft Traditional Chinese to Simplified Chinese Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-7"="Microsoft Devanagari to Latin Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-8"="Microsoft Malayalam to Latin Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-9"="Microsoft Bengali to Latin Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-1"="Microsoft Language Detection"
+ 
+ [HKEY_USERS\.DEFAULT\Software\Microsoft]
+ 
+@@ -2289458,6 +2289391,9 @@
+ [HKEY_USERS\.DEFAULT\Software\Microsoft\Direct3D\MostRecentApplication]
+ "Name"="mscorsvw.exe"
+ 
++[HKEY_USERS\.DEFAULT\Software\Microsoft\HTMLHelp2xSetup]
++@="{90140000-0011-0000-0000-0000000FF1CE}"
++
+ [HKEY_USERS\.DEFAULT\Software\Microsoft\Internet Explorer]
+ 
+ [HKEY_USERS\.DEFAULT\Software\Microsoft\Internet Explorer\BrowserEmulation]
+@@ -2306201,8 +2306137,8 @@
+   00,00,00,00,00,00,00,00,00,00,62,00,65,00,66,00,6f,00,72,00,65,00,64,00,69,\
+   00,76,00,76,00,75,00,6e,00,31,00,31,00,2e,00,72,00,65,00,67,00,00,00,22,00,\
+   00,00
+-"MRUListEx"=hex:03,00,00,00,00,00,00,00,08,00,00,00,07,00,00,00,06,00,00,00,05,\
+-  00,00,00,04,00,00,00,02,00,00,00,01,00,00,00,ff,ff,ff,ff
++"MRUListEx"=hex:04,00,00,00,03,00,00,00,00,00,00,00,08,00,00,00,07,00,00,00,06,\
++  00,00,00,05,00,00,00,02,00,00,00,01,00,00,00,ff,ff,ff,ff
+ "1"=hex:14,00,1f,58,0d,1a,2c,f0,21,be,50,43,88,b0,73,67,fc,96,ef,3c,1a,02,00,\
+   00,14,02,bb,af,93,3b,06,02,04,00,00,00,00,00,3d,00,00,00,31,53,50,53,30,f1,\
+   25,b7,ef,47,1a,10,a5,f1,02,60,8c,9e,eb,ac,21,00,00,00,0a,00,00,00,00,1f,00,\
+@@ -2306517,8 +2306453,8 @@
+   00,00,00,00,00,00,00,00,00,00,62,00,65,00,66,00,6f,00,72,00,65,00,64,00,69,\
+   00,76,00,76,00,75,00,6e,00,31,00,31,00,2e,00,72,00,65,00,67,00,00,00,22,00,\
+   00,00
+-"MRUListEx"=hex:03,00,00,00,00,00,00,00,08,00,00,00,07,00,00,00,06,00,00,00,05,\
+-  00,00,00,04,00,00,00,02,00,00,00,01,00,00,00,ff,ff,ff,ff
++"MRUListEx"=hex:04,00,00,00,03,00,00,00,00,00,00,00,08,00,00,00,07,00,00,00,06,\
++  00,00,00,05,00,00,00,02,00,00,00,01,00,00,00,ff,ff,ff,ff
+ "1"=hex:14,00,1f,58,0d,1a,2c,f0,21,be,50,43,88,b0,73,67,fc,96,ef,3c,1a,02,00,\
+   00,14,02,bb,af,93,3b,06,02,04,00,00,00,00,00,3d,00,00,00,31,53,50,53,30,f1,\
+   25,b7,ef,47,1a,10,a5,f1,02,60,8c,9e,eb,ac,21,00,00,00,0a,00,00,00,00,1f,00,\
+@@ -2310671,7 +2310607,7 @@
+   68,06,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,\
+   80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,ff,ff,ff,ff,7e,5e,3b,\
+   a3,4c,cf,cd,01,00,00,00,00
+-"HRZR_PGYFRFFVBA"=hex:00,00,00,00,7c,00,00,00,fb,00,00,00,f7,2d,63,00,0e,00,00,\
++"HRZR_PGYFRFFVBA"=hex:00,00,00,00,7d,00,00,00,03,01,00,00,8c,26,65,00,0e,00,00,\
+   00,15,00,00,00,a0,68,06,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,66,00,\
+   74,00,2e,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,2e,00,47,00,65,00,74,\
+   00,74,00,69,00,6e,00,67,00,53,00,74,00,61,00,72,00,74,00,65,00,64,00,00,00,\
+@@ -2310693,49 +2310629,49 @@
+   00,00,00,fd,fc,98,77,00,00,00,00,3f,61,d3,74,00,00,00,00,01,00,00,00,00,00,\
+   00,00,50,94,5d,ff,fe,07,00,00,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,02,00,00,00,00,00,00,00,\
+-  02,00,00,00,04,00,00,00,2c,00,00,00,40,0d,10,00,7b,00,46,00,33,00,38,00,42,\
++  02,00,00,00,04,00,00,00,30,00,00,00,e7,1a,11,00,7b,00,46,00,33,00,38,00,42,\
+   00,46,00,34,00,30,00,34,00,2d,00,31,00,44,00,34,00,33,00,2d,00,34,00,32,00,\
+   46,00,32,00,2d,00,39,00,33,00,30,00,35,00,2d,00,36,00,37,00,44,00,45,00,30,\
+   00,42,00,32,00,38,00,46,00,43,00,32,00,33,00,7d,00,5c,00,65,00,78,00,70,00,\
+-  6c,00,6f,00,72,00,65,00,72,00,2e,00,65,00,78,00,65,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,48,90,9a,ff,fe,07,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,70,90,9a,ff,fe,07,\
+-  00,00,9b,02,01,ea,ff,ff,ff,ff,40,c8,c7,02,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,70,90,9a,ff,fe,07,00,00,9b,02,01,ea,ff,ff,ff,ff,40,c8,c7,02,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,0f,00,00,00,00,00,00,00,d4,17,c7,02,00,00,00,00,d0,\
+-  19,c7,02,00,00,00,00,d4,17,c7,02,00,00,00,00,00,00,00,00,00,00,00,00,64,66,\
+-  6c,74,00,00,00,00,1c,1a,c7,02,00,00,00,00,b4,1a,c7,02,00,00,00,00,f0,e1,d8,\
+-  02,00,00,00,00,4c,e5,9b,ff,fe,07,00,00,00,00,00,00,00,00,00,00,4c,e5,9b,ff,\
+-  fe,07,00,00,00,00,00,00,00,00,00,00,38,19,c7,02,00,00,00,00,b4,1a,c7,02,00,\
+-  00,00,00,08,a1,9a,ff,fe,07,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,1c,1a,c7,02,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,ff,ff,ff,\
+-  ff,00,00,00,00,00,00,00,00,d4,17,c7,02,00,00,00,00,38,19,c7,02,00,00,00,00,\
+-  0f,00,00,00,00,00,00,00,1c,1a,c7,02,00,00,00,00,00,00,00,00,00,00,00,00,b4,\
+-  1a,c7,02,00,00,00,00,1c,1a,c7,02,04,00,00,00,2c,00,00,00,40,0d,10,00,7b,00,\
++  6c,00,6f,00,72,00,65,00,72,00,2e,00,65,00,78,00,65,00,00,00,00,00,00,00,50,\
++  3f,01,09,00,00,00,00,08,00,00,00,00,00,00,00,80,e2,42,00,00,00,00,00,04,00,\
++  00,00,00,00,00,00,0b,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,da,d4,86,\
++  77,00,00,00,00,03,00,00,00,35,d7,00,00,00,00,35,00,00,00,00,00,c0,e1,d8,02,\
++  00,00,00,00,a8,00,01,00,00,00,00,00,98,0d,85,02,00,00,00,00,1c,04,00,00,00,\
++  00,00,00,08,00,00,00,00,00,00,00,10,3a,01,09,00,00,00,00,00,00,00,00,00,00,\
++  00,00,70,e2,42,00,00,00,00,00,20,00,00,00,00,00,00,00,20,00,00,00,00,00,00,\
++  00,08,00,00,00,00,00,00,00,08,00,00,00,00,00,00,00,00,e2,42,00,00,00,00,00,\
++  01,01,35,00,00,00,00,00,00,04,00,00,00,00,00,00,02,00,00,00,00,00,00,00,00,\
++  00,35,00,00,00,00,00,78,e2,02,00,00,00,02,00,31,00,32,00,33,00,36,00,a5,6a,\
++  02,00,00,00,00,00,d0,aa,38,00,00,00,00,00,02,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,00,03,00,00,00,00,00,00,00,08,00,00,00,00,00,00,00,02,00,00,00,\
++  00,00,00,00,00,e2,42,00,00,00,00,00,01,01,31,00,00,00,30,00,18,00,00,00,00,\
++  00,00,00,00,01,2e,09,00,00,00,00,02,00,00,00,00,00,00,00,30,02,35,00,00,00,\
++  00,00,2d,00,00,00,00,00,00,00,a5,6a,02,00,00,00,00,00,00,00,00,00,00,00,00,\
++  00,02,00,01,03,00,00,00,00,70,e2,42,00,00,00,00,00,98,02,35,00,00,00,00,00,\
++  32,00,36,00,37,00,2d,00,02,00,00,00,00,00,00,00,38,00,36,00,36,00,36,00,38,\
++  00,34,00,2d,00,34,00,18,00,00,00,04,00,00,00,30,00,00,00,e7,1a,11,00,7b,00,\
+   46,00,33,00,38,00,42,00,46,00,34,00,30,00,34,00,2d,00,31,00,44,00,34,00,33,\
+   00,2d,00,34,00,32,00,46,00,32,00,2d,00,39,00,33,00,30,00,35,00,2d,00,36,00,\
+   37,00,44,00,45,00,30,00,42,00,32,00,38,00,46,00,43,00,32,00,33,00,7d,00,5c,\
+   00,65,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,2e,00,65,00,78,00,65,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,48,90,9a,ff,fe,07,\
+-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,70,90,9a,ff,fe,07,00,00,9b,02,01,ea,ff,ff,ff,ff,40,c8,c7,02,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,70,90,9a,ff,fe,07,00,00,9b,02,01,ea,ff,ff,ff,ff,40,\
+-  c8,c7,02,00,00,00,00,00,00,00,00,00,00,00,00,0f,00,00,00,00,00,00,00,d4,17,\
+-  c7,02,00,00,00,00,d0,19,c7,02,00,00,00,00,d4,17,c7,02,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,64,66,6c,74,00,00,00,00,1c,1a,c7,02,00,00,00,00,b4,1a,c7,02,\
+-  00,00,00,00,f0,e1,d8,02,00,00,00,00,4c,e5,9b,ff,fe,07,00,00,00,00,00,00,00,\
+-  00,00,00,4c,e5,9b,ff,fe,07,00,00,00,00,00,00,00,00,00,00,38,19,c7,02,00,00,\
+-  00,00,b4,1a,c7,02,00,00,00,00,08,a1,9a,ff,fe,07,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,00,00,00,1c,1a,c7,02,00,00,00,00,00,00,00,00,00,00,00,00,\
+-  00,00,00,00,ff,ff,ff,ff,00,00,00,00,00,00,00,00,d4,17,c7,02,00,00,00,00,38,\
+-  19,c7,02,00,00,00,00,0f,00,00,00,00,00,00,00,1c,1a,c7,02,00,00,00,00,00,00,\
+-  00,00,00,00,00,00,b4,1a,c7,02,00,00,00,00,1c,1a,c7,02
++  00,00,00,00,00,00,50,3f,01,09,00,00,00,00,08,00,00,00,00,00,00,00,80,e2,42,\
++  00,00,00,00,00,04,00,00,00,00,00,00,00,0b,00,00,00,00,00,00,00,00,00,00,00,\
++  00,00,00,00,da,d4,86,77,00,00,00,00,03,00,00,00,35,d7,00,00,00,00,35,00,00,\
++  00,00,00,c0,e1,d8,02,00,00,00,00,a8,00,01,00,00,00,00,00,98,0d,85,02,00,00,\
++  00,00,1c,04,00,00,00,00,00,00,08,00,00,00,00,00,00,00,10,3a,01,09,00,00,00,\
++  00,00,00,00,00,00,00,00,00,70,e2,42,00,00,00,00,00,20,00,00,00,00,00,00,00,\
++  20,00,00,00,00,00,00,00,08,00,00,00,00,00,00,00,08,00,00,00,00,00,00,00,00,\
++  e2,42,00,00,00,00,00,01,01,35,00,00,00,00,00,00,04,00,00,00,00,00,00,02,00,\
++  00,00,00,00,00,00,00,00,35,00,00,00,00,00,78,e2,02,00,00,00,02,00,31,00,32,\
++  00,33,00,36,00,a5,6a,02,00,00,00,00,00,d0,aa,38,00,00,00,00,00,02,00,00,00,\
++  00,00,00,00,00,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,08,00,00,00,00,\
++  00,00,00,02,00,00,00,00,00,00,00,00,e2,42,00,00,00,00,00,01,01,31,00,00,00,\
++  30,00,18,00,00,00,00,00,00,00,00,01,2e,09,00,00,00,00,02,00,00,00,00,00,00,\
++  00,30,02,35,00,00,00,00,00,2d,00,00,00,00,00,00,00,a5,6a,02,00,00,00,00,00,\
++  00,00,00,00,00,00,00,00,02,00,01,03,00,00,00,00,70,e2,42,00,00,00,00,00,98,\
++  02,35,00,00,00,00,00,32,00,36,00,37,00,2d,00,02,00,00,00,00,00,00,00,38,00,\
++  36,00,36,00,36,00,38,00,34,00,2d,00,34,00,18,00,00,00
+ "{1NP14R77-02R7-4R5Q-O744-2RO1NR5198O7}\\qvfcynlfjvgpu.rkr"=hex:00,00,00,00,0d,\
+   00,00,00,13,00,00,00,60,cc,05,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,\
+   80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,\
+@@ -2310781,7 +2310717,7 @@
+   bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,ff,ff,ff,ff,50,f6,c3,31,\
+   4d,cf,cd,01,00,00,00,00
+ "{S38OS404-1Q43-42S2-9305-67QR0O28SP23}\\rkcybere.rkr"=hex:00,00,00,00,04,00,\
+-  00,00,2c,00,00,00,40,0d,10,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,\
++  00,00,30,00,00,00,e7,1a,11,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,\
+   bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,\
+   ff,ff,ff,ff,90,20,11,bc,35,d7,cd,01,00,00,00,00
+ "Q:\\IOBKJVAQBJFNQQVGVBAF-NZQ64.RKR"=hex:00,00,00,00,00,00,00,00,08,00,00,00,\
+@@ -2310792,7 +2310728,7 @@
+   00,00,00,00,00,00,00,00,00,00,00,17,04,00,00,00,00,80,bf,00,00,80,bf,00,00,\
+   80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,\
+   bf,00,00,80,bf,ff,ff,ff,ff,00,00,00,00,00,00,00,00,00,00,00,00
+-"Zvpebfbsg.Jvaqbjf.PbagebyCnary"=hex:00,00,00,00,00,00,00,00,1b,00,00,00,c6,c0,\
++"Zvpebfbsg.Jvaqbjf.PbagebyCnary"=hex:00,00,00,00,00,00,00,00,1c,00,00,00,09,d5,\
+   13,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,\
+   bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,ff,ff,ff,ff,00,00,00,00,\
+   00,00,00,00,00,00,00,00
+@@ -2310821,7 +2310757,7 @@
+   bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,ff,ff,ff,ff,00,00,00,00,00,00,00,00,\
+   00,00,00,00
+ "{S38OS404-1Q43-42S2-9305-67QR0O28SP23}\\ertrqvg.rkr"=hex:00,00,00,00,03,00,00,\
+-  00,19,00,00,00,2b,a0,06,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,\
++  00,1c,00,00,00,84,67,07,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,\
+   00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,ff,\
+   ff,ff,ff,90,65,26,c1,35,d7,cd,01,00,00,00,00
+ "P:\\Hfref\\zfbss2010\\Qbjaybnqf\\QviihaVafgnyyre-20081231.rkr"=hex:00,00,00,\
+@@ -2310848,12 +2310784,12 @@
+   00,00,00,00,00,00,00,ec,82,00,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,\
+   80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,\
+   bf,ff,ff,ff,ff,f0,a7,6f,75,36,d7,cd,01,00,00,00,00
+-"P:\\Onpxhc\\Qviiha\\erzbir_FnzvCebbsvatGbbyf.rkr"=hex:00,00,00,00,02,00,00,00,\
++"P:\\Onpxhc\\Qviiha\\erzbir_FnzvCebbsvatGbbyf.rkr"=hex:00,00,00,00,03,00,00,00,\
+   00,00,00,00,00,00,00,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,\
+   00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,ff,ff,\
+-  ff,ff,c0,59,95,fb,35,d7,cd,01,00,00,00,00
++  ff,ff,f0,6e,4e,c5,36,d7,cd,01,00,00,00,00
+ "P:\\Hfref\\zfbss2010\\NccQngn\\Ybpny\\Grzc\\~afh.gzc\\Nh_.rkr"=hex:00,00,00,\
+-  00,00,00,00,00,00,00,00,00,3e,15,00,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,\
++  00,00,00,00,00,00,00,00,00,90,24,00,00,00,00,80,bf,00,00,80,bf,00,00,80,bf,\
+   00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,00,80,bf,00,\
+   00,80,bf,ff,ff,ff,ff,00,00,00,00,00,00,00,00,00,00,00,00
+ "{1NP14R77-02R7-4R5Q-O744-2RO1NR5198O7}\\zfvrkrp.rkr"=hex:00,00,00,00,01,00,00,\
+@@ -2312960,7 +2312896,7 @@
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform]
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\Activation]
+-"LastAction"=hex(b):13,47,d1,06,03,00,00,00
++"LastAction"=hex(b):8d,0f,d7,06,03,00,00,00
+ "ActionId"=dword:0000001d
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Microsoft\Windows NT\CurrentVersion\Windows]
+@@ -2313597,6 +2313533,10 @@
+ "@C:\\Windows\\System32\\msimsg.dll,-34"="Windows Installer Package"
+ "@%SystemRoot%\\system32\\appwiz.cpl,-162"="Uninstall or change an application"
+ "@C:\\Windows\\regedit.exe,-309"="Registration Entries"
++"@C:\\Windows\\system32\\cabview.dll,-20"="Cabinet File"
++"@C:\\Windows\\System32\\msimsg.dll,-36"="&Install"
++"@C:\\Windows\\System32\\msimsg.dll,-37"="Re&pair"
++"@C:\\Windows\\System32\\msimsg.dll,-38"="&Uninstall"
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software]
+ 
+@@ -2316856,8 +2316796,8 @@
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU]
+ "NodeSlots"=hex:02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,\
+-  02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02
+-"MRUListEx"=hex:04,00,00,00,03,00,00,00,00,00,00,00,01,00,00,00,02,00,00,00,06,\
++  02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02
++"MRUListEx"=hex:04,00,00,00,00,00,00,00,01,00,00,00,03,00,00,00,02,00,00,00,06,\
+   00,00,00,05,00,00,00,ff,ff,ff,ff
+ "0"=hex:14,00,1f,50,e0,4f,d0,20,ea,3a,69,10,a2,d8,08,00,2b,30,30,9d,00,00
+ "1"=hex:14,00,1f,70,68,06,ee,26,0a,a0,d7,44,93,71,be,b0,64,c9,86,83,00,00
+@@ -2317767,7 +2317707,7 @@
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2]
+ "NodeSlot"=dword:0000001c
+-"MRUListEx"=hex:01,00,00,00,00,00,00,00,ff,ff,ff,ff
++"MRUListEx"=hex:00,00,00,00,01,00,00,00,ff,ff,ff,ff
+ "0"=hex:5e,00,31,00,00,00,00,00,87,41,40,59,10,00,43,4f,4d,4d,4f,4e,7e,31,00,\
+   00,46,00,08,00,04,00,ef,be,ee,3a,85,1a,87,41,40,59,2a,00,00,00,f8,00,00,00,\
+   00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,43,00,6f,00,6d,00,6d,\
+@@ -2317789,16 +2317729,24 @@
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2\0\0]
+ "NodeSlot"=dword:0000001e
+-"MRUListEx"=hex:00,00,00,00,ff,ff,ff,ff
++"MRUListEx"=hex:01,00,00,00,00,00,00,00,ff,ff,ff,ff
+ "0"=hex:4c,00,31,00,00,00,00,00,87,41,1d,5a,10,00,50,52,4f,4f,46,00,38,00,08,\
+   00,04,00,ef,be,87,41,07,52,87,41,1d,5a,2a,00,00,00,a2,35,01,00,00,00,27,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,50,00,52,00,4f,00,4f,00,46,00,00,\
+   00,14,00,00,00
++"1"=hex:56,00,31,00,00,00,00,00,87,41,6c,53,10,00,4f,46,46,49,43,45,31,34,00,\
++  00,3e,00,08,00,04,00,ef,be,87,41,d7,51,87,41,6c,53,2a,00,00,00,c9,5d,01,00,\
++  00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,4f,00,46,00,46,00,49,\
++  00,43,00,45,00,31,00,34,00,00,00,18,00,00,00
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2\0\0\0]
+ "NodeSlot"=dword:0000001f
+ "MRUListEx"=hex:ff,ff,ff,ff
+ 
++[HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2\0\0\1]
++"NodeSlot"=dword:0000002d
++"MRUListEx"=hex:ff,ff,ff,ff
++
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2\1]
+ "NodeSlot"=dword:00000026
+ "MRUListEx"=hex:00,00,00,00,ff,ff,ff,ff
+@@ -2318966,6 +2318914,32 @@
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\44\Shell]
+ "KnownFolderDerivedFolderType"="{57807898-8C4F-4462-BB63-71042380B109}"
+ 
++[HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\45]
++
++[HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\45\Shell]
++"KnownFolderDerivedFolderType"="{57807898-8C4F-4462-BB63-71042380B109}"
++"SniffedFolderType"="Generic"
++
++[HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\45\Shell\{5C4F28B5-F869-4E84-8E60-F11DB97C5CC7}]
++"Rev"=dword:00000000
++"FFlags"=dword:41200001
++"Vid"="{137E7700-3573-11CF-AE69-08002B2E1262}"
++"Mode"=dword:00000004
++"LogicalViewMode"=dword:00000001
++"IconSize"=dword:00000010
++"ColInfo"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,fd,df,df,fd,10,\
++  00,00,00,00,00,00,00,00,00,00,00,04,00,00,00,18,00,00,00,30,f1,25,b7,ef,47,\
++  1a,10,a5,f1,02,60,8c,9e,eb,ac,0a,00,00,00,10,01,00,00,30,f1,25,b7,ef,47,1a,\
++  10,a5,f1,02,60,8c,9e,eb,ac,0e,00,00,00,78,00,00,00,30,f1,25,b7,ef,47,1a,10,\
++  a5,f1,02,60,8c,9e,eb,ac,04,00,00,00,78,00,00,00,30,f1,25,b7,ef,47,1a,10,a5,\
++  f1,02,60,8c,9e,eb,ac,0c,00,00,00,50,00,00,00
++"Sort"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,30,f1,\
++  25,b7,ef,47,1a,10,a5,f1,02,60,8c,9e,eb,ac,0a,00,00,00,01,00,00,00
++"GroupView"=dword:00000000
++"GroupByKey:FMTID"="{00000000-0000-0000-0000-000000000000}"
++"GroupByKey:PID"=dword:00000000
++"GroupByDirection"=dword:00000001
++
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\5]
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\5\Shell]
+@@ -2319631,6 +2319605,10 @@
+ "@C:\\Windows\\System32\\msimsg.dll,-34"="Windows Installer Package"
+ "@%SystemRoot%\\system32\\appwiz.cpl,-162"="Uninstall or change an application"
+ "@C:\\Windows\\regedit.exe,-309"="Registration Entries"
++"@C:\\Windows\\system32\\cabview.dll,-20"="Cabinet File"
++"@C:\\Windows\\System32\\msimsg.dll,-36"="&Install"
++"@C:\\Windows\\System32\\msimsg.dll,-37"="Re&pair"
++"@C:\\Windows\\System32\\msimsg.dll,-38"="&Uninstall"
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software]
+ 
+@@ -2322890,8 +2322868,8 @@
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU]
+ "NodeSlots"=hex:02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,\
+-  02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02
+-"MRUListEx"=hex:04,00,00,00,03,00,00,00,00,00,00,00,01,00,00,00,02,00,00,00,06,\
++  02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02,02
++"MRUListEx"=hex:04,00,00,00,00,00,00,00,01,00,00,00,03,00,00,00,02,00,00,00,06,\
+   00,00,00,05,00,00,00,ff,ff,ff,ff
+ "0"=hex:14,00,1f,50,e0,4f,d0,20,ea,3a,69,10,a2,d8,08,00,2b,30,30,9d,00,00
+ "1"=hex:14,00,1f,70,68,06,ee,26,0a,a0,d7,44,93,71,be,b0,64,c9,86,83,00,00
+@@ -2323801,7 +2323779,7 @@
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2]
+ "NodeSlot"=dword:0000001c
+-"MRUListEx"=hex:01,00,00,00,00,00,00,00,ff,ff,ff,ff
++"MRUListEx"=hex:00,00,00,00,01,00,00,00,ff,ff,ff,ff
+ "0"=hex:5e,00,31,00,00,00,00,00,87,41,40,59,10,00,43,4f,4d,4d,4f,4e,7e,31,00,\
+   00,46,00,08,00,04,00,ef,be,ee,3a,85,1a,87,41,40,59,2a,00,00,00,f8,00,00,00,\
+   00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,43,00,6f,00,6d,00,6d,\
+@@ -2323823,16 +2323801,24 @@
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2\0\0]
+ "NodeSlot"=dword:0000001e
+-"MRUListEx"=hex:00,00,00,00,ff,ff,ff,ff
++"MRUListEx"=hex:01,00,00,00,00,00,00,00,ff,ff,ff,ff
+ "0"=hex:4c,00,31,00,00,00,00,00,87,41,1d,5a,10,00,50,52,4f,4f,46,00,38,00,08,\
+   00,04,00,ef,be,87,41,07,52,87,41,1d,5a,2a,00,00,00,a2,35,01,00,00,00,27,00,\
+   00,00,00,00,00,00,00,00,00,00,00,00,00,00,50,00,52,00,4f,00,4f,00,46,00,00,\
+   00,14,00,00,00
++"1"=hex:56,00,31,00,00,00,00,00,87,41,6c,53,10,00,4f,46,46,49,43,45,31,34,00,\
++  00,3e,00,08,00,04,00,ef,be,87,41,d7,51,87,41,6c,53,2a,00,00,00,c9,5d,01,00,\
++  00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,4f,00,46,00,46,00,49,\
++  00,43,00,45,00,31,00,34,00,00,00,18,00,00,00
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2\0\0\0]
+ "NodeSlot"=dword:0000001f
+ "MRUListEx"=hex:ff,ff,ff,ff
+ 
++[HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2\0\0\1]
++"NodeSlot"=dword:0000002d
++"MRUListEx"=hex:ff,ff,ff,ff
++
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU\0\0\2\1]
+ "NodeSlot"=dword:00000026
+ "MRUListEx"=hex:00,00,00,00,ff,ff,ff,ff
+@@ -2325000,6 +2324986,32 @@
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\44\Shell]
+ "KnownFolderDerivedFolderType"="{57807898-8C4F-4462-BB63-71042380B109}"
+ 
++[HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\45]
++
++[HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\45\Shell]
++"KnownFolderDerivedFolderType"="{57807898-8C4F-4462-BB63-71042380B109}"
++"SniffedFolderType"="Generic"
++
++[HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\45\Shell\{5C4F28B5-F869-4E84-8E60-F11DB97C5CC7}]
++"Rev"=dword:00000000
++"FFlags"=dword:41200001
++"Vid"="{137E7700-3573-11CF-AE69-08002B2E1262}"
++"Mode"=dword:00000004
++"LogicalViewMode"=dword:00000001
++"IconSize"=dword:00000010
++"ColInfo"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,fd,df,df,fd,10,\
++  00,00,00,00,00,00,00,00,00,00,00,04,00,00,00,18,00,00,00,30,f1,25,b7,ef,47,\
++  1a,10,a5,f1,02,60,8c,9e,eb,ac,0a,00,00,00,10,01,00,00,30,f1,25,b7,ef,47,1a,\
++  10,a5,f1,02,60,8c,9e,eb,ac,0e,00,00,00,78,00,00,00,30,f1,25,b7,ef,47,1a,10,\
++  a5,f1,02,60,8c,9e,eb,ac,04,00,00,00,78,00,00,00,30,f1,25,b7,ef,47,1a,10,a5,\
++  f1,02,60,8c,9e,eb,ac,0c,00,00,00,50,00,00,00
++"Sort"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,30,f1,\
++  25,b7,ef,47,1a,10,a5,f1,02,60,8c,9e,eb,ac,0a,00,00,00,01,00,00,00
++"GroupView"=dword:00000000
++"GroupByKey:FMTID"="{00000000-0000-0000-0000-000000000000}"
++"GroupByKey:PID"=dword:00000000
++"GroupByDirection"=dword:00000001
++
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\5]
+ 
+ [HKEY_USERS\S-1-5-21-4242609267-1877866684-4123670283-1002_Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\5\Shell]
+@@ -2325753,244 +2325765,11 @@
+ 
+ [HKEY_USERS\S-1-5-18\Software\Classes\Local Settings\MuiCache]
+ 
+-[HKEY_USERS\S-1-5-18\Software\Classes\Local Settings\MuiCache\45]
++[HKEY_USERS\S-1-5-18\Software\Classes\Local Settings\MuiCache\46]
+ 
+-[HKEY_USERS\S-1-5-18\Software\Classes\Local Settings\MuiCache\45\52C64B7E]
++[HKEY_USERS\S-1-5-18\Software\Classes\Local Settings\MuiCache\46\52C64B7E]
+ "LanguageList"=hex(7):65,00,6e,00,2d,00,55,00,53,00,00,00,65,00,6e,00,00,00,00,\
+   00
+-"@C:\\Program Files\\Common Files\\system\\wab32res.dll,-10100"="Contacts"
+-"@C:\\Windows\\System32\\ieframe.dll,-12385"="Favorites Bar"
+-"@C:\\Windows\\eHome\\ehepgres.dll,-304"="Public Recorded TV"
+-"@C:\\Windows\\eHome\\ehepgres.dll,-312"="Sample Media"
+-"@C:\\Windows\\System32\\msimsg.dll,-34"="Windows Installer Package"
+-"@C:\\Windows\\System32\\msxml3r.dll,-1"="XML Document"
+-"@C:\\Windows\\system32\\unregmp2.exe,-9905"="Video Clip"
+-"@%SystemRoot%\\system32\\aelupsvc.dll,-1"="Application Experience"
+-"@%systemroot%\\system32\\drivers\\afd.sys,-1000"="Ancillary Function Driver for Winsock"
+-"@%SystemRoot%\\system32\\Alg.exe,-112"="Application Layer Gateway Service"
+-"@%systemroot%\\system32\\appidsvc.dll,-102"="AppID Driver"
+-"@%systemroot%\\system32\\appidsvc.dll,-100"="Application Identity"
+-"@%systemroot%\\system32\\appinfo.dll,-100"="Application Information"
+-"@appmgmts.dll,-3250"="Application Management"
+-"@%systemroot%\\system32\\rascfg.dll,-32000"="RAS Asynchronous Media Driver"
+-"@%SystemRoot%\\system32\\audiosrv.dll,-204"="Windows Audio Endpoint Builder"
+-"@%SystemRoot%\\system32\\audiosrv.dll,-200"="Windows Audio"
+-"@%SystemRoot%\\system32\\AxInstSV.dll,-103"="ActiveX Installer (AxInstSV)"
+-"@%SystemRoot%\\system32\\bdesvc.dll,-100"="BitLocker Drive Encryption Service"
+-"@%SystemRoot%\\system32\\bfe.dll,-1001"="Base Filtering Engine"
+-"@%SystemRoot%\\system32\\qmgr.dll,-1000"="Background Intelligent Transfer Service"
+-"@%systemroot%\\system32\\browser.dll,-102"="Browser Support Driver"
+-"@%systemroot%\\system32\\browser.dll,-100"="Computer Browser"
+-"@%SystemRoot%\\System32\\bthserv.dll,-101"="Bluetooth Support Service"
+-"@%SystemRoot%\\System32\\certprop.dll,-11"="Certificate Propagation"
+-"@%SystemRoot%\\system32\\clfs.sys,-100"="Common Log (CLFS)"
+-"@comres.dll,-947"="COM+ System Application"
+-"@%SystemRoot%\\system32\\cryptsvc.dll,-1001"="Cryptographic Services"
+-"@%systemroot%\\system32\\cscsvc.dll,-202"="Offline Files Driver"
+-"@%systemroot%\\system32\\cscsvc.dll,-200"="Offline Files"
+-"@oleres.dll,-5012"="DCOM Server Process Launcher"
+-"@%SystemRoot%\\system32\\defragsvc.dll,-101"="Disk Defragmenter"
+-"@%systemroot%\\system32\\drivers\\dfsc.sys,-101"="DFS Namespace Client Driver"
+-"@%SystemRoot%\\system32\\dhcpcore.dll,-100"="DHCP Client"
+-"@%systemroot%\\system32\\drivers\\discache.sys,-102"="System Attribute Cache"
+-"@%SystemRoot%\\System32\\dnsapi.dll,-101"="DNS Client"
+-"@%systemroot%\\system32\\dot3svc.dll,-1102"="Wired AutoConfig"
+-"@%systemroot%\\system32\\dps.dll,-500"="Diagnostic Policy Service"
+-"@%systemroot%\\system32\\eapsvc.dll,-1"="Extensible Authentication Protocol"
+-"@%SystemRoot%\\system32\\efssvc.dll,-100"="Encrypting File System (EFS)"
+-"@%SystemRoot%\\ehome\\ehrecvr.exe,-101"="Windows Media Center Receiver Service"
+-"@%SystemRoot%\\ehome\\ehsched.exe,-101"="Windows Media Center Scheduler Service"
+-"@%SystemRoot%\\system32\\wevtsvc.dll,-200"="Windows Event Log"
+-"@comres.dll,-2450"="COM+ Event System"
+-"@%systemroot%\\system32\\fxsresm.dll,-118"="Fax"
+-"@%systemroot%\\system32\\fdPHost.dll,-100"="Function Discovery Provider Host"
+-"@%systemroot%\\system32\\fdrespub.dll,-100"="Function Discovery Resource Publication"
+-"@%SystemRoot%\\system32\\drivers\\fileinfo.sys,-100"="File Information FS MiniFilter"
+-"@%SystemRoot%\\system32\\drivers\\filetrace.sys,-10001"="FileTrace"
+-"@%SystemRoot%\\system32\\drivers\\fltmgr.sys,-10001"="FltMgr"
+-"@%systemroot%\\system32\\FntCache.dll,-100"="Windows Font Cache Service"
+-"@%SystemRoot%\\system32\\PresentationHost.exe,-3309"="Windows Presentation Foundation Font Cache 3.0.0.0"
+-"@%SystemRoot%\\system32\\drivers\\fsdepends.sys,-10001"="File System Dependency Minifilter"
+-"@%SystemRoot%\\system32\\drivers\\fvevol.sys,-100"="Bitlocker Drive Encryption Filter Driver"
+-"@gpapi.dll,-112"="Group Policy Client"
+-"@%SystemRoot%\\System32\\hidserv.dll,-101"="Human Interface Device Access"
+-"@%SystemRoot%\\system32\\kmsvc.dll,-6"="Health Key and Certificate Management"
+-"@%SystemRoot%\\System32\\ListSvc.dll,-100"="HomeGroup Listener"
+-"@%SystemRoot%\\System32\\provsvc.dll,-100"="HomeGroup Provider"
+-"@%SystemRoot%\\system32\\drivers\\http.sys,-1"="HTTP"
+-"@%systemroot%\\system32\\drivers\\hwpolicy.sys,-101"="Hardware Policy Driver"
+-"@%systemroot%\\Microsoft.NET\\Framework64\\v3.0\\Windows Communication Foundation\\ServiceModelInstallRC.dll,-8193"="Windows CardSpace"
+-"@%SystemRoot%\\system32\\ikeext.dll,-501"="IKE and AuthIP IPsec Keying Modules"
+-"@%systemroot%\\system32\\IPBusEnum.dll,-102"="PnP-X IP Bus Enumerator"
+-"@%systemroot%\\system32\\rascfg.dll,-32013"="IP Traffic Filter Driver"
+-"@%SystemRoot%\\system32\\iphlpsvc.dll,-500"="IP Helper"
+-"@%SystemRoot%\\system32\\drivers\\irenum.sys,-100"="IR Bus Enumerator"
+-"@keyiso.dll,-100"="CNG Key Isolation"
+-"@comres.dll,-2946"="KtmRm for Distributed Transaction Coordinator"
+-"@%systemroot%\\system32\\srvsvc.dll,-100"="Server"
+-"@%systemroot%\\system32\\wkssvc.dll,-100"="Workstation"
+-"@%SystemRoot%\\system32\\lltdres.dll,-1"="Link-Layer Topology Discovery Mapper"
+-"@%SystemRoot%\\system32\\lmhsvc.dll,-101"="TCP/IP NetBIOS Helper"
+-"@%systemroot%\\system32\\drivers\\luafv.sys,-100"="UAC File Virtualization"
+-"@%SystemRoot%\\ehome\\ehres.dll,-15501"="Media Center Extender Service"
+-"@%systemroot%\\system32\\mmcss.dll,-100"="Multimedia Class Scheduler"
+-"@%SystemRoot%\\system32\\drivers\\mountmgr.sys,-100"="Mount Point Manager"
+-"@%SystemRoot%\\system32\\FirewallAPI.dll,-23092"="Windows Firewall Authorization Driver"
+-"@%SystemRoot%\\system32\\FirewallAPI.dll,-23090"="Windows Firewall"
+-"@%systemroot%\\system32\\webclnt.dll,-104"="WebDav Client Redirector Driver"
+-"@%systemroot%\\system32\\wkssvc.dll,-1002"="SMB MiniRedirector Wrapper and Engine"
+-"@%systemroot%\\system32\\wkssvc.dll,-1004"="SMB 1.x MiniRedirector"
+-"@%systemroot%\\system32\\wkssvc.dll,-1006"="SMB 2.0 MiniRedirector"
+-"@comres.dll,-2797"="Distributed Transaction Coordinator"
+-"@%SystemRoot%\\system32\\drivers\\mshidkmdf.sys,-100"="Pass-through HID to KMDF Filter Driver"
+-"@%SystemRoot%\\system32\\iscsidsc.dll,-5000"="Microsoft iSCSI Initiator Service"
+-"@%SystemRoot%\\system32\\msimsg.dll,-27"="Windows Installer"
+-"@%systemroot%\\system32\\drivers\\mup.sys,-101"="MUP"
+-"@%SystemRoot%\\system32\\qagentrt.dll,-6"="Network Access Protection Agent"
+-"@%SystemRoot%\\system32\\drivers\\ndis.sys,-200"="NDIS System Driver"
+-"@%systemroot%\\system32\\rascfg.dll,-32001"="Remote Access NDIS TAPI Driver"
+-"@%systemroot%\\system32\\rascfg.dll,-32002"="Remote Access NDIS WAN Driver"
+-"@%SystemRoot%\\system32\\drivers\\netbt.sys,-2"="NETBT"
+-"@%SystemRoot%\\System32\\netlogon.dll,-102"="Netlogon"
+-"@%SystemRoot%\\system32\\netman.dll,-109"="Network Connections"
+-"@%SystemRoot%\\system32\\netprofm.dll,-202"="Network List Service"
+-"@%systemroot%\\Microsoft.NET\\Framework64\\v3.0\\Windows Communication Foundation\\ServiceModelInstallRC.dll,-8201"="Net.Tcp Port Sharing Service"
+-"@%SystemRoot%\\System32\\nlasvc.dll,-1"="Network Location Awareness"
+-"@%SystemRoot%\\system32\\nsisvc.dll,-200"="Network Store Interface Service"
+-"@%SystemRoot%\\system32\\drivers\\nsiproxy.sys,-2"="NSI proxy service driver."
+-"@%SystemRoot%\\system32\\pnrpsvc.dll,-8004"="Peer Networking Identity Manager"
+-"@%SystemRoot%\\system32\\p2psvc.dll,-8006"="Peer Networking Grouping"
+-"@%SystemRoot%\\system32\\drivers\\partmgr.sys,-100"="Partition Manager"
+-"@%SystemRoot%\\system32\\pcasvc.dll,-1"="Program Compatibility Assistant Service"
+-"@%SystemRoot%\\system32\\peerdistsvc.dll,-9000"="BranchCache"
+-"@%systemroot%\\sysWow64\\perfhost.exe,-2"="Performance Counter DLL Host"
+-"@%systemroot%\\system32\\pla.dll,-500"="Performance Logs & Alerts"
+-"@%SystemRoot%\\system32\\umpnpmgr.dll,-100"="Plug and Play"
+-"@%SystemRoot%\\system32\\pnrpauto.dll,-8002"="PNRP Machine Name Publication Service"
+-"@%SystemRoot%\\system32\\pnrpsvc.dll,-8000"="Peer Name Resolution Protocol"
+-"@%SystemRoot%\\System32\\polstore.dll,-5010"="IPsec Policy Agent"
+-"@%SystemRoot%\\system32\\umpo.dll,-100"="Power"
+-"@%systemroot%\\system32\\rascfg.dll,-32006"="WAN Miniport (PPTP)"
+-"@%systemroot%\\system32\\profsvc.dll,-300"="User Profile Service"
+-"@%systemroot%\\system32\\psbase.dll,-300"="Protected Storage"
+-"@%SystemRoot%\\System32\\drivers\\pacer.sys,-101"="QoS Packet Scheduler"
+-"@%SystemRoot%\\system32\\qwave.dll,-1"="Quality Windows Audio Video Experience"
+-"@%SystemRoot%\\system32\\drivers\\qwavedrv.sys,-1"="QWAVE driver"
+-"@%Systemroot%\\system32\\rasauto.dll,-200"="Remote Access Auto Connection Manager"
+-"@%systemroot%\\system32\\rascfg.dll,-32005"="WAN Miniport (L2TP)"
+-"@%Systemroot%\\system32\\rasmans.dll,-200"="Remote Access Connection Manager"
+-"@%systemroot%\\system32\\rascfg.dll,-32007"="Remote Access PPPOE Driver"
+-"@%systemroot%\\system32\\sstpsvc.dll,-202"="WAN Miniport (SSTP)"
+-"@%systemroot%\\system32\\wkssvc.dll,-1000"="Redirected Buffering Sub Sysytem"
+-"@%systemroot%\\system32\\DRIVERS\\RDPCDD.sys,-100"="RDPCDD"
+-"@%systemroot%\\system32\\drivers\\RDPENCDD.sys,-101"="RDP Encoder Mirror Driver"
+-"@%systemroot%\\system32\\drivers\\RdpRefMp.sys,-101"="Reflector Display Driver used to gain access to graphics data"
+-"@%Systemroot%\\system32\\mprdim.dll,-200"="Routing and Remote Access"
+-"@regsvc.dll,-1"="Remote Registry"
+-"@%windir%\\system32\\RpcEpMap.dll,-1001"="RPC Endpoint Mapper"
+-"@%systemroot%\\system32\\Locator.exe,-2"="Remote Procedure Call (RPC) Locator"
+-"@oleres.dll,-5010"="Remote Procedure Call (RPC)"
+-"@%SystemRoot%\\system32\\samsrv.dll,-1"="Security Accounts Manager"
+-"@%SystemRoot%\\System32\\SCardSvr.dll,-1"="Smart Card"
+-"@%SystemRoot%\\System32\\drivers\\scfilter.sys,-11"="Smart card PnP Class Filter Driver"
+-"@%SystemRoot%\\system32\\schedsvc.dll,-100"="Task Scheduler"
+-"@%SystemRoot%\\System32\\certprop.dll,-13"="Smart Card Removal Policy"
+-"@%SystemRoot%\\system32\\sdrsvc.dll,-107"="Windows Backup"
+-"@%SystemRoot%\\system32\\seclogon.dll,-7001"="Secondary Logon"
+-"@%SystemRoot%\\system32\\Sens.dll,-200"="System Event Notification Service"
+-"@%SystemRoot%\\System32\\sensrsvc.dll,-1000"="Adaptive Brightness"
+-"@%SystemRoot%\\System32\\SessEnv.dll,-1026"="Remote Desktop Configuration"
+-"@%SystemRoot%\\system32\\ipnathlp.dll,-106"="Internet Connection Sharing (ICS)"
+-"@%SystemRoot%\\System32\\shsvcs.dll,-12288"="Shell Hardware Detection"
+-"@%SystemRoot%\\system32\\tcpipcfg.dll,-50005"="Message-oriented TCP/IP and TCP/IPv6 Protocol (SMB session)"
+-"@%SystemRoot%\\system32\\snmptrap.exe,-3"="SNMP Trap"
+-"@%systemroot%\\system32\\spoolsv.exe,-1"="Print Spooler"
+-"@%SystemRoot%\\system32\\sppsvc.exe,-101"="Software Protection"
+-"@%SystemRoot%\\system32\\sppuinotify.dll,-103"="SPP Notification Service"
+-"@%systemroot%\\system32\\srvsvc.dll,-102"="Server SMB 1.xxx Driver"
+-"@%systemroot%\\system32\\srvsvc.dll,-104"="Server SMB 2.xxx Driver"
+-"@%systemroot%\\system32\\ssdpsrv.dll,-100"="SSDP Discovery"
+-"@%SystemRoot%\\system32\\sstpsvc.dll,-200"="Secure Socket Tunneling Protocol Service"
+-"@%SystemRoot%\\system32\\wiaservc.dll,-9"="Windows Image Acquisition (WIA)"
+-"@%SystemRoot%\\system32\\vmstorfltres.dll,-1000"="Disk Virtual Machine Bus Acceleration Filter Driver"
+-"@%SystemRoot%\\System32\\StorSvc.dll,-100"="Storage Service"
+-"@%SystemRoot%\\System32\\swprv.dll,-103"="Microsoft Software Shadow Copy Provider"
+-"@%SystemRoot%\\system32\\sysmain.dll,-1000"="Superfetch"
+-"@%SystemRoot%\\system32\\TabSvc.dll,-100"="Tablet PC Input Service"
+-"@%SystemRoot%\\system32\\tapisrv.dll,-10100"="Telephony"
+-"@%SystemRoot%\\system32\\tbssvc.dll,-100"="TPM Base Services"
+-"@%SystemRoot%\\system32\\tcpipcfg.dll,-50003"="TCP/IP Protocol Driver"
+-"@%SystemRoot%\\system32\\tcpipcfg.dll,-50004"="NetIO Legacy TDI Support Driver"
+-"@%SystemRoot%\\System32\\termsrv.dll,-268"="Remote Desktop Services"
+-"@%SystemRoot%\\System32\\themeservice.dll,-8192"="Themes"
+-"@%systemroot%\\system32\\mmcss.dll,-102"="Thread Ordering Server"
+-"@%SystemRoot%\\system32\\trkwks.dll,-1"="Distributed Link Tracking Client"
+-"@%SystemRoot%\\servicing\\TrustedInstaller.exe,-100"="Windows Modules Installer"
+-"@%SystemRoot%\\System32\\DRIVERS\\tssecsrv.sys,-101"="Remote Desktop Services Security Filter Driver"
+-"@%SystemRoot%\\system32\\ui0detect.exe,-101"="Interactive Services Detection"
+-"@%SystemRoot%\\system32\\umrdp.dll,-1000"="Remote Desktop Services UserMode Port Redirector"
+-"@%systemroot%\\system32\\upnphost.dll,-213"="UPnP Device Host"
+-"@%SystemRoot%\\system32\\dwm.exe,-2000"="Desktop Window Manager Session Manager"
+-"@%SystemRoot%\\system32\\vaultsvc.dll,-1003"="Credential Manager"
+-"@%SystemRoot%\\system32\\vds.exe,-100"="Virtual Disk"
+-"@%SystemRoot%\\system32\\vmbusres.dll,-1000"="Virtual Machine Bus"
+-"@%SystemRoot%\\system32\\drivers\\volmgrx.sys,-100"="Dynamic Volume Manager"
+-"@%systemroot%\\system32\\vssvc.exe,-102"="Volume Shadow Copy"
+-"@%SystemRoot%\\System32\\drivers\\vwifibus.sys,-257"="Virtual WiFi Bus Driver"
+-"@%SystemRoot%\\system32\\w32time.dll,-200"="Windows Time"
+-"@%systemroot%\\system32\\rascfg.dll,-32011"="Remote Access IP ARP Driver"
+-"@%systemroot%\\system32\\rascfg.dll,-32012"="Remote Access IPv6 ARP Driver"
+-"@%SystemRoot%\\system32\\Wat\\WatUX.exe,-601"="Windows Activation Technologies Service"
+-"@%systemroot%\\system32\\wbengine.exe,-104"="Block Level Backup Engine Service"
+-"@%systemroot%\\system32\\wbiosrvc.dll,-100"="Windows Biometric Service"
+-"@%SystemRoot%\\system32\\wcncsvc.dll,-3"="Windows Connect Now - Config Registrar"
+-"@%SystemRoot%\\system32\\WcsPlugInService.dll,-200"="Windows Color System"
+-"@%SystemRoot%\\system32\\drivers\\Wdf01000.sys,-1000"="Kernel Mode Driver Frameworks service"
+-"@%systemroot%\\system32\\wdi.dll,-502"="Diagnostic Service Host"
+-"@%systemroot%\\system32\\wdi.dll,-500"="Diagnostic System Host"
+-"@%systemroot%\\system32\\webclnt.dll,-100"="WebClient"
+-"@%SystemRoot%\\system32\\wecsvc.dll,-200"="Windows Event Collector"
+-"@%SystemRoot%\\System32\\wercplsupport.dll,-101"="Problem Reports and Solutions Control Panel Support"
+-"@%SystemRoot%\\System32\\wersvc.dll,-100"="Windows Error Reporting Service"
+-"@%ProgramFiles%\\Windows Defender\\MsMpRes.dll,-103"="Windows Defender"
+-"@%SystemRoot%\\system32\\winhttp.dll,-100"="WinHTTP Web Proxy Auto-Discovery Service"
+-"@%Systemroot%\\system32\\wbem\\wmisvc.dll,-205"="Windows Management Instrumentation"
+-"@%Systemroot%\\system32\\wsmsvc.dll,-101"="Windows Remote Management (WS-Management)"
+-"@%SystemRoot%\\System32\\wlansvc.dll,-257"="WLAN AutoConfig"
+-"@%Systemroot%\\system32\\wbem\\wmiapsrv.exe,-110"="WMI Performance Adapter"
+-"@%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe,-101"="Windows Media Player Network Sharing Service"
+-"@%SystemRoot%\\system32\\wpcsvc.dll,-100"="Parental Controls"
+-"@%SystemRoot%\\system32\\wpdbusenum.dll,-100"="Portable Device Enumerator Service"
+-"@%systemroot%\\System32\\drivers\\ws2ifsl.sys,-1000"="Winsock IFS Driver"
+-"@%SystemRoot%\\System32\\wscsvc.dll,-200"="Security Center"
+-"@%systemroot%\\system32\\SearchIndexer.exe,-103"="Windows Search"
+-"@%systemroot%\\system32\\wuaueng.dll,-105"="Windows Update"
+-"@%SystemRoot%\\system32\\drivers\\Wudfpf.sys,-1000"="User Mode Driver Frameworks Platform Driver"
+-"@%SystemRoot%\\system32\\wudfsvc.dll,-1000"="Windows Driver Foundation - User-mode Driver Framework"
+-"@%SystemRoot%\\System32\\wwansvc.dll,-257"="WWAN AutoConfig"
+-"@provsvc.dll,-202"="HomeGroup"
+-"@peerdistsh.dll,-9003"="BranchCache - Hosted Cache Client (Uses HTTPS)"
+-"@peerdistsh.dll,-9002"="BranchCache - Hosted Cache Server (Uses HTTPS)"
+-"@peerdistsh.dll,-9001"="BranchCache - Peer Discovery (Uses WSD)"
+-"@peerdistsh.dll,-9000"="BranchCache - Content Retrieval (Uses HTTP)"
+-"@%systemroot%\\system32\\provsvc.dll,-202"="HomeGroup"
+-"@snmptrap.exe,-3"="SNMP Trap"
+-"@netlogon.dll,-1010"="Netlogon Service"
+-"@sstpsvc.dll,-35001"="Secure Socket Tunneling Protocol"
+-"@%SystemRoot%\\system32\\p2pcollab.dll,-8042"="Peer to Peer Trust"
+-"@%SystemRoot%\\system32\\qagentrt.dll,-10"="System Health Authentication"
+-"@%SystemRoot%\\system32\\dnsapi.dll,-103"="Domain Name System (DNS) Server Trust"
+-"@%SystemRoot%\\System32\\fveui.dll,-843"="BitLocker Drive Encryption"
+-"@%SystemRoot%\\System32\\fveui.dll,-844"="BitLocker Data Recovery Agent"
+-"C:\\Windows\\system32,@elscore.dll,-2"="Microsoft Script Detection"
+-"C:\\Windows\\system32,@elscore.dll,-5"="Microsoft Transliteration Engine"
+-"C:\\Windows\\system32,@elscore.dll,-4"="Microsoft Simplified Chinese to Traditional Chinese Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-6"="Microsoft Cyrillic to Latin Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-3"="Microsoft Traditional Chinese to Simplified Chinese Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-7"="Microsoft Devanagari to Latin Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-8"="Microsoft Malayalam to Latin Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-9"="Microsoft Bengali to Latin Transliteration"
+-"C:\\Windows\\system32,@elscore.dll,-1"="Microsoft Language Detection"
+ 
+ [HKEY_USERS\S-1-5-18\Software\Microsoft]
+ 
+@@ -2326089,6 +2325868,9 @@
+ [HKEY_USERS\S-1-5-18\Software\Microsoft\Direct3D\MostRecentApplication]
+ "Name"="mscorsvw.exe"
+ 
++[HKEY_USERS\S-1-5-18\Software\Microsoft\HTMLHelp2xSetup]
++@="{90140000-0011-0000-0000-0000000FF1CE}"
++
+ [HKEY_USERS\S-1-5-18\Software\Microsoft\Internet Explorer]
+ 
+ [HKEY_USERS\S-1-5-18\Software\Microsoft\Internet Explorer\BrowserEmulation]
+}}}
