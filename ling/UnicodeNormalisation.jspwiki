@@ -1,5 +1,5 @@
 
-
+(''or: how to fix decomposed Sami letters'')
 
 In Unicode, many glyphs (letter symbols) may either be represented
 by one character, or by a sequence of many. The letter á may thus be
@@ -16,7 +16,10 @@ Our North Sami analysers use the __composed__ representation.
 
 If you get text with decomposed letters (__UnicodeChecker__ will tell you that č is two characters), you must __compose__ them with the following command
 
-{{cat infile.txt | uconv -f utf8 -t utf8 -x Any-NFKC > outfile.txt}}
+{{{
+cat infile.txt \
+| uconv -f utf8 -t utf8 -x Any-NFKC > outfile.txt
+}}}
 
 See also {{man uconv}}
 
