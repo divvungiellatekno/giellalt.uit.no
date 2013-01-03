@@ -2,68 +2,24 @@
 
 This is a receipt for setting up HFST3, with the backends we need. See the HFST3 README file for further details, and how to turn on or off specific backens if needed or wanted.
 
-__Up-to-date as of 2012-10-10__
+__Up-to-date as of 2013-01-03__
 
 Presently, HFST3 supports three different backends:
 * __OpenFST__ - weighted transducers (''default'')
 * __Foma__ - xfst-compatible lexc and regex compiler, xfst scripts (''optional'')
 * __SFST__ - unweighted transducers, fast substitute (''optional'')
 
-The backends need to be installed separately, with full linking support (libraries and header files) for HFST3 to be able to make use of them. The following sections describe how to do that, with notes on required versions etc.
+As of HFST 3.4, the backends are included in the source distributions, and in the svn repository. There is thus ''no need to install them separately'', as used to be the case. This has greatly simplified the installation process for HFST3, which is now pretty straightforward.
 
 HFST3 abstracts over the different backends, and will make it easy to add support for new backends in the future, to support even more FST source code and transducer conversion options. The abstraction is becoming quite clean, but necessitates that the wanted backends are installed separately. This also makes it easier to handle backends with incompatible licenses, as each backend is compiled and installed as separate entities.
 
 The bottom line: use the latest version, and follow the receipts below, and you should be fine.
 
-!!!Install OpenFST (default, required for GT/Divvun use of HFST)
-
-OpenFST is one of the FST backends used in HFST, and enabled by default. By following the receipt below, you will get version 1.3.1 of OpenFST. But you can also check the [OpenFST|http://www.openfst.org/] site to see whether there are newer releases.
-
-{{{
-wget http://openfst.cs.nyu.edu/twiki/pub/FST/FstDownload/openfst-1.3.1.tar.gz
-tar -xzvf openfst-1.3.1.tar.gz 
-cd openfst-1.3.1/
-./configure
-make
-sudo make install
-}}}
-
-!!!Install Foma (optional for HFST, but required for our use of HFST)
-
-__Note!__ Foma has moved from Sourceforge to Google Code. Please remove all old check-outs, and check out anew using the URL below.
-
-We use the svn checkout below. See the [Foma home page|https://code.google.com/p/foma/] for the latest package release.
-
-{{{
-svn co http://foma.googlecode.com/svn/trunk/foma/
-cd foma
-make
-sudo make install
-}}}
-
-!!!Install SFST (optional, not required for Giellatekno/Divvun use)
-
-See the [SFST|http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html] home page for details and possible newer releases.
-
-{{{
-wget ftp://ftp.ims.uni-stuttgart.de/pub/corpora/SFST/SFST-1.4.6a.tar.gz
-tar -xzf SFST-1.4.6a.tar.gz
-cd SFST/src
-make
-sudo make install    # - optional when building for the HFST package
-sudo make maninstall # - optional (installs man pages)
-sudo make libinstall # - required for sfst support in HFST
-}}}
-
-!!Note! Buggy libinstall in SFST!
-
-SFST 1.4.6a has a bug when doing {{sudo make libinstall}} on MacOS X, such that it fails in the middle of the process. The dynamic library has been installed upon failure, but not the header files. To also install the header files do {{sudo make hfiles}}. That's it! Now HFST v3.2 and newer will compile with the SFST backend just fine also on the Mac.
-
 !!!Building HFST3
 
-Please note that HFST3 requires rather new versions of flex and bison. The versions shipping with the latest XCode should be ok. This XCode version is the one coming with Snow Leopard (MacOS X 10.6), with subsequent updates. For older MacOS versions, you probably will have to install updated versions of these tools using [MacPorts|http://www.macports.org/] or [Fink|http://www.finkproject.org/]. See the HFST3 README file for further details.
+Please note that HFST3 requires rather new versions of flex and bison. The versions shipping with the Snow Leopard (MacOS X 10.6) or later XCode should be ok. For older MacOS versions, you probably will have to install updated versions of these tools using [MacPorts|http://www.macports.org/]. See the HFST3 README file for further details.
 
-I assume installation from svn here:
+We assume installation from svn here:
 
 {{{
 svn co http://svn.code.sf.net/p/hfst/code/trunk/hfst3
@@ -87,7 +43,7 @@ make: *** No rule to make target `xfst-parser.cc'.  Stop.
 cp: xfst-parser.hh: No such file or directory
 }}}
 
-Don't care about it, it won't stop hfst3 from building.
+Don't care about it, it won't stop HFST3 from building.
 
 {{{
 make
@@ -105,7 +61,7 @@ cd hfst3/
 make dist
 }}}
 
-When the tarball is on victorio, proceed as follows:
+Copy the tarball to victorio. When the tarball is on victorio, proceed as follows:
 
 {{{
 tar -xzf hfst-3.2.0.tar.gz
