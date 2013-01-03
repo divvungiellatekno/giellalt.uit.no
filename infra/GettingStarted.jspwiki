@@ -26,9 +26,18 @@ This is a list of programs you will need to use this infrastructure for language
 *** [MacPorts|http://www.macports.org]
 ** Linux: all tools should already be installed.
 
+Then you need the following tools for certain operations:
+
 * [Saxon HE|http://saxon.sourceforge.net/#F9.4HE] (for working with languages
    with XML lexicons)
-** Download the __Java__ one, unzip it, place the saxon9he.jar file (.jar file, anyway) in ~/lib, give it the name saxon9.jar.
+** remember to add the Saxon {{.jar}} file to your {{CLASSPATH}} variable!
+* [Python|http://www.python.org] 3.1+ and py-yaml (for running automated tests)
+
+On the Mac, you can get both the tools above as well as some other required tools by running the following command:
+
+{{{
+sudo port install autoconf automake libtool vislcg3 saxon python32 py-yaml subport=py32-yaml
+}}}
 
 * The linguistic programming tools. One, or why not both, of:
 ** [Xerox tools|http://www.fsmbook.com]
@@ -36,9 +45,9 @@ This is a list of programs you will need to use this infrastructure for language
 ** [HFST tools|compiling_HFST3.html]
 *** Open source. Needed for turning your program into a spellchecker.
 
-* [Visl CG3|/doc/tools/docu-vislcg3.html] (For syntactic analysis)
+* [Visl CG3|/doc/tools/docu-vislcg3.html] (For syntactic analysis - already installed if you issued the {{sudo port install ...}} command above)
 
-* If you want to work with proofing tools, see ''Proofing tools to install'' [here|install-overview.html]
+If you want to work with proofing tools, see ''Proofing tools to install'' [here|install-overview.html]
 
 
 !!!Then fetch the files
