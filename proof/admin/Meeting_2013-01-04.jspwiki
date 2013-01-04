@@ -1,0 +1,107 @@
+!!!Speller meeting
+
+What is needed for a new release:
+* a working installer
+* working plx conversion
+
+!!!Installer
+
+Nothing new since the previous meeting.
+
+There's [a separate document|WindowsInstallationTest.html] containing the test results for different combinations of MS Office and Windows  versions.
+
+__DONE:__
+
+__TODO:__
+* look at combinations of Windows XP and Office (__Børre__)
+* get a proper MS certificate, to remove the warning users get when installing (__Børre__)
+
+__POSTPONED:__
+* find an outsourcing option (__Børre, Sjur__)
+* next week: try updating NSIS ourselves (__Børre, Sjur__)
+** using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (__Sjur__)
+* try to find an NSIS script for building MSI packages (__Børre__)
+* add Windows 8 support to our installer (if possible)
+
+!!!PLX conversion
+
+Remaining PLX bugs:
+
+!!Second PRI
+
+||REGRESSIONS - compounds
+| cmp-tags            | *Bu-ollibusse Bu +CmpN/None             | 397
+| name+clit           | Máretgo not accepted, only w hyph       | 415
+| multipart/long cmps | *humanisttalašearutantihkalaš           | 1544
+| not accepted        | filbmačeahppi gets sugg *filbma-čeahppi | 1544
+| alph+clitic         | *sbat                                   | 1544
+| hyphen suggestion   | *njunuš-ulbmiliin                       | 1544
+| should not compound | *maŋá-soahteáigái                       | 1544
+
+||REGRESSIONS
+| Koskivuori-plánenreaiddut | not accepted                                    | 611
+| Mihkalmas-beaivi !        | allowed w hyph, ok as long as wo hyph is ok too | 593
+| word not recognized       | čuohte                                          | 1544
+
+||REGRESSIONS
+| doesn't follow cmp-tags OR vowel-shortening | sámediggepresideanta Sámediggeáirrasin | 489 | THIS ONE!THIS ONE!THIS ONE! | FIXED
+
+!!Second Last PRI
+
+Bugs from here on can be left out of the next release if we are short on time.
+
+||Compounds
+| num cmp:s on 0-       | 051-nummarat | 631
+| non-ex. word accepted | saame        | 658 | FIXED FIXED FIXED!
+
+!!Last PRI
+ 
+||Capitals
+| doesn't understand caps | 1700-LOHKU | 647
+
+----
+
+||Low priority regressions
+| imposs" cmps along w num. | 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145 | NO SUGGESTIONS - GOOD - BUT:
+| imposs" cmps              | sákkasteapmifierbmi > aseákkasteapmifierbmi   etc   | 536      | not a big deal
+| single letter suggestions | đ                                                   | 461      | not a big deal
+
+__DONE:__
+* __Tomi__ has solved almost all PLX bugs
+
+__TODO:__
+* solve the remaining PLX bugs one by one (__Tomi__)
+
+!!!Release plan
+
+The December 1 goal has passed, without meeting the targets. On the plus side is that the number of open PLX bugs have been greatly reduced, and Tomi are squashinhg PLX bugs all the time. It just takes more time than anticipated.
+
+!!Release status
+
+__DONE:__
+# build a new speller with the remaining bug fixes (__Tomi__)
+# tag the present state with the string {{Divvun2.3RC1}} (__Tomi__)
+# update the adjectives with the noun changes (__Tomi__)
+# make new installers with latest SME speller (__Sjur__)
+# test newest speller in Word (__Thomas__)
+# release a public release candidate tomorrow morning (__Sjur__)
+
+__TODO:__
+# build a new speller with the remaining bug fixes (__Tomi__)
+# test against gold standard corpus (__Sjur__)
+# release RC2 January 15 (__Sjur__)
+# if no new serious bugs are found, release as Divvun 2.3 tomorrow afternoon (__all__)
+## update list of known bugs
+## write a short press release emphasising the linguistic updates for North Sámi, and noting that we still have certain problems with Win7/Office2010
+
+Updated release plan:
+
+* New deadline January 14:
+** PLX bugs solved
+* January 15: RC2, NSIS installer
+* January 18: Divvun 2.3 release, SME linguistic updates, NSIS installer, updated user documents
+
+!!!Next meeting
+
+Monday 7.1 at 14.00 (without Sjur)
