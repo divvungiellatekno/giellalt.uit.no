@@ -4,39 +4,33 @@ This is a list of programs you will need to use this infrastructure for language
 !!!Hardware and System
 
 * Machine requirement:
-** 8 Gb RAM is needed for hfst transducer compilation, the more the better
+** 8 Gb RAM is needed for hfst transducer compilation, the more the better (but 4 Gb is fine if you only use the Xerox tools)
 ** fast harddisk preferred
 * OS/System - you will need unix:
 ** __Mac__ (preferred, supported by the Divvun and GT teams)
 ** Any recent __Linux__ distro should be fine, but you will be on your own
-** __Windows__ is ''not'' supported by us, but installing __Cygwin__ should
+** __Windows__ is ''not'' supported by us, but installing __Cygwin__ (a Linux/unix shell for Windows) should
    work. __Warning!__ This is __not__ tested, and there is __no__ support.
 
 
 !!!Software to install
 
-* You need a text editor:
-** For Mac, we recommend
+!!Mac 
+* You need a text editor: we recommend
    [SEE|http://www.codingmonkeys.de/subethaedit/index.html]
-** For Linux, [gedit|http://projects.gnome.org/gedit/] is ok.
 
-* Required tools:
-** Mac:
-*** [XCode|InstallingXCode.html]
-*** [MacPorts|http://www.macports.org]
-** Linux: all tools should already be installed.
+* Basic programming tools (in this order):
+** [XCode|InstallingXCode.html]
+** [MacPorts|http://www.macports.org]
 
-Then you need the following tools for certain operations:
-
-* [Saxon HE|http://saxon.sourceforge.net/#F9.4HE] (for working with languages
-   with XML lexicons)
-* [Python|http://www.python.org] 3.1+ and py-yaml (for running automated tests)
-
-On the Mac, you can get both the tools above as well as some other required tools by running the following command:
+Then you need the following tools for certain operations.
+On the Mac, you can get them by running the following command:
 
 {{{
 sudo port install autoconf automake libtool vislcg3 saxon python32 py-yaml subport=py32-yaml
 }}}
+
+Finally, install the following:
 
 * The linguistic programming tools. One, or why not both, of:
 ** [Xerox tools|http://www.fsmbook.com]
@@ -44,12 +38,28 @@ sudo port install autoconf automake libtool vislcg3 saxon python32 py-yaml subpo
 ** [HFST tools|compiling_HFST3.html]
 *** Open source. Needed for turning your program into a spellchecker.
 
-* [Visl CG3|/doc/tools/docu-vislcg3.html] (for syntactic analysis - already installed if you issued the {{sudo port install ...}} command above)
+If you want to work with proofing tools, see ''Proofing tools to install'' [here|install-overview.html]
+
+!!Linux
+
+* You need a text editor: for Linux,
+ [gedit|http://projects.gnome.org/gedit/] is ok.
+
+* [Saxon HE|http://saxon.sourceforge.net/#F9.4HE] (for working with languages
+   with XML lexicons)
+* [Python|http://www.python.org] __3.1+__ and py-yaml (for running automated tests)
+
+* The linguistic programming tools. One, or why not both, of:
+** [Xerox tools|http://www.fsmbook.com]
+*** Freely available, but not open source. Better documented
+** [HFST tools|compiling_HFST3.html]
+*** Open source. Needed for turning your program into a spellchecker.
+
+* [Visl CG3|/doc/tools/docu-vislcg3.html] (for syntactic analysis)
 
 If you want to work with proofing tools, see ''Proofing tools to install'' [here|install-overview.html]
 
-
-!!!Then fetch the files
+!!!Then fetch the files (all systems)
 
 * [check out|/doc/tools/docu-svn-user.html] our svn repository, then run
   {{$GTHOME/gt/script/gtsetup.sh}} - this gives you everything
