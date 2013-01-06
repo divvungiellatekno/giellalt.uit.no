@@ -1,0 +1,38 @@
+
+The editor ''nano'' is a free editor available on all unix systems.
+
+It is not as good as e.g. emacs, but it is an ok alternative if you
+must work on a remote machine and do not have the time to learning editors like emacs or vi.
+
+To open it, open a terminal and write {{nano}}. To open a file called 
+''file.txt'' in nano, write {{nano file.txt}}.
+
+The two bottom lines of the window then contain the basic commands 
+(__^G:__ means ''ctrl G'', etc.):
+
+{{{
+^G Get Help  ^O WriteOut  ^R Read File  ^Y Prev Page  ^K Cut Text    ^C Cur Pos
+^X Exit      ^J Justify   ^W Where Is   ^V Next Page  ^U UnCut Text  ^T To Spell
+}}}
+
+Pressing __ctrl G__ gives a list of commands. 
+The M in commands like __M-T__ refers to the META key.
+On the Mac, you invoke the meta key by
+''pressing the ESC key, and thereafter T'' 
+(or whatever key is mentioned).
+
+Useful commands when working with large files:
+
+* __M-G__ =  Go to line number
+* __^K__ = Remove ''the whole'' line (note: different from emacs and see)
+
+To cut and paste text:
+
+# Press __^A__ key
+# Move to the end of the area you want to mark
+# Press __^K__ to cut
+# Move to where you want to paste it
+# Press __^U__ to paste
+
+The command {{info nano}} contains some, well, info.
+
