@@ -74,6 +74,30 @@ This should be turned into something like the following html/xml-like structure 
 
 Ie, by default it is a definition list, but if followed by table markup, the whole multichar section should be made as a table, with the multichars on the same line as the content of the first cell of the table.
 
+This corresponds to the following jspwiki document:
+
+{{{
+!!!Multichar_Symbols
+
+!!Escaped chars
+; __% __: This is an escaped space, required by HFST to handle multiword
+expressions properly. It does not affect the Xerox LexC processing
+in any way.
+
+!!Tags for POS
+| +N +A +Adv +V                                 | Open POS'es
+| +Pron +CS +CC +Adp +Po +Pr +Interj +Pcle +Num | Closed POS'es 
+
+!!Tags for sub-POS
+
+Some of the above POS's may be further characterised using a sub-POS tag:
+
+| +Prop +Pers +Dem +Interr +Refl +Recipr +Rel +Indef | Variants of __+Pron__
+| +Coll                                              | Collective numerals
+}}}
+
+__NB!__ Note that the definition term construct isn't working in the Forrest implementation of the jspwiki2xml converter. We might consider fixing it, as it is a rather useful feature, and shouldn't be too hard to fix.
+
 !!Lexicons
 
 {{{
