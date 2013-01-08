@@ -1,0 +1,144 @@
+Content:
+* description = paragraphs, heading, formatting=jspwiki
+* test data
+
+For all source files, the comments use jspwiki markup
+[http://www.jspwiki.org/wiki/TextFormattingRules].
+
+In addition, there is support for specifying test data.
+
+!!!Lexc
+Comment = !
+
+!!Multichar_Symbols
+
+All multichar symbols should be contained in a separate section/chapter, with subchapters where indicated by the commented markup.
+
+Example
+{{{
+Multichar_Symbols
+
+!! !!Escaped chars
+ %  !! This is an escaped space, required by HFST to handle multiword
+    !! expressions properly. It does not affect the Xerox LexC processing
+    !! in any way.
+
+!! !!Tags for POS
+ +N +A +Adv +V                                 !! | Open POS'es
+ +Pron +CS +CC +Adp +Po +Pr +Interj +Pcle +Num !! | Closed POS'es 
+
+!! !!Tags for sub-POS
+!! Some of the above POS's may be further characterised using a sub-POS tag:
+ +Prop +Pers +Dem +Interr +Refl +Recipr +Rel +Indef !! | Variants of __+Pron__
+ +Coll                                              !! | Collective numerals
+}}}
+
+This should be turned into something like the following html/xml-like structure (or the equivalent in other formats):
+
+{{{
+<section>
+<title>Multichar_Symbols</title>
+
+<section>
+<title>Escaped chars</title>
+
+<dl>
+<dt>% </dt>
+<dd>This is an escaped space, required by HFST to handle multiword
+    expressions properly. It does not affect the Xerox LexC processing
+    in any way.</dd>
+</dl>
+
+</section>
+
+<section>
+<title>Tags for POS</title>
+
+<table>
+<tr>% 
+<td>+N +A +Adv +V</td>
+<td>Open POS'es</td>
+</td>
+</tr>
+<tr>% 
+<td>+Pron +CS +CC +Adp +Po +Pr +Interj +Pcle +Num</td>
+<td>Closed POS'es</td>
+</td>
+</tr>
+</table>
+
+</section>
+
+</section>
+}}}
+
+Ie, by default it is a definition list, but if followed by table markup, the whole multichar section should be made as a table, with the multichars on the same line as the content of the first cell of the table.
+
+!!Lexicons
+
+{{{
+LEXICON test
+!! !!!Heading1 @LEXNAME@
+!! some text
+}}}
+
+Should give (in html):
+
+{{{
+<h1>Heading 1 test</h1>
+
+<p>some text</p>
+}}}
+
+!!Test data
+
+Pattern:
+
+{{{
+!! €fst-name: TestName1
+!! € surface analysis gloss
+!! $ surface analysis
+!! € surface analysis
+!! € surface analysis
+!!
+!! €fst-name: TestName1
+!! € surface analysis gloss
+!! € surface analysis
+!! € surface analysis
+!! € surface analysis
+}}}
+
+Output: YAML test data as used by our hfst yaml tester.
+
+The following content, in the source file {{nouns.lexc}}:
+
+{{{
+!! €gt-norm: Talo-test
+!! € talo  talo+N+Sg+Nom house
+!! $ tallo talo+N+Sg+Nom
+}}}
+
+should give the following yaml structure:
+
+{{{
+talo+N+Sg+Nom: [talo, !!tallo]
+}}}
+
+in the file {{nouns-tests_gt-norm.yaml}}.
+
+!!!twolc
+Comment = !
+
+Follows the same structure as the LexC comments, except that it documents twol __rules__ instead of lexicons.
+
+A future version might also allow for documentation of Alphabet, Sets and Definitions.
+
+!!Test data
+
+Similar to LexC, except that the output is turned into twolc test pairs used in the pair-testing tool.
+ 
+!!!CG3
+Comment = #
+ rules
+
+
