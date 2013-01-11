@@ -1,0 +1,55 @@
+
+!!!Neahttadigisánit
+
+!!Content
+
+A grammatical, reading dictionary which combines lexica in main/words/ with
+analyzers to break down compounds, and provide meanings when compound
+definitions do not exist, and more extensive corpus coverage.
+
+!!Maintenance
+
+!Updating dictionaries
+
+... Then you must restart the service to reparse the XML trees, otherwise
+old versions stored in memory will be used.
+
+!Updating FSTs
+
+Follow the paths in app.config.yaml to make check where the FSTs are installed,
+and then copy the new versions to those paths. Note whether any 'special' dictionary
+FSTs are in use and ensure that these are compiled and put in the new paths.
+
+!Configuration file
+
+app.config.yaml contains the following things, and is in
+[YAML|http://www.yaml.org/refcard.html] format:
+
+ * FST path and format definitions
+ * XML dictionary path and format definitions
+ * Language name defininitions and localisations
+ * Base form information: for each part of speech for each language, words
+   that have an analysis matching these tags will be looked up in the lexicon
+   and shown to users.
+ * Paradigm generation: these are for the word detail views only, and these forms
+   will be generated and presented to users.
+ * Tag rewrites: Tags in FSTs or Lexicon files will be rewritten before being presented
+   to users. 
+
+!Restarting the service
+
+On gtoahpa, there are definitions in /etc/init.d that allow you to restart, and
+start the service via the following commands:
+
+{{{
+
+    sudo service neahttadigisanit restart
+    sudo /etc/init.d/neahttadigisanit restart
+
+}}}
+
+The service must be restarted each time lexica, FSTs, or the configuration file
+have been updated. Sometimes this may take a little while, as XML files need to
+be reparsed, and data structures for autocomplete need to be prepared.
+
+
