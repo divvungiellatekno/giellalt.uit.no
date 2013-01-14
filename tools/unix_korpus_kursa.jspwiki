@@ -1,0 +1,109 @@
+!!!Unix ja Divvunkurssat
+
+!!1. Unix-kursa
+
+unix-kommandoat lingvisttaide (deattuhit dákkáriid mat heivejit korpusohcamii)
+
+Jurdda lea ovddalgihtii ráhkadit moadde fiilla freecorpusa vuođul ja stoahkat daiguin, vai oasseváldit ipmirdit poeŋga dáiguin gohččomiiguin
+
+! cat
+
+* cat fiila1.txt fiila2.txt
+* cat *.txt
+* cat -n
+
+! pipe
+
+! less
+* mo ohcat
+
+! wc
+* -l -w
+
+! kwic-snt
+-w -m
+
+! grep, egrep
+-v -c
+
+! regex
+Buorre idea: Kopieret bábirhámis unix in a nutshell -girjjis dahje factsheet OK, dakkár ahte boahtá ovdan grep og egrep erohusa
+
+! tr
+
+! preprocess --abbr=
+
+! sort
+-nr
+
+! uniq
+-c
+
+! rev
+
+! sed
+
+
+! cut
+
+! Repetišuvdna
+* kommando -vuohki objekta
+* man kommando
+* info kommando
+* pipe
+
+
+! Maid sáhttá iskat:
+* gieđahallat muhtun ccat.txt-fiilla:
+** ohcat dihto sániid, gehčosiid, prefivssaid: grep og kwic-snt, buohtastahttit daid
+** oažžut ovtta sáni juohke linnjái: tr, ja de preprocess
+** ráhkadit frekveansaslisttu: preprocess, sort, uniq -c, sort -nr
+** grepet sániid dihto prefivssain, de sorteret, unifiseret, ja rev sorteret ja rev
+** oažžut ovtta cealkaga juohke linnjái: vuos iskat tr, dan maŋŋel preprocess + sed + tr
+
+* gieđahallat muhtun xml-fiilla ccat-gohččumiin => divvun-kursii
+* gieđahallat dis-fiilla => divvun-kursii
+
+
+
+!!2. Divvun-kursa
+
+Bargat Divvun-serveris 
+! min korpus – galle sáni 30.11.12
+
+|| šládja    ||  sme  || sma  || smj    
+| admin   | 7.860.863 | 110.581   | 124.795    
+| bible   | 505.352 |  50.746  | 83.971    
+| facta   |    1.244.686   |  190.874  |  128.286   
+| ficti   |   231.908    | 144.582   |  41.507   
+| laws    |   797.721    |  0  | 0   
+| news    |   11.004.732    |  281  |  8.346   
+| oktiibuot    |  21.645.262     | 497.064  |  386.905  
+
+
+! maid 'analyzed' sisttisdoallá
+{{{
+fiila | preprecess --abbr=abbr.txt | usme > multi
+multi | lookup2cg | vislcg3 -g grammar > dis
+dis | vislcg3 -g grammar > dep
+}}}
+! huksehus, ja mo navigeret
+* gos lean ja gosa vuolggán? 
+
+* pwd
+* mkdir kurssadir
+* cd kurssadir, cd ..
+
+! ccat
+gieđahallat xml-fiillaid
+
+! alias 
+mo doaibmá, mo ráhkadit
+
+! svn up 
+fiillaid ođasmahttin
+
+! analysáhtoriid kompileren
+
+
+
