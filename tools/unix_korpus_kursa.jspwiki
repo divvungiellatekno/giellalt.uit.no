@@ -108,23 +108,21 @@ reversere
 * pipe
 
 
-! Maid sáhttá iskat:
-* gieđahallat muhtun ccat.txt-fiilla:
-** ohcat dihto sániid, gehčosiid, prefivssaid: grep og kwic-snt, buohtastahttit daid
-** oažžut ovtta sáni juohke linnjái: tr, ja de preprocess
-** ráhkadit frekveansaslisttu: preprocess, sort, uniq -c, sort -nr
-** grepet sániid dihto prefivssain, de sorteret, unifiseret, ja rev sorteret ja rev
-** oažžut ovtta cealkaga juohke linnjái: vuos iskat tr, dan maŋŋel preprocess + sed + tr
-
-* gieđahallat muhtun xml-fiilla ccat-gohččumiin => divvun-kursii
-* gieđahallat dis-fiilla => divvun-kursii
-
+! Bargobihtát:
+Gieđahallat muhtun ccat.txt-fiilla:
+# iskka fiillaid sturrodagaid
+# oza dihto sreaŋggaid lessas
+# oza dihto sániid, gehčosiid, prefivssaid. Geavat grep ja kwic-snt, ja buohtastahte bohtosiid
+# oaččo ovtta sáni juohke linnjái: buohtastahte preprocess ja preprocess --abbr
+# ráhkat frekveansaslisttu 
+# váldde sániid dihto prefivssain: sortere ja unifisere sihke sáni álggu ja loahpa mielde
+# oaččo ovtta cealkaga juohke linnjái
 
 
 !!2. Divvun-kursa
 
 Bargat Divvun-serveris 
-! min korpus – galle sáni 30.11.12
+! Divvun korpus – galle sáni 30.11.12
 
 || šládja    ||  sme  || sma  || smj    
 | admin   | 7.860.863 | 110.581   | 124.795    
@@ -136,7 +134,7 @@ Bargat Divvun-serveris
 | oktiibuot    |  21.645.262     | 497.064  |  386.905  
 
 
-! maid 'analyzed' sisttisdoallá
+! 'analyzed'-máhppa
 {{{
 fiila | preprecess --abbr=abbr.txt | usme > multi
 multi | lookup2cg | vislcg3 -g grammar > dis
@@ -146,9 +144,11 @@ dis | vislcg3 -g grammar > dep
 gos lean ja gosa áiggun? 
 * pwd (gos lean?)
 * ls (čájet dán máhpa sisdoalu)
-* ll (čájet dán máhpa sisdoalu eanet dieđuiguin)
+* ll (čájet dán máhpa sisdoalu buot dieđuiguin)
 * mkdir kurssadir (ráhkat kursadir-nammasaš máhpa)
 * cd kurssadir (mana kursadir-nammasaš máhppii)
+* cd ..  (mana ovtta ceahki ruovttoluotta)
+* cd ../..  (mana guokte ceahki ruovttoluotta)
 * cd  (mana ruovttumáhppii)
 
 ! ccat
