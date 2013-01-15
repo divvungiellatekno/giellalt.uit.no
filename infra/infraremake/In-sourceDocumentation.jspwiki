@@ -7,8 +7,12 @@ For all source files, the comments use jspwiki markup
 
 In addition, there is support for specifying test data.
 
+Everything that is supposed to be parsed by the document converter __must__ start with a double comment char:
+
+{{{!! Some parsed text here.}}}
+
 !!!Lexc
-Comment = !
+Comment char = !
 
 !!Multichar_Symbols
 
@@ -33,48 +37,11 @@ Multichar_Symbols
  +Coll                                              !! | Collective numerals
 }}}
 
-This should be turned into something like the following html/xml-like structure (or the equivalent in other formats):
+By default each multichar symbol is documented in a definition list, but if followed by table markup, the whole multichar section should be made as a table, with the multichars on the same line as the content of the first cell of the table.
 
-{{{
-<section>
-<title>Multichar_Symbols</title>
+; Test : this is a test for a term definition.
 
-<section>
-<title>Escaped chars</title>
-
-<dl>
-<dt>% </dt>
-<dd>This is an escaped space, required by HFST to handle multiword
-    expressions properly. It does not affect the Xerox LexC processing
-    in any way.</dd>
-</dl>
-
-</section>
-
-<section>
-<title>Tags for POS</title>
-
-<table>
-<tr>% 
-<td>+N +A +Adv +V</td>
-<td>Open POS'es</td>
-</td>
-</tr>
-<tr>% 
-<td>+Pron +CS +CC +Adp +Po +Pr +Interj +Pcle +Num</td>
-<td>Closed POS'es</td>
-</td>
-</tr>
-</table>
-
-</section>
-
-</section>
-}}}
-
-Ie, by default it is a definition list, but if followed by table markup, the whole multichar section should be made as a table, with the multichars on the same line as the content of the first cell of the table.
-
-This corresponds to the following jspwiki document:
+The above LexC comments corresponds to the following jspwiki document:
 
 {{{
 !!!Multichar_Symbols
@@ -151,7 +118,8 @@ talo+N+Sg+Nom: [talo, !!tallo]
 in the file {{nouns-tests_gt-norm.yaml}}.
 
 !!!twolc
-Comment = !
+
+Comment char = !
 
 Follows the same structure as the LexC comments, except that it documents twol __rules__ instead of lexicons.
 
@@ -160,9 +128,14 @@ A future version might also allow for documentation of Alphabet, Sets and Defini
 !!Test data
 
 Similar to LexC, except that the output is turned into twolc test pairs used in the pair-testing tool.
+
+!!!Xfst script and regex files
+
+Comment char = ! or #
  
 !!!CG3
-Comment = #
+Comment char = #
+
  rules
 
 
