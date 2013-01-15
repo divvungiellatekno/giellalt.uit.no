@@ -1,58 +1,105 @@
 !!!Unix ja Divvunkurssat
 
-!!1. Unix-kursa
+!!1. Unix-gohččumat korpusohcamii
 
-unix-kommandoat lingvisttaide (deattuhit dákkáriid mat heivejit korpusohcamii)
+[Fiillat|https://victorio.uit.no/langtech/trunk/gt/common/speccorp/coursemat/] maiguin sáhttá stoahkat
 
-Jurdda lea ovddalgihtii ráhkadit moadde fiilla freecorpusa vuođul ja stoahkat daiguin, vai oasseváldit ipmirdit poeŋga dáiguin gohččomiiguin
+! info ja man ja --h
+Dieđut gohččumiid birra
+* info cat
+* man cat
+* kwic-snt --h
 
 ! cat
-
-* cat fiila1.txt fiila2.txt
-* cat *.txt
-* cat -n
+"váldde"
+* cat fiila1.txt (váldde ovtta fiilla)
+* cat fiila1.txt fiila2.txt (váldde máŋga fiilla)
+* cat *.txt (váldde máŋga fiilla)
+* cat -n fiila.txt (váldde fiilla ja nummirastte linnjáid)
 
 ! pipe
+"ja de" 
+{{{
+|
+cat fiila.txt | less
+cat fiila.txt | sort | uniq > boadus.txt
 
-! less
-* mo ohcat
-* space ja b
-* g ja G
-* nummir + g
+}}}
+
+! less (modus)
+"čájet sisdoalu"
+* space (bláđe vulos) 
+* b (bláđe bajás) 
+* g (mana fiilla álgui)
+* G (mana fiilla lohppii)
+* nummir g (mana linnjánummárii)
+* \   (oza sreaŋgga)
 
 ! wc
-* -l
-* -w
+"rehkenastte"
+* -l (galle linnjá)
+** wc -l
+* -w (galle sáni)
+** wc -w
 
 ! kwic-snt
-* -w 
-* -m
+"čájet xxx ja dan birrasa"
+* -w (viidodat, default = 80)
+** kwic-snt -w 150 xxx
+* -m (galle dáhpáhusa, default = 100)
+** kwic-snt -m 500 xxx
 
 ! grep, egrep
-* -v 
-* -c
+"atte buot linnjáid mat sisttisdollet xxx"
+* -c (galle linnjá)
+** grep -c xxx
+* -v (mat eai sisttisdoala xxx)
+** grep -v xxx
+* egrep (viiddiduvvon)
+** egrep "láhk(a|á)"
+** egrep "[A-Z]"
+
 
 ! regex
-Buorre idea: Kopieret bábirhámis unix in a nutshell -girjjis dahje factsheet OK, dakkár ahte boahtá ovdan grep og egrep erohusa
+Gč. báhpára
 
 ! tr
+"buhtte x y:in"
+* tr "x" "y"
 
-! preprocess --abbr=
+
+! preprocess --abbr=abbr.txt
+* skripta mii juohká teavstta nu ahte juohke linnjás lea dušše okta sátni. 
+* --abbr váldá vuhtii oanádusaid ja multi word expressions (juohke gielas lea iežas abbr-fiila)
+
 
 ! sort
-* -nr
-* -u
-* -o
+Sortere alfabehtalaččat dahje nummára mielde
+* -nr (sortere nummára mielde) 
+** sort -nr 
+* -u (sortere ja unifisere)
+** sort -u
+* -o (vurke fiilan)
+** sort -o infile.txt outfile.txt
 
 ! uniq
-* -c
+Unifisere
+* -c (galle dáhpáhusa)
+** uniq -c
 
 ! rev
+reversere
 
 ! sed
-* sed "s/x/y/g"
+"buhtte xxx yyy:in"
+* sed "s/xxx/yyy/g"
 
 ! cut
+"čuohpa linnjá"
+* -d (gos, default lea TAB)
+** cut -d " " 
+* -f (ja váldde vára)
+** cut -d " " -f2
 
 ! Repetišuvdna
 * kommando -vuohki objekta
@@ -96,26 +143,32 @@ multi | lookup2cg | vislcg3 -g grammar > dis
 dis | vislcg3 -g grammar > dep
 }}}
 ! huksehus, ja mo navigeret
-* gos lean ja gosa vuolggán? 
-
-* pwd
-* mkdir kurssadir
-* cd kurssadir, cd ..
+gos lean ja gosa áiggun? 
+* pwd (gos lean?)
+* ls (čájet dán máhpa sisdoalu)
+* ll (čájet dán máhpa sisdoalu eanet dieđuiguin)
+* mkdir kurssadir (ráhkat kursadir-nammasaš máhpa)
+* cd kurssadir (mana kursadir-nammasaš máhppii)
+* cd  (mana ruovttumáhppii)
 
 ! ccat
-gieđahallat xml-fiillaid
+"váldde xml-fiilla tevstta"
 
 ! alias 
 mo doaibmá, mo ráhkadit
+* less .bashrc
+* emacs .bashrc / see .bashrc
 
 ! svn up 
-fiillaid ođasmahttin
+"ođasmahte buot fiillaid dán máhpas ja buot máhpain mat leat dan vuolábealde"
+* svnup (skripta mii ođasmahte buot fiillaid dihto máhpain)
 
 ! analysáhtoriid kompileren
-davvisámi:
+"ráhkat davvisámi morfologalaš analysáhtora"
 * make GTLANG=sme (go leat gt-katalogas)
 
 lullisámi/julevsámi (go leat sma/smj-katalogas):
+"ráhkat eará giela morfologalaš analysáhtora"
 * ./autogen.sh
 * ./configure
 * make
