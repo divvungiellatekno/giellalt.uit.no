@@ -4,13 +4,13 @@
 
 [Fiillat|https://victorio.uit.no/langtech/trunk/gt/common/speccorp/coursemat/] maiguin sáhttá stoahkat
 
-! info ja man ja --h
+! info ja man (= manual) ja --h
 Dieđut gohččumiid birra
 * info cat
 * man cat
 * kwic-snt --h
 
-! cat
+! cat - (= concatenate)
 "váldde"
 * cat fiila1.txt (váldde ovtta fiilla)
 * cat fiila1.txt fiila2.txt (váldde máŋga fiilla)
@@ -26,7 +26,7 @@ cat fiila.txt | sort | uniq > boadus.txt
 
 }}}
 
-! less (modus)
+! less (= opposite of more) (modus)
 "čájet sisdoalu"
 * space (bláđe vulos) 
 * b (bláđe bajás) 
@@ -35,7 +35,7 @@ cat fiila.txt | sort | uniq > boadus.txt
 * nummir g (mana linnjánummárii)
 * \   (oza sreaŋgga)
 
-! wc
+! wc (= word count)
 "rehkenastte"
 * -l (galle linnjá)
 ** wc -l
@@ -44,12 +44,13 @@ cat fiila.txt | sort | uniq > boadus.txt
 
 ! kwic-snt
 "čájet xxx ja dan birrasa"
-* -w (viidodat, default = 80)
+* -w (= width) (viidodat, default = 80)
 ** kwic-snt -w 150 xxx
-* -m (galle dáhpáhusa, default = 100)
+* -m (= most)(galle dáhpáhusa, default = 100)
 ** kwic-snt -m 500 xxx
+* -b (= before) (sortere gurutbeal konteavstta mielde)
 
-! grep, egrep
+! grep (= get regular expression), egrep (= extended grep)
 "atte buot linnjáid mat sisttisdollet xxx"
 * -c (galle linnjá)
 ** grep -c xxx
@@ -79,6 +80,8 @@ Gč. báhpára
 ** sort -nr 
 * -u (sortere ja unifisere)
 ** sort -u
+* -r (sortere reverserejuvvon alfabehta mielde)
+** sort -r
 * -o (vurke fiilan)
 ** sort -o infile.txt outfile.txt
 
