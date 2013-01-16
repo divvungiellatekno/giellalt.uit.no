@@ -7,7 +7,7 @@ For all source files, the comments use jspwiki markup
 
 In addition, there is support for specifying test data.
 
-Everything that is supposed to be parsed by the document converter __must__ start with a double comment char:
+Everything that is supposed to be parsed by the document converter __must__ start with a double comment char followed by a space:
 
 {{{!! Some parsed text here.}}}
 
@@ -45,7 +45,8 @@ The above LexC comments corresponds to the following jspwiki document:
 !!!Multichar_Symbols
 
 !!Escaped chars
-; __% __: This is an escaped space, required by HFST to handle multiword
+#; {{% }}
+##: This is an escaped space, required by HFST to handle multiword
 expressions properly. It does not affect the Xerox LexC processing
 in any way.
 
@@ -61,7 +62,8 @@ Some of the above POS's may be further characterised using a sub-POS tag:
 | +Coll                                              | Collective numerals
 }}}
 
-__NB!__ Note that the definition term construct isn't working in the Forrest implementation of the jspwiki2xml converter. We might consider fixing it, as it is a rather useful feature, and shouldn't be too hard to fix.
+__NB!__ Note that the definition term syntax isn't according to the jspwiki syntax,
+but it works. It requires a non-released version of the forrest wiki plugin.
 
 !!Lexicons
 
@@ -71,12 +73,12 @@ LEXICON test
 !! some text
 }}}
 
-Should give (in html):
+Should give the following jspwiki document:
 
 {{{
-<h1>Heading 1 test</h1>
+!!!Heading 1 test
 
-<p>some text</p>
+some text
 }}}
 
 !!Test data
@@ -99,7 +101,7 @@ Pattern:
 
 Output: YAML test data as used by our hfst yaml tester.
 
-The following content, in the source file {{nouns.lexc}}:
+The following content, in the source file {{affixes/nouns.lexc}}:
 
 {{{
 !! €gt-norm: Talo-test
@@ -110,16 +112,16 @@ The following content, in the source file {{nouns.lexc}}:
 should give the following yaml structure:
 
 {{{
-talo+N+Sg+Nom: [talo, !!tallo]
+talo+N+Sg+Nom: [talo, ~tallo]
 }}}
 
-in the file {{nouns-tests_gt-norm.yaml}}.
+in the file {{nouns-affixes-tests_gt-norm.yaml}}.
 
 !!!twolc
 
 Comment char = !
 
-Follows the same structure as the LexC comments, except that it documents twol __rules__ instead of lexicons.
+Follows the same structure as the LexC comments, except that it documents __twol rules__ instead of lexicons.
 
 A future version might also allow for documentation of Alphabet, Sets and Definitions.
 
@@ -134,6 +136,4 @@ Comment char = ! or #
 !!!CG3
 Comment char = #
 
- rules
-
-
+rules
