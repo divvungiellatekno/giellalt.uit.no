@@ -54,6 +54,10 @@ cat fiila.txt | sort | uniq > boadus.txt
 "atte buot linnjáid mat sisttisdollet xxx"
 * -c (galle linnjá)
 ** grep -c xxx
+* $ (linnjá loahpas)
+** grep "xxx$"
+* ^ (linnjá álggus)
+** grep "^xxx"
 * -v (mat eai sisttisdoala xxx)
 ** grep -v xxx
 * egrep (viiddiduvvon)
@@ -112,7 +116,7 @@ Gč. báhpára
 
 
 ! Bargobihtát:
-Gieđahallat muhtun ccat.txt-fiilla:
+Gieđahallat muhtun txt-fiilla:
 # iskka fiillaid sturrodagaid
 # oza dihto sreaŋggaid lessas
 # oza dihto sániid, gehčosiid, prefivssaid. Geavat grep ja kwic-snt, ja buohtastahte bohtosiid
@@ -139,12 +143,19 @@ Bargat Divvun-serveris
 Oassi davvisámegiela teavsttain leat jorgalusat dárogielas, ja mii bálddalaston sámi/dáru cealkagiid:
 * sme: 2.121.438, nob: 2.449.382
 
-! 'analyzed'-máhppa
+! korpus
+Mo beassat korpusii: 
 {{{
-fiila | preprecess --abbr=abbr.txt | usme > multi
-multi | lookup2cg | vislcg3 -g grammar > dis
-dis | vislcg3 -g grammar > dep
+cd ../hoavda/Public/corp/
 }}}
+
+Analysed-máhpain leat dákkár fiillat:
+* ccat: buhtes teaksta
+* preprocess (rievtti mielde multi): buot vejolaš morfologalaš analysat
+* dis: doaivvu mielde rivttes morfologalaš analysa pluss syntávttalaš gilkor
+* dep: dependeansanummáriin
+
+
 ! huksehus, ja mo navigeret
 gos lean ja gosa áiggun? 
 * pwd (gos lean?)
