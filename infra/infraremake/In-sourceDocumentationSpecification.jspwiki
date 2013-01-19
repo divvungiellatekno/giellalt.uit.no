@@ -2,14 +2,46 @@ Content:
 * description = paragraphs, heading, formatting=jspwiki
 * test data
 
-For all source files, the comments use jspwiki markup
-[http://www.jspwiki.org/wiki/TextFormattingRules].
-
-In addition, there is support for specifying test data.
+For all source files, the comments use jspwiki
+markup [http://www.jspwiki.org/wiki/TextFormattingRules]. In addition, there is
+support for specifying test data.
 
 Everything that is supposed to be parsed by the document converter __must__ start with a double comment char followed by a space:
 
 {{{!! Some parsed text here.}}}
+
+__One exception__: If one wants to just reference a line of code, use instead a double comment char followed by an equal sign:
+
+{{{
+LEXICON test
+!! !!!The lexicon @LEXNAME@
+!! This is some description of the lexicon test.
+!! {{ {
+ mennä:menT MENNÄ ; !!=
+!! }} }
+}}}
+
+This should produce the following jspwiki fragment:
+
+{{{
+!!!The lexicon test
+This is some description of the lexicon test.
+{{ {
+ mennä:menT MENNÄ ;
+}} }
+}}}
+
+which should render as follows in forrest:
+
+----
+
+!!!The lexicon test
+This is some description of the lexicon test.
+{{{
+ mennä:menT MENNÄ ;
+}}}
+
+----
 
 !!!Lexc
 Comment char = !
@@ -45,8 +77,7 @@ The above LexC comments corresponds to the following jspwiki document:
 !!!Multichar_Symbols
 
 !!Escaped chars
-#; {{% }}
-##: This is an escaped space, required by HFST to handle multiword
+;{{% }}: This is an escaped space, required by HFST to handle multiword
 expressions properly. It does not affect the Xerox LexC processing
 in any way.
 
@@ -62,23 +93,20 @@ Some of the above POS's may be further characterised using a sub-POS tag:
 | +Coll                                              | Collective numerals
 }}}
 
-__NB!__ Note that the definition term syntax isn't according to the jspwiki syntax,
-but it works. It requires a non-released version of the forrest wiki plugin.
-
 !!Lexicons
 
 {{{
 LEXICON test
-!! !!!Heading1 @LEXNAME@
-!! some text
+!! !!!The lexicon @LEXNAME@
+!! This is some description of the lexicon test.
 }}}
 
 Should give the following jspwiki document:
 
 {{{
-!!!Heading 1 test
+!!!The lexicon test
 
-some text
+This is some description of the lexicon test.
 }}}
 
 !!Test data
