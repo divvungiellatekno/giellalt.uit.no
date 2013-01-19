@@ -1,28 +1,29 @@
-How to write documentation as comments.
+How to write documentation as comments in your source code.
 
 There is now preliminary support for writing structured comments to document the
-code directly in the source.
+code directly in the source. That is, the lexicon structure, organisation and
+content is documented directly ''with'' the lexicon, as comments in a certain
+format. This document describes how this is done.
 
-Content:
-* description = paragraphs, heading, formatting=jspwiki
-* test data
+!!!General notes
 
-Everything that is supposed to be parsed by the document converter __must__ start with a double comment char followed by a space, e.g. in LexC or TwolC it could look like the following:
+The basic idea is that comments following a certain format will be extracted and
+converted to another format more suitable for publishing for a wider audience.
+
+;Basic rule: Everything that is supposed to be included in the published
+ documentation __must__ start with a double comment char followed by a space,
+ e.g. in LexC or TwolC it could look like the following:
 
 {{{!! Some documentation text here.}}}
 
 Such comments will be extracted, and converted to a jspwiki document for further processing.
 
-If a __single__ comment char is used, that comment is ignored, and will __not__ be part of the generated documentation.
-
-For all source file types, the comments use jspwiki
-markup [http://www.jspwiki.org/wiki/TextFormattingRules]. In addition, there is
-support for specifying test data.
-
-That is, to write structured comments, you __first__ type two exclamation symbols, then one space, and then the jspwiki markup you want. To get a heading, you thus type the following:
+That is, to write structured comments, you ''first'' type __two exclamation marks,__ ''then'' __one space,__ and ''then'' the __jspwiki markup__ you want. To get a heading, you thus type the following:
 
 {{{
+...some LexC code...
 !! !!!Top-level heading
+...some LexC code...
 }}}
 
 In the resulting jspwiki dokument this is turned into:
@@ -30,4 +31,11 @@ In the resulting jspwiki dokument this is turned into:
 {{{
 !!!Top-level heading
 }}}
+
+;Ignored comments: If a __single__ comment char is used, that comment is ignored,
+    and will __not__ be part of the generated documentation.
+
+;Formatting convention: For all source file types, the comments use jspwiki
+markup [http://www.jspwiki.org/wiki/TextFormattingRules]. In addition, there is
+support for specifying test data.
 
