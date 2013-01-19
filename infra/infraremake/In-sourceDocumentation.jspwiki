@@ -1,0 +1,33 @@
+How to write documentation as comments.
+
+There is now preliminary support for writing structured comments to document the
+code directly in the source.
+
+Content:
+* description = paragraphs, heading, formatting=jspwiki
+* test data
+
+Everything that is supposed to be parsed by the document converter __must__ start with a double comment char followed by a space, e.g. in LexC or TwolC it could look like the following:
+
+{{{!! Some documentation text here.}}}
+
+Such comments will be extracted, and converted to a jspwiki document for further processing.
+
+If a __single__ comment char is used, that comment is ignored, and will __not__ be part of the generated documentation.
+
+For all source file types, the comments use jspwiki
+markup [http://www.jspwiki.org/wiki/TextFormattingRules]. In addition, there is
+support for specifying test data.
+
+That is, to write structured comments, you __first__ type two exclamation symbols, then one space, and then the jspwiki markup you want. To get a heading, you thus type the following:
+
+{{{
+!! !!!Top-level heading
+}}}
+
+In the resulting jspwiki dokument this is turned into:
+
+{{{
+!!!Top-level heading
+}}}
+
