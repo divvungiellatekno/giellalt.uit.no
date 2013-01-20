@@ -10,11 +10,12 @@ Dieđut gohččumiid birra
 * man cat
 * kwic-snt --h
 
-!! cat - (= concatenate)
+!! cat (= concatenate)
 "váldde"
 * cat fiila1.txt (váldde ovtta fiilla)
 * cat fiila1.txt fiila2.txt (váldde máŋga fiilla)
-* cat *.txt (váldde máŋga fiilla)
+* cat *.txt (váldde buot fiilla main lea .txt loahpas)
+* cat skuvla* (váldde buot fiilla main lea skuvla álggus)
 * cat -n fiila.txt (váldde fiilla ja nummirastte linnjáid)
 
 !! pipe (boallobeavddis: Alt 7) 
@@ -33,7 +34,7 @@ cat fiila.txt | sort | uniq > boadus.txt
 * g (mana fiilla álgui)
 * G (mana fiilla lohppii)
 * nummir g (mana linnjánummárii)
-* \   (oza sreaŋgga) (\ boallobeavddis: Shift Alt 7)
+* /xxx   (oza sreaŋgga xxx) 
 
 !! wc (= word count)
 "rehkenastte"
@@ -61,7 +62,7 @@ cat fiila.txt | sort | uniq > boadus.txt
 * -v (mat eai sisttisdoala xxx)
 ** grep -v xxx
 * egrep (viiddiduvvon)
-** egrep "láhk(a|á)"
+** egrep "láhk[aá]i"
 ** egrep "[A-Z]"
 
 
@@ -86,12 +87,12 @@ Gč. báhpára
 ** sort -u
 * -r (sortere reverserejuvvon alfabehta mielde)
 ** sort -r
-* -o (vurke fiilan)
+* -o (= output, vurke fiilan)
 ** sort -o infile.txt outfile.txt
 
 !! uniq
 "unifisere linnjáid"
-* -c (galle dáhpáhusa)
+* -c (= count, galle dáhpáhusa)
 ** uniq -c
 
 !! rev
@@ -103,10 +104,13 @@ Gč. báhpára
 
 !! cut
 "čuohpa linnjá"
-* -d (gos, default lea TAB)
+* -d (= delimiter, default lea TAB)
 ** cut -d " " 
-* -f (ja váldde vára)
+* -f (= field, ja váldde vára)
 ** cut -d " " -f2
+** cut -d " " -f2,3,5
+** cut -d " " -f2-
+
 
 !! Repetišuvdna
 * kommando -vuohki objekta
