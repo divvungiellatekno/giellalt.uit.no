@@ -17,8 +17,19 @@ Trond har vore i Helsingfors.
 * Attende til gt:
 ** Filtrere bort frå gt-output alt som er parallellisert med apertium, slik
    at det manuelle gt-arbeidet blir berre på nye ord
-** Resultat: l_gt i {{src/fad_nobsme.20121130_nob-c_sme-c.xml}}
+** Resultat: {{l_gt}} i {{src/fad_nobsme.20121130_nob-c_sme-c.xml}}
 
+
+!! gt
+
+Todo-lista frå sist er ikkje gjort. Sjå nedanfor, under __gt__:
+
+Denne kommandoen fjernar semantiske taggar (per 7.1.2013) frå output av lookup2cg.
+
+{{cat fiilla | perl -pe 's/(Ani|Body|Build|Clth|Edu|Event|Fem|Food|Group|Hum|Mal|Measr|Obj|Org|Plant|Plc|Route|Sur|Time|Txt|Veh|Wpn|Wthr|Allegro|v1|v2|v3|v4) //g' > | uniq > fiilla_semhaga}}
+
+Den reelle lista av semantiske taggar står her: 
+{{main/gt/sme/src/sme-lex.txt}}
 
 !!! Arbeid framover med FAD
 
@@ -70,29 +81,20 @@ src>grep '<t_' fad_nobsme.20121130_nob-c_sme-c.xml | grep 'c="2"' | wc -l
     1319
 }}}
 
+
+
 Trond sjekka mot unob og MS Word:
 
-# Ta _nob-c_sme-c
-# Dra ut den norske l_
+# Ta {{_nob-c_sme-c}}
+# Dra ut den norske {{ l_ }}
 # analysere i unob og dra ut ?
 # Lime inn i MS Word og gå manuelt gjennom
+
 
 {{{
 cat src/fad_nobsme.20121130_nob-c_sme-c.xml |grep '<l_'|tr '<' '>' \|
 cut -d">" -f3 \|unob|grep '?'|cut -f1|rev|sort|uniq|rev|see
 }}}
-
-
-! gt
-
-Todo-lista frå sist er ikkje gjort. Sjå nedanfor, under __gt__:
-
-Denne kommandoen fjernar semantiske taggar (per 7.1.2013) frå output av lookup2cg.
-
-{{cat fiilla | perl -pe 's/(Ani|Body|Build|Clth|Edu|Event|Fem|Food|Group|Hum|Mal|Measr|Obj|Org|Plant|Plc|Route|Sur|Time|Txt|Veh|Wpn|Wthr|Allegro|v1|v2|v3|v4) //g' > | uniq > fiilla_semhaga}}
-
-Den reelle lista av semantiske taggar står her: 
-{{main/gt/sme/src/sme-lex.txt}}
 
 __Arbeid framover__
 
