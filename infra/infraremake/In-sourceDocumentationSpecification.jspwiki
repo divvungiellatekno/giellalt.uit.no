@@ -1,9 +1,41 @@
-Content:
-* description = paragraphs, heading, formatting=jspwiki
-* test data
+The specification consists of three parts:
 
-For all source files, the comments use jspwiki
-markup [http://www.jspwiki.org/wiki/TextFormattingRules]. In addition, there is
+# the markup specification used to extract comments
+# the formatting rules for the extracted comments
+# build system behaviour
+
+!!!The markup specification
+
+Keywords:
+
+; {{!! }} (+ space) : print the text after the markup to the output, possibly
+                 using variable substitution (@LEXNAME@/@RULNAME@)
+; {{!!=}}      : print the source code before the markup to the output,
+                 together with the text after the markup, possibly using
+                 variable substitution (@LEXNAME@/@RULNAME@/@CODE@);
+                 __whitespace preserved verbatim__
+; {{!!≈}}      : print the source code before the markup to the output,
+                 together with the text after the markup, possibly using
+                 variable substitution (@LEXNAME@/@RULNAME@/@CODE@);
+                 __leading/trailing whitespace removed, the rest squeezed__
+; {{!!€}}      : print positive test data to output, depeding on output format
+; {{!!$}}      : print negative test data to output, depeding on output format
+
+Variables:
+
+; @LEXNAME@ : name of last lexc lexicon
+; @RULNAME@ : name of last twol/cg3 rule
+; @CODE@    : source code to the left of !!= / !!≈
+
+!!!Formatting rules for extracted comments
+
+For all source files, the comments are formatted using jspwiki
+markup [http://www.jspwiki.org/wiki/TextFormattingRules].
+
+
+!!!Other / old notes
+
+In addition, there is
 support for specifying test data.
 
 Everything that is supposed to be parsed by the document converter __must__ start with a double comment char followed by a space:
