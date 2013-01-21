@@ -19,7 +19,7 @@ This is a list of programs you will need to use this infrastructure for language
 !!!Software to install
 
 !!Mac 
-* You need a text editor: we recommend
+* You need a __text editor__ - we recommend
    [SEE|http://www.codingmonkeys.de/subethaedit/index.html]
 
 * Basic programming tools (in this order):
@@ -33,26 +33,24 @@ On the Mac, you can get them by running the following command:
 sudo port install autoconf automake libtool vislcg3 saxon python32 py-yaml subport=py32-yaml
 }}}
 
-Finally, install the following:
-
-* The linguistic programming tools. One, or why not both, of:
-** [Xerox tools|http://www.fsmbook.com]
-*** Freely available, but not open source. Better documented
-** [HFST tools|compiling_HFST3.html]
-*** Open source. Needed for turning your program into a spellchecker.
+Finally, install the __linguistic programming tools.__ One, or why not both, of:
+* [Xerox tools|http://www.fsmbook.com]
+** Freely available, but not open source. Better documented
+* [HFST tools|compiling_HFST3.html]
+** Open source. Needed for turning your program into a spellchecker.
 
 If you want to work with proofing tools, see ''Proofing tools to install'' [here|install-overview.html]
 
 !!Linux
 
-* You need a text editor: for Linux,
+* You need a __text editor;__ for Linux,
  [gedit|http://projects.gnome.org/gedit/] is ok.
 
 * [Saxon HE|http://saxon.sourceforge.net/#F9.4HE] (for working with languages
    with XML lexicons)
 * [Python|http://www.python.org] __3.1+__ and py-yaml (for running automated tests)
 
-* The linguistic programming tools. One, or why not both, of:
+* The __linguistic programming tools.__ One, or why not both, of:
 ** [Xerox tools|http://www.fsmbook.com]
 *** Freely available, but not open source. Better documented
 ** [HFST tools|compiling_HFST3.html]
@@ -70,11 +68,11 @@ Then you need an __editor__. [jEdit|http://www.jedit.org] should be fine (requir
 
 Be warned: Cygwin is slow, and it is not the optimal way of working with our linguistic infrastructure. But it should work ok.
 
-!!!Then fetch the files (all systems)
+!!!Then fetch the language source files (all systems)
 
-* [check out|/doc/tools/docu-svn-user.html] our svn repository, then run
-  {{$GTHOME/gt/script/gtsetup.sh}} - this gives you everything
-* follow [these instructions|/doc/infra/infraremake/GettingStartedWithTheNewInfra.html] (under the ''Only the GT core and the wanted language(s)'' heading) to only check out the required parts for working with a single or a few languages
+;Either: [check out|/doc/tools/docu-svn-user.html] our svn repository, then run
+  {{$GTHOME/gt/script/gtsetup.sh}} - this gives you everything but is quite big, more than 1 Gb in download size
+;Or: follow [these instructions|/doc/infra/infraremake/GettingStartedWithTheNewInfra.html] (under the ''Only the GT core and the wanted language(s)'' heading) to only check out the required parts for working with a single or a few languages
 
 ----
 
