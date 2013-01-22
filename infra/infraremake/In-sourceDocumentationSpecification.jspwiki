@@ -6,9 +6,9 @@ The specification consists of three parts:
 
 !!!The markup specification
 
-Keywords:
+Keywords/trigger symbols (all are followed by __space__, with one exception):
 
-; {{!! }} (+ space) : print the text after the markup to the output, possibly
+; {{!! }}      : print the text after the markup to the output, possibly
                  using variable substitution (@LEXNAME@/@RULNAME@)
 ; {{!!=}}      : print the source code before the markup to the output,
                  together with the text after the markup, possibly using
@@ -18,6 +18,9 @@ Keywords:
                  together with the text after the markup, possibly using
                  variable substitution (@LEXNAME@/@RULNAME@/@CODE@);
                  __leading/trailing whitespace removed, the rest squeezed__
+; {{!!€fst-type:}} : Specifies the fst-type to run a test set against, must be
+                 followed by the test name, and must be the first line in a
+                 test set.
 ; {{!!€}}      : print positive test data to output, depeding on output format
 ; {{!!$}}      : print negative test data to output, depeding on output format
 
@@ -27,173 +30,20 @@ Variables:
 ; @RULNAME@ : name of last twol/cg3 rule
 ; @CODE@    : source code to the left of !!= / !!≈
 
+The variables retain their values until they are reset (either by a new lexicon or rule name, or by a new {{!!≈}} or {{!!=}} synbol).
+
 !!!Formatting rules for extracted comments
 
 For all source files, the comments are formatted using jspwiki
 markup [http://www.jspwiki.org/wiki/TextFormattingRules].
 
+!!!Build system behaviour
 
-!!!Other / old notes
+The build system will try to generate all files listed in {{$JSP_PAGES}} in
+{{$GTLANG/doc/Makefile.am}}. The jspwiki filenames are derived from the source file names according to the follwing scheme:
 
-In addition, there is
-support for specifying test data.
+{{{parentdir/sourcefile.lexc => sourcefile-parentdir.jspwiki}}}
 
-Everything that is supposed to be parsed by the document converter __must__ start with a double comment char followed by a space:
+The jspwiki pages will be rebuilt whenever the corresponding source file is changed, in the standard way. Just type {{make}}, and the documentation will be rebuilt if needed.
 
-{{{!! Some parsed text here.}}}
-
-__One exception__: If one wants to just reference a line of code, use instead a double comment char followed by an equal sign:
-
-{{{
-LEXICON test
-!! !!!The lexicon @LEXNAME@
-!! This is some description of the lexicon test.
-!! {{ {
- mennä:menT MENNÄ ; !!=
-!! }} }
-}}}
-
-This should produce the following jspwiki fragment:
-
-{{{
-!!!The lexicon test
-This is some description of the lexicon test.
-{{ {
- mennä:menT MENNÄ ;
-}} }
-}}}
-
-which should render as follows in forrest:
-
-----
-
-!!!The lexicon test
-This is some description of the lexicon test.
-{{{
- mennä:menT MENNÄ ;
-}}}
-
-----
-
-!!!Lexc
-Comment char = !
-
-!!Multichar_Symbols
-
-All multichar symbols should be contained in a separate section/chapter, with subchapters where indicated by the commented markup.
-
-Example
-{{{
-Multichar_Symbols
-
-!! !!Escaped chars
- %  !! This is an escaped space, required by HFST to handle multiword
-    !! expressions properly. It does not affect the Xerox LexC processing
-    !! in any way.
-
-!! !!Tags for POS
- +N +A +Adv +V                                 !! | Open POS'es
- +Pron +CS +CC +Adp +Po +Pr +Interj +Pcle +Num !! | Closed POS'es 
-
-!! !!Tags for sub-POS
-!! Some of the above POS's may be further characterised using a sub-POS tag:
- +Prop +Pers +Dem +Interr +Refl +Recipr +Rel +Indef !! | Variants of __+Pron__
- +Coll                                              !! | Collective numerals
-}}}
-
-By default each multichar symbol is documented in a definition list, but if followed by table markup, the whole multichar section should be made as a table, with the multichars on the same line as the content of the first cell of the table.
-
-The above LexC comments corresponds to the following jspwiki document:
-
-{{{
-!!!Multichar_Symbols
-
-!!Escaped chars
-;{{% }}: This is an escaped space, required by HFST to handle multiword
-expressions properly. It does not affect the Xerox LexC processing
-in any way.
-
-!!Tags for POS
-| +N +A +Adv +V                                 | Open POS'es
-| +Pron +CS +CC +Adp +Po +Pr +Interj +Pcle +Num | Closed POS'es 
-
-!!Tags for sub-POS
-
-Some of the above POS's may be further characterised using a sub-POS tag:
-
-| +Prop +Pers +Dem +Interr +Refl +Recipr +Rel +Indef | Variants of __+Pron__
-| +Coll                                              | Collective numerals
-}}}
-
-!!Lexicons
-
-{{{
-LEXICON test
-!! !!!The lexicon @LEXNAME@
-!! This is some description of the lexicon test.
-}}}
-
-Should give the following jspwiki document:
-
-{{{
-!!!The lexicon test
-
-This is some description of the lexicon test.
-}}}
-
-!!Test data
-
-Pattern:
-
-{{{
-!! €fst-name: TestName1
-!! € surface analysis gloss
-!! $ surface analysis
-!! € surface analysis
-!! € surface analysis
-!!
-!! €fst-name: TestName1
-!! € surface analysis gloss
-!! € surface analysis
-!! € surface analysis
-!! € surface analysis
-}}}
-
-Output: YAML test data as used by our hfst yaml tester.
-
-The following content, in the source file {{affixes/nouns.lexc}}:
-
-{{{
-!! €gt-norm: Talo-test
-!! € talo  talo+N+Sg+Nom house
-!! $ tallo talo+N+Sg+Nom
-}}}
-
-should give the following yaml structure:
-
-{{{
-talo+N+Sg+Nom: [talo, ~tallo]
-}}}
-
-in the file {{nouns-affixes-tests_gt-norm.yaml}}.
-
-!!!twolc
-
-Comment char = !
-
-Follows the same structure as the LexC comments, except that it documents __twol rules__ instead of lexicons.
-
-A future version might also allow for documentation of Alphabet, Sets and Definitions.
-
-!!Test data
-
-Similar to LexC, except that the output is turned into twolc test pairs used in the pair-testing tool.
-
-!!!Xfst script and regex files
-
-Comment char = ! or #
- 
-!!!CG3
-Comment char = #
-
-rules
+There will also be build one large file, containing all the documentation.

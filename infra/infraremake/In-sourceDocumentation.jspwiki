@@ -40,17 +40,21 @@ markup [http://www.jspwiki.org/wiki/TextFormattingRules]. In addition, there is
 support for specifying test data.
 
 ;Raw copy of source code: To copy a line of source code as is into the
-    documentation, add ''two'' comment symbols followed by an equal sign at the
+    documentation, add ''two'' comment symbols followed by an equal sign {{!!=}}
+    (keeps all whitespace) or ''two'' comment symbols followed by the almost
+    equal to sign {{!!≈}} (removes all excessive whitespace) at the
     end of the line you want to copy (possibly followed by your own comments).
-    This is useful when you want to cite the code as it is used.
+    The copied code is stored in the variable @CODE@, which can be used to insert
+    the code whereever it is needed.
+    This is useful e.g. when you want to cite the code as it is used.
 
 Example (the extra space in the triple { and } in the example is only needed to avoid double triplets, and should not be included in the actual code):
 
 {{{
 !! !!Symbols that need to be escaped on the lower side (towards twolc):
 !! {{ {
- %[%>%] !!= - Literal >
- %[%<%] !!= - Literal <
+ %[%>%] !!= @CODE@ - Literal >
+ %[%<%] !!= @CODE@ - Literal <
 !! }} }
 }}}
 
@@ -66,11 +70,13 @@ This should give the following jspwiki fragment:
 
 In this case we need to encapsulate the multichar symbol declaration within jspwiki source code tags, because otherwise jspwiki will interpret the symbol declaration as links. And we can't escape the bracket using the double bracket notation, because then we are altering the LexC source code. Instead we surround the lines with triple { and }, and just copy the lines in question using the {{!!=}} notation.
 
+The full syntax and specification for the markup conventions has its own [specification page|In-sourceDocumentationSpecification.html].
+
 !!!LexC notes
 
 !!Conventions
 
-Each lexicon is documented __below__ the keyword ''LEXICON''. It is possible to use the keyword @LEXNAME@ in headings, where it will be replaced with the actual lexicon name. A typical lexicon could looke like the following:
+Each lexicon is documented __below__ the keyword ''LEXICON''. It is possible to use the keyword @LEXNAME@ in the text, where it will be replaced with the actual lexicon name. A typical lexicon could looke like the following:
 
 {{{
 ! ================================
@@ -94,13 +100,51 @@ LEXICON N_ODD
 
 !!Test data
 
-TBW - this part not yet finished or working.
-
 {{{
 ! Test data:
-!! €fst-norm: TestName1
-!! € surface analysis gloss
-!! $ surface analysis # Test omment: negative test - never generate or accept this!
-!! € surface analysis
-!! € surface analysis
+!!€gt-norm: gierehtse # Odd-syllable test
+!!€ gierehtse           gierehtse+N+Sg+Nom
+!!€ gierehtsem          gierehtse+N+Sg+Acc
+!!$ gieriehtsem         gierehtse+N+Sg+Acc # negative test - don't accept this!
+!!€ gierehtsen          gierehtse+N+Sg+Gen
 }}}
+
+__NB!__ The negative test data convention is not yet fully functional. For now it is best to avoid it.
+
+The above test data will give the following yaml file (sans header):
+
+{{{
+  gierehtse: # #
+    gierehtse+N+Sg+Nom: gierehtse # 
+    gierehtse+N+Sg+Acc: gierehtsem # 
+    gieriehtsem: ~gieriehtsem # gierehtse+N+Sg+Acc
+    gierehtse+N+Sg+Gen: gierehtsen # 
+}}}
+
+The negative test data is ''NOT'' the way it should be, and this test will fail.
+
+!!!Twolc notes
+
+''Support for TwolC files is not yet implemented.''
+
+Follows the same structure as the LexC comments, except that it documents __twol rules__ instead of lexicons.
+
+A future version might also allow for documentation of Alphabet, Sets and Definitions.
+
+To Be Written.
+
+!!Twolc test data
+
+''Support for TwolC files is not yet implemented.''
+
+Similar to LexC, except that the output is turned into twolc test pairs used in the pair-testing tool.
+
+To Be Written.
+
+!!!Xfst script and regex files
+
+''Support for Xfst files is not yet implemented.''
+ 
+!!!CG3
+
+''Support for CG3 files is not yet implemented.''
