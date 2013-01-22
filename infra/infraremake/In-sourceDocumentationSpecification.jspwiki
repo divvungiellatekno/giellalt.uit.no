@@ -10,19 +10,19 @@ Keywords/trigger symbols (all are followed by __space__, with one exception):
 
 ; {{!! }}      : print the text after the markup to the output, possibly
                  using variable substitution (@LEXNAME@/@RULNAME@)
-; {{!!=}}      : print the source code before the markup to the output,
-                 together with the text after the markup, possibly using
+; {{!!=}}      : store the source code before the markup in the variable @CODE@,
+                 and print the text after the markup, possibly using
                  variable substitution (@LEXNAME@/@RULNAME@/@CODE@);
-                 __whitespace preserved verbatim__
-; {{!!≈}}      : print the source code before the markup to the output,
-                 together with the text after the markup, possibly using
+                 __code whitespace preserved verbatim__
+; {{!!≈}}      : store the source code before the markup in the variable @CODE@,
+                 and print the text after the markup, possibly using
                  variable substitution (@LEXNAME@/@RULNAME@/@CODE@);
-                 __leading/trailing whitespace removed, the rest squeezed__
+                 __leading/trailing whitespace in the source code is removed, the rest squeezed__
 ; {{!!€fst-type:}} : Specifies the fst-type to run a test set against, must be
                  followed by the test name, and must be the first line in a
                  test set.
-; {{!!€}}      : print positive test data to output, depeding on output format
-; {{!!$}}      : print negative test data to output, depeding on output format
+; {{!!€}}      : print positive test data to output
+; {{!!$}}      : print negative test data to output
 
 Variables:
 
