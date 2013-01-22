@@ -9,14 +9,14 @@ The specification consists of three parts:
 Keywords/trigger symbols (all are followed by __space__, with one exception):
 
 ; {{!! }}      : print the text after the markup to the output, possibly
-                 using variable substitution (@LEXNAME@/@RULNAME@)
+                 using variable substitution (@LEXNAME@/@RULENAME@)
 ; {{!!=}}      : store the source code before the markup in the variable @CODE@,
                  and print the text after the markup, possibly using
-                 variable substitution (@LEXNAME@/@RULNAME@/@CODE@);
+                 variable substitution (@LEXNAME@/@RULENAME@/@CODE@);
                  __code whitespace preserved verbatim__
 ; {{!!≈}}      : store the source code before the markup in the variable @CODE@,
                  and print the text after the markup, possibly using
-                 variable substitution (@LEXNAME@/@RULNAME@/@CODE@);
+                 variable substitution (@LEXNAME@/@RULENAME@/@CODE@);
                  __leading/trailing whitespace in the source code is removed, the rest squeezed__
 ; {{!!€fst-type:}} : Specifies the fst-type to run a test set against, must be
                  followed by the test name, and must be the first line in a
@@ -27,7 +27,7 @@ Keywords/trigger symbols (all are followed by __space__, with one exception):
 Variables:
 
 ; @LEXNAME@ : name of last lexc lexicon
-; @RULNAME@ : name of last twol/cg3 rule
+; @RULENAME@ : name of last twol/cg3 rule
 ; @CODE@    : source code to the left of !!= / !!≈
 
 The variables retain their values until they are reset (either by a new lexicon or rule name, or by a new {{!!≈}} or {{!!=}} synbol).
