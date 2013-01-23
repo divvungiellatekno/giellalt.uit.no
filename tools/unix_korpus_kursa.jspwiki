@@ -61,13 +61,28 @@ cat fiila.txt | sort | uniq > boadus.txt
 ** grep "^xxx"
 * -v (mat eai sisttisdoala xxx)
 ** grep -v xxx
+* grep-ovdamearkkat: 
+{{{
+			(Váldde linnjáid mat sisttisdollet:)
+grep "láhk[aá]i" 	(láhkai dahje láhkái)
+grep "[A-ZČŠŽŊĐŦ]" 	(ovtta dáin bustávain: ABCD....)
+grep "[0-9]" 		(ovtta dáin loguin: 0123...)
+grep -v "[0-9]" 	(main ii leat lohku)
+grep "[139]" 		(ovtta dáin loguin: 139)
+grep "139" 		(139)
+}}}
 * egrep (viiddiduvvon)
-** egrep "láhk[aá]i"
-** egrep "[A-Z]"
+** egrep "(xxx|yyy)"  (main lea juogo xxx dahje yyy)
 
 
 !! regex
-Gč. báhpára
+Moadde regex-vejolašvuođa:
+{{{.		vaikko makkár mearka
+*		vaikko man galle
+\ 		dahká ahte ii dulkojuvvo regex:n, omd. \* mearkkaša *
+
+grep "A.*A"	(váldde linnjáid main leat unnimusat guokte A)
+}}}
 
 !! tr
 "buhtte x y:in"
