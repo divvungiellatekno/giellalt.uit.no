@@ -215,7 +215,7 @@ Agenda accepted as is.
 !!!Pedagogical software online
 
 Meeting memos can be found at
-[http://giellatekno.uit.no/ped/index.html#Meeting+memos]
+[http://giellatekno.uit.no/ped/index.html]
 
 Working on making the ped transducers more flexible and forgiving on user input,
 and at the same time reporting errors to the users.
@@ -429,76 +429,6 @@ __TODO:__
 * meeting to discuss SVN reorg to resolve the access control thing - Wedn. 9.30
   (__Børre, Ciprian, Sjur, Tomi, Trond__)
 
-!!!Linguistics
-
-We need a more fine-grained system for denoting morphological boundaries. Here's what __Sjur__ suggests:
-
-# word boundary: ## (# makes .#. unusable in twolc)
-# inflection: <, >
-# compound-like inflection: <#, #> (cf ''-gujmie'') (lexc %<#, #%>)
-# derivation: «, »
-# compound-like derivation: «#, #» (cf ''-aktig, -skap'' in nob, swe, etc)
-# clitica: ‹, › - ''muorak'' and ''muorage'' but only ''muorasge'' and not
- ''muorask''
-# opaque compounds (''bringebær''): *#, #* - * on the side of the opaque part
-
-The multichar sequences should be defined as {{Multichar_Symbols}}.
-
-It might be possible to distinguish, but do we need them?
-
-the suffix -goahti- behaves:
-* morphologically like a compound 
-* semantically like a closed-class word (begin, often, still, ...)
-* what is ''bringe#bær''? A compound?
-
-Motivation for the new border symbols:
-* compound-like inflection and derivation should be hyphenated as compounds,
-  although regular inflection and hyphenation usually is completely opaque wrt
-  hyphenation.
-* we don't want to use the regular word boundary symbol for this purpose, since
-  that can conflict with other use cases (like IR & indexing, where you want to
-  index both the actual word form, the stem, and possibly substems as long as
-  the stemming is transparent)
-* on the contrary, a richer set of border symbols can be used to enhance e.g. IR
-  - by coding ''bringeber'' as {{bringe*#ber}} we know that the compound is
-  opaque and should not be split, but at the same time we know that the last
-  part is the recognisable word ''ber'', which can be useful for text
-  classification and building semantic relationships - we can automatically
-  deduce that ''bringebær'' is a ''bær''.
-* the regular affix boundaries have turned out to be useful in the making of
-  Hunspell speller files (although the distiction between inflection and
-  derivation was in the end not useful). The borders also make it easier to bind
-  certain two-level rules to the correct contexts.
-
-The guiding principle behind the symbols is that they provide more information
-in the transducer, and it is easy to discard the information later. The opposite
-is not true. Also, there is relatively little work involved in adding the
-symbols.
-
-We'll let this rest for a couple of weeks, and then return.
-
-!!North Sámi
-
-(nothing new, see proofing bugs below)
-
-!!Lule Sámi
-
-(nothing new, see proofing bugs below)
-
-!!South Sámi
-
-__TODO:__
-* reformulate the proper noun grammar according to the Trondheim discussions
-  (__David, Maja, Sjur, Thomas, Trond__)
-* Missing list (focus on closed class words and addition on missing nouns,
-  adjectives and verbs) (__David__)
-** __David__ made a new missing list from an OCR-ed book
-* make a document for the SGL/SGM, {{sma}} section (__David__ with
-  __Maja, Sjur__)
-** placenames (__Jovsset__)
-** abbreviations (__David__)
-* finish the umlaut / derivation work (__Thomas, Sjur, Tomi__)
-* adjectives (__Maja__ with __David, Thomas, Trond, Sjur__)
 
 !!!Name lexicon/risten.no infrastructure
 

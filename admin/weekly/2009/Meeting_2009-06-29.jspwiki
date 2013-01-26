@@ -196,7 +196,7 @@ Agenda accepted as is.
 Ciprian is struggling with MySQL installation and other setup issues.
 
 Meeting memos can be found at
-[http://giellatekno.uit.no/ped/index.html#Meeting+memos]
+[http://giellatekno.uit.no/ped/index.html]
 
 __TODO__
 * Register oahpa.no (__Trond__)
@@ -255,28 +255,14 @@ __TODO:__
 To accomodate future enhancements in different directions (in rough order of
 importance):
 
-# test bench for all parts of our language technology efforts
-## test bench enhanced, but not yet complet
-# set up the Leopard Server features for collaborative support:
-## permanent chat rooms
-## stored (and indexed) chat transcripts of the chat rooms
-## iCal server / group calendars
-## wiki
+# test bench for all parts of our language technology efforts.H. (hash) test bench enhanced, but not yet complet
+# set up the Leopard Server features for collaborative support:.H. (hash) permanent chat rooms.H. (hash) stored (and indexed) chat transcripts of the chat rooms.H. (hash) iCal server / group calendars.H. (hash) wiki
 # wiki? on G5 (is part of Leopard Server) or other web-based documentation
-# improve Forrest stability and i18n support ( the divvun crashes)
-## __Sjur__ has been working on better i18n and pdf rendering
-## __Børre__ has some ideas for getting back to serving static html files
-# reorganise the documentation:
-## differ between target groups
-## get better grouping
-## decide what to write in forrest and what in wiki
+# improve Forrest stability and i18n support ( the divvun crashes).H. (hash) __Sjur__ has been working on better i18n and pdf rendering.H. (hash) __Børre__ has some ideas for getting back to serving static html files
+# reorganise the documentation:.H. (hash) differ between target groups.H. (hash) get better grouping.H. (hash) decide what to write in forrest and what in wiki
    (cf. [Apertium|http://www.apertium.org/] and 
-   [http://xixona.dlsi.ua.es/apertium/]) for a similar split)
-## update/add missing parts
-# migrate lexc lexicons to XML, splitting the task
-## Name lexica (the Name project)
-## Dictionaries (already in XML, task is to integrate them)
-## At least migrate the lexc open POSes (Komi as a pilot case)
+   [http://xixona.dlsi.ua.es/apertium/]) for a similar split).H. (hash) update/add missing parts
+# migrate lexc lexicons to XML, splitting the task.H. (hash) Name lexica (the Name project).H. (hash) Dictionaries (already in XML, task is to integrate them).H. (hash) At least migrate the lexc open POSes (Komi as a pilot case)
 # change the look of the documentation web
 # use HFST as alternative to XFST
 # corpus content moved to Max Planck repositories? Norsk språkbank?
@@ -319,14 +305,14 @@ __TODO:__
 We need a more fine-grained system for denoting morphological boundaries. Here's
 what __Sjur__ suggests:
 
-# word boundary: ## (# makes .#. unusable in twolc)
+# word boundary:.H. (hash) (H makes .H. (hash) unusable in twolc)
 # inflection: <, >
-# compound-like inflection: <#, #> (cf ''-gujmie'') (lexc %<#, #%>)
+# compound-like inflection: .H. (hash) H> (cf ''-gujmie'') (lexc %.H. (hash) H%>)
 # derivation: «, »
-# compound-like derivation: «#, #» (cf ''-aktig, -skap'' in nob, swe, etc)
+# compound-like derivation: .H. (hash) H» (cf ''-aktig, -skap'' in nob, swe, etc)
 # clitica: ‹, › - ''muorak'' and ''muorage'' but only ''muorasge'' and not
  ''muorask''
-# opaque compounds (''bringebær''): *#, #* - * on the side of the opaque part
+# opaque compounds (''bringebær''): .H. (hash) H* - * on the side of the opaque part
 
 The multichar sequences should be defined as {{Multichar_Symbols}}.
 
@@ -335,7 +321,7 @@ It might be possible to distinguish, but do we need them?
 the suffix -goahti- behaves:
 * morphologically like a compound 
 * semantically like a closed-class word (begin, often, still, ...)
-* what is ''bringe#bær''? A compound?
+* what is ''bringeHbær''? A compound?
 
 Motivation for the new border symbols:
 * compound-like inflection and derivation should be hyphenated as compounds,
@@ -346,7 +332,7 @@ Motivation for the new border symbols:
   index both the actual word form, the stem, and possibly substems as long as
   the stemming is transparent)
 * on the contrary, a richer set of border symbols can be used to enhance e.g. IR
-  - by coding ''bringeber'' as {{bringe*#ber}} we know that the compound is
+  - by coding ''bringeber'' as {{bringe*Hber}} we know that the compound is
   opaque and should not be split, but at the same time we know that the last
   part is the recognisable word ''ber'', which can be useful for text
   classification and building semantic relationships - we can automatically
@@ -565,7 +551,7 @@ Lexicon version: __Julevsáme, version 1.1, 2008-12-17__
 * 547 - hyphen in front of vowel: ''Jienastimnjuolgadusá'' and ''Orgánajs'' -
         still __OPEN__
 * 670 - Hard hyphen replaced with soft hyphen: ''10-biejvvásattja'' (the word is
-        not rec.; Bug #711) - still __OPEN__
+        not rec.; Bug 711) - still __OPEN__
 
 __TODO:__
 * fix PL hyphenator errors (__Tomi__)
