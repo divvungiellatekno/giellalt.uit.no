@@ -111,10 +111,10 @@ LEXICON N_ODD
 
 __NB!__ The negative test data convention is not yet fully functional. For now it is best to avoid it.
 
-The above test data will give the following yaml file (sans header):
+Presently, the above test data will give the following yaml file (sans header):
 
 {{{
-  gierehtse: # #
+  gierehtse: # Odd-syllable test #
     gierehtse+N+Sg+Nom: gierehtse # 
     gierehtse+N+Sg+Acc: gierehtsem # 
     gieriehtsem: ~gieriehtsem # gierehtse+N+Sg+Acc
@@ -122,6 +122,16 @@ The above test data will give the following yaml file (sans header):
 }}}
 
 The negative test data is ''NOT'' the way it should be, and this test will fail.
+It __should__ end up like this:
+
+{{{
+  gierehtse: # #
+    gierehtse+N+Sg+Nom: gierehtse # 
+    gierehtse+N+Sg+Acc: [gierehtsem, ~gieriehtsem] # 
+    gierehtse+N+Sg+Gen: gierehtsen # 
+}}}
+
+This will be fixed in a future version of the test bench.
 
 !!!Twolc notes
 
