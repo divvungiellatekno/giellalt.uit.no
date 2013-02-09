@@ -1,6 +1,6 @@
 !!!Ordbok-fst-er
 
-Til dict-sma/sme.fst brukes sma.fst og sme.fst med noen modifiseringer av tagger. dict-sma/sme.fst er ikke definerte i Makefile og derfor kompilerer man en sma.fst/sme.fst som man skifter navn på når man kopierer over i /opt/
+Til dict-sma/sme.fst brukes sma.fst og sme.fst med noen modifiseringer av tagger. {{dict-sma/sme.fst}} er ikke definerte i Makefile og derfor kompilerer man en {{sma.fst/sme.fst}} som man skifter navn på når man kopierer over i /opt/
 
 !! Spesielt for sma
 
@@ -10,9 +10,9 @@ i gt/sma
 
 svn up -r 59359
 
-deretter;
+deretter i denne fila: 
 
-i denne fila: common/src/tag-not-save-but-oahpa.regex
+{{common/src/tag-not-save-but-oahpa.regex}}
 
 kommenter ut noen tagger slik at det blir slik:
 
@@ -21,18 +21,18 @@ kommenter ut noen tagger slik at det blir slik:
 
 !! Felles for sme og sma
 
-Til isma-dict.fst og dict-isme-norm.fst brukes isma-norm.fst og isme-norm.fst med noen modifiseringer av tagger. dict-isme-norm.fst er definert i Makefile, men man må sikre taggene manuelt. For sørsamisk kompilerer man isma-norm.fst med endring av tagger og endrer så navnet til isma-dict.fst når man kopierer til /opt/
+Til {{isma-dict.fst}} og {{dict-isme-norm.fst}} brukes {{isma-norm.fst}} og {{isme-norm.fst}} med noen modifiseringer av tagger. {{dict-isme-norm.fst}} er definert i Makefile, men man må sikre taggene manuelt. For sørsamisk kompilerer man isma-norm.fst med endring av tagger og endrer så navnet til isma-dict.fst når man kopierer til /opt/
 
 
-Både dict-sma/sme.fst og dict-isma/isma.fst skal bli kompilert med tagger som identifiserer homonymer og varianter. 
+Både {{dict-sma/sme.fst}} og {{dict-isma/isma.fst}} skal bli kompilert med tagger som identifiserer homonymer og varianter. 
 Dessuten vil vi unnlate å presentere visse former i miniparadigmet. 
 
 Her er en liste over taggene det gjelder, og filene de er i (utropstegnet viser hvilke tagger du skal kommentere ut):
 
 {{{
-M       tag-not-save.regex - 
+        tag-not-save.regex - 
         !0 (<-) %+Use%/NVD,
-M       remove-variant-homonym-tags.regex
+        remove-variant-homonym-tags.regex
         !0 <- %+1,
         !0 <- %+2,
         !0 <- %+v1, 
@@ -43,12 +43,12 @@ M       remove-variant-homonym-tags.regex
         0 <- %+Use%/NVD,
         0 <- %+Allegro;
 
-M       make-variant-homonym-tags-optional.regex
+        make-variant-homonym-tags-optional.regex
         0 (<-) %+v5;         # <== NB Flytt semikolon hit!
         !0 (<-) %+Use%/NVD,
         !0 (<-) %+Allegro ;
         
-M       tag-not-save-but-oahpa.regex
+        tag-not-save-but-oahpa.regex
         !0 (<-) %+1,
         !0 (<-) %+2,
         !+N (<-) %+N %+NomAg,
@@ -57,7 +57,7 @@ M       tag-not-save-but-oahpa.regex
         0 (<-) %+G7 ;
 }}}
 
-Taggene nedenfor skal være med i output fra dict-sma/sme.fst, de to øverste gjelder sma, de nederste sme:
+Taggene nedenfor skal være med i output fra {{dict-sma/sme.fst}} for å få riktig bøyningsparadigme til homonyme lemmaer. De to øverste gjelder sma, de nederste sme:
 
 {{{
 +1
@@ -72,14 +72,16 @@ Taggene nedenfor skal være med i output fra dict-sma/sme.fst, de to øverste gj
 +v5
 }}}
 
-Disse to taggene skal være med i dict-isme-norm.fst fordi vi ikke ønsker dem i miniparadigmet:
+Disse to taggene skal være med i {{dict-isme-norm.fst}} fordi vi ikke ønsker dem i miniparadigmet:
 
+{{{
 +Allegro
 +Use/NVD
+}}}
 
 Alle de nevnte taggene skal være utkommentert i
 
-gt/common/src/tag-not-save.regex
+{{gt/common/src/tag-not-save.regex}}
 
 
 
@@ -87,12 +89,12 @@ Deretter kompileres i gt:
 
 {{{
 make GTLANG=sma
-make GTLANG=sme   <==== for nordsamisk
+make GTLANG=sme   
 }}}
 
 
 i bin endres navnet på  {{isma-norm.fst}} til {{isma-dict.fst}} slik at man også har en
-vanlig isma-norm.fst for anna bruk.
+vanlig {{isma-norm.fst}} for anna bruk.
 
 
 !! some-ordbok (for sosiale media)
@@ -101,10 +103,10 @@ I tillegg, og med samme taggoppsett, kompileres en egen some-sme.fst for #SoMe-o
 Den blir kompilert slik:
 
 Samme taggoppsett som ovafor, men i tillegg kommenteres de første 20 linjene i
-gt/common/src/spellrelax.reges inn (iPhone keyboard relax og capital for Saami letter..)
+{{gt/common/src/spellrelax.regex}} inn (iPhone keyboard relax og capital for Saami letter..)
 
 Resultatet blir et sett med fst-er som tolererer assi for ášši. Døp om {{sme.fst}} til {{some-sme.fst}}
-og kopier over til /opt/smi/sme/bin. Kommeter deretter ut de 20 linjene og kompiler sme
+og kopier over til {{/opt/smi/sme/bin}}. Kommeter deretter ut de 20 linjene og kompiler sme
 på nytt (så du får tilbake normale fst-er).
 
 
@@ -114,13 +116,13 @@ For å teste at alt er i orden, analyser følgende ord, slik (navna på fst-ene 
 
 !! sma
 
-* dict-sma.fst (dvs. sma.fst)
-** govledh - skal gi +1 og +2 i analysen (kopier du inn)
-** lookup sma/bin/sma.fst
-*** govledh	govledh	+2+V+IV+Inf
-*** govledh	govledh	+1+V+TV+Inf
-* isma-dict.fst (dvs. isma-norm.fst)
-** skal gi slike analyser
+* {{dict-sma.fst}} (dvs. {{sma.fst}})
+** {{govledh}} skal gi {{+1}} og {{+2}} i analysen  
+** {{lookup sma/bin/sma.fst}}
+*** {{govledh	govledh	+2+V+IV+Inf}}
+*** {{govledh	govledh	+1+V+TV+Inf}}
+* {{isma-dict.fst}} (dvs. {{isma-norm.fst}})
+** skal gi slike analyser:
 
 {{{
 echo govledh+1+V+Inf | lookup sma/bin/isma-norm.fst
@@ -130,16 +132,16 @@ govledh+2+V+Inf govledh
 
 !! sme
 
-* dict-sme.fst og some-sme.fst (dvs. sme.fst)
-** vuovdi skal gi både +Plc+N og +Hum+N+NomAg, 
-** tunealla skal gi +v1+N+G3+Sg+Nom, 
-** girjje skel gi girji	+Txt+N+Sg+Gen+Allegro
-* some-sme.fst (dvs. sme.fst kompilert med utvida spellrelax.regex):
-** echo assi | lookup sme/bin/some-sme.fst
-** svaret skal analysere ášši
+* {{dict-sme.fst}} og {{some-sme.fst}} (dvs. {{sme.fst}} )
+** {{vuovdi}} skal gi både {{+Plc+N}} og {{+Hum+N+NomAg}}, 
+** {{tunealla}} skal gi {{+v1+N+G3+Sg+Nom}}, 
+** {{girjje}} skal gi girji	{{+Txt+N+Sg+Gen+Allegro}}
+* {{some-sme.fst}} (dvs. {{sme.fst}} kompilert med utvida {{spellrelax.regex}}):
+** {{echo assi | lookup sme/bin/some-sme.fst}}
+** svaret skal gi bl.a. {{ášši}}
 
 
-* dict-isme-norm.fst  (denne får dette navnet i sme/bin ved vanlig kompilering)
+* {{dict-isme-norm.fst}}  (denne får dette navnet i {{sme/bin}} ved vanlig kompilering)
 ** Test:
 
 {{{
@@ -188,6 +190,6 @@ sudo cp sme/bin/dict-isme-norm.fst /opt/smi/sme/bin/dict-isme-norm.fst
 }}}
 
 sme, some-ordbok (kompilert med some-spellrelax):
-
+{{{
 sudo cp sme/bin/sme.fst /opt/smi/sme/bin/some-sme.fst
-
+}}}
