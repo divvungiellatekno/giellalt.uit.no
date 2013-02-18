@@ -26,12 +26,15 @@ This is a list of programs you will need to use this infrastructure for language
 ** [XCode|InstallingXCode.html]
 ** [MacPorts|http://www.macports.org]
 
-Then you need the following tools for certain operations.
+Then you need a number of tools for the build chain.
 On the Mac, you can get them by running the following command:
 
 {{{
 sudo port install autoconf automake libtool vislcg3 saxon python32 py-yaml subport=py32-yaml
 }}}
+
+The last tool to support the build chain is [Forrest|http://forrest.apache.org],
+which you get by following [these instructions|forrest-howto.html].
 
 Finally, install the __linguistic programming tools.__ One, or why not both, of:
 * [Xerox tools|http://www.fsmbook.com]
@@ -49,6 +52,9 @@ If you want to work with proofing tools, see ''Proofing tools to install'' [here
 * [Saxon HE|http://saxon.sourceforge.net/#F9.4HE] (for working with languages
    with XML lexicons)
 * [Python|http://www.python.org] __3.1+__ and py-yaml (for running automated tests)
+* [Forrest|http://forrest.apache.org] to validate the documentation comments.
+  You get it by following [these instructions|forrest-howto.html].
+
 
 * The __linguistic programming tools.__ One, or why not both, of:
 ** [Xerox tools|http://www.fsmbook.com]
@@ -66,7 +72,7 @@ You need __Cygwin__. To set it up and install most needed software, follow [thes
 
 Then you need an __editor__. [jEdit|http://www.jedit.org] should be fine (requires Java, but that is already required by our infrastructure, and should be in place when you have come this far.
 
-Be warned: Cygwin is slow, and it is not the optimal way of working with our linguistic infrastructure. But it should work ok.
+Be warned: Cygwin is slow, and it is not the optimal way of working with our linguistic infrastructure. But it should work.
 
 !!!Then fetch the language source files (all systems)
 
