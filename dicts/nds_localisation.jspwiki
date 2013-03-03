@@ -1,0 +1,123 @@
+﻿!!!Internationalization (i18n) in Neahttadigis&aacute;nit
+ 
+Uses Flask-Babel which is an interface for flask to the Python Babel extension
+
+1) http://packages.python.org/Flask-Babel/
+2) http://babel.edgewall.org
+ 
+Translation strings are marked as with Oahpa, but NDS uses a slightly different template engine, however no major differences.
+
+ 
+Marking translation strings in templates: http://jinja.pocoo.org/docs/templates/#i18n-in-templates
+
+ 
+!!!Adding new locales
+ 
+As with Django there is a problem that unknown locales such as sme and sma need to be defined somewhere. Nicely, for northern s&aacute;mi it seems that nordsamisk is in existence in se.dat, se_NO.dat and se_FI.dat, but this does not help with s&oslash;rsamisk.
+
+ 
+Thus, we need to copy some files.
+
+ 
+1.) Find out where they are: open python, making sure that the NDS environment is enabled (you will see this in the command prompt)
+
+ 
+2.) Import flask within the python command prompt, observe the path and exit:
+
+{{{
+    >>> import flask
+    >>> flask
+    <module 'flask' from '/path/to/python2.7/site-packages/flask/__init__.pyc'>
+}}}
+
+3.) Then, copy files within Babel:
+
+{{{
+    cp /path/to/python2.7/site-packages/babel/localedata/se.dat \
+       /path/to/python2.7/site-packages/babel/localedata/sma.dat  
+}}}
+
+Thus the new locale will be able to be initialized with the init command below.
+
+ 
+!!!Typical i18n management tasks
+ 
+!!!Generating a message template
+ 
+Message template files (.pot) are where Babel stores all of the strings, which it then moves to individual translation .po files.
+
+ 
+Generating the template is easy. From the NDS project directory, and with the virtualenv enabled:
+
+{{{
+    pybabel extract -F babel.cfg -k lazy_gettext -o translations/messages.pot .
+}}}
+
+!!!Initializing a translation
+
+{{{
+    pybabel init -i translations/messages.pot -d translations -l no
+    pybabel init -i translations/messages.pot -d translations -l sma
+    etc
+}}}
+
+!!!Update .pot with new strings and automatically merge into .po
+ 
+This is two steps: first run pybabel extract, as above, and then:
+
+{{{
+    pybabel extract -F babel.cfg -k lazy_gettext -o translations/messages.pot .
+    pybabel update -i translations/messages.pot -d translations
+}}}
+
+!!!Compiling .po files for use in the interface
+
+{{{
+    pybabel compile -d translations
+}}}
+
+!!!Additional notes...
+ 
+!!!Activating the virtual environment
+ 
+If you do not see the environment enabled in the command prompt, as the NDS user, run the following:
+
+{{{
+    source kursadict_env/bin/activate 
+}}}
+
+If you do not see changes to the command prompt name, check which python to make sure it is active if you do not see it in the bash prompt. If it still doesn't work, there are probably problems with virtualenv.
+
+ 
+Typically you should see something like:
+
+{{{
+    (neahtta_env)[neahtta@gtoahpa gtsvn/]$ 
+}}}
+
+!!!ISO notes and internationalization language code vs. lexicon/FST language code
+ 
+Because most browsers report what language they use using the 2-character ISO 639-1 code, any localization that has a 2-character code, (north s&aacute;mi has se, so lucky!), we must use this code. If it doesn't, then creating new localizations with the 3-character code (ISO 639-2) will be necessary. Also, neahtta.py may not actually handle some of these 3-character localizations as well, so this will need to be fixed.
+
+ 
+!!!Currently supported localizations:
+ 
+May be found in translations/, but for ease of finding out:
+
+ 
+1.) se (sme) 
+2.) fi 
+3.) no (nob)
+
+ 
+Internationalization languages on the way:
+
+4.) sma
+5.) ru
+6.) myv
+7.) mrj
+8.) kv (kpv)
+    TODO: is this actually what komi users' browsers report?
+9.) lv (lav)
+
+
