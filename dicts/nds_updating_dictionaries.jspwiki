@@ -1,0 +1,29 @@
+!!!Updating the lexica
+ 
+1.) Switch to the NDS user account.
+ 
+Note that when logged in as the NDS user, the python virtualenv should be loaded automatically, and you will see this before the command prompt:
+
+{{{
+    (neahtta_env)[neahtta@gtoahpa ~]$ 
+}}}
+
+2.) {{{ cd ~/gtsvn/ ; svn up words }}}
+ 
+3.) {{{ cd ~/kursadict/dicts/ ; sh make_dict.sh }}}
+ 
+4.) check that there were no errors, also wc -l *.xml to make sure there is content
+ 
+Also, sometimes it's a good idea to run the interactive shell with the app, just to make sure that all of the files are able to be parsed with no errors before restarting the actual production service:
+
+ 
+5.) {{{ cd ~/kursadict/ ; python manage.py shell }}}
+ 
+If everything is good and there are no errors, you'll see the command prompt. Exit, and restart the service (as another user):
+
+6.) {{{ sudo service neahttadigisanit stop }}}
+
+7.) {{{ sudo service neahttadigisanit start }}}
+ 
+NB: The reason this is done in two separate steps is just to make sure everything has come down before starting it up again. Usually advisable to watch top.
+
