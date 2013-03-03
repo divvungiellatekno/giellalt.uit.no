@@ -1,0 +1,125 @@
+!!!Starting a new language pair
+ 
+!!!Linguistic requirements
+!!(... for linguists)
+ 
+* lexicon matching sme-nob or sma-nob format as closely as possible
+* FSTs (described below)
+* lists of tag pairs, what is in FST to convert to what users will see
+* lists of paradigms for parts of speech, which can be either as detailed as one paradigm per part of speech, or several paradigms for parts of speech and varying sub-types. These will have to be marked in the lexicon in some way, for exampl, plural-only proper noun paradigms for North S&aacute;mi
+* description of attributes in the XML that need to be displayed to the user
+ 
+!!FSTs
+ 
+!Lookup FST
+
+{{{
+    vuovdi
+    vuovdi  vuovdit verb pres.pts.
+    vuovdi  vuovdit verb imp. 2.p.tot.
+    vuovdi  vuovdit verb nom.Ag. subst. ent. akk.
+    vuovdi  vuovdit verb nom.Ag. subst. ent. gen.
+    vuovdi  vuovdit verb nom.Ag. subst. ent. nom.
+    vuovdi  vuovdi subst. ent. nom.
+    vuovdi  vuovdi adj. ent. akk.
+    vuovdi  vuovdi adj. ent. gen.
+    vuovdi  vuovdi adj. ent. nom.
+    vuovdi  vuovdi subst. aktor ent. nom.
+    vuovdi  vuovdi subst. aktor ent. akk.
+    vuovdi  vuovdi subst. aktor ent. gen.
+}}}
+
+!Spell relax FST
+ 
+Spell relaxing FSTs should follow the exact same format as the lookup FST, but naturally point to the normative lemmas, or whatever lemmas will be used in lookups in the lexicon. These could be of two types:
+
+ 
+1.) Normalizing non-standard spellings 
+2.) Compensating for keyboards without certain characters 
+3.) Switching orthographies, e.g., accepting latin for cyrillic, or vice versa.
+
+ 
+Whatever the use case, the analyzed lemma must match up with the lexicon
+entry.
+
+ 
+!Compound marking
+ 
+Must have a defined (and consistent) method for marking compounds:
+
+{{{
+    vuovdedoaibma
+    vuovdedoaibma   vuovdi subst.  + #doaibma subst. ent. nom.
+    vuovdedoaibma   vuovdi adj.  + #doaibma subst. ent. nom.
+    vuovdedoaibma   vuovdedoaibma subst. ent. nom.
+}}}
+
+__Compound marker__: {{{ "  + #" }}}
+ 
+!Derivation marking
+ 
+Must also be able to specify how all derivational suffixes are marked, because this affects how lexicalized words are displayed when a derivation has a lexicalized form.
+
+{{{
+    oahpásmahttit
+    oahpásmahttit   oahpásmuvvat verb avl.suff.-ahtti verb inf.
+    oahpásmahttit   oahpásmuvvat verb avl.suff.-ahtti verb imp. 2.p.flt.
+    oahpásmahttit   oahpásmuvvat verb avl.suff.-ahtti verb ind. pres. 1.p.flt.
+    oahpásmahttit   oahpásmuvvat verb avl.suff.-ahtti verb nom.Ag. subst. fl. nom.
+}}}
+
+__Derivation marker__: {{{ "suff." }}}
+
+ 
+!Generation FST
+ 
+For generation, currently sme and sma use the typical tag format for GT, but, we have a special generator FST that removes non-standard forms. Also, sma has some special entries that are marked with a hid attribute (g&ouml;&ouml;vledh+1, g&ouml;&ouml;vledh+2) were generation depends on meaning. These must be included in the generation FST.
+
+ 
+!!Lexicon
+ 
+It may be that the analysis FST does not match absolutely with the lexicon, and this is okay. But, if this is so, it is important to know where the differences are.
+
+ 
+For instance, the above examples show &quot;noun&quot; and &quot;verb&quot; as the part of speech in the analyzer, but the lexicon only knows &quot;N&quot; and &quot;V&quot;. Thus, in order to line up these tools, the programmers will need to have a list of all of these things to formulate rules.
+
+ 
+!!!For programmers
+ 
+!!Language-specific rules
+ 
+Will write more in this section a bit later.
+
+Language-specific rules are carried out via python functions, which are decorated by a function in a library that gives them purpose.
+
+{{{
+    # TODO: document this, but also make some changes so it is more 
+    # user friendly
+
+    @generation_overrides.pregenerated_form_selector('sme')
+    def some_function(form, tags, xml_node):
+        # ... forms and tags and xml node are passed in
+        # we return all of these things, but one additional variable
+        # containing the pregenerated analyses.
+        return form, tags, node, analyses
+}}}
+
+!!Morphology -> Lexicon
+ 
+These rules are for manipulating tags that come out of the FST, and aligning them with the tags (POS and other) used in the lexicon.
+
+ 
+!Tag rewrites
+ 
+!!Lexicon -> Paradigm Generation
+ 
+Paradigms are specified in the configuration file for part of speech, however, certain attributes in lexical entries may mean that a paradigm must be generated in a different way.
+
+ 
+For example, in North S&aacute;mi, common nouns have one paradigm including singular and plural forms, and proper nouns have several separate paradigms, sometimes plural-only, sometimes singular-only, but it depends on an attribute in the lexical entry.
+
+ 
+!Pregenerated forms
+ 
+!Tag string manipulations
+
