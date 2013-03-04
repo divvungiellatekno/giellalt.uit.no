@@ -26,34 +26,121 @@
             to detect them.</p>
             <dl>
                <dt>Attributes:</dt>
-               <dd>
-               <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem |
-               resip | indef | pcle | prop | typo | mix | x )<br/>
-               <strong>errtype</strong> ( a | á | conc | svow | vowc | vow
-               | con | mono | diph | lime | meta | suf | cmp | wcmp | ascii | typo | cap | min | mix)</dd>
-               <dt>Some explanations:</dt>
-               <dd>a = should be a instead of á<br/>
-                   á = should be á instead of a<br/>
-                   conc = consonant centre<br/>
-                   vowc = vowel centre<br/>
-                   svow = soggevokála<br/>
-                   vow = some other wrong vowel<br/>
-                   con = some other wrong consonant<br/>
-                   mono = diphthong, but should be monophtong<br/>
-                   diph = wrong diphthong<br/>
-                   lime = consonant between two unstressed syllables, <em>vuovddášis</em> vs <em>vuovddážis</em><br/>
-                   meta = metathesis<br/>
-                   suf = wrong suffixing, e.g. <em>gievkani</em> vs. <em>gievkkanii</em><br/>
-                   cmp = incorrect compounding, e.g. <em>beavdiguorra</em> vs <em>beavdeguorra</em><br/>
-                   ncmp = no compound, e.g. <em>dannåvteste</em> vs correct: <em>dan åvteste</em><br/>
-                   ascii = not used sámi letter<br/>
-                   typo = typical typo<br/>
-                   cap = should be capital letter<br/>
-                   min = should be minuscle<br/>
-                   pos/mix = used with errtype=ncmp, since the correct form is made of several words/POS's<br/>
-                   errtype/mix = more than one errortype in the same word
-                </dd>
+               <dd><dl>
+                     <dt>pos</dt>
+                     <dd> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem | resip | indef |
+                     pcle | prop | typo | mix | x )</dd>
+                     <dt>errtype</dt>
+                     <dd>The value of this attribute is language specific. For details, see below.</dd>
+                  </dl></dd>
             </dl>
+            <p>Language specific details:</p>
+            <section>
+               <title>SME</title>
+               <dl>
+                  <dt>Possible values for <em>errtype</em>:</dt>
+                  <dd>( a | á | conc | svow | vowc | vow | con | mono | diph | lime | meta | suf | cmp | wcmp | ascii |
+                  typo | cap | min | mix)</dd>
+                  <dt>Comments to each <em>errtype</em> value</dt>
+                  <dd><ul>
+                        <li>a = should be a instead of á</li>
+                        <li>á = should be á instead of a</li>
+                        <li>conc = consonant centre</li>
+                        <li>vowc = vowel centre</li>
+                        <li>svow = soggevokála</li>
+                        <li>vow = some other wrong vowel</li>
+                        <li>con = some other wrong consonant</li>
+                        <li>mono = diphthong, but should be monophtong</li>
+                        <li>diph = wrong diphthong</li>
+                        <li>lime = consonant between two unstressed syllables, <em>vuovddášis</em> vs
+                        <em>vuovddážis</em></li>
+                        <li>meta = metathesis</li>
+                        <li>suf = wrong suffixing, e.g. <em>gievkani</em> vs. <em>gievkkanii</em></li>
+                        <li>cmp = incorrect compounding, e.g. <em>beavdiguorra</em> vs <em>beavdeguorra</em></li>
+                        <li>ncmp = no compound, e.g. <em>dannåvteste</em> vs correct: <em>dan åvteste</em></li>
+                        <li>ascii = not used sámi letter</li>
+                        <li>typo = typical typo</li>
+                        <li>cap = should be capital letter</li>
+                        <li>min = should be minuscle</li>
+                        <li>pos/mix = used with errtype=ncmp, since the correct form is made of several words/POS's</li>
+                        <li>errtype/mix = more than one errortype in the same word</li>
+                     </ul></dd>
+                  <dt>Comments to some <em>pos</em> values</dt>
+                  <dd><ul>
+                        <li>typo = typical typo — as a POS value?</li>
+                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
+                        Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                     </ul></dd>
+               </dl>
+            </section>
+            <section>
+               <title>SMA</title>
+               <dl>
+                  <dt>Possible values for <em>errtype</em>:</dt>
+                  <dd>( ??? )</dd>
+                  <dt>Comments to each <em>errtype</em> value</dt>
+                  <dd><ul>
+                        <li>???</li>
+                     </ul></dd>
+                  <dt>Comments to some <em>pos</em> values</dt>
+                  <dd><ul>
+                        <li>typo = typical typo — as a POS value?</li>
+                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
+                        Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                     </ul></dd>
+               </dl>
+            </section>
+            <section>
+               <title>SMJ</title>
+               <dl>
+                  <dt>Possible values for <em>errtype</em>:</dt>
+                  <dd>( ??? )</dd>
+                  <dt>Comments to each <em>errtype</em> value</dt>
+                  <dd><ul>
+                        <li>???</li>
+                     </ul></dd>
+                  <dt>Comments to some <em>pos</em> values</dt>
+                  <dd><ul>
+                        <li>typo = typical typo — as a POS value?</li>
+                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
+                        Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                     </ul></dd>
+               </dl>
+            </section>
+            <section>
+               <title>KAL</title>
+               <dl>
+                  <dt>Possible values for <em>errtype</em>:</dt>
+                  <dd>( ??? )</dd>
+                  <dt>Comments to each <em>errtype</em> value</dt>
+                  <dd><ul>
+                        <li>???</li>
+                     </ul></dd>
+                  <dt>Comments to some <em>pos</em> values</dt>
+                  <dd><ul>
+                        <li>typo = typical typo — as a POS value?</li>
+                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
+                        Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                     </ul></dd>
+               </dl>
+            </section>
+            <section>
+               <title>ISL</title>
+               <dl>
+                  <dt>Possible values for <em>errtype</em>:</dt>
+                  <dd>( ??? )</dd>
+                  <dt>Comments to each <em>errtype</em> value</dt>
+                  <dd><ul>
+                        <li>???</li>
+                     </ul></dd>
+                  <dt>Comments to some <em>pos</em> values</dt>
+                  <dd><ul>
+                        <li>typo = typical typo — as a POS value?</li>
+                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
+                        Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                     </ul></dd>
+               </dl>
+            </section>
          </section>
          <section>
             <title>Orthographic errors, real-words - wrong¢(pos,errtype|correct)</title>
