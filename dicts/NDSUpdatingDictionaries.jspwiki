@@ -1,29 +1,54 @@
 !!!Updating the lexica
  
-1.) Switch to the NDS user account.
+NB: Neahttadigisánit (sme, sma, etc.) or sanit.oahpa.no/sánit.oahpa.no is currently on gtoahpa, but other services are located on gtlab: sanat.oahpa.no, valks.oahpa.no. For these you will need to log into gtlab, though the following examples may show gtoahpa as the hostname in the command prompt
+
+1.) Log in to the server via SSH as your own user account
+
+2.) Switch to the NDS user account.
  
 Note that when logged in as the NDS user, the python virtualenv should be loaded automatically, and you will see this before the command prompt:
 
 {{{
+	$ sudo su neahtta
     (neahtta_env)[neahtta@gtoahpa ~]$ 
 }}}
 
-2.) {{{ cd ~/gtsvn/ ; svn up words }}}
+If it is not available, do the following commands from the home directory of neahtta: 
+
+{{{
+	$ cd ~
+	$ source kursa_env/bin/activate
+}}}
+
+When you see (neahtta_env) in the command prompt, continue.
+
+3.) {{{ cd ~/gtsvn/ ; svn up words }}}
  
-3.) {{{ cd ~/kursadict/dicts/ ; sh make_dict.sh }}}
+4.) {{{ cd ~/kursadict/dicts/ ; sh make_dict.sh }}}
+
+NB: you may be looking for sanat_make_dict.sh instead, if you are updating sanat.oahpa.no; or valks_make_dict.sh.
  
-4.) check that there were no errors, also wc -l *.xml to make sure there is content
+5.) check that there were no errors, also wc -l *.xml to make sure there is content
  
 Also, sometimes it's a good idea to run the interactive shell with the app, just to make sure that all of the files are able to be parsed with no errors before restarting the actual production service:
-
  
-5.) {{{ cd ~/kursadict/ ; python manage.py shell }}}
+6.) {{{ cd ~/kursadict/ ; python manage.py shell }}}
  
 If everything is good and there are no errors, you'll see the command prompt. Exit, and restart the service (as another user):
 
-6.) {{{ sudo service neahttadigisanit stop }}}
+7.) {{{ sudo service neahttadigisanit stop }}}
 
-7.) {{{ sudo service neahttadigisanit start }}}
+NB: there are other service names for the other dictionaries:
+
+* nds-sanat
+* nds-valks
+
+8.) {{{ sudo service neahttadigisanit start }}}
+
+NB: there are other service names for the other dictionaries:
+
+* nds-sanat
+* nds-valks
  
-NB: The reason this is done in two separate steps is just to make sure everything has come down before starting it up again. Usually advisable to watch top.
+The reason this is done in two separate steps is just to make sure everything has come down before starting it up again. Usually advisable to watch top.
 
