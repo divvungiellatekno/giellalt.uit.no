@@ -19,7 +19,7 @@
             resulting xml, the name of the element will be &lt;error&gt;.</p>
          </section>
          <section>
-            <title>Orthographic errors, non-words - wrong$(pos,errtype|correct)</title>
+            <title>Orthographic errors, non-words - wrong$(error classification|correct)</title>
             <p>Traditional misspellings confined to single (error) strings, that is, errors that don't need an analysis
             of the surrounding words to be detected and corrected. In the resulting xml, the element is named
             &lt;errorort&gt;. These errors do always lead to non-words in the text, such that a speller should be able
@@ -126,12 +126,16 @@
             </section>
             <section>
                <title>ISL</title>
+               <p>Description of <em>the error classification</em> for ISL:</p>
                <dl>
-                  <dt>Possible values for <em>errtype</em>:</dt>
-                  <dd>( ??? )</dd>
-                  <dt>Comments to each <em>errtype</em> value</dt>
-                  <dd><ul>
-                        <li>???</li>
+                  <dt>cmp</dt>
+                  <dd>compound errors, subclasses:<ul>
+                        <li>1-X: the word is 1, should have been split in X words (X ≤ 2, specify X)</li>
+                        <li>X-1: the word is split on X words, but should have been one (X ≤ 2, specify X)</li>
+                        <li>st-gensg: the stem is used for the left part, but genitive sing. should have been used</li>
+                        <li>st-genpl: the stem is used for the left part, but genitive plur. should have been used</li>
+                        <li>gensg-genpl: genitive sing. is used, should have been gen pl</li>
+                        <li>gen-st: genitive (unspecified) is used, the stem should have been used</li>
                      </ul></dd>
                   <dt>Comments to some <em>pos</em> values</dt>
                   <dd><ul>
