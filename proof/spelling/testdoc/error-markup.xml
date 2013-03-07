@@ -39,14 +39,14 @@
                <title>SME</title>
                <dl>
                      <dt>Ordtype (ikke obligatorisk):</dt> 
-                     <dd>loan, prop, num, acro</dd>
-                     <dd>dette fordi noen typer ord har mer feilskriving enn andre typer </dd>
+                     <dd>loan, prop, num, acro –
+                     dette fordi noen typer ord har mer feilskriving enn andre typer </dd>
                      <dt>Spesielle forhold ved ordet:</dt> 
-                     <dd>px, der, infl, cmp, nomag</dd>
-                  <dd>dvs at feilen er relatert til dette. Eks. <em>infl</em>: ordet er bøyd som ulikestavelsesstamme når normen er kontrakt stamme. <em>der</em>: dervisjonen er ikke normativ. <em>cmp</em>: largo istedenfor allegro, eller motsatt, eller samskriving der det skulle vært to ord, eller motsatt. </dd>
+                     <dd>px, der, infl, cmp, nomag –
+                  dvs at feilen er relatert til dette. Eks. <em>infl</em>: ordet er bøyd som ulikestavelsesstamme når normen er kontrakt stamme. <em>der</em>: dervisjonen er ikke normativ. <em>cmp</em>: largo istedenfor allegro, eller motsatt, eller samskriving der det skulle vært to ord, eller motsatt. </dd>
                   <dt>Posisjon:</dt>
-                  <dd>initium – vokalsentrum – konsonantsentrum – latus – konsonantmargo – vokalmargo – finis )</dd>
-                  <dd>forkortes med disse taggene: coninit – vowc – conc – vowlat – conm – vowm – fin</dd>
+                  <dd>initium – vokalsentrum – konsonantsentrum – latus – konsonantmargo – vokalmargo – finis -- 
+                  forkortes med disse taggene: coninit – vowc – conc – vowlat – conm – vowm – fin</dd>
                   <dt>Feiltyper:</dt>
                   <dd><ul>
                         <li>typo = tastefeil, eks.<ul><li> laet$(typo|leat)</li></ul></li>
@@ -57,12 +57,12 @@
                         <li>2-1 = skrevet som to ord istedenfor samskriving, eks. <ul><li>(borran beavdi)$(cmp,2-1|borranbeavdi)</li></ul></li>
                         <li>hyph-0 = skrevet som bindestrek istedenfor samskriving, eks. <ul><li>Ivgu-vuonas(prop,cmp,hyph-0|Ivguvuonas)</li></ul></li>
                         <li>suf = kasus merket på feil måte (for num og acro), eks <ul><li>NRKas$(acro,suf|NRK:s)</li> <li>1992:ii$(num,suf|1992:i)</li></ul></li>
-                        <li>gen-nom = første del genitiv istedenfor nominativ, eks. <ul><li>stivrralahttu$(cmp,gen-nom|stivralahttu)</li></ul></li>
+                        <li>gen-nom = første del av sammensatt ord er skrevet som genitiv istedenfor nominativ, eks. <ul><li>stivrralahttu$(cmp,gen-nom|stivralahttu)</li></ul></li>
                         <li>i-á = skrevet i istedenfor á, eks. <ul><li>beaividuvvon$(der,i-á|beaiváduvvon)</li></ul></li>
                         <li>mono = skulle vært diftongforenkling, eks. <ul><li>oahpaheaddjiid$(nomag,mono|oahpaheddjiid)</li></ul></li>
                      </ul></dd>
-                  <dt>Flere feil i samme ord skilles med ( ; ), eks.</dt>
-                        <li>Filkamánne$(loan,vowc,i-y;conc,lk-lkk;vowlat,e-i|Fylkkamánni)</li>
+                  <dt>Flere feil i samme ord skilles med ( ; ), eks.</dt><dd>
+                      <ul>  <li>Filkamánne$(loan,vowc,i-y;conc,lk-lkk;vowlat,e-i|Fylkkamánni)</li></ul></dd>
                </dl>
             </section>
             <section>
