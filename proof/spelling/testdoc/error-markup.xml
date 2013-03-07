@@ -39,39 +39,54 @@
                <title>SME</title>
                <dl>
                      <dt>Ordtype (ikke obligatorisk):</dt> 
-                     <dd>
-                                       <table>
-                   <tr><td>loan</td><td>prop</td><td>num</td><td>acro</td></tr>
-                                     </table>
-
-                     dette fordi noen typer ord har mer feilskriving enn andre typer </dd>
+                     <dd>  loan | prop | num | acro</dd>
+					 <dt>forklaring:</dt>
+                     <dd>dette fordi noen typer ord har mer feilskriving enn andre typer </dd>
                      <dt>Spesielle forhold ved ordet (ikke obligatorisk):</dt> 
-                     <dd>
-                                                            <table>
-                   <tr><td>cmp</td><td>nomag</td><td>px</td><td>der</td><td>infl</td></tr>
-                                     </table>
+                     <dd>  cmp | nomag | px | der | infl | foc </dd>
+					 <dt>forklaring:</dt>
 
-                                      dvs at feilen er relatert til dette. Eks. <em>infl</em>: ordet er bøyd som ulikestavelsesstamme når normen er kontrakt stamme. <em>der</em>: dervisjonen er ikke normativ. <em>cmp</em>: largo istedenfor allegro, eller motsatt, eller samskriving der det skulle vært to ord, eller motsatt. </dd>
+                      <dd>Feilen er relatert til dette. Eks. 
+                      <ul>
+                      <li><em>cmp</em>: largo istedenfor allegro, eller motsatt, eller samskriving der det skulle vært to ord, eller motsatt.</li> 
+                      <li><em>nomag</em>: vanligvis er det snakk om manglende diftongforenkling ved NomAg </li> 
+                      <li><em>px</em>: feilen er knytta til bøyninga i et ord med genitiv suffiks </li> 
+                      <li><em>der</em>: derivasjonen er ikke normativ. </li> 
+                      <li><em>infl</em>: ordet er bøyd som ulikestavelsesstamme når normen er kontrakt stamme.</li> 
+                      <li><em>foc</em>: skrivefeil knytta til enklitisering </li> 
+                      </ul></dd>
+
                   <dt>Posisjon: b-ea-tn-a-g-i-in</dt><dd>
-                  <table>
-                   <tr><td>b</td><td>ea</td><td>tn</td><td>a</td><td>g</td><td>i</td><td>in</td></tr>
-                  <tr>
-                  <td>initium</td><td>vokalsentrum</td><td>konsonantsentrum</td><td>latus</td><td>konsonantmargo</td><td>vokalmargo</td><td>finis</td></tr>
-                   <tr><td>coninit</td><td>vowc</td><td>conc</td><td>vowlat</td><td>conm</td><td>vowm</td><td>fin</td></tr>
-                  </table></dd>
-                  <dt>Feiltyper:</dt>
+                      <ul>
+                      <li>b - initium - <em>coninit</em></li>
+                      <li>ea - vokalsentrum - <em>vowc</em></li>
+                      <li>tn - konsonantsentrum - <em>conc</em></li>
+                      <li>a - latus - <em>vowlat</em></li>
+                      <li>g - konsonantmargo - <em>conm</em></li>
+                      <li>i - vokalmargo - <em>vowm</em></li>
+                      <li>in - finis - <em>fin</em></li>
+                      </ul>
+                  </dd>
+                  <dt>Feiltyper – eksempler:</dt>
                   <dd><ul>
                         <li>typo = tastefeil, eks.<ul><li> laet$(typo|leat)</li></ul></li>
                         <li>a-á = skrevet a istedenfor á, eks. <ul><li>radio$(loan,vowc,a-á|rádio)</li><li>Asias$(prop,vowc,a-á|Ásias)</li><li>boarraseamos$(vowlat,a-á|boarráseamos)</li></ul></li>
                         <li>ht-htt = skrevet htt istedenfor ht, eks. <ul><li>gievkkanláhtis$(conc,ht-htt|gievkkanláhttis)</li></ul></li>
                         <li>i-e = skrevet i istedenfor e, eks. <ul><li>sámidikkis$(cmp,vowlat,i-e|sámedikkis)</li></ul></li>
                         <li>1-2 = samskriving istedenfor to ord, eks. <ul><li>ovddosguvlui$(cmp,1-2|ovddos guvlui)</li></ul></li>
-                        <li>2-1 = skrevet som to ord istedenfor samskriving, eks. <ul><li>(borran beavdi)$(cmp,2-1|borranbeavdi)</li></ul></li>
+                        <li>2-1 = skrevet som to ord istedenfor samskriving, eks. <ul><li>nuppi (máilmmi soađi)$(cmp,2-1|máilmmisoađi)</li></ul></li>
                         <li>hyph-0 = skrevet som bindestrek istedenfor samskriving, eks. <ul><li>Ivgu-vuonas(prop,cmp,hyph-0|Ivguvuonas)</li></ul></li>
-                        <li>suf = kasus merket på feil måte (for num og acro), eks <ul><li>NRKas$(acro,suf|NRK:s)</li> <li>1992:ii$(num,suf|1992:i)</li></ul></li>
+                        <li>suf = kasus merket på feil måte (for num, acro og prop), eks <ul><li>NRKas$(acro,suf|NRK:s)</li> <li>1992:ii$(num,suf|1992:i)</li><li>Asker:is$(prop,suf|Askeris)</li></ul></li>
                         <li>gen-nom = første del av sammensatt ord er skrevet som genitiv istedenfor nominativ, eks. <ul><li>astoáiggibagadalli$(cmp,gen-nom|astoáigebagadalli)</li></ul></li>
                         <li>i-á = skrevet i istedenfor á, eks. <ul><li>beaividuvvon$(der,i-á|beaiváduvvon)</li></ul></li>
                         <li>mono = skulle vært diftongforenkling, eks. <ul><li>oahpaheaddjiid$(nomag,mono|oahpaheddjiid)</li></ul></li>
+                        <li>diph = skulle vært diftong, eks. <ul><li>Olgoriikadepartementtas$(loan,vowc,diph|Olgoriikadepartemeanttas)</li></ul></li>
+                        <li>cond = annet bøyningsmønster ved kondisjonalis, eks. <ul><li>čuovošii$(infl,cond,mono|čuvošii)</li>
+                        <li>lágidivčče$(infl,cond|lágidivččii)</li></ul></li>
+                        <li>verb = annet bøyningsmønster ved verbbøyning, eks. <ul><li>oaččuiba$(infl,verb,b-g|oaččuiga)</li></ul></li>
+                        <li>ill = knyttet til illativsuffikset, eks. <ul><li>Størei$(prop,infl,ill,ei-ii|Størii)</li>
+                        <li>kursi$(infl,ill,i-ii|kursii)</li></ul></li>
+                        <li>com = knyttet til komitativsuffikset, eks. <ul><li>áššin$(infl,com,in-iin|áššiin)</li></ul></li>
                      </ul></dd>
                   <dt>Flere feil i samme ord skilles med ( ; ), eks.</dt><dd>
                       <ul>  <li>Filkamánne$(loan,vowc,i-y;conc,lk-lkk;vowlat,e-i|Fylkkamánni)</li></ul></dd>
