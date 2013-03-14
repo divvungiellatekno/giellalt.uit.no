@@ -117,7 +117,7 @@ LOCALE_20x15.png.
 !!Language-specific rules
  
 Will write more in this section a bit later.
-k
+
 Language-specific rules are carried out via python functions, which are decorated by a function in a library that gives them purpose.
 
 {{{
@@ -151,3 +151,10 @@ For example, in North S&aacute;mi, common nouns have one paradigm including sing
  
 !Tag string manipulations
 
+!!Server config
+
+Things to consider:
+
+ * nginx configuration file
+ * init.d script: make sure to pick an unused port, change the config file, and
+   also the path to the pid file, otherwise bad things happen
