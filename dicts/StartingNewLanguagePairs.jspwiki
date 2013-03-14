@@ -83,13 +83,41 @@ It may be that the analysis FST does not match absolutely with the lexicon, and 
  
 For instance, the above examples show &quot;noun&quot; and &quot;verb&quot; as the part of speech in the analyzer, but the lexicon only knows &quot;N&quot; and &quot;V&quot;. Thus, in order to line up these tools, the programmers will need to have a list of all of these things to formulate rules.
 
- 
+!!! Added polish
+
+!! Flags
+
+For languages that have a translation available in the interface, a flag is
+necessary for the menu. Wikipedia provides pretty much all flags in SVG format,
+and automatically converts to PNG. To get a roughly 20 x 15 px flag, use the
+following steps: 
+
+* Find the flag .svg page in wikipedia, e.g. by browsing to the language page or region page, 
+  and click on the flag: http://en.wikipedia.org/wiki/File:Flag_of_Nenets_Autonomous_District.svg
+
+* Look for the link just below: "This image rendered as PNG in other sizes:
+  200px, 500px, 1000px, 2000px."
+
+* Click any size, preferrably the smallest, and alter the url path, to change
+  the width of the flag to 20px:
+
+{{{
+    http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Flag_of_Nenets_Autonomous_District.svg/200px-Flag_of_Nenets_Autonomous_District.svg.png
+
+    ->
+
+    http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Flag_of_Nenets_Autonomous_District.svg/20px-Flag_of_Nenets_Autonomous_District.svg.png
+}}}
+
+Save the file to static/img/flags/, and match the path name so that it is
+LOCALE_20x15.png.
+
 !!!For programmers
  
 !!Language-specific rules
  
 Will write more in this section a bit later.
-
+k
 Language-specific rules are carried out via python functions, which are decorated by a function in a library that gives them purpose.
 
 {{{
