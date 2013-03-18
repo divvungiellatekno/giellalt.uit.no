@@ -17,6 +17,8 @@ svn co https://voikko.svn.sourceforge.net/svnroot/voikko/trunk voikko
 Install the following:
 * pkg-config ≥ 0.23 ({{sudo port install pkg-config}})
 * gettext ≥ 0.17 ({{sudo port install gettext}})
+* libxml ({{sudo port install libxmlxx2}})
+* libarchive ({{sudo port install libarchive}})
 * [Malaga|http://home.arcor.de/bjoern-beutel/malaga/]
 * Suomimalaga - part of the libvoikko checkout, see
   [here|http://voikko.sourceforge.net/source-mac.html] for details
@@ -32,6 +34,14 @@ Install hfst-ospell with the following {{./configure}} options (required to get 
 {{{
 CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure CXXFLAGS="-I/opt/local/include" LDFLAGS="-L/opt/local/lib"
 }}}
+
+10.7 update/hfst-ospell svn r update:
+
+{{{
+./configure --enable-zhfst --enable-xml
+}}}
+
+might be enough (still to be tested with the rest of the tool chain for voikko).
 
 followed by the usual:
 
