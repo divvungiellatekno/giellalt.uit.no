@@ -31,7 +31,7 @@ cd hfst3/
 For MacOS X
 
 {{{
-# For some reason .yy files must be built explicitely on MacOS X
+# For some reason .yy files must be built explicitly on MacOS X
  for yy_file in `find . -name '*.yy'`; do pushd `dirname $yy_file`; make `basename $yy_file .yy`.cc; cp -vf `basename $yy_file .yy`.hh `basename $yy_file .yy`.h; popd; done
 }}}
 
@@ -43,7 +43,7 @@ make: *** No rule to make target `xfst-parser.cc'.  Stop.
 cp: xfst-parser.hh: No such file or directory
 }}}
 
-Don't care about it, it won't stop HFST3 from building.
+Just ignore it, it won't stop HFST3 from building.
 
 {{{
 make
