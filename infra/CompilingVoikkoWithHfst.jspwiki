@@ -35,14 +35,10 @@ The following is most likely not necesary anymore:
 svn co svn://svn.code.sf.net/p/hfst/code/trunk/hfst-ospell
 }}}
 
-Configure hfst-ospell with the following options (the {{enable}} options are required by Voikko, the {{FLAGS}} etc. are triggered by the macports-installed {{libarchive}}):
+Configure hfst-ospell with the following options (the {{enable}} options are required by Voikko):
 
 {{{
-./configure --enable-zhfst --enable-xml \
-  CFLAGS="-I/opt/local/include" \
-  CXXFLAGS="-I/opt/local/include" \
-  LDFLAGS="-L/opt/local/lib" \
-  CPATH=/opt/local/include:/usr/local/include:/usr/include
+./configure --enable-zhfst --enable-xml
 }}}
 
 followed by the usual:
@@ -54,7 +50,7 @@ sudo make install
 
 !!!Build and install LibVoikko
 
-These installation instructions assume we're using the git codebase. Start the build process by cloning corevoikko from git:
+These installation instructions assume we're using the git codebase. Start the build process by cloning {{corevoikko}} from git:
 
 {{{
 git clone https://github.com/voikko/corevoikko.git
@@ -71,6 +67,12 @@ sudo make install
 }}}
 
 Installation in other locations using {{--prefix}} is not recommended, especially for the dependent components. I have not been able to get it to work.
+
+If you get __configure errors__ about it being unble to find hfstospell, use this configure command line instead:
+
+{{{
+PKG_CONFIG_PATH=:/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig ./configure --enable-hfst
+}}}
 
 !!!Gory details - how to compile hfst-ospell and libvoikko as universal binaries for the LibreOffice extension
 
