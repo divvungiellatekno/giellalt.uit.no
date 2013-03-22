@@ -8,7 +8,7 @@ This is a list of programs you will need to use this infrastructure for language
 ** fast harddisk preferred
 * OS/System - you will need unix:
 ** __Mac__ (preferred, supported by the Divvun and GT teams)
-** Any recent __Linux__ distro should be fine, but you will be on your own
+** Any recent __Linux__ distro is fine
 ** __Windows__ doesn't have a unix shell, but there are two alternatives:
 *** installing __Cygwin__. __Warning!__ This is __very briefly__ tested, and
     you will be on your own. See more info further down
@@ -18,7 +18,7 @@ This is a list of programs you will need to use this infrastructure for language
 
 !!!Software to install
 
-!!Mac 
+!!Mac
 * You need a __text editor__ - we recommend
    [SEE|http://www.codingmonkeys.de/subethaedit/index.html]
 
@@ -30,7 +30,11 @@ Then you need a number of tools for the build chain.
 On the Mac, you can get them by running the following command:
 
 {{{
-sudo port install autoconf automake libtool saxon python32 py-yaml subport=py32-yaml
+sudo port install autoconf automake libtool saxon python27 python32 py-yaml \
+subport=py32-yaml py27-pip py27-chardet py27-beautifulsoup py27-unittest2 \
+py27-lxml p5-xml-twig antiword libxslt tidy poppler
+sudo port select python python27
+sudo pip-2.7 install pyth
 }}}
 
 The last tool to support the build chain is [Forrest|http://forrest.apache.org],
@@ -47,15 +51,14 @@ If you want to work with proofing tools, see ''Proofing tools to install'' [here
 
 !!Linux
 
-* You need a __text editor;__ for Linux,
- [gedit|http://projects.gnome.org/gedit/] is ok.
+* You need a __text editor__.
+ [gedit|http://projects.gnome.org/gedit/] or [kate|http://kate-editor.org/] are excellent choices.
 
 * [Saxon HE|http://saxon.sourceforge.net/#F9.4HE] (for working with languages
    with XML lexicons)
-* [Python|http://www.python.org] __3.1+__ and py-yaml (for running automated tests)
+* [Python|http://www.python.org] Both python 2.7 and __3.1+__ and py-yaml (for running automated tests)
 * [Forrest|http://forrest.apache.org] to validate the documentation comments.
   You get it by following [these instructions|forrest-howto.html].
-
 
 * The __linguistic programming tools.__ One, or why not both, of:
 ** [Xerox tools|http://www.fsmbook.com]
@@ -83,6 +86,6 @@ Be warned: Cygwin is slow, and it is not the optimal way of working with our lin
 
 ----
 
-A final note:  
+A final note:
 
 This list is written for people not working at Divvun or Giellatekno. You may also look at [the longer list of what we install for our new workers|install-overview.html] and [the checklist for what new users should know|../admin/checklist.html], and see if some of that is interesting. But this document will give you what you need.
