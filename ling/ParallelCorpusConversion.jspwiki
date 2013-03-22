@@ -33,7 +33,7 @@ Change the name of the document:
 mv wf (press tab, the whole name will appear) dc2012-2.pdf
 
 Make the xsl file:
-convert2xml.pl dc2012-2.pdf
+convert2xml.py dc2012-2.pdf
 
 !!5. Go back to Safari and copy the link to the norwegian document.
 
@@ -53,7 +53,7 @@ Change the name of the document:
 mv wf (press tab, the whole name will appear) sp2012-2.pdf
 
 Make the .xsl file:
-convert2xml.pl sp2012-2.pdf
+convert2xml.py sp2012-2.pdf
 
 (Now you have the saami pages in the left tab of Terminal and the norwegian pages in the right tab)
 
@@ -95,11 +95,9 @@ This entry has to be entered in the saami xsl file (don't fill in "translated fr
 
 Save!
 
-!!12. Rerun convert2xml in the SME Terminál window (note that you can press up in the Terminal untill the right command appears. Add --debug to it. You could also add PERL_UNICODE=D at the start of the command to have sami characters correctly rendered):
+!!12. Rerun convert2xml in the SME Terminál window (note that you can press up in the Terminal untill the right command appears.):
 
-convert2xml.pl --debug dc2012-2.pdf
-
-(PERL_UNICODE=D convert2xml.pl --debug c2012-2.pdf)--> to have saami letters rendered correctly
+convert2xml.py dc2012-2.pdf
 
 
 !!13. Write svn stat and the result is:
@@ -116,7 +114,7 @@ svn ci -m "your svn message"
 
 !!16. Rerun convert2xml in the NOB Terminal window (note that you can press up in the Terminal untill the right command appears. Add --debug to it.):
 
-convert2xml.pl --debug sp2012-2.pdf
+convert2xml.py sp2012-2.pdf
 
 !!17. Write svn stat and the result is:
 ?	sp2012-2.pdf
