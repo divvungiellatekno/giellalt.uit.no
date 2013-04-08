@@ -2,9 +2,9 @@
  
 NB: Neahttadigisánit (sme, sma, etc.) or sanit.oahpa.no/sánit.oahpa.no is currently on gtoahpa, but other services are located on gtlab: sanat.oahpa.no, valks.oahpa.no. For these you will need to log into gtlab, though the following examples may show gtoahpa as the hostname in the command prompt
 
-1.) Log in to the server via SSH as your own user account
+1.) ''Log in to the server via SSH as your own user account''
 
-2.) Switch to the NDS user account.
+2.) ''Switch to the NDS user account.''
  
 Note that when logged in as the NDS user, the python virtualenv should be loaded automatically, and you will see this before the command prompt:
 
@@ -22,33 +22,50 @@ If it is not available, do the following commands from the home directory of nea
 
 When you see (neahtta_env) in the command prompt, continue.
 
-3.) {{{ cd ~/gtsvn/ ; svn up words }}}
+3.) ''Go to the svn catalogue and fetch the latest version of the source files:''
+{{{
+cd ~/gtsvn/ 
+svn up words # for sme, sma, fkv
+svn up langs # for all other dictionaries
+     }}}
  
-4.) {{{ cd ~/kursadict/dicts/ ; sh make_dict.sh }}}
-
-NB: you may be looking for sanat_make_dict.sh instead, if you are updating sanat.oahpa.no; or valks_make_dict.sh.
+4.) ''Run the relevant shell script for compiling the dictionary files:''
+{{{
+cd ~/kursadict/dicts/ 
+sh make_dict.sh # for sma, sme
+sh sanat_make_dict.sh # for liv, olo, fkv
+sh valks_make_dict.sh # for myv, mdf
+      }}}
  
-5.) check that there were no errors, also wc -l *.xml to make sure there is content
+5.) ''Check that there were no errors, also wc -l *.xml to make sure there is content''
  
 Also, sometimes it's a good idea to run the interactive shell with the app, just to make sure that all of the files are able to be parsed with no errors before restarting the actual production service:
  
-6.) {{{ cd ~/kursadict/ ; python manage.py shell }}}
+6.) ''Run the manage.py:''
+
+{{{ cd ~/kursadict/ 
+python manage.py shell 
+NDS_CONFIG=configs/valks.config.yaml python manage.py shell # for myv, mdf
+NDS_CONFIG=configs/sanat.config.yaml python manage.py shell # for liv, olo, fkv    
+    }}}
  
-If everything is good and there are no errors, you'll see the command prompt. Exit, and restart the service (as another user):
+If everything is good and there are no errors, you'll see the command prompt.
 
-7.) {{{ sudo service neahttadigisanit stop }}}
+7.)  ''Exit, and restart the service (as another user):''
 
-NB: there are other service names for the other dictionaries:
+Note that each dictionary group (sanit, sanat, valks) run different processes, restart only the one you need:
 
-* nds-sanat
-* nds-valks
+{{{
+  sudo service neahttadigisanit stop 
+  sudo service neahttadigisanit start 
+  
+  sudo service nds-sanat stop  
+  sudo service nds-sanat start 
 
-8.) {{{ sudo service neahttadigisanit start }}}
-
-NB: there are other service names for the other dictionaries:
-
-* nds-sanat
-* nds-valks
+  sudo service nds-valks stop  
+  sudo service nds-valks start 
+ }}}
+ 
  
 The reason this is done in two separate steps is just to make sure everything has come down before starting it up again. Usually advisable to watch top.
 
