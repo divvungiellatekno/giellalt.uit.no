@@ -25,8 +25,10 @@ When you see (neahtta_env) in the command prompt, continue.
 3.) ''Go to the svn catalogue and fetch the latest version of the source files:''
 {{{
 cd ~/gtsvn/ 
-svn up words # for sme, sma, fkv
-svn up langs # for all other dictionaries
+svn up words 
+ # for sme, sma, fkv
+svn up langs 
+ # for all other dictionaries
      }}}
  
 4.) ''Run the relevant shell script for compiling the dictionary files:''
@@ -43,10 +45,12 @@ Also, sometimes it's a good idea to run the interactive shell with the app, just
  
 6.) ''Run the manage.py:''
 
-{{{ cd ~/kursadict/ 
+{{{cd ~/kursadict/ 
 python manage.py shell 
-NDS_CONFIG=configs/valks.config.yaml python manage.py shell # for myv, mdf
-NDS_CONFIG=configs/sanat.config.yaml python manage.py shell # for liv, olo, fkv    
+NDS_CONFIG=configs/valks.config.yaml python manage.py shell 
+ # for myv, mdf
+NDS_CONFIG=configs/sanat.config.yaml python manage.py shell 
+ # for liv, olo, fkv    
     }}}
  
 If everything is good and there are no errors, you'll see the command prompt.
