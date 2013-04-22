@@ -11,19 +11,7 @@
 	<section>
 	    <title>Passwordless login by using ssh</title>
 	    <p>
-		To get cvs ssh working without password prompting, stand in the home directory of your own machine, and write: <br />
-		<code>ssh-keygen -t rsa</code> <br />
-		<em>just type enter to all questions</em> <br />
-		<code>chmod 0644 $HOME/.ssh/id_rsa.pub</code> <br />
-		then login to victorio, and write <br />
-		<code>mkdir $HOME/.ssh</code> <br />
-		<code>chmod 700 $HOME/.ssh</code> <br />
-		then logout from victorio, and write <br />
-		<code>scp $HOME/.ssh/id_rsa.pub &lt;user&gt;@victorio.uit.no:.ssh/authorized_keys2</code> <br />
-	    </p>
-	    <p>
-		Repeat the above procedure for the other machines that you would like to have the same function.
-	    </p>
+            <a href="http://www.debian-administration.org/articles/152">Here is a well written guide.</a>
 	</section>
     </body>
 </document>
