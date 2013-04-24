@@ -41,7 +41,7 @@ Eit grovt overslag kunne vere ca 6 månadsverk pr språk.
 # Sentence align (__Ciprian, Børre?__)
 # Word align (__Francis__)
 ## Make parallel wordlists
-## Check for relevant vocabulary (nob frequency deviant from normal, i.e. nob words with higher frequency in the material than in a big reference corpus. What we would expect is (freq in big ref corpus / wordcount of ref corpus) * wordcount of material
+## Check for relevant vocabulary (nob frequency deviant from normal, i.e. nob words with higher frequency in the material than in a big reference corpus. What we would expect is (freq in big ref corpus / wordcount of ref corpus) x wordcount of material
 # Manual lexicographic work (__Lexicographers__)
 ## Go through the word pair lists and evaluate them
 ## The goal here is not a normative evaluation, but a descriptive: 
@@ -87,7 +87,7 @@ nob-sme files are in the folder {{$BIGGIES/gt/sme/corp/forvaltningsordbok/}}.
 # Sentence align (__Ciprian, Børre?__)
 # Word align (__Francis__)
 ## Make parallel wordlists
-## Check for relevant vocabulary (nob frequency deviant from normal, i.e. nob words with higher frequency in the material than in a big reference corpus. What we would expect is (freq in big ref corpus / wordcount of ref corpus) * wordcount of material
+## Check for relevant vocabulary (nob frequency deviant from normal, i.e. nob words with higher frequency in the material than in a big reference corpus. What we would expect is (freq in big ref corpus / wordcount of ref corpus) x wordcount of material
 # Manual lexicographic work (__Lexicographers__)
 ## Go through the word pair lists and evaluate them
 ## The goal here is not a normative evaluation, but a descriptive: 
@@ -135,6 +135,7 @@ nob-sme files are in the folder {{$BIGGIES/gt/sme/corp/forvaltningsordbok/}}.
 
 !How to convert files to xml
 
+{{{
 Inside $GTFREE:
 find orig -type f | grep -v .svn | grep -v .xsl | grep -v .DS_Store | xargs convert2xml2.pl
 
@@ -154,4 +155,4 @@ java -Xmx2048m net.sf.saxon.Transform -it main ../corpus/get-empty-docs.xsl inFi
 This results in a file out_emptyFiles/correp_emptyFiles.xml
 
 The second line tells how many empty files there are.
-
+}}}
