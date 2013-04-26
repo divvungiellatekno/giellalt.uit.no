@@ -1,78 +1,77 @@
 !!!Updating the lexica
  
-NB: Neahttadigisánit (sme, sma, etc.) or sanit.oahpa.no/sánit.oahpa.no is currently on gtoahpa, but other services are located on gtlab: sanat.oahpa.no, valks.oahpa.no. For these you will need to log into gtlab, though the following examples may show gtoahpa as the hostname in the command prompt
+NB: Neahttadigisánit (sme, sma, etc.) or sanit.oahpa.no/sánit.oahpa.no is
+currently on gtoahpa, but other services are located on gtlab: sanat.oahpa.no,
+valks.oahpa.no. For these you will need to log into gtlab, though the following
+examples may show gtoahpa as the hostname in the command prompt
 
 1.) ''Log in to the server via SSH as your own user account''
 
 2.) ''Switch to the NDS user account.''
  
-Note that when logged in as the NDS user, the python virtualenv should be loaded automatically, and you will see this before the command prompt:
+Note that when logged in as the NDS user, the python virtualenv should be
+loaded automatically, and you will see this before the command prompt:
 
 {{{
 	$ sudo su neahtta
-    (neahtta_env)[neahtta@gtoahpa ~]$ 
+    (env)[neahtta@gtweb ~]$ 
 }}}
 
-If it is not available, do the following commands from the home directory of neahtta: 
+If it is not available, do the following commands from the home directory of
+neahtta: 
 
 {{{
 	$ cd ~
-	$ source kursa_env/bin/activate
+	$ source env/bin/activate
 }}}
 
-When you see (neahtta_env) in the command prompt, continue.
+When you see (env) in the command prompt, continue.
 
-3.) ''Go to the svn catalogue and fetch the latest version of the source files:''
-{{{
-cd ~/gtsvn/ 
-svn up words 
- # for sme, sma, fkv
-svn up langs 
- # for all other dictionaries
-     }}}
+3.) {{{ cd ~/gtsvn/ ; svn up words langs }}}
  
-4.) ''Run the relevant shell script for compiling the dictionary files:''
-{{{
-cd ~/kursadict/dicts/ 
-sh make_dict.sh 
- # for sma, sme
-sh sanat_make_dict.sh 
- # for liv, olo, fkv
-sh valks_make_dict.sh 
- # for myv, mdf
-      }}}
- 
-5.) ''Check that there were no errors, also wc -l *.xml to make sure there is content''
- 
-Also, sometimes it's a good idea to run the interactive shell with the app, just to make sure that all of the files are able to be parsed with no errors before restarting the actual production service:
- 
-6.) ''Run the manage.py:''
+4.) {{{ cd ~/neahtta/dicts/ ; make TARGET }}}
 
-{{{cd ~/kursadict/ 
-python manage.py shell 
-NDS_CONFIG=configs/valks.config.yaml python manage.py shell 
- # for myv, mdf
-NDS_CONFIG=configs/sanat.config.yaml python manage.py shell 
- # for liv, olo, fkv    
-    }}}
+There are several targets depending on the name of the project. Since we are only concerned about lexica, and do not need to build FSTs here, we are using only the lexicon-building targets:
+
+ * make sanat-lexica
+ * make sanit-lexica
+ * make baakoeh-lexica
+ * ... etc.
+
+5.) check that there were no errors, also wc -l *.xml to make sure there is content in the files.
+
+If there is an error in an XML file, Saxon will print out the file name
+and line that was problematic.
  
-If everything is good and there are no errors, you'll see the command prompt.
+Also, sometimes it's a good idea to run the interactive shell with the
+app, just to make sure that all of the files are able to be parsed with
+no errors before restarting the actual production service:
+ 
+6.) {{{ cd ~/neahtta/ ; NDS_CONFIG=config/CONFIGFILE python manage.py shell }}}
 
-7.)  ''Exit, and restart the service (as another user):''
-
-Note that each dictionary group (sanit, sanat, valks) run different processes, restart only the one you need:
+Here, replace CONFIGFILE with the relevant file in configs/ that you are working on. For example:
 
 {{{
-  sudo service neahttadigisanit stop 
-  sudo service neahttadigisanit start 
-  
-  sudo service nds-sanat stop  
-  sudo service nds-sanat start 
+	NDS_CONFIG=configs/sanat.config.yaml python manage.py shell
+}}}
+ 
+If everything is good and there are no errors, you'll see the python
+command prompt. Exit, and restart the service (as another user):
 
-  sudo service nds-valks stop  
-  sudo service nds-valks start 
- }}}
+7.) {{{ sudo systemctl stop SERVICE.service }}}
+
+Replace SERVICE with the relevant service name. For example:
+
+{{{ 
+	sudo systemctl stop nds-sanat.service
+}}}
+
+8.) {{{ sudo systemctl start nds-sanat.service }}}
+
+NB: there are other service names for the other dictionaries:
+
  
- 
-The reason this is done in two separate steps is just to make sure everything has come down before starting it up again. Usually advisable to watch top.
+The reason this is done in two separate steps is just to make sure
+everything has come down before starting it up again. Usually advisable
+to watch top.
 
