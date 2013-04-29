@@ -16,8 +16,8 @@ deretter i denne fila:
 
 kommenter ut noen tagger slik at det blir slik:
 
-%0 (<-) %+1,
-%0 (<-) %+2,
+%0 (<-) %+Hom1,
+%0 (<-) %+Hom2,
 
 !! Felles for sme og sma
 
@@ -33,8 +33,8 @@ Her er en liste over taggene det gjelder, og filene de er i (utropstegnet viser 
         tag-not-save.regex - 
         !0 (<-) %+Use%/NVD,
         remove-variant-homonym-tags.regex
-        !0 <- %+1,
-        !0 <- %+2,
+        !0 <- %+Hom1,
+        !0 <- %+Hom2,
         !0 <- %+v1, 
         !0 <- %+v2, 
         !0 <- %+v3, 
@@ -49,8 +49,8 @@ Her er en liste over taggene det gjelder, og filene de er i (utropstegnet viser 
         !0 (<-) %+Allegro ;
         
         tag-not-save-but-oahpa.regex
-        !0 (<-) %+1,
-        !0 (<-) %+2,
+        !0 (<-) %+Hom1,
+        !0 (<-) %+Hom2,
         !+N (<-) %+N %+NomAg,
         0 (<-) %+South ,
         !0 (<-) %+G3 ,
@@ -60,8 +60,8 @@ Her er en liste over taggene det gjelder, og filene de er i (utropstegnet viser 
 Taggene nedenfor skal være med i output fra {{dict-sma/sme.fst}} for å få riktig bøyningsparadigme til homonyme lemmaer. De to øverste gjelder sma, de nederste sme:
 
 {{{
-+1
-+2
++Hom1
++Hom2
 
 +G3
 +NomAg
@@ -117,17 +117,17 @@ For å teste at alt er i orden, analyser følgende ord, slik (navna på fst-ene 
 !! sma
 
 * {{dict-sma.fst}} (dvs. {{sma.fst}})
-** {{govledh}} skal gi {{+1}} og {{+2}} i analysen  
+** {{govledh}} skal gi {{+Hom1}} og {{+Hom2}} i analysen  
 ** {{lookup sma/bin/sma.fst}}
-*** {{govledh	govledh	+2+V+IV+Inf}}
-*** {{govledh	govledh	+1+V+TV+Inf}}
+*** {{govledh	govledh	+Hom2+V+IV+Inf}}
+*** {{govledh	govledh	+Hom1+V+TV+Inf}}
 * {{isma-dict.fst}} (dvs. {{isma-norm.fst}})
 ** skal gi slike analyser:
 
 {{{
-echo govledh+1+V+Inf | lookup sma/bin/isma-norm.fst
-govledh+1+V+Inf govledh
-govledh+2+V+Inf govledh
+echo govledh+Hom1+V+Inf | lookup sma/bin/isma-norm.fst
+govledh+Hom1+V+Inf govledh
+govledh+Hom2+V+Inf govledh
 }}}
 
 !! sme
