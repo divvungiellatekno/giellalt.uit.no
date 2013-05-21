@@ -2,11 +2,25 @@
 
 __NB!__ This documentation is likely outdated, and should be taken as a guide to new efforts only. Please update the document as necessary when building the extension again.
 
-First, ensure that you have universal binaries of the things that both {{hfst-ospell}} and {{libvoikko}} depends on (specify the +universal option in MacPorts). For {{hfst-ospell}} that means the following libraries (some of these might be on your system already, just check that they are universal binaries):
+First, ensure that you have universal binaries of the things that both {{hfst-ospell}} and {{libvoikko}} depends on by specifying the {{+universal}} option in MacPorts. Or make the {{+universal}} variant default by adding it to the file:
+
+{{{
+/opt/local/etc/macports/variants.conf
+}}}
+
+(see [http://trac.macports.org/wiki/howto/buildUniversal] for more details,
+including how to add more architectures for the universal build.)
+
+__NB!__ LibreOffice 4 still supports MacOSX on PPC all the way back to Tiger. To
+ensure that the Voikko plugin with hfst support actually runs on those systems,
+it should probably be built on such a system (assuming that the compiled plugin
+is more likely forward compatible than backwards compatible). Also, presently the MacOSX builds of LibreOffice (and OpenOffice) are 32-bit only, thus all libraries need to be available for that architecture.
+
+For {{hfst-ospell}} the required dependencies mean the following libraries (some of these might be on your system already, just check that they are universal binaries):
 
 * libarchive
 * liblzma
-* libxml2
+* libxml++2
 * libz
 * libiconv
 * libcrypto
@@ -68,7 +82,7 @@ sudo make install CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
 
 It is possible that these can be simplified a bit, but at least they work. Please note that {{--disable-dependency-tracking}} is __required__ when configuring for a universal binary!
 
-!Lion and later(?) (≥ 10.7) build
+!Lion (= 10.7) build
 
 The XCode development tool, libraries etc was moved in Lion, thus the SDK path has to be changed for the build to work. In addition, the lowest OS version supported is 10.6. The updated configure command looks like the following:
 
@@ -80,6 +94,26 @@ CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
 		-L/usr/local/lib -L/opt/local/lib -lstdc++-static -isysroot \
 		/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk \
 		-arch i386 -arch x86_64 -mmacosx-version-min=10.6" \
+	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" \
+	--enable-static \
+	--disable-dependency-tracking \
+	--disable-shared
+}}}
+
+Similar changes need to be made to the make command.
+
+!Mountain Lion (= 10.8) build
+
+There are stricter rules for building static libraries under 10.8: minimum system version must be 10.7, and no static linking of core libraries. The updated configure command looks like the following:
+
+{{{
+CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
+	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
+	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
+	CFLAGS="-I/usr/local/include -I/opt/local/include \
+	-L/usr/local/lib -L/opt/local/lib -isysroot \
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk \
+	-arch i386 -arch x86_64 -mmacosx-version-min=10.7" \
 	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" \
 	--enable-static \
 	--disable-dependency-tracking \
