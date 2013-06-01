@@ -188,21 +188,21 @@ ifeq "$(PLATFORM)" "macosx"
 		-Wl,-dylib_file,@loader_path/libreg.dylib.3:'/Applications/LibreOffice.app/Contents/ure-link/lib/libreg.dylib.3' \
 		-Wl,-dylib_file,@loader_path/libuno_salhelpergcc3.dylib.3:'/Applications/LibreOffice.app/Contents/ure-link/lib/libuno_salhelpergcc3.dylib.3' \
 		-Wl,-dylib_file,@loader_path/libxmlreader.dylib:'/Applications/LibreOffice.app/Contents/ure-link/lib/libxmlreader.dylib' \
-		/Users/adminis/alibs/libvoikko.a     \
-		/Users/adminis/alibs/libhfstospell.a \
-		/Users/adminis/alibs/libarchive.a    \
-		/Users/adminis/alibs/libbz2.a        \
-		/Users/adminis/alibs/libcrypto.a     \
-		/Users/adminis/alibs/libgiomm-2.4.a  \
-		/Users/adminis/alibs/libglib-2.0.a   \
-		/Users/adminis/alibs/libglibmm-2.4.a \
-		/Users/adminis/alibs/libiconv.a      \
-		/Users/adminis/alibs/libintl.a       \
-		/Users/adminis/alibs/liblzma.a       \
-		/Users/adminis/alibs/libsigc-2.0.a   \
-		/Users/adminis/alibs/libxml2.a       \
-		/Users/adminis/alibs/libxml++-2.6.a  \
-		/Users/adminis/alibs/libz.a
+		/Users/$USER/alibs/libvoikko.a     \
+		/Users/$USER/alibs/libhfstospell.a \
+		/Users/$USER/alibs/libarchive.a    \
+		/Users/$USER/alibs/libbz2.a        \
+		/Users/$USER/alibs/libcrypto.a     \
+		/Users/$USER/alibs/libgiomm-2.4.a  \
+		/Users/$USER/alibs/libglib-2.0.a   \
+		/Users/$USER/alibs/libglibmm-2.4.a \
+		/Users/$USER/alibs/libiconv.a      \
+		/Users/$USER/alibs/libintl.a       \
+		/Users/$USER/alibs/liblzma.a       \
+		/Users/$USER/alibs/libsigc-2.0.a   \
+		/Users/$USER/alibs/libxml2.a       \
+		/Users/$USER/alibs/libxml++-2.6.a  \
+		/Users/$USER/alibs/libz.a
 		$(INSTALL_NAME_URELIBS)  $@
 else
 }}}
@@ -217,6 +217,7 @@ The core of the changes is the following:
   that we don't link using non-working calls to the dynamic libraries
 * remove the steps to build {{build/voikko.map}} and remove the inclusion of it
   in the linking command
+* remember to replace {{$USER}} above with the real user account short-name!
 
 NOW - finally - you can run {{make oxt}} and you will get a statically linked
 LibreOffice extension for the Voikko speller ''with'' enabled support for
