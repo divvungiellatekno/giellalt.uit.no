@@ -66,7 +66,18 @@ Replace SERVICE with the relevant service name. For example:
 	sudo systemctl stop nds-sanat.service
 }}}
 
+__Note:__ On gtoahpa, the commant is not ''systemctl'', but ''service''.
+The command is thus:
+
+{{{ 
+sudo service nds-sanit stop 
+}}}
+ 
+
 8.) {{{ sudo systemctl start nds-sanat.service }}}
+
+Again, on gtoahpa, the command does not use 'systemctl'', but is:
+{{sudo service nds-sanat start}}.
 
 NB: there are other service names for the other dictionaries:
 
@@ -74,4 +85,16 @@ NB: there are other service names for the other dictionaries:
 The reason this is done in two separate steps is just to make sure
 everything has come down before starting it up again. Usually advisable
 to watch top.
+
+
+!!! More CENTOS
+
+In order to start with reboot:
+
+
+CENTOS
+chkconfig --list  (list all)
+chkconfig SERVICE on
+
+where SERVICE is a variable for nds-sanit.service, etc.
 
