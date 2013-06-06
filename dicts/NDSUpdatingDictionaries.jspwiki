@@ -14,31 +14,43 @@ loaded automatically, and you will see this before the command prompt:
 
 {{{
 	$ sudo su neahtta
-    (env)[neahtta@gtweb ~]$ 
+	(env)[neahtta@gtweb ~]$ 
 }}}
 
 If it is not available, do the following commands from the home directory of
 neahtta: 
 
 {{{
-	$ cd ~
-	$ source env/bin/activate
+	cd ~
+	source env/bin/activate
 }}}
 
 When you see (env) in the command prompt, continue.
 
-3.) {{{ cd ~/gtsvn/ ; svn up words langs }}}
+3.) ''Go to the gtsvn catalogue and update the files from svn''
+
+{{{
+	cd ~/gtsvn/ ; svn up words langs
+}}}
  
-4.) {{{ cd ~/neahtta/dicts/ ; make TARGET }}}
+4.) ''Then, go to the dicts cataloge and compile the dictionaries.''
 
-There are several targets depending on the name of the project. Since we are only concerned about lexica, and do not need to build FSTs here, we are using only the lexicon-building targets:
+{{{
+	cd ~/neahtta/dicts/ ; make TARGET
+}}}
 
- * make sanat-lexica
- * make sanit-lexica
- * make baakoeh-lexica
- * ... etc.
+There are several targets depending on the name of the project. Since we 
+are only concerned about lexica, and do not need to build FSTs here, 
+we are using only the lexicon-building targets:
 
-5.) check that there were no errors, also wc -l *.xml to make sure there is content in the files.
+{{{
+	make sanat-lexica	
+	make sanit-lexica	
+	make baakoeh-lexica
+	... etc.
+}}}
+
+5.) ''Check that there were no errors, also wc -l *.xml to make sure there is content in the files.''
 
 If there is an error in an XML file, Saxon will print out the file name
 and line that was problematic.
@@ -46,8 +58,12 @@ and line that was problematic.
 Also, sometimes it's a good idea to run the interactive shell with the
 app, just to make sure that all of the files are able to be parsed with
 no errors before restarting the actual production service:
- 
-6.) {{{ cd ~/neahtta/ ; NDS_CONFIG=configs/CONFIGFILE python manage.py shell }}}
+
+6.) ''Go to neahtta and configure the dictionaries''
+
+{{{ 
+	cd ~/neahtta/ ; NDS_CONFIG=configs/CONFIGFILE python manage.py shell 
+}}}
 
 Here, replace CONFIGFILE with the relevant file in configs/ that you are working on. For example:
 
@@ -56,30 +72,43 @@ Here, replace CONFIGFILE with the relevant file in configs/ that you are working
 }}}
  
 If everything is good and there are no errors, you'll see the python
-command prompt. Exit, and restart the service (as another user):
+command prompt. 
 
-7.) {{{ sudo systemctl stop SERVICE.service }}}
 
-Replace SERVICE with the relevant service name. For example:
+7.) ''Exit, and restart the service (as another user).''
 
-{{{ 
-	sudo systemctl stop nds-sanat.service
-}}}
+__On gtweb (sanat, valks...):__
 
-__Note:__ On gtoahpa, the commant is not ''systemctl'', but ''service''.
-The command is thus:
+''First stop...''
 
 {{{ 
-sudo service nds-sanit stop 
+	sudo systemctl stop SERVICE.service 
 }}}
- 
 
-8.) {{{ sudo systemctl start nds-sanat.service }}}
+Replace SERVICE with the relevant service name 
+(sanat, valks, muter, kyv, vada). For example:
 
-Again, on gtoahpa, the command does not use 'systemctl'', but is:
-{{sudo service nds-sanat start}}.
+{{{
+	sudo systemctl stop nds-sanat.service 
+}}}
 
-NB: there are other service names for the other dictionaries:
+''... then restart''
+
+{{{ 
+	sudo systemctl start nds-sanat.service 
+}}}
+
+__On gtoahpa (sanit, baakoeh):__
+
+
+
+The commant is not ''systemctl'', but ''service''.
+The command is thus (with either sanit or baakoeh:
+
+{{{
+	sudo service nds-sanit stop
+	sudo service nds-sanit start
+}}}
 
  
 The reason this is done in two separate steps is just to make sure
@@ -87,14 +116,14 @@ everything has come down before starting it up again. Usually advisable
 to watch top.
 
 
-!!! More CENTOS
+!!! More comments on the CENTOS (gtoahpa) operative system
 
-In order to start with reboot:
+In order to start with reboot on CENTOS:
 
+{{{
+	chkconfig --list  (list all)
+	chkconfig SERVICE on
+}}}
 
-CENTOS
-chkconfig --list  (list all)
-chkconfig SERVICE on
-
-where SERVICE is a variable for nds-sanit.service, etc.
+where __SERVICE__ is a variable for nds-sanit.service, etc.
 
