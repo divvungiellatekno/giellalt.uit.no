@@ -2,128 +2,761 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document>
-   <header>
-      <title>Error markup</title>
-   </header>
-   <body>
-      <p>We want to extend (some of) the corpus files with markup for spelling and other errors, to use them as gold
-      standards for testing our spellers (and in the future other tools as well). The markup is done manually, and needs
-      to follow certain rules.</p>
-      <section>
-         <title>Markup TYPES</title>
-         <p>We differentiate between different types of errors that people make, depending on the type of analysis
-         needed to detect and correct the error. We also use the annotation for errors in learner texts.</p>
-         <section>
-            <title>Unclassified errors - wrong§correct</title>
-            <p>Errors of unknown type. By default such errors will be treated as spelling errors (see below). In the
-            resulting xml, the name of the element will be &lt;error&gt;.</p>
-         </section>
-         <section>
-            <title>Orthographic errors, non-words - wrong$(error classification|correct)</title>
-            <p>Traditional misspellings confined to single (error) strings, that is, errors that don't need an analysis
-            of the surrounding words to be detected and corrected. In the resulting xml, the element is named
-            &lt;errorort&gt;. These errors do always lead to non-words in the text, such that a speller should be able
-            to detect them.</p>
-            <dl>
-               <dt>Gammel annotering: Attributes:</dt>
-               <dd><dl>
-                     <dt>pos</dt>
-                     <dd> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem | resip | indef |
-                     pcle | prop | typo | mix | x )</dd>
-                     <dt>errtype</dt>
-                     <dd>The value of this attribute is language specific. For details, see below.</dd>
-                  </dl></dd>
-            </dl>
-            <p>Language specific details:</p>
+    <header>
+        <title>Error markup</title>
+    </header>
+    <body>
+        <p>We want to extend (some of) the corpus files with markup for spelling and other errors, to use them as gold
+            standards for testing our spellers (and in the future other tools as well). The markup is done manually, and needs
+            to follow certain rules.</p>
+        <section>
+            <title>Markup TYPES</title>
+            <p>We differentiate between different types of errors that people make, depending on the type of analysis
+            needed to detect and correct the error. We also use the annotation for errors in learner texts.</p>
             <section>
-               <title>SME</title>
-               <dl>
-                     <dt>Ordklasse (ikke obligatorisk):</dt> 
-                     <dd>  loan | prop | num | acro <br/>
-                     (dette fordi noen typer ord har mer feilskriving enn andre typer) </dd>
-                     <dt>Spesielle forhold ved ordet (ikke obligatorisk):</dt> 
-                     <dd>  cmp | nomag | px | der | infl | foc<br/>
-                     Feilen er relatert til dette. Eks. 
-                      <ul>
-                      <li><em>cmp</em>: sammensetningsfeil - largo istedenfor allegro, eller motsatt, eller samskriving
-                         der det skulle vært to ord, eller motsatt.</li> 
-                      <li><em>nomag</em>: vanligvis er det snakk om manglende diftongforenkling ved NomAg </li> 
-                      <li><em>px</em>: feilen er knytta til bøyninga i et ord med genitiv suffiks </li> 
-                      <li><em>der</em>: derivasjonsfeil - f.eks. deriv. følger ikke normen </li> 
-                      <li><em>infl</em>: feil knyttet til bøyingsmorfologi - ordet er bøyd som ulikestavelsesstamme
-                         når normen er kontrakt stamme.</li> 
-                      <li><em>foc</em>: skrivefeil knytta til enklitisering </li> 
-                      </ul></dd>
-
-                  <dt>Posisjon: b-ea-tn-a-g-i-in</dt><dd>
-                      <ul>
-                      <li>b - initium - <em>coninit</em></li>
-                      <li>ea - vokalsentrum - <em>vowc</em></li>
-                      <li>tn - konsonantsentrum - <em>conc</em></li>
-                      <li>a - latus - <em>vowlat</em></li>
-                      <li>g - konsonantmargo - <em>conm</em></li>
-                      <li>i - vokalmargo - <em>vowm</em></li>
-                      <li>in - finis - <em>fin</em></li>
-                      </ul>
-                  </dd>
-                  <dt>Posisjon i sammensatte hvor første ord ender på konsonant: b-a-j-á-sš-a-dd-a-n</dt><dd>
-                      <ul>
-                       <li>b - initium - <em>coninit</em></li>
-                      <li>a - vokalsentrum - <em>vowc</em></li>
-                      <li>j - konsonantsentrum - <em>conc</em></li>
-                      <li>á - latus - <em>vowlat</em></li>
-                      <li>sš - konsonantgruppe i ordgrense - <em>conwb</em></li>
-                      <li>a - vokalsentrum - <em>vowc</em></li>
-                      <li>dd - konsonantsentrum - <em>conc</em></li>
-                      <li>a - latus - <em>vowlat</em></li>
-                      <li>n - finis - <em>fin</em></li>
-                      </ul>
-                  </dd>
-                  <dt>Feiltyper – eksempler:</dt>
-                  <dd><ul>
-                        <li>typo = tastefeil, eks.<ul><li> laet$(typo|leat)</li></ul></li>
-                        <li>a-á = skrevet a istedenfor á, eks. <ul><li>radio$(loan,vowc,a-á|rádio)</li><li>Asias$(prop,vowc,a-á|Ásias)</li><li>boarraseamos$(vowlat,a-á|boarráseamos)</li></ul></li>
-                        <li>ht-htt = skrevet ht istedenfor htt, eks. <ul><li>gievkkanláhtis$(conc,ht-htt|gievkkanláhttis)</li></ul></li>
-                        <li>i-e = skrevet i istedenfor e, eks. <ul><li>sámidikkis$(cmp,vowlat,i-e|sámedikkis)</li></ul></li>
-                        <li>i-á = skrevet i istedenfor á, eks. <ul><li>beaividuvvon$(der,i-á|beaiváduvvon)</li></ul></li>
-                        <li>1-2 = samskriving istedenfor to ord, eks. <ul><li>ovddosguvlui$(cmp,1-2|ovddos guvlui)</li></ul></li>
-                        <li>2-1 = skrevet som to ord istedenfor samskriving, eks. <ul><li>nuppi (máilmmi soađi)$(cmp,2-1|máilmmisoađi)</li></ul></li>
-                        <li>hyph-0 = skrevet som bindestrek istedenfor samskriving, eks. <ul><li>dálkkádat-rievdan$(cmp,hyph-0|dálkkádatrievdan)</li></ul></li>
-                        <li>0-hyph = samskriving istedenfor bindestrek, eks.  <ul><li>epoastta$(loan,cmp,0-hyph|e-poastta)</li></ul></li>
-                        <li>suf = kasus merket på feil måte (for num, acro og prop), eks <ul><li>NRKas$(acro,suf|NRK:s)</li> <li>1992:ii$(num,suf|1992:i)</li><li>Asker:is$(prop,suf|Askeris)</li></ul></li>
-                        <li>gen-nom = første del av sammensatt ord er skrevet som genitiv istedenfor nominativ, eks. <ul><li>astoáiggibagadalli$(cmp,gen-nom|astoáigebagadalli)</li></ul></li>
-                        <li>mono = skulle vært diftongforenkling, eks. <ul><li>oahpaheaddjiid$(nomag,mono|oahpaheddjiid)</li></ul></li>
-                        <li>diph = skulle vært diftong, eks. <ul><li>Olgoriikadepartementtas$(loan,vowc,diph|Olgoriikadepartemeanttas)</li></ul></li>
-                        <li>cond = annet bøyningsmønster ved kondisjonalis, eks. <ul><li>čuovošii$(infl,cond,mono|čuvošii)</li>
-                        <li>lágidivčče$(infl,cond|lágidivččii)</li></ul></li>
-                        <li>verb = annet bøyningsmønster ved verbbøyning, eks. <ul><li>oaččuiba$(infl,verb|oaččuiga)</li></ul></li>
-                        <li>ill = knyttet til illativsuffikset, eks. <ul><li>Størei$(prop,infl,ill,ei-ii|Størii)</li>
-                        <li>kursi$(infl,ill,i-ii|kursii)</li></ul></li>
-                        <li>com = knyttet til komitativsuffikset. Her har jeg merka av posisjon også fordi det er snakk om assimilasjon. Eks. <ul><li>áššin$(infl,com,fin,n-in|áššiin)</li></ul></li>
-                     </ul></dd>
-                  <dt>Flere feil i samme ord skilles med ( ; ), eks.</dt><dd>
-                      <ul>  <li>Filkamánne$(loan,vowc,i-y;conc,lk-lkk;vowlat,e-i|Fylkkamánni)</li>
-                      <li> eváhkomátkálaččat$(conc,hk-hkk;conc,tk-tkk|eváhkkomátkkálaččat)</li></ul></dd>
-               </dl>
+                <title>Unclassified errors - wrong§correct</title>
+                <p>Errors of unknown type. By default such errors will be treated as spelling errors (see below). In the
+                resulting xml, the name of the element will be &lt;error&gt;.</p>
+                </section>
+                <section>
+                <title>Orthographic errors, non-words - wrong$(error classification|correct)</title>
+                    <p>Traditional misspellings confined to single (error) strings, that is, errors that don't need an analysis
+                    of the surrounding words to be detected and corrected. In the resulting xml, the element is named
+                    &lt;errorort&gt;. These errors do always lead to non-words in the text, such that a speller should be able
+                    to detect them.</p>
+                    <dl>
+                        <dt>Gammel annotering: Attributes:</dt>
+                        <dd>
+                            <dl>
+                                <dt>pos</dt>
+                                <dd> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem | resip | indef |
+                                pcle | prop | typo | mix | x )</dd>
+                                <dt>errtype</dt>
+                                <dd>The value of this attribute is language specific. For details, see below.</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                    <p>Language specific details:</p>
+                    <section>
+                        <title>SME</title>
+                        <dl>
+                            <dt>Ordklasse (ikke obligatorisk):</dt>
+                            <dd>  loan | prop | num | acro <br/>
+                            (dette fordi noen typer ord har mer feilskriving enn andre typer) </dd>
+                            <dt>Spesielle forhold ved ordet (ikke obligatorisk):</dt>
+                            <dd>  cmp | nomag | px | der | infl | foc<br/>
+                                Feilen er relatert til dette. Eks.
+                                <ul>
+                                    <li><em>cmp</em>: sammensetningsfeil - largo istedenfor allegro, eller motsatt, eller samskriving
+                                    der det skulle vært to ord, eller motsatt.</li>
+                                    <li><em>nomag</em>: vanligvis er det snakk om manglende diftongforenkling ved NomAg </li>
+                                    <li><em>px</em>: feilen er knytta til bøyninga i et ord med genitiv suffiks </li>
+                                    <li><em>der</em>: derivasjonsfeil - f.eks. deriv. følger ikke normen </li>
+                                    <li><em>infl</em>: feil knyttet til bøyingsmorfologi - ordet er bøyd som ulikestavelsesstamme
+                                    når normen er kontrakt stamme.</li>
+                                    <li><em>foc</em>: skrivefeil knytta til enklitisering </li>
+                                </ul>
+                            </dd>
+                            <dt>Posisjon: b-ea-tn-a-g-i-in</dt>
+                                <dd>
+                                    <ul>
+                                        <li>b - initium - <em>coninit</em></li>
+                                        <li>ea - vokalsentrum - <em>vowc</em></li>
+                                        <li>tn - konsonantsentrum - <em>conc</em></li>
+                                        <li>a - latus - <em>vowlat</em></li>
+                                        <li>g - konsonantmargo - <em>conm</em></li>
+                                        <li>i - vokalmargo - <em>vowm</em></li>
+                                        <li>in - finis - <em>fin</em></li>
+                                    </ul>
+                                </dd>
+                                <dt>Posisjon i sammensatte hvor første ord ender på konsonant: b-a-j-á-sš-a-dd-a-n</dt><dd>
+                                    <ul>
+                                        <li>b - initium - <em>coninit</em></li>
+                                        <li>a - vokalsentrum - <em>vowc</em></li>
+                                        <li>j - konsonantsentrum - <em>conc</em></li>
+                                        <li>á - latus - <em>vowlat</em></li>
+                                        <li>sš - konsonantgruppe i ordgrense - <em>conwb</em></li>
+                                        <li>a - vokalsentrum - <em>vowc</em></li>
+                                        <li>dd - konsonantsentrum - <em>conc</em></li>
+                                        <li>a - latus - <em>vowlat</em></li>
+                                        <li>n - finis - <em>fin</em></li>
+                                    </ul>
+                                </dd>
+                                <dt>Feiltyper – eksempler:</dt>
+                                <dd>
+                                    <ul>
+                                        <li>typo = tastefeil, eks.
+                                            <ul>
+                                                <li> laet$(typo|leat)</li>
+                                            </ul>
+                                        </li>
+                                        <li>a-á = skrevet a istedenfor á, eks.
+                                            <ul>
+                                                <li>radio$(loan,vowc,a-á|rádio)</li>
+                                                <li>Asias$(prop,vowc,a-á|Ásias)</li>
+                                                <li>boarraseamos$(vowlat,a-á|boarráseamos)</li>
+                                            </ul>
+                                        </li>
+                                        <li>ht-htt = skrevet ht istedenfor htt, eks.
+                                            <ul>
+                                                <li>gievkkanláhtis$(conc,ht-htt|gievkkanláhttis)</li>
+                                            </ul>
+                                        </li>
+                                        <li>i-e = skrevet i istedenfor e, eks.
+                                            <ul>
+                                                <li>sámidikkis$(cmp,vowlat,i-e|sámedikkis)</li>
+                                            </ul>
+                                        </li>
+                                        <li>i-á = skrevet i istedenfor á, eks.
+                                            <ul>
+                                                <li>beaividuvvon$(der,i-á|beaiváduvvon)</li>
+                                            </ul>
+                                        </li>
+                                        <li>1-2 = samskriving istedenfor to ord, eks.
+                                            <ul>
+                                                <li>ovddosguvlui$(cmp,1-2|ovddos guvlui)</li>
+                                            </ul>
+                                        </li>
+                                        <li>2-1 = skrevet som to ord istedenfor samskriving, eks.
+                                            <ul>
+                                                <li>nuppi (máilmmi soađi)$(cmp,2-1|máilmmisoađi)</li>
+                                            </ul>
+                                        </li>
+                                        <li>hyph-0 = skrevet som bindestrek istedenfor samskriving, eks.
+                                            <ul>
+                                                <li>dálkkádat-rievdan$(cmp,hyph-0|dálkkádatrievdan)</li>
+                                            </ul>
+                                        </li>
+                                        <li>0-hyph = samskriving istedenfor bindestrek, eks.
+                                            <ul>
+                                                <li>epoastta$(loan,cmp,0-hyph|e-poastta)</li>
+                                            </ul>
+                                        </li>
+                                        <li>suf = kasus merket på feil måte (for num, acro og prop), eks
+                                            <ul>
+                                                <li>NRKas$(acro,suf|NRK:s)</li>
+                                                <li>1992:ii$(num,suf|1992:i)</li>
+                                                <li>Asker:is$(prop,suf|Askeris)</li>
+                                            </ul>
+                                        </li>
+                                        <li>gen-nom = første del av sammensatt ord er skrevet som genitiv istedenfor nominativ, eks.
+                                            <ul>
+                                                <li>astoáiggibagadalli$(cmp,gen-nom|astoáigebagadalli)</li>
+                                            </ul>
+                                        </li>
+                                        <li>mono = skulle vært diftongforenkling, eks.
+                                            <ul>
+                                                <li>oahpaheaddjiid$(nomag,mono|oahpaheddjiid)</li>
+                                            </ul>
+                                        </li>
+                                        <li>diph = skulle vært diftong, eks.
+                                            <ul>
+                                                <li>Olgoriikadepartementtas$(loan,vowc,diph|Olgoriikadepartemeanttas)</li>
+                                            </ul>
+                                        </li>
+                                        <li>cond = annet bøyningsmønster ved kondisjonalis, eks.
+                                            <ul>
+                                                <li>čuovošii$(infl,cond,mono|čuvošii)</li>
+                                                <li>lágidivčče$(infl,cond|lágidivččii)</li>
+                                            </ul>
+                                        </li>
+                                        <li>verb = annet bøyningsmønster ved verbbøyning, eks.
+                                            <ul>
+                                                <li>oaččuiba$(infl,verb|oaččuiga)</li>
+                                            </ul>
+                                        </li>
+                                        <li>ill = knyttet til illativsuffikset, eks.
+                                            <ul>
+                                                <li>Størei$(prop,infl,ill,ei-ii|Størii)</li>
+                                                <li>kursi$(infl,ill,i-ii|kursii)</li>
+                                            </ul>
+                                        </li>
+                                        <li>com = knyttet til komitativsuffikset. Her har jeg merka av posisjon også fordi det er snakk om assimilasjon. Eks.
+                                            <ul>
+                                                <li>áššin$(infl,com,fin,n-in|áššiin)</li>
+                                            </ul>
+                                        </li>
+                                     </ul>
+                                </dd>
+                                <dt>Flere feil i samme ord skilles med ( ; ), eks.</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Filkamánne$(loan,vowc,i-y;conc,lk-lkk;vowlat,e-i|Fylkkamánni)</li>
+                                        <li> eváhkomátkálaččat$(conc,hk-hkk;conc,tk-tkk|eváhkkomátkkálaččat)</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                     </section>
+                     <section>
+                          <title>SMA</title>
+                          <dl>
+                                <dt>Possible values for <em>errtype</em>:</dt>
+                                <dd>( ??? )</dd>
+                                <dt>Comments to each <em>errtype</em> value</dt>
+                                <dd>
+                                    <ul>
+                                        <li>???</li>
+                                    </ul>
+                                </dd>
+                                <dt>Comments to some <em>pos</em> values</dt>
+                                <dd>
+                                    <ul>
+                                        <li>typo = typical typo — as a POS value?</li>
+                                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
+                                          Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                                    </ul>
+                                </dd>
+                          </dl>
+                     </section>
+                     <section>
+                        <title>SMJ</title>
+                        <dl>
+                            <dt>Posisjon: a-kt-i-j-v-uo-d-a-jn</dt>
+                            <dd>
+                                <ul>
+                                    <li>a - vokalsentrum - <em>vowc</em></li>
+                                    <li>kt - konsonantsentrum - <em>conc</em></li>
+                                    <li>i - latus - <em>vowlat</em></li>
+                                    <li>j - finis - <em>fin</em></li>
+                                    <li>v - initium - <em>coninit</em></li>
+                                    <li>uo - vokalsentrum - <em>vowc</em></li>
+                                    <li>d - konsonantsentrum - <em>conc</em></li>
+                                    <li>a - latus - <em>vowlat</em></li>
+                                    <li>jn - finis - <em>fin</em></li>
+                                </ul>
+                            </dd>
+                            <dt>Posisjon:</dt>
+                            <dd>
+                                <ul>
+                                    <li>b - initium - <em>coninit</em></li>
+                                    <li>e - vokalsentrum - <em>vowc</em></li>
+                                    <li>dn - konsonantsentrum - <em>conc</em></li>
+                                    <li>a - latus - <em>vowlat</em></li>
+                                    <li>g - konsonantmargo - <em>conm</em></li>
+                                    <li>a - vokalmargo - <em>vowm</em></li>
+                                    <li>v - finis - <em>fin</em></li>
+                                </ul>
+                            </dd>
+                            <dt>Posisjon:</dt>
+                            <dd>
+                                <ul>
+                                    <li>m - initium - <em>coninit</em></li>
+                                    <li>a - vokalsentrum - <em>vowc</em></li>
+                                    <li>sk - initium - <em>coninit</em></li>
+                                    <li>i - vokalsentrum - <em>vowc</em></li>
+                                    <li>jn - konsonantsentrum - <em>conc</em></li>
+                                    <li>a - latus - <em>vowlat</em></li>
+                                    <li>v - finis - <em>fin</em></li>
+                                </ul>
+                            </dd>
+                            <dt>Feiltyper $ – eksempler:</dt>
+                            <dd>
+                                <ul>
+                                    <li>typo = tastefeil, eks.
+                                        <ul>
+                                            <li> behi$(typo|vehi)</li>
+                                            <li>dábábalsj$(typo|dábálasj)</li>
+                                        </ul>
+                                    </li>
+                                    <li>ascii= n-ŋ, ñ-ŋ eks.
+                                        <ul>
+                                            <li>Mañemus$(ascii|Maŋemus)</li>
+                                        </ul>
+                                    </li>
+                                    <li>a-á = skrevet a istedenfor á, eks.
+                                        <ul>
+                                            <li>radio$(loan,vowc,a-á|rádio)</li>
+                                            <li>dáhpádusa$(vowlat,a-á|dáhpádusá)</li>
+                                            <li>dahpadusá$(vowc,a-á,vowlat,a-á|dáhpádusá)</li>
+                                        </ul>
+                                    </li>
+                                    <li>á-a = skrevet á istedenfor a, eks.
+                                        <ul>
+                                            <li>báhtaj$(vowc,á-a|bahtaj)</li>
+                                            <li>dáhkap$(vowc,á-a|dahkap)</li>
+                                            <li>boarraseamos$(vowlat,a-á|boarráseamos)</li>
+                                        </ul>
+                                    </li>
+                                    <li>diftongfeil, eks.
+                                        <ul>
+                                            <li>muodda$(vowc,uo-oa|moadda)</li>
+                                            <li>biehttám$(vowc,ie-æ|bæhttám)</li>
+                                        </ul>
+                                    </li>
+                                    <li>vokalfeil = skrevet i istedenfor á, eks.
+                                        <ul>
+                                            <li>Guovdesj$(vowlat,e-á|Guovdásj)</li>
+                                            <li>dåbddåmerkajt$(vowlat,å-o|dåbddomerkajt)</li>
+                                        </ul>
+                                    </li>
+                                    <li>stammekonsonantfeil, eks.
+                                        <ul>
+                                            <li>gahtját$(conc,htj-tj|gatját)</li>
+                                            <li>subtsasa$(conc,bts-btts|subttsasa)</li>
+                                        </ul>
+                                    </li>
+                                    <li>mangler konsonant i slutten av ordet/stammen
+                                        <ul>
+                                            <li>miehtá$(fin,0-j|miehtáj)</li>
+                                            <li>aktivuodav$(fin,0-j|aktijvuodav)</li>
+                                        </ul>
+                                    </li>
+                                    <li>ekstra konsonant i slutten av ordet
+                                        <ul>
+                                            <li>gåhttsåjijn$(fin,jn-n|gåhttsåjin)</li>
+                                            <li>gålmmij$(fin,j-0|gålmmi)</li>
+                                        </ul>
+                                    </li>
+                                    <li>feil konsonant i slutten av ord
+                                        <ul>
+                                            <li>láhppán$(fin,n-m|láhppám)</li>
+                                        </ul>
+                                    </li>
+                                    <li>feil konsonant i morfemgrense
+                                        <ul>
+                                            <li>åtsåtallá$(coninit,t-d|åtsådallá)</li>
+                                        </ul>
+                                    </li>
+                                    <li>feil konsonant i grense for sammensatteord
+                                        <ul>
+                                            <li>giládumsuormas$(fin,m-s|giládussuormas)</li>
+                                        </ul>
+                                    </li>
+                                    <li>feil konsonant ved bøying
+                                        <ul>
+                                            <li>luhtáka$(conm,k-g|luhtága)</li>
+                                            <li>riehpiji$(conm,j-h;fin,0-j|riehpihij)</li>
+                                        </ul>
+                                    </li>
+                                    <li>feil bøying av ord, eks. kontrakt som likestavelses
+                                        <ul>
+                                            <li>oassás$(infl|oases)</li>
+                                            <li>riebija$(infl|riehpiha)</li>
+                                        </ul>
+                                    </li>
+                                    <li>feil derivasjon, eks.
+                                        <ul>
+                                            <li>dáhpádime$(der,ime-usá|dáhpádusá)</li>
+                                            <li>x</li>
+                                        </ul>
+                                    </li>
+                                    <li>1-X = samskriving istedenfor to ord, eks.
+                                        <ul>
+                                            <li>ienemusoasse$(cmp,1-X|ienemus oasse)</li>
+                                        </ul>
+                                    </li>
+                                    <li>hyph-0 = skrevet som bindestrek istedenfor samskriving, eks.
+                                        <ul>
+                                            <li>(Duodje-tiemá)$(cmp,hyhp-0|Duodjetiemá)</li>
+                                        </ul>
+                                    </li>
+                                    <li>gen-nom = første del av sammensatt ord er skrevet som genitiv istedenfor nominativ, eks.
+                                        <ul>
+                                            <li>asstoájgedåjma¢(cmp,gen-nom|asstoájggedåjma)</li>
+                                        </ul>
+                                    </li>
+                                    <li>suf = kasus merket på feil måte (for num, acro og prop), eks
+                                        <ul>
+                                            <li>NRKas$(acro,suf|NRK:s)</li>
+                                            <li>1992:aj$(num,suf|1992:j)</li>
+                                            <li>Asker:is$(prop,suf|Askeris)</li>
+                                        </ul>
+                                    </li>
+                                    <li>px =feil possesivsuffix, eks.
+                                        <ul>
+                                            <li>iehtjasij$(px|iehtjasa)</li>
+                                        </ul>
+                                    </li>
+                                    <li>cap = skal være stor bokstav, eks.
+                                        <ul>
+                                            <li>magga$(cap|Magga)</li>
+                                        </ul>
+                                    </li>
+                                    <li>abbr = punktmarkeringen er feil i forkortelser eks.
+                                        <ul>
+                                            <li>dr$(abbr,0-punct|dr.)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </dd>
+                            <dt>Feiltyper ¢ – eksempler:</dt>
+                            <dd>
+                                <ul>
+                                    <li>¢ merkes på samme måte som $ pluss disse:</li>
+                                    <li>min = skal være liten bokstav, eks.
+                                        <ul>
+                                            <li>Julevsámegielav¢(min|julevsámegielav)</li>
+                                        </ul>
+                                    </li>
+                                    <li>X-1 = skrevet som to ord istedenfor samskriving, eks.
+                                        <ul>
+                                            <li>(fabrihkka bivtas)¢(cmp,X-1|fabrihkkabivtas)</li>
+                                        </ul>
+                                    </li>
+                                    <li>X-hyph = skrevet som to ord istedenfor med bindestrek, eks.
+                                        <ul>
+                                            <li>(Siggá muohtá)¢(cmp,X-hyph|Siggá-muohtá)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p>Mange ¢ feil kan også være markert som £ feil, og omvendt. Hvis man har skrevet en substantiv med feil grad, kan de ha blitt essiv i stede for inessiv, det er vanskelig å vite om dette da er £ eller ¢.</p>
+                            </dd>
+                            <dt>Feiltyper € – eksempler:</dt>
+                            <dd>
+                                <ul>
+                                    <li>der = feil deivasjon, eks.
+                                        <ul>
+                                            <li>hiervvidam€(der,aktiv-pass|hiervvidum)</li>
+                                            <li>unnaoabbáj€(der|unnaoappátjij)</li>
+                                        </ul>
+                                    </li>
+                                    <li>skulle vært supinum i stede for infinitiv (egentlig ikke en €(der feil, men den passer best hit) eks.
+                                        <ul>
+                                            <li>hárjjidallat€(der,inf-sup|hárjjidalátjit)</li>
+                                        </ul>
+                                    </li>
+                                    <li>w = feil ord, eks.
+                                        <ul>
+                                            <li>Nav€(w|Dát)</li>
+                                            <li>aj€(w|duodden)</li>
+                                            <li>konkrehtalasj€(w,adj-adv|konkrehtalattjat)</li>
+                                            <li>muv€(w,pers-refl|ietjam)</li>
+                                        </ul>
+                                    </li>
+                                    <li>foreign = ikke lulesamisk ord, eks.
+                                        <ul>
+                                            <li>minsstarijt€(foreign|girjajt)</li>
+                                            <li>sentrálla€(foreign|guovdásj)</li>
+                                        </ul>
+                                    </li>
+                                    <li>phr = fraser som burde bli skrevet med et ord, tyder på norwagisme , eks.
+                                        <ul>
+                                            <li>(álgijma bårråt)€(phr|bårrågådijma)</li>
+                                            <li>(ienep låhpaladtjan))€(phr|låhpalabbon)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </dd>
+                            <dt>Feiltyper £ – eksempler:</dt>
+                            <dd>
+                                <ul>
+                                    <li>skulle ha vært kondisjonalis, eks.
+                                        <ul>
+                                            <li>(gåktu lij sjaddat jus)£(infl,ind-cond|gåktu luluj sjaddat jus)</li>
+                                        </ul>
+                                    </li>
+                                    <li>kongr
+                                        <ul>
+                                            <li>Nav€(w|Dát)</li>
+                                            <li>(ma tjielggi)£(kongr|ma tjielggiji)</li>
+                                            <li>(vuogij milta mij guosská)£(kongr|vuogij milta ma guosski)</li>
+                                            <li>(sujttára vásedij)£(kongr|sujttára vásedi)</li>
+                                        </ul>
+                                    </li>
+                                    <li>feil kasus, eks.
+                                        <ul>
+                                            <li>(báhpas Olaf Holmas)£(case,ela-nom|báhpas Olaf Holm)</li>
+                                            <li>(lijkkuv dajt)£(case|lijkkuv dajda)</li>
+                                        </ul>
+                                    </li>
+                                    <li>x = ukategorisert feil, eks.
+                                        <ul>
+                                            <li>(iv dádjadum)£(x|ittjiv dádjada)</li>
+                                            <li>(iv la nav ålojt dahkam)£(x|iv la nav ålov dahkam)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </dd>
+                            <dt>Feiltyper ¥ – eksempler:</dt>
+                            <dd>
+                                <ul>
+                                    <li>missing = det mangler et ord eks.
+                                        <ul>
+                                            <li>åvddål¥(missing|åvddål gå)</li>
+                                            <li>(Riebij álu sluogas)¥(missing|Riebij la álu sluogas)</li>
+                                        </ul>
+                                    </li>
+                                    <li>redun = unødvendige ord, eks.
+                                        <ul>
+                                            <li>(biedji iemeálmmugij dárbojt ja guovdátjij)¥(redun|biedji iemeálmmugij dárbojt guovdátjij)</li>
+                                            <li>(guoradallat ietjá ulmutjij ja kultuvraj birra)¥(redun|guoradallat ietjá ulmutjijt ja kultuvrajt)</li>
+                                        </ul>
+                                    </li>
+                                    <li>wo = feil rekkefølge på ordene, eks.
+                                        <ul>
+                                            <li>(ådå rássjojáhkka Haglöfs)¥(wo|ådå Haglöfs rássjojáhkka)</li>
+                                            <li>(de e girde háleda)¥(wo|de girde e háleda)</li>
+                                        </ul>
+                                    </li>
+                                    <li>der = derivasjonsfeil som har endret argumentstrukturen skal hit, eks.
+                                        <ul>
+                                            <li>(ådå rássjojáhkka Haglöfs)¥(wo|ådå Haglöfs rássjojáhkka)</li>
+                                            <li>(de e girde háleda)¥(wo|de girde e háleda)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </dd>
+                            <dt>Feiltyper ∞ – eksempler:</dt>
+                            <dd>
+                                <ul>
+                                    <li>ord eller setning på annet språk, eks.
+                                        <ul>
+                                            <li>(Red Matter, Native American Studies)∞(eng)</li>
+                                            <li>Ivnnit∞(sme) </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </dd>
+                            <dt>Comments to some <em>pos</em> values</dt>
+                            <dd>
+                                <ul>
+                                    <li>typo = typical typo — as a POS value?</li>
+                                    <li>; = typical typo — as a POS value?</li>
+                                    <li>mix = lots of errors.</li>
+                                </ul>
+                            </dd>
+                          </dl>
+                     </section>
+                     <section>
+                          <title>KAL</title>
+                          <dl>
+                                <dt>Possible values for <em>errtype</em>:</dt>
+                                <dd>( ??? )</dd>
+                                <dt>Comments to each <em>errtype</em> value</dt>
+                                <dd>
+                                    <ul>
+                                        <li>???</li>
+                                    </ul>
+                                </dd>
+                                <dt>Comments to some <em>pos</em> values</dt>
+                                <dd>
+                                    <ul>
+                                        <li>typo = typical typo — as a POS value?</li>
+                                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
+                                          Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                                     </ul>
+                                 </dd>
+                          </dl>
+                     </section>
+                     <section>
+                          <title>ISL</title>
+                          <p>Description of <em>the error classification</em> for ISL:</p>
+                          <dl>
+                                <dt>cmp</dt>
+                                <dd>compound errors, subclasses:
+                                    <ul>
+                                        <li>1-X: the word is 1, should have been split in X words (X ≤ 2, specify X)</li>
+                                        <li>X-1: the word is split on X words, but should have been one (X ≤ 2, specify X)</li>
+                                        <li>st-gensg: the stem is used for the left part, but genitive sing. should have been used</li>
+                                        <li>st-genpl: the stem is used for the left part, but genitive plur. should have been used</li>
+                                        <li>gensg-genpl: genitive sing. is used, should have been gen pl</li>
+                                        <li>gen-st: genitive (unspecified) is used, the stem should have been used</li>
+                                    </ul>
+                                </dd>
+                                <dt>Comments to some <em>pos</em> values</dt>
+                                <dd>
+                                    <ul>
+                                        <li>typo = typical typo — as a POS value?</li>
+                                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
+                                          Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                                    </ul>
+                                </dd>
+                          </dl>
+                     </section>
+                </section>
+                <section>
+                    <title>Orthographic errors, real-words - wrong¢(error classification|correct), same as for non-words, see above</title>
+                    <p>Misspellings confined to single words, but stilll need an analysis of the surrounding words to be
+                    detected and corrected. In the resulting xml, the element is named &lt;errorortreal&gt; These errors,
+                    although orthographical in nature, lead to other. real words, such that a traditional speller is unable to
+                    detect them.</p>
+                    <dl>
+                        <dt>Gammel annotering: Attributes:</dt>
+                        <dd>
+                            <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem |
+                            resip | indef | pcle | prop | typo | x )<br/><strong>errtype</strong> ( a | á | conc | svow | vowc | vow
+                            | con | mono | diph | lime | meta | suf | cmp | ascii | typo | cap | min |
+                            mix)<br/>
+                            <strong>errcase</strong> ( gen )<br/><strong>corrcase</strong> ( nom )
+                        </dd>
+                        <dt>Some explanations:</dt>
+                        <dd>
+                            a = should be a instead of á<br/>
+                            á = should be á instead of a<br/>
+                            conc = consonant centre<br/>
+                            vowc = vowel centre<br/>
+                            svow = soggevokála<br/>
+                            vow = some other wrong vowel<br/>
+                            con = some other wrong consonant<br/>
+                            mono = diphthong, but should be monophtong<br/>
+                            diph = wrong diphthong<br/>
+                            lime = consonant between two unstressed syllables, <em>vuovddášis</em> vs <em>vuovddážis</em><br/>
+                            meta = metathesis<br/>
+                            suf = wrong suffixing, e.g. <em>gievkani</em> vs. <em>gievkkanii</em><br/>
+                            cmp = incorrect compounding, e.g. <em>beavdiguorra</em> vs <em>beavdeguorra</em><br/>
+                            ascii = not used sámi letter<br/>
+                            typo = typical typo<br/>
+                            cap = should be capital letter<br/>
+                            min = should be minuscle<br/>
+                            mix = more than one errortype in the same word
+                        </dd>
+                    </dl>
+                </section>
+                <section>
+                    <title>Morphosyntactic errors - (context wrong)£(pos,gf,cat,orig,errtype|context correct)</title>
+                    <p>Errors that require an analysis of (parts of) the sentence or surrounding words to be detected and
+                    corrected. In the resulting xml, the element is named &lt;errormorphsyn&gt;.</p>
+                    <dl>
+                        <dt>Eksempler på ny annotering</dt>
+                        <dd>
+                            <ul>
+                                <li>Brukt feil kasus:
+                                    <ul>
+                                        <li>Enkel annotering: Mun liikon dien girjji£girjái . </li>
+                                        <li>Detaljert annotering:  Mun (liikon dien girjji)£(n,case,acc-ill|liikon dien girjái) .</li>
+                                    </ul>
+                                </li>
+                                <li>Analytisk bøyning istedenfor syntetisk bøyning:
+                                    <ul>
+                                        <li>Enkel annotering: Dat lea (eanemus dábálaš)£dábálaččamus váriin ja duoddariin.</li>
+                                        <li>Detaljert annotering:  Dat lea (eanemus dábálaš)£(adj,superl,analyt-synt|dábálaččamus) váriin ja duoddariin.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Gammel annotering: Attributes:</dt>
+                        <dd>
+                            <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop |pers | refl | dem | resip | indef | x )<br/>
+                            <strong>gf</strong> ( subj | obj | advl | fin | infin | spred | opred | pcle | interj | app | conj | pph | x | attr )<br/>
+                            <strong>cat</strong> ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | cmp | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br/>
+                            <strong>orig</strong> ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br/>
+                            <strong>errtype</strong> ( agr | case | tense | mode | number | mix | x )
+                        </dd>
+                        <dt>Some explanations:</dt>
+                        <dd>
+                            gf = grammatical function<br/>
+                            subj = subject<br/>
+                            fin = finite verb<br/>
+                            infin = infinite verb<br/>
+                            obj = object<br/>
+                            spred = subjectpredicative<br/>
+                            opred = objectpredicative<br/>
+                            advl = adverbial, e.g. <em>Mun boađán 'sotnabeaivi'</em> vs. <em>Mun boađán 'sotnabeaivve'</em><br/>
+                            pph = pp phrace, e.g. <em>sullo guovdu</em> vs. <em>guovdu sullo</em><br/>
+                            conj = conjunction/subjunction<br/>
+                            pcle = particle<br/>
+                            interj = interjection<br/>
+                            app = apposition<br/>
+                            attr = attribute<br/>
+                            x = unknown<br/>
+                            nump = numeral phrase<br/>
+                            gensg = acc/gen sg<br/>
+                            genpl = acc/gen pl
+                        </dd>
+                     </dl>
+                </section>
+                <section>
+                    <title>Syntactic errors - redundantword¥0 or word¥(word missingword) or word¥(missingword word)</title>
+                    <p>Also these errors require a partial or full analysis of (parts of) the sentence or surrounding words to
+                     be detected and corrected. In the resulting xml, the element is named &lt;errorsyn&gt;.</p>
+                    <dl>
+                        <dt>Eksempler på ny annotering</dt>
+                        <dd>
+                            <ul>
+                                <li>Unødvending ord, enkel annotering:
+                                    <ul>
+                                        <li>SNF doaibmá dál juo dego¥0 resursaguovddážin. </li>
+                                        <li>Gaup searvvai mielde¥0 guoimmuhanprográmmii</li>
+                                    </ul>
+                                </li>
+                                <li>Manglende ord, enkel annotering:
+                                    <ul>
+                                        <li>Fápmudusskovvi galgá leat stivrras ovdal¥(ovdal go) riikačoahkkin álgá.</li>
+                                        <li>Dat lei vuosttaš girji sámiid birra máid sápmelaš čállán¥(lea čállán) .</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Gammel annotering: Attributes:</dt>
+                        <dd>
+                            <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | det | resip | indef | punct | x )<br/>
+                            <strong>errtype</strong> ( wo | pph | redun | missing | cmp | x )
+                        </dd>
+                        <dt>Some explanations:</dt>
+                        <dd>
+                            wo = word order<br/>
+                            pph = pp-phrase<br/>
+                            redun = redundant word<br/>
+                            dupl = duplicate<br/>
+                            missing = missing word, or punctation when it is crucial for the interpretation<br/>
+                            cmp = should be compound<br/>
+                            x = unknown
+                        </dd>
+                    </dl>
+                </section>
+                <section>
+                    <title>Lexical errors - wrong€(wrongPoS,correctPoS|correct)</title>
+                     <p>Errors where the real error is only in the chosen word used, that is, another word would be better or
+                     correct; to be able to detect and correct such errors, we need in addition to syntactic analysis also a
+                     dictionary component with sufficiently rich syntactic and semantic markup of the entries, as well as
+                     syntactic and semantic disambiguation. The possibility to detect and correct this type of errors is probably
+                     not in the nearest future, but the need to mark up texts for these errors is real now. In the resulting xml,
+                     the element is named &lt;errorlex&gt;.</p>
+                    <dl>
+                        <dt>Eksempler på ny annotering</dt>
+                        <dd>
+                            <ul>
+                                <li>Brukt adjektiv istedenfor adverb:
+                                    <ul>
+                                        <li> ovddimus€(adv-adj|ovddimusat)</li>
+                                    </ul>
+                                </li>
+                                <li>Brukt feil verb:
+                                    <ul>
+                                        <li>Go su ráđđehus eretgeassádii€(verb|geassádii) , juolludii Stuorradiggi Nygaardsvoldii gudnebálkká.</li>
+                                    </ul>
+                                </li>
+                                <li>Brukt annet språk istedenfor samisk:
+                                    <ul>
+                                        <li> og€(foreign|ja)</li>
+                                        <li> august€(foreign|borgemánnu)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Gammel annotering: Attributes:</dt>
+                        <dd>
+                            <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | resip | indef | x )<br/>
+                            <strong>orig</strong> ( noun | verb | adj | adv | num | interj | ppan | cc | cs | pcle | prop | pers | refl | dem | resip | indef | x )<br/>
+                            <strong>errtype</strong> ( der | w | foreign | x )
+                        </dd>
+                        <dt>Some explanations:</dt>
+                        <dd>
+                            der = wrong derivation<br/>
+                            w = wrong word<br/>
+                            foreign = foreign word<br/>
+                            x = unknown
+                        </dd>
+                    </dl>
+                </section>
+                <section>
+                    <title>Nesting</title>
+                    <p>The three types can be nested, with the spelling error being the innermost one. That is, the following
+                    nesting is allowed: <code>syntactic &gt; morphosyntactic &gt; lexical &gt; spelling</code>.</p>
+                    <p>Parentheses are used to identify the range of the error. When nesting error markup, parentheses are
+                    required. Parentheses are also required when the error is followed by punctuation that is not part of the
+                    error or correction - the parenthesis will make sure the punctuation stays outside the error correction
+                    markup.</p>
+                </section>
             </section>
             <section>
-               <title>SMA</title>
-               <dl>
-                  <dt>Possible values for <em>errtype</em>:</dt>
-                  <dd>( ??? )</dd>
-                  <dt>Comments to each <em>errtype</em> value</dt>
-                  <dd><ul>
-                        <li>???</li>
-                     </ul></dd>
-                  <dt>Comments to some <em>pos</em> values</dt>
-                  <dd><ul>
-                        <li>typo = typical typo — as a POS value?</li>
-                        <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
-                        Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
-                     </ul></dd>
-               </dl>
-            </section>
-            <section>
+<<<<<<< HEAD
                <title>SMJ</title>
                <dl>
                   <dt>Possible values for <em>errtype</em>:</dt>
@@ -306,84 +939,106 @@
          <p>Here are some examples of error/correction markup and how they are converted to xml:</p>
          <source>nourra$(a,meta|nuorra)
 		
+=======
+                <title>Markup EXAMPLES</title>
+                <p>Here are some examples of error/correction markup and how they are converted to xml:</p>
+                <source>nourra$(a,meta|nuorra)
+
+>>>>>>> Fix up indentation && fix validation error
 &lt;errorort pos="n" errtype="meta" corr="nuorra"&gt;nourra&lt;/errorort&gt; </source>
-         <source>(Nieiddat leat nuorra)£(a,spred,nompl,nomsg,agr|Nieiddat leat nuorat).
+                <source>(Nieiddat leat nuorra)£(a,spred,nompl,nomsg,agr|Nieiddat leat nuorat).
 
 &lt;errormorphsyn cat="nompl" const="spred" correct="Nieiddat leat nuorat" errtype="agr" orig="nomsg" pos="adj"&gt;Nieiddat leat \
-    &lt;errorort correct="nuorra" errtype="meta" pos="adj"&gt;nourra&lt;/errorort&gt;&lt;/errormorphsyn&gt;.</source>
-         <source>Mun (riŋgen nieidda lusa)¥(x,pph|riŋgen niidii) ihttin.
+      &lt;errorort correct="nuorra" errtype="meta" pos="adj"&gt;nourra&lt;/errorort&gt;&lt;/errormorphsyn&gt;.</source>
+                <source>Mun (riŋgen nieidda lusa)¥(x,pph|riŋgen niidii) ihttin.
 
 Mun &lt;errorsyn pos="x" errtype="pph" corr="riŋgen niidii"&gt;riŋgen nieidda lusa&lt;/errorsyn&gt; ihttin.</source>
-         <source>Son lei ovtta¥(num,redun| ) viesus.
+                <source>Son lei ovtta¥(num,redun| ) viesus.
 
 Son lei &lt;errorsyn pos="num" errtype="redun" corr=""&gt;ovtta&lt;/errorsyn&gt; viesus.</source>
-         <source>Mun barggan nu dábálaš€(adv,adj,der|dábálaččat).
+                <source>Mun barggan nu dábálaš€(adv,adj,der|dábálaččat).
 
 Mun barggan nu &lt;errorlex pos="adv" origpos="adj" errtype="der" corr="dábálaččat"&gt;dábálaš&lt;/errorlex&gt;.</source>
-         <p>Nesting:</p>
-         <source>(Nieiddat leat nourra$(adj,meta|nuorra))£(adj,spred,nompl,nomsg,agr|Nieiddat leat nuorat).
+                <p>Nesting:</p>
+                <source>(Nieiddat leat nourra$(adj,meta|nuorra))£(adj,spred,nompl,nomsg,agr|Nieiddat leat nuorat).
 
 &lt;errormorphsyn pos="adj" const="spred" cat="nompl" orig="nomsg" errtype="agr" corr="Nieiddat leat nuorat"&gt;
 Nieiddat leat &lt;errorort pos="adj" errtype="meta" corr="nuorra"&gt;nourra&lt;/errorort&gt;&lt;/errormorphsyn&gt;.</source>
-         <source>Mus leat (guokte ganddat§(n,á|gánddat))£(n,nump,gensg,nompl,case|guokte gándda).
-  
+                <source>Mus leat (guokte ganddat§(n,á|gánddat))£(n,nump,gensg,nompl,case|guokte gándda).
+
 Mus leat &lt;errormorphsyn cat="gensg" const="nump" correct="guokte gándda" errtype="case" orig="nompl" pos="n"&gt;
 guokte &lt;error correct="gánddat"&gt;ganddat&lt;/error&gt;&lt;/errormorphsyn&gt;.</source>
-         <source>
+                <source>
 Mus (leat (okta máná)£(n,spred,nomsg,gensg,case|okta mánná))£(v,v,sg3prs,pl3prs,agr|lea okta mánná).
 
 Mus &lt;errormorphsyn cat="sg3prs" const="v" correct="lea okta mánná" errtype="agr" orig="pl3prs" pos="v"&gt;
 leat &lt;errormorphsyn cat="nomsg" const="spred" correct="okta mánná" errtype="case" orig="gensg" pos="n"&gt;
 okta máná&lt;/errormorphsyn&gt;&lt;/errormorphsyn&gt;.</source>
-         <!--      <source>muitlat§muitalat
+                <!--          <source>muitlat§muitalat
 {mun muitalat}£{mun muitalan}
 guossodimieddne€biebbmoieddne</source>
 
-      <p>And some more complex examples with nesting:</p>
+          <p>And some more complex examples with nesting:</p>
 
-      <source>{mun (muitlat§muitalat)}£{mun muitalan}
+          <source>{mun (muitlat§muitalat)}£{mun muitalan}
 (guossodmieddne§guossodimieddne)€biebbmoieddne</source> -->
-      </section>
-      <section>
-         <title>Markup RULES</title>
-         <p>The following rules should be followed when marking up texts:</p>
-         <ol>
-            <li><strong>The correction is always done in the original format - never in the xml file!</strong> That is,
-            make a copy of the original <code>doc</code>, <code>txt</code> or <code>html</code> file, and name it
-            <code>corr.doc</code>, <code>corr.txt</code>, or <code>corr.html</code>, and add the correction markup in
-            this new file. This will create a "new" original, which is identical to the "real" original, except for the
-            additional correction markup. The "new" original will be converted to xml by the script
-            <code>convert2xml.pl</code>, which is run automatically every night. Corrections done to the converted xml
-            files will be lost upon next conversion.</li>
-            <li><strong>$ is the spelling correction mark</strong> - use it directly after the wrongly spelled word,
-            followed by the correction, as in error$correction. Example: <em>volvo$Volvo</em>. NB! there should be
-            <strong>NO space</strong> on either side of the correction mark $.</li>
-            <li><strong>skip foreign text</strong> - we assume that text in other languages are properly detected, or
-            manually marked in the xsl file. That is: DON'T add spelling error markup to passages in Norwegian -
-            instead, try to enforce or add xml markup designating the passage as being in Norwegian. Single words used
-            as part of a sami sentence (in situ loans), should NOT be marked, either, since we can't know what the
-            correction should be (and in principle the word isn't a misspelling if it is correctly spelled
-            Norwegian).</li>
-            <li><strong>enclose multiword corrections in parenthesis</strong> - since the conversion to xml needs a way
-            of knowing where the correction ends, we need to tell it if it is not at the end of the first word after the
-            correction symbol. Example: <em>Norggabealde§(Norgga bealde)</em></li>
-            <li><strong>separate punctuation that is not part of the correction</strong> with a space, or use
-            parentheses around the correction. Example: "<em>buolasta§(buolašta).</em>" or "<em>buolasta§buolašta
-            .</em>" (the example text is the text within the quotes, <strong>including</strong> the punctuation).</li>
-            <li><strong>remember the case</strong> - the correction should have the same case pattern as the spelling
-            error. Example: <em>Mannjá§Maŋŋá</em>, <strong>NOT</strong> <em>Mannjá§maŋŋá</em> (note the case of the
-            initial letter). The exception is of course when the error is missing capitalisation, as in names spelled
-            lower case, etc.</li>
-            <li><strong>always provide a correction!</strong> The markup is useless if it isn't complete.</li>
-            <li><strong>Both</strong> the <strong>untouched original</strong> and the <strong>corrected
-            "original"</strong> should be stored in <code>$CORPUSHOME/prooftest/orig/$LANG/$GENRE/</code>. The converted
-            xml file(s) will be found in <code>$CORPUSHOME/prooftest/$CONTRACT/$LANG/$GENRE/</code>. It is important
-            that the untouched original is also stored in the <code>prooftest/</code> hierarchy, otherwise it can easily
-            be included when making new missing lists, which means that the coverage testing will become misleading
-            without us noticing it.</li>
-         </ol>
-      </section>
-      <p>By following these guidelines the resulting files should be readily useable for (speller) testing, as soon as
-      they are converted to xml.</p>
-   </body>
+            </section>
+            <section>
+                <title>Markup RULES</title>
+                <p>The following rules should be followed when marking up texts:</p>
+                <ol>
+                    <li>
+                        <strong>The correction is always done in the original format - never in the xml file!</strong> That is,
+                        make a copy of the original <code>doc</code>, <code>txt</code> or <code>html</code> file, and name it
+                        <code>corr.doc</code>, <code>corr.txt</code>, or <code>corr.html</code>, and add the correction markup in
+                        this new file. This will create a "new" original, which is identical to the "real" original, except for the
+                        additional correction markup. The "new" original will be converted to xml by the script
+                        <code>convert2xml.pl</code>, which is run automatically every night. Corrections done to the converted xml
+                        files will be lost upon next conversion.
+                    </li>
+                    <li>
+                        <strong>$ is the spelling correction mark</strong> - use it directly after the wrongly spelled word,
+                        followed by the correction, as in error$correction. Example: <em>volvo$Volvo</em>. NB! there should be
+                        <strong>NO space</strong> on either side of the correction mark $.
+                    </li>
+                    <li>
+                        <strong>skip foreign text</strong> - we assume that text in other languages are properly detected, or
+                        manually marked in the xsl file. That is: DON'T add spelling error markup to passages in Norwegian -
+                        instead, try to enforce or add xml markup designating the passage as being in Norwegian. Single words used
+                        as part of a sami sentence (in situ loans), should NOT be marked, either, since we can't know what the
+                        correction should be (and in principle the word isn't a misspelling if it is correctly spelled
+                        Norwegian).
+                    </li>
+                    <li>
+                        <strong>enclose multiword corrections in parenthesis</strong> - since the conversion to xml needs a way
+                        of knowing where the correction ends, we need to tell it if it is not at the end of the first word after the
+                        correction symbol. Example: <em>Norggabealde§(Norgga bealde)</em>
+                    </li>
+                    <li>
+                        <strong>separate punctuation that is not part of the correction</strong> with a space, or use
+                        parentheses around the correction. Example: "<em>buolasta§(buolašta).</em>" or "<em>buolasta§buolašta
+                        .</em>" (the example text is the text within the quotes, <strong>including</strong> the punctuation).
+                    </li>
+                    <li>
+                        <strong>remember the case</strong> - the correction should have the same case pattern as the spelling
+                        error. Example: <em>Mannjá§Maŋŋá</em>, <strong>NOT</strong> <em>Mannjá§maŋŋá</em> (note the case of the
+                        initial letter). The exception is of course when the error is missing capitalisation, as in names spelled
+                        lower case, etc.
+                    </li>
+                    <li>
+                        <strong>always provide a correction!</strong> The markup is useless if it isn't complete.
+                    </li>
+                    <li>
+                        <strong>Both</strong> the <strong>untouched original</strong> and the <strong>corrected
+                        "original"</strong> should be stored in <code>$CORPUSHOME/prooftest/orig/$LANG/$GENRE/</code>. The converted
+                        xml file(s) will be found in <code>$CORPUSHOME/prooftest/$CONTRACT/$LANG/$GENRE/</code>. It is important
+                        that the untouched original is also stored in the <code>prooftest/</code> hierarchy, otherwise it can easily
+                        be included when making new missing lists, which means that the coverage testing will become misleading
+                        without us noticing it.
+                    </li>
+                </ol>
+            </section>
+            <p>By following these guidelines the resulting files should be readily useable for (speller) testing, as soon as
+            they are converted to xml.</p>
+    </body>
 </document>
