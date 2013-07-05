@@ -1,14 +1,18 @@
 
-This document gives an overview of our new infrastructure, i.e.
-over the directories {{gtcore, langs}} located under our main catalogue. Also the file README in {{$GTHOME}} describes some basic properties of the new infrastructure.
+This is an overview of the file structure for each language 
+catalogue found in our (new) infrastructure, i.e.
+over the directories {{gtcore, langs}} located under our main catalogue. 
+Also the file README in {{$GTHOME}} describes some basic properties of 
+the new infrastructure.
 
-!!! Work, overview
-
-* [Checklist for moving online fst files to new compiler|../NewCompilerChecklist.html]
 
 !!! Catalogue structure
 
-Newinfra contains README, and the catalogues {{gtcore, langs}}
+The starting point is the mother catalogue {{$GTHOME}} (called ''main''
+if you follow [the standard checkout procedure|../../tools/docu-svn-user.html].
+It contains (a.o.) the catalogues {{gtcore, langs}}, the former is for 
+language-independent files, and the latter is for language-specific files, 
+one subfolder for each language.
 
 !! gtcore
 
@@ -33,7 +37,7 @@ catalogue. So, when a new moment comes in, it always comes in via ''und''.
 Each language has its own folder, the naming convention
 is from [ISO 639-3|http://en.wikipedia.org/wiki/List_of_ISO_639-3_codes].
 
-The folder (here smj) contains the following
+Each folder contains the following
 
 * am-shared (automake shared; never changed here, only in gtcore/templates)
 * doc (folder for language-specific documentation)
@@ -41,10 +45,10 @@ The folder (here smj) contains the following
 * src (this is where the linguistics files are)
 ** filters (language-specific filters)
 ** hyphenation (each phenomenon its folder)
-** morphology
+** morphology (see below)
 ** orthography
-** phonetics
-** phonology
+** phonetics (for different scripts for phonetic transcription)
+** phonology (mostly morphophonology)
 ** syntax
 * test
 * tools
@@ -52,8 +56,9 @@ The folder (here smj) contains the following
 
 !! The morphology folder under langs/$LANG/src/
 
-* affixes (here we find the lexc morphology files)
-* stems (lexc stem files, the lists of words)
+* {{root.lexc}} (defines tags and basic parts of speech)
+* the folder ''affixes'' (here we find the lexc morphology files)
+* the folder ''stems'' (lexc stem files, the lists of words)
 
 The folder might also contain some lexc files, like:
 {{{
