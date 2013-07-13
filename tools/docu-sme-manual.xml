@@ -3,148 +3,82 @@
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
    <header>
-      <title>How to use the Saami morphological parsers</title>
+      <title>How to use the morphological parsers</title>
       <authors>
          <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud"/>
       </authors>
    </header>
    <body>
       <section>
-         <title>Setting up the environment</title>
+         <title>Preamble: setting up the environment (You probably did this already)</title>
          <ol>
-            <li>If you work on victorio, then log in with your own user name and password. If you work on your own
-            machine, make sure the Xerox tools are available and in your path (see the <a
-            href="../admin/checklist.html">installation list</a> for programs to install).</li>
-            <li>Remember to write <code>svnup</code> and press the return key (from now on indicated by &lt;ENTER&gt;). (This
-            also works on your machine, if you have SVN access to victorio). By doing that, you check out whatever new
-            catalogues or files that have been added since last time. For more info on svn and the messages it may give
-            you, see <a href="docu-svn-user.html">Introduction to svn</a>. If you work on files checked out from
-            anonymous svn, you only need the Xerox tools.</li>
-            <li>Change to the directory gt (<code>cd main/gt</code> &lt;ENTER&gt;) In order to compile North Sámi, write
-            <code>make GTLANG=sme</code>. The target is sma for Sourthern, sje for Pite, smj for Lule, sms for Skolt,
-            smn for Inari and sjd for Kildin.</li>
-            <li>The machine will then for the next 3 to 30 minutes (depending upon how many parts of the parser it must
-            rebuild, on what language it is, and on how quick your computer is) write cryptic messages on the screen,
-            and finish with an optimistic "bye.". The other parts of the parser are compiled in a couple of minutes, but
-            compiling the preprocessor is a really slow process. While waiting, open a new window and do something else
-            (you may e.g. read this documentation)</li>
+            <li>Machine setup: <a href="infra/GettingStarted.html">Getting started</a>.</li>
+            <li>Download the source files: <a href="tools/docu-svn-user.html">How to use SVN</a>.
+            Remember to write <code>svnup</code> and press the return key (from now on indicated by &lt;ENTER&gt;) whenever you start working.</li>
+            <li>Making the transducers (compilation):
+            <a href="/infra/infraremake/GettingStartedWithTheNewInfra.html">Getting Started With The New Infra</a>.
+            (Or, if you work on North Saami, write instead <code>cd main/gt</code> &lt;ENTER&gt;, and 
+            <code>make GTLANG=sme</code>.) </li>
          </ol>
       </section>
       <section>
          <title>Analysing and generating words</title>
-         <section>
-            <title>Analysing one word at a time:</title>
-            <p>Note that the source files are in src/, the binary files are in bin/. The exact commands depend upon
-            where you are. In order to compile new versions of the analysers, you must be in <code>gt/</code>, and then
-            write <code>make GTLANG=sme</code> (for North Sámi, change sme to  smj, sma, smn, sms, sjd, sje for Lule, South,
-            Inari, Skolt, Kildin and Pite Sámi).
-            We assume that you have a separate window for analysis, and that you are in the gt/ catalogue when you
-            analyse. If you have set up your machine correctly, you have ready-defined functions for analysing
-            and generating text (to check, write <code>alias usme</code>, if the terminal does not answer that it
-            is not found, you are ok)</p>
             <ol>
                <li>For analysis, write <code>u</code> and then the 3-letter language code, e.g. for North Sami,
-               write "<code>usme</code>"</li>
+               write <code>usme</code></li>
                <li>Then write the words that shall be analysed, one word at a time, followed by &lt;ENTER&gt;.</li>
-               <li>To leave lookup mode, press "ctrl C".</li>
+               <li>To leave analysis mode, press <code>ctrl C</code>.</li>
                <li>For generation, write <code>d</code> and then the 3-letter language code, e.g. for North Sami,
-               write "<code>dsme</code>"</li>
+               write <code>dsme</code></li>
                <li>Then write lemma and grammatical tags (in the same form as was given as output, followed by &lt;ENTER&gt;.</li>
-
             </ol>
             <p>For testing, you may also write a file with one wordform on each line, and then feed that to
-            <code>lookup</code> (example here is for Inari Sámi, with a file <code>testfile.txt</code>):</p>
-            <ul>
-               <li><code>cat testfile.txt | lookup -flags mbTT smn/bin/smn.fst | less</code></li>
-               <li>or, equivalently, <code>cat testfile.txt | usmn | less</code></li>
-            </ul>
-	    <p>(again, to leave lookup mode, press "ctrl C", and to leave less, press q)</p>
+            the analyser (example here is for Inari Sámi, with a file <em>testfile.txt</em>):</p>
+
+               <p><code>cat testfile.txt | usmn | less</code></p>
+
+	    <p>(again, to leave analysis mode, press <code>ctrl C</code>, and to leave <em>less</em>, press <code>q</code>)</p>
          </section>
-         <section>
-            <title>Generating words</title>
-            <ol>
-               <li>Write exactly the same commands as you do when you analyse words, except that you change
-               <code>sme.fst</code> to <code>isme.fst</code>, <code>sma.fst</code> to <code>isma.fst</code>, etc.</li>
-               <li>Then write Saami words in their dictionary forms, followed by grammatical information. The format is
-               given in the table in the file <a href="../lang/sme/docu-sme-grammartags.html">The grammatical
-               tags</a>.Note that the South Saami <code>sma.fst</code> handles capital letters and ï-i variation, but
-               that it only accepts correct "ïquot; when you write in the base forms in the generator.</li>
-               <li>Also here, there is an alias, <code>dsme</code>, and dsma, etc.</li>
-               <li>Again, to leave lookup mode, press "ctrl C".</li>
-            </ol>
-            <p>A good way of working is to have two windows open, one for analysing and one for generating (and probably
-            also addidtional windows, for documentation, for the source files, etc.).</p>
-         </section>
-         <section>
-            <title>Analysing more than one word at a time</title>
-            <p>Write the following command (the string 'sentence here' should be replaced with the actual sentence, and
-            the part following the command <code>lookup</code> varies according to language, of course). I again assume
-            you stand in the sme/ (sma/ etc.) catalogue).</p>
-            <source>
-echo "sentence here" | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT bin/sme.fst
-</source>
-            <p>We also have some shortcuts for analysis. These may be written anywhere. Contact us if you want more
-            aliases, or make them yourself, on the basis of the existing ones.</p>
+<section>
+<title>Text analysis</title>
+            <p>We have set up aliases for text analysis. These may be written anywhere.</p>
             <dl>
-               <dt>cealkka</dt>
+               <dt>smedis</dt>
                <dd>Gives a sentence analysis of North Sámi</dd>
-               <dt>sme-dis.sh, smj-dis.sh</dt>
-               <dd>Gives a sentence analysis of North (Lule) Sámi, with rule numbers</dd>
-               <dt>sme-multi.sh, smj-multi.sh</dt>
-               <dd>Gives a non-disambiguated morphological analysis of North (Lule) Sámi</dd>
-               <dt>sme-multisyn.sh</dt>
-               <dd>Gives a non-disambiguated morphological analysis of North Sámi, and adds possible syntactic tags</dd>
+               <dt>smedep</dt>
+               <dd>Gives a dependency analysis of North Sámi</dd>
+               <dt>smedist</dt>
+               <dd>Gives a sentence analysis of North Sámi, in trace mode (showing which dis rules work)</dd>
+               <dt>smedept</dt>
+               <dd>Gives a dependency analysis of North Sámi, in trace mode (showing which dep rules work)</dd>
             </dl>
+<p>To do the same for other languages, exchange <code>sme</code> with your
+own language code. If, for any given language, the alias does not
+work, it means there is no (say) dependency analysis written for that
+language.</p>
+<p>These aliases may be used in two ways: either write the alias followed by a sentence in quotes</p>
+<p><code>smedis "Mun lean boahtán."</code></p>
+<p>Or, alternatively, pipe a file through it:</p>
+<p><code>cat testfile.txt | smedis</code></p>
          </section>
-         <section>
-            <title>Generating one paradigm at a time</title>
-            <p>Each language catalogue contains a catalogue called <code>testing/</code>. Go there, and write the
-            command (exchange the example words for whatever you want):.</p>
-            <source>
-make n-paradigm WORD=giella
-make v-paradigm WORD=boahtit
-make a-paradigm WORD=ođas
-</source>
-         </section>
-      </section>
-      <section>
-         <title>Analysing files</title>
-         <p>For each of the languages, write the following line:</p>
-         <source>
-cat filename | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT bin/sme.fst | less
-cat filename | preprocess --abbr=bin/abbr.txt | lookup -flags TT bin/smj.fst | less
-cat filename | preprocess --abbr=bin/abbr.txt | lookup -flags TT bin/sma.fst | less
-cat filename | preprocess  | lookup -flags TT bin/smn.fst | less
-</source>
-         <p>You probably want disambiguation as well (there is no disambiguation for Inari Sámi):</p>
-         <source>
-cat filename | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT bin/sme.fst | lookup2cg | vislcg3 -g src/sme-3dis.rle | less
-cat filename | preprocess --abbr=bin/abbr.txt | lookup -flags TT bin/smj.fst | lookup2cg | vislcg3 -g src/smj-dis.rle | less
-cat filename | preprocess --abbr=bin/abbr.txt | lookup -flags TT bin/smj.fst | lookup2cg | vislcg3 -g src/smn-dis.rle | less
-</source>
-         <p>To use content from our corpus repository as input to the analyser, one should use the tool
-         <code>ccat</code> (type <code>ccat -h</code> to get usage details):</p>
-         <source>
-ccat -l sme -r zcorp/bound | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT bin/sme.fst | less
-</source>
+<section>
+<title>Output manipulation</title>
          <p>Instead of just showing the result on the screen as running text (as above), much can be done to manipulate
-         it. Here are some examples, all the textstrings should replace the word <code>less</code> in the command
-         above.</p>
-         <ul>
-            <li><code>grep '+N+Pl' &gt; plnouns</code><br/> (to get all plural nouns and save them to the file
-            <code>plnouns</code>)</li>
-            <li><code>grep -v '\?' | cut -f2 | sort | uniq -c | sort -nr | less &lt;ENTER&gt;</code><br/> (to get a frequency
-            list of the lexemes that the parser recognizes, note that this requires that the flag TT is turned off, i.e.
-            not mentioned.)</li>
-            <li><code>grep '\?' | sort | uniq -c | sort -nr | less &lt;ENTER&gt;</code> <br/> (to get a frequency list of the
-            <strong>words</strong> that the parser does not recognize)</li>
-            <li><code>grep '\+\?' | sort | uniq -c | sort -nr | less &lt;ENTER&gt;</code> <br/> (to get a frequency list of the
-            <strong>word forms</strong> that the parser does not recognize)</li>
-         </ul>
+         it. Here are some examples, all the textstrings should be added after the <em>smedis</em> etc. above.</p>
+         
+            <p><code>| grep '+N+Pl' &gt; plnouns</code><br/> (to get all plural nouns and save them to the file
+            <em>plnouns</em>)</p>
+            <p><code>| grep -v '\?' | cut -f2 | sort | uniq -c | sort -nr | less </code><br/> (to get a frequency
+            list of the lexemes that the parser recognizes.</p>
+            <p><code>| grep '\?' | sort | uniq -c | sort -nr | less </code> <br/> (to get a frequency list of the
+            <strong>words</strong> that the parser does not recognize)</p>
+            <p><code>| grep '\+\?' | sort | uniq -c | sort -nr | less </code> <br/> (to get a frequency list of the
+            <strong>word forms</strong> that the parser does not recognize)</p>
          <p>To analyse more files at the same time, write their names one after another after the <code>cat</code>
          command:</p>
-         <source>cat file1 file2 file3 | preprocess ...</source>
+         <source>cat file1 file2 file3 |  ...</source>
       </section>
+
       <p class="last_modified">Last modified $Date$, by $Author: lene
       $</p>
    </body>
