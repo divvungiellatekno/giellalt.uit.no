@@ -6,7 +6,7 @@
 * lexicon matching sme-nob or sma-nob format as closely as possible
 * FSTs (described below)
 * lists of tag pairs, what is in FST to convert to what users will see
-* lists of paradigms for parts of speech, which can be either as detailed as one paradigm per part of speech, or several paradigms for parts of speech and varying sub-types. These will have to be marked in the lexicon in some way, for exampl, plural-only proper noun paradigms for North S&aacute;mi
+* lists of paradigms for parts of speech, which can be either as detailed as one paradigm per part of speech, or several paradigms for parts of speech and varying sub-types. These will have to be marked in the lexicon in some way, for exampl, plural-only proper noun paradigms for North Saami
 * description of attributes in the XML that need to be displayed to the user
  
 !!FSTs
@@ -31,12 +31,12 @@
 
 !Spell relax FST
  
-Spell relaxing FSTs should follow the exact same format as the lookup FST, but naturally point to the normative lemmas, or whatever lemmas will be used in lookups in the lexicon. These could be of two types:
+Spell relaxing FSTs should follow the exact same format as the lookup FST, but naturally point to the normative lemmas, or whatever lemmas will be used in lookups in the lexicon. These could be of three types:
 
  
-1.) Normalizing non-standard spellings 
-2.) Compensating for keyboards without certain characters 
-3.) Switching orthographies, e.g., accepting latin for cyrillic, or vice versa.
+# Normalizing non-standard spellings 
+# Compensating for keyboards without certain characters 
+# Switching orthographies, e.g., accepting latin for cyrillic, or vice versa.
 
  
 Whatever the use case, the analyzed lemma must match up with the lexicon
@@ -144,7 +144,7 @@ These rules are for manipulating tags that come out of the FST, and aligning the
 Paradigms are specified in the configuration file for part of speech, however, certain attributes in lexical entries may mean that a paradigm must be generated in a different way.
 
  
-For example, in North S&aacute;mi, common nouns have one paradigm including singular and plural forms, and proper nouns have several separate paradigms, sometimes plural-only, sometimes singular-only, but it depends on an attribute in the lexical entry.
+For example, in North Saami, common nouns have one paradigm including singular and plural forms, and proper nouns have several separate paradigms, sometimes plural-only, sometimes singular-only, but it depends on an attribute in the lexical entry.
 
  
 !Pregenerated forms
