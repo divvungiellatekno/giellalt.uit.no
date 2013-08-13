@@ -1,0 +1,125 @@
+
+
+
+
+
+This document follows the {{cgi-interface.xsl}} and 
+{{cgi-index.xsl}} document. They document what cgi-bin processes 
+each and every language is subject to. The processes themselves are
+governed by {{conf.pl}} and other cgi-bin scripts in the www directory.
+
+The source files are compiled in the maintainer's home directory
+on gtweb and thereafter copied manually to the /opt/smi catalogue.
+The reason why this is not done automatically is that we want to be sure
+fsts are checked before they are put online. With the large number
+of fsts we still need to make the process semi-automatic, with scripts
+a la ''update mhr''. This documents paves the way for such a setup.
+
+!!!All languages with directory in /opt/smi
+
+
+Source files in 
+{{{
+$GTHOME/langs/LANG
+$GTHOME/gt/sme/src
+}}}
+
+
+!!Basic files for all
+
+We have analysis and paradigm for all languages
+
+src/analyser-gt-desc.xfst	/opt/smi/LANG/bin/LANG.fst 
+src/src/generator-gt-desc.xfst	/opt/smi/LANG/bin/iLANG.fst
+
+src/src/generator-gt-norm.xfst	/opt/smi/LANG/bin/iLANG-norm.fst
+
+	/opt/smi/LANG/bin/korpustags.LANG.txt
+	/opt/smi/LANG/bin/korpustags.LANG.txt	  = 
+	/opt/smi/LANG/bin/paradigm.LANG.txt
+	/opt/smi/LANG/bin/paradigm.LANG.txt	  = 
+	/opt/smi/LANG/bin/paradigm_min.LANG.txt	  = 
+	/opt/smi/LANG/bin/paradigm_standard.LANG.txt = 
+
+
+!!These are hmm
+src/src/generator-gt-norm.hfst	/opt/smi/LANG/bin/hiLANG-norm.fst
+	/opt/smi/LANG/bin/typos.fst	  = 
+	/opt/smi/LANG/bin/typos.txt	  = 
+
+
+
+!!!Language-specific files
+
+!!cgi-interface.xsl
+
+!Syntax
+
+{{{
+if dependency="1", copy:
+LANG/src/syntax/dependency.bin /opt/smi/LANG/bin/LANG-dep.bin
+LANG/src/syntax/dependency.cg3 /opt/smi/LANG/bin/LANG-dep.rle
+
+if nodisamb="0", copy:
+LANG/src/syntax/disambiguation.bin /opt/smi/LANG/bin/LANG-dis.bin
+LANG/src/syntax/disambiguation.cg3 /opt/smi/LANG/bin/LANG-dis.rle
+LANG/src/...	/opt/smi/LANG/bin/abbr.txt	
+
+
+if nohyph="0", copy:
+LANG/src/hyphenation/hyphenation.xfst  /opt/smi/LANG/bin/hyph-LANG.fst
+
+if orth="1" & lang="kal", copy:
+LANG/src/transcriptions/kleinschmidt2norm.xfst /opt/smi/LANG/bin/orth-LANG.fst
+
+if translate_dan="1", copy
+LANG/
+
+if translate_nob="1", copy
+LANG/
+
+
+!Other transducers
+
+if orth="1" & lang="ipk", copy:
+
+if phon="1", copy
+LANG/src/phonetics/text2ipa.xfst /opt/smi/LANG/bin/phon-LANG.fst
+
+
+!Paradigm generation
+
+if dialpara="1"
+
+if minpara="1"
+
+if standardpara="1"
+
+if fullpara="1"
+
+}}}
+
+
+
+!!cgi-index.xml
+
+
+if nonum="0"
+
+LANG/src/transcriptions/transcriptor-numbers2text-raw.xfst 	/opt/smi/LANG/bin/LANG-num.fst
+
+
+if oahpa="1"
+
+src/transcriptions/transcriptor-clock2text-raw.xfst	/opt/smi/LANG/bin/iclock-LANG.fst
+
+src/transcriptions/transcriptor-date2text-raw.xfst	/opt/smi/LANG/bin/idate-LANG.fst
+
+Invert these transducers and copy them to clock-LANG.fst and date-LANG.fst
+
+CHECK: It might be that Oahpa uses fsts stored in he /home/oahpa catalogue.
+
+
+
+
+
