@@ -32,11 +32,29 @@
          <title>Testing</title>
          <ul>
             <li>Test data: we are marking up gold-standard documents with a relatively simple, plain-text <a
-            href="spelling/testdoc/error-markup.html">error markup</a>.</li>
+            href="spelling/testdoc/error-markup.html">error markup</a>. There are separate documents for each
+            of the languages we have gold-standard documents for:
+              <ul>
+                <li><a href="spelling/testdoc/error-markup-isl.html">ISL - Icelandic</a></li>
+                <li><a href="spelling/testdoc/error-markup-kal.html">KAL - Greenlandic</a></li>
+                <li><a href="spelling/testdoc/error-markup-sma.html">SMA - South Sámi</a></li>
+                <li><a href="spelling/testdoc/error-markup-sme.html">SME - North Sámi</a></li>
+                <li><a href="spelling/testdoc/error-markup-smj.html">SMJ - Julev Sámi</a></li>
+              </ul>
+            </li>
             <li>The test data is converted to xml and is stored in
-            <code>$GTFREE/stable/goldstandard/converted/</code></li>
-            <li>You run a speller test using the following command: <code>cd $GTHOME/gt &amp;&amp; make GTLANG=sma TESTTOOL=pl
-            correct-test</code></li>
+            <code>$GTFREE/stable/goldstandard/converted/</code> when proofread and checked, before that in
+            <code>$GTFREE/prestable/goldstandard/converted/</code></li>
+            <li>You run a speller test using the following command:
+              <ul>
+                <li>new infra: <code>cd $GTBIG/prooftesting &amp;&amp; ./autogen.sh &amp;&amp;
+                    ./configure &amp;&amp; make</code> - to run all tests for all languages,
+                    cd into one of the language subdirs and <code>./autogen.sh &amp;&amp;
+                    ./configure &amp;&amp; make</code> to run the tests for just one language.
+                    After <code>./configure</code>, you can even <code>cd</code> into one of the speller tool
+                    dirs, and run <code>make</code> there, to run the tests for one speller only.</li>
+                <li>old infra: <code>cd $GTHOME/gt &amp;&amp; make GTLANG=sma TESTTOOL=pl correct-test</code></li>
+              </ul></li>
             <li>We also have a <a href="spelling/testdoc/PLXConversionTesting.html">plan for creating Unit Tests for the
             PLX conversion</a> used to build our MS Office tools</li>
          </ul>
