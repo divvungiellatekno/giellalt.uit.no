@@ -1,15 +1,20 @@
-Here are the steps:
+!!!Adding a new language to the $GTHOME/langs dir
+
+This is the directory where all linguistic development for the core language technology is done, for all languages. Here are the steps:
 
 # {{cd $GTHOME/langs}}
-# {{../gtcore/scripts/new-language.sh LANGCODE langs}}
+# {{$GTCORE/scripts/new-language.sh LANGCODE}}
 
 where 
 * LANGCODE  is the ISO 639-3 code for the language you want to add, and
-* langs must be written because we want a TEMPLATE_COLLECTION
 
-!!!Result
+!!Result
 
-The above command will create a new dir for the specified language, and populate it with the required makefiles, autoconf files and template source files. The files are automatically added (but not committed) to svn, and all relevant {{svn:ignore}} properties are set.
+The above command will create a new directory for the specified language, and populate it with the required makefiles, autoconf files and template source files. The files are automatically added (but not committed) to svn, and all relevant {{svn:ignore}} properties are set.
+
+In addition, the new language code is added to {{$GTHOME/langs/Makefile.am}} and {{$GTHOME/langs/configure.ac}}. When you have checked the new language, and found that everything is ok, please {{svn commit}} ''both'' the new language dir, and the {{configure.ac}} and {{Makefile.am}} files. If the changes in those two files are not committed, the new language will be left out of future updates to the infrastructure.
+
+__NB!__ At present, the linguistic source files are __not__ added to svn. The idea is that we are still moving from the old infra to the new infra, and thus all source files should be svn-moved (or svn-copied) from the old to the new infra. The dummy source files are only kept to indicate what the new filenames should be. It is __important__ to use {{svn copy}} or {{svn move}} when moving from the old to the new infra, to retain the version history of the files. We want to be able to trace the history all the way back to the start, for every language.
 
 Now, to start doing real work, you must do one set of preparations still:
 
@@ -20,3 +25,31 @@ cd LANGCODE
 }}}
 
 Now you can start editing the source files, and whenever you want to make sure everything compiles, run {{make}}. Run {{make check}} to ensure that all defined tests are passed. Remember to update the test suits as you enhance the linguistic model!
+
+!!!Adding a new language to the $GTBIG/prooftesting dir
+
+This directory contains infrastructure for testing proofing tools for a number of languages. At present, only spellers are tested, but more tool types will be added in the future. The prerequisite for being able to test a speller is:
+
+* at least one speller gold-standard document for the targeted language, stored in {{$GTFREE/[pre]stable/goldstandard/converted/}}
+* a speller lexicon available in the test infra for that language
+* a command line speller for the lexicon(s) in the test infra
+
+The command to set up the basic testing infrastructure for a new language is exactly as above, with only one path adjustment:
+
+# {{cd $GTBIG/prooftesting}}
+# {{$GTCORE/scripts/new-language.sh LANGCODE}}
+
+!!Result
+
+A new language will be added to the testing infrastructure, ready to be populated with speller lexicons. Add new lexicons in the appropriate places (see the other languages for examples), and you should be ready to prepare the testing for your new language:
+
+{{{
+cd LANGCODE
+./autogen.sh
+./configure
+}}}
+
+If everything is ok, at least one of the speller tests listed at the end of the {{./configure}} step should return ''yes'', after which you can just run {{make}}. If there is test data available in {{$GTFREE}}, the test(s) will run, and after a while the test results are written to an xml file.
+
+__TODO:__
+* add a build step to install the xml file in a location available to {{forrest}}, so that the test results can be viewed online as html and nice graphs
