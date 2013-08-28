@@ -1,0 +1,47 @@
+
+
+The linguistic source files are compiled in {{$GTHOME/langs/}} and then
+manually copied over to the apertium folder. The morphology tags are
+converted automatically during the make process, but the syntax files need
+to have their tags converted manually in the apertium folder.
+
+!!!Morphology
+
+
+sme:
+
+{{{
+cd langs/sme/
+./configure --with-hfst --enable-apertium
+make
+cp src/analyser-mt-apertium.sma.att.gz /path/to/apertium-sme-sma/apertium-sme-sma.LR.att.gz
+}}}
+
+sma:
+
+{{{
+cd langs/sma/
+./configure --with-hfst --enable-apertium --enable-oahpa
+make
+cp src/genarator-mt-apertium.att.gz /path/to/apertium-sme-sma/apertium-sme-sma.RL.att.gz
+}}}
+
+!!!Syntax
+
+{{{
+cat apertium-sme-sma.sme-sma.dis.rlx | \
+python3 dev/cg-tag-convertor.py > /tmp/x
+
+mv /tmp/x apertium-sme-sma.sme-sma.dis.rlx
+}}}
+
+and the same for syn
+
+{{{
+cat apertium-sme-sma.sme-sma.dis.rlx | python3 dev/cg-tag-convertor.py > /tmp/x
+mv /tmp/x apertium-sme-sma.sme-sma.dis.rlx
+}}}
+
+There might be problematic rules (conversion errors), they may be commented out.
+
+
