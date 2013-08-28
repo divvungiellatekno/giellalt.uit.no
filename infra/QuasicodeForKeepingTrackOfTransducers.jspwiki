@@ -9,11 +9,24 @@ each and every language is subject to. The processes themselves are
 governed by {{conf.pl}} and other cgi-bin scripts in the www directory.
 
 The source files are compiled in the maintainer's home directory
-on gtweb and thereafter copied manually to the /opt/smi catalogue.
-The reason why this is not done automatically is that we want to be sure
+on gtweb. A suitable command for compiling the fsts might be to 
+run {{makeall.sh}} (and thereafter go for a cup of coffee).
+
+After the fsts are compiled they should be copied manually or 
+semi-manually to the /opt/smi catalogue by the compiler.
+
+The reason why this is not done automatically (say, by a cronjob) 
+is that we want to be sure
 fsts are checked before they are put online. With the large number
 of fsts we still need to make the process semi-automatic, with scripts
 a la ''update mhr''. This documents paves the way for such a setup.
+
+In short: ''We want to have a selective button to press.''
+
+A (now outdated) script to do this, and to get inspiration, is:
+
+{{$GTLANG/gt/script/fst2opt}}
+
 
 !!!All languages with directory in /opt/smi
 
