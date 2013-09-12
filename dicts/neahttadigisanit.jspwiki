@@ -1,47 +1,26 @@
 
-!!!Neahttadigisánit
 
-!!Content
-
-A grammatical, reading dictionary which combines lexica in main/words/ with
-analyzers to break down compounds, and provide meanings when compound
-definitions do not exist, and more extensive corpus coverage.
+__Neahttadigisánit__ is an online reading dictionary which uses analysers to
+find lemma forms, and send them to dictionary lookup. This page documents
+developmental work on Neahttadigisánit.
 
 !!Meetings
 
-! 2013
-* Spring: [4.2.|nds/referat/130204.html]  
+* 2013: [4.2.|nds/referat/130204.html]  
 
 !!Maintenance
 
 * [Starting new language pairs|StartingNewLanguagePairs.html]
-
-!Compiling FSTs
-
-* [Gjennomgang av FST-generering for sme og sma|KompilereNettordbok.html]
 * [How to compile FSTs for the languages in newinfra|CompilingNeahttadigisanit.html]
-* [New languages|StartingNewLanguagePairs.html]
-* [Updating dictionaries|nds/NDSUpdatingDictionaries.html]
+** [Gjennomgang av FST-generering for sme og sma|KompilereNettordbok.html]
+* [Updating dictionaries and fsts|nds/NDSUpdatingDictionaries.html]
 * [Updating Localisations|nds/NDSLocalisations.html]
 * [Logging options and extraction|nds/LogExtraction.html]
 
-!Updating dictionaries
-
-`sudo su` to the neahttadigisanit user (check home directories for a reminder),
-then the dictionary path, and run make_dicts.sh.
-
-Then you must restart the service to reparse the XML trees, otherwise
-old versions stored in memory will be used.
-
-!Updating FSTs
-
-Follow the paths in app.config.yaml to make check where the FSTs are installed,
-and then copy the new versions to those paths. Note whether any 'special' dictionary
-FSTs are in use and ensure that these are compiled and put in the new paths.
 
 !Configuration file
 
-app.config.yaml contains the following things, and is in
+The file {{app.config.yaml}} contains the following things, and is in
 [YAML|http://www.yaml.org/refcard.html] format:
 
  * FST path and format definitions

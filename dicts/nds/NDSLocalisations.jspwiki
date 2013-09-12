@@ -1,24 +1,39 @@
 ﻿
-Internationalization (i18n) in Neahttadigisánit
- 
-Uses Flask-Babel which is an interface for flask to the Python Babel extension
 
-# [http://packages.python.org/Flask-Babel/]
-# [http://babel.edgewall.org]
+We first look at how to write localisation, then how to set it up and maintain it.
+
+!!!Writing localisation 
+
+To ''write'' localisation (translate to your language) you go to the directory
+
+{{apps/dicts/nds/src/neahtta/translations/}}
+
+There you find your directory (follow your ISO code). Edit the lines
+labeled ''msgstr'' in the file {{LC_MESSAGES/messages.po}}.	Note from the
+examples the way the quotation marks are put, with errors here the file
+will not work. Do __not__ change the text on the lines mared ''#:'' or 
+''msgid''.
+
+See [the Oahpa documentation on localisation|../../../ped/common/Localisation.html] for help on how to get your translations online.
+
+
+!!!To set up and maintain the localisation infrastructure
+
+Internationalization (i18n) in Neahttadigisánit uses Flask-Babel which is an interface for flask to the Python Babel extension
+
+* [http://packages.python.org/Flask-Babel/]
+* [http://babel.edgewall.org]
  
 Translation strings are marked as with Oahpa, but NDS uses a slightly different template engine, however no major differences.
 
- 
 Marking translation strings in templates: [http://jinja.pocoo.org/docs/templates/#i18n-in-templates]
 
  
 !!!Adding new locales
  
-As with Django there is a problem that unknown locales such as sme and sma need to be defined somewhere. Nicely, for northern sámi it seems that nordsamisk is in existence in se.dat, se_NO.dat and se_FI.dat, but this does not help with sørsamisk.
-
+Unknown locales such as crk and sma need to be defined somewhere. North Saami is in existence in se.dat, se_NO.dat and se_FI.dat, but this does not help with languages without two-letter codes.
  
-Thus, we need to copy some files.
-
+Thus, for those we need to copy some files.
  
 # Find out where they are: open python, making sure that the NDS environment is enabled (you will see this in the command prompt)
 # Import flask within the python command prompt, observe the path and exit:
