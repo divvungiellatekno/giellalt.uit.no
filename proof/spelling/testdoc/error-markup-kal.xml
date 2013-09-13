@@ -12,24 +12,33 @@
         <section>
              <title>KAL</title>
              <dl>
-                   <dt>Possible values for <em>errtype</em>:</dt>
-                   <dd>( ??? )</dd>
-                   <dt>Comments to each <em>errtype</em> value</dt>
-                   <dd>
+                   <dt>Ordklasse (ikke obligatorisk):</dt>
+                   <dd> loan | prop | pron | num | acro | abbr | hypcorr <br/>
+                (dette fordi nogle typer ord har mere fejlskrivning end andre typer)</dd>
+                   <dt>Specielle forhold ved ordet (ikke obligatorisk)</dt>
+                   <dd>  infl | der | phon | orto | punct | ord | dial | typo
                        <ul>
-                           <li>???</li>
+                           <li><em>infl</em>: fejlen er tilknyttet bøjningen i ordet</li>
+                           <li><em>der</em>: derivationsfejl, fx manglende derivativ (tilhæng) eller fejl ved affingering</li>
+                           <li><em>phon</em>: fejlen er tilknyttet fonetik/fonologi</li>
+                           <li><em>orto</em>: fejlen er tilknyttet retskrivningens konventioner, eks. dér, hvor ortografien bryder med fonologien</li>
+                           <li><em>punct</em>: fejlen er tilknyttet interpunktion</li>
+                           <li><em>ord</em>: fejlen er tilknyttet ordenstal</li>
+                           <li><em>dial</em>: dialektal fejl</li>
+                           <li><em>typo</em>: tastefejl</li>
+                           <li><em>hypcorr</em>: hyperkorrektion</li>
                        </ul>
                    </dd>
-                   <dt>Comments to some <em>pos</em> values</dt>
+                   <dt>Fejltyper - eksempler</dt>
                    <dd>
                        <ul>
+                           <li>infl</li>
+                           <li>(Taassumallu$(pron,infl|Taassumalu)</li>
                            <li>typo = typical typo — as a POS value?</li>
                            <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
                              Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
                         </ul>
                     </dd>
-             </dl>
-<dl>
                    <dt>Possible values for <em>errtype</em>:</dt>
                    <dd>( ??? )</dd>
                    <dt>Comments to each <em>errtype</em> value</dt>
