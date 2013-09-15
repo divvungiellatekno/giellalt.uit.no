@@ -26,10 +26,11 @@ Oppsummering: mykje er bra, nokre punkt som Ciprian skal sjekka enno. Notatar i 
 
 Uløyseleg problem med split compounds, må fiksast i preprossessering før OBT-analyse.
 
-
-hum-tf4-ans143:obt ttr000$ echo "Jorden var øde og tom, og mørke lå over havdypet. " | ./bin/mtag-osx64 |vislcg3  -g src/nob_morf.cg3 
+!!Problem
 
 {{{
+hum-tf4-ans143:obt ttr000$ echo "Jorden var øde og tom, og mørke lå over havdypet. " | ./bin/mtag-osx64 |vislcg3  -g src/nob_morf.cg3 
+
 "<jorden>"
 	"jord" subst appell mask be ent 
 "<var>"
@@ -58,16 +59,11 @@ hum-tf4-ans143:obt ttr000$ echo "Jorden var øde og tom, og mørke lå over havd
 	"havdyp" subst appell nøyt be ent 
 "<.>"
 	"$." clb <punkt> 
-}}}
+
 
 
 hum-tf4-ans143:obt ttr000$ echo "Jorden var øde og tom, og mørke lå over havdypet. " | ./bin/mtag-osx64 |vislcg3  -g src/nob_morf-prestat.cg3  | OBT-Stat/bin/run_obt_stat.rb 
 
-
-model loaded
-tagger compiled
-
-{{{
 "<jorden>"
 	"jord" subst appell mask be ent 
 "<var>"
@@ -94,7 +90,9 @@ tagger compiled
 	"$." clb <punkt> 
 }}}
 
+!!Oppsummering
 
+{{{
 sme unknown:
 cat data.tagged.clean.sme | PERL_UNICODE=D perl -p -e 's/ /\n/g' | grep unknown | wc -l
    tokens 39014 (20121014)
@@ -119,7 +117,7 @@ cat data.tagged.clean.nob | PERL_UNICODE=D perl -p -e 's/ /\n/g' | grep '<ukjent
          3426 (20121028)
          3431 (20121102)
          3453 (20121112)
-
+}}}
 
 !!!Wikipedia
 
