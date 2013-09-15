@@ -3,7 +3,7 @@
 
 Til stades: Berit Merete, Marja, Ciprian, Trond
 
-!!! Saker:
+!!!Saker:
 
 * Status
 * Arbeid framover
@@ -11,14 +11,14 @@ Til stades: Berit Merete, Marja, Ciprian, Trond
 * Neste møte
 
 
-!!! Status
+!!!Status
 
-!! Oppsummere Apertium-gull-arbeid (M og BM ferdig)
+!!Oppsummere Apertium-gull-arbeid (M og BM ferdig)
 
 BM og M har funne mykje spennande. Gt-pipeline har lemma,
 det har ikkje Apertium.
 
-
+{{{
 $67 0 -5.798 0.0 0.2087912 språk+regle<n><f> giella+njuolggadus<n>
 11 0 -7.605 0.0 0.1212121 sovemedisin<n><m> oađđit+dálkkas<n>
 7 0 -8.057 0.0 0.25 handel+avtale<n><m> efta+gávpi+šiehtadus<n>
@@ -29,18 +29,20 @@ second_run>grep -h '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | sort | uniq |
    17238
 	
 $10 0 -7.7 0.0 0.25 høyskole+utdanning<n><m> allaskuvla+oahpahus<n>
-
-!! Oppsummere gt-pipeline-alignment (Cip har laga)
-22 0 -6.91 0.0 0.25 høgskoleutdanning<subst> allaskuvlaoahpahus<N>
-22 0 -6.91 0.0 0.25 hurtigrute<subst> riddorukto<N>
-
-{{{
-grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | cut -d" " -f6-|cut -d"<" -f1|tr -d "+" |sort|uniq|lookup ~/main/words/dicts/nobsme/bin/nobsme.fst |grep '?'|wc -l
-grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | cut -d" " -f6-|cut -d"<" -f1|tr -d "+" |sort|uniq|wc -l
 }}}
 
 
+!! Oppsummere gt-pipeline-alignment 
+
+Cip har laga alignment.
+
 {{{
+22 0 -6.91 0.0 0.25 høgskoleutdanning<subst> allaskuvlaoahpahus<N>
+22 0 -6.91 0.0 0.25 hurtigrute<subst> riddorukto<N>
+
+grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | cut -d" " -f6-|cut -d"<" -f1|tr -d "+" |sort|uniq|lookup ~/main/words/dicts/nobsme/bin/nobsme.fst |grep '?'|wc -l
+grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | cut -d" " -f6-|cut -d"<" -f1|tr -d "+" |sort|uniq|wc -l
+
 $22 0 -6.911 0.0 0.2222222 yrkesaktiv<adj> bargonávccalaš<a>
 $3 0 -8.904 0.0 0.1538462 yrkesaktivitet<n><m> fidnodoaibma<n>
 $16 0 -7.23 0.0 0.1612903 yrkeserfaring<n><m> bargoduogáš<n>
@@ -52,8 +54,8 @@ $10 0 -7.7 0.0 0.4 yrkesutøver<n><m> fidnobargi<n><actor>
 !!! Arbeid framover
 
 
-Planlegge gt-gull-arbeid
-	bestemme nedre grense for sannsynsverdi
+* Planlegge gt-gull-arbeid
+* bestemme nedre grense for sannsynsverdi
 
 !! Hovudtrekk
 
@@ -68,6 +70,7 @@ Planlegge gt-gull-arbeid
 ## BM og M arbeider med rest-gt-pipeline
 
 
+
 !! Prosedyre for å arbeide med apertium
 
 Lemmatisere apertium-$-output:
@@ -77,14 +80,15 @@ Lemmatisere apertium-$-output:
 # Pluss i nob men ikkje sme => prøv i nob å erstatte "+" med "s", null, "e"
 # Pluss i sme men ikkje i nob => prøv i sme: 
 ## fjern +, 
-## /søk/erstatt/: /hallat/hallan/, /eapmi/an/, /stit/stin/, /hit/han/, /dit/dan/ /i+/e/, /u+/o/ /t+/n/, /t+//
+## Gjer /søk/erstatt/: /hallat/hallan/, /eapmi/an/, /stit/stin/, /hit/han/, /dit/dan/ /i+/e/, /u+/o/ /t+/n/, /t+//
 # Pluss i nob og sme => prøv nob først og deretter sme 
 # Hugs <actor> i sme
 ## <n>...<actor> => stryk <<actor>
 ## <v>...<actor> => manuelt
 
 
- Her er oversikt over {{der_}}:
+
+Her er oversikt over {{der}}:
 
 {{{ 
 1018 passl => stryk der_passl-taggen
@@ -101,12 +105,21 @@ Lemmatisere apertium-$-output:
   11 alla => ignorer
    8 h => ignorer
    5 d => stryk der_d-taggen
-}}}    
+}}}
 
- grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | grep der_|rev|cut -d"_" -f1|rev|cut -d">" -f1|sort|uniq -c|sort -nr
+
+
+
+
+
+Kommandoar:
+
+{{{
+grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | grep der_|rev|cut -d"_" -f1|rev|cut -d">" -f1|sort|uniq -c|sort -nr
 grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | grep 'eapmi+'|rev|cut -d"+" -f2-|sort|rev|l
+}}}
 
-<vabess> må vi sjå manuelt på:
+Taggen <vabess> må vi sjå manuelt på:
 
 {{{
 bruke<vblex> geavahit<v><tv><vabess>
@@ -136,13 +149,10 @@ uønsket<adj> sávvat<v><tv><vabess><a>
 !!! Autshomato
 
 # Skal vi pushe CAT (Authomato eller andre ting) på omsetjarar må vi arrangere __kurs__.
-# Verkeleg nyttig blir CAT først når TM inneheld tekstar som __verkeleg__ inneheld
-  same emne
+# Verkeleg nyttig blir CAT først når TM inneheld tekstar som __verkeleg__ inneheld same emne
 
 !!! Neste møte
 
 Kort prat når Ciprian  er ferdig med fase 1/2.
-
-
 
 
