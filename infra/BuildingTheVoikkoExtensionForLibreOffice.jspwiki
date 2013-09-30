@@ -1,4 +1,4 @@
-!!!Gory details - how to compile hfst-ospell and libvoikko as universal binaries
+!!!Gory details - how to compile hfst-ospell and libvoikko as static universal binaries
 
 __NB!__ This documentation is likely outdated, and should be taken as a guide to new efforts only. Please update the document as necessary when building the extension again.
 
@@ -25,7 +25,9 @@ For {{hfst-ospell}} the required dependencies mean the following libraries (some
 * libiconv
 * libcrypto
 
-!!Check the architecture of the installed libraries
+Depending on OS version and LibreOffice versions, the list might be longer. The only way to tell is to see what the linker complains about, and then build the missing libraries.
+
+!!!Check the architecture of the installed libraries
 
 To check that they really are universal, first get a list of which installed libraries {{hfst-ospell}} is dependent on:
 
@@ -44,188 +46,16 @@ $ file /usr/local/lib/libhfstospell.1.dylib
 
 For those libraries that give the above output, all is fine. But if you get a message that there is only one architecture for a library, you have to recompile and reinstall that library as a universal binary.
 
-!!Build hfst-ospell as a universal binary
+Then do the following:
 
-Next, configure and make {{hfst-ospell}} using the following options (the text is linewrapped here for readability, all commands should be on one line):
+* [Build hfst-ospell for inclusion in voikko|BuildingHfst-ospellForInclusionInVoikko.html]
+* [Build libvoikko as a universal binary|BuildLibvoikkoAsUniversalBinary.html]
 
-!Snow Leopard or earlier(?) (≤ 10.6) build
-
-{{{
-# If you have run make before, run make distclean just to ensure you start from scratch:
-make distclean
-
-# HFST-ospell, working univ. binary config:
-CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
-	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
-	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
-	CFLAGS="-I/usr/local/include -I/opt/local/include \
-		-L/usr/local/lib -L/opt/local/lib -isysroot \
-		/Developer/SDKs/MacOSX10.5.sdk \
-		-arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" \
-	--enable-static \
-	--disable-dependency-tracking \
-	--disable-shared
-
-# HFST-ospell, working univ. binary make:
-make CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot /Developer/SDKs/MacOSX10.5.sdk \
-	-arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LINK="gcc -framework CoreFoundation -framework Cocoa -arch i386 -arch x86_64" \
-	LDFLAGS="-framework CoreFoundation -framework Cocoa"
-
-# Finaly, install the binaries:
-sudo make install CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
-	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LINK="gcc -framework CoreFoundation -framework Cocoa -arch i386 -arch x86_64" \
-	LDFLAGS="-framework CoreFoundation -framework Cocoa"
-}}}
-
-It is possible that these can be simplified a bit, but at least they work. Please note that {{--disable-dependency-tracking}} is __required__ when configuring for a universal binary!
-
-!Lion (= 10.7) build
-
-The XCode development tool, libraries etc was moved in Lion, thus the SDK path has to be changed for the build to work. In addition, the lowest OS version supported is 10.6. The updated configure command looks like the following:
-
-{{{
-CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
-	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
-	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
-	CFLAGS="-I/usr/local/include -I/opt/local/include \
-		-L/usr/local/lib -L/opt/local/lib -lstdc++-static -isysroot \
-		/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk \
-		-arch i386 -arch x86_64 -mmacosx-version-min=10.6" \
-	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" \
-	--enable-static \
-	--disable-dependency-tracking \
-	--disable-shared
-}}}
-
-Similar changes need to be made to the make command.
-
-!Mountain Lion (= 10.8) build
-
-There are stricter rules for building static libraries under 10.8: minimum system version must be 10.7, and no static linking of core libraries. The updated configure command looks like the following:
-
-{{{
-CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
-	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
-	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
-	CFLAGS="-I/usr/local/include -I/opt/local/include \
-	-L/usr/local/lib -L/opt/local/lib -isysroot \
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk \
-	-arch i386 -arch x86_64 -mmacosx-version-min=10.7" \
-	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" \
-	--enable-static \
-	--disable-dependency-tracking \
-	--disable-shared
-}}}
-
-Similar changes need to be made to the make command.
-
-!!Build hfst-ospell as a STATIC universal binary
-
-If you want to build {{hfst-ospell}} as a __static__ library (e.g. as part of another component made for external distribution), there are a couple of changes. First, copy the following files to a separate dir (I have used {{/Users/sjur/alibs/}}):
-
-{{{
-libarchive.a
-libbz2.a
-libcrypto.a
-libiconv.a
-liblzma.a
-libxml2.a
-libz.a
-}}}
-
-Then configure it as follows:
-
-{{{
-CPATH=/opt/local/include:/usr/local/include:/usr/include \
-	./configure CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
-	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
-	CFLAGS="-I/usr/local/include -I/opt/local/include -L/Users/sjur/alibs \
-	-L/usr/local/lib -isysroot /Developer/SDKs/MacOSX10.5.sdk -arch i386 \
-	-arch x86_64 -mmacosx-version-min=10.5" \
-	LDFLAGS=" -arch i386 -arch x86_64 -L/Users/sjur/alibs" \
-	--enable-static --disable-dependency-tracking --disable-shared
-}}}
-
-The essential point here is that the library flag {{-L}} now points to the separate dir we just made. This is required to force OSX to use static libraries when linking - if both a static and a dynamic version of a library is found in the same dir, OSX will ''always'' prefer the dynamic one. Hence the separate dir.
-
-The {{make}} command line is modified in the same way:
-
-{{{
-make CFLAGS="-I/usr/local/include -L/Users/sjur/alibs -L/usr/local/lib -isysroot \
-	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LINK="gcc -framework CoreFoundation -framework Cocoa -arch i386 -arch x86_64" \
-	LDFLAGS="-framework CoreFoundation -framework Cocoa"
-}}}
-
-Finally install this using the same {{make}} command as we just used, but add {{sudo}} and {{install}}:
-
-{{{
-sudo make install ... [the rest as above]
-}}}
-
-When done, you should have a freshly compiled and installed file {{/usr/local/lib/libhfstospell.a}}. Copy it to the same library dir we made above, together with the rest of the library files (in my case {{/Users/sjur/alibs/}}).
-
-!!Build libvoikko as a universal binary
-
-{{{
-# LibVoikko, working univ. binary + hfst  configure:
-./configure CXXFLAGS=" -arch i386 -arch x86_64" CPPFLAGS="-I/usr/local/include" \
-	CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
-	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 \
-	-mmacosx-version-min=10.5" LDFLAGS=" -arch i386 -arch x86_64" \
-	--enable-static --disable-dependency-tracking --enable-hfst
-
-# Libvoikko, working univ. binary + hfst make:
-make CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
-	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LINK="gcc -framework CoreFoundation -framework Cocoa  -arch i386 -arch x86_64" \
-	LDFLAGS="-framework CoreFoundation -framework Cocoa"
-
-# Finally install the binaries:
-sudo make install CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
-	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LINK="gcc -framework CoreFoundation -framework Cocoa  -arch i386 -arch x86_64" \
-	LDFLAGS="-framework CoreFoundation -framework Cocoa"
-}}}
-
-Now you should have in {{/usr/local/lib/}} a file named {{libvoikko.1.dylib}} as a universal library including hfst support. This is the last step before making the {{VoikkoSpellService}} component, giving system-wide Voikko spellers.
-
-Building {{libvoikko}} as a __static__ library follows the same outline as for {{hfst-ospell}}. The details are as follows:
-
-{{{
-./configure CXXFLAGS=" -arch i386 -arch x86_64" \
-	CPPFLAGS="-I/usr/local/include -L/Users/sjur/alibs" \
-	CFLAGS="-I/usr/local/include -L/Users/sjur/alibs -isysroot \
-	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LDFLAGS=" -arch i386 -arch x86_64" \
-	--enable-static --disable-dependency-tracking --enable-hfst --disable-shared
-}}}
-
-Then {{make}}:
-
-{{{
-make CFLAGS="-I/usr/local/include -L/Users/sjur/alibs -isysroot \
-	/Developer/SDKs/MacOSX10.5.sdk -arch i386 -arch x86_64 -mmacosx-version-min=10.5" \
-	LINK="gcc -framework CoreFoundation -framework Cocoa  -arch i386 -arch x86_64" \
-	LDFLAGS="-framework CoreFoundation -framework Cocoa"
-}}}
-
-And finally {{make install}}:
-
-{{{
-sudo make install ... [the rest as above]
-}}}
-
-Copy the resulting {{/usr/local/lib/libvoikko.a}} to the same static library dir we made above.
-
-!!Compiling the VoikkoSpellService
+!!!Compiling the VoikkoSpellService
 
 Copy the file {{/usr/local/lib/libvoikko.1.dylib}} to your VoikkoSpellService source dir + {{Resources/voikko/}}. Then open the XCode project, and compile. Hopefully that should be enough.
 
-!!Building the LibreOffice extension
+!!!Building the LibreOffice extension
 
 The first time you're compiling, you need to prepare your environment:
 * download the LibreOffice SDK
@@ -250,4 +80,35 @@ lib/
 
 In this case, {{STANDALONE_EXTENSION_PATH}} should be set to {{lib/voikko}}. When done, just {{make oxt}} and distribute the final {{.oxt}} file.
 
-__NB!!!__ The above build instructions are only tested on Snow Leopard, and the resulting OOo / LibreOffice extension is known to ''only'' work on Snow Leopard (aka MacOS X 10.6).
+Finally you need to modify the build step for the oxt macosx version as follows:
+{{{
+ifeq "$(PLATFORM)" "macosx"
+		cat $(PRJ)/settings/component.uno.map > build/voikko.map
+		nm -gx $^ | $(ADDSYMBOLS) >> build/voikko.map
+		$(LINK) $(COMP_LINK_FLAGS) $(LINK_LIBS) -o $@ $^ \
+		-framework CoreFoundation -framework Cocoa \
+		$(CPPUHELPERLIB) $(CPPULIB) $(SALLIB) \
+		$(CPPUHELPERDYLIB) $(CPPUDYLIB) $(SALDYLIB) \
+		/Users/USERNAME/alibs/libvoikko.a \
+		/Users/USERNAME/alibs/libarchive.a \
+		/Users/USERNAME/alibs/libbz2.a \
+		/Users/USERNAME/alibs/libcrypto.a \
+		/Users/USERNAME/alibs/libgiomm-2.4.a \
+		/Users/USERNAME/alibs/libglib-2.0.a \
+		/Users/USERNAME/alibs/libglibmm-2.4.a \
+		/Users/USERNAME/alibs/libhfstospell.a \
+		/Users/USERNAME/alibs/libiconv.a \
+		/Users/USERNAME/alibs/libintl.a \
+		/Users/USERNAME/alibs/liblzma.a \
+		/Users/USERNAME/alibs/libsigc-2.0.a \
+		/Users/USERNAME/alibs/libvoikko.a \
+		/Users/USERNAME/alibs/libxml++-2.6.a \
+		/Users/USERNAME/alibs/libxml2.a \
+		/Users/USERNAME/alibs/libz.a
+		$(INSTALL_NAME_URELIBS)  $@
+else
+}}}
+
+__NB!!!__ The above build instructions are only tested on Snow Leopard, and the
+resulting OOo / LibreOffice extension is known to ''only'' work on Snow Leopard
+(aka MacOS X 10.6) and Mountain Lion (aka MacOS X 10.8).
