@@ -44,6 +44,11 @@ When you see (env) in the command prompt, continue.
 
 Replace DICT below with sanat, vada, etc (to ''make vada-lexica'' etc.)
 
+If you have problems here, make sure that the environment variables for
+''GTHOME'', and ''GTCORE'' are set. Either you will see errors, or you can check
+with ''echo $GTHOME''. The ''neahtta'' user has these set automatically in its bash
+profile.
+
 {{{
 	make DICT-lexica
 }}}
@@ -52,13 +57,11 @@ Possible DICTs are: baakoeh, erey, kyv, muter, pikiskwewina, saan, sanat, sanit,
 
 6.) ''Check that there were no errors, also wc -l *.xml to make sure there is content in the files.''
 
-If there is an error in an XML file, Saxon will print out the file name
-and line that was problematic.
+If there is an error in an XML file used in compilation, Saxon will print out
+the file name and line that was problematic. It's sometimes good to check the
+output too, because Saxon may not error but produce no output. You can test this
+by following the procedure below.
  
-Also, sometimes it's a good idea to run the interactive shell with the
-app, just to make sure that all of the files are able to be parsed with
-no errors before restarting the actual production service.
-
 This ''Makefile'' process naturally results in files ending up in
 ''dicts/'', which is the place that the app looks for dictionaries,
 following the relevant configuration file in ''configs/DICT.config.yaml''. This
@@ -82,9 +85,16 @@ such:
     NDS_CONFIG=configs/DICT.config.yaml python manage.py chk-fst-paths
 }}}
 
+!! Updating on your own
+
 The first way to update FSTs is to do so on your own, using whichever method
 you are comfortable with, typically following the usual procedure for
 ''$GTSVN/langs/'', and then copying them manually to the specified locations.
+
+!! Updating via the Makefile
+
+NB: this will not work as the ''neahtta'' user, and is meant mostly for
+development environments.
 
 For convenience, the ''Makefile'' also contains compilation and install
 targets, which assume a specific type of configuration. You may easily compile
@@ -109,9 +119,9 @@ the ''Makefile'' (which simply follows the procedures for ''$GTSVN/langs''),
 but it will also copy FST files to temporary locations within the dictionary
 config directory as a prerequisite to the install targets.
 
-!!!Configuring the dictionary + fst
+!!! Testing the configuration
 
-''Go to neahtta and configure the dictionaries''
+Go to neahtta and configure the dictionaries
 
 {{{ 
 	cd ~/neahtta/ ; NDS_CONFIG=configs/DICT.config.yaml python manage.py shell 
@@ -124,7 +134,17 @@ Here, replace DICT with the relevant name in configs/ that you are working on (t
 }}}
  
 If everything is good and there are no errors, you'll see the python
-command prompt. 
+command prompt: ''Interactive Flask Shell'', meaning the XML
+files work. Exit with ''Ctrl-D''.
+
+As a reminder, you can also check that the FSTs for a given configuration are
+able to be found. This also checks XML files, and at the end will print out FST
+paths, updated dates, and missing files.
+
+{{{
+    NDS_CONFIG=configs/DICT.config.yaml python manage.py chk-fst-paths
+}}}
+
 
 !!!Resetting the server
 
