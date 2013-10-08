@@ -24,6 +24,22 @@ sudo make install CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
 
 Now you should have in {{/usr/local/lib/}} a file named {{libvoikko.1.dylib}} as a universal library including hfst support. This is the last step before making the {{VoikkoSpellService}} component, giving system-wide Voikko spellers.
 
+!!MacOSX 10.8 + XCode 5 & grammar checker enabled
+
+Prerequisites:
+* newest [hfst-ospell|BuildingHfst-ospellForInclusionInVoikko.html] from {{svn}}
+* newest [vislcg3|../tools/docu-vislcg3.html] from {{svn}}
+* very newest master branch of libvoikko
+
+{{{
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --enable-hfst --enable-vislcg3 CC=llvm-gcc
+make CXXFLAGS="-Qunused-arguments $CXXFLAGS" CFLAGS="-Qunused-arguments $CFLAGS"
+}}}
+
+__NB!__ This is work in progress, and the code might crash, it might not build,
+etc. Don't be surprised, but inform the developers about the issues so they can
+be fixed.
+
 !!!Build libvoikko as a static universal binary with hfst support
 
 !!MacOSX 10.6
