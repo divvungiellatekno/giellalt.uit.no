@@ -13,49 +13,77 @@
              <title>KAL</title>
              <dl>
                    <dt>Ordklasse (ikke obligatorisk):</dt>
-                   <dd> loan | prop | pron | num | acro | abbr | hypcorr <br/>
+                   <dd> loan | prop | pron | num | acro | abbr  <br/>
                 (dette fordi nogle typer ord har mere fejlskrivning end andre typer)</dd>
                    <dt>Specielle forhold ved ordet (ikke obligatorisk)</dt>
-                   <dd>  infl | der | phon | orto | punct | ord | dial | typo
+                   <dd>  infl | der | cmp 
                        <ul>
                            <li><em>infl</em>: fejlen er tilknyttet bøjningen i ordet</li>
                            <li><em>der</em>: derivationsfejl, fx manglende derivativ (tilhæng) eller fejl ved affingering</li>
-                           <li><em>phon</em>: fejlen er tilknyttet fonetik/fonologi</li>
-                           <li><em>orto</em>: fejlen er tilknyttet retskrivningens konventioner, eks. dér, hvor ortografien bryder med fonologien</li>
-                           <li><em>punct</em>: fejlen er tilknyttet interpunktion</li>
-                           <li><em>ord</em>: fejlen er tilknyttet ordenstal</li>
-                           <li><em>dial</em>: dialektal fejl</li>
-                           <li><em>typo</em>: tastefejl</li>
-                           <li><em>hypcorr</em>: hyperkorrektion</li>
+                           <li><em>cmp</em>: sammensætningsfejl</li>
+                           
                        </ul>
                    </dd>
                    <dt>Fejltyper - eksempler</dt>
-                   <dd>
+                   <dd> phon | orto | punct | ord | dial | hypcorr | typo
                        <ul>
-                           <li>infl</li>
-                           <li>(Taassumallu$(pron,infl|Taassumalu)</li>
-                           <li>typo = typical typo — as a POS value?</li>
-                           <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
-                             Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                           <li><em>phon</em>: fejlen er tilknyttet fonetik/fonologi
+                             <ul>
+                               <li> atoraai$(phon,ai|atorai) </li>
+                               <li> ingerlarnga$(phon,rng-rn|ingerlarna) </li>
+                               <li> erngup$(phon,rng-rm|ermup) </li>
+                             </ul>
+                           </li>
+                           <li><em>orto</em>: fejlen er tilknyttet retskrivningens konventioner
+                             <ul>
+                               <li> Arkaluk$(prop,orto,old,rk-qq|Aqqaluk) </li>
+                             </ul>
+                           </li>
+                           <li><em>punct</em>: fejlen er tilknyttet interpunktion
+                             <ul>
+                               <li> Pisunili.$(punct,dot-0|Pisunili)</li>
+                             </ul>
+                           </li>
+                           <li><em>ord</em>: fejlen er tilknyttet ordenstal
+                             <ul>
+                               <li> 14-anut$(num,ord,0-dot|14.-anut)</li>
+                             </ul>
+                           </li>
+                           <li><em>dial</em>: dialektal fejl
+                             <ul>
+                               <li> (aninguissaqqaartoq)$(dial,g,ng-g|aniguissaqqaartoq) </li>
+                               <li> Erseqqissaatigissuara$(dial,ssa|Erseqqissaatigissavara) </li>
+                               <li> Paasiuminaattut$(dial,ts|Paasiuminaatsut) </li>
+                               <li> igalaavinnaat$(dial,v-g|igalaaginnaat) </li>
+                               <li> oqaaseqatigiileeriaasiisa$(dial,i-dial|oqaaseqatigiilioriaasiisa) </li>
+                               <li> aaqqissuusaanngitsumik$(dial,con,s,1-2|aaqqissuussaanngitsumik) </li>
+                               <li> S-O-V-uginnarani$(dial,phon,i-dial|S-O-V-uinnarani) </li>
+                               <li> oqaluinnarniutaagani$(infl,dial,ga-na|oqaluinnarniutaanani) </li>
+                               <li> Ass.36:”Neriartoqusingami$(der,dial,qu-qqu;dial,ng-g;cmp,1-3|Ass. 36: "Neriartoqqusigami)</li>
+                             </ul>
+                           </li>
+                           <li><em>hypcorr</em>: hyperkorrektion
+                             <ul>
+                               <li> inornartigaaramiuk$(dial,hypcorr,g-ng|inornartingaaramiuk) </li>
+                               <li> atoraangasigik$(hypcorr,s-t|atoraangatigik)</li>
+                             </ul>
+                           </li>
+                           <li><em>typo</em>: tastefejl
+                             <ul>
+                               <li> akissutissarsisineqarsinnaapput$(typo,der,si-0|akissutissarsineqarsinnaapput) </li>
+                               <li> atorneqrtut$(typo,0-a|atorneqartut) </li>
+                               <li> Pallullorni$(typo,llullor-llorlu|Pallorluni) </li>
+                             </ul>
+                           </li>
                         </ul>
                     </dd>
-                   <dt>Possible values for <em>errtype</em>:</dt>
-                   <dd>( ??? )</dd>
-                   <dt>Comments to each <em>errtype</em> value</dt>
-                   <dd>
-                       <ul>
-                           <li>???</li>
-                       </ul>
-                   </dd>
-                   <dt>Comments to some <em>pos</em> values</dt>
-                   <dd>
-                       <ul>
-                           <li>typo = typical typo — as a POS value?</li>
-                           <li>mix = used with errtype=ncmp, since the correct form is made of several words/POS's.
-                             Problem: there is no such <em>errtype</em> value, only <em>wcmp</em> and <em>cmp</em>.</li>
+                    <dt> Flere fejl i samme ord holdes adskilt med ( ; ), eks.</dt>
+                    <dd>
+                        <ul>
+                            <li> Ass.36:”Neriartoqusingami$(der,dial,qu-qqu;dial,ng-g;cmp,1-3|Ass. 36: "Neriartoqqusigami) </li>
                         </ul>
                     </dd>
-             </dl>
+                </dl>
         </section>
         <p>By following these guidelines the resulting files should be readily usable for (speller) testing, as soon as
         they are converted to xml.</p>
