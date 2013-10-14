@@ -19,25 +19,35 @@
                    <dd>  infl | der | cmp 
                        <ul>
                            <li><em>infl</em>: fejlen er tilknyttet bøjningen i ordet</li>
-                           <li><em>der</em>: derivationsfejl, fx manglende derivativ (tilhæng) eller fejl ved affingering</li>
-                           <li><em>foc</em>: fejlen er tilknyttet enklitisering</li>
-                           <li><em>cmp</em>: sammensætningsfejl</li>
+                           <ul>
+                            <li><em>plurtant</em>: pluralis tantum</li>
+                            <li><em>0-suff</em>: manglende suffiks</li>
+                            <li><em>poss</em>: fejlen ligger i possessormarkeringen</li>
+                           </ul>
+                        <li><em>der</em>: derivationsfejl, fx manglende derivativ (tilhæng) eller fejl ved affingering</li>
+                            <ul>
+                            <li><em>htr</em>: halvtransitiv
+                            </ul>
+                        <li><em>foc</em>: fejlen er tilknyttet enklitisering</li>
+                        <li><em>cmp</em>: sammensætningsfejl</li>
                            
                        </ul>
                    </dd>
                    <dt>Fejltyper - eksempler</dt>
                    <dd> phon | orto | punct | ord | dial | hypcorr | typo
+                       <br> <b>Note</b>: Når der i opmærkningen står en bindestreg med mindst et bogstav på hver side, eks. a-i: Venstre side af bindestregen angiver aktuelle forhold i ordet, medens højre side angiver rettelsen.</br>
                        <ul>
-                           <li><em>phon</em>: fejlen er tilknyttet fonetik/fonologi
+                           <li><em>phon</em>: fejlen er tilknyttet fonetik/fonologi.
                              <ul>
                                <li> atoraai$(phon,ai|atorai) </li>
                                <li> ingerlarnga$(phon,rng-rn|ingerlarna) </li>
                                <li> erngup$(phon,rng-rm|ermup) </li>
                              </ul>
                            </li>
-                           <li><em>orto</em>: fejlen er tilknyttet retskrivningens konventioner
+                           <li><em>orto</em>: fejlen er tilknyttet retskrivningens konventioner. Herunder <em>old</em> = gammel retskrivning; og <em>glides</em> = halvvokaler
                              <ul>
                                <li> Arkaluk$(prop,orto,old,rk-qq|Aqqaluk) </li>
+                               <li> allanngujuitsuviit$(orto,glides|allanngujuitsuiit)</li>
                              </ul>
                            </li>
                            <li><em>punct</em>: fejlen er tilknyttet interpunktion
@@ -50,11 +60,11 @@
                                <li> 14-anut$(num,ord,0-dot|14.-anut)</li>
                              </ul>
                            </li>
-                           <li><em>dial</em>: dialektal fejl
+                           <li><em>dial</em>: dialektal fejl.
                              <ul>
                                <li> (aninguissaqqaartoq)$(dial,g,ng-g|aniguissaqqaartoq) </li>
                                <li> Erseqqissaatigissuara$(dial,ssa|Erseqqissaatigissavara) </li>
-                               <li> Paasiuminaattut$(dial,ts|Paasiuminaatsut) </li>
+                               <li> Paasiuminaattut$(dial,tt-ts|Paasiuminaatsut) </li>
                                <li> igalaavinnaat$(dial,v-g|igalaaginnaat) </li>
                                <li> oqaaseqatigiileeriaasiisa$(dial,i-dial|oqaaseqatigiilioriaasiisa) </li>
                                <li> aaqqissuusaanngitsumik$(dial,con,s,1-2|aaqqissuussaanngitsumik) </li>
@@ -63,11 +73,32 @@
                                <li> Ass.36:”Neriartoqusingami$(der,dial,qu-qqu;dial,ng-g;cmp,1-3|Ass. 36: "Neriartoqqusigami)</li>
                              </ul>
                            </li>
+                           <li><em>sub</em>: substandard, afviger fra det standardiserede sprog.
+                           <ul>
+                           <li>Akileraartigani$(sub,infl,ga-nna|Akileraartinnani)</li>
+                           <li>Namminersornerulernitsinniik$(infl,sub|Namminersornerulernitsinniit)</li>
+                           <li>akissuteqapalluttarneri$(sub,u-a|akissuteqapallattarneri)</li>
                            <li><em>hypcorr</em>: hyperkorrektion
                              <ul>
                                <li> inornartigaaramiuk$(dial,hypcorr,g-ng|inornartingaaramiuk) </li>
                                <li> atoraangasigik$(hypcorr,s-t|atoraangatigik)</li>
                              </ul>
+                           </li>
+                           <li><em>sandhi</em>: affingeringsfejl
+                             <ul>
+                               <li> Tulluutissorinassanngikkaluarpoq$(der,sandhi,ti-0|Tulluussorinassanngikkaluarpoq) </li>
+                             </ul>
+                           </li>
+                           <li><em>metathesis</em>: ombytning
+                             <ul>
+                               <li> Uunnammarmiullu$(typo,metathesis,nn-mm|Uummannarmiullu) </li>
+                               <li>uupakaatiillugu$(phon,con,metathesis|uukapaatiillugu)</li>
+                             </ul>
+                           </li>
+                           <li><em>min-cap</em>: skrevet lille begyndelsesbogstav, skal være stort begyndelsesbogstav
+                             <ul>
+                               <li> nuummi$(prop,min-cap|Nuummi) </li>
+                               </ul>
                            </li>
                            <li><em>typo</em>: tastefejl
                              <ul>
