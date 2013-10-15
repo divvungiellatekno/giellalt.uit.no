@@ -11,10 +11,32 @@ To ''write'' localisation (translate to your language) you go to the directory
 There you find your directory (follow your ISO code). Edit the lines
 labeled ''msgstr'' in the file {{LC_MESSAGES/messages.po}}.	Note from the
 examples the way the quotation marks are put, with errors here the file
-will not work. Do __not__ change the text on the lines mared ''#:'' or 
+will not work. Do __not__ change the text on the lines marked ''#:'' or 
 ''msgid''.
 
-See [the Oahpa documentation on localisation|../../../ped/common/Localisation.html] for help on how to get your translations online.
+Then check in your changes.
+
+Thereafter log in to gtoahpa via ssh.
+
+{{{
+sudo su neahtta 
+   (evt. sudo su root && sudo su neahtta)
+cd
+cd neahtta
+svn up
+pybabel compile -d translations
+exit
+}}}
+
+Gå ut av root (ctrl-D), til du er deg sjölv ({{whois trond}} etc., with
+your own username), and restart the service:
+
+{{{
+ sudo service nds-baakoeh stop
+ sudo service nds-baakoeh start
+}}}
+
+See also [the Oahpa documentation on localisation|../../../ped/common/Localisation.html] in order to see how this works for Oahpa.
 
 
 !!!To set up and maintain the localisation infrastructure
