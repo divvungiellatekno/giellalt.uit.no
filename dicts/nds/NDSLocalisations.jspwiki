@@ -14,30 +14,9 @@ examples the way the quotation marks are put, with errors here the file
 will not work. Do __not__ change the text on the lines marked ''#:'' or 
 ''msgid''.
 
-Then check in your changes.
+Then check in your changes, and then to update the server, follow the procedure in the following section __Recompiling translations for production server__.
 
-Thereafter log in to gtoahpa via ssh.
-
-{{{
-sudo su neahtta 
-   (evt. sudo su root && sudo su neahtta)
-cd
-cd neahtta
-svn up
-pybabel compile -d translations
-exit
-}}}
-
-Gå ut av root (ctrl-D), til du er deg sjölv ({{whois trond}} etc., with
-your own username), and restart the service:
-
-{{{
- sudo service nds-baakoeh stop
- sudo service nds-baakoeh start
-}}}
-
-See also [the Oahpa documentation on localisation|../../../ped/common/Localisation.html] in order to see how this works for Oahpa.
-
+Also read [the Oahpa documentation on localisation|../../../ped/common/Localisation.html] in order to see how this works for Oahpa.
 
 !!!To set up and maintain the localisation infrastructure
 
@@ -50,10 +29,11 @@ Translation strings are marked as with Oahpa, but NDS uses a slightly different 
 
 Marking translation strings in templates: [http://jinja.pocoo.org/docs/templates/#i18n-in-templates]
 
- 
 !!!Adding new locales
  
-Unknown locales such as crk and sma need to be defined somewhere. North Saami is in existence in se.dat, se_NO.dat and se_FI.dat, but this does not help with languages without two-letter codes.
+Unknown locales such as crk and sma need to be defined somewhere. North Saami
+is in existence in se.dat, se_NO.dat and se_FI.dat, but this does not help with
+languages without two-letter codes.
  
 Thus, for those we need to copy some files.
  
@@ -112,18 +92,40 @@ This is two steps: first run pybabel extract, as above, and then:
     pybabel compile -d translations
 }}}
 
-!!!Additional notes...
+!! Recompiling translations for production server
+
+1.) log in to the server
+2.) change to the neahtta user: ''sudo su neahtta''
+3.) switch to the project directory: ''cd ~/neahtta/''
+4.) ''svn up translations/''
+5.) ''pybabel compile -d translations''
+
+If everything went good and there were no errors, continue, otherwise if you
+need help troubleshooting see the section below (''Common error messages and troubleshooting'').
+
+6.) Exit from the ''neahtta'' user session by ''^D'', or ''exit''
+
+Then, you need to restart the relevant services.
+
+7.) sudo service nds-DICT stop
+8.) sudo service nds-DICT start
+
+(Where DICT is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)
+
+!!! Additional notes...
  
 !!Activating the virtual environment
  
-If you do not see the environment enabled in the command prompt, as the NDS user, run the following:
+If you do not see the environment enabled in the command prompt when you log in
+as the Neahttadigisánit user, run the following from this user's home directory:
 
 {{{
-    source kursadict_env/bin/activate 
+    source neahtta_env/bin/activate 
 }}}
 
-If you do not see changes to the command prompt name, check which python to make sure it is active if you do not see it in the bash prompt. If it still doesn't work, there are probably problems with virtualenv.
-
+If you do not see changes to the command prompt name, check ''which python'' to
+make sure it is active if you do not see it in the bash prompt. If it still
+doesn't work, there are probably problems with virtualenv.
  
 Typically you should see something like:
 
@@ -131,21 +133,24 @@ Typically you should see something like:
     (neahtta_env)[neahtta@gtoahpa gtsvn/]$ 
 }}}
 
-!!!ISO notes and internationalization language code vs. lexicon/FST language code
+!!! ISO notes and internationalization language code vs. lexicon/FST language code
  
-Because most browsers report what language they use using the 2-character ISO 639-1 code, any localization that has a 2-character code, (north sámi has se, so lucky!), we must use this code. If it doesn't, then creating new localizations with the 3-character code (ISO 639-2) will be necessary. Also, neahtta.py may not actually handle some of these 3-character localizations as well, so this will need to be fixed.
+Because most browsers report what language they use using the 2-character ISO
+639-1 code, any localization that has a 2-character code, (north sámi has se,
+so lucky!), we must use this code. If it doesn't, then creating new
+localizations with the 3-character code (ISO 639-2) will be necessary. Also,
+neahtta.py may not actually handle some of these 3-character localizations as
+well, so this will need to be fixed.
 
  
-!!!Currently supported localizations:
+!!! Currently supported localizations:
  
 May be found in translations/, but for ease of finding out:
 
- 
 # se (sme) 
 # fi 
 # no (nob)
 
- 
 Internationalization languages on the way:
 
 # sma
@@ -160,4 +165,22 @@ Internationalization languages on the way:
 # myv
 # yrk
 # sv
+
+!!! Common error messages and troubleshooting
+
+!! babel.core.UnknownLocaleError: unknown locale 'sms'
+
+This means that the locale directory is missing a .dat file for the locale.
+Follow the procedure in the 'Adding new locales' section.
+
+!! catalog 'translations/sma/LC_MESSAGES/messages.po' is marked as fuzzy, skipping
+
+Babel marks things with ''#, fuzzy'' when it can't find the line in the source
+code that the string belongs on, however it's not a big problem if line numbers
+are missing. As such, to compile, delete lines containing ''#, fuzzy'', and
+alternatively determine why there are no line numbers.
+
+Sometimes the first translation string in the catalogue will be marked fuzzy,
+but this is because it is blank. The first message must be blank for the
+meta-data, so delete the fuzzy comment if it appears, but leave the string.
 
