@@ -94,21 +94,22 @@ This is two steps: first run pybabel extract, as above, and then:
 
 !! Recompiling translations for production server
 
-1.) log in to the server
-2.) change to the neahtta user: ''sudo su neahtta''
-3.) switch to the project directory: ''cd ~/neahtta/''
-4.) ''svn up translations/''
-5.) ''pybabel compile -d translations''
+# log in to the server
+# change to the neahtta user: ''sudo su neahtta''
+# switch to the project directory: ''cd ~/neahtta/''
+# ''svn up translations/''
+# ''pybabel compile -d translations''
 
 If everything went good and there were no errors, continue, otherwise if you
 need help troubleshooting see the section below (''Common error messages and troubleshooting'').
 
-6.) Exit from the ''neahtta'' user session by ''^D'', or ''exit''
+Exit from the ''neahtta'' user session by ''^D'', or ''exit''
 
 Then, you need to restart the relevant services.
-
-7.) sudo service nds-DICT stop
-8.) sudo service nds-DICT start
+{{{
+sudo service nds-DICT stop
+sudo service nds-DICT start
+}}}
 
 (Where DICT is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)
 
@@ -147,28 +148,23 @@ well, so this will need to be fixed.
  
 May be found in translations/, but for ease of finding out:
 
-# se (sme) 
-# fi 
-# no (nob)
-
-Internationalization languages on the way:
-
-# sma
-# ru
-# myv
-# mrj
-# kv (kpv) \\
-  TODO: is this actually what komi users' browsers report?
-# lv (lav)
-# mdf
-# mhr
-# myv
-# yrk
-# sv
+# fi Finnish
+# kv (kpv) Komi (TODO: is this actually what komi users' browsers report?)
+# lv (lav) Latvian
+# mdf Moksha
+# mhr Eastern Mari
+# mrj Western Mari
+# myv Erzya
+# no (nob) Norwegian Bokmål
+# ru Russian
+# se (sme) North Saami
+# sma South Saami
+# sv Swedish
+# yrk Nenets
 
 !!! Common error messages and troubleshooting
 
-!! babel.core.UnknownLocaleError: unknown locale 'sms'
+!! babel.core.UnknownLocaleError: unknown locale sms
 
 This means that the locale directory is missing a .dat file for the locale.
 Follow the procedure in the 'Adding new locales' section.
