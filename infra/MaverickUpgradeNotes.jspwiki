@@ -1,0 +1,51 @@
+There are no big changes when it comes to language support and language technology in Maverick compared to Mountain Lion. The few points to mention:
+
+* offline dictation is available for a select few languages (English, French, Italian, Japanese, Chinese, Korean, Spanish, German)
+* the speller language preferences have been moved from the Language & Text control panel to the Keyboard control panel
+
+!!!Changes to the development tools
+
+The most important change is that XCode 5 under Maverick has no visible option for installing command line tools. Instead one must use a command line tool with a specific option:
+
+{{{xcode-select --install
+}}}
+
+!!HFST compilation issues
+
+Another effect of changes to the compilation of third party tools is that the configure and make commands have to be slightly modified for Hfst to build:
+
+{{{
+./configure --enable-lexc --enable-proc --enable-xfst \
+    --without-sfst \
+    CXXFLAGS="-I/usr/include/c++/4.2.1" LDFLAGS=" -stdlib=libstdc++"
+}}}
+
+Comments:
+* the first line lists the optional tools we need for the Divvun/GT infra
+* the second line is presently needed because of a bug in the SFST code (it
+  hasn't built in a while - this is irrespective of Maverick)
+* the third line is the additional parameters needed for Hfst to build on
+  OSX 10.9 / Maverick
+** actually, the CXXFLAGS option is because of a bug in the OpenFST backend
+   code([1]) meaning that the only Maverick specific issue is the LDFLAGS
+   option([2])
+
+!!!Summary of linguistic features in MacOSX 10.9 / Maverick
+
+* Unicode fonts: yes (at least 3)
+* built-in keyboard layouts: 73 languages (incl. Chinese * 2 - trad &
+  simplified) (Jf Trosterud 2004, Trosterud i Nordlyd 2012)
+* built-in spellers: 11 languages, but — using Hunspell {{.aff}} and {{.dic}}
+  files — extensible to any language; ISO 639-2 languages will be presented by
+  name (i.e. "sma" will be presented as ''South Sámi'' in the language of the
+  user interface), other languages will be presented using only the language
+  code (the non-suffix part of the {{.aff}} and {{.dic}} files). Example:
+  {{abd.aff}} and {{abd.dic}} will be presented as ''abd'', not as ''Manide''.
+* speech synthesis: 28 languages
+* speech recognition: 8 languages
+
+----
+Footnotes:
+[#1] see [https://bugs.launchpad.net/libmemcached/+bug/1216521/comments/2] for
+     further details
+[#2] see [http://mathematica.stackexchange.com/questions/34692/mathlink-linking-error-after-os-x-10-9-mavericks-upgrade] for further details
