@@ -30,7 +30,24 @@ Translation strings are marked as with Oahpa, but NDS uses a slightly different 
 Marking translation strings in templates: [http://jinja.pocoo.org/docs/templates/#i18n-in-templates]
 
 !!!Adding new locales
+
+This comes in three main steps:
+
+* Make sure .dat files exist
+* Generate a .po file for the locale
+* Check in the .po files
  
+The easiest place to do this will be on the {gtweb} server, because the
+environment is already configured with the required tools. Otherwise, if you
+wish to do this on your local machine, you will need to set up your environment before this works.
+
+* See: [Developing NDS|nds/NDSDeveloping.jspwiki]
+
+All further steps assume that you are doing this on gtweb, if you are
+developing, you will know what paths you need to update.
+
+!! Dat files
+
 Unknown locales such as crk and sma need to be defined somewhere. North Saami
 is in existence in se.dat, se_NO.dat and se_FI.dat, but this does not help with
 languages without two-letter codes.
@@ -55,27 +72,34 @@ Thus, for those we need to copy some files.
 
 Thus the new locale will be able to be initialized with the init command below.
 
- 
 !!!Typical i18n management tasks
  
 !!Generating a message template
  
-Message template files (.pot) are where Babel stores all of the strings, which it then moves to individual translation .po files.
-
+Message template files (.pot) are where Babel stores all of the strings, which
+it then moves to individual translation .po files.
  
-Generating the template is easy. From the NDS project directory, and with the virtualenv enabled:
+Generating the template is easy. If you are doing this on {gtweb}, as the
+{neahtta} user, switch to the project directory first:
+
+{{{
+	cd ~/neahtta/
+}}}
+
+Then extract all strings to the template file, and update existing projects:
 
 {{{
     pybabel extract -F babel.cfg -k lazy_gettext -o translations/messages.pot .
+    pybabel update -i translations/messages.pot -d translations
 }}}
 
-!!Initializing a translation
+Now you can initialize a translation.
 
 {{{
-    pybabel init -i translations/messages.pot -d translations -l no
-    pybabel init -i translations/messages.pot -d translations -l sma
-    etc
+    pybabel init -i translations/messages.pot -d translations -l LANG
 }}}
+
+Where LANG is the ISO code for the language project.
 
 !!Update .pot with new strings and automatically merge into .po
  
@@ -94,22 +118,22 @@ This is two steps: first run pybabel extract, as above, and then:
 
 !! Recompiling translations for production server
 
-# log in to the server
-# change to the neahtta user: ''sudo su neahtta''
-# switch to the project directory: ''cd ~/neahtta/''
-# ''svn up translations/''
-# ''pybabel compile -d translations''
+1.) log in to the server as the neahtta user
+2.) switch to the project directory: ''cd ~/neahtta/''
+3.) ''svn up translations/''
+4.) ''pybabel compile -d translations''
 
 If everything went good and there were no errors, continue, otherwise if you
 need help troubleshooting see the section below (''Common error messages and troubleshooting'').
-
-Exit from the ''neahtta'' user session by ''^D'', or ''exit''
 
 Then, you need to restart the relevant services.
 {{{
 sudo service nds-DICT stop
 sudo service nds-DICT start
 }}}
+
+5.) sudo service nds-DICT stop
+6.) sudo service nds-DICT start
 
 (Where DICT is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)
 
