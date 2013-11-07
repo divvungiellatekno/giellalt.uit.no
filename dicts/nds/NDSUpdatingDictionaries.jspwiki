@@ -1,73 +1,69 @@
-
 This page documents both lexicon and fst updating, and restarting of the server.
 One may update either lexica or fst or both, but in both cases configuring and
 resetting of the surver must be run.
 
-!!!Updating the lexica
- 
+Administering NDS requires the use of Fabric, which is a system for performing
+processes remotely.  Each process here could theoretically be run remotely,
+without first logging in to the server, however this requires installing Fabric
+on your local machine. The added benefit is being able to chain commands together. For more information see the final section on Fabric.
+
+All of the examples here use the ''gtweb'' dictionaries, and require logging in as the ''neahtta'' user.
+
 NB: Neahttadigisánit (sme, sma, etc.) or sanit.oahpa.no/sánit.oahpa.no is
 currently on gtoahpa, but other services are located on gtweb: sanat.oahpa.no,
 valks.oahpa.no. For these you will need to log into gtweb, though the following
 examples may show gtoahpa as the hostname in the command prompt
 
-1.) ''Log in to the server via SSH as your own user account''
+!!!Updating the lexica
 
-2.) ''Switch to the NDS user account.''
+1.) ''Log in to the server via SSH as the NDS user''
  
 Note that when logged in as the NDS user, the python virtualenv should be
 activated automatically, and you will see this before the command prompt:
 
 {{{
-	$ sudo su neahtta
 	(env)[neahtta@gtweb ~]$ 
 }}}
 
-(If this procedure is not available, do the following commands from the home directory of
+(If you do not see this, do the following commands from the home directory of
 neahtta: ''cd ~ && source env/bin/activate''.)
 
 When you see (env) in the command prompt, continue.
 
-3.) ''Go to the gtsvn catalogue and update the files from svn''
+2.) ''Go to the neahtta catalogue and run the Fabric process''
 
 {{{
-	cd ~/gtsvn/ && svn up words langs
+	cd ~/neahtta/
+	fab local DICT compile_dictionary
 }}}
+
+Replace DICT below with sanat, vada, etc. (to ''fab local vada compile_dictionary'' etc.)
  
-4.) ''Then, go to the dicts catalogue.''
-
-
-{{{
-	cd ~/neahtta/dicts/ 
-}}}
-
-5.) ''Then, compile the dictionaries.''
-
-Replace DICT below with sanat, vada, etc (to ''make vada-lexica'' etc.)
-
 If you have problems here, make sure that the environment variables for
-''GTHOME'', and ''GTCORE'' are set. Either you will see errors, or you can check
-with ''echo $GTHOME''. The ''neahtta'' user has these set automatically in its bash
-profile.
+''GTHOME'', and ''GTCORE'' are set. Either you will see errors, or you can
+check with ''echo $GTHOME''. The ''neahtta'' user has these set automatically
+in its bash profile.
 
-{{{
-	make DICT-lexica
-}}}
-
-Possible DICTs are: baakoeh, erey, kyv, muter, pikiskwewina, saan, sanat, sanit, vada, valks.
-
-6.) ''Check that there were no errors, also wc -l *.xml to make sure there is content in the files.''
+6.) ''Check that there were no errors, also wc -l dicts/*.xml to make sure there is content in the files.''
 
 If there is an error in an XML file used in compilation, Saxon will print out
-the file name and line that was problematic. It's sometimes good to check the
-output too, because Saxon may not error but produce no output. You can test this
-by following the procedure below.
- 
-This ''Makefile'' process naturally results in files ending up in
-''dicts/'', which is the place that the app looks for dictionaries,
-following the relevant configuration file in ''configs/DICT.config.yaml''. This
-will usually be enough, but if updates do not seem to be visible on the web, it
-is a good idea to check that the dictionaries are in the locations that the
-config expects, and alternatively restarting the server process.
+the file name and line that was problematic. Before compilation, a backup file
+will be stored, so if the compilation process overwrites this with nothing, you
+may revert to a previous version. Backup files are named *.bak, and include a 
+timestamp.
+
+This process compiles all dictionaries to ''dicts/'', which is the place that
+most instances of NDS rely on, following the relevant configuration file in
+''configs/DICT.config.yaml''. This will usually be enough, but if updates do
+not seem to be visible on the web, it is a good idea to check that the
+dictionaries are in the locations that the config expects, and alternatively
+restarting the server process.
+
+7.) ''Restart the server process''
+
+{{{
+	fab local baakoeh restart_service
+}}}
 
 !!!Updating the fsts
 
@@ -76,13 +72,13 @@ know first where the FSTs for each dictionary and language should lie.
 FST locations are defined in the relevant config file in
 ''configs/DICT.config.yaml'', in the ''Morphology'' section near the top.
 
-A handy tool is availble to do this automatically, from ''~/neahtta/'', which
-will evaluate the config, test dictionaries, and then print FST paths and last
-updated date. If an FST is missing from its expected path, it will be listed as
-such: 
+An automatic tool to check these configs is availble to do this automatically,
+from ''~/neahtta/'', which will evaluate the config, test dictionaries, and
+then print FST paths and last updated date. If an FST is missing from its
+expected path, it will be listed as such: 
 
 {{{
-    NDS_CONFIG=configs/DICT.config.yaml python manage.py chk-fst-paths
+    fab local DICT test_configuration
 }}}
 
 !! Updating on your own
@@ -91,28 +87,30 @@ The first way to update FSTs is to do so on your own, using whichever method
 you are comfortable with, typically following the usual procedure for
 ''$GTSVN/langs/'', and then copying them manually to the specified locations.
 
-!! Updating via the Makefile
+!! Updating via Fabric
 
-NB: this will not work as the ''neahtta'' user, and is meant mostly for
-development environments.
+Fabric provides a quick shortcut to the build processes for each language.
 
-For convenience, the ''Makefile'' also contains compilation and install
-targets, which assume a specific type of configuration. You may easily compile
-these using the following commands, however installing them to the paths
-defined in ''DICT.config.yaml'' may require ''sudo'' privileges. If you are
-logged in as the ''neahtta'' user, you may be out of luck, because this user
-has no ''sudo'' permissions for security purposes. In any case, this will also
-allow for developers to test the build process.
+When you are logged in and in the ''~/neahtta/'' directory, you may run these
+commands.
 
-Compiling FSTs with the ''Makefile'' is as follows: you can compile all FSTs
-individually with ''make ISO'', where ISO is the ISO for the language, or
-''make DICT'' where DICT is the short name for the project. This will compile
-all FSTs belonging to the DICT together.
+Compiling FSTs with Fabric is as follows: you can compile all FSTs
+individually with ''fab local DICT compile_fst:ISO'', or,
+''fab local DICT compile'' where DICT is the short name for the project. The
+latter will compile all FSTs belonging to the DICT, together with the lexicon.
 
 {{{
-    make DICT
-    make ISO
+    fab local DICT compile_fst:ISO
+    fab local DICT compile
 }}}
+
+When you run these, follow the output to make sure no errors have occurred. The
+process will automatically install the new FST files in their respective
+locations, but only if the compilation process was successful.
+
+Updates to FSTs do not require restarting the server, and changes will be made
+live immediately. If you update the lexicon however, you shouold restart the
+process.
 
 Either of these will compile the FSTs in their original locations as defined in
 the ''Makefile'' (which simply follows the procedures for ''$GTSVN/langs''),
@@ -124,69 +122,48 @@ config directory as a prerequisite to the install targets.
 Go to neahtta and configure the dictionaries
 
 {{{ 
-	cd ~/neahtta/ ; NDS_CONFIG=configs/DICT.config.yaml python manage.py shell 
+	cd ~/neahtta/
+    fab local DICT test_configuration
 }}}
 
-Here, replace DICT with the relevant name in configs/ that you are working on (the list of DICTs above). For example:
+Here, replace DICT with the relevant name in configs/ that you are working on (the list of DICTs above). 
 
-{{{
-	NDS_CONFIG=configs/sanat.config.yaml python manage.py shell
-}}}
- 
-If everything is good and there are no errors, you'll see the python
-command prompt: ''Interactive Flask Shell'', meaning the XML
-files work. Exit with ''Ctrl-D''.
-
-As a reminder, you can also check that the FSTs for a given configuration are
-able to be found. This also checks XML files, and at the end will print out FST
-paths, updated dates, and missing files.
-
-{{{
-    NDS_CONFIG=configs/DICT.config.yaml python manage.py chk-fst-paths
-}}}
-
+If everything is good and there are no errors, you'll see FST paths, and some happy cyan text at the end.
 
 !!!Resetting the server
 
-''Exit sudo mode, and restart the service (as yourself).''
-
-__On gtweb (sanat, valks...):__
-
-''First stop...''
+Either use the fab process, or relevant system commands.
 
 {{{ 
-	sudo systemctl stop nds-DICT.service 
+	cd ~/neahtta/
+    fab local DICT restart_service
 }}}
 
-Replace DICT with the relevant service name sanat etc.
-(see above for a list). For example:
+NB: you may be prompted for your the neahtta sudo password, and if this doesn't
+work, something is broken and developers must fix it.
+
+!!! More on Fabric
+
+Most of the process here is delegated to other commands, and this is because
+Fabric is a system for executing commands locally or remotely on other systems.
+
+Two benefits for people who need to run these processes frequently are:
+
+ * chaining commands together
+ * running remotely
+
+Most commands above have used ''local'' as a possible host, but these could be
+replaced with ''gtweb'', and Fabric will ask for an SSH password, and then
+perform all the commands.
+
+Commands can also be chained, for example:
 
 {{{
-	sudo systemctl stop nds-sanat.service 
+    fab local guusaaw compile test_configuration restart_service
 }}}
 
-''... then restart'' (again with ''sanat'' as an example)
-
-{{{ 
-	sudo systemctl start nds-sanat.service
-}}}
-
-Two dictionaries (sanit, baakoeh) are on gtoahpa. Here, the 
-command is __different__.
-
-The command is not ''systemctl'', but ''service''.
-The command is thus (with either sanit or baakoeh:
-
-{{{
-	sudo service nds-sanit stop
-	sudo service nds-sanit start
-}}}
-
- 
-The reason this is done in two separate steps is just to make sure
-everything has come down before starting it up again. Usually advisable
-to watch top.
-
+This would execute everything after guusaaw in order: compilation, testing, and
+restart.
 
 !!! More comments on the CENTOS (gtoahpa) operative system
 
