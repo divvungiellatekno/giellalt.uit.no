@@ -14,7 +14,7 @@ Configure and make {{hfst-ospell}} using the following options (the text is line
 make distclean
 
 # HFST-ospell, working univ. binary config:
-CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
+CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure --enable-zhfst \
 	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
 	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
 	CFLAGS="-I/usr/local/include -I/opt/local/include \
@@ -46,7 +46,7 @@ It is possible that these can be simplified a bit, but at least they work. Pleas
 The XCode development tool, libraries etc was moved in Lion, thus the SDK path has to be changed for the build to work. In addition, the lowest OS version supported is 10.6. The updated configure command looks like the following:
 
 {{{
-CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
+CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure --enable-zhfst \
 	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
 	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
 	CFLAGS="-I/usr/local/include -I/opt/local/include \
@@ -66,7 +66,7 @@ Similar changes need to be made to the make command.
 There are stricter rules for building static libraries under 10.8: minimum system version must be 10.7, and no static linking of core libraries. The updated configure command looks like the following:
 
 {{{
-CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
+CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure --enable-zhfst \
 	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
 	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
 	CFLAGS="-I/usr/local/include -I/opt/local/include \
@@ -80,6 +80,26 @@ CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure \
 }}}
 
 Similar changes need to be made to the make command.
+
+!!Maverick / 10.9 build
+
+By default, only backwards compatible with 10.8. The following is for dynamic libs only. Configuration:
+{{{
+CPATH=/opt/local/include:/usr/local/include:/usr/include \
+./configure --enable-zhfst \
+	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
+	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
+	CFLAGS="-I/usr/local/include -I/opt/local/include \
+	-L/usr/local/lib -L/opt/local/lib -isysroot \
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk \
+	-arch i386 -arch x86_64 -mmacosx-version-min=10.8" \
+	LDFLAGS=" -arch i386 -arch x86_64 -L/opt/local/lib" \
+	--disable-dependency-tracking
+}}}
+
+Make:
+{{{
+}}}
 
 !!!Build hfst-ospell as a STATIC universal binary
 
@@ -99,7 +119,8 @@ Then configure it as follows:
 
 {{{
 CPATH=/opt/local/include:/usr/local/include:/usr/include \
-	./configure CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
+	./configure --enable-zhfst \
+	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
 	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
 	CFLAGS="-I/usr/local/include -I/opt/local/include -L/Users/USERNAME/alibs \
 	-L/usr/local/lib -isysroot /Developer/SDKs/MacOSX10.5.sdk -arch i386 \

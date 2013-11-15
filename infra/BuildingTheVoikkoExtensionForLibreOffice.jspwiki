@@ -44,7 +44,19 @@ $ file /usr/local/lib/libhfstospell.1.dylib
 /usr/local/lib/libhfstospell.1.dylib (for architecture x86_64):	Mach-O 64-bit dynamically linked shared library x86_64
 }}}
 
-For those libraries that give the above output, all is fine. But if you get a message that there is only one architecture for a library, you have to recompile and reinstall that library as a universal binary.
+For those libraries that give the above output, all is fine. But if you get a message that there is only one architecture for a library, you have to recompile and reinstall that library as a universal binary. You do that as follows:
+
+{{{
+sudo port -f install PORTNAME +universal
+}}}
+
+!!Grammar checker update
+
+As we now also have started to work on a grammar checker, there are two more dependencies to build:
+* vislcg3
+* tinyxml2
+
+Both have their makefiles constructed by CMake, and none of them are available through MacPorts (at least not in a recent enough version).
 
 Then do the following:
 
