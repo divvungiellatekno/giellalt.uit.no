@@ -14,7 +14,9 @@ including how to add more architectures for the universal build.)
 __NB!__ LibreOffice 4 still supports MacOSX on PPC all the way back to Tiger. To
 ensure that the Voikko plugin with hfst support actually runs on those systems,
 it should probably be built on such a system (assuming that the compiled plugin
-is more likely forward compatible than backwards compatible). Also, presently the MacOSX builds of LibreOffice (and OpenOffice) are 32-bit only, thus all libraries need to be available for that architecture.
+is more likely forward compatible than backwards compatible). Also, presently the MacOSX builds of LibreOffice (and OpenOffice) are 32-bit only, thus all libraries need to be available for that architecture. The easiest solution is to install everything using MacPorts with the {{+universal}} flag.
+
+__NB2!__ As of LibreOffice 4.1, support for PPC on the Mac has been dropped. Depending on how backwards compatible we want to be (or not), dropping PPC for the LO Voikko plugin can also be considered.
 
 For {{hfst-ospell}} the required dependencies mean the following libraries (some of these might be on your system already, just check that they are universal binaries):
 
@@ -26,6 +28,10 @@ For {{hfst-ospell}} the required dependencies mean the following libraries (some
 * libcrypto
 
 Depending on OS version and LibreOffice versions, the list might be longer. The only way to tell is to see what the linker complains about, and then build the missing libraries.
+
+!!Future work
+
+{{hfst-ospell}} will in the near future be rewritten to ''not'' rely this long list of dependencies, mainly by replacing libxml++2 with a selfcontained library (e.g. {{tinyxml}}). This should make compilation of {{hfst-ospell}} for linking into Voikko much easier.
 
 !!!Check the architecture of the installed libraries
 
@@ -57,6 +63,18 @@ As we now also have started to work on a grammar checker, there are two more dep
 * tinyxml2
 
 Both have their makefiles constructed by CMake, and none of them are available through MacPorts (at least not in a recent enough version).
+
+To build universal binaries, do as follows:
+
+VislCG3: cd into the source dir, and do:
+{{{
+CMAKE_OSX_ARCHITECTURES=i386\;x86_64 ./cmake.sh
+make clean
+make
+sudo make install
+}}}
+
+For TinyXML2, the configuration command is:
 
 Then do the following:
 
