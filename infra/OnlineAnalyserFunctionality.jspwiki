@@ -6,158 +6,170 @@ This page reports on functionality of our online analser. It measures alpha qual
 
 The first column contains the programs our pages contain (and therefore claim that should work). The goal is to have all of them working.
 
-!!sme
-|| Prog    || 23.11.13.
-| fst      | ok
-| dis      | ok
-| distrans | NOTWORK
-| hyph     | ok
-| trans    | ok
+!!sme				    
+|| Prog    || 22.11.13.    || 23.11.13. 
+| fst      | ok		    | ok
+| dis      | ok		    | ok
+| distrans | NOTWORK    | NOTWORK
+| hyph     | ok		    | ok
+| trans    | ok		    | ok
+					    
+!!smj				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst  | ok			    | ok
+| dis | NOTSUPP		    | ok
+| dep | NOTSUPP		    | NOTSUPP
+| hyph | ok			    | ok
 
-!!smj
-|| Prog || 23.11.13.
-| fst  | ok
-| dis | NOTSUPP
-| dep | NOTSUPP
-| hyph | ok
+Note: dep not working even though the fsie is there.
+					    
+!!sma				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
+| dis   | ok		    | ok
+| dep   | NOTSUPP	    | NOTSUPP
+| hyph  | ok		    | ok
+| trans | ok		    | ok
+					    
+Note: The sma-dep.bin is in /opt/smi/sma, but it still does not work.
+					    
+!!smn				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
+					    
+!!sje				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst  | ok			    | ok
+					    
+!!sjd				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst  | ok			    | ok
+					    
+!!sms				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst  | ok			    | ok
+					    
+					    
+!!myv				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
+					    
+!!fin				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst  | ok			    | ok
+| dis  | ok			    | ok
+| hyph | ok			    | ok
+					    
+!!mrj				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | NOTWORK	    | ok
+					    
+!!izh				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
+					    
+!!kca				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
+					    
+!!fkv				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok 		    | ok
+					    
+!!kom				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | NOTWORK	    | ok
+| dis   | NOTWORK	    | ok
+| hyph  | NOTWORK	    | NOTWORK
 
-!!sma
-|| Prog || 23.11.13.
-| fst   | ok
-| dis   | ok
-| dep   | NOTSUPP
-| hyph  | ok
-| trans | ok
+* 22.11.13: Note: Text he |ading says Buriat analyser, directs to kom.fst (__fixed__)
+* 23.11.13: Note: No Cyrillic hyph works.					    
+					    
+!!liv				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok 		    | ok
+					    
+!!mhr				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok 		    | ok
+					    
+!!mdf				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
+					    
+!!yrk				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok 		    | ok
+					    
+!!nio				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
+					    
+!!olo				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok 		    | ok
+					    
+!!udm				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok 		    | ok
+					    
+!!vep				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | NOTWORK 	    | ok
+					    
+!!bxr				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
 
+!!cor				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | NOTWORK	    | NOTWORK
+| dis   | NOTWORK	    | NOTWORK
+| hyph  | NOTWORK	    | NOTWORK
 
-!!smn
-|| Prog || 23.11.13.
-| fst   | ok
+This is a non-trivial error: the fst works on the server:
+{{lookup /opt/smi/cor/bin/cor.fst}}					    
+					    
+!!fao				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok		    | ok
+| dis   | ok		    | ok
+| dep   | NOTWORK	    | NOTWORK
+					    
+dep error is non-trivial, the fao-dep.bin works on gtweb.
+					    
+!!kal				    
+|| Prog    || 22.11.13.    || 23.11.13. 
+| fst 	   | ok		    | ok
+| dis 	   | ok		    | ok
+| distrans | NOTWORK    | NOTWORK
+| dep	   | NOTWORK    | NOTWORK
+| hyph 	   | NOTWORK    | NOTWORK
+| convert  | NOTWORK    | NOTWORK
+| transcr  | NOTWORK    | ok
+					    
+* Note: the fst is __very__ slow
+* Note: Makefile to convert (transcription) must be fixed
+					    
+!!ipk				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok  		    | ok
+| convert | NOTWORK	    | NOTWORK
 
-!!sje
-|| Prog || 23.11.13.
-| fst  | ok
+* Note: Makefile to convert (transcription) must be fixed
+					    
+!!hdn				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok 		    | ok
+					    
+!!ciw				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | NOTWORK 	    | NOTWORK
 
-!!sjd
-|| Prog || 23.11.13.
-| fst  | ok
-
-!!sms
-|| Prog || 23.11.13.
-| fst  | ok
-
-
-!!myv
-|| Prog || 23.11.13.
-| fst   | ok
-
-!!fin
-|| Prog || 23.11.13.
-| fst  | ok
-| dis  | ok
-| hyph | ok
-
-!!mrj
-|| Prog || 23.11.13.
-| fst   | NOTWORK
-
-!!izh
-|| Prog || 23.11.13.
-| fst   | ok
-
-!!kca
-|| Prog || 23.11.13.
-| fst   | ok
-
-!!fkv
-|| Prog || 23.11.13.
-| fst   | ok 
-
-!!kom
-|| Prog || 23.11.13.
-| fst   | NOTWORK
-| dis   | NOTWORK
-| hyph  | NOTWORK
-
-23.11.13. Note: Text heading says Buriat analyser, directs to kom.fst
-
-!!liv
-|| Prog || 23.11.13.
-| fst   | ok 
-
-!!mhr
-|| Prog || 23.11.13.
-| fst   | ok 
-
-!!mdf
-|| Prog || 23.11.13.
-| fst   | ok
-
-!!yrk
-|| Prog || 23.11.13.
-| fst   | ok 
-
-!!nio
-|| Prog || 23.11.13.
-| fst   | ok
-
-!!olo
-|| Prog || 23.11.13.
-| fst   | ok 
-
-!!udm
-|| Prog || 23.11.13.
-| fst   | ok 
-
-!!vep
-|| Prog || 23.11.13.
-| fst   | NOTWORK 
-
-!!bxr
-|| Prog || 23.11.13.
-| fst   | ok
-
-!!cor
-|| Prog || 23.11.13.
-| fst   | NOTWORK
-| dis   | NOTWORK
-| hyph  | NOTWORK
-
-
-!!fao
-|| Prog || 23.11.13.
-| fst   | ok
-| dis   | ok
-| dep   | NOTWORK
-
-
-!!kal
-|| Prog    || 23.11.13.
-| fst 	   | ok
-| dis 	   | ok
-| distrans | NOTWORK
-| dep	   | NOTWORK
-| hyph 	   | NOTWORK
-| convert  | NOTWORK
-| transcr  | NOTWORK
-
-Note: the fst is __very__ slow
-
-!!ipk
-|| Prog || 23.11.13.
-| fst   | ok  
-| convert | NOTWORK
-
-!!hdn
-|| Prog || 23.11.13.
-| fst   | ok 
-
-!!ciw
-|| Prog || 23.11.13.
-| fst   | NOTWORK 
-
-!!rus
-|| Prog || 23.11.13.
-| fst   | ok 
+Note: Works on server
+					    
+!!rus				    
+|| Prog || 22.11.13.    || 23.11.13. 
+| fst   | ok 		    | ok
 
 
