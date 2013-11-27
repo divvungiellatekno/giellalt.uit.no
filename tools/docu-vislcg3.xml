@@ -13,66 +13,20 @@
         href="http://beta.visl.sdu.dk/cg3.html">beta.visl.sdu.dk/cg3.html</a>. Here, we only document installation and
         basic usage.</p>
         <section>
-            <title>Preparations before you install vislcg3</title>
-            <ul>
-                <li>
-                Check if you have <a href="http://giellatekno.uit.no/doc/infra/MacPorts.html">MacPorts</a>. Issue the command <code>/opt/local/bin/port search twig</code> in a Terminal. If that is successfull, go on to the next step. If not <a href="http://www.macports.org/install.php">install MacPorts</a>, then continue
-                </li>
-                <li>Issue the command <code>sudo port install cmake icu boost</code>. This installs the libraries and programs that vislcg3 depends on. Next step is to fetch, install and build vislcg3.</li>
-            </ul>
-        </section>
-        <section>
-            <title>Commands to check out, install and update the vislcg3 program</title>
-            <p>vislcg3 may be checked out, and later on updated, from Odense via <code>svn</code>, or it may be downloaded
-            from sourceforge. Here, we assume you download it from Odense. Run the following commands:</p>
+            <title>Installation</title>
             <section>
-
-                <title>Commands to check out and install vislcg3</title>
-
-                <source>
-svn co --username anonymous --password anonymous http://beta.visl.sdu.dk/svn/visl/tools/vislcg3/trunk vislcg3
-cd vislcg3/
-./get-boost.sh
-./cmake.sh
-make -j3
-test/runall.pl
-sudo make install
-                </source>
-
-                <p>If you want vislcg3 in /opt/local, and not in /usr/local (or somewhere else), do this instead:</p>
-
-                <source>
-svn co --username anonymous --password anonymous http://beta.visl.sdu.dk/svn/visl/tools/vislcg3/trunk vislcg3
-cd vislcg3/
-./get-boost.sh
-cmake -DCMAKE_INSTALL_PREFIX=/opt/local
-make -j3
-test/runall.pl
-sudo make install
-                </source>
-
-                <p>Now <code>vislcg3</code> is installed in <code>/usr/local/bin/</code>, and is ready to be used.</p>
-
-                <note>If you are logged in as a non-admin user, you need to switch to an admin user before you run the last
-                command (the <code>sudo</code> command): <code>su [admin-username]</code> Replace
-                <code>[admin-username]</code> with a username with administrative privileges. Then type in the corresponding
-                password, and continue with the final step above.</note>
-
+                <title>Mac OS X</title>
+                <ul>
+                    <li>
+                    Check if you have <a href="http://giellatekno.uit.no/doc/infra/MacPorts.html">MacPorts</a>. Issue the command <code>/opt/local/bin/port search twig</code> in a Terminal. If that is successfull, go on to the next step. If not <a href="http://www.macports.org/install.php">install MacPorts</a>, then continue
+                    </li>
+                    <li>Follow the <a href="http://beta.visl.sdu.dk/cg3/chunked/installation.html#macosx-ports">installation instructions from the vislcg3 site</a>.</li>
+                </ul>
+                <p>The vislcg3 site also has <a href="http://beta.visl.sdu.dk/cg3/chunked/installation.html#macosx-brew">instructions for HomeBrew users</a> and a link to an <a href="http://beta.visl.sdu.dk/cg3/chunked/installation.html#macosx-other">installation package</a></p>
             </section>
             <section>
-                <title>Commands to update vislcg3</title>
-                <p>If you already have checked out <code>vislcg3</code>, then you can simply do the following:</p>
-                <source>
-cd vislcg3/
-svn up
-./cmake.sh
-make -j3
-test/runall.pl
-sudo make install
-                </source>
-                <p>Tip: The vislcg3 is downloaded automatically to victorio every night. If you have access to the svn you
-                can check whether you have the latest version (compare <code>vislcg3 --version</code> on your machine and on
-                victorio, and repeat the steps above if your version is older).</p>
+                <title>Other operating systems</title>
+                <p>The vislcg3 site has installation instructions for Linux and Windows</p>
             </section>
         </section>
         <section>
