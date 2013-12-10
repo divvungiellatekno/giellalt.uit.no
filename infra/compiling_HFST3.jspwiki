@@ -4,7 +4,7 @@ This is a receipt for setting up HFST3, with the backends we need. See the HFST3
 README file for further details, and how to turn on or off specific backens if
 needed or wanted.
 
-__Up-to-date as of 2013-04-11__
+__Up-to-date as of 2013-12-10__
 
 Presently, HFST3 supports three different backends:
 * __OpenFST__ - weighted transducers (''default'')
@@ -48,3 +48,16 @@ sudo make install
 
 To check what other options there are for enabling other backends and functions,
 do {{./configure --help}}.
+
+!!!Extra preparations on older systems
+
+!!MacOSX 10.6
+
+OSX 10.6 and earlier require newer versions of {{automake}} and {{autoconf}}
+than provided by the system. Also the flex version installed breaks {{hfst}}
+compilation. Ensure you have MacPorts installed, then do the
+following:
+
+{{{
+sudo port install automake autoconf flex
+}}}
