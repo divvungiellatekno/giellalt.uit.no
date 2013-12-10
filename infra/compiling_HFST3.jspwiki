@@ -1,91 +1,50 @@
 !!!Compiling HFST3
 
-This is a receipt for setting up HFST3, with the backends we need. See the HFST3 README file for further details, and how to turn on or off specific backens if needed or wanted.
+This is a receipt for setting up HFST3, with the backends we need. See the HFST3
+README file for further details, and how to turn on or off specific backens if
+needed or wanted.
 
 __Up-to-date as of 2013-04-11__
 
 Presently, HFST3 supports three different backends:
 * __OpenFST__ - weighted transducers (''default'')
-* __Foma__ - xfst-compatible lexc and regex compiler, xfst scripts (''optional'')
+* __Foma__ - xfst-compatible lexc and regex compiler, xfst
+  scripts (''optional'')
 * __SFST__ - unweighted transducers, fast substitute (''optional'')
-
-As of HFST 3.4, the backends are included in the source distributions, and in
-the svn repository. There is thus ''no need to install them separately'', as
-used to be the case. This has greatly simplified the installation process for
-HFST3, which is now pretty straightforward.
 
 HFST3 abstracts over the different backends, and will make it easy to add
 support for new backends in the future, to support even more FST source code and
-transducer conversion options. The abstraction is becoming quite clean, but
-@necessitates that the wanted backends are installed separately. This also makes
-it easier to handle backends with incompatible licenses, as each backend is
-compiled and installed as separate entities.
-
-The bottom line: use the latest version, and follow the receipts below, and you
-should be fine.
+transducer conversion options.
 
 !!!Building HFST3
 
 Please note that HFST3 requires rather new versions of flex and bison. The
-versions shipping with the Snow Leopard (MacOS X 10.6) or later XCode should be
-ok. For older MacOS versions, you probably will have to install updated versions
-of these tools using [MacPorts|http://www.macports.org/]. See the HFST3 README
+configure script should check this for you, and report if you have to install
+newer versions of these tools (use [MacPorts|http://www.macports.org/] on the
+Mac, some of the packaging systems on other OS's). See the HFST3 README
 file for further details.
 
 We assume installation from svn here:
-
 
 {{{
 svn co http://svn.code.sf.net/p/hfst/code/trunk/hfst3
 cd hfst3/
 ./autogen.sh
-./configure --enable-lexc --enable-proc --enable-xfst --enable-foma-wrapper # This is the minimum we need
+./configure --enable-lexc --enable-proc --enable-xfst --enable-foma-wrapper
 }}}
 
-As of HFST 3.4.4, the {{foma}} and {{sfst}} backends are enabled by default,
-thus there is no need to explicitly enable them.
+The configuration above is the minimum we need. The foma wrapper (and thus foma
+itself) should become optional in the near future.
 
-!!For MacOS X
-
-For some reason .yy files must be built explicitly on MacOS X:
-
-{{{
-for yy_file in `find . -name '*.yy'`; do pushd `dirname $yy_file`; make `basename $yy_file .yy`.cc; cp -vf `basename $yy_file .yy`.hh `basename $yy_file .yy`.h; popd; done
-}}}
-
-You will get this error message at the end of the output:
+On some system {{.hh}} files built from {{.yy}} files must be built in a
+separate build step. The complete steps to build and install {{hfst}} after the
+configuration is as follows:
 
 {{{
-~/lingsvn/hfst3/tools/src/parsers ~/lingsvn/hfst3
-make: *** No rule to make target `xfst-parser.cc'.  Stop.
-cp: xfst-parser.hh: No such file or directory
-}}}
-
-Just ignore it, it won't stop HFST3 from building.
-
-{{{
+./scripts/generate-cc-files.sh
 make
 sudo make install
 }}}
 
 To check what other options there are for enabling other backends and functions,
 do {{./configure --help}}.
-
-!!Building on Victorio
-
-Victorio lacks a few crucial tools to build from svn. One thus have to first build a distro on another machine, and move it to victorio, or use the prebuilt tarball from the hfst site. To build a tarball on your local machine, do:
-
-{{{
-cd hfst3/
-make dist
-}}}
-
-Copy the tarball to victorio. When the tarball is on victorio, proceed as follows:
-
-{{{
-tar -xzf hfst-3.2.0.tar.gz
-cd hfst-3.2.0/
-./configure --with-foma --enable-proc --enable-lexc # as above
-make
-sudo make install
-}}}
