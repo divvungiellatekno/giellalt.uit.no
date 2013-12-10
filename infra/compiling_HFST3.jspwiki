@@ -54,10 +54,12 @@ do {{./configure --help}}.
 !!MacOSX 10.6
 
 OSX 10.6 and earlier require newer versions of {{automake}} and {{autoconf}}
-than provided by the system. Also the flex version installed breaks {{hfst}}
-compilation. Ensure you have MacPorts installed, then do the
-following:
+than provided by the system. Also the {{flex}} and {{bison}} versions installed
+breaks {{hfst}} compilation. Ensure you have MacPorts installed, then do the
+following __first__:
 
 {{{
-sudo port install automake autoconf flex
+sudo port install automake autoconf flex bison
 }}}
+
+After this, do {{./autogen.sh}} etc as above.
