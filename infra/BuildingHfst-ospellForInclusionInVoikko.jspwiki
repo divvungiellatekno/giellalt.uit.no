@@ -8,13 +8,62 @@ Configure and make {{hfst-ospell}} using the following options (the text is line
 
 !!Snow Leopard or earlier(?) (≤ 10.6) build
 
+OSX 10.6 and earlier require newer versions of {{automake}} and {{autoconf}} than provided by the system. Ensure you have MacPorts installed, then do the following:
+
+{{{
+sudo port install automake autoconf flex bison libtool pkgconfig
+}}}
+
+To reduce the number of dependencies, we build libarchive with as few dependencies as possible. To do this, do as follows:
+
+* download [https://github.com/libarchive/libarchive/archive/v3.1.2.zip]
+* unzip
+* install {{cmake}}: {{sudo port install cmake}}
+* configure and build as this:
+
+{{{
+./build/autogen.sh
+# If the previous step fails, try:
+autoreconf -i -v
+./configure --without-xml2 --without-nettle --without-bz2lib --without-lzo2 --without-lzma --without-iconv
+make
+sudo make install
+}}}
+
+This leaves us with only one external dependency: zlib. This library is also
+pretty standard, and can be assumed available on all systems(?).
+to enable x386 binaries, but this is a start.
+
+Another heap of dependencies comes with {{libxml2++}}, which can now be replaced
+by [TinyXML2|http://www.grinninglizard.com/tinyxml2/]. Do as follows:
+
+* [Download TinyXML|https://github.com/leethomason/tinyxml2/archive/master.zip]
+* configure, build and install (requires cmake):
+
+{{{
+cd Downloads/tinyxml2-master/
+cmake CMakeLists.txt
+make
+sudo make install
+}}}
+
+Now start to build hfst-ospell. The simple configuration (test this first):
+
+{{{
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/ ./configure --enable-zhfst --enable-xml=tinyxml2
+}}}
+
+If this works – and the freshly installed hfst-ospell works – then start over
+with a more complex configuration, to get proper support for x386:
+
 {{{
 # If you have run make before, run make distclean just to ensure you
 # start from scratch:
 make distclean
 
 # HFST-ospell, working univ. binary config:
-CPATH=/opt/local/include:/usr/local/include:/usr/include ./configure --enable-zhfst \
+CPATH=/opt/local/include:/usr/local/include:/usr/include \
+	./configure --enable-zhfst --enable-xml=tinyxml2 \
 	CXXFLAGS=" -arch i386 -arch x86_64 -I/opt/local/include" \
 	CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
 	CFLAGS="-I/usr/local/include -I/opt/local/include \
