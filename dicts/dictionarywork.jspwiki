@@ -6,6 +6,10 @@ Sitat fra møte 23.8.11:
 * vi kan samarbeide med de leksikografiske miljøene
 * vi trenger transferleksikon for MT
 
+!!Genererte ordformsorbøker (VD) vs. online-analyse-ordbøker (NDS) vs. Apertium-ordbøker
+* Apertium-ordbøkene inneholder bare grunnform og er smX-nob/fin og motsatt veg
+* VD inneholder genererte ordformer og er smX-nob
+* NDS analyseres online med analyser-dict-gt-desc, og genereres med generator-dict-gt-norm
 
 !!Leksikonfiler
 Entryene er delt inn i filer etter POS. For sme er det ei fil other_smenob.xml med flere ordklasser.
@@ -16,10 +20,10 @@ Entryene er delt inn i filer etter POS. For sme er det ei fil other_smenob.xml m
 
 !!Entryenes struktur
 
-! <e> nivå
+! <e> nivå i xml
 De som er med i dictionary er merket med usage="vd" for sme og usage="dict" for sma. Enkelte entryer er også merket med kildehenvisning, f.eks. src="nj" (fra Jernsletten) eller src="sk" (Statens Kartverk).
 
-!Meningsgrupper <mg>
+!Meningsgrupper <mg> i xml
 
 Man skiller mellom synonymer og meningsgrupper. Synonymer har samme <mg> (meaning group / meningsgruppe) og samme <tg> (translation group / oversettelsesgruppe). Hvis en entry har flere betydninger, så skilles disse som forskjellige <mg>.
 
@@ -41,7 +45,7 @@ Man skiller mellom synonymer og meningsgrupper. Synonymer har samme <mg> (meanin
       </mg>
    </e>}}}
    
-!Oversettelsesgrupper <tg>
+!Oversettelsesgrupper <tg> i xml
 Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller translation group) som igjen kan inneholde:
 
 <t> - et ord
@@ -79,7 +83,7 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
       </mg>
           }}}
 
-!Bruk av <re> (restriksjon)
+!Bruk av <re> (restriksjon) i xml
 * <re> gir restriksjon for oversettelsen. Oversettelsen ''vest'' har restriksjonen ''om klesplagg'', dvs at oversettelsen gjelder klesplagg, og ikke himmelretning.
 {{{
       <mg>
@@ -92,14 +96,14 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
 * <re> kan også brukes for å markere kasusbetydning, f.ek.s ''bevegelse til''.
 * for stedsnavn angir den kommune eller fylke
 
-!Bruk av <style>
+!Bruk av <style> i xml
 F.eks. litterær, uhøflig etc.
 
-!Lemmaet har ikke paradigme
+!Lemmaet har ikke paradigme: pg="no" i xml
 I filer som skal blir generert pga POS-merkinga, skal lemmaer som likevel ikke skal genereres, eller som bare har en form, merkes med attributten pg="no".
 
 
-!Bruk av v1, v2 osv.
+!Bruk av v1, v2 osv. i lexc
 * Ett lemma kan ha flere __normative__ skrivemåter. I fst merkes disse med felles lemma, men skilles ved hjelp av taggene v1, v2 osv:
 ** tunealla+v1:tunealla
 ** tunealla+v2:tunnealla
@@ -115,7 +119,7 @@ I filer som skal blir generert pga POS-merkinga, skal lemmaer som likevel ikke s
 * Ved hjelp av v1, v2 taggene, kan man sortere ordformene til riktig oppslagsord (tunealla vs. tunnealla) og presentere reine miniparadigmer.
 
 
-!Bruk av lsub
+!Bruk av lsub i xml
 Elementet lsub legges til i <lg> for vanlige __ikke-normative__ skrivemåter. Hvis forskjellen i skrivemåte bare er a vs. á, kan dette løses med regex. Hvis det skal genereres paradigme for ikke-normativ skrivemåte, må lemmaet være i fst. Vi skal ikke presentere miniparadigme for lsub. Det må gjøres klart for brukeren at dette er en ikke-normativ skrivemåte.
 
 {{{
@@ -143,7 +147,7 @@ Elementet lsub legges til i <lg> for vanlige __ikke-normative__ skrivemåter. Hv
 
 
 
-!Bruk av l_ref
+!Bruk av l_ref i xml
 Elementet l_ref legges til i <lg> for å vise til ander lemmaer som kan være nyttige for brukeren. Lemmaet skal merkes med POS, f.eks. seavagiella_n. l_ref brukes for å
 * vise til det lemmaet som bør brukes i følge termordlister etc. I slike tilfeller merkes kun det lemmaet som man vil vise fra, og ikke det lemmaet som man viser til:
 
@@ -306,7 +310,10 @@ pr_smanob.xml
 
 !!Miniparadigmer
 
-Miniparadigmene i leksikonoppslaget er hjelp for brukeren. De vil variere fra POS til POS. Ved å legge til +Use/NVD i fst, kan man velge bort en del bøyningsformer når man ikke vil presentere alle i miniparadigmet. Dette er f.eks. aktuelt for nordsamiske adjektiver.
+Miniparadigmene i leksikonoppslaget er hjelp for brukeren. De vil variere fra POS til POS. 
+
+!Use/NGminip og Allegro i lexc
+Ved å legge til +Use/NGminip i lexc, kan man velge bort en del bøyningsformer når man ikke vil presentere alle i miniparadigmet. Dette er f.eks. aktuelt for nordsamiske adjektiver.
 
 !substantiv:
 Substantiv kan få attributten illpl="no" hvis den ikke er så høvelig å presentere i flertall, f.eks. ''bargguhisvuohta''.  For sme utelates allegroformen for Sg Gen, som er merka med Allegro-tag: ''viesu viessu+N+Sg+Gen'' versus ''vieso viessu+N+Sg+Gen+Allegro''  .
@@ -403,9 +410,9 @@ For resiproke verb :
 
 !adjektiver:
 
-Ved å legge til +Use/NVD i fst, kan man velge bort en del bøyningsformer når man ikke vil presentere alle i miniparadigmet. Dette er ikke minst aktuelt for adjektiver.
+Ved å legge til +Use/NGminip i fst, kan man velge bort en del bøyningsformer når man ikke vil presentere alle i miniparadigmet. Dette er ikke minst aktuelt for adjektiver.
 
-|| Bøyning	|| Uten +Use/NVD	|| Med +Use/NVD
+|| Bøyning	|| Uten +Use/NGminip	|| Med +Use/NGminip
 |  A+Sg+Nom           | heittot | heittot
  | A+Attr             | heittogis heittohis (bivttas) | heittogis (bivttas)
  | A+Pl+Nom           | heittogat heittohat | heittogat
