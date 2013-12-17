@@ -1,5 +1,29 @@
 !!!New infra - infra maintenance
 
+Below there are a couple of example tasks, and steps to take to realise them.
+
+!!! Task - modify an existing target
+
+If you want to change the build procedure (e.g. to add or remove a new feature from a specific fst for all languages), work through this task.
+
+Here is the procedure, with {{dictionary-include.am}} in 
+{{am-shared}} as an example.
+The local directory {{am-shared}} is an exact copy of:
+{{$GTCORE/langs-templates/und/am-shared/}}
+
+# Change {{dictionary-include.am}} locally (for your test language)
+  and make sure everything works.
+# copy your local {{dictionary-include.am}} to the {{und/am-shared/}} directory
+# write a checkin message in {{und/und.timestamp}} 
+# check in __both__ {{dictionary-include.am}} and {{und.timestamp}}.
+# {{cd $GTHOME/langs}}
+# {{./update-all-from-core.sh -t und}}
+# check that things are working correctluy for 1-2 other languages
+# when everything looks fine, check in ''all languages at once'' (but preferably
+  ''only'' the changes coming from {{und/}}
+
+!!!Task - add a new template
+
 Task: add __plx__ and __Hunspell__ conversion to the new infra, but only for a limited set of languages (sma, smj, later sme).
 
 Steps:

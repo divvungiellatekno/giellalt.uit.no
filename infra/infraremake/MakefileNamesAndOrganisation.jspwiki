@@ -1,0 +1,48 @@
+The directory structure is described in [NewinfraCatalogues.html]. Almost every
+directory has one {{make}} file, named {{Makefile.am}}. The {{.am}} suffix is
+there to indicate that the files are going to be processed by {{automake}}, to
+produce {{Makefile.in}} files, which are processed by {{configure}} to produce
+the final {{Makefile}}'s that {{make}} can process.
+
+Most of the {{Makefile.am}} files have an {{include}} statement at the end, by
+which they include shared build instructions, These shared build instructions
+are common to all languages (thus ''shared''), and they are always located in
+{{$top_srcdir/am-shared}} ({{$top_srcdir}} refers to the language dir, like
+{{sme}}, {{sma}}, etc.).
+
+There are three principles for filenames in the __am-shared__ dir:
+
+1. name after dir of including file (these should always be included by the
+   {{Makefile.am}} files, then these files can further include the other
+   include files below)
+* tools-grammarcheckers-include.am
+* tools-spellcheckers-fstbased-foma-include.am
+* tools-spellcheckers-fstbased-hfst-include.am
+* tools-spellcheckers-fstbased-include.am
+* tools-spellcheckers-include.am
+* test-src-morph-include.am
+
+2. name after type of source file to be processed by the makefile
+* vislcg3-include.am
+* doc-include.am
+* lexc-include.am
+* regex-include.am
+
+3. name after configure option/application-specific targets
+* dictionary-include.am
+* oahpa-include.am
+* mt-include.am
+
+Then there are accidental exceptions for historical reasons (=not yet
+cleaned/renamed):
+* filters-include.am
+* hfstlanginstall-include.am
+* hunspell-include.am
+* hyphenation-include.am
+* listbased-spellchecker-include.am
+* orthography-include.am
+* phonetics-include.am
+* phonology-include.am
+* syntax-include.am
+* transcriptions-include.am
+* topdir-include.am (the targets of the src/ catalogue)

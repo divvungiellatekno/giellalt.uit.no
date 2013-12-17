@@ -53,6 +53,50 @@ Each folder contains the following
 * test
 * tools
 
+Here's a tree view of the und template dir (and thus the dir structure of all
+languages):
+
+{{{
+und$ tree -d
+.
+├── am-shared
+├── doc
+│   └── resources
+│       └── images
+├── m4
+├── misc
+├── src
+│   ├── filters
+│   ├── hyphenation
+│   ├── morphology
+│   │   ├── affixes
+│   │   └── stems
+│   ├── orthography
+│   ├── phonetics
+│   ├── phonology
+│   ├── syntax
+│   ├── tagsets
+│   └── transcriptions
+├── test
+│   ├── data
+│   ├── src
+│   │   ├── morphology
+│   │   ├── phonology
+│   │   └── syntax
+│   └── tools
+│       └── spellcheckers
+└── tools
+    ├── grammarcheckers
+    ├── shellscripts
+    └── spellcheckers
+        ├── fstbased
+        │   ├── foma
+        │   └── hfst
+        └── listbased
+            └── hunspell
+}}}
+
+Some directories are described in further detail below.
 
 !! The morphology folder under langs/$LANG/src/
 
