@@ -14,19 +14,15 @@ If you only do linguistic analysis for a limited number of languages you will do
 
 It can be wise to create a separate directory for holding the core and the language modules. The command to do this is (with the name of the directory set to "langtech"): {{mkdir langtech}}. Then {{cd langtech}} and continue.
 
-To check out the core module, do this:
+To check out the core module and prepare it, do this:
 
 {{{
 svn co https://victorio.uit.no/langtech/trunk/gtcore
+cd gtcore
+./autogen.sh
+./configure
+sudo make install # optional, only required on servers with multiple users
 }}}
-
-Then add the following to your {{.profile}} or {{.bash_profile}}
-
-{{{
-export GTCORE=/path/to/gtcore
-}}}
-
-replacing {{/path/to}} with the actual path to the {{gtcore}} directory you just checked out. You need to restart the __Terminal__ application (or open a new terminal window) after you have done this.
 
 Then, for each language you want to work with, do the following:
 
