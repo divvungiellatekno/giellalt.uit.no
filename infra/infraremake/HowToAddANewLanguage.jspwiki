@@ -3,10 +3,16 @@
 This is the directory where all linguistic development for the core language technology is done, for all languages. Here are the steps:
 
 # {{cd $GTHOME/langs}}
-# {{$GTCORE/scripts/new-language.sh LANGCODE}}
+# {{$GTCORE/scripts/new-language.sh LANGCODE [TEMPLATECOLL]}}
 
 where 
-* LANGCODE  is the ISO 639-3 code for the language you want to add, and
+* LANGCODE  is the ISO 639-3 code for the language you want to add
+* TEMPLATECOLL (optional, usually automatically identified) is the name of the
+  template collection to use; presently there are two template collections:
+** {{langs}} - templates for populating language directories for building
+   linguistic analysers and tools based on them
+** {{prooftesting}} - templates for populating directories for testing proofing
+   tools, also organised according to language
 
 !!Result
 
