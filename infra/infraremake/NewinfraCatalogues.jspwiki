@@ -18,40 +18,39 @@ one subfolder for each language.
 
 The catalogue {{gtcore}} contains scripts used for all languages.
 
-* gtshared
+* gtdshared
 ** src
-*** filters (parts of old gt/common/src)
+*** filters (regex files for removing tags or strings, for extracting strings or making them optional)
 * scripts (scripts used by the GT infrastructure)
-** xsl
 * schemas (for languages having their lexica in xml)
-* templates
-** und (the iso code for an undefined language)
+* langs-templates
+** plxtools (speller tools)
+** und (= «undefined language») contans dummy files for new languages, files governing language independent fst compilation, and __und.timestamp__ for logging updates.
 ** smi (common source files for the Saami languages)
-
-There is a script adding additions from ''und'' to each language
-catalogue. So, when a new moment comes in, it always comes in via ''und''.
-
+* prooftesting-templates
+* schemas (for Uralic dictionaries writing lexc in xml)
+* scripts
 
 !! langs
 
 Each language has its own folder, the naming convention
 is from [ISO 639-3|http://en.wikipedia.org/wiki/List_of_ISO_639-3_codes].
 
-Each folder contains the following
+Each folder contains the following folders:
 
-* am-shared (automake shared; never changed here, only in gtcore/templates)
-* doc (folder for language-specific documentation)
+* am-shared (''automake shared'', common commands for fst compilation, never changed here, only in gtcore/langs-templates)
+* doc (folder where we write language-specific documentation)
 * m4 (support files for compilation)
 * src (this is where the linguistics files are)
 ** filters (language-specific filters)
 ** hyphenation (each phenomenon its folder)
 ** morphology (see below)
-** orthography
+** orthography (capital letters, spellrelax)
 ** phonetics (for different scripts for phonetic transcription)
-** phonology (mostly morphophonology)
-** syntax
-* test
-* tools
+** phonology (morphophonology: the twolc files)
+** syntax (see below)
+* test (see below)
+* tools (proofing tools files)
 
 Here's a tree view of the und template dir (and thus the dir structure of all
 languages):
@@ -127,15 +126,21 @@ include $(top_srcdir)/am-shared/lesc-include.am
 
 This statement includes the majority of the build instructions. You should never need to touch the included file.
 
-! The folder orthography
+!! The orthography folder 
 
 Here we take care of initial capitalisation, and of spellrelax. Note that
 spellrelax now will be language-specific.
 
-! phonetics
+!! The phonetics folder under langs/$LANG/src/
 
-This is conversion to IPA.
+This folder contains files for conversion to IPA.
 
+
+!! The syntax folder under langs/$LANG/src/
+
+This folder contains {{disambiguation.cg3}}. 
+
+The files {{functions.cg3, dependency.cg3}} for for sma/sme/smj are in gtcore/langs-templates/smi/src/syntax/. Faroese also uses the common dependency.cg3, but has its own functions.cg3.
 
 !! The test catalogue under langs/$LANG
 
@@ -150,9 +155,13 @@ If you need a new test, just write a shell script that follows this convention, 
 
 Also take care that the shell script uses AM variables for all references to files and commands outside the script which can not be assumed to be universally available. This will make the test scripts portable.
 
+So far we have morphology tests only, but there is a setup for syntax and phonology as well.
+
 !! Transducers
 
-dictionary.default.xfst (this is an automaton, which creates wordforms)
-analyser. It is the basis for the hfst spellers.
 
-{{To be written.}}
+What kind of and how many transducers we produce varies from language to language. 
+The binary files are stored in {{$LANG/src}}, with 
+[the following name conventions|TransducerNamesInTheNewInfra.html]. 
+
+For some languages (at least sme and sma) the content of and difference between the transducers is explained on [the documentation page of each language|../../lang/index.html]

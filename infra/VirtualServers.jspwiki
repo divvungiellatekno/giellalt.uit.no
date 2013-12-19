@@ -1,15 +1,16 @@
 
 To ensure stability we have several servers:
 
-Physical servers:
-* Victorio
-* xserve
-
 Virtual servers
 * gtsvn : svn goes here
 * gtlab : this is for experimenting
-* gtoahpa : online oahpa
-* gtweb : online analysers
+* gtoahpa : online oahpa (and sma/sme NDS)
+* gtweb : online analysers, online dictionaries (minus sma/sme NDS)
+
+Physical servers:
+* xserve: storage of analysed text, download site, etc.
+* stallo: Fast computer for corpus analysis
+
 
 Admin documentation/log:
 * private/admin/README-admin-gtoahpa.txt: for changes, package installation, and other things that must remain private.
@@ -26,5 +27,9 @@ Gtoahpa runs CentOS release 6.2. Univ_oahpa is installed on gtoahpa, and uses ng
 * flup: http://trac.saddi.com/flup/
 * django: http://djangoproject.com/
 
-All user accounts are the same as victorio. In addition to the private admin tech documentation, certain config files have been checked in in the same location under the gtoahpa/ directory.
+In addition to the private admin tech documentation, certain config files have been checked in in the same location under the gtoahpa/ directory.
+
+!! The other servers - high level overview
+
+tbw.
 
