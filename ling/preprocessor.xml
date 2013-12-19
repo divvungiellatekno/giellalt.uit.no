@@ -45,7 +45,7 @@ Options:
 
       <p>Example use :</p>
 
-      <source>cat file.txt | preprocess --abbr=sme/bin/abbr.txt | lookup ...</source>
+      <source>cat file.txt | preprocess --abbr=langs/sme/src/syntax/abbr.txt | lookup ...</source>
 
       <section>
         <title>Overview and intro</title>
@@ -182,10 +182,10 @@ guovllut
         it reads <code>STDIN</code> for input. The preprocessor is given one
         command line parameter, the file from where to read the formerly
         generated list of abbreviations and multiword expressions. The file is
-        created by <code>make</code> and the name is usually
-        <code>lang/bin/abbr.txt</code>. Usage:</p>
+        created by <code>make</code> and the name is <code>abbr.txt</code>. Usage
+        (with sme as an example):</p>
 
-        <source>preprocess --abbr=sme/bin/abbr.txt
+        <source>preprocess --abbr=$GTCORE/langs/sme/src/syntax/abbr.txt
 </source>
 
         <p>The output of the script is a list of analyzable tokens, separated
@@ -403,31 +403,31 @@ $CONTAIN_PUNCT = 'ja\/dahje|http|:\/\/|km\/h|www|@|\.jpg|\.doc|\.pdf|\.html|\.tx
         <code>gt/script</code> directory; it is intended to be a
         language-independent script.</p>
 
-        <p>The main source is <code>abbr-lang-lex.txt</code>, where the real
+        <p>The main source is <code>abbreviations.lexc</code>, where the real
         abbreviations are listed. There also exists a number of multi-word
         expressions which are dispersed to different lexicon files, for
-        example the file <code>adv-sme-lex.txt</code> contains multi-word
+        example the file <code>adverbs.lexc</code> contains multi-word
         adverbials like <code>earret eará</code>. Not to mention the
-        propernoun lexicon, which contains (at the moment) over 500 multi-word
+        propernoun lexicon, which contains several multiword
         propernouns.</p>
 
         <p>In order to be able to treat the multi-word expressions as single
         tokens already at the preprocessing phase, the multi-word expressions
         are extracted from the lexicon files. The relevant lexicon file names
-        are given to the script <code>abbr-extract</code> in
-        <code>lang/src/Makefile</code>. There are no restrictions to how to
+        are given to the script <code>$GTHOME/gt/script/abbr-extract</code> by the 
+        Makefile (NOTE: NOT IMPLEMENTED YET, dec 2013). There are no restrictions to how to
         list the multiword expressions, they can be used in lexicon files as
         other tokens. Only the structure of the file
-        <code>abbr-lang-tex.txt</code> is restricted.</p>
+        <code>abbreviations.lexc</code> is restricted.</p>
 
         <p>Usage of the script <code>abbr-extract</code>:</p>
 
         <source>abbr-extract --output=&lt;file&gt; --abbr_lex=&lt;file&gt; --lex=&lt;file1,file2,..&gt;</source>
 
         <section>
-          <title>The structure of abbr-lang-lex.txt</title>
+          <title>The structure of abbreviations.lexc</title>
 
-          <p>The structure of the <code>abbr-lang-lex.txt</code> is free in
+          <p>The structure of the <code>abbreviations.lexc</code> is free in
           all the other respects but the extracted part must have the
           following syntax:</p>
 
@@ -451,7 +451,7 @@ abbr% abbr TAG ;
           the %-sign (literal operator) which is recognized by
           <code>abbr-extract</code>-script and removed.</p>
 
-          <p>Abbreviations in <code>abbr-lang-lex.txt</code> are lower-cased
+          <p>Abbreviations in <code>abbreviations.lexc</code> are lower-cased
           unless there exists only upper cased version of the abbreviation.
           <code>abbr-extract</code>-script generates upper case versions of
           all the abbreviations (since they may begin the sentence).</p>
