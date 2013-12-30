@@ -1,0 +1,1142 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<B>&Aacute;LGU-TIETOKANTA<BR>
+TIETOKANNAN DOKUMENTAATIO</B><BR>
+<BR>
+Ville Tikkaoja 27.4.2008<BR>
+Kotimaisten kielten tutkimuskeskus<BR>
+<BR>
+Tietokannan versio 3.2
+<BR>
+<BR>
+<BR>
+<B>Sis&auml;lt&ouml;</B>
+<P>
+<A HREF="#1">1. Johdanto</A><BR>
+<A HREF="#1.1">1. Unicode</A><BR>
+<A HREF="#2">2. Taulut</A><BR>
+<A HREF="#2.1">2.1. Yleist&auml;</A><BR>
+<A HREF="#2.2">2.2. Tauluesittelyt</A><BR>
+<A HREF="#3">3. Tietokannan rakenne</A><BR>
+<BR>
+<BR>
+<HR>
+<BR>
+<BR>
+<A NAME="1">
+<B>1. JOHDANTO</B>
+<P>
+T&auml;m&auml; dokumentti k&auml;sittelee &Aacute;LGU-tietokantaj&auml;rjestelm&auml;n varsinaista
+tietokantaa. Dokumentissa selostetaan tietokannan suunnitteluperiaatteet,
+rakenne ja esitell&auml;&auml;n tietokantataulut.
+<P>
+Tietokanta on toteutettu SQL-pohjaisena MySQL-tietokantaohjelmistolla.
+Tietokanta on suunniteltu relaatiotietokannan periaatteiden mukaisesti.
+Eli eri tauluissa oleva tieto liittyy toisiinsa ja eri tietoja talletetaan
+vain silloin kun on tarkoitus, jolloin ei turhaan pidet&auml; yll&auml; ns. tyhj&auml;&auml;
+tietoa.
+<P>
+<BR>
+<BR>
+<A NAME="1.1">
+<B>1.1. UNICODE</B>
+<P>
+K&auml;yt&ouml;ss&auml; oleva MySQL:n versio on 5.0. Se tukee Unicode-standardin
+mukaista UTF-8 -koodausta. Unicode-tuki ei kuitenkaan ole t&auml;ydellinen.
+MySQL ei t&auml;ll&auml; hetkell&auml; tue Unicoden normalisointia. T&auml;st&auml; syyst&auml;
+tietokantaan tallennettu tekstidata normalisoidaan NFD-muotoon ennen
+tietokantaan tallentamista, jolloin normalisointiongelmasta p&auml;&auml;st&auml;&auml;n
+suurilta osin eroon. On kuitenkin huomioitava, ett&auml; esim. vertailuja varten
+kaikki sy&ouml;tteet on aina ensin normalisoitava tai muuten vertailut eiv&auml;t
+toimi.
+<P>
+<P>
+<BR>
+<BR>
+<A NAME="2"> <B>2.
+TAULUT</B> <P>
+<A NAME="2.1">
+<B>2.1. YLEIST&Auml;</B>
+<P>
+Yleist&auml; tietoa t&auml;ss&auml; kappaleessa esitelt&auml;vist&auml; tietokanan tauluista:
+<P>
+<LI> Tietokantatauluista esitet&auml;&auml;n attribuuttien m&auml;&auml;ritykset SQL:n CREATE
+TABLE -lauseina.<BR>
+<LI> Lekseemien tauluissa lekseemi_id-attribuutti viittaa lekseemi-taulun
+vastaavan id:n mukaiseen riviin riviin. Erillinen tieto liittyy siis
+n&auml;in tiettyyn lekseemiin.<BR>
+<LI> Sanueiden tauluissa sanue_id-attribuutti viittaa sanue-taulun
+vastaavan id:n mukaiseen riviin riviin. Erillinen tieto liittyy siis
+n&auml;in tiettyyn sanueeseen.<BR>
+<LI> Taulujen indeksein&auml; (ja osittain muina tietoina) k&auml;ytett&auml;v&auml;t
+INT-arvoiset attribuuteille on asetettu UNSIGNED-m&auml;&auml;re, joka poistaa
+k&auml;yt&ouml;st&auml; negatiiviset arvot siirt&auml;m&auml;ll&auml; t&auml;m&auml;n joukon verran arvoja
+positiiviselle puolelle. Eli positiivisten arvojen m&auml;&auml;r&auml; tuplaantuu. N&auml;in
+saadaan enemm&auml;n arvoja k&auml;ytt&ouml;&ouml;n, koska negatiivisia arvoja ei k&auml;ytet&auml;
+koskaan.<BR>
+<LI> Kaikissa tauluissa indeksin&auml; k&auml;ytett&auml;v&auml; attribuuteille on lis&auml;ksi
+asetettu AUTO_INCREMENT-m&auml;&auml;re, joka yksik&auml;sitteist&auml;&auml; jokaisen taulun
+rivin kasvattamalla ko. sarakkeen arvoa aina yhdell&auml; edellisest&auml;.
+T&auml;llaiselle sarakkeelle on annettava INSERT-komennossa arvoksi 0 tai
+j&auml;tt&auml;&auml; ko. sarake kokonaan sy&ouml;tt&auml;m&auml;tt&auml;, jotta tietokannan oma seuraavaksi
+suurin luku asettuu.
+<P> <BR>
+<BR>
+<A NAME="2.2">
+<B>2.2. TAULUESITTELYT</B>
+<P>
+<B>KIELI-taulu</B>
+<P>
+Kieli-taulu esitt&auml;&auml; kieli&auml;, joihin voi kuulua lekseemej&auml; ja sanueita.
+<P>
+<PRE>
+CREATE TABLE kieli (
+        id              INT NOT NULL AUTO_INCREMENT,
+        jarjestys       INT NOT NULL,
+        nimi            VARCHAR(100) CHARACTER SET utf8 NOT NULL,
+        lyhenne         VARCHAR(20) CHARACTER SET utf8 NOT NULL,
+        kieliryhma      INT NOT NULL,
+        valintaryhma    INT NOT NULL,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id              INT NOT NULL AUTO_INCREMENT</CODE><BR>
+Kielen yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>jarjestys       INT NOT NULL</CODE><BR>
+Kielen j&auml;rjestysnumero kieliryhm&auml;n sis&auml;ll&auml;.
+<P>
+<CODE>nimi            VARCHAR(100) NOT NULL</CODE><BR>
+Kielen nimi.
+<P>
+<CODE>kieliryhma      INT NOT NULL</CODE><BR>
+0 = jos kyseess&auml; normaali kieli, 1 = jos kyseess&auml; kieliryhm&auml;
+<P>
+<CODE>valintaryhma    INT NOT NULL</CODE><BR>
+Kielivalintaryhm&auml;, johon ko. kieli kuuluu. J&auml;rjestelm&auml;n kielivalikon
+valinnaiset kielet esitet&auml;&auml;n sen mukaan mik&auml; kielivalintaryhm&auml; on valittu.
+T&auml;m&auml; liittyy kielivalintaryhma-tauluun.
+<P>
+Kieli-taulu esitt&auml;&auml; kieli&auml;, joihin voi kuulua lekseemej&auml; ja sanueita.
+<P>
+<BR>
+<BR>
+<B>KIELIVALINTARYHMA-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE kielivalintaryhma (
+        id              INT NOT NULL,
+        jarjestys       INT NOT NULL,
+        nimi            VARCHAR(100) CHARACTER SET utf8 NOT NULL,
+        kielijoukko     INT NOT NULL,
+        PRIMARY KEY(id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		      INT NOT NULL AUTO_INCREMENT</CODE><BR>
+Kielivalintaryhm&auml;n yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>jarjestys       INT NOT NULL</CODE><BR>
+Kielivalintaryhm&auml;n j&auml;rjestysnumero kielijoukon sis&auml;ll&auml;..
+<P>
+<CODE>nimi            VARCHAR(100) CHARACTER SET utf8 NOT NULL</CODE><BR>
+Kieli-taulun kielen id, johon ko. lekseemi kuuluu.
+<P>
+<CODE>kielijoukko     INT NOT NULL</CODE><BR>
+Kielijoukko, johon kielivalintaryhm&auml; kuuluu. 1 = ieur, 2 = ural, 3 = muu.
+<P>
+Kielivalintaryhm&auml;t, joihin varsinaiset kielet (kieli-taulu) kuuluvat.
+K&auml;ytet&auml;&auml;n mm. muodostamaan hakutoiminnon kielivalikot.
+<P>
+<BR>
+<BR>
+<B>LEKSEEMI-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE lekseemi (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        kieli_id        INT UNSIGNED NOT NULL,
+        PRIMARY KEY (id),
+        INDEX kieli_id_index (kieli_id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Lekseemin yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>kieli_id	INT UNSIGNED NOT NULL</CODE><BR>
+Kieli-taulun kielen id, johon ko. lekseemi kuuluu.
+<P>
+Lekseemi-taulu on tietokannan ydin. Taulu m&auml;&auml;ritt&auml;&auml; lekseemin,
+sanan, johon voi kuulua lis&auml;&auml; muuta tietoa muista tauluista id:n mukaan
+liitettyn&auml;. Lekseemi kuuluu aina johonkin kieleen. Muuta tietoa lekseemi
+ei yksist&auml;&auml;n oletusarvoisesti sis&auml;ll&auml;. T&auml;m&auml;n katsottiin olevan j&auml;rkev&auml;
+ratkaisu, jotta lekseemiin voidaan tarvittaessa liitt&auml;&auml; vain ja ainoastaan
+tarvittavaa tietoa. Lekseemi koostuu kokonaisuudessaan tarkenteesta,
+ilmentymist&auml;, merkityksist&auml;, suhteista toisiin lekseemeihin ja ns. muusta
+tiedosta.
+<P>
+<BR>
+<BR>
+<B>TARKENNE-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE tarkenne (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        lekseemi_id     INT UNSIGNED NOT NULL,
+        tarkenne        VARCHAR(80) CHARACTER SET utf8,
+        varmennettu     INT,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id              INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Tarkenteen yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>lekseemi_id     INT UNSIGNED NOT NULL</CODE><BR>
+Lekseemin id, johon ko. tarkenne kuuluu.
+<P>
+<CODE>tarkenne        VARCHAR(80) CHARACTER SET utf8</CODE><BR>
+Tarkenneteksti.
+<P>
+<CODE>varmennettu     INT</CODE><BR>
+Tieto onko tarkenne varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Tarkenteella lekseemin yhteyteen lis&auml;t&auml;&auml;n tarkempi tieto kieleen liittyen
+jos kyse on esim. jostain murteesta.
+<P>
+<BR>
+<BR>
+<B>ILMENTYMA-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE ilmentyma (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        lekseemi_id     INT UNSIGNED NOT NULL,
+        ortognro        INT NOT NULL,
+        ilmentyma       VARCHAR(100) CHARACTER SET utf8,
+        ilmentyma_p     VARCHAR(100) CHARACTER SET utf8
+        homonyymi_id    INT,
+        numero          VARCHAR(20) CHARACTER SET utf8,
+        varmennettu     INT,
+        aakk            INT UNSIGNED
+        PRIMARY KEY (id),
+        INDEX lid_index (lekseemi_id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Ilmentym&auml;n yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>lekseemi_id	INT UNSIGNED NOT NULL</CODE><BR>
+Lekseemin id, johon ko. ilmentyma kuuluu.
+<P>
+<CODE>ortognro	INT NOT NULL</CODE><BR>
+Ilmentym&auml;n ortografianumero. Ilmentymi&auml; on sek&auml; p&auml;&auml;l&auml;hteenmukaisia ett&auml;
+l&auml;hteenmukaisia. P&auml;&auml;l&auml;hteit&auml; on enint&auml;&auml;n 3 kpl kielt&auml; kohden ja kullekin
+p&auml;&auml;l&auml;hteelle on olemassa yksi p&auml;&auml;l&auml;hteen mukainen ilmentym&auml; lekseemi&auml;
+kohden. ortognro-attribuutin arvot 1, 2 ja 4 tarkoittavat p&auml;&auml;l&auml;hteen
+mukaista ilmentym&auml;&auml;. Lis&auml;ksi lekseemill&auml; voi olla useita l&auml;hteenmukaisia
+ilmentymi&auml;, jotka esitet&auml;&auml;n ortognro-attribuutin arvolla 3. Ep&auml;looginen
+j&auml;rjestys johtuu my&ouml;hemmin tehdyst&auml; kolmannen p&auml;&auml;l&auml;hteen lis&auml;yksest&auml;.
+<P>
+<CODE>ilmentyma	VARCHAR(100) CHARACTER SET utf8</CODE><BR>
+Ilmentyma, eli sanan kirjoitusasu merkkijonona
+<P>
+<CODE>ilmentyma_p	VARCHAR(100) CHARACTER SET utf8</CODE><BR>
+Ilmentyman pelkistetty muoto, jossa joitain merkkej&auml; on poistettu.
+<P>
+<CODE>homonyymi_id    INT</CODE><BR>
+Ilmentym&auml;n homonyymi-indeksi.
+<P>
+<CODE>numero          VARCHAR(20) CHARACTER SET utf8</CODE><BR>
+Ilmentym&auml;n numeroarvoinen ilmentym&auml;. Numeroarvoa voidaan k&auml;ytt&auml;&auml; joko
+varsinaisen ilmentym&auml;n sijaan tai my&ouml;s sen rinnalla. My&ouml;s numeroarvolla
+haetaan ilmentymi&auml;. Numeroarvo on merkkijono, koska se sis&auml;lt&auml;&auml;
+mahdollisesti pisteit&auml; tai kaksoispisteit&auml;.
+<P>
+<CODE>varmennettu	INT</CODE><BR>
+Tieto onko ilmentyma varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Ilmentyma-taululla esitet&auml;&auml;n lekseemien ortografioiden formatiivien
+ilmentym&auml;t.
+<P>
+<BR>
+<BR>
+<B>MERKITYS-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE merkitys (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        lekseemi_id     INT UNSIGNED NOT NULL,
+        ortognro        INT NOT NULL,
+        kieli           VARCHAR(50) NOT NULL,
+        merkitys        TEXT CHARACTER SET utf8 NOT NULL,
+        varmennettu     INT,
+        PRIMARY KEY (id),
+        INDEX lid_index (lekseemi_id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Merkityksen yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>lekseemi_id	INT UNSIGNED NOT NULL</CODE><BR>
+Lekseemin id, johon ko. merkitys kuuluu.
+<P>
+<CODE>ortognro        INT NOT NULL</CODE><BR>
+Kuvaa mihin ortografiaan merkitys liittyy. Merkityksi&auml; on sek&auml;
+p&auml;&auml;l&auml;hteenmukaisia ett&auml; l&auml;hteenmukaisia. P&auml;&auml;l&auml;hteit&auml; on 2 kpl kielt&auml;
+kohden ja kullekin p&auml;&auml;l&auml;hteelle on olemassa yksi p&auml;&auml;l&auml;hteen mukainen
+merkitys lekseemi&auml; kohden. ortognro-attribuutin arvot 1, 2 ja 4 tarkoittavat
+p&auml;&auml;l&auml;hteen mukaista ilmentym&auml;&auml;. Lis&auml;ksi lekseemill&auml; voi olla useita
+l&auml;hteenmukaisia merkityksi&auml;, jotka esitet&auml;&auml;n ortognro-attribuutin arvolla 3.
+Ep&auml;looginen j&auml;rjestys johtuu my&ouml;hemmin tehdyst&auml; kolmannen p&auml;&auml;l&auml;hteen
+lis&auml;yksest&auml;.
+<P>
+<CODE>kieli		VARCHAR(50) NOT NULL</CODE><BR>
+Merkityksen kieli.
+<P>
+<CODE>merkitys	TEXT CHARACTER SET utf8 NOT NULL</CODE><BR>
+Merkityks merkkijonona.
+<P>
+<CODE>varmennettu	INT</CODE><BR>
+Onko merkitys varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Merkitys esitt&auml;&auml; lekseemin sanallisen merkityksen. Merkityksen tietoihin
+kuuluu tieto kielest&auml;, jolla se on esitetty. Merkityksi&auml; voi kuulua
+lekseemin useita (ks ortognro-attribuutti).
+<P>
+<BR>
+<BR>
+<B>SUHDE-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE suhde (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        lekseemi1_id    INT UNSIGNED NOT NULL,
+        suhdetyyppi     INT NOT NULL,
+        lekseemi2_id    INT UNSIGNED NOT NULL,
+        varmuusaste     INT NOT NULL,
+        implisiittinen  INT NOT NULL,
+        varmennettu     INT,
+        PRIMARY KEY (id),
+        INDEX st_index (suhdetyyppi));
+</PRE>
+<P>
+Attribuuttien selitys:
+</P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Suhteen yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>lekseemi1_id	INT UNSIGNED NOT NULL</CODE><BR>
+Suhteen yhden p&auml;&auml;n lekseemin id. Ks lekseemi2_id.
+<P>
+<CODE>suhdetyyppi	INT NOT NULL</CODE><BR>
+Suhdetyypin m&auml;&auml;rittelev&auml; numero.
+<P>
+Suhdetyypit:
+<P>
+1 = vastinesuhde<BR>
+2 = johtosuhde<BR>
+3 = lainasuhde<BR>
+5 = vertaussuhde<BR>
+6 = kielteinen vastinesuhde<BR>
+7 = kielteinen johtosuhde<BR>
+8 = kieleinen lainasuhde<BR>
+10 = kielteinen vertaussuhde<BR>
+<P>
+Tyypit 4 ja 9 puuttuvat, koska niill&auml; aikanaan esitetty korrelaatiosuhde
+on poistettu k&auml;yt&ouml;st&auml;.
+<P>
+<CODE>lekseemi2_id	INT UNSIGNED NOT NULL</CODE><BR>
+Suhteen yhden p&auml;&auml;n lekseemin id. Ks lekseemi1_id.
+<P>
+<CODE>varmuusaste     INT NOT NULL</CODE><BR>
+Suhteen varmuusaste. 1 = varma, 2 = ep&auml;varma.
+<P>
+<CODE>implisiittinen  INT NOT NULL</CODE><BR>
+Onko suhde implisiittinen, eli p&auml;&auml;telty. 1 = on 0 = ei.<BR>
+Suhteet (vastine- ja johtosuhteet) p&auml;&auml;tell&auml;&auml;n aina suhteen lis&auml;yksen
+yhteydess&auml;. P&auml;&auml;tellyt suhteet tallennetaan kantaan, koska n&auml;in
+k&auml;ytt&ouml;liittym&auml;st&auml; saadaan nopeampi. Suhteiden p&auml;&auml;ttely joka vaiheessa
+osoittautui turhan hitaaksi. Suhteen implisiittisyys voitaisiin selvitt&auml;&auml;
+my&ouml;s l&auml;hdetiedoista (p&auml;&auml;tellyll&auml; ei ole l&auml;hdett&auml;), mutta t&auml;m&auml;kin
+aiheuttaisi turhia tietokantaoperaatioita k&auml;ytt&ouml;liittym&auml;ss&auml;
+<P>
+<CODE>varmennettu	INT</CODE><BR>
+Onko suhde varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Suhde on konkreettisesti suhde kahden eri lekseemin v&auml;lill&auml;. Se yhdist&auml;&auml;
+kaksi lekseemi&auml; attribuuttien lekseemi1_id ja lekseemi2_id mukaan
+suhdetyypin m&auml;&auml;rittelem&auml;&auml;n suhteeseen. Suhteet toimivat yleens&auml;
+molemminsuuntaisesti lekseemien v&auml;lill&auml;.
+<P>
+Vastine- ja johtosuhteiden osalta j&auml;rjestelm&auml;ss&auml; suoritetaan ko. suhteiden
+lis&auml;yksen aikana p&auml;&auml;ttely&auml;. Lekseemist&auml; l&auml;htev&auml;n suhdeverkon
+transitiivisuus selvitet&auml;&auml;n ja lis&auml;t&auml;&auml;n implisiittiset suhteet niiden
+lekseemien v&auml;liin, joista suhde transitiivisuuden mukaan puuttuu.
+<P> <BR>
+<BR>
+<B>MUUTIETO-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE muutieto (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        lekseemi_id     INT UNSIGNED NOT NULL,
+        tieto           VARCHAR(255) CHARACTER SET utf8,
+        varmennettu     INT,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Muun tiedon yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>lekseemi_id	INT UNSIGNED NOT NULL</CODE><BR>
+Lekseemin id, johon muu tieto liittyy.
+<P>
+<CODE>tieto		VARCHAR(255) CHARACTER SET utf8</CODE><BR>
+Muun tiedon teksti merkkijonona.
+<P>
+<CODE>varmennettu	INT</CODE><BR>
+Onko muu tieto varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Muu tieto esitt&auml;&auml; lekseemin jotain muuta tietoa, jota ei muulla tavalla
+voida esitt&auml;&auml;.
+<P>
+<BR>
+<BR>
+<B>SANUE-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE sanue (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        kieli_id        INT UNSIGNED NOT NULL,
+        eduslekseemi    INT UNSIGNED NOT NULL,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id              INT NOT NULL AUTO_INCREMENT</CODE><BR>
+Sanueen yksik&auml;sitteist&auml;v&auml; id.
+<P>
+<CODE>kieli_id        INT UNSIGNED NOT NULL</CODE><BR>
+Sanueen kieli. Viittaa kieli-tauluun.
+<P>
+<CODE>eduslekseemi    INT UNSIGNED NOT NULL</CODE><BR>
+Sanueen eduslekseemi, jonka mukaan sanueelle tulee ilmentym&auml;. Viittaa
+lekseemi-tauluun.
+<P>
+Sanue on lekseemiin verrattava kokonaisuus. Taulu m&auml;&auml;ritt&auml;&auml; sanueen, johon
+voi kuulua lis&auml;&auml; muuta tietoa muista tauluista id:n mukaan
+liitettyn&auml;. Sanue kuuluu aina johonkin kieleen. Muuta tietoa sanue
+ei yksist&auml;&auml;n oletusarvoisesti sis&auml;ll&auml;. Sanue koostuu kokonaisuudessaan
+tarkenteesta, ilmentymist&auml;, merkityksist&auml;, suhteista toisiin sanueisiin ja
+ns. muusta tiedosta.
+<P>
+<BR>
+<BR>
+<B>SANUELIITOS-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE sanueliitos (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        lekseemi_id     INT UNSIGNED NOT NULL,
+        sanue_id        INT UNSIGNED NOT NULL,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id              INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Sanueliitoksen id.
+<P>
+<CODE>lekseemi_id     INT UNSIGNED NOT NULL</CODE><BR>
+Sanueeseen liittyv&auml; lekseemi. Viittaa lekseemi-tauluun.
+<P>
+<CODE>sanue_id        INT UNSIGNED NOT NULL</CODE><BR>
+Mihin sanueeseen lekseemi_id:n viittaama lekseemi kuuluu.
+<P>
+Taulu esitt&auml;&auml; sanueisiin kuuluvat lekseemit.
+<P>
+<BR>
+<BR>
+<B>SANUE_ILMENTYMA-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE sanue_ilmentyma (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        sanue_id        INT UNSIGNED NOT NULL,
+        ilmentyma       VARCHAR(255) CHARACTER SET utf8,
+        varmennettu     INT,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id                INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Ilmentym&auml;n yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>sanue_id       INT UNSIGNED NOT NULL</CODE><BR>
+Sanue id, johon ko. ilmentyma kuuluu. Viittaa sanue-tauluun.
+<P>
+<CODE>ilmentyma VARCHAR(255) CHARACTER SET utf8</CODE><BR>
+Ilmentyma, eli sanan kirjoitusasu merkkijonona
+<P>
+<CODE>varmennettu       INT</CODE><BR>
+Tieto onko ilmentyma varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Sanue_ilmentyma-taulussa esitet&auml;&auml;n sanueiden l&auml;hteenmukaiset ilmentym&auml;t.
+<P>
+<BR>
+<BR>
+<B>SANUE_MERKITYS-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE sanue_merkitys (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        sanue_id        INT UNSIGNED NOT NULL,
+        kieli           VARCHAR(50) NOT NULL,
+        merkitys        TEXT CHARACTER SET utf8,
+        toimittaja      INT,
+        varmennettu     INT,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id                INT UNSIGNED NOT NULL
+AUTO_INCREMENT</CODE><BR>
+Merkityksen yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>lekseemi_id       INT UNSIGNED NOT NULL</CODE><BR>
+Lekseemin id, johon ko. merkitys kuuluu.
+<P>
+<CODE>ortognro        INT NOT NULL</CODE><BR>
+Kuvaa mihin ortografiaan merkitys liittyy. Merkityksi&auml; on sek&auml;
+p&auml;&auml;l&auml;hteenmukaisia ett&auml; l&auml;hteenmukaisia. P&auml;&auml;l&auml;hteit&auml; on 2 kpl kielt&auml;
+kohden ja kullekin p&auml;&auml;l&auml;hteelle on olemassa yksi p&auml;&auml;l&auml;hteen mukainen
+merkitys lekseemi&auml; kohden. ortognro-attribuutin arvot 1 ja 2 tarkoittavat
+p&auml;&auml;l&auml;hteen mukaista merkityst&auml;. Lis&auml;ksi lekseemill&auml; voi olla useita
+l&auml;hteenmukaisia merkityksi&auml;, jotka esitet&auml;&auml;n ortognro-attribuutin arvolla
+3.
+<P>
+<CODE>kieli             VARCHAR(50) NOT NULL</CODE><BR>
+Merkityksen kieli.
+<P>
+<CODE>merkitys  TEXT CHARACTER SET utf8</CODE><BR>
+Merkityks merkkijonona.
+<P>
+<CODE>varmennettu       INT</CODE><BR>
+Onko merkitys varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Merkitys esitt&auml;&auml; sanueen sanallisen merkityksen. Merkityksen tietoihin
+kuuluu tieto kielest&auml;, jolla se on esitetty.
+<P>
+<BR>
+<BR>
+<B>SANUE_SUHDE-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE sanue_suhde (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        sanue1_id       INT UNSIGNED NOT NULL,
+        suhdetyyppi     INT NOT NULL,
+        sanue2_id       INT UNSIGNED NOT NULL,
+        lainakieli      INT NOT NULL DEFAULT 0,
+        varmuusaste     INT NOT NULL,
+        implisiittinen  INT NOT NULL,
+        varmennettu     INT,
+        PRIMARY KEY (id),
+        INDEX st_index (suhdetyyppi));
+</PRE>
+<P>
+Attribuuttien selitys:
+</P>
+<CODE>id                INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Suhteen yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>sanue1_id      INT UNSIGNED NOT NULL</CODE><BR>
+Suhteen yhden p&auml;&auml;n sanueen id. Ks sanue2_id.
+<P>
+<CODE>suhdetyyppi       INT NOT NULL</CODE><BR>
+Suhdetyypin m&auml;&auml;rittelev&auml; numero.
+<P>
+Suhdetyypit:
+<P>
+1 = vastinesuhde<BR>
+3 = lainasuhde<BR>
+5 = vertaussuhde<BR>
+6 = kielteinen vastinesuhde<BR>
+8 = kieleinen lainasuhde<BR>
+10 = kielteinen vertaussuhde<BR>
+<P>
+Tyypit samat kuin lekseemin suhde-taulussa. Sanueilla ei k&auml;yt&ouml;ss&auml;
+johtosuhdetta.
+<P>
+<CODE>sanue2_id      INT UNSIGNED NOT NULL</CODE><BR>
+Suhteen yhden p&auml;&auml;n sanueen id. Ks sanue1_id.
+<P>
+<CODE>lainakieli      INT NOT NULL DEFAULT 0</CODE><BR>
+Lainasuhteen lainakieliryhm&auml;.
+<P>
+<CODE>varmuusaste     INT NOT NULL</CODE><BR>
+Suhteen varmuusaste. 1 = varma, 2 = ep&auml;varma.
+<P>
+<CODE>implisiittinen  INT NOT NULL</CODE><BR>
+Onko suhde implisiittinen, eli p&auml;&auml;telty. 1 = on 0 = ei.<BR>
+Suhteet (vastine) p&auml;&auml;tell&auml;&auml;n aina suhteen lis&auml;yksen
+yhteydess&auml;. P&auml;&auml;tellyt suhteet tallennetaan kantaan, koska n&auml;in
+k&auml;ytt&ouml;liittym&auml;st&auml; saadaan nopeampi. Suhteiden p&auml;&auml;ttely joka vaiheessa
+osoittautui turhan hitaaksi. Suhteen implisiittisyys voitaisiin selvitt&auml;&auml;
+my&ouml;s l&auml;hdetiedoista (p&auml;&auml;tellyll&auml; ei ole l&auml;hdett&auml;), mutta t&auml;m&auml;kin
+aiheuttaisi turhia tietokantaoperaatioita k&auml;ytt&ouml;liittym&auml;ss&auml;
+<P>
+<CODE>varmennettu       INT</CODE><BR>
+Onko suhde varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Suhde on konkreettisesti suhde kahden eri sanueen v&auml;lill&auml;. Se yhdist&auml;&auml;
+kaksi sanuetta attribuuttien sanue1_id ja sanue2_id mukaan
+suhdetyypin m&auml;&auml;rittelem&auml;&auml;n suhteeseen. Suhteet toimivat yleens&auml;
+molemminsuuntaisesti sanueiden v&auml;lill&auml;.
+<P>
+Vastinesuhteiden osalta j&auml;rjestelm&auml;ss&auml; suoritetaan ko. suhteiden
+lis&auml;yksen aikana p&auml;&auml;ttely&auml;. Sanueesta l&auml;htev&auml;n suhdeverkon
+transitiivisuus selvitet&auml;&auml;n ja lis&auml;t&auml;&auml;n implisiittiset suhteet niiden
+sanueiden v&auml;liin, joista suhde transitiivisuuden mukaan puuttuu.
+<P>
+<BR>
+<BR>
+<B>LAINALAAJENNUS-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE lainalaajennus (
+        suhde_id        INT UNSIGNED NOT NULL,
+        sanue_id        INT UNSIGNED NOT NULL,
+        PRIMARY KEY(suhde_id,sanue_id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>suhde_id        INT UNSIGNED NOT NULL</CODE><BR>
+Suhteen id-numero, jota lainalaajennus koskee.
+<P>
+<CODE>sanue_id        INT UNSIGNED NOT NULL</CODE><BR>
+Sanueen id, jota lainalaajennus koskee.
+<P>
+Lainalaajennus-taulussa esitet&auml;&auml;n lainasuhteiden laajennukset, eli
+lainasuhteeseen lainatahoon liittyv&auml;t sanueet.
+<P>
+<BR>
+<BR>
+<B>SANUE_MUUTIETO-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE sanue_muutieto (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        sanue_id        INT UNSIGNED NOT NULL,
+        tieto           VARCHAR(255) CHARACTER SET utf8,
+        varmennettu     INT,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id                INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Muun tiedon yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>sanue_id       INT UNSIGNED NOT NULL</CODE><BR>
+Sanueen id, johon muu tieto liittyy. Viittaa sanue-tauluun.
+<P>
+<CODE>tieto             VARCHAR(255) CHARACTER SET utf8</CODE><BR>
+Muun tiedon teksti merkkijonona.
+<P>
+<CODE>varmennettu       INT</CODE><BR>
+Onko muu tieto varmennettu. 0 = ei, 1 = kyll&auml;.
+<P>
+Muu tieto esitt&auml;&auml; sanueen jotain muuta tietoa, jota ei muulla tavalla
+voida esitt&auml;&auml;.
+<P>
+<BR>
+<BR>
+<B>LAHDETIETO-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE lahdetieto (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        taulu           INT NOT NULL,
+        taulu_id        INT UNSIGNED NOT NULL,
+        lahde           INT UNSIGNED NOT NULL,
+        sivunro         VARCHAR(20),
+        PRIMARY KEY (id),
+        INDEX t_index (taulu,taulu_id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+L&auml;hdetiedon yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+M&auml;&auml;rittelee taulun, johon l&auml;hdetieto liittyy.<BR>
+0 = lekseemi<BR>
+1 = ilmentyma<BR>
+2 = merkitys<BR>
+3 = suhde<BR>
+4 = lisatieto<BR>
+5 = lahde<BR>
+<P>
+<CODE>taulu_id	INT UNSIGNED NOT NULL</CODE><BR>
+Taulu-attribuutin m&auml;&auml;rittelem&auml;n taulun id, johon l&auml;hdetieto liittyy.
+<P>
+<CODE>lahde		INT UNSIGNED NOT NULL</CODE><BR>
+L&auml;hdetiedon l&auml;hde, viite lahde-tauluun.
+<P>
+<CODE>sivunro		VARCHAR(15)</CODE><BR>
+L&auml;hdetiedon sivunumero merkkijonona. Voi olla tyhj&auml;.
+<P>
+<CODE>INDEX t_index (taulu,taulu_id)</CODE><BR>
+Kahden avaimen indeksi, joka nopeuttaa taulusta hakuja etenkin
+varmennuksessa.
+<P>
+L&auml;hdetieto yhdist&auml;&auml; tiedon sis&auml;lt&auml;v&auml;n taulun ja sen l&auml;hteen ja kertoo
+l&auml;hteen mahdollisen sivunumeron.
+<P>
+<BR>
+<BR>
+<B>LAHDE-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE lahde (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        tekija_lyhenne  VARCHAR(80) CHARACTER SET utf8 NOT NULL,
+        ilmestymisvuosi VARCHAR(20) CHARACTER SET utf8 NOT NULL,
+        teoslyhenne     VARCHAR(30) CHARACTER SET utf8 NOT NULL,
+        bibliotieto     INT,
+        kayttajalahde   INT,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id 		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+L&auml;hdelyhenteen yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>tekija_lyhenne  VARCHAR(80) CHARACTER SET utf8 NOT NULL</CODE><BR>
+L&auml;hdelyhenteess&auml; tekij&auml;n lyhenne.
+<P>
+<CODE>ilmestymisvuosi	VARCHAR(20) CHARACTER SET utf8 NOT NULL</CODE><BR>
+L&auml;hdelyhenteess&auml; l&auml;hteen ilmestymisvuosi.
+<P>
+<CODE>teoslyhenne	VARCHAR(30) CHARACTER SET utf8 NOT NULL</CODE><BR>
+L&auml;hdelyhenteess&auml; teoksen lyhenne.
+<P>
+<CODE>bibliotieto     INT</CODE><BR>
+Kertoo mihin bibliografiatietoon l&auml;hdelyhenne liittyy.
+<P>
+<CODE>kayttajalahde   INT</CODE><BR>
+Onko kyseess&auml; k&auml;ytt&auml;j&auml;l&auml;hde. 0 = ei, 1 = kyll&auml;.
+<P>
+Lahde-taulu kuvaa tietokannassa l&auml;hdelyhenteit&auml;. Lyhenteet liittyv&auml;t
+bibliografian teoksiin ja niit&auml; my&ouml;s m&auml;&auml;ritell&auml;&auml;n l&auml;hteiksi tietokantaan
+lis&auml;tt&auml;viin l&auml;hteenmukaisiin tietoihin.
+ <P>
+<BR>
+<BR>
+<B>KOMMENTTI</B><BR>
+<P>
+<PRE>
+CREATE TABLE kommentti (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        lekseemi_id     INT UNSIGNED NOT NULL,
+        kommentoija     VARCHAR(50) NOT NULL,
+        aika            DATETIME NOT NULL,
+        teksti          TEXT CHARACTER SET utf8,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Kommentin yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>lekseemi_id	INT UNSIGNED NOT NULL</CODE><BR>
+Lekseemin id, johon kommentti liittyy.
+<P>
+<CODE>kommentoija	VARCHAR(50) NOT NULL</CODE><BR>
+Kommentoija.
+<P>
+<CODE>aika		DATETIME NOT NULL</CODE><BR>
+Aika, jolloin kommentti talletettiin.
+<P>
+<CODE>teksti		TEXT CHARACTER SET utf8</CODE><BR>
+Kommentin teksti.
+<P>
+Kommentti-taulu sis&auml;lt&auml;&auml; lekseemeihin kuuluvia k&auml;ytt&auml;jien
+lis&auml;&auml;mi&auml; kommentteja.
+<P>
+<BR>
+<BR>
+<B>TALLENNUS-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE tallennus (
+        id              INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        taulu           INT NOT NULL,
+        taulu_id        INT UNSIGNED NOT NULL,
+        tallentaja      INT UNSIGNED NOT NULL,
+        aika            DATETIME NOT NULL,
+        PRIMARY KEY (id),
+        INDEX t_index (taulu,taulu_id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+Tallennustiedon yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>taulu		INT NOT NULL</CODE><BR>
+Taulu, johon tallennustieto liitty.<BR>
+0 = lekseemi<BR>
+1 = ilmentyma<BR>
+2 = merkitys<BR>
+3 = suhde<BR>
+4 = lisatieto<BR>
+5 = lahde<BR>
+6 = tarkenne<BR>
+<P>
+<CODE>taulu_id	INT UNSIGNED NOT NULL</CODE><BR>
+Taulu-attribuutin m&auml;&auml;rittelem&auml;n taulun id, johon tallennustieto liittyy.
+<P>
+<CODE>tallentaja	INT UNSIGNED NOT NULL</CODE><BR>
+Tallentajan tunnus.
+<P>
+<CODE>aika		DATETIME NOT NULL</CODE><BR>
+Aika, jolloin tieto tallennettin.
+<P>
+<CODE>INDEX t_index (taulu,taulu_id)</CODE><BR>
+Kahden avaimen indeksi, joka nopeuttaa hakuja.
+<P>
+Tallennus-tauluun ker&auml;t&auml;&auml;n tietokantaan talletettujen tietojen
+tallennusaikoja ja tallentajien nimi&auml;. Taulun perusteella selvitet&auml;&auml;n mm.
+j&auml;rjestelm&auml;n lekseemien varmennukseen liittyvi&auml; tietoja. Lis&auml;ksi saadaan
+tarvittaessa my&ouml;s muuten selville kuka mit&auml;kin tietoa on
+lis&auml;nnyt/muokannut ja milloin.
+<P>
+<BR>
+<BR>
+<B>KAYTTAJA-taulu</B><BR>
+<P>
+<PRE>
+CREATE TABLE kayttaja (
+        id                  INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        nimi                VARCHAR(50),
+        tunnus              VARCHAR(30) NOT NULL,
+        salasana            VARCHAR(30) NOT NULL,
+        edellogin           DATETIME,
+        syottoja            INT UNSIGNED DEFAULT 0,
+        muutoksia           INT UNSIGNED DEFAULT 0,
+        varmennuksia        INT UNSIGNED DEFAULT 0,
+        attr_syottaja       INT,
+        attr_varmentaja     INT,
+        attr_korjaaja       INT,
+        attr_yllapitaja     INT,
+        attr_eikaytossa     INT,
+        kattr_kaikkilahteet	INT
+        lahdelyhenne        VARCHAR(30)
+        lahteet             VARCHAR(80),
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id		INT UNSIGNED NOT NULL AUTO_INCREMENT</CODE><BR>
+K&auml;ytt&auml;j&auml;n yksik&auml;sitteist&auml;v&auml; id-numero.
+<P>
+<CODE>nimi		VARCHAR(50)</CODE><BR>
+K&auml;ytt&auml;j&auml;n koko nimi.
+<P>
+<CODE>tunnus		VARCHAR(30) NOT NULL</CODE><BR>
+K&auml;ytt&auml;j&auml;n tunnus.
+<P>
+<CODE>salasana	VARCHAR(30) NOT NULL</CODE><BR>
+K&auml;ytt&auml;j&auml;n salasana.
+<P>
+<CODE>edellogin       DATETIME</CODE><BR>
+Edellisen j&auml;rjestelm&auml;&auml;n kirjautumisen ajankohta.
+<P>
+<CODE>syottoja        INT UNSIGNED DEFAULT 0</CODE><BR>
+Tehtyjen sy&ouml;tt&ouml;jen m&auml;&auml;r&auml;.
+<P>
+<CODE>muutoksia       INT UNSIGNED DEFAULT 0</CODE><BR>
+Tehtyjen muutosten m&auml;&auml;r&auml;.
+<P>
+<CODE>varmennuksia    INT UNSIGNED DEFAULT 0</CODE><BR>
+Tehtyjen varmennusten m&auml;&auml;r&auml;.
+<P>
+<CODE>attr_syottaja	INT</CODE><BR>
+Onko k&auml;ytt&auml;j&auml; sy&ouml;tt&auml;j&auml;. 0 = ei, 1 = kyll&auml;.
+<P>
+<CODE>attr_varmentaja	INT</CODE><BR>
+Onko k&auml;ytt&auml;j&auml; varmentaja. 0 = ei, 1 = kyll&auml;.
+<P>
+<CODE>attr_korjaaja   INT</CODE><BR>
+Onko k&auml;ytt&auml;j&auml; korjaaja. 0 = ei, 1 = kyll&auml;.
+<P>
+<CODE>attr_yllapitaja	INT</CODE><BR>
+Onko k&auml;ytt&auml;j&auml; yll&auml;pit&auml;j&auml;. 0 = ei, 1 = kyll&auml;.
+<P>
+<CODE>attr_eikaytossa	INT</CODE><BR>
+Onko k&auml;ytt&auml;j&auml;tunnus k&auml;yt&ouml;ss&auml;. 0 = ei, 1 = kyll&auml;.
+<P>
+<CODE>kattr_kaikkilahteet	INT</CODE><BR>
+Onko k&auml;ytt&auml;j&auml;ll&auml; asetuksena n&auml;ytt&auml;&auml; l&auml;hteenmukaiset tiedot oletuksena tilassa
+"kaikki l&auml;hteet". 0 = ei, 1 = kyll&auml;.
+<P>
+<CODE>lahdelyhenne  VARCHAR(30)</CODE><BR>
+K&auml;ytt&auml;j&auml;n l&auml;hdelyhenne. K&auml;ytet&auml;&auml;n kun k&auml;ytt&auml;j&auml; lis&auml;&auml; tietoja k&auml;ytt&auml;en
+itse&auml;&auml;n l&auml;hteen&auml;.
+<P>
+<CODE>lahteet  VARCHAR(80)</CODE><BR>
+K&auml;ytt&auml;j&auml;n viimeksi k&auml;ytt&auml;mien l&auml;hteiden id:t stringin&auml; j&auml;rjestyksess&auml;
+pilkulla erotettuna.
+<P>
+K&auml;ytt&auml;j&auml;-taulu m&auml;&auml;ritt&auml;&auml; j&auml;rjestelm&auml;n k&auml;ytt&auml;j&auml;t. K&auml;ytt&auml;jille voidaan
+m&auml;&auml;ritell&auml; erilaisia oikeuksia attr_-alkuisten attribuuttien mukaan.
+<P>
+<BR>
+<BR>
+<B>KAYTTAJA_STAT-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE kayttaja_stat (
+        kayttaja        INT NOT NULL,
+        vuosi           INT NOT NULL,
+        syottoja        INT UNSIGNED DEFAULT 0,
+        muutoksia       INT UNSIGNED DEFAULT 0,
+        varmennuksia    INT UNSIGNED DEFAULT 0,
+        PRIMARY KEY (kayttaja,vuosi));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>kayttaja        INT NOT NULL</CODE><BR>
+<P>
+K&auml;ytt&auml;j&auml;n id, jolla tiedet&auml;&auml;n kenen tiedoista on kyse. Muodostaa taulun
+p&auml;&auml;avaimen yhdess&auml; vuosi-attribuutin kanssa.
+<P>
+<CODE>vuosi           INT NOT NULL</CODE><BR>
+<P>
+Mink&auml; vuoden statistiikasta on kyse. Muodostaa taulun p&auml;&auml;avaimen yhdess&auml;
+kayttaja-attribuutin kanssa.
+<P>
+<CODE>syottoja        INT UNSIGNED DEFAULT 0</CODE><BR>
+<P>
+K&auml;ytt&auml;j&auml;n tekemien sy&ouml;tt&ouml;jen yhteism&auml;&auml;r&auml;.
+<P>
+<CODE>muutoksia       INT UNSIGNED DEFAULT 0</CODE><BR>
+<P>
+K&auml;ytt&auml;j&auml;n tekemien muutosten yhteism&auml;&auml;r&auml;.
+<P>
+<CODE>varmennuksia    INT UNSIGNED DEFAULT 0</CODE><BR>
+<P>
+K&auml;ytt&auml;j&auml;n tekemien varmennusten yhteism&auml;&auml;r&auml;.
+<P>
+K&auml;ytt&auml;j&auml;n vuosittaiset ty&ouml;skentelystatistiikat. Tietoja ker&auml;t&auml;&auml;n
+sy&ouml;t&ouml;ist&auml;, muutoksista ja varmennuksista.
+<P>
+<BR>
+<BR>
+<B>BIBLIOGRAFIA-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE bibliografia (
+        id              INT NOT NULL AUTO_INCREMENT,
+        tyyppi          INT,
+        vuosiluku       VARCHAR(20) CHARACTER SET utf8,
+        teoksen_nimi    VARCHAR(255) CHARACTER SET utf8,
+        ilmestymispaikka        VARCHAR(50) CHARACTER SET utf8,
+        niteiden_maara  VARCHAR(10) CHARACTER SET utf8,
+        sarjalyhenne    VARCHAR(20) CHARACTER SET utf8,
+        sarjanide       VARCHAR(30) CHARACTER SET utf8,
+        sarjasivut      VARCHAR(10) CHARACTER SET utf8,
+        sijainti        VARCHAR(255) CHARACTER SET utf8,
+        lisatieto       TEXT CHARACTER SET utf8,
+        kommentti       TEXT CHARACTER SET utf8,
+        PRIMARY KEY(id));
+</PRE>
+<P>
+Bibliografian tiedot.
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id              INT NOT NULL AUTO_INCREMENT</CODE><BR>
+Bibliografiatiedon yksik&auml;sitteist&auml;v&auml; id.
+<P>
+tyyppi          INT</CODE><BR>
+Bibliografiatiedon tyyppi: 1 = artikkeli/monografia, 2 =
+hakuteos/sanakirja, 3 = sarja
+<P>
+<CODE>vuosiluku       VARCHAR(20) CHARACTER SET utf8</CODE><BR>
+Vuosiluku
+<P>
+<CODE>teoksen_nimi    VARCHAR(255) CHARACTER SET utf8</CODE><BR>
+Teoksen nimi
+<P>
+<CODE>ilmestymispaikka        VARCHAR(50) CHARACTER SET utf8</CODE><BR>
+Ilmestymispaikka
+<P>
+<CODE>niteiden_maara  VARCHAR(10) CHARACTER SET utf8</CODE><BR>
+Niteiden m&auml;&auml;r&auml;
+<P>
+<CODE>sarjalyhenne    VARCHAR(20) CHARACTER SET utf8</CODE><BR>
+Sarjan lyhenne. Sarja ja muu bibliografiatieto yhdistet&auml;&auml;n samanlaisten
+lyhenteiden mukaan.
+<P>
+<CODE>sarjanide       VARCHAR(30) CHARACTER SET utf8</CODE><BR>
+Sarjan nide
+<P>
+<CODE>sarjasivut      VARCHAR(10) CHARACTER SET utf8</CODE><BR>
+Sarjan sivut
+<P>
+<CODE>sijainti        VARCHAR(255) CHARACTER SET utf8</CODE><BR>
+Sijaintitieto
+<P>
+<CODE>lisatieto       TEXT CHARACTER SET utf8</CODE><BR>
+Lis&auml;tietoja
+<P>
+<CODE>kommentti       TEXT CHARACTER SET utf8</CODE><BR>
+Kommentteja
+<P>
+
+<P>
+<BR>
+<BR>
+<B>KIRJOITTAJA-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE kirjoittaja (
+        id              INT NOT NULL AUTO_INCREMENT,
+        nimi            VARCHAR(100) CHARACTER SET utf8,
+        variantti1      VARCHAR(100) CHARACTER SET utf8,
+        variantti2      VARCHAR(100) CHARACTER SET utf8,
+        variantti3      VARCHAR(100) CHARACTER SET utf8,
+        variantti4      VARCHAR(100) CHARACTER SET utf8,
+        PRIMARY KEY (id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id              INT NOT NULL AUTO_INCREMENT</CODE><BR>
+Kirjoittajan yksik&auml;sitteist&auml;v&auml; id.
+<P>
+<CODE>nimi            VARCHAR(100) CHARACTER SET utf8</CODE><BR>
+Kirjoittajan ensisijainen nimi.
+<P>
+<CODE>variantti1      VARCHAR(100) CHARACTER SET utf8</CODE><BR>
+Kirjoittajan nimen vaihtoehtoinen esitysmuoto.
+<P>
+<CODE>variantti2      VARCHAR(100) CHARACTER SET utf8</CODE><BR>
+Kirjoittajan nimen vaihtoehtoinen esitysmuoto.
+<P>
+<CODE>variantti3      VARCHAR(100) CHARACTER SET utf8</CODE><BR>
+Kirjoittajan nimen vaihtoehtoinen esitysmuoto.
+<P>
+<CODE>variantti4      VARCHAR(100) CHARACTER SET utf8</CODE><BR>
+Kirjoittajan nimen vaihtoehtoinen esitysmuoto.
+<P>
+Bibliografian teosten kirjoittajia. Kullekin kirjoittajalle voidaan
+m&auml;&auml;ritell&auml; 5 nimen kirjoitusasua tai nimimuotoa.
+<P>
+<BR>
+<BR>
+<B>KIRJOITTAJALIITOS-taulu</B><BR>
+<P>
+<PRE>CREATE TABLE kirjoittajaliitos (
+        id              INT NOT NULL AUTO_INCREMENT,
+        kirjoittaja_id  INT,
+        bibliografia_id INT,
+        monesnimi       INT,
+        PRIMARY KEY(id));
+</PRE>
+<P>
+Attribuuttien selitys:
+<P>
+<CODE>id              INT NOT NULL AUTO_INCREMENT</CODE><BR>
+Kirjoittajaliitoksen yksik&auml;sitteist&auml;v&auml; id.
+<P>
+<CODE>kirjoittaja_id  INT</CODE><BR>
+Kirjoittajan id.
+<P>
+<CODE>bibliografia_id INT</CODE><BR>
+Bibliografiateoksen id.
+<P>
+<CODE>monesnimi       INT</CODE><BR>
+Kuinka monetta nimimuotoa k&auml;ytet&auml;&auml;n ko. teokselle.
+<P>
+Taulu liitt&auml;&auml; tietyn kirjoittajan bibliografian teokseen.
+
+<P>
+<BR>
+<BR>
+<A NAME="3">
+<B>3. TIETOKANNAN RAKENNE</B>
+<P>
+Tietokannan rakenne esitet&auml;&auml;n t&auml;ss&auml; UML-tyylisin&auml; kaavioina, joista n&auml;hd&auml;&auml;n
+tietokantataulujen v&auml;liset yhteydet. Rakenne on jaettu useampiin
+osarakenteiden kaaviokuviin selvyyden vuoksi. Todellisuudessa kaikki
+kaaviot kuuluvat samaan rakenteeseen. Tarkemmat selitykset kuvien yhteydess&auml;.
+<P>
+Huom: Taulujen yhteyksien m&auml;&auml;r&auml;t ovat esitetty niin kuin ne ovat
+j&auml;rjestelm&auml;n toimintatavan kannalta mahdollisia. Pelk&auml;n tietokannan
+kannalta yhteyksien m&auml;&auml;r&auml;t voisivat olla muutakin, mutta tietokantaa
+k&auml;ytt&auml;v&auml; j&auml;rjestelm&auml; huolehtii oikeista yhteyksien m&auml;&auml;r&auml;st&auml;.
+<P>
+<B>Lekseemi</B>
+<P>
+Lekseemin taulurakenne. Lahdetieto-taulusta on yhteys eteenp&auml;in, katso lis&auml;&auml;
+l&auml;hdetietot. Osasta tauluista tallennetaan my&ouml;s tallennustiedot, katso lis&auml;&auml;
+tallennustiedot.
+<P>
+<IMG SRC="tkkaavio_lekseemi.gif" BORDER="0">
+<P>
+<B>Sanue</B>
+<P>
+Sanueen taulurakenne. Sanueeseen liitet&auml;&auml;n lekseemej&auml; sanueliitos-taulun
+avulla. Lahdetieto-taulusta on yhteys eteenp&auml;in, katso lis&auml;&auml;
+l&auml;hdetietot. Osasta tauluista tallennetaan my&ouml;s tallennustiedot, katso lis&auml;&auml;
+tallennustiedot.
+<P>
+<IMG SRC="tkkaavio_sanue.gif" BORDER="0">
+<P>
+<B>L&auml;hdetiedot</B>
+<P>
+Kullakin taululla, jolla on l&auml;hteenmukaista tietoa, on viitte
+lahdetieto-taulun (lekseemi- ja sanuekaavioissa esitetty vain
+lahdetieto-taulu) kautta tiettyyn l&auml;hdelyhenteeseen lahde-taulussa.
+Lahde-taulu puolestaan yhdist&auml;&auml; l&auml;hdelyhenteen bibliografian johonkin
+teokseen. Bibliografiaan puolestaan liitet&auml;&auml;n kirjoittajaliitos-taulun
+avulla teoksen kirjoittajia kirjoittaja-taulusta. L&auml;hdetietoa voivat saada
+seuraavat taulut: ilmentyma, merkitys, suhde, muutieto, sanue_ilmentyma,
+sanue_merkitys, sanue_suhde, sanue_muutieto. Bibliografia-taulun tiedoista
+tallennetaan tallennustieto, katso lis&auml;&auml; tallennustiedot.
+<P>
+<IMG SRC="tkkaavio_lahde.gif" BORDER="0">
+<P>
+<B>Tallennustieto</B>
+<P>
+Kullakin taululla, joihin lis&auml;t&auml;&auml;n tietoa k&auml;ytt&auml;j&auml;n sy&ouml;tt&auml;m&auml;n&auml;, on ns.
+tallennustieto tallennus-taulussa. Taulun rivill&auml; on viite tauluun, jonka
+tallennustietoja se kuvaa. Lis&auml;ksi tallennus-taulusta on viite
+kayttaja-taluun, jolla yhdistet&auml;&auml;n sy&ouml;tetty tieto tietyn k&auml;ytt&auml;j&auml;n
+sy&ouml;tt&auml;m&auml;ksi. Tallennustietoja voi olla useampia tietty&auml; sy&ouml;tetty&auml; tietoa
+kohde. Kyseess&auml; on nk. tallennushistoria. Tallennustietoja k&auml;ytet&auml;&auml;n
+k&auml;ytt&ouml;liittym&auml;ss&auml; selvitt&auml;m&auml;&auml;n kuka saa muokata sy&ouml;tetty&auml; tietoa sek&auml;
+varmentamistoiminnossa. Tallennustietoa voivat saada seuraavat taulut:
+tarkenne, ilmentyma, merkitys, suhde, muutieto, sanue_tarkenne,
+sanue_ilmentyma, sanue_merkitys, sanue_suhde, sanue_muutieto.
+<P>
+<IMG SRC="tkkaavio_tallennus.gif" BORDER="0">
+
+</BODY>
+</HTML>
