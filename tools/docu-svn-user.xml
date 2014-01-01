@@ -105,13 +105,21 @@ main/gt/script/gtsetup.sh
          </section>
          <section>
             <title>Ignoring items</title>
-            <p>The Subversion <code>svn:ignore</code> property is very similar in syntax and function to the CVS
-            <code>.cvsignore</code> file. In fact, if you are migrating a CVS working copy to Subversion, you can
-            directly migrate the ignore patterns by using the <code>.cvsignore</code> file as input file to the
-            <code>svn propset</code> command:</p>
-            <source>$ svn propset svn:ignore -F .cvsignore . 
-property 'svn:ignore' set on '.' 
-$</source>
+
+<p>The key insight to understanding svn ignore can be summarised in two sentences (quoting <a href="http://blog.bogojoker.com/2008/07/command-line-svnignore-a-file/">Joseph Pecoraro's excellent article</a>):</p>
+
+<p><em>You don’t svn:ignore a file. You put an svn:ignore property on the directory to ignore that filename pattern!</em> 
+</p>
+
+<p>Here is the command for making directories ignoring files, assuming you want to ignore files in the
+directory <em>where you stand now</em>:</p>
+
+            <source>$ svn propedit svn:ignore .</source>
+
+<p>Then add the files or suffixes you want to ignore (e.g. *.toc), and save (if in emacs: ctrl X C). Then you must <em>check in</em> the <em >directory</em> (here represented by the "."):</p>
+
+            <source>$ svn ci -m "Vi ignorerer toc-filer" .</source>
+ 
             <p>More details about ignoring files can be found in <em>Chapter 3: Advanced Topics</em>, in the section
             <em>Ignoring Unversioned Items</em>, in the <a href="http://svnbook.red-bean.com/">SVN book</a>.</p>
          </section>
