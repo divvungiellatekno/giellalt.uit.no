@@ -1,0 +1,1 @@
+../../words/dicts/smanob/inc/00readme.txt
