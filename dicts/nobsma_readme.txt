@@ -1,0 +1,1 @@
+../../words/dicts/nobsma/00_readme.txt
