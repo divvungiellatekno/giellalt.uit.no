@@ -1,0 +1,1 @@
+../../words/dicts/sms2X/00readme.txt
