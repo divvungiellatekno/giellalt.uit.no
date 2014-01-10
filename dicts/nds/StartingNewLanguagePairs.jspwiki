@@ -1,4 +1,3 @@
- 
 !!!Linguistic requirements
 
 !!(... for linguists)
@@ -9,25 +8,33 @@
 * lists of paradigms for parts of speech, which can be either as detailed as one paradigm per part of speech, or several paradigms for parts of speech and varying sub-types. These will have to be marked in the lexicon in some way, for exampl, plural-only proper noun paradigms for North Saami
 * description of attributes in the XML that need to be displayed to the user
  
-!!FSTs
+!!! Collecting the materials...
+
+!! FSTs
  
-!Lookup FST
+! Lookup FST
+
+Lookup FST tags may be in any format, as these can be relabeled for users at a
+later stage.
 
 {{{
     vuovdi
-    vuovdi  vuovdit verb pres.pts.
-    vuovdi  vuovdit verb imp. 2.p.tot.
-    vuovdi  vuovdit verb nom.Ag. subst. ent. akk.
-    vuovdi  vuovdit verb nom.Ag. subst. ent. gen.
-    vuovdi  vuovdit verb nom.Ag. subst. ent. nom.
-    vuovdi  vuovdi subst. ent. nom.
-    vuovdi  vuovdi adj. ent. akk.
-    vuovdi  vuovdi adj. ent. gen.
-    vuovdi  vuovdi adj. ent. nom.
-    vuovdi  vuovdi subst. aktor ent. nom.
-    vuovdi  vuovdi subst. aktor ent. akk.
-    vuovdi  vuovdi subst. aktor ent. gen.
+    vuovdi  vuovdit+V+TV+PrsPrc
+    vuovdi  vuovdit+V+TV+Imprt+Du2
+    vuovdi  vuovdit+V+TV+Der/NomAg+N+Sg+Nom
+    vuovdi  vuovdit+V+TV+Der/NomAg+N+Sg+Gen
+    vuovdi  vuovdit+V+TV+Der/NomAg+N+Sg+Acc
+    vuovdi  vuovdi+Sem/Plc+N+Sg+Nom
+    vuovdi  vuovdi+A+Sg+Nom
+    vuovdi  vuovdi+A+Sg+Gen
+    vuovdi  vuovdi+A+Sg+Acc
+    vuovdi  vuovdi+Sem/Hum+N+NomAg+Sg+Nom
+    vuovdi  vuovdi+Sem/Hum+N+NomAg+Sg+Gen
+    vuovdi  vuovdi+Sem/Hum+N+NomAg+Sg+Acc
 }}}
+
+Following newinfra, it's best to use the analysers compiled with
+''--enable-dicts'', because this will strip extraneous tags.
 
 !Spell relax FST
  
@@ -43,7 +50,7 @@ Whatever the use case, the analyzed lemma must match up with the lexicon
 entry.
 
  
-!Compound marking
+! Compound marking
  
 Must have a defined (and consistent) method for marking compounds:
 
@@ -55,10 +62,14 @@ Must have a defined (and consistent) method for marking compounds:
 }}}
 
 __Compound marker__: {{{ "  + #" }}}
+
+This setting can be configured in the YAML settings file.
  
-!Derivation marking
+! Derivation marking
  
-Must also be able to specify how all derivational suffixes are marked, because this affects how lexicalized words are displayed when a derivation has a lexicalized form.
+Must also be able to specify how all derivational suffixes are marked, because
+this affects how lexicalized words are displayed when a derivation has a
+lexicalized form.
 
 {{{
     oahpásmahttit
@@ -70,18 +81,28 @@ Must also be able to specify how all derivational suffixes are marked, because t
 
 __Derivation marker__: {{{ "suff." }}}
 
- 
-!Generation FST
- 
-For generation, currently sme and sma use the typical tag format for GT, but, we have a special generator FST that removes non-standard forms. Also, sma has some special entries that are marked with a hid attribute (g&ouml;&ouml;vledh+1, g&ouml;&ouml;vledh+2) were generation depends on meaning. These must be included in the generation FST.
+This setting can be configured in the YAML settings file.
 
  
-!!Lexicon
+! Generation FST
  
-It may be that the analysis FST does not match absolutely with the lexicon, and this is okay. But, if this is so, it is important to know where the differences are.
+For generation, currently sme and sma use the typical tag format for GT, but,
+we have a special generator FST that removes non-standard forms. Also, sma has
+some special entries that are marked with a hid attribute
+(g&ouml;&ouml;vledh+1, g&ouml;&ouml;vledh+2) were generation depends on
+meaning. These must be included in the generation FST.
 
  
-For instance, the above examples show &quot;noun&quot; and &quot;verb&quot; as the part of speech in the analyzer, but the lexicon only knows &quot;N&quot; and &quot;V&quot;. Thus, in order to line up these tools, the programmers will need to have a list of all of these things to formulate rules.
+!! Lexicon
+ 
+It may be that the analysis FST does not match absolutely with the lexicon, and
+this is okay. But, if this is so, it is important to know where the differences
+are.
+
+For instance, the above examples show &quot;noun&quot; and &quot;verb&quot; as
+the part of speech in the analyzer, but the lexicon only knows &quot;N&quot;
+and &quot;V&quot;. Thus, in order to line up these tools, the programmers will
+need to have a list of all of these things to formulate rules.
 
 !!! Added polish
 
@@ -112,46 +133,234 @@ following steps:
 Save the file to static/img/flags/, and match the path name so that it is
 LOCALE_20x15.png.
 
-!!!For programmers
- 
-!!Language-specific rules
- 
-Will write more in this section a bit later.
+!!! Configuring a new pair in an existing instance
 
-Language-specific rules are carried out via python functions, which are decorated by a function in a library that gives them purpose.
+So far the process is a little complex, but there are things that can be
+done mostly by linguists once the basic structure is in place. In each
+following section, I'll mark who the role is best suited for, thus it's
+clearer where work can be shared.
+
+This following process assumes that there is already a service existing
+to which a new language pair is being added.
+
+!!  1.) Establish a build process for the FSTs and lexicon.
+
+**Intended**: Programmers
+
+! FST build process in dicts/Makefile
+
+This is mainly meant as a convenience for easy developing.
+
+Assuming that the language uses the ''langs/'' infrastructure, adding
+another to a dictionary set's build process is easy. Find the targets
+for the dictionary set, for example, ''kyv'' and ''kyv-install'', and add
+the language ISO to the variable ''GT_COMPILE_LANGS'' for these
+targets.
 
 {{{
-    # TODO: document this, but also make some changes so it is more 
-    # user friendly
+    .PHONY: baakoeh-install
+    baakoeh-install: GT_COMPILE_LANGS := sma nob
+    baakoeh-install: install_langs_fsts 
 
-    @generation_overrides.pregenerated_form_selector('sme')
-    def some_function(form, tags, xml_node):
-        # ... forms and tags and xml node are passed in
-        # we return all of these things, but one additional variable
-        # containing the pregenerated analyses.
-        return form, tags, node, analyses
+    .PHONY: baakoeh
+    baakoeh: GT_COMPILE_LANGS := sma nob
+    baakoeh: baakoeh-lexica compile_langs_fsts
+    [... snip ...]
 }}}
 
-!!Morphology -> Lexicon
- 
-These rules are for manipulating tags that come out of the FST, and aligning them with the tags (POS and other) used in the lexicon.
+These targets will build analysers as usual, but the ''*-install'' targets
+are there as a convenience for when overwriting the analysers in
+''/opt/smi/'' is allowed. **Be careful** with this though, because with
+language sets like ''sánit'' and ''baakoeh'' which are very much in
+production mode now, there may be some unintended consequences.
 
- 
-!Tag rewrites
- 
-!!Lexicon -> Paradigm Generation
- 
-Paradigms are specified in the configuration file for part of speech, however, certain attributes in lexical entries may mean that a paradigm must be generated in a different way.
+In any case, the targets that these will write to are
+dictionary-specific, and will not overwrite analysers for other
+projects.
 
- 
-For example, in North Saami, common nouns have one paradigm including singular and plural forms, and proper nouns have several separate paradigms, sometimes plural-only, sometimes singular-only, but it depends on an attribute in the lexical entry.
+{{{
+    /opt/smi/LANG/bin/dict-LANG.fst
+    /opt/smi/LANG/bin/dict-iLANG-norm.fst
+    /opt/smi/LANG/bin/some-LANG.fst
+}}}
 
- 
-!Pregenerated forms
- 
-!Tag string manipulations
+! Troubleshooting
 
-!!Server config
+If you do not succeed in getting these make targets to work with a new
+language, run the process manually. It might be that `make distclean`
+needs to be run once within the language directory, and then things will
+work.
+
+! Lexicon in the Makefile
+
+Editing the Makefile is a little tricky. You will need to add a target
+for the lexicon file or files. 
+
+Lexica are compiled using a ''Saxon'' process, and the Makefile contains
+some variables that can be used as shortcuts. For languages using
+''langs/'' infrastructure for the lexicon, the best option is the
+following:
+
+{{{
+    ZZZ-all.xml: $(GTHOME)/langs/ZZZ/src/morphology/stems/*.xml
+	    @echo "**************************"
+	    @echo "** Building ZZZ lexicon **"
+	    @echo "**************************"
+	    @echo "** Backup made (.bak)   **"
+	    @echo "**************************"
+	    @echo ""
+	    -@cp $@ $@.$(shell date +%s).bak
+	    mkdir ZZZ
+	    cp $^ ZZZ/
+	    $(SAXON) inDir=$(pwd)/ZZZ/ > ZZZ-all.xml
+	    rm -rf ZZZ/
+}}}
+
+The above makes a copy of the XML files, and then uses the Saxon process
+to compile them all into one file, with no additional processing.
+
+This process will be the same if the lexica are in ''main/words/dicts/'', 
+however some languages there have multiple subdirectories that need to
+be copied before the Saxon process is run.
+
+Make note of the filename that you intend to output this to, and add it
+to the language installation's lexicon target, for example,
+''kyv-lexica'', ''muter-lexica''; and also the remove target
+(''rm-kyv-lexica'').
+
+!! 2.) Edit the .yaml file for new FSTs and Dictionaries
+
+**Intended**: Programmers, linguists
+
+Realistically anyone can do this as long as the build process is
+working, since most of this should be a cut-and-paste job.
+
+Once you're done, save the file and attempt to restart the service.
+
+If everything seems to be working, do not check in the config file
+itself, but copy the values to `INSTANCE.config.yaml.in`, and check that
+in. This is simply so that no incoming updates to config files will
+destroy existing production configs.
+
+! ''Morphology'' section
+
+This needs to have the paths to the new analysers, for each language
+ISO. Follow one of the existing languages and adjust the values as
+necessary. If any language variants (mobile spellrelax) need to be
+included, a good idea is to use the language ISO as the key, but with
+one letter appended, i.e., ''udm'' for mobile would be ''udmM''.
+
+In any case, the morphology section should contain a new entry like the
+following:
+
+{{{
+    YYY:
+      tool: *LOOKUP
+      file: [*OPT, '/YYY/bin/dict-YYY.fst']
+      inverse_file: [*OPT, '/YYY/bin/dict-iYYY-norm.fst']
+      format: 'xfst'
+      options:
+        compoundBoundary: "+Use/Circ#"
+        derivationMarker: "+Der"
+        tagsep: '+'
+        inverse_tagsep: '+'
+}}}
+
+Where YYY is the language ISO path. Note the weird way that forming
+paths with aliases is handled here in YAML, they may be strings or
+lists, and if they are lists, they will be automatically concatinated
+into strings. This must be done because YAML does not allow string 
+concatenation with aliases/variables.
+
+! ''Languages'' section
+
+Add a new entry for the language iso to this list.
+
+! ''Dictionaries'' section
+
+Here, add a new item to the list of dictionaries, relative to the
+''neahtta'' path, i.e., ''dicts/file-name.xml''.
+
+{{{
+    Dictionaries:
+
+      # [... snip ...]
+
+      - source: udm
+        target: hun
+        path: 'dicts/udm-all.xml'
+}}}
+
+For more information on all the settings for this chunk, see the page on YAML
+configuration:
+
+* [The Neahttadigisánit Configuration|FilesForConfiguratingNDS.html]
+
+!! 3.) Define language names and translation strings
+
+**Intended**: Linguists
+
+Open the file ''configs/language_names.py''. Here you will need to add the
+language ISO to several variables. Save when done, and be sure to check
+in in SVN.
+
+! NAMES
+
+Here we define the name in English, so that it will be available for
+translation to any interface languages.
+
+{{{
+    ('sme', _(u"North Sámi")),
+}}}
+
+The most easy way is to copy one existing line, and replace the contents
+of the strings. If you're unfamiliar with Python, be careful not to
+remove any underscores around the strings, and only edit the contents.
+
+The first value should be the language ISO, **or** the language variant
+(''SoMe'', ''udmM'', ''kpvS'', etc.)
+
+! LOCALISATION_NAMES_BY_LANGUAGE
+
+Here we have the ISO and the language's name in the language.
+
+{{{
+    ('sme', u"Davvisámegiella"),
+}}}
+
+Again, copy and paste a line, and only edit the strings.
+
+! ISO_TRANSFORMS
+
+If the language has a two-character ISO as well as a three-character
+ISO, we must have these defined here.
+
+{{{
+    ('se', 'sme'),
+    ('no', 'nob'),
+    ('fi', 'fin'),
+    ('en', 'eng'),
+}}}
+
+!! 4.) Define tagsets, and paradigms, user-friendly tag relabels
+
+**Intended**: Linguists
+
+If you wish to have paradigms visible in the language, you will need two
+things: 
+
+ * `Tagsets` files: [NDS Linguistic Settings|NDSLinguisticSettings.html]
+ * `.paradigm` files:  [NDS Linguistic Settings|NDSLinguisticSettings.html]
+ * `.context` files:  [NDS Linguistic Settings|NDSLinguisticSettings.html]
+ * `.relabel` files: [NDS Linguistic Settings|NDSLinguisticSettings.html]
+
+The easiest means of course is to look at existing languages and copy
+what they do.
+
+When done with these steps, be sure to add the new files and directories
+to svn and check them in.
+
+!!! Server config
 
 Things to consider:
 
