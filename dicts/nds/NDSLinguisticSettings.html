@@ -8,6 +8,10 @@ The documentation here concerns the directory, and subdirectories in
 3. Tagsets
 4. User-friendly tags
 
+If you update these files, be sure to run the test procedure and restart the
+service, as explained in [Updating|NDSUpdatingDictionaries.html], but don't
+forget to check in any new files created.
+
 !! Paradigm generation
 
 Paradigms are managed by a file and directory structure.
@@ -247,8 +251,167 @@ Note the lack of quotes around "None".
 
 Otherwise, see the checked in files for more examples.
 
-
 !! Tagsets
 
+Tagsets are necessary for constructing certain types of rules for manipulating
+lexical information and morphological information, either for generating forms,
+or analyzing input, or even determining how entries should be displayed...
+However, tagsets crucially operate on morphological analyzer output. Tagsets
+are particularly integral in defining paradigms.
+
+The ''pos'' tagset is also particularly important, because it helps match up
+morphological analyses with lexicon entries, as the lexicon lookup will include
+''pos'' when a value is available. If entries in the search results appear to
+be out of line, and do not match by ''pos'', one of the causes may be that a
+''pos'' is missing from the list.
+
+Tagsets are file based because this makes it easier to duplicate them for
+language variants, or share languages across dictionary instances--
+particularly majority languages, for which it is easy to forget to check
+settings for when they are used in multiple installations.
+
+Symlinks in this directory are also permitted, if two language variants (i.e.
+''SoMe'' and ''sme'') need to share a tagset.
+
+! Tagset files
+
+Each language has its own set of tagsets, and these are defined in a file in:
+
+{{{
+    configs/language_specific_rules/tagsets/
+}}}
+
+The filename must be ''ISO.tagset'', where ISO is a variable for the 3-character
+language ISO (even for languages like ''se'', which should be listed in this
+directory as ''sme'').
+
+The file format is YAML, and all that is permitted here is key-value settings,
+where the key is the name of the tagset, and the value is a list of tags that
+fit into this tagset.
+
+! Example
+
+Here's an example of some tagsets from ''sme'':
+
+{{{
+    pos:
+     - "N"
+     - "V"
+     - "A"
+     - "Pr"
+     - "Po"
+     - "Num"
+     - "CS"
+     - "CC"
+     - "pron."
+     - "subst."
+     - "verb"
+     - "adj."
+     - "konj."
+    type: 
+     - "NomAg"
+     - "G3"
+     - "aktor"
+     - "res."
+     - "Prop"
+     - "prop."
+    number: ["Sg", "Pl"]
+}}}
+
+Note that YAML allows you to define lists in multiple ways, and strings may be
+quoted or non-quoted, however, it is often a good idea to quote them anyway,
+because certain values like ''no'' and ''yes'' may be translated to boolean values
+''True'' and ''False'', instead of being used as plain strings.
+
+The above example also shows the two alternate list formats, one with brackets,
+and the other with hyphens.
+
+Note that comments are also allowed (marked with `#`), and it may be useful
+to document some sets as needed.
+
+## More YAML documentation
+
+http://en.wikipedia.org/wiki/YAML#Lists
+
 !! User-friendly tags
+
+{{{
+    configs/language_specific_rules/user_friendly_tags/*.relabel
+}}}
+
+Each file is named with a suffix ''.relabel'', but the name may be
+anything. Organize tag relabel sets however you will, maybe on a
+language-pair to language-pair basis, or by dictionary set instead.
+
+Consider that you may have to repeat some tagsets, so maybe using YAML
+aliases will make things easier.
+
+## File structure
+
+The file structure is quite simple, and at most it must contain a list
+called ''Relabel''. Each list item is a dictionary containing the keys:
+
+ * ''source_morphology'' - The morphology name, usually an ISO, but
+   sometimes something else in the case of language variants. (''sme'',
+   ''SoMe'', ''kpv'')
+ * ''target_ui_language'' - The language the user is browsing in-- must
+   be an ISO.
+ * ''tags'' - A dictionary of tags.
+
+### Example
+
+{{{
+    Relabel:
+
+      - source_morphology: 'kpv'
+        target_ui_language: 'eng'
+        tags: &some_alias_name
+          V: "v."
+          N: "n."
+          A: "adj."
+
+      - source_morphology: 'kpv'
+        target_ui_language: 'fin'
+        tags: &another_alias
+          V: "v."
+          N: "s."
+          A: "adj."
+          DO_NOT_SHOW: ""
+
+      - source_morphology: "zzz"
+        target_ui_language: "www"
+        tags:
+          <<: *some_alias_name
+          <<: *another_alias
+
+}}}
+
+The last item in the list shows an example of inheriting from two
+sources. Thus, the resulting tags will be:
+
+{{{
+          V: "v."
+          N: "s."
+          A: "adj."
+          DO_NOT_SHOW: ""
+}}}
+
+You can even set tags in another location, outside of the `Relabel`
+list, if necessary.
+
+{{{
+    Aliases:
+      tag_set_one: &some_alias_name
+        V: "v."
+        N: "n."
+        A: "adj."
+
+    Relabel:
+      - source_morphology: 'kpv'
+        target_ui_language: 'eng'
+        tags: 
+          <<: *some_alias_name
+
+  }}}
+
 
