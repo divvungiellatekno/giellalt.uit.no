@@ -25,7 +25,57 @@ The local directory {{am-shared}} is an exact copy of:
 
 !!! Task - add a new fst type
 
-tbw.
+When a new fst type is called for, the procedure is roughly the same as above,
+with a few additions. As an example, we will create a new fst for dictionary
+analysers (ie to be used for analysing input to dictionary lookup).
+
+But first we need to answer the following question: where do we add the code for
+building the new fst? The idea so far has been to add default targets to the
+file {{am-shared/topdir-include.am}}, and optional targets (turned on via
+{{configure}} options) to separate include files such as
+{{dictionary-incluce.am}}. Generally this line will continue, but if the list of
+default targets grow too long, even those might be split out in separate include
+files.
+
+For our example, we will edit {{dictionary-incluce.am}}. As always, edit in a
+local language dir first, to test that the new target works. When all is done
+and works fine, copy the modifications to the {{und}} template. Here are the
+steps to go through:
+
+# edit {{am-shared/dictionary-incluce.am}} - the following steps will tell the
+  system __how__ to build the fst:
+## add a new target {{analyser-dict-gt-desc.tmp.hfst}} - it is important that
+   the target is named {{*.tmp.*}} to allow local overrides.
+## write the build instructions for the ''language neutral parts'' of the build
+   - if language specific additions, changes or filters are required, these
+   should be added to a separate {{*.tmp.hfst -> *.hfst}} target in the local
+   Makefile.am (if no such changes are needed, {{*.tmp.hfst}} will just be
+   copied to {{*.hfst}}).
+## ensure that all filters required are actually built in the {{filters/}} dir,
+   and add dependencies to them all (such that the build will break properly if
+   a filter is not available, and all required filters are rebuilt if needed).
+# edit {{src/Makefile.am}} - the following steps will tell the system __when__
+  to build the fst target:
+## to tell the build system that we want a target to be built, it must be added
+   to the variable {{GT_ANALYSERS_HFST}} (for hfst transducers).
+## ... but since we only want this transducer to be built when the user has
+   explicitly requested dictionary fst's, we need to wrap that variable
+   assignment within a conditional: \\ find the text
+   {{if WANT_DICTIONARIES}} and within that {{if}} block, write the following:\\
+   {{GT_ANALYSERS_HFST+=analyser-dict-gt-desc.hfst}}\\
+   (the {{+=}} part will add the new fst to the list of fst's already assigned
+   to the variable)
+## if you need to make use of a new conditional, that requires some {{M4}} work
+   and will be covered in a separate tutorial
+# test - remember to {{./configure}} with the proper option
+# if everything works as it should, copy to the {{und}} template, add a note in
+  {{und.timestamp}}, and commit
+# to populate all languages with the new feature, run
+  {{$GTHOME/langs/update-all-from-core.sh -t und}}
+# check that the new (and old) build(s) work(s) in a couple of languages - if
+  everything is ok, commit all languages at once (but only the changes belonging
+  to the new feature - it is best to merge with a clean version of the
+  {{langs/}} dir)
 
 !!!Task - add a new template
 
