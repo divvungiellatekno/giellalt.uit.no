@@ -40,7 +40,7 @@ match.
 Symlinks in this directory are also tolerated, so if multiple language variants
 need to use the same rule set, simply make a symlink between the directories.
 
-For some more advanced examples, see the rules for `sme` (particularly, tanta
+For some more advanced examples, see the rules for ''sme'' (particularly, tanta
 pluralia rules).
 
 ! Paradigm file format
@@ -87,7 +87,7 @@ will be used for the entries where these align.
 ! Morphology conditions
 
 Conditions that are possible to match on are set up in a variety of
-ways. Analyzer conditions may be specified in the `analyzer` key,
+ways. Analyzer conditions may be specified in the ''analyzer'' key,
 and each key under that may be a tagset and a value, or a whole tag:
 
 {{{
@@ -152,7 +152,7 @@ is possible to do all sorts of template operations.
 
 Certain variables are available by default:
 
-  - `lemma`
+  - ''lemma''
 
 Additional variables are available as they are defined by the conditions, and
 the variable will be set to the matched condition:
@@ -192,7 +192,7 @@ match condition:
 This is more of a TODO for developers...
 
 * Pregenerated paradigms could be accomplished by a template, but it would
-  be fairly complex, and thus would require good access to `lxml` nodes
+  be fairly complex, and thus would require good access to ''lxml'' nodes
   without lots of complex template tags and custom filters. 
 
 
@@ -203,10 +203,10 @@ For now this isn't entirely in line with the way Paradigm Generation
 works, but it should be good enough for linguists to see the pattern and
 work accordingly.
 
-`.context` files in each directory control what is displayed with the
+''.context'' files in each directory control what is displayed with the
 generated wordform. The filename may be anything, so long as the suffix
-is `.context`. For convenience, `sme` and `sma` match filenames between
-paradigms and context, but there is no need to do so, and one `.context`
+is ''.context''. For convenience, ''sme'' and ''sma'' match filenames between
+paradigms and context, but there is no need to do so, and one ''.context''
 file could be used for everything.
 
 ! File structure
@@ -326,7 +326,7 @@ because certain values like ''no'' and ''yes'' may be translated to boolean valu
 The above example also shows the two alternate list formats, one with brackets,
 and the other with hyphens.
 
-Note that comments are also allowed (marked with `#`), and it may be useful
+Note that comments are also allowed (marked with ''#''), and it may be useful
 to document some sets as needed.
 
 ## More YAML documentation
@@ -396,7 +396,7 @@ sources. Thus, the resulting tags will be:
           DO_NOT_SHOW: ""
 }}}
 
-You can even set tags in another location, outside of the `Relabel`
+You can even set tags in another location, outside of the ''Relabel''
 list, if necessary.
 
 {{{
