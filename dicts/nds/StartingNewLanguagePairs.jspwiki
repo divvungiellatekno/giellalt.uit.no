@@ -1,11 +1,16 @@
+
+This document explains how to start new Neahttadigisánit
+versions. Some of the 
+
 !!!Linguistic requirements
 
-!!(... for linguists)
+__Intended__: Linguists
  
-* lexicon matching sme-nob or sma-nob format as closely as possible
-* FSTs (described below)
+* The xml format of the lexicon should match sme-nob or sma-nob format as closely as possible ({{words/dicts/smanob/src}})
+* morphological analysers (FSTs, described below)
 * lists of tag pairs, what is in FST to convert to what users will see
-* lists of paradigms for parts of speech, which can be either as detailed as one paradigm per part of speech, or several paradigms for parts of speech and varying sub-types. These will have to be marked in the lexicon in some way, for exampl, plural-only proper noun paradigms for North Saami
+* lists of paradigms for parts of speech
+** they can be either as detailed as one paradigm per part of speech, or several paradigms for parts of speech and varying sub-types. These will have to be marked in the lexicon in some way, for exampl, plural-only proper noun paradigms for North Saami
 * description of attributes in the XML that need to be displayed to the user
  
 !!! Collecting the materials...
@@ -33,7 +38,7 @@ later stage.
     vuovdi  vuovdi+Sem/Hum+N+NomAg+Sg+Acc
 }}}
 
-Following newinfra, it's best to use the analysers compiled with
+It is best to use the analysers compiled with
 ''--enable-dicts'', because this will strip extraneous tags.
 
 !Spell relax FST
@@ -45,11 +50,22 @@ Spell relaxing FSTs should follow the exact same format as the lookup FST, but n
 # Compensating for keyboards without certain characters 
 # Switching orthographies, e.g., accepting latin for cyrillic, or vice versa.
 
- 
 Whatever the use case, the analyzed lemma must match up with the lexicon
 entry.
 
- 
+Spellrelax behaviour is governed in {{$GTHOME/langs/$LANG/src/orhtography}}. 
+Here, there are two scripts: ''spellrelax.regex'' and 
+''spellrelax-mobile-keyboard.regex''. These will result in two analysers,
+the first containing the spellrelax.regex rules, and the latter will
+contain the rules for both regex files. The latter is intended for the 
+SoMe option (see e.g. [sanit.oahpa.no|http://sanit.oahpa.no]).
+
+* analyser-dict-gt-desc.xfst
+* analyser-dict-gt-desc-mobile.xfst
+
+Put variation __within__ the norm, and variation invisible to the user, 
+in the former file, and ad hoc / dirty hack variation in the latter.
+
 ! Compound marking
  
 Must have a defined (and consistent) method for marking compounds:
@@ -89,7 +105,7 @@ This setting can be configured in the YAML settings file.
 For generation, currently sme and sma use the typical tag format for GT, but,
 we have a special generator FST that removes non-standard forms. Also, sma has
 some special entries that are marked with a hid attribute
-(g&ouml;&ouml;vledh+1, g&ouml;&ouml;vledh+2) were generation depends on
+(göövledh+1, göövledh+2) were generation depends on
 meaning. These must be included in the generation FST.
 
  
@@ -99,9 +115,9 @@ It may be that the analysis FST does not match absolutely with the lexicon, and
 this is okay. But, if this is so, it is important to know where the differences
 are.
 
-For instance, the above examples show &quot;noun&quot; and &quot;verb&quot; as
-the part of speech in the analyzer, but the lexicon only knows &quot;N&quot;
-and &quot;V&quot;. Thus, in order to line up these tools, the programmers will
+For instance, the above examples show "noun" and "verb" as
+the part of speech in the analyzer, but the lexicon only knows "N"
+and "V". Thus, in order to line up these tools, the programmers will
 need to have a list of all of these things to formulate rules.
 
 !!! Added polish
@@ -124,11 +140,10 @@ following steps:
 
 {{{
     http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Flag_of_Nenets_Autonomous_District.svg/200px-Flag_of_Nenets_Autonomous_District.svg.png
-
     ->
-
     http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Flag_of_Nenets_Autonomous_District.svg/20px-Flag_of_Nenets_Autonomous_District.svg.png
 }}}
+
 
 Save the file to static/img/flags/, and match the path name so that it is
 LOCALE_20x15.png.
@@ -145,11 +160,15 @@ to which a new language pair is being added.
 
 !!  1.) Establish a build process for the FSTs and lexicon.
 
-**Intended**: Programmers
+
+
+__Intended__: Programmers
 
 ! FST build process in dicts/Makefile
 
 This is mainly meant as a convenience for easy developing.
+
+
 
 Assuming that the language uses the ''langs/'' infrastructure, adding
 another to a dictionary set's build process is easy. Find the targets
@@ -170,7 +189,7 @@ targets.
 
 These targets will build analysers as usual, but the ''*-install'' targets
 are there as a convenience for when overwriting the analysers in
-''/opt/smi/'' is allowed. **Be careful** with this though, because with
+''/opt/smi/'' is allowed. __Be careful__ with this though, because with
 language sets like ''sánit'' and ''baakoeh'' which are very much in
 production mode now, there may be some unintended consequences.
 
@@ -183,6 +202,7 @@ projects.
     /opt/smi/LANG/bin/dict-iLANG-norm.fst
     /opt/smi/LANG/bin/some-LANG.fst
 }}}
+
 
 ! Troubleshooting
 
@@ -219,18 +239,19 @@ following:
 The above makes a copy of the XML files, and then uses the Saxon process
 to compile them all into one file, with no additional processing.
 
-This process will be the same if the lexica are in ''main/words/dicts/'', 
+This process will be the same if the lexica are in {{main/words/dicts/}},
 however some languages there have multiple subdirectories that need to
 be copied before the Saxon process is run.
 
 Make note of the filename that you intend to output this to, and add it
-to the language installation's lexicon target, for example,
-''kyv-lexica'', ''muter-lexica''; and also the remove target
-(''rm-kyv-lexica'').
+to the language installation’s lexicon target, for example, __kyv-lexica__,
+__muter-lexica__, and also the remove target 
+(such as __rm-kyv-lexica__ etc.).
+
 
 !! 2.) Edit the .yaml file for new FSTs and Dictionaries
 
-**Intended**: Programmers, linguists
+__Intended__: Programmers, linguists
 
 Realistically anyone can do this as long as the build process is
 working, since most of this should be a cut-and-paste job.
@@ -242,7 +263,7 @@ itself, but copy the values to ''INSTANCE.config.yaml.in'', and check that
 in. This is simply so that no incoming updates to config files will
 destroy existing production configs.
 
-! ''Morphology'' section
+! ''Morphology''  section
 
 This needs to have the paths to the new analysers, for each language
 ISO. Follow one of the existing languages and adjust the values as
@@ -272,11 +293,11 @@ lists, and if they are lists, they will be automatically concatinated
 into strings. This must be done because YAML does not allow string 
 concatenation with aliases/variables.
 
-! ''Languages'' section
+! ''Languages''  section
 
 Add a new entry for the language iso to this list.
 
-! ''Dictionaries'' section
+! ''Dictionaries''  section
 
 Here, add a new item to the list of dictionaries, relative to the
 ''neahtta'' path, i.e., ''dicts/file-name.xml''.
@@ -298,7 +319,7 @@ configuration:
 
 !! 3.) Define language names and translation strings
 
-**Intended**: Linguists
+__Intended__: Linguists
 
 Open the file ''configs/language_names.py''. Here you will need to add the
 language ISO to several variables. Save when done, and be sure to check
@@ -344,7 +365,7 @@ ISO, we must have these defined here.
 
 !! 4.) Define tagsets, and paradigms, user-friendly tag relabels
 
-**Intended**: Linguists
+__Intended__: Linguists
 
 If you wish to have paradigms visible in the language, you will need two
 things: 
