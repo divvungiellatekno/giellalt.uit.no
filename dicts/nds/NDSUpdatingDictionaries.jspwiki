@@ -60,6 +60,12 @@ not seem to be visible on the web, it is a good idea to check that the
 dictionaries are in the locations that the config expects, and alternatively
 restarting the server process.
 
+**NB:** The files checked in to SVN are different from those actually used in
+production on the server, this is to prevent accidental overwritings via ''svn
+up''. Thus, you will need to edit and check in ''configs/DICT.config.yaml.in'',
+which is fine for use in development work, but the servers instances will be
+running from ''confgis/DICT.config.yaml''.
+
 7.) ''Test the configuration files''
 
 An automatic tool to check that everything went well is also available.
@@ -87,7 +93,8 @@ When everything is working, run the following:
 There are two ways to update the FSTs. For both of these options, you must 
 know first where the FSTs for each dictionary and language should lie.
 FST locations are defined in the relevant config file in
-''configs/DICT.config.yaml'', in the ''Morphology'' section near the top.
+''configs/DICT.config.yaml'', in the ''Morphology'' section near the top. 
+(Note the difference mentioned above between ''.yaml.in'' and ''.yaml''.
 
 As above, you can use the test command to see if the files were updated.
 
