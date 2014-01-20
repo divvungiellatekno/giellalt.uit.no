@@ -88,11 +88,26 @@ data, as follows:
 gierehtse+N+Sg+Acc: [gierehtsem, ~gieriehtsem]
 }}}
 
-Now the Yaml test will only pass if the last word form given is NOT generated, and is NOT giving any analyses.
+Now the Yaml test will only pass if the last word form given is NOT generated,
+and is NOT giving any analyses.
 
 !!Filenames for Yaml tests
 
-To be written.
+The filenames for the yaml tests are built up with the following components:
+
+* a descriptive part, anything ''but underscore'' goes
+* an underscore
+* an fst specificator
+* an optional {{.ana}} or {{.gen}} specifier
+* the suffix {{.yaml}}
+
+The underscore is the separator between the "free" part and the fst specifier.
+By specifying the fst as part of the filename, it is possible to write tests for
+all of the produced fst's.
+
+By specifying {{.ana}} or {{.gen}} before the {{.yaml}} suffix, only
+''analysis'' or ''generation'' testing will be done on the data. This is useful
+for testing transducers that do not naturally come in generation/analysis pairs.
 
 !!!Lexc tests
 
