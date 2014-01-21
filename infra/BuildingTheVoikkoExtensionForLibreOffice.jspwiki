@@ -84,6 +84,11 @@ sudo make install
 
 For TinyXML2, the configuration command is:
 
+{{{
+cmake -DCMAKE_OSX_ARCHITECTURES=i386\;x86_64 CMakeLists.txt
+make
+}}}
+
 Then do the following:
 
 * [Build hfst-ospell for inclusion in voikko|BuildingHfst-ospellForInclusionInVoikko.html]
