@@ -85,7 +85,7 @@ avoid restarting until this is corrected.
 When everything is working, run the following:
 
 {{{
-	fab local baakoeh restart_service
+	fab local DICT restart_service
 }}}
 
 !!!Updating the fsts
@@ -179,7 +179,7 @@ Most commands above have used ''local'' as a possible host, but these could be
 replaced with ''gtweb'', and Fabric will ask for an SSH password, and then
 perform all the commands.
 
-Commands can also be chained, for example:
+Commands can also be chained, for example (here with guusaaw as DICT):
 
 {{{
     fab local guusaaw compile test_configuration restart_service
