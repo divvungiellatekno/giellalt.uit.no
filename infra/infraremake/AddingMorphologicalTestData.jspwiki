@@ -156,3 +156,8 @@ Note the last line, where we explicitly check that the illegal word form
 
 Note that there __must__ be a space between {{!!€}} or {{!!$}} and the following
 word form in the test data.
+
+__Possible pitfal:__ due to the way the parsed test data is stored internally by
+the test bench, you can __not__ use the same lemma more than once for the same
+fst within the same lexc file. That is, check that the words you use for testing
+are only used in one test each, and you should be fine.
