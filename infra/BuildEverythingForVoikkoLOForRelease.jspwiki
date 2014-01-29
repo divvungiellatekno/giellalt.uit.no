@@ -109,21 +109,26 @@ binary.
 {{{
 PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/ \
 CPATH=/usr/local/include:/usr/include \
-	./configure --enable-zhfst --enable-xml=tinyxml2 \
+./configure \
+	--enable-zhfst \
+	--enable-xml=tinyxml2 \
 	CXXFLAGS=" -arch i386 -arch x86_64" \
 	CPPFLAGS="-I/usr/local/include" \
 	CFLAGS="-I/usr/local/include \
 		-L/usr/local/lib -isysroot \
 		/Developer/SDKs/MacOSX10.6.sdk \
-		-arch i386 -arch x86_64 -mmacosx-version-min=10.6" \
+		-arch i386 -arch x86_64 \
+		-mmacosx-version-min=10.6" \
 	LDFLAGS=" -arch i386 -arch x86_64" \
 	--enable-static \
 	--disable-dependency-tracking
 
 make CFLAGS="-I/usr/local/include -L/usr/local/lib \
-    -isysroot /Developer/SDKs/MacOSX10.6.sdk \
-	-arch i386 -arch x86_64 -mmacosx-version-min=10.6" \
-	LINK="gcc -framework CoreFoundation -framework Cocoa -arch i386 -arch x86_64" \
+	-isysroot /Developer/SDKs/MacOSX10.6.sdk \
+	-arch i386 -arch x86_64 \
+	-mmacosx-version-min=10.6" \
+	LINK="gcc -framework CoreFoundation -framework Cocoa \
+	-arch i386 -arch x86_64" \
 	LDFLAGS="-framework CoreFoundation -framework Cocoa"
 
 sudo make install
@@ -157,17 +162,25 @@ Comments:
 The libvoikko config and build instructions follow the same patterns as above:
 {{{
 PKG_CONFIG_PATH=/usr/local/lib/pkgconfig \
-./configure CXXFLAGS=" -arch i386 -arch x86_64" CPPFLAGS="-I/usr/local/include" \
-	CFLAGS="-I/usr/local/include -L/usr/local/lib -isysroot \
-	/Developer/SDKs/MacOSX10.6.sdk -arch i386 -arch x86_64 \
-	-mmacosx-version-min=10.6" LDFLAGS=" -arch i386 -arch x86_64" \
-	--enable-static --disable-dependency-tracking --enable-hfst
+./configure \
+	--enable-hfst \
+	CXXFLAGS=" -arch i386 -arch x86_64" \
+	CPPFLAGS="-I/usr/local/include" \
+	CFLAGS="-I/usr/local/include -L/usr/local/lib \
+		-isysroot /Developer/SDKs/MacOSX10.6.sdk \
+		-arch i386 -arch x86_64 \
+		-mmacosx-version-min=10.6" \
+	LDFLAGS=" -arch i386 -arch x86_64" \
+	--enable-static \
+	--disable-dependency-tracking
 
 make CFLAGS="-I/usr/local/include -L/usr/local/lib \
--isysroot /Developer/SDKs/MacOSX10.6.sdk \
--arch i386 -arch x86_64 -mmacosx-version-min=10.6" \
-LINK="gcc -framework CoreFoundation -framework Cocoa  -arch i386 -arch x86_64" \
-LDFLAGS="-framework CoreFoundation -framework Cocoa"
+	-isysroot /Developer/SDKs/MacOSX10.6.sdk \
+	-arch i386 -arch x86_64 \
+	-mmacosx-version-min=10.6" \
+	LINK="gcc -framework CoreFoundation -framework Cocoa \
+	-arch i386 -arch x86_64" \
+	LDFLAGS="-framework CoreFoundation -framework Cocoa"
 
 sudo make install
 }}}
