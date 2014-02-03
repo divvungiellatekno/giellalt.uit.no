@@ -5,6 +5,8 @@ code directly in the source. That is, the lexicon structure, organisation and
 content is documented directly ''with'' the lexicon, as comments in a certain
 format. This document describes how this is done.
 
+First come some general notes, then an overview over differences between lexc, twolc and vislcg3 source files. At the end there is an overview of the compilation procedure.
+
 !!!General notes
 
 The basic idea is that comments following a certain format will be extracted and
@@ -158,3 +160,22 @@ To Be Written.
 !!!CG3
 
 ''Support for CG3 files is not yet implemented.''
+
+
+!!!Compilation procedure
+
+The documentation files are compiled when you write {{make}} in the $lang catalogue ($lang meaning any language catalogue in langs/). There is a makefile in the $lang/doc catalogue that governs which sourcefiles to harvest for documentation. Linking to the generated files is done automatically, in the generated file $lang/doc/Links.jspwiki.
+
+In order to force compilation, do {{make -B}} in $lang/doc.
+
+Check in the converted jspwiki files: 
+
+{{svn ci -m "documentation update" doc/*.jspwiki}}
+
+!!!Debugging
+
+To debug the documentation added to e.g {{som/src/morphology/stems/nouns.lexc}}, 
+inspect and edit the file {{som/doc/nouns-stems.jspwiki}}, and check the page
+[http://localhost:8888/doc/lang/som/nouns-stems.html] in a locally running copy
+of forrest. When everything is fine, do the necessary changes in stems/nouns.lexc,
+compile again.
