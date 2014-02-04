@@ -57,8 +57,7 @@ information about parallel files (line 83-96). Check also line 60-79
 $ see orig/sme/admin/depts/regjeringen.no/bargu-ja-algu.html_id=210.xsl
 
 4. Convert the file xml to check if there are any errors in xsl-file:
-$ PERL_UNICODE=D convert2xml.pl --debug
-orig/sme/admin/depts/regjeringen.no/bargu-ja-algu.html_id=210
+$ convert2xml orig/sme/admin/depts/regjeringen.no/bargu-ja-algu.html_id=210
 
 5. If converted succesfully, check in xsl-file:
 $ svn ci -m "This file doesn't have a parallel nob version"

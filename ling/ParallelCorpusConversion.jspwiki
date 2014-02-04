@@ -33,7 +33,7 @@ Change the name of the document:
 mv wf (press tab, the whole name will appear) dc2012-2.pdf
 
 Make the xsl file:
-convert2xml.py dc2012-2.pdf
+convert2xml dc2012-2.pdf
 
 !!5. Go back to Safari and copy the link to the norwegian document.
 
@@ -53,7 +53,7 @@ Change the name of the document:
 mv wf (press tab, the whole name will appear) sp2012-2.pdf
 
 Make the .xsl file:
-convert2xml.py sp2012-2.pdf
+convert2xml sp2012-2.pdf
 
 (Now you have the saami pages in the left tab of Terminal and the norwegian pages in the right tab)
 
@@ -97,7 +97,7 @@ Save!
 
 !!12. Rerun convert2xml in the SME Terminál window (note that you can press up in the Terminal untill the right command appears.):
 
-convert2xml.py dc2012-2.pdf
+convert2xml dc2012-2.pdf
 
 
 !!13. Write svn stat and the result is:
@@ -110,11 +110,11 @@ convert2xml.py dc2012-2.pdf
 svn add (cmd+v) (cmd+v+.+tab)
 
 !!15. Write:
-svn ci -m "your svn message" 
+svn ci -m "your svn message"
 
-!!16. Rerun convert2xml in the NOB Terminal window (note that you can press up in the Terminal untill the right command appears. Add --debug to it.):
+!!16. Rerun convert2xml in the NOB Terminal window (note that you can press up in the Terminal untill the right command appears.):
 
-convert2xml.py sp2012-2.pdf
+convert2xml sp2012-2.pdf
 
 !!17. Write svn stat and the result is:
 ?	sp2012-2.pdf
@@ -126,7 +126,7 @@ convert2xml.py sp2012-2.pdf
 svn add (cmd+v) (cmd+v+.+tab)
 
 !!19. Write:
-svn ci -m "your svn message" 
+svn ci -m "your svn message"
 
 !!20. In the SME Terminal, write:
 cd

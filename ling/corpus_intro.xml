@@ -20,12 +20,12 @@
          href="corpus_repositories.html#The+bound+part">the restricted part</a>.</p>
          <p>To be able to easily use the content of the corpus, we need to convert the original files stored in various
          formats to a uhttp://www.divvun.no/doc/infra/anonymous-svn.html#Preparationniform format. This is achieved
-         using the script convert2xml.pl.</p>
+         using the script convert2xml.</p>
          <p>To convert all the original files inside a repository to xml, open a terminal and go to the working copy,
          and issue the command:</p>
-         <source>make_corpus.py orig</source>
+         <source>convert2xml orig</source>
          <p>If you want to convert a specific file, issue the command:</p>
-         <source>convert2xml.py &lt;filename&gt;</source>
+         <source>convert2xml &lt;filename&gt;</source>
          <p>The graphical show that follows indicate lines looking like this: "...|......". Here, each symbol represents
          a file. The dots indicate "(formally) successful conversion", and the pipe symbols indicate flawed conversion.
          Note that the conversion will be flawed if you are offline while converting, as the conversion scripts takes
@@ -44,10 +44,6 @@
          <title>Old links (kept for now)</title>
          <p><a href="corpus_dtd.html">DTD -discussion</a></p>
          <p><a href="corpus_conversion.html">Conversion</a></p>
-      </section>
-      <section>
-         <title>Commands to install dependencies for the conversion script</title>
-         <source>sudo port install py27-lxml py27-chardet py27-beautifulsoup</source>
       </section>
    </body>
 </document>
