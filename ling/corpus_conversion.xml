@@ -42,28 +42,28 @@
          <p>When you have a file that you want to add to our corpus directory,
          you have two alternatives. You can either use the web upload script in
          <a href="http://www.divvun.no/upload/upload_corpus_file.html">
-		 http://www.divvun.no/upload/upload_corpus_file.html</a>
+         http://www.divvun.no/upload/upload_corpus_file.html</a>
          or add the file manually to the corpus subversion repositories.</p>
 
          <section>
             <title>Manual conversion</title>
 
             <ol>
-				<li>Copy the file to the correct place in your working copy of
-					the corpus repositores.</li>
+                <li>Copy the file to the correct place in your working copy of
+                    the corpus repositores.</li>
                <li><p>Run the convert2xml.pl script for the file. For example, a
                MS Word document, with language and genre as above, is converted
                with command (relative path is fine as well, but do not use
                tilde.) Give the language as command line option.</p> <source>
-	convert2xml.pl --lang=sme file_name.doc
-	</source> <p>The conversion takes a while especially if the file is large or
+    convert2xml.pl --lang=sme file_name.doc
+    </source> <p>The conversion takes a while especially if the file is large or
                with lot of structure. If you want to see all the error messages
                generated during conversion, use option --nolog.</p></li>
 
                <li>If there are fatal errors during the conversion,
                you will see an error message stating "ERROR &lt;something&gt;",
                consult the maintainers of the corpus files or see the log file
-			   (in &lt;path-to-your-working-copy&gt;/tmp) for details. The script informs
+               (in &lt;path-to-your-working-copy&gt;/tmp) for details. The script informs
                you of the character conversion and the original (or
                intermediate) encoding.</li>
             </ol>
@@ -83,14 +83,14 @@
          the errors to be printed to screen, use option --nolog. The log file is
          for example:<code> tmp/Feb-10-8-57.log</code></p>
 
-		<section>
-			<title>convert2xml.pl</title>
+        <section>
+            <title>convert2xml.pl</title>
 
-			<p>This script needs <a href="/doc/infra/MacPorts.html">MacPorts on OS X</a> and
-				<a href="/doc/admin/perl-twig.html">the Perl::Twig module</a>. You will also have
-				to run the <a href="/doc/infra/anonymous-svn.html">gtsetup.sh</a>
-				script to set up the running environment correctly.
-			</p>
+            <p>This script needs <a href="/doc/infra/MacPorts.html">MacPorts on OS X</a> and
+                <a href="/doc/admin/perl-twig.html">the Perl::Twig module</a>. You will also have
+                to run the <a href="/doc/infra/anonymous-svn.html">gtsetup.sh</a>
+                script to set up the running environment correctly.
+            </p>
          <p>There are several options available which control the conversion
          process, it is e.g possible to skip the xsl-processing, the character
          decoding, or the hyphenation. The available options:</p>
@@ -117,7 +117,7 @@ The available options:
 
          <p>The file to be converted is given to convert2xml.pl as command line
          argument. If a directory is the argument, all files in the given directory
-		 and the directories inside it are converted. The file
+         and the directories inside it are converted. The file
          types that are supported at the moment are: doc, pdf, html, text and
          paratext. The corresponding file suffixes are are .doc, .pdf, .html,
          txt and .ptx. At the users' point of view, there is no difference
