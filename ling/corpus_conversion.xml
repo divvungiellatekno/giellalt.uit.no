@@ -6,8 +6,9 @@
         <title>Corpus collector's manual</title>
 
         <authors>
-            <person email="tomi.pieski@hum.uit.no" name="Tomi Pieski" />
+            <person email="tomi.k.pieski@uit.no" name="Tomi Pieski" />
             <person email="saara huhmarniemi @ helsinki fi" name="Saara Huhmarniemi" />
+            <person email="borre.gaup@uit.no" name="Børre Gaup" />
         </authors>
     </header>
 
@@ -34,21 +35,12 @@
                 The first section explains the conversion process step by step. It
                 is followed by more detailled descriptions of the directory structure
                 and the handling of the file-specific xsl-files. There is also a small
-                section of the log-files and the different uses of the convert2xml.pl
-                -script.
+                section of the log-files and the different uses of convert2xml.
             </p>
         </section>
 
         <section>
             <title>Basic conversion process</title>
-
-            <p>
-                When you have a file that you want to add to our corpus directory,
-                you have two alternatives. You can either use the web upload script in
-                <a href="http://www.divvun.no/upload/upload_corpus_file.html">
-         http://www.divvun.no/upload/upload_corpus_file.html</a>
-                or add the file manually to the corpus subversion repositories.
-            </p>
 
             <section>
                 <title>Manual conversion</title>
@@ -56,31 +48,20 @@
                 <ol>
                     <li>
                         Copy the file to the correct place in your working copy of
-                        the corpus repositores.
+                        the <a href="corpus_repositories.html">corpus repositores</a>.
                     </li>
                     <li>
                         <p>
-                            Run the convert2xml.pl script for the file. For example, a
-                            MS Word document, with language and genre as above, is converted
-                            with command (relative path is fine as well, but do not use
-                            tilde.) Give the language as command line option.
+                            Run convert2xml on the file. For example, a
+                            MS Word document.
                         </p>
-                        <source>convert2xml.pl --lang=sme file_name.doc
+                        <source>convert2xml file_name.doc
                         </source>
-                        <p>
-                            The conversion takes a while especially if the file is large or
-                            with lot of structure. If you want to see all the error messages
-                            generated during conversion, use option --nolog.
-                        </p>
                     </li>
 
                    <li>
                         If there are fatal errors during the conversion,
-                        you will see an error message stating "ERROR &lt;something&gt;",
-                        consult the maintainers of the corpus files or see the log file
-                        (in &lt;path-to-your-working-copy&gt;/tmp) for details. The script informs
-                        you of the character conversion and the original (or
-                        intermediate) encoding.
+                        you will see an error message stating «Could not convert file_name.doc». The error log of the file is found in «file_name.doc.log».
                     </li>
                 </ol>
             </section>
@@ -90,53 +71,39 @@
             <title>Log files</title>
 
             <p>
-                The error messages, warnings and other information of the conversion
-                are stored in special logfile. The log file is named after current date
-                and time and stored to a temporary directory, by default the directory
-                tmp/ under corpdir. The directory can be given as a command line option
-                as well. The log file contains the information that was printed to
-                STDERR during the conversion. The errors that prevent some document to
-                be converted are still printed to the screen as well. If you want all
-                the errors to be printed to screen, use option --nolog. The log file is
-                for example:<code> tmp/Feb-10-8-57.log</code>
+                If a file is not converted, the error messages, warnings and other information of the conversion
+                are stored in a logfile. The log file is named after current file and stored in the same directory that the file resides. The log file contains the information that was printed to
+                STDERR during the conversion.
             </p>
 
             <section>
-                <title>convert2xml.pl</title>
+                <title>convert2xml</title>
 
                 <p>
-                    This script needs <a href="/doc/infra/MacPorts.html">MacPorts on OS X</a> and
-                    <a href="/doc/admin/perl-twig.html">the Perl::Twig module</a>. You will also have
-                    to run the <a href="/doc/infra/anonymous-svn.html">gtsetup.sh</a>
-                    script to set up the running environment correctly.
-                </p>
-                <p>
-                    There are several options available which control the conversion
-                    process, it is e.g possible to skip the xsl-processing, the character
-                    decoding, or the hyphenation. The available options:
+                    Follow the Instructions on our
+                    <a href="../infra/GettingStarted.html">getting started</a>
+                    page. Then install <code>convert2xml</code> by running
+                    <source>cd $GTHOME/tools/CorpusTools
+                        python setup.py install --install-scripts=/usr/local/bin
+                    </source>
+
                 </p>
 
-                <source>Usage: convert2xml.pl [OPTIONS] [FILE|DIR]
-    The available options:
-        --xsl=&lt;file&gt;    The xsl-file which is used in the conversion.
-                        If not specified, the default values are used.
-        --dir=&lt;dir&gt;     The directory where to search for converted files.
-                        If not given, only FILE is processed.
-        --tmpdir=&lt;dir&gt;  The directory where the log and other temporary files are stored.
-        --nolog         Print error messages to screen, not to log files.
-        --corpdir=&lt;dir&gt; The corpus directory, default is where you have checked out your working copy.
-        --no-decode     Do not decode the characters.
-        --multi-coding  Resolve the character coding separately for each paragraph.
-        --no-hyph       Do not add &lt;hyph/&gt; tags.
-        --no-xsl        Skip the file-specific xsl-processing.
-        --all-hyph      Tag all hyphens (default is at the end of the line).
-        --upload        Do conversion in the upload-directory.
-        --lang          The main language of the document.
-        --help          Print this message and exit.
+                <source>usage: convert2xml [-h] source
+
+Convert original files to giellatekno xml.
+
+positional arguments:
+  source      either a file to be converted, or a directory containing files
+              to be converted
+
+optional arguments:
+  -h, --help  show this help message and exit
+
                 </source>
 
                 <p>
-                    The file to be converted is given to convert2xml.pl as command line
+                    The file to be converted is given to convert2xml as command line
                     argument. If a directory is the argument, all files in the given directory
                     and the directories inside it are converted. The file
                     types that are supported at the moment are: doc, pdf, html, text and
@@ -146,47 +113,23 @@
                 </p>
 
                 <p>
-                    Some documents get wrongly utf-8-encoded by the conversion tools and
-                    they are fixed using a Perl module <code>samiChar::Decode.pm.</code> It
-                    is installed in victorio, and you should not notice it's presence. If
-                    you are converting files in some other machine, you should install the
-                    module.. Another Perl module that is needed is XML::Twig. Instructions
-                    for installing both modules can be found in <a href="corpus_conversion_tech.html">corpus_conversion_tech.html.</a>
-                </p>
-
-                <p>
                     Let the original file be <code>original.pdf</code>. Use for example the command
                 </p>
 
                 <source>
-                    $ perl convert2xml.pl --corpdir=/home/mydir/samipdf --tmpdir=mytmp original.pdf
+                    $ convert2xml original.pdf
                 </source>
 
                 <p>
-                    Generally each file has only one character coding which may be
-                    wrongly utf-8-encoded. The best way to decode the file is determined
-                    statistically. By using the option --multi-coding, the file is assumed
-                    to contain more than one character codings, which are decoded
-                    paragraph-wise.
-                </p>
-
-                <p>
-                    The resulting file is fully converted xml-file <code>
-                    original.pdf.xml </code>When working with the full directory hierarchy,
-                    the original file is expected to be found in some subdirectory under
-                    /usr/local/share/corp/orig. Then the resulting xml-file is generated to
-                    the corresponding subdirectory under /usr/local/share/corp/bound. If
-                    you have the same hierarchy in the corpdir given in commandline, the
-                    process will be similar. You may use relative path names to the files
-                    and directories but do not use tilde (~).
-                </p>
-
-                <p>
-                    The hyphenation points are tagged as <code>&lt;hyph/&gt; </code>.
-                    The script tags hyphens that are found at line breaks or end of the
-                    paragraphs followed by a suitable word. If all the hyphenation points
-                    should be tagged, convert2xml.pl can be called with option
-                    --all-hyph.
+                    The resulting file is a fully converted xml-file <code>
+                    original.pdf.xml</code>.
+                    If the file is placed inside a corpus hierarchy, e.g.
+                    orig/sme/facta/original.pdf, then the converted file will
+                    be written to converted/sme/facta/original.pdf, where
+                    orig and converted are parallel directories. Otherwise
+                    a directory named <code>converted</code> will be made,
+                    and the result of the conversion is written to
+                    <code>converted/original.pdf.xml</code>
                 </p>
             </section>
         </section>
