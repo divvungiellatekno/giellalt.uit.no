@@ -166,6 +166,10 @@ To Be Written.
 
 The documentation files are compiled when you write {{make}} in the $lang catalogue ($lang meaning any language catalogue in langs/). There is a makefile in the $lang/doc catalogue that governs which sourcefiles to harvest for documentation. Linking to the generated files is done automatically, in the generated file $lang/doc/Links.jspwiki.
 
+As a default, only the ''root.lexc'' file is scheduled for generating a documentation
+file. In order to add documentation for more source files, open the {{doc/Makefile.am}}
+file, and comment in the relevant file in the JSP_PAGES list (nouns_stems.jspwiki for src/morphology/stems/nouns.lexc, etc). The jspwiki files will then be files, and linked to.
+
 In order to force compilation, do {{make -B}} in $lang/doc.
 
 Check in the converted jspwiki files: 
@@ -179,3 +183,44 @@ inspect and edit the file {{som/doc/nouns-stems.jspwiki}}, and check the page
 [http://localhost:8888/doc/lang/som/nouns-stems.html] in a locally running copy
 of forrest. When everything is fine, do the necessary changes in stems/nouns.lexc,
 compile again.
+
+!!Debugging procedure
+
+The error messages from forrest are notoriously unhelpful, typically of the type
+
+{{{
+nouns-affixes.html	BROKEN: Couldn't accept input hardbreak ["\n\n"]
+}}}
+
+The "input hardbreak" tells that somewhere there is an error in the document. 
+Unfortunately it is not related to the presence of two newlines, but may be due 
+to any jspwiki syntax error. The error from the browser (when opening the file locally)
+may be slightly better, eg. in this case it was
+
+{{{
+Couldn't accept input emitem ["''"]
+}}}
+
+In this case the error was italics embedded in monotype:
+
+{{{
+{{''син син(м)-''}}
+}}}
+
+Common errors:
+
+* Other errors include single _ instead of double ones as bold
+* and single _ inside italics
+* stacked formatting symbols, italics AND bold
+* square brackets are links in jspwiki
+* Jumping directly from !!! to ! etc.
+
+The best advice if you do not spot the error is to open the broken file
+(here: ''nouns-affixes.jspwiki'') in a test editor, and remove parts of it until 
+you find the syntax error (reload the file in the editor, say
+[http://localhost:8888/doc/lang/udm/root-morphology.html]
+in order to see when the error is fixed. The jspwiki syntax may be inspected
+[here|../jspwiki-howto.html], and on [the jspwiki documentation page|http://www.ecyrd.com/JSPWiki/wiki/JSPWikiDocumentation].
+
+
+
