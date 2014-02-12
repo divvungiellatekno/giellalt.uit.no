@@ -10,39 +10,45 @@ are common to all languages (thus ''shared''), and they are always located in
 {{$top_srcdir/am-shared}} ({{$top_srcdir}} refers to the language dir, like
 {{sme}}, {{sma}}, etc.).
 
-There are three principles for filenames in the __am-shared__ dir:
+There are three types of files in the __am-shared__ dir, each with their own
+file naming scheme:
 
-1. name after dir of including file (these should always be included by the
-   {{Makefile.am}} files, then these files can further include the other
-   include files below)
-* tools-grammarcheckers-include.am
-* tools-spellcheckers-fstbased-foma-include.am
-* tools-spellcheckers-fstbased-hfst-include.am
-* tools-spellcheckers-fstbased-include.am
-* tools-spellcheckers-include.am
-* test-src-morph-include.am
+1. named after the dir of the including file (these files should always be
+   included by the {{Makefile.am}} files, then these included files can further
+   include other include files, see below). These files __must always end__ in
+   {{-dir-include.am}}.
+* {{doc-dir-include.am}}
+* {{src-morphology-dir-include.am}} => included by the following file: \\
+  {{src/morphology/Makefile.am}}
+* {{tools-grammarcheckers-dir-include.am}}
+* {{tools-spellcheckers-fstbased-hfst-dir-include.am}}
+* {{tools-spellcheckers-dir-include.am}}
+* {{test-src-morphology-dir-include.am}}
 
-2. name after type of source file to be processed by the makefile
-* vislcg3-include.am
-* doc-include.am
-* lexc-include.am
-* regex-include.am
+2. named after the type of source file to be processed by the makefile. These
+   are utility include files, so to speak, in the sense that they will process
+   files of one type irrespective of source file location, using the utility (or
+   utilities) as indicated by the the file name of the include file. The name of
+   these files do __not__ include an underscore, and __not__ the string
+   {{-dir}}. This allows processing abstration over file types independent of
+   location, and will make it easier to maintain the core build code for all
+   file types.
+* {{vislcg3-include.am}} => process all vislcg3 files
+* {{lexc-include.am}}
+* {{regex-include.am}}
 
-3. name after configure option/application-specific targets
-* dictionary-include.am
-* oahpa-include.am
-* mt-include.am
+3. named after configure option/application-specific targets, and after the
+   including file. These files are always included by another include file, and
+   the purpose is to avoid filling up the main include file by all sorts of
+   optional build code. The first part of the filename follows
+   ''the directory part'' of the including file, then __followed by underscore__
+   ({{_}}) followed by the tag for the configure option, and finally ending with
+   {{-include.am}} as usual.
+* {{src_dictionary-include.am}} => included by {{src-dir-include.am}}
+* {{src_oahpa-include.am}}
+* {{src_mt-include.am}}
 
-Then there are accidental exceptions for historical reasons (=not yet
-cleaned/renamed):
-* filters-include.am
-* hfstlanginstall-include.am
-* hunspell-include.am
-* hyphenation-include.am
-* listbased-spellchecker-include.am
-* orthography-include.am
-* phonetics-include.am
-* phonology-include.am
-* syntax-include.am
-* transcriptions-include.am
-* topdir-include.am (the targets of the src/ catalogue)
+Summary: it is possible to programmatically identify all three types:
+* main include files contain {{-dir-}}
+* configure option include files contain {{_}}
+* source file general compilation file names include neither
