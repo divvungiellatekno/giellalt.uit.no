@@ -4,9 +4,9 @@ This is a receipt for setting up HFST3, with the backends we need. See the HFST3
 README file for further details, and how to turn on or off specific backens if
 needed or wanted.
 
-__Up-to-date as of 2013-12-10__
+__Up-to-date as of HFST 3.6__
 
-Presently, HFST3 supports three different backends:
+Presently, HFST3 supports three different backends, all enabled by default:
 * __OpenFST__ - weighted transducers (''default'')
 * __Foma__ - xfst-compatible lexc and regex compiler, xfst
   scripts (''optional'')
@@ -24,30 +24,55 @@ newer versions of these tools (use [MacPorts|http://www.macports.org/] on the
 Mac, some of the packaging systems on other OS's). See the HFST3 README
 file for further details.
 
+!!Checkout and configuration
+
 We assume installation from svn here:
 
 {{{
 svn co http://svn.code.sf.net/p/hfst/code/trunk/hfst3
 cd hfst3/
 ./autogen.sh
-./configure --enable-lexc --enable-proc --enable-xfst --enable-foma-wrapper
+./configure --enable-lexc-wrapper --enable-xfst --enable-foma-wrapper  --enable-proc
 }}}
 
-The configuration above is the minimum we need. The foma wrapper (and thus foma
-itself) should become optional in the near future.
+The configuration above is the minimum we need. To check what other options there are for enabling other backends and functions,
+do {{./configure --help}}.
+
+The foma wrapper (and thus foma itself) should become optional in the near
+future.
+
+A simpler but complete configuration is the following:
+
+{{{
+./configure --with-unicode-handler=ICU --enable-all-tools --enable-silent-rules
+}}}
+
+!!Special configuration on MacOSX 10.9
+
+Due to new default compiler settings on MacOSX 10.9 (with which the hfst code - presumably the openfst backen - is not compatible), one needs the following configuration command:
+
+{{{
+./configure --with-unicode-handler=ICU --enable-all-tools --enable-silent-rules CXXFLAGS="-I/usr/include/c++/4.2.1" LDFLAGS=" -stdlib=libstdc++"
+}}}
+
+!!Missing .hh files
 
 On some system {{.hh}} files built from {{.yy}} files must be built in a
-separate build step. The complete steps to build and install {{hfst}} after the
-configuration is as follows:
+separate build step:
 
 {{{
 ./scripts/generate-cc-files.sh
+}}}
+
+!!Make and install
+
+The final steps to build and install {{hfst}} after the configuration and
+{{.hh}} files are as follows:
+
+{{{
 make
 sudo make install
 }}}
-
-To check what other options there are for enabling other backends and functions,
-do {{./configure --help}}.
 
 !!!Extra preparations on older systems
 
