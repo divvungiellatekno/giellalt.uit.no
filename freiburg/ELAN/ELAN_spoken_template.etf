@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ANNOTATION_DOCUMENT AUTHOR="" DATE="2014-01-16T12:00:38+01:00" FORMAT="2.7" VERSION="2.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv2.7.xsd">
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2014-02-23T16:19:20+01:00" FORMAT="2.7" VERSION="2.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv2.7.xsd">
     <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds"/>
     <TIME_ORDER/>
-    <TIER LINGUISTIC_TYPE_REF="lemmaT" PARENT_REF="word@S1" TIER_ID="lemma@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="morphT" PARENT_REF="word@S1" TIER_ID="morph@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="refT" TIER_ID="ref@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="orthT" PARENT_REF="ref@S1" TIER_ID="orth@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="phonet-upaT" PARENT_REF="ref@S1" TIER_ID="phonet-UPA@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="phonol-cyrT" PARENT_REF="ref@S1" TIER_ID="phonol-CYR@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="translit-latT" PARENT_REF="ref@S1" TIER_ID="translit-LAT@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="noteT" PARENT_REF="ref@S1" TIER_ID="note@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="wordT" PARENT_REF="orth@S1" TIER_ID="word@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-engT" PARENT_REF="orth@S1" TIER_ID="ft-eng@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-deuT" PARENT_REF="orth@S1" TIER_ID="ft-deu@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-nobT" PARENT_REF="orth@S1" TIER_ID="ft-nob@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-rusT" PARENT_REF="orth@S1" TIER_ID="ft-rus@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-sweT" PARENT_REF="orth@S1" TIER_ID="ft-swe@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-lingT" PARENT_REF="orth@S1" TIER_ID="ft-ling@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="posT" PARENT_REF="word@S1" TIER_ID="pos@S1"/>
-    <TIER LINGUISTIC_TYPE_REF="lgT" PARENT_REF="word@S1" TIER_ID="lg@S1"/>
-    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="refT" TIME_ALIGNABLE="true"/>
+    <TIER LINGUISTIC_TYPE_REF="part(speech)T" TIER_ID="part"/>
+    <TIER LINGUISTIC_TYPE_REF="ref(speech)T" TIER_ID="ref"/>
+    <TIER LINGUISTIC_TYPE_REF="phonet-upaT" PARENT_REF="ref" TIER_ID="phonet-UPA"/>
+    <TIER LINGUISTIC_TYPE_REF="phonol-cyrT" PARENT_REF="ref" TIER_ID="phonol-CYR"/>
+    <TIER LINGUISTIC_TYPE_REF="translit-latT" PARENT_REF="ref" TIER_ID="translit-LAT"/>
+    <TIER LINGUISTIC_TYPE_REF="noteT" PARENT_REF="ref" TIER_ID="note(ref)"/>
+    <TIER LINGUISTIC_TYPE_REF="orthT" PARENT_REF="ref" TIER_ID="orth"/>
+    <TIER LINGUISTIC_TYPE_REF="lemmaT" PARENT_REF="word" TIER_ID="lemma"/>
+    <TIER LINGUISTIC_TYPE_REF="morphT" PARENT_REF="word" TIER_ID="morph"/>
+    <TIER LINGUISTIC_TYPE_REF="wordT" PARENT_REF="orth" TIER_ID="word"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-engT" PARENT_REF="orth" TIER_ID="ft-eng"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-deuT" PARENT_REF="orth" TIER_ID="ft-deu"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-nobT" PARENT_REF="orth" TIER_ID="ft-nob"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-rusT" PARENT_REF="orth" TIER_ID="ft-rus"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-sweT" PARENT_REF="orth" TIER_ID="ft-swe"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-lingT" PARENT_REF="orth" TIER_ID="ft-ling"/>
+    <TIER LINGUISTIC_TYPE_REF="posT" PARENT_REF="word" TIER_ID="pos"/>
+    <TIER LINGUISTIC_TYPE_REF="lgT" PARENT_REF="word" TIER_ID="lg(word)"/>
+    <TIER LINGUISTIC_TYPE_REF="noteT" PARENT_REF="part" TIER_ID="note(part)"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-finT" PARENT_REF="orth" TIER_ID="ft-fin"/>
+    <TIER LINGUISTIC_TYPE_REF="noteT" PARENT_REF="orth" TIER_ID="note(orth)"/>
+    <TIER LINGUISTIC_TYPE_REF="lgT" PARENT_REF="orth" TIER_ID="lg(orth)"/>
+    <TIER LINGUISTIC_TYPE_REF="phonet-ipaT" PARENT_REF="ref" TIER_ID="phonet-IPA"/>
+    <TIER LINGUISTIC_TYPE_REF="phonol-latT" PARENT_REF="ref" TIER_ID="phonol-LAT"/>
+    <TIER LINGUISTIC_TYPE_REF="placeT" TIER_ID="place"/>
+    <TIER LINGUISTIC_TYPE_REF="noteT" PARENT_REF="place" TIER_ID="note(place)"/>
+    <TIER LINGUISTIC_TYPE_REF="personT" TIER_ID="person"/>
+    <TIER LINGUISTIC_TYPE_REF="noteT" PARENT_REF="person" TIER_ID="note(person)"/>
+    <TIER LINGUISTIC_TYPE_REF="noteT" PARENT_REF="word" TIER_ID="note(word)"/>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="part(speech)T" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="ref(speech)T" TIME_ALIGNABLE="true"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="orthT" TIME_ALIGNABLE="false"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="phonet-upaT" TIME_ALIGNABLE="false"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="phonol-cyrT" TIME_ALIGNABLE="false"/>
@@ -35,7 +48,13 @@
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" CONTROLLED_VOCABULARY_REF="pos" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="posT" TIME_ALIGNABLE="false"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" CONTROLLED_VOCABULARY_REF="lg" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="lgT" TIME_ALIGNABLE="false"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="lemmaT" TIME_ALIGNABLE="false"/>
-    <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="morphT" TIME_ALIGNABLE="false"/><CONSTRAINT DESCRIPTION="Time subdivision of parent annotation's time interval, no time gaps allowed within this interval" STEREOTYPE="Time_Subdivision"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="morphT" TIME_ALIGNABLE="false"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="phonet-ipaT" TIME_ALIGNABLE="false"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="ft-finT" TIME_ALIGNABLE="false"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="phonol-latT" TIME_ALIGNABLE="false"/>
+    <LINGUISTIC_TYPE EXT_REF="er1" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="placeT" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="personT" TIME_ALIGNABLE="true"/>
+    <CONSTRAINT DESCRIPTION="Time subdivision of parent annotation's time interval, no time gaps allowed within this interval" STEREOTYPE="Time_Subdivision"/>
     <CONSTRAINT DESCRIPTION="Symbolic subdivision of a parent annotation. Annotations refering to the same parent are ordered" STEREOTYPE="Symbolic_Subdivision"/>
     <CONSTRAINT DESCRIPTION="1-1 association with a parent annotation" STEREOTYPE="Symbolic_Association"/>
     <CONSTRAINT DESCRIPTION="Time alignable annotations within the parent annotation's time interval, gaps are allowed" STEREOTYPE="Included_In"/>
@@ -50,6 +69,7 @@
         <CV_ENTRY DESCRIPTION="Pite Saami">sje</CV_ENTRY>
         <CV_ENTRY DESCRIPTION="Lule Saami">smj</CV_ENTRY>
         <CV_ENTRY DESCRIPTION="North Saami">sme</CV_ENTRY>
+        <CV_ENTRY DESCRIPTION="Komi-Zyrian">kpv</CV_ENTRY>
     </CONTROLLED_VOCABULARY>
     <CONTROLLED_VOCABULARY CV_ID="pos" DESCRIPTION="part of speech">
         <CV_ENTRY DESCRIPTION="adjective">a</CV_ENTRY>
@@ -69,4 +89,5 @@
         <CV_ENTRY DESCRIPTION="punctuation">punct</CV_ENTRY>
         <CV_ENTRY DESCRIPTION="verb">v</CV_ENTRY>
     </CONTROLLED_VOCABULARY>
+    <EXTERNAL_REF EXT_REF_ID="er1" TYPE="iso12620" VALUE="http://www.isocat.org/datcat/DC-2523"/>
 </ANNOTATION_DOCUMENT>
