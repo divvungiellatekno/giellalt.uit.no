@@ -1,0 +1,51 @@
+This page documents the ELAN tier structures used by our projects.
+
+
+!!!Intro
+
+…
+
+
+!!!ELAN Tier Structur(s)
+
+!Master template (spoken)
+
+|| Level || Name   || Parent || Type        || Explanation
+|  0     |  ref     | -      |  ref(spoken)T | gives each utterance a unique number (within the recording)
+|        |          |        |               | and aligns it in time relative to the recording
+|  -1    |  orth    | ref    |  orthT        | representation of the utterance in the standard orthography
+|  –2    |  ft-XYZ  | orth   |  ft-XYZT      | free X-language translation of the utterance (where 'XYZ' is replaced 
+|        |          |        |               | with a language code: eng, rus, etc.)
+|  –2    |  ft-ling | orth   |  ft-lingT     | morpheme glosses (‘free translation linguistics’); mostly used in PSDP
+|        |          |        |               | recordings; morpheme boundary indications based on the [Leipzig glossing rules|http://www.eva.mpg.de/lingua/resources/glossing-rules.php]
+|  –2    |  word    | orth   |  wordT        | individual tokens (words, punctuation, etc.) of the utterance, each with its own annotation unit;
+|        |          |        |               | essentially an exact copy of the ‘orth’-tier, just divided into individual tokens;
+|        |          |        |               | ELAN can tokenize automatically
+|        |  to      | be     | continued     | …
+
+
+!!!ELAN Tier Template Files for Download
+
+!Ready made template files in ELAN .etf format:
+
+For spoken corpus data
+
+*[Master template|ELAN/ELAN_spoken_template.etf] (including all possible annotation tiers and linguistic types)
+*[PSDP template|ELAN/ELAN_spoken_template_PSDP.etf] (including only annotation tiers and linguistic types relevant for PSDP)
+*KSDP template (including only annotation tiers and linguistic types relevant for KSDP
+*IKDP template (including only annotation tiers and linguistic types relevant for IKDP
+
+For written corpus data
+
+
+*Master template (including all possible annotation tiers and linguistic types)
+*PSDP template (including only annotation tiers and linguistic types relevant for PSDP)
+*KSDP template (including only annotation tiers and linguistic types relevant for KSDP
+*IKDP template (including only annotation tiers and linguistic types relevant for IKDP
+
+
+
+
+Tiers for unstructered textual notes can be inserted on every level; the common linguistic type for them is "noteT".
+
+Tiers for indicating lg can be inserted on the level of the utterance (orth), word or morphology.
