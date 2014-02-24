@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ANNOTATION_DOCUMENT AUTHOR="" DATE="2014-02-23T16:22:50+01:00" FORMAT="2.7" VERSION="2.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv2.7.xsd">
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2014-02-24T09:06:37+01:00" FORMAT="2.7" VERSION="2.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv2.7.xsd">
     <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds"/>
     <TIME_ORDER/>
-    <TIER LINGUISTIC_TYPE_REF="ref(speech)T" TIER_ID="ref"/>
-    <TIER LINGUISTIC_TYPE_REF="orthT" PARENT_REF="ref" TIER_ID="orth"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-engT" PARENT_REF="orth" TIER_ID="ft-eng"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-nobT" PARENT_REF="orth" TIER_ID="ft-nob"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-rusT" PARENT_REF="orth" TIER_ID="ft-rus"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-sweT" PARENT_REF="orth" TIER_ID="ft-swe"/>
-    <TIER LINGUISTIC_TYPE_REF="ft-finT" PARENT_REF="orth" TIER_ID="ft-fin"/>
-    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="part(speech)T" TIME_ALIGNABLE="true"/>
-    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="ref(speech)T" TIME_ALIGNABLE="true"/>
+    <TIER LINGUISTIC_TYPE_REF="ref(spoken)T" TIER_ID="ref@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="orthT" PARENT_REF="ref@S1" TIER_ID="orth@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="wordT" PARENT_REF="orth@S1" TIER_ID="word@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-engT" PARENT_REF="orth@S1" TIER_ID="ft-eng@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-deuT" PARENT_REF="orth@S1" TIER_ID="ft-deu@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-nobT" PARENT_REF="orth@S1" TIER_ID="ft-nob@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-rusT" PARENT_REF="orth@S1" TIER_ID="ft-rus@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-sweT" PARENT_REF="orth@S1" TIER_ID="ft-swe@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-lingT" PARENT_REF="orth@S1" TIER_ID="ft-ling@S1"/>
+    <TIER LINGUISTIC_TYPE_REF="ft-finT" PARENT_REF="orth@S1" TIER_ID="ft-fin@S1"/>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="part(spoken)T" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="ref(spoken)T" TIME_ALIGNABLE="true"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="orthT" TIME_ALIGNABLE="false"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="phonet-upaT" TIME_ALIGNABLE="false"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="phonol-cyrT" TIME_ALIGNABLE="false"/>
@@ -30,8 +33,8 @@
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="phonet-ipaT" TIME_ALIGNABLE="false"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="ft-finT" TIME_ALIGNABLE="false"/>
     <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="phonol-latT" TIME_ALIGNABLE="false"/>
-    <LINGUISTIC_TYPE EXT_REF="er1" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="placeT" TIME_ALIGNABLE="true"/>
-    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="personT" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE EXT_REF="er1" GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="geoT" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="bioT" TIME_ALIGNABLE="true"/>
     <CONSTRAINT DESCRIPTION="Time subdivision of parent annotation's time interval, no time gaps allowed within this interval" STEREOTYPE="Time_Subdivision"/>
     <CONSTRAINT DESCRIPTION="Symbolic subdivision of a parent annotation. Annotations refering to the same parent are ordered" STEREOTYPE="Symbolic_Subdivision"/>
     <CONSTRAINT DESCRIPTION="1-1 association with a parent annotation" STEREOTYPE="Symbolic_Association"/>
