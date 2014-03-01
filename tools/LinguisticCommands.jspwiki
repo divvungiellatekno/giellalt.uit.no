@@ -4,7 +4,7 @@
 
 !How many words, not numerals
 {{{
-cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-zA-Z]' | uniq | wc -l
+cat <analysedtext> | grep '"<' | grep '[a-zA-Z]'  | wc -l
 }}}
 !How many uniq words, not numerals
 {{{
