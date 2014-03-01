@@ -12,7 +12,8 @@ cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-zA-Z]' | uniq | wc
 }}}
 
 !!Compounds in an analysed text
-Add 'sort -u' instead of 'uniq' to get numbers for uniqs
+The syntactic analysis is important for getting the correct lemma through disambiguation. Many compounds are lexicalised in our analyser, and therefore we have to analyse the lemmas once more to find the compounds. \\
+For all commands: Add 'sort -u' instead of 'uniq' to get numbers for uniqs
 
 !How many compounds with noun in the first part
 We don't want Der/NomAct as N:
