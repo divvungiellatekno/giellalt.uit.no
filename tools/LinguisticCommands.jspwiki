@@ -12,6 +12,7 @@ cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-zA-Z]' | uniq | wc
 }}}
 
 !!Compounds in an analysed text
+Add 'sort -u' instead of 'uniq' to get numbers for uniqs
 
 !How many compounds with noun in the first part
 We don't want Der/NomAct as N:
@@ -20,7 +21,7 @@ cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]'
 }}}
 
 !How many compounds with verb in the first part
-We don't want Der/NomAg as V:
+We don't want Der/NomAg as V. 
 {{{
 cat <analysedtext>| grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | egrep 'V\+.*Cmp' | grep -v 'NomAg.*Cmp' | cut -f1 | uniq  
 }}}
