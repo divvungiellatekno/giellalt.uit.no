@@ -1,11 +1,10 @@
-﻿
-
-This document describes the Neahttadigisánit configuration
+﻿This document describes the Neahttadigisánit configuration
 
 !!! Neahttadigisánit Configuration
 
-Individual dictionary services are configured via a [YAML|http://www.yaml.org/refcard.html] file which is included
-in the path on launch. The configuration file contains:
+Individual dictionary services are configured via a
+[YAML|http://www.yaml.org/refcard.html] file which is included in the path on
+launch. The configuration file contains:
 
  * Main application settings: localisations, application subdomain/hostname, etc.
  * FST path and format definitions (compounding, tag structure, etc.)
@@ -31,16 +30,21 @@ The ApplicationSettings key contains the following configuration settings:
  * {{short_name}} - a short name for the project, usually corresponding to the subdomain. This must be unique.
  * {{default_locale}} - the default locale to display of those available, when any other locale cannot be detected from the browser.*
  * {{default_pair}} - the default dictionary language pair to display
+ * {{mobile_default_pair}} - the default dictionary to display when a mobile browser is detected
  * {{locales_available}} - internationalisations available*. It is important that these are defined as strings with quotes (YAML allows for strings to be defined without quotes as well), otherwise problems occur for Norwegian ("no"). Without the quotes, YAML will process this as a boolean value, but with quotes it is unambiguously a string.
  * {{meta_description}}, {{meta_keywords}} - these values will be inserted into the HTML {{<meta />}} tags in the header of all pages, and are important for search engines.
-
+ * {{admins_to_email}} - A list of email addresses to send server errors to.
+ * {{app_meta_title}}, {{meta_description}}, {{meta_keywrods}} - Fields for
+   determining meta tags that search engines pay attention to.
 
 ! Note on locales
 
-When defining locales for localization, it is important to use the two-character (ISO 639-1) code
-if one exists for the language, otherwise use the three-character (ISO 639-2) code.
+When defining locales for localization, it is important to use the
+two-character (ISO 639-1) code if one exists for the language, otherwise use
+the three-character (ISO 639-2) code.
 
-When defining language codes for dictionaries and morphological tools, use the three-character code always.
+When defining language codes for dictionaries and morphological tools, use the
+three-character code always.
 
 ! Example
 
@@ -59,11 +63,18 @@ ApplicationSettings:
      Free, mobile-friendly dictionaries for lots of languages.
   meta_keywords: >
      list, of, keywords
+  app_meta_title: >
+     Balto-finnic dictionaries
+  admins_to_email:
+    - "email@domain.com"
+    - "email2@domain.com"
 }}}
 
 !! FST path and format definitions (Morphology)
 
-The {{Morphology}} key contains a list of languages by ISO 639-2 code. Each language contains the following keys:
+The {{Morphology}} key contains a list of languages by ISO 639-2 code, but
+other short strings are tolerated, in case a spell-relax FST needs to be
+defined. Each language contains the following keys:
 
  * {{tool}} - path to the morphological tool
  * {{file}} - path to the morphological analysis file
@@ -79,17 +90,21 @@ The options setting may contain the following keys:
 * {{inverse_tagsep}} - the same, but for generation
 
 {{{
-  liv:
-    tool: '/usr/bin/lookup'
-    file: '/opt/smi/liv/bin/liv.fst'
-    inverse_file: '/opt/smi/liv/bin/liv.fst'
-    format: 'xfst'
-    options:
-      compoundBoundary: "+Use/Circ#"
-      derivationMarker: "+Der"
-      tagsep: '+'
-      inverse_tagsep: '+'
+  Morphology:
+    liv:
+      tool: '/usr/bin/lookup'
+      file: '/opt/smi/liv/bin/analyser-dict-gt-desc-mobile.xfst'
+      inverse_file: '/opt/smi/liv/bin/generator-dict-gt-norm.xfst'
+      format: 'xfst'
+      options:
+        compoundBoundary: "+Use/Circ#"
+        derivationMarker: "+Der"
+        tagsep: '+'
+        inverse_tagsep: '+'
 }}}
+
+Make note of the name you use for this key (i.e. {{liv}}), because this will be
+referred to later.
 
 !!! Notes
 
@@ -105,11 +120,11 @@ Tools:
 Morphology:
   olo:
     tool: *LOOKUP
-    file: [*OPT, '/olo/bin/olo.fst']
-    inverse_file: [*OPT, '/olo/bin/iolo.fst']
+    file: [*OPT, '/olo/bin/analyser-dict-gt-desc-mobile.xfst']
+    inverse_file: [*OPT, '/olo/bin/generator-dict-gt-norm.xfst']
 }}}
 
-Note how string concatenation is handled.
+Note how string concatenation is handled in YAML.
 
 !! Languages covered by the system (Languages)
 
@@ -137,24 +152,21 @@ optimised for different directions. This is controlled by the key 'reversable'.
 
 Dictionaries is a list of dictionaries, each dictionary defining the following keys: 
 
- * {{source}} - source language ISO (3 characters)
+ * {{source}} - source language ISO (or other short code, i.e., spellrelax variant)
  * {{target}} - target language ISO
  * {{path}}
- * optional: {{reversable}} - true.
 
-Example:
+Following are some minimal examples:
 
 {{{
 Dictionaries:
  - source: olo
    target: fin
    path: 'dicts/olo-fin.xml'
-   reversable: true
 
  - source: liv
    target: fin
    path: 'dicts/liv.all.xml'
-   reversable: true
 
  - source: liv
    target: est
@@ -162,8 +174,79 @@ Dictionaries:
 
 }}}
 
-NOTE: the reversable feature is shakily implemented at the present moment.
-Test before releasing into the wild.
+!! Additional lexicon settings
+
+! Input variants
+
+Some languages have optional spell-relax FSTs, either for converting from
+various keyboards and alternate orthographies.
+
+These may be marked as 'mobile' too, so that they appear by default when a
+mobile browser is detected, and so that swapping between language pairs is
+handled properly.
+
+The "special" types are thus: {{mobile}} and {{standard}}. Anything that is
+neither of these must have a separate type (which can be any word, i.e.
+{{molotsov}}).
+
+{{{
+  - source: sme
+    target: fin
+    path: 'dicts/sme-fin.all.xml'
+    input_variants:
+      - type: "standard"
+        description: "Standard (<em>áčđŋšŧž</em>)
+        short_name: "sme"
+      - type: "mobile"
+        description: "Social media (with <em>acdnstz</em>)"
+        short_name: "SoMe"
+}}}
+
+Here, each item in the {{input_variants}} key has a {{type}}, {{description}}
+and {{short_name}}. {{short_name}} refers to the morphology name, and
+description will be presented to the user in the interface.
+
+The description string may be marked for translation with the {{!gettext}}
+flag, which is a custom YAML function for NDS. Marked strings will then be
+able to be extracted into {{.po}} files as normal.
+
+{{{
+      - type: "mobile"
+        description: !gettext "Social media (with <em>acdnstz</em>)"
+        short_name: "SoMe"
+}}}
+
+! Korp integration
+
+Each item in the dictionary list may specify keys to include korp search links.
+It's a little hacky now, and requires manually URL-encoding things:
+
+What is essential is that the URL patterns included specify variables that
+will be substituted with the user's search: USER_INPUT for an alternate search,
+and INPUT_LEMMA for the lemma search links.
+
+{{{
+    show_korp_search: True
+    # use http://meyerweb.com/eric/tools/dencoder/ if things are
+    # unreadable or do not work
+    #
+    # Here, whatever the user input is will be replaced into the
+    # following string, marked by USER_INPUT
+    wordform_search_url: 
+      "http://gtweb.uit.no/korp/#search=word%7CUSER_INPUT&page=0"
+    #
+    # Here, whatever the input lemma is will be replaced into the
+    # following string, marked by INPUT_LEMMA
+    #
+    # cqp|[lemma = "INPUT_LEMMA"]
+    lemma_search_url: 
+      "http://gtweb.uit.no/korp/#page=0&search-tab=2&search=cqp%7C%5Blemma%20%3D%20%22INPUT_LEMMA%22%5D"
+
+    # Specify a word delimiter for when there are many.
+    # "] [word = "
+    lemma_multiword_delimiter: &korp_lemma_delim 
+      "%22%5D%20%5Bword%20%3D%20%22"
+}}}
 
 !! Wordform generation and analysis details (Paradigms)
 
