@@ -8,12 +8,17 @@ cat <analysedtext> | grep '"<' | grep '[a-zA-Z]'  | wc -l
 }}}
 !How many uniq lemmas, not numerals
 {{{
-cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-zA-Z]' | uniq | wc -l
+cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-zA-Z]' | sort -u | wc -l
 }}}
 
 !!Compounds in an analysed text
 The syntactic analysis is important for getting the correct lemma through disambiguation. Many compounds are lexicalised in our analyser, and therefore we have to analyse the lemmas once more to find the compounds. \\
 For all commands: Add 'sort -u' instead of 'uniq' to get numbers for uniqs
+
+!How many compound nouns
+{{{
+cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | egrep 'Cmp.*N\+' |cut -f1 | uniq
+}}}
 
 !How many compounds with noun in the first part
 We don't want Der/NomAct as N:
