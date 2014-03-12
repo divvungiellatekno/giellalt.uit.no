@@ -13,14 +13,14 @@
       <p>Our main subversion repository is at the address <a
       href="https://victorio.uit.no/langtech/">http://victorio.uit.no/langtech/</a>. Subversion documentation is
       available as a <a href="http://svnbook.red-bean.com/en/1.4/index.html">browsable book</a>.</p>
-      <p>Subversion communicates with us in cryptical ways. <strong>m</strong> is "me", and <strong>u</strong> is you, right? 
+      <p>Subversion communicates with us in cryptical ways. <strong>m</strong> is "me", and <strong>u</strong> is you, right?
       Here is the full story:</p>
       <p><a href="http://www.knaddison.com/technology/svn-status-code-cheat-sheet">svn-status-code-cheat-sheet</a></p>
       <section>
          <title>Graphical Subversion clients</title>
          <p>If you want to use a graphical Subversion client, please see the following pages:</p>
          <ul>
-            <li><a href="docu-svn-user-tortoisesvn.html">TortoiseSVN</a> - an open-source GUI front-end for Windows; this is the 
+            <li><a href="docu-svn-user-tortoisesvn.html">TortoiseSVN</a> - an open-source GUI front-end for Windows; this is the
             program we have experience with on Windows. (<a
             href="http://tortoisesvn.net/">home page</a>, <a href="http://en.wikipedia.org/wiki/TortoiseSVN">Wikipedia page</a>)</li>
             <li><a href="docu-svn-user-versionsapp.html">Versions.app</a> - a Mac only, commercial client (<a
@@ -41,13 +41,14 @@
             <title>The first commands</title>
             <p>This may be done in two ways:</p>
             <ol>
-            <li>You want to check out the files for only one or a limited number of languages. In that case, 
-            follow <a href="../infra/infraremake/GettingStartedWithTheNewInfra.html">these instructions</a>, especially 
+            <li>You want to check out the files for only one or a limited number of languages. In that case,
+            follow <a href="../infra/infraremake/GettingStartedWithTheNewInfra.html">these instructions</a>, especially
             the section "Only the GT core and the wanted language(s)".</li>
-            <li>You work on many languages and / or many end user projects (dictionaries, Oahpa, ...). In that case, 
+            <li>You work on many languages and / or many end user projects (dictionaries, Oahpa, ...). In that case,
             read on.</li>
+            <li>To control exactly what you need from our svn, use the options <code>--depth</code> and <code>--set-depth</code>. More info on <a href="https://stackoverflow.com/questions/11650156/svn-checkout-depth">Stack Overflow</a></li>
             </ol>
-            
+
             <p>Thus, to check o to your home directory (write <code>cd</code>), and give the following command:</p>
             <source>
 svn co https://victorio.uit.no/langtech/trunk main --username &lt;your_username&gt;
@@ -108,7 +109,7 @@ main/gt/script/gtsetup.sh
 
 <p>The key insight to understanding svn ignore can be summarised in two sentences (quoting <a href="http://blog.bogojoker.com/2008/07/command-line-svnignore-a-file/">Joseph Pecoraro's excellent article</a>):</p>
 
-<p><em>You don’t svn:ignore a file. You put an svn:ignore property on the directory to ignore that filename pattern!</em> 
+<p><em>You don’t svn:ignore a file. You put an svn:ignore property on the directory to ignore that filename pattern!</em>
 </p>
 
 <p>Here is the command for making directories ignoring files, assuming you want to ignore files in the
@@ -119,7 +120,7 @@ directory <em>where you stand now</em>:</p>
 <p>Then add the files or suffixes you want to ignore (e.g. *.toc), and save (if in emacs: ctrl X C). Then you must <em>check in</em> the <em >directory</em> (here represented by the "."):</p>
 
             <source>$ svn ci -m "Vi ignorerer toc-filer" .</source>
- 
+
             <p>More details about ignoring files can be found in <em>Chapter 3: Advanced Topics</em>, in the section
             <em>Ignoring Unversioned Items</em>, in the <a href="http://svnbook.red-bean.com/">SVN book</a>.</p>
          </section>
@@ -149,7 +150,7 @@ directory <em>where you stand now</em>:</p>
          <p>After you did <code>svn rm file, svn ci -m removed file</code>, the file is still there. To get it, do the following:</p>
          <ul>
          <li>First find the number of the deletion, by logging the parent folder, with the flag -v:
-svn log -v parentfollder/ |less 
+svn log -v parentfollder/ |less
 (Deletion was some number, say r61000) </li>
 
 <li>Then get the deleted file with the command: svn cat url/of/file@lastrevisionthefileexisted -r latrevisionthefileexisted > file</li>
