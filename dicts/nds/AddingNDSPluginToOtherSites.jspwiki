@@ -1,0 +1,77 @@
+!!! Including Neahttadigisánit in a website
+
+At minimum, two or three files need to be included on any page of content that
+you wish to include NDS with. If you are using a Content Management System, you
+may need to edit the system's templates in the relevant location to include
+these files.
+
+* {{neahttadigisanit.css}} - the stylesheet that provides styling for the
+  definition bubbles and options menu
+* {{neahttadigisanit.jquery.min.js}} - the main Neahttadigisanit (compressed) JS
+  file, with its own version of jQuery
+* Optionally, you may include a third file that contains the options and
+  actually initializes the plugin, or simply put this in a {{<script />}} node
+
+NB: if you prefer to use a version of jQuery that is already in use on your
+website, there is a version of the NDS source compiled without it:
+{{neahttadigisanit.min.js}}.
+
+!! Including the files
+
+You can either download and rehost these files, or use our copies directly.
+Either way is alright, but your site will still need to permit users' browsers
+to make external API calls. All API calls use JSONP, so cross-domain API calls
+should be permitted.
+
+There are a few strategies for including these: first, the stylesheet must be
+in the header. It should hopefully not interfere with any local styles, as all
+the selectors refer only to things that involve NDS. If this turns out not to
+be the case, report a bug.
+
+{{{
+    <link rel="stylesheet" 
+          href="http://sanit.oahpa.no/static/css/neahttadigisanit.css"></link>
+
+    <script type="text/javascript" 
+            src="http://sanit.oahpa.no/static/js/neahttadigisanit.jquery.min.js"></script>
+}}}
+
+Second: the JS file may be included in the header, or toward the footer so that
+it does not delay other content in the site from loading.
+
+!! Initializing the plugin
+
+The final step is to call the plugin. Typically, you will want to do this
+within a jQuery event-- usually when the document is ready. This code may be
+included in its own {{script}} node, but must run after the {{.js}} file has been
+included.
+
+{{{
+    // Wait for the document to load...
+    $(document).ready(function (){
+
+        // Initialize and configure NDS
+        $(document).selectToLookup({
+            // This specifies the dictionary set to 
+            api_host: 'http://sanit.oahpa.no/',
+        });
+    });
+}}}
+
+For most purposes you should be able to just copy and paste this JS snippet
+without changes. If you need another dictionary set, you may alter the
+{{api_host}} setting:
+
+* South Saami / Norwegian - http://baakoeh.oahpa.no/
+* More coming soon...
+
+Mind the trailing slash.
+
+!! Note on HTTPS and SSL
+
+We are in the process of  making this functionality available on sites using
+SSL. The document will be updated when this is available.
+
+!! Contact
+
+If you encounter problems, please contact us!
