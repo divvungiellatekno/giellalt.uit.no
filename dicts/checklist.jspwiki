@@ -1,6 +1,20 @@
 !!!Sjekkliste før ordboka genereres og kompileres
+
+!!Generelt for alle NDS-ordbøkene
 * det skal ikke være dubletter
-* at alle lemmaene som skal genereres lemma i norm-fst
+** Kommando: {{{cat *.xml|grep '<l '|sort | uniq -d}}}
+* alle lemmaene som skal genereres må ha lemma i norm-fst
+** Kommando (eksempel frå fkv): {{{cat N_*.xml|grep '<l '|tr '<' '>'|cut -d">" -f3|ufkvNorm|grep '?'}}}
+* sjekke at eksempler har stor forbokstav og punktum, og sjekke rettskriving v.hj. av analyse
+* stedsnavn med flere <mg> - den vanligste mg bør stå først fordi det er den oversettelsen som brukes i miniparadigmet 
+* Sjekk oversettelsene, eksempelsetningene og oversettelsene av eksempelsetningene:
+** Grep dem ut i ei separat fil hver og se på dem med stavekontroll i et tekstbehandlingsprogram (eller analysepgram for de språka der det ikke fins stavekontroll)
+{{{
+cat N_*.xml|grep '<t '|tr '<' '>'|cut -d">" -f3|see
+cat N_*.xml|grep '<x>'|tr '<' '>'|cut -d">" -f3|see
+cat N_*.xml|grep '<xt>'|tr '<' '>'|cut -d">" -f3|see
+}}}
+!!Spesielt for nordsamisk
 * at alle lemmaer (adjektiver, verb, substantiver, numeraler, pronIndef og propernouns) som genererer med enn en grunnform, merkes med v1 osv i fst og vmax i dict-filene. Eksempel på kommando for å sjekke dette. Pass på at isme-norm.fst er kompilert med at v1-taggene går til 0 i tag-not-save.regex før kommandoene:
 
 {{{
@@ -10,14 +24,10 @@ grep '<l ' adjective_smenob.xml | grep -v vmax | tr "<" ">" | cut -d ">" -f3 |
 }}}
 
 * sjekk at substantiver er i riktig fil (G3, Actor osv.)
-* sjekk gt/common/src/tag-not-save
+* sjekk gt/common/src/tag-not-save (__oppdater__ til nyinfra)
 * genere lemmaer fra hver ordklasse med codes.txt-filene for å teste kodene
 * evt. legge til illpl="no" og pg="no" i leksikonfilene
 * evt. legge til l_ref
-* sjekke at eksempler har stor forbokstav og punktum, og sjekke rettskriving v.hj. av analyse
-* stedsnavn med flere <mg> - den vanligste mg bør stå først fordi det er den oversettelsen som brukes i miniparadigmet 
-* Sjekk eksempelsetningene og oversettelsene av eksempelsetningene:
-** Grep dem ut i ei separat fil hver og se på dem med stavekontroll i et tekstbehandlingsprogram
 
 !!Sjekkliste for den nykompilerte ordboka
 
