@@ -19,9 +19,26 @@ Adding password for user sally</source>
       </section>
       <section>
          <title>Adding users to the svn mailing alias</title>
-         <p>Optionally, add the user to the group <em>samicvs</em> in the file <code>/etc/aliases</code>, and <em>run
+         <p>Optionally, add the user to the alias <em>samicvs</em> in the file <code>/etc/aliases</code>, and <em>run
          the program</em> <code>newaliases</code>.</p>
       </section>
-      <p class="last_modified">Last modified: $Date: 2008/06/20 12:05:39 $</p>
+      <section>
+          <title>Adding new aliases to /etc/alias and using them in the post-commit hook</title>
+          <ul>
+              <li>Make a new alias by adding a new line in /etc/alias in this format <code>aliasname: mailadress1, mailadress2</code></li>
+              <li>Copy the last line of the post-commit script, and change the <em>-m</em> argument to a path that is interesting for the given alias and the address to aliasname@localhost. The resulting line should look like this: <code>LC_ALL=se_NO.UTF-8 commit-email.pl "$REPOS" "$REV" -m "&lt;path of interest&gt;" -h "victorio.uit.no" -s langtech aliasname@localhot</code></li>
+              <li>The post-commit scripts are here:
+                  <ul>
+                      <li>/home/svn/langtech/hooks/post-commit</li>
+                      <li>/home/svn/biggies/hooks/post-commit</li>
+                      <li>/home/svn/dasago/hooks/post-commit</li>
+                      <li>/home/svn/freecorpus/hooks/post-commit</li>
+                      <li>/home/svn/boundcorpus/hooks/post-commit</li>
+                      <li>/home/svn/private/hooks/post-commit</li>
+                      <li>/home/svn/speech/hooks/post-commit</li>
+                  </ul>
+              </li>
+          </ul>
+      </section>
    </body>
 </document>
