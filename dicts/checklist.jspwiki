@@ -4,8 +4,8 @@
 * det skal ikke være dubletter
 ** Kommando: {{{cat *.xml|grep '<l '|sort | uniq -d}}}
 * alle lemmaene som skal genereres må ha lemma i norm-fst
-** Kommando (eksempel frå fkv): {{{cat N_*.xml|grep '<l '|tr '<' '>'|cut -d">" -f3|ufkvNorm|grep '?'}}}
-* sjekke at eksempler har stor forbokstav og punktum, og sjekke rettskriving v.hj. av analyse
+** Kommando (eksempel fra fkv): {{{cat N_*.xml|grep '<l '|tr '<' '>'|cut -d">" -f3|ufkvNorm|grep '?'}}}
+* sjekke at eksempler har stor forbokstav og punktum, og sjekke rettskriving v.hj. av analyse eller retteprogram
 * stedsnavn med flere <mg> - den vanligste mg bør stå først fordi det er den oversettelsen som brukes i miniparadigmet 
 * Sjekk oversettelsene, eksempelsetningene og oversettelsene av eksempelsetningene:
 ** Grep dem ut i ei separat fil hver og se på dem med stavekontroll i et tekstbehandlingsprogram (eller analysepgram for de språka der det ikke fins stavekontroll)
@@ -14,8 +14,9 @@ cat N_*.xml|grep '<t '|tr '<' '>'|cut -d">" -f3|see
 cat N_*.xml|grep '<x>'|tr '<' '>'|cut -d">" -f3|see
 cat N_*.xml|grep '<xt>'|tr '<' '>'|cut -d">" -f3|see
 }}}
+
 !!Spesielt for nordsamisk
-* at alle lemmaer (adjektiver, verb, substantiver, numeraler, pronIndef og propernouns) som genererer med enn en grunnform, merkes med v1 osv i fst og vmax i dict-filene. Eksempel på kommando for å sjekke dette. Pass på at isme-norm.fst er kompilert med at v1-taggene går til 0 i tag-not-save.regex før kommandoene:
+* sjekk at alle lemmaer (adjektiver, verb, substantiver, numeraler, pronIndef og propernouns) som genererer med enn en grunnform, merkes med v1 osv i fst og vmax i dict-filene. Eksempel på kommando for å sjekke dette. Pass på at isme-norm.fst er kompilert med at v1-taggene går til 0 i tag-not-save.regex før kommandoene:
 
 {{{
 grep '<l ' adjective_smenob.xml | grep -v vmax | tr "<" ">" | cut -d ">" -f3 |
