@@ -44,7 +44,7 @@ future.
 A simpler but complete configuration is the following:
 
 {{{
-./configure --with-unicode-handler=ICU --enable-all-tools --enable-silent-rules
+./configure --with-unicode-handler=libicu --enable-all-tools --enable-silent-rules
 }}}
 
 !!Special configuration on MacOSX 10.9
@@ -52,7 +52,7 @@ A simpler but complete configuration is the following:
 Due to new default compiler settings on MacOSX 10.9 (with which the hfst code - presumably the openfst backen - is not compatible), one needs the following configuration command:
 
 {{{
-./configure --with-unicode-handler=ICU --enable-all-tools --enable-silent-rules CXXFLAGS="-I/usr/include/c++/4.2.1" LDFLAGS=" -stdlib=libstdc++"
+./configure --with-unicode-handler=libicu --enable-all-tools --enable-silent-rules CXXFLAGS="-I/usr/include/c++/4.2.1" LDFLAGS=" -stdlib=libstdc++"
 }}}
 
 !!Missing .hh files
