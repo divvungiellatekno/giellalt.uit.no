@@ -18,7 +18,7 @@ sme:
 cd langs/sme/
 ./configure --with-hfst --enable-apertium
 make
-cp src/analyser-mt-apertium.sma.att.gz /path/to/apertium-sme-sma/apertium-sme-sma.LR.att.gz
+cp tools/mt/apertium/analyser-mt-apertium-desc.nob.att.gz ~/apertium/trunk/apertium-sme-nob/apertium-sme-nob.sme-nob.LR.att.gz
 }}}
 
 sma:
@@ -29,6 +29,10 @@ cd langs/sma/
 make
 cp src/genarator-mt-apertium.att.gz /path/to/apertium-sme-sma/apertium-sme-sma.RL.att.gz
 }}}
+
+nob:
+For nob, we do not use the Giellatekno version, but the one
+in apertium/languages/apertium-nob. See the Apertium documentation.
 
 !!!Syntax
 
