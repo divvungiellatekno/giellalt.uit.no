@@ -42,9 +42,13 @@ This script will iterate over all language dirs, and merge the changes in the {{
 
 !!!Infrastructure updates
 
-The infrastructure is updated using the {{und}} template, and is otherwise done as above.
+The infrastructure is updated using the {{und}} template, and is otherwise
+done as above.
 
-__NB! Do NOT update the infrastructure without checking with the core developers!!!__ You should usually not need to touch the infrastructure at all. The core maintainers will take care of these things, and the updates will be propagated automatically via the svn repository.
+__NB! Do NOT update the infrastructure without checking with the core
+developers!!!__ You should usually not need to touch the infrastructure at all.
+The core maintainers will take care of these things, and the updates will be
+propagated automatically via the svn repository.
 
 !!Updating a single language
 
@@ -52,7 +56,10 @@ Steps to take for language {{$GTLANG}}:
 
 # {{cd $GTHOME/langs/$GTLANG/}}
 # {{../../gtcore/scripts/merge-templates.sh}}
-## one can try to add the option {{--unsafe}} to get the script to try to merge some more files than default
+## one can try to add the option {{--unsafe}} to get the script to try to merge
+   some more files than default (e.g. shell scripts, yaml files, etc - it will
+   anyway only merge the files that have been changed or added since the
+   previous merge)
 # check and resolve conflicts, if any
 # check all modifications made
 # commit
@@ -65,6 +72,37 @@ Steps to take for language {{$GTLANG}}:
 # check and resolve conflicts, if any
 # check all modifications made
 # commit
+
+!!Updating languages outside $GTHOME/langs/
+
+There are a couple of language repositories elsewhere in our infra, and it is
+also possible to build a language repository completely outside the
+Giellatekno/Divvun infra, and still use our templating system.
+
+In all these cases you need to specify which of the available templates you want
+to merge. The merge/update command thus becomes:
+
+{{{
+./update-all-from-core.sh -t und --templatecoll langs
+}}}
+
+In some cases you can get error messages like
+
+{{{
+Copyfrom-url 'https://victorio.uit.no/langtech/trunk/gtcore/langs-templates/und/am-shared/tools-spellcheckers-listbased-hunspell-dir-include.am' \
+has different repository root than 'https://USERNAME@victorio.uit.no/langtech'
+}}}
+
+(replace USERNAME with your own username in subversion)
+
+This message is caused by subversion not knowing which user to do the merge
+from, and thus the url's become different. To avoid this error, first revert all
+changes from the failed attempt, and then reissue the merge/update command with
+the addition of a --username option, as follows:
+
+{{{
+./update-all-from-core.sh -t und --unsafe --templatecoll langs --username USERNAME
+ }}}
 
 !!What if your language is not automatically updated?
 
