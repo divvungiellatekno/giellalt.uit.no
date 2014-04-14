@@ -40,6 +40,24 @@ Menu:
 # search for sme and nob in translations (lemma search in sentence aligned sentences) – corpus: nob2sme
 # deepdict sme (lemma search -> dependency daughters in corpus dep) – corpus: smedep 
 
+!!!Lemgram
+Generere lemgrams from lexc, use dict-isme-norm.fst or generator-dict-gt-norm.xfst or generator-dict-gt-norm.hfst
+* noun-sme-lex.txt: 
+** egrep -v "(G3|ACTOR|CmpN/Only|ShCmp|RCmpnd|\+V\+|^\!)" 
+** base form is N+Sg+Nom for all. If no form: N+Pl+Nom
+** grep ACTOR: N+NomAg+Sg+Nom
+** grep G3: N+G3+Sg+Nom
+* verb-sme-lex.txt:
+** egrep -v "(STRAYFORMS|ENDLEX|\+V|^\!)"
+** base form is V+Inf
+* adj-sme-lex.txt:
+** egrep -v "(LEXICON|ATTR|FINJU|Der|Attr| At |BBO |MUS |BUOREMUSS|OVDDIT |STUORIBUS|BUStem | K | Rreal | R |^\!)"
+** base form is A+Sg+Nom: 
+** base form is A+Pl+Nom: grep _PL
+** base form is A+Attr: egrep (ATTR|Attr)
+** base form is A+Superl+Sg+Nom: grep BUOREMUSS
+** base form is A+Comp+Sg+Nom: egrep "(OVDDIT|BBO |BU/MUS|EABBO/EAMOS|STUORIBUS|BUStem)"
+
 !!!Meetings
 
 * 2013: [9.4.|meetings/130409.html]   // [4.12.|meetings/131204.html]
