@@ -41,7 +41,7 @@ Menu:
 # deepdict sme (lemma search -> dependency daughters in corpus dep) – corpus: smedep 
 
 !!!Lemgram
-Generere lemgrams from lexc, use dict-isme-norm.fst or generator-dict-gt-norm.xfst or generator-dict-gt-norm.hfst
+Generering of lemgrams from lexc, use dict-isme-norm.fst or generator-dict-gt-norm.xfst or generator-dict-gt-norm.hfst
 * noun-sme-lex.txt: 
 ** egrep -v "(G3|ACTOR|CmpN/Only|ShCmp|RCmpnd|\+V\+|^\!)" 
 ** base form is N+Sg+Nom for all. If no form: N+Pl+Nom
@@ -51,8 +51,8 @@ Generere lemgrams from lexc, use dict-isme-norm.fst or generator-dict-gt-norm.xf
 ** egrep -v "(STRAYFORMS|ENDLEX|\+V|^\!)"
 ** base form is V+Inf
 * adj-sme-lex.txt:
-** egrep -v "(LEXICON|ATTR|FINJU|Der|Attr| At |BBO |MUS |BUOREMUSS|OVDDIT |STUORIBUS|BUStem | K | Rreal | R |^\!)"
-** base form is A+Sg+Nom: 
+** egrep -v "(_PL|LEXICON|ATTR|FINJU|Der|Attr| At |BBO |MUS |BUOREMUSS|OVDDIT |STUORIBUS|BUStem | K | Rreal | R |^\!)"
+** base form is A+Sg+Nom
 ** base form is A+Pl+Nom: grep _PL
 ** base form is A+Attr: egrep (ATTR|Attr)
 ** base form is A+Superl+Sg+Nom: grep BUOREMUSS
