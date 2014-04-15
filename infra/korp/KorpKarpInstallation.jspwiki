@@ -41,15 +41,47 @@ Menu:
 # deepdict sme (lemma search -> dependency daughters in corpus dep) – corpus: smedep 
 
 !!!Lemgram
-Generering of lemgrams from lexc, use dict-isme-norm.fst or generator-dict-gt-norm.xfst or generator-dict-gt-norm.hfst. Suggestion: We remove v1, v2.. from the fst. Better for the user that all variants are in the same lemgram. Many lemmas will have more than one entry in lexc, so the list should be uniqed before generating forms.
-* noun-sme-lex.txt: 
-** egrep -v "(G3|ACTOR|CmpN/Only|ShCmp|RCmpnd|\+V\+|^\!)" 
-** grep ACTOR: N+NomAg
-** grep G3: N+G3
-* verb-sme-lex.txt:
-** egrep -v "(ENDLEX|\+V|^\!)"
-* adj-sme-lex.txt:
-** egrep -v "(LEXICON|Der|Rreal|R|^\!)"
+
+!!Definitions
+* __lexeme__ = member of an open lexical category, having meaning and form but being neither
+* __lemma__ = wordform used as representative for lexeme
+* __grammatical word__ pair of lemma+grammatical properties and wordform
+* __paradigm__ = set of grammatical words realising a lemma
+* __lemgram__ = set of wordforms in paradigm
+
+!!Generation
+Generation of lemgrams from lexc:
+
+Use ''dict-isme-norm.fst'' or ''generator-dict-gt-norm.xfst'' or ''generator-dict-gt-norm.hfst''. We remove the tags v1, v2.. from the fst. It is better for the user that all variants of the same paradigm are in the same lemgram. Many fst-lemmas have more than one entry in lexc, so the list should be uniqed before generating forms. I suggest that we start with these files:
+
+For nouns, we pick different 3 lists: The ordinary nouns, the actors (NomAg), and the G3-marked nouns. 
+For the other parts of speech, one command is enough. Commands to filter (ir)relevant forms:
+
+!noun-sme-lex.txt: 
+*Ordinary words:
+{{{
+egrep -v "(G3|ACTOR|CmpN/Only|ShCmp|RCmpnd|\+V\+|^\!)"
+}}}
+* ACTOR: 
+{{{
+grep N+NomAg
+}}}
+* G3: 
+{{{
+grep N+G3
+}}}
+!verb-sme-lex.txt:
+{{{
+egrep -v "(ENDLEX|\+V|^\!)"
+}}}
+!adj-sme-lex.txt: 
+{{{
+egrep -v "(LEXICON|Der| Rreal | R |^\!)"
+}}}
+!adv-sme-lex.txt:
+{{{
+egrep -v "(LEXICON| K |^\!)"
+}}}
 
 !!!Meetings
 
