@@ -22,7 +22,7 @@ Note that when logged in as the NDS user, the python virtualenv should be
 activated automatically, and you will see this before the command prompt:
 
 {{{
-	(env)[neahtta@gtweb ~]$ 
+    (env)[neahtta@gtweb ~]$ 
 }}}
 
 (If you do not see this, do the following commands from the home directory of
@@ -45,7 +45,7 @@ automatically be configured properly. Either you will see errors, or you can
 check with ''echo $GTHOME''. The ''neahtta'' user has these set automatically
 in its bash profile.
 
-6.) ''Check that there were no errors, also wc -l dicts/*.xml to make sure there is content in the files.''
+3.) ''Check that there were no errors, also wc -l dicts/*.xml to make sure there is content in the files.''
 
 If there is an error in an XML file used in compilation, Saxon will print out
 the file name and line that was problematic. Before compilation, a backup file
@@ -60,13 +60,14 @@ not seem to be visible on the web, it is a good idea to check that the
 dictionaries are in the locations that the config expects, and alternatively
 restarting the server process.
 
-**NB:** The files checked in to SVN are different from those actually used in
-production on the server, this is to prevent accidental overwritings via ''svn
-up''. Thus, you will need to edit and check in ''configs/DICT.config.yaml.in'',
+__NB:__ The files checked in to SVN are different from those actually used in
+production on the server, this is to prevent accidental overwritings via ''svn up''. 
+Thus, you will need to edit and check in ''configs/DICT.config.yaml.in'',
 which is fine for use in development work, but the servers instances will be
 running from ''confgis/DICT.config.yaml''.
 
-7.) ''Test the configuration files''
+
+4.) ''Test the configuration files''
 
 An automatic tool to check that everything went well is also available.
 
@@ -80,12 +81,12 @@ avoid restarting until this is corrected.
     fab local DICT test_configuration
 }}}
 
-8.) ''Restart the server process''
+5.) ''Restart the server process''
 
 When everything is working, run the following:
 
 {{{
-	fab local DICT restart_service
+    fab local DICT restart_service
 }}}
 
 !!!Updating the fsts
@@ -145,7 +146,7 @@ config directory as a prerequisite to the install targets.
 Go to neahtta and configure the dictionaries
 
 {{{ 
-	cd ~/neahtta/
+    cd ~/neahtta/
     fab local DICT test_configuration
 }}}
 
@@ -158,7 +159,7 @@ If everything is good and there are no errors, you'll see FST paths, and some ha
 Either use the fab process, or relevant system commands.
 
 {{{ 
-	cd ~/neahtta/
+    cd ~/neahtta/
     fab local DICT restart_service
 }}}
 
@@ -193,8 +194,8 @@ restart.
 In order to start with reboot on CENTOS:
 
 {{{
-	chkconfig --list  (list all)
-	chkconfig SERVICE on
+    chkconfig --list  (list all)
+    chkconfig SERVICE on
 }}}
 
 where __SERVICE__ is a variable for nds-sanit.service, etc.
