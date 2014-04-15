@@ -41,22 +41,15 @@ Menu:
 # deepdict sme (lemma search -> dependency daughters in corpus dep) – corpus: smedep 
 
 !!!Lemgram
-Generering of lemgrams from lexc, use dict-isme-norm.fst or generator-dict-gt-norm.xfst or generator-dict-gt-norm.hfst. Suggestion: We remove v1, v2.. from the fst. Better for the user that all variants are in the same lemgram.
+Generering of lemgrams from lexc, use dict-isme-norm.fst or generator-dict-gt-norm.xfst or generator-dict-gt-norm.hfst. Suggestion: We remove v1, v2.. from the fst. Better for the user that all variants are in the same lemgram. Many lemmas will have more than one entry in lexc, so the list should be uniqed before generating forms.
 * noun-sme-lex.txt: 
 ** egrep -v "(G3|ACTOR|CmpN/Only|ShCmp|RCmpnd|\+V\+|^\!)" 
-** base form is N+Sg+Nom for all. If no form: N+Pl+Nom
-** grep ACTOR: N+NomAg+Sg+Nom
-** grep G3: N+G3+Sg+Nom
+** grep ACTOR: N+NomAg
+** grep G3: N+G3
 * verb-sme-lex.txt:
-** egrep -v "(STRAYFORMS|ENDLEX|\+V|^\!)"
-** base form is V+Inf
+** egrep -v "(ENDLEX|\+V|^\!)"
 * adj-sme-lex.txt:
-** egrep -v "(_PL|LEXICON|ATTR|FINJU|Der|Attr| At |BBO |MUS |BUOREMUSS|OVDDIT |STUORIBUS|BUStem | K | Rreal | R |^\!)"
-** base form is A+Sg+Nom
-** base form is A+Pl+Nom: grep _PL
-** base form is A+Attr: egrep (ATTR|Attr)
-** base form is A+Superl+Sg+Nom: grep BUOREMUSS
-** base form is A+Comp+Sg+Nom: egrep "(OVDDIT|BBO |BU/MUS|EABBO/EAMOS|STUORIBUS|BUStem)"
+** egrep -v "(LEXICON|Der|Rreal|R|^\!)"
 
 !!!Meetings
 
