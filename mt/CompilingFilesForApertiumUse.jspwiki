@@ -47,7 +47,7 @@ to use __must__ start with 3 (be python 3), e.g. python3.2.
 Disambiguation:
 
 {{{
-cp src/syntax/disambiguation.cg3 /path/to/apertium-sme-sma/apertium-sme-sma.sme-sma.dis.rlx
+grep -v RemoveFromApertium langs/sme/src/syntax/disambiguation.cg3 > /path/to/apertium-sme-sma/apertium-sme-sma.sme-sma.dis.rlx
 
 Then, in the apertium-sme-sma directory:
 
@@ -59,7 +59,7 @@ mv /tmp/x apertium-sme-sma.sme-sma.dis.rlx
 and the same for syntax:
 
 {{{
-cp src/syntax/function.cg3 /path/to/apertium-sme-sma/apertium-sme-sma.sme-sma.syn.rlx
+grep -v grep -v RemoveFromApertium gtcore/gtdshared/smi/src/syntax/src/syntax/functions.cg3 > /path/to/apertium-sme-sma/apertium-sme-sma.sme-sma.syn.rlx
 
 Then, in the apertium-sme-sma directory:
 
