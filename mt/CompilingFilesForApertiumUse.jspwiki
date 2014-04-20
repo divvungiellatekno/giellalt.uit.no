@@ -1,4 +1,4 @@
-
+!!!Compiling files from gt to apertium
 
 The linguistic source files are compiled in {{$GTHOME/langs/}} and then
 manually copied over to the apertium folder. The morphology tags are
@@ -9,10 +9,10 @@ Remember that the real source files are in the old infra, and must be copied
 over to newinfra by (in newinfra sme) the command
 {{sh src/scripts/copy-old2new.sh}}
 
-!!!Morphology
+!!Morphology
 
 
-sme:
+!sme:
 
 {{{
 cd langs/sme/
@@ -21,7 +21,7 @@ make
 cp tools/mt/apertium/analyser-mt-apertium-desc.nob.att.gz ~/apertium/trunk/apertium-sme-nob/apertium-sme-nob.sme-nob.LR.att.gz
 }}}
 
-sma:
+!sma:
 
 {{{
 cd langs/sma/
@@ -34,7 +34,7 @@ nob:
 For nob, we do not use the Giellatekno version, but the one
 in apertium/languages/apertium-nob. See the Apertium documentation.
 
-!!!Syntax
+!!Syntax
 
 This is relevant to sme only.
 
@@ -44,8 +44,21 @@ not necessarily under this name. Writing {{ls -l /opt/local/bin/python*/}} or
 to use __must__ start with 3 (be python 3), e.g. python3.2. 
 (Change the number in the command below if needed).
 
-Disambiguation:
+!!Disambiguation:
 
+!smenob
+{{{
+grep -v RemoveFromApertium langs/sme/src/syntax/disambiguation.cg3 > /path/to/apertium/trunk/apertium-sme-nob/apertium-sme-nob.sme-nob.mor.rlx
+
+Then, in the apertium-sme-sma directory:
+
+cat apertium-sme-nob.sme-nob.mor.rlx | python3.2 dev/cg-tag-convertor.py > /tmp/x
+
+mv /tmp/x apertium-sme-nob.sme-nob.mor.rlx
+}}}
+
+
+!smesma
 {{{
 grep -v RemoveFromApertium langs/sme/src/syntax/disambiguation.cg3 > /path/to/apertium-sme-sma/apertium-sme-sma.sme-sma.dis.rlx
 
@@ -56,7 +69,22 @@ cat apertium-sme-sma.sme-sma.dis.rlx | python3.2 dev/cg-tag-convertor.py > /tmp/
 mv /tmp/x apertium-sme-sma.sme-sma.dis.rlx
 }}}
 
-and the same for syntax:
+
+
+!!Syntax:
+!smenob
+
+{{{
+grep -v RemoveFromApertium gtcore/gtdshared/smi/src/syntax/src/syntax/functions.cg3 > /path/to/apertium/trunk/apertium-sme-nob/apertium-sme-nob.sme-nob.syn.rlx
+
+Then, in the apertium-sme-sma directory:
+
+cat apertium-sme-nob.sme-nob.syn.rlx | python3.2 dev/cg-tag-convertor.py > /tmp/x
+mv /tmp/x apertium-sme-nob.sme-nob.syn.rlx
+}}}
+
+
+!smesma
 
 {{{
 grep -v RemoveFromApertium gtcore/gtdshared/smi/src/syntax/src/syntax/functions.cg3 > /path/to/apertium-sme-sma/apertium-sme-sma.sme-sma.syn.rlx
