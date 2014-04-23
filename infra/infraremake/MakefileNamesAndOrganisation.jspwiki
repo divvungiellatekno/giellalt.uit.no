@@ -10,6 +10,8 @@ are common to all languages (thus ''shared''), and they are always located in
 {{$top_srcdir/am-shared}} ({{$top_srcdir}} refers to the language dir, like
 {{sme}}, {{sma}}, etc.).
 
+!!!The "am-shared" dir
+
 There are three types of files in the __am-shared__ dir, each with their own
 file naming scheme:
 
@@ -32,22 +34,43 @@ file naming scheme:
    {{-dir}}. This allows processing abstration over file types independent of
    location, and will make it easier to maintain the core build code for all
    file types.
-* {{vislcg3-include.am}} => process all vislcg3 files
-* {{lexc-include.am}}
-* {{regex-include.am}}
+* {{vislcg3-include.am}} => compile vislcg3 files
+* {{twolc-include.am  }} => compile twolc files
+* {{regex-include.am  }} => compile regex files
 
 3. named after configure option/application-specific targets, and after the
    including file. These files are always included by another include file, and
    the purpose is to avoid filling up the main include file by all sorts of
    optional build code. The first part of the filename follows
    ''the directory part'' of the including file, then __followed by underscore__
-   ({{_}}) followed by the tag for the configure option, and finally ending with
-   {{-include.am}} as usual.
+   ({{ _ }}) followed by the tag for the configure option, and finally ending
+   with {{-include.am}} as usual.
 * {{src_dictionary-include.am}} => included by {{src-dir-include.am}}
 * {{src_oahpa-include.am}}
 * {{src_mt-include.am}}
 
 Summary: it is possible to programmatically identify all three types:
-* main include files contain {{-dir-}}
-* configure option include files contain {{_}}
-* source file general compilation file names include neither
+* main include files contain the string {{ -dir- }}
+* configure option include files contain __underscore__ ({{ _ }}) 
+* general compilation file names based on source type include neither
+
+!!!Other (regular) dirs
+
+The Automake files are everywhere else named {{Makefile.am}}.
+These do always include the Automake include files in {{am-shared/}}, and always
+and only the include file named after the directory which the {{Makefile.am}} is
+located in. That is, the file {{tools/spellcheckers/fstbased/Makefile.am}}
+includes the file {{am-shared/tools-spellcheckers-fstbased-dir-include.am}}.
+
+Therer are a couple of conventions to observe:
+# the target {{clean-local:}} should always be defined in the local
+  {{Makefile.am}} - not in the include files; if there is a need to define
+  clean operations in the include files, it should be through the use of the
+  variable {{CLEANFILES}}, e.g. something like:\\
+  {{CLEANFILES=$(BUILDFILES)}}
+# the include file {{am-shared/silent_build-include.am}} should only be included
+  by the {{*-dir-include.am}} files to avoid double inclusion and subsequent
+  double definitions of the same variables
+
+There might be some violations of these conventions, they should be cleaned up
+as they are found.
