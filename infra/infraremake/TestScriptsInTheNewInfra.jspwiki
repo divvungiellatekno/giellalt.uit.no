@@ -5,6 +5,75 @@ Autotools (Automake, Autoconf, etc., see [1]). It is actually pretty simple:
   exit values
 # add that executable to the {{TESTS}} variable in the {{Makefile.am}} file in
   the dir where the executable is located
+# run the command {{make check}} - this will also rebuild any targets not
+  up-to-date
+
+!!!Existing shell scripts for testing
+
+Presently (January 2014) there are quite a few shell scripts for testing the
+morphology and the lexicon, and nothing else. The following shell scripts are
+found for all languages:
+
+* {{generate-noun-lemmas.sh         }} - will check that the lemma can generate itself
+* {{run-gt-desc-yaml-testcases.sh   }} - will run all yaml tests written for the ''descriptive'' analyser/generator
+* {{run-gt-norm-anayaml-testcases.sh}} - will run yaml test for ''analysis only'' against the normative analyser
+* {{run-gt-norm-genyaml-testcases.sh}} - will run yaml test for ''generation only'' against the normative generator
+* {{run-gt-norm-yaml-testcases.sh   }} - will run all yaml tests written for the ''normative'' analyser/generator
+* {{run-lexc-testcases.sh           }} - will run tests written as part of the lexc source files
+
+Many languages have an extensive set of so called YAML tests,
+[test data written in the yaml format|AddingMorphologicalTestData.html#Yaml+tests].
+Some also have tests written
+[directly in the lexc source code|AddingMorphologicalTestData.html#Lexc+tests].
+But we need more tests. Please use the receipt here to add more tests for
+all sorts of testing needs.
+
+!!!What to add to Makefile.am
+
+All shell scripts or other test scripts that should be run should be listed in
+the variable {{TESTS}}. As we only want to test things that we actually build,
+we only assign test scripts to this variable inside a conditional for building
+the corresponding target. An example from
+{{test/tools/spellcheckers/Makefile.am}}:
+
+{{{
+TESTS=
+
+# Only test spellers if we build spellers:
+if WANT_SPELLERS
+TESTS+=test-zhfst-file.sh
+endif # WANT_SPELLERS
+}}}
+
+That is, the {{TESTS}} variable is empty by default (i.e. no tests will be run),
+but if we have configured the language in question to build spellers, the test
+script {{test-zhfst-file.sh}} will be run.
+
+During development it is common that some tests fail. In such cases the
+test script should also be assigned to the variable {{XFAIL_TESTS}} (in addition
+to the variable {{TESTS}}). This assignment does not have to be conditional,
+since only test scripts also listed in the variable {{TESTS}} will be
+considered.
+
+When the development has progressed to the point where the test actually PASSes,
+that will cause the {{make check}} command to break, with an uneXpected PASS -
+{{XPASS}}. This makes it obvious that a qualitative change has happened.
+From now on the test should always PASS (otherwise it is a regression), and we
+remove the test script from the variable {{XFAIL_TESTS}}. After this the test
+will PASS as expected the next time we run {{make check}}.
+
+If you have tests that test that something ''does'' fail (e.g. when given bad
+input), you should design the test script such that the exit value is zero when
+the actual test fails, and non-zero otherwise. That is, reverse the logic within
+the test script, such that the logic within the {{Makefile.am}} files remains
+the same.
+
+
+!!!Naming conventions for yaml tests
+
+To be written.
+
+!!!Details on how to write new shell scripts
 
 The possible exit values are:
 
@@ -12,10 +81,6 @@ The possible exit values are:
 * 77 - the test was skipped for some reason
 * 99 - a hard failure (such as segmentation fault, etc - not very useful to us)
 * any other value - the test failed
-
-If you have tests that ''should'' fail, then you assign the value of those
-executables to the variable {{XFAIL_TESTS}} (in addition to to the variable
-{{TESTS}}).
 
 If you need to reference data files, you have access to the variable {{$srcdir}}
 (both from Automake and from the environment). This variable points to the
@@ -62,24 +127,6 @@ This script can easily be adapted and extended for our purposes, to e.g. test
 that the output of an analysis matches a certain expected output ({{diff}}
 should exit with {{0}}), or that certain input words all give at least one
 suggestion, etc.
-
-!!!Existing shell scripts for testing
-
-Presently (January 2014) there are quite a few shell scripts for testing the
-morphology and the lexicon, and nothing else. The following shell scripts are
-found for all languages:
-
-* {{generate-noun-lemmas.sh}}          - will check that the lemma can generate itself
-* {{run-gt-desc-yaml-testcases.sh}}    - will run all yaml tests written for the ''descriptive'' analyser/generator
-* {{run-gt-norm-anayaml-testcases.sh}} - will run yaml test for ''analysis only'' against the normative analyser
-* {{run-gt-norm-genyaml-testcases.sh}} - will run yaml test for ''generation only'' against the normative generator
-* {{run-gt-norm-yaml-testcases.sh}}    - will run all yaml tests written for the ''normative'' analyser/generator
-* {{run-lexc-testcases.sh}}            - will run tests written as part of the lexc source files
-
-Many languages have an extensive set of so called YAML tests, test data written
-in the yaml format. Some also have tests written directly in the lexc source
-code. But we need more tests. Please use the receipt here to add more tests for
-all sorts of testing needs.
 
 !!!Footnotes
 
