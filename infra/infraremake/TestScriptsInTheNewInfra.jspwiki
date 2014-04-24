@@ -71,23 +71,49 @@ the same.
 
 !!!Naming conventions for yaml tests
 
-To be written.
+Some parts of the naming conventions are described on
+[this page|AddingMorphologicalTestData.html#Filenames+for+Yaml+tests]. There are
+a couple of additional things to note:
 
-!!!Details on how to write new shell scripts
+* the name of the shell script is completely free form, but should for clarity
+  reflect the fst being tested;
+* the fst specifier in the yaml file name (see the docu linked to above)
+  __must__ be specified in the shell script.
+* the ''location'' of the yaml testing ''shell script'' is crucial - it must be
+  located in a directory within {{test/}} parallell to the directory where the
+  fst being tested is located. That is, if the fst file(s) you want to test is
+  located in {{$GTLANG/tools/mt/apertium/}}, then the shell script for running
+  the yaml tests __must__ be located in {{$GTLANG/test/tools/mt/apertium/}}. The
+  yaml files themselves can be in another directory, in which case that
+  directory must be specified in the shell script. The default is that the yaml
+  files are in the same dir as the shell script for running the yaml tests.
 
+!!Adding yaml tests for a new fst class
+
+To add a new shell script to test a new type of fst('s), it is easiest to just
+copy one of the existing shell scripts, and change the fst specifier at the
+beginning of the shell script. Also consider whether you want to put the yaml
+files in a subdirectory, which must be specified at the same location.
+
+!!!Details on how to write new testing shell scripts
+
+As mentioned above, any shell script or other script (perl, python) - even a
+compiled binary - can serve as a test script. The only requirement is that the
+correct exit value is produced depending on the outcome of the test.
 The possible exit values are:
 
-* 0 - the test succeeded
-* 77 - the test was skipped for some reason
+*  0 - the test succeeded
+* 77 - the test was skipped for some reason (test data not found, some other
+       precondition not met)
 * 99 - a hard failure (such as segmentation fault, etc - not very useful to us)
 * any other value - the test failed
 
 If you need to reference data files, you have access to the variable {{$srcdir}}
 (both from Automake and from the environment). This variable points to the
-source directory of the test script, ie the dir in which the Makefile.am file is
-located. ''Every other location must be relative to this dir!'' If done
+source directory of the test script, i.e. the dir in which the Makefile.am file
+is located. ''Every other location must be relative to this dir!'' If done
 properly, the tests will then work also when the source code is built and tested
-out-of-source.
+out-of-source (so-called VPATH building).
 
 Test scripts can be as simple or complicated as you want, as long as it
 fullfills the basic requirements:
