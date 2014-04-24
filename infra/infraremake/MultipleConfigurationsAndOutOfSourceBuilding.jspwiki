@@ -47,6 +47,28 @@ to compare the output of fst's from different configurations, etc., since the
 resulting fst's are in different build trees, and thus aren't overwritten by
 the next make.
 
+This can also be used to turn off some of the default targets, to speed up the
+compilation process as much as possible for the targets one wants. Here is an
+example of how to configure for building spellers, and spellers only:
+
+{{{
+cd $GTLANG
+mkdir build
+cd build
+mkdir spellers
+cd spellers
+../../configure --with-hfst --without-xfst --enable-spellers \
+                --disable-morphology --disable-generation
+make
+}}}
+
+This will turn off compilation of the regular analysers and generators, and will
+for some languages save considerable compilation time. A similar strategy can
+of course be put to use for other specialised targets like MT.
+(There seems to be some shortcomings that should be fixed, vislcg3 files and
+generated documentation seems to be built always irrespective of configuration
+options.)
+
 __NB!__ When using out-of-source / VPATH building, the aliases {{usme}},
 {{dsme}}, etc. do __NOT__ work. This is because the aliases have hard-coded
 paths relative to {{$GTHOME/langs/}}. The plan is to replace the aliases with
