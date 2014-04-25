@@ -57,8 +57,11 @@ mkdir build
 cd build
 mkdir spellers
 cd spellers
-../../configure --with-hfst --without-xfst --enable-spellers \
-                --disable-morphology --disable-generation
+../../configure --with-hfst --without-xfst \
+                --enable-spellers \
+                --disable-analysers \
+                --disable-generators \
+                --disable-transcriptors
 make
 }}}
 
