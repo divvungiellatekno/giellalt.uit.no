@@ -21,15 +21,18 @@ The adaption is basically that one needs to check that the tag string used for
 generating the lemma form actually corresponds to what is used in the language
 (and there are languages where the concept of a "lemma" doesn't make that much
 sense - if that is so, remove the test script by removing it from the {{TESTS}}
-variable in {{Makefile.am}}).
+variable in {{test/src/morphology/Makefile.am}}).
 
 Complicating factors might be that some nouns do not inflect in singular (the
 usual lemma form), and other forms of irregular lemma creation.
 
 The template only gives noun lemma generation, but it is easy to use that script
-as a tempate for doing teh same for verbs, adjectives and proper nouns. At least
+as a tempate for doing the same for verbs, adjectives and proper nouns. At least
 North, Julev and South Sámi have more elaborate test scripts for all of these
 parts-of-speeches. Have a look there for inspiration.
+
+Note that this setup does not work for languages with gender systems, dividing
+nouns into different classes. 
 
 !!!Yaml tests
 
