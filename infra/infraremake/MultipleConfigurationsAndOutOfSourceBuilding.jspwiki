@@ -113,6 +113,20 @@ The {{--enable-langs}} option is understood by the {{configure}} script within
 {{$GTHOME/langs/}}, the rest of the options are passed on to the {{configure}}
 scripts in the language subdirectories.
 
+Here is a configuration for compiling and testing all but a few languages:
+
+{{{
+ ../../configure --enable-langs="bxr chp ciw cor crk est fao fin fkv hdn ipk \
+ izh kca kpv liv lut mdf mhr mns mrj myv nio nob olo ron rus sjd sma sme smj \
+ smn sms som udm vep vro yrk"
+}}}
+
+The only languages left out are: {{kal, rup, sje, tat, tku, vot}}. Of these six
+languages {{kal}} builds fine, but takes an awful lot of time, whereas the rest
+have lexc errors that must be cleaned up. All other languages build just fine.
+This configuration only builds Xerox since it is so much faster, but this makes
+for a nice check that the code is syntactically valid.
+
 __NB!__ During configuration, the configuration script will traverse all
 language directories and it looks like it will build all of them. But when it
 comes to build time, only the specified languages will actually be built.
