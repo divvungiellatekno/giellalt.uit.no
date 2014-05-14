@@ -18,9 +18,9 @@
 
 !!Exit values
 
-Must be one of:
+Must be __0 - 255__, where some have a special meaning:
 ;  0 : everything went ok = PASS
-; 77 : some precondition was not met, we need to SKIP
+; 77 : some precondition was not met, we need to SKIP the test
 ; 99 : hard error - we can't continue - STOP
 ; everything else : FAIL (usually just __1__)
 
@@ -42,6 +42,11 @@ Check that all prerequisites are met, and bail out if not (exit 77/SKIP)
 !!Do not rely on anything outside the own language dir
 
 * all paths should be relative to the local dir
+* do not reference {{$GTHOME}} and similar variables
+* the only variables you can trust are:
+** {{$srcdir}} - the directory in which the original test script is located
+** the variables defined and exported by {{configure.ac}} - but __ONLY__ if you
+   process the testing script with {{configure.ac}} (details about this later)
 
 !!should use variables for configured tools
 
@@ -51,4 +56,106 @@ Check that all prerequisites are met, and bail out if not (exit 77/SKIP)
 
 !!!test script content
 
-!!!how to run the tests
+* define variables
+* read in test data if needed
+* test that all tools and data are found
+* make a loop for xfst and hfst if relevant
+* write the real test
+
+!!Define variables
+
+Typically you start a shell script by defining variables for the most important
+things. Here's one example from the test script {{generate-noun-lemmas.sh.in}}:
+
+{{{
+###### Variables: #######
+sourcefile=${srcdir}/../../../src/morphology/stems/nouns.lexc
+lemmas=./nouns.txt
+generatedlemmas=./gen-nouns
+failedlemmas=./fail-lemmas
+generatorfile=./../../../src/generator-gt-norm
+resultfile=lemma-gen-diff
+}}}
+
+!Variables from configure.ac
+
+If your testing script relies on a lot of external tools, it is a good idea to
+make sure that the tools are actually installed on the system. This is the job
+of the {{configure.ac}} file. To make use of this feature, there are a couple of
+things to remember:
+
+* the test script filename should end in {{.sh.in}}
+* the testing script must be processed by {{configure.ac}} — this is done by
+  adding two lines as follows to that file:
+
+{{{
+AC_CONFIG_FILES([test/tools/spellcheckers/test-zhfst-file.sh], \
+      [chmod a+x test/tools/spellcheckers/test-zhfst-file.sh])
+}}}
+
+The first line tells autoconf to process the {{*.sh.in}} file, and produce the
+actual {{*.sh}} file, the second line ensures that the final shell file is
+executable.
+
+In this processing all configure.ac variables will be replaced with their actual
+value as identifed during the configuration phase. Such variables look like {{@VARIABLE@}} in the test script.
+
+!!Variables from configure.ac - an example
+* we need to do some {{awk}} processing as part of the test
+* we use {{configure.ac}} to check for the availability of an {{awk}} tool
+* typically, that will set a corresponding variable {{AWK}} in {{configure}}
+* you reference this variable in your {{*.sh.in}} file, and when configured,
+  the variable is replaced with the actual value
+* the variable looks like this in the {{*.sh.in}} file: {{@AWK@}}
+
+That is, in a test file {{test-lemmas.sh.in}} we could write something like:
+
+{{{
+AWK=@AWK@
+}}}
+
+The corresponding test file {{test-lemmas.sh}} will after configuration look
+something like:
+
+{{{
+AWK=/opt/local/gawk
+}}}
+
+Then we can add tests in the testing script to check whether {{$AWK}} is empty,
+and if it is, the test script can bail out with a SKIP return value (__77__).
+
+!!!Running the tests
+
+* basic commands
+* what happens upon FAILs
+* what  outcomes can there be?
+
+!!Basic commands
+
+* {{make check}} - runs all defined tests
+* {{make check TESTS=a-test-script.sh}} - will run only the test
+  script {{a-test-script.sh}}
+
+To run a subset of tests, {{cd}} into the subdir containing the subset of tests
+you want to run, and do {{make check}} there. Only the tests in that directory
+and its subdirectories will be run.
+
+!!What happens when something fails
+
+The tests are run on a per directory basis, which means that all tests in a
+directory will be run, and then {{make}} will give a report.
+
+If some of the tests FAILed, then that is an error in the view of {{make}}, and
+{{make}} stops. This is a property of {{make}} and the {{Automake}} system. You
+can override this behavior with option {{ -i, --ignore-errors}}. The problem
+with using {{ -i}} is of course that you risk ignoring errors, since the error
+message can easily scroll out of view before {{make}} is done.
+
+!!What outcomes can there be?
+
+Testing within the Automake framework can have four outcomes:
+
+; PASS : everything is ok
+; FAIL : some condition in the test was NOT met
+; XFAIL : some condition in the test was NOT met, but we are aware of the issue, and will handle it later => testing will CONTINUE despite the FAIL
+; XPASS : everything is ok but we didn't know - we expected a FAIL, but got a PASS => testing will STOP baecause of this, to ensure that the developer notices the new state of affairs
