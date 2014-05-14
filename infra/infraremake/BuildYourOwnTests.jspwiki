@@ -1,0 +1,54 @@
+!!!How to write your own shell scripts for testing
+
+!!!Overview
+
+* requirements
+* what to test
+* test script content
+* how to run the tests
+
+!!!Requirements
+
+* be __robust__ - check that all prerequisites are met, and bail out if not
+* overall goal: all scripts should be __portable__
+* exit value according to AM standards
+* should not rely on anything outside the own language dir
+* should use variables for configured tools
+* should use both xfst and hfst, depending on what has been configured
+
+!!Exit values
+
+Must be one of:
+;  0 : everything went ok = PASS
+; 77 : some precondition was not met, we need to SKIP
+; 99 : hard error - we can't continue - STOP
+; everything else : FAIL (usually just __1__)
+
+!!Robustness
+Check that all prerequisites are met, and bail out if not (exit 77/SKIP)
+
+* are fst's found?
+* do we find the input data files
+* do we have all tools needed?
+
+!!Portability
+
+* work on all systems (except Windows)
+* work both when you have checked out all of $GTHOME and when you have checked
+  out only $GTCORE and one language
+* work when the language dir (when checking out single languages) is called
+  something else than default
+
+!!Do not rely on anything outside the own language dir
+
+* all paths should be relative to the local dir
+
+!!should use variables for configured tools
+
+!!should use both xfst and hfst, depending on what has been configured
+
+!!!what to test
+
+!!!test script content
+
+!!!how to run the tests
