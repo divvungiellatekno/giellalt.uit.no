@@ -7,6 +7,10 @@
 * test script content
 * how to run the tests
 
+What this is NOT: this is NOT an overview of the YAML testing framework. You can
+find a description of YAML testing on a
+[separate page|AddingMorphologicalTestData.html#Yaml+tests].
+
 !!!Requirements
 
 * be __robust__ - check that all prerequisites are met, and bail out if not
@@ -15,6 +19,7 @@
 * should not rely on anything outside the own language dir
 * should use variables for configured tools
 * should use both xfst and hfst, depending on what has been configured
+* test only modules that have been built
 
 !!Exit values
 
@@ -52,15 +57,50 @@ Check that all prerequisites are met, and bail out if not (exit 77/SKIP)
 
 !!should use both xfst and hfst, depending on what has been configured
 
-!!!what to test
+!!Test only modules that have been built
+
+Example:
+# test only spellers if speller building have been turned on
+
+How do we do this?
+# By using Automake conditionals:
+
+{{{
+TESTS=
+
+if WANT_GENERATION
+# Add your shell scripts for running tests requiring only a generator:
+TESTS+=test-noun-generation.sh \
+	   test-verb-generation.sh \
+	   test-adj-generation.sh \
+	   test-propernoun-generation.sh
+
+endif # WANT_GENERATION
+}}}
+
+There is a list of all presently defined conditionals
+[here|ListOfDefinedAutomakeConditionals.html].
 
 !!!test script content
 
+* what to test
 * define variables
 * read in test data if needed
 * test that all tools and data are found
 * make a loop for xfst and hfst if relevant
 * write the real test
+
+!!What to test
+
+You can test anything that is scriptable or programable. The only requirement is
+that the answer can be captured as a YES or NO, i.e. PASS or FAIL.
+
+Here are some ideas:
+* test that a syntactic analysis is what you expect (compare with expected, FAIL
+  if there is a diff)
+* test whether a given non-word gets a specific suggestion in a speller
+* test that the hyphenation patterns are correct (this could probably be easily
+  done using the YAML testing framework)
 
 !!Define variables
 
