@@ -19,7 +19,9 @@ find a description of YAML testing on a
 * should use variables for configured tools
 * should use both xfst and hfst, depending on what has been configured
 * test only modules that have been built
+
 !!Robustness
+
 Check that all prerequisites are met, and bail out if not (exit 77/SKIP)
 
 * are fst's found?
@@ -71,7 +73,7 @@ By following this practice, the system becomes more robust and portable.
 
 Details of how to actually do this is given further down.
 
-!!should use both xfst and hfst
+!!It should use both xfst and hfst
 
 ... depending on what has been configured.
 
@@ -80,9 +82,9 @@ meaning that some have the Xerox tools installed, some have Hfst, and some have
 both.
 
 The test scripts should check for what has actually been built, and what is
-available on the system, and use the one that is available - or both.
+available on the system, and use the one or both that is available or configured.
 
-We'll return to the details.
+We'll return to the details further down.
 
 !!Test only modules that have been built
 
@@ -283,7 +285,10 @@ grep ";" $sourcefile | grep -v "^\!" \
 	| sort -u > Rnouns.txt
 }}}
 
-!!write the real test
+!!Write the real test
+
+This is an excerpt from the {{sma}} test file mentioned earlier, and should only
+serve as an example:
 
 {{{
 ###### Test non-comopunds: #######
@@ -299,6 +304,9 @@ grep ";" $sourcefile | grep -v "^\!" \
 			| $lookuptool $generatorfile.$f | cut -f2 \
 			| grep -v "^$" >> analnouns.$f.txt 
 }}}
+
+The full test script file can be found
+[here|https://victorio.uit.no/langtech/trunk/langs/sma/test/src/morphology/test-noun-generation.sh.in].
 
 !!Add the test script to Makefile.am
 
@@ -324,8 +332,8 @@ XFAIL_TESTS=generate-noun-lemmas.sh \
 
 !!Add the test script to configure.ac
 
-If - as in this example - we have written an *.in file we need to process it
-with configure to replace {{@VARIABLE@}} style variables with their configure
+If we have written an *.in file - as in this example - we need to process it
+with configure to replace {{@VARIABLE@}} style variables with their {{configure}}
 values. To do that, you need to add two lines like the following to
 {{configure.ac}}:
 
@@ -334,8 +342,8 @@ AC_CONFIG_FILES([test/src/morphology/test-noun-generation.sh], \
       [chmod a+x test/src/morphology/test-noun-generation.sh])
 }}}
 
-With these two lines, {{configure}} will be able to produce the shell script as
-we added it to {{Makefile.am}} above.
+With these two lines, {{configure}} will be able to produce the shell script
+that we added to {{Makefile.am}} above.
 
 !!!How to run the tests and interpret the results
 
@@ -390,7 +398,7 @@ message can easily scroll out of view before {{make}} is done.
 
 !!What outcomes can there be?
 
-Testing within the Automake framework can have four outcomes:
+Testing within the Automake framework can have five outcomes:
 
 ; PASS  : everything is ok
 ; FAIL  : some condition in the test was NOT met
@@ -400,3 +408,4 @@ Testing within the Automake framework can have four outcomes:
 ; XPASS : everything is ok but we didn't know - we expected a FAIL, but got
           a PASS (an uneXpected PASS) => testing will STOP baecause of this,
           to ensure that the developer notices the new state of affairs
+; SKIP  : some precondition was not met, and the test was not performed.
