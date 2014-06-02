@@ -4,7 +4,7 @@ This is a receipt for setting up HFST3, with the backends we need. See the HFST3
 README file for further details, and how to turn on or off specific backens if
 needed or wanted.
 
-__Up-to-date as of HFST 3.6__
+__NB!__ The information below is up-to-date as of __HFST 3.7.1__.
 
 Presently, HFST3 supports three different backends, all enabled by default:
 * __OpenFST__ - weighted transducers (''default'')
@@ -26,50 +26,51 @@ file for further details.
 
 !!Checkout and configuration
 
-We assume installation from svn here:
+We assume installation from svn here. If you have downloaded a tarball from
+[sourceforge|https://sourceforge.net/projects/hfst/files/latest/download?source=files],
+unzip and untar, and go directly to the {{./configure}} step.
 
 {{{
 svn co http://svn.code.sf.net/p/hfst/code/trunk/hfst3
 cd hfst3/
 ./autogen.sh
-./configure --enable-lexc-wrapper --enable-xfst --enable-foma-wrapper  --enable-proc
+./configure --without-foma --with-unicode-handler=ICU --enable-all-tools
 }}}
 
-The configuration above is the minimum we need. To check what other options there are for enabling other backends and functions,
+The configuration above is the default. To check what other options there are,
 do {{./configure --help}}.
 
-The foma wrapper (and thus foma itself) should become optional in the near
-future.
+The Foma backend is now optional (all xfst functionality is available as part
+of the regular hfst tools), and Foma does in fact contain a bug that prevents
+some languages from building. Turning off Foma is thus recommended until this
+bug has been fixed.
 
-A simpler but complete configuration is the following:
+To avoid the very wordy output of {{make}}, and get only essential messages,
+add the following {{./configure}} option:
 
 {{{
-./configure --with-unicode-handler=libicu --enable-all-tools --enable-silent-rules
+--enable-silent-rules
 }}}
 
 !!Special configuration on MacOSX 10.9
 
-Due to new default compiler settings on MacOSX 10.9 (with which the hfst code - presumably the openfst backen - is not compatible), one needs the following configuration command:
+Due to new default compiler settings on MacOSX 10.9 (with which the hfst code
+- presumably the openfst backend - is not compatible), one needs the following
+configuration:
 
 {{{
-./configure --with-unicode-handler=libicu --enable-all-tools --enable-silent-rules CXXFLAGS="-I/usr/include/c++/4.2.1" LDFLAGS=" -stdlib=libstdc++"
-}}}
-
-!!Missing .hh files
-
-On some system {{.hh}} files built from {{.yy}} files must be built in a
-separate build step:
-
-{{{
-./scripts/generate-cc-files.sh
+./configure --without-foma --with-unicode-handler=ICU --enable-all-tools \
+            CXXFLAGS="-I/usr/include/c++/4.2.1" LDFLAGS=" -stdlib=libstdc++"
 }}}
 
 !!Make and install
 
-The final steps to build and install {{hfst}} after the configuration and
-{{.hh}} files are as follows:
+The final steps to build and install {{hfst}} after the configuration are as
+follows (the script to generate {{.cc}} files may only be required on some
+systems, but does no harm):
 
 {{{
+./scripts/generate-cc-files.sh
 make
 sudo make install
 }}}
@@ -78,11 +79,12 @@ sudo make install
 
 !!MacOSX 10.6
 
-OSX 10.6 and earlier require newer versions of {{automake}} and {{autoconf}}
+When building from the subversion source code,
+OSX 10.6 and earlier requires newer versions of {{automake}} and {{autoconf}}
 than provided by the system, and {{hfst-ospell}} requires {{pkg-config}} to
 configure. Also the {{flex}} and {{bison}} versions installed breaks {{hfst}}
 compilation. Ensure you have MacPorts installed, then do the following
-__first__:
+__before anything else__:
 
 {{{
 sudo port install automake autoconf flex bison pkgconfig
