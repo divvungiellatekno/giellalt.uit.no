@@ -25,9 +25,11 @@ Adding password for user sally</source>
       <section>
           <title>Adding new aliases for svn mail (new sets of files to send mail about)</title>
 
-<p>New aliases for groups of files for svnshould be made to
-/etc/aliases. Thereafter, they will be used in the so-called
-post-commit hook. Do as follows:</p>
+<p>New aliases for groups of files for svnshould be made to the file
+<code>/etc/aliases</code>. Thereafter, they will be used in the
+so-called post-commit hook (i.e. their svn messages will be sent to
+the members of the alias in question. Do as follows:</p>
+
           <ul>
               <li>Make a new alias <code>aliasname</code> for svn mail
               by adding a <em>new line</em> in the file /etc/aliases
@@ -55,6 +57,9 @@ post-commit hook. Do as follows:</p>
                   </ul>
               </li>
           </ul>
+<p>
+<note>TODO: Document the implementation of this</note>
+</p>
       </section>
    </body>
 </document>
