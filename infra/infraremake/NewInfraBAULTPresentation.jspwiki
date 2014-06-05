@@ -7,10 +7,10 @@ Sjur Nørstebø Moshagen, Divvun, UiT Norgga árktalaš universitehta
 !!!Content
 * overview
 * the core
-* template and merge
+* templates and merging
 * languages
-* build structure
 * linguistic data
+* build structure
 * testing
 * documentation
 * the tools we produce
@@ -28,6 +28,7 @@ Main points for the design of the infrastructure:
 * (relatively)  easy to maintain (as few repetetive tasks as possible)
 * support existing source code and language technology -> lexc/twolc/xfst scripts + vislcg3 (all with open-source compilers and run-time engines)
 
+Developed by Tommi Pirinen and Sjur Moshagen.
 
 A schematic overview of the main components of the infrastructure:
 
@@ -75,14 +76,14 @@ There are presently 52 such regexes.
 * Shared Scripts/Programs
 * Document Schemas
 
-!!!Template And Merge
+!!!Templates And Merging
 
 * template content
 * merging the template
 
 !!Template Content
 
-Briefly described earlier, here is what you will find:
+Briefly described earlier, this is what you will find:
 * lexc files
 * twolc/xfscript files
 * cg3 files
@@ -94,6 +95,53 @@ Briefly described earlier, here is what you will find:
 
 [../images/newinfralayout.png]
 [../images/newinfralayout2.png]
+
+!!Template content layout as ASCII art
+
+{{{
+.
+├── am-shared
+├── doc
+├── src
+│   ├── filters
+│   ├── hyphenation
+│   ├── morphology
+│   │   ├── affixes
+│   │   └── stems
+│   ├── orthography
+│   ├── phonetics
+│   ├── phonology
+│   ├── syntax
+│   ├── tagsets
+│   └── transcriptions
+├── test
+│   ├── data
+│   ├── src
+│   │   ├── dict-gt-yamls
+│   │   ├── gt-desc-yamls
+│   │   ├── gt-norm-yamls
+│   │   ├── morphology
+│   │   ├── phonology
+│   │   └── syntax
+│   └── tools
+│       ├── mt
+│       │   └── apertium
+│       └── spellcheckers
+└── tools
+    ├── grammarcheckers
+    ├── mt
+    │   └── apertium
+    │       ├── filters
+    │       └── tagsets
+    ├── preprocess
+    ├── shellscripts
+    └── spellcheckers
+        ├── fstbased
+        │   ├── foma
+        │   └── hfst
+        └── listbased
+            └── hunspell
+}}}
 
 !!Template Content (II)
 
@@ -136,6 +184,19 @@ svn co https://victorio.uit.no/langtech/trunk/langs/ISO639-3-CODE/
 
 We still have a number of languages located in an older infrastructure system - these will be moved to the new infra as time permits.
 
+!!!Linguistic data
+
+Formats:
+* lexc
+* twolc
+* xfst scripts
+* constraint grammar (VISLCG3 style)
+
+Standardised tag sets:
+* non-linguistic tag sets the same for all languages
+* linguistic tags the same or similar as far as possible
+* "namespace"-like prefix for certain domains, e.g. {{+Err/}} and {{+Sem/}}
+
 !!!Build Structure
 
 Support for:
@@ -162,7 +223,7 @@ This is done by first building a {{*.tmp}} file, and using a fall-back target th
 
 The language-specific build steps are specified in a (mostly) clearly marked section in the Makefile.am files.
 
-!!Testing
+!!!Testing
 
 Testing is done with the command {{make check}}, as in all Autotool-based build
 systems. There is built-in support for two types of tests:
@@ -172,12 +233,12 @@ systems. There is built-in support for two types of tests:
 
 In addition, there is the general support for testing in Autotools (or more specifically in {{automake}}), meaning that it is possible to add test scripts for whatever you like.
 
-!Test directory
+!!Test directory
 Most test scripts are located within the {{test/}} directory, within which there is a mirror copy of the language's directory tree, to keep the tests for different parts of the grammar separate from each other:
 
 [../images/newinfratestinglayout.png]
 
-!Yaml tests
+!!Yaml tests
 
 * test files written using yaml syntax
 * the test data follows a very simple layout (in addition to a header):
@@ -210,7 +271,7 @@ pushd /Users/smo036/langtech/main/langs/liv/build/xerox/test/src; \
 ../../../../test/src/gt-norm-yamls/N-aandam_gt-norm.yaml; popd
 }}}
 
-!Lexc tests
+!!Lexc tests
 
 The in-source {{lexc}} tests are actually a variant of the yaml tests,
 although the format is slightly different:
@@ -230,7 +291,7 @@ All lexc files are looped over, and if test cases are found, they are extracted
 and run against the specified fst. The feedback to the developer is the same as
 for the yaml tests, including the command to repeat in case of fails.
 
-!Twolc tests
+!!Twolc tests
 
 If one wants to test specific two-level rules one can add test pairs to the
 twolc files. Support for this type of testing has only recently been added, and
@@ -250,7 +311,7 @@ The test data looks like the following:
 The yaml and lexc tests will also de facto test the correctness of the two-level
 rules.
 
-!!Documentation
+!!!Documentation
 
 The infrastructure supports extraction of in-source documentation written as
 comments in a specific format. The exact format is specified on a
@@ -264,7 +325,7 @@ The format supports the use of a couple of variables to extract such things as
 lexicon names, a line of code, etc. The extracted documentation must follow the
 [jspwiki syntax|http://www.jspwiki.org/wiki/TextFormattingRules].
 
-!Documentation example
+!!Documentation example
 
 {{{
 ! ======================
@@ -297,7 +358,7 @@ which can be seen rendered online as html here:
 
 !!!The Targets, Tools And Packages Produced By The Infrastructure
 
-The list is growing slowly but contains roughly the following at present:
+The list is constantly growing and contains roughly the following at present:
 * morphological analysers for different purposes
 * morphological generators for different purposes
 * syllabification transducers
@@ -340,7 +401,7 @@ On a slightly longer scale there are plans for:
 More info at [http://giellatekno.uit.no/doc/infra/GettingStarted.html] \\
 and [http://giellatekno.uit.no/doc/infra/infraremake/Index.html]
 
-!!!Thank you!
+!!!Thank you! Kiitos!
 
 __Thanks for your attention!__
 
