@@ -24,20 +24,19 @@ Another effect of changes to the compilation of third party tools is that the
 configure and make commands have to be slightly modified for Hfst to build:
 
 {{{
-./configure --enable-lexc --enable-proc --enable-xfst \
-    --without-sfst \
+./configure --without-foma --with-unicode-handler=glib --enable-all-tools \
     CXXFLAGS="-I/usr/include/c++/4.2.1" LDFLAGS=" -stdlib=libstdc++"
 }}}
 
 Comments:
-* the first line lists the optional tools we need for the Divvun/GT infra
-* the second line is presently needed because of a bug in the SFST code (it
-  hasn't built in a while - this is irrespective of Maverick)
-* the third line is the additional parameters needed for Hfst to build on
+* the first line lists the default configuration we use for the Divvun/GT infra
+* the second line is the additional parameters needed for Hfst to build on
   OSX 10.9 / Maverick
 ** actually, the CXXFLAGS option is because of a bug in the OpenFST backend
    code([1]) meaning that the only Maverick specific issue is the LDFLAGS
    option([2])
+
+For general info on how to build HFST, see [this page|compiling_HFST3.html].
 
 !!!Summary of linguistic features/properties in MacOSX 10.9 / Maverick
 

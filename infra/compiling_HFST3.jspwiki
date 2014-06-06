@@ -34,7 +34,7 @@ unzip and untar, and go directly to the {{./configure}} step.
 svn co http://svn.code.sf.net/p/hfst/code/trunk/hfst3
 cd hfst3/
 ./autogen.sh
-./configure --without-foma --with-unicode-handler=ICU --enable-all-tools
+./configure --without-foma --with-unicode-handler=glib --enable-all-tools
 }}}
 
 The configuration above is the default. To check what other options there are,
@@ -59,7 +59,7 @@ Due to new default compiler settings on MacOSX 10.9 (with which the hfst code
 configuration:
 
 {{{
-./configure --without-foma --with-unicode-handler=ICU --enable-all-tools \
+./configure --without-foma --with-unicode-handler=glib --enable-all-tools \
             CXXFLAGS="-I/usr/include/c++/4.2.1" LDFLAGS=" -stdlib=libstdc++"
 }}}
 
