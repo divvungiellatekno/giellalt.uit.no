@@ -38,19 +38,22 @@ is from [ISO 639-3|http://en.wikipedia.org/wiki/List_of_ISO_639-3_codes].
 
 Each folder contains the following folders:
 
-* am-shared (''automake shared'', common commands for fst compilation, never changed here, only in gtcore/langs-templates)
-* doc (folder where we write language-specific documentation)
-* m4 (support files for compilation)
-* src (this is where the linguistics files are)
-** filters (language-specific filters)
-** hyphenation (each phenomenon its folder)
-** morphology (see below)
-** orthography (capital letters, spellrelax)
-** phonetics (for different scripts for phonetic transcription)
-** phonology (morphophonology: the twolc files)
-** syntax (see below)
-* test (see below)
-* tools (proofing tools files)
+* {{am-shared}} (''automake shared'', common commands for fst compilation,
+  never changed here, only in gtcore/langs-templates)
+* {{doc}} (folder where we write language-specific documentation)
+* {{m4}} (support files for compilation)
+* {{misc}} (a grab bag dir for anything you don't want in svn - all files are
+  ignored)
+* {{src}} (this is where the linguistic source files are)
+** {{filters}} (language-specific filters)
+** {{hyphenation}} (each phenomenon its folder)
+** {{morphology}} (see below)
+** {{orthography}} (capital letters, spellrelax)
+** {{phonetics}} (for different scripts for phonetic transcription)
+** {{phonology}} (morphophonology: the twolc files)
+** {{syntax}} (see below)
+* {{test}} (see below)
+* {{tools}} (tools we build, both proofing tools and other tools)
 
 Here's a tree view of the und template dir (and thus the dir structure of all
 languages):
