@@ -3,26 +3,44 @@
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
   <header>
-    <title>Preprocesor for Saami language tools</title>
-
-    <authors>
-      <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
-
-      <person email="borre.gaup@uit.no" name="Børre Gaup" />
-
-      <person email="saara.huhmarniemi@helsinki.fi" name="Saara Huhmarniemi" />
-    </authors>
+    <title>Preprocesor for the Giellatekno/Divvun languages</title>
   </header>
 
   <body>
     <section>
       <title>Preprocessor for Saami language tools</title>
 
-      <p>Usage:</p>
+      <p>The preprocessor splits text into tokens (sentences and words).</p>
+
+      <p>At present, our preprocessor is a perlscript, this file:
+      <code>$GTHOME/gt/script/preprocess</code>. For North Saami,
+      there is a Makefile routine ("make abbr GTLANG=sme" in gt/),
+      this routine extracts abbreviations and multiword expressions
+      from the lexc code, classifies abbreviations according to
+      behaviour in the sentence, and expands the multiword expressions
+      in all cases.</p>
+
+      <p> For the other languages, this routine is not available at
+      present (summer 2014). For these languages, a file
+      <code>abbr.txt</code> must be manually compiled and put in the
+      <code>tools/preprocess/</code> folder of the language in
+      question.  </p>
+
+      <p>The preprocessor file is common to all languages. It should
+      be parametrised, certain languages, such as Skolt Saami and
+      Haida, have very deviant orthographic conventions when it comes
+      to punctuation marks.</p>
+
+      <p>A further goal is to replace, or supplement, the preprocess
+      file with an fst-based preprocessor.</p>
+
+    </section>
+    <section>
+      <title>Usage</title>
 
       <source>Usage: preprocess [OPTIONS] FILE
 Split text in FILE into sentences and words.
-Options:
+Options (note that all options are not available for most languages):
 
 -connect=&lt;list&gt;  comma separated list of words which connect expressions
                  like fisk- og vilthandelen
@@ -43,9 +61,11 @@ Options:
 --no-xml-out     Used together with --xml, does not print the xml-tags.
 -n</source>
 
-      <p>Example use :</p>
+      <p>Example use in new and old infra:</p>
 
-      <source>cat file.txt | preprocess --abbr=langs/sme/src/syntax/abbr.txt | lookup ...</source>
+      <source>cat file.txt | preprocess --abbr=$GTHOME/langs/sma/tools/preprocess/abbr.txt | lookup ...</source>
+
+      <source>cat file.txt | preprocess --abbr=$GTHOME/gt/sme/bin/abbr.txt | lookup ...</source>
 
       <section>
         <title>Overview and intro</title>
