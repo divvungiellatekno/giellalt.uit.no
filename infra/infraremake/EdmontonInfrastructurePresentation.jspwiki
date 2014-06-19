@@ -1,0 +1,74 @@
+!!!Content
+
+Mål: overordna overblikk, ingen tekniske detaljar
+
+__Frå lingvistsynspunkt__
+
+* background
+* Katalogstruktur
+* Kjeldefiler
+* Testing
+* Dokumentasjon
+* Språkspesifikke vs språkuavhengige data
+
+!!!Background
+
+!!The problem
+
+* the old infratructure a patchwork of copy and paste
+* new languages being added all the time
+* also new features and new tools added for some languages,
+** ... but they would not become available for other languages without
+   more error-prone copy and paste
+* Hfst added as a hack on top of the support for the Xerox tools
+* way too time-consuming and boring to maintain (mainly by me)
+
+!!The plan
+
+To create an infrastructure that:
+* scales well both regarding languages and tools
+* has full parity between Hfst and Xerox
+* treats all languages the same
+* is consistent from language to language, supporting cross-language cooperation
+
+!!The solution
+
+The rest of the presentation
+
+!!!General principles
+
+* Be explicit (non-cryptic catalogue and file names)
+* Be clear (files should be found in non-surprising locations)
+* Keep conventions identical from language to language whenever possible
+* Divide language-dependent and language-independent code
+* Reuse resources
+* Know the setup of one language -- know the setup of them all
+* All tools built for all languages
+* Parametrise the build process
+
+
+!!!Conventions
+
+{{{
+src for source files
+    folders morphology/stems, morphology/affixes, phonolog
+    stem files: nouns.lexc, verbs.lexc, particles.lexc, ...
+    affix files: nouns.lexc, verbs.lexc
+}}}
+
+!!!The core
+
+Something here
+
+
+!!!The tools
+
+* Analysers
+* Generators
+* Number transcriptors
+* Specialised analysers and generators
+* Spellrelax
+* Disambiguators and parsers
+* Spellers
+* Grammar checkers
+
