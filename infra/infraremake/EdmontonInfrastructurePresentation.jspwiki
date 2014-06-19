@@ -2,7 +2,7 @@
 
 University of Alberta, Edmonton, June 19th
 
-Sjur Moshagen, UiT The Arctic University of Norway
+Sjur Moshagen & Trond Trosterud, UiT The Arctic University of Norway
 
 !!!Content
 
@@ -29,7 +29,7 @@ Sjur Moshagen, UiT The Arctic University of Norway
    error-prone copy and paste
 * Hfst was added as a hack on top of the support for the Xerox tools
 ** (Xerox = the first fst compiler; Hfst = an open-source implementation)
-* it was way too time-consuming and boring to maintain (mainly by me)
+* it was way too time-consuming and boring to maintain (mainly by Sjur)
 
 !!The plan
 
@@ -65,16 +65,6 @@ A schematic overview of the main components of the infrastructure:
 # Know the basic setup of one language -- know the setup of them all
 # Possibility for all tools to be built for all languages
 # Parametrise the build process
-
-!!Two startup scenarios
-
-* Add a new language that does not have machine-readable resources ("Blackfoot")
-* Add an existing morphological analyser in an incompatible format, 
-  in order to generate the full range of tools offered here ("Innu")
-
-In the latter case it could be possible and even preferable to script the
-conversion from the original format to the lexc format, to make it possible to
-reimport or update the data
 
 !!What is the infrastructure?
 
@@ -275,6 +265,7 @@ lexicon names, a line of code, etc.
 * add grammatical functions
 * add dependency relations
 
+
 !!The pipeline for grammar checking
 
 * take text
@@ -285,6 +276,16 @@ lexicon names, a line of code, etc.
 * mark them 
 * give message to the writer
 
+
+!!Two startup scenarios
+
+* Add a new language that does not have machine-readable resources ("Blackfoot")
+* Add an existing morphological analyser in an incompatible format, 
+  in order to generate the full range of tools offered here ("Innu")
+
+In the latter case it could be possible and even preferable to script the
+conversion from the original format to the lexc format, to make it possible to
+reimport or update the data.
 
 
 !!!Summary
