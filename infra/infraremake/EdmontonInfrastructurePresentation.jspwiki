@@ -35,7 +35,15 @@ To create an infrastructure that:
 
 The rest of the presentation
 
-!!!General principles
+!!!Introduction
+
+Developed by Tommi Pirinen and Sjur Moshagen.
+
+A schematic overview of the main components of the infrastructure:
+
+[../images/newinfra.png]
+
+!!General principles
 
 * Be explicit (non-cryptic catalogue and file names)
 * Be clear (files should be found in non-surprising locations)
@@ -47,7 +55,7 @@ The rest of the presentation
 * Parametrise the build process
 
 
-!!!Conventions
+!!Conventions
 
 {{{
 src for source files
@@ -56,9 +64,63 @@ src for source files
     affix files: nouns.lexc, verbs.lexc
 }}}
 
+!!Directory structure
+
+{{{
+.
+├── am-shared
+├── doc
+├── misc
+├── src
+│   ├── filters
+│   ├── hyphenation
+│   ├── morphology
+│   │   ├── affixes
+│   │   └── stems
+│   ├── orthography
+│   ├── phonetics
+│   ├── phonology
+│   ├── syntax
+│   ├── tagsets
+│   └── transcriptions
+├── test
+│   ├── data
+│   ├── src
+│   └── tools
+└── tools
+    ├── grammarcheckers
+    ├── mt
+    │   └── apertium
+    ├── preprocess
+    ├── shellscripts
+    └── spellcheckers
+}}}
+
 !!!The core
 
-Something here
+Contains:
+* templates for the languages
+* scripts used for maintenance and testing
+* shared resources:
+** language independent fst manipulation
+** linguistic resources shared among several languages
+
+!!!Languages
+
+We have split the languages in four groups, depending on the type of work done on them, and their license:
+
+; langs            : These are the languages being actively developed - 43 languages
+; startup-langs    : These are languages that someone has an interest in, but are not actually being developed, and where the linguistic content is thin - 11 languages
+; experiment-langs : The name says it all - this is the playground, and they are a.o. used for teaching - 3 languages
+; closed-langs     : These are languages with a closed license, only ISL and DAN at the moment
+
+Available at:
+
+{{{
+svn co https://victorio.uit.no/langtech/trunk/langs/ISO639-3-CODE/
+}}}
+
+(replace {{ISO639-3-CODE}} with the actual ISO code)
 
 
 !!!The tools
