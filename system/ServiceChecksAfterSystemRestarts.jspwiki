@@ -16,7 +16,21 @@ Nothing to do.
 
 !!!sátni.org
 
-TBW.
+!!eXist
+
+If the server has stopped, restart it:
+cd /home/tomi/exist/
+./bin/startup.sh
+
+Check address {{http://gtweb.uit.no:8080/exist/restxq/satni/dictionaries}} if it returns JSON response.
+
+If server is running, and no response is received, open eXide {{http://gtweb.uit.no:8080/exist/apps/eXide/index.html}} and open&save an xquery module at apps/satni/modules/
+
+Above process helps most of the times. If it doesn't, there is most likely a bug to be solved.
+
+!!Nginx
+
+Front-end resides on the same server as neahttadigisánit. Restarting nginx should be enough.
 
 !!!our web pages (and their automatic updating)
 
