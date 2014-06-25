@@ -1,128 +1,67 @@
 
 This is a list of programs you will need to use this infrastructure for language analysis and development.
 
-!!!Hardware and System
+!!!Hardware and system requirements
 
-* Machine requirement:
-** 8 Gb RAM is needed for hfst transducer compilation, the more the better (but 4 Gb is fine if you only use the Xerox tools)
-** fast harddisk preferred
+* Machine requirements:
+** 8 Gb RAM is needed for Hfst transducer compilation, the more the better
+   (but 4 Gb is fine if you only use the Xerox tools)
+** fast hard-disk preferred
 * OS/System - you will need unix:
-** __Mac__ (preferred, supported by the Divvun and GT teams)
-** Any recent __Linux__ distro is fine
+** __Mac__ (used by most of the Divvun and GT teams)
+** Any recent __Linux__ distribution is fine (also used by the Divvun & GT teams)
 ** __Windows__ doesn't have a unix shell, but there are two alternatives:
 *** installing __Cygwin__. __Warning!__ This is __very briefly__ tested, and
     you will be on your own. See more info further down
-*** Alternatively, you might log on to a remote unix machine, see our
+*** Alternatively, you might __log on to a remote unix machine,__ see our
    [Windows help page|../tools/ForWindowsUsers.html]
 
 
-!!!Software to install
+!!!System preparations - software to install
 
-!!Mac
-* You need a __text editor__ - we recommend
-   [SEE|http://www.codingmonkeys.de/subethaedit/index.html]
+* [Getting Started On The Mac|GettingStartedOnTheMac.html]
+* [Getting Started On Linux|GettingStartedOnLinux.html]
+* [Getting Started On Windows|GettingStartedOnWindows.html]
 
-* Basic programming tools (in this order):
-** [XCode|InstallingXCode.html]
-** [MacPorts|http://www.macports.org]
+!!!Getting the Divvun/Giellatekno infrastructure & source code for your language
 
-* Then you need a number of tools for the build chain.
-  On the Mac, you can get them by running the following commands:
+There are __three alternatives:__
 
-{{{
-sudo port install autoconf automake libtool saxon python27 python32 py-yaml \
-subport=py32-yaml py27-pip py27-beautifulsoup4 py27-unittest2 \
-py27-lxml p5-xml-twig antiword libxslt poppler tidy wget bison \
-py27-feedparser subversion cmake p5-xml-libxml
+!!1. Everything
 
-sudo port select python python27
+[Check out|/doc/tools/docu-svn-user.html] our svn repository, then run
+{{$GTHOME/gt/script/gtsetup.sh}} - this gives you everything but is quite big,
+more than 3.5Gb in download size, and twice as much on your hard-disk.
 
-sudo pip-2.7 install pyth pytidylib
+''Not recommended when you are on slow lines or if you are low on hard-disk space!''
 
-sudo cpan install Text::Brew
-}}}
+!!2. Only the core and single languages (on your own computer)
 
-* [Forrest|http://forrest.apache.org] to validate the documentation comments.
-  You get it by following [these instructions|forrest-howto.html].
+Follow
+[these instructions|/doc/infra/infraremake/GettingStartedWithTheNewInfra.html]
+(under the ''Only the GT core and the wanted language(s)'' heading) to only
+check out the required parts for working with a single or a few languages.
 
-* Finally, install the __linguistic programming tools:__
-** One, or why not both, of:
-*** [Xerox tools|http://www.fsmbook.com] -
-    Freely available, but not open source. Better documented.
-*** [HFST tools|compiling_HFST3.html] -
-    Open source. Needed for turning your morphology and lexicon into a
-    spellchecker in [LibreOffice|http://libreoffice.org].
-** [Visl CG3|/doc/tools/docu-vislcg3.html] (for syntactic analysis)
+!!3. Only the core and single languages (on a multiuser server)
 
-If you want to work with proofing tools, see ''Proofing tools to install'' [here|install-overview.html]
+To use this configuration, follow these instructions:
 
-!!Linux
+* install the {{gtcore}} -
+  [instructions for sysadmins|SettingUpAMultiuserServer.html]
+* check out your language -
+  [instructions for linguists|GettingStartedOnAServer.html]
 
-* You need a __text editor__.
- [gedit|http://projects.gnome.org/gedit/] or [kate|http://kate-editor.org/] are excellent choices.
+!!!Start the development!
 
-* [Saxon HE|http://saxon.sourceforge.net/#F9.4HE] (for working with languages
-   with XML lexicons)
-
-!Fedora (18)
-{{{
-sudo yum install autoconf automake libtool saxon python-pip \
-python-lxml python-beautifulsoup4 python3-PyYAML \
-python-unittest2 perl-XML-Twig antiword libxslt poppler python-tidy \
-wget python-feedparser subversion java-1.7.0-openjdk cmake cpan perl-XML-LibXML
-
-sudo pip install pyth pytidylib
-sudo cpan install Text::Brew
-}}}
-
-!Centos 6.4
-{{{
-sudo yum install autoconf automake libtool saxon python-pip \
-python-lxml python-beautifulsoup4 \
-python-unittest2 perl-XML-Twig antiword libxslt poppler \
-wget python-feedparser subversion java-1.7.0-openjdk cmake cpan perl-XML-LibXML
-
-sudo pip install pyth pytidylib
-sudo cpan install Text::Brew
-}}}
-
-!Ubuntu
-{{{
-sudo apt-get install autoconf automake libtool libsaxonb-java python-pip \
-python-lxml  python-bs4 python-unittest2 libxml-twig-perl antiword xsltproc \
-poppler-utils wget python-feedparser subversion openjdk-7-jdk cmake \
-python-tidylib python3-yaml libxml-libxml-perl libtext-brew-perl
-}}}
-
-* [Forrest|http://forrest.apache.org] to validate the documentation comments.
-  You get it by following [these instructions|forrest-howto.html].
-
-* Finally, install the __linguistic programming tools:__
-** One, or why not both, of:
-*** [Xerox tools|http://www.fsmbook.com] -
-    Freely available, but not open source. Better documented.
-*** [HFST tools|compiling_HFST3.html] -
-    Open source. Needed for turning your morphology and lexicon into a
-    spellchecker in [LibreOffice|http://libreoffice.org].
-** [Visl CG3|/doc/tools/docu-vislcg3.html] (for syntactic analysis)
-
-If you want to work with proofing tools, see ''Proofing tools to install'' [here|install-overview.html]
-
-
-!!Windows
-
-You need __Cygwin__. To set it up and install most needed software, follow [these instructions|CygwinSetup.html].
-
-Then you need an __editor__. [jEdit|http://www.jedit.org] should be fine (requires Java, but that is already required by our infrastructure, and should be in place when you have come this far.
-
-Be warned: Cygwin is slow, and it is not the optimal way of working with our linguistic infrastructure. But it should work.
-
-!!!Then fetch the language source files (all systems)
-
-;Either: [check out|/doc/tools/docu-svn-user.html] our svn repository, then run
-  {{$GTHOME/gt/script/gtsetup.sh}} - this gives you everything but is quite big, more than 1 Gb in download size;
-;Or: follow [these instructions|/doc/infra/infraremake/GettingStartedWithTheNewInfra.html] (under the ''Only the GT core and the wanted language(s)'' heading) to only check out the required parts for working with a single or a few languages.
+See [this page|infraremake/Index.html] for details on how to use our
+infrastructure to develop your morphologies, lexicons and more to create tools
+for yourself and your language community.
 
 !!!A final note
 
-This list is written for people not working at Divvun or Giellatekno. You may also look at [the longer list of what we install for our new workers|install-overview.html] and [the checklist for what new users should know|../admin/checklist.html], and see if some of that is interesting. But this document will give you what you need.
+This list is written for people not working at Divvun or Giellatekno. You may
+also look at
+[the longer list of what we install for our new workers|install-overview.html]
+and [the checklist for what new users should know|../admin/checklist.html], and
+see if some of that is interesting. But this document will give you what you
+need to get started.

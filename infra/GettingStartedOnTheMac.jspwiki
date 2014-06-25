@@ -1,0 +1,76 @@
+This page is a part of the overall [Getting started|GettingStarted.html] page.
+It describes what you need to install on the __Mac__ to be ready to develop
+language tools for your language.
+
+!!!System setup
+
+* You need a __text editor__ - we recommend
+   [SEE|http://www.codingmonkeys.de/subethaedit/index.html] - then you can
+   collaborate with us over the net straight from your hard disk (only the
+   things you explicitly share or invite peope to). 
+* Basic programming tools (in this order):
+** [Xcode|InstallingXCode.html]
+** [MacPorts|http://www.macports.org]
+* Then you need a number of tools for the build chain.
+  On the Mac, you can get them by running the following commands:
+
+{{{
+sudo port install autoconf automake libtool saxon python27 python32 py-yaml \
+subport=py32-yaml py27-pip py27-beautifulsoup4 py27-unittest2 \
+py27-lxml p5-xml-twig antiword libxslt poppler tidy wget bison \
+py27-feedparser subversion cmake p5-xml-libxml
+
+sudo port select python python27
+
+sudo pip-2.7 install pyth pytidylib
+
+sudo cpan install Text::Brew
+}}}
+
+* [Forrest|http://forrest.apache.org] to validate the documentation comments.
+  You get it by following [these instructions|forrest-howto.html].
+
+!!Additional software
+
+Certain tasks can require additional software. Here's some additional software
+you might need depending on what you need to do.
+
+!Article authoring using LaTeX
+
+{{{sudo port install \
+       TeXShop3      \
+       texlive-basic \
+       texlive-latex-extra
+}}}
+
+!!Note for Java avoiders
+
+Some of the tools above require or use Java, notably Saxon and Forrest. Saxon is
+used to convert XML-based source files into Lexc files, and Forrest is used to
+validate documentation extracted from the source files.
+
+None of these functions are strictly required for developing language tools. The
+lexc files converted from XML are stored in svn, and if Saxon is not available,
+the lexc files will be used as is. And if Forrest is not available, the step for
+building documentation out of source code comments will just be skipped.
+
+That is, __Java is not required__ to do development using the Divvun/Giellatekno
+infrastructure, __unless__ you specifically work with xml-based lexicons.
+
+!!!Linguistic software
+
+You need tools to convert your linguistic source code (lexicons, morphology,
+phonology, syntax, etc.) into usefull tools like analysers, generators,
+hyphenators and spellers. Install the following
+__linguistic programming tools:__
+
+* One or both of:
+** [Xerox tools|http://www.fsmbook.com] -
+   Freely available, faster compilation, but not open source and no spellers
+** [HFST tools|compiling_HFST3.html] -
+   Open source. Needed for turning your morphology and lexicon into a
+   spellchecker in [LibreOffice|http://libreoffice.org].
+* [Visl CG3|/doc/tools/docu-vislcg3.html] (for syntactic analysis)
+
+If you want to work with proofing tools, see
+''Proofing tools to install'' [here|install-overview.html]

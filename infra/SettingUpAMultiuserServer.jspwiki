@@ -1,0 +1,34 @@
+This page is a part of the overall [Getting started|GettingStarted.html] page.
+It describes the steps you as a system administrator need to do to prepare the
+server for the work done by the linguists, by installing the Giellatekno/Divvun
+infrastructure core, and make it available to the linguists.
+
+__NB!__ It is ''required'' that the {{gtcore}} and all its subdirectories are
+__readable__ by all users, and shell scripts must be executable (but this should
+be handled automatically by Subversion). Nothing more is required, nothing less.
+
+To check out the core module and prepare it, do this:
+
+{{{
+svn co https://victorio.uit.no/langtech/trunk/gtcore
+cd gtcore
+./autogen.sh
+./configure
+make
+sudo make install
+}}}
+
+The {{gtcore}} and the Giellatekno/Divvun infrastructure is under constant
+development, and it is important that it is kept up-to-date to maintain a
+functional working environment for the linguists. To keep it
+up-to-date, make a shell script or cron job that does the following:
+
+* daily svn up
+* if {{gtcore/scripts/configure.ac}} has changed since last svn up, run
+  {{make && sudo make install}}
+
+That's it. The linguists can now check out a single language, and the configure
+script for that language will find the {{gtcore}} and everything else that is
+needed. You can point the linguists to
+[the following page|GettingStartedOnAServer.html] to get directions on how
+to check out single languages.
