@@ -18,6 +18,36 @@ and commit that change. Without an updated timestamp file, the merge script has 
 
 __Best practice:__ commit your resource updates and the timestamp at the same time, in the same commit. Let the comment in the timestamp file be the same as the commit message. This will make the timestamp file an svn log, which makes it easy to see whether one language is up-to-date or not.
 
+!!How to edit the und.timestamp file
+
+You shall edit the top of the file only.
+
+Before you touch it the 2-3 first lines of gtcore/langs-templates/und/und.timestamp look like
+
+{{{
+$Rev: 97047 $
+Added WANT_OAHPA option for analysers for all languages (until now only generator)
+
+}}}
+
+You edit the file by writing the new message __under__ the first line, and by
+__copying__ the revision number in as a new heading over the previous
+login message, with a newline inbetween.
+
+After you have edited it (but before checkin) it should look like this:
+
+{{{
+$Rev: 97047 $
+And this is the new svn login message you write for your checkin.
+
+r97047:
+Added WANT_OAHPA option for analysers for all languages (until now only generator)
+}}}
+
+Then you check in the edited und.timestamp and the files that were changed in 
+{{gtcore/langs-templates/und/}}, preferabely __in the same checkin__ and
+__with the same message__ as you added to und.timestamp.
+
 !!Merging a single language
 
 Let's say we want to update myv. The command for that is:

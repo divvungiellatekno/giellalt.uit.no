@@ -1,18 +1,24 @@
-!!!Adding a new language to the $GTHOME/langs dir
+!!!Adding a new language to the infrastructure
 
-This is the directory where all linguistic development for the core language technology is done, for all languages. Here are the steps:
+Languages may be added to one of these 4 directories:
+
+# $GTHOME/langs (for languages we work on, or who have full-size transducers)
+# $GTHOME/closed-langs (for languages with a restricted (closed) license)
+# $GTHOME/experiment-langs (experiments of different kinds)
+# $GTHOME/startup-langs (when we do not know whether the work will lead to anything or not)
+
+The closed-langs directory is invisible for users without password access to the 
+svn repository, otherwise all directories have the same functionalities.
+
+!!How to add a new language
+
+We here show how to add new languages to ''langs'' (for adding to the 3 other directories, 
+exchange "langs" with "startup-langs" etc.)
 
 # {{cd $GTHOME/langs}}
-# {{$GTCORE/scripts/new-language.sh LANGCODE [[TEMPLATECOLL]}}
+# {{$GTCORE/scripts/new-language.sh LANGCODE}}
 
-where 
-* LANGCODE  is the ISO 639-3 code for the language you want to add
-* TEMPLATECOLL (optional, usually automatically identified) is the name of the
-  template collection to use; presently there are two template collections:
-** {{langs}} - templates for populating language directories for building
-   linguistic analysers and tools based on them
-** {{prooftesting}} - templates for populating directories for testing proofing
-   tools, also organised according to language
+where LANGCODE  is the 3-letter ISO 639-3 code for the language you want to add
 
 !!Result
 
@@ -32,7 +38,26 @@ cd LANGCODE
 
 Now you can start editing the source files, and whenever you want to make sure everything compiles, run {{make}}. Run {{make check}} to ensure that all defined tests are passed. Remember to update the test suits as you enhance the linguistic model!
 
+!!Setting up the documentation page for the new language
+
+The new language must also be added to 
+[the language documentation page|http://giellatekno.uit.no/doc/lang/index.html].
+[Here we document how to set up language documentation for new languages|HowToSetUpLanguageDocumentation.html].
+
 !!!Adding a new language to the $GTBIG/prooftesting dir
+
+The procedure is the same as above, but by adding a template to the command:
+
+# {{cd $GTHOME/langs}}
+# {{$GTCORE/scripts/new-language.sh LANGCODE [[TEMPLATECOLL]}}
+
+where
+
+* TEMPLATECOLL (optional, usually automatically identified) is the name of the
+  template collection to use; presently there are two template collections:
+** {{prooftesting}} - templates for populating directories for testing proofing
+   tools, also organised according to language
+
 
 This directory contains infrastructure for testing proofing tools for a number of languages. At present, only spellers are tested, but more tool types will be added in the future. The prerequisite for being able to test a speller is:
 
