@@ -34,19 +34,49 @@ Front-end resides on the same server as neahttadigisánit. Restarting nginx shou
 
 !!!our web pages (and their automatic updating)
 
-TBW.
+The sites
+
+* http://giellatekno.uit.no
+* http://dicts.uit.no
+* http://oahpa.no
+* http://divvun.no
+
+are updated once every 24 hours with these lines in a crontab from the account of the user boerre on divvun.no
+
+* 00 10 * * * source $HOME/.bash_profile && cd $GTHOME && svn up && cd $GTBIG && svn up && divvun2web $GTHOME/xtdoc/gtuit gtuit@giellatekno.uit.no:Sites
+* 30 18 * * * source $HOME/.bash_profile && cd $GTHOME && svn up && cd $GTBIG && svn up && divvun2web $GTHOME/xtdoc/dicts gtuit@giellatekno.uit.no:Sites/dicts
+* 55 18 * * * source $HOME/.bash_profile && cd $GTHOME && svn up && cd $GTBIG && svn up && divvun2web $GTHOME/ped oahpa@oahpa.no:/home/oahpa/public_html
+* 15 19 * * * source $HOME/.bash_profile && cd $GTHOME && svn up && cd $GTBIG && svn up && static-divvun.py --sitehome $GTHOME/xtdoc/sd --destination sd@divvun.no:Sites/ fi no se smj sma sv en
+
+If the sites are not updated, it is probably because a document contains invalid xml.
+
+Run svn up in the working copy of giellatekno, run the command forrest validate in these directories:
+
+* $GTHOME/xtdoc/gtuit
+* $GTHOME/xtdoc/sd
+* $GTHOME/ped
+* $GTHOME/xtdoc/dicts
+
+Fix the docs that don't validate and check them in. The sites will be automatically updated.
 
 !!!the termwiki
 
-TBW.
+!! Restart mysql on gtsvn
+ssh gtsvn.uit.no
+sudo service mysql restart
 
 !!!bugzilla
 
-TBW.
+If http://giellatekno.uit.no/bugzilla does not work, then one must restart mysql
+
+!! Restart mysql on the xserve
+
+sudo /opt/local/etc/LaunchDaemons/org.macports.mysql5/mysql5.wrapper restart
 
 !!!iChat/Jabber
 
-TBW.
+sudo serveradmin stop jabber
+sudo serveradmin start jabber
 
 !!!SubEthaEdit
 
