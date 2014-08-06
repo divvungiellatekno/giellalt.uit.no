@@ -23,7 +23,7 @@ development, and it is important that it is kept up-to-date to maintain a
 functional working environment for the linguists. To keep it
 up-to-date, make a shell script or cron job that does the following:
 
-* daily svn up
+* daily svn up of the {{gtcore/}} directory
 * if {{gtcore/scripts/configure.ac}} has changed since last svn up, run
   {{make && sudo make install}}
 
@@ -32,3 +32,25 @@ script for that language will find the {{gtcore}} and everything else that is
 needed. You can point the linguists to
 [the following page|GettingStartedOnAServer.html] to get directions on how
 to check out single languages.
+
+__NB!!__ If you get the following __error__ from svn when checking out:
+
+{{{
+svn: Can't convert string from 'UTF-8' to native encoding:
+}}}
+
+it is indicative of your filesystem using a filename encoding not compatible
+with Unicode. This will __stop__ the svn checkout process, leaving you with an
+incomplete and most likely non-functional working copy. Typically this can
+happen if you or your sysadmin has set the following:
+
+{{{
+LC_ALL=C
+}}}
+
+To fix this, change or redefine the {{LC_ALL}} variable in your {{~/.profile}}
+file to something like:
+
+{{{
+LC_ALL=en_UK.UTF-8
+}}}
