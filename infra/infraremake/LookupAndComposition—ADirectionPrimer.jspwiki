@@ -66,6 +66,14 @@ When building __lexical fst's__ to be used for
 
 In our aliases and shell scripts, we call the analyser ''u–'' and the generator ''d–''. The metaphor behind ''uXXX'' and ''dXXX'' thus follows the __Xerox__ scheme of "up" and "down".
 
+!!Stand-alone LexC files
+
+When writing stand-alone lexc files such as the ones used for conversion between
+numerical expressions and their textual counterpart (''10'' -> ''ten'') and the
+other way around, the resulting fst behaves "inverted" when using Xerox, and as
+written when using Hfst. To get both fst's to behave the same, the Xerox fst
+must be inverted before one uses the {{lookup}} tool.
+
 !!Rule fst's for composition
 When building __rule transducers to be composed__ with a lexical transducer,
 __both behave the same__ and nothing special needs to be done for one or the
