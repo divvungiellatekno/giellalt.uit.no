@@ -12,8 +12,9 @@ Once comments have been moved out of the {{main/langs/LANG/src/morphology/stems/
  {{main/langs/LANG/src/morphology/Makefile.am}} file.  There are three fields of declaration:  (1) Giellatekno lexc sources, maintained source lexc files;
  (2) generated lexc sources, these produced with xsl transformation, and (3) Giellatekno xml sources, the part-of-speech oriented database. If you are just beginning work with a language, your {{main/langs/LANG/src/morphology/Makefile.am}} file might look something like the following: 
 
-* START
-{{
+START
+
+{{{
 # Set this to the names of all other source lexc files
 GT_LEXC_SRCS=\
                          stems/abbr.lexc          \
@@ -34,12 +35,13 @@ GENERATED_LEXC_SRCS=
 
 # Set this to the names of all source xml files, if any
 GT_XML_SRCS=
-}}
-* END
+}}}
+
+END
 
 The changes you want to make in the declaration will include the removal of the files:
 
-{{
+{{{
                          stems/adjectives.lexc \
                          stems/adverbs.lexc \
                          stems/nouns.lexc \
@@ -48,16 +50,16 @@ from the
 GT_LEXC_SRCS=\ 
 declaration, and their declaration in
 GENERATED_LEXC_SRCS=\
-}}
+}}}
 
 Please, note the commented new lines.
 
 Additionally, the xml files must also be declared, resulting in the following:
 
 
-* START
+START
 
-{{
+{{{
 # Set this to the names of all other source lexc files
 GT_LEXC_SRCS=\
                          stems/abbr.lexc          \
@@ -84,8 +86,9 @@ GT_XML_SRCS=\
                         stems/nouns.xml         \
                         stems/verbs.xml
 
-}}
-* END
+}}}
+
+END
 
 A few notes:
 
@@ -105,11 +108,13 @@ Here are a couple of further points:
 
 * the .xml files are checked against an .xsd schema 
 
-{{<r xsi:noNamespaceSchemaLocation="$GTHOME/gtcore/schemas/fiu-dict-schema.xsd"
+{{{
+<r xsi:noNamespaceSchemaLocation="$GTHOME/gtcore/schemas/fiu-dict-schema.xsd"
    xml:lang="mrj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:xs="http://www.w3.org/2001/XMLSchema"
    xmlns:hfp="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty"
-   xmlns:fn="http://www.w3.org/2005/02/xpath-functions">}}
+   xmlns:fn="http://www.w3.org/2005/02/xpath-functions">
+}}}
 
 
 * as long as the files follow this schema, and the declarations are completed as illustrated above, just dropping them in the dir
@@ -125,4 +130,4 @@ adaption or generalisations of the present structure.
 
 The xsd provides a possibility for semantic classes to be added within
 mg elements. These semantic classes correspond to semantic classes used in 
-the {{http://oahpa.no/davvi}} ICALL environment.
+the [http://oahpa.no/davvi] ICALL environment.
