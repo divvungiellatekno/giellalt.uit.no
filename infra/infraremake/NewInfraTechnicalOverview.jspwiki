@@ -1,45 +1,69 @@
 !!!The new infra - a technical overview
 
-Main components:
-* autotools
-* gtcore
-* templates
+Main components: ''autotools, gtcore'' and ''templates''.
 
 !!!Autotools
 
-* all languages are independent "projects/products"
-* building is done with the familiar:
+All languages are independent "projects/products"
+
+
+!!Building languages
+
+Building is done (e.g. for ''sme'') in the $GTHOME/langs/sme folder, with:
 
 {{{
-./autogen.sh # only required if building from svn source
-./configure
+./autogen.sh -l
+./configure 
 make
 sudo make install
 }}}
 
-And the same goes for the overall {{langs/}} dir, if one wants to build and
-install all languages.
+(Note that the ./configure command may take different parameters, see directly below.)
 
-The basic layout of each language:
+The same commands are used for all languages in the different {{langs/}} dir, if one wants to build and
+install more languages (note that there is a script ''makeall.sh'' to compile all languages).
+(See also [the overview of the subdirectories in each language directory|NewinfraCatalogues.html].)
 
+
+As mentioned, the command {{./configure}} is used to set up different options for compilation.
+In order to see all the available options, write:
 {{{
-<lang>/doc/  # more or less unused for now, will contain language-specific
-             # documentation, both hand-made and extracted from source.
-      src/   # pretty obvious
-      test/  # here we add tests for everything
-      tools/ # here we build spell checkers etc.
+./configure --help
 }}}
 
-Build and configure dirs:
+In order to see what installation you have set just now, write:
+{{{
+head config.log
+}}}
+
+The answer will read  __Invocation command line was__, and thereafter 
+the {{./configure}} command, with the current settings displayed. A situation
+where {{make}} will build fsts for dictionaries, but otherwise just give the
+default values, will show as follows:
+{{{
+  ./configure --enable-dicts
+}}}
+
+Default options may be turned off with ''disable'', e.g. by writing:
+ {{{./configure --disable-generators}}}
+ 
+or, to turn off the ''--with'' options, write ''--without'', and then what you do not want: 
+{{{
+ ./configure --without-xfst
+ }}}
+ 
+Several options may be stacked after each other, in any order. 
+
+!!Note about the build and configure directories
 
 {{{
 <lang>/am-shared/ # shared build instructions - the real build stuff
        m4/        # configuration macros
 }}}
 
-__NEVER TOUCH THESE DIRS AND FILES!!!__
+__NEVER TOUCH THESE DIRECTORIES AND FILES!!!__
 
-These files (and dirs) are always updated by merging in changes from the
+These files (and directories) are always updated by merging in changes from the
 templates (see below). Such changes should only be done by the infrastructure
 maintainers.
 
