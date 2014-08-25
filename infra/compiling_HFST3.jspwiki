@@ -54,9 +54,23 @@ add the following {{./configure}} option:
 
 !!Special configuration on MacOSX 10.9
 
-Due to new default compiler settings on MacOSX 10.9 (with which the hfst code
-- presumably the openfst backend - is not compatible), one needs the following
-configuration:
+Due to a new default compiler on MacOSX 10.9 (with which the hfst code
+- presumably the openfst backend - is not compatible), one needs additional
+configuration flags. Try one of these:
+
+{{{
+./configure --without-foma --with-unicode-handler=glib --enable-all-tools \
+            LDFLAGS=" -stdlib=libstdc++"
+}}}
+
+Or:
+
+{{{
+./configure --without-foma --with-unicode-handler=glib --enable-all-tools \
+            CXXFLAGS=" -stdlib=libstdc++" LDFLAGS=" -stdlib=libstdc++"
+}}}
+
+Or:
 
 {{{
 ./configure --without-foma --with-unicode-handler=glib --enable-all-tools \
