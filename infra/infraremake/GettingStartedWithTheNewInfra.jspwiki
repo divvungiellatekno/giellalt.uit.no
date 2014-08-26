@@ -1,18 +1,26 @@
 !!!Installation and setup
 
-The required steps are described in our [Getting Started guide|../GettingStarted.html]
+The required steps are described in our
+[Getting Started guide|../GettingStarted.html]
 
 !!!Check out the source code
 
 !!Everything
 
-If you are working with many languages, or with both linguistic analysis and e.g. language learning (Oahpa) or dictionaries, you want to check out everything. That process is documented [on a separate page|../../tools/docu-svn-user.html#The+first+commands].
+If you are working with many languages, or with both linguistic analysis and
+e.g. language learning (Oahpa) or dictionaries, you want to check out
+everything. That process is documented
+[on a separate page|../../tools/docu-svn-user.html#The+first+commands].
 
 !!Only the GT core and the wanted language(s)
 
-If you only do linguistic analysis for a limited number of languages you will do fine by only checking out the core module, and then each language separately. It will save you a lot of download time and disk space.
+If you only do linguistic analysis for a limited number of languages you will
+do fine by only checking out the core module, and then each language separately.
+It will save you a lot of download time and disk space.
 
-It can be wise to create a separate directory for holding the core and the language modules. The command to do this is (with the name of the directory set to "langtech"): {{mkdir langtech}}. Then {{cd langtech}} and continue.
+It can be wise to create a separate directory for holding the core and the
+language modules. The command to do this is (with the name of the directory
+set to "langtech"): {{mkdir langtech}}. Then {{cd langtech}} and continue.
 
 To check out the core module and prepare it, do this:
 
@@ -21,8 +29,33 @@ svn co https://victorio.uit.no/langtech/trunk/gtcore
 cd gtcore
 ./autogen.sh
 ./configure
-sudo make install # optional, only required on servers with multiple users
 }}}
+
+To make the core module accessible, there are two methods: one intended for
+single users, and one intended for multiuser servers (but it works fine for
+single users as well).
+
+__EITHER:__ The first method uses an environmental variable called GTCORE,
+which must be manually set. Add the following line to your {{.profile}} file:
+
+{{{
+export GTCORE=/path/to/your/gtcore/dir
+}}}
+
+Replace {{/path/to/your/gtcore/dir}} with the real path on your system. You can
+get it by using the command {{pwd}} after you did the {{./configure}} command
+above. Then open a new terminal window.
+
+__OR:__ The server method is to install some of the components of the core:
+
+{{{
+sudo make install
+}}}
+
+That is it. This method requires that you redo the installation every time the
+gtcore is updated. This method works by installing two simple shell scripts in
+your path, one of which returns the full path to the gtcore (the other returns
+the version number of the gtcore).
 
 Then, for each language you want to work with, do the following:
 
@@ -30,9 +63,12 @@ Then, for each language you want to work with, do the following:
 svn co https://victorio.uit.no/langtech/trunk/langs/LANGCODE --username <your_username>
 }}}
 
-where {{LANGCODE}} is the ISO 639-3 three-letter code for the language. You can see a list of the languages we currently have by looking at [https://victorio.uit.no/langtech/trunk/langs/].
+where {{LANGCODE}} is the ISO 639-3 three-letter code for the language. You
+can see a list of the languages we currently have by looking at
+[https://victorio.uit.no/langtech/trunk/langs/].
 
-When you have checked out the language(s) you want to work with, then you are ready to...
+When you have checked out the language(s) you want to work with, then you
+are ready to...
 
 !!!Actually getting started with your language
 
@@ -44,7 +80,9 @@ cd $GTLANG
 ./configure
 }}}
 
-where $GTLANG is the directory name of the language you want to work with. Now you are ready to start working. More info about where to find the different pieces of source code can be found on [this page|NewinfraCatalogues.html].
+where $GTLANG is the directory name of the language you want to work with. Now
+you are ready to start working. More info about where to find the different
+pieces of source code can be found on [this page|NewinfraCatalogues.html].
 
 __WARNING__
 
