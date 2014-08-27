@@ -17,121 +17,100 @@
             <title>Introduction</title>
 
             <p>
-                 This file provides an overview of the corpus conversion process.
-                 Basically, when a new document is recieved, it is classified according
-                 to the language and genre and stored as such to the directory structure
-                 for the original files. All the original files are left untouched. The
-                 text and structural information contained in the document is extracted
-                 by a conversion script and transformed to an xml-file. Xml-files are
-                 stored in separate, parallel directory hierarchy where they can be
-                 easily accessed and used as a test material for grammar checkers and
-                 spellers. The metainformation associated with the document, such as the
-                 name of the author, is stored in an xsl-file and appended to the
-                 xml-file during the conversion. The metainformation is used elsewhere,
-                 in different corpus applications.
-            </p>
-
-            <p>
-                The first section explains the conversion process step by step. It
-                is followed by more detailled descriptions of the directory structure
-                and the handling of the file-specific xsl-files. There is also a small
-                section of the log-files and the different uses of convert2xml.
-            </p>
-        </section>
-
-        <section>
-            <title>Basic conversion process</title>
-
-            <section>
-                <title>Manual conversion</title>
-
-                <ol>
-                    <li>
-                        Copy the file to the correct place in your working copy of
-                        the <a href="corpus_repositories.html">corpus repositores</a>.
-                    </li>
-                    <li>
-                        <p>
-                            Run convert2xml on the file. For example, a
-                            MS Word document.
-                        </p>
-                        <source>convert2xml file_name.doc
-                        </source>
-                    </li>
-
-                   <li>
-                        If there are fatal errors during the conversion,
-                        you will see an error message stating «Could not convert file_name.doc». The error log of the file is found in «file_name.doc.log».
-                    </li>
-                </ol>
-            </section>
-        </section>
-
-        <section>
-            <title>Log files</title>
-
-            <p>
-                If a file is not converted, the error messages, warnings and other information of the conversion
-                are stored in a logfile. The log file is named after current file and stored in the same directory that the file resides. The log file contains the information that was printed to
-                STDERR during the conversion.
+                This file provides an overview of the corpus conversion process.
+                Basically, when a new document is recieved, it is classified according
+                to the language and genre and stored as such to the directory structure
+                for the original files. All the original files are left untouched. The
+                text and structural information contained in the document is extracted
+                by a conversion script and transformed to an xml-file. Xml-files are
+                stored in separate, parallel directory hierarchy where they can be
+                easily accessed and used as a test material for grammar checkers and
+                spellers. The metainformation associated with the document, such as the
+                name of the author, is stored in an xsl-file and appended to the
+                xml-file during the conversion. The metainformation is used elsewhere,
+                in different corpus applications.
             </p>
 
             <section>
                 <title>convert2xml</title>
 
                 <p>
-                    Follow the Instructions on our
-                    <a href="../infra/GettingStarted.html">getting started</a>
-                    page. Then install <code>convert2xml</code> by running
-                </p>
-                    <source>cd $GTHOME/tools/CorpusTools
-                        python setup.py install --install-scripts=/usr/local/bin
-                    </source>
-
-
-                <source>usage: convert2xml [-h] source
-
-Convert original files to giellatekno xml.
-
-positional arguments:
-  source      either a file to be converted, or a directory containing files
-              to be converted
-
-optional arguments:
-  -h, --help  show this help message and exit
-
-                </source>
-
-                <p>
-                    The file to be converted is given to convert2xml as command line
+                    The file to be converted is given to convert2xml as a command line
                     argument. If a directory is the argument, all files in the given directory
                     and the directories inside it are converted. The file
                     types that are supported at the moment are: doc, pdf, html, text and
-                    paratext. The corresponding file suffixes are are .doc, .pdf, .html,
-                    txt and .ptx. At the users' point of view, there is no difference
+                    paratext. At the users' point of view, there is no difference
                     between the file types, the technical documentation is provided at <a href="corpus_conversion_tech.html">corpus_conversion_tech.html</a>.
                 </p>
 
-                <p>
-                    Let the original file be <code>original.pdf</code>. Use for example the command
-                </p>
+                <section>
+                    <title>Install convert2xml</title>
+                    <p>
+                        Follow the instructions on our
+                        <a href="../infra/GettingStarted.html">getting started</a>
+                        page. Then install <code>convert2xml</code> by running
+                    </p>
+                    <source>cd $GTHOME/tools/CorpusTools
+python setup.py develop --user
+mv $HOME/.local/bin/* $HOME/bin
+                    </source>
+                </section>
 
-                <source>
-                    $ convert2xml original.pdf
-                </source>
+                <section>
+                    <title>Convert a file</title>
+                    <source>
+convert2xml original.pdf
+                    </source>
+                    <p>
+                        The resulting file is a fully converted xml-file <code>
+                        original.pdf.xml</code>.
+                    </p>
+                    <p>
+                        If the file is placed inside a corpus hierarchy, e.g.
+                        orig/sme/facta/original.pdf, then the converted file will
+                        be written to converted/sme/facta/original.pdf, where
+                        orig and converted are parallel directories.
+                    </p>
+                    <p>
+                        Otherwise
+                        a directory named <code>converted</code> will be made,
+                        and the result of the conversion is written to
+                        <code>converted/original.pdf.xml</code>
+                    </p>
+                </section>
 
-                <p>
-                    The resulting file is a fully converted xml-file <code>
-                    original.pdf.xml</code>.
-                    If the file is placed inside a corpus hierarchy, e.g.
-                    orig/sme/facta/original.pdf, then the converted file will
-                    be written to converted/sme/facta/original.pdf, where
-                    orig and converted are parallel directories. Otherwise
-                    a directory named <code>converted</code> will be made,
-                    and the result of the conversion is written to
-                    <code>converted/original.pdf.xml</code>
-                </p>
+                <section>
+                    <title>Convert all the files in directories</title>
+                    <p>
+                        Examples:
+                    </p>
+                    <source>
+convert2xml dir1
+convert2xml dir1 dir2
+convert2xml dir*
+                    </source>
+                </section>
+
+                <section>
+                    <title>Log files</title>
+
+                    <p>
+                        If a file is not converted, the error messages, warnings and other information of the conversion
+                        are stored in a logfile. The log file is named after current file with a .log extenseion and stored in the same directory that the file resides.
+                    </p>
+
+                </section>
             </section>
         </section>
+
+        <section>
+            <title>Working with the corpus</title>
+            <ul>
+                <li><a href="corpus_repositories.html#Adding+content">Adding content to the corpus</a></li>
+                <li><a href="ParallelCorpusConversion.html">Example session on how to add parallel files to the corpus</a></li>
+            </ul>
+
+        </section>
+
     </body>
 </document>
