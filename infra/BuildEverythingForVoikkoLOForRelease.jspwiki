@@ -267,5 +267,43 @@ With the new oxt available, test it on a couple of machines:
 * if yes, copy the oxt to {{$GTHOME/prooftools/toollibs/mac/voikko}}, unzip and
   commit the modified files to svn
 
-Now the new oxt is available as a template for language-specific oxt's. Build
-support for that is forthcoming.
+Now the new oxt is available as a template for language-specific oxt's.
+
+!!Universal binary OXT
+
+To build the OXT as a universal binary, you first have to build a 64-bit
+version of the OXT. Repeat the previous step with the following modifications:
+
+* ensure you are using a 64-bit SDK coupled with a 64-bit LibreOffice
+  installation
+* ensure you are linking against 64-bit versions of the static libraries: you
+  can extract the 64-bit portion of the universal binaries of the libraries with
+  the following command:
+  {{lipo /usr/local/lib/libarchive.a    -output alibs/libarchive.a    -extract x86_64}}
+
+The rest of the build is the same.
+
+When you have a 64-bit OXT, there are really only two small changes:
+
+* merge voikko.dylib from both into a universal binary dylib using {{lipo}}
+* merge {{META-INF/manifest.xml}} using a text editor
+
+The {{lipo}} merge should be something like the following:
+
+{{{
+lipo -create 32-bit-voikko.dylib 64-bit-voikko.dylib -output universal-voikko.dylib
+}}}
+
+The {{manifest.xml}} file should contain two entries with platform info, one for
+each supported platform:
+
+{{{
+  <manifest:file-entry
+   manifest:media-type="application/vnd.sun.star.uno-components;type=native;platform=MacOSX_x86_64"
+   manifest:full-path="voikko.components"/>
+  <manifest:file-entry
+   manifest:media-type="application/vnd.sun.star.uno-components;type=native;platform=MacOSX_x86"
+   manifest:full-path="voikko.components"/>
+}}}
+
+Replace the old files with the new ones, and you should have a template for universal binary OXT's.
