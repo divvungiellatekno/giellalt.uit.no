@@ -98,13 +98,22 @@ the order of the suggestions by using general single-letter rules.
 
 To enable the error model to correct longer sequences of letter combinations,
 one should edit the file
-{{tools/spellcheckers/fstbased/hfst/strings.default.txt}}. It follows the same
-structure as the previous file.
+{{tools/spellcheckers/fstbased/hfst/strings.default.txt}}. It follows a similar
+but not identical structure as the previous file:
+
+{{{
+øø:öö	0.2
+ää:ææ	0.2
+}}}
 
 It is also possible to add whole word replacements to the error model by editing
 the file {{tools/spellcheckers/fstbased/hfst/words.default.txt}}. Whole-word
 replacements are typically given the weight "0.0", to ensure they are on the
-top of the suggestion list.
+top of the suggestion list:
+
+{{{
+jih:jïh	0.0
+}}}
 
 In the future it will be possible to use a file of collected typos and their
 corrections as the basis for whole-word corrections.
@@ -130,7 +139,25 @@ In the future it is likely that we want to add weights also to the regular
 analysers. It is an open question whether we want to use the same weights for
 the analyser and the speller, but if so, the two need to be coordinated.
 
-For an example of how this is working, have a look at {{sme}}.
+Below is an example of how this can be done, taken from {{sme}}:
+
+{{{
+$(GT_SPELLER_HFST): ../$(GT_SPELLER_HFST)
+	$(AM_V_GEN)cat $< \
+		| $(HFST_REWEIGHT) -a 0.1 -S +Cmp   \
+		| $(HFST_REWEIGHT) -a 0.1 -S +Der   \
+		| $(HFST_REWEIGHT) -a 0.1 -S +Der1  \
+		| $(HFST_REWEIGHT) -a 0.1 -S +Der2  \
+		| $(HFST_REWEIGHT) -a 0.1 -S +Der3  \
+		| $(HFST_REWEIGHT) -a 0.1 -S +Der4  \
+		| $(HFST_REWEIGHT) -a 0.2 -S +PxSg1 \
+		| $(HFST_REWEIGHT) -a 0.2 -S +PxSg2 \
+		| $(HFST_REWEIGHT) -a 0.2 -S +PxSg3 \
+		| $(HFST_REWEIGHT) -a 0.2 -S +PxPl1 \
+		| $(HFST_REWEIGHT) -a 0.2 -S +PxPl2 \
+		| $(HFST_REWEIGHT) -a 0.2 -S +PxPl3 \
+		-o $@
+}}}
 
 !!Corpus-based weighting
 
