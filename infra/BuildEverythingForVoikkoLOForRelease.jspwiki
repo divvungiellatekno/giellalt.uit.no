@@ -111,7 +111,8 @@ PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/ \
 CPATH=/usr/local/include:/usr/include \
 ./configure \
 	--enable-zhfst \
-	--enable-xml=tinyxml2 \
+	--without-libxmlpp \
+	--with-tinyxml2 \
 	CXXFLAGS=" -arch i386 -arch x86_64" \
 	CPPFLAGS="-I/usr/local/include" \
 	CFLAGS="-I/usr/local/include \
