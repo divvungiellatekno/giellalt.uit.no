@@ -193,7 +193,7 @@ The new file is then saved as "newfile". Note that you can not use the same name
 
 A very useful tr command is the one that turns a text into a list with one word per line. In order to achieve that we will replace all spaces with the newline character. The newline character we write as '\n'. Since what we have is a list, we start by turning it into a text:
 
-cat n-list | tr 'n' ' ' > n-text
+cat n-list | tr '\n' ' ' > n-text
 
 If you then type cat n-text, you wil see that the names list  are now on the same line. You may return to the list format by turning the command, and write:
 
