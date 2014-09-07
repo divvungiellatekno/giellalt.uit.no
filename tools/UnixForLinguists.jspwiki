@@ -22,8 +22,8 @@ Unix differs from most other operating systems in that it has no graphical user 
 
 You will now learn many commands. Commands must be written in a certain way. A unix command has two mandatory parts: The command must start with the name of a program, and it is completed when you press the ENTER key. 
 
-* We try a simple command: 
-** Print date and press ENTER. 
+* Let's try a simple command: 
+** Write date and press ENTER. 
 ** In response, you should get the current date and time. 
 * Another command: 
 ** Write cal and press ENTER. 
@@ -31,27 +31,27 @@ You will now learn many commands. Commands must be written in a certain way. A u
 
 From now on we will assume that you always press ENTER after a command. "type ls" therefore means "type ls and press ENTER", and similarly for the other commands.
 
-Most commands take one or more arguments. One such command is mkdir, which means "make directory" or create a directory. Try it: Write mkdir, press ENTER, and you will get a logical answer. In order to make  a directory unix need an argument, a directory name. Write .e.g. mkdir hogwash. To see what has happened, type ls (list the contents of the directory you are in right now). The directory you just made you may now remove by writing rmdir hogwash. Try it, and then try it again. (The rmdir command only works on empty directories.)
+Most commands take one or more arguments. One such command is mkdir, which means "make directory" or create a directory. Try it: Write mkdir, press ENTER, and you will get a logical answer. In order to make  a directory unix needs an argument, a directory name. Write .e.g. mkdir hogwash. To see what has happened, type ls (list the contents of the directory you are in right now). The directory you just made you may now remove by writing rmdir hogwash. Try it, and then try it again. (The rmdir command only works on empty directories.)
 
 From a linguistic point of view, we can look at the commands as verbs. Since all commands represent our requests to the computer, we may see them as verbs in the imperative. Like other verbs also Unix commands transitive or intransitive. A command like date can be seen as an intransitive verb: You print date and the machine tells you what date it is. The mkdir command, however, is a transitive verb, it must have an object, namely the name of the new directory you want to create.
 
-In the same way as regular verbs, Unix commands also operate with implicit object. The interpretation depends on the context. If we say "eat!" we usually mean "Eat the food that is in front of you". The Unix command ls also has such a context-dependent, implicit object. What you're really saying is "list the contents of the directory I am standing now." If you want to list the content of a specific directory, you must state the name of the directory (see below). The same applies to cal. By typing cal, you get this year's calendar. If you want to know which day of the week we started a new millenium, type cal 2000.  We will later look at commands with two objects, the Unix version of ditransitive verbs.
+In the same way as regular verbs, Unix commands also operate with implicit objects. The interpretation depends on the context. When we say "eat!" we usually mean "Eat the food that is in front of you". The Unix command ls also has such a context-dependent, implicit object. What you're really saying is "list the contents of the directory I am standing now." If you want to list the content of a specific directory, you must state the name of the directory (see below). The same applies to cal. By typing cal, you get this year's calendar. If you want to know which day of the week we started a new millenium, type cal 2000.  We will later look at commands with two objects, the Unix version of ditransitive verbs.
 
 
-Commands can also be modified. We may call these modifiers adverbs, but programmars call them options or flags. Different commands take different adverbs, or flags, and the meaning of the flag varies from command to command. Flags typically consist of one letter or number, and they begin with a hyphen. On some systems, the flags -m causes Monday to be the first day of the week, instead of Sunday) and -3 (show the month before and the month after). 
+Commands can also be modified. We may call these modifiers adverbs, but programmers call them options or flags. Different commands take different adverbs, or flags, and the meaning of the flag varies from command to command. Flags typically consist of one letter or number, and they begin with a hyphen. On some systems, the flags -m causes Monday to be the first day of the week, instead of Sunday) and -3 (show the month before and the month after). 
 
 Summary:
 
 * Command syntax: command name or command name argument ENTER
 * Commands: date, cal, mkdir
 
-Commands can be seen as verbs in the imperative. These verbs may be intransitive or transitive (have none, one or more argument) and they may take modifying adverbs (flag)
+Commands can be seen as verbs in the imperative. These verbs may be intransitive or transitive (have none, one or more arguments) and they may take modifying adverbs (flag)
 
 The unix landscape
 
-Your home directory is located in another directory. It also contains other directories. But somewhere the chain of directories stop. All directories' mother is the root directory. It has its own symbol in Unix, namely /. To see the content of your own root directory you may type ls /, i.ee "list the contents of the root directory". Remember to press ENTER. There you will see some cryptic names, all names of different directories.
+Your home directory is located in another directory. It also contains other directories. But somewhere the chain of directories stop. The mother of all directories is the root directory. It has its own symbol in Unix, namely /. To see the content of your own root directory you may type ls /, i.e. "list the contents of the root directory". Remember to press ENTER. There you will see some cryptic names, all names of different directories.
 
-On Linux systems of the directories in the root dicrectory is called home. The corresponding directory on Mac computers is called Users. This directory contains all users on the system. If you work on a laptop you are probably the only user. The command ls /home or ls /Users lists the contents. One of the user names is yours. If you write just ls you will see all the files and directories you have in the directory you are in right now.
+On Linux systems the base of the directories in the root dicrectory is called home. The corresponding directory on Mac computers is called Users. This directory contains all users on the system. If you work on a laptop you are probably the only user. The command ls /home or ls /Users lists the contents. One of the user names is yours. If you write just ls you will see all the files and directories you have in the directory you are in right now.
 
 
 Summary:
@@ -128,7 +128,7 @@ grep
 
 Another central command is grep. It stands for "get regular expression", and pulls out all the lines that are of the type you have specified. Write grep J n-list and you get Jane and John as response. Write grep a n-list and you get Jane and Lena (but not Anne!) as response.
 
-To search for more advanced expressions you use single or double quotation marks. The command grep mii filename in a Sami text finds both 'mii' and 'huksemiid'. To search only for mii at the beginning of words you may write grep ' mii' filename. To search for the word 'mii' you may writte grip -w mii filename
+To search for more advanced expressions you use single or double quotation marks. The command grep mii filename in a Sami text finds both 'mii' and 'huksemiid'. To search only for mii at the beginning of words you may write grep ' mii' filename. To search for the word 'mii' you may write grep -w mii filename
 
 rev
 
@@ -249,7 +249,7 @@ cp ../Downloads/eng_vaalit2012.txt .
 
 In the command, the final dot means: "Copy the file to where I am now". Note the space between the filename and the dot.
 
-To wildernesses string 'relay' in a text called list we write grip relay list. As an example we take these two sentences (if you practice you can copy them to a separate document, which you can call td list) .:
+To wildernesses string 'relay' in a text called list we write grep relay list. As an example we take these two sentences (if you practice you can copy them to a separate document, which you can call td list) .:
 
 
 {{{
@@ -300,7 +300,7 @@ More information on regular expressions is found on Wikipedia:
 
 Unix's built-in help system: man, apropos and info
 
-Unix has a very good help system built-in. If you know the name of the command and want more information, you may write man and the command name (eg. man grip). 
+Unix has a very good help system built-in. If you know the name of the command and want more information, you may write man and the command name (eg. man grep). 
 
 There are two problems with this information: You must know the name of the command before you can ask, and the text is often a bit cryptic. The man pages are most suited to find out what flags to use with a command, and how they work.
 
