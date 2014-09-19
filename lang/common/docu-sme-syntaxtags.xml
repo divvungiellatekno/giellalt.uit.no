@@ -42,7 +42,7 @@
             <section>
                 <title>The major function tags</title>
                 <ul>
-                <li>@&lt;SUBJ @SUBJ> (@SUBJ) @&lt;SPRED @SPRED> (@SPRED) @&lt;OBJ @OBJ> (@OBJ) @&lt;OPRED @OPRED> (@OPRED)</li>
+                <li>@&lt;SUBJ (@&lt;SUBJ @&lt;ext>) @SUBJ> @SUBJ @&lt;SPRED @SPRED> @SPRED @&lt;OBJ @OBJ> @OBJ @&lt;OPRED @OPRED> @OPRED</li>
                 </ul>
                 <p>
                 The four main functions for subject, object and their predicatives are obvious.
@@ -59,7 +59,7 @@
                 <title>The adverbial tags</title>
                 <ul>
                     <li>@ADVL> @&lt;ADVL @ADVL</li> 
-                    <li>@-FADVL @HAB</li>
+                    <li>@-FADVL</li>
                     <li>@PCLE @COMP-CS&lt;</li>
                     <li>@P&lt; @>P</li>
                     <li>@ADVL&lt; @>ADVL</li>
@@ -67,7 +67,7 @@
                 <p>
                 The @ADVL> @&lt;ADVL @ADVL tags mark adverbials (many, but not all of the adverbials are adverbs). The two first ones indicate the direction to the mother node, the third is used to refer to both the former.
                 </p>
-                <p>The adverbial of an infinite verb outside the verbal gets @-FADVL. The @HAB tag marks the habitative construction.
+                <p>The adverbial of an infinite verb outside the verbal gets @-FADVL. The &lt;hab> tag marks the habitive construction.
                 </p>
                 <p>
                 The @PCLE tag marks particles, and the @COMP-CS&lt; tag is for the complement of a @CS.
@@ -432,7 +432,7 @@
                         </dd>
                     </dl>
                 </dd>
-                <dt>@HAB></dt>
+                <dt>@&lt;ADVL &lt;hab></dt>
                 <dd>Habitive to the left of the finite verb.
                     <dl>
                         <dt>Máhtes (N)</dt>
@@ -441,7 +441,7 @@
                         </dd>
                     </dl>
                 </dd>
-                <dt>@&lt;HAB</dt>
+                <dt>@ADVL> &lt;hab></dt>
                 <dd>Habitive to the right of the finite verb.
                     <dl>
                         <dt>dus (Pron)</dt>
@@ -650,10 +650,6 @@
                         <dd class="ex" >
                             <em>Mus leat gieđat nu <em class="red">galbmasat</em>. - 'My hands are so <em class="red">cold</em>.'</em>
                         </dd>
-                        <dt>beana (N)</dt>
-                        <dd class="ex" >
-                            <em>Mus lea <em class="red">beana</em>. - 'I have <em class="red">a dog</em>.'</em>
-                        </dd>
                     </dl>
                 </dd>
                 <dt>@SPRED></dt>
@@ -681,10 +677,6 @@
                         <dd class="ex" >
                             <em><em class="red">Son</em> lea mu oabbá. - '<em class="red">She</em> is my sister.'</em>
                         </dd>
-                        <dt>luopmánat (N)</dt>
-                        <dd class="ex" >
-                            <em>Jeakkis leat <em class="red">luopmánat</em>. - 'There are <em class="red">cloudberries</em> in the swamp.'</em>
-                        </dd>
                     </dl>
                 </dd>
                 <dt>@&lt;SUBJ</dt>
@@ -693,6 +685,17 @@
                         <dt>ollusat (Pron)</dt>
                         <dd class="ex" >
                             <em>...ja dan vejolašvuođa orro gal <em class="red">ollusat</em> geavahan. - '...and this opportunity, <em class="red">many</em> seem to make use of.'</em>
+                        </dd> </dl></dd>
+                <dt>@&lt;SUBJ &lt;ext></dt>
+                <dd>Subject to the right of the finite verb, in a habitive or extencial construction.
+                    <dl>
+                        <dt>beana (N)</dt>
+                        <dd class="ex" >
+                            <em>Mus lea <em class="red">beana</em>. - 'I have <em class="red">a dog</em>.'</em>
+                        </dd>
+                        <dt>luopmánat (N)</dt>
+                        <dd class="ex" >
+                            <em>Jeakkis leat <em class="red">luopmánat</em>. - 'There are <em class="red">cloudberries</em> in the swamp.'</em>
                         </dd>
                     </dl>
                 </dd>
