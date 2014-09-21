@@ -3,17 +3,21 @@
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
    <header>
-      <title>Language Documentation</title>
+      <title>Language modelling</title>
    </header>
    <body>
-      <p>Here you find documentation of how the grammatical analysers
-      are made, and how they may be used, ordered according to
-      language. The source files for each of the languages are found
-      in subcatalogues under the catalogue langs/ with similar
+      <p>Here you find documentation of the modelling of the grammars
+      of each individual language. The modelling technique we use is
+<a href="https://en.wikipedia.org/wiki/Finite_state_transducer">Finite state transducers</a>
+for morphology and 
+<a href="https://en.wikipedia.org/wiki/Constraint_Grammar">Constraint
+      Grammar</a> for syntax.  In our source code, the actual files
+      for each of the languages are found in subcatalogues under the
+      catalogue langs/ with similar
       structures, <a href="../infra/infraremake/NewinfraCatalogues.html">described
       here</a>. Languages with no work done so far are marked with an
-      asterisk.
-      Our research publications on these programs are found on our 
+      asterisk, and found in the catalogue startup-langs/.  Our
+      research publications on these programs are found on our
       <a href="background/index.html">publication page</a>, and information
       on practical programs are found behind the tabs above.</p>
       <section>
