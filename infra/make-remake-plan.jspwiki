@@ -13,7 +13,7 @@ gt/mk-files/ - main entrance for whatever field they cover
            /phonrules.mk  => morphophonology, twolc or xfst
            /polderland.mk =>
            /speller.mk    =>
-gt/$LANG/Makefile - variables that are lang specific, esp. SRCS, also 
+gt/$LANG/Makefile - variables that are lang specific, esp. SRCS, also
 }}}
 
 Sjur: What happens when we insert e.g. Greenlandic?
@@ -29,7 +29,9 @@ Sjur: That is a different thing. Sfst is a complete replacement for the xerox to
 Trond: fin is not in our vcs
 Børre: What we are discussing are xerox tools and in the future, be able to insert hfst into our tool chain, which read our xerox files fine.
 
+{{{
 make all TARGET=sme tool=[xerox|sfst|whatever] (reasonable default)
+}}}
 
 reasons for having parallel tool chains:
 * future flexibility
@@ -47,7 +49,7 @@ either:
 if kal then XFST
 
 or
-COMPILER 
+COMPILER
 
 gt/kal/Makefile
 COMPILER=xfst
@@ -71,11 +73,12 @@ if twolc, do x-y-z
 make binary phonrules (name!! mphonrules)
 
 phon-$lang.xfst  tts rule files  sme kal in txt out ipa orth2phon -> phon2ipa/phon2sampa/whatever
-phon-$lang.bin                 
+phon-$lang.bin
 orth-kal.txt  Kleinschmidt 2 modern
 ipa2sampa.pl   <==== totally lg-independent
 ipa2sampa.fst  <==== totally lg-independent
 
+{{{
 twol: $(RULEBIN)
 $(RULEBIN): $(RULESRC)
 	@echo
@@ -88,11 +91,12 @@ $(RULEBIN): $(RULESRC)
 	quit \n" > tmp/twol-$(TARGET)-script
 	$(COMPILER) < tmp/twol-$(TARGET)-script
 	@rm -f tmp/twol-$(TARGET)-script
-	
-	
+}}}
+
 # Here we build xfst-kal.bin, the morphophonological component.
 # This goal depends on xfst-kal.txt
 
+{{{
 xfst-kal.bin: ../bin/xfst-kal.bin
 ../bin/xfst-kal.bin: xfst-kal.txt
 	@echo
@@ -110,9 +114,10 @@ xfst-kal.bin: ../bin/xfst-kal.bin
 
 	printf "compile-source $(LEX)  \n\
 	read-rules ../bin/twol-fao.bin \n\
+}}}
 
-
-# This target removes all !SUB-marked entries                                                                    
+# This target removes all !SUB-marked entries
+{{{
 %.norm: $(TARGET)/int/%.norm
 $(TARGET)/int/%.norm: %.txt
         @echo
@@ -134,6 +139,7 @@ $(TARGET)/bin/$(TARGET).save: twol-$(TARGET)-descriptive.bin \
 	compose-result \n\
 	save-result $@ \n\
 	quit \n" > tmp/save-script
+}}}
 
 Problem: name clashes
 Solution: More explicit names, clear file naming conventions
@@ -144,7 +150,7 @@ Solution: More explicit names, clear file naming conventions
 * every target checks for the existence of the required source files
 * if the resources do not exist, print an error message, listing the missing files
 * we need to visualise the depenedencies - the makefiles are too complex
-** [http://search.cpan.org/~srezic/GraphViz-Makefile-1.15/Makefile.pm] - a perl 
+** [http://search.cpan.org/~srezic/GraphViz-Makefile-1.15/Makefile.pm] - a perl
    module to produce Graph Viz output files diagramming Makefiles
 
 Make is not utilised
@@ -158,7 +164,7 @@ We have so many things there going on that we should have a stable prototype bef
 1. make a toy testbench in order to understand the dependency system
 2. make a testbench doing real stuf, but only part of our system
 3.
-For the testbench we 
+For the testbench we
 
 
 Börre: Calls for a new naming convention
@@ -169,14 +175,14 @@ hyph: kal has hyph-kal.fst as a target, the big file seems to have hyph-fes
 
 Changing from make to other programs?
 
-Sjur: 
+Sjur:
 If we replace make with something else, it makes the job bigger
 We wll then have another learning curve
 The risks are larger as well
 If Saara is correct in that we have not made the best out of make yet, we shoul do that first
 
 
-Saara: 
+Saara:
 What was actually the problem with the new make setup?
 
 Sjur:
@@ -194,7 +200,7 @@ We don't have implicit rules for going rom .txt to .fst
 
 $(TARGET)/bin/%.fst: %.lex
     commands
-    
+
 $(TARGET)/bin/hyph-%.fst: %.lex
     and the same commands?
 
@@ -221,7 +227,7 @@ We should also be able to ask for any binary file as a target, right?
 
 But what should the binary file be named?
 
-eventually so that 
+eventually so that
 you can ask for any final binary file
 and all binary final files are given a TOOL definition
 
@@ -276,5 +282,3 @@ Renaming must be __discussed__. This goes especially for the production line lgs
 Topics: new suffixes: noun-sme-lex.txt => noun-sme.lexc, sme-dis.rle _> sme-dis.cg3
 names like ateq- away.
 Start tagging revisions -- the current revision as the baseline version
-
-
