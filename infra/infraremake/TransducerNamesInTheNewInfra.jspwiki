@@ -4,12 +4,14 @@ The new infrastructure produces transducers with a different naming scheme than 
 
 !!The information we want to encode
 
-The strings to represent the value for each class is given first. The order of the info classes represent the order in the filename.
+The strings to represent the value for each class is given first. The order
+of the info classes represent the order in the filename.
 
 !basictype
 * analyser
 * generator
-* transformer (transducer to transform one kind of representation to another, e.g. date expressions from arabic numerals to text, or vice verse)
+* transformer (transducer to transform one kind of representation to another,
+  e.g. date expressions from arabic numerals to text, or vice verse)
 * automaton (single-level acceptor)
 
 !application
@@ -39,7 +41,8 @@ The strings to represent the value for each class is given first. The order of t
 * whatever set of dialects are relevant for the language
 
 !orthography
-* whatever set of orthographies are relevant for the language, e.g. Kleinschmidt for KAL, etc.
+* whatever set of orthographies are relevant for the language, e.g.
+Kleinschmidt for KAL, etc.
 
 !fsttype
 * hfst (HFST fst)
@@ -62,28 +65,34 @@ This should give transducers with names like:
 
 !!!Transcription transducers
 
-These are not lexical transducers, instead they convert between one representational format and another, like between dates written as text and dates written with digits. For this type of transducers there is a separate basic transducertype: __transcriptor__. The application name specifies what type of transcription is being done by the transducer.
+These are not lexical transducers, instead they convert between one
+representational format and another, like between dates written as text and
+dates written with digits. For this type of transducers there is a separate
+basic transducertype: __transcriptor__. The application name specifies what
+type of transcription is being done by the transducer, and the direction is
+specified using either __digit2text__ or __text2digit__.
 
 Possible application names are:
 
-* date2text
-* clock2text
-* number2text
+* date
+* clock
+* number
 
-Or in the other direction
-
-* text2date
-* text2clock
-* text2number
-
-Conversion to IPA is just another case of this type of transducers, and is named:
+Conversion to IPA is a variant of this type of transducers, and is named:
 
 * text2ipa
 
-Since no tags are involved in these types of transducers, __the tagset is left out.__
+Since no tags are involved in these types of transducers,
+__the tagset is left out.__
+
+The transcriptors are sometimes filtered (i.e. some forms are excluded in
+one direction or the other) and that is indicated by a suffix ''.filtered''.
+And because of [the issues with Xerox
+lookup|LookupAndComposition—ADirectionPrimer.html], whether the fst is
+intended for lookup or composition is also indicated by a suitable suffix.
 
 !!File name examples
 
-* {{transcriptor-date2text-desc.hfst}}
-* {{transcriptor-text2clock-norm.xfst}}
+* {{transcriptor-date-text2digit.filtered.lookup.xfst}}
+* {{transcriptor-clock-digit2text.filtered.lookup.xfst}}
 * {{transcriptor-text2ipa-desc.hfst}}
