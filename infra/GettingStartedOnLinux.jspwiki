@@ -44,6 +44,17 @@ poppler-utils wget python-feedparser subversion openjdk-7-jdk cmake \
 python-tidylib python3-yaml libxml-libxml-perl libtext-brew-perl
 }}}
 
+__NB! Known bug on Ubuntu!__ If you get an error message like the following:
+
+{{{
+make[1]: *** No rule to make target `apertium-fin-est.est-fin.LR.att.gz', needed by `all-am'.  Stop.
+}}}
+
+it means that your {{GNU make}} is too old. Try upgrading to 4.0. This bug only
+manifests on Ubuntu systems (at least as far as we know) and only when enabling
+apertium fst's. Requiring Make 4 for all platforms would be too much fuss for
+too many users, so please fix it by upgrading {{make}} on your system.
+
 !!Note for Java avoiders
 
 Some of the tools above require or use Java, notably Saxon and Forrest. Saxon is
@@ -73,4 +84,5 @@ __linguistic programming tools:__
    spellchecker in [LibreOffice|http://libreoffice.org].
 * [Visl CG3|/doc/tools/docu-vislcg3.html] (for syntactic analysis)
 
-If you want to work with proofing tools, see ''Proofing tools to install'' [here|install-overview.html]
+If you want to work with proofing tools, see ''Proofing tools to install''
+[here|install-overview.html]
