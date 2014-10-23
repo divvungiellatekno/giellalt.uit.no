@@ -1,11 +1,20 @@
-!!!INSTALLATION/UPDATE OF A SINGLE TRANSLATOR ON VICTORIO
+
+Installation/update of a single translator on gtweb.
+
+
+!!!WAIT:
+
+__This documentation is out of date, and will be updated shortly__
+
 
 !!a) Log in
 
 If you’re not already, add your user to the MT group
+
 {{{
 $ /usr/bin/usermod -a -G mt <username>
 }}}
+
 You’ll need ‘sudo’ for this.
 
 !!b) make a directory in your home directory for the MT source
@@ -16,6 +25,7 @@ cd mt/
 }}}
 
 !!c) check out the necessary source code (e.g. for sme-nob)
+
 {{{
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-sme-nob
 }}}
@@ -40,7 +50,7 @@ $ echo “ja” | apertium -d /opt/mt/share/apertium/ sme-nob
 og
 }}}
 
-!!!INSTALLATION OF TRANSLATORS ON VICTORIO
+!!!INSTALLATION OF TRANSLATORS ON GTWEB
 
 !!a) Log in
 
@@ -58,9 +68,11 @@ cd mt/
 
 !!c) check out the necessary source code
 {{{
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/incubator/apertium-sme-smn
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/nursery/apertium-sme-fin
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/nursery/apertium-sme-sma
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/nursery/apertium-sme-smj
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-nn-nb
+$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-nno-nob
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-sme-nob
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium
 $ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/lttoolbox
@@ -96,23 +108,13 @@ $ make
 $ make install
 $ cd ..
 
-$ cd apertium-nn-nb
+$ cd apertium-nno-nob
 $ ./autogen.sh --prefix=/opt/mt
 $ make
 $ make install
 $ cd ..
 
-$ cd apertium-sme-smj/
-$ ./autogen.sh --prefix=/opt/mt
-$ make
-$ make install
-$ cd ..
-
-$ cd apertium-sme-fin/
-$ ./autogen.sh --prefix=/opt/mt
-$ make
-$ make install
-$ cd ..
+etc. for all the language pairs
 }}}
 
 !!e) test it installed ok:
