@@ -42,9 +42,9 @@ for sme on a fast machine. Once the basic transducers are compiled, new apertium
 translators are compiled quickly, though.
 
 
-__Compiling the Saami languages__
+__Compiling the Saami languages and Finnish__
 
-The Saami languages are compiled in the respective folders in $GTHOME/langs/.
+The Saami languages and Finnish are compiled in the respective folders in $GTHOME/langs/.
 The compilation procedure will then store the binary files in /usr somewhere, 
 and the apertium compilers will read them from that location. 
 Before compiling each language, the configure option must be tuned to MT usage:
@@ -64,11 +64,11 @@ so that one for e.g. ''sme-sma'' must compile ''sme'' __and__ ''sma''.
 Remember to reset the .configure option afterwards, e.g. to 
 {{./configure}} to get the default setting.
 
-__Compiling Bokmål, Nynorsk and Finnish (for sme-nob, sme-fin and nob-nno)__
+__Compiling Bokmål, Nynorsk (for sme-nob and nob-nno)__
 
 For these languages, we do not use the Giellatekno version, but the one
 in apertium/languages/apertium-nob, etc. You must check out the apertium branch 
-{{apertium/languages/apertium-nob}} (and -fin, -nno, eventually). In that catalogue
+{{apertium/languages/apertium-nob}} (and -nno, eventually). In that catalogue
 you must do
 
 {{{
