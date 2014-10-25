@@ -107,6 +107,34 @@ etc.
 
 !!In case of trouble
 
+!cg compiler version mismatch
+
+You may get this type of error message:
+
+{{{
+$ echo ja | apertium -d . fin-est
+Error: Grammar revision is 9705, but this loader requires 10043 or later!
+}}}
+
+Now, you may have an old vislcg3 / cg-proc compiler. Test that:
+
+{{{
+vislcg3 --version
+cg-proc --version
+}}}
+
+If the number you get (__0.9.9.10195__) is lower than the error message
+requires, you should update. It may be, however, that the version number
+is ok but you still get the error message. In that case, you have old 
+binary files although you have updated your compeler. In that case,
+
+* in the apertium-LANG1-LANG2 folder, write ''make clean''
+* in the $GTHOME/langs/LANG/ folder, write ''sudo make uninstall''
+
+Thereafter, repeat the installation procedure.
+
+!More
+
 ... to be written, when reported.
 
 
