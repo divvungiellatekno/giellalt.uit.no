@@ -34,16 +34,15 @@ unzip and untar, and go directly to the {{./configure}} step.
 svn co http://svn.code.sf.net/p/hfst/code/trunk/hfst3
 cd hfst3/
 ./autogen.sh
-./configure --without-foma --with-unicode-handler=glib --enable-all-tools
+./configure --enable-all-tools --with-unicode-handler=glib
 }}}
 
 The configuration above is the default. To check what other options there are,
 do {{./configure --help}}.
 
-The Foma backend is now optional (all xfst functionality is available as part
-of the regular hfst tools), and Foma does in fact contain a bug that prevents
-some languages from building. Turning off Foma is thus recommended until this
-bug has been fixed.
+The Foma backend is not used by the Giella infrastructure, and whether you
+build with or without it is up to you. For license compatibility issues it
+can be wise to build without it (use {{--without-foma}} to achieve this).
 
 To avoid the very wordy output of {{make}}, and get only essential messages,
 add the following {{./configure}} option:
