@@ -36,6 +36,21 @@ The ApplicationSettings key contains the following configuration settings:
  * {{admins_to_email}} - A list of email addresses to send server errors to.
  * {{app_meta_title}}, {{meta_description}}, {{meta_keywrods}} - Fields for
    determining meta tags that search engines pay attention to.
+ * {{grouped_nav}} - For projects with many dictionary pairs, this allows
+   another system for managing a long navigation list. Languages will be
+   grouped by the source language, with minority languages prioritized. See the
+   {{Languages}} section about marking these languages.
+
+Development features in {{ApplicationSettings}}:
+
+These features may not be entirely finished, so use with care.
+
+ * {{new_style_templates}} - This enables the template
+   system in configs/language_specific_options/ for local project-based control
+   of dictionary appearance. 
+ * {{new_mobile_nav}} - To be used with {{grouped_nav}}: this enables a new
+   navigation style with submenus for language groups. Once this is complete,
+   this setting will go away and be the default option in all projects.
 
 ! Note on locales
 
@@ -142,6 +157,11 @@ Languages:
   - iso: lav
 }}}
 
+Optional arguments for each item:
+
+ * {{minority_lang: true}}: this helps sort by minority and majority languages,
+   and is particularly useful with grouped navigation, thus only minority
+   languages may be the group parent.
 
 !! XML dictionary paths (Dictionaries)
 
@@ -175,6 +195,24 @@ Dictionaries:
 }}}
 
 !! Additional lexicon settings
+
+! Asynchronous paradigms
+
+Each dictionary may specify that paradigms are to be generated asynchronously.
+This is because some generators may be a little slow while under development,
+resulting in long page load times. We would rather finish rendering the page,
+and let the paradigm load later.
+
+{{{
+ - source: lang_iso
+   target: lang_iso
+   asynchronous_paradigms: true
+   path: 'dicts/dictionary.file.xml'
+}}}
+
+This causes the page to load, and the paradigm to be requested via a separate
+AJAX request. When the request is finished, the user will be able to see the
+paradigm.
 
 ! Input variants
 
@@ -215,6 +253,38 @@ able to be extracted into {{.po}} files as normal.
         description: !gettext "Social media (with <em>acdnstz</em>)"
         short_name: "SoMe"
 }}}
+
+! On-screen keyboard/key palette
+
+The project maintainer may define an on-screen key palette to allow users to
+input the specific symbols they desire, even though their keyboard does not
+support them. This is because spell-relax may not always be an option for user
+input: not because we cannot come up with spell-relax rules of any kind, but
+because users may wish to be specific. This also works on mobile devices.
+
+This is configured on a variant-to-variant basis, to reflect that each
+variant may have its own input system.
+
+
+{{{
+  - source: sms
+    target: fin
+    input_variants: &spell_relax
+      - type: "standard"
+        description: !gettext "Standard"
+        example: "(ǩ)"
+        onscreen_keyboard: &SMS_KEYS
+          - "â"
+          - "č"
+          - "ʒ"
+          - "ǯ"
+          # etc ... 
+
+}}}
+
+*Note*: Skolt Saami has lots of characters in the keyboard, so this example
+is shortened.
+
 
 ! Korp integration
 
