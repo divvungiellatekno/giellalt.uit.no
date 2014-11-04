@@ -7,14 +7,15 @@ processes remotely.
 
 All of the examples here use the ''gtweb'' dictionaries, and require logging in
 as the ''neahtta'' user. Note that on ''gtoahpa'', the compile process is
-restricted, so that only the lexicon will be able to be compiled.
+restricted, so that only the lexicon will be able to be compiled, but ''not''
+the FST files. FSTs must be compiled manually (see below in ''Updating the FSTs'').
 
 NB: Neahttadigisánit (sme, sma, etc.) or sanit.oahpa.no/sánit.oahpa.no is
 currently on gtoahpa, but other services are located on gtweb: sanat.oahpa.no,
 valks.oahpa.no. For these you will need to log into gtweb, though the following
 examples may show gtoahpa as the hostname in the command prompt
 
-!!!Updating the lexica
+!!!Updating the lexica on gtweb
 
 1.) ''Log in to the server via SSH as the NDS user (user name: neahtta)''
 
@@ -93,7 +94,7 @@ When everything is working, run the following:
     fab local DICT restart_service
 }}}
 
-!!!Updating the fsts
+!!!Updating the FSTs
 
 There are two ways to update the FSTs. For both of these options, you must 
 know first where the FSTs for each dictionary and language should lie.
@@ -109,11 +110,42 @@ As above, you can use the test command to see if the files were updated.
 
 If you see any errors, be sure to correct them.
 
-!! Updating on your own
+!! Updating on your own (NB: necessary on gtoahpa)
 
 The first way to update FSTs is to do so on your own, using whichever method
 you are comfortable with, typically following the usual procedure for
 ''$GTSVN/langs/'', and then copying them manually to the specified locations.
+
+To find the FST locations: 
+
+{{{
+    fab local DICT test_configuration
+}}}
+
+This will output the following: 
+
+{{{
+    SoMe:
+      FOUND:   /opt/smi/sme/bin/analyser-dict-gt-desc-mobile.xfst
+      UPDATED: Tue Nov  4 15:47:31 2014
+
+      FOUND:   /opt/smi/sme/bin/generator-dict-gt-norm.xfst
+      UPDATED: Tue Nov  4 15:47:31 2014
+
+
+    sme:
+      FOUND:   /opt/smi/sme/bin/analyser-dict-gt-desc.xfst
+      UPDATED: Tue Nov  4 15:47:31 2014
+
+      FOUND:   /opt/smi/sme/bin/generator-dict-gt-norm.xfst
+      UPDATED: Tue Nov  4 15:47:31 2014
+
+    ... snip ...
+
+}}}
+
+When you compile the analyzers on your own, copy them to these paths, and test
+that their permissions allow them to be accessible to the neahtta user.
 
 !! Updating via Fabric
 
