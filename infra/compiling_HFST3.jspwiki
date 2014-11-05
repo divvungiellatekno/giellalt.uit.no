@@ -1,10 +1,4 @@
-!!!Compiling HFST3
-
-This is a receipt for setting up HFST3, with the backends we need. See the HFST3
-README file for further details, and how to turn on or off specific backens if
-needed or wanted.
-
-__NB!__ The information below is up-to-date as of __HFST 3.7.1__.
+__NB!__ The information below is up-to-date as of __HFST 3.8.1__.
 
 Presently, HFST3 supports three different backends, all enabled by default:
 * __OpenFST__ - weighted transducers (''default'')
@@ -16,15 +10,7 @@ HFST3 abstracts over the different backends, and will make it easy to add
 support for new backends in the future, to support even more FST source code and
 transducer conversion options.
 
-!!!Building HFST3
-
-Please note that HFST3 requires rather new versions of flex and bison. The
-configure script should check this for you, and report if you have to install
-newer versions of these tools (use [MacPorts|http://www.macports.org/] on the
-Mac, some of the packaging systems on other OS's). See the HFST3 README
-file for further details.
-
-!!Checkout and configuration
+!!!Checkout and configuration
 
 We assume installation from svn here. If you have downloaded a tarball from
 [sourceforge|https://sourceforge.net/projects/hfst/files/latest/download?source=files],
@@ -79,7 +65,13 @@ Or:
 __NB!__ Remember to {{make clean}} after each {{./configure}} run, and before
 you {{make}}
 
-!!Make and install
+__NB2!__ This does NOT apply to MacOSX 10.10 - in this case, just configure
+without any extra flags, as described earlier. This might be because the hfst
+build instructions are improved, or because of changes in Apple's compilers. If
+it is because of changes in the Hfst code base, the above workaround is probably
+obsolete also on MacOSX 10.9, but this needs to be tested.
+
+!!!Make and install
 
 The final steps to build and install {{hfst}} after the configuration are as
 follows (the script to generate {{.cc}} files may only be required on some
@@ -91,9 +83,7 @@ make
 sudo make install
 }}}
 
-!!!Extra preparations on older systems
-
-!!MacOSX 10.6
+!!!Extra preparations on MacOSX 10.6
 
 When building from the subversion source code,
 OSX 10.6 and earlier requires newer versions of {{automake}} and {{autoconf}}
@@ -106,4 +96,4 @@ __before anything else__:
 sudo port install automake autoconf flex bison pkgconfig
 }}}
 
-After this, do {{./autogen.sh}} etc as above.
+After this, do {{./autogen.sh}} etc. as above.
