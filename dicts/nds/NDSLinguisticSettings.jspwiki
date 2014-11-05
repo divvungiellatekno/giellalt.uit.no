@@ -289,6 +289,18 @@ The file format is YAML, and all that is permitted here is key-value settings,
 where the key is the name of the tagset, and the value is a list of tags that
 fit into this tagset.
 
+! Tagset uses
+
+ * paradigm generation rules: you may use a tagset to apply a
+   paradigm file to lexical entries corresponding with a specific morphological
+   analyses.
+
+ * In rendering paradigms via the HTML templates, you may filter a list of
+   generated forms by a tagset:
+
+    - Jinja template filters ''by_tagset'', ''by_tagset_value'', are available
+      for this.
+
 ! Example
 
 Here's an example of some tagsets from ''sme'':
