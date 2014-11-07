@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>The pipeline for the xserve corpus analysis</title>
+
+    <authors>
+      <person email="borre.gaup@uit.no" name="Børre Gaup" />
+      <person email="trond.trosterud@uit.no" name="Trond Trosterud" />
+    </authors>
+  </header>
+
+  <body>
+
+    <section>
+        <title>Analysis</title>
+        <p>Here we document the daily process for analysing corpora. </p>
+            <p>In short: 
+            The xserve corpora are analysed on stallo every second night, 
+            and thereafter moved to the xserve divvun.no.</p>
+        
+        <p>The details are as follows: The script <code>analyse.sh</code> (in gt/scripts/corpus) 
+            runs a shellscript <code>analyse_corpus</code>,
+            a shell-script pointing at <code>analyser.py</code> (in tools/CorpusTools/corpustools). </p>
+        
+        <p>The final section of the file <code>analyser.py</code> gives the actual pipeline,
+            it is the standard newinfra pipeline, with abbr.txt in tools/preprocess, the analyser
+            analyser-disamb-gt-desc.xfst, disambiguation.cg3, korp.cg3 and dependency.cg3. </p>
+        
+        <p>The analysis is run on stallo as a cronjoob every night at 01.44. The cronjob command is:</p>
+        
+        <pre>
+source $HOME/.bash_profile &amp;&amp; rsync -qavz --delete 
+divvun.no:boundcorpus/converted $GTBOUND/ &amp;&amp; rsync -qavz --delete 
+divvun.no:freecorpus/converted $GTFREE/ &amp;&amp; cd $GTHOME &amp;&amp; svn up &amp;&amp; cd &amp;&amp; 
+/opt/torque/bin/qsub -o analysis.log -j oe 
+/home/boerre/svnrepos/main/gt/script/corpus/analyse.sh
+        </pre>
+
+        </section>
+      <section>
+          <title>Files and compilers</title>
+          
+        <p>The files used in the analysis are found on stallo in <code>/home/boerre/svnrepos/main/langs/</code>.</p>
+        
+        <p>The compilers used on stallo seem to be</p>
+        <ul>
+        <li>vislcg3: /home/sjur/bin/vislcg3 (0.9.7.7465; TODO: This need to be updated)</li>
+        <li>xfst, lookup: TODO: hmm, where are they?</li>
+        </ul>
+
+        <p>There are tests checking whether the corpus analysis works, they are found and 
+            documented in <code>$GTHOME/tools/CorpusTools/test/test_analyser.py</code>. </p>
+        </section>    
+        
+      
+      
+  </body>
+</document>
+      
