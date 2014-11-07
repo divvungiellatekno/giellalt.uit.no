@@ -30,13 +30,13 @@
         
         <p>The analysis is run on stallo as a cronjoob every night at 01.44. The cronjob command is:</p>
         
-        <pre>
-source $HOME/.bash_profile &amp;&amp; rsync -qavz --delete 
-divvun.no:boundcorpus/converted $GTBOUND/ &amp;&amp; rsync -qavz --delete 
-divvun.no:freecorpus/converted $GTFREE/ &amp;&amp; cd $GTHOME &amp;&amp; svn up &amp;&amp; cd &amp;&amp; 
-/opt/torque/bin/qsub -o analysis.log -j oe 
+        <p>
+source $HOME/.bash_profile &amp;&amp; rsync -qavz --delete <br/>
+divvun.no:boundcorpus/converted $GTBOUND/ &amp;&amp; rsync -qavz --delete <br/>
+divvun.no:freecorpus/converted $GTFREE/ &amp;&amp; cd $GTHOME &amp;&amp; svn up &amp;&amp; cd &amp;&amp; <br/>
+/opt/torque/bin/qsub -o analysis.log -j oe <br/>
 /home/boerre/svnrepos/main/gt/script/corpus/analyse.sh
-        </pre>
+        </p>
 
         </section>
       <section>
