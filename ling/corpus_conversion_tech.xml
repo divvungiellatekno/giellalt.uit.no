@@ -255,6 +255,15 @@ dánska-norgalaš
         <dd>The script is used for correcting the group ids and permissions of
         the corpus files in different catalogs. Running the script requires
         sudo rights.</dd>
+        
+        <dt>change_xsl_generic.py</dt>
+	        <dd>
+for i in `find . -name \*.xsl`<br/>
+do<br/>
+change_xsl_generic.py translator_fn Pirjo translator_ln Paavaniemi <br/>
+translator_gender fem translator_nat FI  $i<br/>
+done<br/>
+</dd>
 
         <dt>gt2ga.sh</dt>
 
