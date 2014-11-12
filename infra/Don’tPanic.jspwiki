@@ -30,6 +30,37 @@ The following processes need to be restarted, and in the following way.
 
 (tbw.)
 
+!!!A server is very slow
+* Log in to the machine via ssh and find out which processes are using most CPU resource by giving the command:
+{{{
+    top
+}}}
+
+The output looks something like
+{{{
+ PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND       
+15221 neahtta   20   0  512m 303m 2848 R 19.2  3.9   2:24.15 python         
+ 9405 neahtta   20   0  512m 303m 2848 S 13.9  3.9   1:28.60 python         
+ 6239 mysql     20   0  896m 185m 5500 S  0.3  2.4  19:10.63 mysqld          
+.......
+}}}
+ 
+Observe the column __%CPU__. If some of the processes remains in the top of the table with a high value in this column then this is obviously the cause of the problem. To get more information about the problematic process give the command
+
+{{{
+    ps -fp ''PID''
+}}}
+
+where you replace ''PID'' by the concrete number, e.g. 15221 in the given example.
+
+If it is an Oahpa (python2.7) process then you can see from this output which Oahpa it is. First, you can try to [restart the particular Oahpa instance|http://giellatekno.uit.no/ped/common/httpdserver.html]. After doing that check with command __top__ if the problem has disappeared. If not then you can stop the process using the command
+
+{{{
+    kill ''PID''
+}}}
+
+(requires sudo rights)   
+
 !!!Analysers do not work
 
 * The analysers are in /opt/smi. Check that they work, and recompile if they don't.
