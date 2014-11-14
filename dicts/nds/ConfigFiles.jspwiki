@@ -10,8 +10,7 @@ launch. The configuration file contains:
  * FST path and format definitions (compounding, tag structure, etc.)
  * Languages available
  * XML dictionary paths 
- * Wordform generation and analysis details
- * Wordform tag rewrites
+ * Reader configuration
 
 Further configuration beyond this, formatting of lexicon entries, is covered
 by other parts of the system.
@@ -411,3 +410,52 @@ TagSets:
 
 
 
+!! Reader Settings (ReaderConfig)
+
+This is another top-level configuration. Within this is one key for each
+language ISO code. Within the ISO code, the following settings may be defined:
+
+ * ''multiword_lookups'' (boolean)
+ * ''multiword_range'' (string) - this setting specifies how many words before
+   and after the user's cursor should be included in the lookup (see below)
+ * ''word_regex'' (string) - a JavaScript formatted regular expression string
+   which determines which word characters are contained within the language's
+   words.
+ * ''word_regex_opts'' (string) - any regular expression options. Most likely
+   this will be "g"
+
+An example of the word regular expression, which contains most characters
+defined as words in unicode via unicode ranges, but also includes the hyphen
+and apostrophe.
+
+{{{
+ReaderConfig
+  myv:
+    multiword_lookups: false
+    word_regex: |
+      [\u00C0-\u1FFF\u2C00-\uD7FF\w\-']+
+    word_regex_opts: "g"
+}}}
+
+! Multiword lookups
+
+The reader may be configured to allow multiword environments, so, each click
+will expand the word selection to include surrounding material. This operation
+only respects word boundaries, but does not perform any linguistic computation
+on the client side. It also results in more data being sent to the server.
+
+Multiword lookups are enabled by setting ''multiword_lookups'' to ''true'', and
+then defining the range. The range is defined with a string of two numbers,
+separated by a comma. The first number, prefixed by a ''-'' will define how
+many words _before_ the selection to search, and the second number, prefixed by
+a ''+'' will define how many words _after_ the selection to search.
+
+{{{
+ReaderConfig
+  hdn:
+    multiword_lookups: true
+    multiword_range: "-4,+4"
+}}}
+
+This setting assumes that the user will Alt/Option + click on a word, and the
+multiword expansion may not function while dragging and selecting a word.
