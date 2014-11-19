@@ -1,117 +1,203 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
-                          "http://forrest.apache.org/dtd/document-v20.dtd">
-<document xml:lang="en"> 
-    <header> 
-        <title>Forrest i18n effort</title>
-
-	<authors>
-	  <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen" />
-	  <person email="tomi.pieski@samediggi.no" name="Tomi Pieski" />
-	  <person email="borre.gaup@samediggi.no" name="Børre Gaup" />
-	</authors>
-
-    </header> 
-    <body> 
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="nb" >
+    <header>
+        <title>Divvun som mangespråklig site</title>
+    </header>
+    <body>
         <section>
-            <title>Forrest i18n subproject</title>
-<warning>This document is not up-to-date!</warning>
-            <p>We need to get Forrest i18n to work to present users and the 
-            general audience with a decent and working language menu that
-            reflects the list of available languages.</p>
+            <title>Oversikt</title>
 
-            <p>Tasks:</p>
+            <p>
+                Divvun har delt den opprinnelige siten sin i to byggbare deler, dvs. to forrest siter.
+            </p>
+
             <ul>
-              <li>Define the wanted behaviour</li>
-              <li>Collect the pieces available presently in Forrest, and test 
-                  the present implementation</li>
-              <li>Identify the problems with the existing version</li>
-              <li>Make our own changes to get Forrest to behave like we want it
-                  to</li>
-              <li>Present the solution to the Forrest list (dev), and hopefully
-                  get it accepted.
-                  <note>All of us should start subscribing to
-                  the Forrest dev list!</note></li>
-              <li>Install a new version of the Forrest-doc on divvun.no.</li>
+                <li>$GTHOME/xtdoc/sd</li>
+                <li>$GTHOME/xtdoc/techdoc</li>
             </ul>
+
+            <p>
+                Dette ble gjort fordi deler av siten skulle oversettes til sju språk, mens store deler var og skulle være enspråklig.
+            </p>
+
+            <p>
+                Begge sitene blir bygget med skriptet <code>$GTHOME/gt/script/static-divvun.py</code>.
+            </p>
+
+            <p>
+                Kommandoen
+                <br/>
+                <code>
+                    static-divvun.py --sitehome $GTHOME/xtdoc/sd --destination sd@divvun.no:Sites/ fi no se smj sma sv en
+                </code>
+                <br/>
+                lager en site med sju forskjellige metaspråk og sørger for å koble filer med likt metaspråk og innholdsspråk sammen.
+            </p>
+
+            <p>
+                Kommandoen
+                <br/>
+                <code>
+                    static-divvun.py --sitehome $GTHOME/xtdoc/techdoc --destination sd@divvun.no:Sites/ en
+                </code>
+                <br/>
+                lager en site med engelsk som metaspråk.
+            </p>
+
+            <p>Disse to sitene ser ut som de er samme forrest site ved at de har samme layout og ved å samstemme tabs.xml-filene for de to sitene.</p>
         </section>
+
         <section>
-            <title>The wanted behaviour</title>
-            <p>Have a look at
-               <a href="http://www.risten.no/exist/risten">risten.no</a>.
-               The available languages are listed to the top right, and one can 
-               change the interface language by clicking the links (which is 
-               just the server address augmented with ?locale=xx, see next 
-               section).</p>
-            <p>For a document centric site, we would like to have the language 
-               menu generated dynamically, and reflect the available 
-               language versions for the document in question. For pages
-               available in only one language, the lang menu should reflect
-               this by displaying the language of the document.
+            <title>Fremgangsmåte</title>
+            <section>
+                <title>Ny site-mappe</title>
+                <p>
+                    Vi begynte med å lage en ny mappe, <code>techdoc</code>, som lå parallelt med sd. Deretter kjørte vi <code>forrest seed</code> i den mappa for å lage rammeverket for en ny forrest site. Deretter ble alt innholdet som forrest site laget i  <code>techdoc/src/documentation/content/xdocs/</code> slettet (rm -rf techdoc/src/documentation/content/xdocs/*)
+                </p>
+            </section>
+
+            <section>
+                <title>Felles styling og plugins</title>
+                <p>
+                    For å få samme styling og oppsett på sd og techdoc ble følgende mapper
+                </p>
+                <ul>
+                    <li>plugins</li>
+                    <li>src/documentation/classes</li>
+                    <li>src/documentation/resources</li>
+                    <li>src/documentation/skins</li>
+                    <li>src/documentation/translations</li>
+                    <li>src/documentation/content/xdocs/images</li>
+                </ul>
+                <p>
+                    og disse filene:
+                </p>
+                <ul>
+                    <li>forrest.properties</li>
+                    <li>forrest.properties.xml</li>
+                    <li>src/documentation/sitemap.xmap</li>
+                </ul>
+                <p>
+                    slettet fra techdoc. Deretter ble disse symlinket inn til techdoc fra sd.
+                </p>
+            </section>
+
+            <section>
+                <title>Flytte mapper fra sd til techdoc</title>
+                <p>
+                    Det ble bestemt at alt som var "techdoc" skulle flyttes til techdoc-siten. Det som ble flyttet var disse mappene:
+                </p>
+                <dl>
+                    <dt>doc</dt>
+                    <dd>symlink til <code>$GTHOME/techdoc</code></dd>
+                    <dt>ped</dt>
+                    <dd>symlink til <code>$GTHOME/ped/doc</code></dd>
+                    <dt>ttsdoc</dt>
+                    <dd>symlink til <code>$GTHOME/tts/doc/</code></dd>
+                    <dt>wordsdoc</dt>
+                    <dd>symlink til <code>$GTHOME/words/doc</code></dd>
+                </dl>
+            </section>
+
+            <section>
+                <title>Flytte innhold i <code>site.xml</code> og <code>tabs.xml</code> fra sd til techdoc</title>
+                <p>
+                    Neste steg var å lage en tom fil i <code>$GTHOME/xtdoc/techdoc/src/documentation/content/xdocs/site.xml</code> og klippe ut alle adresser fra <code>$GTHOME/xtdoc/sd/src/documentation/content/xdocs/site.xml</code> som hadde med mappene ovenfor å gjøre og klippe dem inn i den nye fila.
+                </p>
+                <p>
+                    Det samme ble gjort for <code>$GTHOME/xtdoc/techdoc/src/documentation/content/xdocs/tabs.xml</code>.
+                </p>
+            </section>
+        </section>
+
+        <section>
+            <title>Støtte for oversettelser i forrest</title>
+            <p>
+                forrest støtter (i prinsippet) oversettelse av «metaspråk», dvs. menyen til venstre, tab-rekka og annet «systeminnhold» og av «artikler» (forrest-xml-filer og .jspwiki-filer).
             </p>
-            <p>In cases where the browser requests an unavailable locale or no
-               locale, Forrest should return the default locale as specified
-               in either forrest.properties or skinconf.xml. That is, a request
-               for index.html should be turned into a request for index_se.xml
-               if <code>default-lang=se</code>.
-            </p>
-            <p>The language (override) menu should be configurable from skinconf.xml,
-               with the default rendering being a horizontal list along the
-               top of the page. Both appearance (list, menu) and location (top,
-               tabs, other location?) should be configurable independently.
-            </p>
-            <p>The menu texts and all tabs and other text elements outside the
-               content proper should be translated into the specified locale
-               using standard Cocoon/Forrest translation dictionaries. If a
-               locale is available for the document itself, but not all text
-               elements to be translated, the fallback (and eventually the
-               default) language should be used.
+
+            <section>
+                <title>Oversettelse av «artikler»</title>
+                <p>
+                    En artikkel kan være enspråklig. I forrest markerer man dette ved å bruke bare <code>.xml</code> som suffiks.
+                </p>
+                <p>
+                    Om man vil ha en artikkel som skifter språk etter som man skifter metaspråk bruker man suffikset <code>.$LANG.xml</code>.
+                </p>
+
+                <section>
+                    <title>Eksempel</title>
+                    <p>
+                        En artikkel finnes på alle språkene vi støtter. De har disse filnavnene:
+                    </p>
+                    <ul>
+                        <li>abba.en.xml</li>
+                        <li>abba.fi.xml</li>
+                        <li>abba.no.xml</li>
+                        <li>abba.se.xml</li>
+                        <li>abba.sma.xml</li>
+                        <li>abba.smj.xml</li>
+                        <li>abba.sv.xml</li>
+                    </ul>
+                    <p>
+                        Vi har sørget for at forrest vet om dem ved å legge inn en peker til den i site.xml:
+                        <br/>
+                        <code>&lt;abba description="Abba rules!" href="abba.html" label="Abba, the swedish pop band"/&gt;</code>.
+                    </p>
+                    <p>
+                        Alt ettersom hvilket språk som er valgt, vil den artikkelen som hører til det språket vises.
+                    </p>
+                </section>
+                <section>
+                    <title>Oversettelse av artikler i praksis</title>
+                    <p>
+                        Dersom man av en eller grunn ikke vil oversette en artikkel til alle metaspråkene man bygger siten for <em>må</em> man likevel sørge for at man har en «fil» for hvert språk.
+                        <br/>
+                        <br/>
+                        Om vi har en artikkel som er på engelsk og nordsamisk, f.eks. <code>julenissen.en.xml</code> og <code>julenissen.se.xml</code> og vi ikke har tenkt å oversette den til de andre språkene vi støtter så lager vi en symlink til en av disse artiklene for de andre språkene. Resultatet er at vi har de to filene <code>julenissen.en.xml</code> og <code>julenissen.se.xml</code> og symlinkene <code>julenissen.fi.xml</code>, <code>julenissen.nb.xml</code>, <code>julenissen.sma.xml</code>, <code>julenissen.smj.xml</code> og <code>julenissen.sv.xml</code> som peker til en av de to eksisterende filene. Om man ikke gjør dette vil man få en <em>«broken link»</em>-melding fra forrest.
+                    </p>
+                </section>
+            </section>
+
+            <section>
+                <title>Oversettelse av metaspråk</title>
+                <p>
+                    Filene nedenfor har blitt oversatt for å støtte <code>fi no se smj sma sv en</code>.
+                </p>
+                <dl>
+                    <dt>$GTHOME/sd/src/documentation/translations/tabs_$LANG.xml</dt>
+                    <dd>
+                        oversettelser for $GTHOME/sd/src/documentation/content/xdocs/tabs.xml
+
+                        <p>
+                            Hver «key» i tabs_$LANG.xml tilsvarer en «id» i tabs.xml (og alle tabs-frag.xml-filene vi har). Man må manuelt legge alle «id» man vil ha oversettelse for inn i tabs_$LANG.xml-filene.
+                        </p>
+                    </dd>
+                    <dt>$GTHOME/sd/src/documentation/translations/menu_$LANG.xml</dt>
+                    <dd>
+                        oversettelser for $GTHOME/sd/src/documentation/content/xdocs/site.xml
+
+                        <p>
+                            Hver «key» i menu_$LANG.xml tilsvarer en «label» i site.xml (og alle site-frag.xml-filene vi har). Man må manuelt legge alle «label» man vil ha oversettelse for inn i menu_$LANG.xml-filene.
+
+                        </p>
+
+                    </dd>
+                    <dt>$GTHOME/sd/src/documentation/translations/ContractsMessages_$LANG.xml</dt>
+                    <dd>oversettelser for "systemmeldinger" i forrest</dd>
+                </dl>
+            </section>
+        </section>
+
+        <section>
+            <title>Bygging av en oversatt site</title>
+            <p>
+                forrest har som nevnt, i prinsippet, støtte for full i18n. I praksis behøver den litt krykker, i form av skriptet static-divvun.py.
             </p>
             <p>
+                Dette skriptet sørger for at siten blir bygd på alle språk, at linker til de forskjellige språkene blir lagt inn og at alle filene blir kopiert til korrekt på plass på den offentlige siten.
             </p>
         </section>
-        <section>
-            <title>Current situation (Forrest svn version as of May 25, 2005)
-               </title>
-            <p>A very <a
-               href="http://casa.che-che.com/blog/2005/05/10/internalization-a-site-using-forrest-07-dev/"
-               >recent blog</a> describes the steps to turn on and utilise
-               i18n. Unfortunately, it doesn't completely match what we have
-               found - read on (what is good is that Forrest now degrades
-               gracefully, without a 404 error).</p>
-            <p>Forrest uses its internationalisation features when they are
-               enabled in forrest.properties: <code>project.i18n=true</code></p>
-            <p>It is able to specify the wanted locale using 
-               <code>http://localhost:8888/index.html?locale=se</code>, or by 
-               letting the browser decide the locale. Forrest then chooses 
-               index_se.xml, and falls back to the default language when the
-               locale isn't found.</p>
-            <p>If the tabs_se.xml and site_se.xml files exist in 
-               <code>translation</code> directory, the menus and tabs are 
-               translated as well, but only if the requested locale is specified
-               by the browser.</p>
-            <p>What is still missing from the present Forrest version is a
-               language override menu. Also, the menus and tabs aren't
-               translated if a locale is specified within a URL (as <code>
-               index.html?locale=sme</code>).</p>
-            <p>Problem summary:</p>
-            <ul>
-                <li>Forrest menu translation works only if locale is coming
-                    from browser - the same might be the case with the tabs,
-                    but that is not yet tested</li>
-                <li>Document locale is disregarded if locale is taken from
-                    browser</li>
-                <li>There's no documented way of specifying the default
-                    language, or generating the language override menu from
-                    the content of whatever.xml (without any locale in the
-                    filename) to make the default language listed among all
-                    languages</li>
-                <li>No language override menu is generated</li>
-                <li>Since no language override menu is generated, our requests
-                    for override menu configuration can not be evaluated
-                    further</li>
-            </ul>
-        </section>
-	    <p>Last modified: $Date$, by $Author$</p>
     </body>
 </document>
