@@ -170,13 +170,24 @@ As a default, only the ''root.lexc'' file is scheduled for generating a document
 file. In order to add documentation for more source files, open the {{doc/Makefile.am}}
 file, and comment in the relevant file in the JSP_PAGES list (nouns_stems.jspwiki for src/morphology/stems/nouns.lexc, etc). The jspwiki files will then be files, and linked to.
 
-In order to force compilation, do {{make -B}} in $lang/doc.
+In order to compile again (regardless of compilation status), do {{make -B}} in $lang/doc.
 
 Check in the converted jspwiki files: 
 
 {{svn ci -m "documentation update" doc/*.jspwiki}}
 
 !!!Debugging
+
+In order to find out what file is broken, write (in ''$lang/doc''):
+
+{{{
+forrest
+}}}
+
+This will tell you what file is broken, unfortunately without a line number
+telling you where. In order to find the error (in case you do not spot it),
+you must remove parts of the file, one after another, and reload the documentation
+(cmd R in the browser when running the pages as localhost on your own machine).
 
 To debug the documentation added to e.g {{som/src/morphology/stems/nouns.lexc}}, 
 inspect and edit the file {{som/doc/nouns-stems.jspwiki}}, and check the page
