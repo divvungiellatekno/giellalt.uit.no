@@ -1,6 +1,78 @@
 ﻿
 
-We first look at how to write localisation, then how to set it up and maintain it.
+First we will look at typical maintenance tasks, and more detailed tasks will follow.
+
+!!!Typical i18n management tasks
+
+The ''fab'' script contains shortcuts for running all the following processes.
+
+!! Recompiling changes to the localization
+
+First ensure you are in the project directory.
+
+{{{
+	cd ~/neahtta/
+}}}
+
+Then, run the compile command for the specific project you are working on.
+
+{{{
+	fab local PROJNAME compile_strings
+}}}
+
+Where PROJNAME is a variable for the dictionary project, ex.) sanit, baakoeh,
+etc. 
+
+This will compile only the languages in this project, and avoids errors for
+languages that are not available in the system.
+
+!! Recompiling changes to all localizations
+
+The following command will compile everything, and may result in some errors if
+a locale is not installed on the system. If you do not need these locales, this
+is not a problem, and you should use the project-specific command above. If you
+need these locales, this is a problem, and see below on the section on ''Adding
+new locales''.
+
+{{{
+	fab local compile_strings
+}}}
+
+
+!! Extracting strings due to code changes.
+
+If the source code has changed, this has likely resulted in line numbers being
+out of date. Thus, you will need to re-extract the strings. Babel is pretty
+smart about doing this.
+
+First ensure you are in the project directory.
+
+{{{
+	cd ~/neahtta/
+}}}
+
+Then, extract strings. 
+
+{{{
+	fab local extract_strings
+}}}
+ 
+
+!! Recompiling translations for production server
+
+1.) log in to the server as the neahtta user
+2.) switch to the project directory: ''cd ~/neahtta/''
+3.) ''fab local PROJNAME compile_strings''
+
+If everything went good and there were no errors, continue, otherwise if you
+need help troubleshooting see the section below (''Common error messages and troubleshooting'').
+
+Then, you need to restart the relevant services.
+{{{
+	fab local PROJNAME restart_service
+}}}
+
+(Where PROJNAME is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)
 
 !!!Writing localisation 
 
@@ -83,27 +155,11 @@ Thus, for those we need to copy some files.
 
 Thus the new locale will be able to be initialized with the init command below.
 
-!!!Typical i18n management tasks
+!! .po files: generate a message template for a new language.
+
+First make sure that all the message files have been updated to the most recent
+version of the code, by extracting all strings (above).
  
-!!Generating a message template
- 
-Message template files (.pot) are where Babel stores all of the strings, which
-it then moves to individual translation .po files.
- 
-Generating the template is easy. If you are doing this on {gtweb}, as the
-{neahtta} user, switch to the project directory first:
-
-{{{
-	cd ~/neahtta/
-}}}
-
-Then extract all strings to the template file, and update existing projects:
-
-{{{
-    pybabel extract -F babel.cfg -k lazy_gettext -o translations/messages.pot .
-    pybabel update -i translations/messages.pot -d translations
-}}}
-
 Now you can initialize a translation.
 
 {{{
@@ -112,41 +168,6 @@ Now you can initialize a translation.
 
 Where LANG is the ISO code for the language project.
 
-!!Update .pot with new strings and automatically merge into .po
- 
-This is two steps: first run pybabel extract, as above, and then:
-
-{{{
-    pybabel extract -F babel.cfg -k lazy_gettext -o translations/messages.pot .
-    pybabel update -i translations/messages.pot -d translations
-}}}
-
-!!Compiling .po files for use in the interface
-
-{{{
-    pybabel compile -d translations
-}}}
-
-!! Recompiling translations for production server
-
-1.) log in to the server as the neahtta user
-2.) switch to the project directory: ''cd ~/neahtta/''
-3.) ''svn up translations/''
-4.) ''pybabel compile -d translations''
-
-If everything went good and there were no errors, continue, otherwise if you
-need help troubleshooting see the section below (''Common error messages and troubleshooting'').
-
-Then, you need to restart the relevant services.
-{{{
-sudo service nds-DICT stop
-sudo service nds-DICT start
-}}}
-
-5.) sudo service nds-DICT stop
-6.) sudo service nds-DICT start
-
-(Where DICT is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)
 
 !!! Additional notes...
  
@@ -202,7 +223,8 @@ May be found in translations/, but for ease of finding out:
 !! babel.core.UnknownLocaleError: unknown locale sms
 
 This means that the locale directory is missing a .dat file for the locale.
-Follow the procedure in the 'Adding new locales' section.
+Follow the procedure in the 'Adding new locales' section **or** ensure that you
+are running the fab process only for the project you are working on. 
 
 !! catalog 'translations/sma/LC_MESSAGES/messages.po' is marked as fuzzy, skipping
 
