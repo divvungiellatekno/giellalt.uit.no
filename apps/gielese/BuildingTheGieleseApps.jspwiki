@@ -1,14 +1,65 @@
+Gïelese has a client and a remote server for data storage. These steps focus on the compilation of the client.
+
 These are the steps required to build the three apps presently supported by the Gïelese source code:
 
-* web app
-* Android app
-* iOS app
+* (1) JavaScript web app
+* (2) Client-side media files
+* (3) PhoneGap Android app
+* (4) PhoneGap iOS app
 
 !!!Preparations
 
 # cd $GTHOME/apps/aajege/src/sma-client
 # sudo port install nodejs npm
 # npm install
+
+!!! (1) Preparing the JavaScript environment
+
+!!! (2) Preparing the media server
+
+ * Create a virtualenv, run it and initialize from requirements.txt
+ * `python -c "import os ; print os.urandom(24)" > secret_key`
+ * `python manage.py init_db`
+ * `python manage.py install_media -f ../data/sma_media.xml`
+ * `python manage.py append_lexical_data -f ../data/n_smanob_test.xml`
+
+The latter only installs/updates definitions for existing words from the
+first step, if you want to just install everything, use:
+
+ * `python manage.py install_lexicon -f ../data/n_smanob.xml`
+
+Prepare JSON files.
+
+ * `python manage.py prepare_json`
+
+!! Building the internationalisation
+
+Extracting is a little tricky. Mind the dot at the end, as we need the
+current directory too.
+
+    pybabel compile -d translations
+
+!! Building the media directories for phonegap
+
+In the main directory (~/$GTHOME/apps/aajege/src/) run the following command:
+
+    make prepare-for-phonegap
+
+This will take a little while. It does the following:
+
+ 1.) Extracts database information to JSON
+ 2.) Copies JSON
+ 3.) Copies media files, and trims them depending on various parameters (target device)
+
+!!! Phonegap dependencies
+
+PhoneGap dependencies must be installed using 'npm', globally. NB: you may need sudo permissions for this.
+
+    $ npm install -g phonegap@3.6.3-0.22.6
+    $ npm install -g cordova@3.6.3-0.2.13
+    $ npm install -g ios-sim@3.1.1
+
+These dependencies are checked in sma-client/phonegap/package.json
 
 !!!Building the apps
 
