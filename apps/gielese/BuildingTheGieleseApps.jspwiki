@@ -53,11 +53,22 @@ This will take a little while. It does the following:
 
 !!! Phonegap dependencies
 
+PhoneGap system dependencies: 
+
+''For building with Android''
+
+1. Android SDK (standalone tools): http://developer.android.com/sdk/installing/index.html?pkg=tools
+2. ant (via homebrew)
+
+
+
 PhoneGap dependencies must be installed using 'npm', globally. NB: you may need sudo permissions for this.
 
+{{{
     $ npm install -g phonegap@3.6.3-0.22.6
     $ npm install -g cordova@3.6.3-0.2.13
     $ npm install -g ios-sim@3.1.1
+}}}
 
 These dependencies are checked in sma-client/phonegap/package.json
 
@@ -66,3 +77,33 @@ These dependencies are checked in sma-client/phonegap/package.json
 3. ./node_modules/.bin/brunch build --production => webapp
 4. ??? => Android app
 5. ??? => iOS app
+
+!!! Building for Android
+
+{{{
+    phonegap build android
+    cd PATH_TO_RELEASE/platforms/android
+    ant release
+}}}
+
+NB: you will be prompted for the keystore password (twice). This is in priv too.
+
+The file will be generated in `bin`. This should be enough for building Android
+.apk files for release, but but if this is not enough see further steps in the following document.
+
+Other relevant docs:
+
+ * http://developer.android.com/tools/device.html
+ * http://developer.android.com/tools/publishing/app-signing.html
+ * http://stackoverflow.com/questions/17316910/phonegap-run-from-cli-with-release-and-self-signed-app-requires-me-to-patch-co
+
+NB: before uploading a new release to the android app store, be sure to update the versionCode in the AndroidManifest.xml file.
+
+!! Debugging
+
+If you encounter errors in the process of the ''phonegap build android''
+command, run the following instead:
+
+    cordova build android
+
+This will return much more useful feedback.
