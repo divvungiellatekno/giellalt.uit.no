@@ -9,8 +9,8 @@ The resulting spellers are available both for OpenOffice/LibreOffice, and for co
 
 Languages with analysers working to some degree or better are: 
 
-North Saami, South Saami, Lule Saami, Komi Zyrian, Erzya Mordvin,
-Meadow Mari, Hill Mari, Kven, Faroese, Greenlandic, Tundra Nenets.
+North Saami, South Saami, Lule Saami, Kven (note! Kven shows up in LibreOffice as "Kashubian")
+Komi Zyrian, Erzya Mordvin, Meadow Mari, Hill Mari, Kven, Faroese, Greenlandic, Tundra Nenets.
 
 * Download and install 
   [LibreOffice 3.6.2 (the newest version)|http://www.libreoffice.org/download/]
@@ -31,7 +31,7 @@ To build and test:
 
 {{{
     cd $GTHOME/langs/kpv
-    ./configure --with-hfst
+    ./configure --with-hfst --enable-spellers
     make
     sudo make install
 }}}
@@ -40,10 +40,6 @@ To build and test:
    and check that the newly installed language is listed 
    (and thus known to Voikko+LibreOffice).
 
-Known problem:
-
-At the moment (26.10.2012), the kvp speller does not work (although it did yesterday).
-To ensure that the pipeline works, install with e.g. {{sma}} instead.
 
 
 ! For other languages not in the langs directory:
@@ -57,12 +53,9 @@ make -f Makefile.hfst
 
 This can be done with a simple installation of an extesion. The steps are as follows:
 
-* download one of these:
-** [A Greenlandic speller|http://www.helsinki.fi/~tapirine/tmp/voikko-kl-macosx-i386-static.oxt] - __alpha__ quality, 51 Mb
-** [The default Finnish Voikko with HFST support|http://www.divvun.no/static_files/voikko-macosx106-i386-static.oxt] - 3 Mb
-** If you would like to test Voikko+HFST for OOo/LOffice on Windows or Linux,
-    look for http://www.helsinki.fi/~tapirine/tmp/ and download the
-    relevant {{.oxt}} file
+* download :
+** one of the spellers at [http://divvun.no/libreofficeoxt.html], or
+** [the default Finnish Voikko with HFST support|http://www.divvun.no/static_files/voikko-macosx106-i386-static.oxt] - 3 Mb
 
 * Install the addition in OpenOffice / LibreOffice
 
@@ -88,7 +81,8 @@ This is __Beta quality, at best__
 Både hfst som ein del av Voikko og hfst-transdusarane våre er langt i frå ferdige! Det kan finnast problem, og det er kjende feil. Alle lingvistiske problem skal meldast til Bugzilla (eller rettast direkte), alle tekniske feil med Voikko, HFST eller OOo-tillegget skal meldast til Sjur eller til Libvoikko-e-postlista (http://lists.puimula.org/listinfo/libvoikko).
 
 __Known errors:__
-* OOo-tillegget fungerer BERRE på snøleoparden, dvs MacOS X 10.6. Det er *ikkje* støtte for 10.5 (enno i alle fall)
+* OOo-tillegget fungerer BERRE på MacOS X 10.6. og seinare. Det er *ikkje* støtte 
+for 10.5 (enno i alle fall)
 * hfst-stavekontrollen er *deskriptiv*, ikkje normativ - det vil altså vera ein god del ikkje-normativt som blir akseptert
 * hfst-stavekontrollen har ein svært rudimentær forslagsmekanisme - oftast vil det ikkje koma forslag i det heile, og når dei kjem er den korrekte rettinga nesten aldri fyrste forslag
 
