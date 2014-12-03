@@ -148,3 +148,43 @@ Play's servers, it may be so that you will be able to enroll in the beta
 program, but not access the beta. If this is so, try back in a couple hours. 
 
 
+!!! Deploying an iOS app
+
+In the Apple Developer Member Center, you must have the following things:
+
+ * a Provisioning profile
+  - The deploying user must have access to the production distribution profile
+
+ * a Deployment certificate
+  - After a distribution provisioning profile is created, the user must create
+  	a production certificate
+
+The wizards used to create these will explain in good detail how to generate certificates.
+
+The end result will be that you will need to install the Deployment Certificate
+on your own machine through the Keychain Access app.
+
+
+!! Xcode configuration
+
+1.) Add your Apple Dev Center account (which could be different from iTunes Store)
+2.) Account must be an admin in order to have access to provisioning profiles
+3.) In Xcode preferences, look at Accounts tab
+4.) Add the account, or if the account is already added, click on Details, and then click the refresh icon. 
+
+!! Uploading
+
+1.) Build the project with destination iOS Device, and Build for Running.
+2.) Troubleshoot any errors that occur in the build process.
+3.) Once successful... Select from the ''Product'' menu: ''Archive''
+4.) Once the archiving process completes, you will see a window with the latest archive
+5.) Select this, and choose ''Submit''* 
+6.) Through the following dialog boxes, choose the correct project and team
+7.) Wait for archive to be signed (you may have to confirm some accesses to the Key Ring)
+8.) Upload it
+
+NB: the Bundle ID must be the same for the upload to work. You can set this on
+Apple's side within iTunes Connect.
+
+
+* Exporting is also possible, but haven't identified a need for this yet
