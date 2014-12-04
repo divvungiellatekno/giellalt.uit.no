@@ -12,6 +12,31 @@ Apple has some general debugging tips [here|https://developer.apple.com/library/
 
 These two are different entities, but for simplicity's sake, use the same user account for both. Also, make sure your user account is a valid e-mail address. A non-e-mail address is not accepted by iTunes Connect.
 
+!!!Building and submitting
+
+!!Building
+
+* open your xcode project file in XCode
+* Change the build setting from Debug to Release in Product > Scheme > Edit Scheme ...
+* if you want to test on a phone, attach the phone with a USB cable, and select Product > Run (the phone must be in developer mode)
+
+!!Submitting
+
+When the project is ready to be submitted, do as follows:
+
+* build an archive: Product > Archive
+* open the archive Window: Windows > Organizer
+* submit using one of to alternatives:
+** __either__
+*** click on the submit button in the Archive windows (assumes your developer ID
+    is the same as your Apple ID / iTunes Connect ID - if not, use the next
+    alternative)
+** __or__
+*** export archive (click the export button)
+*** open Application Loader, and log in with your iTunes Connect user account
+*** click Deliver Your App, and select the exported file from two steps above
+
+
 !!!Icons
 
 !!Tools
