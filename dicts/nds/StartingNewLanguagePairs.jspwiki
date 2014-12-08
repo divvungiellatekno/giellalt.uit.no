@@ -27,7 +27,7 @@ your project name.
 
 !! Adding language names
 
-1.) Open the file 'config/language_names.py'
+1.) Open the file ''config/language_names.py''
 
 2.) For each language in the project, check the following (there are plenty of comments to guide you):
 
@@ -47,7 +47,7 @@ TODO:
 
 !! Fabfile
 
-1.) Search the file for instances of 'sample' and follow the instructions there.
+1.) Search the file for instances of ''sample'' and follow the instructions there.
 
 2.) DO NOT check this in yet.
 
@@ -55,7 +55,7 @@ TODO:
 
 1.) copy sample to a new location, uncomment it, and follow the instructions there.
 
-2.) Be sure to replace instances of 'sample' in your new section with the PROJNAME.
+2.) Be sure to replace instances of ''sample'' in your new section with the PROJNAME.
 
 
 TODO: this is a slightly more complex part, which I wish to do away with by
@@ -70,13 +70,13 @@ easier process, and build information is more visible.
 
 2.) Activate the virtualenv
 
-3.) Run 'fab local PROJNAME compile', and wait until the process completes.
+3.) Run ''fab local PROJNAME compile'', and wait until the process completes.
 
-4.) Run 'fab local PROJNAME test_configuration', and wait until the process
+4.) Run ''fab local PROJNAME test_configuration'', and wait until the process
     completes. Check FST path names and ensure that the build process moved all
     the files to the proper location.
 
-5.) Run 'fab local PROJNAME runserver'. If this completes, navigate to the
+5.) Run ''fab local PROJNAME runserver''. If this completes, navigate to the
     address that you see at the end of the output in your browser.
 
 6.) Does everything seem to work as intended? If so...
@@ -96,6 +96,23 @@ TODO: confirm that there isn't anything required for the base configuration to
 work (maybe user friendly tag file?)
 
 !!! Server-side configuration
+
+!! Gtweb-specific
+
+Since the dictionaries on ''gtweb'' all compile FSTs and install them as an
+automatic part of the ''fab'' compile process, it is a good idea to confirm
+that the process will have the necessary permissions to write to the necessary
+directories in the server infrastructure. After you have configured all the
+languages in a project, add them to the list in the following file and check it
+in.
+
+{{{
+    $GTHOME/apps/dicts/nds/neahtta/gtweb_cron_permission_pairs
+}}}
+
+This file is periodically checked on ''gtweb'' and write permissions will be
+given to the NDS project user group for each directory via a cron task.
+
 
 !! Configuring nginx
 
