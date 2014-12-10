@@ -1,5 +1,42 @@
-!!!Denne informasjonen er om gammel infa
-men testeksemplene gjelder fremdeles, selv om det er tildels kommet nye tagger. Se denne siden med nye tagger: [FSTer i nyinfra|../lang/sme/KompilereFST.html]. +Use/NVD er nå +Use/NGminip
+!!!Testing
+
+For å teste at alt er i orden, analyser følgende ord, slik (navna på fst-ene i parantes er det som kommer ut av kompileringsprosessen). Se ellers [om tagger og FSTer|../lang/sme/KompilereFST.html].
+
+!! sme
+
+* {{analyser-dict-gt-desc.xfst}}:
+** {{vuovdi}} skal gi både {{vuovdi+N+Sg+Nom}} og {{vuovdi+N+NomAg+Sg+Nom}}
+** {{tunealla}} skal gi {{tunealla+v1+N+G3+Sg+Nom}}
+** {{girjje}} skal gi girji	{{girji+N+Sg+Gen+Allegro}}
+* {{analyser-dict-gt-desc-mobile.xfst}}:
+** {{cienal}} skal gi {{čieŋal+A+Sg+Nom}}
+* {{generator-dict-gt-norm.xfst}}:
+** {{girji+N+Sg+Gen+Allegro}} skal gi {{girjje}}
+** {{girji+N+Sg+Gen}} skal gi {{girjji}}
+** {{deaivvadit+V+Ind+Prt+Pl3}} skal gi {{deaivvadedje}}
+** {{deaivvadit+V+Ind+Prt+Pl3+Use/NGminip}} skal gi {{deaivvade}}
+** {{vuovdi+N+Sg+Acc}} skal gi {{vuovddi}}
+** {{vuovdi+N+NomAg+Sg+Acc}} skal gi {{vuovdi}}
+** {{golli+N+Sg+Nom}} skal gi {{+?}}
+** {{golli+N+G3+Sg+Nom}} skal gi {{golli}}
+
+!! sma
+
+* {{analyser-dict-gt-desc.xfst}}:
+** {{govledh}} skal gi {{+Hom1}} og {{+Hom2}} i analysen:  
+*** {{govledh	govledh+Hom2+V+IV+Inf}}
+*** {{govledh	govledh+Hom1+V+TV+Inf}}
+* {{generator-dict-gt-norm.xfst}} skal gi slike former:
+** {{govledh+Hom1+V+Ind+Prs+Sg3}} skal gi {{gåvla}}
+** {{govledh+Hom2+V+Ind+Prs+Sg3}} skal gi {{govloe}}
+** {{govledh+V+Ind+Prs+Sg3}} skal gi {{+?}}
+
+
+
+
+
+!!! Informasjonen nederfor her er om gammel infa
+Se denne siden med nye tagger: [FSTer i nyinfra|../lang/sme/KompilereFST.html]. +Use/NVD er nå +Use/NGminip
 
 !!Ordbok-fst-er
 
@@ -112,65 +149,6 @@ Resultatet blir et sett med fst-er som tolererer assi for ášši. Døp om {{sme
 og kopier over til {{/opt/smi/sme/bin}}. Kommeter deretter ut de 20 linjene og kompiler sme
 på nytt (så du får tilbake normale fst-er).
 
-
-!!!Testing
-
-For å teste at alt er i orden, analyser følgende ord, slik (navna på fst-ene i parantes er det som kommer ut av kompileringsprosessen):
-
-!! sma
-
-* {{dict-sma.fst}} (dvs. {{sma.fst}})
-** {{govledh}} skal gi {{+Hom1}} og {{+Hom2}} i analysen  
-** {{lookup sma/bin/sma.fst}}
-*** {{govledh	govledh	+Hom2+V+IV+Inf}}
-*** {{govledh	govledh	+Hom1+V+TV+Inf}}
-* {{isma-dict.fst}} (dvs. {{isma-norm.fst}})
-** skal gi slike analyser:
-
-{{{
-echo govledh+Hom1+V+Inf | lookup sma/bin/isma-norm.fst
-govledh+Hom1+V+Inf govledh
-govledh+Hom2+V+Inf govledh
-}}}
-
-!! sme
-
-* {{dict-sme.fst}} og {{some-sme.fst}} (dvs. {{sme.fst}} )
-** {{vuovdi}} skal gi både {{+Plc+N}} og {{+Hum+N+NomAg}}, 
-** {{tunealla}} skal gi {{+v1+N+G3+Sg+Nom}}, 
-** {{girjje}} skal gi girji	{{+Txt+N+Sg+Gen+Allegro}}
-* {{some-sme.fst}} (dvs. {{sme.fst}} kompilert med utvida {{spellrelax.regex}}):
-** {{echo assi | lookup sme/bin/some-sme.fst}}
-** svaret skal gi bl.a. {{ášši}}
-
-
-* {{dict-isme-norm.fst}}  (denne får dette navnet i {{sme/bin}} ved vanlig kompilering)
-** Test:
-
-{{{
-lookup -flags mbTT sme/bin/dict-isme-norm.fst
-girji+N+Sg+Gen+Allegro
-girji+N+Sg+Gen
-deaivvadit+V+Ind+Prt+Pl3
-deaivvadit+V+Ind+Prt+Pl3+Use/NVD
-vuovdi+N+Sg+Acc
-vuovdi+N+NomAg+Sg+Acc
-golli+N+Sg+Nom
-golli+N+G3+Sg+Nom
-}}}
-
-Resultatet skal være:
-
-{{{
-girjje
-girjji
-deaivvadedje
-deaivvade
-vuovddi
-vuovddi
-?  (dvs at du ikke kan genere uten G3)
-golli
-}}}
 
 
 !!! Oppsummering, kommandoer for å kopiere på plass
