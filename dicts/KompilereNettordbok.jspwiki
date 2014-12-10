@@ -1,13 +1,16 @@
 !!!Testing
 
-For å teste at alt er i orden, analyser følgende ord, slik (navna på fst-ene i parantes er det som kommer ut av kompileringsprosessen). Se ellers [om tagger og FSTer|../lang/sme/KompilereFST.html].
+For å teste at FSTer for ordbøker fungerer som dem skal, analyser følgende ord. Se ellers [om tagger og FSTer|../lang/sme/KompilereFST.html].
 
 !! sme
 
 * {{analyser-dict-gt-desc.xfst}}:
 ** {{vuovdi}} skal gi både {{vuovdi+N+Sg+Nom}} og {{vuovdi+N+NomAg+Sg+Nom}}
-** {{tunealla}} skal gi {{tunealla+v1+N+G3+Sg+Nom}}
 ** {{girjje}} skal gi girji	{{girji+N+Sg+Gen+Allegro}}
+** {{tunnealla}} skal gi {{tunealla+v2+N+G3+Sg+Nom}}
+** {{tunealla}} skal gi {{tunealla+N+G3+Sg+Nom}} for bruk i NDS, men for VD skal det være {{tunealla+v1+N+G3+Sg+Nom}}. For øyeblikket bruker jeg for NDS disse to kommandoene før jeg kompilerer, men dette burde legges inn i Makefile:
+*** {{perl -pi -e "s/v1\+//g" affixes/*lexc stems/*lexc }} 
+*** {{perl -pi -e "s/\+v1:/:/g" affixes/*lexc stems/*lexc}}
 * {{analyser-dict-gt-desc-mobile.xfst}}:
 ** {{cienal}} skal gi {{čieŋal+A+Sg+Nom}}
 * {{generator-dict-gt-norm.xfst}}:
