@@ -223,7 +223,9 @@ But, we don't use push notifications.
 the push notification API, even though the phonegap project is not configured
 to use a push notification plugin... Building the XCode project from PhoneGap
 results in the inclusion of the following lines in
-''Gielese/Classes/AppDelegate.m''
+''Gielese/Classes/AppDelegate.m''. Apple is warning that the certificate does
+not include these entitlements. One way would be to regenerate a provisioning
+profile with these entitlements, but keeping the app simpler seems to be a better idea. 
 
 {{{
     // repost all remote and local notification using the default NSNotificationCenter so multiple plugins may respond
