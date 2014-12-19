@@ -200,3 +200,60 @@ Follow the documentation, but also make sure that you:
  * cordova platform upgrade ios
 
 And then check the installed plugins and, remove and add them all individually
+
+
+!!! Known issuess
+
+!! Apple complains of aps-environment entitlement
+
+Review process returns:
+
+{{{
+    Missing Push Notification Entitlement - Your app appears to include API used to
+    register with the Apple Push Notification service, but the app signature's
+    entitlements do not include the "aps-environment" entitlement. 
+}}}
+
+But, we don't use push notifications. 
+
+# https://github.com/meteor/meteor/issues/2974
+# http://forum.ionicframework.com/t/missing-push-notification-entitlement/5436/4
+
+''Problem'': Phonegap 3.5 seems to automatically include API calls to set up
+the push notification API, even though the phonegap project is not configured
+to use a push notification plugin... Building the XCode project from PhoneGap
+results in the inclusion of the following lines in
+''Gielese/Classes/AppDelegate.m''
+
+{{{
+    // repost all remote and local notification using the default NSNotificationCenter so multiple plugins may respond
+    - (void)            application:(UIApplication*)application
+        didReceiveLocalNotification:(UILocalNotification*)notification
+    {
+        // re-post ( broadcast )
+        [[NSNotificationCenter defaultCenter] postNotificationName:CDVLocalNotification object:notification];
+    }
+
+    - (void)                                application:(UIApplication *)application
+       didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+    {
+        // re-post ( broadcast )
+        NSString* token = [[[[deviceToken description]
+                             stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                            stringByReplacingOccurrencesOfString: @">" withString: @""]
+                           stringByReplacingOccurrencesOfString: @" " withString: @""];
+
+        [[NSNotificationCenter defaultCenter] postNotificationName:CDVRemoteNotification object:token];
+    }
+
+    - (void)                                 application:(UIApplication *)application
+        didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+    {
+        // re-post ( broadcast )
+        [[NSNotificationCenter defaultCenter] postNotificationName:CDVRemoteNotificationError object:error];
+    }
+}}}
+
+Commenting these out, rebuilding, and resubmitting, is supposed to fix the
+problem (currently waiting for proof from the approval process).
+
