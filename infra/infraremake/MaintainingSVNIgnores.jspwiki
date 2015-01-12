@@ -1,6 +1,6 @@
 There are typically to maintenance cases:
 
-* set (default) {{svn:ignore}} on a new directory
+* set some (default) {{svn:ignore}} on a new directory 
 * change the {{svn:ignore}} on a directory from the default/existing to
   something new
 
@@ -13,7 +13,7 @@ are:
 
 {{{
 cd langs/
- ../gtcore/scripts/update-all-ignores.sh
+../gtcore/scripts/update-all-ignores.sh
 }}}
 
 !!How it works
@@ -71,10 +71,10 @@ They are applied to the template type as indicated by the last part of their
 filename ({{langs}} or {{prooftesting}}).
 
 Open the desired file, edit it following the code structure that is there, and
-when done, run the commands above.
+when done, run the svn:ignore commands described above.
 
 __NB!__ Remember to commit the changes to these scripts after you have edited
-them!
+them!, and to commit the changes to each and every catalogue that got the new setting.
 
 !!!Known shortcomings/bugs
 
