@@ -1,58 +1,52 @@
 
 
-Wikipedia is a convenient way of getting at least some text for 
-languages we look at. Most Wikipedias in Russia are not that bad.
 
+!!!Fetch Wikipedias as raw text
 
-!!!Wikipedias as raw text
-
-In order to use the raw text of Wikipedia editions as test corpora, do the following:
+Do the following:
 
 # Go to [the Wikipedia download page|http://en.wikipedia.org/wiki/Wikipedia:Database_download]
 # Go to the language you want. [http://dumps.wikimedia.org/sewiki/|http://dumps.wikimedia.org/koiwiki/] will give you North Sámi, exchange the __se__ in ''sewiki'' with the language code you want.
 # In the list that follows, choose the last one __before__ ''latest/''. The
-  latest one is the same as the one with the last dates (it is just a stable url), the download headers are not formatted yet.
+  latest one is the same as the one with the last dates (it is just a stable url), the download headers are more nicely formatted in the last dated link.
 # Download the .bz2 file found under the header 
   __Articles, templates, image descriptions, and primary meta-pages.__
-  This will give you the articles. If you want revision history (e.g. if you
-  want to use the corpus as spellchecker data), you need 
+  This will give you the articles. 
+  ## If you want revision history (e.g. for spellchecker testing), you need 
   ''All pages with complete edit history''.
 # When downloaded, open the .bz2 file
 # Extract it with the script ''WikiExtractor.py'' (which is in your
   path, in $GTHOME/gt/script/corpus/. The script has a --help option explaining
   usage.
-# The output is xml. If you want clean text, you may strip the tags with the command
+# The output is xml. If you want clean text, you may strip the tags with some command, e.g.
 {{{... | sed 's/<[^>]*>//g;' | ... }}}
  
-Note that we, for the Uralic languages of Russia, already have corpus files
-in biggies/kt/$LANG/corp/$LANGwiki.txt. The Wikipedias they stem from may be
-slightly outdated, but are ok for getting random examples.
 
-!!!Wikipedias in Korp, integrated with Neahttadigisánit
-
-For several NDS languages there are Wikipedia versions large enough
-to serve as corpora. They may then be linked in NDS, just like sme and sma.
+!!!Use Wikipedias in Korp, integrated with Neahttadigisánit
 
 Task:
 
-Download the Wikipedias, install in Korp (probably Võro and Veps with Kven 
-and the rest in a different Korp for Uralic languages of Russia. Then 
-link to them from NDS. 
+Download Wikipedias, install in Korp 
+
+# Võro and Veps with Kven in a Finnic Corpus
+# The rest in a different Korp for Uralic languages of Russia. 
+
+Then link to them from NDS. 
 
 
-The following languages have dictionaries in NDS and reasonable
-Wikipedias:
+The following languages have dictionaries in NDS and reasonable Wikipedias:
 
-|| Uralic languages in Russia          || NDS   || Words 2014
-|  [http://dumps.wikimedia.org/kvwiki]  |kyv       | 225 000
-|  [http://dumps.wikimedia.org/mrjwiki] | muter	 | 275 000
-|  [http://dumps.wikimedia.org/mhrwiki] | mhter	 | 375 000
-|  [http://dumps.wikimedia.org/myvwiki] | valks	 | 66 000
-|  [http://dumps.wikimedia.org/mdfwiki] | valks	 | 67 500
+|| Uralic languages in Russia          || NDS   || Wds 2014	   || ||
+|  [http://dumps.wikimedia.org/kvwiki]  |kyv     | 225 000	   |  |
+|  [http://dumps.wikimedia.org/mrjwiki] | muter	 | 275 000	   |  |
+|  [http://dumps.wikimedia.org/mhrwiki] | mhter	 | 375 000	   |  |
+|  [http://dumps.wikimedia.org/myvwiki] | valks	 | 66 000	   |  |
+|  [http://dumps.wikimedia.org/mdfwiki] | valks	 | 67 500	   |  |
+															   |  |
 
-|| Baltic Finnic languages		        || NDS      || Words 2014
-|  [http://dumps.wikimedia.org/fiu_vrowiki] | sonad | 206 000
-|  [http://dumps.wikimedia.org/vepwiki]  | sanat	    | 150 000
+|| Baltic Finnic languages		        || NDS     || Wds 2014 || ||
+|  [http://dumps.wikimedia.org/fiu_vrowiki] | sonad | 206 000  |  |
+|  [http://dumps.wikimedia.org/vepwiki]  | sana     | 150 000  |  |
 
 
 
