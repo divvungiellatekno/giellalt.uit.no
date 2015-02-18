@@ -15,7 +15,7 @@ First ensure you are in the project directory.
 Then, run the compile command for the specific project you are working on.
 
 {{{
-	fab local PROJNAME compile_strings
+	fab PROJNAME compile_strings
 }}}
 
 Where PROJNAME is a variable for the dictionary project, ex.) sanit, baakoeh,
@@ -33,7 +33,7 @@ need these locales, this is a problem, and see below on the section on ''Adding
 new locales''.
 
 {{{
-	fab local compile_strings
+	fab compile_strings
 }}}
 
 
@@ -52,7 +52,7 @@ First ensure you are in the project directory.
 Then, extract strings. 
 
 {{{
-	fab local extract_strings
+	fab extract_strings
 }}}
  
 
@@ -60,14 +60,14 @@ Then, extract strings.
 
 1.) log in to the server as the neahtta user
 2.) switch to the project directory: ''cd ~/neahtta/''
-3.) ''fab local PROJNAME compile_strings''
+3.) ''fab PROJNAME compile_strings''
 
 If everything went good and there were no errors, continue, otherwise if you
 need help troubleshooting see the section below (''Common error messages and troubleshooting'').
 
 Then, you need to restart the relevant services.
 {{{
-	fab local PROJNAME restart_service
+	fab PROJNAME restart_service
 }}}
 
 (Where PROJNAME is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)

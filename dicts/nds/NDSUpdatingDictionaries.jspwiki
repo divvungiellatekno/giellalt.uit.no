@@ -20,9 +20,9 @@ examples may show gtoahpa as the hostname in the command prompt
 For the impatient: __The short version:__
 
 {{{
-fab local PROJECT compile
-fab local PROJECT test_configuration
-fab local PROJECT restart_service
+fab PROJECT compile
+fab PROJECT test_configuration
+fab PROJECT restart_service
 }}}
 
 __The longer explanation:__
@@ -50,10 +50,10 @@ When you see (env) in the command prompt, continue.
 
 {{{
 	cd ~/neahtta/
-	fab local DICT compile_dictionary
+	fab DICT compile_dictionary
 }}}
 
-Replace DICT below with sanat, vada, etc. (to ''fab local vada compile_dictionary'' etc.)
+Replace DICT below with sanat, vada, etc. (to ''fab vada compile_dictionary'' etc.)
  
 If you have problems here, make sure that the environment variables for
 ''GTHOME'', and ''GTCORE'' are set, however the ''neahtta'' user should
@@ -94,7 +94,7 @@ of the process, or worse, Python errors, something is wrong and you should
 avoid restarting until this is corrected.
 
 {{{
-    fab local DICT test_configuration
+    fab DICT test_configuration
 }}}
 
 5.) ''Restart the server process''
@@ -102,7 +102,7 @@ avoid restarting until this is corrected.
 When everything is working, run the following:
 
 {{{
-    fab local DICT restart_service
+    fab DICT restart_service
 }}}
 
 !!!Updating the FSTs
@@ -116,7 +116,7 @@ FST locations are defined in the relevant config file in
 As above, you can use the test command to see if the files were updated.
 
 {{{
-    fab local DICT test_configuration
+    fab DICT test_configuration
 }}}
 
 If you see any errors, be sure to correct them.
@@ -130,7 +130,7 @@ you are comfortable with, typically following the usual procedure for
 To find the FST locations: 
 
 {{{
-    fab local DICT test_configuration
+    fab DICT test_configuration
 }}}
 
 This will output the following: 
@@ -166,13 +166,13 @@ When you are logged in and in the ''~/neahtta/'' directory, you may run these
 commands.
 
 Compiling FSTs with Fabric is as follows: you can compile all FSTs
-individually with ''fab local DICT compile_fst:ISO'', or,
-''fab local DICT compile'' where DICT is the short name for the project. The
+individually with ''fab DICT compile_fst:ISO'', or,
+''fab DICT compile'' where DICT is the short name for the project. The
 latter will compile all FSTs belonging to the DICT, together with the lexicon.
 
 {{{
-    fab local DICT compile_fst:ISO
-    fab local DICT compile
+    fab DICT compile_fst:ISO
+    fab DICT compile
 }}}
 
 When you run these, follow the output to make sure no errors have occurred. The
@@ -194,7 +194,7 @@ Go to neahtta and configure the dictionaries
 
 {{{ 
     cd ~/neahtta/
-    fab local DICT test_configuration
+    fab DICT test_configuration
 }}}
 
 Here, replace DICT with the relevant name in configs/ that you are working on (the list of DICTs above). 
@@ -207,7 +207,7 @@ Either use the fab process, or relevant system commands.
 
 {{{ 
     cd ~/neahtta/
-    fab local DICT restart_service
+    fab DICT restart_service
 }}}
 
 NB: you may be prompted for your the neahtta sudo password, and if this doesn't
@@ -223,14 +223,10 @@ Two benefits for people who need to run these processes frequently are:
  * chaining commands together
  * running remotely
 
-Most commands above have used ''local'' as a possible host, but these could be
-replaced with ''gtweb'', and Fabric will ask for an SSH password, and then
-perform all the commands.
-
 Commands can also be chained, for example (here with guusaaw as DICT):
 
 {{{
-    fab local guusaaw compile test_configuration restart_service
+    fab guusaaw compile test_configuration restart_service
 }}}
 
 This would execute everything after guusaaw in order: compilation, testing, and
