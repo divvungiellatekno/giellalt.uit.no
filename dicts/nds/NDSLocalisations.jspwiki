@@ -180,11 +180,17 @@ Thus, for those we need to copy some files.
     $ cd path/to/.../site-packages/babel
 }}}
 
+(3) Change directories once more
+
+{{{
+    $ cd localedata/
+}}}
+
 (3) Then, copy one dat file to the locale you wish to create (make a rational choice):
 
 {{{
-    cp /path/to/python2.7/site-packages/babel/localedata/se.dat \
-       /path/to/python2.7/site-packages/babel/localedata/sma.dat  
+    cp se.dat \
+       sma.dat  
 }}}
 
 Thus the new locale will be able to be initialized with the init command below.
