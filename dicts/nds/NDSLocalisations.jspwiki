@@ -7,7 +7,7 @@ The ''fab'' script contains shortcuts for running all the following processes.
 
 !!Recompiling changes to the localization
 
-First ensure you are in the project directory.
+First ensure you are logged in as the user ''neahtta'' and are in the project directory.
 
 {{{
 	cd ~/neahtta/
@@ -19,7 +19,7 @@ Then, run the compile command for the specific project you are working on.
 	fab PROJNAME compile_strings
 }}}
 
-Where PROJNAME is a variable for the dictionary project, ex. sanit, baakoeh,
+Where PROJNAME is a variable for the dictionary project, ex. ''sanit, baakoeh'',
 etc. 
 
 This will compile only the languages in this project, and avoids errors for
@@ -41,41 +41,14 @@ need these locales, this is a problem, and see below on the section on
 
 !! Extracting strings due to code changes.
 
-If the source code has changed, this has likely resulted in line numbers being
-out of date. Thus, you will need to re-extract the strings. Babel is pretty
-smart about doing this.
+Sometimes you (or other maintainers) want to revise or enlarge 
+the dictionary interface. This should be done in the underlying
+html files, e.g. here:
 
-First ensure you are in the project directory.
+* $GTHOME/main/apps/dicts/nds/src/neahtta/templates
+* $GTHOME/main/apps/dicts/nds/src/neahtta/configs/language_specific_rules/templates/
 
-{{{
-	cd ~/neahtta/
-}}}
-
-Then, extract strings. 
-
-{{{
-	fab extract_strings
-}}}
- 
-
-!! Recompiling translations for production server
-
-# log in to the server as the neahtta user
-# switch to the project directory: ''cd ~/neahtta/''
-# ''fab PROJNAME compile_strings''
-
-If everything went good and there were no errors, continue, otherwise if you
-need help troubleshooting see the section below (''Common error messages and troubleshooting'').
-
-Then, you need to restart the relevant services.
-
-{{{
-	fab PROJNAME restart_service
-}}}
-
-
-
-!! Extracting strings due to code changes.
+If in doubt, be careful, read documentation on a relevant django page.
 
 If the source code has changed, this has likely resulted in line numbers being
 out of date. Thus, you will need to re-extract the strings. Babel is pretty
@@ -97,19 +70,18 @@ Then, extract strings.
 !! Recompiling translations for production server
 
 # log in to the server as the neahtta user
-# switch to the project directory: ''cd ~/neahtta/''
-# ''fab PROJNAME compile_strings''
+# switch to the project directory: {{cd ~/neahtta/}}
+# write the command (again, exchange PROJNAME with your own dictionary): \\ {{fab PROJNAME compile_strings}}
 
 If everything went good and there were no errors, continue, otherwise if you
-need help troubleshooting see the section below (''Common error messages and troubleshooting'').
+need help troubleshooting see the section below 
+(''Common error messages and troubleshooting'').
 
 Then, you need to restart the relevant services.
 
 {{{
 	fab PROJNAME restart_service
 }}}
-
-
 
 (Where PROJNAME is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)
 
@@ -141,8 +113,9 @@ which is an interface for flask to the Python Babel extension
 # [Flask and Babel documentation|http://packages.python.org/Flask-Babel/]
 # [Babel documentation|http://babel.edgewall.org]
  
-Translation strings are marked as with Oahpa, but NDS uses a slightly different
-template engine, however no major differences.
+Translation strings are marked as they were in the ''Oahpa'' programs, 
+but NDS uses a slightly different
+template engine, there are however no major differences.
 
 Marking translation strings in templates: 
 [Jinja documentation|http://jinja.pocoo.org/docs/templates/#i18n-in-templates]
