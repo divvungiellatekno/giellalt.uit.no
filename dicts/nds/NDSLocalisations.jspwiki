@@ -1,6 +1,16 @@
 
 First we will look at typical maintenance tasks, and more detailed tasks will follow.
 
+!!!Typical i18n process - making changes to strings, deploying them on the server
+
+Here is how you can expect to work:
+
+1.) locally: make revisions to text
+2.) locally: extract all strings (''fab extract_strings'')
+3.) locally: check in in SVN
+4.) on the server: ''svn up''
+5.) on the server: compile strings for the project (''fab PROJNAME compile_strings'')
+
 !!!Typical i18n management tasks
 
 The ''fab'' script contains shortcuts for running all the following processes.
@@ -156,18 +166,21 @@ languages without two-letter codes.
  
 Thus, for those we need to copy some files.
  
-(1) Find out where they are: open python, making sure that the NDS environment 
-    is enabled (you will see this in the command prompt)
-
-(2) Import flask within the python command prompt, observe the path and exit:
+(1) Find out where they are with the following command, which will
+    output something similar to the below:
 
 {{{
-    >>> import flask
-    >>> flask
-    <module 'flask' from '/path/to/python2.7/site-packages/flask/__init__.pyc'>
+    $ fab find_babel
+    <module 'babel' from 'path/to/.../site-packages/babel'>
 }}}
 
-(3) Then, copy files within Babel:
+(2) Change directories to the path printed in the above step:
+
+{{{
+    $ cd path/to/.../site-packages/babel
+}}}
+
+(3) Then, copy one dat file to the locale you wish to create (make a rational choice):
 
 {{{
     cp /path/to/python2.7/site-packages/babel/localedata/se.dat \
@@ -175,6 +188,10 @@ Thus, for those we need to copy some files.
 }}}
 
 Thus the new locale will be able to be initialized with the init command below.
+
+NB: If we were feeling more specific in this step, we could create a new
+locale specifically for the language, but since specifics aren't
+required here it is fine to do it this way.
 
 !! .po files: generate a message template for a new language.
 
