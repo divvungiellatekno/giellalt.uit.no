@@ -84,6 +84,11 @@ ApplicationSettings:
     - "email2@domain.com"
 }}}
 
+
+
+
+
+
 !! FST path and format definitions (Morphology)
 
 The {{Morphology}} key contains a list of languages by ISO 639-2 code, but
@@ -281,7 +286,7 @@ variant may have its own input system.
 
 }}}
 
-*Note*: Skolt Saami has lots of characters in the keyboard, so this example
+__Note__: Skolt Saami has lots of characters in the keyboard, so this example
 is shortened.
 
 
@@ -444,18 +449,5 @@ will expand the word selection to include surrounding material. This operation
 only respects word boundaries, but does not perform any linguistic computation
 on the client side. It also results in more data being sent to the server.
 
-Multiword lookups are enabled by setting ''multiword_lookups'' to ''true'', and
-then defining the range. The range is defined with a string of two numbers,
-separated by a comma. The first number, prefixed by a ''-'' will define how
-many words _before_ the selection to search, and the second number, prefixed by
-a ''+'' will define how many words _after_ the selection to search.
 
-{{{
-ReaderConfig
-  hdn:
-    multiword_lookups: true
-    multiword_range: "-4,+4"
-}}}
 
-This setting assumes that the user will Alt/Option + click on a word, and the
-multiword expansion may not function while dragging and selecting a word.
