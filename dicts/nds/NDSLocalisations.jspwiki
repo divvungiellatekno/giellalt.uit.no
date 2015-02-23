@@ -1,10 +1,11 @@
+
 First we will look at typical maintenance tasks, and more detailed tasks will follow.
 
-!!! Typical i18n management tasks
+!!!Typical i18n management tasks
 
 The ''fab'' script contains shortcuts for running all the following processes.
 
-!! Recompiling changes to the localization
+!!Recompiling changes to the localization
 
 First ensure you are in the project directory.
 
@@ -18,23 +19,24 @@ Then, run the compile command for the specific project you are working on.
 	fab PROJNAME compile_strings
 }}}
 
-Where PROJNAME is a variable for the dictionary project, ex.) sanit, baakoeh,
+Where PROJNAME is a variable for the dictionary project, ex. sanit, baakoeh,
 etc. 
 
 This will compile only the languages in this project, and avoids errors for
 languages that are not available in the system.
 
-!! Recompiling changes to all localizations
+!!Recompiling changes to all localizations
 
 The following command will compile everything, and may result in some errors if
 a locale is not installed on the system. If you do not need these locales, this
 is not a problem, and you should use the project-specific command above. If you
-need these locales, this is a problem, and see below on the section on ''Adding
-new locales''.
+need these locales, this is a problem, and see below on the section on 
+''Adding new locales''.
 
 {{{
 	fab compile_strings
 }}}
+
 
 
 !! Extracting strings due to code changes.
@@ -58,17 +60,56 @@ Then, extract strings.
 
 !! Recompiling translations for production server
 
-1.) log in to the server as the neahtta user
-2.) switch to the project directory: ''cd ~/neahtta/''
-3.) ''fab PROJNAME compile_strings''
+# log in to the server as the neahtta user
+# switch to the project directory: ''cd ~/neahtta/''
+# ''fab PROJNAME compile_strings''
 
 If everything went good and there were no errors, continue, otherwise if you
 need help troubleshooting see the section below (''Common error messages and troubleshooting'').
 
 Then, you need to restart the relevant services.
+
 {{{
 	fab PROJNAME restart_service
 }}}
+
+
+
+!! Extracting strings due to code changes.
+
+If the source code has changed, this has likely resulted in line numbers being
+out of date. Thus, you will need to re-extract the strings. Babel is pretty
+smart about doing this.
+
+First ensure you are in the project directory.
+
+{{{
+	cd ~/neahtta/
+}}}
+
+Then, extract strings. 
+
+{{{
+	fab extract_strings
+}}}
+ 
+
+!! Recompiling translations for production server
+
+# log in to the server as the neahtta user
+# switch to the project directory: ''cd ~/neahtta/''
+# ''fab PROJNAME compile_strings''
+
+If everything went good and there were no errors, continue, otherwise if you
+need help troubleshooting see the section below (''Common error messages and troubleshooting'').
+
+Then, you need to restart the relevant services.
+
+{{{
+	fab PROJNAME restart_service
+}}}
+
+
 
 (Where PROJNAME is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)
 
@@ -84,13 +125,18 @@ examples the way the quotation marks are put, with errors here the file
 will not work. Do __not__ change the text on the lines marked ''#:'' or 
 ''msgid''.
 
-Then check in your changes, and then to update the server, follow the procedure in the following section __Recompiling translations for production server__.
+Then check in your changes, and then to update the server, 
+follow the procedure in the following section 
+__Recompiling translations for production server__.
 
-Also read [the Oahpa documentation on localisation|../../../ped/common/Localisation.html] in order to see how this works for Oahpa.
+Also read 
+[the Oahpa documentation on localisation|../../../ped/common/Localisation.html] 
+in order to see how this works for Oahpa.
 
 !!!To set up and maintain the localisation infrastructure
 
-Internationalization (i18n) in Neahttadigisánit uses Flask-Babel which is an interface for flask to the Python Babel extension
+Internationalization (i18n) in Neahttadigisánit uses Flask-Babel 
+which is an interface for flask to the Python Babel extension
 
 # [Flask and Babel documentation|http://packages.python.org/Flask-Babel/]
 # [Babel documentation|http://babel.edgewall.org]
@@ -98,7 +144,8 @@ Internationalization (i18n) in Neahttadigisánit uses Flask-Babel which is an in
 Translation strings are marked as with Oahpa, but NDS uses a slightly different
 template engine, however no major differences.
 
-Marking translation strings in templates: [Jinja documentation|http://jinja.pocoo.org/docs/templates/#i18n-in-templates]
+Marking translation strings in templates: 
+[Jinja documentation|http://jinja.pocoo.org/docs/templates/#i18n-in-templates]
 
 !! Running the commands
 
@@ -107,7 +154,8 @@ have a ''virtualenv'' installed. This is because there are a few packages
 required to extract strings, and it's easier to just use the automatic install
 script.
 
-# See: [Developing NDS|NDSDeveloping.html]
+
+See: [Developing NDS|NDSDeveloping.html]
 
 !!!Adding new locales
 
@@ -121,7 +169,7 @@ The easiest place to do this will be on the {gtweb} server, because the
 environment is already configured with the required tools. Otherwise, if you
 wish to do this on your local machine, you will need to set up your environment before this works.
 
-# See: [Developing NDS|NDSDeveloping.html]
+See: [Developing NDS|NDSDeveloping.html]
 
 All further steps assume that you are doing this on gtweb, if you are
 developing, you will know what paths you need to update.
@@ -134,8 +182,10 @@ languages without two-letter codes.
  
 Thus, for those we need to copy some files.
  
-# Find out where they are: open python, making sure that the NDS environment is enabled (you will see this in the command prompt)
-# Import flask within the python command prompt, observe the path and exit:
+(1) Find out where they are: open python, making sure that the NDS environment 
+    is enabled (you will see this in the command prompt)
+
+(2) Import flask within the python command prompt, observe the path and exit:
 
 {{{
     >>> import flask
@@ -143,7 +193,7 @@ Thus, for those we need to copy some files.
     <module 'flask' from '/path/to/python2.7/site-packages/flask/__init__.pyc'>
 }}}
 
-# Then, copy files within Babel:
+(3) Then, copy files within Babel:
 
 {{{
     cp /path/to/python2.7/site-packages/babel/localedata/se.dat \
@@ -164,6 +214,8 @@ Now you can initialize a translation.
 }}}
 
 Where LANG is the ISO code for the language project.
+
+
 
 
 !!! Additional notes...
@@ -223,7 +275,7 @@ This means that the locale directory is missing a .dat file for the locale.
 Follow the procedure in the 'Adding new locales' section **or** ensure that you
 are running the fab process only for the project you are working on. 
 
-!! catalog 'translations/sma/LC_MESSAGES/messages.po' is marked as fuzzy, skipping
+!! catalog translations/sma/LC_MESSAGES/messages.po is marked as fuzzy, skipping
 
 Babel marks things with ''#, fuzzy'' when it can't find the line in the source
 code that the string belongs on, however it's not a big problem if line numbers
