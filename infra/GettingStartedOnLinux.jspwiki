@@ -44,16 +44,19 @@ poppler-utils wget python-svn wv python-feedparser subversion openjdk-7-jdk cmak
 python-tidylib python3-yaml libxml-libxml-perl libtext-brew-perl
 }}}
 
-__NB! Known bug on Ubuntu!__ If you get an error message like the following:
+!!Known bug in GNU Make 3.8.1
+
+__NB!__ If you get an error message like the following:
 
 {{{
 make[1]: *** No rule to make target `apertium-fin-est.est-fin.LR.att.gz', needed by `all-am'.  Stop.
 }}}
 
-it means that your {{GNU make}} is too old. Try upgrading to 4.0. This bug only
-manifests on Ubuntu systems (at least as far as we know) and only when enabling
-apertium fst's. Requiring Make 4 for all platforms would be too much fuss for
-too many users, so please fix it by upgrading {{make}} on your system.
+it means that your {{GNU make}} is too old. Try upgrading to at least 3.8.2.
+At the moment it is only a problem when building fst's for Apertium (using
+{{--enable-apertium}}), but the broken feature is very useful (= a requirement
+for writing decent make files) for new features coming in the near future.
+Please upgrade your system if at all possible.
 
 !!Note for Java avoiders
 
