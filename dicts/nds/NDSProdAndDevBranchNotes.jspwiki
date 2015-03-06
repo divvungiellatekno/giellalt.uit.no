@@ -13,6 +13,7 @@
     neahtta/dicts/*.xml neahtta-prod-tag/dicts/
     neahtta/dicts/*.bak neahtta-prod-tag/dicts/
     neahtta/configs/*.yaml neahtta-prod-tag/configs/*.yaml
+    neahtta/user_log.txt neahtta-prod-tag/user_log.txt
 }}}
 
  * ''copy'' the following.
@@ -52,3 +53,16 @@
      mv ~/neahtta-prod ~/neahtta
 }}}
 
+ * then once more
+
+{{{
+     fab sanit test_configuration
+     fab baakoeh test_configuration
+}}}
+
+ * then finally...
+
+{{{
+   sudo service nds-sanit start
+   sudo service nds-baakoeh start
+}}}
