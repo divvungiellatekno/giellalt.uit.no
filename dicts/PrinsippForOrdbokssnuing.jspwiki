@@ -1,0 +1,242 @@
+
+
+Dette dokumentet diskuterer prinsipp for korleis vi kan redigere ordbøker
+som har vorte snudd, td. frå sme-nob til nob-sme. Problema som blir tatt opp
+er dei vi støyter på når ei norsk forklaring til eit samisk, kvensk, ... ord
+plutseleg dukkar opp som norsk oppslagsord.
+
+!!!Overordna spørsmål uansett ordklasse
+
+Legge ordet under det norske ordet som brukeren vil leite etter?
+
+# Finnes det et norsk ord som dekker innholdet 
+# Vil det være naturlig for brukeren å leite etter dette ordet?
+-- eksempel ''sykne = buohccát''
+# flerordsuttrykk?
+## ja: men grensesnittet er avgjørende for hvor mange man kan vises
+## nei: vil gi større artikler, viktig at det blir leselige (f.eks. i forhold til eksempelsetninger. Evt fordel vil kunne være ved klikk-i-tekst - hvis mulig å få dem opp
+# gjøre brukeren oppmerksom på at det finnes flere ord å velge mellom, f.eks. laks gir flere ord for laks, etter størrelse osv, sjøl også ordet som ligger under unglaks. Hva med ball, fotball osv?
+
+Kildehenvisninger
+
+# kildehenvisninger som finnes (som ikke lenger er konsistente)
+## fad: ordparet kommer fra korpus
+## nj: ordparet kommer fra N Jernsletten
+# hva gjør vi med kildehenvisninga når vi legger til en oversetting, forbedrer ortografi, legger til en <re> osv?
+## Eit mogleg svar: la stå heilt til endringa er substansiell, deretter endre/fjerne
+# skal kildehenvisninga vises i grensesnittet?
+## i tilfelle bør vi tilby to grensesnitt: eitt med og eitt utan 
+# kan kildehenvisninga brukes av Giellagáldu eller andre?
+# legge til informasjon i xml-formatet (signere ved endringer osv)?
+
+
+
+!!!Verb
+
+!!Overordna spørsmål:
+
+!!Fleirordsuttrykk eller ikkje som lemma?
+
+Jf. eit tilfelle som vokse vs. vokse opp:
+
+{{{
+"vokse" (med eksempel vokse opp)
+"vokse opp" som eige oppslag
+}}}
+
+Vi har tre alternativ:
+
+# Berre einskildverb som oppslagsord (med partiklar som underoppslag)
+# Partikkelverb som separate oppslag
+# Begge delar
+
+Konklusjon: ... vil variere frå tilfelle til tilfelle, sjå lenger ned.
+
+
+!!partikkelverb
+
+__Eksempel:__ bukle til, bære hen, dale ned
+
+Dette er moglege kandidatar for å ha fleirordsuttrykk (her: "dale ned") 
+som lemma.
+
+!!verb + preposisjon
+
+Her er det tilfelle som
+
+* fokusere på
+* folde ut
+
+her vil vi ha __fokusere__ som oppslagsord, med to mønster:
+
+* fokusere ei kameralinsa, fokusere blikket (Acc)
+* fokusere på ei sak (Ill?)
+
+
+!!verb + adverb/adverbial
+
+Dette er tilfelle som
+
+{{{
+verb +
+...fort, hardt, litt, plutseleg, ...
+fort + verb + ... (sma)
+}}}
+
+
+Desse må under hovudverbet
+
+hoppe
+
+Når det samiske ordet er resultat av eit modifisert norsk
+uttrykk (hoppe til, plutselig hoppe til, .., , også:
+
+anse for å være dyr - divrrašit
+
+vil vi ha divrrašit som t og ikkje som xt i eit eksempelpar.
+Dermed vil vi også kunne klikke på divrrašit og få opp bøying.
+
+
+
+!!verb + objekt
+
+__Eksempel:__ type 1: objektet er nært knytt til verbet
+
+* bake brød, avlegge ed, flekke fisk
+
+=> legges under både verbet og også under objektet dersom tilsvarende verb ikke finnes på norsk, eller ikke ville være naturlig å lete etter. (luomi - lubmet, gáhkku - gáhkket)
+
+
+__Eksempel:__ type 2: Objektet er ikkje like nært knytt til verbet
+
+* få posefasong = goarvanit
+* ta et skritt = lávket
+
+=> legges under objektet
+
+
+slike "oppslagsord" ("få posefasong") er styrt av samisk, og ikke av norsk.
+
+skritt = lávki
+	mg: re="ta et skritt" m lávket
+	
+Man legger til en ny <mg> i entryen for å gjøre oppmerksom på at når man skal bruke det norske ordet "skritt" i sammenhengen "ta et skritt", så skal man bruke verbet "lávket" istedenfor substantivet "lávki"
+
+
+
+!!verb (+ objekt) + PP
+
+__Eksempel:__ 
+
+* fange fisk med ruse, 
+* flette sennegressknipper
+* drive reinflokken ned fra fjellet til et bestemt sted (sma)
+* forårsake at noen blir ille omtalt
+* legge seg mer eller mindre flatt i vannet
+
+Dei mest komplekse av desse bør vi berre fjerne.
+Dei andre bør inn under ordet med mest semantisk vekt.
+T.d. heller under "ruse" enn under "fisk".
+
+!!forklaring som oppslag
+
+__Eksempel:__ 
+
+* "avgi skjærende lyd", 
+* "bruke mange norske ord når man snakker samisk"
+
+!!refleksive verb
+
+__Eksempel:__ barbere seg
+
+
+!!Inkoative verb
+
+__Eksempel:__ begynne å fortelle
+
+!!durative verb
+
+drive på å farte
+
+!!kausative verb
+
+__Eksempel:__ få noen til å gråte, få noen til å hoppe (sma)
+
+!!Passive verb med bli + V
+
+__Eksempel:__ bli bundet, bli drept
+
+
+
+!!verb + adjektiv
+
+__Eksempel:__ farge blå
+
+!bli + A
+
+__Eksempel:__ bli døv, bli edru, bli blekgul
+
+
+
+!!Verb med restriksjon i lemmaet
+
+__Eksempel:__ dryppe fra sår
+
+
+
+!!Sentrale verb
+
+!ta
+
+{{{
+nobsme: 
+ta = váldit
+ta det med ro
+ta en snartur
+ta en tur
+ta et skritt = lávket
+ta et tak
+ta forbehold 
+ta fort
+ta fram
+ta hensyn til
+ta imot
+ta med makt
+ta opp på bånd
+ta part
+ta seg en blund
+ta slutt
+ta stilling til
+}}}
+
+Nynorskordboka
+
+{{{
+ta
+1 gripe
+2 røre
+3 kalle til seg, velje
+4 straffe: eg skal ta deg
+5 romme: spanne tar to liter
+6 forstå: den tok han fort
+7 retning: ta til venstre
+8 inkoativ: ta og gå heim
+
+ta affære
+ta att
+ta av dage
+ta av plakaten
+ta avstand fra
+ta beina på nakken
+ta bladet fra munnen
+...
+ta feil
+}}}
+
+(lista her har omtrent ingen fleirordsuttrykk til felles med nobsme).
+
+
+
+
+
+
