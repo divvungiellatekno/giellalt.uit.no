@@ -27,7 +27,7 @@ Det er mange gamle filer i smenob/inc-mappa. Her bør alle gå gjennom og oppdat
 
 Nettside: Laste opp fil i .doc-format, få attende frekvenssortert lemma og ordform
 
-
+Her er foreløpig pipeline (som må forbedres litt for å ta hensyn til ikke disambiguert homonymier):
 {{{
 Første steg er identisk med smesyn (sent-proc.sh -s syn) > analysert_fil
 cat analysert_fil | grep '"<' | downcase | sort | uniq -d | sort -nr > wordfrekv.file
