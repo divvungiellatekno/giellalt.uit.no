@@ -23,47 +23,55 @@ Spørsmål:
 Fordeler med leksikalisering:
 * ordbøker og MT
 * prioritering av forslag i stavekontrollen (de leksikaliserte kommer først)
+* mulighet for å legge til semantiske tagger uavhengig av derivasjonstype
 * estetiske (reint syntaktiske) lesingar i syntaktisk analyse
 
 
 Alternativer:
-* ta vare på kompleks analyse
-* legge til tagger som forteller om kompleks analyse, f.eks. +NomAg vs +Der/NomAg
-* legge til underlesninger i et skript før disambiguering med cg3 fil
+# Bruke kompleks analyse istedenfor leksikalisering
+# Legge til tagger om derivasjon til dagens analyse. I dag har vi en slik i sme: +NomAg 
+# Ta vare på kompleks analyse som underlesning
+# Legge til definerte underlesninger i et skript, mellom FST og cg3 
 
-__Legge til tagger:__
+
+__ 1. Bruke kompleks analyse istedenfor leksikalisering:__
+
+En både-og-løsning vil kunne kreve to disambigueringsfiler
+
+__ 2. Legge til tagger:__
+
+Vi har i dag dette for NomAg for å løse homonymi
 {{{
-čorgejeaddji   = reingjører
-čorgejeaddji	čorgejeaddji+N+NomAg+Sg+Nom  <= info i tagg til det leksikaliserte lemmaet
-čorgejeaddji	čorget+V+TV+Der/NomAg+N+Sg+Nom <= kompleks analyse
+vuovdi   = selger
+vuovdi	vuovdi+N+NomAg+Sg+Nom  <= info i tagg til det leksikaliserte lemmaet
+vuovdi	vuovdit+V+TV+Der/NomAg+N+Sg+Nom <= kompleks analyse
 }}}
 
-pga av homonymi med ulike bøyningsparadigmer eks. vuovdi+N = skog og vuovdi+N+NomAg = selger
+pga av homonymi med vuovdi+N = skog som har ulikt bøyningsparadigme 
 
-čorgen	čorgen+N+Sg+Nom  <== +NomAct vil være fordel for disambiguering
-čorgen	čorget+V+TV+Der/NomAct+N+Sg+Nom
+For derivasjonen Der/NomAct har vi det ikke
 
 {{{
-"<čorgen>"
-    "čorgen" N NomAct Sg Nom
-        "čorget" V TV
+vuovdin	vuovdin+N+Sg+Nom  <== +NomAct ville være fordel for disambiguering av Acc vs Gen
+vuovdin	vuovdit+V+TV+Der/NomAct+N+Sg+Nom
+}}}
+
+__3. Ta vare på kompleks analyse som underlesning__ \\
+Denne diskuterte vi ikke
+
+
+__4. Legge til definerte underlesninger i et skript, mellom FST og cg3 __
+
+{{{
+"<vuovdin>"
+    "vuovdin" N NomAct Sg Nom
+        "vuovdit" V TV
 
 "<ealli>"
-    "ealli" N NomAg Sg Nom
+    "ealli" N NomAg Sg Nom Sem/Ani
         "eallit" V IV
-
-
-ealli
-ealli	ealli+N+Sem/Ani+NomAg+Sg+Nom
-ealli	eallit+V+IV+Der/NomAg+N+Sg+Nom
-ealli	eallit+V+IV+PrsPrc
-
-vuovdi
-vuovdi	vuovdi+N+Sem/Plc+Sg+Nom  -- skog Pl:vuovddit 
-vuovdi	vuovdi+N+NomAg+Sem/Hum+Sg+Nom  -- selger Pl:vuovdit
 }}}
 
-__Legge til underlesning__
 {{{
 $ echo čorgejeaddji | hfst-proc2 --xerox tools/preprocess/tokeniser-disamb-gt-desc.pmhfst | cg-conv -f
 "<čorgejeaddji>"
@@ -74,7 +82,7 @@ $ echo čorgejeaddji | hfst-proc2 --xerox tools/preprocess/tokeniser-disamb-gt-d
 }}}
 
 
-Konsekvensar for ulike applikasjonar/komponentar:
+!!Konsekvensar for ulike applikasjonar/komponentar:
 * CG (disambiguering) - må tilpasses ny lookup2cg
 * ordbøker / Oahpa osv
 * MT
@@ -123,9 +131,10 @@ nuorttalappot	nuorttalabbo+A+Comp+Der/at+Adv
 nuorttalappot	nuorttalappot+Adv
 - subst->komp->adj->adv
 
+$ usme
 
 geahppaseappot  geahpas+A+Comp+Der/at+Adv
-geahppaseappot  geahppaseappot+Adv  <== denne vinner
+geahppaseappot  geahppaseappot+Adv  <== denne vinner i dis.cg3
 }}}
 
 !!Bz 1308:
