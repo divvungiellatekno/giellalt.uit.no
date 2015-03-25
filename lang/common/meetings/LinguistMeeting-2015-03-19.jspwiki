@@ -1,0 +1,153 @@
+Morfologiske taggar i korpuset
+
+Status i dag: mange taggar blir fjerna
+
+Vi vil:
+* ta vare på taggane
+* både for dynamiske og leksikaliserte samansetjingar/avleiingar
+
+Alternativer:
+* ta vare på kompleks analyse
+* legge til tagger som forteller om kompleks analyse, f.eks. +NomAg vs +Der/NomAg
+
+{{{
+sme$ usme
+čorgejeaddji   = reingjører
+čorgejeaddji	čorgejeaddji+N+NomAg+Sg+Nom  <= info i tagg til det leksikaliserte lemmaet
+čorgejeaddji	čorget+V+TV+Der/NomAg+N+Sg+Nom <= kompleks analyse
+}}}
+
+Pga av homonymi med ulike bøyningsparadigmer eks. {{vuovdi+N = skog}} og
+{{vuovdi+N+NomAg = selger}}
+
+{{{
+čorgen	čorgen+N+Sg+Nom  <== +NomAct vil være fordel for disambiguering
+čorgen	čorget+V+TV+Der/NomAct+N+Sg+Nom
+
+"<čorgen>"
+    "čorgen" N NomAct Sg Nom
+        "čorget" V TV
+
+"<ealli>"
+    "ealli" N NomAg Sg Nom
+        "eallit" V IV
+
+
+ealli
+ealli	ealli+N+Sem/Ani+NomAg+Sg+Nom
+ealli	eallit+V+IV+PrsPrc
+ealli	eallit+V+IV+Der/NomAg+N+Sg+Nom
+
+vuovdi
+vuovdi	vuovdi+N+Sem/Plc+Sg+Nom  -- Pl: vuovddit
+vuovdi	vuovdi+N+NomAg+Sem/Hum+Sg+Nom  -- Pl: vuovdit
+vuovdi	vuovdi+A+Sg+Nom
+vuovdi	vuovdi+A+Sg+Gen
+vuovdi	vuovdi+A+Sg+Acc
+
+
+čorgejeaddji	čorgejeaddji+N+NomAg+Sg+Nom
+čorgejeaddji	čorget+V+TV+Der/NomAg+N+Sg+Nom
+
+$ echo čorgejeaddji | hfst-proc2 --xerox tools/preprocess/tokeniser-disamb-gt-desc.pmhfst | cg-conv -f
+"<čorgejeaddji>"
+	"čorgejeaddji" N NomAg Sem/Hum Sg Nom
+	"čorgejeaddji" N NomAg Sem/Hum Sg Gen
+	"čorgejeaddji" N NomAg Sem/Hum Sg Acc
+	"čorget" V TV Err/Sub PrsPrc
+	"čorgejeaddji" Der/NomAg N Sg Gen
+		"čorget" V TV 
+	"čorgejeaddji" Der/NomAg N Sg Acc
+		"čorget" V TV 
+	"čorgejeaddji" Der/NomAg N Sg Nom
+		"čorget" V TV 
+}}}
+
+Saker:
+* kva gjer vi i lookup2cg? Avklart på separat møte, vi hiv ut all lingv. pros.
+* korleis skal taggane for leksikaliserte ord sjå ut?
+* kva er eit lemma?
+
+Spørsmål:
+* vil vi ha kopling til rotlemma?
+* kor stor del av den morfologiske historia vil vi ta vare på?
+* kva vil vi koda?
+* kva slags "syntaks" vil vi ha for taggane for morf.historia?
+
+Konsekvensar for ulike applikasjonar/komponentar:
+* CG (disambiguering) - må tilpasses ny lookup2cg
+* ordbøker / Oahpa osv
+* MT
+* korp
+* grammatikkontroll
+* talesyntese(?)
+
+Fordeler med leksikalisering:
+* ordbøker og MT
+* prioritering av forslag i stavekontrollen (de leksikaliserte kommer først)
+* estetiske (reint syntaktiske) lesingar i syntaktisk analyse
+
+Eksempler:
+{{{
+sme$ usme
+borahahtti - (ordboka: spiselig A)
+borahahtti	borrat+V+TV+Der/h+V+Der/ahtti+V+TV+PrsPrc
+borahahtti	borrat+V+TV+Der/h+V+Der/ahtti+V+TV+Der/NomAg+N+Sg+Nom
+borahahtti	borahit+V+TV+Der/ahtti+V+TV+PrsPrc
+borahahtti	borahit+V+TV+Der/ahtti+V+TV+Der/NomAg+N+Sg+Nom
+borahahtti	borahahtti+A+Attr
+borahahtti	borahahtti+A+Sg+Nom
+
+borahahtti
+borahahtti	borrat+V+TV+Der/h+V+Der/ahtti+V+TV+PrsPrc
+borahahtti	borrat+V+TV+Der/h+V+Der/ahtti+V+TV+Imprt+Du2
+borahahtti	borrat+V+TV+Der/h+V+Der/ahtti+V+TV+Der/NomAg+N+Sg+Gen
+borahahtti	borrat+V+TV+Der/h+V+Der/ahtti+V+TV+Der/NomAg+N+Sg+Acc
+borahahtti	borrat+V+TV+Der/h+V+Der/ahtti+V+TV+Der/NomAg+N+Sg+Nom
+borahahtti	borahit+V+TV+Der/ahtti+V+TV+PrsPrc
+borahahtti	borahit+V+TV+Der/ahtti+V+TV+Imprt+Du2
+borahahtti	borahit+V+TV+Der/ahtti+V+TV+Der/NomAg+N+Sg+Gen
+borahahtti	borahit+V+TV+Der/ahtti+V+TV+Der/NomAg+N+Sg+Acc
+borahahtti	borahit+V+TV+Der/ahtti+V+TV+Der/NomAg+N+Sg+Nom
+borahahtti	borahahtti+A+Attr
+borahahtti	borahahtti+A+Sg+Nom => A = PrsPrc 'borahit/borrat'
+borahahtti	borahahtti+A+Sg+Gen
+borahahtti	borahahtti+A+Sg+Acc
+}}}
+
+Og:
+{{{
+$ usmj
+nuorttal	nuorttal+Adv + 
+nuorttal	nuorttal+Po
+nuorttal	nuorttal+Pr
+
+nuorttalappo	nuorttalabbo+A+Comp+Pl+Nom
+nuorttalappo	nuorttalabbo+A+Comp+Sg+Gen
+
+nuorttalappot	nuorttalabbo+A+Comp+Der/at+Adv
+nuorttalappot	nuorttalappot+Adv
+- subst->komp->adj->adv
+
+
+geahppaseappot  geahpas+A+Comp+Der/at+Adv
+geahppaseappot  geahppaseappot+Adv  <== denne vinner
+}}}
+
+Bz 1308:
+Det er noen deriverte verb hvor derivasjonen ikke kommer fram i fst. 
+Spesielt gjelder det verb på -lit:
+{{{
+usme:
+oaidnalit    oaidnalit+V+IV+Inf
+náitalit     náitalit+V+IV+Inf
+heaitalit    heaitalit+V+TV+Inf
+álgalit      álgalit+V+IV+Inf
+riidalit     riidalit+V+IV+Inf
+}}}
+
+men også verb p -šit:
+{{{
+bealkkašit    bealkkašit+V+TV+Inf
+vávjjašit     vávjjašit+V+TV+Inf
+}}}
