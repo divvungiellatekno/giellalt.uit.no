@@ -1,12 +1,13 @@
 !!! Neahttadigisánit linguistic settings
 
-The documentation here concerns the directory, and subdirectories in
-''language_specific_rules/'', and is divided into the following sections:
+The documentation here concerns the directory and subdirectories in
+''apps/dicts/nds/src/neahtta/configs/language_specific_rules/''.
+The directory itself is divided into the following sections:
 
- 1.) Paradigms 
- 2.) Contexts
- 3.) Tagsets
- 4.) User-friendly tags
+ # paradigms 
+ # Contexts
+ # tagsets
+ # user_friendly_tags
 
 If you update these files, be sure to run the test procedure and restart the
 service, as explained in [Updating|NDSUpdatingDictionaries.html], but don't
@@ -14,9 +15,9 @@ forget to check in any new files created.
 
 !! Paradigm generation
 
-Paradigms are managed by a file and directory structure.
+The dictionary paradigms are managed by a file and directory structure.
 
-! Paradigm folder structure
+! The paradigm folder structure
 
 {{{
     paradigms/sme/common_nouns.paradigm
@@ -40,8 +41,8 @@ match.
 Symlinks in this directory are also tolerated, so if multiple language variants
 need to use the same rule set, simply make a symlink between the directories.
 
-For some more advanced examples, see the rules for ''sme'' (particularly, tanta
-pluralia rules).
+For some more advanced examples, see the rules for ''sme'' 
+(particularly, pluralia tanta rules).
 
 ! Paradigm file format
 
@@ -116,10 +117,12 @@ One other key that might be used for the analyzer is 'lemma', which is
 also present for lexicon, assuming that you only want the rule to apply
 to a specific lemma.
 
+{{{
     morphology:
       lemma: "diehtit"
+}}}
 
-NB: if there are problems matching a tag set, make sure that it is defined in
+__NB:__ if there are problems matching a tag set, make sure that it is defined in
 the language's corresponding tagset.
 
 ! Lexicon conditions
@@ -147,7 +150,8 @@ to use XPATH statements to test against individual XML entries.
 Paradigm definition is mostly plaintext, but since it is a template, it
 is possible to do all sorts of template operations.
 
-    {{ lemma }}+N+Sg+Nom
+
+    {{ lemma }}+N+Sg+Nom \\
     {{ lemma }}+N+Sg+Acc
 
 Certain variables are available by default:
@@ -165,8 +169,8 @@ the variable will be set to the matched condition:
         - "Foo"
         - "Bar"
     --
-    {{ lemma }}+Adj+{{ some_attribute }}
 }}}
+    {{ lemma }}+Adj+{{ some_attribute }}
 
 It is also possible to specify additional variables that are not used in the
 match condition:
