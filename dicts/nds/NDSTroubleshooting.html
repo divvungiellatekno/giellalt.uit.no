@@ -4,7 +4,7 @@
 
 There are two possible problems: 
 
- * Compile with a more specific version of this command, i.e., `fab PROJNAME compile`
+ * Compile with a more specific version of this command, i.e., {{fab PROJNAME compile}}
  * A locale is not installed in the project environment
 
 In the case of the second, see the section ''Dat files'' in [NDS Localisations|NDSLocalisations.html].
@@ -48,7 +48,7 @@ Fix:
   PROJECT compile_strings}} and restarting the service
 
 * If there is still a problem, then likely one of the translation strings is
-  misformatted. For the affected locale, search through the `.po` file for 
+  misformatted. For the affected locale, search through the {{.po}} file for 
   the affected template, and doublecheck that all translations marked with 
   {{#, python-format}} have variables with the correct syntax. 
 
