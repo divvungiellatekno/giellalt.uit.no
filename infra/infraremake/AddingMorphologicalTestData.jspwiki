@@ -121,10 +121,10 @@ like the following:
 
 {{{
 !!€gt-norm: adjectives
-!!€ isvelihks    isvelihks+A+Attr
-!!€ isveligs     isvelihks+A+Attr
-!!€ isvelihks    isvelihks+A+Sg+Nom
-!!€ isveligs     isvelihks+A+Sg+Nom
+!!€ isvelihks:    isvelihks+A+Attr
+!!€ isveligs:     isvelihks+A+Attr
+!!€ isvelihks:    isvelihks+A+Sg+Nom
+!!€ isveligs:     isvelihks+A+Sg+Nom
 }}}
 
 The first line specifies which transducer to run the test data against, followed
@@ -142,23 +142,29 @@ the corresponding analysis string.
 
 __Positive tests__ are specified with the string {{!!€}} at the very beginning
 of the line, whereas __negative tests__ are specified by the string {{!!$}} at
-the beginning of the line:
+the beginning of the line. Then both are followed by a space, then the word
+form, then a colon followed by whitespace, and finally the lemma+tags:
 
 {{{
 ! Test data:
 !!€gt-norm: gierehtse # Odd-syllable test
-!!€ gierehtse           gierehtse+N+Sg+Nom
-!!€ gierehtsen          gierehtse+N+Sg+Gen
-!!€ gieriehtsasse       gierehtse+N+Sg+Ill
-!!€ gierehtsem          gierehtse+N+Sg+Acc
-!!$ gieriehtsem         gierehtse+N+Sg+Acc
+!!€ gierehtse:           gierehtse+N+Sg+Nom
+!!€ gierehtsen:          gierehtse+N+Sg+Gen
+!!€ gieriehtsasse:       gierehtse+N+Sg+Ill
+!!€ gierehtsem:          gierehtse+N+Sg+Acc
+!!$ gieriehtsem:         gierehtse+N+Sg+Acc     ! Block diphthongues in odd syll
 }}}
 
 Note the last line, where we explicitly check that the illegal word form
 {{gieriehtsem}} is never generated or accepted.
 
-Note that there __must__ be a space between {{!!€}} or {{!!$}} and the following
-word form in the test data.
+Note that there __must be a space__ between {{!!€}} or {{!!$}} and the following
+word form in the test data, and there __must be a colon followed by whitespace__
+after the word form and before the lemma+tag string. This syntax allows
+multiword expressions as test data.
+
+It is ok to have LexC style comments after the second column, as shown in the
+last line.
 
 __Possible pitfal:__ due to the way the parsed test data is stored internally by
 the test bench, you can __not__ use the same lemma more than once for the same
