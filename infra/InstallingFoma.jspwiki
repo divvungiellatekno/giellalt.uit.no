@@ -1,0 +1,33 @@
+__NB!__ Support for building fst's using Foma is experimental, and only works
+with a few languages at the moment. Specifically, the following is required:
+
+* use an xfst script (suffix {{.xfscript}}) for the morphophonological description
+* do NOT use regular expressions in any of your lexc files
+
+Also, only a subset of the fst's are built using {{foma}} for now. More fst's
+will be added over time.
+
+!!!Installation
+
+To install Foma, do the following:
+
+{{{
+svn co https://code.google.com/p/foma
+cd foma
+make
+sudo make install
+}}}
+
+!!!Use
+
+To configure a language to be built with {{foma}}, do the following:
+{{{
+./configure --with-foma
+}}}
+
+To also turn off Xerox (if you have it installed), you can add
+{{--without-xfst}}. The default is to always
+use the Xerox tools, but if they are not installed, the fallback is to use
+the Hfst tools if nothing else is specified. Foma must always be enabled
+explicitly. If Foma is enabled, Hfst is turned off unless you explicitly also
+enable Hfst.
