@@ -30,3 +30,13 @@ use the Xerox tools, but if they are not installed, the fallback is to use
 the Hfst tools if nothing else is specified. Foma must always be enabled
 explicitly. If Foma is enabled, Hfst is turned off unless you explicitly also
 enable Hfst.
+
+!!!Differences between Foma and Xfst
+
+There are a number of differences between Foma and Xfst, but most of them are
+additions on top of Xfst. That is, Xfst-based source
+files are always compatible with Foma.
+
+There are a couple of exceptions, they are listed here as they are found:
+* do not start an {{echo}} string with the character "=" - this turns {{echo}} 
+  into a defined net with the name ''echo''.
