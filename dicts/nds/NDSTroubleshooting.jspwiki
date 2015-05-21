@@ -1,48 +1,33 @@
+﻿!! Troubleshooting frequent problems
 
+! String compilation failed, aborting:  babel.core.UnknownLocaleError: unknown locale 'hdn'
 
-!!! Troubleshooting frequent problems
-
-!! String compilation
-
-{{{
-String compilation failed, aborting:  babel.core.UnknownLocaleError: unknown locale 'hdn'
-}}}
-
-There are two possible problems:
+There are two possible problems: 
 
  * Compile with a more specific version of this command, i.e., {{fab PROJNAME compile}}
  * A locale is not installed in the project environment
 
 In the case of the second, see the section ''Dat files'' in [NDS Localisations|NDSLocalisations.html].
 
-! fab
+! **fab** is unable to copy FSTs
 
 {{{
-**fab** is unable to copy FSTs
-
     cp: cannot create regular file ‘/opt/smi/vep/bin/analyser-dict-gt-desc.xfst’: Permission denied
     cp: cannot create regular file ‘/opt/smi/vep/bin/generator-dict-gt-norm.xfst’: Permission denied
 }}}
 
 Cause: File permissions and owners on certain files have been overridden.
 
-Fix:
+Fix: 
+* Check that the language ISO is in the file {{~/neahtta/gtweb_cron_permission_pairs}}. This will ensure that the language permissions are fixed if they change. The cron script runs 
 
-Check that the language ISO is in the file {{~/neahtta/gtweb_cron_permission_pairs}}. 
-This will ensure that the language permissions are fixed if they change. 
-The cron script runs
-
-Cause: The FSTs have not actually compiled.
+Cause: The FSTs have not actually compiled. 
 
 Fix:
 * Check that running {{make}} in the language directory in ~/gtsvn/langs/ actually works as expected.
 
 
-! 500
-
-{{{
-500: "unsupported format character 'n' (0x6e) at index 20"
-}}}
+! 500: "unsupported format character 'n' (0x6e) at index 20"
 
 Cause: one of the python formatted variables in the translation strings has the
 wrong syntax. This is not surprising, because variable formatting in python
@@ -59,13 +44,13 @@ strings.
 Fix:
 
 * First: confirm that the server is running the most up-to-date versions of the
-  localization files by updating from SVN and compiling the strings, 
-  {{fab PROJECT compile_strings}} and restarting the service
+  localization files by updating from SVN and compiling the strings, {{fab
+  PROJECT compile_strings}} and restarting the service
 
 * If there is still a problem, then likely one of the translation strings is
-  misformatted. For the affected locale, search through the {{.po}} file for
-  the affected template, and doublecheck that all translations marked with
-  {{#, python-format}} have variables with the correct syntax.
+  misformatted. For the affected locale, search through the {{.po}} file for 
+  the affected template, and doublecheck that all translations marked with 
+  {{#, python-format}} have variables with the correct syntax. 
 
     OR:
 
@@ -80,5 +65,3 @@ Fix:
 }}}
 
 ! More...
-
-... to come
