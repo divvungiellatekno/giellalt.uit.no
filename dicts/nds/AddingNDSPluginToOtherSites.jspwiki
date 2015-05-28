@@ -30,21 +30,29 @@ be the case, report a bug.
 
 {{{
     <link rel="stylesheet" 
-          href="http://sanit.oahpa.no/static/css/neahttadigisanit.css"></link>
-
-    <script type="text/javascript" 
-            src="http://sanit.oahpa.no/static/js/neahttadigisanit.jquery.min.js"></script>
+          href="http://PROJNAME.oahpa.no/static/css/neahttadigisanit.css"></link>
 }}}
 
-Second: the JS file may be included in the header, or toward the footer so that
-it does not delay other content in the site from loading.
+Here you will need to replace PROJNAME with the project you are using, i.e.,
+sanit, itwewina, valks, sonad, etc.
+
+Second: the JS file must be included toward the end, so that it does not delay
+other content in the site from loading, and also so that all the text content
+is present when the file is called.
+
+
+{{{
+    <script type="text/javascript" 
+            src="http://PROJNAME.oahpa.no/static/js/neahttadigisanit.jquery.min.js"></script>
+}}}
+
 
 !! Initializing the plugin
 
 The final step is to call the plugin. Typically, you will want to do this
 within a jQuery event-- usually when the document is ready. This code may be
 included in its own {{script}} node, but must run after the {{.js}} file has been
-included.
+included above.
 
 {{{
     // Wait for the document to load...
@@ -53,7 +61,7 @@ included.
         // Initialize and configure NDS
         $(document).selectToLookup({
             // This specifies the dictionary set to 
-            api_host: 'http://sanit.oahpa.no/',
+            api_host: 'http://PROJNAME.oahpa.no/',
         });
     });
 }}}
