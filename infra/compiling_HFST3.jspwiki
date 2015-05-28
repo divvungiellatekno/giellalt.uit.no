@@ -97,3 +97,18 @@ sudo port install automake autoconf flex bison pkgconfig
 }}}
 
 After this, do {{./autogen.sh}} etc. as above.
+
+!!!installing the SWIG Python binding
+
+If you want to run hfst from Python, you need to install the Python binding provided through SWIG. First you need to install {{swig}} and the Swig submodule for Python using MacPorts:
+
+{{{
+sudo port install swig
+sudo port install swig-python
+}}}
+
+When done, you are ready to build and install the Python bindings:
+
+{{{
+python3.3 setup.py build_ext --inplace
+}}}
