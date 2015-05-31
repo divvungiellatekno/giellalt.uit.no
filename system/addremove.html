@@ -4,7 +4,7 @@
 </head>
 
 <body>
-<h1>Adding and removing users</h1>
+<h1>Adding and removing users on linux</h1>
 
 <p>Be root. To add a new user named Laila Sara with laila as the user
 name, do the following:</p>
@@ -46,7 +46,34 @@ initial "cvs get" command.</p>
 the command "passwd laila". You will not be prompted for the old
 password, and the new one you enters will erase the old one.</p>
 
-<h3>Removing users</h3>
+<h1>Adding users on mac server</h1>
+
+<p>Use the dscl command. This example would create the user "luser", like so:</p>
+
+
+<pre><p>
+dscl . -create /Users/luser
+dscl . -create /Users/luser UserShell /bin/bash
+dscl . -create /Users/luser RealName "Lucius Q. User"
+dscl . -create /Users/luser UniqueID "1010"
+dscl . -create /Users/luser PrimaryGroupID 80
+dscl . -create /Users/luser NFSHomeDirectory /Users/luser
+You can then use passwd to change the user's password, or use:
+
+dscl . -passwd /Users/luser password
+
+You'll have to create /Users/luser for the user's home directory and 
+change ownership so the user can access it, and be sure that the 
+UniqueID is in fact unique (via the command id 1010 etc.)
+</pre></p>
+
+<p>This line will add the user to the administrator's group:</p>
+
+<p><pre>
+dscl . -append /Groups/admin GroupMembership luser
+</pre></p>
+
+<h1>Removing users on linux</h1>
 
 <p>For removing (in this example the user laila), be root, and use this
 command (-r removes the files of the user al well):</p>
