@@ -1,35 +1,45 @@
 !!!Edmonton presentation
 
-Sjur Moshagen
+University of Alberta, Edmonton, June 8th 2015
+
+Sjur Moshagen, UiT The Arctic University of Norway
 
 !!!Overview of the presentation
 
-* philosophy - why?
-* General presentation
-** organisation
-** what is where
-** interaction between components to produce different types of fst's
-* fst compilers supported (Xerox, Hfst, Foma)
+* philosophy & background
+* bird's eye view
+* closer view of selected parts:
+** lexicon maintenance
+** documentation
+** testing
+** from source to final tool:
+*** relation between lexicon, build and speller
+*** fst's and dictionaries
 
-!!Dealing with descriptive vs normative grammars
+!!!Philosophy & Background
 
-* the normative is a subset of the descriptive
-* tag the non-normative superset: +Err/Orth etc.
-(say something about the usefulness of standardised tagsets
+* Background
+* Philosophy
+* Goals
 
-!!Going from analyser to speller
+!!Background
 
-* coverage and overgeneration - how to restrict and enhance (filters, lexicalisations)
-* tuning the suggestions - an art
-* who decides on the norm and the orthography?
-* different speller needs for different persons and groups
+* need for simpler maintenance
+* scalability, both for languages, tools and linguists and other developers
 
-!!!Introduction
+!!Philosophy
 
-!!Philoshophy
+* keep technical details out of the way
+* make the daily work as simple as possible
+* division of labour
+* Recognition: know the basic setup of one language - know the setup of them all
 
-# askldf
-# Recognition - know the basic setup of one language -- know the setup of them all
+!!Goals
+
+* easy support for many languages
+* easy support for many tools
+* keep language independent and language specific code apart
+* easily upgradable
 
 !!General principles
 
@@ -42,6 +52,84 @@ Sjur Moshagen
 # Possibility for all tools to be built for all languages
 # Parametrise the build process
 
+!!!Bird's Eye View
+
+* organisation
+* technologies (xerox, hfst, foma)
+* øaksdfj
+
+!!!Closer View Of Selected Parts:
+
+*Lexicon Maintenance
+*Documentation
+*Testing
+*From Source To Final Tool:
+**Relation Between Lexicon, Build And Speller
+**Fst's And Dictionaries
+
+!!!Closer View: Lexicon Maintenance
+
+!!!Closer View: Documentation
+
+Inline documentation
+
+!!!Closer View: Testing
+
+!!!Closer View: From Source To Final Tool:
+
+* Relation Between Lexicon, Build And Speller
+* Fst's And Dictionaries
+
+!!Relation Between Lexicon, Build And Speller
+
+* tag conventions, automatically generated filters
+* spellers and different writing system / alternative orthographies
+
+!Dealing with descriptive vs normative grammars
+
+* the normative is a subset of the descriptive
+* tag the non-normative superset: +Err/Orth etc.
+(say something about the usefulness of standardised tagsets
+
+!Going from analyser to speller
+
+* coverage and overgeneration - how to restrict and enhance (filters, lexicalisations)
+* tuning the suggestions - an art
+* who decides on the norm and the orthography?
+* different speller needs for different persons and groups
+
+!!Fst's And Dictionaries
+
+
+!!!Summary
+
+* scalability
+* division of labour
+* language independence
+* ... but still flexible wrt the needs of each language
+
+!!!Giittu
+
+* Thank you!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 !!!Introduction
 
@@ -52,3 +140,6 @@ Our CWIL workshop is fast approaching, and I believe it would be good to have a 
 Basically, I'm thinking of something quite along the lines you presented last June - but now we have many new faces, that would really benefit from the big picture, in particular the participants to the first Athabascan segment, and also the subsequent Algonquian stretch (our two new graduate students and postdoc). This would in fact involve presenting the same content twice, most likely on Sunday 7th and Friday 12th.
 
 In addition, we could consider having an introductory presentation on the general challenges of transforming a decent descriptive FST into something that works as a (useful) spell-checker - and the various strategies of how these challenges may be addressed in tightening up the linguistic description. Myself, I could well present something based on the ambiguous analyses resulting from applying the current analyzer real Cree texts, which concretely exhibits what analyses an initial decent descriptive morphological analyzer is capable of, but many of which analyses (and forms) one would not want to allow a spell-checker to accept. But might you have something prepared for some other earlier event on this fst2speller aspect, e.g. from the Sámi perspective?
+
+Sjur:
+Sounds good, there should be material that I can build on, and in any case we need a presentation like this for general perusal. I’ll probably make it a bit more detailed than last year, and focus on the interactions of the different parts of the infrastructure, correspondence between certain tags/tag conventions and the final fst’s of different types. And of course also what you mention: how the infra works wrt to handling different orthographies and writing systems.
