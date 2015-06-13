@@ -68,6 +68,33 @@ Sjur Moshagen, UiT The Arctic University of Norway
 * {{*Speech synthesis is not (yet) built by the infra, conversion to IPA is part of the infrastructure though}}
 * {{Supported: fst's and syntactic parsers used are built by the infrastructure}}
 
+!!$GTHOME - directory structure
+
+Some less relevant dirs removed for clarity:
+
+{{{
+$GTHOME/                     # root directory, can be named whatever
+├── experiment-langs         # language dirs used for experimentation
+├── gtcore                   # $GTCORE - core utilities, templates and resources
+├── keyboards                # keyboard apps organised as language dirs
+├── langs                    # The language we work on daily or often, such as:
+│   [...]                    #
+│   ├── crk                  # Plains Cree
+│   ├── est                  #
+│   ├── evn                  #
+│   ├── fao                  #
+│   ├── fin                  #
+│   ├── fkv                  # Kven
+│   ├── hdn                  # Northern Haida
+│   [...]                    #
+├── ped                      # Oahpa etc.
+├── prooftools               # Libraries and installers for spellers and the like
+├── startup-langs            # Directory for languages in their start-up phase
+├── techdoc                  # technical documentation
+├── words                    # dictionary sources
+└── xtdoc                    # external (user) documentation & web pages
+}}}
+
 !!Organisation - Dir Structure
 
 {{{
@@ -86,7 +113,7 @@ Sjur Moshagen, UiT The Arctic University of Norway
 │   └── transcriptions   = convert number expressions to text or v.v.
 ├── test                 =
 │   ├── data             = test data
-│   ├── src              = tests for the fst's in the src/ dir
+│   └── src              = tests for the fst's in the src/ dir
 └── tools                =
     ├── grammarcheckers  = prototype work, only SME for now
     ├── mt               = machine translation
