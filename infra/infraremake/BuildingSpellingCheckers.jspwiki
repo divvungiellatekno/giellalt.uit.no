@@ -1,15 +1,97 @@
-Presentation in Edmonton, June 15 2015
+!!!Spellers in the Giella infrastructure
 
-Sjur Moshagen
+University of Alberta, Edmonton, June 15 2015
 
-* lexicon (can there be too much?)
-* lexicon sources (dictionaries as speller sources)
-* restrictions in the grammar (compounding and derivation restrictions)
+Sjur Moshagen, UiT The Arctic University of Norway
+
+!!!Presentation Overview
+
+* How to build a speller
+* speller integration
+* lexicon considerations
 * suggestions - the interface of the speller
-* collecting typos
-* lexicon weights:
+* error data
+* error model
+* testing
+
+!!!Background
+
+!!What is a spelling error?
+
+* not always easy to define...
+* ... the simplest definition: a non-word intended to be an exising word
+* this is used as the basis for most spelling checkers
+* ... where word = space-separated string of letters
+* more complex errors are often handled by so-called grammar checkers (although
+  few of them checks your grammar in a linguistic sense)
+
+
+!!How to build a speller
+
+Building an fst-based speller in the Giella framework goes like the following:
+
+!The acceptor
+
+{{{
+raw-fst
+  |
+  | <- filters
+  |
+speller-fst (normative, without punctuation)
+  |
+  | <- compounding and derivation filters, adding weights
+  |
+fstspeller-fst
+  |
+  | <- remove the upper (analysis) side
+  |
+acceptor
+}}}
+
+!The error model
+
+The error model build is still a bit in the flux, so the following may not hold
+exactly like this in the future.
+
+The error model is built from several indivual parts:
+
+* edit distance file (edit distance 1 or 2)
+* string replacement file
+* word replamenent file
+* possible enhancements coming up:
+** special treatment of first and last letters
+** possibility to build more complex error models using regexes or xfscripts
+
+Each part is compiled into an fst, and unioned into one error model file.
+
+!!Speller Integration
+
+* Components
+* What Do We Control?
+
+!Components
+
+[../images/Speller_integration.png]
+
+!What Do We Control?
+
+[../images/Speller_integration_source_owner.png]
+
+!!!Lexicon
+ (can there be too much?)
+!!!lexicon sources
+ (dictionaries as speller sources)
+!!!restrictions in the grammar
+ (compounding and derivation restrictions)
+!!!suggestions - the interface of the speller
+!!!collecting typos
+!!!lexicon weights
+
 ** frequency weights
 ** tag weights
 * designing an error model
 * error model weights
 * testing
+** typos
+** gold standard documents
+** regression testing
