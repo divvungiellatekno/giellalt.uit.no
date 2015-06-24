@@ -1,7 +1,8 @@
 !! Lexicon files
+
 Lexicon files are a part of the ''langs/sms/src/morphology'' infrastructure.
 
-!!Entry structure
+!! Entry structure
 
 ! <e /> level
 
@@ -14,7 +15,7 @@ TODO: example sms entry
 Man skiller mellom synonymer og meningsgrupper. Synonymer har samme <mg>
 (meaning group / meningsgruppe) og samme <tg> (translation group /
 oversettelsesgruppe). Hvis en entry har flere betydninger, så skilles disse som
-forskjellige <mg>.
+forskjellige <mg>. 
 
 ! <tg /> level
 
@@ -93,11 +94,17 @@ In sms these can come in under either <mg /> or <tg />, for good reasons.
 
 Currently all sms files have a minimal miniparadigm, but in NDS we generate more.
 
-sms-files with static paradigms:
+In NDS we can tell the system to not use the static miniparadigm with the @exclude attribute:
 
 {{{
-Pron_references_sms2x.xml
+      <mini_paradigm exclude="NDS">
+        <analysis ms="Pron_Pers_Sg1_Gen"><wordform>muu</wordform></analysis>
+        <analysis ms="Pron_Pers_Sg1_Ill"><wordform>muʹnne</wordform></analysis>
+      </mini_paradigm>
 }}}
+
+If this attribute is not present as in the above, then the static paradigm will
+be displayed in NDS.
 
 ! Other files
 
@@ -124,6 +131,7 @@ one.
 |  A+Comp+Attr        | heittogit heittogut heittoget heittogat heittohit heittohut heittohet heittohat | heittoget heittogat 
 |  A+Comp+Sg+Nom      | heittogit heittogut heittoget heittogeabbo heittogat heittogabbo heittohit heittohut heittohet heittoheabbo heittohat heittohabbo | heittogeabbo heittogabbo 
 |  A+Superl+Sg+Nom    | heittogeamos heittogamos heittoheamos heittohamos | heittogeamos heittogamos
+
 ! Nouns
 
 Display the whole paradigm in two columns for plural.  In NDS, because there
@@ -154,20 +162,31 @@ TODO: Noun attributes that affect miniparadigms ?
 
 ! Proper nouns
 
-Some proper nouns may only be available in singular.
+For now, all proper nouns are not generated in Plural.
 
-Proper nouns may also require some context to make the examples make sense.
-E.g. Sg+Gen can include a postposition.
+Sg+Nom Njuõttjokk
+Sg+Gen Njuõttjook
+Sg+Acc Njuõttjook
+Sg+Ill Njuõttjoʹǩǩe
+Sg+Loc Njuõttjookâst
+Sg+Abe Njuõttjooktää
+Sg+Par Njuõttjokkâd
+
+EX: Äʹnnjääuʹraž
 
 TODO: determine how to display these in sms
 
 || Form   	|| Context  || Example     || Translation
 |   -        |  -        |              |      
-| Sg+Gen     | X bokte	 |              |          
+| Sg+Gen     | X pääiʹǩ	 |              |          
 | Sg+Ill     | 	-        |              |          
 | Sg+Loc     |  -        |              |            
 
 TODO: Any plural-only proper nouns?
+
+! Holidays?
+
+use räjja in context for e.g. eeʹjjpeeiʹv räjja
 
 ! Adjectives
 
@@ -201,20 +220,22 @@ This also requires the ''type="Pers"'' attribute on the ''<l />'' node, and the
 adjust the paradigm rules.
 
 || Inflection | Example |
-|Sg+Nom	      | mon     |
-|Sg+Gen	      | muu     |
-|Sg+Acc	      | muu     |
-|Sg+Ill	      | muʹnne  |
-|Sg+Loc	      | muʹst   |
-|Sg+Com	      | muin    |
-|Sg+Abe	      | muutää  |
-|Ess	      | muuʹnen |
-|Par	      | muuʹđed |
+| Sg+Nom	  | mon     |
+| Sg+Gen	  | muu     |
+| Sg+Acc	  | muu     |
+| Sg+Ill	  | muʹnne  |
+| Sg+Loc	  | muʹst   |
+| Sg+Com	  | muin    |
+| Sg+Abe	  | muutää  |
+| Ess	      | muuʹnen |
+| Par	      | muuʹđed |
 
 
 TODO:
 
 ! Indef pron
+
+måtam Måtmin
 
 TODO:
 
