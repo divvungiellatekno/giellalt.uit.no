@@ -1,0 +1,99 @@
+!! Lexicon files
+
+Lexicon files are a part of the ''langs/crk/src/morphology'' infrastructure.
+
+!! Entry structure
+
+! <e /> level
+
+TODO: example crk entry
+
+! <mg /> level
+
+TODO: example crk entry
+
+! <tg /> level
+
+Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller translation group) som igjen kan inneholde:
+
+! <t /> - a word
+
+{{{ TODO: example entry with <t /> }}}
+
+! <t /> - a phrase
+
+{{{ TODO: example entry with <t /> }}}
+
+! <te /> - An explanation: a sentence which explains the meaning of a word, but can't be used in the translation. 
+
+{{{ TODO: example entry with <t /> }}}
+
+! <re /> - Restriction 
+
+* <re> gives a restriction for the translation, f.ex. norwegian ''vest'' has the restriction ''of clothes'', to separate it from the navigational direction.
+
+{{{ TODO: example entry with <t /> }}}
+
+! <l /> attribute documentation
+
+TODO: 
+
+! <stem /> attribuet documentation
+
+TODO: 
+
+! <t /> attribute documentation
+
+TODO: 
+
+! <xg /> Example sentences
+
+TODO: 
+
+! Other files
+
+TODO:
+
+!! Generated miniparadigms 
+
+Miniparadigms are generated in lexicon entries in order to help users. They
+vary from POS to POS and sometimes within POS.
+
+There are also some constraints on generation for orthographical reasons.
+
+! FST restrictions
+
+# {{+Err/Orth}} - Forms marked with this will not be displayed in generation.
+## This may affect forms without hyphens, where hyphens are expected.
+# {{+Use/Ped}} - ?
+# {{+Use/NGminip}} - ?
+
+! Lexicon attributes in XML that affect generation
+
+
+
+! Verbs
+
+! Nouns
+
+! Proper nouns
+
+! Adjectives
+
+! Numerals
+
+! Pronouns
+
+! Personal pronouns
+
+!! Pregenerated paradigms 
+
+Plains Cree currently does not reply on pregenerated entries in NDS.
+
+
+!! Analysis specifics
+
+Plains Cree has some tags that appear before the lemma. There is a special rule
+in NDS to handle this, but more tags may need to be added occasionally.
+
+TODO: document tags
