@@ -1,12 +1,25 @@
-!! Lexicon files
+!!! Lexicon files
 
 Lexicon files are a part of the ''langs/crk/src/morphology'' infrastructure.
+This documentation is not intended to be an exhaustive document for the
+structure of the lexicon, but so far just the lexicon elements that have an
+effect on the display of the dictionary through NDS.
 
 !! Entry structure
 
 ! <e /> level
 
-TODO: example crk entry
+**Source attribute**
+
+In order to display a dictionary source in the entry, it should be included as
+an attribute on the <e /> node. This should be the full text that you wish to
+be displayed.
+
+{{{
+    <e src="nêhiyawêwin : itwêwina / Cree : Words">
+}}}
+
+TODO: example image
 
 ! <mg /> level
 
@@ -14,7 +27,7 @@ TODO: example crk entry
 
 ! <tg /> level
 
-Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller translation group) som igjen kan inneholde:
+<mg> contains one or more <tg> (translation group) which can contain:
 
 ! <t /> - a word
 
@@ -34,11 +47,61 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
 
 {{{ TODO: example entry with <t /> }}}
 
-! <l /> attribute documentation
+! <lg /> level
 
 TODO: 
 
-! <stem /> attribuet documentation
+
+! <lc /> node
+
+Currently the <lc /> node contains the word inflectional class. For some words
+it will be used to determine how to generate a miniparadigm.
+
+{{{
+      <lg>
+         <l pos="V">kiskinwahamâkêwikamikohkêw</l>
+         <lc>VAI-v</lc>
+      </lg>
+}}}
+
+It is also used to display the inflectional class alongside the POS.
+
+{{{
+     <lc>VTA-1</lc>
+
+     ->
+
+    wâpamêw (Verb, VTA)
+}}}
+
+See the userfriendly tag relabels file for {{crk}} to adjust how any of these
+appear in the interface. 
+
+! <l /> level
+
+TODO: any attributes 
+
+! <stem /> node
+
+The stem will be included with the analysis column along the right side of all
+entries that match up with an analysis. The stem will be pulled from the <stem
+/> node within the <lg /> node.
+
+  {{{
+      <lg>
+         <l pos="V">kiskinwahamâkosiw</l>
+         <lc>VAI-v</lc>
+         <stem>kiskinwahamâkosi</stem>
+      </lg>
+  }}}
+
+The stem will also be used in analyses along the right side.
+
+{{{
+    nikî-nitawi-kiskinwahamâkosin
+    ⟵
+    PV/nitawi + √ kiskinwahamâkosi- + Intransitive Animate Verb + Independent + Past + 1s
+}}}
 
 TODO: 
 
@@ -70,9 +133,19 @@ There are also some constraints on generation for orthographical reasons.
 
 ! Lexicon attributes in XML that affect generation
 
-
+For now generation relies purely on animacy tags in the FST.
 
 ! Verbs
+
+** TA **
+
+** II ** 
+
+** AI and TI **
+
+** Context **
+
+Independent pronouns are included for context.
 
 ! Nouns
 
@@ -97,3 +170,11 @@ Plains Cree has some tags that appear before the lemma. There is a special rule
 in NDS to handle this, but more tags may need to be added occasionally.
 
 TODO: document tags
+
+
+!!! FST Miscellany
+
+* Preverbs and reduplication tags come before the lemma, and so there is a tag
+reformatter in place which shifts these tags after the lemma, and may replace
+the slot formerly occupied by the lemma with {{Tpl/Lemma}} for analysis work in
+the templates.
