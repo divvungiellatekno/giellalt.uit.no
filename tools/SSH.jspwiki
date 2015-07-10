@@ -1,4 +1,3 @@
-!!!SSH
 
 !!Use keys, avoid password trouble
 
@@ -58,6 +57,24 @@ to have your keypair password stored in Mac Keychain.
 
 Ubuntu should offer storing it the first time you use it.
 
+!!Sharing a server account
+
+When you do {{{ssh-copy-id}}}, what happens is you copy your public keyfile,
+typically named ~/.ssh/id_rsa.pub, to the server account, where it's appended
+to the file ~/.ssh/authorized_keys. This file can have several public keys, one
+per line.  This might be handy if you happen to have several keypairs (e.g. one
+per laptop), or if you want several people to have access to the same server
+account, without any of them having to remember the password of that account.
+
+If user Bob has access to the account "neahtta", and you give your
+~/.ssh/id_rsa.pub to Bob, then he can give you access to "neahtta" by doing
+
+{{{
+    cat alices_id_rsa.pub >> /home/neahtta/.ssh/authorized_keys
+}}}
+
+(If the folder /home/neahtta/.ssh doesn't exist, do {{{mkdir
+/home/neahtta/.ssh; chmod 700 /home/neahtta/.ssh}}}  first.)
 
 
 !!See also

@@ -31,8 +31,11 @@ __The longer explanation:__
 1.) ''Log in to the server via SSH as the NDS user (user name: neahtta)''
 
 If you have root access, log in to gtweb, and thereafter do {{sudo su neahtta}}
-If you do not have root access, log in as the NDS user, use your ordinary gtweb
-account password. (ask Jaska for how to do this (TODO: add documentation here)).
+If you do not have root access, you can still log in by having your public SSH
+key added to neahtta's authorized_keys. See [SSH|../../tools/SSH.jspwiki] on
+how to make an SSH keypair if you don't have one already, then ask someone with
+access (e.g.  Kevin/Trond/Jaska/Ryan) to append your public key to the
+/home/neahtta/.ssh/authorized_keys file.
 
 Note that when logged in as the NDS user, the python virtualenv should be
 activated automatically, and you will see this before the command prompt:
