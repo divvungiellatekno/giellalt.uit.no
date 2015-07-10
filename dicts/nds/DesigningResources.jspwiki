@@ -15,13 +15,21 @@ were 'rendered' into XML. Possibly a good choice for this would have been XSLT,
 but as I am not amazingly skilled with XSLT, I chose to use the Jinja2
 templating engine (used in NDS) to render TSV rows into the GT lexicon format.
 
+
+!!! Initial thoughts
+
+ * Who are your users? How skilled might they be with the languages? Advanced
+   users looking for a reference tool to read a language they don't know as
+   well? Beginning users looking to learn a language?
+
+
 !! Priorities?
 
 If your first concern is where it's best to spend more time, it seems like that
 should go to the lexicon over the FST. As long as the FST is capable of some
 amount of lemmatization, and returning POS, and can do so for a decent (but not
 extensive) amount of words, the primary functions of serving as a dictionary
-will work, and NDS can also function without an FST (but that's not as cool,
+will work. Also, NDS can also function without an FST (but that's not as cool,
 right?)
 
 The reason more time should be spent on the lexicon, is because you'll see
@@ -39,7 +47,7 @@ for ''ól'' 'drink'.
         drinking
         boozing
         drunkenness
-        crapulence    
+        crapulence              *
         drinking
         imbibing
         imbibition
@@ -48,9 +56,14 @@ for ''ól'' 'drink'.
         booze
         hard drink
         hard liquor
-        John Barleycorn
+        John Barleycorn         *
         strong drink  
 }}}
+
+With a wordnet, I probably have automated ways of resolving this-- but with a
+lexicon for this type of dictionary, spending some time resolving issues like
+thesse will do a lot for ease of use. On the other hand, one may want to
+preserve rarer definition if providing a reference tool.
 
 !! Lexicon
 
@@ -58,15 +71,29 @@ for ''ól'' 'drink'.
 
  * A newly parsed lexicon had too much. Became important to trim it down:
 
-   - restrict translations by matching POS of both sides
+  - restrict translations by matching POS of both sides
 
-   - consider lemmatizing both sides, and discarding non-lemmas or giving them
-     less priority
+  - consider lemmatizing both sides, and discarding non-lemmas or giving them
+    less priority
 
-   - be careful with the amount of annotations <re /> and <te />
+  - be careful with the amount of annotations <re /> and <te />
 
 
-! Refinements
+!! Morphology / FST
+
+The dictionary may serve as a quick way to test your morphology for both
+generation and analysis.
+
+! Discovered issues 
+
+ * Words do not generate
+ * Generation is surprisingly slow (9 forms for a paradigm may add up if
+   generation takes .5 seconds for one form)
+ * Words generate incorrectly
+
+ * Words are not analyzed
+
+!!! Refinements
 
 For pedagogical lexica, you may want to produce pre-generated paradigms for
 closed classes of words. Pronouns may need more work. Pronouns with cases and
@@ -84,7 +111,7 @@ specialized uses could use examples.
     </tg>
 }}}
 
-TODO: img
+[{Image src='img/example.png' caption='example sentence'}]
 
 ''Index entries''
 
@@ -98,9 +125,7 @@ drill down into various categories:
 {{{
     1.) Step one:
 
-     hverandre -> choose person
-       - about two people
-       - about more than two people
+     hverandre -> choose person (two people, more than two people)
 
     2.) Step two:
 
@@ -108,10 +133,11 @@ drill down into various categories:
        - from eachother (locative)
        - to eachother (illative)
        - with eachother (commitative)
-       - etc... 
 
     3.) Step three: present definitions.
 }}}
+
+TODO: images
 
 This requires some specific formatting in the XML: 
 
@@ -180,8 +206,6 @@ This requires some specific formatting in the XML:
       </mg>
    </e>
 }}}
-
-TODO: example. munnje_mun.png + xml snippet
 
 [{Image src='img/munnje_mun.png' caption='Munnje -> mun'}]
 
@@ -259,7 +283,11 @@ TODO: example. munnje_mun.png + xml snippet
 !! Niceties
 
 1. Morphological tags should be relabeled into a user friendly means. See: TODO
-2. Paradigms can be reformatted to remove repeating tag elements
+2. Paradigms can be reformatted to remove repeating tag elements, or present in different formats. (Slightly advanced, since it requires interacting with templates).
+
+TODO: images
+
 3. Additional annotations can be added to the lexicon and displayed to the
    user, i.e., placenames may want region attribuets. TODO: example.
+
 
