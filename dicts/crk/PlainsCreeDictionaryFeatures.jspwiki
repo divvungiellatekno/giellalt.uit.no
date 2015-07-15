@@ -51,6 +51,41 @@ TODO: example crk entry
 
 TODO: 
 
+! <audio /> 
+
+Audio specifications fall under the <lg /> node in an <audio /> node. Within
+this node are <a /> nodes, which contain the following attributes:
+
+ * @href - a link to the audio file, hosted on some server
+ * @speaker - initials, or anonymized name for the speaker
+ * @dialect - a code for the dialect.
+
+There may be more attributes, use whatever you like and document them here. NDS
+will chiefly rely on @href, but may use other attributes such as @dialect, in
+order to render more information to the user on what they will hear.
+
+Filenames should be unique to the sound. If the sound needs to reappear
+anywhere, the same filename may be used.
+
+{{{
+    <lg>
+        <l pos="N">lemma</l>
+        <audio>
+            <a dialect="muo"
+                href="http://audio-corpus-website.com/path/to/audio/file/aud_file_1.wav"
+                speaker="ZMN"/>
+            <a dialect="xxx"
+                href="http://audio-corpus-website.com/path/to/audio/file/aud_file_2.wav"
+                speaker="EL"/>
+        </audio>
+    </lg>
+}}}
+
+During the lexicon build process, audio will be extracted and compressed for
+web-friendly formats, so that files dictionary users need to download are
+wtihin the ~50kb range. Locally hosted paths to the file will be automatically
+added during the build process as long as filenames are unique, so that files
+specified may be whatever size.
 
 ! <lc /> node
 
