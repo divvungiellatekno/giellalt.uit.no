@@ -170,3 +170,21 @@ __Possible pitfal:__ due to the way the parsed test data is stored internally by
 the test bench, you can __not__ use the same lemma more than once for the same
 fst within the same lexc file. That is, check that the words you use for testing
 are only used in one test each, and you should be fine.
+
+!!One-sided (half) tests in lexc
+
+In some cases you may want to run the test in only one direction: only analysis
+or only generation tests. This is __required__ when testing specialised fst's
+that do not exist in pairs. Here is one example (from Inari Sámi):
+
+{{{
+!!€dict-gt-norm.gen:  # Even-syllable test, generation only
+!!€ raattâđ:         raattâđ+V+Inf
+}}}
+
+The {{dict-gt-norm}} fst is only used for generation (the corresponding analyser
+is descriptive, not normative, to allow non-normative input to dictionary lookup)
+and we need to tell the test bench that the fst and the following test data
+should only be used for generation testing. This is done by adding the «suffix»
+{{.gen}} to the fst name. If you need to run certain tests only for the analyser,
+add the «suffix» {{.ana}} to the fst name just before the colon.
