@@ -132,7 +132,7 @@ by colon and space, and then the name of the test. There must be __no space__
 between the Euro sign and the transducer specifier, and __no space__ between the
 transducer specifier and the following colon. The string {{!!€gt-norm:}} is
 obligatory (you can replace {{gt-norm}} with another fst specifier if you want
-to test agains e.g. a descriptive fst, or an fst with a different tagset), but
+to test against e.g. a descriptive fst, or an fst with a different tagset), but
 the name of the test (''adjectives'' in the case above) is optional. If not
 specified, the name will be the last seen lexicon name above.
 
@@ -166,14 +166,14 @@ multiword expressions as test data.
 It is ok to have LexC style comments after the second column, as shown in the
 last line.
 
-__Possible pitfal:__ due to the way the parsed test data is stored internally by
-the test bench, you can __not__ use the same lemma more than once for the same
+__NB! Possible pitfal:__ due to the way the parsed test data is stored internally
+by the test bench, you can __not__ use the same lemma more than once for the same
 fst within the same lexc file. That is, check that the words you use for testing
 are only used in one test each, and you should be fine.
 
 !!One-sided (half) tests in lexc
 
-In some cases you may want to run the test in only one direction: only analysis
+In some cases you may want to run the tests in only one direction: only analysis
 or only generation tests. This is __required__ when testing specialised fst's
 that do not exist in pairs. Here is one example (from Inari Sámi):
 
@@ -182,8 +182,10 @@ that do not exist in pairs. Here is one example (from Inari Sámi):
 !!€ raattâđ:         raattâđ+V+Inf
 }}}
 
-The {{dict-gt-norm}} fst is only used for generation (the corresponding analyser
-is descriptive, not normative, to allow non-normative input to dictionary lookup)
+The {{dict-gt-norm}} fst is only used for generation (the dictionary analyser
+is descriptive, not normative, to allow non-normative input to dictionary lookup,
+which means that the analyser and the generator will cover a different set of
+word forms, thus they need different sets of data for testing)
 and we need to tell the test bench that the fst and the following test data
 should only be used for generation testing. This is done by adding the «suffix»
 {{.gen}} to the fst name. If you need to run certain tests only for the analyser,
