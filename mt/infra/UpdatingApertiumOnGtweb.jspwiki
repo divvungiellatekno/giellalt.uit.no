@@ -1,123 +1,87 @@
 
-Installation/update of a single translator on gtweb.
+This documentation is for the web translators on gtweb.
+
+!!!Installation/update
+
+* Log into gtweb, and do \\
+cd /opt/mt
+* Change user to mt
+{{{
+sudo -s
+su mt
+}}}
+* Update and compile languages (config.log needs --with-hfst --enable-aprtium)
+{{{
+svn up langs/*
+Remember to compile both source and target language
+If you do sme-nob, then remember check out apertium/languages/apertium-nob
+}}}
+* Update and compile translators
+** cd ../pairs/ .. and then to your language pair \\
+   here with sme-smn as example
+{{{
+./autogen.sh --prefix=/opt/mt  --with-lang1=/opt/mt/langs/giella-sme/tools/mt/apertium --with-lang2=/opt/mt/langs/giella-smn/tools/mt/apertium
+make
+}}}
+
+__Then your languae pair is online on__ [http://gtweb.uit.no/mt/] \\
+(evt. in the secret subfolder)
 
 
-!!!WAIT:
-
-__This documentation is out of date, and will be updated shortly__
-
-
-!!a) Log in
+Not permission?
 
 If you’re not already, add your user to the MT group
 
 {{{
-$ /usr/bin/usermod -a -G mt <username>
+/usr/bin/usermod -a -G mt <username>
 }}}
 
 You’ll need ‘sudo’ for this.
 
-!!b) make a directory in your home directory for the MT source
+
+!!!Testing, updating apertium and hfst
+
+Note that apertium and hfst will become obsolete now and then.
+
+hfst may be updated as documented in the hfst3 documentation at giellatekno.
+
+You may check out an compile apertium in your home directory
+  (cf. documentation on [http://wiki.apertium.org] 
+
+
+Check out apertium. Then set paths:
 
 {{{
-mkdir mt/
-cd mt/
+export LD_LIBRARY_PATH=/opt/mt/lib
+export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
+export PATH=/opt/mt/bin:$PATH
 }}}
 
-!!c) check out the necessary source code (e.g. for sme-nob)
+Then compile:
 
 {{{
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-sme-nob
+cd apertium
+cd lttoolbox
+./autogen.sh --prefix=/opt/mt
+./configure --prefix=/opt/mt
+make
+make install
+cd ..
+
+export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
+export LD_LIBRARY_PATH=/opt/mt/lib/
+export PATH=/opt/mt/bin:$PATH
+
+cd ..7apertium
+./autogen.sh --prefix=/opt/mt
+./configure --prefix=/opt/mt
+make
+make install
 }}}
 
-!!d) compile it
-{{{
-$ export LD_LIBRARY_PATH=/opt/mt/lib
-$ export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
-$ export PATH=/opt/mt/bin:$PATH
 
-$ cd apertium-sme-nob
-$ ./autogen.sh --prefix=/opt/mt
-$ ./configure --prefix=/opt/mt
-$ make
-$ make install
-$ cd ..
-}}}
 
-!!e) test it installed ok:
-{{{
-$ echo “ja” | apertium -d /opt/mt/share/apertium/ sme-nob
-og
-}}}
-
-!!!INSTALLATION OF TRANSLATORS ON GTWEB
-
-!!a) Log in
-
-If you’re not already, add your user to the MT group
-{{{
-$ /usr/bin/usermod -a -G mt <username>
-}}}
-You’ll need ‘sudo’ for this.
-
-!!b) make a directory in your home directory for the MT source
-{{{
-mkdir mt/
-cd mt/
-}}}
-
-!!c) check out the necessary source code
-{{{
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/incubator/apertium-sme-smn
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/nursery/apertium-sme-fin
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/nursery/apertium-sme-sma
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/nursery/apertium-sme-smj
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-nno-nob
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-sme-nob
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium
-$ svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/lttoolbox
-}}}
-
-!!d) compile it
-{{{
-$ export LD_LIBRARY_PATH=/opt/mt/lib
-$ export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
-$ export PATH=/opt/mt/bin:$PATH
-
-$ cd lttoolbox
-$ ./autogen.sh --prefix=/opt/mt
-$ ./configure --prefix=/opt/mt
-$ make
-$ make install
-$ cd ..
-
-$ export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
-$ export LD_LIBRARY_PATH=/opt/mt/lib/
-$ export PATH=/opt/mt/bin:$PATH
-
-$ cd apertium
-$ ./autogen.sh --prefix=/opt/mt
-$ ./configure --prefix=/opt/mt
-$ make
-$ make install
-$ cd ..
-
-$ cd apertium-sme-nob
-$ ./autogen.sh --prefix=/opt/mt
-$ make
-$ make install
-$ cd ..
-
-$ cd apertium-nno-nob
-$ ./autogen.sh --prefix=/opt/mt
-$ make
-$ make install
-$ cd ..
-
-etc. for all the language pairs
-}}}
-
-!!e) test it installed ok:
+!!test it installed ok:
 {{{
 $ echo “ja” | apertium -d /opt/mt/share/apertium/ sme-nob
 og
