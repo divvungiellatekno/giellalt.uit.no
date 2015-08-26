@@ -16,6 +16,8 @@ svn up langs/*
 Remember to compile both source and target language
 If you do sme-nob, then remember check out apertium/languages/apertium-nob
 }}}
+It can be found in /opt/mt/langs/apertium-nob
+
 * Update and compile translators
 ** cd ../pairs/ .. and then to your language pair \\
    here with sme-smn as example
@@ -23,6 +25,14 @@ If you do sme-nob, then remember check out apertium/languages/apertium-nob
 ./autogen.sh --prefix=/opt/mt  --with-lang1=/opt/mt/langs/giella-sme/tools/mt/apertium --with-lang2=/opt/mt/langs/giella-smn/tools/mt/apertium
 make
 }}}
+
+With sme-nob:
+{{{
+./autogen.sh --prefix=/opt/mt  --with-lang1=/opt/mt/langs/giella-sme/tools/mt/apertium --with-lang2=/opt/mt/langs/apertium-nob/
+make
+}}}
+
+
 
 __Then your languae pair is online on__ [http://gtweb.uit.no/mt/] \\
 (evt. in the secret subfolder)
