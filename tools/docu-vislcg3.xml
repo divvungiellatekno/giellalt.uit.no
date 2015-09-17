@@ -18,11 +18,23 @@
                 <title>Mac OS X</title>
                 <ul>
                     <li>
-                    Check if you have <a href="http://giellatekno.uit.no/doc/infra/MacPorts.html">MacPorts</a>. Issue the command <code>/opt/local/bin/port search twig</code> in a Terminal. If that is successfull, go on to the next step. If not <a href="http://www.macports.org/install.php">install MacPorts</a>, then continue
-                    </li>
-                    <li>Follow the <a href="http://beta.visl.sdu.dk/cg3/chunked/installation.html#macosx-ports">installation instructions from the vislcg3 site</a>.</li>
+                    Check if you have <a href="http://giellatekno.uit.no/doc/infra/MacPorts.html">MacPorts</a>. Issue the command <code>/opt/local/bin/port search twig</code> in a Terminal. If that is successfull, go on to the next step. If not <a href="http://www.macports.org/install.php">install MacPorts</a>, then issue the following commands in your terminal window: </li>
                 </ul>
-                <p>The vislcg3 site also has <a href="http://beta.visl.sdu.dk/cg3/chunked/installation.html#macosx-brew">instructions for HomeBrew users</a> and a link to an <a href="http://beta.visl.sdu.dk/cg3/chunked/installation.html#macosx-other">installation package</a></p>
+
+<source>
+          sudo port install cmake
+          sudo port install boost
+          sudo port install icu
+          cd /tmp
+          svn co http://visl.sdu.dk/svn/visl/tools/vislcg3/trunk vislcg3
+          cd vislcg3/
+          ./cmake.sh --prefix=/usr/local
+          make -j3
+          ./test/runall.pl
+          sudo make install
+</source>
+
+                <p>The vislcg3 site has <a href="http://beta.visl.sdu.dk/cg3/chunked/installation.html"> more info on Mac OS installation </a> (including instructions for HomeBrew users), but note that we for our Apertium work assume your vislcg3 is instlled in /usr/local and not in /opt/local.</p>
             </section>
             <section>
                 <title>Other operating systems</title>
