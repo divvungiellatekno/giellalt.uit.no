@@ -2,6 +2,49 @@ This document and the hfst speller setup in our infra was inspired by
 [https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstSpellCheckerBuildingTutorialFsmnlp2012]
 (in English).
 
+!!!Weights in spellers
+
+!!Weight classes
+
+The weights should be restricted to signed integers in the range
+{{-32 000 - +32 000}}. Weights are usually positive, with a higher weight
+meaning less likelyhood of being relevant. Negative weights are usually used to
+promote a candidate. The weights have no influence on whether a word is
+accepted, only on the ranking of suggestions.
+
+To make the interaction of the weights more predictable, we group types of
+weights into classes of power of tens:
+
+;10^0 (0-9):       Tiny adjustments, nit-picking
+;10^1 (10-90):     Smaller adjustments
+;10^2 (100-900):   Regular edits
+;10^3 (1000-9000): Heavy-handed weights
+;10^4 (10000-...): Most heavy demotion - do not suggest. Although not yet
+                   implemented, there will probably be a hard-coded limit of
+                   20 000 - anything with this or a higher weight will __never__
+                   be suggested.
+
+It is possible to use fractions (the weighted hfst format allow any real as
+weight), but in some applications only integers will be accepted, and weight
+differences on the decimal scale will be ignored. It is thus best to stay in
+the integer world for maximum compatibility with all tools.
+
+Each higher weight class will usually override ordering based on weights from
+lighter weight classes.
+
+!!Weight sources and total weight calculation
+
+Sources:
+* frequency corpus + default weight for unseen word forms
+* tags
+* morphological structure (compounding & derivation)
+* error model edits
+
+The actual weight for any given suggestion is the sum of all the weights.
+
+----
+__Old version below:__
+
 !!!Korleis vi lagar forslag i hfst
 
 # feilskrive ord inn

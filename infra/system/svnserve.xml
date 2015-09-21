@@ -3,7 +3,7 @@
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en"> 
     <header> 
-        <title>Setup of svnserve on victorio</title>
+        <title>Setup of svnserve on gtsvn</title>
         
         <authors>
             <person name="Børre Gaup" email="borre.gaup@samediggi.no" />
@@ -16,7 +16,7 @@
 			<p>
 				The svnserve daemon serves the restricted part of our corpus.
 				That repository is located in <code>/var/repositories/boundcorpus</code>.
-				The repository should be accesible only from victorio, so the
+				The repository should be accesible only from gtsvn, so the
 				setup of the svnserve daemon and the firewall reflects that
 				decision.
 			</p>
@@ -31,7 +31,7 @@
 					The variable named arthur was changed to
 					<code> --listen-host localhost -r /var/repositories</code>.
 					This means that svnserve only listens to requests from
-					victorio itself, and serves the repositories found in
+					gtsvn itself, and serves the repositories found in
 					the directory <code>/var/repositories</code>.
 				</p>
 			</section>
