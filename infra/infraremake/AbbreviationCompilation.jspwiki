@@ -1,0 +1,15 @@
+
+
+Text is preprocessed and made into words and sentences. In order to do the latter we need to handle abbreviations. The linguistic sides of the issue are found [in this document|../../lang/sme/docu-sme-preprocessor.html], here we look at the compilation.
+
+In order to compile the file __abbr.txt__ (which you will need to find the correct sentence border), do the following:
+
+(we assume you stand in the catalogue of your language)
+
+{{{
+cd tools/preprocess
+make abbr
+}}}
+
+The best solution would be to have this compilation as part of the ordinary make process, this is still not in place.
+
