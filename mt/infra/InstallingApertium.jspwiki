@@ -1,0 +1,119 @@
+
+
+We here use sme-smn as example. The same holds for any Saami - Saami pair.
+For sme-nob, see below.
+
+This is the 
+
+# Compiling the source and target language transducers
+# Compiling the machine translation module Apertium
+# Compiling apertium for the language pair
+
+!!!Compiling the source and target language transducers
+
+We here assume you have the source files for the Saami transducers checked out.
+Now, compile sme and smn transducers for machine translation. 
+
+In Giellatekno sme and smn, do:
+
+{{{
+cd $GTHOME/langs/sme
+./configure --with-hfst --enable-apertium
+make
+sudo make install
+
+cd $GTHOME/langs/smn
+./configure --with-hfst --enable-apertium
+make
+sudo make install
+}}}
+
+You have now created two binary files for each language, 
+one analyser and one generator. They are created during compilation
+and stored in the {{tools/mt/apertium}} folder. 
+
+* tools/mt/apertium/apertium-sme-smn.smn-sme.LR.att.gz 
+* tools/mt/apertium/apertium-smn.smn.RL.att.gz 
+
+!!!Compiling the machine translation module Apertium
+
+Then, check out the apertium tree, or part of it:
+
+{{{
+Either all:
+    svn co https://svn.code.sf.net/p/apertium/svn/ apertium
+
+Or only parts:
+    svn co https://svn.code.sf.net/p/apertium/svn/trunk/lttoolbox
+    svn co https://svn.code.sf.net/p/apertium/svn/trunk/apertium
+    svn co https://svn.code.sf.net/p/apertium/svn/trunk/apertium-lex-tools
+    svn co https://svn.code.sf.net/p/apertium/svn/incubator/apertium-sme-smn
+}}}
+
+Compile lttoolbox, apertium and apertium-lex-tools. Cf. the
+[documentation|http://wiki.apertium.org/wiki/Apertium_on_Mac_OS_X_(Local)].
+
+
+!!!Compiling apertium for the language pair
+
+Move to the folder, and compile there:
+
+{{{
+cd apertium/incubator/apertium-sme-smn
+./autogen.sh --with-lang1=/path/to/sme/tools/mt/apertium --with-lang2=/path/to/smn/tools/mt/apertium
+make
+}}}
+
+Here, the path may be e.g. /Users/abc000/main/langs/sme/.
+
+
+configure: error: Could not find binaries dir for giella-smn (AP_LIB2="/Users/lan000/gtsvn/langs/tools/mt/apertium")
+
+
+!!! sme-nob
+
+Compile sme as shown above. nob should be compiled as shown in the Apertium documentation.
+
+!!!Troubleshooting
+
+Here comes a couple of error messages:
+
+''configure: error: You don't have lrx-comp installed''
+
+So, install it:
+
+{{{
+    svn co https://svn.code.sf.net/p/apertium/svn/trunk/apertium-lex-tools
+
+    cd apertium-lex-tools
+    ./autogen.sh
+    make
+    sudo make install
+}}}
+
+
+''configure: error: Package requirements (lttoolbox >= 3.2.0) were not met:''
+''No package 'lttoolbox' found''
+
+So, find it. Is it where it should? Yes:
+
+{{{
+   ls /usr/local/lib/pkgconfig
+}}}
+
+But do we find it? No.
+Det må finnes lttoolbox.pc i $PKG_CONFIG_PATH
+
+{{{
+   lt-proc --version
+}}}
+
+Viss du har den korrekt lttoolbox-versjonen, da sett den folgende linjen i $HOME/.profile 
+
+{{{
+   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+}}}
+
+
+
+
