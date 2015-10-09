@@ -12,7 +12,8 @@ DONE:
 https://repo.clarino.uib.no/xmlui/
 
 TODO:
- - all free corpora
+ - all free corpora: sme, smj, sma, (what about smn? is this free?)
+ - all u_korp corpora (wikipedia texts): Komi texts|Udmurt texts|Moksha texts|Erzya texts|Hill Mari texts|Meadow Mari texts
  - frequency lists
  - ngrams: 2- and 3-grams
 
