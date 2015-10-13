@@ -23,7 +23,7 @@ The following provides an inventory of both the linguistic and the tier types us
 
 !!!ELAN Tiers and Tier Hierarchy
 
-!Required for each speaker:
+!!Required for each speaker:
  || Level   ||  Name    ||  Parent Tier ||  Linguistic Type ||  Language        ||  Purpose
  |  0       |   ref     |   -           |   refT            |   - (numbered)    |   root node, time-aligned annotation units are set here, each annotation is provided with a unique number here
  |  -1      |   orth    |   ref         |   orthT           |   vernacular      |   an orthographic transcription is provided here; this provides the input for the FST engine
@@ -38,7 +38,7 @@ The following provides an inventory of both the linguistic and the tier types us
  |  -2      |   lang    |   orth        |   langT           |   English                     |   indicates the language being used in an annotated utterance or part of an annotated utterance; the language name is in English; adheres to 'languages'-list of controlled vocabulary
 
 
-!Optional for any tier or as a root node with its own time-alignment:
+!!Optional for any tier or as a root node with its own time-alignment:
  || Level   ||  Name    ||  Parent Tier ||  Linguistic Type ||  Language                    ||  Purpose
  |  *       |   note-XYZ|   XYZ         |   noteT           |   anything                    |   provide unstructured text-based notes for any given parent tier XYZ
 *all tiers for a given speaker are named using the tier name plus the @ symbol plus an short form referring to the relevant speaker, such as ref@JKW, lemma@JKW
