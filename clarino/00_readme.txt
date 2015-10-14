@@ -4,16 +4,18 @@ Is this data shareable via CLARINO?
 TODO:
  - sjeswe: 6547 entries
  - sjdrus: 7616 entries (Kurutch => ask Michael)
- - smsfin: ask Michael and Jack
+ - smsfin: ask Michael and Jack ==> DONE
  
 DONE:
  - 10 dict data sets from the GT/DV-group have been uploaded on the Clarino
    Repository UB Berger
 https://repo.clarino.uib.no/xmlui/
 
-TODO:
- - all free corpora: sme, smj, sma, (what about smn? is this free?)
- - all u_korp corpora (wikipedia texts): Komi texts|Udmurt texts|Moksha texts|Erzya texts|Hill Mari texts|Meadow Mari texts
+DONE:
+ - all free corpora: sme, smj, sma, fkv
  - frequency lists
  - ngrams: 2- and 3-grams
 
+TODO
+ - all u_korp corpora (wikipedia texts): Komi texts|Udmurt texts|Moksha texts|Erzya texts|Hill Mari texts|Meadow Mari texts
+ - upload the corpus/freq lists/n-grams on the Bergen repository
