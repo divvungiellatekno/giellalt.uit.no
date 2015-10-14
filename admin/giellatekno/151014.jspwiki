@@ -20,7 +20,7 @@ Giellateknomøte 14.10.
 
 !! programmerer-stillinga
 
-Trond har snakka med Eystein Dahl. Han delegerer intervjuansvaret til Trond. 
+Trond har snakka med Eystein, som delegerer intervjuansvaret til Trond. 
 Administrasjonen kan ikke hjelpe til med det praktiske med intervjuene. 
 Trond engasjerer en til å gjøre dette for oss.
 
@@ -131,7 +131,10 @@ Mål: Utnytte informasjonen i kolonnene i smn-ordbøkene
 
 Verb + bøyingsformer er:
 
+{{{
 cat smnfin/inc/2015/Saami-suoma_ERRATA_03072015.csv |grep 'đ '|cut -f1
+}}}
+
 Script: For ord nr 2, 3 på kvar linje, har dei lemma = ord 1?
 
 Desse to filene har same innhald, og er dei som er i best stand.
@@ -149,9 +152,9 @@ almaaštâllâđ  almaaštâlâm  }}}
 # smnfin/inc/2015/Saami-suoma_ERRATA_03072015.csv 
 # smnfin/src/Saami-suoma_ERRATA_03072015_smnfin.xml 
 
+{{{
 cat finsmn/src/all_finsmn.xml |grep 'wf='
 
-{{{
   <t pos="" wf="páárust">párustiđ</t>
   <t pos="" l_par="murista" wf="roVom">rohhoođ</t>
   <t pos="" t_tld="~ haridiđ haariid" wf="haarijd">harijdiđ</t>
@@ -191,9 +194,10 @@ Døme på verb med berre ei wf:
 "uulât">ulâttiđ</t>
 "olám">olleeđ</t>
 "keelijd">kelijdiđ</t>
-}}}
 
 cat finsmn/src/all_finsmn.xml |grep 'wf='|grep 'đ</t>'|sed 's/wf=/™/'|cut -d"™" -f2|grep ' '
+}}}
+
 
 Men i finsmn er einskildformer vs. fleirordsuttrykk disambiguert.
 
@@ -211,7 +215,9 @@ asdf
 !! Dubletter i korpus
 
 Ciprian har prosessert data. Vi har dublettpar av to typer:
+
  (1) filer men nesten samme naven
+
 {{{
 2015-10-13/sme/news/minaigi/2000/75-103/nmk-buljoglad.txt.xml
 2015-10-13/sme/news/minaigi/2000/75-103/_nmk-buljoglad.txt.xml
@@ -223,6 +229,7 @@ Ciprian har prosessert data. Vi har dublettpar av to typer:
 2015-10-13/sme/news/minaigi/2000/75-103/_od-ingaguttorm.txt.xml
 ...
 }}}
+
  (2) filer med uliker navn (se BZ bug #2092)
  
 
