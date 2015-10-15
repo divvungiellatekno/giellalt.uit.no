@@ -11,7 +11,30 @@ language tools for your language.
 * Basic programming tools (in this order):
 ** [Xcode|InstallingXCode.html]
 ** [MacPorts|http://www.macports.org]
-* Then you need a number of tools for the build chain.
+
+__Note on MacPorts for Mac OS 10.11 (El Capitan)__
+
+The computer is not able to verify MacPorts (this is a bug that is not
+solved yet). A workaround is to install MacPorts, with the following set
+of commands:
+
+{{{
+(download MacPorts-2.3.4.tar from the MacPorts site)
+mv Downloads/MacPorts-2.3.4.tar /tmp/
+cd /tmp/
+tar xvf MacPorts-2.3.4.tar
+cd MacPorts-2.3.4
+./configure && make
+sudo make install
+sudo port sync
+}}}
+
+* Note: The final command will take time.
+* Note: The above should be needed only if the ordinary MacPorts installation does not work.
+
+
+
+Then you need a number of tools for the build chain.
   On the Mac, you can get them by running the following commands:
 
 {{{
