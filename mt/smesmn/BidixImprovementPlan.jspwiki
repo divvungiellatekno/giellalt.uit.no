@@ -1,8 +1,24 @@
 
-Here is a tentative 4-point list:
 
-# smnfin oahpa + finsmn (488 of 1335 smnfin oahpa pairs are in finsme)
-# smefin + finsmn
-# Frequency-based smn -> sme translated manually
-# Domain-specific sme -> smn translated manually
+Procedure for bidix improvement:
 
+# Diff the manual work done for 
+  incubator/apertium-sme-smn/apertium-sme-smn.sme-smn.dix
+  since r62163, and put that aside
+# build a new bidix from fresh data, as follows:
+## take the 1-1 pair from  words/finsmn/trans-dict/all_sme2smn.csv
+## for the 1-m (one-to-many) pairs, 
+### take the cognates (= Levenshtein =< 3) from 
+  words/finsmn/trans-dict/all_sme2smn_lsd_pseudo-sme_v4.xml
+### take the remaining 1-m sme words, and order them after sme POS, 
+    and thereafter according to sme frequency for manual inspection. 
+    This last group should be kept separate 
+
+When the new bidix is built, it should be added in addition to the
+manual additions in point 1. Choice between the two should then be 
+done in the bidix.
+    
+
+
+
+    
