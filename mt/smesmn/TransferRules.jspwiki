@@ -25,8 +25,8 @@ Input:
 
 {{{
 $ echo "Leat guokte guoli" | apertium -d . sme-smn-biltrans
-^Leat<vblex><iv><indic><pres><pl3><@+FMAINV>/Leđe<vblex><indic><pres><pl3><@+FMAINV>$ ^guokte<num><sg><nom><@←SUBJ>/kyeh'ti<num><sg><nom><@←SUBJ>$ 
-^guolli<n><sem_ani><sg><gen><@Num←>/kyeli<n><sem_ani><sg><gen><@Num←>$^.<sent>/.<sent>$
+^Leat<vblex><iv><indic><pres><pl3><@+FMAINV>/Leđe<vblex><indic><pres><pl3><@+FMAINV>$ ^guokte<num><sg><nom><@←SUBJ>/kyehti<num><sg><nom><@←SUBJ>$ 
+^guolli<n><sem_ani><sg><gen><@Num←>/kyeli<n><sem_ani><sg><gen><@Num←>$
 }}}
 
 Output:
@@ -34,7 +34,7 @@ Output:
 {{{
 $ echo "Láá kyehti kyellid" | hfst-proc smn-sme.automorf.hfst 
 ^Láá/Leđe<vblex><iv><indic><pres><pl3>$ 
-^kyehti/kyehti<n>um<sg><nom>$ 
+^kyehti/kyehti<num><sg><nom>$ 
 ^kyellid/kyeli<n><par>$
 }}}
 
