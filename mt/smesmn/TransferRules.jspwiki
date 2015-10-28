@@ -190,7 +190,11 @@ We define this with:
 </chunk>
 }}}
 
-This is essentially like writing ^num-noun{}$.
+This is essentially like writing 
+
+{{{
+^num-noun{}$.
+}}}
 
 Each chunk has a name, some tags and some contents, for example
 to get the <SN> "noun group" (sintagma nominal)
@@ -205,7 +209,11 @@ to get the <SN> "noun group" (sintagma nominal)
 </out>
 }}}
 
-This is essentially like writing ^num-noun<SN>{}$.
+This is essentially like writing 
+
+{{{
+^num-noun<SN>{}$.
+}}}
 
 Looking at this in the file context:
 
@@ -246,7 +254,12 @@ Looking at this in the file context:
 
 This matches the input pattern <num><sg>(<nom>|<acc) <n><sg><gen>
 
-And outputs: ^num-noun<SN>{}$
+And outputs: 
+
+{{{
+^num-noun<SN>{}$
+}}}
+
 
 What is missing here is the chunk contents (e.g. the lexical units
 that were matched by the pattern).
@@ -319,12 +332,18 @@ The lit-tag instruction outputs strings encased in < and >.
 	
 the the output is what we get by calling sme-smn-chunker1
 	
+{{{
 ^num-noun<SN>{^kyeli<n><par>$}
-	
+}}}
+
 Now, how would we output both lexical units ? The output we
 are looking for is:
 
+{{{
 ^num-noun<SN>{^kyehti<num><sg><nom>$ ^kyeli<n><par>$}$
+}}}
+
+The rule:
 
 {{{
         <out>
@@ -346,7 +365,9 @@ are looking for is:
 
 This will give:
 
+{{{
 ^num-noun<SN>{^kyehti<num><sg><nom><@←SUBJ>$ ^kyeli<n><par>$}$
+}}}
 
 This is good, but we don´t want the syntax tag... <@←SUBJ>
 
