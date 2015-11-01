@@ -2,21 +2,126 @@
 
 Procedure for bidix improvement:
 
+!!!The bidix file
+
+The file is found as follows:
+
+* cd apertium/incubator/apertium-sme-smn
+* see apertium-sme-smn.sme-smn.dix
+
+After 75 initial lines of definitions, the bidix contains, in this order:
+
+# __The initial bidix__ starts at appr line 75
+## The words from the initial 2014 bidix 
+## the words added in sept 2015 
+## Loanwords, fetched words with 3 different suffixes + identical first part in sme and fin
+# __tEQ1__ starts at appr line 750 
+## words from Cip's bidix run having a  1-1 match sme-smn
+# __LT4__  - starts at appr line 3400
+##  word pairs with similar forms (edit distance less than 4) (marked as such)
+# Filtered with sme-fin - starts at appr line 5900
+## = sme-smn word pairs with priority given to the smn that also occur in smn-fin dict
+# Filtered without sme-fin - starts at appr line 10400
+## word pairs without such priority
+
+These 5 sections are orderd so that the most safe ones are in section 1, and
+the least safe ones are in section 5
+
+Todo now: The 4 last groups: tEQ1, LT4 and the two filtered ones contain multiple
+translations of the same sme. Wrong or unfit translations should be removed.
+
+!!Procedure 
+
+use xml or xsl mode in SubEthaEdit.
+
+!Editing
+
+Start on the top of one of the section 2, 3, 4 or 5 (start with 5)
+
+There will be more that one sme reading, as follows:
+
+{{{
+    <e><p><l>hiljážii<s n="adv"/></l><r>kuuloold<s n="adv"/></r></p></e>
+    <e><p><l>hiljážii<s n="adv"/></l><r>šiäđust<s n="adv"/></r></p></e>
+
+    <e><p><l>divttásmuvvat<s n="vblex"/><s n="iv"/></l><r>sovđâđ<s n="vblex"/></r></p></e>
+    <e><p><l>divttásmuvvat<s n="vblex"/><s n="iv"/></l><r>suáhuđ<s n="vblex"/></r></p></e>
+    <e><p><l>heahppášuhttit<s n="vblex"/>s n="iv"/></l><r>hiäpášâttâđ<s n="vblex"/></r></p></e>
+    <e><p><l>heahppášuhttit<s n="vblex"/><s n="tv"/></l><r>hiäpášiđ<s n="vblex"/></r></p></e>
+    <e><p><l>heahppášuhttit<s n="vblex"/><s n="tv"/></l><r>hiäpášâtah<s n="vblex"/></r></p></e>
+    <e><p><l>teahtásmuvvat<s n="vblex"/><s n="iv"/></l><r>suáhuđ<s n="vblex"/></r></p></e>
+    <e><p><l>teahtásmuvvat<s n="vblex"/><s n="iv"/></l><r>sovđâđ<s n="vblex"/></r></p></e>
+    <e><p><l>šávahit<s n="vblex"/><s n="tv"/></l><r>vyeijiđ<s n="vblex"/></r></p></e>
+    <e><p><l>šávahit<s n="vblex"/><s n="tv"/></l><r>hurgáttâllâđ<s n="vblex"/></r></p></e>
+    <e><p><l>šávahit<s n="vblex"/><s n="tv"/></l><r>skirviittâllâđ<s n="vblex"/></r></p></e>
+}}}
+
+The procedure for editing is:
+
+# Remove whole lines
+# Remove the lines that give a wrong translation
+# In cases where more than one translation is ok, remove the less general (or less common) ones
+# You are allowed to leave two translations only in the following case:
+## You are able to state explicitly when to use one, and when to use the other, e.g.
+### This verb is translated to X for human subjects but to Y for non-human subjects
+### This adjective is translated to X when it modifies words for food, but to Y when it does not
+### ..
+## In that case, you do the following:
+### Keep __both__ lines
+### Open the file {{apertium-sme-smn.sme-smn.lrx}}, and write an explanation in the beginning of that file.
+### Note that if we are not able to formalise the difference, we should just keep one pair.
+Remove the one you do not want. Remove the whole line.
+
+Correction of errors:
+
+# Do not correct the sme entries. If they contain errors, delete the whole line
+# If none of the smn translations are correct, you may take one of the sme-smn lines
+  and replace the errouneous smn form with a correct one. Mind the > and < symbols.
+
+When the smn translation should consist of more than one word, the blank is
+marked with __<b/>__, as follows:
+
+{{{
+    <e><p><l>ovddos<b/>guvlui<s n="adv"/></l><r>ovdâskuávlui<s n="adv"/></r></p></e>
+}}}
+
+In most cases, we do not want multiword translations in the bidix, but in the transfer rules.
+
+!When you are done editing, do the following:
+
+# At the point in the file where you are, make a new empty line.
+# Write a note (appr {{<!-- Checked until this line 1.11.15. TT -->}} )
+# save the file
+# write {{make}}, and look for error messages saying e.g. \\
+apertium-sme-smn.sme-smn.dix:10444: parser error : Opening and ending tag mismatch: section line 75 and e \\
+You should then look for the error at line 10444 (or the previous line)
+
+
+
+
+
+
+
+
+
+
+
+----
+
+For historical reference: This was done to create the bidix:
+
 # Diff the manual work done for 
   incubator/apertium-sme-smn/apertium-sme-smn.sme-smn.dix
-  since r62163, and put that aside
+  since r62163, and put that aside - DONE
 # build a new bidix from fresh data, as follows:
-## take the 1-1 pair from  words/finsmn/trans-dict/all_sme2smn.csv
+## take the 1-1 pair from  words/finsmn/trans-dict/all_sme2smn.csv - DONE
 ## for the 1-m (one-to-many) pairs, 
 ### take the cognates (= Levenshtein =< 3) from 
-  words/finsmn/trans-dict/all_sme2smn_lsd_pseudo-sme_v4.xml
+  words/finsmn/trans-dict/all_sme2smn_lsd_pseudo-sme_v4.xml - DONE
 ### take the remaining 1-m sme words, and order them after sme POS, 
     and thereafter according to sme frequency for manual inspection. 
-    This last group should be kept separate 
+    This last group should be kept separate - DONE
 
-When the new bidix is built, it should be added in addition to the
-manual additions in point 1. Choice between the two should then be 
-done in the bidix.
     
 
 
