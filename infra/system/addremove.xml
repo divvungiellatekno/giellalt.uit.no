@@ -7,7 +7,8 @@
    </header>
    <body>
       <section>
-         <title>Adding users</title>
+         <title>Adding users on the Linux servers</title>
+         <p>For Mac (the divvun server), see below</p>
          <p>To add a new user named <em>Laila Sara</em> with <code>laila</code> as the user name, do the following:</p>
          <p>Write the following command. It shall be written in one line:</p>
          <source>sudo /usr/sbin/adduser -c "Laila Sara, Samisk inst." laila</source>
@@ -30,5 +31,28 @@
          files of the user as well):</p>
          <source>sudo /usr/sbin/userdel -r laila</source>
       </section>
+      <section>
+         <title>Adding users on Mac servers</title>
+<p>Mac servers have other commands. Use the dscl command. This example would create the user "luser", like so:</p>
+
+
+<source>dscl . -create /Users/luser								</source>
+<source>dscl . -create /Users/luser UserShell /bin/bash			</source>
+<source>dscl . -create /Users/luser RealName "Lucius Q. User"	</source>
+<source>dscl . -create /Users/luser UniqueID "1010"				</source>
+<source>dscl . -create /Users/luser PrimaryGroupID 80			</source>
+<source>dscl . -create /Users/luser NFSHomeDirectory /Users/luser</source>
+
+
+<p>
+You can then use passwd to change the user's password, or use:</p>
+
+<p>
+dscl . -passwd /Users/luser password
+</p>
+
+<p>Cf. <a href="http://serverfault.com/questions/20702/how-do-i-create-user-accounts-from-the-terminal-in-mac-os-x-10-5">a relevant documentation page.</a></p>
+      </section>
+
    </body>
 </document>
