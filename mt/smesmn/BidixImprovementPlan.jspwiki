@@ -23,11 +23,11 @@ After 75 initial lines of definitions, the bidix contains, in this order:
 
 Todo now: Choose the right smn for each sme in chapter C.
 
-!!Procedure 
+!!!Procedures 
 
 use xml or xsl mode in SubEthaEdit.
 
-!Editing
+!!Editing
 
 Start on the top of section C
 
@@ -90,14 +90,47 @@ apertium-sme-smn.sme-smn.dix:10444: parser error : Opening and ending tag mismat
 You should then look for the error at line 10444 (or the previous line)
 
 
+!!Adding new word pairs
+be aware of verbs IV vs. TV
+<e><p><l>birget<s n="vblex"/><s n="tv"/></l><r>piergiđ<s n="vblex"/></r></p></e>
 
 
+!!Special cases - how to handle them 
+
+!sme lemma is Pl, smn lemma is Sg – or the other way round
+e.g. ávvodoalut vs. juhlálâšvuotâ. \\
+Add plural and singular tags to the bidix:
+{{{
+<e><p><l>ávvodoalut<s n="n"/><s n="pl"/></l><r>juhlálâšvuotâ<s n="n"/><s n="sg"/></r></p></e>
+}}}
+
+!sme lemma is not lexicalised
+e.g. háldui vs. haaldun. \\
+
+Add a comment:
+{{{
+<e><p><l>háldui<s n="po"/></l><r>haaldun<s n="po"/></r></p></e> <!-- not in sme -->
+}}}
+
+!sme lemma is an adverb, smn lemma is not lexicalised as adverb, but a noun in locative. 
+e.g. iđđes vs. iđedist. \\
 
 
+Give correct tags, and a comment:
+
+{{{
+<e><p><l>iđđes<s n="adv"/><s n="tv"/></l><r>iiđeed<s n="n"/><s n="sg"/><s n="loc"/></r></p></e>  <!-- not same PoS -->
+}}}
+
+!sme lemma has no counterpart in smn, in stead smn uses an inflection: 
+e.g. haga Po. vs. abessive case in smn. \\
 
 
+Give explanations and examples in the contrastive grammar and give a comment about it in the bidix:
 
-
+{{{
+<e><p><l>haga<s n="po"/></l><r>nuhhuđ<s n="po"/></r></p></e> <!-- abessive, explained in the contrastive grammar -->
+}}}
 
 
 !!For historical reference: This was done to create the bidix:
