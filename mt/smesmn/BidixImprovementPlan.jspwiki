@@ -6,8 +6,8 @@ Procedure for bidix improvement:
 
 The file is found as follows:
 
-* cd apertium/nursery/apertium-sme-smn
-* see apertium-sme-smn.sme-smn.dix
+* {{cd apertium/nursery/apertium-sme-smn}}
+* {{see apertium-sme-smn.sme-smn.dix}}
 
 After 75 initial lines of definitions, the bidix contains, in this order:
 
@@ -85,7 +85,7 @@ You should then look for the error at line 10444 (or the previous line)
 
 Give the lemma form of both sme and smn. Check the analysis, e.g. ávvudoalut:
 
-ávvudoalut  ávvodoalut+Err/Orth+N+Pl+Nom <= the lemma is ávvodoalut
+{{ávvudoalut  ávvodoalut+Err/Orth+N+Pl+Nom}} <= the lemma is ávvodoalut
 
 
 Be aware of that some verbs are IV, other verbs are TV. At the time being we add this tag only to the sme lemma:
@@ -99,7 +99,7 @@ Be aware of that some verbs are IV, other verbs are TV. At the time being we add
 !sme lemma is Pl, smn lemma is Sg – or the other way round
 Some lemmas are lexicalised as plurals. As long as it is the same for sme and smn, it is no problem. But if the number is not the same for these two languages, then the number tags must be given to the bidix.  
 
-E.g. {{ávvodoalut+N+Pl vs. juhlálâšvuotâ+N+Sg}}. Add plural and singular tags to the bidix:
+E.g. {{ávvodoalut+N+Pl}} vs. {{juhlálâšvuotâ+N+Sg}}. Add plural and singular tags to the bidix:
 {{{
 <e><p><l>ávvodoalut<s n="n"/><s n="pl"/></l><r>juhlálâšvuotâ<s n="n"/><s n="sg"/></r></p></e>
 }}}
@@ -108,7 +108,7 @@ E.g. {{ávvodoalut+N+Pl vs. juhlálâšvuotâ+N+Sg}}. Add plural and singular ta
 !sme lemma is an adverb, smn lemma is not lexicalised as adverb, but a noun in locative. 
 Many adverbs are really inflected nouns, usually locatives, illatives or genetives. Sometimes the lemma can be lexicalised as an adverb in one of the languages, but not in the other language. One could consider if the word should be lexicalised also in the other language. If the bidix-worker is not responsible for the FST for the language in question, she should just leave a comment about it.
 
-E.g. {{iđđes vs. iđedist}}. Give correct tags, and a comment:
+E.g. {{iđđes}} vs. {{iđedist}}. Give correct tags, and a comment:
 
 {{{
 <e><p><l>iđđes<s n="adv"/><s n="tv"/></l><r>iiđeed<s n="n"/><s n="sg"/><s n="loc"/></r></p></e>  <!-- not same PoS -->
@@ -117,7 +117,7 @@ E.g. {{iđđes vs. iđedist}}. Give correct tags, and a comment:
 !sme lemma is not lexicalised
 Sometimes the lemma can be lexicalised as a postposition in one of the languages, but not in the other language. One could consider if the word should be lexicalised also in the other language. If the bidix-worker is not responsible for the FST for the language in question, she should just leave a comment about it.
 
-E.g. {{háldui+Po vs. haaldun+Po}}. Add a comment:
+E.g. {{háldui+Po}} vs. {{haaldun+Po}}. Add a comment:
 {{{
 <e><p><l>háldui<s n="po"/></l><r>haaldun<s n="po"/></r></p></e> <!-- not in sme -->
 }}}
