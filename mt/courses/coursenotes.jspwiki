@@ -19,10 +19,22 @@ alias sme="pushd ~/gtsvn/langs/sme"
 gt2apertium.cg3r
 
 !!Gohččumat:
-!Test 1:
-* {{echo "ja" | apertium -d . sme-sma}}
+giellatekno-bealde: {{usmedis}}
 
-!Test 2:
+
+!Analysa:
+* {{echo "sáni" | hfst-lookup sme-sma.automorf.hfst}}
+* {{echo "baakoem" | hfst-lookup sma-sme.automorf.hfst}}
+
+!Genereren:
+* {{echo "sátni<n><sg><acc>" | hfst-lookup sma-sme.autogen.hfst}}
+* {{echo "baakoe<n><sg><acc>" | hfst-lookup sme-sma.autogen.hfst}}
+
+!Jorgalanteasta 1:
+* {{echo "sáni" | apertium -d . sme-sma}}
+* {{echo "sánis" | apertium -d . sme-sma}}
+
+!Jorgalanteasta 2:
 * {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-morph}}
 * {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-biltrans}}
 * {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-chunker}}
@@ -30,7 +42,7 @@ gt2apertium.cg3r
 * {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-postchunk}}
 * {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma}}
 
-!Test 3:
+!Jorgalanteasta 3:
 * {{cat texts/tarina.sme.txt | apertium -d . sme-sma | less}}
 * {{cat texts/tarina.sme.txt | apertium -d . sme-sma-dgen | less}} - for debugging
 
