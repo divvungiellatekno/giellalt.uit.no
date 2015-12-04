@@ -16,16 +16,27 @@ alias sme="pushd ~/gtsvn/langs/sme"
 !!Apertium modulat
 
 !!Apertium gilkorat
+gt2apertium.cg3r
 
 !!Gohččumat:
+!Test 1:
+* {{echo "ja" | apertium -d . sme-sma}}
+
+!Test 2:
+* {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-morph}}
+* {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-biltrans}}
+* {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-chunker}}
+* {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-interchunk3}}
+* {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-postchunk}}
+* {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma}}
 
 !1) kompileret mt-analysáhtoriid sme ja smn/sma/smj giellateknobealde:
-* svn up
-* ./configure --with-hfst --enable-apertium
-* make
+* {{svn up}}
+* {{./configure --with-hfst --enable-apertium}}
+* {{make}}
 
 Dáinna oažžu maiddái dábálaš norm- ja desc-xfst.
 
 !2)  kompilere apertium-bealde:
-* svn up (álo buorre dahkat vaikko ii leat dárbu dán oktavuođas)
-* make
+* {{svn up}} (álo buorre dahkat vaikko ii leat dárbu dán oktavuođas)
+* {{make}}
