@@ -13,20 +13,25 @@
 
 
 !!analysáhtoriid kompileren giellatekno bealde
-Mana dán katalogii: {{cd main/langs/sme/}}
-{{{svn up
-./configure --with-hfst --enable-apertium
-make}}}
+1. Mana dán katalogii: {{cd main/langs/sme/}}
+* {{svn up}}
+* {{./configure --with-hfst --enable-apertium}}
+* {{make}}
 
-Open a new terminal, mana du giela katalogii, omd. {{cd main/langs/sma/}}
-{{{svn up
-./configure --with-hfst --enable-apertium
-make}}}
+2. Open a new terminal, mana du giela katalogii, omd. {{cd main/langs/sma/}}
+* {{svn up}}
+* {{./configure --with-hfst --enable-apertium}}
+* {{make}}
+
+Dáinna oažžu maiddái dábálaš norm- ja desc-xfst.
+
 
 Dát kompileremat ádjánit guhká, erenoamážit sme.
 
-Go kompileremat leat geargan, mana du giela apertiumkatalogii, omd. 
-{{{cd apertium/nursery/apertium-sme-sma}}}
+3. Go kompileremat leat geargan, mana du giela apertiumkatalogii, omd. 
+* {{svn up}} (álo buorre dahkat vaikko ii leat dárbu dán oktavuođas)
+* {{make}}
+
 
 
 !!alias 
@@ -76,16 +81,6 @@ giellatekno-bealde: {{usmedis}}
 * {{cat texts/tarina.sme.txt | apertium -d . sme-sma | less}}
 * {{cat texts/tarina.sme.txt | apertium -d . sme-sma-dgen | less}} - for debugging
 
-!1) kompileret mt-analysáhtoriid sme ja smn/sma/smj giellateknobealde:
-* {{svn up}}
-* {{./configure --with-hfst --enable-apertium}}
-* {{make}}
-
-Dáinna oažžu maiddái dábálaš norm- ja desc-xfst.
-
-!2)  kompilere apertium-bealde:
-* {{svn up}} (álo buorre dahkat vaikko ii leat dárbu dán oktavuođas)
-* {{make}}
 
 
 !!Bidix-bargu
