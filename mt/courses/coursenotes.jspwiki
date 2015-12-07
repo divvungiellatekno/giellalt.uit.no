@@ -109,6 +109,8 @@ giellatekno-bealde: {{usmedis}}
 !Teste ovdalgo šekket sisa
 {{make}}
 
-
+!Ráhkadit missinglist
+{{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
+tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' > dev/missinglist.txt}}}
 
 
