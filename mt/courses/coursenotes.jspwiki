@@ -57,8 +57,16 @@ giellatekno-bealde: {{usmedis}}
 
 
 !Analysa:
+
+Dáppe lea MT-systema analysahtor-output
+
 * {{echo "lohkan" | hfst-lookup sme-smn.automorf.hfst}}
 * {{echo "baakoem" | hfst-lookup sma-sme.automorf.hfst}}
+
+Dáppe lea analysahtor-output __ovdal__ go lea váldojuvvon dušše bidix-sániid.
+
+* {{echo "lohkan" | hfst-lookup .deps/sme.automorf.hfst}}
+* {{echo "baakoem" | hfst-lookup .deps/sma.automorf.hfst}}
 
 !Genereren:
 * {{echo "sátni<n><sg><acc>" | hfst-lookup sma-sme.autogen.hfst}}
