@@ -10,7 +10,7 @@ tekst | særskriv+analyse | staving | statistikk | valens+dis+syn-cg | gram-cg |
 Pipeline skal ikkje vera avhengig av voikko; me vil støtta MS Office og helst OS X-systemgramsjekk
 
 
-!!! tilbakemelding
+!!! tilbakemelding+generering / errors.xml
 
 Me kan kanskje ha ein <longdescription> òg i errors.xml
 
@@ -19,7 +19,7 @@ inn fleire parametre så me kan visa til eit kontekstord (er det nok
 med 2, treng me fleire?)
 
 {{{
-ADDRELATION (gen-after-prep) contexthint (-1 prep);
+ADDRELATION contexthint (&gen-after-prep) (-1 prep);
 }}}
 
 !!! taggfølgje i &SUGGEST
@@ -68,3 +68,26 @@ visa fram til andre, få ekte tilbakemelding
 screenshots!
 
 lettare å sjå falske positivar, fjernar tunnelsyn
+
+
+!!! Endring av fleire stader samtidig, med ting mellom:
+
+{{{
+Dat lea nominašuvdnačoahkkin gii vállje gean bidjá bajimussii, ja in ADV mun.
+↓
+Dat lea nominašuvdnačoahkkin gii vállje gean bidjá bajimussii, in ADV munge.
+}}}
+
+{{{
+Áidna gii váilu dán govas lea …
+↓
+Ii váillo eará go …
+}}}
+
+
+!!! konvensjon på døme i CG-fila
+
+{{{
+## ekte positiv
+#$ falsk positiv
+}}}
