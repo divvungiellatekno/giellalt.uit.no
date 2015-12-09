@@ -1,15 +1,7 @@
 !!!Oktasaš notáhtat
 
 !!giellaoanádusat
-* sme : davvisámegiella
-* smn : anársámegiella
-* smj : julevsámegiella
-* sma : lullisámegiella
-* sms : koltasámegiella
-* nob : girjedárogiella
-* nno : ođđadárogiella
-* fin : suomagiella
-* eng : eŋgelasgiella
+sme : davvisámegiella, smn : anársámegiella, smj : julevsámegiella, sma : lullisámegiella, sms : koltasámegiella, nob : girjedárogiella, nno : ođđadárogiella, fin : suomagiella, eng : eŋgelasgiella
 
 
 !!analysáhtoriid kompileren giellatekno bealde
@@ -120,7 +112,7 @@ Dáppe lea analysahtor-output __ovdal__ go lea váldojuvvon dušše bidix-sánii
     <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>orniđ<s n="n"/></r></p></e> 
     <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>lääččiđ<s n="n"/></r></p></e> }}}
 
-!lrx-fiillaid struktuvra 
+!!lrx-fiillaid struktuvra 
 omd. apertium-sme-smn.sme-smn.lrx
 
 Dáppe lea lrx-fiilla ovdamearka. Default lea láhčit = orniđ (1.0 > 0.5). Jos láhčit-vearbba 
@@ -150,11 +142,48 @@ máŋŋel boahtá sem_furn, de mis lea lääččiđ (0.5 + 0.6 = 1.1 > 1.0).
 }}}
 
 
+!!Ráhkadit missinglist, sánit mat eai leat dix-fiillas
+{{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
+tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' > dev/missinglist.txt}}}
+
+!!Transfer-njuolggadusat - kvasikoda
+
+Mo sáhttá diehtit gosa galgá ráhkadit njuolggadusa:
+* jos: sátni x > kasus y = .t1x (transf)
+* jos: kasus y > sátni x = .lrx (lexsel) 
+** omd. liikon dutnje -> datnem lyjhkem (ill -> acc)
+
+Nubbi čilgehus:
+* lrx vállje jorgalusa bidix-fiillas
+* t?x vállje struktuvrra
+
+!Quasicode type 1, ovdamearkka lea sma:
+{{{if 	slword 1 = liikot  (suorcelanguage)
+   	slword 2 = N+Ill  (suorcelanguage)
+   
+then
+      tlword 1 =N+Acc (Targetlanguage) 
+      
+Example: liikon dutnje => datnem lyjhkem.      
+      }}}
+
+!Quasicode type 2, ovdamearkka lea sma:
+If you in the source language have a noun in illativ followed by the verb liikot, then put the noun in accusative in the target language.
+
+Example: liikon dutnje => datnem lyjhkem.
+
+
+!!Testing
+
 !Muitte álo testet ovdalgo šekket sisa
 {{make}}
 
-!Ráhkadit missinglist, sánit mat eai leat dix-fiillas
-{{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
-tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' > dev/missinglist.txt}}}
+
+!Regression tests
+{{./t/regression-tests}}
+
+!Pending tests
+{{./t/pending-tests}}
+
 
 
