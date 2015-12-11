@@ -1,30 +1,32 @@
 
+!!!Gohččumat maid dárbbašat dávjjimusat:
 
-!Generating modes:
+* {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma}}
+* {{cat texts/tarina.sme.txt | apertium -d . sme-sma | less}} - dáinna don jorgalat olles fiilla
+* {{cat texts/tarina.sme.txt | apertium -d . sme-sma-dgen | less}} - for debugging
 
-{{{
-apertium-gen-modes modes.xml
-}}}
 
-!Dás lea MT-systema analysahtor-output:
+
+!!Go debugget, de lea buorre iskat MT-systema analysahtor-output:
 
 * {{echo "lohkan" | hfst-lookup sme-smn.automorf.hfst}}
 * {{echo "baakoem" | hfst-lookup sma-sme.automorf.hfst}}
 
-!Dás lea analysahtor-output buot sániiguin, eai dušše bidix-sánit:
+!!Dás lea analysahtor-output buot sániiguin, eai dušše bidix-sánit:
 
 * {{echo "lohkan" | hfst-lookup .deps/sme.automorf.hfst}}
 * {{echo "baakoem" | hfst-lookup .deps/sma.automorf.hfst}}
 
-!Genereren:
+!!Go debugget, de lea buorre iskat MT-systema genererema:
 * {{echo "sátni<n><sg><acc>" | hfst-lookup sma-sme.autogen.hfst}}
 * {{echo "baakoe<n><sg><acc>" | hfst-lookup sme-sma.autogen.hfst}}
 
-!Jorgalanteasta 1:
+!!Jorgalanteasta 1:
 * {{echo "sáni" | apertium -d . sme-sma}}
 * {{echo "sánis" | apertium -d . sme-sma}}
 
-!Jorgalanteasta 2:
+!!Jorgalanteasta 2:
+Iskka dáid gohččumiid, de oainnát mo Apertium bargá cehkiid mielde. Lonut sma = smn jnv.
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-morph}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-disam}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-biltrans}}
@@ -33,6 +35,9 @@ apertium-gen-modes modes.xml
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-postchunk}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma}}
 
-!Jorgalanteasta 3:
-* {{cat texts/tarina.sme.txt | apertium -d . sme-sma | less}}
-* {{cat texts/tarina.sme.txt | apertium -d . sme-sma-dgen | less}} - for debugging
+
+!!Generating modes:
+Dás oainnát buot vejolaš gohččumiid:
+{{{
+apertium-gen-modes modes.xml
+}}}
