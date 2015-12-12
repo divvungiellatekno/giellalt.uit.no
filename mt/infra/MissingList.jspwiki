@@ -1,4 +1,22 @@
 
 !!Ráhkadit missinglist, sánit mat eai leat dix-fiillas
+Missinglisttus leat sánit mat váilot dix-fiillas. Sánit leat ordnejuvvon frekveanssa mielde.
+
 {{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
 tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' > dev/missinglist.txt}}}
+
+Ovdamearka:
+{{less dev/missinglist.txt}}
+
+{{{
+ 118 s
+  19 Máhtes
+  17 Biret
+  10 han
+   8 Ánde
+   8 miilla
+   8 dahjege
+   8 Kárášjogas
+   7 goit
+   7 Romssas }}}
+
