@@ -1,40 +1,100 @@
 
-This page explains how to compile the Apertium machine translation program on your machine.
 
-The linguistic source files are compiled in {{$GTHOME/langs/}} and then
-manually copied over to the apertium folder. The tags are
-converted automatically during the make process. 
-(We assume you are a Mac user. For Linux users things are slightly different. 
-Cf. the Apertium documentation.)
+We here use sme-sma as example. Replace sme with smj or smn.
+For sme-nob, see below.
 
-!!Prerequisites
+The compilation happens in three steps:
 
-You must have [downloaded Apertium|http://wiki.apertium.org/wiki/Using_SVN], 
-either the full tree, or the relevant language pairs only. You must have 
-[installed hfst|../infra/compiling_HFST3.html]. You must also 
-compile ''apertium'' and ''lttoolbox'', they are located in the catalogues
-{{apertium/trunk/apertium}} and {{apertium/trunk/lttoolbox}}.
+# Compiling the source language transducer
+# Compiling the target language transducer
+# Compiling  the language pair in the apertium catalogue
 
+!!!Compiling the source and target language transducers
 
-The quick installation guide to ''apertium'' and ''lttoolbox'' is: 
-Make sure these two lines are in your {{~/.profile}} file:
+We here assume you have the source files for the Saami transducers checked out.
+Now, compile sme and sma transducers for machine translation. 
+
+In Giellatekno sme and sma, do (the second, "configure" line does not
+need to be written more than once):
 
 {{{
-export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-}}}
+cd $GTHOME/langs/sme
+./configure --with-hfst --enable-apertium
+make
+sudo make install
 
-Then go to the two catalogues and in each of them, write:
-
-{{{
-./configure
+cd $GTHOME/langs/sma
+./configure --with-hfst --enable-apertium
 make
 sudo make install
 }}}
 
-Then compile the langage fsts, and thereafter the MT program itself, read:
+You have now created two binary files for each language, 
+one analyser and one generator. They are created during compilation
+and stored in the {{tools/mt/apertium}} folder. 
 
-[Daily compiling of Apertium files|DailyCompilingOfApertiumFiles.html]
+* tools/mt/apertium/apertium-sme-smn.smn-sme.LR.att.gz 
+* tools/mt/apertium/apertium-smn.smn.RL.att.gz 
+
+
+
+
+!!! sme-nob
+
+Compile sme as shown above. nob should be compiled as follows:
+
+{{{
+cd apertium/languages/apertium-nob
+./autogen.sh
+make
+}}}
+
+And then:
+
+cd ../../trunk/apertium-sme-nob
+./autogen.sh --with-lang1=/Users/lan000/gtsvn/langs/sme/tools/mt/apertium
+--with-lang2=/Users/lan000/apertium/languages/apertium-nob
+make
+
+!!!Troubleshooting
+
+Here comes a couple of error messages:
+
+''configure: error: You don't have lrx-comp installed''
+
+So, install it:
+
+{{{
+    svn co https://svn.code.sf.net/p/apertium/svn/trunk/apertium-lex-tools
+
+    cd apertium-lex-tools
+    ./autogen.sh
+    make
+    sudo make install
+}}}
+
+
+''configure: error: Package requirements (lttoolbox >= 3.2.0) were not met:''
+''No package 'lttoolbox' found''
+
+So, find it. Is it where it should? Yes:
+
+{{{
+   ls /usr/local/lib/pkgconfig
+}}}
+
+But do we find it? No.
+Det må finnes lttoolbox.pc i $PKG_CONFIG_PATH
+
+{{{
+   lt-proc --version
+}}}
+
+Viss du har den korrekt lttoolbox-versjonen, da sett den folgende linjen i $HOME/.profile 
+
+{{{
+   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+}}}
 
 
 
