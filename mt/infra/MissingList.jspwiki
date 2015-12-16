@@ -1,9 +1,9 @@
 
-!!Ráhkadit missinglist, sánit mat eai leat dix-fiillas
+!!Missinglist, sánit mat eai leat dix-fiillas
 Missinglistui leat čohkkejuvvon buot sániid mat ožžot nástti go mii jorgalit buot teavsttaid mat leat texts-máhpas. Násti mearkkaša ahte sátni ii leat bidix-fiillas, dahje ahte das lea boasttu sátneluohkká dahje (jus vearba) IV/TV bidixas. Sánit leat ordnejuvvon frekveanssa mielde.
 
-{{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
-tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' > dev/missinglist.txt}}}
+Jus háliidat geahččat mo sátni geavahuvvo teavsttain: {{cat texts/*sme.txt | less }}, ja de ohcat sáni.
+
 
 Ovdamearka:
 {{less dev/missinglist.txt}}
@@ -20,3 +20,7 @@ Ovdamearka:
    7 goit
    7 Romssas }}}
 
+!!Ieš ráhkadit missinglist
+
+{{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
+tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' > dev/missinglist.txt}}}
