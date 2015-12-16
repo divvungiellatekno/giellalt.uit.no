@@ -1,6 +1,6 @@
 
 !!Ráhkadit missinglist, sánit mat eai leat dix-fiillas
-Missinglisttus leat sánit mat váilot dix-fiillas. Sánit leat ordnejuvvon frekveanssa mielde.
+Missinglistui leat čohkkejuvvon buot sániid mat ožžot nástti go mii jorgalit buot teavsttaid mat leat texts-máhpas. Násti mearkkaša ahte sátni ii leat bidix-fiillas, dahje ahte das lea boasttu sátneluohkká dahje (jus vearba) IV/TV bidixas. Sánit leat ordnejuvvon frekveanssa mielde.
 
 {{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
 tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' > dev/missinglist.txt}}}
