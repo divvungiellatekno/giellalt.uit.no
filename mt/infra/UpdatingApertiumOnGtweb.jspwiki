@@ -1,101 +1,80 @@
 
-This documentation is for the web translators on gtweb.
+Installation/update of a single translator on gtweb.
 
-!!!Installation/update
+!!!What data is used for a pair?
+Do
 
-* Log into gtweb, and do \\
-cd /opt/mt
-* Change user to mt
 {{{
-sudo -s
-su mt
-}}}
-* Update and compile languages (config.log needs --with-hfst --enable-aprtium)
+$ grep 'dir.*=' /opt/mt/html/index.php
+$ grep 'dir.*=' /opt/mt/html/testing/index.php
+ }}}
+
+to see the data directory used each pair. The directory
+/usr/share/apertium is common for all pairs installed from the repos,
+other pairs point at their svn source directories (e.g.
+/opt/mt/pairs/apertium-sme-smn).
+
+If you want to change the location of a single pair, use the "dir"
+variable for either the testing or the main index.php.
+
+!!!Hiding pairs in the html
+
+If you want to turn off/hide a pair, uncomment the <option> part of
+the html using a #-symbol. See
 {{{
-svn up langs/*
-Remember to compile both source and target language
-If you do sme-nob, then remember check out apertium/languages/apertium-nob
+$ grep option /opt/mt/html/index.php
 }}}
-It can be found in /opt/mt/langs/apertium-nob
+for examples of this.
 
-* Update and compile translators
-** cd ../pairs/ .. and then to your language pair \\
-   here with sme-smn as example
+!!!Updating packaged pairs
+
+Pairs like sme-nob are installed through Tino's yum repo, and should be updated
+once every 24 hours by the program `dnf-automatic` running on this machine. If
+it seems like it hasn't updated to the latest nightly, you can run
+
 {{{
-./autogen.sh --prefix=/opt/mt  --with-lang1=/opt/mt/langs/giella-sme/tools/mt/apertium --with-lang2=/opt/mt/langs/giella-smn/tools/mt/apertium
-make
+$ sudo dnf -y update
 }}}
 
-With sme-nob:
-{{{
-./autogen.sh --prefix=/opt/mt  --with-lang1=/opt/mt/langs/giella-sme/tools/mt/apertium --with-lang2=/opt/mt/langs/apertium-nob/
-make
-}}}
+!!!Updating manually compiled pairs
 
-
-
-__Then your languae pair is online on__ [http://gtweb.uit.no/mt/] \\
-(evt. in the secret subfolder)
-
-
-Not permission?
+!!a) Log in
 
 If you’re not already, add your user to the MT group
 
 {{{
-/usr/bin/usermod -a -G mt <username>
+$ /usr/bin/usermod -a -G mt <username>
 }}}
 
 You’ll need ‘sudo’ for this.
 
+!!b) go to the pairs source:
 
-!!!Testing, updating apertium and hfst
-
-Note that apertium and hfst will become obsolete now and then.
-
-hfst may be updated as documented in the hfst3 documentation at giellatekno.
-
-You may check out an compile apertium in your home directory
-  (cf. documentation on [http://wiki.apertium.org] 
-
-
-Check out apertium. Then set paths:
+E.g.
 
 {{{
-export LD_LIBRARY_PATH=/opt/mt/lib
-export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
-export PATH=/opt/mt/bin:$PATH
+cd /opt/mt/pairs/apertium-sme-smn
 }}}
 
-Then compile:
+!!c) update source
 
 {{{
-cd apertium
-cd lttoolbox
-./autogen.sh --prefix=/opt/mt
-./configure --prefix=/opt/mt
-make
-make install
-cd ..
-
-export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
-export LD_LIBRARY_PATH=/opt/mt/lib/
-export PATH=/opt/mt/bin:$PATH
-
-cd ../apertium
-./autogen.sh --prefix=/opt/mt
-./configure --prefix=/opt/mt
-make
-make install
+$ svn up
 }}}
 
-
-
-!!test it installed ok:
+!!d) compile it
 {{{
-$ echo “ja” | apertium -d /opt/mt/share/apertium/ sme-nob
-og
+$ export LD_LIBRARY_PATH=/opt/mt/lib
+$ export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
+$ export PATH=/opt/mt/bin:$PATH
 
-$ echo “ja” | apertium -d /opt/mt/share/apertium/ fin-sme
-ja
+$ ./autogen.sh --prefix=/opt/mt
+$ ./configure --prefix=/opt/mt
+$ make
 }}}
+
+!!e) test it compiled ok:
+{{{
+$ echo “ja” | apertium -d . sme-smn
+}}}
+
