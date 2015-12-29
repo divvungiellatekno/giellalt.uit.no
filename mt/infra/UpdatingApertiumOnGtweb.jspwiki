@@ -11,11 +11,14 @@ $ grep 'dir.*=' /opt/mt/html/testing/index.php
 
 to see the data directory used each pair. The directory
 /usr/share/apertium is common for all pairs installed from the repos,
-other pairs point at their svn source directories (e.g.
+other pairs point at their svn source directories (as earlier did
 /opt/mt/pairs/apertium-sme-smn).
 
 If you want to change the location of a single pair, use the "dir"
 variable for either the testing or the main index.php.
+
+(Earlier we had pairs in /opt/mt/pairs/ and /opt/mt/langs.)
+
 
 !!!Hiding pairs in the html
 
@@ -30,7 +33,7 @@ for examples of this.
 
 Pairs like sme-nob are installed through Tino's yum repo, and should be updated
 once every 24 hours by the program `dnf-automatic` running on this machine. If
-it seems like it hasn't updated to the latest nightly, you can run
+it seems like it hasn't updated to the latest nightly, you can (anywhere on gtweb) run
 
 {{{
 $ sudo dnf clean packages
@@ -85,3 +88,4 @@ $ make
 $ echo “ja” | apertium -d . sme-smn
 }}}
 
+Then copy the binary files to where index.php expects to find them.
