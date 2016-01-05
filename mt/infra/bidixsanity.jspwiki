@@ -1,0 +1,23 @@
+!!!Bidix-sanity script
+In {{dev}}-directory:
+
+{{sh bidix-sanity.sh > sanityoutput}}
+
+Output: smX-entries which is not possible to generate with the information in bidix
+!!Syntax of output
+{{sme-lemma<PoS>:smj-lemma<PoS>:^input to analyser/analysis}}
+
+!!How to use the output
+
+!Examples:
+{{ahccát<vblex>:ahttsát<vblex>:^ahttsát/*ahttsát$}} - "ahttsát" is not in FST.
+
+
+{{aggregáhta<n>:aggregáhta<n>:^aggregáhta/aggregáhtta<n><sem_dummytag><pl><nom>/aggregáhtta<n><sem_dummytag><sg><gen>$ }} – lemma in bidix, "aggregáhta", should be the same as lemma in FST, "aggregáhtta".
+
+{{ahte<cnjcoo>:jut<cnjcoo>:^jut/jut<cnjsub>$}} - lemma in bidix, "jut", is marked as cnjcoo, but FST analysis gives cnjsub. PoS should be changed in bidix or in FST.
+
+{{ahkitvuohta<n>:ahketvuohta<n>:^ahketvuohta/ahket<adj><sem_dummytag><der_vuohta><n><sg><nom>$ }} - "ahketvuohta" is not lexicalised in FST. It can be lexicalised, or, because the words in sme and smj have the same derivation, one can remove the word pair from bidix and, if the wordpair "ahkit"-"ahket" is in bidix, transfer rules should make it possible to generate "ahketvuohta".
+
+
+
