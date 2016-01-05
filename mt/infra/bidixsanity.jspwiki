@@ -1,15 +1,24 @@
 !!!Bidix-sanity script
-In {{dev}}-directory:
+
+This script show all bidix pair where the second (rightmost) word in the pair
+(the smj word in the sme-smj bidix, etc) may not be generated.
+
+To run the script, go to the {{dev}} directory in apertium-sme-smj etc:
+
+Then, in {{dev}}-directory, write:
 
 {{sh bidix-sanity.sh > sanityoutput}}
 
-Output: smX-entries which is not possible to generate with the information in bidix
+The output is then smX-entries which is not possible to generate with the information in bidix
+
 !!Syntax of output
+
 {{sme-lemma<PoS>:smj-lemma<PoS>:^input to analyser/analysis}}
 
 !!How to use the output
 
 !Examples:
+
 {{ahccát<vblex>:ahttsát<vblex>:^ahttsát/*ahttsát$}} - "ahttsát" is not in FST.
 
 
