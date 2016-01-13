@@ -1,35 +1,36 @@
 
 !!!Gohččumat maid dárbbašat dávjjimusat:
 
-* {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma}}
-* {{cat texts/tarina.sme.txt | apertium -d . sme-sma | less}} - dáinna don jorgalat olles fiilla
-* {{cat texts/tarina.sme.txt | apertium -d . sme-sma-dgen | less}} - for debugging
+Jorgalit:
+* Jorgalit cealkaga: {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma}} 
+* Jorgalit olles fiilla: {{cat texts/tarina.sme.txt | apertium -d . sme-sma | less}}
+* Jorgalit nu ahte oainnát maid prográmma ii máhte genereret, omd: {{#pyeri<adj><comp><der_avt><adv> }}
+ \\{{cat texts/tarina.sme.txt | apertium -d . sme-sma-dgen | less}} 
+!!Debuggen:
+* Boađus ovdal transfernjuolggadusaid: \\
+{{{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-biltrans | tr ' ' '\n'}}}
+* Boađus maŋŋel transfernjuolggadusaid: \\
+{{{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-chunker}}}
+* Davvisámi disambigueren: \\
+{{{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-disam | tr ' ' '\n'}}}
 
-Ovdamearka: MT vuogádat geahččala suorggidahttit pyeri adjektiivva, muhto FST ii dovdda dan suorgádusa. \\ Vuosttaš jorgalus lea dahkkon {{apertium -d . sme-smn}}-gohččumiin, nubbi lea dahkkon {{apertium -d . sme-smn-dgen}}-gohččumiin
-* {{piärgukáhhoid #pyeri ko vuoššum kyelikáhhoid}}
-* {{piärgukáhhoid #pyeri<adj><comp><der_avt><adv> ko vuoššum kyelikáhhoid}}
 
-
-!!Go debugget, de lea buorre iskat MT-vuogádaga analysahtor-output:
+!!Iskat MT-vuogádaga analysahtor-output:
 MT-vuogádaga analysáhtoriin leat dušše sánit mat leat mielde dix-fiillas.
 
 * {{echo "lohkan" | hfst-lookup sme-smn.automorf.hfst}}
 * {{echo "baakoem" | hfst-lookup sma-sme.automorf.hfst}}
 
-!!Dás lea analysahtor-output buot sániiguin, eai dušše bidix-sánit:
+!!Analysahtor-output buot sániiguin, eai dušše bidix-sánit:
 * {{echo "lohkan" | hfst-lookup .deps/sme.automorf.hfst}}
 * {{echo "baakoem" | hfst-lookup .deps/sma.automorf.hfst}}
 
-!!Go debugget, de lea buorre iskat MT-systema genererema:
+!!Iskat MT-systema genererema:
 MT-vuogádaga genereráhtoriin leat dušše sánit mat leat mielde dix-fiillas, ja seamma PoS:in mii lea dix-fiillas.
 * {{echo "sátni<n><sg><acc>" | hfst-lookup sma-sme.autogen.hfst}}
 * {{echo "baakoe<n><sg><acc>" | hfst-lookup sme-sma.autogen.hfst}}
 
-!!Jorgalanteasta 1:
-* {{echo "sáni" | apertium -d . sme-sma}}
-* {{echo "sánis" | apertium -d . sme-sma}}
-
-!!Jorgalanteasta 2:
+!!Jorgalanteasta:
 Iskka dáid gohččumiid, de oainnát mo Apertium bargá cehkiid mielde. Lonut sma = smn jnv.
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-morph}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-disam}}
