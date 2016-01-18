@@ -16,14 +16,16 @@ Then you need a number of tools for the build chain.
   On the Mac, you can get them by running the following commands:
 
 {{{
-sudo port install autoconf automake libtool python35 py-yaml subport=py35-yaml \
+sudo port install autoconf automake libtool python35 py35-pip \
 python27 py27-pip py27-beautifulsoup4 py27-unittest2 py27-lxml py-pysvn \
 py27-html5lib py27-feedparser p5-xml-twig antiword wv libxslt poppler tidy \
-wget bison cmake p5-xml-libxml gawk saxon subversion
+wget bison cmake p5-xml-libxml gawk saxon
 
-sudo port select python python27
+sudo port select --set python python27
+sudo port select --set python3 python35
 
 sudo pip-2.7 install pyth pytidylib
+sudo pip-3.5 install PyYAML
 
 sudo cpan install Text::Brew XML::LibXML
 }}}
