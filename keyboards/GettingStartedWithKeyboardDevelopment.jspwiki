@@ -8,18 +8,19 @@ sudo port install py35-lxml
 sudo pip-3.5 install tornado pytz pycountry
 }}}
 
-If you have NOT installed the other packages (e.g. if you are only interested
+If you have NOT installed the other packages (e.g. if you are __only__ interested
 in keyboards), the following is the minimum you need:
 
 {{{
-sudo port install autoconf automake libtool python35 py35-lxml py35-pip
+sudo port install autoconf automake libtool pkgconfig \
+     python35 py35-lxml py35-pip
 
 sudo port select --set python3 python35
 
 sudo pip-3.5 install PyYAML tornado pytz pycountry
 }}}
 
-Full details of how to proceede can be found
+Full details of how to proceed can be found
 [here|https://github.com/bbqsrc/softkbdgen/blob/master/doc/targets/android.md]
 and thereabout.
 
