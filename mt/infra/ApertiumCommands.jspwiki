@@ -41,6 +41,31 @@ Iskka dáid gohččumiid, de oainnát mo Apertium bargá cehkiid mielde. Lonut s
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma}}
 
 
+!!Hukset paralealla jorgalusaid (python-jorgalusa -- tmx-fiillaide)
+
+Input: tmx-kataloga.
+
+* (text-kataloga sisdoallu)
+** {{python check_mt-otpt.py -d tmx_data}} 
+* (sámedikki siiddut)
+** {{python check_mt-otpt.py -d fi.samediggi}}
+* časkat buot output-fiillaid oktii ja rahpat fierbmilohkkis
+** {{cat otpt-dir/* > testenfiillat.html}}
+** {{open testenfiillat.html}}
+
+
+!!Hukset paralealla jorgalusaid (tmx:a haga)
+
+Input: sme- ja smj-fiillat parallelliserejuvvon nu, ahte juohke cealka lea seammá linjjas.
+
+{{{
+cat -n texts/samediggidiedadus_samegiela_birra_2012.sme.txt |sed 's/	/a	/g;' > xdiedahusa
+cat -n texts/samediggidiedadus_samegiela_birra_2012.smj.txt |sed 's/	/b	/g;' > xdiedahusa
+cat texts/samediggidiedadus_samegiela_birra_2012.sme.txt |apertium -d . sme-smj|cat -n|sed 's/	/c	/g;' > xdiedahusc
+yes|head -1217|cat -n|sed 's/	y/d	/g;' > xdiedahusd
+sort -n xdiedahus*|l
+}}}
+
 !!Generating modes:
 Dás oainnát buot vejolaš gohččumiid:
 {{{
