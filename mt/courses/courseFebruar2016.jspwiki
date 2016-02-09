@@ -43,17 +43,22 @@ Missing-barggus lea vejolaš geavahit min sátnegirjjiid (ovdamearka sma-katalog
 * lexical selection (eanet go okta vejolaš jorgalus)
 
 
-!! Tirsdag - onsdag
+!! Tirsdag
+Praktisk arbeid med mandagens temaer \\
 
-!Stille diagnose, med eksempler fra Majas sma-listu 
+Derivasjoner fra kildespråk til målspråk, harmonisering
+
+!! Onsdag
+
+!Stille diagnose, med eksempler fra Majas og MLs lister 
+
+!Testing (regression og pending)
 
 !Transferregler
-* derivasjoner fra kildespråk til målspråk, harmonisering
-* sammensetninger fra kildespråk til målspråk
 * tilpassing av lexc-tagger til MT, og harmonisering: A+Attr+Der/lagan osv.
+* sammensetninger fra kildespråk til målspråk
 * omorganisering av transferregler
 
-!testing (regression og pending)
 
 !sme-disambigueren 
 * forbedre konvertering fra divvun/gt til apertium (Sjur)
@@ -69,3 +74,71 @@ Missing-barggus lea vejolaš geavahit min sátnegirjjiid (ovdamearka sma-katalog
 * milepæler i forhold systemets brukbarhet
 * faglige mål i 2016 (i forhold til NFR-prosjektet)
 * forskningsspørsmål
+
+!!Derivasjoner: Endring av tagger, harmonisering
+
+!Alle sme-taggene:
+Dagens tagger som forteller funksjon:
+* Der/A
+* Der/Adv
+* Der/Dimin
+* Der/NomAct 						 
+* Der/NomAg
+* Der/PassL
+* Der/PassS
+
+Forslag om nye tagger som forteller funksjon:
+* kaus: Der/ahtti Der/ahtte  Der/dehte => Der/Caus
+* inch: Der/goahti => Der/InchL
+* pass: Der/halla Der/PassD => Der/PassH Der/PassD Der/PassT 
+* Der/at Der/at Der/avt => Der/AAdv
+
+Forslag om nye tagger som med suffikser:
+* Der/st Der/stidh => Der/st
+* Der/l Der/lidh => Der/l
+* Der/laš => Der/lasj 
+* Der/alla -  Der/alle (sma) => Der/alla
+* kaus: Der/h Der/d Der/htidh => Der/h Der/ht Der/d Der/tt
+* Der/d Der/didh => Der/d
+* Der/lágan  Der/laakan  Der/lagan => Der/laakan
+* Der/lágaš => Der/laagasj
+* Der/las +Der/lis (vearba => adj) => Der/las Der/lis
+* Der/saš Der/sasj  Der/sas => Der/sasj
+* Der/vuohta Der/voete Der/vuota => Der/vuota
+* Der/t smj: Der/k =>  Der/k
+* Der/upmi -- Der/NomActPass , eller er det nok at vi har Der/PassL i strengen før Der/NomAct: \\
+{{fuomášit+V+TV+Der/PassL+V+IV+Der/upmi+N+Sg+Nom}}: fuomášupmi  \\
+=> {{fuomášit+V+TV+Der/PassL+V+IV+Der/NomAct+N+Sg+Nom}} \\
+{{fuomášit+V+TV+Der/NomAct+N+Sg+Nom}} : fuomášeapmi
+
+
+Resten av sme-taggene - ikke diskutert, og mange av dem er ikke så viktige for MT
+* Der/meahttun 
+* Der/heapmi +Der/ahtes
+* Der/jagaš Der/jagáš => Der/jagasj
+* Der/keahtta <=== marginal ikke-normativ derivasjon for substantiver, samme form som VAbess 
+* Der/adda 
+* Der/amoš 
+* Der/asti 
+* Der/at 
+* Der/dáfot 
+* Der/eamoš 
+* Der/easti 
+* Der/geahtes 
+* Der/has 
+* Der/heapmi 
+* Der/huhtti 
+* Der/huvva 
+* Der/muš 
+* Der/nuolus 
+* Der/náittot 
+* Der/seagat 
+* Der/stuvva 
+* Der/stávval
+* Der/supmi 
+* Der/suttat 
+* Der/veara 
+* Der/viđi 
+* Der/viđá 
+* Der/ár
+
