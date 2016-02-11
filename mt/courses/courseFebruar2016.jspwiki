@@ -70,10 +70,63 @@ Derivasjoner fra kildespråk til målspråk, harmonisering
 * propernouns 
 
 !!Torsdag dii. 9.00
-* domene vi skal konsentrere oss om
-* milepæler i forhold systemets brukbarhet
-* faglige mål i 2016 (i forhold til NFR-prosjektet)
-* forskningsspørsmål
+!!Forskningsspørsmål for MT-prosjektet
+* hvilke språklige forskjeller finnes?
+** statistikk over forskjellige språkpar
+* hvilke språklige forskjeller er vanskelige å løse?
+* hvor god er lrx-modellen kontra lex-modellen?
+* hvor god er Apertium systemet for språkpar med stor syntaktisk forskjell (sme-sma)?
+* forskjell mellom idiomer og språkbilder mellom de samiske språkene?
+* sme-smn: tekster skrevet på norsk side vs finsk side 
+* hvilke samfunnsmessige konsekvenser kan dette ha?
+** er rele-modellen en brukbar modell? (for hvert språkpar, hvorfor?)
+** hvor stor interesse/nytte for intersamiske ordbøker osv.
+* interferens: er nordsamisk interferens verre enn anna interferens?
+* forske på posteditprosessen
+** oversettingsprosessen menneske + maskin vs. menneske
+** sammenlikne arbeidsmåter (f.eks. hele tekster vs setning for setning)
+
+!!Faglige mål i 2016 (i forhold til NFR-prosjektet)
+! Domene vi skal konsentrere oss om
+* årsrapporter, sametingsprotokoller, (departementer) (som rele)
+* samisk høgskole: sme til andre samiske språk
+* sme-sma: samfunnsfagskolebøker (ungdomsskole) (Mii dáppe dál) - kommer ut på sme og sma på våren. "Multi" (matematikk) til sma (finnes på smj).
+* sme-smj: skal sjekkes ut
+* sme-smn: kommer nye skoleplaner i Finland => nye oversettinger
+
+! Milepæler i forhold systemets brukbarhet
+* mål: systemet er så pass bra sametingsoversettere vil posteditere (redigere)
+* når: 1. september skal være klart for evaluering som rele-språk med WER osv.
+
+! praktisk plan framover
+* finne i korpus tekster som vi har (innafor domenet): 1. april
+** 3-språklige: tmx-format (Ciprian)
+** 2-språklige: (Ciprian)
+** lage fin-smn ankerliste (Trond) 25.2
+* samle inn tekster som vi mangler (innafor domenet), vi trenger folk! (Trond): 10. mars
+* ta kontakt med sametinget for å finne ut av oversettinger (Sandra): 15.2
+* harmonisering av tagger (der, cmp): Der/voete, Der/vuohta, Der/vuota
+Der/AN  Der/AdjN (denne uka) Lene: lager liste over flere fredag
+** teste med pronomensetninger i texts/
+** partikkel vs. adverb (kan være forskjellig PoS i bidix, men man bør vurdere harmonisering i FST)
+* bidix - mål er å halvere missingprosenten fram til neste samling
+** missinglist (fra domenet) - Trond
+** rydde direkte i bidix
+** bidix sanity
+* lexSel:
+** utfra bidix (legg i pending test)
+* transfer - løse det som er mest frekvente problemer:
+** reorganisering: merke chunking med syntaktiske tagger, endre klitika, lage et mønster for navning av chunkene, skal dokumenteres på nett
+** sjekke konstruksjonstyper:
+*** objekt- og adverbialplassering
+*** NP-intern kongruens
+*** numeral-fraser
+*** kasusbruk 
+*** hjelpeverb
+*** MWE i smX må legges inn i FST
+* hangout-tid: mandag 10-12, temaer
+** dokumentere (legg i pending test)
+! neste samling: 25-29. april
 
 !!Derivasjoner: Endring av tagger, harmonisering
 
