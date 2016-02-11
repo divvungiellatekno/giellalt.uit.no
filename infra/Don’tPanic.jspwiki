@@ -66,4 +66,33 @@ If it is an Oahpa (python2.7) process then you can see from this output which Oa
 * The analysers are in /opt/smi. Check that they work, and recompile if they don't.
 ** The naming conventions for fsts when compiled ("new") and in the web directories ("old") [are found here|infraremake/FstNamesInOldAndNewInfra.html]
 
+!!!The svn application is down, yet the gtsvn server is up-n-running (test it by logging into the server) 
 
+* error messages
+{{{
+sme$ svnup
+Updating '/Users/xxxxxx/gtsvn':
+svn: E000060: Unable to connect to a repository at URL 'https://victorio.uit.no/langtech/trunk'
+svn: E000060: Error running context: Operation timed out
+}}}
+
+* log into the gtsvn server
+
+* find the processes running
+{{{
+[root@gtsvn ~]# lsof -i | grep http
+httpd     26024    apache    4u  IPv6    15925      0t0  TCP *:http (LISTEN)
+httpd     26024    apache    6u  IPv6    15929      0t0  TCP *:8099 (LISTEN)
+httpd     26024    apache    8u  IPv6    15935      0t0  TCP *:https (LISTEN)
+}}}
+
+* kill them
+{{{
+[root@gtsvn ~]# kill -KILL 26024
+}}}
+
+* start the service anew
+{{{
+ot@gtsvn ~]# service httpd start 
+Starting httpd:                                            [  OK  ]
+}}}
