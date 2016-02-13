@@ -1,21 +1,23 @@
 !!!MT-beaivvit guovvamánu 8-11. b
-Sandra, Maja, Trond, Lene, Ciprian
+Sandra, Maja, Trond, Lene, Ciprian \\
+Marja-Liisa fra onsdag
 
 !! Mandag
 !Bidix:
-* bidix-sanity (genereringstest):\\ {{sh bidix-sanity.sh > sanityoutput}} (når man står i dev)
-** sma /smj
-** sme (Francis skal lage bidix-sanity som tester sme)
+* bidix-sanity (test som tester generering av alle sma/smj/smn ord i bidix):\\ {{sh bidix-sanity.sh > sanityoutput}} (når man står i dev). Les mer om [tolking av output|../infra/bidixsanity.html]
+** dette gir grunnlag for å rette lemma i bidix og å legge til ord i FST
+** vanligvis er mesteparten av linjene i sanityoutput propernouns. Start med de viktigste slik: \\ {{grep -v "<np>" sanityoutput | less}}
+** Francis skal lage bidix-sanity som tester generering sme i bidix
 * missinglister
 ** fra tekstene i texts/ - lag sjøl med denne [kommandoen|../infra//MissingList.html]
 ** fra relevante tekster i hele korpuset (Trond lager)
-*** prioriter substantivlister uten sammensetning, og verb og adjektivlister uten derivasjon
+*** prioriter substantiv-lister uten sammensetning, og verb- og adjektiv-lister uten derivasjon
 *** kommando for å fornye missinglista (ordene som får analyse kan fjernes), eksempel fra smj: \\
 {{cat dev/sikor.sme.V.freq.noder.missing |hfst-proc sme-smj.automorf.hfst |less }}
 
-Missing-barggus lea vejolaš geavahit min sátnegirjjiid (ovdamearka sma-katalogas):
+Missinglist-barggus lea vejolaš geavahit min sátnegirjjiid (ovdamearka sma-katalogas):
 
-* jorgalit buot missing-sánit darogillii: \\
+* jorgalit buot missing-sániid darogillii: \\
 {{cat dev/missing_v_noder | smenob | see }}
 * Jos vastádus lea \\
   Lexicon file '...bin/smenob-all.fst' could not be found or opened \\
@@ -25,10 +27,14 @@ Missing-barggus lea vejolaš geavahit min sátnegirjjiid (ovdamearka sma-katalog
   (... ja bija SLANG ja TLANG , linjjus 27, 28 dego háliidat, sme + nob lea default) \\
   {{make -f make-bildict}} \\
   ... ja de dus lea sátnegirji 
-  
-* NomAg, G3
-* Pl vs Sg
-* fra ett ord til multiword expressions, og motsatt veg
+
+Vær OBS på tagger i bidix:  
+* ordklasse
+* {{NomAg, G3, G7}}
+* {{Sg}} vs {{Pl}} (andre vegen er ikke nødvendig å merke)
+* fra ett ord til multiword expressions:
+** mellomrom merkes med {{<b/>}}
+** MWE må legges til i FST, gjerne merkes med {{Use/MT}}
 
 !Parallelltekster: 
 * hva og hvordan bruke dem (når du er i apertium-sme-smX)
@@ -38,24 +44,25 @@ Missing-barggus lea vejolaš geavahit min sátnegirjjiid (ovdamearka sma-katalog
 
 
 !Lex-sel
-* lexical selection (eanet go okta vejolaš jorgalus)
+* [lexical selection|../infra/LexicalSelection.html] (eanet go okta vejolaš jorgalus)
 
 
 !! Tirsdag
 Praktisk arbeid med mandagens temaer \\
 
-Derivasjoner fra kildespråk til målspråk, harmonisering
+Derivasjoner fra kildespråk til målspråk, diskusjon om harmonisering, se nederst på denne siden
 
 !! Onsdag
 
 !Stille diagnose, med eksempler fra Majas og MLs lister 
 
 !Testing (regression og pending)
+Viktig å legge inn eksempelsetninger for lexical selection og transfer
 
 !Transferregler
-* tilpassing av lexc-tagger til MT, og harmonisering: A+Attr+Der/lagan osv.
-* sammensetninger fra kildespråk til målspråk
-* omorganisering av transferregler
+* tilpassing av lexc-tagger til MT, og harmonisering av derivasjontagger
+* sammensetninger fra kildespråk til målspråk, harmonisering
+* omorganisering av transferregler (skal gjøres)
 
 
 !sme-disambigueren 
@@ -65,9 +72,11 @@ Derivasjoner fra kildespråk til målspråk, harmonisering
 
 
 !hva andre enn Maja og Sandra kan gjøre i MT og lexc-koden
-* propernouns 
+* legge til sme-propernouns 
+* transferregler 
 
-!!Torsdag dii. 9.00
+
+!!Torsdag
 !!Forskningsspørsmål for MT-prosjektet
 * hvilke språklige forskjeller finnes?
 ** statistikk over forskjellige språkpar
@@ -108,8 +117,9 @@ Derivasjoner fra kildespråk til målspråk, harmonisering
 * ta kontakt med sametinget for å finne ut av oversettinger (__Sandra__): 15.2
 
 ! FST
-* harmonisering av tagger (der, cmp): Der/voete, Der/vuohta, Der/vuota
-Der/AN  Der/AdjN (denne uka) __Lene__: lager liste over flere fredag
+* harmonisering av tagger (Der): Der/voete, Der/vuohta, Der/vuota
+Der/AN  Der/AdjN (denne uka)\\ __Lene__: lager liste over flere 
+** Cmp (__Lene__ skriver bugzilla)
 ** teste med pronomensetninger i texts/ (__Maja, Sandra__)
 ** partikkel vs. adverb (kan være forskjellig PoS i bidix, men man bør vurdere harmonisering i FST) (__Maja, Sandra, ML__)
 
@@ -118,25 +128,26 @@ Der/AN  Der/AdjN (denne uka) __Lene__: lager liste over flere fredag
 ** missinglist (fra domenet) (__Trond lager og Maja, Sandra, ML__ oversetter)
 ** rydde direkte i bidix (__Maja, Sandra, ML__)
 ** bidix sanity (__Maja, Sandra, ML__)
+** MWE i smX må legges inn i FST (__Maja, Sandra, ML__)
 ** bidix i hht. til tospråklige tekster (__Erika__)
 
 ! LexSel
 * lage regler utfra behov man ser i bidix, legge eksempelsetninger i pending test, (__Maja, Sandra, ML__)
 ! Transfer 
-Løse de mest frekvente problemene: (__alle__)
-* reorganisering: merke chunking med syntaktiske tagger, endre klitika, lage et mønster for navning av chunkene, skal dokumenteres på nett
-* sjekke konstruksjonstyper:
+Løse de mest frekvente problemene: 
+* reorganisering: merke chunking med syntaktiske tagger, endre klitika, lage et mønster for navning av chunkene, skal dokumenteres på nett (__Lene, Trond__)
+* sjekke konstruksjonstyper: (__alle__ samler eksempler og dokumentasjon)
 ** objekt- og adverbialplassering
 ** NP-intern kongruens
 ** numeral-fraser
 ** kasusbruk 
 ** hjelpeverb
-** MWE i smX må legges inn i FST
 
 ! Forbedre sme-analyse inn i apertium
 * ordne konvertering av *  (__Sjur__ snarest mulig)
 * forbedre CG analyse (__Lene__ snarest mulig)
-* forbedre sme FST i forhold til tekster skrevet i Finland (__Thomas?__)
+* forbedre sme FST i forhold til tekster skrevet i Finland (__Thomas__)
+** __Trond__ lager missinglister
 
 !! Møter
 ! Hangout-tid: mandag 10-12, med temaer
