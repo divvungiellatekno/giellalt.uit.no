@@ -1,6 +1,6 @@
 
 !!Missinglist, sánit mat eai leat dix-fiillas
-Missinglistui leat čohkkejuvvon buot sániid mat ožžot nástti go mii jorgalit buot teavsttaid mat leat texts-máhpas. Násti mearkkaša ahte sátni ii leat bidix-fiillas, dahje ahte das lea boasttu sátneluohkká dahje (jus vearba) IV/TV bidixas. Sánit leat ordnejuvvon frekveanssa mielde.
+Missinglistui leat čohkkejuvvon buot sániid mat ožžot nástti go mii jorgalit buot teavsttaid mat leat texts-máhpas. Násti mearkkaša ahte sátni ii leat bidix-fiillas, dahje ahte das lea boasttu sátneluohkká dahje (jus vearba) IV/TV bidixas. Sánit leat ordnejuvvon frekveanssa mielde, ja analyserejuvvon vai oainnát lemma-hámi.
 
 Jus háliidat geahččat mo sátni geavahuvvo teavsttain: {{cat texts/*sme.txt | less }}, ja de ohcat sáni.
 
@@ -9,18 +9,22 @@ Ovdamearka:
 {{less dev/missinglist.txt}}
 
 {{{
- 118 s
-  19 Máhtes
-  17 Biret
-  10 han
-   8 Ánde
-   8 miilla
-   8 dahjege
-   8 Kárášjogas
-   7 goit
-   7 Romssas }}}
+Ijahis  idja+N+Der/heapmi+A+Attr
+Ijahis  ijaheapme+A+Attr
+
+tel     tel+N+ABBR+Nom
+tel     tel+N+ABBR+Gen
+tel     tel+N+ABBR+Attr
+tel     tel+N+ABBR+Acc
+
+Akwé    Akwé    +?
+
+ONid    ON+N+ACR+Err/Orth+Pl+Gen
+ONid    ON+N+ACR+Err/Orth+Pl+Gen+Err/Orth
+ONid    ON+N+ACR+Err/Orth+Pl+Acc
+ONid    ON+N+ACR+Err/Orth+Pl+Acc+Err/Orth }}}
 
 !!Ieš ráhkadit missinglist
 
 {{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
-tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' > dev/missinglist.txt}}}
+tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' | usme > dev/missinglist.txt}}}
