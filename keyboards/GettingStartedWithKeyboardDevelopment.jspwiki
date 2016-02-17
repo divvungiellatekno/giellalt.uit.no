@@ -3,22 +3,34 @@ the keyboard build system. We assume that you have already installed
 [the packages needed for general linguistic work|../infra/GettingStarted.html].
 
 {{{
-sudo port install py35-lxml
-
-sudo pip-3.5 install tornado pytz pycountry
+sudo pip-3.4 install lxml PyYAML tornado pytz pycountry
 }}}
 
-If you have NOT installed the other packages (e.g. if you are __only__ interested
-in keyboards), the following is the minimum you need:
+If you have NOT installed the other packages (e.g. if you are __only__
+interested in keyboards), the following is the minimum you need:
 
 {{{
 sudo port install autoconf automake libtool pkgconfig \
-     python35 py35-lxml py35-pip
+     imagemagick apache-ant python34 py34-pip
 
 sudo port select --set python3 python35
 
-sudo pip-3.5 install PyYAML tornado pytz pycountry
+sudo pip-3.4 install pycountry lxml PyYAML tornado pytz pycountry
 }}}
+
+Download:
+* JDK7 [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html]
+* Android SDK [https://developer.android.com/sdk/index.html?hl=i] (click "VIEW ALL DOWNLOADS AND SIZES" and choose from "SDK Tools Only")
+* Android NDK [https://developer.android.com/ndk/downloads/index.html]
+
+Set the environmental variables to point to the respective variables:
+* {{export JAVA_HOME=path/to/it}} (but check that it isn't already set)
+* {{export ANDROID_HOME=path/to/it}}
+* {{export NDK_HOME=path/to/it}}
+
+Run the command:
+{{$ANDROID_HOME/tools/android update sdk -u -t "tools,platform-tools,build-tools-23,extra-android-support,android-23}}.
+Say yes to all the EULAs.
 
 Full details of how to proceed can be found
 [here|https://github.com/bbqsrc/softkbdgen/blob/master/doc/targets/android.md]
