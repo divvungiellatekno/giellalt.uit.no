@@ -56,12 +56,20 @@ These installation instructions assume we're using the git codebase. Start the b
 git clone https://github.com/voikko/corevoikko.git
 }}}
 
-The build receipt is the standard one, with one additional flag to turn on support for {{hfst}}:
+The build receipt is the standard one, with one additional flag to enable
+support for loading dictionaries shared by all users and for backwards and
+Unix/Linux compatibility.
+
+__NB!__ This configuration is for OSX! For Windows and Linux/Unix dictionary
+paths, see the Libvoikko documenation!
+
+__NOTE!__ These directories come in addition to the user-only directories (e.g.
+~/.voikko etc.).
 
 {{{
 cd corevoikko/libvoikko
 ./autogen.sh
-./configure --enable-hfst
+./configure --with-dictionary-path=/Library/Spelling/voikko:/usr/local/share/voikko:/usr/local/lib/voikko
 make
 sudo make install
 }}}
