@@ -1,0 +1,16 @@
+!!Mo ráhkadit listtu
+# Generere jorgalusaid: {{python check_mt-otpt.py}} 
+# Čoakke buot sániid merkejuvvon #: \\  {{cat otpt_dir/*|grep 'tg-amt'|cut -d">" -f2-|cut -d"<" -f1|sed 's/&gt;/>/g;'|sed 's/&lt;/</g;'|tr ' ' '\n'|grep '#'|sort|uniq -c|sort -nr > dev/hash-report.freq}}
+# {{less dev/hash-report.freq}}
+
+{{{
+  49 #guhti<prn><rel><pl><nom>
+  48 #sámegiel<adj><attr>
+  38 #giella<n><cmp_sgnom><cmp>
+  36 #ietjá<prn><ind><attr>
+  36 #ienebu<adj><attr> }}}
+
+!!Mo iskat dáhpáhusaid
+* {{cat otpt_dir/* | less}}
+
+
