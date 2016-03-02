@@ -14,10 +14,8 @@ connect.
 
 !! The steps
 
-The precise details are stored in the MotD message when logging in as
-the Gïelese user.
-
-1.) Execute the Fab command to start mongodb.
+Do this as your regular user account, thus the sudo password will be your usual
+sudo password.
 
 {{{
     sudo service gielese_mongodb start
@@ -29,3 +27,6 @@ the Gïelese user.
     sudo service gielese start
 }}}
 
+
+NB: commands accepted by these processes are also stop, and restart; however,
+make sure to start mongodb first, otherwise the gielese process will not start.
