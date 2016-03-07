@@ -3,12 +3,11 @@
 Languages may be added to one of these 4 directories:
 
 # $GTHOME/langs (for languages we work on, or who have full-size transducers)
-# $GTHOME/closed-langs (for languages with a restricted (closed) license)
 # $GTHOME/experiment-langs (experiments of different kinds)
 # $GTHOME/startup-langs (when we do not know whether the work will lead to anything or not)
 
-The closed-langs directory is invisible for users without password access to the 
-svn repository, otherwise all directories have the same functionalities.
+There are also a couple of directories for languages with a closed license and
+restricted access. Their structure is identical to the open ones above.
 
 !!How to add a new language
 
@@ -16,9 +15,17 @@ We here show how to add new languages to ''langs'' (for adding to the 3 other di
 exchange "langs" with "startup-langs" etc.)
 
 # {{cd $GTHOME/langs}}
-# {{$GTCORE/scripts/new-language.sh LANGCODE}}
+# {{./autogen.sh}}
+# {{./configure}}
+# {{make NEW_LANGS=LANGCODE}}
 
-where LANGCODE  is the 3-letter ISO 639-3 code for the language you want to add
+where LANGCODE  is the 3-letter ISO 639-3 code for the language you want to add.
+You can also add more than one language by separating the codes with spaces, and
+putting double quotes around the whole list:
+
+* {{make NEW_LANGS="LANGCODE1 LANGCODE2 LANGCODE3"}}
+
+{{./autogen.sh}} and {{./configure}} should only be required the first time.
 
 !!Result
 
