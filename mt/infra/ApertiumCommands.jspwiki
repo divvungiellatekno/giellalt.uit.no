@@ -31,7 +31,7 @@ MT-vuogádaga genereráhtoriin leat dušše sánit mat leat mielde dix-fiillas, 
 * {{echo "baakoe<n><sg><acc>" | hfst-lookup sme-sma.autogen.hfst}}
 
 !!Jorgalanteasta:
-Iskka dáid gohččumiid, de oainnát mo Apertium bargá cehkiid mielde. Lonut sma = smn jnv.
+Iskka dáid gohččumiid, ja de oainnát mo Apertium bargá cehkiid mielde. Lonut sma = smn jnv.
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-morph}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-disam}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-biltrans}}
@@ -41,22 +41,22 @@ Iskka dáid gohččumiid, de oainnát mo Apertium bargá cehkiid mielde. Lonut s
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma}}
 
 
-!!Hukset paralealla jorgalusaid (python-jorgalusa -- tmx-fiillaide)
+!!Hukset parallealla jorgalusaid (python-jorgalusa -- tmx-fiillaide)
 
-Input: tmx-kataloga.
+Input: tmx-máhppa.
 
-* (text-kataloga sisdoallu)
+* (text-máhpa sisdoallu)
 ** {{python check_mt-otpt.py -d tmx_data}} 
 * (sámedikki siiddut)
 ** {{python check_mt-otpt.py -d fi.samediggi}}
-* časkat buot output-fiillaid oktii ja rahpat fierbmilohkkis
+* časkit buot output-fiillaid oktii ja rahpat daid fierbmelohkkis:
 ** {{cat otpt-dir/* > testenfiillat.html}}
 ** {{open testenfiillat.html}}
 
 
-!!Hukset paralealla jorgalusaid (tmx:a haga)
+!!Hukset parallealla jorgalusaid (tmx haga)
 
-Input: sme- ja smj-fiillat parallelliserejuvvon nu, ahte juohke cealka lea seammá linjjas.
+Input: sme- ja smj-fiillat parallelliserejuvvon nu, ahte juohke cealkka lea seammá linnjás.
 
 {{{
 cat -n texts/samediggidiedadus_samegiela_birra_2012.sme.txt |sed 's/	/a	/g;' > xdiedahusa
