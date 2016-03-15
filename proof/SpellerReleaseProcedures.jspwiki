@@ -1,0 +1,46 @@
+!!!Speller release procedure
+
+# Create a branch from the codebase you want to use after testing the codebase
+## ... or add bug fixes to an existing release branch
+# build and upload the speller
+
+!!!Build a bug fix release
+
+# check out the branch for which you want to release a bug fix
+# cd into the branch, then {{gtcore}}
+# {{./autogen.sh && ./configure}}
+# {{cd ../$GIELLALANG/}}
+# {{./autogen.sh && ./configure}}
+## Remember proper speller release configurations! Will vary a bit from language
+   to language, but typically something like:
+   {{./configure --without-xfst --with-hfst --enable-spellers --disable-syntax --disable-transcriptors --disable-analysers --disable-generators --enable-alignment}}
+
+Merge your changes as needed, e.g. to merge a single file, do as follows:
+
+{{{
+svn merge \
+^/trunk/langs/smj/am-shared/tools-spellcheckers-fstbased-desktop-hfst_prods_n_upload-dir-include.am \
+am-shared/tools-spellcheckers-fstbased-hfst_prods_n_upload-dir-include.am
+}}}
+
+In case you get conflicts, review and resolve them.
+
+You can also specify the revisions you want to merge, to pick only the changes
+you are interested in:
+
+{{{
+svn merge --revision 126367:128639 \
+^/trunk/langs/smj/am-shared/tools-spellcheckers-fstbased-desktop-hfst-dir-include.am \
+am-shared/tools-spellcheckers-fstbased-hfst-dir-include.am
+}}}
+
+Then build and test the spellers:
+
+# {{time make -j}}
+# test etc.
+# if everything is ok:
+## upload: {{cd tools/spellcheckers/fstbased/[desktop/]hfst/; make upload}}
+## create a new tag for the release
+
+Testing:
+
