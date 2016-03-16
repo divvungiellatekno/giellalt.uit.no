@@ -6,9 +6,12 @@
 
 !!!Build a bug fix release
 
-# check out the branch for which you want to release a bug fix
+# check out the branch for which you want to release a bug fix, e.g.:
+  {{https://gtsvn.uit.no/langtech/branches/sma-speller/4.0 sma-speller-4.0}}
 # cd into the branch, then {{gtcore}}
 # {{./autogen.sh && ./configure}}
+# {{export GTCORE=`pwd`}} - to set the branch-specific {{gtcore}} as the Giella
+  core to use
 # {{cd ../$GIELLALANG/}}
 # {{./autogen.sh && ./configure}}
 ## Remember proper speller release configurations! Will vary a bit from language
@@ -40,7 +43,17 @@ Then build and test the spellers:
 # test etc.
 # if everything is ok:
 ## upload: {{cd tools/spellcheckers/fstbased/[desktop/]hfst/; make upload}}
+### you can also upload just some of the packages, if the update is only
+    relevant for a subset:
+    {{make [uploadoxt | uploadxpi | uploadzip | uploadzhfst]}}
 ## create a new tag for the release
 
 Testing:
 
+* technical testing:
+** download the spellers, install them and use them on some document
+** run some basic command line spelling process, check that the output is ok
+* linguistic testing:
+** forthcoming, but involves several larger tasks to ensure we have no regressions and decent performance
+** only required if there have been linguistic changes (ie technical bug
+   fixes usually do not require this type of testing)
