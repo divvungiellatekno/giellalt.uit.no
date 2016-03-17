@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+    <header>
+        <title>Proofing Tools Technical Documentation</title>
+        <authors>
+            <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen"/>
+        </authors>
+    </header>
+    <body>
+        <section>
+            <title>Speller release procedure</title>
+
+            <ol>
+                <li>Create a branch from the codebase you want to use after testing the codebase
+                    <ol>
+                        <li>... or add bug fixes to an existing release branch</li>
+                    </ol>
+                </li>
+                <li>build and upload the speller</li>
+            </ol>
+        </section>
+
+        <section>
+            <title>Build a bug fix releaseM</title>
+
+            <ol>
+                <li>check out the branch for which you want to release a bug fix, e.g.:
+                    <code>https://gtsvn.uit.no/langtech/branches/sma-speller/4.0 sma-speller-4.0</code>
+                </li>
+                <li>into the branch, then <code>gtcore</code></li>
+                <li><code>./autogen.sh &amp;&amp; ./configure</code></li>
+                <li><code>export GTCORE=`pwd`</code> - to set the branch-specific <code>gtcore</code> as the Giella
+                    core to use</li>
+                <li><code>cd ../$GIELLALANG/</code></li>
+                <li><code>./autogen.sh &amp;&amp; ./configure</code>
+                    <ol>
+                        <li>Remember proper speller release configurations! Will vary a bit from
+                            language to language, but typically something like:
+                            <code>./configure --without-xfst --with-hfst --enable-spellers --disable-syntax --disable-transcriptors --disable-analysers --disable-generators --enable-alignment</code></li>
+                    </ol>
+                </li>
+            </ol>
+
+            <p>Merge your changes as needed, e.g. to merge a single file, do as follows:</p>
+
+            <source>
+svn merge \
+^/trunk/langs/smj/am-shared/tools-spellcheckers-fstbased-desktop-hfst_prods_n_upload-dir-include.am \
+am-shared/tools-spellcheckers-fstbased-hfst_prods_n_upload-dir-include.am
+            </source>
+
+            <p>In case you get conflicts, review and resolve them.</p>
+
+            <p>You can also specify the revisions you want to merge, to pick only the changes
+                you are interested in:</p>
+
+            <source>
+svn merge --revision 126367:128639 \
+^/trunk/langs/smj/am-shared/tools-spellcheckers-fstbased-desktop-hfst-dir-include.am \
+am-shared/tools-spellcheckers-fstbased-hfst-dir-include.am
+            </source>
+
+            <p>Then build and test the spellers:</p>
+
+            <ol>
+                <li><code>time make -j</code></li>
+                <li>test etc. (see next section)</li>
+                <li>if everything is ok:
+                    <ol>
+                        <li>upload: <code>cd tools/spellcheckers/fstbased/[desktop/]hfst/; make upload</code>
+                            <ol>
+                                <li>you can also upload just some of the packages, if the update is only
+                                    relevant for a subset:
+                                    <code>make [uploadoxt | uploadxpi | uploadzip | uploadzhfst]</code></li>
+                            </ol>
+                        </li>
+                        <li>create a new tag for the release</li>
+                    </ol>
+                </li>
+                <li>update version info page</li>
+                <li>add note to main speller page about the new release, check that the
+                    documentation is up-to-date</li>
+            </ol>
+        </section>
+
+        <section>
+            <title>Release</title>
+
+            <ol>
+                <li>Update web site</li>
+                <li>announce the release on FB, G+, e-mail</li>
+            </ol>
+        </section>
+
+        <section>
+            <title>Testing</title>
+
+            <ul>
+                <li>technical testing:
+                    <ul>
+                        <li>download the spellers, install them and use them on some document</li>
+                        <li>run some basic command line spelling process, check that the output is ok</li>
+                    </ul>
+                </li>
+                <li>linguistic testing:
+                    <ul>
+                        <li>forthcoming, but involves several larger tasks to ensure we have no regressions and decent performance</li>
+                        <li>only required if there have been linguistic changes (ie technical bug
+                            fixes usually do not require this type of testing)</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </body>
+</document>
