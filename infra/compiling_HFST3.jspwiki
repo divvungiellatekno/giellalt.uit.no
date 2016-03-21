@@ -12,13 +12,13 @@ transducer conversion options.
 
 !!!Checkout and configuration
 
-We assume installation from svn here. If you have downloaded a tarball from
-[sourceforge|https://sourceforge.net/projects/hfst/files/latest/download?source=files],
+We assume installation from svn here. You can downloaded a tarball from the
+[Hfst Github site|https://github.com/hfst]. Then
 unzip and untar, and go directly to the {{./configure}} step.
 
 {{{
-svn co http://svn.code.sf.net/p/hfst/code/trunk/hfst3
-cd hfst3/
+svn co https://github.com/hfst/hfst.git/trunk hfst
+cd hfst/
 ./autogen.sh
 ./configure --enable-all-tools --with-unicode-handler=glib
 }}}
@@ -26,16 +26,46 @@ cd hfst3/
 The configuration above is the default. To check what other options there are,
 do {{./configure --help}}.
 
-The Foma backend is not used by the Giella infrastructure, and whether you
-build with or without it is up to you. For license compatibility issues it
-can be wise to build without it (use {{--without-foma}} to achieve this).
-
 To avoid the very wordy output of {{make}}, and get only essential messages,
 add the following {{./configure}} option:
 
 {{{
 --enable-silent-rules
 }}}
+
+!!!Make and install
+
+The final steps to build and install {{hfst}} after the configuration are as
+follows (the script to generate {{.cc}} files may only be required on some
+systems, but does no harm):
+
+{{{
+./scripts/generate-cc-files.sh
+make
+sudo make install
+}}}
+
+!!!installing the SWIG Python binding
+
+__NB!!__ The following info is most likely outdated. See the Hfst readme file
+for further details.
+
+If you want to run hfst from Python, you need to install the Python binding
+provided through SWIG. First you need to install {{swig}} and the Swig submodule
+for Python using MacPorts:
+
+{{{
+sudo port install swig
+sudo port install swig-python
+}}}
+
+When done, you are ready to build and install the Python bindings:
+
+{{{
+python3.3 setup.py build_ext --inplace
+}}}
+
+!!!Extra considerations for older systems
 
 !!Special configuration on MacOSX 10.9
 
@@ -71,19 +101,7 @@ build instructions are improved, or because of changes in Apple's compilers. If
 it is because of changes in the Hfst code base, the above workaround is probably
 obsolete also on MacOSX 10.9, but this needs to be tested.
 
-!!!Make and install
-
-The final steps to build and install {{hfst}} after the configuration are as
-follows (the script to generate {{.cc}} files may only be required on some
-systems, but does no harm):
-
-{{{
-./scripts/generate-cc-files.sh
-make
-sudo make install
-}}}
-
-!!!Extra preparations on MacOSX 10.6
+!!Extra preparations on MacOSX 10.6
 
 When building from the subversion source code,
 OSX 10.6 and earlier requires newer versions of {{automake}} and {{autoconf}}
@@ -98,17 +116,3 @@ sudo port install automake autoconf flex bison pkgconfig
 
 After this, do {{./autogen.sh}} etc. as above.
 
-!!!installing the SWIG Python binding
-
-If you want to run hfst from Python, you need to install the Python binding provided through SWIG. First you need to install {{swig}} and the Swig submodule for Python using MacPorts:
-
-{{{
-sudo port install swig
-sudo port install swig-python
-}}}
-
-When done, you are ready to build and install the Python bindings:
-
-{{{
-python3.3 setup.py build_ext --inplace
-}}}
