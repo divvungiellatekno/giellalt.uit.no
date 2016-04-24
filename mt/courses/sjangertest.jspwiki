@@ -464,6 +464,7 @@ tanapioner
    6 *ovttaskasa
    6 *Kondoma
 
+==> tanapioner <==
    6 *og
    6 *Heimen
    5 *ee
@@ -708,4 +709,22 @@ tanapioner
    3 *ánsomedáljja
    3 *vázze
    }}}
+
+
+!!!Jorgalanprográmmaid status
+
+* bidix = {{cat apertium-sme-sma.sme-sma.dix |grep '<e>'|grep -v '"np"'|tr '<' '>'|cut -d">" -f7|sort|uniq|wc -l }}
+* transfer = {{cat apertium-sme-smj.sme-smj.t?x|grep '^ *<rule'|wc -l}}
+* lexsel = cat apertium-sme-sma.sme-sma.lrx|grep '^ *<rule'|wc -l
+
+
+|| Sisdoallu || sme-smn || sme-sma || sme-smj
+| Bidix       |    7897  |    4384  | 12208*) 
+| Transfer    |      67  |      69  |    32
+| Lexsel      |     139  |     322  |     9
+
+(*) Stuorra oassi sme-smj-bidixas lea genererejuvvon
+
+
+
    
