@@ -15,8 +15,8 @@ Trond, ML ja Lene leat hupman MT-vahku sisdoalu birra. Dát lea evttohus:
 * Leago hfst ok? Dáppe gn. Kevina kommando:
 ** wget http://apertium.projectjj.com/osx/install-nightly.sh
 ** sudo bash install-nightly.sh 	  				 	 	 	    		  	   		  		
-sudo bash install-nightly.sh 	  				 	 	 	  
 * Mii kompileregoahtit sme + smX + sme-smX
+** [kompileren ja configure|../infra/Compilation.html]
 * Vahku prográmma
 * Jorgalanprográmmaid status
 ** [Buohtastahttin|sjangertest.html]
@@ -35,25 +35,78 @@ Jorgalit guokte oanehis teavstta: čáppagirjjálašvuođa teavstta ja čoahkkin
 ** Evalueren: [http://xixona.dlsi.ua.es/~fran/eval/]
 
 !!2 Buoridit jorgalanfeaillaid
+
 !Mo gávdnat jorgalanfeailla siva?
 Bargat ieš, oažžut bagadeami
 
-!Geahččat input :
+!!Bargat násttiid ja hash
+!Missing (násti)
+Ovdalgo sáhttá árvvoštallat cealkaga syntávssa dahje váilevaš genererema, de ii galgga leat missing-sánit cealkagis 
+* lasit missing sániid bidixii, ja sánit fertejit leat leksikaliserejuvvon sihke sme- ja smX-FST:s
+* [bidix-bargu|../infra/BidixWork.html]
+
+!Geahččat dan maid analysáhtor ii máhte genereret (hash):
+* {{echo 'cealkka' | apertium -d. sme-smn-dgen}} , omd.\\
+{{#Pariisa<np><top><sg><loc>}}
+** buohtastahte analysáhtoriin ({{usmX}} ja {{dsmXNorm}})
+{{{
+usmn
+Pariisa
+Pariisa	Pariisa+N+Prop+Sem/Plc+Sg+Nom
+
+dsmnNorm 
+Pariisa+N+Prop+Sem/Plc+Sg+Loc
+Pariisa+N+Prop+Sem/Plc+Sg+Loc	Pariisa+N+Prop+Sem/Plc+Sg+Loc	+?
+
+}}}
+Ferte lasihit/divvut FST (omd. addit +Loc leksikonii masa Pariisa manná)
+
+__Nubbi ovdamearka__:
+* omd. {{#lávluđ<vblex><der_nomag><n><pl><nom>}}
+** buohtastahte analysáhtoriin ({{usmX}} ja {{dsmXNorm}})
+{{{
+usmn
+lávluđ
+lávluđ	lávluđ+V+Inf
+
+dsmnNorm 
+lávluđ+V+Der/NomAg+N+Sg+Nom
+lávluđ+V+Der/NomAg+N+Sg+Nom	lávluđ+V+Der/NomAg+N+Sg+Nom	+?
+}}}
+Ferte lasihit/divvut FST (addit +Der/NomAg  leksikonii masa lávluđ manná)
+
+
+!!Leago sme-input riekta?
+
+!Geahččat input:
 * {{echo 'cealkka' | apertium -d. sme-smn-biltrans}}
+** bidix ráddje biltrans-analysa. Jus omd. dihto sátni lea bidix:s dušše adjektiivan, 
+dalle dat ii sáhte oažžut Adv-analysa, vaikko dat livččii rivttes analysa cealkagis
+** {{usme}} čájeha sáni vejolaš analysaid olggobealde bidix
+** jus sátni oažžu boasttu kásusa, omd genitiivva dan sajis go akkusatiivva, de feaila lea sme syntávssalaš analysas
+** dieđit sme-feailla Lenii, Trondii dahje Duommái 
 
-!Geahččat dan maid analysáhtor ii máhte genereret:
-* {{echo 'cealkka' | apertium -d. sme-smn-dgen}}
-
-!Geahččat sme-analysa:
+!Geahččat sme syntávssalaš analysa:
 * {{echo 'cealkka' | apertium -d. sme-smn-disam}}
+
+!!Lexical selection
+Jus lea eanet go okta vejolaš jorgalusa, de sáhttá ráhkadit njuolggadusaid -lrx-fiillas. \\
+Geavat {{echo 'cealkka' | apertium -d. sme-smn-biltrans}} vai oainnát taggaid
+
+
+!!Manne transfer-njuolggadus ii doaimma?
 
 !Geahččat chunkema:
 * {{echo 'cealkka' | apertium -d. sme-smn-chunker}}
 
 
-!Lasihit cealkkapáraid testensiidduide, karakteriseret daid lingvisttalaččat
 
 !!!Disttaga
+
+!!Lasit cealkkapáraid testensiidduide, ja karakterisere daid lingvisttalaččat
+* [sme-smn|http://wiki.apertium.org/wiki/North_Saami_and_Inari_Saami/Pending_tests]
+* [sme-sma|http://wiki.apertium.org/wiki/North_Saami_and_South_Saami/Pending_tests]
+* [sme-smj|http://wiki.apertium.org/wiki/North_Saami_and_Lule_Saami/Pending_tests]
 
 !!3 Giellatekno ja Apertiuma taggaformáhtat
 * Makkár formáhtat
