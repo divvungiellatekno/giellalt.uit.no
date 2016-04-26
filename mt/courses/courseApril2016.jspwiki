@@ -22,11 +22,22 @@ Trond, ML ja Lene leat hupman MT-vahku sisdoalu birra. Dát lea evttohus:
 ** [Buohtastahttin|sjangertest.html]
 
 !!1 Evalueret sme-teavstta MT-jorgalusa
-Jorgalit guokte oanehis teavstta: čáppagirjjálašvuođa teavstta ja čoahkkingirjji:
+!Jorgalit guokte oanehis teavstta: čáppagirjjálašvuođa teavstta ja čoahkkingirjji:
 # {{python check_mt-otpt.py -f pseudo_tmx_data/cahceravgga_sme2smn.tmx}} 
 # {{open otpt_dir/cahceravgga_sme2smn.html}} 
 # {{python check_mt-otpt.py -f pseudo_tmx_data/SP-18-2012_sme2smn.tmx}} 
 # {{open otpt_dir/SP-18-2012_sme2smn.html}} 
+
+!Jorgalit teavstta mii lea juo jorgaluvvon, ja buohtastahttit jorgalusaid:
+Jorgalit dihto fiilla, ja rahpat bohtosa:
+# {{python check_mt-otpt_wer.py -f tmx_data/100writers_sme2smn.tmx}} 
+# {{open otpt_dir/100writers_sme2smn.html}} 
+
+Jorgalit olles máhpa, ja rahpat bohtosa:
+# {{python check_mt-otpt_wer.py -d tmx_data/}} 
+# {{open otpt_dir/xxxxxxxxfilnavnxxxxx.html}} 
+
+
 
 * geahččat násttiid ja hash
 * árvvoštallat gielalaš meattáhusaid
