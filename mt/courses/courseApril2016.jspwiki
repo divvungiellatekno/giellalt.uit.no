@@ -28,16 +28,6 @@ Trond, ML ja Lene leat hupman MT-vahku sisdoalu birra. Dát lea evttohus:
 # {{python check_mt-otpt.py -f pseudo_tmx_data/SP-18-2012_sme2smn.tmx}} 
 # {{open otpt_dir/SP-18-2012_sme2smn.html}} 
 
-!Jorgalit teavstta mii lea juo jorgaluvvon, ja buohtastahttit jorgalusaid:
-Jorgalit dihto fiilla, ja rahpat bohtosa:
-# {{python check_mt-otpt_wer.py -f tmx_data/100writers_sme2smn.tmx}} 
-# {{open otpt_dir/100writers_sme2smn.html}} 
-
-Jorgalit olles máhpa, ja rahpat bohtosa:
-# {{python check_mt-otpt_wer.py -d tmx_data/}} 
-# {{open otpt_dir/xxxxxxxxfilnavnxxxxx.html}} 
-
-
 
 * geahččat násttiid ja hash
 * árvvoštallat gielalaš meattáhusaid
@@ -97,12 +87,14 @@ dalle dat ii sáhte oažžut Adv-analysa, vaikko dat livččii rivttes analysa c
 ** jus sátni oažžu boasttu kásusa, omd. genitiivva dan sajis go akkusatiivva, de feaila lea sme syntávssalaš analysas
 ** dieđit sme-feailla Lenii, Trondii dahje Duommái 
 
-!Geahččat sme syntávssalaš analysa:
+!Geahččat sme syntávssalaš analysa apertiumas:
 * {{echo 'cealkka' | apertium -d. sme-smn-disam}}
 
-!!Lexical selection
-Jus lea eanet go okta vejolaš jorgalusa, de sáhttá ráhkadit njuolggadusaid -lrx-fiillas. \\
-Geavat {{echo 'cealkka' | apertium -d. sme-smn-biltrans}} vai oainnát taggaid
+!Geahččat sme syntávssalaš analysa olggobeal apertiuma:
+Jus buot sánit eai leat mielde bidixis, de lea buoret geavahit dán gohččuma:
+* {{echo 'cealkka' | smedis}}
+
+
 
 
 !!Manne transfer-njuolggadus ii doaimma?
@@ -121,21 +113,84 @@ Geavat {{echo 'cealkka' | apertium -d. sme-smn-biltrans}} vai oainnát taggaid
 
 !!3 Giellatekno ja Apertiuma taggaformáhtat
 * Makkár formáhtat
-* python-skriptat
-* Man dihte erohusat, gos gávdnat daid
+* Man dihte erohusat
+* dáinna gohččumiin oainnát tággaid: \\
+{{echo 'cealkka' | apertium -d. sme-smn-biltrans}} 
 
 
-!!4 Testenbargu
-!python-skripta ovttagielat teavsttaide
-* oahppat dan geavahit
+!!4 Testenbargu: python skripttat
+* python-skripta ovttagielat teavsttaide: {{check_mt-otpt.py}}
+* python-skripta guovttegielat teavsttiade, ja mas lea WER: {{check_mt-otpt_wer.py}}
 
-!python-skripta mas lea BLEU- ja missing-logut
-* oahppat dan geavahit
-* válljet teavsttaid dasa
+!!Jorgalit teavstta mii lea juo jorgaluvvon, ja buohtastahttit jorgalusaid:
+Jorgalit dihto fiilla, ja rahpat bohtosa:
+# {{python check_mt-otpt_wer.py -f tmx_data/100writers_sme2smn.tmx}} 
+# {{open otpt_dir/}} - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
+
+Jorgalit olles máhpa, ja rahpat bohtosa:
+# {{python check_mt-otpt_wer.py -d tmx_data/}} 
+# {{open otpt_dir/xxxxxxxxfilnavnxxxxx.html}} 
+
+!!Jorgalit teavstta mii ii leat jorgaluvvon ovdal:
+Jorgalit dihto fiilla, ja rahpat bohtosa:
+# {{python check_mt-otpt.py -f mappe/file}} 
+# {{open otpt_dir/}} - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
+
+Jorgalit olles máhpa, ja rahpat bohtosa:
+# {{python check_mt-otpt.py -d tmx_data/}} 
+# {{open otpt_dir/}} - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
+
 
 !!5 Buoridit jorgalanfeaillaid
 * Bargat ieš, oažžut bagadeami
 * Lasihit cealkagiid testensiidduide
+
+!!Lexical selection
+Jus lea eanet go okta vejolaš jorgalus, de sáhttá ráhkadit njuolggadusaid -lrx-fiillas. \\
+omd. sämikielâlâš + human vs sämikiel 
+
+Lasit bidixii
+* sámegielat = sämikielâlâš
+* sámegielat = sämikiel
+
+Geavat dán gohččuma vai oainnát taggaid
+* {{echo 'Doppe lea ollu sámegielat olbmot.' | apertium -d. sme-smn-biltrans}} 
+{{{
+^Doppe<adv><sem_plc><@ADVL→>/Tobbeen<adv><sem_plc><@ADVL→>$ 
+^leat<vblex><iv><indic><pres><p3><pl><@+FMAINV>/leđe<vblex><indic><pres><p3><pl><@+FMAINV>$ 
+^ollu<adv><@←ADVL>/ennuv<adv><@←ADVL>$ 
+^sámegielat<adj><sem_hum><attr><@→N>/sämikiel<adj><sem_hum><attr><@→N>/sämikielâlâš<adj><sem_hum><attr><@→N>$ 
+^olmmoš<n><sem_hum><pl><nom><←ext→><@←SUBJ>/olmooš<n><sem_hum><pl><nom><←ext→><@←SUBJ>$
+^.<sent>/.<sent>$^.<sent>/.<sent>$ }}}
+
+Lasit -lrx-fiilii:
+
+{{{
+  <rule weight="1.0">
+    <match lemma="sámegielat">
+      <select lemma="sämikiel"/>
+    </match>
+  </rule>
+
+  <rule weight="0.5">
+    <match lemma="sámegielat">
+      <select lemma="sämikielâlâš"/>
+    </match> 
+  </rule>
+
+  <rule weight="0.6">
+   <match lemma="sámegielat" tags="adj.sem_hum.attr.*">  (sámegielat<adj><sem_hum><attr><@→N>)
+      <select lemma="sämikielâlâš"/>
+   </match>
+<or>
+   <match tags="n.sem_hum.*"/>     (omd. olmmoš<n><sem_hum><pl><nom>)
+   <match tags="n.*.sem_hum.*"/>   (omd. oahpaheaddji<n><sem_hum><pl><nom>)
+ </or>  
+  </rule>
+}}}
+
+
+
 
 !!!Gaskavahku-bearjadaga
 
