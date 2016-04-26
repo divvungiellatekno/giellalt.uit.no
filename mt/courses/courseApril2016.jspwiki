@@ -106,16 +106,16 @@ Jus buot sánit eai leat mielde bidixis, de lea buoret geavahit dán gohččuma:
 
 !!!Disttaga
 
-!!Lasit cealkkapáraid testensiidduide, ja karakterisere daid lingvisttalaččat
-* [sme-smn|http://wiki.apertium.org/wiki/North_Saami_and_Inari_Saami/Pending_tests]
-* [sme-sma|http://wiki.apertium.org/wiki/North_Saami_and_South_Saami/Pending_tests]
-* [sme-smj|http://wiki.apertium.org/wiki/North_Saami_and_Lule_Saami/Pending_tests]
 
 !!3 Giellatekno ja Apertiuma taggaformáhtat
 * Makkár formáhtat
 * Man dihte erohusat
 * dáinna gohččumiin oainnát tággaid: \\
 {{echo 'cealkka' | apertium -d. sme-smn-biltrans}} 
+
+Dahje don sáhtát iskat eaŋkilsániid:
+* {{echo "lohkan" | hfst-lookup .deps/sme.automorf.hfst}}
+* {{echo "luuhâm" | hfst-lookup .deps/smn.automorf.hfst}}
 
 
 !!4 Testenbargu: python skripttat
@@ -143,7 +143,12 @@ Jorgalit olles máhpa, ja rahpat bohtosa:
 
 !!5 Buoridit jorgalanfeaillaid
 * Bargat ieš, oažžut bagadeami
-* Lasihit cealkagiid testensiidduide
+* Lasit cealkkapáraid testensiidduide, ja karakterisere daid lingvisttalaččat
+** [sme-smn|http://wiki.apertium.org/wiki/North_Saami_and_Inari_Saami/Pending_tests]
+** [sme-sma|http://wiki.apertium.org/wiki/North_Saami_and_South_Saami/Pending_tests]
+** [sme-smj|http://wiki.apertium.org/wiki/North_Saami_and_Lule_Saami/Pending_tests]
+
+
 
 !!Lexical selection
 Jus lea eanet go okta vejolaš jorgalus, de sáhttá ráhkadit njuolggadusaid -lrx-fiillas. \\
