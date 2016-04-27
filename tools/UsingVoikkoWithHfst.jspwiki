@@ -9,15 +9,15 @@ The resulting spellers are available both for OpenOffice/LibreOffice, and for co
 
 Languages with analysers working to some degree or better are: 
 
-North Saami, South Saami, Lule Saami, Kven (note! Kven shows up in LibreOffice as "Kashubian")
+North Saami, South Saami, Lule Saami, Inari Saami, Kven,
 Komi Zyrian, Erzya Mordvin, Meadow Mari, Hill Mari, Kven, Faroese, Greenlandic, Tundra Nenets.
 
 * Download and install 
-  [LibreOffice 3.6.2 (the newest version)|http://www.libreoffice.org/download/]
+  [LibreOffice 5.0 or newer (the newest version)|http://www.libreoffice.org/download/]
    - it knows about several FU languages,
   e.g. both Komi Zyrian, Komi Permyak, Erzya Mordvin and Meadow Mari.
-* If you already have this LibreOffice, make sure you do not have Voikko 3.x from 2010 
-  installed, if you do, uninstall it from the menu 
+* (If you already have this LibreOffice, make sure you do not have Voikko 3.x from 2010 
+  installed, if you do, uninstall it from the menu)
   Tools > Extension manager > Voikko (Remove). You should have Voikko 4.1 (or newer)
 * Download and install Voikko LibreOffice plugin with hfst support - either the 
   Finnish, Greenlandic or North Sámi Oxt file from: 
@@ -36,17 +36,13 @@ To build and test:
     sudo make install
 }}}
 
+(The new speller will then turn up in {{/usr/local/share/voikko/3/}} as ''kpv.zhfst'' with today's date.)
+
 2. in LibreOffice, open {{Preferences > Language Settings > Voikko}}
    and check that the newly installed language is listed 
    (and thus known to Voikko+LibreOffice).
 
 
-
-! For other languages not in the langs directory:
-
-{{{
-make -f Makefile.hfst
-}}}
 
 
 !!Using the spellers in OpenOffice / LibreOffice
@@ -82,8 +78,7 @@ Både hfst som ein del av Voikko og hfst-transdusarane våre er langt i frå fer
 
 __Known errors:__
 * OOo-tillegget fungerer BERRE på MacOS X 10.6. og seinare. Det er *ikkje* støtte 
-for 10.5 (enno i alle fall)
-* hfst-stavekontrollen er *deskriptiv*, ikkje normativ - det vil altså vera ein god del ikkje-normativt som blir akseptert
+for eldre operativsystem
 * hfst-stavekontrollen har ein svært rudimentær forslagsmekanisme - oftast vil det ikkje koma forslag i det heile, og når dei kjem er den korrekte rettinga nesten aldri fyrste forslag
 
 Kjende __forbetringar__ i høve til Hunspellstavekontrollane våre:
