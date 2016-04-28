@@ -34,7 +34,7 @@ MT-vuogádaga genereráhtoriin leat dušše sánit mat leat mielde dix-fiillas, 
 Iskka dáid gohččumiid, ja de oainnát mo Apertium bargá cehkiid mielde. Lonut sma = smn jnv.
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-morph}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-disam}}
-# {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-biltrans}}
+# {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-biltrans}}   # sme-analysa
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-chunker}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-interchunk3}}
 # {{echo "Don galggat boahtit skuvlii." | apertium -d . sme-sma-postchunk}}
@@ -71,3 +71,13 @@ Dás oainnát buot vejolaš gohččumiid:
 {{{
 apertium-gen-modes modes.xml
 }}}
+
+!!Missing lists
+
+Leago missing list up to date?  (ovdamearka = smn)
+
+{{cat listanamma | hfst-proc sme-smn.automorf.hfst}}
+
+{{cat dev/sme_FI.N.nocmp.missing |hfst-proc sme-smn.automorf.hfst |grep -v '/\*'|see}}
+
+
