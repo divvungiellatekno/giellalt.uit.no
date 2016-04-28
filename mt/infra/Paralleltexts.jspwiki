@@ -1,15 +1,39 @@
-Mis lea skripta mainna mii sáhttit buohtastahttit cealkagiid mielde: sme, smX ja MT-jorgalusa dahje dušše sme ja MT-jorgalusa (jus ii leat juo jorgaluvvon manuálalaččat). Paraleallateavsttat leat {{tmx_data/}}-máhpas ja anársámegillii maid {{fi.samediggi/}}-máhpas (apsmn).
+!! Genereret jorgalusaid
+Mis lea skriptat mainna mii sáhttit buohtastahttit cealkagiid mielde: 
+* sme, smX ja MT-jorgalusa (parallellateavsttaid)
+* dahje dušše sme ja MT-jorgalusa (jus ii leat juo jorgaluvvon manuálalaččat). 
+
+Paralleallateavsttat leat {{tmx_data/}}-máhpas ja anársámegillii maid {{fi.samediggi/}}-máhpas (apsmn).
+
+!! Testenbargu: python skriptat
+* python-skripta ovttagielat teavsttaide: {{check_mt-otpt.py}}
+* python-skripta guovttegielat teavsttiade, ja mas lea WER: {{wercheck_mt-otpt.py}}
+
+!! Jorgalit paralleallateavsttaid, ja buohtastahttit jorgalusaid:
+Jorgalit dihto fiilla, ja rahpat bohtosa:
+# {{python wercheck_mt-otpt.py -f tmx_data/100writers_sme2smn.tmx}} 
+# {{open otpt_dir/}} - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
+
+Jorgalit olles máhpa, ja rahpat bohtosa:
+# {{python wercheck_mt-otpt.py -d tmx_data/}} 
+# {{open otpt_dir/}} - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
+
+Dahje don sáhtát bidjat buot fiillaid ovtta fiilii ja rahpat buot oktanaga oktan html-fiilan:
+# {{cat otpt_dir/* > buotfiillat.html}} 
+# {{open buotfiillat.html}} (åpnes i Safari)
 
 
-!!sme, smX ja MT-jorgalus (go leat apertium-sme-smX-máhpas)
-* {{python check_mt-otpt.py}} mii vállje tmx_data-máhpa. Jus háliidat válljet eará máhpa, čále omd.
-** {{python check_mt-otpt.py -d fi.samediggi/ }}
-* {{python wercheck_mt-otpt.py}} mii vállje tmx_data-máhpa, ja čálá maid WER-bohtosiid
-* {{cat otpt_dir/* > buotfiillat.html}} 
-* {{open buotfiillat.html}} (åpnes i Safari)
+!!Jorgalit teavstta mii ii leat jorgaluvvon ovdal:
+Jorgalit dihto fiilla, ja rahpat bohtosa:
+# {{python check_mt-otpt.py -f mappe/file}} 
+# {{open otpt_dir/}} - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
+
+Jorgalit olles máhpa, ja rahpat bohtosa:
+# {{python check_mt-otpt.py -d tmx_data/}} 
+# {{open otpt_dir/}} - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
+
+Dahje don sáhtát bidjat buot fiillaid ovtta fiilii ja rahpat buot oktanaga oktan html-fiilan:
+# {{cat otpt_dir/* > buotfiillat.html}} 
+# {{open buotfiillat.html}} (åpnes i Safari)
 
 
-!!sme ja MT-jorgalus (go leat apertium-sme-smX-máhpas)
-* {{python check_mt-otpt.py -d pseudo_tmx_data/ }} 
-* {{cat otpt_dir/* > allefiler.html}} 
-* {{open allefiler.html}} (åpnes i Safari)
