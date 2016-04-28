@@ -194,13 +194,16 @@ Lasit -lrx-fiilii:
   </rule>
 }}}
 
+Nubbi ovdamearka dás: [Lexical selection|../infra/LexicalSelection.html]
 
 
-
-!!!GASKAVAHKU -jnv
+!!!GASKAVAHKU
 
 
 !!6 Hash-listtuiguin bargat
+Hash-listu ráhkaduvvo teavsttaid jorgaleami vuođul, ja buot dábáleamos čuolmmat bohtet listtu bajimussii.
+Nu ahte __čuolmmat sorterejuvvojit frekveanssa mielde__.
+
 Jus don háliidat ráhkadit ođđa hash-listtu ieš, dahje don háliidat ohcat ovdamearkkaid, de fertet
 genereret ođđa jorgalusaid: [genereret jorgalusaid|../infra/Paralleltexts.html]
 
@@ -222,16 +225,33 @@ dev/hash-fi-report.fi
 
 Ulbmil: Ipmirdit ja divvut feaillaid.
 
-Kommandot:
+Gohččumat:
 
 {{{
 cat dev/hash-report.freq |egrep -v '(cmp|<np-d"#" -f2|cut -d"<" -f1|hfst-lookup smj-sme.automorf.hfst |see
 cat dev/hash-report.freq |egrep -v '(cmp|<np>|<top>|der_)'|see
 }}}
 
+!!!DUORASTAGA
 
+!!7 Bidix-sanity
+Bidix-sanity listu ráhkaduvvo bidix-listtu vuođul. __Čuolmmat sorterejuvvojit alfabehtalaččat__.
 
-!!7 Derivašuvnnat
+{{sh bidix-sanity.sh > sanityoutput}} 
+
+Lea vejolaš heivehit sanityoutput nu ahte oaččut listtu mas eai leat namat, 
+ja mas smX-sánit leat sorterejuvvon sáni loahpa mielde. 
+Dalle lea álkit árvvoštallat sániid (seammá sánit bohtet maŋŋálaga) ja maiddái kopieret sániid FST:i.
+
+Go leat {{dev}}-máhpas:
+
+{{sh sortedsanityoutput_withoutprop.txt}}
+
+Loga eanet [bidix-sanity birra|../infra/bidixsanity.html].
+
+!!!BEARJADAGA
+
+!!8 Derivašuvnnat
 * Taggaid harmoniseren (seammá tagga buot gielain)
 
 !Harmoniserte tagger som forteller funksjon:
