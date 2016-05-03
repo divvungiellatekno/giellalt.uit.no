@@ -64,7 +64,7 @@ To include disambiguation of ambiguous multiwords:
 
 {{{
 echo 'sánit, jna. Leago' \
-  | hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc \
+  | hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc.pmhfst \
   | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3
 }}}
 
@@ -72,7 +72,7 @@ To include splitting disambiguated multiwords into their own cohorts:
 
 {{{
 echo 'sánit, jna. Leago' \
-  | hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc \
+  | hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc.pmhfst \
   | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3 \
   | cg-mwesplit
 }}}
@@ -81,7 +81,7 @@ To include regular morphological disambiguation:
 
 {{{
 echo 'sánit, jna. Leago' \
-  | hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc \
+  | hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc.pmhfst \
   | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3 \
   | cg-mwesplit \
   | vislcg3 -g $GTHOME/langs/sme/src/syntax/disambiguation.cg3
@@ -91,7 +91,7 @@ To include regular syntax tagging:
 
 {{{
 echo 'sánit, jna. Leago' \
-  | hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc \
+  | hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc.pmhfst \
   | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3 \
   | cg-mwesplit \
   | vislcg3 -g $GTHOME/langs/sme/src/syntax/disambiguation.cg3 \
@@ -106,7 +106,7 @@ If you use these steps often, you'll probably want to make an alias. Open
 ~/.bashrc in your editor and enter for example
 
 {{{
-alias hsme='hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc'
+alias hsme='hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc.pmhfst'
 alias hsmemwe='hsme | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3'
 alias hsmesplit='hsmemwe | cg-mwesplit'
 }}}
