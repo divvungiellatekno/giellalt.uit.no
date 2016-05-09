@@ -1,0 +1,52 @@
+
+Spellchecker suggestion mechanism documentation
+
+!!Levenshtein transitions
+Each Levenshtein operation is 10 points. 
+
+!!Adjustments to the transitions
+
+!Single letters
+
+editdist.default.txt
+
+In the file, all letters are added.
+
+Thtere is then a mapping from each letter to each other letter.
+The weight for all these transitions is then x.
+
+When the transition pair operation is listed in editdist.default.txt,
+it will get the weight listed __instead__ of 10 points.
+
+!Strings
+
+strings.default.txt
+
+!Words
+
+words.default.txt
+
+Full word pairs will get a weight.
+
+This would come __instead of__ the error models, and
+will always beat it.
+
+!Frequency
+
+spellercorpus.raw.txt
+
+
+A corpus may be used as a frequency weighting mechanism.
+Give the system a correctly spelled corpus.
+You then give least weight to the most frequent wordforms, 
+according to a logarithmic scale (source: Tommi Pirinen).
+Thus, more common words get lower frequency values.
+
+
+You may even take a specialised speller for learners, tuning 
+frequency for a (corrected) learner's corpus.
+
+
+!!Adding it all up
+
+Word weights come instead of 
