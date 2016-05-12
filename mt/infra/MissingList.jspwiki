@@ -33,6 +33,11 @@ ONid    ON+N+ACR+Err/Orth+Pl+Acc+Err/Orth }}}
 
 !Ieš ráhkadit missinglist
 
+Jus leat vuodján python-skripta, de jorgaluvvon teavsttat leat otpt_dir/ -máhpas, ja de sáhtát geavahit skripta:
+
+{{sh star.sh}}
+
+Jus teavsttat eai leat jorgaluvvon
 {{{cat texts/*sme.txt | apertium -d . sme-smn | tr '\t' ' '| tr ' ' '\n' |\
 tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' | usme > dev/missinglist.txt}}}
 
