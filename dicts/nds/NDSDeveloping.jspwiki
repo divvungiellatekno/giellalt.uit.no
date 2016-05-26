@@ -62,3 +62,19 @@ And with the virtual environment active, run the following:
 Note, you do *not* need to run this as a super user, if you do, there are some
 other problems.
 
+!! Beginning a development session
+
+With the environment prepared, you may start work on NDS. However, if you need to set up the environment again, all you need to do is source the virtualenv file
+
+{{{
+    source env/bin/activate
+}}}
+
+... and then start a development server
+
+{{{
+    fab itwewina runserver
+}}}
+
+NB: for some changes to config files you will need to stop and restart the
+development server.
