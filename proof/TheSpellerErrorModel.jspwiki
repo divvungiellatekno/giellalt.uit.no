@@ -77,4 +77,39 @@ tools/spellcheckers/fstbased/desktop/hfst/editdist.default.txt
 }}}
 
 In that file you specify the whole alphabet used for the error model (that is,
-all and only the letters you want to be modified).
+all and only the letters you want to be used when generating correction
+suggestions). The default weight for each modification of the input misspelling
+is specified in the {{Makefile.am}} variable:
+
+{{{
+DEFAULT_WEIGHT=10
+}}}
+
+That is, every letter change is given a default weight of {{10}} (in addition
+to whatever weight is already present, e.g. from the corpus).
+
+One can change this default for individual letters in the alphabet in the
+{{editdist.default.txt}} file (which will then change the weight for all pairs
+involving that letter), or for specific transitions:
+
+{{{
+## Inclusions: this is the real alphabet definition:
+a
+á	5
+b
+c
+č	6
+
+## Transition pairs + weight - section separator:
+@@
+
+## Transition pair specifications:
+a	á	4
+á	a	4
+}}}
+
+In the above fragment, the letters {{a}}, {{b}} and {{c}} will have a default
+weight of {{10}} for all changes involving these letters, whereas changes
+involving {{á}} and {{č}} will have a non-default weight as specified. In
+addition, the change from {{a}} to {{á}} (and the other way around) is given a
+weight of {{-4}}.
