@@ -65,8 +65,10 @@ FINAL_STRING_EDITS=no
 WORD_REPLACEMENTS=no
 }}}
 
-That is, the error model only contains a Levenshtein edit distance 2 error model
-with no additional components. It looks something like this:
+That is, the error model only contains a Levenshtein edit distance {{2}} error
+model with no additional components. It can be illustrated like this (the
+multiplication factor {{2}} is taken from the {{Makefile.am}} variable
+{{EDIT_DISTANCE}}, and {{.#.}} marks the beginning and end of the word):
 
 [../images/SimpleErrorModel.png]
 
