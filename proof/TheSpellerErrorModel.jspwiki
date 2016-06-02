@@ -1,0 +1,80 @@
+This document describes the different parts of the error model used to create
+suggestions for the spellers, how they interact, and how one can turn the
+different parts on and off.
+
+!!!Makefile configurations
+
+The file {{tools/spellcheckers/fstbased/desktop/hfst/Makefile.am}} looks like
+this, with default values as given by the {{und/}} template:
+
+{{{
+# This is the default weight for all editing operations in the error model:
+DEFAULT_WEIGHT=10
+
+# Edit distanse for the Levenshtein error model:
+EDIT_DISTANCE=2
+
+# Define whether we allow changes to the initial letter(s) in the error model,
+# possible values are:
+# * no    - no longer string edits = only the default, letter-based error model
+# * txt   - use only the txt file as source
+# * regex - use only the regex file as source
+# * both  - use both the txt and regex files as sources
+# NB!!! Setting this to anything but 'no' will greatly increase the size and
+# search space of the error model, and thus make it much, much slower. Make sure
+# you TEST the resulting error model properly and thoroughly, both for speed
+# and suggestion quality.
+INITIAL_EDITS=no
+
+# Variable to define whether to enable edits of longer strings (as opposed to
+# single letters). Possible values are:
+# * no    - no longer string edits = only the default, letter-based error model
+# * txt   - use only the txt file as source
+# * regex - use only the regex file as source
+# * both  - use both the txt and regex files as sources
+STRING_EDITS=txt
+# Variable to specify the edit distance for the regex
+# version of the strings file. The total edit distance for those operations is
+# this value multiplied with the value of the DEFAULT_EDIT_DIST variable.
+STRING_REGEX_EDIT_DISTANCE=2
+
+# Variable to define whether to enable edits of word-final strings (as opposed
+# to single letters). Possible values are:
+# * no    - no longer string edits = only the default, letter-based error model
+# * txt   - use only the txt file as source
+# * regex - use only the regex file as source
+# * both  - use both the txt and regex files as sources
+FINAL_STRING_EDITS=no
+
+# Variable to define whether to enable whole-word replacements. Possible values:
+# - yes
+# - no
+WORD_REPLACEMENTS=no
+}}}
+
+The different options are described above in the comments. In the following
+discussion only the relevant options are listed. We'll start with a minimal
+error model:
+
+{{{
+DEFAULT_WEIGHT=10
+EDIT_DISTANCE=2
+INITIAL_EDITS=no
+STRING_EDITS=no
+FINAL_STRING_EDITS=no
+WORD_REPLACEMENTS=no
+}}}
+
+That is, the error model only contains a Levenshtein edit distance 2 error model
+with no additional components. It looks something like this:
+
+[../images/SimpleErrorModel.png]
+
+The file used to specify the letters of the error model is:
+
+{{{
+tools/spellcheckers/fstbased/desktop/hfst/editdist.default.txt
+}}}
+
+In that file you specify the whole alphabet used for the error model (that is,
+all and only the letters you want to be modified).
