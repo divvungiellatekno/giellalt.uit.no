@@ -1,22 +1,20 @@
-!!!Linguistic updates
+__NB!__ Do __NOT__ update the infrastructure without checking with the core
+developers!!!! You should usually not need to touch the infrastructure at all.
+The core maintainers will take care of these things, and the updates will be
+propagated automatically via the svn repository.
 
-There are a couple of templates used to share linguistic resources among a subset of the languages:
+!!!Initial work - the actual changes
 
-* {{smi}} - used to share proper nouns among the Saami languages
-* {{urj-Cyrl}} - used to share proper nouns among the Uralic languages written
-  with the Cyrillic script
+The initial work to develop a new feature or fix a bug is done using your
+favourite language as test case. When the feature or bug fix is working as
+expected, do as follows
 
-These lexical resources should be edited within their templates, and the template merged with the languages using that template.
+* copy the changes to the corresponding files in
+  {{$GTCORE/langs-templates/und/}}
+** make sure you do NOT bring any language-specific things over to the template
+* edit the {{und.timestamp}} file (see next)
 
-__NB!!__ After editing the template resources, you __must__ add a note about the edits in the file:
-
-{{{
-$GTHOME/gtcore/templates/TEMPLATENAME/TEMPLATENAME.timestamp
-}}}
-
-and commit that change. Without an updated timestamp file, the merge script has nothing to base its merging range (version and date info) on, and in practice nothing will be merged.
-
-__Best practice:__ commit your resource updates and the timestamp at the same time, in the same commit. Let the comment in the timestamp file be the same as the commit message. This will make the timestamp file an svn log, which makes it easy to see whether one language is up-to-date or not.
+Now you are ready for the merge.
 
 !!How to edit the und.timestamp file
 
@@ -48,75 +46,67 @@ Then you check in the edited und.timestamp and the files that were changed in
 {{gtcore/langs-templates/und/}}, preferabely __in the same checkin__ and
 __with the same message__ as you added to und.timestamp.
 
-!!Merging a single language
 
-Let's say we want to update myv. The command for that is:
+!!!Preferred: Merge all languages using make
 
-{{{
-cd $GTHOME/langs/myv/
-../../gtcore/scripts/merge-templates.sh --unsafe -t urj-Cyrl
-}}}
-
-We need to turn on the {{--unsafe}} option, otherwise {{.lexc}} files will be ignored. And we should ''always'' specify the template to be merged using the {{-t}} option, to avoid merging in unintended changes.
-
-!!Merging all languages sharing a linguistic resource
-
-To update all languages using a specific template, we run the merge script via another shell script, as follows:
+In each of the {{langs}} directories, do as follows:
 
 {{{
-cd $GTHOME/langs/
-./update-all-from-core.sh --unsafe -t urj-Cyrl
+./autogen.sh
+./configure
+make templatemerge
 }}}
 
-This script will iterate over all language dirs, and merge the changes in the {{urj-Cyrl}} template for every language that contains the file {{urj-Cyrl.timestamp}}. All other languages will be ignored.
+That's it! After the merge:
 
-!!!Infrastructure updates
-
-The infrastructure is updated using the {{und}} template, and is otherwise
-done as above.
-
-__NB!__ Do __NOT__ update the infrastructure without checking with the core
-developers!!! You should usually not need to touch the infrastructure at all.
-The core maintainers will take care of these things, and the updates will be
-propagated automatically via the svn repository.
-
-!!Updating a single language
-
-Steps to take for language {{$GTLANG}}:
-
-# {{cd $GTHOME/langs/$GTLANG/}}
-# {{../../gtcore/scripts/merge-templates.sh}}
-## one can try to add the option {{--unsafe}} to get the script to try to merge
-   some more files than default (e.g. shell scripts, yaml files, etc - it will
-   anyway only merge the files that have been changed or added since the
-   previous merge)
 # check and resolve conflicts, if any
 # check all modifications made
-# commit
+# commit (see details below)
 
-!!Updating all languages in one go
+Please review your changes, so that you won't commit changes that
+do not belong to the merge! To that end, it might be better to have a completely
+separate svn working copy for doing merges only.
 
-# {{cd $GTHOME/langs/}}
-# {{./update-all-from-core.sh}}
-## one can try to add the option {{--unsafe}} to get the script to try to merge some more files than default
-# check and resolve conflicts, if any
-# check all modifications made
-# commit
+Tips for verifying that the merge went well:
 
-!!Updating languages outside $GTHOME/langs/
+* count the number of modified files in the {{und/}} template - check that
+  the number of modified files in each langs dir is the same number times the
+  number of languages in that dir
+* check for conflicts
+* compare the diff for the modified files in the {{und/}} template and the same
+  files in the {{langs/}} dir after the merge - the diff should be identical
 
-There are a couple of language repositories elsewhere in our infra, and it is
-also possible to build a language repository completely outside the
-Giellatekno/Divvun infra, and still use our templating system.
+!!Commit details
 
-In all these cases you need to specify which of the available templates you want
-to merge. The merge/update command thus becomes:
+When committing a merge, try to commit all languages at once as long as the
+changes are relatively small and focused. If the merge covers a major change
+with a lot of modified and new files, it is better to commit in blocks of say
+ten files.
+
+Add a line of the following format on top of the commit message of the {{langs/}}
+dirs:
 
 {{{
-./update-all-from-core.sh -t und --templatecoll langs
+[Template merge - und/langs]
+Your commit message here.
 }}}
 
-In some cases you can get error messages like
+The idea is that we can easily identify these commits later on.
+
+!!Merge options
+
+There are a couple of variables you can set for {{make}} when doing a merge:
+
+{{{
+ USERNAME=abc # needed if you get errors about url mismatch between repo and working copy
+ UNSAFE=yes   # needed if you want to merge changes to modifiable files, like lexc files etc
+ REVISION=123 # explicitly specify the revision to merge from
+}}}
+
+!Option USERNAME
+
+Use the {{USERNAME}} option if you get error messages like the following when
+doing a merge:
 
 {{{
 Copyfrom-url 'https://gtsvn.uit.no/langtech/trunk/gtcore/langs-templates/und/am-shared/tools-spellcheckers-listbased-hunspell-dir-include.am' \
@@ -125,20 +115,111 @@ has different repository root than 'https://USERNAME@gtsvn.uit.no/langtech'
 
 (replace USERNAME with your own username in subversion)
 
-This message is caused by subversion not knowing which user to do the merge
-from, and thus the url's become different. To avoid this error, first revert all
-changes from the failed attempt, and then reissue the merge/update command with
-the addition of a --username option, as follows:
+This message is caused by subversion trying to merge without a username, whereas
+the repository root has a username specified, and thus the url's become
+different. To avoid this error, first revert all changes from the failed attempt
+to get a clean, new start, and then merge again as follows:
 
 {{{
-./update-all-from-core.sh -t und --unsafe --templatecoll langs --username USERNAME
- }}}
+make templatemerge USERNAME=abc    # replace 'abc' with your actual user name
+}}}
 
-!!What if your language is not automatically updated?
+!Option UNSAFE
+
+Give the {{UNSAFE}} variable a value {{yes}} to force merging of source files
+considered dangerous to merge, like lexc files, yaml files, etc. Be prepared for
+a lot of conflicts and manual cleanup afterwards!
+
+{{{
+make templatemerge UNSAFE=yes
+}}}
+
+!Option REVISION
+
+Specify the revision number in the variable {{REVISION}} to force the merge to
+start from that revision number, irrespective of the revision number of the
+latest change to the {{und.timestamp}} file in {{$GTCORE/langs-templates/und/}}.
+This can be used to repair partial merges done earlier, but is seldom needed.
+
+{{{
+make templatemerge REVISION=12345
+}}}
+
+!!Renaming or moving files
+
+The one thing that the merge scrimpt can't do well is to move files after a move
+in the template dir. This is due to limitations in svn merge.
+
+The merge process when moving or renaming files involves one additional step for
+each file being moved or renamed, and the total process becomes:
+
+# change files in the template as needed, including moves and renames
+# commit changes in the template
+# __for each language in each language dir__, move or rename the corresponding file(s)
+# when all files are moved, merge as usual (see above). Ignore errors about files not found
+
+A simple shell script for automating svn moves of files can look like this:
+
+{{{
+#!/bin/bash
+
+# This is a maintenance script to help propagate file moves or renames in the
+# core template to all languages. It loops over all language dirs as defined in
+# the *.am file and svn mv the files specified.
+
+# Extract the list of all languages from the *.am file:
+ALL_LANGS=$(egrep '^ALL_LANGS=' < Makefile.am | sed -e 's/ALL_LANGS=//')
+
+oldfile=$1
+newfile=$2
+
+for ll in $ALL_LANGS ; do
+    if test -d $ll ; then
+        svn mv $ll/$oldfile $ll/$newfile
+    fi
+done
+
+echo
+echo "*** Done: all languages updated. ***"
+echo
+}}}
+
+Store this script in a file, place it in the top {{lang/}} dir, and use it as
+follows:
+
+{{{
+./move-in-svn.sh src/old-file src/new-file
+}}}
+
+Do ''NOT'' specify the language dir (in front of {{src/}} in the example above).
+It is automatically inserted by the shell script.
+
+!!!Updating one language at a time
+
+Steps to take for language {{$GTLANG}}:
+
+# {{cd $GTHOME/langs/$GTLANG/}}
+# {{$GTCORE/scripts/merge-templates.sh}}
+## one can try to add the option {{--unsafe}} to get the script to try to merge
+   some more files than default (e.g. lexc files, yaml files, etc - it will
+   anyway only merge the files that have been changed or added since the
+   previous merge)
+# check and resolve conflicts, if any
+# check all modifications made by the merge
+# commit (see details above)
+
+!!!Updating languages outside $GTHOME/langs/
+
+The process is the same for all language directories, ie directories whose name
+ends in {{langs}}, and which contains the proper {{configure.ac}} and
+{{Makefile.am}} files.
+
+!!!What if your language is not automatically updated?
 
 Make sure that the language code is listed in:
 
 * {{$GTHOME/langs/configure.ac}}
 * {{$GTHOME/langs/Makefile.am }}
 
-If not, add it to the list of language codes in those files.
+If not, add it to the list of language codes in those files. The same holds for
+the same files in the other {{langs}} directories.
