@@ -293,6 +293,14 @@ space and thus speed of the speller. If enabled, consider redusing the editing
 distance to one, and compensate with more targeted additions in the {{strings}}
 and {{final_strings}} files.
 
+Also, as seen below, these edit operations come ''in addition to'' the regular
+Levenshtein model (and final_strings operations), which means that the effective
+editing distance of an error model with {{INITIAL_EDITS}} on,
+{{EDIT_DISTANCE=2}} and {{FINAL_STRING_EDITS}} enabled is __four__. That is a
+very powerful model, and one that is likely to be way too slow. Reducing
+{{EDIT_DISTANCE}} to {{1}} will substantially limit the error model, and thus
+improve suggestion speed.
+
 The possible values for the {{INITIAL_EDITS}} variable are:
 
 ;''no''    : no {{INITIAL_EDITS}} operations
