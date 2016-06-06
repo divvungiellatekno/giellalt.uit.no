@@ -128,10 +128,10 @@ The {{STRING_EDITS}} variable governs whether longer stretches than single
 characters (ie strings) can be changed in one editing operation. It has four
 possible values:
 
-;''no''    : no STRING_EDITS operations
-;''txt''   : STRING_EDITS taken from a txt file
-;''regex'' : STRING_EDITS taken from a regex file
-;''both''  : STRING_EDITS taken from both a txt and  a regex file
+;''no''    : no {{STRING_EDITS}} operations
+;''txt''   : {{STRING_EDITS}} taken from a txt file
+;''regex'' : {{STRING_EDITS}} taken from a regex file
+;''both''  : {{STRING_EDITS}} taken from both a txt and a regex file
 
 !!STRING_EDITS=txt
 
@@ -227,4 +227,57 @@ Beware that when using both the txt and the regex strings extensions to the
 Levenshtein model, there is a risk that the total error model becomes too large
 and powerful. This will be noticable through sluggish suggestion speed. To avoid
 this issue, make sure you only include strings and string patterns that are
-frequent and have a good effect on suggestion quality.
+frequent and have a good effect on suggestion quality. Also have a look at the
+error model file size.
+
+!!!Increasing the complexity - adding FINAL_STRING_EDITS
+
+This part of the error model is meant to cover errors in suffixes. It comes
+''in addition to'' the previous Levenshtein + strings error model, which means that with {{EDIT_DISTANCE=2}}, you get two edit operations (Levenshtein or string) ''pluss'' one suffix operation. This will normally not be a problem since the changes are restricted to the final parts of the word, and thus the search space for the error model does not increase very much.
+
+The possible values for this variable are the same as for {{STRING_EDITS}}:
+
+;''no''    : no {{FINAL_STRING_EDITS}} operations
+;''txt''   : {{FINAL_STRING_EDITS}} taken from a txt file
+;''regex'' : {{FINAL_STRING_EDITS}} taken from a regex file
+;''both''  : {{FINAL_STRING_EDITS}} taken from both a txt and a regex file
+
+Each of these values has the same meaning and consequence as for
+{{STRING_EDITS}}.
+
+!!FINAL_STRING_EDITS=txt
+
+{{{
+EDIT_DISTANCE=2
+STRING_EDITS=both
+STRING_REGEX_EDIT_DISTANCE=2
+FINAL_STRING_EDITS=txt
+}}}
+
+[../images/ErrorModelWithFinalStrings.png]
+
+!!FINAL_STRING_EDITS=regex
+
+{{{
+EDIT_DISTANCE=2
+STRING_EDITS=both
+STRING_REGEX_EDIT_DISTANCE=2
+FINAL_STRING_EDITS=regex
+}}}
+
+[../images/ErrorModelWithFinalRegex.png]
+
+!!FINAL_STRING_EDITS=both
+
+{{{
+EDIT_DISTANCE=2
+STRING_EDITS=both
+STRING_REGEX_EDIT_DISTANCE=2
+FINAL_STRING_EDITS=both
+}}}
+
+[../images/ErrorModelWithFinalBoth.png]
+
+The same warning applies in this case as with the {{STRING_EDITS}} — if you use
+both the {{txt}} and the {{regex}} files, make sure to test for speed and size
+issues.
