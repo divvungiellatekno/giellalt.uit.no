@@ -56,6 +56,8 @@ The different options are described above in the comments. In the following
 discussion only the relevant options are listed. We'll start with a minimal
 error model:
 
+!!!A minimal error model
+
 {{{
 DEFAULT_WEIGHT=10
 EDIT_DISTANCE=2
@@ -65,12 +67,16 @@ FINAL_STRING_EDITS=no
 WORD_REPLACEMENTS=no
 }}}
 
-That is, the error model only contains a Levenshtein edit distance {{2}} error
+That is, the error model contains only a Levenshtein edit distance {{2}} error
 model with no additional components. It can be illustrated like this (the
 multiplication factor {{2}} is taken from the {{Makefile.am}} variable
 {{EDIT_DISTANCE}}, and {{.#.}} marks the beginning and end of the word):
 
 [../images/SimpleErrorModel.png]
+
+(Strictly speaking, the error model could have been even simpler, by specifying
+an edit distance of one. But that will in most cases produce a very bad speller,
+so we stick to the default editing distance 2 default value.)
 
 The file used to specify the letters of the error model is:
 
@@ -115,3 +121,63 @@ weight of {{10}} for all changes involving these letters, whereas changes
 involving {{á}} and {{č}} will have a non-default weight as specified. In
 addition, the change from {{a}} to {{á}} (and the other way around) is given a
 weight of {{4}}.
+
+!!!Slightly more complex - adding STRING_EDITS
+
+The {{STRING_EDITS}} variable governs whether longer stretches than single
+characters (ie strings) can be changed in one editing operation. It has four
+possible values:
+
+;''no''    : no STRING_EDITS operations
+;''txt''   : STRING_EDITS taken from a txt file
+;''regex'' : STRING_EDITS taken from a regex file
+;''both''  : STRING_EDITS taken from both a txt and  a regex file
+
+!!STRING_EDITS=txt
+
+Using a txt file as the input file for {{STRING_EDITS}} operations, you edit
+a very simple data structure:
+
+{{{
+gi:giija	-2
+riikka:rihká	-2
+rg:rgg	-2
+rgg:rg	-2
+}}}
+
+The format is:
+
+* input string
+* colon
+* output string to replace the input string
+* TAB
+* weight specification (numeric type real)
+
+The intended use is to replace sequences of characters that typically get
+spelled wrongly with their correct counterpart, such that the expected
+suggestions appear on top or among the top 5. This can be useful also in cases
+where the actual editing distance between input and output is only one, e.g.
+when the error is part of a regular but context-restricted pattern.
+
+The filename for this file is: {{strings.default.txt}}. The {{default}} part
+can be replaced with names for alternative writing systems or orthographies, to
+be used in spellers for those writing systems or orthographies.
+
+The string pairs in this file is compiled in as a parallel fst to the
+Levenshtein edit distance model, and the editing distance variable is applied to
+both. That is, with the following setup:
+
+{{{
+EDIT_DISTANCE=2
+STRING_EDITS=txt
+}}}
+
+we get an error model that could be illustrated as follows:
+
+[../images/ErrorModelWithStrings.png]
+
+!!STRING_EDITS=regex
+
+The file for the regex string editing model is: {{strings.default.regex}}.
+
+!!STRING_EDITS=both
