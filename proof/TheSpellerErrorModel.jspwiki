@@ -373,6 +373,17 @@ The possible values for the {{WORD_REPLACEMENTS}} variable are:
 ;''no''    : no {{WORD_REPLACEMENTS}} operations
 ;''yes''   : enable {{WORD_REPLACEMENTS}}
 
+Expanding on the settings fragment used throughout, we get the following:
+
+{{{
+EDIT_DISTANCE=2
+INITIAL_EDITS=both
+STRING_EDITS=both
+STRING_REGEX_EDIT_DISTANCE=2
+FINAL_STRING_EDITS=both
+WORD_REPLACEMENTS=yes
+}}}
+
 When enabled, the file is compiled into an fst that is applied outside the rest
 of the error model:
 
