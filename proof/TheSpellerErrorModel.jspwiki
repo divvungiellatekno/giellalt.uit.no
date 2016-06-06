@@ -281,3 +281,103 @@ FINAL_STRING_EDITS=both
 The same warning applies in this case as with the {{STRING_EDITS}} — if you use
 both the {{txt}} and the {{regex}} files, make sure to test for speed and size
 issues.
+
+!!!Maximum complexity - adding INITIAL_EDITS
+
+__NB!__ This is an experimental feature, and is not guaranteed to work as
+intended.
+
+The purpose of this variable is to allow for special treatment of the initial
+letter(s) of the misspellings. This has a huge price, though, in terms of search
+space and thus speed of the speller. If enabled, consider redusing the editing
+distance to one, and compensate with more targeted additions in the {{strings}}
+and {{final_strings}} files.
+
+The possible values for the {{INITIAL_EDITS}} variable are:
+
+;''no''    : no {{INITIAL_EDITS}} operations
+;''txt''   : {{INITIAL_EDITS}} taken from a txt file
+;''regex'' : {{INITIAL_EDITS}} taken from a regex file
+;''both''  : {{INITIAL_EDITS}} taken from both a txt and a regex file
+
+Each of these values has the same meaning and consequence as for
+{{STRING_EDITS}}. The files to edit are {{initial_letters.default.*}}.
+
+!!INITIAL_EDITS=txt
+
+{{{
+EDIT_DISTANCE=2
+INITIAL_EDITS=txt
+STRING_EDITS=both
+STRING_REGEX_EDIT_DISTANCE=2
+FINAL_STRING_EDITS=both
+}}}
+
+[../images/ErrorModelWithInitLtrs.png]
+
+!!INITIAL_EDITS=regex
+
+{{{
+EDIT_DISTANCE=2
+INITIAL_EDITS=regex
+STRING_EDITS=both
+STRING_REGEX_EDIT_DISTANCE=2
+FINAL_STRING_EDITS=both
+}}}
+
+[../images/ErrorModelWithInitRegex.png]
+
+!!INITIAL_EDITS=both
+
+{{{
+EDIT_DISTANCE=2
+INITIAL_EDITS=both
+STRING_EDITS=both
+STRING_REGEX_EDIT_DISTANCE=2
+FINAL_STRING_EDITS=both
+}}}
+
+[../images/ErrorModelWithInitBoth.png]
+
+!!!Complete madness - adding WORD_REPLACEMENTS
+
+Actually, that might not be a bad idea. Enabling {{WORD_REPLACEMENTS}} does not
+really add to the complexity of the error model, but it allows targeted
+promotion of individual words on the suggestion list, words with known and
+frequent misspellings. To that end you can add misspelled words and their
+corrections to the file {{words.default.txt}}, in the following format:
+
+{{{
+oahppiin:ohppiin	-10
+váiloje:váilo	-10
+maŋge:mange	-10
+}}}
+
+The format is:
+* misspelled word
+* colon
+* correct word
+* TAB
+* weight
+
+The possible values for the {{WORD_REPLACEMENTS}} variable are:
+
+;''no''    : no {{WORD_REPLACEMENTS}} operations
+;''yes''   : enable {{WORD_REPLACEMENTS}}
+
+When enabled, the file is compiled into an fst that is applied outside the rest
+of the error model:
+
+[../images/ErrorModelWithWords.png]
+
+!!!Final words
+
+DO NOT ENABLE EVERYTHING! That will very, very likely make the error model size
+explode, and make the speller so slow that it can't be used. Exactly which files
+and what features are needed will vary from language to language, and has to be
+tested on a case by case basis.
+
+The goal of a good speller is to always suggest the correct thing, or something
+sensible and close to the correct thing, but do not try to overdo this - it is
+better to not suggest something, than to need several seconds to be able to
+suggest.
