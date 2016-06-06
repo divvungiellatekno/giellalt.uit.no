@@ -151,7 +151,7 @@ The format is:
 * colon
 * output string to replace the input string
 * TAB
-* weight specification (numeric type real)
+* weight specification (numeric type ''real'')
 
 The intended use is to replace sequences of characters that typically get
 spelled wrongly with their correct counterpart, such that the expected
@@ -172,12 +172,53 @@ EDIT_DISTANCE=2
 STRING_EDITS=txt
 }}}
 
-we get an error model that could be illustrated as follows:
+we get an error model that can be illustrated as follows:
 
 [../images/ErrorModelWithStrings.png]
 
+{{EDIT_DISTANCE=2}} means that one can correct up to two errors in the input
+word, each of which can be either a regular Levenshtein operation or a string
+replacement operation.
+
 !!STRING_EDITS=regex
 
-The file for the regex string editing model is: {{strings.default.regex}}.
+The file for the regex string editing model is: {{strings.default.regex}}. The
+content of that file is a standard Xerox-style regular expression, with an
+additional Hfst weight specification:
+
+{{{
+{øø} -> {öö}::0 ,
+ ø   ->  {ö}::0 ;
+}}}
+
+With the Makefile.am variables set as follows:
+
+{{{
+EDIT_DISTANCE=2
+STRING_EDITS=regex
+STRING_REGEX_EDIT_DISTANCE=2
+}}}
+
+we get an error model that looks like:
+
+[../images/ErrorModelWithRegex.png]
+
+The variable {{STRING_REGEX_EDIT_DISTANCE}} regulates how many times the regex
+file is applied - __on top of__ the EDIT_DISTANCE variable. With the values
+specified above, you can have ''four'' changes applied to the input word, as
+long as all changes are covered by the {{strings.default.regex}} error model.
 
 !!STRING_EDITS=both
+
+In this case both the {{txt}} and {{regex}} files are included. With the
+following settings:
+
+{{{
+EDIT_DISTANCE=2
+STRING_EDITS=both
+STRING_REGEX_EDIT_DISTANCE=2
+}}}
+
+we get the following error model:
+
+[../images/ErrorModelWithBoth.png]
