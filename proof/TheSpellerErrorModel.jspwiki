@@ -222,3 +222,9 @@ STRING_REGEX_EDIT_DISTANCE=2
 we get the following error model:
 
 [../images/ErrorModelWithBoth.png]
+
+Beware that when using both the txt and the regex strings extensions to the
+Levenshtein model, there is a risk that the total error model becomes too large
+and powerful. This will be noticable through sluggish suggestion speed. To avoid
+this issue, make sure you only include strings and string patterns that are
+frequent and have a good effect on suggestion quality.
