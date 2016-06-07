@@ -13,13 +13,13 @@ Nginx may be started whenever, and ideally will be running already.
 Mongodb must be running first, so that the Python processes can
 connect.
 
-!! The steps
+!! Starting the service
 
 Do this as your regular user account, thus the sudo password will be your usual
 sudo password.
 
 {{{
-    sudo service gielese_mongodb start
+    sudo service gielese-mongodb start
 }}}
 
 2.) Then if all is good... 
@@ -31,3 +31,14 @@ sudo password.
 
 NB: commands accepted by these processes are also stop, and restart; however,
 make sure to start mongodb first, otherwise the gielese process will not start.
+
+!! Restarting the services
+
+The order to restart these is such that the web service is not running without mongo, thus:
+
+{{{
+    sudo service gielese stop
+    sudo service gielese-mongodb stop
+    sudo service gielese-mongodb start
+    sudo service gielese start
+}}}
