@@ -8,29 +8,31 @@ What to do if ...
 
 * For the ''gtsvn, gtlab, gtoahpa, gtweb'' servers at uit.no
 ** Call ''IT, Seksjon for applikasjoner og tjenester'' (see plan/admin/emergency.txt)
-* For the ''divvun.no'' server
+* For the xserve, the ''divvun.no'' server
 ** Call Børre Gaup (the server is in the cellar under the A wing, second door to the left)
 
 !!Restart processes afterward
 
 The following processes need to be restarted, and in the following way.
 
-* [instructions for gtweb (interactive web programs, MT and NDS)|../../ped/common/httpdserversgtweb.html]
+* [instructions for gtweb (interactive web programs, MT, webdicts and NDS)|../../ped/common/httpdserversgtweb.html]
 * [instructions for gtoahpa (oahpa.no, NDS and Konteaksta)|../../ped/common/httpdserver.html]
 * [instructions for gtlab (testing.oahpa.no and VIEW (Russian Konteaksta))|../../ped/common/GtlabRestart.html]
 * [instructions for restarting nginx|../../ped/common/RestartingNginx.html]
-* [instructions for Neahttadigisánit|../dicts/nds/NDSUpdatingDictionaries.html]
-* [instructions for Gïelese|../apps/gielese/GieleseRestarting.html]
+* [instructions for Gïelese|../apps/gielese/GieleseRestarting.html] (TODO: Update documentation)
 ** Look for commands with ''restart...''
-* Instructions for gtsvn (to be written)
-* Instructions for the interactive web servers (tbw.)
-* Instructions for forrest (tbw.)
+* [Instructions for gtsvn|gtsvn.html] 
+* [When the webpages are not rebuilt|SiteBuildProblems.html]
+* [Instructions for xserve|xserve.html] (SubEthaEdit, Jabber, Bugzilla)
 
 !!Test that everything is ok
 
 (tbw.)
 
+(We want automatic testing of web service availability.)
+
 !!!A server is very slow
+
 * Log in to the machine via ssh and find out which processes are using most CPU resource by giving the command:
 {{{
     top
@@ -64,7 +66,10 @@ If it is an Oahpa (python2.7) process then you can see from this output which Oa
 !!!Analysers do not work
 
 * The analysers are in /opt/smi. Check that they work, and recompile if they don't.
+** One possible error source is mismatch between compiled programs and compilers that
+   use them. The pipeline is documented in [the cgi-bin documentation|docu-cgi-bin.html].
 ** The naming conventions for fsts when compiled ("new") and in the web directories ("old") [are found here|infraremake/FstNamesInOldAndNewInfra.html]
+
 
 !!!The svn application is down, yet the gtsvn server is up-n-running (test it by logging into the server)
 
