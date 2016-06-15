@@ -1,4 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
 <title>
 CVS administration</title>
@@ -15,22 +14,22 @@ CVS administration</title>
 
 
 As part of the installation routine, every new user is assigned to the group "cvs". 
-Add the new user to the group cvs.<p>
+Add the new user to the group cvs.</p><p>
 
-Run the command<p>
+Run the command</p><p>
 
-cvs -d /usr/local/cvs/repository/ co gt <p>
+cvs -d /usr/local/cvs/repository/ co gt </p><p>
 
-(This might work for the user, without root privileges, I am not sure). What does work is the following:<p>
+(This might work for the user, without root privileges, I am not sure). What does work is the following:</p><p>
 
-Be root. Go to the home directory of the new user. Write "cvs get gt".<p>
+Be root. Go to the home directory of the new user. Write "cvs get gt".</p><p>
 
-Cf. Eero's explanation:<p>
+Cf. Eero's explanation:</p><p>
 
-<pre>
+</p><pre>
 [root@gitek cvsrep]# groups sjur
 sjur : sjur
-Aha. Sjur ei ole ryhm�ss� lingsoft, jolla on oikeudet gt-hakemistoon.
+Aha. Sjur ei ole ryhm&#65533;ss&#65533; lingsoft, jolla on oikeudet gt-hakemistoon.
 
 [root@gitek cvsrep]# groups kristin
 kristin : kristin
@@ -38,7 +37,7 @@ kristin : kristin
 [root@gitek cvsrep]# groups kristin
 kristin : kristin lingsoft
 
-Nyt pit�isi toimia:
+Nyt pit&#65533;isi toimia:
 
 [root@gitek cvsrep]# su -l sjur
 [sjur@gitek sjur]$ cvs get gt
@@ -46,11 +45,11 @@ cvs checkout: Updating gt
 cvs checkout: Updating gt/doc
 <......>
 
-Jep, toimii. Nyt Kristinin pit�isi saada tiedostot ulos komentamalla
+Jep, toimii. Nyt Kristinin pit&#65533;isi saada tiedostot ulos komentamalla
 cvs get gt
 
 
-<hr>
+<hr/>
 
 <p>This is a command that perhaps is irrelevant?</p>
 
@@ -60,9 +59,9 @@ drwxrwsr-x   10 trond    lingsoft     4096 feb 15 17:42 gt
 </pre>
 
 
-</pre>
+</......></pre>
 
-<hr>
+<hr/>
 <address>Eero Taipale</address>
 <!-- hhmts start -->
 Last modified: Fri Feb 21 09:59:36 GMT 2003

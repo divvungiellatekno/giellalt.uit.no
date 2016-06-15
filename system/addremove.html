@@ -1,4 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
 <title>Adding and removing users</title>
 </head>
@@ -11,23 +10,23 @@ name, do the following:</p>
 
 <p>You will need <i>nnnnn</i>, the next free uid number, the numbers start with
 10000 for trond. Check out the next number by typing <code>tail
-/etc/passwd</code>. Say it is 501.<p>
+/etc/passwd</code>. Say it is 501.</p><p>
 
-<p>Then make the group laila:</p>
+</p><p>Then make the group laila:</p>
 
 <p><code>/usr/sbin/groupadd -g 501 laila</code></p>
 
 <p>Then make the new user. Write the following command.  It shall be written in one line,
 but is here written on multiple lines for readability. </p>
 <p>
-<pre>
+</p><pre>
  /usr/sbin/useradd
  -u 501 
  -g 501 
  -G cvs 
  -c "Laila Sara, Samisk inst."  
  laila
-</pre></p>
+</pre>
 
 <p>The user must own her own catalogue, but others may want to read it. This is achieved by writing:</p>
 
@@ -65,25 +64,25 @@ dscl . -passwd /Users/luser password
 You'll have to create /Users/luser for the user's home directory and 
 change ownership so the user can access it, and be sure that the 
 UniqueID is in fact unique (via the command id 1010 etc.)
-</pre></p>
+</p></pre>
 
 <p>This line will add the user to the administrator's group:</p>
 
-<p><pre>
+<p/><pre>
 dscl . -append /Groups/admin GroupMembership luser
-</pre></p>
+</pre>
 
 <h1>Removing users on linux</h1>
 
 <p>For removing (in this example the user laila), be root, and use this
 command (-r removes the files of the user al well):</p>
 
-<p><pre>
+<p/><pre>
 /usr/sbin/userdel -r laila
 rm -r /export/home/laila
 cd /var/yp
 make 
-</pre></p>
+</pre>
 
 <p>A general warning: The commands that the manuals say should work, do
 work, if you just write /sbin/ in front of them, i.e. prbably
@@ -93,8 +92,8 @@ work, if you just write /sbin/ in front of them, i.e. prbably
 
 
 
-<hr>
-<address></address>
+<hr/>
+<address/>
 <!-- hhmts start -->
 Last modified: Fri Nov 26 15:50:23 2004
 <!-- hhmts end -->

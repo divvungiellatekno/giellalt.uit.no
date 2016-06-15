@@ -1,4 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
 <title>
 CVS administration</title>
@@ -13,17 +12,17 @@ CVS administration</title>
 
 Run the command<p>
 
-cvs -d /usr/local/cvs/repository/ co gt <p>
+cvs -d /usr/local/cvs/repository/ co gt </p><p>
 
-Copying Eero's commands:<p>
+Copying Eero's commands:</p><p>
 
-<pre>
+</p><pre>
 [root@gitek cvsrep]# ls -lart gt
 drwxrwsr-x   10 trond    lingsoft     4096 feb 15 17:42 gt
 [root@gitek cvsrep]# groups sjur
 sjur : sjur
 
-Aha. Sjur ei ole ryhmässä lingsoft, jolla on oikeudet gt-hakemistoon.
+Aha. Sjur ei ole ryhmslingsoft, jolla on oikeudet gt-hakemistoon.
 
 [root@gitek cvsrep]# groups kristin
 kristin : kristin
@@ -31,7 +30,7 @@ kristin : kristin
 [root@gitek cvsrep]# groups kristin
 kristin : kristin lingsoft
 
-Nyt pitäisi toimia:
+Nyt pitsi toimia:
 
 [root@gitek cvsrep]# su -l sjur
 [sjur@gitek sjur]$ cvs get gt
@@ -40,17 +39,17 @@ cvs checkout: Updating gt/doc
 U gt/doc/book.pdf_1.pdf
 <......>
 
-Jep, toimii. Nyt Kristinin pitäisi saada tiedostot ulos komentamalla
+Jep, toimii. Nyt Kristinin pitsi saada tiedostot ulos komentamalla
 cvs get gt
 
-</pre>
+</......></pre>
 
 <h2>Add a new directory to the cvs</h2>
 
 (How can I add a new directory if I want to widen the project to other, non-sami languages, but keep them separate from the sami files? A new directory, parallel to gt?)<p>
 
 
-<hr>
+</p><hr/>
 <address>Eero Taipale</address>
 <!-- hhmts start -->
 Last modified: Tue Mar 19 08:10:14 CET 2002

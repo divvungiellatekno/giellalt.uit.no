@@ -1,11 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
 <head>
-	<title>Testing tools for the s&aacute;mi LT project</title>
+	<title>Testing tools for the s&#225;mi LT project</title>
 </head>
 
 <body>
-	<h1>Testing tools for the s&aacute;mi language technology project</h1>
+	<h1>Testing tools for the s&#225;mi language technology project</h1>
 	
 	<h2>- Technical documentation -</h2>
 	
@@ -50,14 +49,14 @@
 			filenames are not hardcoded, but given by the Makefile):
 			<ul>
 				<li><code>noun-codes.txt</code>
-				<li><code>verb-codes.txt</code>
-				<li><code>adj-codes.txt</code>
-			</ul>
-		<li>
+				</li><li><code>verb-codes.txt</code>
+				</li><li><code>adj-codes.txt</code>
+			</li></ul>
+		</li><li>
 			<code>ARG2:	</code>input file with inflected word forms, in the
 			same order as the tags; two or more alternate word forms on the
 			same line, separated by a comma ONLY
-	</ul>
+	</li></ul>
 	
 	<h4>Output stream:</h4>
 	
@@ -67,15 +66,15 @@
 	<ul>
 		<li>
 			<code>Field 1: </code>the baseform of the word
-		<li>
+		</li><li>
 			<code>Field 2: </code>a morphological tag
-		<li>
+		</li><li>
 			<code>Field 3: </code>the word form(s) corresponding to the tag; in the case of
          two or more alternative word forms, they are separated by
          a comma ONLY (no space).
-	</ul>
+	</li></ul>
 	
-	<h3>Usage</H3>
+	<h3>Usage</h3>
 	
 	<p>Used in front of one of:</p>
 	
@@ -103,13 +102,13 @@
 			filenames are not hardcoded, but given by the Makefile):
 			<ul>
 				<li><code>noun-codes.txt</code>
-				<li><code>verb-codes.txt</code>
-				<li><code>adj-codes.txt</code>
-			</ul>
-		<li>
+				</li><li><code>verb-codes.txt</code>
+				</li><li><code>adj-codes.txt</code>
+			</li></ul>
+		</li><li>
 			<code>ARG2:	</code>a word in its base form. The word has to
 			belong to one of the major POSes N, A or V.
-	</ul>
+	</li></ul>
 	
 	<h4>Output stream:</h4>
 	
@@ -117,7 +116,7 @@
 	There is one such combination on each line.
 	</p>
 	
-	<h3>Usage</H3>
+	<h3>Usage</h3>
 	
 	<p>The output can be directly used as input for <code>xfst</code>, to
 	generate the word forms that make up the paradigm.</p>
@@ -137,14 +136,14 @@
 	inflectional codes, and word form(s) corresponding to the inflectional
 	codes.
 	
-	<h4>Output stream:</h4>
+	</p><h4>Output stream:</h4>
 	
 	<p>Test file for word form generation testing: one line for each
 	inflection, consisting of baseform and inflectional codes appended. This
 	is the input format required by the Xerox <code>xfst</code> tool.
 	</p>
 	
-	<h3>Usage</H3>
+	<h3>Usage</h3>
 	
 	<p>Use as input to the Xerox <code>xfst</code> tool (done in the
 	Makefile).</p>
@@ -169,7 +168,7 @@
 	tools, extracted from the testbase file. One word form on each line.
 	</p>
 	
-	<h3>Usage</H3>
+	<h3>Usage</h3>
 	
 	<p>Use the output of this script to diff against the actual test result
 	(done in the Makefile). Any differences indicate possible errors in the
@@ -200,13 +199,13 @@
 	
 	<ul>
 		<li><strong>Field 1:</strong> Wordform
-		<li><strong>Field 2:</strong> Baseform+Codes
-	</ul>
+		</li><li><strong>Field 2:</strong> Baseform+Codes
+	</li></ul>
 	
 	<p>In cases where there are more than one alternative wordform, they
 	have been split onto separate lines.
 	
-	<h3>Usage</H3>
+	</p><h3>Usage</h3>
 	
 	<p>Use to create the basis for word form analysis testing. Further
 	sorting and cutting (field 1 as test data, field 2 as facit data) is
@@ -222,9 +221,9 @@
 	
 	<ul>
 		<li>Flow diagram for testing
-		<li>Variables
-		<li>Main sections of the Makefile
-	</ul>
+		</li><li>Variables
+		</li><li>Main sections of the Makefile
+	</li></ul>
 	
 	<h4>Flow diagram for testing</h4>
 	
@@ -234,7 +233,7 @@
 	
 <pre>
             -----------    ===========           The corresponding
-   "Files", | Scripts |  & || Tools ||              <strong>make</strong> target
+   "Files", | Scripts |  &amp; || Tools ||              <strong>make</strong> target
 ==================================================================
 "noun-codes.txt"  "n-even-col6-ie-full.txt"
         \                 |
@@ -298,8 +297,7 @@
 	the Makefile.</p>
 	
 	<p>The scheme for paradigm generation is much simpler, and it should be
-	possible to read the Makefile directly. If not, <a
-	href="mailto:sjurnm@mac.com">complain to me!</a></p>
+	possible to read the Makefile directly. If not, <a href="mailto:sjurnm@mac.com">complain to me!</a></p>
 	
 	<h4>Variables Used</h4>
 	
@@ -309,33 +307,33 @@
 	
 	<dl>
 		<dt>$@
-		<dd>
+		</dt><dd>
 			Contains the name of the target, is often used to redirect
 			output to a file named the same as the target.
-		<dt>%
-		<dd>
+		</dd><dt>%
+		</dt><dd>
 			(Strictly speaking not a variable:) Wildcard in target and
 			dependency statements. When used as a
 			wildcard in a target, the string it represents will be inserted
 			in its place in names of dependencies. Often used to make one
 			target for many similarly named files/targets.
-		<dt>$<
-		<dd>
+		</dd><dt>$&lt;
+		</dt><dd>
 			Represents the <strong>first</strong> element in a list of
 			dependencies.
-		<dt>$^
-		<dd>
+		</dd><dt>$^
+		</dt><dd>
 			Holds the name of <strong>all</strong> dependencies.
-		<dt>$*
-		<dd>
+		</dd><dt>$*
+		</dt><dd>
 			Holds the string matched by % in a target name.
-		<dt>MAKE
-		<dd>
+		</dd><dt>MAKE
+		</dt><dd>
 			Holds the pathname of the <code>make</code> program used. This
 			is useful f.ex. when starting a <code>make</code> command in
 			another directory from within a Makefile, to ensure they are
 			using the same <code>make</code>.
-	</dl>
+	</dd></dl>
 	
 	<h5>Variables I have defined</h5>
 	
@@ -343,39 +341,39 @@
 	
 	<dl>
 		<dt>SHELL
-		<dd>
+		</dt><dd>
 			The location of the shell program. The use of this variable
 			(set to this value) is recommended in the <code>make</code>
 			documentation. That's why.
-		<dt>BINDIR
-		<dd>
+		</dd><dt>BINDIR
+		</dt><dd>
 			The location of the directory that holds the scripts used in
 			testing.
-		<dt>TEMP
-		<dd>
+		</dd><dt>TEMP
+		</dt><dd>
 			The location of the directory for storing temporary files (so
 			that it can easily be redefined).
-		<dt>SAVEFILE
-		<dd>
+		</dd><dt>SAVEFILE
+		</dt><dd>
 			A variable containing the (computed) name of the save file used
 			during testing. The computed content of this variable makes the
 			reference to the save file language independent.
-		<dt>UMASK
-		<dd>
+		</dd><dt>UMASK
+		</dt><dd>
 			Something I have copied from a Lingsoft makefile. I do not
 			understand exactly what it does, and whether we need it. It does
 			not seem to do any harm, so it is left for the time being.
-		<dt>WORD
-		<dd>
+		</dd><dt>WORD
+		</dt><dd>
 			An empty variable to be filled/set by the user (on the command
 			line) when generating a paradigm.
-		<dt>NGenFiles<br>
-			NAnaFiles<br>
-			VGenFiles<br>
-			VAnaFiles<br>
-			AGenFiles<br>
+		</dd><dt>NGenFiles<br/>
+			NAnaFiles<br/>
+			VGenFiles<br/>
+			VAnaFiles<br/>
+			AGenFiles<br/>
 			AAnaFiles
-		<dd>
+		</dt><dd>
 			Variables whose content is a list of target names (one for each
 			POS, analysis and generation) calculated from (existing) file
 			names. This is to circumvent a problem with being able to
@@ -383,7 +381,7 @@
 			other files (I have forgotten the details, but <em>with</em> it
 			works, <em>without</em> it doesn't. Trust me.). If you are
 			curious, see the <code>make</code> documentation.
-	</dl>
+	</dd></dl>
 	
 	<p>When defined, the variable names are written as such, when
 	referenced, they are encapsulated in parenthesis, and prefixed with a
@@ -396,15 +394,15 @@
 	
 	<ul>
 		<li>Variable definitions
-		<li>Main targets, housekeeping targets
-		<li>POS-specific targets, one section each for N, V and A. The three
+		</li><li>Main targets, housekeeping targets
+		</li><li>POS-specific targets, one section each for N, V and A. The three
 		sections are identical apart from the POS variation. (It is not
 		possible to merge these targets into a smaller, POS-independent set
 		without a major rework. It will not be done.)
-		<li>POS-UNspecific targets for running the tests
-	</ul>
+		</li><li>POS-UNspecific targets for running the tests
+	</li></ul>
 	
-	<hr>
+	<hr/>
 	<address>sjurnm@mac.com</address>
 	<!-- hhmts start -->
 	Last modified: Mon Jun 24 15:28:28 CEST 2002
