@@ -40,55 +40,27 @@ The sites
 * http://dicts.uit.no
 * http://oahpa.no
 * http://divvun.no
+* http://divvun.no/doc
+* http://divvun.org
 
-are updated once every 24 hours with these lines in a crontab from the account of the user boerre on divvun.no
+Have a look at [the info about the xserve|../xserve.html#Web+sites].
 
-* 00 10 * * * source $HOME/.bash_profile && cd $GTHOME && svn up && cd $GTBIG && svn up && divvun2web $GTHOME/xtdoc/gtuit gtuit@giellatekno.uit.no:Sites
-* 30 18 * * * source $HOME/.bash_profile && cd $GTHOME && svn up && cd $GTBIG && svn up && divvun2web $GTHOME/xtdoc/dicts gtuit@giellatekno.uit.no:Sites/dicts
-* 55 18 * * * source $HOME/.bash_profile && cd $GTHOME && svn up && cd $GTBIG && svn up && divvun2web $GTHOME/ped oahpa@oahpa.no:/home/oahpa/public_html
-* 15 19 * * * source $HOME/.bash_profile && cd $GTHOME && svn up && cd $GTBIG && svn up && static-divvun.py --sitehome $GTHOME/xtdoc/sd --destination sd@divvun.no:Sites/ fi no se smj sma sv en
-
-If the sites are not updated, it is probably because a document contains invalid xml.
-
-Run svn up in the working copy of giellatekno, run the command forrest validate in these directories:
-
-* $GTHOME/xtdoc/gtuit
-* $GTHOME/xtdoc/sd
-* $GTHOME/ped
-* $GTHOME/xtdoc/dicts
-
-Fix the docs that don't validate and check them in. The sites will be automatically updated.
+To manually update the sites, run the commands found above in the crontab entries.
 
 !!!the termwiki
 
-!! Restart mysql on gtsvn
-ssh gtsvn.uit.no
-sudo service mysql restart
+Have a look at [the info about gtsvn|../gtsvn.html].
 
 !!!bugzilla
 
-If http://giellatekno.uit.no/bugzilla does not work, then one must restart mysql
+If http://giellatekno.uit.no/bugzilla does not work, then one must restart mysql.
 
-!! Restart mysql on the xserve
-
-sudo /opt/local/etc/LaunchDaemons/org.macports.mysql5/mysql5.wrapper restart
+Have a look at [the info about the xserve|../xserve.html#Restart+mysql+on+the+xserve].
 
 !!!iChat/Jabber
 
-sudo serveradmin stop jabber
-sudo serveradmin start jabber
-
-If the users that have divvun.no as domain cannot log in, log in to divvun.no
-using a vnc client.
-
-* Start up the Server Admin program from the Dock
-* Go the the iChat item in the left field of the program
-* Click settings in the upper icon field
-* Add divvun.no to the Host Domains field
-* Click Save
+Have a look at [the info about the xserve|../xserve.html#Jabber].
 
 !!!SubEthaEdit
 
-* Log in to divvun.no using a vnc client.
-* Start up SubEthaEdit from the Dock.
-* Start two or three new documents, announce them and make the writable
+Have a look at [the info about the xserve|../xserve.html#SubEthaEdit].
