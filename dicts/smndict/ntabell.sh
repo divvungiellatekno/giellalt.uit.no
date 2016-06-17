@@ -20,26 +20,26 @@ DATO=`date +"%d.%m.%y."`
 echo '<document><header><title>finsmn-substantiivien taulukko - HUOM! työlista korjaamista varten</title></header><body><table class="ForrestTable">' > gen/nounfinsmntabell.xml
 echo "" >> gen/nounfinsmntabell.xml
 echo "Päivämäärä: $DATO" >> gen/nounfinsmntabell.xml
-echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </th><th> Ine Sg </th><th> Ess </th><th> Nom Pl </th><th> Acc Pl </th><th> Ill Pl </th></tr>" >> gen/nounfinsmntabell.xml
+echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </th><th> Loc Sg </th><th> Ess </th><th> Nom Pl </th><th> Acc Pl </th><th> Ill Pl </th></tr>" >> gen/nounfinsmntabell.xml
 
 #smnfin
 echo '<document><header><title>Käänteinen lista: finsmn-substantiivien taulukko - HUOM! työlista korjaamista varten</title></header><body><table class="ForrestTable">' > gen/nounfinsmntabellrev.xml
 echo "" >> gen/nounfinsmntabellrev.xml
 echo  "Päivämäärä: $DATO" >> gen/nounfinsmntabellrev.xml
-echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </th><th> Ine Sg </th><th> Ess </th><th> Nom Pl </th><th> Acc Pl </th><th> Ill Pl </th></tr>" >> gen/nounfinsmntabellrev.xml
+echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </th><th> Loc Sg </th><th> Ess </th><th> Nom Pl </th><th> Acc Pl </th><th> Ill Pl </th></tr>" >> gen/nounfinsmntabellrev.xml
 
 # Reversed
 # finsmn
 echo '<document><header><title>smnfin-substantiivien taulukko - HUOM! työlista korjaamista varten</title></header><body><table class="ForrestTable">' > gen/nounsmnfintabell.xml
 echo "" >> gen/nounsmnfintabell.xml
 echo "Päivämäärä: $DATO" >> gen/nounsmnfintabell.xml
-echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </th><th> Ine Sg </th><th> Ess </th><th> Nom Pl </th><th> Acc Pl </th><th> Ill Pl </th></tr>" >> gen/nounsmnfintabell.xml
+echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </th><th> Loc Sg </th><th> Ess </th><th> Nom Pl </th><th> Acc Pl </th><th> Ill Pl </th></tr>" >> gen/nounsmnfintabell.xml
 
 #smnfin
 echo '<document><header><title>Käänteinen lista: smnfin-substantiivien taulukko - HUOM! työlista korjaamista varten</title></header><body><table class="ForrestTable">' > gen/nounsmnfintabellrev.xml
 echo "" >> gen/nounsmnfintabellrev.xml
 echo "Päivämäärä: $DATO" >> gen/nounsmnfintabellrev.xml
-echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </th><th> Ine Sg </th><th> Ess </th><th> Nom Pl </th><th> Acc Pl </th><th> Ill Pl </th></tr>" >> gen/nounsmnfintabellrev.xml
+echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </th><th> Loc Sg </th><th> Ess </th><th> Nom Pl </th><th> Acc Pl </th><th> Ill Pl </th></tr>" >> gen/nounsmnfintabellrev.xml
 
 
 
@@ -59,9 +59,9 @@ cat t1|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.
 cat t2|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgill
 #cat t3|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgill
 
-cat t1|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sgine
-cat t2|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgine
-#cat t3|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgine
+cat t1|sed 's/$/+N+Sg+Loc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sgloc
+cat t2|sed 's/$/+N+Sg+Loc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgloc
+#cat t3|sed 's/$/+N+Sg+Loc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgloc
 
 cat t1|sed 's/$/+N+Ess/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1ess
 cat t2|sed 's/$/+N+Ess/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2ess
@@ -81,8 +81,8 @@ cat t2|sed 's/$/+N+Pl+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.
 
 
 
-paste -d"£" t1 t1sggen t1sgill t1sgine t1ess t1plnom t1placc t1plill | sed 's/£/ <\/td><td> /g;' | sed 's/^/<tr><td> /'|sed 's/$/<\/td><\/tr> /'| sed 's/,/, /g;' | grep '[A-Za-z]' > t1nounforms
-paste -d"£" t2 t2sggen t2sgill t2sgine t2ess t2plnom t2placc t2plill | sed 's/£/ <\/td><td> /g;' | sed 's/^/<tr><td> /'|sed 's/$/<\/td><\/tr> /'| sed 's/,/, /g;' | grep '[A-Za-z]' > t2nounforms
+paste -d"£" t1 t1sgnom t1sggen t1sgill t1sgloc t1ess t1plnom t1placc t1plill | sed 's/£/ <\/td><td> /g;' | sed 's/^/<tr><td> /'|sed 's/$/<\/td><\/tr> /'| sed 's/,/, /g;' | grep '[A-Za-z]' > t1nounforms
+paste -d"£" t2 t2sgnom t2sggen t2sgill t2sgloc t2ess t2plnom t2placc t2plill | sed 's/£/ <\/td><td> /g;' | sed 's/^/<tr><td> /'|sed 's/$/<\/td><\/tr> /'| sed 's/,/, /g;' | grep '[A-Za-z]' > t2nounforms
 
 
 
@@ -92,7 +92,7 @@ cat t2nounforms >> gen/nounsmnfintabell.xml
 echo "</table></body></document>" >> gen/nounfinsmntabell.xml
 echo "</table></body></document>" >> gen/nounsmnfintabell.xml
 
-rm -f  t?sggen t?sgill t?sgine t?ess t?plnom t?placc t?plill 
+rm -f  t?sggen t?sgill t?sgloc t?ess t?plnom t?placc t?plill 
 
 cat t1 | perl -nle 'print scalar reverse $_' > t1rev
 cat t2 | perl -nle 'print scalar reverse $_' > t2rev
