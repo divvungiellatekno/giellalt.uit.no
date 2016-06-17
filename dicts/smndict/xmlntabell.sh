@@ -47,37 +47,37 @@ echo "<tr><th>  lemma  </th><th>  Nom Sg  </th><th>  Gen Sg </th><th> Ill Sg </t
 
 
 # Making the 7 columns
-cat t1|sed 's/$/+N+Sg+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sgnom
-cat t2|sed 's/$/+N+Sg+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgnom
-#cat t3|sed 's/$/+N+Sg+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgnom
+cat t1|sed 's/$/+N+Sg+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sgnom
+cat t2|sed 's/$/+N+Sg+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgnom
+#cat t3|sed 's/$/+N+Sg+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgnom
 
-cat t1|sed 's/$/+N+Sg+Gen/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sggen
-cat t2|sed 's/$/+N+Sg+Gen/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sggen
-#cat t3|sed 's/$/+N+Sg+Gen/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sggen
+cat t1|sed 's/$/+N+Sg+Gen/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sggen
+cat t2|sed 's/$/+N+Sg+Gen/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sggen
+#cat t3|sed 's/$/+N+Sg+Gen/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sggen
 
-cat t1|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sgill
-cat t2|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgill
-#cat t3|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgill
+cat t1|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sgill
+cat t2|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgill
+#cat t3|sed 's/$/+N+Sg+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgill
 
-cat t1|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sgine
-cat t2|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgine
-#cat t3|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgine
+cat t1|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1sgine
+cat t2|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2sgine
+#cat t3|sed 's/$/+N+Sg+Ine/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3sgine
 
-cat t1|sed 's/$/+N+Ess/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1ess
-cat t2|sed 's/$/+N+Ess/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2ess
-#cat t3|sed 's/$/+N+Ess/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3ess
+cat t1|sed 's/$/+N+Ess/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1ess
+cat t2|sed 's/$/+N+Ess/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2ess
+#cat t3|sed 's/$/+N+Ess/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3ess
 
-cat t1|sed 's/$/+N+Pl+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1plnom
-cat t2|sed 's/$/+N+Pl+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2plnom
-#cat t3|sed 's/$/+N+Pl+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3plnom
+cat t1|sed 's/$/+N+Pl+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1plnom
+cat t2|sed 's/$/+N+Pl+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2plnom
+#cat t3|sed 's/$/+N+Pl+Nom/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3plnom
 
-cat t1|sed 's/$/+N+Pl+Acc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1placc
-cat t2|sed 's/$/+N+Pl+Acc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2placc
-#cat t3|sed 's/$/+N+Pl+Acc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3placc
+cat t1|sed 's/$/+N+Pl+Acc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1placc
+cat t2|sed 's/$/+N+Pl+Acc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2placc
+#cat t3|sed 's/$/+N+Pl+Acc/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3placc
 
-cat t1|sed 's/$/+N+Pl+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1plill
-cat t2|sed 's/$/+N+Pl+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2plill
-#cat t3|sed 's/$/+N+Pl+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-desc.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3plill
+cat t1|sed 's/$/+N+Pl+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t1plill
+cat t2|sed 's/$/+N+Pl+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t2plill
+#cat t3|sed 's/$/+N+Pl+Ill/;'| lookup -q $GTHOME/langs/smn/src/generator-gt-norm.xfst |tr '\n' '™'|sed 's/™™/£/g;'|tr '£' '\n'|tr '™' '\t'|cut -f2,4,6,8|sed 's/.*+N.*/-/'|tr '\t' ',' > t3plill
 
 
 
