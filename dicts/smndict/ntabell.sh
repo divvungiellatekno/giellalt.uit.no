@@ -92,7 +92,7 @@ cat t2nounforms >> gen/nounsmnfintabell.xml
 echo "</table></body></document>" >> gen/nounfinsmntabell.xml
 echo "</table></body></document>" >> gen/nounsmnfintabell.xml
 
-rm -f  t?sggen t?sgill t?sgloc t?ess t?plnom t?placc t?plill 
+rm -f  t?sgnom t?sggen t?sgill t?sgloc t?ess t?plnom t?placc t?plill 
 
 cat t1 | perl -nle 'print scalar reverse $_' > t1rev
 cat t2 | perl -nle 'print scalar reverse $_' > t2rev
