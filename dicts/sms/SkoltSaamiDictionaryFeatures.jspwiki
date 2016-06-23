@@ -50,10 +50,6 @@ TODO:
 ''<lemma_ref />'' is used to display a reference in the dictionary to another
 entry.
 
-This node contains an attribute, called ''lemmaID'', which is an
-underscore-separated list of: ''lemma__PartOfSpeech__Type'', but you could also
-include more tag information.
-
 Typically these words also include an <analysis /> node in the <lg /> so we can
 provide ad-hoc analyses that don't come from the FST.
 
@@ -123,7 +119,7 @@ NB: judicious use of +Use/NGminip from sme to clean up many possibilities into
 one.
 
 || Inflection         || Without +Use/NGminip         || With +Use/NGminip
-|  A+Sg+Nom           | heittot                       | heittot
+|  A+Sg+Nom| heittot                       | heittot
 |  A+Attr             | heittogis heittohis (bivttas) | heittogis (bivttas)
 |  A+Pl+Nom           | heittogat heittohat           | heittogat
 |  A+Comp+Attr        | heittogit heittogut heittoget heittogat heittohit heittohut heittohet heittohat | heittoget heittogat 
@@ -175,10 +171,10 @@ EX: Äʹnnjääuʹraž
 TODO: determine how to display these in sms
 
 || Form   	|| Context  || Example     || Translation
-|   -        |  -        |              |      
-| Sg+Gen     | X pääiʹǩ	 |              |          
-| Sg+Ill     | 	-        |              |          
-| Sg+Loc     |  -        |              |            
+|   -        |  -        |              |       
+| Sg+Gen     | X pääiʹǩ	 |              |          
+| Sg+Ill     | 	-        |              |           
+| Sg+Loc     |  -        |              |             
 
 TODO: Any plural-only proper nouns?
 
@@ -193,11 +189,11 @@ provide an attributive adjective example with a noun.
 
 TODO: determine some good contexts for adjs
 
-|| Inflection        || Context         || Example     |
-| A+Pred+Sg           |                 | oođâs        |
-| A+Attr              | context:"??"    | ođđ (??)     |
-| A+Comp              |                 | ođđsab       |
-| A+Superl            |                 | ođđsumus     |
+|| Inflection        || Context         || Example
+| A+Pred+Sg           |                 | oođâs
+| A+Attr              | context:"??"    | ođđ (??)
+| A+Comp              |                 | ođđsab
+| A+Superl            |                 | ođđsumus
 
 TODO: +A+Pred+Pl ?
 
@@ -217,16 +213,16 @@ This also requires the ''type="Pers"'' attribute on the ''<l />'' node, and the
 +Sg, +Du, and +Pl marking in the pronoun tag. If these change, we will need to
 adjust the paradigm rules.
 
-|| Inflection | Example |
-| Sg+Nom	  | mon     |
-| Sg+Gen	  | muu     |
-| Sg+Acc	  | muu     |
-| Sg+Ill	  | muʹnne  |
-| Sg+Loc	  | muʹst   |
-| Sg+Com	  | muin    |
-| Sg+Abe	  | muutää  |
-| Ess	      | muuʹnen |
-| Par	      | muuʹđed |
+|| Inflection || Example
+| Sg+Nom	  | mon
+| Sg+Gen	  | muu
+| Sg+Acc	  | muu
+| Sg+Ill	  | muʹnne
+| Sg+Loc	  | muʹst
+| Sg+Com	  | muin
+| Sg+Abe	  | muutää
+| Ess	      | muuʹnen
+| Par	      | muuʹđed
 
 
 TODO:
