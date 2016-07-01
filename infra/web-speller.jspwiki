@@ -11,6 +11,14 @@ At first, installing hfst-ospell-js failed using the outdated (as it turned out)
 Resulted in
 {{{nvm install stable}}}
 
+Or (summary version):
+{{{
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+nvm ls-remote
+nvm current
+nvm install stable
+}}}
+
 !!hfst-ospell-js
 
 ck-ospell is built on this, so in retrospect installing this turned out to be an excercise in using npm …
@@ -32,7 +40,7 @@ cd ..
 git clone https://github.com/killercup/ck-ospell.git
 cd ck-ospell
 npm install
-npm start
+mkdir etc
 curl http://divvun.no/static_files/zhfsts/se.zhfst > "etc/sme_NO.zhfst"
 curl http://divvun.no/static_files/zhfsts/smj.zhfst > "etc/smj_NO.zhfst"
 curl http://divvun.no/static_files/zhfsts/sma.zhfst > "etc/sma_NO.zhfst"
