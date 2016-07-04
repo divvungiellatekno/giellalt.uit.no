@@ -14,30 +14,22 @@ your project name.
 
 !! Create the configuration file
 
-1.) In the terminal, move to '$GTHOME/apps/dicts/nds/neahtta/'
-
-2.) Copy configs/sample.config.yaml.in to configs/PROJNAME.sample.yaml.in. 
-
-3.) Add the new file to SVN.
-
-4.) Open the file in a text editor, and read through the settings. There are
-    numerous comments to guide you.
-
-5.) When you are done, check in the changes.
+# In the terminal, move to {{$GTHOME/apps/dicts/nds/neahtta/}}
+# Copy {{configs/sample.config.yaml.in}} to {{configs/PROJNAME.sample.yaml.in}}
+# Add the new file to SVN.
+# Open the file in a text editor, and read through the settings. There are
+  numerous comments to guide you.
+# When you are done, check in the changes.
 
 !! Adding language names
 
-1.) Open the file ''config/language_names.py''
-
-2.) For each language in the project, check the following (there are plenty of comments to guide you):
-
- * the NAMES variable contains the ISO codes, and then a string marked for
+# Open the file {{config/language_names.py}}
+# For each language in the project, check the following (there are plenty of comments to guide you):
+## the {{NAMES}} variable contains the ISO codes, and then a string marked for
    localization with the language names in English
-
- * the LOCALISATION_NAMES_BY_LANGUAGE contains ISO codes, and the language's
+## the {{LOCALISATION_NAMES_BY_LANGUAGE}} contains ISO codes, and the language's
    own name / endonym
-
- * the ISO_TRANSFORMS contains any potential pairs of two-character and
+## the {{ISO_TRANSFORMS}} contains any potential pairs of two-character and
    three-character ISO codes
 
 
@@ -47,18 +39,16 @@ TODO:
 
 !! Fabfile
 
-1.) Search the file for instances of ''sample'' and follow the instructions there.
-
-2.) DO NOT check this in yet.
+# Search the file for instances of ''sample'' and follow the instructions there.
+# DO NOT check this in yet.
 
 !! Makefile
 
-1.) copy sample to a new location, uncomment it, and follow the instructions there.
+# copy sample to a new location, uncomment it, and follow the instructions there.
+# Be sure to replace instances of ''sample'' in your new section with the PROJNAME.
 
-2.) Be sure to replace instances of ''sample'' in your new section with the PROJNAME.
 
-
-TODO: this is a slightly more complex part, which I wish to do away with by
+__TODO:__ this is a slightly more complex part, which I wish to do away with by
 generalizing the makefile settings into the .yaml.in config, interpreted by
 'fabric'. Make will still be used, but everything will be configured by
 environment variables instead. This way we can ensure that configuration is an
@@ -66,29 +56,24 @@ easier process, and build information is more visible.
 
 !! Test the configuration
 
-1.) In the terminal, move to '$GTHOME/apps/dicts/nds/neahtta/'
-
-2.) Activate the virtualenv
-
-3.) Run ''fab PROJNAME compile'', and wait until the process completes.
-
-4.) Run ''fab PROJNAME test_configuration'', and wait until the process
-    completes. Check FST path names and ensure that the build process moved all
-    the files to the proper location.
-
-5.) Run ''fab PROJNAME runserver''. If this completes, navigate to the
-    address that you see at the end of the output in your browser.
-
-6.) Does everything seem to work as intended? If so...
+# In the terminal, move to {{$GTHOME/apps/dicts/nds/neahtta/}}
+# Activate the virtualenv
+# Run {{fab PROJNAME compile}}, and wait until the process completes.
+# Run {{fab PROJNAME test_configuration}}, and wait until the process
+  completes. Check FST path names and ensure that the build process moved all
+  the files to the proper location.
+# Run {{fab PROJNAME runserver}}. If this completes, navigate to the
+  address that you see at the end of the output in your browser.
+# Does everything seem to work as intended? If so...
 
 !! Check in the configurations
 
 Check in the following config files
 
-1.) fabfile.py
-2.) dicts/Makefile
-3.) config/language_names.py
-4.) config/PROJNAME.config.yaml.in
+# fabfile.py
+# dicts/Makefile
+# config/language_names.py
+# config/PROJNAME.config.yaml.in
 
 !! Create additional files
 
@@ -133,12 +118,11 @@ necessary for the menu. Wikipedia provides pretty much all flags in SVG format,
 and automatically converts to PNG. To get a roughly 20 x 15 px flag, use the
 following steps: 
 
-* Find the flag .svg page in wikipedia, e.g. by browsing to the language page or region page, 
-  and click on the flag: http://en.wikipedia.org/wiki/File:Flag_of_Nenets_Autonomous_District.svg
-
+* Find the flag {{.svg}} page in wikipedia, e.g. by browsing to the language
+  page or region page, and click on the flag:
+  [http://en.wikipedia.org/wiki/File:Flag_of_Nenets_Autonomous_District.svg]
 * Look for the link just below: "This image rendered as PNG in other sizes:
   200px, 500px, 1000px, 2000px."
-
 * Click any size, preferrably the smallest, and alter the url path, to change
   the width of the flag to 20px:
 
@@ -149,7 +133,7 @@ following steps:
 }}}
 
 Save the file to static/img/flags/, and match the path name so that it is
-LOCALE_20x15.png.
+{{LOCALE_20x15.png}}.
 
 !! Linguistic configuration (paradigms, etc.)
 
@@ -294,7 +278,7 @@ following:
         inverse_tagsep: '+'
 }}}
 
-Where YYY is the language ISO path. Note the weird way that forming
+Where {{YYY}} is the language ISO path. Note the weird way that forming
 paths with aliases is handled here in YAML, they may be strings or
 lists, and if they are lists, they will be automatically concatinated
 into strings. This must be done because YAML does not allow string 
@@ -307,7 +291,7 @@ Add a new entry for the language iso to this list.
 ! ''Dictionaries''  section
 
 Here, add a new item to the list of dictionaries, relative to the
-''neahtta'' path, i.e., ''dicts/file-name.xml''.
+{{neahtta}} path, i.e., {{dicts/file-name.xml}}.
 
 {{{
     Dictionaries:
@@ -321,8 +305,7 @@ Here, add a new item to the list of dictionaries, relative to the
 
 For more information on all the settings for this chunk, see the page on YAML
 configuration:
-
-* [The Neahttadigisánit Configuration|FilesForConfiguratingNDS.html]
+[The Neahttadigisánit Configuration|FilesForConfiguratingNDS.html]
 
 !! 3.) Define language names and translation strings
 
@@ -400,11 +383,15 @@ Things to consider:
 
 __Intended__: Linguists
  
-* The xml format of the lexicon should match sme-nob or sma-nob format as closely as possible ({{words/dicts/smanob/src}})
+* The xml format of the lexicon should match sme-nob or sma-nob format as
+  closely as possible ({{words/dicts/smanob/src}})
 * morphological analysers (FSTs, described below)
 * lists of tag pairs, what is in FST to convert to what users will see
 * lists of paradigms for parts of speech
-** they can be either as detailed as one paradigm per part of speech, or several paradigms for parts of speech and varying sub-types. These will have to be marked in the lexicon in some way, for exampl, plural-only proper noun paradigms for North Saami
+** they can be either as detailed as one paradigm per part of speech, or several
+   paradigms for parts of speech and varying sub-types. These will have to be
+   marked in the lexicon in some way, for exampl, plural-only proper noun
+   paradigms for North Saami
 * description of attributes in the XML that need to be displayed to the user
  
 !!! Collecting the materials...
@@ -437,7 +424,9 @@ It is best to use the analysers compiled with
 
 !Spell relax FST
  
-Spell relaxing FSTs should follow the exact same format as the lookup FST, but naturally point to the normative lemmas, or whatever lemmas will be used in lookups in the lexicon. These could be of three types:
+Spell relaxing FSTs should follow the exact same format as the lookup FST, but
+naturally point to the normative lemmas, or whatever lemmas will be used in
+lookups in the lexicon. These could be of three types:
 
  
 # Normalizing non-standard spellings 
@@ -513,4 +502,3 @@ For instance, the above examples show "noun" and "verb" as
 the part of speech in the analyzer, but the lexicon only knows "N"
 and "V". Thus, in order to line up these tools, the programmers will
 need to have a list of all of these things to formulate rules.
-
