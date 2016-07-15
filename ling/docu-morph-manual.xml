@@ -9,7 +9,7 @@
       <title>Setting up the environment</title>
       <ol>
         <li>Log in with your own user name and password.</li>
-        <li>If you have been away from victorio for a long time, or if this is your first time, write &quot;cvs co gt&quot; and press the return key (from now on indicated by &quot;RETURN&quot;). By doing that, you check out whatever new catalogues or files that have been added since last time. In order to update already existing files, &quot;cvs up&quot; is enough. For more info on cvs and the messages it may give you, see <a href="docu-svn-user.html" >Introduction to cvs</a>.</li>
+        <li>If you have been away from victorio for a long time, or if this is your first time, write &quot;cvs co gt&quot; and press the return key (from now on indicated by &quot;RETURN&quot;). By doing that, you check out whatever new catalogues or files that have been added since last time. In order to update already existing files, &quot;cvs up&quot; is enough. For more info on cvs and the messages it may give you, see <a href="/doc/tools/docu-svn-user.html" >Introduction to cvs</a>.</li>
         <li>Change to the directory of the language you are interested in (&quot;cd gt/sme/src RETURN&quot; for North Sámi, and correspondingly for gt/sma/src (South Sámi) and gt/smj/src (Lule Sámi).</li>
         <li>When in the src directory, write &quot;make RETURN&quot; (in order to compile the last version of the parser). The machine will then for the next 30 minutes (depending upon how many parts of the parser it must rebuild) write cryptic messages on the screen, and finish with an optimistic &quot;bye.&quot;. The other parts of the parser are compiled in a couple of minutes, but compiling the preprocessor is a really slow process. While waiting, open a new window and do something else (you may e.g. read this documentation)</li>
       </ol>
@@ -32,7 +32,7 @@
           <title>Generating words</title>
           <ol>
             <li>Write exactly the same commands as you do when you analyse words, except that you change 'sme.fst' to 'isme.fst', 'sma.fst' to 'isma.fst', etc.</li>
-            <li>Then write Saami words in their dictionary forms, followed by grammatical information. The format is given in the table in the file <a href="docu-sme-grammartags.html" >The grammatical tags</a>.Note that the SouthSaami sma.fst handles capital letters and ï-i variation, but that it only accepts correct &quot;ïquot; when you write in the base forms in the generator.</li>
+            <li>Then write Saami words in their dictionary forms, followed by grammatical information. The format is given in the table in the file <a href="/doc/lang/sme/docu-sme-grammartags.html" >The grammatical tags</a>.Note that the SouthSaami sma.fst handles capital letters and ï-i variation, but that it only accepts correct &quot;ïquot; when you write in the base forms in the generator.</li>
             <li>Again, to leave lookup mode, press &quot;ctrl C&quot;.</li>
           </ol>
           <p>A good way of working is to have two windows open, one for analysing and one for generating (and probably also addidtional windows, for documentation, for the source files, etc.).</p>
