@@ -136,8 +136,9 @@ Mánná	mannat+V+TV+Ind+Prs+Sg3
 }}}
 
 Kandidat til kommando for å finne ekte ukjente samiske ord:
-
-cat unknown_sme_20121028.txt |sed 's/^ *//g;'|cut -d"bt/bin/mtag-osx64 |grep '" ukjent'|cut -d"\"" -f2|ueng|grep -v '[[.+@]'|grep -v '^$' > tull
+{{{
+cat unknown_sme_20121028.txt |sed 's/^ *//g;'|cut -d"bt/bin/mtag-osx64 |grep '" ukjent'|cut -d"\"" -f2|ueng|grep -v '[.+@]'|grep -v '^$' > tull
+}}}
 
 __TODO__
 
