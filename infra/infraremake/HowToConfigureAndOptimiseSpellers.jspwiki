@@ -198,3 +198,13 @@ speller we have made or echo it into a speller on the command line, and the
 suggestions should contain the version information.
 
 !!!Testing spellers
+
+The weighting may be tested on data from {{test/data/typos.txt}}. In order to do this, 
+you need Text/Brew.pm ( a Perl module). To test, stand in the $LANG (langs/sme, etc) 
+directory and write
+
+{{{
+sh devtools/test_voikkospell_suggestions.sh 
+open -a Safari devtools/speller_result_typos.vk.xml
+}}}
+
