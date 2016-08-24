@@ -1,5 +1,45 @@
 !!! sme-sma rules
 
+!!Syntactic transfer
+
+!Cases and numbers
+* loc => gen (<hab>), ine (ADVL-ine), ela (ADVL-ela)
+* ill => ine (def-list "from-ill-to-ine-verb")
+* acc => nom (def-list "nom-verb" )
+* numerals loc => gen: Paul lea riegádan 1931:s - Paul jaepien 1931 reakadamme (semyear-loc-gen), jagis 2001 - jaepien 2001, 
+* date => nom (sem_date)
+* pl+acc => pl+nom (when not dem in NP)
+* sg+gen => pl+nom (in numeral phrases): 
+
+!Negation verbs
+* move tense from main verb to aux: Mun in boahtán. : Idtjim manne båetieh.
+
+!Scecial handling for Dem Num Nouns
+
+!Agreement
+* def-cat "agreement-attr"
+
+!Expressions
+* mus lea borranmiella - manne bårrestovvem (def-cat "goiku")
+* moai Laarain => månnoeh Laarah
+* eadni ja áhčči => tjidtjie gonnoeh aehtjieh (def-cat "aehtjie" "aahka"), eadnái ja áhččái => tjidtjie gonnoeh aahtjan
+* 2001 - jaepien 2001 (sem_year), jaepiej 2011-12
+* actio+ill => inf: oassálastit barggu plánemii - mealtan barkoem soejkesjidh 
+* orru leamen => luste vååjnoe
+* Mus lea oaivi bávččas. => Mov åejjieh saejriedieh.
+
+!Word order
+* pron+ref+sg+nom (pluss agreement): Ieš jorgalusat - Jarkoestimmieh jïjtjh 
+* subject + negation => negation + subject:  Mun in boađe. - Im manne båetieh.
+* verb: Mun vuoján buriin biillain. - Manne buerie bïjline vuajam.
+
+!Remove words
+* ahte: Ja Ipmil oinnii ahte dat lei buorre. -	Jïh Jupmele vuejnieji dïhte lij hijven.
+* copula: 
+** Dat lea buorre biila. - Dïhte buerie bïjle.
+** Áhčči lea ruovttus. - Aehtjie gåetesne.
+
+!! The rules
 * prn-refl-sg-nom  - 2 positions  - Ieš jorgalusat   -  Jarkoestimmieh jïjtjh 
 * pronouns  - 1 position 
 * pronouns  - 2 positions  - moai Laarain - månnoeh Laarah
@@ -7,8 +47,8 @@
 * date - 1 position in-out   - date should be nominative
 * year pl - 1 position in-out  - 2011-12  - jaepiej 2011-12
 * jagis 2001 - 2 position in-out  - jagis 2001 - jaepien 2001 
-*  2001 - 2 position in-out  -  2001 - jaepien 2001 
-*  dates  
+* 2001 - 2 position in-out  -  2001 - jaepien 2001 
+* dates  
 * numeral - 1 position in-out  - from sem_year to arab
 * mus lea goiku, 2 chunks out  - mus lea borranmiella - manne bårrestovvem
 * n-cmp n-cmp n-cmp n - 1 position out  - compounding
