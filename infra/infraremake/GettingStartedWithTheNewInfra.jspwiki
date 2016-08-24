@@ -15,47 +15,62 @@ everything. That process is documented
 !!Only the GT core and the wanted language(s)
 
 If you only do linguistic analysis for a limited number of languages you will
-do fine by only checking out the core module, and then each language separately.
-It will save you a lot of download time and disk space.
+do fine by only checking out the core modules, and then each language
+separately. It will save you a lot of download time and disk space.
 
-It can be wise to create a separate directory for holding the core and the
+It can be wise to create a separate directory for holding the core and
 language modules. The command to do this is (with the name of the directory
 set to "langtech"): {{mkdir langtech}}. Then {{cd langtech}} and continue.
 
-To check out the core module and prepare it, do this:
+There are two required core modules:
+; giella-core: core scripts and technical data required for the build system
+; giella-shared: resources shared among all languages or language groups
+
+!!Check out the core modules
+
+To check out the core modules and prepare them, do this:
 
 {{{
-svn co https://gtsvn.uit.no/langtech/trunk/gtcore
-cd gtcore
+svn co https://gtsvn.uit.no/langtech/trunk/giella-core
+svn co https://gtsvn.uit.no/langtech/trunk/giella-shared
+cd giella-core
 ./autogen.sh
 ./configure
+make
+cd ../giella-shared
+./autogen.sh
+./configure
+make
 }}}
 
-To make the core module accessible, there are two methods: one intended for
+To make the core modules accessible, there are two methods: one intended for
 single users, and one intended for multiuser servers (but it works fine for
 single users as well).
 
-__EITHER:__ The first method uses an environmental variable called GTCORE,
-which must be manually set. Add the following line to your {{.profile}} file:
+__EITHER:__ The first method uses environmental variables, one called
+GIELLA_CORE and the other GIELLA_SHARED.
+They must be manually set. Add the following line to your {{.profile}} file:
 
 {{{
-export GTCORE=/path/to/your/gtcore/dir
+export GIELLA_CORE=/path/to/your/giella-core/dir
+export GIELLA_SHARED=/path/to/your/giella-shared/dir
 }}}
 
-Replace {{/path/to/your/gtcore/dir}} with the real path on your system. You can
-get it by using the command {{pwd}} after you did the {{./configure}} command
-above. Then open a new terminal window.
+Replace {{/path/to/your/giella-core/dir}} with the real path on your system, and
+the same for {{/path/to/your/giella-shared/dir}}. You can
+get them by using the command {{pwd}} after you did the {{./configure}} command
+above. Then open a new terminal window. Now you are done.
 
-__OR:__ The server method is to install some of the components of the core:
+__OR:__ The server method is to install some of the components of the core modules. For each module, after you did {{make}} above, do:
 
 {{{
 sudo make install
 }}}
 
-That is it. This method requires that you redo the installation every time the
-gtcore is updated. This method works by installing two simple shell scripts in
-your path, one of which returns the full path to the gtcore (the other returns
-the version number of the gtcore).
+That is it. __NB!__ This method requires that you redo the installation every
+time the core modules are updated, although should not happen too often.
+
+!!Check out the languages you want
 
 Then, for each language you want to work with, do the following:
 
@@ -84,12 +99,6 @@ where $GTLANG is the directory name of the language you want to work with. Now
 you are ready to start working. More info about where to find the different
 pieces of source code can be found on [this page|NewinfraCatalogues.html].
 
-__WARNING__
-
-You may encounter troubles with your CLASSPATH. We are working on it, 
-here is a fix if the compiler complains it is not set:
-In the langs directory, write {{export CLASSPATH=}}.
-
 To build the transducers and other tools for linguistic analysis, egdo:
 
 {{{make}}}
@@ -97,5 +106,11 @@ To build the transducers and other tools for linguistic analysis, egdo:
 To run the preinstalled tests, do:
 
 {{{make check}}}
+
+__WARNING__
+
+You may encounter troubles with your CLASSPATH. We are working on it, 
+here is a fix if the compiler complains it is not set:
+In the langs directory, write {{export CLASSPATH=}}.
 
 Happy linguistic coding!
