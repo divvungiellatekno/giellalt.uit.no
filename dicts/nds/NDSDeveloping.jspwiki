@@ -78,3 +78,26 @@ With the environment prepared, you may start work on NDS. However, if you need t
 
 NB: for some changes to config files you will need to stop and restart the
 development server.
+
+
+!Notes
+
+{{{
+(env) tf-hsl-m0016:neahtta ttr000$ fab saanih runserver
+[localhost] Executing task 'saanih'
+
+Warning: Unable to load SSH config file '/Users/ttr000/.ssh/config'
+
+[localhost] Executing task 'runserver'
+
+Warning: Unable to load SSH config file '/Users/ttr000/.ssh/config'
+
+** Production config not found, using development (*.in)
+** Go.
+[localhost] local: NDS_CONFIG=configs/saanih.config.yaml.in python neahtta.py dev
+* Missing dependency in $PATH: uglifyjs
+  Install the executable, check that it is available in $PATH,
+    and check that it's executable.
+
+Done.
+}}}
