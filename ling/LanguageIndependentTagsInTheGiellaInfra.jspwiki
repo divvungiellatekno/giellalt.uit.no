@@ -24,8 +24,25 @@ This tag class is defined as follows:
 
 ;Tag prefix: {{+Err/}}
 ;Meaning: tags describing parts of the language outside the established norm
+;FST implication: all strings containing one or more such tags are removed from
+          all normative transducres
 
 !!!Dialect tags
+
+;Tag prefix: {{+Dial/}}
+;Meaning: tags describing variation (in the written language) based on dialect
+;FST implication: when the {{DIALECTS}} variable is set in {{configure.ac}}, one
+            filter for each dialect defined there is built automatically. Each
+            filter will remove all strings tagged with a dialect different from
+            the one specific to the filter. Untagged strings will be left as is.
+
+__Other notes:__
+* The first character after the __/__ must be one of {{+}} or {{–}}, denoting
+  either inclusion (the entry/form is valid for the specified dialect) or
+  exclusion (this entry/form is NOT valid for the specified dialect - but for
+  all others)
+* The string following __/__ and __+/–__ must be one of the strings specified in
+  {{configure.ac}} for the variable {{DIALECTS}}.
 
 !!!Area tags
 
