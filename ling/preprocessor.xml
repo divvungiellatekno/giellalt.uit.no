@@ -9,27 +9,28 @@
   <body>
       <p>The preprocessor splits text into tokens (sentences and words).</p>
 
-      <p>At present, our preprocessor is a perlscript, this file:
-      <code>$GTHOME/gt/script/preprocess</code>. For North Saami,
-      there is a Makefile routine ("make abbr GTLANG=sme" in gt/),
-      this routine extracts abbreviations and multiword expressions
-      from the lexc code, classifies abbreviations according to
-      behaviour in the sentence, and expands the multiword expressions
-      in all cases.</p>
-
-      <p> For the other languages, this routine is not available at
-      present (summer 2014). For these languages, a file
-      <code>abbr.txt</code> must be manually compiled and put in the
-      <code>tools/preprocess/</code> folder of the language in
-      question.  </p>
-
       <p>The preprocessor file is common to all languages. It should
       be parametrised, certain languages, such as Skolt Saami and
       Haida, have very deviant orthographic conventions when it comes
       to punctuation marks.</p>
 
-      <p>A further goal is to replace, or supplement, the preprocess
-      file with an fst-based preprocessor.</p>
+    <section>
+      <title>Perl > /dev/null - using Hfst instead</title>
+      <p>Using Hfst, one can tokenise («preprocess»), analyse and print the
+        output in VISLCG3 format, all in one go, and everything using a single
+        transducer. This will handle multiword expressions properly, including
+        all inflections of them. This setup replaces the older, Perl-based
+        solution for the Xerox tools.
+      </p>
+      <p>The new command is as follows:</p>
+      <source>cat testfile.txt | hfst-tokenise --gtd tools/preprocess/tokeniser-disamb-gt-desc.pmhfst</source>
+      <p>Please note that the file
+        <code>tools/preprocess/tokeniser-disamb-gt-desc.pmhfst</code> is
+        not built by default. To enable building it, configure as follows:</p>
+      <source>./configure --with-hfst --enable-tokenisers</source>
+      <p>Below follows the description for how to use the Perl-based solution
+      we have been using so far.</p>
+    </section>
 
     <section>
       <title>Usage</title>
@@ -57,11 +58,9 @@ Options (note that all options are not available for most languages):
 --no-xml-out     Used together with --xml, does not print the xml-tags.
 -n</source>
 
-      <p>Example use in new and old infra:</p>
+      <p>Example use:</p>
 
       <source>cat file.txt | preprocess --abbr=$GTHOME/langs/sma/tools/preprocess/abbr.txt | lookup ...</source>
-
-      <source>cat file.txt | preprocess --abbr=$GTHOME/gt/sme/bin/abbr.txt | lookup ...</source>
       </section>
 
       <section>
@@ -72,9 +71,10 @@ Options (note that all options are not available for most languages):
         overall description of the preprocessing task and some implementation
         details.</p>
 
-        <p>Preprocessor is a Perl script <code>preprocess</code>. It takes
+        <p>The preprocessor is a Perl script called <code>preprocess</code>, it
+        is located in <code>$GTHOME/gt/script/</code>. It takes
         text as input and produces a list of words (tokens) separated by
-        newline. The preprocessor has two main functions: it cuts the the text
+        newlines. The preprocessor has two main functions: it cuts the the text
         into sentences and sentences into tokens (words and other units such
         as numerical expressions and punctuation). Sentence delimiters and
         most of the punctuation are treated as separate tokens.</p>
@@ -82,7 +82,9 @@ Options (note that all options are not available for most languages):
         <p>The output of the preprocessor is a list of tokens separated by
         newline. The list of tokens is input to the morphological parser. (See
         <a href="global-flowchart.html">the flowchart</a> of the parsing
-        process.) The parser gives each token a morphological analysis, a set
+        process; if you are using Hfst (see above), the flowchart is outdated:
+        all steps up to the vislcg3 step is collapsed into one.) The parser
+        gives each token a morphological analysis, a set
         of tags. For the analysis to be succesful, the preprocessor must be
         compatible with the parser; the preprocessor should produce tokens
         that are recognized by the parser. This means that for example
@@ -151,7 +153,7 @@ jna.
       <section>
         <title>Tokens</title>
 
-        <p>The string that is given to the preprocessor is divided to tokens,
+        <p>The string that is given to the preprocessor is divided into tokens,
         which are the basic processing units used in the lexical analysis.
         There are four types of tokens: words, multiword expressions,
         numerical expressions and punctuation. Numerical expressions consist
@@ -208,7 +210,7 @@ guovllut
         <p>The output of the script is a list of analyzable tokens, separated
         by newline.</p>
 
-        <p>The text is handled one paragraph at the time (paragraph ends when
+        <p>The text is handled one paragraph at a time (paragraphs end when
         two subsequent newlines are encountered). If there are no paragraphs
         in the text, the whole input is slurped in in one go. The newlines are
         replaced with space and the paragraph is treated as a single line. The
@@ -397,6 +399,25 @@ $CONTAIN_PUNCT = 'ja\/dahje|http|:\/\/|km\/h|www|@|\.jpg|\.doc|\.pdf|\.html|\.tx
           <dd>abbreviations such as 'du.' (dual) which is also a common noun
           and not treated as an abbreviation at the end of a sentence.</dd>
         </dl>
+
+      <p>To make the preprocessor handle abbreviations and multiword
+      expressions better than the default, one can provide an abbreviation
+      file to it. There is a Makefile target for that. This target extracts
+      abbreviations and multiword expressions
+      from the lexc code, classifies abbreviations according to
+      behaviour in the sentence, and expands the multiword expressions
+      in all cases.</p>
+
+      <p>To build the abbreviation list to be used by <code>preprocess</code>,
+      do as follows:</p>
+      <source>./configure --enable-abbr
+cd tools/preprocess
+make abbr</source>
+
+      <p>Now there is a new <code>abbr.txt</code> file in that dir, and you
+      can specify it as an option to the
+      <code>preprocess</code> command. See further notes above.</p>
+
       </section>
 
       <section>
