@@ -19,6 +19,7 @@
             <a href="../infra/infraremake/GettingStartedWithTheNewInfra.html">Getting Started With The New Infra</a>.</li>
          </ol>
       </section>
+
       <section>
          <title>Analysing and generating words</title>
             <ol>
@@ -36,9 +37,10 @@
                <p><code>cat testfile.txt | usmn | less</code></p>
 
 	    <p>(again, to leave analysis mode, press <code>ctrl C</code>, and to leave <em>less</em>, press <code>q</code>)</p>
-         </section>
-<section>
-<title>Text analysis</title>
+      </section>
+
+      <section>
+        <title>Text analysis</title>
             <p>We have set up aliases for text analysis. These may be written anywhere.</p>
             <dl>
                <dt>smedis</dt>
@@ -50,17 +52,28 @@
                <dt>smedept</dt>
                <dd>Gives a dependency analysis of North Sámi, in trace mode (showing which dep rules work)</dd>
             </dl>
-<p>To do the same for other languages, exchange <code>sme</code> with your
-own language code. If, for any given language, the alias does not
-work, it means there is no (say) dependency analysis written for that
-language.</p>
-<p>These aliases may be used in two ways: either write the alias followed by a sentence in quotes</p>
-<p><code>smedis "Mun lean boahtán."</code></p>
-<p>Or, alternatively, pipe a file through it:</p>
-<p><code>cat testfile.txt | smedis</code></p>
-         </section>
-<section>
-<title>Output manipulation</title>
+            <p>To do the same for other languages, exchange <code>sme</code> with your
+            own language code. If, for any given language, the alias does not
+            work, it means there is no (say) dependency analysis written for that
+            language.</p>
+            <p>These aliases may be used in two ways: either write the alias followed by a sentence in quotes</p>
+            <source>smedis "Mun lean boahtán."</source>
+
+            <p>Or, alternatively, pipe a file through it:</p>
+            <source>cat testfile.txt | smedis</source>
+
+            <p>If you are using Hfst, the command to tokenise, analyse and print
+                the output in a CG compatible format is:</p>
+            <source>cat testfile.txt | hfst-tokenise --gtd tools/preprocess/tokeniser-disamb-gt-desc.pmhfst</source>
+            <p>Please note that the file
+                <code>tools/preprocess/tokeniser-disamb-gt-desc.pmhfst</code> is
+                not built by default. To enable building it, configure as
+                follows:</p>
+            <source>./configure --with-hfst --enable-tokenisers</source>
+      </section>
+
+      <section>
+         <title>Output manipulation</title>
          <p>Instead of just showing the result on the screen as running text (as above), much can be done to manipulate
          it. Here are some examples, all the textstrings should be added after the <em>smedis</em> etc. above.</p>
          
