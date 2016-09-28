@@ -31,6 +31,35 @@ nginx.
 
 !! The reader plugin / bookmarklet
 
+! SSL / HTTPS considerations
+
+In order for the reader to work over SSL, on Facebook and Wikipedia, some
+sneakiness was required, because the resources couldn't simply be served for
+all projects on gtweb in the same way as projects on gtoahpa. The SSL
+certificate we have is only good for one subdomain, thus the easiest way was to
+get other projects to use this subdomain instead.
+
+This solution requires two parts:
+
+1. Configuration information in NDS that will point the reader to the SSL
+subdomain when it downloads the required JS and CSS files; and also to point
+the reader at the SSL domain when making dictionary API requests. Following is
+a snippet of the YAML config for the project ''kyv'':
+
+{{{
+ReaderConfig:
+  Settings:
+    # host path without scheme (https, http) to reader lookup API, no trailing
+    # slash.
+    api_host: "sanit.oahpa.no/reader/kyv"
+    # URL to serve media from, minus scheme, and no trailing slash.
+    media_host: "sanit.oahpa.no" 
+}}}
+
+2.) A setup within nginx to allow proxying of specific requests to the non-SSL
+projects via the SSL project. This is left to the reader with admin access to
+inspect nginx config files, I will not paste them here for sikkerhets skyld.
+
 !! Debugging
 
 ! Logging
