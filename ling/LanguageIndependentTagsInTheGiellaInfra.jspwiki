@@ -16,12 +16,13 @@ with "__+__" (for suffix tags; prefix tags for prefixing languages end with
 __+__ as their last character) and ending with "__/__". Examples of such tag
 prefixes are: {{+Err/}}, {{+Dial/}} etc.
 
-It is assumed that all tags described here (and all other tags, for that matter)
-are declared as multichar symbols in the {{root.lexc}} file of each language.
+It is assumed — and required — that all tags described here (and all other tags,
+for that matter) are declared as multichar symbols in the {{root.lexc}} file of
+each language.
 
 !!!Error tags
 
-This tag class is defined as follows:
+The error tag class is defined as follows:
 
 ;Tag prefix: {{+Err/}}
 ;Definition: tags describing parts of the language outside the established norm
@@ -29,6 +30,8 @@ This tag class is defined as follows:
           all normative transducres
 
 !!!Dialect tags
+
+The dialect tag class is defined as follows:
 
 ;Tag prefix: {{+Dial/}}
 ;Definition: tags describing (written) variation based on dialect
@@ -39,14 +42,16 @@ This tag class is defined as follows:
             The dialect tags are presently only made use of in Oahpa generators.
 
 Other notes:
-* The first character after the __/__ must be one of {{+}} or {{–}}, denoting
-  either inclusion (the entry/form is valid for the specified dialect) or
-  exclusion (this entry/form is NOT valid for the specified dialect - but for
+* The first character after the __/__ ''must'' be one of {{+}} or {{–}},
+  denoting either inclusion (the entry/form is valid for the specified dialect)
+  or exclusion (the entry/form is NOT valid for the specified dialect - but for
   all others)
-* The string following __/__ and __+/–__ must be one of the strings specified in
-  {{configure.ac}} for the variable {{DIALECTS}}.
+* The string following __/__ and __+/–__ ''must'' be one of the strings
+  specified in {{configure.ac}} for the variable {{DIALECTS}}.
 
 !!!Area tags
+
+The area/country tag class is defined as follows:
 
 ;Tag prefix: {{+Area/}}
 ;Definition: tags describing (written) variation based on country or another
@@ -60,9 +65,12 @@ Other notes:
             and faster, and with less irrelevant suggestions.
 
 Other notes:
-* The tag prefix must be followed by an ISO 3166 string.
+* The tag prefix must be followed by an
+  [ISO 3166|https://en.wikipedia.org/wiki/ISO_3166] string.
 
 !!!Semantic tags
+
+The semantic tag class is defined as follows:
 
 ;Tag prefix: {{+Area/}}
 ;Definition: tags describing semantic properties of the lexeme
@@ -80,11 +88,15 @@ Other notes:
 
 !!!Derivation tags
 
+The derivation tag class is defined as follows:
+
 ;Tag prefix: {{+Der/}}
 ;Definition: tags describing derivational morphology
 ;FST implication: there is no language-independent processing of these tags ATM
 
 !!!Originating language tags
+
+The originating language tag class is defined as follows:
 
 ;Tag prefix: {{+OLang/}}
 ;Definition: tags describing originating language for loan words in cases where
@@ -102,5 +114,6 @@ So far the only speech synthesis system we have built is for North Sámi. It was
 furthermore built without using our text processing technology, and the features
 being made possible with these tags (ie pronouncing «u» as /ʉː/ instead
 of the default /uː/) has so far not been put to use. But we expect that to
-change in the future, as the support for text processing in front of a speech
-synthesis system will be improved.
+change in the future, as the text processing is applied to open-source speech
+synthesis systems such as [Festival|http://www.cstr.ed.ac.uk/projects/festival/]
+and [Simple4All|http://simple4all.org].
