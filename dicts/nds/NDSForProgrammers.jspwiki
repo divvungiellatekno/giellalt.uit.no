@@ -31,6 +31,21 @@ nginx.
 
 !! The reader plugin / bookmarklet
 
+! Development environment, and how to debug / test locally
+
+Will elaborate later, but, wihin the ''nds-reader'' directory, I have been
+running {{python -m SimpleHTTPServer}} in one terminal, {{make rebuild}} on
+changes in another. Then I go to the test html pages at {{localhost:8000/}}
+
+A handy tool for running a command while watching for code changes is [pywatch|]
+
+If there is something that doesn't work within the test {{html}} files, you can
+also add a {{make bookmarklet-install}}, and then run the NDS server locally,
+go to the {{read/}} page and click the button. This is less ideal because less
+debugging options will be available.
+
+TODO: write more, but for now, collecting notes and ideas while they are fresh
+
 ! SSL / HTTPS considerations
 
 In order for the reader to work over SSL, on Facebook and Wikipedia, some
