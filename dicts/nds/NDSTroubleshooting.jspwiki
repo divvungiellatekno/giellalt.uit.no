@@ -1,5 +1,53 @@
 ﻿!! Troubleshooting frequent problems
 
+! 500 error: Invalid tagset <pos>. Choose one of: 
+
+This means the tagset file is missing, or `pos` is not a valid category in that file.
+
+To fix:
+
+# Go to: .../configs/language_specific_rules/tagsets
+# Check that ZZZ.tagset exists, where ZZZ is the language ISO (this may be `udm`,
+or `udmM`, or some other short code used within NDS for the language).
+# If it exists:
+## edit the file and add a `pos` category with at least one entry
+# If it does not exist:
+## create the file, and do the above.
+
+For more information on tagsets, see [NDS Linguistic settings|NDSLinguisticSettings.html].
+
+! automake problems
+
+{{{
+    WARNING: 'aclocal-1.13' is missing on your system.
+             You should only need it if you modified 'acinclude.m4' or
+             'configure.ac' or m4 files included by 'configure.ac'.
+             The 'aclocal' program is part of the GNU Automake package:
+}}}
+
+This usually means there's a problem with the path variable, on gtweb and
+gtoahpa, the correct versions of automake should be installed. Observe the
+output of ''which automake'', and check that it leads to the proper version.
+ 
+
+! HTML appears in templates
+
+Try switching internationalization languages and see if the problem remains: if
+it does not, then the problem is likely somewhere in a .po file, which means
+that somewhere there is a string containing HTML that is not properly escaped.
+This can be tricky to debug, but will usually arise by looking at svn diffs,
+and comparing to working versions.
+
+! gtoahpa or gtweb language compile process errors
+
+Occasionally an installation problem will arise due to source updates or
+updates within gtcore. Occasionally the problems can be fixed by using ''make
+distclean'', before recompiling the language, or by updating ''gtcore'', and
+then compiling.  Sometimes this will not work.
+
+Since these problems arise in a deployment situation, it is usually best to
+delete the language catalog and check it out again. 
+
 ! String compilation failed, aborting:  babel.core.UnknownLocaleError: unknown locale 'hdn' 
 
 There are two possible problems: 
