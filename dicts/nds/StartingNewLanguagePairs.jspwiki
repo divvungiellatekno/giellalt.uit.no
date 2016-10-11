@@ -101,15 +101,11 @@ given to the NDS project user group for each directory via a cron task.
 !! Adding opt directories for FST deployment
 
 If, while editing the Makefile, you are creating new languages in the ''opt''
-directory for deployment, there are two things to do:
+directory for deployment, there are three things to do:
 
 # create ''/opt/smi/LANG/bin''
-# add ''LANG'' to the cron script config file in ''nds/src/neahtta/gtweb_cron_permission_pairs'', check it in and SVN up the file on gtweb
-
-The cron script simply reads this list of language directories, and sets the
-permissions on the directory so that the ''neahtta'' user may reinstall FSTs
-there. Occasionally other operations on the server will overwrite these files
-with root, so that users we want to eb able to access them cannot.
+# check permissions on directories ''/opt/smi/LANG/bin'' and ''/opt/smi/LANG'', if it is owned by the group ''neahtta'', and writeable by that group
+# add ''LANG'' to the cron script above
 
 !! Configuring nginx
 
