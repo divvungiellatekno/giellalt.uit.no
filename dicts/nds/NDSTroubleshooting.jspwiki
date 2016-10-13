@@ -38,6 +38,17 @@ that somewhere there is a string containing HTML that is not properly escaped.
 This can be tricky to debug, but will usually arise by looking at svn diffs,
 and comparing to working versions.
 
+! Audio links do not work (opens new tab)
+
+This is a newer feature and hasn't been tested on many projects, however the
+easiest thing to check here:
+
+# go to language_specific_rules/templates/PROJNAME/
+# look for {{includes.template}}. If this file isn't there, create it, based on
+what exists in {{itwewina/includes.template}}. Copy the two JS include lines
+for SoundManager and audio_links.js
+
+
 ! gtoahpa or gtweb language compile process errors
 
 Occasionally an installation problem will arise due to source updates or
