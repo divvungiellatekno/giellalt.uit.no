@@ -5,11 +5,11 @@ The code is found at [github|https://github.com/divvun/ck-ospell].
 
 A web editor with spellers is found at [http://divvun.no:3000], and also at [http://divvun.no/korrektur/speller-demo.html]
 
-!Log in, attach to screen
+!!!Log in, attach to screen
 
 # Log in to the account.
-# Attach to the screen instance: {screen -RD}
-# Use nvm: {nvm use stable}
+# Attach to the screen instance: {{screen -RD}}
+# Use nvm: {{nvm use stable}}
 
 !!How ck-ospell was installed
 
@@ -17,7 +17,7 @@ A web editor with spellers is found at [http://divvun.no:3000], and also at [htt
 # cd ck-ospell
 # CXX=clang++-mp-3.4 npm install
 
-!!Languages downloaded
+!!!Languages downloaded
 
 {{{
 for LANG in se sma smj smn
@@ -26,18 +26,18 @@ do
 done
 }}}
 
-!!Run server
+!!!Run server
 
 npm start
 
-!To install a new language
+!!To install a new language
 
 # Log in to the account, attach to screen
 # Ctrl-c (stop the speller server)
 # curl -o etc/<newlanguage>.zhfst http://divvun.no/static_files/zhfsts/<newlanguage>.zhfst
 # npm start
 
-!Update ck-ospell
+!!Update ck-ospell
 
 # Log in to the account, attach to screen
 # Ctrl-c (stop the speller server)
