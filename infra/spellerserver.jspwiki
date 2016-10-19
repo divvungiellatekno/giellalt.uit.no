@@ -13,9 +13,9 @@ A web editor with spellers is found at [http://divvun.no:3000], and also at [htt
 
 !!How ck-ospell was installed
 
-# git clone https://github.com/divvun/ck-ospell.git
-# cd ck-ospell
-# CXX=clang++-mp-3.4 npm install
+# {{git clone https://github.com/divvun/ck-ospell.git}}
+# {{cd ck-ospell}}
+# {{CXX=clang++-mp-3.4 npm install}}
 
 !!!Languages downloaded
 
@@ -28,18 +28,21 @@ done
 
 !!!Run server
 
+{{{
 npm start
+}}}
 
-!!To install a new language
-
-# Log in to the account, attach to screen
-# Ctrl-c (stop the speller server)
-# curl -o etc/<newlanguage>.zhfst http://divvun.no/static_files/zhfsts/<newlanguage>.zhfst
-# npm start
-
-!!Update ck-ospell
+!!!To install a new language
 
 # Log in to the account, attach to screen
 # Ctrl-c (stop the speller server)
-# git pull
-# npm install
+# {{curl -o etc/<newlanguage>.zhfst http://divvun.no/static_files/zhfsts/<newlanguage>.zhfst}}
+# {{npm start}}
+
+!!!Update ck-ospell
+
+# Log in to the account, attach to screen
+# Ctrl-c (stop the speller server)
+# {{git pull}}
+# {{npm install}}
+# {{npm start}}
