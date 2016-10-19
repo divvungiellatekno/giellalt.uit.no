@@ -4,13 +4,14 @@ The code is found at [github|https://github.com/divvun/ck-ospell].
 
 A web editor with spellers is found at [http://divvun.no:3000], and also at [http://divvun.no/korrektur/speller-demo.html]
 
-!!!Log in, attach to screen
+!!!Log in, attach to screen, exit screen
 
 # Log in to the account.
 # Attach to the screen instance: {{screen -RD}}
 # Use nvm: {{nvm use stable}}
+# When done (how to exit {{screen}}): {{Ctrl-A, D, D}}
 
-!!How ck-ospell was installed
+!!!How ck-ospell was installed
 
 # {{git clone https://github.com/divvun/ck-ospell.git}}
 # {{cd ck-ospell}}
@@ -19,7 +20,7 @@ A web editor with spellers is found at [http://divvun.no:3000], and also at [htt
 !!!Languages downloaded
 
 {{{
-for LANG in se sma smj smn
+for LANG in se sma smj smn sms
 do
     curl -o etc/$LANG.zhfst http://divvun.no/static_files/zhfsts/$LANG.zhfst
 done
