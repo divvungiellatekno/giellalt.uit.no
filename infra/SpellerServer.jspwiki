@@ -7,9 +7,9 @@ A web editor with spellers is found at [http://divvun.no:3000], and also at [htt
 !!!Log in, attach to screen, exit screen
 
 # Log in to the account.
-# Attach to the screen instance: {{screen -RD}}
+# Attach to the {{screen}} instance: {{screen -RD}}
 # Use nvm: {{nvm use stable}}
-# When done (how to exit {{screen}}): {{Ctrl-A, D, D}}
+# When done, exit {{screen}} by pressing {{Ctrl-a, d, d}}
 
 !!!How ck-ospell was installed
 
@@ -34,15 +34,15 @@ npm start
 
 !!!To install a new language
 
-# Log in to the account, attach to screen
-# Ctrl-c (stop the speller server)
+# Log in to the account, attach to {{screen}}
+# {{Ctrl-c}} (stop the speller server)
 # {{curl -o etc/<newlanguage>.zhfst http://divvun.no/static_files/zhfsts/<newlanguage>.zhfst}}
 # {{npm start}}
 
 !!!Update ck-ospell
 
-# Log in to the account, attach to screen
-# Ctrl-c (stop the speller server)
+# Log in to the account, attach to {{screen}}
+# {{Ctrl-c}} (stop the speller server)
 # {{git pull}}
 # {{npm install}}
 # {{npm start}}
