@@ -1,0 +1,47 @@
+REST points are called in file at $GTHOME/apps/risten2/frontend/assets/js/components/satni/satni.rest.js
+
+http://gtweb.uit.no:8080/exist/restxq/satni/dictionaries returns list of dictionaries and terminilogies in satni database. Below is the response given today:
+[{ "id" : "smanob", "name" : [{ "xml:lang" : "no", "#text" : "Sørsamisk-norsk ordbok" }, { "xml:lang" : "se", "#text" : "Máttasámi-dáru sátnegirji" }, { "xml:lang" : "sma", "#text" : "Åarjelsaemien-daaaroen baakoegærja" }, { "xml:lang" : "smj", "#text" : "Oarjjelsáme-dárro báhkogirjje" }, { "xml:lang" : "sv", "#text" : "Sydsamisk-norsk ordbok" }] }, { "id" : "nobsma", "name" : [{ "xml:lang" : "no", "#text" : "Norsk-sørsamisk ordbok" }, { "xml:lang" : "se", "#text" : "Dáru-máttasámi sátnegirji" }, { "xml:lang" : "sma", "#text" : "Daaroen-åarjelsaemien baakoegærja" }, { "xml:lang" : "smj", "#text" : "Dárro-oarjjelsáme báhkogirjje" }, { "xml:lang" : "sv", "#text" : "Norsk-sydsamisk ordbok" }] }, { "id" : "nobsme", "name" : [{ "xml:lang" : "no", "#text" : "Norsk-nordsamisk ordbok" }, { "xml:lang" : "se", "#text" : "Dáru-davvisámi sátnegirji" }, { "xml:lang" : "sma", "#text" : "Daaroen-Noerhtesaemien baakoegærja" }, { "xml:lang" : "smj", "#text" : "Dárro-nuorttasáme báhkogirjje" }] }, { "id" : "smenob", "name" : [{ "xml:lang" : "no", "#text" : "Nordsamisk-norsk ordbok" }, { "xml:lang" : "se", "#text" : "Davvisámi-dáru sátnegirji" }, { "xml:lang" : "sv", "#text" : "Nordsamisk-norsk ordbok" }, { "xml:lang" : "sma", "#text" : "Noerhtesaemien-daaroen baakoegærja" }, { "xml:lang" : "smj", "#text" : "Nuorttasáme-dárro báhkogirjje" }] }, { "id" : "mekanikk-1999", "name" : [{ "xml:lang" : "no", "#text" : "Mekanikktermer, 1999" }, { "xml:lang" : "sv", "#text" : "Mekaniktermar, 1999" }, { "xml:lang" : "se", "#text" : "Mekanihkartearpmat, 1999" }, { "xml:lang" : "smj", "#text" : "Mekanihkaterma, 1999" }, { "xml:lang" : "sma", "#text" : "Mekanihken teermh, 1999" }, { "xml:lang" : "en", "#text" : "Mechanical terms, 1999" }, { "xml:lang" : "fi", "#text" : "Mekaniikkatermit, 1999" }] }, { "id" : "termwiki", "name" : [{ "xml:lang" : "no", "#text" : "Termwiki" }, { "xml:lang" : "se", "#text" : "Tearbmawiki" }, { "xml:lang" : "sma", "#text" : "Termwiki" }, { "xml:lang" : "smj", "#text" : "Termwiki" }] }, { "id" : "SD-terms", "name" : [{ "xml:lang" : "en", "#text" : "The Sámi Parliament's term collection" }, { "xml:lang" : "no", "#text" : "Sametingets termsamling" }, { "xml:lang" : "se", "#text" : "Sámedikki tearbmačoakkáldat" }, { "xml:lang" : "sma", "#text" : "Saemiedigkien teermelæstoe" }, { "xml:lang" : "smj", "#text" : "Sámedikke tærmmatjoakkáldahka" }, { "xml:lang" : "sv", "#text" : "Sametingets termsamling" }] }, { "id" : "JustermTana", "name" : [{ "xml:lang" : "no", "#text" : "Juridiske termer" }, { "xml:lang" : "se", "#text" : "Láhkatearpmat" }, { "xml:lang" : "sma", "#text" : "Juridihken teermh" }, { "xml:lang" : "smj", "#text" : "Juridihkalasj terma" }] }]
+
+
+http://gtweb.uit.no:8080/exist/restxq/satni/search returns search result for queries that are three character long or longer.
+There are two query parameters for search:
+query= Query string sent to the database, which compiles a regex "^<query>*"
+dict= Optional parameter to specify which dictionary or terminiology to query. If no dictionary is specified, all dictionaries are queried.
+Example:
+http://gtweb.uit.no:8080/exist/restxq/satni/search?query=hore
+[{ "term" : "hore", "dict" : "nobsme" }, { "term" : "hore", "dict" : "nobsme" }, { "term" : "horekjøper", "dict" : "nobsme" }]
+
+
+http://gtweb.uit.no:8080/exist/restxq/satni/article/<article> returns article or articles.
+Example:
+http://gtweb.uit.no:8080/exist/restxq/satni/article/hore
+[{ "term" : "hore", "dict" : "nobsme", "tg" : { "xml:lang" : "sme", "t" : { "pos" : "N", "src" : "nj", "usage" : "vd", "#text" : "fuorrá" } } }, { "term" : "hore", "dict" : "nobsme", "tg" : { "xml:lang" : "sme", "t" : { "pos" : "V", "src" : "nj", "usage" : "vd", "#text" : "furrošit" } } }]
+
+
+Fourth REST point returns metadata information about a dictionary or terminology. Difference is that this REST address returns an XML fragment.
+http://gtweb.uit.no:8080/exist/restxq/satni/dictionary/termwiki
+<dictionary>
+    <meta id="termwiki" name="Termwiki">
+        <license>Uspesifisert</license>
+        <copyright>Sametinget, Giellagáldu, UiT Norgga árktalaš universitehta</copyright>
+        <description xml:lang="no">
+            <p>Innholdet i Termwikien er basert på Sametingets termsamling. Sametingets
+    termsamling ble overført til Termwikien høsten 2013, og det har blitt lagt
+    inn noe ny terminologi etter det. Sátni.org vil regelmessig bli oppdatert
+    med det nyeste innholdet på Termwikien.</p>
+        </description>
+        <langs>
+            <lang>sma</lang>
+            <lang>sme</lang>
+            <lang>smj</lang>
+            <lang>smn</lang>
+            <lang>sms</lang>
+            <lang>nor</lang>
+            <lang>swe</lang>
+            <lang>fin</lang>
+            <lang>eng</lang>
+            <lang>lat</lang>
+        </langs>
+    </meta>
+</dictionary>
