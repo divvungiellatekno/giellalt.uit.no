@@ -229,6 +229,30 @@ http://gtweb.uit.no:8080/exist/restxq/satni/search?query=hore
   }
 ]
 
+*Example with dictionaries specified
+http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=smanob
+http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=nobsma
+http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=smenob
+http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=nobsme
+http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=mekanikk-1999
+http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=termwiki
+http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=SD-terms
+[
+  {
+    "term": "Cinda",
+    "dict": "smenob"
+  },
+  {
+    "term": "Cindy",
+    "dict": "smenob"
+  },
+  {
+    "term": "cinná",
+    "dict": "smenob"
+  }
+]
+
+
 !!Article search
 http://gtweb.uit.no:8080/exist/restxq/satni/article/<article> returns article or articles.
 *Example:
