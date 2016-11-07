@@ -2,7 +2,7 @@
 REST points are called in file at $GTHOME/apps/risten2/frontend/assets/js/components/satni/satni.rest.js
 
 !!Dictionaries
-http://gtweb.uit.no:8080/exist/restxq/satni/dictionaries returns list of dictionaries and terminilogies in satni database. It also returns localized names for diciotnaries and terminologies in north sami, julev sami, south sami, swedish and norwegian. Below is the response given today:
+[http://gtweb.uit.no:8080/exist/restxq/satni/dictionaries] returns list of dictionaries and terminilogies in satni database. It also returns localized names for diciotnaries and terminologies in north sami, julev sami, south sami, swedish and norwegian. Below is the response given today:
 {{{
 [
   {
@@ -215,7 +215,7 @@ There are two query parameters for search:
 *dict= Optional parameter to specify which dictionary or terminiology to query. If no dictionary is specified, all dictionaries are queried.
 
 *Example:
-http://gtweb.uit.no:8080/exist/restxq/satni/article/muna
+[http://gtweb.uit.no:8080/exist/restxq/satni/article/muna]
 {{{
 [
   {
@@ -262,13 +262,13 @@ http://gtweb.uit.no:8080/exist/restxq/satni/article/muna
 }}}
 
 *Example with dictionaries specified
-http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=smanob
-http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=nobsma
-http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=smenob
-http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=nobsme
-http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=mekanikk-1999
-http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=termwiki
-http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=SD-terms
+[http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=smanob]
+[http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=nobsma]
+[http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=smenob]
+[http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=nobsme]
+[http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=mekanikk-1999]
+[http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=termwiki]
+[http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=SD-terms]
 {{{
 [
   {
@@ -289,7 +289,7 @@ http://gtweb.uit.no:8080/exist/restxq/satni/search?query=cin&dict=SD-terms
 }}}
 
 *Example with all dictionaries
-http://gtweb.uit.no:8080/exist/restxq/satni/search?query=hel&dict=all
+[http://gtweb.uit.no:8080/exist/restxq/satni/search?query=hel&dict=all]
 {{{
 [
   {
@@ -312,7 +312,7 @@ http://gtweb.uit.no:8080/exist/restxq/satni/search?query=hel&dict=all
 http://gtweb.uit.no:8080/exist/restxq/satni/article/<article> returns article or articles.
 
 *Example
-http://gtweb.uit.no:8080/exist/restxq/satni/article/munanleikkuri
+[http://gtweb.uit.no:8080/exist/restxq/satni/article/munanleikkuri]
 {{{
 [
   {
@@ -364,7 +364,7 @@ http://gtweb.uit.no:8080/exist/restxq/satni/article/munanleikkuri
 }}}
 
 *Example
-http://gtweb.uit.no:8080/exist/restxq/satni/article/kiet%C3%A2
+[http://gtweb.uit.no:8080/exist/restxq/satni/article/kiet%C3%A2]
 {{{
 { {
   "term": "kietâ",
@@ -411,7 +411,7 @@ http://gtweb.uit.no:8080/exist/restxq/satni/article/kiet%C3%A2
 Fourth REST point returns metadata information about a dictionary or terminology. Difference is that this REST address returns an XML fragment.
 
 *Example
-http://gtweb.uit.no:8080/exist/restxq/satni/dictionary/termwiki
+[http://gtweb.uit.no:8080/exist/restxq/satni/dictionary/termwiki]
 {{{
 <dictionary>
     <meta id="termwiki" name="Termwiki">
