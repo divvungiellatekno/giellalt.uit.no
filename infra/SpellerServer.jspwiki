@@ -46,3 +46,24 @@ npm start
 # {{git pull}}
 # {{npm install}}
 # {{npm start}}
+
+!!!Depending on particular branches/commits
+
+ck-ospells dependencies are specixfied in package.json. More info can be found in
+[package.json/npm documentation|https://docs.npmjs.com/files/package.json#git-urls-as-dependencies].
+
+!!Depending on a particular commit
+
+{{{
+    "hfst-ospell-js": "git://github.com/divvun/hfst-ospell-js#c311421b3c9a79bcb5decd482b131dd5883564fb",
+}}}
+
+[Example commit on github|https://github.com/divvun/ck-ospell/commit/062082229d86d7ca0b0878604f764461d0e7428e]
+
+!!Depending on a particular branch
+
+{{{
+    "hfst-ospell-js": "git://github.com/divvun/hfst-ospell-js#alphabet-hack",
+}}}
+
+[Example commit on github|https://github.com/divvun/ck-ospell/commit/1b7ec150fa8fce3c286cc5788c8d3e26e39dd4b6]
