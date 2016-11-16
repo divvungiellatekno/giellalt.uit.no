@@ -137,44 +137,89 @@ to add weights to the fst that will end up as the acceptor.
 
 Morphology-based weighting is done by adding weights to the morphological or
 morphosyntactic tags in the analyser. You do this by modifying the file
-{{tools/spellcheckers/fstbased/hfst/Makefile.am}}, see the commented example in
-that file.
+{{tools/spellcheckers/fstbased/desktop/weighting/tags.reweight}}. The file
+contains TAB separated values, two columns:
 
-In the future it is likely that we want to add weights also to the regular
-analysers. It is an open question whether we want to use the same weights for
-the analyser and the speller, but if so, the two need to be coordinated.
+# the tag itself
+# the weight that should be given to the tag
+
+Comments can be added as lines starting with __#__.
 
 Below is an example of how this can be done, taken from {{sme}}:
 
 {{{
-$(GT_SPELLER_HFST): ../$(GT_SPELLER_HFST)
-	$(AM_V_GEN)cat $< \
-		| $(HFST_REWEIGHT) -a 0.1 -S +Cmp   \
-		| $(HFST_REWEIGHT) -a 0.1 -S +Der   \
-		| $(HFST_REWEIGHT) -a 0.1 -S +Der1  \
-		| $(HFST_REWEIGHT) -a 0.1 -S +Der2  \
-		| $(HFST_REWEIGHT) -a 0.1 -S +Der3  \
-		| $(HFST_REWEIGHT) -a 0.1 -S +Der4  \
-		| $(HFST_REWEIGHT) -a 0.2 -S +PxSg1 \
-		| $(HFST_REWEIGHT) -a 0.2 -S +PxSg2 \
-		| $(HFST_REWEIGHT) -a 0.2 -S +PxSg3 \
-		| $(HFST_REWEIGHT) -a 0.2 -S +PxPl1 \
-		| $(HFST_REWEIGHT) -a 0.2 -S +PxPl2 \
-		| $(HFST_REWEIGHT) -a 0.2 -S +PxPl3 \
-		-o $@
++Cmp	+2
++Der	+1
++Der1	+1
++Der2	+1
++Der3	+1
++Der4	+1
++Der5	+1
++PxSg1	+3
++PxSg2	+3
++PxSg3	+3
++PxPl1	+3
++PxPl2	+3
++PxPl3	+3
++Use/SpellNoSugg	+10000
++Cmp/Hyph	+10000
++Cmp/SplitR	+10000
 }}}
+
+The weights are added to the other weights given to a word form, and should be
+chosen to align with the rest of the weights being used. Corpus weights are
+typically between {{6}} and {{12}} (but will vary depending on the size of the
+corpus), and the default weight for editing distance operations is {{10}}. Very
+high weights will cause a word form not to be suggested at all, or very rarely.
 
 !!Corpus-based weighting
 
-Presently only provided for Finnish, this can quite easily be added to other
-languages. The basic idea is to add frequency-based sorting, such that more
-frequent words are suggested over less frequent ones. The support is not yet
-complete, but have a look at {{fin}} for inspiration.
+You turn on frequency-based weighting by doing two things:
+
+# Create a speller corpus
+# Enable the use of the speller corpus
+
+!Creating a speller corpus
+
+This is very simple: just store a large amount of text in the file
+{{tools/spellcheckers/fstbased/desktop/weighting/spellercorpus.raw.txt}}. The
+content does not have to be sorted, split or clean in anyway - basic cleaning
+and sorting is done automatically, and all incorrect words will be filtered out
+automatically.
+
+If you are using texts that are copyrighted, you can use the following Perl
+one-liner to scramble the words or lines in the text, so that the original text
+is not reconstructable:
+
+{{{
+perl -MList::Util=shuffle -e 'print shuffle(<>);' < myfile.txt \
+> tools/spellcheckers/fstbased/desktop/weighting/spellercorpus.raw.txt
+}}}
+
+After this, the text is fine for inclusion in the corpus.
+
+Use a lot of text, so that also the not-so-frequent word forms are covered -
+that will help a lot in improving the suggestion quality.
+
+!Enabling the use of the speller corpus
+
+Having a text corpus (which provides us with frequency data) is not enough, you
+also need to enable the use of it. This is done by editing
+{{tools/spellcheckers/fstbased/desktop/Makefile.am}}, so that it contains the
+following line (the line should already be there, but with the value ''no''):
+
+{{{
+ENABLE_CORPUS_WEIGHTS=yes
+}}}
+
+You can temporarily disable the use of frequency data, e.g. for evaluation and
+development purposes, by changing ''yes'' to ''no''.
 
 !!Both
 
-It should be possible to combine the two, but that has not been tested. If done,
-this is really an area for research, and must be done carefull
+It can also be quite helpful to combine the use of frequency (corpus) weights
+and tag-based (morphology) weights. You need to experiment and test a bit to
+arrive at the best configuration for a given language.
 
 !!!Time-stamping the spellers
 
@@ -199,12 +244,12 @@ suggestions should contain the version information.
 
 !!!Testing spellers
 
-The weighting may be tested on data from {{test/data/typos.txt}}. In order to do this, 
-you need Text/Brew.pm ( a Perl module). To test, stand in the $LANG (langs/sme, etc) 
-directory and write
+The speller may be tested on data from {{test/data/typos.txt}}. In order to do
+this, you need {{Text/Brew.pm}} (a Perl module, it should be installed if you
+follow the default setup procedure). To test, stand in the $LANG (langs/sme,
+etc) directory and write:
 
 {{{
 sh devtools/test_voikkospell_suggestions.sh 
 open -a Safari devtools/speller_result_typos.vk.xml
 }}}
-
