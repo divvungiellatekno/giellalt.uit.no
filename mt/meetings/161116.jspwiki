@@ -1,0 +1,363 @@
+!!!MT-Apertium 
+
+Lene, Fran, Trond
+
+!!Saker
+* Lage motsatt versjoner av språkparene
+* Bug 2201
+* Harmonisering av kategoriar i t1x-filene
+
+
+!!Motsatt versjoner
+* sma->sme, smj->sme, smn->sme fungerer
+
+{{{
+$ echo "Månnoeh aehtjieh gåetide båetiejimen." | apertium -d . sma-sme
+Moai áhčit dáluide bođiime.
+
+$ echo "Sámij årromguovllo gåhtjuduvvá Sábmen." | apertium -d . smj-sme
+Sámiiguin ássanguovlu #gohčodit Sápmin.
+}}}
+
+!!Bug 2201
+Vi diskuterte løsninger:
+
+Francis legger inn i dix-filene definisjon av numeral som adjektiv som dekker tallene 1-39
+{{{
+    <e><re>([0-9]|[0-3][0-9]+)</re><p><l><s n="adj"/><s n="ord"/></l><r><s n="adj"/><s n="ord"/></r></p></e>
+}}}
+
+Vi ser på muligheta av å disambiguere sentence delimiter i before-section, evt. ta opp med Tino hvis behov.
+
+!!Harmonisering av kategoriar .t1x-filene
+
+Oversyn over arbeid:
+
+# Harmonisere navn på dem som har likt innhold - OK (i -sma, -smj, -smn)
+# Legge til språkpar 3 de som er i språkpar 1 og 2 - OK
+# De som er i bare ett språkpar, legges i en egen blokk 
+# Fjern dei som ikkje er i bruk 
+# Harmonisere bruk av bindestrek vs. understrek i navn
+# Harmonisere form av samisk i namna
+# Endre navnene slik at de dekker innholdet 
+
+
+__Tiltak__
+
+* Vi vil ha nordsamisk som metaspråk
+* Lene ser på namna i gruppe 1 (alle tre filer)
+* Fikse bug <ord> for sørsamisk
+
+!Desse er i alle tre filer, med same innhald:
+
+{{{
+x      3 <def-cat n="váikkuhitverb">
+x      3 <def-cat n="sent">
+x      3 <def-cat n="semyear">
+x      3 <def-cat n="prosent">
+x      3 <def-cat n="prn-rel">
+x      3 <def-cat n="prn-res">
+x      3 <def-cat n="prn-pers">
+x      3 <def-cat n="prn-dem">
+x      3 <def-cat n="prn">
+x      3 <def-cat n="pr">
+x      3 <def-cat n="post">
+x      3 <def-cat n="mielde-adv">
+x      3 <def-cat n="miehtá">
+x      3 <def-cat n="liikotverb">
+x      3 <def-cat n="jagis">
+x      3 <def-cat n="jagi">
+x      3 <def-cat n="geahččatverb">
+x      3 <def-cat n="ge">
+x      3 <def-cat n="foc">
+x      3 <def-cat n="dihte">
+x      3 <def-cat n="default">
+x      3 <def-cat n="comma">
+x      3 <def-cat n="cnjsub">
+x      3 <def-cat n="cnjcoo">
+x      3 <def-cat n="buorre">
+x      3 <def-cat n="boaris">
+x      3 <def-cat n="adpos">
+x      3 <def-cat n="adj">
+x      3 <def-cat n="váste">
+x      3 <def-cat n="prn-refl">
+x      3 <def-cat n="pcle">
+x      3 <def-cat n="birra-po">
+x      3 <def-cat n="birra-adv">
+x      3 <def-cat n="mánnu">
+x      3 <def-cat n="rdep">
+x      3 <def-cat n="prn-itg">
+x      3 <def-cat n="prn-ind">
+x      3 <def-cat n="guhkki">
+x      3 <def-cat n="prop-nom">
+x      3 <def-cat n="prop-attr">
+x      3 <def-cat n="áigi">
+x      3 <def-cat n="prn-attr">
+x      3 <def-cat n="geatnegahtton">
+x      3 <def-cat n="verb-prfprc">
+x      3 <def-cat n="mod_num">
+x      3 <def-cat n="vuollai">
+x      3 <def-cat n="leat-aux">
+x      3 <def-cat n="vp-boundary">
+x      3 <def-cat n="numcmp">
+x      3 <def-cat n="prn-pers-gen">
+x      3 <def-cat n="prn-pers-acc">
+x      3 <def-cat n="prn-dem-sg">
+x      3 <def-cat n="cmp_splitr">
+x      3 <def-cat n="num-ldep">
+x      3 <def-cat n="gen">
+x      3 <def-cat n="boahtit">
+x      3 <def-cat n="cnp">
+x      3 <def-cat n="dat-pcle">
+x      3 <def-cat n="bealis-px">
+x      3 <def-cat n="fápmui"> 
+x      3 <def-cat n="fárrui">
+x      3 <def-cat n="abbr">
+x      3 <def-cat n="go-qst">
+x      3 <def-cat n="go-cnjsub">
+x      3 <def-cat n="beassatverb">
+x      3 <def-cat n="geahčen">
+x      3 <def-cat n="sisa">
+x      3 <def-cat n="mielde-post">
+x      3 <def-cat n="bokte">
+x      3 <def-cat n="beallai">
+x      3 <def-cat n="hupmatverb">
+}}}
+
+!Desse er i alle tre filene, men med ulikt innhald
+
+{{{
+      3 <def-cat n="adv">               | different tags - harmoniser
+      3 <def-cat n="ja">                | different lemmas - max
+      3 <def-cat n="noun">              | extra tag - max
+      3 <def-cat n="word">              | different tags - max
+      3 <def-cat n="numeral">           | different tags- 
+      endre navnet for settet i sma til: "numeral_not_year" , 
+      legg til "numeral" som samme cat i sma som i de andre to 
+    sma:
+        <def-cat n="numeral">
+      <cat-item tags="num.*"/>
+    </def-cat>
+
+    <def-cat n="numeral-not-year">
+      <cat-item tags="num.rom.*"/>
+      <cat-item tags="num.arab.*"/>
+      <cat-item tags="num.sg.*"/>
+      <cat-item tags="num.pl.*"/>
+      <cat-item tags="num.ess.*"/>
+    </def-cat>
+
+    smn:
+    
+        <def-cat n="numeral">
+      <cat-item tags="num.*"/>
+    </def-cat>
+    
+    smj:
+    
+        <def-cat n="numeral">
+      <cat-item tags="num.*"/>
+    </def-cat>
+    
+      
+      3 <def-cat n="verb-fin">          | different tags 
+      => "verb-fin-not-imp" alle tre språk, for smj: "verb-cond" 
+      inkluderes inn i verb-fin-regelen, med egen chunking
+      
+
+      
+      3 <def-cat n="negverb">           | wildly different tags
+     sma = smn mønsteret kopieres til smj, men med nytt navn:     negverb  
+}}}
+     
+!Vi arbeider videre med disse over mail     
+{{{
+      
+      3 <def-cat n="prop-cmp">          | different tags
+      3 <def-cat n="n-cmp">             | different tags
+      3 <def-cat n="num-nomacc">        | different tags
+      3 <def-cat n="nom-gen">           | different tags
+      3 <def-cat n="attr">              | different tags
+      3 <def-cat n="leat-main-fin">     | different tags
+      3 <def-cat n="n-sg-nom">          | different tags
+      3 <def-cat n="n-not-cmp">         | different tags
+      3 <def-cat n="verb-inf">          | different tags
+}}}
+
+!Desse er i berre ei fil:
+
+Leksikaliserte - Lene foreslår andre navn - epost
+
+{{{
+      1 <def-cat n="Laarain">
+      1 <def-cat n="aahka">
+      1 <def-cat n="aehtjie">
+      1 <def-cat n="ahte">
+      1 <def-cat n="ala">
+      1 <def-cat n="almmá">
+      1 <def-cat n="atnit">
+      1 <def-cat n="atnu">
+      1 <def-cat n="beaivi">
+      1 <def-cat n="buot">
+      1 <def-cat n="coggat">
+      1 <def-cat n="dat">
+      1 <def-cat n="dattetge">
+      1 <def-cat n="dieđu">
+      1 <def-cat n="dihto-adj">
+      1 <def-cat n="duohken">
+      1 <def-cat n="dálá">
+      1 <def-cat n="dárbu">
+      1 <def-cat n="eanet">
+      1 <def-cat n="eará">
+      1 <def-cat n="eatnat">
+      1 <def-cat n="eret">
+      1 <def-cat n="giittos">
+      1 <def-cat n="goiku">
+      1 <def-cat n="gosage">
+      1 <def-cat n="guokte">
+      1 <def-cat n="haga">
+      1 <def-cat n="ii">
+      1 <def-cat n="ii-imp">
+      1 <def-cat n="ipmárdus">
+      1 <def-cat n="jahki">
+      1 <def-cat n="juohke">
+      1 <def-cat n="lassin">
+      1 <def-cat n="ládje">
+      1 <def-cat n="láhki">
+      1 <def-cat n="maake">
+      1 <def-cat n="maiddái">
+      1 <def-cat n="mearkkašit">
+      1 <def-cat n="mihkkege">
+      1 <def-cat n="moai">
+      1 <def-cat n="nu">
+      1 <def-cat n="nubbi">
+      1 <def-cat n="oaivvildit">
+      1 <def-cat n="oassálastit">
+      1 <def-cat n="oažžut">
+      1 <def-cat n="oktavuohta">
+      1 <def-cat n="olu">
+      1 <def-cat n="ovdamearka">
+      1 <def-cat n="ovttasráđiid">
+      1 <def-cat n="ovttâst-verb">
+      1 <def-cat n="uđđâsist-verb">
+      1 <def-cat n="vejolaš">
+      1 <def-cat n="vuhtii">
+      1 <def-cat n="vuástá-verb">
+      1 <def-cat n="váldit">
+      1 <def-cat n="árvvus">
+      1 <def-cat n="älkkeebin-verb">
+      1 <def-cat n="čájehit">
+      1 <def-cat n="shoes">
+}}}
+
+!Grammatiske
+
+{{{
+      1 <def-cat n="a-adv-comp">
+      1 <def-cat n="actio-sem_act">
+      1 <def-cat n="adj-rdep">
+      1 <def-cat n="adj-sup">
+      1 <def-cat n="adj2verb">
+      1 <def-cat n="adjattr-all">
+      1 <def-cat n="adjattr-pos">
+      1 <def-cat n="adv-empty">
+      1 <def-cat n="adv_go">
+      1 <def-cat n="adv_r">  => "l_advl"
+      1 <def-cat n="agreem-pl">
+      1 <def-cat n="agreem-pl-gen">
+      1 <def-cat n="agreem-sg">
+      1 <def-cat n="agreem-sg-gen">
+      1 <def-cat n="agreement-attr">
+      1 <def-cat n="agreement-attr">                             
+      1 <def-cat n="agreement-buot">
+      1 <def-cat n="agreement-half">                             
+      1 <def-cat n="anon-verb">
+      1 <def-cat n="auxverb">
+      1 <def-cat n="com-ess-verb">
+      1 <def-cat n="comitative">
+      1 <def-cat n="conneg">
+      1 <def-cat n="connegverb">
+      1 <def-cat n="dem-gen">
+      1 <def-cat n="gencompl">
+      1 <def-cat n="genmod">
+      1 <def-cat n="habitive">
+      1 <def-cat n="illadvl">
+      1 <def-cat n="inessive"> 
+      1 <def-cat n="interj">
+      1 <def-cat n="l_spred">
+      1 <def-cat n="l_subj">
+      1 <def-cat n="leat-aux-main">
+      1 <def-cat n="leat-conneg">
+      1 <def-cat n="leat-drop">
+      1 <def-cat n="leat-main">
+      1 <def-cat n="leat-main-infin">
+      1 <def-cat n="leat-main-pret">
+      1 <def-cat n="leat-qst">
+      1 <def-cat n="leat_conneg_prt">
+      1 <def-cat n="leat_prfprc">
+      1 <def-cat n="mainverb">
+      1 <def-cat n="mainverbqst">
+      1 <def-cat n="n-pl-com">
+      1 <def-cat n="n-prop-pers">
+      1 <def-cat n="n-sg-accgen">
+      1 <def-cat n="n-sg-com">
+      1 <def-cat n="n-sg-gen">
+      1 <def-cat n="n-sg-pl-gen">
+      1 <def-cat n="negverb23">
+      1 <def-cat n="negverbqst">
+      1 <def-cat n="nomact-com">
+      1 <def-cat n="nomact-ill">
+      1 <def-cat n="nomact-ill-modn">
+      1 <def-cat n="nomact-nom">
+      1 <def-cat n="nominal"> 
+      1 <def-cat n="not-pcle">
+      1 <def-cat n="noun-ill">
+      1 <def-cat n="noun-loc">
+      1 <def-cat n="noun-loc-num">
+      1 <def-cat n="noun-nom">
+      1 <def-cat n="noun-nom"> 
+      1 <def-cat n="noun-nom-acc-gen">
+      1 <def-cat n="noun-not-np">
+      1 <def-cat n="nouncmp">
+      1 <def-cat n="nounpx">
+      1 <def-cat n="num-sg-all">
+      1 <def-cat n="numattr">
+      1 <def-cat n="numgen">
+      1 <def-cat n="numsem">
+      1 <def-cat n="numsg-acc-nom">
+      1 <def-cat n="obj_l">
+      1 <def-cat n="ordinal">
+      1 <def-cat n="pl-words"> 
+      1 <def-cat n="po_l">
+      1 <def-cat n="prfprcword">
+      1 <def-cat n="prn-adj-attr">
+      1 <def-cat n="prn-dem-loc">
+      1 <def-cat n="prn-ind-dem">
+      1 <def-cat n="prn-num">
+      1 <def-cat n="prn-pl-com">
+      1 <def-cat n="prn-ref_PRONl">
+      1 <def-cat n="prn-refl-sg-nom">
+      1 <def-cat n="prn-refl_PRONl">
+      1 <def-cat n="prnrefgen">
+      1 <def-cat n="prsprc">
+      1 <def-cat n="refcom">
+      1 <def-cat n="sem_measr_time">
+      1 <def-cat n="semdate">
+      1 <def-cat n="semyear-loc">
+      1 <def-cat n="semyear-loc-gen">
+      1 <def-cat n="semyearPl">
+      1 <def-cat n="subpred">
+      1 <def-cat n="verb">
+      1 <def-cat n="verb-actio">
+      1 <def-cat n="verb-actio-ess">
+      1 <def-cat n="verb-actio-gen">
+      1 <def-cat n="verb-actio-inf">
+      1 <def-cat n="verb-cond">
+      1 <def-cat n="verb-for-cmp">
+      1 <def-cat n="verb-imp">
+      1 <def-cat n="verb_to_adv">
+      1 <def-cat n="word-not-verb">
+      1 <def-cat n="word_qst-not-verb">
+}}}
+
+
