@@ -1,0 +1,556 @@
+!!! Čoahkkin 15.12.2016
+
+Marja-Liisa, Trond, Lene (google hangouts)
+
+!! Boahtteáigi (2017 rájes)
+mii joatkit, muhto eat seamma ollu go dán jagi
+
+! Vejolaš giellateknologiijabarggut:
+* buoridit FST
+* buoridit sátnegirjji
+* buoridit divvun-prográmma (dan mii ii leat FST)
+* buoridit MT-vuogádaga
+* čohkket teavsttaid Korpii
+* oažžut olbmuid geavahit reaidduid
+* geahččat/árvvoštallat reaidduid geavaheami
+* álgit ođđa reaidduid ráhkadit
+
+!! Artihkalbargu
+
+* MT
+* divvunprográmma
+* Sátnegirjjit
+* Giellasosiologalaš artihkal
+
+
+!!MT Nodalida artihkal
+
+Kommandot:
+* cd main/art/2017/MTsmesmX
+* open nodalida/smesmx.pdf
+* see nodalida/smesmx.tex
+
+
+# Introduction
+# Background
+## Languages and lang situation
+TODO: 2.1. ii leat čállojuvvon
+## Rulebased MT
+TODO: 2.2. ii leat čállojuvvon
+# The project
+TODO: Prošeavtta idea
+## Challenges
+TODO: Ođđa bajilčála, sisdoallu
+# Evaluation
+TODO: Presenteret evalueren-setup
+## Qvantitative
+## Word coverage
+TODO: ođđa tabealla
+## Word error rate
+### Inari Saami
+### Lule Saami
+TODO: sma (Trond)
+### The role of the pivot language on the resulting translation
+fin etc deike.
+## Qvalitative evaluation
+Doppe lea Miina gážaldat
+### North Saami to Inari Saami
+### How the evaluators solved remaining problems
+TODO: ML čállá + mii oaidnit
+## Terminology    
+Oaidnu: Terminologiijačuolmmat oalle seammaláganat buot sámegielain. 
+"jousiammunta" --> dávggiin báhčin; Jorgalančuolmmaid čoavdin šaldegielas; heivvolaš čovdosat.
+Gokko feile? - ?? "Masa MT ii nu bures heive?"
+(vrd.: Davvisámegiela jorgaleaddji geahččá nob-fin sátnegirjjis
+vai oažžut buorre inspirašuvnna)
+Vejolaš geahčat buot dynamalaš goallossániid, leago rievdaduvvon dahje ii.
+# Future work
+# Conclusion
+
+gč. maid smesma seammálágan artihkkal: 
+
+open main/art/2015/nejlt-iwclul/smesma/smesmapaper.pdf
+
+Bargu:
+
+* kvantatiivalaš evalueren (buot, eret 1 smj)
+** maimus smj boahtá boahtte vahku
+* tabealla (sma váilu, boahtá odne (__Trond__)
+* lingvisttalaš evalueren (smn olu dahkkon, sma, smj boahtá
+** {{empiri/smesmn/qualitative/analyse_MLO*}}
+
+
+!! Sátnegirjji lanseren
+
+
+Sátnegirji saanih.oahpa.no lea juo geavahusas:
+
+{{{
+   3261 2016-02
+   5551 2016-03
+  11411 2016-04
+  10177 2016-05
+   6154 2016-06
+   2741 2016-07
+   8387 2016-08
+  12107 2016-09
+  10440 2016-10
+  12577 2016-11
+   2999 2016-12
+}}}
+
+Trond váldá oktavuođa Sámedikkiin
+
+
+!! FST buorideapmi
+
+Jos fuobmá juoida, de
+
+# Čále Bugzilla
+# Čále feará mii-yaml
+
+Geahččat missinglisttu
+* divvunservera: {{2016-12-07/smn_missing_frekv}}
+* deike: {{smn/src/morphology/incoming}}
+
+
+!! Goallosteapmi
+
+ML sádde ovdamearkkaid mat eai oaččo analysa dahje Divvun-prográmma ii dohkket.
+
+* Mearusoassi sáhttá leat SgNom, SgGen, PlGen
+* Vuođđooassi buot substantiivat, maiddái deriverašuvnnat
+
+Ovdamearkkat korpusis:
+
+{{{
+kuávdášruttârááju	kuávdáš+N+Cmp/SgNom+Cmp#ruttârááju+N+Sg+Nom
+evaŋgeliumkirjeest  evangelium+N+Cmp/SgNom+Cmp#kirje+N+Sg+Loc
+sämikielâkevttim        säämi+N+Cmp/SgNom+Cmp#kielâ+N+Cmp/SgGen+Cmp#kevttiđ+V+TV+Der2+Der/NomAct+N+Sg+Nom
+...
+}}}
+
+Mii dárbbašit konkreahta feailaovdamearkkat
+
+
+!! Derivašuvdna
+
+[http://giellatekno.uit.no/doc/mt/infra/DerivationOverview.html]
+
+Missinglisttut:
+* smn/src/morphology/incoming/smn_missing_frekv
+* smn/src/morphology/incoming/rev_smn_missing_frekv
+
+
+!! Passiiva
+
+!! Possessiivasuffiksa
+
+käärbis, jna.
+
+Bargu:
+* __Marja-Liisa__ hukse sátnelisttu, 
+* __Lene__ generere cealkagiid
+
+!!A - Adv -derivašuvdna
+
+{{{
+LEXICON A_ADV  !!= * __@CODE@__ for derivation
++Der2+Der/AAdv+Adv:ávt K ; !pyeremusávt
++Der2+Der/AAdv+Adv+Err/Orth:avt K ; !
++Der2+Der/AAdv+Adv+Use/NG:âht K ; !pyeremusâht
+
+LEXICON COMPA_ADV  !!= * __@CODE@__ for derivation
++Der2+Der/AAdv+Adv:oht K ; !vijđásubboht
+}}}
+
+* Lasit A_ADV joatkkaleksikonaide
+* Dutkka missinglisttu
+
+Missingsánit main leat -ht/vt loahpas:
+
+{{{
+Oht
+paaht
+valjaht
+Liivilaht
+somaht
+Feäđaht
+paabeht
+pahabeht
+valjebeht
+älkkebeht
+komebeht
+hyenebeht
+byörebeht
+Tárhibeht
+jienniibeht
+tävjibeht
+herkibeht
+vänibeht
+läivibeht
+Härvibeht
+härvibeht
+Togobeht
+kogobeht
+togobeht
+hiälbubeht
+Táágubeht
+táágubeht
+hiäjubeht
+huápubeht
+sijvuubeht
+uáccáábeht
+ruákkáábeht
+äššitobdeht
+älkkeebeeht
+passeeht
+viijđeeht
+Stockfleht
+čalmettemeht
+vavettemeht
+kenhittemeht
+räjittemeht
+rávhuttemeht
+iävtuttemeht
+mášuttemeht
+mielâttemeht
+huolâttemeht
+jienâttemeht
+hyeneht
+uuineht
+Kogopeht
+kogopeht
+fasteht
+iberdetteht
+lyetittetteht
+Oskottetteht
+velttittitteht
+huámášitteht
+merhâšitteht
+pišteht
+miänástuvveht
+Kyeht
+kyeht
+toŋŋeht
+goretoŋŋeht
+häälbiht
+cobciht
+tuáŋgiht
+tuávhiht
+täävjiht
+heerkiht
+Lääškiht
+lääškiht
+suámiht
+jienniht
+Oovtkiärdániht
+čeepiht
+pyöräpiht
+jieččiht
+oht
+jotelobboht
+jotelubboht
+vijđásubboht
+Mielâstubboht
+mielâstubboht
+booht
+kirkkádubbooht
+čovgâdubbooht
+sahâdubbooht
+joskâdubbooht
+lašmâdubbooht
+várugubbooht
+uánihubbooht
+juhlelubbooht
+jotelubbooht
+tärhilubbooht
+Tärkkilubbooht
+tärkkilubbooht
+teknilubbooht
+pehtilubbooht
+kävilubbooht
+almolubbooht
+tiervâslubbooht
+koŋkreetlubbooht
+vuáđulubbooht
+aktiivlubbooht
+rávhálubbooht
+jiešráđálubbooht
+huolâlubbooht
+čieŋâlubbooht
+ohtâkiärdánubbooht
+keppisubbooht
+nanosubbooht
+uđđâäigásubbooht
+njálgásubbooht
+kumásubbooht
+fijnásubbooht
+vissásubbooht
+hitásubbooht
+kivásubbooht
+kijvásubbooht
+čovgâsubbooht
+vuohâsubbooht
+pakkâsubbooht
+merikoskâsubbooht
+latkišubbooht
+čuávvoht
+táálášoht
+cuápcuht
+gontannuht
+hiälpuht
+hitruht
+puoššuht
+uáccáht
+viijdáht
+vijdáht
+šlundáht
+njálgáht
+livkkáht
+riskáht
+hurskáht
+Čiävláht
+čiävláht
+kuáimáht
+epifijnáht
+fiijnáht
+linnáht
+munnáht
+vuávnáht
+vijsáht
+iättáht
+viijđáht
+eennâmvijđáht
+njuálččáht
+ráđđáht
+puáššáht
+rijjâht
+joolâht
+valjaamusâht
+Pahamusâht
+pyremusâht
+tävjimusâht
+huápumusâht
+syeligâsâht
+syelimâsâht
+poočâht
+räht
+vijđht
+čielgasavt
+sahâdumosavt
+eromâšavt
+tienievt
+kevt
+tienevt
+Kyevt
+kyevt
+táválvt
+ovt
+Oovt
+Tovt
+oovt
+Kiäinuluovt
+nuovt
+nánosvt
+vissásvt
+Nuvt
+nuvt
+tienuvt
+nuuuuvt
+korrâsávvt
+hirmadávt
+muččadávt
+kirkkádávt
+hirmádávt
+kiämádávt
+ruokkâdâdávt
+čielgâdávt
+Vohâdávt
+vohâdávt
+kirkkâdávt
+sitkâdávt
+sivâdávt
+sovâdávt
+sivvâdávt
+mudagávt
+mädigávt
+vyelligávt
+mudâgávt
+kuvdâgávt
+uáinihávt
+snielâhávt
+oppâhistorjalávt
+siivvâdlávt
+täpitormelávt
+arkkitehlávt
+juridilávt
+Tärggilávt
+loogilávt
+tárkkilávt
+radikaalilávt
+täsipelilávt
+teknilávt
+automaatilávt
+teoreetilávt
+praktiiklávt
+spatiaallávt
+funtionaallávt
+horisontaallávt
+historjallávt
+noomlávt
+elektroonlávt
+ohtânmanolávt
+hysteerlávt
+Oleslávt
+oovtčielgiittâslávt
+priivaatlávt
+fooneetlávt
+koŋkreetlávt
+implisiitlávt
+kielâpoolitlávt
+Abstraktlávt
+Semantlávt
+semantlávt
+čyetiprosseentlávt
+proosentlávt
+hypnootlávt
+systemáátlávt
+Keevvâtlávt
+máhdulávt
+luánduhäämijuávhulávt
+várulávt
+ansulávt
+kohtulávt
+jiešiävtulávt
+Molsâiätulávt
+mahđulávt
+agressiivlávt
+relatiivlávt
+kvantitatiivlávt
+intransitiivlávt
+rehálávt
+epirehálávt
+uárjálávt
+toskálávt
+miärálávt
+Koskamiärálávt
+lohomiärálávt
+olesmiärálávt
+tievâsmiärálávt
+koškâmiärálávt
+päiválávt
+árbivuáválávt
+olespiäválávt
+oovtráđálávt
+eennâmtiäđálávt
+pedagogâlávt
+mytologâlávt
+oovtmielâlávt
+Ritmâlávt
+ritmâlávt
+naturalistâlávt
+višâlávt
+máhđúlávt
+lohđuttemávt
+lohđutmettumávt
+várumettumávt
+várumáttumávt
+Tienávt
+tienávt
+ángirávt
+sávt
+lieggasávt
+ovtâskâssajasávt
+ovdâsajasávt
+vuolgâsajasávt
+sâsajasávt
+omasávt
+päresávt
+spesifisávt
+teologisávt
+änhisávt
+taksonomisávt
+kyynisávt
+fyysisávt
+realistisávt
+epieettisávt
+nabdosávt
+oppâtahosávt
+Sahâdumosávt
+sahâdumosávt
+Jotelumosávt
+jotelumosávt
+vijđásumosávt
+eennâmvijđosávt
+struktuursávt
+pyeremussávt
+njuáidusávt
+njuádusávt
+kiärgusávt
+jiänusávt
+luándumiäldásávt
+pargotiervâsvuođâlaavâmiäldásávt
+sundásávt
+siämmáásundásávt
+täsiviärdásávt
+oovtviärdásávt
+ovtâskâsčuággásávt
+kujásávt
+riskásávt
+olásávt
+tuodânálásávt
+erenomásávt
+kumásávt
+linnásávt
+čielgâsánásávt
+korrásávt
+kiärrásávt
+olesmiärásávt
+Váldumiärásávt
+epitásásávt
+tábáhtuskuáhtásávt
+puttásávt
+olespiäivásávt
+stađásávt
+maailmvijđásávt
+Liággâsávt
+ielgâsávt
+várugâsávt
+čovgâsávt
+unohâsávt
+toškâsávt
+miellâsávt
+ollâsávt
+sulâsávt
+siämmáásulâsávt
+Eromâsávt
+eromâsávt
+fijnâsávt
+vissâsávt
+suotâsávt
+teoreetávt
+Luánduávt
+täsivávt
+epitäsivávt
+lyettivávt
+váruvávt
+cuávuvávt
+táváávt
+čielgâávt
+Erinomašávt
+erenomášávt
+Erinomášávt
+erinomážávt
+erinomášávt
+eromášávt
+mâšávt
+Erinomâšávt
+Erâomâšávt
+hirmâđávt
+Eroâšávt
+torvolâvt
+komálâvt
+ärbivuáválâvt
+tärkkilävt
+}}}
