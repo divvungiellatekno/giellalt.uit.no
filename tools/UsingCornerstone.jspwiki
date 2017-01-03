@@ -16,7 +16,7 @@ Start Cornerstone and either click __Add Repository__ (if you don't have a local
 working copy already) or __Add Working Copy__ (if you ''do'' have a working copy
 already):
 
-[images/CornerstoneInitialSetup.png]
+[Cornerstone: initial setup|images/CornerstoneInitialSetup.png]
 
 !!!Working with the local working copy
 
@@ -33,24 +33,24 @@ When committing files, press ''Cmd-Return'' to get a diff view to help with
 writing the commit message, and to verify that you are actually committing what
 you intended:
 
-[images/CornerstoneCommitWithTextDiff.png]
+[Cornerstone: commit with text diff|images/CornerstoneCommitWithTextDiff.png]
 
 The diff view also works with images:
 
-[images/CornerstoneCommitWithImageDiff.png]
+[Cornerstone: commit with image diff|images/CornerstoneCommitWithImageDiff.png]
 
-By turning on the inspector, it is very easy to change common attributes:
+One of the most powerful features of Cornerstone is the timeline view. Using it
+one can compare any two revisions of a file:
 
-Cornerstone: working copy with inspector, file selection
+[Cornerstone: timeline view|images/CornerstoneTimlineView.png]
 
-or edit the ignore list:
+This can be very useful e.g. when debugging, or tracking changes, especially
+when combined with the ''blame'' labelling (turn on the blame labelling by
+clicking the button highlighted with the red circle below):
 
-Cornerstone: working copy with inspector, folder selection
+[Cornerstone: timeline view with blame
+enabled|images/CornerstoneTimelineViewWithBlameEnabled.png]
 
-Even with Cornerstone (as compared to SvnX), diffs will open in FileMerge. But Cornerstone do a better job at providing the real working copy file, and with a small script (found in $GTHOME/gt/src/filemerge-tools/ - run make there to install), all files will open with the correct encoding, and merges done using FileMerge will automatically be saved back to the working copy file.
-
-Cornerstone: filemerge displays correctly
-
-Make sure that after you have installed the script (named FileMerge_SaveMergedToSecondFile.sh), you open Cornerstone > Preferences, and select the script in the File Comparison drop-down menu:
-
-Cornerstone: the preferences dialog
+There are many more features in Cornerstone, e.g. merging and branching, that go
+beyond this short guide. Look at the Cornerstone help linked to above, and don't
+be afraid of asking for help.
