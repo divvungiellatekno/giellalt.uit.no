@@ -20,9 +20,24 @@ already):
 
 !!!Working with the local working copy
 
-When all is set up, Cornerstone will give you a status listing directly in the window. It will also indicate how many commits are in the repository since you last updated (''1'' in the picture below). You can switch between only seeing the modified (and unknown) files, or all files.
+When all is set up, Cornerstone will give you a status listing directly in the
+window. It will also indicate how many commits are in the repository since you
+last updated (''1'' in the picture below). There are premade filters to list
+''All'' files, only ''Changed'' files, ''Conflicted'' files, etc. In addition,
+there is a search field where one can search on filename, author name
+or revision number:
 
 [Cornerstone: view of working copy|images/CornerstoneWorkingCopyWithUpdates.png]
+
+When committing files, press ''Cmd-Return'' to get a diff view to help with
+writing the commit message, and to verify that you are actually committing what
+you intended:
+
+[images/CornerstoneCommitWithTextDiff.png]
+
+The diff view also works with images:
+
+[images/CornerstoneCommitWithImageDiff.png]
 
 By turning on the inspector, it is very easy to change common attributes:
 
@@ -35,6 +50,7 @@ Cornerstone: working copy with inspector, folder selection
 Even with Cornerstone (as compared to SvnX), diffs will open in FileMerge. But Cornerstone do a better job at providing the real working copy file, and with a small script (found in $GTHOME/gt/src/filemerge-tools/ - run make there to install), all files will open with the correct encoding, and merges done using FileMerge will automatically be saved back to the working copy file.
 
 Cornerstone: filemerge displays correctly
+
 Make sure that after you have installed the script (named FileMerge_SaveMergedToSecondFile.sh), you open Cornerstone > Preferences, and select the script in the File Comparison drop-down menu:
 
 Cornerstone: the preferences dialog
