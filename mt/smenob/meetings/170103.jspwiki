@@ -17,7 +17,96 @@ Hangouts: Kevin, Lene
 
 !! Semtag vs bidix-paradigme
 
-! Leksikalske unntak spesifisert med paradigme
+!!Fra epost-diskusjon:
+__Lene skrev:__
+
+{{{
+Vi har etterhvert fått mer og mer semtagger, både på substantiv og adjektiv. Taggene er i bruk også i disambiguering.
+
+I sme-smX blir taggene med over i apertium, sjøl om de ikke er med i dix, og de er dermed med i disambigueringa (bedre resultat)
+  (ordet får to analyser, en med og en uten semtagg:
+
+"<bargobáikkis>"
+
+"bargobáiki" n sem_plc sg loc
+
+"bargobáiki" n sg loc
+
+, og analysen med semtagg blir valgt i functions.cg3 for disambigueringa. Analysen uten semtagg blir parret med dix)
+
+og de kan også brukes i transferreglene
+Taggene blir fjerna i t1x.
+}}}
+
+__Kevin skrev:__
+{{{
+I sme-nob har me brukt bidix-paradigme til tre relevante ting her:
+
+1. Til å endra/fjerna taggar som generelle reglar:
+   Paradigmet "__adj" gjer cmp_attr.cmp → pst.mf.sg.ind og
+   ess → pst.GD.ND (medan andre taggar blir overført likt).
+
+2. Til å markera leksikalske unntak frå regelen:
+   Paradigmet "pl__n" gjer t.d. alle sg-lesingar til pl:
+   <e><p><l>bivvu<s n="n"/><s n="sem_clth"/></l><r>klær<s n="n"/><s n="nt"/></r></p><par n="pl__n"/></e>
+   <e><p><l>beaiveruhta<s n="n"/><s n="sem_money"/></l><r>dagpenger<s n="n"/><s n="m"/></r></p><par n="pl__n"/></e>
+   … der dei fleste substantiv bruker "__n" som lar sg gå til sg.
+
+3. Til å trimma analysar me ikkje vil ha med:
+   Ved å ha eit bidix-paradigme som *ikkje* har med
+   <e><p><l/><r/></p></e>
+   , men berre t.d.
+   <e><p><l><s n="inf"/></r><s n="inf"/></r>
+   osb., får du ikkje med dei analysane som ikkje er spesifisert i
+   paradigmet.
+  
+Alle tre funksjonane er moglege å utføra på andre måtar, og eg ser
+fordelen med å sleppa å spesifisera sem-taggar i bidix; me må berre
+passa på at me ikkje mistar noko i omskrivinga.
+
+
+Punkt 1. er jo gjort med transferreglar i sme-smX, det kan me gjera her
+òg.
+
+
+Punkt 2. er vanskelegare – viss me ikkje skal spesifisera sem-taggar,
+kan me heller ikkje spesifisera taggar som kjem etter sem-taggen på
+sme-sida (for då får me berre ikkje-sem-analysen med). Altså,
+
+   <e><p><l>bivvu<s n="n"/><s n="sg"/></l><r>klær<s n="n"/><s n="nt"/><s n="pl"/></r></p></e>
+
+vil trimma sem-analysen. Me kan heller ikkje ha
+
+   <e><p><l>bivvu<s n="n"/></l><r>klær<s n="n"/><s n="nt"/><s n="pl"/></r></p></e>
+
+sidan me då får bidix-output
+^bivvu<n><sem_clth><sg><nom>/klær<n><nt><pl><sem_clth><sg><nom>$, som
+berre blir eit rot.
+
+Eitt alternativ for leksikalske unntak er at me rett og slett seier «ok,
+for dei må me ha sem-taggar med i bidix», men me kan jo bruka eit
+paradigme av sem-taggar så det ikkje er så farleg om ting endrar seg,
+altså:
+
+<pardef n="semtags">
+  <e><p><l><s n="sem_clth"/></l><r></r></p></e>
+  <e><p><l><s n="sem_jna."/></l><r></r></p></e>
+  <!-- ingen sem-tagg: -->
+  <e><p><l/><r/></p></e>
+</pardef>
+<pardef n="pl__n">
+  <e><par n="semtags"/><p><l><s n="sg"/></l><r><s n="pl"/></r></p></e>
+  <e><par n="semtags"/><p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
+</pardef>
+<e><p><l>bivvu<s n="n"/></l><r>klær<s n="n"/><s n="nt"/></r></p><par n="pl__n"/></e>
+
+
+Punkt 3. kan me nok løysa i rm-deriv-cmp.twol – det er kanskje bra å
+ha alt på éin plass der uansett?
+}}}
+
+
+!! Leksikalske unntak spesifisert med paradigme
 
 lemma n sg
 {{{
