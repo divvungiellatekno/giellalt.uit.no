@@ -9,12 +9,15 @@ A web editor with spellers is found at [http://divvun.no:3000], and also at [htt
 # Log in to the account.
 # Attach to the {{screen}} instance: {{screen -RD}}
 # Use nvm: {{nvm use stable}}
-# When done, exit {{screen}} by pressing {{Ctrl-a, d, d}}
+# When done, exit {{screen}} by pressing {{Ctrl-a, Shift-d, Shift-d}}
 
 !!!How ck-ospell was installed
 
 # {{git clone https://github.com/divvun/ck-ospell.git}}
 # {{cd ck-ospell}}
+# {{git submodule init}}
+# {{git submodule update}}
+# Alternatively, change port from 3000 to something else in server.js
 # {{CXX=clang++-mp-3.4 npm install}}
 
 !!!Languages downloaded
