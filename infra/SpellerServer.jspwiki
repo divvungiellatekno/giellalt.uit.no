@@ -1,14 +1,19 @@
-The speller server runs on [divvun.no] in the account {{spellerserver}}, and has
-a {{screen}} instance running.
-The code is found at [github|https://github.com/divvun/ck-ospell].
+Two speller server instances run on [divvun.no], one for saami languages, the other one for non-saami languages.
 
-A web editor with spellers is found at [http://divvun.no:3000], and also at [http://divvun.no/korrektur/speller-demo.html]
+A web editor with the saami spellers is found at [http://divvun.no:3000], and also at [http://divvun.no/korrektur/speller-demo.html]
+
+A web editor with the non-saami spellers is found at [http://divvun.no:3001], and also at [http://divvun.org/proofing/online-speller.html]
+
+The speller servers runs on divvun.no. The saami one is run from the account {{spellerserver}}, the non-saami one is run from the account {{morespellerservers}}. Both have [screen|https://www.gnu.org/software/screen/] instances running.
+
+The code for the server is found at [github|https://github.com/divvun/ck-ospell].
 
 !!!Log in, attach to screen, exit screen
 
 # Log in to the account.
 # Attach to the {{screen}} instance: {{screen -RD}}
 # Use nvm: {{nvm use stable}}
+# Do whatever is work is needed.
 # When done, exit {{screen}} by pressing {{Ctrl-a, Shift-d, Shift-d}}
 
 !!!How ck-ospell was installed
@@ -20,15 +25,6 @@ A web editor with spellers is found at [http://divvun.no:3000], and also at [htt
 # Alternatively, change port from 3000 to something else in server.js
 # {{CXX=clang++-mp-3.4 npm install}}
 
-!!!Languages downloaded
-
-{{{
-for LANG in se sma smj smn sms
-do
-    curl -o etc/$LANG.zhfst http://divvun.no/static_files/zhfsts/$LANG.zhfst
-done
-}}}
-
 !!!Run server
 
 {{{
@@ -39,7 +35,7 @@ npm start
 
 # Log in to the account, attach to {{screen}}
 # {{Ctrl-c}} (stop the speller server)
-# {{curl -o etc/<newlanguage>.zhfst http://divvun.no/static_files/zhfsts/<newlanguage>.zhfst}}
+# Copy a .zhfst file to the etc directory, e.g. {{curl -o etc/<newlanguage>.zhfst http://divvun.no/static_files/zhfsts/<newlanguage>.zhfst}}
 # {{npm start}}
 
 !!!Update ck-ospell
@@ -52,7 +48,7 @@ npm start
 
 !!!Depending on particular branches/commits
 
-ck-ospells dependencies are specixfied in package.json. More info can be found in
+ck-ospells dependencies are specified in package.json. More info can be found in
 [package.json/npm documentation|https://docs.npmjs.com/files/package.json#git-urls-as-dependencies].
 
 !!Depending on a particular commit
