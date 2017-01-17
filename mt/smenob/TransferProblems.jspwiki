@@ -1,4 +1,48 @@
 Liste over ting som må forbedres i transfer filene
 
-!!! Chunking
-asdf
+!!! Problemer
+
+
+!! Cmp
+ønsket resultat: smávis Cmp => små
+{{{
+echo smávvaaviisa | apertium -d. sme-nob
+ei litenavis (=> småavis)
+}}}
+
+
+!! Tagger i chunk
+!fra sápmi n sg gen til samisk adj
+1:
+{{{
+ Sámedikkit galget bures beassat váikkuhit movt sámi guovlluid luondduvalljodagaid hálddašuvvojit.
+ Sametingene skal godt få påvirke hvordan naturressursene til #samisk<adj><pst><pl><ind> områder de forvaltes over.
+ 
+#samisk<adj><pst><pl><ind> => samisk<adj><pst><un><pl><ind>
+}}}
+
+2:
+
+{{{
+ Sámi ásahusaid davviguovlluid fierpmádat
+Et nettverk nordområdene #samisk<sg><ind><gen> institusjoner
+
+#samisk<sg><ind><gen> => samisk<adj><pst><un><pl><ind>
+}}}
+
+!! Chunke coordination
+
+! adj_attr conj adj_attr nom
+{{{
+Dát lea leamašan guhkes ja áddjás proseassa
+Dette har vært langt og en tidkrevende prosess
+
+^adj<SA><@→N><ind><GD><ND>{^lang<adj><sint><pst><GD><ND><3>$}$ 
+^conj<@CNP><cnjcoo>{^og<cnjcoo>$}$ 
+^pre_nom<SN><@←SPRED><ind><m><sg><nom><impers>{^tidkrevende<adj><pst><mf><sg><3>$ 
+^prosess<n><m><sg><3>$}$^default<default>{^.<sent><clb>$}
+
+=> lang og tidkrevende prosess
+
+}}}
+
