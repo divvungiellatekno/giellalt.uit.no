@@ -3,61 +3,19 @@ Liste over ting som må forbedres i transfer filene
 Fenomena er lauseleg gruppert etter type (med store bokstavar på nivå 3)
 
 
-!!! KOORDINERING
+Forsøk på disposisjon
 
-!! Chunke coordination
-
-! adj_attr conj adj_attr nom
-{{{
-Dát lea leamašan guhkes ja áddjás proseassa
-Dette har vært langt og en tidkrevende prosess
-
-^adj<SA><@→N><ind><GD><ND>{^lang<adj><sint><pst><GD><ND><3>$}$ 
-^conj<@CNP><cnjcoo>{^og<cnjcoo>$}$ 
-^pre_nom<SN><@←SPRED><ind><m><sg><nom><impers>{^tidkrevende<adj><pst><mf><sg><3>$ 
-^prosess<n><m><sg><3>$}$^default<default>{^.<sent><clb>$}
-
-=> lang og tidkrevende prosess
-
-}}}
+* Morfologi
+**
+* Syntaks
+** Bestemtheit
+**
 
 
-!!! BESTEMTHEIT
-
-!! ind, men ikke artikkel
-Legge til en tagg for dette i t1x
-
-{{{
-echo Suoma Sámedikki presideanta, Tiina Sanila-Aikio lea duhtavaš konvenšuvnnain 
-
-presidenten I Finland sameting, Tiina Sanila Aikio er fornøyd med en konvensjon
-=> konvensjonen
-}}}
-
-
-ikke artikkel for acr (vi kan ha en unntaksliste, som CD osv)
-{{{
-NRK sádde vahkkosaš prográmma giđđajohtimis
-en NRK sender et ukentlig program på vårflyttinga
-}}}
-
-ikke artikkel for sem_time (vi kan ha en unntaksliste, f.eks. dag)
-{{{
-Áviisa almmuhuvvo vuossárggain gitta lávvardahkii
-Avisen publiseres på mandagene helt til en lørdag => til lørdag
-}}}
-
-
-!! ikke bestemt form for acr (bortsett fra unntaksliste som CD, TV)
-{{{
-Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
-Dette året er det på publikumene en mulighet TV-EN og nettet via følge vårflyttinga,
-}}}
-
-
-
+!!! NORSK MORFOLOGI
 !! Ang. bøyning i nob
 !reiner => rein
+
 {{{
 mo Fálá bohccot láhttejit
 hvordan #Kvaløya reiner oppfører seg
@@ -101,6 +59,102 @@ en snø ryddingsavtale
 }}}
 
 
+
+
+
+!!! ADJEKTIV
+
+!!cmp: sakte-TV /// LØYST ///
+{{{
+Minuvttas minuktii prográmmaid gohčodit hiljes-TV:n. 
+Minutt for minutt de kaller programmene #sakte<adj><sint><pst><mf><sg><ind><guio>TV.
+}}}
+
+
+
+!! Cmp /// LØYST ///
+ønsket resultat: smávis Cmp => små
+{{{
+echo smávvaaviisa | apertium -d. sme-nob
+ei litenavis (=> småavis)
+}}}
+
+!!! PRONOMEN
+
+!!Type pronomen
+
+!refleksivt pronomen
+{{{
+Dál ferte duođas váldit sámemánáid- ja nuoraid go sii dárbbašit lohkamušaid iežaset gillii.
+Nå må ta sant samebarn- og ungdommer når de behøver lesestoff på deres språk.
+=> sitt evt. eget
+}}}
+
+!!Fjerne pronomen
+
+!Pronomen + nekting gir dobbelt pronomen
+{{{
+In han munge sáhte sárdnut ruoššagillii.
+Jeg ikke jo jeg kan tale på russisk. => ett jeg skal fjernes
+}}}
+
+
+!! Genus av han/ho
+
+
+{{{
+Sara Pettersen čilge ahte son áŋgiruššá dán áššis, danne go su mielas lea olles ášši nu boastut.
+Sara Pettersen forklarer at hun ivrer i denne saken, fordi i hans oppfatning er en hel sak slik galt.
+}}}
+
+Sara KOMMA su mielas
+
+
+
+
+
+
+!!! SUBSTANTIV
+
+!! Bestemtheit: indef, men ikke artikkel
+
+Legge til en tagg for dette i t1x
+
+{{{
+echo Suoma Sámedikki presideanta, Tiina Sanila-Aikio lea duhtavaš konvenšuvnnain 
+
+presidenten I Finland sameting, Tiina Sanila Aikio er fornøyd med en konvensjon
+=> konvensjonen
+}}}
+
+
+ikke artikkel for acr (vi kan ha en unntaksliste, som CD osv)
+{{{
+NRK sádde vahkkosaš prográmma giđđajohtimis
+en NRK sender et ukentlig program på vårflyttinga
+}}}
+
+ikke artikkel for sem_time (vi kan ha en unntaksliste, f.eks. dag)
+{{{
+Áviisa almmuhuvvo vuossárggain gitta lávvardahkii
+Avisen publiseres på mandagene helt til en lørdag => til lørdag
+}}}
+
+
+!! ikke bestemt form for acr (bortsett fra unntaksliste som CD, TV)
+{{{
+Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
+Dette året er det på publikumene en mulighet TV-EN og nettet via følge vårflyttinga,
+}}}
+
+!! Fleirtalsobjekt i bestemt form
+
+{{{
+Bátnedivššár rámida kárášjohkalaččaid.
+Tannpleieren roser karasjokværinger.
+}}}
+
+Vent med denne
 
 
 
@@ -157,6 +211,21 @@ Possessor med -s + bar N
 
 
 
+!!!ADJEKTIVFRASER
+
+!! Flink til å 
+
+{{{
+– Olbmot leat leamaš čeahpit vuoruhit bátnedearvvašvuođa
+Folk har vært flinke prioritere tannhelsen
+}}}
+
+__Generaliseringa er:__
+
+lea + Adj + Inf => er Adj TIL Å  Inf
+
+
+
 !!! KVANTORAR
 
 !! Dakkára
@@ -184,20 +253,6 @@ __Generaliseringa er:__
 
 ''olu'' + bar NP
 
-
-
-!!! ORDSTILLING
-
-!! Ordstilling: V + OBJ + ADV-PP
-
-{{{
-Barggu geažil ferte son Álttás čuovvut dikki,
-På grunn av arbeidet må han i følge Alta tinget,
-}}}
-
-__Generaliseringa er:__
-
-Alle adverbial som blir til fraser på norsk skal flyttast etter objektet
 
 
 
@@ -273,54 +328,61 @@ Jeg tenker at vi kan skulle slik som Svenske siden har vi samlet seg
 ... men ''vi samlet seg'' -> oss
 
 
-!!! GENUS
-
-!! Genus av han/ho
 
 
+
+!!! KOORDINERING
+
+!! Chunke coordination
+
+! adj_attr conj adj_attr nom
 {{{
-Sara Pettersen čilge ahte son áŋgiruššá dán áššis, danne go su mielas lea olles ášši nu boastut.
-Sara Pettersen forklarer at hun ivrer i denne saken, fordi i hans oppfatning er en hel sak slik galt.
+Dát lea leamašan guhkes ja áddjás proseassa
+Dette har vært langt og en tidkrevende prosess
+
+^adj<SA><@→N><ind><GD><ND>{^lang<adj><sint><pst><GD><ND><3>$}$ 
+^conj<@CNP><cnjcoo>{^og<cnjcoo>$}$ 
+^pre_nom<SN><@←SPRED><ind><m><sg><nom><impers>{^tidkrevende<adj><pst><mf><sg><3>$ 
+^prosess<n><m><sg><3>$}$^default<default>{^.<sent><clb>$}
+
+=> lang og tidkrevende prosess
+
 }}}
 
-Sara KOMMA su mielas
+
+!!!SETNINGSTILSVAR
 
 
-!!! ADJEKTIV
+!! lohkat + Acc + Inf -> å Nom Inf
 
-!!cmp: sakte-TV /// LØYST ///
 {{{
-Minuvttas minuktii prográmmaid gohčodit hiljes-TV:n. 
-Minutt for minutt de kaller programmene #sakte<adj><sint><pst><mf><sg><ind><guio>TV.
+Jáhkká kulturmáhtu leat oktan ággan
+Han tror kulturkompetansen å være som et argument
 }}}
 
+Han tror at kulturkompetanse er et argument
 
 
-!! Cmp /// LØYST ///
-ønsket resultat: smávis Cmp => små
+__Generaliseringa er:__
+
+lohkat, jáhkkát ... + Acc + Inf -> tro, ... at N er
+
+
+
+
+!!! ORDSTILLING
+
+!! Ordstilling: V + OBJ + ADV-PP
+
 {{{
-echo smávvaaviisa | apertium -d. sme-nob
-ei litenavis (=> småavis)
+Barggu geažil ferte son Álttás čuovvut dikki,
+På grunn av arbeidet må han i følge Alta tinget,
 }}}
 
-!!! PRONOMEN
+__Generaliseringa er:__
 
-!!Type pronomen
+Alle adverbial som blir til fraser på norsk skal flyttast etter objektet
 
-!refleksivt pronomen
-{{{
-Dál ferte duođas váldit sámemánáid- ja nuoraid go sii dárbbašit lohkamušaid iežaset gillii.
-Nå må ta sant samebarn- og ungdommer når de behøver lesestoff på deres språk.
-=> sitt evt. eget
-}}}
-
-!!Fjerne pronomen
-
-!Pronomen + nekting gir dobbelt pronomen
-{{{
-In han munge sáhte sárdnut ruoššagillii.
-Jeg ikke jo jeg kan tale på russisk. => ett jeg skal fjernes
-}}}
 
 
 !!! FORMATERING
@@ -372,5 +434,8 @@ Denne skal få "være" i t3x fordi den er både OPRED og Acc
 Denne skal ikke få "være" i t3x fordi den er OPRED, men ikke Acc
 * Minuvttas minuktii prográmmaid gohčodit hiljes-TV:n.
 * Minutt for minutt programmene kaller de sakte-TV.
+
+
+
 
 
