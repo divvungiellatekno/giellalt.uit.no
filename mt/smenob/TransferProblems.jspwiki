@@ -45,13 +45,6 @@ echo Kvaløya | apertium -d. unob-sme-morph
 
 !cmp: nytt problem oppstått - dette fungerte før endringene i cmp i dag: /// LØYST ///
 {{{
-echo muohtačorgenšiehtadusa | apertium -d. sme-nob-biltrans
-^muohta<n><sem_substnc_wthr><cmp_sgnom><cmp>/snø<n><m><unc><sem_substnc_wthr><cmp_sgnom><cmp>$ ^čorgen<n><sem_act><cmp_sgnom><cmp>/rydding<n><f><sem_act><cmp_sgnom><cmp>$ ^šiehtadus<n><sem_prod-ling><sg><acc><@HNOUN>/avtale<n><m><sem_prod-ling><sg><acc><@HNOUN>$^.<sent>/.<sent><clb>$
-
-apertium-sme-nob$ echo muohtačorgenšiehtadusa | apertium -d. sme-nob-chunker
-apertium-transfer: Rule 33 muohta<n><sem_substnc_wthr><cmp_sgnom><cmp>/sn?<n><m><unc><sem_substnc_wthr><cmp_sgnom><cmp>
-
-apertium-transfer: Rule 45 muohta<n><sem_substnc_wthr><cmp_sgnom><cmp>/sn?<n><m><unc><sem_substnc_wthr><cmp_sgnom><cmp> ^pre_pre_nom<SN><@HNOUN><ind><m><sg><acc><impers>{^snø<n><m><sg><ind><cmp>$ ^rydding<n><f><sg><ind><cmp>$^avtale<n><m><sg><3>$}$^sent<SENT>{^.<sent><clb>$}$
 apertium-sme-nob$ echo muohtačorgenšiehtadusa | apertium -d. sme-nob
 en snø ryddingsavtale
 
@@ -90,6 +83,9 @@ Nå må ta sant samebarn- og ungdommer når de behøver lesestoff på deres spr�
 => sitt evt. eget
 }}}
 
+disambigueringsproblem: duođas adv = alvorlig \\
+istedenfor duohta adj
+
 !!Fjerne pronomen
 
 !Pronomen + nekting gir dobbelt pronomen
@@ -107,7 +103,7 @@ Sara Pettersen čilge ahte son áŋgiruššá dán áššis, danne go su mielas 
 Sara Pettersen forklarer at hun ivrer i denne saken, fordi i hans oppfatning er en hel sak slik galt.
 }}}
 
-Sara KOMMA su mielas
+Sara KOMMA su mielas, skal beholde riktig kjønn i variabel
 
 
 
@@ -143,7 +139,7 @@ Avisen publiseres på mandagene helt til en lørdag => til lørdag
 !! ikke bestemt form for acr (bortsett fra unntaksliste som CD, TV)
 {{{
 Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
-Dette året er det på publikumene en mulighet TV-EN og nettet via følge vårflyttinga,
+Dette året er det på publikumene en mulighet via TV-EN og nettet følge vårflyttinga
 }}}
 
 !! Fleirtalsobjekt i bestemt form
@@ -161,7 +157,7 @@ Vent med denne
 
 {{{
 Jođiheaddjibargui manná hirbmat ollu áigi
-– Til lederarbeidet går ei svær mye tid, spesielt i en journalistisk institusjon.
+– Til lederarbeidet går ei svær mye tid
 }}}
 
 __Generaliseringa er:__
@@ -178,6 +174,7 @@ ADVL + Ind.Prs.Sg3  NP => ADVL + Ind.Prs.Sg3 det NP =>
 – Doarjja duođašta ahte álbmot dovdá ahte lea boasttuvuohta dahkkon, lohká Jovsset Ante Sara.
 – Støtten bekrefter at folket kjenner at det har feilen blitt gjort, sier Jovsset Ante Sara.
 }}}
+=> at det har feil blitt gjort  (bedre: at det har blitt gjort feil)
 
 __Generaliseringa er:__
 
@@ -217,9 +214,11 @@ Possessor med -s + bar N
 !! Flink til å 
 
 {{{
-– Olbmot leat leamaš čeahpit vuoruhit bátnedearvvašvuođa
+Olbmot leat leamaš čeahpit vuoruhit bátnedearvvašvuođa
 Folk har vært flinke prioritere tannhelsen
 }}}
+
+=> Folk har vært flinke å prioritere tannhelsen
 
 __Generaliseringa er:__
 
@@ -233,9 +232,10 @@ lea + Adj + Inf => er Adj TIL Å  Inf
 
 {{{
 eaba gávdnan dakkára,
-da de to ikke fant slikt,
+de to fant ikke slikt
 }}}
 
+=> de to fant ikke noe slikt ?
 
 __Generaliseringa er:__
 
