@@ -32,6 +32,12 @@
       Close the terminal and start a new one.
       </p>
 
+      <p>If you have a file ~/.emacs, first move it to ~/.emacs.d/init.el</p>
+      <source>
+	mkdir ~/.emacs.d
+        mv ~/.emacs ~/.emacs.d/init.el
+      </source>
+
       <p>In a new terminal, do</p>
       <source>
 	cd
@@ -40,6 +46,14 @@
 	echo '(load "~/apertium-tools-emacs/init-apertium.el")' >>  ~/.emacs.d/init.el
 	emacs
       </source>
+
+      <p>Note: If you've already checked out the full apertium SVN tree, you already have the init-apertium.el file and you might want to just refer to that:</p>
+      <source>
+	mkdir ~/.emacs.d
+	echo '(load "/path/to/where/you/have/apertium-svn/trunk/apertium-tools/emacs/init-apertium.el")' >>  ~/.emacs.d/init.el
+	emacs
+      </source>
+
       <p>On first run, Emacs should download some packages for you, then
       you should be ready for editing CG, XML, lexc and twolc with
       syntax highlighting and many handy functions.</p>
