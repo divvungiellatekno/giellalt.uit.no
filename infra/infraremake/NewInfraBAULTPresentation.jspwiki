@@ -44,7 +44,7 @@ A schematic overview of the main components of the infrastructure:
 Available at:
 
 {{{
-svn co https://gtsvn.uit.no/langtech/trunk/gtcore
+svn co https://gtsvn.uit.no/langtech/trunk/giella-core
 }}}
 
 !!Templates For Data And Build Files
@@ -262,9 +262,9 @@ YAML test 38: analyser-gt-norm.xfst + gt-norm-yamls/N-aandam_gt-norm.yaml - 26/2
 
 To rerun with more details, please triple-click, copy and paste the following:
 
-pushd /Users/smo036/langtech/main/langs/liv/build/xerox/test/src; \
+pushd $GTHOME/langs/liv/build/xerox/test/src; \
 /opt/local/bin/python3.2 \
-/Users/smo036/langtech/main/gtcore/scripts/morph-test.py -c -i -v -S xerox \
+$GTHOME/giella-core/scripts/morph-test.py -c -i -v -S xerox \
 --app /Users/smo036/bin/lookup \
 --morph ././../../src/analyser-gt-norm.xfst \
 --gen ././../../src/generator-gt-norm.xfst \
@@ -384,7 +384,7 @@ in the future:
 * grammar checker
 
 On a slightly longer scale there are plans for:
-* proper packaging and distribution of the gtcore and each language
+* proper packaging and distribution of the giella-core and each language
 * support for speech based applications (speech synthesis)
 
 !!!Concluding remarks

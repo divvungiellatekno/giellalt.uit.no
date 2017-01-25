@@ -38,9 +38,9 @@ https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcod
 
 !!!Build sme
 
-Now, "svn up" in gtcore and langs/sme, and run configure in langs/sme
-with the option --enable-tokenisers; e.g. if you want both the CG
-rules and the tokenisers, you would do
+Now, {{svn up}} in {{giella-core}} and {{langs/sme}}, and run {{./configure}} in
+{{langs/sme}} with the option {{--enable-tokenisers}}; e.g. if you want both the
+CG rules and the tokenisers, you would do
 
 {{{
   ./configure --enable-tokenisers --enable-syntax
@@ -95,7 +95,7 @@ echo 'sánit, jna. Leago' \
   | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3 \
   | cg-mwesplit \
   | vislcg3 -g $GTHOME/langs/sme/src/syntax/disambiguation.cg3 \
-  | vislcg3 -g $GTHOME/gtcore/giella-shared/smi/src/syntax/functions.cg3
+  | vislcg3 -g $GTHOME/giella-core/giella-shared/smi/src/syntax/functions.cg3
 }}}
 
 etc.

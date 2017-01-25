@@ -1,7 +1,7 @@
 
 This is an overview of the file structure for each language 
 catalogue found in our (new) infrastructure, i.e.
-over the directories {{gtcore, langs}} located under our main catalogue. 
+over the directories {{giella-core, langs}} located under our main catalogue. 
 Also the file README in {{$GTHOME}} describes some basic properties of 
 the new infrastructure.
 
@@ -10,13 +10,13 @@ the new infrastructure.
 
 The starting point is the mother catalogue {{$GTHOME}} (called ''main''
 if you follow [the standard checkout procedure|../../tools/docu-svn-user.html].
-It contains (a.o.) the catalogues {{gtcore, langs}}, the former is for 
+It contains (a.o.) the catalogues {{giella-core, langs}}, the former is for 
 language-independent files, and the latter is for language-specific files, 
 one subfolder for each language.
 
-!! gtcore
+!! giella-core
 
-The catalogue {{gtcore}} contains scripts used for all languages.
+The catalogue {{giella-core}} contains scripts used for all languages.
 
 * gtdshared
 ** src
@@ -39,7 +39,7 @@ is from [ISO 639-3|http://en.wikipedia.org/wiki/List_of_ISO_639-3_codes].
 Each folder contains the following folders:
 
 * {{am-shared}} (''automake shared'', common commands for fst compilation,
-  never changed here, only in gtcore/langs-templates)
+  never changed here, only in giella-core/langs-templates)
 * {{doc}} (folder where we write language-specific documentation)
 * {{m4}} (support files for compilation)
 * {{misc}} (a grab bag dir for anything you don't want in svn - all files are
@@ -143,7 +143,9 @@ This folder contains files for conversion to IPA.
 
 This folder contains {{disambiguation.cg3}}. 
 
-The files {{functions.cg3, dependency.cg3}} for for sma/sme/smj are in gtcore/langs-templates/smi/src/syntax/. Faroese also uses the common dependency.cg3, but has its own functions.cg3.
+The files {{functions.cg3, dependency.cg3}} for for sma/sme/smj are in
+{{giella-shared/smi/src/syntax/}}. Faroese also uses the common
+{{dependency.cg3}}, but has its own {{functions.cg3}}.
 
 !! The test catalogue under langs/$LANG
 
