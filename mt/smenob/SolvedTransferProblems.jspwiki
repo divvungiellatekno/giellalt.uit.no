@@ -1,0 +1,184 @@
+
+Liste over ting vi har retta opp i transfer filene
+
+Fenomena er lauseleg gruppert etter type (med store bokstavar på nivå 3)
+
+Dette er det vi har fiksa, det blir kopiert over hit frå dokumentet [Transfer Problems|TransferProblems.html] etter kvart, vi har dei i to dokument for å få litt betre oversyn
+
+
+
+Forsøk på disposisjon
+
+* Morfologi
+** asdf
+* Syntaks
+** Bestemtheit
+** Ordstilling
+
+
+!!! NORSK MORFOLOGI
+!! Ang. bøyning i nob
+
+!reiner => rein   /// LØYST ///
+
+{{{
+mo Fálá bohccot láhttejit
+hvordan #Kvaløya rein oppfører seg
+}}}
+
+Her må vi lage nytt paradigme for ''rein'' (det er kanskje gjort), der vi bøyer ''rein'' som ''ting'' (flere rein, ting)
+
+!million flertall => millioner
+{{{
+46,3 miljovnna lassi juolludeapmi
+46,3 million tilleggs en bevilgning
+}}}
+
+Også her vil vi ha nytt paradigme for ''million''
+
+!cmp: nytt problem oppstått : /// LØYST ///
+{{{
+apertium-sme-nob$ echo muohtačorgenšiehtadusa | apertium -d. sme-nob
+en snø ryddingsavtale
+
+=> en snøryddingsavtale
+}}}
+
+
+
+
+
+!!! ADJEKTIV
+
+!!cmp: sakte-TV /// LØYST ///
+{{{
+Minuvttas minuktii prográmmaid gohčodit hiljes-TV:n. 
+Minutt for minutt de kaller programmene #sakte<adj><sint><pst><mf><sg><ind><guio>TV.
+}}}
+
+
+
+!! Cmp /// LØYST ///
+ønsket resultat: smávis Cmp => små
+{{{
+echo smávvaaviisa | apertium -d. sme-nob
+ei litenavis (=> småavis)
+}}}
+
+!!! PRONOMEN
+
+!!Type pronomen
+
+
+disambigueringsproblem: duođas adv = alvorlig \\
+istedenfor duohta adj /// LØYST ///
+
+
+
+
+!!! SUBSTANTIV
+
+
+
+!! Bestemtheit: indef, men ikke artikkel
+
+Legge til en tagg for dette i t1x /// LØYST ///
+
+{{{
+echo Suoma Sámedikki presideanta, Tiina Sanila-Aikio lea duhtavaš konvenšuvnnain 
+presidenten I Finland sameting, Tiina Sanila Aikio er fornøyd med en konvensjon
+=> konvensjonen
+}}}
+
+
+ikke artikkel for acr (vi kan ha en unntaksliste, som CD osv) /// LØYST ///
+{{{
+NRK sádde vahkkosaš prográmma giđđajohtimis
+en NRK sender et ukentlig program på vårflyttinga
+}}}
+
+ikke artikkel for sem_time (vi kan ha en unntaksliste, f.eks. dag) /// LØYST ///
+{{{
+Áviisa almmuhuvvo vuossárggain gitta lávvardahkii
+Avisen publiseres på mandagene helt til en lørdag => til lørdag
+}}}
+
+
+
+!! ruhta
+
+* skenket ruđa --> forære penger, ikkje pengen /// LØYST ///
+{{{
+echo skeŋket ruđa | apertium -d. sme-nob
+forære penger
+}}}
+
+!! Genitivs-s + ubestemt form
+
+''Redaktørens bøkene'' er alltid feil
+
+__Generaliseringa er:__
+
+Possessor med -s + bar N
+
+
+
+!!!ADJEKTIVFRASER
+
+
+
+!! Faste uttrykk
+
+! Ta litt ost: /// LØYST ///
+
+{{{
+ ii leat hárjánan váldit vuostá dákkáriid.
+ det har ikke blitt vant å ta i mot slike.
+ }}}
+
+
+!!! VERBALET
+
+
+
+!!-huvvon-passiv er partisipp, ikkje Sg1  /// LØYST ///
+
+{{{
+Sámekonvenšuvdna almmuhuvvon ja gaskaboddosaččat dohkkehuvvon
+En samekonvensjon blitt annonsert og midlertidig blitt vedtatt
+}}}
+
+''jeg'' kjem pga Sg1 på -huvvon, som kjem fordi det ikkje er 
+andre finitte verb der. ==> HMAINV eller noko.
+
+
+
+
+
+!! ikke flertallsbøyning /// LØYST ///
+januar
+{{{
+Almmuhuvvon odne, dii. 15:38 Ođđajagimánu 18.beaivi 2017
+Blitt Annonsert i dag, #kl. 15:38 Januarer den 18.dagen 2017
+}}}
+
+
+!!!EIN DEL SAKER ORDNA ETTER DIAGNOSE (tag), og ikkje etter grammatikk
+
+!! Tagger i chunk
+!fra sápmi n sg gen til samisk adj
+1:  til samiske områder /// LØYST ///
+{{{
+ Sámedikkit galget bures beassat váikkuhit movt sámi guovlluid luondduvalljodagaid hálddašuvvojit.
+ Sametingene skal godt få påvirke hvordan naturressursene til #samisk<adj><pst><pl><ind> områder de forvaltes over.
+#samisk<adj><pst><pl><ind> => samisk<adj><pst><un><pl><ind>
+}}}
+
+2: samiske institusjoner /// LØYST ///
+men precase fungerer ikke
+{{{
+ Sámi ásahusaid davviguovlluid fierpmádat
+Et nettverk nordområdene #samisk<sg><ind><gen> institusjoner
+
+#samisk<sg><ind><gen> => samisk<adj><pst><un><pl><ind>
+}}}

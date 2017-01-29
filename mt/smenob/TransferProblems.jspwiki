@@ -2,6 +2,7 @@ Liste over ting som må forbedres i transfer filene
 
 Fenomena er lauseleg gruppert etter type (med store bokstavar på nivå 3)
 
+For å få betre oversikt flyttar vi ting som er ok over i dokumentet [Solved Transfer Problems|SolvedTransferProblems.html]
 
 Forsøk på disposisjon
 
@@ -15,14 +16,6 @@ Forsøk på disposisjon
 !!! NORSK MORFOLOGI
 !! Ang. bøyning i nob
 
-!reiner => rein   /// LØYST ///
-
-{{{
-mo Fálá bohccot láhttejit
-hvordan #Kvaløya rein oppfører seg
-}}}
-
-Her må vi lage nytt paradigme for ''rein'' (det er kanskje gjort), der vi bøyer ''rein'' som ''ting'' (flere rein, ting)
 
 !million flertall => millioner
 {{{
@@ -53,36 +46,6 @@ echo Kvaløya | apertium -d. unob-sme-morph
 ^Kvaløya/Kvaløya<np><top><f>
 }}}
 
-
-!cmp: nytt problem oppstått : /// LØYST ///
-{{{
-apertium-sme-nob$ echo muohtačorgenšiehtadusa | apertium -d. sme-nob
-en snø ryddingsavtale
-
-=> en snøryddingsavtale
-}}}
-
-
-
-
-
-!!! ADJEKTIV
-
-!!cmp: sakte-TV /// LØYST ///
-{{{
-Minuvttas minuktii prográmmaid gohčodit hiljes-TV:n. 
-Minutt for minutt de kaller programmene #sakte<adj><sint><pst><mf><sg><ind><guio>TV.
-}}}
-
-
-
-!! Cmp /// LØYST ///
-ønsket resultat: smávis Cmp => små
-{{{
-echo smávvaaviisa | apertium -d. sme-nob
-ei litenavis (=> småavis)
-}}}
-
 !!! PRONOMEN
 
 !!Type pronomen
@@ -94,8 +57,6 @@ Nå må ta sant samebarn- og ungdommer når de behøver lesestoff på deres spr�
 => sitt evt. eget
 }}}
 
-disambigueringsproblem: duođas adv = alvorlig \\
-istedenfor duohta adj /// LØYST ///
 
 !!Fjerne pronomen
 
@@ -134,28 +95,6 @@ nom<SN><@SUBJ^pre_nom<SN><@→N><ind><pl><gen>{^5<det><qnt><un><pl><guio>$^årin
 }}}
 
 
-!! Bestemtheit: indef, men ikke artikkel
-
-Legge til en tagg for dette i t1x /// LØYST ///
-
-{{{
-echo Suoma Sámedikki presideanta, Tiina Sanila-Aikio lea duhtavaš konvenšuvnnain 
-presidenten I Finland sameting, Tiina Sanila Aikio er fornøyd med en konvensjon
-=> konvensjonen
-}}}
-
-
-ikke artikkel for acr (vi kan ha en unntaksliste, som CD osv) /// LØYST ///
-{{{
-NRK sádde vahkkosaš prográmma giđđajohtimis
-en NRK sender et ukentlig program på vårflyttinga
-}}}
-
-ikke artikkel for sem_time (vi kan ha en unntaksliste, f.eks. dag) /// LØYST ///
-{{{
-Áviisa almmuhuvvo vuossárggain gitta lávvardahkii
-Avisen publiseres på mandagene helt til en lørdag => til lørdag
-}}}
 
 
 !! ikke bestemt form for acr 
@@ -186,18 +125,6 @@ er med og tvinger fram bestemt form på norsk.
 
 
 !! Insetjing av formelt subjekt
-
-{{{ /// LØYST for "ill mannat/leat/šaddat SN" ///
-Jođiheaddjibargui manná hirbmat ollu áigi
-– Til lederarbeidet går ei svær mye tid
-}}}
-
-{{{ /// LØYST for "ill mannat/leat/šaddat SN" ///
-– Dasa leat vissásit ollu čilgehusat.
-– Til det er de sikkert mange forklaringer.
-Skal vere:
-– Til dette er det sikkert mange forklaringer.
-}}}
 
 
 Men vi kan ikkje ha subjektspredikativ etterpå:
@@ -236,18 +163,7 @@ Det er mogleg vi først skal ha reglar for Ess og etterpå reglar for kontekstar
 På møtet skal planen lages til progresjonen til studentens trening .
 }}}
 
-!! Ubestemt E-subjekt etter insatt det-subjekt
 
-{{{ /// "LØYST" (treng betre døme) ///
-– Doarjja duođašta ahte álbmot dovdá ahte lea boasttuvuohta dahkkon, lohká Jovsset Ante Sara.
-– Støtten bekrefter at folket kjenner at det har feilen blitt gjort, sier Jovsset Ante Sara.
-}}}
-=> at det har feil blitt gjort  (bedre: at det har blitt gjort feil)
-men: «Álbmot dovdá ahte boasttuvuohta lea dahkkon» betre sme, og «feilen har blit gjort» mogleg tolkning
-
-__Generaliseringa er:__
-
-I dei tilfella vi klarer å setje inn ''det'', skal NP-en etterpå vere ubestemt
 
 
 
@@ -285,13 +201,6 @@ ADVL (for å vere sikker: Ill) + AUXV + Inf
 ** visse ord: guolli, boazu, hoahppu (fisk, rein, hast ...)
 
 
-!! ruhta
-
-* skenket ruđa --> forære penger, ikkje pengen /// LØYST ///
-{{{
-echo skeŋket ruđa | apertium -d. sme-nob
-forære penger
-}}}
 
 !! Genitivs-s + ubestemt form
 
@@ -392,13 +301,6 @@ Julaften er det mange julegaver under juletrærne
 
 !! Faste uttrykk
 
-! Ta litt ost: /// LØYST ///
-
-{{{
- ii leat hárjánan váldit vuostá dákkáriid.
- det har ikke blitt vant å ta i mot slike.
- }}}
-
 
 !ságaide
 
@@ -423,16 +325,6 @@ __Generaliseringa er:__
 
 Konstruksjonen {{passivsubjekt + lea + V-juvvon}} skal ha ''være'' som hjelpeverb, ikkje ''ha''
 
-
-!!-huvvon-passiv er partisipp, ikkje Sg1  /// LØYST ///
-
-{{{
-Sámekonvenšuvdna almmuhuvvon ja gaskaboddosaččat dohkkehuvvon
-En samekonvensjon blitt annonsert og midlertidig blitt vedtatt
-}}}
-
-''jeg'' kjem pga Sg1 på -huvvon, som kjem fordi det ikkje er 
-andre finitte verb der. ==> HMAINV eller noko.
 
 
 
@@ -531,33 +423,8 @@ for Fire år siden vekket Sverre Porsanger litt debatten  => For fire
 
 
 
-!! ikke flertallsbøyning /// LØYST ///
-januar
-{{{
-Almmuhuvvon odne, dii. 15:38 Ođđajagimánu 18.beaivi 2017
-Blitt Annonsert i dag, #kl. 15:38 Januarer den 18.dagen 2017
-}}}
-
 
 !!!EIN DEL SAKER ORDNA ETTER DIAGNOSE (tag), og ikkje etter grammatikk
-
-!! Tagger i chunk
-!fra sápmi n sg gen til samisk adj
-1:  til samiske områder /// LØYST ///
-{{{
- Sámedikkit galget bures beassat váikkuhit movt sámi guovlluid luondduvalljodagaid hálddašuvvojit.
- Sametingene skal godt få påvirke hvordan naturressursene til #samisk<adj><pst><pl><ind> områder de forvaltes over.
-#samisk<adj><pst><pl><ind> => samisk<adj><pst><un><pl><ind>
-}}}
-
-2: samiske institusjoner /// LØYST ///
-men precase fungerer ikke
-{{{
- Sámi ásahusaid davviguovlluid fierpmádat
-Et nettverk nordområdene #samisk<sg><ind><gen> institusjoner
-
-#samisk<sg><ind><gen> => samisk<adj><pst><un><pl><ind>
-}}}
 
 !Vi trenger case tag på OPRED-chunken
 
