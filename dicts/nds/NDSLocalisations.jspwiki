@@ -104,9 +104,12 @@ Then, you need to restart the relevant services.
 
 !!!Writing localisation 
 
-To ''write'' localisation (translate to your language) you go to the directory
 
-{{apps/dicts/nds/src/neahtta/translations/}}
+!!Translating the string to the localisation language
+
+To write ''localisation'' (translate the interface to different languages) you go to the directory
+
+{{configs/language_specific_rules/templates/}}
 
 There you find your directory (follow your ISO code). Edit the lines
 labeled ''msgstr'' in the file {{LC_MESSAGES/messages.po}}.	Note from the
@@ -115,8 +118,34 @@ will not work. Do __not__ change the text on the lines marked ''#:'' or
 ''msgid''.
 
 Then check in your changes, and then to update the server, 
-follow the procedure in the following section 
+follow the procedure in the section 
 __Recompiling translations for production server__.
+below.
+
+
+
+!!What if you are not satisfied with the content of the msgid (the original)?
+
+The form of the msgid is not important (it is translated), but an msgid
+with wrong or irrelevant content may lead the translators astray.
+
+Over each ''msgid'' there is a file reference, go there and correct
+the original text. It is always found with a tag
+
+{{{
+{% trans %}
+}}}
+
+before and a tag
+
+{{{
+{% endtrans %}
+}}}
+
+after the string to be translated. You thus change what you find between those two tags.
+
+Then, you should compile new translations.po files.
+
 
 Also read 
 [the Oahpa documentation on localisation|../../../ped/common/Localisation.html] 
