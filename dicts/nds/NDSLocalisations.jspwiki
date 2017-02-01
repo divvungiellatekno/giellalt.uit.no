@@ -144,7 +144,14 @@ before and a tag
 
 after the string to be translated. You thus change what you find between those two tags.
 
-Then, you should compile new translations.po files.
+Then, you should compile new translations.po files. This is done on the NDS server.
+Go there, and do
+
+{{{
+fab PROJNAME compile_strings
+}}}
+
+Afterwards, check in the new .po files in {{translations/*/LC_MESSAGES/messages.po}}
 
 
 Also read 
