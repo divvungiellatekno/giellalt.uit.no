@@ -5,11 +5,11 @@ First we will look at typical maintenance tasks, and more detailed tasks will fo
 
 Here is how you can expect to work:
 
-1.) locally: make revisions to text
-2.) locally: extract all strings (''fab extract_strings'')
-3.) locally: check in in SVN
-4.) on the server: ''svn up''
-5.) on the server: compile strings for the project (''fab PROJNAME compile_strings'')
+# locally: make revisions to text
+# locally: extract all strings (''fab extract_strings'')
+# locally: check in in SVN
+# on the server: ''svn up''
+# on the server: compile strings for the project (''fab PROJNAME compile_strings'')
 
 !!!Typical i18n management tasks
 
@@ -110,10 +110,10 @@ Then, you need to restart the relevant services.
 To write ''localisation'' (translate the interface to different languages) you 
 have to find the place of the specific file to localise 
 
-{{neahtta>find . -name "templates" -type d
+{{{neahtta>find . -name "templates" -type d
 ./configs/language_specific_rules/templates
 ./templates
-}}
+}}}
 
  then you go to the specific directory, for instance, here:
 
