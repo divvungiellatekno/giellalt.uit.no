@@ -12,16 +12,16 @@ Skriv/lim inn tekst eller en nettadresse for å få det oversatt (eller dra inn 
 
 
 !!! About 
-Giellatekno at UiT The arctic univesity of Norway is working with machine translation based on our grammatical analysers for Saami languages, combined with bilingual dictionaries, grammatical transfer rules and a generation component. We build translation programs from North Saami to Norwegian and Finnish, and to Saami languages (Inari Saami, Lule Saami, South Saami). Giellatekno cooperates with Apertium on machine translation which is a free/open-source machine translation platform. Contact us giellatekno@uit.no
+Giellatekno at UiT The arctic univesity of Norway is working with machine translation based on our grammatical analysers for Saami languages, combined with bilingual dictionaries, grammatical transfer rules and a generation component. Giellatekno cooperates with Apertium on machine translation which is a free/open-source machine translation platform. Contact us giellatekno@uit.no
 
 !!fin
 Norjan Arktisen yliopiston tutkimusryhmä Giellatekno työskentelee kieliopillisiin meneteimiin pohjautuvien analysaattorien kanssa. Yhdistämällä saamen kielten analysaattorit kaksikielisiin sanakirjoihin, kieliopin siirtosääntöihin ja kohdekieltä generoivaan analysaattorin Giellatekno rakentaa käännösohjelmia pohjoissaamesta norjaan, suomeen  sekä inarin-, luulajan- ja eteläsaameen). Giellatekno tekee yhtestyötä Apertiumin kehittäjien kanssa. Apertium on avoimeen lähdekoodiin pohjautuva konekäännösalusta. Ota yhteyttä: giellatekno@uit.no
 
 !!nob
-Giellatekno ved UiT Norges arktiske universitet arbeider med maskinoversetting basert på våre grammatiske analysatorer for samiske språk, kombinert med tospråklige ordbøker, overføringsregler for grammatikk, og en generator for målspråket. Vi lager oversettingsprogram fra nordsamisk til andre samiske språk (inarisamisk, lulesamisk, sørsamisk), og dessuten til norsk og finsk. Giellatekno samarbeider med Apertium, som har en maskinoversettingsplattform med åpen kildekode. Ta gjerne kontakt med oss: giellatekno@uit.no
+Giellatekno ved UiT Norges arktiske universitet arbeider med maskinoversetting basert på våre grammatiske analysatorer for samiske språk, kombinert med tospråklige ordbøker, overføringsregler for grammatikk, og en generator for målspråket. Giellatekno samarbeider med Apertium, som har en maskinoversettingsplattform med åpen kildekode. Ta gjerne kontakt med oss: giellatekno@uit.no
 
 !!sme
-Giellatekno, UiT Norgga árktalaš universitehta, hukse dihtorjorgalanprográmmaid, mat leat vuođđuduvvon min sámegielaid grammatihkalaš analysáhtoriidda. Dasa lassin geavahit guovttegielat sátnegirjjiid, grammatihkkasirdinnjuolggadusaid ja generáhtor mii hukse ulbmilgiela sániid. Mii ráhkadit jorgalanprográmmaid davvisámegielas eará sámegielaide (anárašgillii, julevsámegillii, lullisámegillii), ja daidda lassin dáro- ja suomagielaide. Giellatekno ovttasbargá Apertiumain, mas lea dihtorjorgalanvuođđu mas lea rabas gáldokoda. Váldde áinnas minguin oktavuođa: giellatekno@uit.no
+Giellatekno, UiT Norgga árktalaš universitehta, hukse dihtorjorgalanprográmmaid, mat leat vuođđuduvvon min sámegielaid grammatihkalaš analysáhtoriidda. Dasa lassin geavahit guovttegielat sátnegirjjiid, grammatihkkasirdinnjuolggadusaid ja generáhtor mii hukse ulbmilgiela sániid. Giellatekno ovttasbargá Apertiumain, mas lea dihtorjorgalanvuođđu mas lea rabas gáldokoda. Váldde áinnas minguin oktavuođa: giellatekno@uit.no
 
 
 
@@ -72,30 +72,23 @@ noe du slett ikke hadde ventet deg er det grunn til å se
 kritisk på resultatet.
 Vær spesielt oppmerksom på følgende mulige feiltyper:
 
-Samisk skiller ikke mellom
-«han» og «hun». Hvis det i teksten står «han» er det
-dermed fullt mulig at teksten refererer til ei kvinne.
-
-Samisk skiller ikke mellom bestemt og ubestemt form, så
-hvis et annet valg av bestemthet hadde gitt et annet
-meningsinnhold, kan du ikke være sikker på at oversettelsen
-gir korrekt innhold.
-
-Når programmet oversetter sammensatte ord det ikkje har sett
-før, oversetter det ordet ved å oversette delene hver for seg.
-Som oftest går det bra, men det kan også hende at norsk bruker
-et helt annet ord. Vær med andre ord forsiktig med å tolke sammensetninger.
-
-I alle språk er det mange ord som har flere enn en betydning.
-For flertydige ord prøver vi å finne korrekt betydning ut i
-fra kontekst, men vi klarer det ikke i alle tilfelle.
-Hvis en spesifikk oversettelse er uventet, kan det dermed 
-hende at vi har bommet. Slå opp relevante samiske nøkkelord
-i ei ordbok, f.eks. i Neahttadigisánit.
+Samisk skiller ikke mellom «han» og «hun». For å unngå forvirring 
+på grunn av feil oversetting, bruker vi «h_n» i de tilfellene 
+programmet ikke er i stand til å bestemme rett kjønn. Samisk 
+skiller heller ikke mellom bestemt og ubestemt form, f.eks. 
+'skole' vs. 'skolen', så programmet gir ikke alltid riktig 
+bestemthet på norsk. Når man oversetter sammensatte ord som ikke 
+finnes i programmets ordbok, oversettes  delene hver for seg, og 
+man kan få oversettinger som 'fjellordfører' istedenfor 'varaordfører' 
+('várri' betyr både vara og fjell). I alle språk er det mange ord 
+som har flere enn en betydning. Programmet klarer ikke alltid å finne 
+korrekt betydning ut i fra sammenhengen. Brukeren kan, når hun er i tvil 
+om betydninga, slå opp slike ord i ei ordbok, f.eks. 
+i Neahttadigisánit (http://sanit.oahpa.no).
 
 
 !!sme:
-Leat jámma ovddideamen dáro-sámi jorgalanvuogádaga.
+Giellatekno lea jámma ovddideamen dáro-sámi jorgalanvuogádaga.
 Dán dásis go lea dál, de sáhttá geavahit vuogádaga ipmirdit 
 davvisámegiela buorebut, muhto dat ii máhte čállit dárogiela
 meattáhusaid haga. Jus dáru jorgaleapmi sisttisdoallá juoidá 
@@ -103,20 +96,16 @@ maid it lean vuordán, de berrešit leat kritihkalaš.
 
 Fuobmá erenoamážit dákkár vejolaš meattáhustiippaid:
 
-Lea váttis oažžut «han» ja «hun» riekta. Garvin dihte moivvi, 
-de prográmma čállá "h_n" dain oktavuođain go ii dieđe goabbá lea 
-riekta. 
-
-Seamma láhkai lea váttis válljet definihtta ja indefinihtta hámiid 
-riekta, omd. 'skole' ja 'skolen'. 
-
-Dalle go jorgala goallossániid mat 
-eai gávdno prográmma sátnegirjjis, de vuogádat jorgala sáni osiid 
-ovttaid mielde, ja dalle sáhttá 'várresátnejođiheaddji'-sánis 
-dárogillii boahtit 'fjellordfører' dan sajis go 'varaordfører'. 
-Juohke gielas leat ollu sánit main lea eanet go okta mearkkašupmi, 
-ja prográmma ii álo máhte válljet rivttes mearkkašumi. Geavaheaddji 
-sáhttá ieš dárkkistit diekkár sániid sátnegirjjis, omd. Neahttadigisániin.
+Lea váttis oažžut «han» ja «hun» riekta. Garvin dihte moivvi, de prográmma 
+čállá «h_n» dain oktavuođain go ii dieđe goabbá lea riekta. Seamma láhkai 
+lea váttis válljet definihtta ja indefinihtta hámiid riekta, omd. 
+'skole' ja 'skolen'. Dalle go jorgala goallossániid mat eai gávdno prográmma 
+sátnegirjjis, de vuogádat jorgala sáni osiid ovttaid mielde, ja dalle 
+sáhttá 'várresátnejođiheaddji'-sánis dárogillii boahtit 'fjellordfører' 
+dan sajis go 'varaordfører'. Juohke gielas leat ollu sánit main lea eanet go 
+okta mearkkašupmi, ja prográmma ii álo máhte válljet rivttes mearkkašumi. 
+Geavaheaddji sáhttá ieš dárkkistit diekkár sániid sátnegirjjis, omd. 
+Neahttadigisániin (http://sanit.oahpa.no).
 
 
 
