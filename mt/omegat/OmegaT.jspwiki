@@ -1,0 +1,60 @@
+
+The user documentation page for OmegaT refers to installation and user documentation, it is here:
+
+* [../../tools/omegat.eng.html]
+* [../../tools/omegat.fin.html]
+* [../../tools/omegat.nob.html]
+* [../../tools/omegat.sme.html]
+
+
+!!!Adapting to our language pairs
+
+The idea is to offer a set of ready-made folders, in two different formats:
+
+# as a one-time downloading of a zipped file archive
+# as svn checkout (via Tortoise on Windows) for access to updates
+
+For the time being, the folders are at [https://victorio.uit.no/biggies/trunk/mt/omegat/].
+
+The idea is to put the following resources into the following subdirectories:
+
+* into {{dictionary}}: our dictionaries (OmegaT [documentation|http://omegat.sourceforge.net/manual-standard/en/chapter.dictionaries.html])
+* into {{glossary}}: term lists, partly fad-marked pairs, partly from satni.org, cf [documentation|http://omegat.sourceforge.net/manual-standard/en/chapter.glossaries.html]
+* into {{tm}}: our parallel texts, __all files fused into one .tmx file__ (or one per theme), cf [documentation|http://omegat.sourceforge.net/manual-standard/en/chapter.translation.memories.html]
+* into {{omegat}}: a file segmentation.conf, for doing sentence level segmentation, cf. [documentation|http://omegat.sourceforge.net/manual-standard/en/chapter.segmentation.html]
+
+The source and target folders are given ''svn ignore'' status, as we develop the folders we should determine what other files to ignore and what to share.
+
+
+!!!The language pairs
+
+The language pairs are of three types:
+
+# smesmn, smesmj, smesmn: The main thing here is MT, glossaries and 
+  dictionaries are less interesting since they are already in bidix, 
+  and since we do not have a OmegaT-compatible tokenizer to look up 
+  inflected words.
+# nobsme, nobsmj, nobsma, finsme, finsmn, finsms: Here we have no MT 
+  (except for finsme, which is not much developed). The focus here is
+  on glossaries (fad project, etc.) and translation memory
+# smasme, smjsme, smnsme, smenob: these we ignore in OmegaT for now.
+  They are mainly made for understanding, not for text production.
+  
+!!!Working plan
+
+# Add glossaries
+# Develop segmentation.conf
+# Test and evaluate
+
+!!!Future plans
+
+Adding more resources:
+
+* Analysers for lemmatisation of dictionary lookup
+* Proofing tools
+ 
+
+
+
+
+
