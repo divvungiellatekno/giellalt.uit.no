@@ -63,5 +63,5 @@ see tull/out_simple-apertium/tull.xml
     THEN DELETE THE LINES BETWEEN THE FIRST LINE AND THE <r> NODE
 java -Xmx2048m -Dfile.encoding=UTF8 net.sf.saxon.Transform -it:main gtdict2simple-apertiumdix.xsl
 tail tull/ut/tull.xml 
-mv tull/ut/tull.xml ../../../apps/dicts/apertium_dict/dics/sme--fin-lr-trie.xml 
+apertium-dixtools dix2trie tull/ut/tull.xml lr ../../../apps/dicts/apertium_dict/dics/fin-smn-lr-trie.xml
 }}}
