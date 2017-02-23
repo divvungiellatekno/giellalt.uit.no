@@ -3,52 +3,47 @@
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
     <header>
-        <title>Corpus repositories</title>
-
-        <authors>
-        <person email="borre.gaup@samediggi.no" name="Børre Gaup" />
-        </authors>
+        <title>Metadata files for corpus files</title>
     </header>
 
     <body>
         <section>
             <title>XSL-files</title>
 
-            <p>The subdirectories under orig contain the original documentes stored
-            to the corpus database in their original format. During the conversion,
-            the original documents are transformed to text and stored in an
-            xml-structure. The xml-files are stored under bound-hierarchy, whereas
-            the original documents stay untouched. The conversion from the original
-            format to the xml-file can be done any time, and should be done if e.g
-            the tools improve or the xml-structure changes.</p>
+            <p>
+                The purpose of the xsl files is:
+                <ul>
+                    <li>
+                        Add metadata about the original file. Examples of this is info
+                        about the author, publishing year, which language it has been
+                        translated from, who added the file to the repository, pointers
+                        to parallel files, etc.
+                    </li>
+                    <li>
+                        Add info about which parts of a document to exclude or include.
+                        This especially handy for pdf documents, which is a fickly file
+                        format to convert to xml. There is also support to do the same
+                        for clean text, html and epub files.
+                    </li>
+                    <li>
+                        Add processing instructions, such as the languages
+                        to which the text is categorized or some information of the text
+                        layout.
+                    </li>
+                </ul>
+            </p>
 
-            <p>The xml-document contains a header for the metainformation such as
-            the title of the document, author(s), publication info and so on. Since
-            we cannot edit the original document and do not want to edit the
-            xml-file, the changes to the metasection are done in an xsl-script,
-            which adds the metainformation to the xml-file during the conversion.
-            In addition to metainformation, the xsl-file may contain processing
-            instructions, such as the languages to which the text is categorized or
-            some information of the text layout.</p>
+            <p>The xsl-file is created when a file is added to a
+                <a href="corpus_repositories.html">corpus repository</a>
+                using
+                <a href="http://divvun.no/doc/ling/CorpusTools.html#add_files_to_corpus">add_files_to_corpus</a>.
+                The xsl-file is stored to the same directory as the original
+                document, with the same name as the original document, and suffix <code>.xsl</code>.
+            </p>
 
-            <p>The xsl-file is created during the conversion by the
-            convert2xml-script. When the corpus file is uploaded to the directory
-            hierarchy via web interface, the script xsl-process.cgi creates the
-            xsl-file. The xsl-file is stored to the same directory as the original
-            document, with the same name as the original document, and suffix
-            .xsl.</p>
+            <p>The variables are defined by expressions as the following:</p>
 
-            <p>File specific xsl-file contains variables for main language and
-            metainformation of the corpus document. By changing or adding values on
-            these variables, we are able modify the the xml-file without touching
-            the original.</p>
-
-            <section>
-                <title>The variables in the xsl-file</title>
-
-                <p>The variables are defined by expressions as the following:</p>
-
-                <source>
+            <source>
 &lt;xsl:variable name="title" select="''"/&gt;
 &lt;xsl:variable name="author" select="''"/&gt;
 &lt;xsl:variable name="author-gender" select="'f'"/&gt;
@@ -56,203 +51,18 @@
 &lt;xsl:variable name="translated-from" select="''"/&gt;
 
 &lt;xsl:variable name="mainlang" select="'sme'"/&gt;
-                </source>
+            </source>
 
-                <p>The information is updated by adding the new value to the
-                "select"-field, inside single quotes. Most of the fields, such as
-                the title and the name of the author can contain free text, but the
-                values of some fields are restricted. The variables are explained in
-                detail in following.</p>
+            <p>The information is updated by adding the new value to the
+            "select"-field, inside single quotes. Most of the fields, such as
+            the title and the name of the author can contain free text, but the
+            values of some fields are restricted.</p>
 
-                <section>
-                    <title>General variables</title>
-
-                    <dl>
-                        <dt><code>filename</code></dt>
-
-                        <dd>The original name of the file, that comes from the
-                        submitter of the document. Sometimes the filename has to be
-                        changed e.g. for the system requirements: no white spaces or
-                        special characters are allowed in the filename.</dd>
-
-                        <dt><code>author1_fn, author1_ln, author1_born,
-                        author1_nat</code></dt>
-
-                        <dd>Information of the first author: first name, last name,
-                        date or year of birth, nationality. The variables for author2
-                        etc. respectively.</dd>
-
-                        <dt><code>author1_gender</code></dt>
-
-                        <dd>The gender is selected from the list: f, m or
-                        unknown.</dd>
-
-                        <dt><code>translated_from</code></dt>
-
-                        <dd>The original language of the document: select from the
-                        list: sme, smj, sma, nob, nno, fin, ger, eng, .. and so
-                        on.</dd>
-
-                        <dt><code>publChannel</code></dt>
-
-                        <dd>The values are either: published or unpublished</dd>
-
-                        <dt><code>publisher, place, collection, ISBN, ISSN</code></dt>
-
-                        <dd>The name of the publisher, place, the name of the
-                        collection etc. as free text.</dd>
-
-                        <dt><code>year</code></dt>
-
-                        <dd>Publishing year, or if the document is unpublished, the
-                        year the document was written.</dd>
-
-                        <dt><code>translator_fn, translator_ln, translator_gender,
-                        translator_nat, translator_born</code></dt>
-
-                        <dd>The values are similar as with the author1.</dd>
-
-                        <dt><code>license_type</code></dt>
-
-                        <dd>The availability of the document. Some documents are
-                        freely available, some are under license. The type of the
-                        license is either free, standard or other.</dd>
-
-                        <dt><code>sub_name, sub_email</code></dt>
-
-                        <dd>The name and email of the submitter.</dd>
-
-                        <dt><code>wordcount</code></dt>
-
-                        <dd>The wordcount for size estimates.</dd>
-
-                        <dt><code>metadata</code></dt>
-
-                        <dd>If the xsl-file is finished. The values are complete and
-                        uncomplete</dd>
-
-                        <dt><code>template_version, current_version</code></dt>
-
-                        <dd>Version information of the original XSL-template and the
-                        version number of the current xsl-file. This information is
-                        provided automatically.</dd>
-
-                        <dt><code>note</code></dt>
-
-                        <dd>Free text field for notes.</dd>
-                    </dl>
-                </section>
-
-                <section>
-                    <title>The languages of the document</title>
-
-                    <dl>
-                        <dt><code>mainlang</code></dt>
-
-                        <dd>The main language of the document: sme, smj, sma, nob,
-                        fin, etc. The main language should be the same as the language
-                        directory where the file is in.</dd>
-                    </dl>
-
-                    <dl>
-                        <dt><code>monolingual, multilingual</code></dt>
-
-                        <dd>Select "1" for either of these. If both are undefined, the
-                        document is assumed to be multilingual.
-                            <dl>
-                                <dt>mlang_sme, mlang_nob, mlang_fin, mlang_swe,..</dt>
-
-                                <dd>The languages that appear in the document in
-                                addition to the main language.</dd>
-                            </dl>
-                        </dd>
-                    </dl>
-                </section>
-
-                <section>
-                    <title>Parallel texts</title>
-
-                    <dl>
-                        <dt>parallel_texts</dt>
-
-                        <dd>Select "1" if the document has parallel texts.</dd>
-                    </dl>
-
-                    <dl>
-                        <dt>para_sme, para_nob, para_fin, para_swe</dt>
-
-                        <dd>Give the names of the parallel documents. The parallel
-                        file is assumed to be located in the corresponding
-                        subdirectory under the selected language. E.g. the Bokmål
-                        parallel file of the
-                        file<code>corp/orig/sme/facta/file.doc</code> is assumed to be
-                        located in <code>corp/orig/nob/facta/</code>. If this is not
-                        the case, give the full path to the file. If more than one
-                        document in some language correspond the document, give the
-                        filenames separated by comma (,).</dd>
-                    </dl>
-                </section>
-            </section>
-
-            <section>
-                <title>Other processing instructions in the xsl-file.</title>
-
-                <section>
-                    <title>Changing the language of a paragraph</title>
-
-                    <p>It is possible to explicitely state that some element in the
-                    xml-document is categorized to some language. The part of
-                    xsl-file that specifies the block is the following:</p>
-
-                    <source>
-&lt;!-- Add all paragraphs that should have xml:lang=X--&gt;
-&lt;!-- Uncomment the following and add the paths, for example: --&gt;
-&lt;!-- &lt;xsl:template match="/root/section[2]/paragraph[5] |
-    /root/section[3]/paragraph[2] "&gt; --&gt;
-
-&lt;xsl:template match=""&gt;
-&lt;xsl:element name="p"&gt;
-&lt;xsl:attribute name="xml:lang"&gt;
-&lt;xsl:value-of select="$smelang"/&gt;
-&lt;/xsl:attribute&gt;
-&lt;xsl:apply-templates/&gt;
-&lt;/xsl:element&gt;
-&lt;/xsl:template&gt;
-                    </source>
-
-                    <p>Change the value of "template match" to the XPath-expression
-                    of the xml-element. Change the value of "select" to the desired
-                    language.</p>
-                </section>
-
-                <section>
-                    <title>Translating characters to other characters in the
-                    text</title>
-
-                    <p>The problematic characters in the document that cannot be
-                    reached by the character conversion can be replaced by
-                    xsl-script. The line of code is: <code>&lt;xsl:value-of
-                    select="translate($text,'ðq','đá') "/&gt;</code>
-                    </p>
-
-
-                    <p>In the example, the ð is translated to đ and q to á.</p>
-                </section>
-
-                <section>
-                    <title>Excluding a file from conversion</title>
-
-                    <p>The xsl-file contains line for including the processing
-                    instructions:</p>
-
-                    <source>&lt;xsl:include href="/usr/local/share/corp/bin/common.xsl"/&gt;</source>
-
-                    <p>Sometimes the converted text does not fulfill the quality
-                    requirements for some reason, e.g. the Saami characters are
-                    missing or encoded strangely. The file can be excluded from the
-                    conversion by replacing "common.xsl" with "empty.xsl".</p>
-                </section>
-            </section>
+            <p>
+                The template for the xsl files is
+                <a href="https://gtsvn.uit.no/langtech/trunk/tools/CorpusTools/corpustools/xslt/XSL-template.xsl">$GTHOME/tools/CorpusTools/corpustools/xslt/XSL-template.xsl</a>.
+                How to fill in values are documented in that document.
+            </p>
         </section>
     </body>
 </document>
