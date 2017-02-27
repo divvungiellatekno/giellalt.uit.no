@@ -1,32 +1,14 @@
 Liste over ting som må forbedres i transfer filene
 
 Fenomena er lauseleg gruppert etter type (med store bokstavar på nivå 3)
-
 For å få betre oversikt flyttar vi ting som er ok over i dokumentet [Solved Transfer Problems|SolvedTransferProblems.html]
 
-Forsøk på disposisjon
-
-* Morfologi
-** asdf
-* Syntaks
-** Bestemtheit
-** Legge til cnjsub/pr 
-** Ordstilling
 
 
 !!! NORSK MORFOLOGI
 !! Ang. bøyning i nob
 
-
-!million flertall => millioner
-{{{
-46,3 miljovnna lassi juolludeapmi
-46,3 million tilleggs en bevilgning
-}}}
-
-Også her vil vi ha nytt paradigme for ''million''
-
-!publikumer => publikum
+!Bøying: publikumer => publikum
 {{{
 Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
 Dette året har publikumene en mulighet via TV og nettet følge vårflyttinga
@@ -39,67 +21,32 @@ Skal dette løses i norsk morfologi (dvs aldri publikumer) eller i transfer (pl 
 
 
 
-!Kvaløya krever <f> /// LØST
-ved å legge til "f" i bidix
-{{{
-Ei vårflytting i 2016 Bávttajohka til #Kvaløya<np><top>.
-Vårflytting i 2016 Bávttajohka til Kvaløya.
-
-echo Kvaløya | apertium -d. unob-sme-morph
-^Kvaløya/Kvaløya<np><top><f>
-}}}
-
 !!! PRONOMEN
-
-!!Type pronomen
-
-!refleksivt pronomen /// LØST
-{{{
-Dál ferte duođas váldit sámemánáid- ja nuoraid go sii dárbbašit lohkamušaid iežaset gillii.
-Nå må ta sant samebarn- og ungdommer når de behøver lesestoff på sitt språk.
-=> sitt evt. eget
-}}}
-
-
 !!Fjerne pronomen
-
 !Pronomen + nekting gir dobbelt pronomen
+
 {{{
 In han munge sáhte sárdnut ruoššagillii.
 Jeg ikke jo jeg kan tale på russisk. => ett jeg skal fjernes
 }}}
 
-
 !! Genus av han/ho
-
 Evt. problemer hit
-
-
-
 
 !!! SUBSTANTIV
 
-
-!! gen forsvinner i t4x for "åring"
-=> 5-åringers tannhelse
-{{{
-echo 5-jahkásaččaid bátnedearvvašvuohta ii leat gal mánáid duohken, | apertium -d. sme-nob
-5-åringer tannhelsen er ikke virkelig avhengig av barna,
-
-sme-nobinterchunk2:
-nom<SN><@SUBJ^pre_nom<SN><@→N><ind><pl><gen>{^5<det><qnt><un><pl><guio>$^åring<n><m><pl><ind>$}
-}}}
-
-
-
-
-!! ikke bestemt form for acr 
+!!Bestemtheit
+! ikke bestemt form for acr 
 {{{
 Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
 Dette året er det på publikumene en mulighet via TV-EN og nettet følge vårflyttinga
 }}}
 
-!! Fleirtalsobjekt i bestemt form
+ACR treng opprydding: Vi vil ha to typar: __namn__ (Det er NRK, jeg snakker om NRK) 
+og __substantiv__  (Det er en SUV, jeg snakker om en SUV). Det finst tvetydige akronym: 
+(Det er (en) BMW, jeg snakker om (en) BMW).
+
+! Fleirtalsobjekt i bestemt form
 
 {{{
 Bátnedivššár rámida kárášjohkalaččaid.
@@ -119,12 +66,57 @@ Her er berre bestemt mogleg. Eg trur det at subjektet er underforstått
 er med og tvinger fram bestemt form på norsk.
 - Enn: Mii fertet oastit skeaŋkkaid (laboratoriesetning)
 
+! Bar NP
+
+* For fleirtals-N sett vi ikkje inn ''en''
+* ''en'' skal ikkje inn for ord for:
+** utellelig, masse, stoff
+** visse ord: guolli, boazu, hoahppu (fisk, rein, hast ...)
+
+!Bar N i faste uttrykk
+
+{{{
+Son lea barggus.
+H_n er i arbeidet.
+H_n er i arbeid.
+}}}
 
 
-!! Insetjing av formelt subjekt
+!!Genitiv, possessor, osb.
+
+! gen forsvinner i t4x for "åring"
+=> 5-åringers tannhelse
+{{{
+echo 5-jahkásaččaid bátnedearvvašvuohta ii leat gal mánáid duohken, | apertium -d. sme-nob
+5-åringer tannhelsen er ikke virkelig avhengig av barna,
+
+sme-nobinterchunk2:
+nom<SN><@SUBJ^pre_nom<SN><@→N><ind><pl><gen>{^5<det><qnt><un><pl><guio>$^åring<n><m><pl><ind>$}
+}}}
+
+! Genitivs-s + ubestemt form
+
+''Redaktørens bøkene'' er alltid feil
+
+__Generaliseringa er:__ \\
+Possessor med -s + bar N
+
+!Genitivs-s i possessor-NP skal vere bestemt
+
+N-gen N = bestemt possessor + ubestemt noun
+
+! Possessorfrase med to genitivar
+
+Bil til jentas far
+
+__Generaliseringa er__ \\
+Alle N2-gen N1 som blir overført til ''N1 til N2'' skal ha bestemt N1.
 
 
-Men vi kan ikkje ha subjektspredikativ etterpå:
+!!Kasus
+!Essiv
+
+"eaktun" ''som betingelse'' -> ''en betingelse''.
 
 {{{
 Danne lea nana matematihkkagelbbolašvuohta eaktun servodaga ovdánahttimii.
@@ -133,135 +125,16 @@ Vi vil ha:
 Derfor er den sterke matematikkkompetansen en betingelse til samfunnets utvikling .
 }}}
 
-
-Og viss vi har partisipp etter subjektet kan vi __ikkje__ setje inn "det".
-
-{{{
-Earret_eará lea Romssa fylkkagielda ásahan Romssa guovllubuohcceviesu oktavuhtii bálvalandoaimma , mii gohčoduvvo Sámi ossodahkan .
-Unntatt_annet har Tromsø fylkeskommune etablert Tromsø regionsykehus i forbindelse tjenesteoppgaven , som kalles Samisk avdeling .
-}}}
-
-
-
-__Generaliseringa er:__
-
-ADVL + Ind.Prs.Sg3  NP => ADVL + Ind.Prs.Sg3 det NP (men ikkje Ess etterpå)
-ADVL + leat.Ind.Prs.Pl3  NP.Pl => ADVL +  er det NP (men ikkje Ess etterpå)
-(evt. skal NP vere -Human)
-
-Det er mogleg vi først skal ha reglar for Ess og etterpå reglar for kontekstar utan.
-
-
-
-!! det-subjekt i passiv og ubestemt form for subjektet /// delvis LØYST
-
-{{{
-Čoahkkimis galgá ráhkaduvvot plána studeantta hárjehallama progrešuvdnii .
-På møtet skal planen lages til progresjonen til studentens trening .
-}}}
-På møtet skal det lages en plan til en progresjon til students trening
-
-
-
-!! Insetjing av man som subjekt
-
-{{{
-Juohkehažžii galgá ordnet nuvttá vuođđooahpahusa .
-Til ethvert skal ordne gratis grunnopplæring .
-Vi vil ha:
-Til enhver skal man ordne gratis grunnopplæring . /// LØST
-
-Ráddjemis galgá giddet fuomášumi dasa , ...
-I avgrensningen skal feste oppmerksomheten til det, ...
-Vi vil ha:
-I avgrensningen skal man feste oppmerksomheten til det, ...
-
-Dalle sáhttá guođđit čálli nama eret čujuhusas , nugo čuovvovaš ovdamearkkain :
-Da kan forfatteren utelate navnets fra henvisningen , som i følgende eksempler : (feil i smesyn)
-Vi vil ha:
-Da kan kan man utelate forfatterens navn fra henvisningen , som i følgende eksempler :
-}}}
-
-
-__Generaliseringa er:__
-
-ADVL (for å vere sikker: Ill) + AUXV + Inf
-
-
-
-!! Bar NP
-
-* For fleirtals-N sett vi ikkje inn ''en''
-* ''en'' skal ikkje inn for ord for:
-** utellelig, masse, stoff
-** visse ord: guolli, boazu, hoahppu (fisk, rein, hast ...)
-
-
-
-!! Genitivs-s + ubestemt form
-
-''Redaktørens bøkene'' er alltid feil
-
-__Generaliseringa er:__
-
-Possessor med -s + bar N
-
-
-
-!!Genitivs-s i possessor-NP skal vere bestemt
-
-N-gen N = bestemt possessor + ubestemt noun
-
-!! Possessorfrase med to genitivar
-
-Bil til jentas far
-
-__Generaliseringa er__
-
-Alle N2-gen N1 som blir overført til ''N1 til N2''
-skal ha bestemt N1.
-
-
-
-
-{{{
-Mun dovddan skuvlla rektor
-J
-}}}
-
-
+__Generalisering__ er, hmm.
 
 !!!ADJEKTIVFRASER
-
-!! Flink til å  /// LØST
-
-{{{
-Olbmot leat leamaš čeahpit vuoruhit bátnedearvvašvuođa
-Folk har vært flinke prioritere tannhelsen
-}}}
-
-=> Folk har vært flinke å prioritere tannhelsen
-
-__Generaliseringa er:__
-
-lea + Adj + Inf => er Adj TIL Å  Inf, trenger @A< i smesyn
-
-
+Alt ok, ventar på fleire feil :-)
 
 !!! KVANTORAR
-
-
-
+Alt ok, ventar på fleire feil :-)
 
 !!! ADVERB
-
-!! Ulike adverb
-
-
-* barggus - i arbeid
-
-
-
+Alt ok, ventar på fleire feil :-)
 
 
 !! Faste uttrykk
@@ -286,16 +159,12 @@ Vi har ikke fått tak i Sametingspresident Tiina Sanila i taler.
  I mange aviser har det lenge VÆRT en vanskelig situasjon
 }}}
 
-__Generaliseringa er__
-
+__Generaliseringa er__ \\
 Med det-innsetjing skal vi også ha "å ha" som hjelpeverb, ikkje "å vere"
 
 
-
 !!Potensialis
-
 ha forskjellige løsninger for forskjellige verb/syntaks?
-
 eks. adv: kanskje bare for leat-verbet ?
 
 
@@ -326,26 +195,20 @@ Dette har vært langt og en tidkrevende prosess
 {{{
 Jáhkká kulturmáhtu leat oktan ággan
 Han tror kulturkompetansen å være som et argument
+Han tror at kulturkompetanse er et argument
 }}}
 
-Han tror at kulturkompetanse er et argument
-
-
-__Generaliseringa er:__
-
+__Generaliseringa er:__ \\
 lohkat, jáhkkát ... + Acc + Inf -> tro, ... at N er
 
 
-!!! LEGGE TIL cnjsub/pr 
+!!! CNJSUB/PR
 
-!! om
+!! Legte til "om"
 lage regler i t4x for å legge til "om". Eksempler, X markerer innsetting av om
-
-
 
 ! knyttet til spesielle verb
 # Ná sii beasašedje buoret diehtit X makkár áššiiguin mii bargat, Paltto lohká. (diehtit = vite om)
-
 
 ! foran vfin (bisetning)
 # – Mii áigguimet iskat vuosttažettiin X leago dán sáddaga obage vejolaš čađahit. (før vfin)
@@ -363,18 +226,10 @@ lage regler i t4x for å legge til "om". Eksempler, X markerer innsetting av om
 ^adv<ADV><@←ADVL-ine><adv>{^bra<adv>$}$^sent<SENT>{^..<sent><clb>$}$
 }}}
 
-!!! ORDSTILLING
 
-
-
-
-!!!Formelt subjekt "det"
-
-
-
-!!ein "det" for mykje
-
-!apposisjon
+!!!FORMELT SUBJEKT "det"
+!!Ein "det" for mykje
+!Apposisjon
 
 {{{
 Finnmarken áviissa váldodoaimmaheaddji, Eilif Aslaksen, lea cealkán eret virggistis dušše jagi maŋŋá go álggii bargui.
@@ -384,11 +239,8 @@ Eilif Andreas Aslaksen (53) lea bajásšaddan Hilláguras Deanus
 Eilif Andreas Aslaksen (53) det har vokst opp av Hillagurra i Tana
 }}}
 
-
-__Problemet er:__
-
+__Problemet er:__ \\
 Vi klarer ikkje å sjå det eigentlege subjektet attom apposisjonen.
-
 
 !Topikalisert objekt
 
@@ -398,11 +250,9 @@ Han har lest journalistikk på Norges journalisthøyskole i Oslo (1989–1991)
 Journalistikken har det lest i Norge journalisthøyskole i Oslo (1989–1991)
 }}}
 
-__Generaliseringa er:__
-
-* Ikkje legg til formelt subjekt når det er eit topikalisert subjekt i setninga.
-* Frasen ''lea lohkan'' skal heller ikkje ha det-innsetjing, dette er hjelpeverb "leat" og ikkje hovudverb "leat".
-
+__Generaliseringa er:__ \\
+Ikkje legg til formelt subjekt når det er eit topikalisert subjekt i setninga. \\
+Frasen ''lea lohkan'' skal heller ikkje ha det-innsetjing, dette er hjelpeverb "leat" og ikkje hovudverb "leat".
 
 !Topikalisert subjektspredikativ > "er det" eller "er"
 
@@ -411,10 +261,8 @@ Mu mihttomearri journalistihkas lea, ahte dat álo galgá nu bures go vejolačč
 Mi målsetting i journalistikken det er, at det skal alltid så godt som mulig utføres.
 }}}
 
-__Problemet er:__
-
+__Problemet er:__ \\
 Vi ser ikkje subjektet gjennom Loc-komplementet.
-
 
 !Topikalisert nektingsverb (overskrift)
 
@@ -424,36 +272,10 @@ Han vet ikke enda hvor han skal arbeide
 Det ikke enda vet hvor skal man arbeide
 }}}
 
-__Generaliseringa er:__
-
+__Generaliseringa er:__ \\
 Dette er overskriftsyntaks, initial ii gjev prodrop.
 
-
-
-
 !!Manglande "det" som skal vere
-
-
-
-
-!!Eit subjekt (pro) for mykje
-
-tbw.
-
-!!Eit subjekt (pro) for lite
-
-
-
-{{{
-– Dan sáhttá gaskkohagaid bargat, muhto juohke beaivve ná bargat lean dovdagoahtán leat veadjetmeahttun
-– Det kan HAN innimellom arbeide, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
-}}}
-
-__Generaliseringa er:__
-
-Topikalisert objekt har ført til prodrop, OBJ + verb (evt: OBJ + sáhttá + Inf)
-gjev det-innsetjing.
-
 
 !Topikalisert adverbial
 
@@ -463,21 +285,34 @@ I mange aviser har DET lenge VÆRT en vanskelig situasjon
 I mange aviser har lenge hatt en vanskelig situasjon
 }}}
 
-__Generaliseringa er:__
+__Generaliseringa er:__ \\
+Her er ''leat'' hovudverb (leamaš), og vi skal ha ''det''
 
-Her er ''leat'' hovudverb (leamaš), og vi skal ha det
-
-!Feilaktig de-innsetting for e-subjekt
+!! det-subjekt i passiv og ubestemt form for subjektet /// delvis LØYST
 
 {{{
-Tiimmu ovdal gaskaija leat kulturdoalut Kárášjoga čierastanluohkás.
-Timen før midnatt er det et kulturarrangement i Karasjok slalåmbakke.
-Timen før midnatt de er kulturarrangement i Karasjoks slalåmbakke.
-
-Tiimmu ovdal gaskaija leat kulturdoalut Kárášjoga čierastanluohkás.
-Timen før midnatt er det et kulturarrangement i Karasjok slalåmbakke.
-Timen før midnatt de er kulturarrangement i Karasjoks slalåmbakke.
+Čoahkkimis galgá ráhkaduvvot plána studeantta hárjehallama progrešuvdnii .
+På møtet skal planen lages til progresjonen til studentens trening .
 }}}
+
+På møtet skal det lages en plan til en progresjon til students trening
+
+
+!!!PRO OG MANGLANDE PRO SOM SUBJEKT
+
+!!Eit subjekt (pro) for mykje
+Alt ok, ventar på fleire feil :-)
+
+!!Eit subjekt (pro) for lite
+
+{{{
+– Dan sáhttá gaskkohagaid bargat, muhto juohke beaivve ná bargat lean dovdagoahtán leat veadjetmeahttun
+– Det kan HAN innimellom arbeide, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
+}}}
+
+__Generaliseringa er:__ \\
+Topikalisert objekt har ført til prodrop, OBJ + verb (evt: OBJ + sáhttá + Inf)
+gjev det-innsetjing.
 
 
 !Relativsetning som ikkje skal ha subjekt
@@ -487,18 +322,15 @@ Sii barget ovttas fitnodagain, mas lea teknihkalaš ovddasvástádus čađahit d
 De arbeider sammen med et firma, som har teknisk ansvar å gjennomføre denne smell- og lysopplevelsen, som varer omtrent ti minutt.
 De arbeider sammen med firmaet, hvor det har et teknisk ansvar å gjennomføre dette smellingen og lysopplevelsen, som varer omtrent ti minutt.
 
-
 Sii barget ovttas fitnodagain, mas lea teknihkalaš ovddasvástádus čađahit dán bávkin- ja čuovgavásáhusa, mii bistá sullii logi minuvtta.
 De arbeider sammen med et firma, som har teknisk ansvar å gjennomføre denne smell- og lysopplevelsen, som varer omtrent ti minutt.
 De arbeider sammen med firmaet, hvor det har et teknisk ansvar å gjennomføre dette smellingen og lysopplevelsen, som varer omtrent ti minutt.
 }}}
 
-__Generaliseringa er:__
-
+__Generaliseringa er:__ \\
 Relativsetningar, med relativt pronomen i nominativ (eller for e-setningar, i lokativ) skal aldri ha innsett subjekt.
 
 ! Relativsetning som skal ha subjekt
-
 
 {{{
 – Presideanttas han lea politihkalaš sáhka maid galgá ovddidit, ja dat sáhka han manná giela bokte.
@@ -506,15 +338,13 @@ Relativsetningar, med relativt pronomen i nominativ (eller for e-setningar, i lo
 – En president har jo et politisk budskap som skal fremme, og det budskapet går jo via språket.
 }}}
 
-__Generaliseringa er:__
-
-* Ei relativsetning med relativisert objekt må på norsk ha eksplisitt subjekt
-** Her: Hab lea NP maid Aux Inf — skal ha subjektspronomen koreferent med Hab
-
-
-Setningsadverb etter det finitte verbet i hovudsetning
+__Generaliseringa er:__ \\
+Ei relativsetning med relativisert objekt må på norsk ha eksplisitt subjekt \\
+Her: Hab lea NP maid Aux Inf — skal ha subjektspronomen koreferent med Hab
 
 
+
+!!!ORDSTILLING
 
 !! Ordstilling setningsadverb leddsetning
 
@@ -529,8 +359,7 @@ Det er ikke slik at når vi feirer her julen, så er vi bare #tre personer<n><mf
 
 }}}
 
-__Generaliseringa er:__
-
+__Generaliseringa er:__ 
 * Setningsadverb før det finitte verbet i leddsetning (etter ahte/at)
 * Andre adverb etter objektet
 * Ingen adverb mellom finitt verb og objekt
