@@ -1,91 +1,11 @@
+See the
+[gtweb-apy-conf README|https://github.com/unhammer/gtweb-apy-conf#introduction]
+for full documentation on how the MT pairs on gtweb are installed and
+updated, and how the html pages and APY MT server are configured and
+kept up-to-date (as well as other system configuration files that were
+altered to make everything work).
 
-Installation/update of a single translator on gtweb.
-
-!!!What data is used for a pair?
-Do
-
-{{{
-$ grep 'dir.*=' /opt/mt/html/index.php
-$ grep 'dir.*=' /opt/mt/html/testing/index.php
- }}}
-
-to see the data directory used each pair. The directory
-/usr/share/apertium is common for all pairs installed from the repos,
-other pairs point at their svn source directories (as earlier did
-/opt/mt/pairs/apertium-sme-smn).
-
-If you want to change the location of a single pair, use the "dir"
-variable for either the testing or the main index.php.
-
-(Earlier we had pairs in /opt/mt/pairs/ and /opt/mt/langs.)
-
-
-!!!Hiding pairs in the html
-
-If you want to turn off/hide a pair, uncomment the <option> part of
-the html using a #-symbol. See
-{{{
-$ grep option /opt/mt/html/index.php
-}}}
-for examples of this.
-
-!!!Updating packaged pairs
-
-Pairs like sme-nob are installed through Tino's yum repo, and should be updated
-once every 24 hours by the program `dnf-automatic` running on this machine. If
-it seems like it hasn't updated to the latest nightly, you can (anywhere on gtweb) run
-
-{{{
-$ sudo dnf clean packages
-$ sudo dnf -y update
-}}}
-
-You can get info on pairs with e.g.
-{{{
-$ dnf info apertium-sme-nob # show version+revision number
-$ rpm -ql apertium-sme-nob  # show the files installed by the package
-}}}
-
-!!!Updating manually compiled pairs
-
-!!a) Log in
-
-If you’re not already, add your user to the MT group
-
-{{{
-$ /usr/bin/usermod -a -G mt <username>
-}}}
-
-You’ll need ‘sudo’ for this.
-
-!!b) go to the pairs source:
-
-E.g.
-
-{{{
-cd /opt/mt/pairs/apertium-sme-smn
-}}}
-
-!!c) update source
-
-{{{
-$ svn up
-}}}
-
-!!d) compile it
-{{{
-$ export LD_LIBRARY_PATH=/opt/mt/lib
-$ export PKG_CONFIG_PATH=/opt/mt/lib/pkgconfig
-$ export PATH=/opt/mt/bin:$PATH
-
-$ ./autogen.sh --prefix=/opt/mt
-$ ./configure --prefix=/opt/mt
-$ make
-}}}
-
-!!e) test it compiled ok:
-{{{
-$ echo “ja” | apertium -d . sme-smn
-}}}
-
-Then copy the binary files to where index.php expects to find them.
+In summary:
+* language pairs are installed using the "dnf" command, and come from from Tino's nightly packages
+* every morning, "dnf-automatic" runs an upgrade of all packages (including language pairs), and restarts the APY MT server to load the new data
+* if you install *new* language pairs, you have to run "sudo /home/apy/update" afterwards to make them appear in http://gtweb.uit.no/mt-testing/ (while the configuration files in gtweb-apy-conf specify that e.g. [jorgal|http://gtweb.uit.no] only translates Northern Saami→Norwegian, and [tolkimine|http://gtweb.uit.no] only translates Finnish⇆Estonian)
