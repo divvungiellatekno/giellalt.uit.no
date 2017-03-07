@@ -1,18 +1,18 @@
 !!!Adding a new language to the infrastructure
 
-Languages may be added to one of these 4 directories:
+Languages may be added to one of these three directories:
 
-# $GTHOME/langs (for languages we work on, or who have full-size transducers)
+# $GTHOME/langs (for languages we work on, or which have full-size transducers)
 # $GTHOME/experiment-langs (experiments of different kinds)
 # $GTHOME/startup-langs (when we do not know whether the work will lead to anything or not)
 
-There are also a couple of directories for languages with a closed license and
-restricted access. Their structure is identical to the open ones above.
+There are also a couple of directories for a few languages with a closed license
+and restricted access. Their structure is identical to the open ones above.
 
 !!How to add a new language
 
-We here show how to add new languages to ''langs'' (for adding to the 3 other directories, 
-exchange "langs" with "startup-langs" etc.)
+We here show how to add new languages to {{$GTHOME/langs/}} (for adding to the
+two other directories, exchange "langs" with "startup-langs" etc.)
 
 # {{cd $GTHOME/langs}}
 # {{./autogen.sh}}
@@ -32,8 +32,6 @@ putting double quotes around the whole list:
 The above command will create a new directory for the specified language, and populate it with the required makefiles, autoconf files and template source files. The files are automatically added (but not committed) to svn, and all relevant {{svn:ignore}} properties are set.
 
 In addition, the new language code is added to {{$GTHOME/langs/Makefile.am}} and {{$GTHOME/langs/configure.ac}}. When you have checked the new language, and found that everything is ok, please {{svn commit}} ''both'' the new language dir, and the {{configure.ac}} and {{Makefile.am}} files. If the changes in those two files are not committed, the new language will be left out of future updates to the infrastructure.
-
-__NB!__ At present, the linguistic source files are __not__ added to svn. The idea is that we are still moving from the old infra to the new infra, and thus all source files should be svn-moved (or svn-copied) from the old to the new infra. The dummy source files are only kept to indicate what the new filenames should be. It is __important__ to use {{svn copy}} or {{svn move}} when moving from the old to the new infra, to retain the version history of the files. We want to be able to trace the history all the way back to the start, for every language.
 
 Now, to start doing real work, you must do one set of preparations still:
 
