@@ -30,16 +30,16 @@ The source and target folders are given ''svn ignore'' status, as we develop the
 
 The language pairs are of three types:
 
-# smesmn, smesmj, smesmn: The main thing here is MT, glossaries and 
-  dictionaries are less interesting since they are already in bidix, 
-  and since we do not have a OmegaT-compatible tokenizer to look up 
+# smesmn, smesmj, smesmn: The main thing here is MT, glossaries and
+  dictionaries are less interesting since they are already in bidix,
+  and since we do not have a OmegaT-compatible tokenizer to look up
   inflected words.
-# nobsme, nobsmj, nobsma, finsme, finsmn, finsms: Here we have no MT 
+# nobsme, nobsmj, nobsma, finsme, finsmn, finsms: Here we have no MT
   (except for finsme, which is not much developed). The focus here is
   on glossaries (fad project, etc.) and translation memory
 # smasme, smjsme, smnsme, smenob: these we ignore in OmegaT for now.
   They are mainly made for understanding, not for text production.
-  
+
 !!!Working plan
 
 # Add glossaries
@@ -52,9 +52,16 @@ Adding more resources:
 
 * Analysers for lemmatisation of dictionary lookup
 * Proofing tools
- 
 
+!!!HFST Tokenizer
 
+Hfst tokenizer is at [github|https://github.com/divvun/OmegaT-hfst-tokenizer]
+{{{
+ant jar
+cp lib/hfst-ol.jar dist/OmegatHfst-tokenizer.jar $OMEGAT_DIR/lib/provided
+}}}
 
+To file {{$OMEGAT_DIR/Plugins.properties}} add {{no.divvun.tokenizer.HfstTokenizer}} to tokenizer variable.
 
-
+FST's are searched from OmegaT preferred folder {{~
+/Library/Preferences/OmegaT/spelling}} and filename should end '-<lang>.hfstol'
