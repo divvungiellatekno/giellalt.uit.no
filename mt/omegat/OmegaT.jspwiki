@@ -79,6 +79,10 @@ Follow these instructions:
 # Get appbundler used by OmegaT from [here|https://bitbucket.org/infinitekind/appbundler].
   This needs Java 1.7
 ## install this into ~/.ant/lib/
+## this appbundler needs {{JavaAppLauncher}} and {{jre-mac-root}} to be defined
+   in {{OMEGAT_ASSETS_DIR}} folder, which is searched from environmental variables.
+   If not found in this folder the build process looks one folder down from
+   where you installed OmegaT sources.
 # Download {{hfst-ol.jar}} and put it to {{OMEGAT_SRC_FOLDER/lib}} where
   OMEGAT_SRC_FOLDER is the folder you just installed the OmegaT source files.
   [here|https://sourceforge.net/projects/hfst/files/optimized-lookup/hfst-ol.jar/download]
