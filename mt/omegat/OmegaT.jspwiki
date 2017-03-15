@@ -93,7 +93,12 @@ Follow these instructions:
 ## Modify files package name if needed
 ## Remove {{throws IOException}} from {{getTokenStream}} method and correct
    {{StandardTokenizer}} constructor call
-## diff HfstTokenizer.java against 4.x HfstTokenizer.java
+## diff HfstTokenizer.java against 4.x HfstTokenizer.java (see diffs below)
+# Add {{hfst-ol.jar}} to {{manifest-template.mf}} (details below)
+# Add {{lib/hfst-ol.jar}} entry to {{manifest.mf}}'s {{Class-Path}} variable
+# run {{ant mac}} in OmegaT source folder, the one where you installed OmegaT
+
+Diffs:
 {{{
 1c1
 < package org.omegat.tokenizer;
@@ -138,10 +143,9 @@ Follow these instructions:
 ---
 >       });
 }}}
-# Add {{hfst-ol.jar}} to {{manifest-template.mf}}
+
+Add the following for {{hfst-ol.jar}} to template:
 {{{
 Name: org.omegat.tokenizer.HfstTokenizer
 OmegaT-Plugin: tokenizer
 }}}
-# Add {{lib/hfst-ol.jar}} entry to {{manifest.mf}}'s {{Class-Path}} variable
-# run {{ant mac}} in OmegaT source folder, the one where you installed OmegaT
