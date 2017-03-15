@@ -74,12 +74,14 @@ FST's are searched from OmegaT preferences folder
 HfstTokenizer can be compiled together with OmegaT and bundled into Mac App.
 Follow these instructions:
 
-1. Download OmegaT 3.x source code, not 4.x
-2. Get appbundler used by OmegaT from [here|https://bitbucket.org/infinitekind/appbundler]. This needs Java 1.7
-3. Download hfst-ol.jar and put it to OMEGAT_SRC_FOLDER/lib
-4. Copy HfstTokenizer.java and HfstStemFilter.java to OMEGAT_SRC_FOLDER/src/org/omegat/tokenizer
-4.1 Modify files package name if needed
-4.2 Remove 'throws IOException' from getTokenStream method and correct StandardTokenizer constructor call
-5. Add hfst-ol.jar to manifest-template.mf
-6. Add 'lib/hfst-ol.jar' entry to manifest.mf 'Class-Path' variable
-7. run 'ant mac'
+# Download OmegaT 3.x source code, not 4.x
+# Get appbundler used by OmegaT from [here|https://bitbucket.org/infinitekind/appbundler]. This needs Java 1.7
+# Download {{hfst-ol.jar}} and put it to OMEGAT_SRC_FOLDER/lib
+# Copy {{HfstTokenizer.java}} and {{HfstStemFilter.java}} to
+  {{OMEGAT_SRC_FOLDER/src/org/omegat/tokenizer}}
+## Modify files package name if needed
+## Remove {{throws IOException}} from {{getTokenStream}} method and correct
+   {{StandardTokenizer}} constructor call
+# Add {{hfst-ol.jar}} to {{manifest-template.mf}}
+# Add {{lib/hfst-ol.jar}} entry to {{manifest.mf}}'s {{Class-Path}} variable
+# run {{ant mac}}
