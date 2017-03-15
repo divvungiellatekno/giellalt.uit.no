@@ -56,14 +56,13 @@ Adding more resources:
 
 !!!HFST Tokenizer
 
-Hfst tokenizer is at [github|https://github.com/divvun/OmegaT-hfst-tokenizer]
-{{{
-ant jar
-cp lib/hfst-ol.jar dist/OmegatHfst-tokenizer.jar $OMEGAT_DIR/lib/provided
-}}}
+You can get the hfst tokenizer ready compiled. You need to download two files:
+[Hfst tokenizer|http://divvun.no/static_files/omegat-hfst-tok/OmegatHfst-tokenizer.jar]
+[Hfst lookup library|http://divvun.no/static_files/omegat-hfst-tok/hfst-ol.jar]
 
-To file {{$OMEGAT_DIR/Plugins.properties}}
-add {{no.divvun.tokenizer.HfstTokenizer}} to tokenizer variable.
+And put them into {{~/Library/Preferences/OmegaT/plugins}} (create the dir if it's not there)
+
+Hfst tokenizer source is at [github|https://github.com/divvun/OmegaT-hfst-tokenizer]
 
 FST's are searched from OmegaT preferences folder
 {{~/Library/Preferences/OmegaT/spelling}} and filename should end in
