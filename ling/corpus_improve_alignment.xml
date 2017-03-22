@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<document xml:lang="en">
+  <header>
+    <title>How to improve sentence alignment of pdf files</title>
+  </header>
+  <body>
+    <section>
+      <title>Example: Sentences as paragraphs</title>
+
+      <table>
+        <tr>
+          <td>Hallitus esitteli maaliskuussa 2009 uuden</td>
+          <td>Ráđđehus ovdanbuvttii njukčamánus 2009 ođđa</td>
+        </tr>
+        <tr>
+          <td>vähemmistöpoliittisen strategian esityksessään</td>
+          <td>unnitlogopolitihkalaš strategiija proposišuvnnas Från</td>
+        </tr>
+        <tr>
+          <td>Tunnustamisesta omaan valtaan – Hallituksen kansallisia</td>
+          <td>strategiija nášuvnnalaš unnitloguid váras) (prop.</td>
+        </tr>
+        <tr>
+          <td>vähemmistöjä koskeva strategia (esitys 2008/2009:158).</td>
+          <td>2008/2009:158).</td>
+        </tr>
+        <tr>
+          <td>Strategia merkitsee useita muutoksia, jotka koskevat</td>
+          <td>Strategiija sisdoallá máŋga rievdadusa</td>
+        </tr>
+        <tr>
+          <td>kansallisten vähemmistöjen oikeuksien vahvistamista ja</td>
+          <td>nannen dihte daid nášuvnnalaš unnitloguid vuoigatvuođaid ja</td>
+        </tr>
+        <tr>
+          <td>vähemmistöpolitiikan toteuttamisambitioiden parantamista.</td>
+          <td>alidit gudneáŋgirvuođa got unnitlogopolitihkka galgá</td>
+        </tr>
+        <tr>
+          <td>Hallitus panostaa 70 miljoonaa kruunua uudistukseen, jota</td>
+          <td>čađahuvvot. Ráđđehus bidjá 70 miljovnna ruvnnu reforbmii mii</td>
+        </tr>
+        <tr>
+          <td>aletaan toteuttaa vuodesta 2010.</td>
+          <td>galgá čađahuvvot 2010 rájis.</td>
+        </tr>
+      </table>
+
+      <p>Above is an example of a sentence alignment of two pdf documents. We see that sentences have been cut off in the middle. The reason for this is that these pdf documents have been converted as if each sentence is a paragraph. To fix this, one has to
+        <ol>
+          <li>find the name of the two original documents</li>
+          <li>change the linespacing in the metadata that belong to these documents</li>
+          <li>run the command <code>realign &lt;path-to-tmx.html-file&gt;</code></li>
+        </ol>
+      </p>
+
+      <section>
+        <title>Finding paths to the original files</title>
+
+        <p>The file where one proofreads the sentence aligned files typically has this kind of name:</p>
+
+        <pre>prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</pre>
+
+        <p>fin2sme in the path above tells us that <code>language1</code> of the alignment is <code>fin</code>, and language2 is <code>sme</code>.</p>
+
+        <section>
+          <title>Finding the path of the language1 file</title>
+
+          <p>The path to the original language1 file is:</p>
+          <pre>orig/fin/admin/lansstyrelsen.se/faktablad_finska.pdf</pre>
+
+          <p>The formula for finding this path is:
+            <ol>
+              <li>replace <code>prestable/tmx</code> with <code>orig/</code></li>
+              <li>replace <code>fin2sme</code> with <code>fin</code></li>
+              <li>remove <code>.tmx.html</code> at end of the filename</li>
+            </ol>
+          </p>
+        </section>
+
+        <section>
+          <title>Finding the name of the language2 file</title>
+
+          <p>The name of the language2 file is found in the file:</p>
+          <pre>orig/fin/admin/lansstyrelsen.se/faktablad_finska.pdf.xsl</pre>
+
+          <p>Open the file, look for a line that looks like this:</p>
+          <pre>&lt;xsl:variable name="parallels"&gt;</pre>
+
+          <p>Right below that line is a line that tells what the filename of the language2 is</p>
+          <pre>&lt;parallel_text location="faktablad_nordsamiska.pdf" xml:lang="sme"/&gt;</pre>
+
+          <p>The path to the language2 file is:</p>
+          <pre>orig/sme/admin/lansstyrelsen.se/faktablad_nordsamiska.pdf</pre>
+
+          <p>The formula for finding this path is:
+            <ol>
+              <li>replace <code>fin</code> with <code>sme</code></li>
+              <li>replace <code>faktablad_finska.pdf</code> with <code>faktablad_nordsamiska.pdf</code></li>
+            </ol>
+          </p>
+
+        </section>
+      </section>
+
+    </section>
+  </body>
+</document>
