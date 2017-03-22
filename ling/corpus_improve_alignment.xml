@@ -47,63 +47,52 @@
         </tr>
       </table>
 
-      <p>Above is an example of a sentence alignment of two pdf documents. We see that sentences have been cut off in the middle. The reason for this is that these pdf documents have been converted as if each sentence is a paragraph. To fix this, one has to
+      <p>Above is an example of a sentence alignment of two pdf documents. We see that sentences have been cut off in the middle. The reason for this is that these pdf documents have been converted as if each sentence is a paragraph.</p>
+      <p>The name of the file with this content is <code>prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code></p>
+
+      <p>To fix this, one has to:
         <ol>
-          <li>find the name of the two original documents</li>
-          <li>change the linespacing in the metadata that belong to these documents</li>
-          <li>run the command <code>realign &lt;path-to-tmx.html-file&gt;</code></li>
+          <li>Find the names of the <a href="corpus_xsl_file.html">metadata</a> files belonging to the above file. Run the command <code>realign --files prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code><br/>Note the metadata names that are printed to the terminal.</li>
+          <li>Open the metadata files, change the line <code>&lt;xsl:variable name="linespacing" select="''"/&gt;</code> to become <code>&lt;xsl:variable name="linespacing" select="'all=2'"/&gt;</code><br/>Save the files.</li>
+          <li>Run the command <code>realign prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code></li>
+          <li>Reload <code>prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code> in the web browser to see if the sentence alignment has been improved.</li>
         </ol>
       </p>
 
+      <p>The above steps improves the situation somewhat, but the sentence alignment has not become perfect.</p>
+    </section>
+
+    <section>
+      <title>General approach to improving sentence alignment</title>
+      <p>To improve the sentence alignment, one must improve the quality of the converted xml file. The general steps are:
+        <ol>
+          <li>Run the command <code>realign --files &lt;path-to-tmx-html-file&gt;</code> to find the names of <a href="corpus_xsl_file.html">metadata</a> and converted files.</li>
+          <li>Have a look at the converted files to see if they are of bad quality</li>
+          <li>Set a variable in the <a href="corpus_xsl_file.html">metadata</a> files to try to improve the quality.</li>
+          <li>Run the command <code>realign --convert &lt;path-to-tmx-html-file&gt;</code> to reconvert the files</li>
+          <li>Repeat the above steps until the quality of the converted files seem to be ok, then run <code>realign &lt;path-to-tmx-html-file&gt;</code> to realign the sentences</li>
+          <li>Open &lt;path-to-tmx-html-file&gt; in a web browser. If alignment is good, commit modified files. If not, repeat the steps above.</li>
+        </ol>
+
+        A more thorough documentation of these variables are found in <a href="$GTHOME/tools/CorpusTools/corpustools/xslt/XSL-template.xsl">the metadata template file</a>.
+      </p>
+
       <section>
-        <title>Finding paths to the original files</title>
-
-        <p>The file where one proofreads the sentence aligned files typically has this kind of name:</p>
-
-        <pre>prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</pre>
-
-        <p>fin2sme in the path above tells us that <code>language1</code> of the alignment is <code>fin</code>, and language2 is <code>sme</code>.</p>
-
-        <section>
-          <title>Finding the path of the language1 file</title>
-
-          <p>The path to the original language1 file is:</p>
-          <pre>orig/fin/admin/lansstyrelsen.se/faktablad_finska.pdf</pre>
-
-          <p>The formula for finding this path is:
-            <ol>
-              <li>replace <code>prestable/tmx</code> with <code>orig/</code></li>
-              <li>replace <code>fin2sme</code> with <code>fin</code></li>
-              <li>remove <code>.tmx.html</code> at end of the filename</li>
-            </ol>
-          </p>
-        </section>
-
-        <section>
-          <title>Finding the name of the language2 file</title>
-
-          <p>The name of the language2 file is found in the file:</p>
-          <pre>orig/fin/admin/lansstyrelsen.se/faktablad_finska.pdf.xsl</pre>
-
-          <p>Open the file, look for a line that looks like this:</p>
-          <pre>&lt;xsl:variable name="parallels"&gt;</pre>
-
-          <p>Right below that line is a line that tells what the filename of the language2 is</p>
-          <pre>&lt;parallel_text location="faktablad_nordsamiska.pdf" xml:lang="sme"/&gt;</pre>
-
-          <p>The path to the language2 file is:</p>
-          <pre>orig/sme/admin/lansstyrelsen.se/faktablad_nordsamiska.pdf</pre>
-
-          <p>The formula for finding this path is:
-            <ol>
-              <li>replace <code>fin</code> with <code>sme</code></li>
-              <li>replace <code>faktablad_finska.pdf</code> with <code>faktablad_nordsamiska.pdf</code></li>
-            </ol>
-          </p>
-
-        </section>
+        <title>Improve sentence alignment of pdf files</title>
+        <p>When the sentence alignment between two pdf files is bad, it is possible to improve it a lot by editing the <a href="corpus_xsl_file.html">metadata</a> file and setting various variables that are specific to pdf files.</p>
+        <p>The following variables in the <a href="corpus_xsl_file.html">metadata</a> file affect the content of the converted file:
+          <dl>
+            <dt>skip_pages</dt>
+            <dd>skip specific pages that are not wanted in the converted file</dd>
+            <dt>right_margin, left_margin, top_margin, bottom_margin</dt>
+            <dd>remove text above, below, to the right and left of the main content. This is typically removes page numbers, foot notes, reoccuring page headers and footers, etc.</dd>
+            <dt>inner_*_margin</dt>
+            <dd>remove a rectangle shaped part of the page</dd>
+            <dt>linespacing</dt>
+            <dd>as the above example shows, if line spacing in a document is larger than the default 1.5, text lines will be converted to paragraphs. To improve this, set a larger value for this.</dd>
+          </dl>
+        </p>
       </section>
-
     </section>
   </body>
 </document>
