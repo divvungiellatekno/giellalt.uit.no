@@ -51,47 +51,46 @@
       <p>The name of the file with this content is <code>prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code></p>
 
       <p>To fix this, one has to:
-        <ol>
-          <li>Find the names of the <a href="corpus_xsl_file.html">metadata</a> files belonging to the above file. Run the command <code>realign --files prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code><br/>Note the metadata names that are printed to the terminal.</li>
-          <li>Open the metadata files, change the line <code>&lt;xsl:variable name="linespacing" select="''"/&gt;</code> to become <code>&lt;xsl:variable name="linespacing" select="'all=2'"/&gt;</code><br/>Save the files.</li>
-          <li>Run the command <code>realign prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code></li>
-          <li>Reload <code>prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code> in the web browser to see if the sentence alignment has been improved.</li>
-        </ol>
       </p>
+      <ol>
+        <li>Find the names of the <a href="corpus_xsl_file.html">metadata</a> files belonging to the above file. Run the command <code>realign --files prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code><br/>Note the metadata names that are printed to the terminal.</li>
+        <li>Open the metadata files, change the line <code>&lt;xsl:variable name="linespacing" select="''"/&gt;</code> to become <code>&lt;xsl:variable name="linespacing" select="'all=2'"/&gt;</code><br/>Save the files.</li>
+        <li>Run the command <code>realign prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code></li>
+        <li>Reload <code>prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html</code> in the web browser to see if the sentence alignment has been improved.</li>
+      </ol>
 
       <p>The above steps improves the situation somewhat, but the sentence alignment has not become perfect.</p>
     </section>
 
     <section>
       <title>General approach to improving sentence alignment</title>
-      <p>To improve the sentence alignment, one must improve the quality of the converted xml file. The general steps are:
-        <ol>
-          <li>Run the command <code>realign --files &lt;path-to-tmx-html-file&gt;</code> to find the names of <a href="corpus_xsl_file.html">metadata</a> and converted files.</li>
-          <li>Have a look at the converted files to see if they are of bad quality</li>
-          <li>Set a variable in the <a href="corpus_xsl_file.html">metadata</a> files to try to improve the quality.</li>
-          <li>Run the command <code>realign --convert &lt;path-to-tmx-html-file&gt;</code> to reconvert the files</li>
-          <li>Repeat the above steps until the quality of the converted files seem to be ok, then run <code>realign &lt;path-to-tmx-html-file&gt;</code> to realign the sentences</li>
-          <li>Open &lt;path-to-tmx-html-file&gt; in a web browser. If alignment is good, commit modified files. If not, repeat the steps above.</li>
-        </ol>
+      <p>To improve the sentence alignment, one must improve the quality of the converted xml file. The general steps are:</p>
+      <ol>
+        <li>Run the command <code>realign --files &lt;path-to-tmx-html-file&gt;</code> to find the names of <a href="corpus_xsl_file.html">metadata</a> and converted files.</li>
+        <li>Have a look at the converted files to see if they are of bad quality</li>
+        <li>Set a variable in the <a href="corpus_xsl_file.html">metadata</a> files to try to improve the quality.</li>
+        <li>Run the command <code>realign --convert &lt;path-to-tmx-html-file&gt;</code> to reconvert the files</li>
+        <li>Repeat the above steps until the quality of the converted files seem to be ok, then run <code>realign &lt;path-to-tmx-html-file&gt;</code> to realign the sentences</li>
+        <li>Open &lt;path-to-tmx-html-file&gt; in a web browser. If alignment is good, commit modified files. If not, repeat the steps above.</li>
+      </ol>
 
-        A more thorough documentation of these variables are found in <a href="$GTHOME/tools/CorpusTools/corpustools/xslt/XSL-template.xsl">the metadata template file</a>.
+      <p>A more thorough documentation of these variables are found in <a href="$GTHOME/tools/CorpusTools/corpustools/xslt/XSL-template.xsl">the metadata template file</a>.
       </p>
 
       <section>
         <title>Improve sentence alignment of pdf files</title>
         <p>When the sentence alignment between two pdf files is bad, it is possible to improve it a lot by editing the <a href="corpus_xsl_file.html">metadata</a> file and setting various variables that are specific to pdf files.</p>
-        <p>The following variables in the <a href="corpus_xsl_file.html">metadata</a> file affect the content of the converted file:
-          <dl>
-            <dt>skip_pages</dt>
-            <dd>skip specific pages that are not wanted in the converted file</dd>
-            <dt>right_margin, left_margin, top_margin, bottom_margin</dt>
-            <dd>remove text above, below, to the right and left of the main content. This is typically removes page numbers, foot notes, reoccuring page headers and footers, etc.</dd>
-            <dt>inner_*_margin</dt>
-            <dd>remove a rectangle shaped part of the page</dd>
-            <dt>linespacing</dt>
-            <dd>as the above example shows, if line spacing in a document is larger than the default 1.5, text lines will be converted to paragraphs. To improve this, set a larger value for this.</dd>
-          </dl>
-        </p>
+        <p>The following variables in the <a href="corpus_xsl_file.html">metadata</a> file affect the content of the converted file:</p>
+        <dl>
+          <dt>skip_pages</dt>
+          <dd>skip specific pages that are not wanted in the converted file</dd>
+          <dt>right_margin, left_margin, top_margin, bottom_margin</dt>
+          <dd>remove text above, below, to the right and left of the main content. This is typically removes page numbers, foot notes, reoccuring page headers and footers, etc.</dd>
+          <dt>inner_*_margin</dt>
+          <dd>remove a rectangle shaped part of the page</dd>
+          <dt>linespacing</dt>
+          <dd>as the above example shows, if line spacing in a document is larger than the default 1.5, text lines will be converted to paragraphs. To improve this, set a larger value for this.</dd>
+        </dl>
       </section>
     </section>
   </body>
