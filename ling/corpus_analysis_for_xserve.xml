@@ -37,7 +37,38 @@
             </ul>
 
             <p>The "xfst" mode found in <a href="https://gtsvn.uit.no/langtech/trunk/tools/CorpusTools/corpustools/xml/modes.xml">$GTHOME/tools/CorpusTools/corpustools/xml/modes.xml</a> is the pipeline for analysing files.</p>
+
+            <section>
+                <title>hfst: Build commands</title>
+                <source>cd ~/hfst/
+git pull
+module load autoconf/2.69
+module load automake/1.13.1
+module load gcc/4.9.1
+./autogen.sh
+./configure --enable-all-tools --with-unicode-handler=glib --prefix=/home/boerre --with-readline
+make
+make install</source>
+            </section>
+
+            <section>
+                <title>vislcg3: Build commands</title>
+                <source>module load cmake/3.1.1
+module load gcc/4.9.1
+module load boost/1.57.0
+cd ~/svnrepos/vislcg3/
+svn up
+./cmake.sh --prefix=~
+make
+make install</source>
+            </section>
+
+            <section>
+                <title>CorpusTools: Install commands</title>
+                <source>cd ~/svnrepos/main/tools/CorpusTools/
+svn up
+python setup.py install --user --install-scripts=$HOME/bin</source>
+            </section>
         </section>
     </body>
 </document>
-
