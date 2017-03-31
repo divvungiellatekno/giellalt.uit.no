@@ -266,6 +266,18 @@ This requires some specific formatting in the XML:
 
 
 ! Discovered issues
+ * 500 error with the output
+ {{{
+  500
+
+Whoops! There was some kind of error.
+Invalid tagset <pos>. Choose one of: 
+}}}
+ - create and add the language-corresponding tagset-file 
+   with the name xxx.tagset (xxx=three-letter-code of the language, e.g. for Russian rus.tagset) in
+{{{
+ neahtta/configs/language_specific_rules/tagsets
+}}}
 
 ! Troubleshooting
 
