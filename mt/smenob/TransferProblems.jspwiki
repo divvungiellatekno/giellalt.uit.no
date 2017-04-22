@@ -11,7 +11,16 @@ Skriv slik:
 
 !!! NORSK MORFOLOGI
 !! Bøyning i nob
-Alt ok, ventar på fleire feil :-)
+
+
+rømmet, rømmede => rømt, rømte
+{{{
+apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | apertium -d. sme-nob-postchunk
+^Den<det><dem><m><sg>$ ^rømme<adj><pp><sg><def>$ ^laks<n><m><sg><def>$ ^være<vblex><pres>$ ^påvirkning<n><m><sg><ind>$ ^på<pr>$ ^laks<n><m><sg><def>$^..<sent><clb>$
+apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | apertium -d. sme-nob
+Den rømmede laksen er påvirkning på laksen.
+}}}
+
 
 
 !!! PRONOMEN
