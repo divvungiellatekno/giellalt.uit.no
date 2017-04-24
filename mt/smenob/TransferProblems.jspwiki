@@ -11,7 +11,15 @@ Skriv slik:
 
 !!! NORSK MORFOLOGI
 !! Bøyning i nob
-
+manglende bindestrek guio mellom acro og substantiv
+{{{
+apertium-sme-nob$ echo VM-gull | apertium -d. unob-sme-morph
+^VM-gull/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>$^./.<sent><clb>$
+apertium-sme-nob$ echo  OG-golli | apertium -d. sme-nob
+#OLgull
+apertium-sme-nob$ echo  OG-golli | apertium -d. sme-nob-postchunk
+^OL<n><sg><ind><guio>$^gull<n><nt><sg><ind>$^.<sent><clb>$
+}}}
 
 rømmet, rømmede => rømt, rømte
 {{{
