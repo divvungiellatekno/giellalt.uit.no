@@ -3,48 +3,12 @@
 <document xml:lang="en">
   <header>
     <title>Howto upgrade Bugzilla</title>
-    <authors>
-      <person email="borre.gaup@samediggi.no" name="Børre Gaup"/>
-    </authors>
   </header>
   <body>
     <section>
-      <title>Steps in upgrading a bugzilla installation</title>
-      <ul>
-        <li>Become root</li>
-        <li>Stop mysql: <code>/etc/init.d/mysql stop</code></li>
-        <li>Take a backup of mysql: <code>tar zcppf mysql-backup-`date +%x`.tar gz /var/lib/mysql</code></li>
-        <li>Install the following packages if they don't exist:
-			<ul>
-                <li><code>apt-get -y install libemail-send-perl libgd-graph-perl libnet-ldap-perl libapache2-mod-perl2 libapache-dbi-perl libhtml-scrubber-perl libxml-twig-perl libsoap-lite-perl libchart-perl perlmagick unzip make links libemail-mime-contenttype-perl libemail-mime-encodings-perl libemail-mime-modifier-perl libemail-mime-perl  libemail-simple-creator-perl apache2 mysql-server openssh-client</code></li>
-                <li><code>perl -MCPAN -e 'install PatchReader'</code></li>
-            </ul>
-		</li>
-        <li>Fetch the wanted bugzilla from http://www.bugzilla.org/download/, in my case 3.0.2</li>
-        <li>Move the original bugzilla away: <code>mv /home/gtuit/giellatekno/public_html/bugzilla/ to /home/gtuit/giellatekno/public_html/bugzilla.bak/</code></li>
-        <li>Unpack bugzilla-3.0.2: <code>tar zxf bugzilla-3.0.2.tar.gz -C /home/gtuit/giellatekno/public_html/</code></li>
-        <li>Move the new bugzilla to the correct place: <code>mv /home/gtuit/giellatekno/public_html/bugzilla-3.0.2 /home/gtuit/giellatekno/public_html/bugzilla/</code></li>
-        <li>Get settings from the old bugzilla to the new one: <code>cp /home/gtuit/giellatekno/public_html/bugzilla.bak/localconfig  /home/gtuit/giellatekno/public_html/bugzilla/.</code></li>
-        <li>Start mysql: <code>/etc/init.d/mysql start</code></li>
-        <li>Run <code>./checksetup.pl</code> inside <code>/home/gtuit/public_html/bugzilla</code></li>
-        <li>Open http://giellatekno.uit.no/bugzilla, and login</li>
-        <li>Go to parameters: <code>http://giellatekno.uit.no/bugzilla/editparameters.cgi</code></li>
-        <li>Set the maintainner</li>
-        <li>Set the urlbase to <code>http://giellatekno.uit.no/bugzilla/</code></li>
-        <li>Save the form.</li>
-        <li>Goto My bugs: If the quips (the quote below the date) have strange characters, we have a faulty utf-8 setup.
-			<ul>
-                <li>Fix utf-8</li>
-                <li>Go to parameters: <code>http://giellatekno.uit.no/bugzilla/editparameters.cgi</code></li>
-                <li>Switch off utf-8, save the form.</li>
-                <li>Run <code>contrib/recode.pl --charset=iso-8859-1</code> inside <code>/home/gtuit/public_html/bugzilla</code></li>
-                <li>Go to parameters again: <code>http://giellatekno.uit.no/bugzilla/editparameters.cgi</code></li>
-                <li>Switch on utf-8 again. Save the form.</li>
-                <li>Run <code>./checksetup.pl</code> inside <code>/home/gtuit/public_html/bugzilla</code></li>
-                <li>Check if everything is working again by going to My Bugs</li>
-            </ul>
-		</li>
-      </ul>
+      <title>Steps in upgrading the bugzilla installation</title>
+      <p>Bugzilla exists on <code>divvun.no</code>, in the directory <code>/Users/gtuit/Sites/bugzilla-3.4.4</code>. Remember to include <code>/opt/local/lib/mysql5/bin</code> in <code>$PATH</code> when running the upgrade script.</p>
+      <p>Upgrade bugzilla according to these instructions: http://bugzilla.readthedocs.io/en/latest/installing/upgrading-with-git.html</p>
     </section>
   </body>
 </document>
