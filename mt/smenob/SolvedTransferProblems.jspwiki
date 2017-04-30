@@ -20,7 +20,7 @@ Forsøk på disposisjon
 !! Ang. bøyning i nob
 
 
-!Bøying: publikumer => publikum
+!Bøying: publikumer => publikum  /// LØYST ///
 {{{
 Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
 Dette året har publikumene en mulighet via TV og nettet følge vårflyttinga
@@ -33,6 +33,16 @@ Lene: er det riktig med publikumer i flertall på norsk, eller er det bare publi
 eks. Det er mange slags publikum (publikumer?) \\
 Skal dette løses i norsk morfologi (dvs aldri publikumer) eller i transfer (pl => sg)?
 
+
+!mange navn til feil paradigme slik at vi får genitiv s lagt til -s, /// LØYST ///
+
+f.eks. 
+
+Iver Jåkss hus er i ferd med å ødelegges
+
+Andre ord med feil genitiv:
+
+Kjendiss hus i dårlige situasjonen
 
 
 !reiner => rein   /// LØYST ///
@@ -71,6 +81,28 @@ Vårflytting i 2016 Bávttajohka til Kvaløya.
 echo Kvaløya | apertium -d. unob-sme-morph
 ^Kvaløya/Kvaløya<np><top><f>
 }}}
+
+
+!!Genitiv, possessor, osb.
+
+! Genitivs-s + ubestemt form
+
+''Redaktørens bøkene'' er alltid feil  /// LØYST 
+
+__Generaliseringa er:__ \\
+Possessor med -s + bar N
+
+{{{
+echo Doaimmaheddjiid bargu lea garas|apertium -d. sme-nob
+Journalistenes arbeid er hardt
+}}}
+
+!Genitivs-s i possessor-NP skal vere bestemt
+
+__Generaliseringa er:__ \\
+N-gen N = bestemt possessor + ubestemt noun
+
+/// LØYST (sjå ovafor)
 
 !!!PRONOMEN
 
@@ -251,6 +283,26 @@ lea + Adj + Inf => er Adj TIL Å  Inf, trenger @A< i smesyn
 
 !!! VERBALET
 
+!!ha/være som hjelpeverb
+
+{{{
+ Olu áviissain lea guhká leamaš váttis dilli
+ I mange aviser har det lenge HATT en vanskelig situasjon
+ Mange aviser har lenge hatt vanskelig situasjon
+
+Olu guovlluin lea guhká leamaš váttis dilli|apertium -d. sme-nob
+I mange områder har lenge vært vanskelig situasjon
+}}}
+
+Dømet (áviissain) er løyst ved å endre det til habitiv. For andre døme
+(guovlluin) får vi VÆRT som vi vil ha. Det er andre problem
+(manglande DET, artikkel EN), men det høyrer ikkje hit.
+
+__Generaliseringa er__ \\
+Med det-innsetjing skal vi også ha "å ha" som hjelpeverb, ikkje "å vere" /// LØYST
+
+
+
 !!vblex.ger til adj.pprs /// LØYST ///
 {{{
 Nu čilge Viktor Trosten bivddedettiin Lišmmajávrri alde.
@@ -295,6 +347,23 @@ En samekonvensjon blitt annonsert og midlertidig blitt vedtatt
 
 ''jeg'' kjem pga Sg1 på -huvvon, som kjem fordi det ikkje er 
 andre finitte verb der. ==> HMAINV eller noko.
+
+
+!!! KOORDINERING
+
+!! Chunke coordination
+
+! adj_attr conj adj_attr nom   /// LØST
+{{{
+Dát lea leamašan guhkes ja áddjás proseassa
+Dette har vært en lang og tidkrevende prosess
+
+^adj<SA><@→N><ind><GD><ND>{^lang<adj><sint><pst><GD><ND><3>$}$ 
+^conj<@CNP><cnjcoo>{^og<cnjcoo>$}$ 
+^pre_nom<SN><@←SPRED><ind><m><sg><nom><impers>{^tidkrevende<adj><pst><mf><sg><3>$ 
+^prosess<n><m><sg><3>$}$^default<default>{^.<sent><clb>$}
+}}}
+
 
 
 !! ikke artikkel - vi trenger en tagg (lagt til i t1x) som hindrer artikkel i t4x /// LØYST ///
@@ -395,6 +464,81 @@ Alle adverbial som blir til fraser på norsk skal flyttast etter objektet
 
 
 !!!DET som formelt subjekt
+
+!!Ein "det" for mykje
+!Apposisjon  /// LØST for subjekter
+
+{{{
+Finnmarken áviissa váldodoaimmaheaddji, Eilif Aslaksen, lea cealkán eret virggistis
+redaktørens i Finnmarken avis, Eilif Aslaksen, har sagt opp fra stillingen..
+
+
+Eilif Andreas Aslaksen (53) lea bajásšaddan Hilláguras Deanus
+Einar Andreas Aslaksen (53) har vokst opp i Hillagurra i Tana
+}}}
+
+__Problemet er:__ 
+Vi klarer ikkje å sjå det eigentlege subjektet attom apposisjonen. /// LØST for numeraler ala (53) etter navn, i nominativ. Arbeider videre med andre syntaktiske sammenhenger etterhvert som de dukker opp.
+
+
+
+
+!Topikalisert subjektspredikativ > "er det" eller "er" /// LØST
+
+{{{
+Mu mihttomearri journalistihkas lea, ahte dat álo galgá nu bures go vejolaččat doaimmahuvvot.
+Mi målsetting i journalistikk er, at det skal alltid så bra som mulig utføres
+
+(bortsett fra av vi ønsker bestemt form: journalistikken)
+}}}
+
+
+!Insett "det" som subjekt i relativsetning med relativisert subjekt /// LØST
+
+{{{
+Seammás Bargiidbellodat lea sidjiide leamaš dat áidnu bellodat mas lea leamaš sosialdemokráhtalaš ideologiija vuođđun.
+
+Samtidig har Arbeiderpartiet vært til dem det eneste partiet som har hatt til de sosialdemokratiske ideologis grunn.
+}}}
+
+!Habitiv /// LØST
+{{{
+Larsenis lea sámegielmáhttu.
+Larsen har samiskkunnskap.
+}}}
+
+!Insett "det" ved topikalisert adverb /// løst
+
+{{{
+Čoahkkimis galgá ráhkaduvvot plána studeantta hárjehallama progrešuvdnii .
+På møtet skal det lages en plan for progresjonen i studentens trening .
+På møtet skal det lages en plan til en progresjon til students trening
+}}}
+
+
+
+!Relativsetning som ikkje skal ha subjekt
+
+{{{
+Sii barget ovttas fitnodagain, mas lea teknihkalaš ovddasvástádus čađahit dán bávkin- ja čuovgavásáhusa, mii bistá sullii logi minuvtta.
+De arbeider sammen med firmaet, som har et teknisk ansvar å gjennomføre dette smellingen og lysopplevelsen, som varer omtrent ti minutt.
+}}}
+
+__Generaliseringa er:__ \\
+Relativsetningar, med relativt pronomen i nominativ (eller for e-setningar, i lokativ) skal aldri ha innsett subjekt. /// LØYST her
+
+
+! Relativsetning som skal ha subjekt
+
+{{{
+– Presideanttas han lea politihkalaš sáhka maid galgá ovddidit, ja dat sáhka han manná giela bokte.
+- Presidenten jo har et politisk budskap som h_n skal utvikle, og det budskapet jo går via språket.
+}}}
+
+__Generaliseringa er:__ \\
+Ei relativsetning med relativisert objekt må på norsk ha eksplisitt subjekt \\   
+Her: Hab lea NP maid Aux Inf — skal ha subjektspronomen koreferent med Hab      /// LØYST her
+
 
 
 !!Subjekt + partisipp

@@ -7,30 +7,50 @@ For å få betre oversikt flyttar vi ting som er ok over i dokumentet [Solved Tr
 Skriv slik: 
 * Øverste overskrift: store bokstavar, tema
 * Midtre overskrift: Små bokstavar, undergruppe
-* Lågaste overskrift: døme: sme + mt + korrekt (evt store bokst for nøkkelord), deretter drøfting + generalisering
+* Lågaste overskrift: Einskildsaker, disponer gjerne slik:
+** eksempel: sme + mt + korrekt (evt store bokst for nøkkelord), 
+** deretter drøfting 
+** deretter generalisering
 
 !!! NORSK MORFOLOGI
 !! Bøyning i nob
-mange navn til feil paradigme slik at vi får genitiv s lagt til -s, f.eks. 
 
-Iver Jåkss hus er i ferd med å ødelegges
+!Ordklasse og bøying for N/A på -sk
 
-Andre ord med feil genitiv:
-
-Kjendiss hus i dårlige situasjonen\\
-samisks
-
-manglende bindestrek guio mellom acro og substantiv
 {{{
-apertium-sme-nob$ echo VM-gull | apertium -d. unob-sme-morph
-^VM-gull/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>$^./.<sent><clb>$
-apertium-sme-nob$ echo  OG-golli | apertium -d. sme-nob
+Eilif Aslaksen lea máŋgii vuoitán Finnmárkku journalistasearvvi journalistabálkkašumi ja jagis 2015 son vuittii Sámi journalistabálkkašumi
+Eilif Aslaksen har mange ganger vunnet Finnmarks journalistklubbs journalistpremie og 2015 vant han Samisks journalistpremie
+}}}
+
+''samisks''
+
+Problemet er at ''samisk'' blir analysert som substantiv. 
+
+
+
+!manglende bindestrek guio mellom acro og substantiv
+{{{
+OG-golli
 #OLgull
-apertium-sme-nob$ echo  OG-golli | apertium -d. sme-nob-postchunk
+OL-gull
+}}}
+
+Output frå sme:
+{{{
+echo  OG-golli | apertium -d. sme-nob-postchunk
 ^OL<n><sg><ind><guio>$^gull<n><nt><sg><ind>$^.<sent><clb>$
 }}}
 
-rømmet, rømmede => rømt, rømte
+Analyse av nob:
+{{{
+echo VM-gull | apertium -d. unob-sme-morph
+^VM-gull/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>$^./.<sent><clb>$
+}}}
+
+Vi treng <guio> på nob-sida
+
+! Feil adjektivbøying
+
 {{{
 apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | apertium -d. sme-nob-postchunk
 ^Den<det><dem><m><sg>$ ^rømme<adj><pp><sg><def>$ ^laks<n><m><sg><def>$ ^være<vblex><pres>$ ^påvirkning<n><m><sg><ind>$ ^på<pr>$ ^laks<n><m><sg><def>$^..<sent><clb>$
@@ -38,27 +58,45 @@ apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | apertium -d. 
 Den rømmede laksen er påvirkning på laksen.
 }}}
 
+* verb: rømmet, rømmede => rømt, rømte /// LØYST ///
+* Men problemet er adjektiv, ikkje verb
+
 
 
 !!! PRONOMEN
 !!Fjerne pronomen
-
-Alt ok, ventar på nye feil.
+Alt ok, ventar på fleire feil :-)
 
 !! Genus av han/ho
 Alt ok, ventar på fleire feil :-)
 
 !!! SUBSTANTIV
 !!Bestemtheit
-! ikke bestemt form for acr 
+
+!Ubestemt artikkel i presenteringssetningar
+
 {{{
-Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
-Dette året er det på publikumene en mulighet via TV-EN og nettet følge vårflyttinga
+Lea illusáhka ahte suohkanstivra mearridii álggahit giellaguovddáža
+Det er gladsak at kommunestyret bestemte å starte språksentret, 
+Det er ei gladsak at kommunestyret bestemte å starte språksentret, 
 }}}
 
-ACR treng opprydding: Vi vil ha to typar: __namn__ (Det er NRK, jeg snakker om NRK) 
-og __substantiv__  (Det er en SUV, jeg snakker om en SUV). Det finst tvetydige akronym: 
-(Det er (en) BMW, jeg snakker om (en) BMW).
+__Generaliseringa er:__ \\
+Samisk ''Lea N ahte S'' skal vere ''Det er en/ei/et N at S''
+
+
+!Ubestemt form etter ii veaháge
+
+{{{
+Jagis 2001 sárdnidii Norgga prinseassa Märtha Louise sámegillii, vaikko sus ii leat ii veaháge sámegielduogáš.
+2001   prekte Norges prinsesse Märtha Louise på samisk, selv om hun hun har ikke ikke #noe samiskbakgrunnen.
+I 2001 prekte Norges prinsesse Märtha Louise på samisk, selv om hun ikke har noen samiskbakgrunnen.
+}}}
+
+__Generaliseringa er:__ \\
+Norsk skal ha ubestemt form etter negasjon av typen ''ikke noe''  (litt som partitiv i finsk)
+
+
 
 ! Fleirtalsobjekt i bestemt form
 
@@ -79,7 +117,8 @@ Fleire eksempel på at fleirtals-NP er bestemt:
 Her er berre bestemt mogleg. Eg trur det at subjektet er underforstått
 (som er flott satt inn på norsk) i konstruksjonen fertet + Inf + Pl-Obj
 er med og tvinger fram bestemt form på norsk.
-- Enn: Mii fertet oastit skeaŋkkaid (laboratoriesetning)
+* Enn: Mii fertet oastit skeaŋkkaid (laboratoriesetning)
+
 
 ! Bar NP
 
@@ -96,6 +135,8 @@ H_n er i arbeidet.
 H_n er i arbeid.
 }}}
 
+Vi treng ei liste over slike (og undersøke unntaka der ''i arbeidet'' er ok).
+
 
 !!Genitiv, possessor, osb.
 
@@ -103,45 +144,58 @@ H_n er i arbeid.
 => 5-åringers tannhelse
 {{{
 echo 5-jahkásaččaid bátnedearvvašvuohta ii leat gal mánáid duohken, | apertium -d. sme-nob
-5-åringer tannhelsen er ikke virkelig avhengig av barna,
+a. 5-åringer tannhelsen er ikke virkelig avhengig av barna,
+b. 5#år tannhelsen er ikke  avhengig av barna,
 
 sme-nobinterchunk2:
 nom<SN><@SUBJ^pre_nom<SN><@→N><ind><pl><gen>{^5<det><qnt><un><pl><guio>$^åring<n><m><pl><ind>$}
 }}}
 
 ! Genitivs-s + ubestemt form
-
-''Redaktørens bøkene'' er alltid feil
-
-__Generaliseringa er:__ \\
-Possessor med -s + bar N
+Alt ok, ventar på fleire feil :-)
 
 !Genitivs-s i possessor-NP skal vere bestemt
+Alt ok, ventar på fleire feil :-)
 
-__Generaliseringa er:__ \\
-N-gen N = bestemt possessor + ubestemt noun
 
 ! Possessorfrase med to genitivar
 
+{{{
+Nieidda áhči biila
 Bil til jentas far
+Bilen til jentas far
+
+Nieidda áhči biila lea boaris
+Bilen til jentas faren er gammel
+Bilen til jentas far er gammel
+}}}
 
 __Generaliseringa er__ \\
-Alle N2-gen N1 som blir overført til ''N1 til N2'' skal ha bestemt N1.
+Alle N2-gen N1 som blir overført til ''N1 til N2'' skal ha bestemt N1 og ubestemt N2.
 
 
-!!Kasus
-!Essiv
+
+!!Illativ
+Alt ok, ventar på fleire feil :-)
+
+
+
+!!Essiv
+
+!eaktun
 
 "eaktun" ''som betingelse'' -> ''en betingelse''.
 
 {{{
 Danne lea nana matematihkkagelbbolašvuohta eaktun servodaga ovdánahttimii.
-Derfor er den sterke matematikkkompetansen som betingelse til samfunnets utvikling .
+Derfor er sterk matematikkkompetanse som betingelse for samfunnets utvikling.
 Vi vil ha:
-Derfor er den sterke matematikkkompetansen en betingelse til samfunnets utvikling .
+Derfor er sterk matematikkkompetanse en betingelse for samfunnets utvikling.
 }}}
 
-__Generalisering__ er, hmm.
+__Generalisering__ er, \\
+''eaktun'' bør på liste over essivar som skal omsetjast med ''en'' og ikkje med ''som''
+evt. i lexical selection.
 
 !!!ADJEKTIVFRASER
 Alt ok, ventar på fleire feil :-)
@@ -153,71 +207,63 @@ Alt ok, ventar på fleire feil :-)
 Alt ok, ventar på fleire feil :-)
 
 
-!! Faste uttrykk
-
-!ságaide
-
-{{{
-Mii eat leat fáhten Sámediggepresideantta Tiina Sanila-Aikio ságaide.
-Vi har ikke fått tak i Sametingspresident Tiina Sanila i taler.
-=> i tale
-}}}
 
 
 !!! VERBALET
 
 !!ha/være som hjelpeverb
-
-{{{
- Olu áviissain lea guhká leamaš váttis dilli
- I mange aviser har det lenge HATT en vanskelig situasjon
- I mange aviser har det lenge VÆRT en vanskelig situasjon
-}}}
-
-__Generaliseringa er__ \\
-Med det-innsetjing skal vi også ha "å ha" som hjelpeverb, ikkje "å vere"
+Alt ok, ventar på fleire feil :-)
 
 
 !!Potensialis
-ha forskjellige løsninger for forskjellige verb/syntaks?
+
+Ha forskjellige løsninger for forskjellige verb/syntaks?
 eks. adv: kanskje bare for leat-verbet ?
 
 
 !!! KOORDINERING
 
-!! Chunke coordination /// LØST
-
-! adj_attr conj adj_attr nom 
-{{{
-Dát lea leamašan guhkes ja áddjás proseassa
-
-Dette har vært en lang og tidkrevende prosess
-
-^adj<SA><@→N><ind><GD><ND>{^lang<adj><sint><pst><GD><ND><3>$}$ 
-^conj<@CNP><cnjcoo>{^og<cnjcoo>$}$ 
-^pre_nom<SN><@←SPRED><ind><m><sg><nom><impers>{^tidkrevende<adj><pst><mf><sg><3>$ 
-^prosess<n><m><sg><3>$}$^default<default>{^.<sent><clb>$}
-}}}
 
 !!Koordinering av subjekt
+Alt ok, ventar på fleire feil :-)
+
+
+
+
+!!!AKRONYM
+
+!!Bestemtheit
+! ikke bestemt form for acr 
+
+{{{
+Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
+Dette året er det på publikumene en mulighet via TV-EN og nettet følge vårflyttinga
+}}}
+
+ACR treng opprydding: Vi vil ha to typar: __namn__ (Det er NRK, jeg snakker om NRK) 
+og __substantiv__  (Det er en SUV, jeg snakker om en SUV). Det finst tvetydige akronym: 
+(Det er (en) BMW, jeg snakker om (en) BMW).
 
 
 !!Habitiv
+!Habitiv ved akronym
 
 {{{
 NSRas leat oskkáldas jienasteaddjit
-I NSR er DE lojale velgere
-NSR HAR lokale velgere
+I #NSR er de lojale velgere
+På #NRK er de lojale velgere
+På AUF er de lojale velgere
 
-AUFas leat oskkáldas jienasteaddjit
-På AUF er DE lojale velgere
-AUF HAR lojale velgere
+NSR HAR lokale velgere
 }}}
 
-__Problemet er__ \\
+Akronymsaka er framleis open, som vi ser.
+
+__Problemet var__ \\
 Vi har ikkje Sem/Org-tagg på (relevante) akronym. Med den taggen på plass 
 ville vi ha fått habitiv, og det ville ha hindra innsetting av "de".
 
+No treng vi ein ny gjennomgang (Trond).
 
 
 
@@ -228,7 +274,7 @@ ville vi ha fått habitiv, og det ville ha hindra innsetting av "de".
 
 {{{
 Jáhkká kulturmáhtu leat oktan ággan
-Han tror kulturkompetansen å være som et argument
+H_n tror kulturkompetansen for å være som et argument
 Han tror at kulturkompetanse er et argument
 }}}
 
@@ -264,44 +310,23 @@ lage regler i t4x for å legge til "om". Eksempler, X markerer innsetting av om
 
 !!!FORMELT SUBJEKT "det"
 !!Ein "det" for mykje
-!Apposisjon  /// LØST for subjekter
 
-{{{
-Finnmarken áviissa váldodoaimmaheaddji, Eilif Aslaksen, lea cealkán eret virggistis
-redaktørens i Finnmarken avis, Eilif Aslaksen, har sagt opp fra stillingen..
+!Apposisjon 
 
+/// LØST for numeraler ala (53) etter navn, i nominativ. Arbeider videre med andre syntaktiske sammenhenger etterhvert som de dukker opp.
 
-Eilif Andreas Aslaksen (53) lea bajásšaddan Hilláguras Deanus
-Einar Andreas Aslaksen (53) har vokst opp i Hillagurra i Tana
-}}}
-
-__Problemet er:__ 
-Vi klarer ikkje å sjå det eigentlege subjektet attom apposisjonen. /// LØST for numeraler ala (53) etter navn, i nominativ. Arbeider videre med andre syntaktiske sammenhenger etterhvert som de dukker opp.
 
 !Topikalisert objekt /// DELVIS LØST
 
 {{{
 Journalistihka lea lohkan Norgga journalistaallaskuvllas Oslos (1989–1991)
+
 Vil vil ha en av disse to:
 Han har lest journalistikk på Norges journalisthøyskole i Oslo (1989–1991)
 Journalistikken har han lest i Norge journalisthøyskole i Oslo (1989–1991)
 
 Slik er den no, her mangler pro:
-Journalistikken har lest i Norge journalisthøyskole i Oslo
-
-Muhto sámediggepresideantta baicce ii hálit giellaguovddášjođiheaddji cuiggodit dan dihtii go presideanta ii sámástan ođđajagisártnistis.
-Men sametingspresidenten derimot vil ikke språksenterlederen kritisere fordi at presidenten ikke snakket samisk i nyttårstalen.
-}}}
-
-
-
-!Topikalisert subjektspredikativ > "er det" eller "er" /// LØST
-
-{{{
-Mu mihttomearri journalistihkas lea, ahte dat álo galgá nu bures go vejolaččat doaimmahuvvot.
-Mi målsetting i journalistikk er, at det skal alltid så bra som mulig utføres
-
-(bortsett fra av vi ønsker bestemt form: journalistikken)
+Har lest journalistikk i Norge journalisthøyskole i Oslo.
 }}}
 
 
@@ -309,45 +334,20 @@ Mi målsetting i journalistikk er, at det skal alltid så bra som mulig utføres
 
 {{{
 Ii vel dieđe gos áigu bargat
-Det ikke enda vet hvor skal man arbeide
+Ikke enda vet hvor skal arbeide
 
 Vi ønsker:
 H_n vet ikke enda hvor h_n skal arbeide
 }}}
 
 __Generaliseringa er:__ \\
-Dette er overskriftsyntaks, initial ii gjev prodrop.
-
-
-!Insett "det" som subjekt i relativsetning med relativisert subjekt /// LØST
-
-{{{
-Seammás Bargiidbellodat lea sidjiide leamaš dat áidnu bellodat mas lea leamaš sosialdemokráhtalaš ideologiija vuođđun.
-
-Samtidig har Arbeiderpartiet vært til dem det eneste partiet som har hatt til de sosialdemokratiske ideologis grunn.
-}}}
-
-
-!Leksikalisert "ii veaháge"
-
-{{{
-Jagis 2001 sárdnidii Norgga prinseassa Märtha Louise sámegillii, vaikko sus ii leat ii veaháge sámegielduogáš.
-I 2001 prekte Norges prinsesse på Märtha Louises samisk, selv om hun ikke har DET ikke #noe samiskbakgrunnen.
-I 2001 prekte Norges prinsesse på Märtha Louises samisk, selv om hun ikke har noen samiskbakgrunnen.
-}}}
-
-__Problemet er:__ \\
-Uttrykket ''ii veaháge'' gjev opphav til ekstra "det", men skal vere negativ polaritet til første ''ii''
-
-!Habitiv /// LØST
-{{{
-Larsenis lea sámegielmáhttu.
-Larsen har samiskkunnskap.
-}}}
+Dette er overskriftsyntaks, initial ii gjev prodrop, og vi vil ha inn pronomen
 
 
 
-!!Manglande "det" som skal vere
+
+
+!!Manglande "det"
 
 !Topikalisert adverbial
 
@@ -365,13 +365,6 @@ I mange aviser har DET lenge VÆRT en vanskelig situasjon
 __Generaliseringa er:__ \\
 Her er ''leat'' hovudverb (leamaš), og vi skal ha ''det''
 
-!! det-subjekt i passiv og ubestemt form for subjektet /// delvis LØYST
-
-{{{
-Čoahkkimis galgá ráhkaduvvot plána studeantta hárjehallama progrešuvdnii .
-På møtet skal planen lages til progresjonen til studentens trening .
-På møtet skal det lages en plan til en progresjon til students trening
-}}}
 
 
 
@@ -385,7 +378,8 @@ Alt ok, ventar på fleire feil :-)
 !Topikalisert objekt
 {{{
 – Dan sáhttá gaskkohagaid bargat, muhto juohke beaivve ná bargat lean dovdagoahtán leat veadjetmeahttun
-– Det kan HAN innimellom arbeide, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
+- Det kan innimellom arbeide, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
+– Det kan HAN innimellom arbeide, men å arbeide slik hver dag har jeg begynt å kjenne at er umulig
 }}}
 
 __Generaliseringa er:__ \\
@@ -409,37 +403,22 @@ Det-innsetingsregelen kunne ha vore ok, men koordinasjonen vil ha identitet med 
 
 !Topikalisert objjekt "dan"
 
-– Dan sáhttá gaskkohagaid bargat, muhto juohke beaivve ná bargat lean dovdagoahtán leat veadjetmeahttun
-– Det kan innimellom arbeide, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
-– Det kan man innimellom gjøre, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
+{{{
+Dan sáhttá gaskkohagaid bargat, muhto juohke beaivve ná bargat lean dovdagoahtán leat veadjetmeahttun
+Det kan innimellom arbeide, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
+Det kan man innimellom gjøre, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
+}}}
+
+Vi har eit topikalisert objekt, og treng eit dummy-subjekt "man" rett etter det finitte verbet.
 
 
 !Relativsetning som ikkje skal ha subjekt
+Alt ok, ventar på fleire feil :-)
 
-{{{
-Sii barget ovttas fitnodagain, mas lea teknihkalaš ovddasvástádus čađahit dán bávkin- ja čuovgavásáhusa, mii bistá sullii logi minuvtta.
-De arbeider sammen med et firma, som har teknisk ansvar å gjennomføre denne smell- og lysopplevelsen, som varer omtrent ti minutt.
-De arbeider sammen med firmaet, hvor det har et teknisk ansvar å gjennomføre dette smellingen og lysopplevelsen, som varer omtrent ti minutt.
 
-Sii barget ovttas fitnodagain, mas lea teknihkalaš ovddasvástádus čađahit dán bávkin- ja čuovgavásáhusa, mii bistá sullii logi minuvtta.
-De arbeider sammen med et firma, som har teknisk ansvar å gjennomføre denne smell- og lysopplevelsen, som varer omtrent ti minutt.
-De arbeider sammen med firmaet, hvor det har et teknisk ansvar å gjennomføre dette smellingen og lysopplevelsen, som varer omtrent ti minutt.
-}}}
-
-__Generaliseringa er:__ \\
-Relativsetningar, med relativt pronomen i nominativ (eller for e-setningar, i lokativ) skal aldri ha innsett subjekt.
 
 ! Relativsetning som skal ha subjekt
-
-{{{
-– Presideanttas han lea politihkalaš sáhka maid galgá ovddidit, ja dat sáhka han manná giela bokte.
-– En president har jo et politisk budskap som HUN skal fremme, og det budskapet går jo via språket.
-– En president har jo et politisk budskap som skal fremme, og det budskapet går jo via språket.
-}}}
-
-__Generaliseringa er:__ \\
-Ei relativsetning med relativisert objekt må på norsk ha eksplisitt subjekt \\
-Her: Hab lea NP maid Aux Inf — skal ha subjektspronomen koreferent med Hab
+Alt ok, ventar på fleire feil :-)
 
 
 
@@ -449,22 +428,31 @@ Her: Hab lea NP maid Aux Inf — skal ha subjektspronomen koreferent med Hab
 !! Ordstilling setningsadverb leddsetning
 
 {{{
-Mii gáibidit, ahte olmmoš liikkáge galgá dan giela hállat.|apertium -d. sme-nob
-#Vi krever, at mennesket skal likevel snakke det språket. ==> ... likevel skal ...
+Mii gáibidit, ahte olmmoš liikkáge galgá dan giela hállat.
+Vi krever, at mennesket skal likevel snakke det språket.
+... likevel skal ...
 
 Dat ii leat nu ahte go mii dáppe ávvudat juovllaid, de mii leat dušše golmmas.
-Det er ikke slik at når vi feirer her julen, så er vi bare #tre personer<n><mf><sp>.
+Det er ikke slik at når vi feirer her jul, så er vi bare #tre personer<n><un><pl><ind>.
 ==> når vi feirer jul her
 ==> når vi her feirer jul
 
+Jagis 2001 sárdnidii Norgga prinseassa Märtha Louise sámegillii, vaikko sus ii leat ii veaháge sámegielduogáš.
+2001   prekte Norges prinsesse Märtha Louise på samisk, selv om hun hun har ikke ikke #noe samiskbakgrunnen.
+I 2001 prekte Norges prinsesse Märtha Louise på samisk, selv om hun ikke har noen samiskbakgrunnen.
 }}}
+
 
 __Generaliseringa er:__ 
 * Setningsadverb før det finitte verbet i leddsetning (etter ahte/at)
 * Andre adverb etter objektet
 * Ingen adverb mellom finitt verb og objekt
 
-!!Topikalisert Neg skal ikkje ha initialt ikkje
+
+
+!!Neg
+
+!Topikalisert Neg skal ikkje ha initialt ikkje
 
 {{{
 In munge sáhte sárdnut ruoššagillii.
@@ -477,18 +465,20 @@ Jeg kan jo heller ikke snakke russisk.
 
 Ii dáiddárstipeanda ge leat sirdojuvvon Sámediggái .
 Ikke kunststipendet heller er blitt flyttet til Sametinget .
-Heller kkke kunststipendet er blitt flyttet til Sametinget .
+Kunststipendet er heller ikke blitt flyttet til Sametinget .
 }}}
 
 __Generaliseringa er:__ \\
-Neg + NP + ge ==> Heller ikke NP
+* Neg + NP + ge + V ... ==> NP V heller ikke
+* Neg + han + NP + ge + V ==> NP V jo heller ikke
 
 
 
 
 
+!!det-referanse vs. den-referanse
 
-!det-referanse vs. den-referanse
+!den/det-referanse ved koordinasjon
 
 {{{
 Finnmarken lea beaivválaš áviisa mii almmuhuvvo Čáhcesullos Finnmárkkus ja lea vuođđuduvvon jagis 1899
@@ -496,7 +486,34 @@ Finnmarken er en daglig avis som publiseres i Vadsø i Finnmark og den blei grun
 Finnmarken er en daglig avis som publiseres i Vadsø i Finnmark og det er blitt grunnlagt i 1899
 }}}
 
+Genus den/det som subjekt i andre del av koordinasjon blir styrt av subjektet i første del.
 
+
+!!!FASTE UTTRYKK
+
+!!Substantiv
+
+!ságaide
+
+{{{
+Mii eat leat fáhten Sámediggepresideantta Tiina Sanila-Aikio ságaide.
+Vi har ikke fått tak i Sametingspresident Tiina Sanila Aikios til taler.
+=> i tale
+}}}
+
+!!Adverb
+
+
+!Leksikalisert "ii veaháge"
+
+{{{
+Jagis 2001 sárdnidii Norgga prinseassa Märtha Louise sámegillii, vaikko sus ii leat ii veaháge sámegielduogáš.
+2001   prekte Norges prinsesse Märtha Louise på samisk, selv om hun hun har ikke ikke #noe samiskbakgrunnen.
+I 2001 prekte Norges prinsesse Märtha Louise på samisk, selv om hun ikke har noen samiskbakgrunnen.
+}}}
+
+__Problemet er:__ \\
+''ii veaháge'' skal kongruere med substantivet til høgre.
 
 
 
@@ -522,7 +539,6 @@ Denne skal ikke få "være" i t3x fordi den er OPRED, men ikke Acc
 
 dohkkehit = vedta -> godta
 
-Eilif Aslaksen lea máŋgii vuoitán Finnmárkku journalistasearvvi journalistabálkkašumi ja jagis 2015 son vuittii Sámi journalistabálkkašumi
 
 Dalle go mun álgen ledje mis 4200 diŋgojeaddji, sihke bábiráviissa lohkkit ja digitála diŋgojeaddjit
 
