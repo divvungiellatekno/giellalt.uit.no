@@ -25,11 +25,17 @@ Eilif Aslaksen har mange ganger vunnet Finnmarks journalistklubbs journalistprem
 ''samisks''
 
 Problemet er at ''samisk'' blir analysert som substantiv. \\
-Lene: delvis løst i transferregler (t4x). Men fordi det er mange ord med samisk, engelsk osv som får substantivbøyning i nob, 
-så bør dette løses i nob, dvs at substantiver som ender på -sk, ikke får en genetiv s.
 
-!barnene
-vi vil ha barna
+Lene: delvis løst i transferregler (t4x). Men fordi det er 
+mange ord med samisk, engelsk osv som får substantivbøyning i nob, 
+så bør dette løses i nob, dvs at substantiver som ender på -sk, 
+ikke får en genetiv s.
+
+Trond: Problemet med ei slik løysing er at det finst ord på -sk som har -s, som i 
+(det autentiske dømet) ''Norsk arktisk torsks dumpingssalg gjennom årtider.''
+Derimot finn eg ikkje ''engelsks'' på Google. Eg skal sjå om det er 
+mogleg å dele -sk opp i to grupper.
+
 
 !mat - mater
 
@@ -37,6 +43,18 @@ vi vil ha barna
 Čohkken 14 eami­álbmoga biepmuid ovtta girjái
 Samlet 14 urfolk mater til ei bok
 }}}
+
+Bokmålsordboka bøyer ''mat'' i fleirtal, og det finst
+(heilt marginale) døme på nett. Sjølv vil eg gjerne ha det
+berre i eintal i nob-morfologi, men problemet vi har må 
+løysast i transfer: Paradigme for ''mat'' utan +Pl
+gjev oss #, og paradigme med sg = pl for ''mat'' vil
+gje oss former med adjektiv i fleirtal
+(''14 gode mat til en bok''). Ei løysing er:
+* biebmu = mat
+* biebmu = matrett
+
+og så ha matrett dersom biebmu i pl. Eg ser på det.
 
 !manglende bindestrek guio mellom acro og substantiv
 {{{
@@ -62,9 +80,13 @@ Vi treng <guio> på nob-sida
 ! Feil adjektivbøying
 
 {{{
-apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | apertium -d. sme-nob-postchunk
-^Den<det><dem><m><sg>$ ^rømme<adj><pp><sg><def>$ ^laks<n><m><sg><def>$ ^være<vblex><pres>$ ^påvirkning<n><m><sg><ind>$ ^på<pr>$ ^laks<n><m><sg><def>$^..<sent><clb>$
-apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | apertium -d. sme-nob
+apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | 
+apertium -d. sme-nob-postchunk
+^Den<det><dem><m><sg>$ ^rømme<adj><pp><sg><def>$ ^laks<n><m><sg><def>$ 
+^være<vblex><pres>$ ^påvirkning<n><m><sg><ind>$ ^på<pr>$ 
+^laks<n><m><sg><def>$^..<sent><clb>$
+apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | 
+apertium -d. sme-nob
 Den rømmede laksen er påvirkning på laksen.
 }}}
 
@@ -469,6 +491,20 @@ Sett inn ''på''.
 
 
 !!!ORDSTILLING
+
+!!Ordstilling i NP
+
+!Ordet gitta utanfor NP
+
+{{{
+Vuosttaš plánaid mielde lei Stáda Geaidnodoaimmahat sávvan beassat cegget gaskaboddosaš šalddi GITTA DÁLÁ šaldái
+Etter de første planene hadde Statens Veivesen ønsket å få sette opp midlertidig bru til helt nåværende bru
+... helt til
+}}}
+
+Det som skjer er at adverbet ''gitta'' blir analysert som del av NPen, og dermed som del av den resulterande PPen.
+''gitta'' må på ei liste over adverb som ikkje skal vere del av NPen, det gjeld kanskje til og med alle adverb.
+
 
 !!Internt i NP
 
