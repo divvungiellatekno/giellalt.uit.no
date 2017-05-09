@@ -64,7 +64,11 @@ Things to consider/change:
 *** for languages with only an {{ISO-639-3}} code, consider adding the nearest
     {{ISO-639-2}} or {{ISO-639-1}} code (even if it is a macro-language code),
     this will help in getting the keyboard(s) better integrated into the host OS
-    as many of the OS's don't a thing about {{ISO-639-3}} languages.
+    as many of the OS's don't a thing about {{ISO-639-3}} languages. The broader
+    language code should be used instead of the correct code for the attribute
+    {{locale:}} in the layout file. If you stick to the correct code, the end
+    users will most likely only see the language code instead of a relevant
+    language name.
 
 !!Platform specific notes
 
@@ -73,6 +77,30 @@ Notes from the [Github repo|https://github.com/divvun/kbdgen]:
 * [MacOS|https://github.com/divvun/kbdgen/blob/master/doc/targets/osx.md]
 * [Linux|https://github.com/divvun/kbdgen/blob/master/doc/targets/x11.md]
 * [SVG|https://github.com/divvun/kbdgen/blob/master/doc/targets/svg.md]
+
+!!Compatibility notes
+
+See the note above on the use of language codes for best compatibility with
+Windows and macOS.
+
+!Windows
+
+The generated keyboard (using the linked MS Keyboard Layout Creator (see above)
+can only be guaranteed to work with Windows 7 and newer. This is especially true
+for languages with language codes only in {{ISO 639-3}}. The keyboard is
+compatible with Windows 10.
+
+!macOS
+
+The keyboard package is compatible with most versions of macOS, going back all
+the way to at least OS X 10.4.
+
+!Linux
+
+The generated code is directly compatible with existing code, but must be merged
+with it. One should develop the keyboard using the other OS's, and only when one
+is done with the keyboard layout should one submit the code for inclusion in the
+Linux keyboard driver code.
 
 !!!Mobile keyboard apps
 
