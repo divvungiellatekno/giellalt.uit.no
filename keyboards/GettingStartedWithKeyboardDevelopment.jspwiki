@@ -2,39 +2,81 @@ Below is a short description of what you need to install to be able to work with
 the keyboard build system. We assume that you have already installed
 [the packages needed for general linguistic work|../infra/GettingStarted.html].
 
+!!!Preparations
+
+!!General
 {{{
-sudo pip-3.4 install lxml PyYAML tornado pytz pycountry
+sudo pip-3.5 install lxml PyICU PyYAML
 }}}
 
-If you have NOT installed the other packages (e.g. if you are __only__
+If you have ''NOT'' installed the other packages (e.g. if you are __only__
 interested in keyboards), the following is the minimum you need on OSX (on other
 systems, install the same packages using the preferred package manager):
 
 {{{
 sudo port install autoconf automake libtool pkgconfig \
-     imagemagick apache-ant python34 py34-pip
+     imagemagick apache-ant python35 py35-pip
 
 sudo port select --set python3 python35
 
-sudo pip-3.4 install pycountry lxml PyYAML tornado pytz pycountry
+sudo pip-3.5 install lxml PyICU PyYAML
 }}}
 
-Download:
-* JDK7 [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html]
-* Android SDK [https://developer.android.com/sdk/index.html?hl=i] (click "VIEW ALL DOWNLOADS AND SIZES" and choose from "SDK Tools Only")
-* Android NDK [https://developer.android.com/ndk/downloads/index.html]
+!!Android
 
-Set the environmental variables to point to the respective variables:
-* {{export JAVA_HOME=path/to/it}} (but check that it isn't already set)
-* {{export ANDROID_HOME=path/to/it}}
-* {{export NDK_HOME=path/to/it}}
+(Removed outdated and old info - new instructions comming soon.)
 
-Run the command:
-{{$ANDROID_HOME/tools/android update sdk -u -t "tools,platform-tools,build-tools-23,extra-android-support,android-23}}.
-Say yes to all the EULAs.
+!!!Desktop keyboards
 
-Full details of how to proceed can be found
-[here|https://github.com/bbqsrc/softkbdgen/blob/master/doc/targets/android.md]
-and thereabout.
+It is pretty simple:
+* edit {{xxx.yaml}}
+* run {{make}}
 
-More info will slowly be added here.
+where {{xxx}} is the language code of the language you want. {{xxx}} can also be
+a longer name - it is possible to have multiple keyboards for the same project.
+
+The {{make}} command produces several output files:
+
+* {{doc/xxx_keyboards.svg}} - graphical overview of the layout
+* {{linux/hdn_keyboard.*}} - linux files (needs to be merged with the rest of
+  the keyboard subsystem, should be done once when the keyboard design is setled
+* {{macos/xxx_keyboard.*}} - installation package (and source bundle) for macOS,
+  ready to be installed
+* {{win/kbdxxxxx.klc}} - source file for [MS Keyboard Layout
+  Creator|https://www.microsoft.com/en-us/download/details.aspx?id=22339].
+  Open the file in that app, and create an installer by selecting the menu
+  __Project > Build DDL and Setup Package__
+
+Things to consider/change:
+* in {{project.yaml}}:
+** name and description at least in English and the target language
+** name of icon file (any {{png}} file will do)
+** list the names of all yaml files (without the {{.yaml}} extension) under the
+   {{layouts:}} key, separate with space if you have several
+** also change {{author}}, {{e-mail}}, {{copyright}} etc to your likings
+* in the {{xxx.yaml}} file(s):
+** add display names in the relevant languages
+*** for languages with only an {{ISO-639-3}} code, consider adding the nearest
+    {{ISO-639-2}} or {{ISO-639-1}} code (even if it is a macro-language code),
+    this will help in getting the keyboard(s) better integrated into the host OS
+    as many of the OS's don't a thing about {{ISO-639-3}} languages.
+
+!!!Mobile keyboard apps
+
+TBW.
+
+!!!Adding a new language
+
+* requires $GIELLA_TEMPLATES
+
+Run the commands:
+
+{{{
+cd $GTHOME/keyboards
+./autogen.sh
+./configure
+make NEW_LANG=xxx
+}}}
+
+Replace xxx with the actual language code of the language you want to add. If
+you want to add multiple languages, enclose the list within double quotes.
