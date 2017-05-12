@@ -3,6 +3,79 @@
 Målet med dette dokumentet er å lage overordna generaliseringar for
 bruk av bestemt og ubestemt form i norsk som målspråk.
 
+!!!Dagens system
+Hvilke regler i dagens system velger bestemt/ubestemt, og artikkel eller ikke.
+
+!!t1x:
+
+!Bestemthet
+* Macro n="set_defnes" npar="1" c="arg.1: noun/adj, with syn_label
+** Default to indefinite, guess definite for certain GF's, genitives, ...
+** Locatives only indefinite in first position with leat
+** Adjectives given to this macro will be (predicative and) indefinite
+* Macro n="set_defnes2" c="arg.1: noun, arg.2: determiner (or adj, but only if no det).
+** indefinite if the determiner is a possessive
+** definite if it is a demonstrative
+** With superlatives, it's always definite.
+** Otherwise, keep old defnes.
+* Noen regler definerer defness for enkeltuttrykk
+
+!Artikkel
+* macro set_neverdet
+** når substantivet ikke har maydetind-tagg
+** determinerless_sem : sem_time
+** determiner-although-determinerless_sem: måned, dag, uke, år, time, minutt, sekund
+* noen regler legger til neverdet
+** lquot quotationmark-name rquot clean_noun
+*** Váillahit dáidda- ja kulturoasi «Váibmogiella» guorahallamis.
+** nom.prop_attr nom.prop.gen nom_head
+*** Jođiheaddji Christina Henriksena mielas
+** nom.unprop.gen nom_head
+
+!!t2x:
+* SUBJr PR compl :"Sámi oahpaheaddji masteroahput (ind) and Giellabargu mánáidgárddis (def)
+** neverdet gir ind
+
+!!t4x:
+
+! Determiner
+* Macro maybe_out_det3 c="arg.1: chunk, arg.2: determiner or other pre-nominal, arg.3: head-nominal of chunk
+** Don't add determiner if chunk ends in np">
+* Macro maybe_out_det2 c="arg.1: chunk, arg.2: first word in nominal chunk
+** For eg. 'det_nom' or 'adj_nom', to make sure we say 'den andre/lyse hunden' (not 'andre/lyse hunden')
+** og: det var lite (*en) kylling i salaten. (ADV + bar NP)
+** If pre-nominal is indefinite and nominal definite, we do not output a determiner,
+** since it's most likely a compound (eg. ovttaskasolbmui => enslig.adj.ind mennesket.n.def).
+** Ignores chunks where pre-nominal is np or genitive.
+** No determiner if it already has some determiner other than 'annen', or has a genitive before it
+* syn-no-determiner: @←PPRED @HNOUN
+* initial-lemh-no-def-determiner: hel
+* lemh-no-determiner: mor, ansvar, januar ....
+* initial-lemh-no-determiner: fjorårets
+** betingelser ellers
+*** <not><ends-with><clip pos="2" part="lemh"/><lit v="og en halv"/></ends-with></not>
+*** <not><begins-with><clip pos="2" part="a_nom"/><lit-tag v="n.acr"/></begins-with></not>
+*** <not><begins-with><clip pos="2" part="a_nom"/><lit-tag v="np"/></begins-with></not>
+*** <not><begins-with><clip pos="2" part="a_adv"/><lit-tag v="adv"/></begins-with></not>
+*** <not><equal><clip pos="2" part="case"/><lit-tag v="gen"/></equal></not>
+*** <equal><clip pos="1" part="a_neverdet"/><lit v=""/></equal>
+*** not (<equal><clip pos="1" part="lemh"/><lit v="nom"/></equal> and <not><equal><clip pos="2" part="a_adj"/><lit v=""/></equal></not>)
+*** <equal><clip pos="2" part="a_prn"/><lit v=""/></equal>
+*** or:
+*** <equal><clip pos="2" part="a_det"/><lit v=""/></equal>
+*** <equal caseless="yes"><clip pos="2" part="lemh"/><lit v="annen"/></equal>
+*** <in caseless="yes"><clip pos="2" part="lemh"/><list n="det.sp.def"/></in>
+
+! legg til ubestemt artikkel når 
+* maydetind
+* not neverdet
+* not ess
+* not unc
+* not sup
+* not former-chunk SN or unknown
+
+
+
 !!!Nominalfraser
 
 !!Possessivkonstruksjonar
@@ -58,13 +131,24 @@ E-subjekt er ubestemt. Dei kan opptre med og utan utestemt artikkel:
 * Mus lea beana --  Jeg har en hund / Jeg har hund
 * Gilis lea gávpi -- I bygda er det en butikk / (?) I bygda er det butikk
 
-Vi har ''en N'' som default, men bør vurdere kva slags N som ikkje skal ha N.
+Vi har ''en N'' som default, men bør vurdere kva slags N som ikkje skal ha N. => maydetind i bidix gir ubestemt art (hvis ikke regel mot)
 
 !Subjekt 
 
 Subjekt til venstre for verbet skal vere bestemt:
 
 * Beana borrá láibbi -- Hunden spiser brødet (for objektet, sjå nedanfor)
+
+
+Slik var regelen:
+* dáčča skuvlla kopija → kopi av den norske skolen (kopi av norsk skole, ser bra ut for meg) (nom.gen nom.gen nom_head)
+
+Her må vi ha ubestemt: 
+* Sámi oahpaheaddji masteroahput besset álggahuvvot → Masterutdanninger som samisk lærer får startes. (nom.gen nom.gen nom_head)
+
+
+* Doaktáriid searvvi jođiheaddji boahtá. → Leder av legenes forening kommer.
+
 
 
 !!Objekt
