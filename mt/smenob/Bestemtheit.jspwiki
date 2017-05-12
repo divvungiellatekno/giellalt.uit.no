@@ -5,19 +5,32 @@ bruk av bestemt og ubestemt form i norsk som målspråk.
 
 !!!Dagens system
 Hvilke regler i dagens system velger bestemt/ubestemt, og artikkel eller ikke.
+Det meste skjer i t1x (legge til tagger) og t4x (skrive ut):
 
 !!t1x:
 
 !Bestemthet
-* Macro n="set_defnes" npar="1" c="arg.1: noun/adj, with syn_label
-** Default to indefinite, guess definite for certain GF's, genitives, ...
-** Locatives only indefinite in first position with leat
-** Adjectives given to this macro will be (predicative and) indefinite
-* Macro n="set_defnes2" c="arg.1: noun, arg.2: determiner (or adj, but only if no det).
+* Macro set_defnes: arg.1: noun/adj, with syn_label
+** Default to indefinite, guess definite for certain GF's, genitives, 
+Locatives only indefinite in first position with leat. 
+Adjectives given to this macro will be (predicative and) indefinite
+** ubestemt ved 
+*** HNOUN acr unc ←ext→
+*** sem_domain - gen
+*** ekstra, blåse liv, halv million, i tale, i samarbeid
+*** noun.pseudo-prop + sg: Nouns that act proper (indefinite in the singular, no determiner) april, bestefar...
+*** @←SUBJ + hovedverb til venstre er i passiv
+*** modifiseres av adjektiv (men regelen dekker ikke alle typer, f.eks. sint er ikke med)
+** bestemt ved
+*** @OBJ→ ←hab→ @SUBJ→ @←SUBJ gen loc ill com
+*** sg, men ikke @←PPRED @←SPRED @←OPRED @ADVL @←ADVL-ela @←ADVL-ine @ADVL→ @ADVL-ela→ @ADVL-ine→ @←ADVL @X ess gen
+* Macro set_defnes2: arg.1: noun, arg.2: determiner (or adj, but only if no det).
+** Kjører først set_defnes, deretter justeringer i forhold til ordet foran, (bestemt av regelen, hvis det er flere ord):
 ** indefinite if the determiner is a possessive
 ** definite if it is a demonstrative
 ** With superlatives, it's always definite.
 ** Otherwise, keep old defnes.
+** noun.pseudo-prop + @HNOUN: april, bestefar...
 * Noen regler definerer defness for enkeltuttrykk
 
 !Artikkel
@@ -33,15 +46,15 @@ Hvilke regler i dagens system velger bestemt/ubestemt, og artikkel eller ikke.
 ** nom.unprop.gen nom_head
 
 !!t2x:
-* SUBJr PR compl :"Sámi oahpaheaddji masteroahput (ind) and Giellabargu mánáidgárddis (def)
+* SUBJr PR compl: Sámi oahpaheaddji masteroahput (ind) and Giellabargu mánáidgárddis (def)
 ** neverdet gir ind
 
 !!t4x:
 
-! Determiner
-* Macro maybe_out_det3 c="arg.1: chunk, arg.2: determiner or other pre-nominal, arg.3: head-nominal of chunk
-** Don't add determiner if chunk ends in np">
-* Macro maybe_out_det2 c="arg.1: chunk, arg.2: first word in nominal chunk
+! Artikkel
+* Macro maybe_out_det3: arg.1: chunk, arg.2: determiner or other pre-nominal, arg.3: head-nominal of chunk
+** Don't add determiner if chunk ends in np
+* Macro maybe_out_det2: arg.1: chunk, arg.2: first word in nominal chunk
 ** For eg. 'det_nom' or 'adj_nom', to make sure we say 'den andre/lyse hunden' (not 'andre/lyse hunden')
 ** og: det var lite (*en) kylling i salaten. (ADV + bar NP)
 ** If pre-nominal is indefinite and nominal definite, we do not output a determiner,
@@ -66,7 +79,7 @@ Hvilke regler i dagens system velger bestemt/ubestemt, og artikkel eller ikke.
 *** <equal caseless="yes"><clip pos="2" part="lemh"/><lit v="annen"/></equal>
 *** <in caseless="yes"><clip pos="2" part="lemh"/><list n="det.sp.def"/></in>
 
-! legg til ubestemt artikkel når 
+! Legg til ubestemt artikkel når 
 * maydetind
 * not neverdet
 * not ess
