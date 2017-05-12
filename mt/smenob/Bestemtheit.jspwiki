@@ -65,19 +65,14 @@ Adjectives given to this macro will be (predicative and) indefinite
 * initial-lemh-no-def-determiner: hel
 * lemh-no-determiner: mor, ansvar, januar ....
 * initial-lemh-no-determiner: fjorårets
-** betingelser ellers
-*** <not><ends-with><clip pos="2" part="lemh"/><lit v="og en halv"/></ends-with></not>
-*** <not><begins-with><clip pos="2" part="a_nom"/><lit-tag v="n.acr"/></begins-with></not>
-*** <not><begins-with><clip pos="2" part="a_nom"/><lit-tag v="np"/></begins-with></not>
-*** <not><begins-with><clip pos="2" part="a_adv"/><lit-tag v="adv"/></begins-with></not>
-*** <not><equal><clip pos="2" part="case"/><lit-tag v="gen"/></equal></not>
-*** <equal><clip pos="1" part="a_neverdet"/><lit v=""/></equal>
-*** not (<equal><clip pos="1" part="lemh"/><lit v="nom"/></equal> and <not><equal><clip pos="2" part="a_adj"/><lit v=""/></equal></not>)
-*** <equal><clip pos="2" part="a_prn"/><lit v=""/></equal>
-*** or:
-*** <equal><clip pos="2" part="a_det"/><lit v=""/></equal>
-*** <equal caseless="yes"><clip pos="2" part="lemh"/><lit v="annen"/></equal>
-*** <in caseless="yes"><clip pos="2" part="lemh"/><list n="det.sp.def"/></in>
+* betingelser ellers
+** ikke: og en halv
+** ikke: n.acr, np, adv, gen, ikke neverdet-tagg
+** ikke: adj + nom,  prn + nom
+* or:
+** ikke det + nom
+** annen + nom
+** det.sp.def + nom
 
 ! Legg til ubestemt artikkel når 
 * maydetind
