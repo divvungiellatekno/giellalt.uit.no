@@ -64,6 +64,9 @@ gje oss former med adjektiv i fleirtal
 og så ha matrett dersom biebmu i pl. Eg ser på det.
 
 !manglende bindestrek guio mellom acro og substantiv
+
+__OG, VM, EM__
+
 {{{
 OG-golli
 #OLgull
@@ -82,7 +85,31 @@ echo VM-gull | apertium -d. unob-sme-morph
 ^VM-gull/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>$^./.<sent><clb>$
 }}}
 
-Vi treng <guio> på nob-sida
+Desse var leksikalisert i bidix men ikkje i nob, dei er no leksikalisert
+(og sølv og bronse kjem).
+
+Akronym + substantiv med bindestrek er delvis løyst:
+Det fungerer for akronym med contlex 
+
+{{{
+VM__n 
+}}}
+
+i nob.dix. Det er det dei færreste akronyma som har, så
+vi må sannsynlegvis splitte mange substantiveksika for å få akronym
+og andre ord kvar for seg.
+
+Eit akronym som både har dette leksikonet og står i bidix er ''AS'', jf:
+
+{{{
+AS-áigi|apertium -d. sme-nob
+AS-tid
+}}}
+
+Andre akronym skal få tilsvarande handsaming (kjem etter kvart).
+
+
+
 
 ! Feil adjektivbøying
 
@@ -215,8 +242,19 @@ Alle N2-gen N1 som blir overført til ''N1 til N2'' skal ha bestemt N1 og ubeste
 
 
 !!Illativ
-Alt ok, ventar på fleire feil :-)
 
+{{{
+Emil ja su viellja Felix (3) áddeba sámegiela, muhto dábálaččat vástideaba dárogillii. 
+Emil og h_ns bror Felix (3) de to forstår samisk, men vanligvis svarer de to til norsk. 
+
+Muhto dábálaččat vástideaba dárogillii. 
+men vanligvis svarer de to på norsk. 
+}}}
+
+Med berre ''vástideaba'' får vi ''på norsk'', men med heile setninga 
+får vi korrekt ''til norsk''.
+
+Regelen i t2x treff på ulik preposisjon, av grunnar 
 
 !!Lokativ
 
