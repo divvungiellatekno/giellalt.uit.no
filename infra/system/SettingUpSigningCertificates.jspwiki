@@ -1,3 +1,46 @@
+Modern operating systems require that software is signed, or at least will the
+signature make the user experience better and more trustworthy. The details vary
+from system to system, but the basic idea is that you create a developer account
+from the OS provider (for free or for pay), and then get a certificate that one
+can use to sign software and installation packages with.
+
+Below is a short overview of the developer accounts we have access to, and how
+to set up the signing infrastructure on each computer.
+
+!!!macOS & iOS
+
+!!Dev account
+
+UiT has an Apple developer account, managed by (=Team Agent)
+[Marcel Pogorzelski|https://uit.no/om/enhet/ansatte/person?p_document_id=334103&p_dimension_id=88226].
+Sjur is an admin, and can invite others. Divvun has a shared admin account, to
+be able to share credentials etc across computers and build systems. Ask Sjur or
+Børre for details. The shared credentials are mainly used by iOS and Android
+build systems, and is based on [Fastlane|https://fastlane.tools].
+
+!!Signing setup
+
+# You need [XCode|https://itunes.apple.com/us/app/xcode/id497799835?mt=12]
+# after installing XCode, you use your AppleID to sign in in XCode:
+##  __XCode > Preferences… > Accounts__
+## click the __+__ sign
+## type in your AppleID + password
+# if ''The University of Tromso'' does not show up as a team, you need to be
+  invited - contact Marcel, Sjur or Børre
+
+When done, and you are a member of the team, you need to install certificates.
+When doing __iOS__ development, the easiest is to use Fastlane to retrieve and
+save the shared credentials using a private git repository. Again, ask Børre or
+Sjur for details.
+
+For __macOS__ development, you need some certificates and signing identities
+that can only be created by the Team Agent, others you can create yourself. You
+know that you need the Team Agent when you get an error message like this:
+
+[images/Permissions_failure.png]
+
+For the ones that the Team Agent must create, the procedure is as follows:
+
 Short version:
 
 * make Team Agent create one using XCode
@@ -8,3 +51,11 @@ Short version:
 ** decrypt using the same strong password
 * get info on the certificate, copy name of public part of certificate
 * use the name when signing installation packages
+
+!!!Windows
+
+TBW
+
+!!!Android
+
+TBW
