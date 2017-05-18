@@ -41,16 +41,21 @@ know that you need the Team Agent when you get an error message like this:
 
 For the ones that the Team Agent must create, the procedure is as follows:
 
-Short version:
-
-* make Team Agent create one using XCode
-* make Team Agent export the private key from the local key chain
-** use a strong password
-* send enkrypted private key to team member(s)
-* import the certificate into team member key chain
-** decrypt using the same strong password
-* get info on the certificate, copy name of public part of certificate
-* use the name when signing installation packages
+# make Team Agent create the wanted certificate using XCode, by going to
+  __XCode > Preferences… > Accounts__, selecting the UiT team, clicking
+  __Manage Certificates…__, and finally clicking the __+__ symbol in the
+  lower, left corner:\\
+  [images/Certificate_creation_menu.png]
+# make the Team Agent __Download All Profiles__ (in the same Account
+  preferences pane)
+# the Team Agent must export the private key from the local key chain:\\
+  [images/Export_certificate.png]
+## __Important!!__ Use a strong password!
+# send enkrypted private key to team member(s)
+# import the certificate into team member key chain
+## decrypt using the same strong password
+# get info on the certificate, copy name of public part of certificate
+# use the name when signing installation packages
 
 !!!Windows
 
