@@ -95,9 +95,11 @@ make draft XML_SRC=xx
 }}}
 
 where {{xx}} is either a two-letter language code, or the full filename +
-platform string in the format {{platform/filename.xml}}. If you don't know what
+platform string in the format {{platform/filename}}. If you don't know what
 to put there, just leave out the {{xx}}, and you will be given a list of all
-the alternatives.
+the alternatives. The two-letter language code will give you a macOS-based draft
+keyboard layout. If you want to draft for another platform, you need the full
+{{platform/filename}} specification.
 
 !!Compatibility notes
 
@@ -114,7 +116,7 @@ compatible with Windows 10.
 !macOS
 
 The keyboard package is compatible with most versions of macOS, going back all
-the way to at least OS X 10.4.
+the way to macOS version 10.2 (Jaguar).
 
 !Linux
 
@@ -143,8 +145,16 @@ Run the commands:
 cd $GTHOME/keyboards
 ./autogen.sh
 ./configure
-make NEW_LANG=xxx
+make NEW_LANGS=xxx
 }}}
 
-Replace xxx with the actual language code of the language you want to add. If
-you want to add multiple languages, enclose the list within double quotes.
+Replace {{xxx}} with the actual language code of the language you want to add.
+If you want to add multiple languages, enclose the list within double quotes.
+
+When the new language dir is populated with Makefile's and template data, commit
+the whole dir to svn. Remember to also commit the files
+{{$GTHOME/keyboards/configure.ac}} and {{$GTHOME/keyboards/Makefile.am}}.
+
+When done, start editing the {{$NEW_LANGS.yaml}} file, and run {{make}}. Have a
+look at the layout of the keyboard by opening {{doc/layout.html}} in a web
+browser.
