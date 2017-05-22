@@ -60,7 +60,7 @@ Things to consider/change:
 ** name and description at least in English and the target language
 ** name of icon file (any {{png}} file will do)
 ** list the names of all yaml files (without the {{.yaml}} extension) under the
-   {{layouts:}} key, separate with space if you have several
+   {{layouts:}} key, separate with comma if you have several
 ** also change {{author}}, {{e-mail}}, {{copyright}} etc to your likings
 * in the {{xxx.yaml}} file(s):
 ** add display names in the relevant languages
@@ -80,6 +80,24 @@ Notes from the [Github repo|https://github.com/divvun/kbdgen]:
 * [MacOS|https://github.com/divvun/kbdgen/blob/master/doc/targets/osx.md]
 * [Linux|https://github.com/divvun/kbdgen/blob/master/doc/targets/x11.md]
 * [SVG|https://github.com/divvun/kbdgen/blob/master/doc/targets/svg.md]
+
+!!Making a draft layout
+
+Desktop keyboards are relatively complex things, and to get a head start, and at
+the same time ensure that one is as close as possible to the majority language
+keyboard that the users are accustomed to, one can create a draft keyboard layout
+based on data from
+[CLDR|http://www.unicode.org/cldr/charts/latest/keyboards/layouts/index.html].
+The command is:
+
+{{{
+make draft XML_SRC=xx
+}}}
+
+where {{xx}} is either a two-letter language code, or the full filename +
+platform string in the format {{platform/filename.xml}}. If you don't know what
+to put there, just leave out the {{xx}}, and you will be given a list of all
+the alternatives.
 
 !!Compatibility notes
 
