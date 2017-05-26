@@ -81,6 +81,40 @@ Notes from the [Github repo|https://github.com/divvun/kbdgen]:
 * [Linux|https://github.com/divvun/kbdgen/blob/master/doc/targets/x11.md]
 * [SVG|https://github.com/divvun/kbdgen/blob/master/doc/targets/svg.md]
 
+Further notes:
+
+!macOS
+
+You can add a README file and a License file, as well as a background image for
+the installer package. Supported file formats are:
+
+* documents: {{txt,html,rtf}}
+* images: {{background}} + {{.jpg,.png}}
+
+Valid filenames for the documentation are: {{readme}}, {{welcome}}, {{license}},
+and {{conclusion}}. All filenames can be capitalised.
+
+To make the files be used by the package builder, add a {{resources:}}key to
+your {{project.yaml}} file under {{targets:}} like this:
+
+{{{
+targets:
+  osx:
+    packageId: no.uit.giella.keyboards.smj
+    version: 0.1.0
+    bundleName: *bundleName
+    icon: icon.png
+    resources: doc
+}}}
+
+The string {{doc}} in the example above is the name of a directory containing
+the files you want included in the installer. They will be picked up
+automatically given they follow the naming conventions described above.
+
+__NB!__ When using {{html}} as the file format, make sure you __do not__ include
+an xml header as the first line of text in the html file. That will cause the
+file to be read as text, with all tags visible.
+
 !!Making a draft layout
 
 Desktop keyboards are relatively complex things, and to get a head start, and at
