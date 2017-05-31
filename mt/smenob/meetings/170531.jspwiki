@@ -3,9 +3,19 @@
 Tilstede: Kevin, Trond, Lene
 
 !!Saker:
+# Kompilering og størrelse av sme-nob.t1x.bin
+# Sámi dieđalaš áigečála  som pdf 
+# caseprep : vi har to systemer
+# om hvordan vi skal løse riktig valg av pro. 
+# ends-with og starts-with i test i regler t1x-fila
+# t4x må kunna handtera alle kombinasjonar
+# fungerer --trace på mac no? Ja.
+# bidix-sanity for nob
+# Fleirordsuttrykk
+# Kronikk i Nordlys
 
 
-!! Kompiliering og størrelse av sme-nob.t1x.bin
+!! Kompilering og størrelse av sme-nob.t1x.bin
 apertium frå etter 26.mai skal gi mindre binærfiler av transfer.
 Der me før hadde t1x.bin på 15M, bør me no ha ca. 74K.
 
@@ -18,13 +28,13 @@ apertium-sme-nob$ ls -lah $(which apertium-preprocess-transfer)
 
 -rwxr-xr-x  1 root  admin  19480 May 26 15:24 /usr/local/bin/apertium-preprocess-transfer
 
-!LØSNING:
+! TILTAK::
 * Kevin har spørt Tino om korfor nightly har gammal preprocess-transfer, så oppdaterer me igjen seinare.
 
 !!Sámi dieđalaš áigečála  som pdf 
 Om det er mulig å tilby oversetting av Sámi dieđalaš áigečála sine artikler som er i pdf-format, se bz 2378. Dvs om det er mulig å legge inn convert2xml i pipelinen når vi på forhånd vet formatet på pdf-en. Jeg regner med at det blir rein tekst, uten tabeller og figurer og formattering
 
-!LØSNING:
+! TILTAK::
 * Kevin tar kontakt med Børre om dette.
 
 !! caseprep : vi har to systemer
@@ -38,7 +48,7 @@ Viss verbet kjem etterpå treng vi caseprep i t2x, vi kan vise til chunking som 
 
 I andre tilfelle løyser vi det i t1x.
 
-!! om hvordan vi skal løse riktig valg av pro. 
+!! om hvordan vi skal løse riktig valg av pro 
 Eksempel:
 
 Alle setningene under her får sin pro i denne regelen i tx3: <rule comment="REGLA: adv-FV.neg IV - out: pro 2 1
@@ -67,7 +77,7 @@ agreem-pro   (verb som får  den/det)
 incongr-pro = inkongruent =   (verb som alltid får   "det", dvs. værverb, jf. liste i t1x)
 }}}
 
-!LØSNING
+! TILTAK:
 * Lene legger til tagger i bidix
 
 
@@ -79,7 +89,7 @@ Kan vi løse problemet med riktig valg av pro nær finittverb, basert på hovudv
 
 Hovedverbet kommer lenger ut i setninga så variabel vil ikke fungere, må matcha heile chunken.
 
-!LØSNING
+! TILTAK:
 * Vi lager flere regler i t3x
 
 
@@ -108,7 +118,7 @@ SELECT:fallback ("bli"i) + (impers) (0 ("<šaddat>"i)) ;
 }}}
 
 
-!! ends-with og starts-with
+!! ends-with og starts-with i test i regler t1x-fila
 
 {{{
      <list-item v="jente"/>
@@ -179,7 +189,9 @@ Viss t1x kan laga pre_pre_pre_pre_nom, så kan t2x laga
 }}}
 
 Kor lange rekkjer kan t1x lage? Opprinneleg: 3 x pre + nom. No er det meir.
-Lene ser på det.
+
+! TILTAK:
+* Lene ser på det.
 
 !! fungerer --trace på mac no? Ja.
 
@@ -199,7 +211,7 @@ apertium-interchunk: Rule 43 sent<SENT>{^.<sent><clb>$}
 }}}
 
 
-!!bidix-sanity for nob
+!! bidix-sanity for nob
 
 [apertium/nursery/apertium-sme-smn/dev/bidixsanity.sh]
 
@@ -218,7 +230,7 @@ viss L1 <n><sg><nom> så skal L2 ha <n><GENUS><sg><indef>
 <e r="RL" lm="hva" c="sme-nob"><i>hva</i><par n="neste__det"/></e>
 }}}
 
-! LØSNING
+! TILTAK:
 * Kevin lagar sanity basert på sme-smn i sme-nob
 
 !!Fleirordsuttrykk
@@ -260,11 +272,14 @@ echo nulpu lea doppe. | apertium -d. sme-nob
 #rein er der borte.
 }}}
 
+! TILTAK:
+* Trond ser på dem
+
 !!Kronikk i Nordlys
-
-Lene lager mappe i art/2017 og tar kontakt med Nordlys. Og sender epost om resultatet.
-
 Andre moglege fora: forsking.no, Norsk Tidend.
+
+! TILTAK:
+Lene lager mappe i art/2017 og tar kontakt med Nordlys. Og sender epost om resultatet.
 
 
 
