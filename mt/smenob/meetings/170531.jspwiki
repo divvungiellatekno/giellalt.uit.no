@@ -11,12 +11,12 @@ Tilstede: Kevin, Trond, Lene
 # t4x må kunna handtera alle kombinasjonar
 # fungerer --trace på mac no? Ja.
 # bidix-sanity for nob
-# Fleirordsuttrykk
+# Fleirordsuttrykk, nob i bidix
 # Kronikk i Nordlys
 
 
 !! Kompilering og størrelse av sme-nob.t1x.bin
-apertium frå etter 26.mai skal gi mindre binærfiler av transfer.
+apertium frå etter 26. mai skal gi mindre binærfiler av transfer.
 Der me før hadde t1x.bin på 15M, bør me no ha ca. 74K.
 
 {{{
@@ -29,13 +29,13 @@ apertium-sme-nob$ ls -lah $(which apertium-preprocess-transfer)
 -rwxr-xr-x  1 root  admin  19480 May 26 15:24 /usr/local/bin/apertium-preprocess-transfer
 
 ! TILTAK::
-* Kevin har spørt Tino om korfor nightly har gammal preprocess-transfer, så oppdaterer me igjen seinare.
+* __Kevin__ har spørt Tino om korfor nightly har gammal preprocess-transfer, så oppdaterer me igjen seinare.
 
 !!Sámi dieđalaš áigečála  som pdf 
 Om det er mulig å tilby oversetting av Sámi dieđalaš áigečála sine artikler som er i pdf-format, se bz 2378. Dvs om det er mulig å legge inn convert2xml i pipelinen når vi på forhånd vet formatet på pdf-en. Jeg regner med at det blir rein tekst, uten tabeller og figurer og formattering
 
 ! TILTAK::
-* Kevin tar kontakt med Børre om dette.
+* __Kevin__ tar kontakt med Børre om dette.
 
 !! caseprep : vi har to systemer
 
@@ -78,7 +78,7 @@ incongr-pro = inkongruent =   (verb som alltid får   "det", dvs. værverb, jf. 
 }}}
 
 ! TILTAK:
-* Lene legger til tagger i bidix
+* __Lene__ legger til tagger i bidix
 
 
 Kan vi løse problemet med riktig valg av pro nær finittverb, basert på hovudverb langt vekke, på annen måte enn å lage regler i t3x for alle varianter av slike setninger? Setningstypene er mange:
@@ -126,7 +126,7 @@ SELECT:fallback ("bli"i) + (impers) (0 ("<šaddat>"i)) ;
         
 Men slik:
 
- <not><ends-with><clip pos="2" side="tl" part="lemh"/><lit v="og en halv"/></ends-wi
+ <ends-with caseless="yes"><clip pos="2" side="tl" part="lemh"/><lit v="jente"/></ends-with>
 <!ELEMENT ends-with (%value;,%value;)>
 
  
@@ -140,8 +140,6 @@ $ grep -e -with /usr/local/share/apertium/transfer.dtd
 <!ATTLIST begins-with-list caseless (no|yes) #IMPLIED>
 <!ELEMENT ends-with-list (%value;,list)>
 <!ATTLIST ends-with-list caseless (no|yes) #IMPLIED>
-
-så du kan skriva <begins-with caseless="yes"><clip …><lit v="jente"/></begins-with>
 }}}
 
 {{{
@@ -191,7 +189,7 @@ Viss t1x kan laga pre_pre_pre_pre_nom, så kan t2x laga
 Kor lange rekkjer kan t1x lage? Opprinneleg: 3 x pre + nom. No er det meir.
 
 ! TILTAK:
-* Lene ser på det.
+* __Lene__ ser på det.
 
 !! fungerer --trace på mac no? Ja.
 
@@ -231,9 +229,9 @@ viss L1 <n><sg><nom> så skal L2 ha <n><GENUS><sg><indef>
 }}}
 
 ! TILTAK:
-* Kevin lagar sanity basert på sme-smn i sme-nob
+* __Kevin__ lagar sanity basert på sme-smn i sme-nob
 
-!!Fleirordsuttrykk
+!!Fleirordsuttrykk, nob i bidix
 
 frå -r78846 [http://sprunge.us/HXPM]
 
@@ -273,13 +271,13 @@ echo nulpu lea doppe. | apertium -d. sme-nob
 }}}
 
 ! TILTAK:
-* Trond ser på dem
+* __Trond__ ser på dem
 
 !!Kronikk i Nordlys
 Andre moglege fora: forsking.no, Norsk Tidend.
 
 ! TILTAK:
-Lene lager mappe i art/2017 og tar kontakt med Nordlys. Og sender epost om resultatet.
+__Lene__ lager mappe i art/2017 og tar kontakt med Nordlys. Og sender epost om resultatet.
 
 
 
