@@ -181,11 +181,12 @@ Notes from the [Github repo|https://github.com/divvun/kbdgen]:
 
 !!!Adding a new language
 
-* requires $GIELLA_TEMPLATES
+* requires that one has set {{$GIELLA_TEMPLATES}}
 
 Run the commands:
 
 {{{
+export GIELLA_TEMPLATES=/path/to/giella-templates
 cd $GTHOME/keyboards
 ./autogen.sh
 ./configure
@@ -196,7 +197,7 @@ Replace {{xxx}} with the actual language code of the language you want to add.
 If you want to add multiple languages, enclose the list within double quotes.
 
 When the new language dir is populated with Makefile's and template data, commit
-the whole dir to svn. Remember to also commit the files
+the whole dir to svn. __Remember__ to also commit the files
 {{$GTHOME/keyboards/configure.ac}} and {{$GTHOME/keyboards/Makefile.am}}.
 
 When done, start editing the {{$NEW_LANGS.yaml}} file, and run {{make}}. Have a
