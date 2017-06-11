@@ -1,0 +1,36 @@
+Most keyboard types (ie for most OS's) can be customised in various ways, either
+the installer or the actual keyboard itself. Below follows a list of relevant
+customisation options pr OS. Most of these customisations are specified as file
+pointers in the {{project.yaml}} file.
+
+!!!Android
+
+; App icon: specify the image file in {{targets: android: icon:}} in the
+  {{project.yaml}} file; default location is in {{images/}}
+; Release signing: set or export {{KEY_PW}} and {{STORE_PW}} to hold the
+  password to the signing keystore. Ask Sjur or Børre for the password,
+  AND KEEP IT SAFE! Define these env. variables manually in the terminal window
+  when building for release, and close the terminal window afterwards. That way
+  the password will only be stored temporarily in memory. XXX what about the
+  history file? This sounds like a huge security hole :O
+
+!!!iOS
+
+; App icon: specify the image file in {{targets: android: icon:}} in the
+  {{project.yaml}} file; default location is in {{images/}}
+; About text: specify the text file in {{targets: ios: aboutDir:}} in the
+  {{project.yaml}} file; default location is in {{ios/About.txt}}
+
+!!!macOS
+
+; Keyboard Icon: same as icon location above. This is the icon seen in the
+  keyboard menu in the menu bar.
+
+* Readme
+* License
+
+!!!Windows
+
+* Locale
+* Readme (coming)
+* License (coming)
