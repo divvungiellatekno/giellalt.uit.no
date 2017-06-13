@@ -171,13 +171,27 @@ Linux keyboard driver code.
 
 !!!Mobile keyboard apps
 
-TBW.
+The mobile keyboards have more dependencies, documentation is linked below. They
+also differ from desktop keyboards in that the keyboards are full-blown apps,
+and you need all the machinery to build and distribute apps through the relevant
+stores. The desktop keyboards are less appy, mostly just plain text files (with
+Windows keyboards as an exception).
 
-!!Platform specific notes
+!!iOS build instructions
 
-Notes from the [Github repo|https://github.com/divvun/kbdgen]:
-* [iOS|https://github.com/divvun/kbdgen/blob/master/doc/targets/ios.md]
-* [Android|https://github.com/divvun/kbdgen/blob/master/doc/targets/android.md]
+* follow instructions at [https://github.com/divvun/kbdgen/blob/master/doc/targets/ios.md]
+* follow the instructions [here|../infra/system/SettingUpSigningCertificates.html] to get your signing identity
+* {{make ios}}
+
+This is not enough, more instructions to come.
+
+!!Android build instructions
+
+* follow instructions at [https://github.com/divvun/kbdgen/blob/master/doc/targets/android.md]
+* check out $GTPRIV
+* define $GTPRIV
+* define KEY_PW and STORE_PW to contain the password for the signing certificate
+* {{make android}}
 
 !!!Adding a new language
 
