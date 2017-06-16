@@ -18,8 +18,8 @@ pointers in the {{project.yaml}} file.
 
 ; App icon: specify the image file in {{targets: android: icon:}} in the
   {{project.yaml}} file; default location is in {{images/}}
-; About text: specify the text file in {{targets: ios: aboutDir:}} in the
-  {{project.yaml}} file; default location is in {{ios/About.txt}}
+; About text: specify the text file directory in {{targets: ios: aboutDir:}} in
+  the {{project.yaml}} file; default location is in {{ios/About.txt}}
 
 !!!macOS
 
@@ -31,6 +31,22 @@ pointers in the {{project.yaml}} file.
 
 !!!Windows
 
-* Locale
-* Readme (coming)
+; Readme File: specify the text file directory in {{targets: win: readmePath:}}
+  in the {{project.yaml}}, and name the file(s) {{LANGUAGECODE.suffix}}, where
+  {{LANGUAGECODE}} is the ISO 639 code, and {{suffix}} is one of {{txt}} and
+  {{rtf}}, indicating the format of the file. The fallback language is {{en}}
+  (English). Example: {{targets: win: readmePath: readmes}}, and in {{readmes/*}}
+  you have {{en.txt, nb.txt}} but your installer supports {{en}}, {{nb}} and
+  {{sv}}, then if someone choses Swedish, the UI would be Swedish, but the
+  readme would show up in English.
+
 * License (coming)
+
+!! Custom Locale
+
+Most languages we support do not have a preexisting locale in Windows (most Sámi
+languages actually do, except Kildin, Pite and Ume). Presently we create
+installers without a locale for these, but soon it will be a requirement to also
+specify a custom locale to go with the keyboard.
+
+More info will be added when the feature is ready.
