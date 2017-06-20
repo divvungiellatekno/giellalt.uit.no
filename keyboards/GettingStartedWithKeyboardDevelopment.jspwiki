@@ -125,6 +125,82 @@ __NB!__ When using {{html}} as the file format, make sure you __do not__ include
 an xml header as the first line of text in the html file. That will cause the
 file to be read as text, with all tags visible.
 
+!Windows
+
+With recent changes to the keyboard generation tool {{kbdgen}}, one can actually
+build the final Windows installer in macOS or Linux. To do this, one has to run
+the following setup sequence:
+
+# install [Wine|https://www.winehq.org/download] - ensure that you choose the
+  latest devel version, only {{wine-2.10}} is known to work.
+# install [Winetricks|https://wiki.winehq.org/Winetricks]
+
+Add the bin dir of Wine to your {{$PATH}}, and make sure that also {{winetricks}}
+(a shell script) is available in the {{$PATH}}.
+
+Next, you need to install further tools, most easily done by running the
+following shell script (copy and paste into a suitable file, and make it
+executable):
+
+{{{
+#!/bin/sh
+
+export WINEARCH="win32"
+if [ -z "$WINEPREFIX" ]; then
+    export WINEPREFIX="$HOME/.wine"
+fi
+
+INNO=http://www.jrsoftware.org/download.php/is-unicode.exe
+KBDI=https://github.com/bbqsrc/kbdi/releases/download/v0.1.0/kbdi-i386.exe
+MSKLC=https://download.microsoft.com/download/1/1/8/118aedd2-152c-453f-bac9-5dd8fb310870/MSKLC.exe
+
+echo "Getting Inno Setup…"
+curl -OL "$INNO"
+
+echo "Getting MSKLC…"
+curl -O "$MSKLC"
+
+echo "Getting kbdi…"
+curl -O "$KBDI"
+
+echo "Installing dotnet20 with winetricks…"
+winetricks -q dotnet20
+
+echo "Installing MSKLC…"
+unzip -o `basename $MSKLC`
+msiexec /i MSKLC.msi /passive
+
+echo "Installing Inno Setup…"
+wine `basename $INNO` /SILENT
+
+
+echo "Done!"
+echo
+echo "You will want to put the following in your .profile or a script you source before running kbdgen:"
+echo
+echo "export WINEARCH=\"win32\""
+echo "export WINEPREFIX=\"$WINEPREFIX\""
+echo "export INNO_PATH=\"\$WINEPREFIX/drive_c/Program Files/Inno Setup 5\""
+echo "export MSKLC_PATH=\"\$WINEPREFIX/drive_c/Program Files/Microsoft Keyboard Layout Creator 1.4\""
+echo "export KBDI=\"path/to/kbdi.exe\""
+}}}
+
+After having saved the script and made it executable, run it, and follow the
+instructions printed at the end of how to install the remaining dependencies.
+Replace {{path/to/kbdi.exe}} with the actual, absolute path to where {{kbdi.exe}}
+is, and rename the file to that name if it contains e.g. {{-i386}} or something
+similar.
+
+Finally, you need to add a real {{uuid}} for each language. Run the command:
+
+{{{
+uuidgen
+}}}
+
+and paste the generated {{uuid}} in the project file. Now you are ready to run
+{{make win}}, and get a working installer. If no installer is built, uncomment
+the {{RELEASE}} variable in {{Makefile.am}}.
+
 !!Making a draft layout
 
 Desktop keyboards are relatively complex things, and to get a head start, and at
