@@ -136,7 +136,8 @@ the following setup sequence:
 # install [Winetricks|https://wiki.winehq.org/Winetricks]
 
 Add the bin dir of Wine to your {{$PATH}}, and make sure that also {{winetricks}}
-(a shell script) is available in the {{$PATH}}.
+(a shell script) is available in the {{$PATH}}. __Close the terminal window__
+and open a new one before continuing.
 
 Next, you need to install further tools, most easily done by running the
 following shell script (copy and paste into a suitable file, and make it
@@ -196,7 +197,7 @@ Finally, you need to add a real {{uuid}} for each language. Run the command:
 uuidgen
 }}}
 
-and paste the generated {{uuid}} in the project file under
+and paste the generated {{uuid}} in the {{project.yaml}} file under
 {{targets: win: uuid:}}. Now you are ready to run
 {{make win}}, and get a working installer. If no installer is built, uncomment
 the {{RELEASE}} variable in {{Makefile.am}}.
@@ -212,7 +213,8 @@ targets:
 }}}
 
 Repeat for all layout files. If not added, the keyboard won't integrate properly
-with Windows.
+with Windows. Identifying which languages will need such a specification is a
+feature that will be added in the near future.
 
 !!Making a draft layout
 
