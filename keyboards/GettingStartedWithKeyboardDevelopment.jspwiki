@@ -154,6 +154,8 @@ INNO=http://www.jrsoftware.org/download.php/is-unicode.exe
 KBDI=https://github.com/bbqsrc/kbdi/releases/download/v0.1.0/kbdi-i386.exe
 MSKLC=https://download.microsoft.com/download/1/1/8/118aedd2-152c-453f-bac9-5dd8fb310870/MSKLC.exe
 
+KBDIDIR=$(pwd)
+
 echo "Getting Inno Setup…"
 curl -OL "$INNO"
 
@@ -161,7 +163,7 @@ echo "Getting MSKLC…"
 curl -O "$MSKLC"
 
 echo "Getting kbdi…"
-curl -O "$KBDI"
+curl -Lk "$KBDI" -o kbdi.exe
 
 echo "Installing dotnet20 with winetricks…"
 winetricks -q dotnet20
@@ -182,14 +184,11 @@ echo "export WINEARCH=\"win32\""
 echo "export WINEPREFIX=\"$WINEPREFIX\""
 echo "export INNO_PATH=\"\$WINEPREFIX/drive_c/Program Files/Inno Setup 5\""
 echo "export MSKLC_PATH=\"\$WINEPREFIX/drive_c/Program Files/Microsoft Keyboard Layout Creator 1.4\""
-echo "export KBDI=\"path/to/kbdi.exe\""
+echo "export KBDI=\"${KBDIDIR}/kbdi.exe\""
 }}}
 
 After having saved the script and made it executable, run it, and follow the
 instructions printed at the end of how to install the remaining dependencies.
-Replace {{path/to/kbdi.exe}} with the actual, absolute path to where {{kbdi.exe}}
-is, and rename the file to that name if it contains e.g. {{-i386}} or something
-similar.
 
 Finally, you need to add a real {{uuid}} for each language. Run the command:
 
