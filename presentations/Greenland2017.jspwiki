@@ -14,6 +14,7 @@ Topics:
 * unix crash course
 * in-source documentation
 * tag conventions in the Giella infrastructure
+* morpheme boundaries
 * testing
 * debugging
 * developer tools
@@ -45,18 +46,51 @@ Topics:
 * [speech synthesis|http://divvun.no/tale/tale.html]
 * language learning:
 ** [initial training on a mobile app|http://gielese.no/play/]
-** L2 learning
-** L1 grammar excercises
+** [L2 learning|http://oahpa.no]
+** [L1 grammar excercises|http://oahpa.no/sme/usevisl/VISL_spealut.nob.html]
 
 !!! Introduction To The Infrastructure
+
+!! Overall goals
+
+* language independent, while still adaptable to the needs of each language
+* separation of concerns - build structure vs linguistic work
+* scalable:
+** add as many languages as you want
+** add as many tools as you want
+** with a new language, you get whatever all the other languages have
+** with a new tool, all languages get a basic version of the tool
+* predictable - same thing is called the same in different languages
+* understandable - names should be understandable as is
+* modular
+* technology neutral (but rule-based by default - the only thing that works with
+  the languages we work with)
+** it supports both Xerox, Hfst and Foma
+** it supports Apertium, but could also support other (rule-based) MT systems
+* should give strong support to reuse of resources
+** shared lexical data
+** one fst starting point for every tool
+
+!! Means for achieving the goals
+
+* shared directory structure
 
 !!! Dependencies On External Tools
 
 !!! Unix Crash Course
 
+See [Unix for Linguists|../tools/UnixForLinguists.html]
+
 !!! In-Source Documentation
 
-!!!Tag conventions in the Giella infrastructure
+!!! Tag conventions in the Giella infrastructure
+
+* [Language Independent Tags In The Giella
+  Infra|../ling/LanguageIndependentTagsInTheGiellaInfra.html]
+
+!!! Morpheme boundaries
+
+* [Morfeme border markup|../ling/morfem-borders.html]
 
 !!! Testing
 
@@ -64,7 +98,7 @@ Topics:
 
 !! Yaml
 
-!!!Debugging
+!!! Debugging
 
 * [Issues in KAL|../lang/kal/IssuesInGreenlandic.html]
 
