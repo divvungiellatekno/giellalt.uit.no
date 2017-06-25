@@ -73,15 +73,44 @@ Topics:
 
 !! Means for achieving the goals
 
-* shared directory structure
+* [shared directory structure|../infra/infraremake/NewinfraCatalogues.html]
 
 !!! Dependencies On External Tools
+
+!! Language technology tools
+
+* Hfst or Foma or Xerox
+* VislCG3
+
+Optional:
+* Apertium (MT)
+* Forrest (documentation verification and publishing)
+
+!! Infrastructure support tools
+
+* Autotools
+* Python
+* Subversion
+* a number of other tools [listed on a separate page|../infra/GettingStartedOnTheMac.html]
+
+!! External dependencies for final products
+
+This varies from product to product. In most cases (like spellers, keyboards and
+more) all these dependencies are precompiled by programmers and added as library
+resources to be included automatically so that the linguists do not have to have
+everything installed and correctly configured for building the end user products
+(s)he wants.
+
+The exact details for each product is listed separately in each case, on
+individual pages.
 
 !!! Unix Crash Course
 
 See [Unix for Linguists|../tools/UnixForLinguists.html]
 
 !!! In-Source Documentation
+
+See [a separate document|../infra/infraremake/In-sourceDocumentation.html].
 
 !!! Tag conventions in the Giella infrastructure
 
@@ -94,9 +123,7 @@ See [Unix for Linguists|../tools/UnixForLinguists.html]
 
 !!! Testing
 
-!! In-Source
-
-!! Yaml
+See [this document|../infra/infraremake/AddingMorphologicalTestData.html]
 
 !!! Debugging
 
@@ -104,4 +131,10 @@ See [Unix for Linguists|../tools/UnixForLinguists.html]
 
 !!! Developer Tools
 
+Short intro to the tools in the {{devtools/}} directory.
+
 !!! Refactoring the code
+
+When the Yaml files are covering the relevant parts of lexc, one can rewrite the
+lexc code and at the same time ensure that the analysis doesn't change. One can
+also use one of the {{devtools/}} tools to help in that process.
