@@ -8,9 +8,9 @@
 
 Linguists need Unix because Unix can manipulate text for us. To be able to use Unix, we need to use Unix's command line interface, the Shell. This is an introduction to what we need to know about Unix to do what we want. After each section there will be a small summary.
 
-Unix is found on Linux and on Mac OS X. The application we use to give commands is usually called the Terminal. On MS Windows, there is no Unix Shell. You may install a virtual Linux machine on you Windows computer. Alternatively, you must have an account on another Unix machine. You may log on to this computer and use the screen and keyboard on your Windows machine. In order to sign in you may e.g. use the program Putty.exe.
+Unix is found on Linux and on macOS. The application we use to give commands is usually called the Terminal. On MS Windows, there is no Unix Shell. You may install a virtual Linux machine on your Windows computer. Alternatively, you must have an account on another Unix machine. You may log on to this computer and use the screen and keyboard on your Windows machine. In order to sign in you may e.g. use the program __Putty.exe__.
 
-In order to use Unix on Mac or Linux just open the terminal program. On the Mac it is located in the folder for assistance programs. In Linux the terminal is in the folder for programming tools. We now assume that you have access to unix on your own machine.
+In order to use Unix on macOS or Linux just open the terminal program. On the Mac it is located in the folder for assistance programs. In Linux the terminal is in the folder for programming tools. We now assume that you have access to unix on your own machine.
 
 
 !!Basic Commands
@@ -33,7 +33,7 @@ From now on we will assume that you always press ENTER after a command. "type ls
 
 Most commands take one or more arguments. One such command is __mkdir__, which means "make directory" or create a directory. Try it: Write {{mkdir}}, press ENTER, and you will get a logical answer. In order to make  a directory unix needs an argument, a directory name. Write e.g. {{mkdir hogwash}}. To see what has happened, type {{ls}} (list the contents of the directory you are in right now). The directory you just made you may now remove by writing {{rmdir hogwash}}. Try it, and then try it again. (The {{rmdir}} command only works on empty directories.)
 
-From a linguistic point of view, we can look at the commands as verbs. Since all commands represent our requests to the computer, we may see them as verbs in the imperative. Like other verbs also Unix commands transitive or intransitive. A command like __date__ can be seen as an intransitive verb: You print {{date}} and the machine tells you what date it is. The __mkdir__ command, however, is a transitive verb, it must have an object, namely the name of the new directory you want to create.
+From a linguistic point of view, we can look at the commands as verbs. Since all commands represent our requests to the computer, we may see them as verbs in the imperative. Like other verbs also Unix commands are either transitive or intransitive. A command like __date__ can be seen as an intransitive verb: You print {{date}} and the machine tells you what date it is. The __mkdir__ command, however, is a transitive verb, it must have an object, namely the name of the new directory you want to create.
 
 In the same way as regular verbs, Unix commands also operate with implicit objects. The interpretation depends on the context. When we say "eat!" we usually mean "Eat the food that is in front of you". The Unix command __ls__ also has such a context-dependent, implicit object. What you're really saying is "list the contents of the directory I am standing now." If you want to list the content of a specific directory, you must state the name of the directory (see below). The same applies to __cal__. By typing {{cal}}, you get this year's calendar. If you want to know which day of the week we started a new millenium, type cal 2000.  We will later look at commands with two objects, the Unix version of ditransitive verbs.
 
@@ -43,7 +43,7 @@ Commands can also be modified. We may call these modifiers adverbs, but programm
 Summary:
 
 * Command syntax: command name or command name argument ENTER
-* Commands: date, cal, mkdir
+* Commands: {{date}}, {{cal}}, {{mkdir}}
 
 Commands can be seen as verbs in the imperative. These verbs may be intransitive or transitive (have none, one or more arguments) and they may take modifying adverbs (flags).
 
@@ -52,21 +52,21 @@ Commands can be seen as verbs in the imperative. These verbs may be intransitive
 
 Your home directory is located in another directory. It also contains other directories. But somewhere the chain of directories stop. The mother of all directories is the root directory. It has its own symbol in Unix, namely /. To see the content of your own root directory you may type {{ls /}}, i.e. "list the contents of the root directory". Remember to press ENTER. There you will see some cryptic names, all names of different directories.
 
-On Linux systems the base of the directories in the root dicrectory is called home. The corresponding directory on Mac computers is called Users. This directory contains all users on the system. If you work on a laptop you are probably the only user. The command {{ls /home}} or {{ls /Users}} lists the contents. One of the user names is yours. If you write just {{ls}} you will see all the files and directories you have in the directory you are in right now.
+On Linux systems the base of the directories in the root dicrectory is called {{home}}. The corresponding directory on Mac computers is called {{Users}}. This directory contains all users on the system. If you work on a laptop you are probably the only user. The command {{ls /home}} or {{ls /Users}} lists the contents. One of the user names is yours. If you write just {{ls}} you will see all the files and directories you have in the directory you are in right now.
 
 
 Summary:
 
 * home directory, root directory (__/__)
 * Directory Structure: Directories are inside one another. In the graphical user interface, they are called folders
-* Commands: ls, ls /, ls / home, ls / Users
+* Commands: {{ls}}, {{ls /}}, {{ls /home}}, {{ls /Users}}
 !!Creating directories and moving around
 
-Create a directory for this course, let us call it unixcourse. You thus write mkdir unixcourse. Write ls, and you see that the directory has been created. If you then type ls unixcourse you can find out what's inside the new directory. Yes, quite right, nothing.
+Create a directory for this course, let us call it {{unixcourse}}. You thus write {{mkdir unixcourse}}. Write {{ls}}, and you see that the directory has been created. If you then type {{ls unixcourse}} you can find out what's inside the new directory. Yes, quite right, nothing. On macOS, you can also type {{open unixcourse}} to get a graphical view of the directory you created. As you can see, the graphical world is a reflection of the command line world, and vice versa.
 
-Then try to move into the directory. Type cd unixcourse (cd means "change directory"). Check if prompt change. If you then type ls unixcourse once you get a completely different answer than the last. Why?
+Then try to move into the directory. Type {{cd unixcourse}} ({{cd}} means "change directory"). Check if prompt change. If you then type {{ls unixcourse}} once you get a completely different answer compared to last time. Why?
 
-The reason you now get the answer "No such file or directory" (or equivalent) is that the catalog unixcourse does not itself contain any directory called "unixcourse". Create now a new directory, writing for example {{mkdir somename}}. You can then go back to your home directory by typing {{cd ..}} (cd space dot dot) Teh two dots mean "the parent directory to the directory I now stand in". You may then type ls unixcourse, and get the answer "somename"). You may use the symbols __..__ also in other contexts. The command {{ls ..}} means "list the contents of the parent directory to the directory I now stand in". If you stand in the directory unixcourse, and your home directory contains e.g. the directories unixcourse and Documents, you may list the content of Documents by typing {{ls ../Documents}}. The dots __..__ means "one level up", and __/__ means one level down. The name Documents tells which directory the system will list the contents of.
+The reason you now get the answer "No such file or directory" (or equivalent) is that the catalog {{unixcourse}} does not itself contain any directory called "unixcourse". Create now a new directory, writing for example {{mkdir somename}}. You can then go back to your home directory by typing {{cd ..}} (cd space dot dot). The two dots mean "the parent directory to the directory I now stand in". You may then type {{ls unixcourse}}, and get the answer "somename"). You may use the symbols __..__ also in other contexts. The command {{ls ..}} means "list the contents of the parent directory to the directory I now stand in". If you stand in the directory {{unixcourse}}, and your home directory contains e.g. the directories {{unixcourse}} and {{Documents}}, you may list the content of {{Documents}} by typing {{ls ../Documents}}. The dots __..__ means "one level up", and __/__ means one level down. The name {{Documents}} tells which directory the system should list the contents of.
 
 
 One directory is more important than all other directories: the home directory. If you are in the directory {{unixcourse}} and want to go home, you could write {{cd ..}} but if you're not sure where you are, or you will go directly home, you may write only {{cd}}. The command moves you right back to the home directory.
@@ -85,9 +85,9 @@ Commands:
 
 !!Relative and absolute reference
 
-There are two ways to refer to files and directories in Unix. One is absolute and the other is relative. The way we have used so far is the relative one. When we use the relative reference the reference depends on where we stand. Suppose you are in the home directory, and you there is a directory called "unixcourse". Then it is possible to write {{ls unixcourse}}. But if you stand in the sister directory {{Documents}}, it is not possible, then you must write {{ls ../unixcourse}} to see the content. Relative reference is thus relative to where in the system you are when you write the command. 
+There are two ways to refer to files and directories in Unix. One is absolute and the other is relative. The way we have used so far is the relative one. When we use the relative reference the reference depends on where we stand. Suppose you are in the home directory, and there is a directory called "unixcourse". Then it is possible to write {{ls unixcourse}}. But if you stand in the sister directory {{Documents}}, it is not possible, then you must write {{ls ../unixcourse}} to see the content. Relative reference is thus relative to where in the system you are when you write the command. 
 
-When you use absolute reference it plays no role where you stand, because absolute reference shows you where the file or directory is located by referring to the root directory, which is called __/__. If your user name is trond, typing {{ls /Users/trond/unixcourses/}} will work, no matter what directory you are in. The reference to the directory unixcourse is no longer relative, but absolute, it is given in relation to the root directory.
+When you use absolute reference it plays no role where you stand, because the absolute reference shows you where the file or directory is located by referring to the root directory, which is called __/__. If your user name is trond, typing {{ls /Users/trond/unixcourses/}} will work, no matter what directory you are in. The reference to the directory unixcourse is no longer relative, but absolute, it is given in relation to the root directory.
 
 
 
@@ -95,19 +95,20 @@ Summary:
 
 * Relative reference, depending on how you are in the system
 * Absolute reference refers via the root directory
+
 !!View the content of files
 
 Go to the directory "unixcourse", that you have just created. If you do not know where you are, you may first write the command {{cd}}, and thereafter {{cd unixcourse}}, You can create a few files. Later we will create files with a text editor, now we make them in a slightly more convenient way, with the command __cat__. Write {{cat > n-list}}. The response is not the usual prompt, but a blank line. Write a word, e.g. Jane, press ENTER. Write another name, e.g. John, and press ENTER. Write some more namnes, e.g. Peter, Anne, Mark, Lena, with ENTER after each name. Finally end by the command Ctrl-d (hold down the Ctrl key and press the D key). Now you should get back the prompt. The symbol ">" means "send the output of the previous command to the file following the ">" symbol. This command thus creates the file "n-list".
 
-If you then type ls, you see that you have a file, namely "n-list." If you wonder what is in the file you may write {{cat n-list}}. The __cat__ command will then present the whole content of the file, and print it on the screen.
+If you then type {{ls}}, you see that you have a file, namely "n-list." If you wonder what is in the file you may write {{cat n-list}}. The __cat__ command will then present the whole content of the file, and print it on the screen.
 
 If the file had been very long, you would have preferred having it one screenful at a time. In order to get that, you may write {{less n-list}}. For a file stretching over several screenlengths, you may read forward by pressing the ENTER or SPACE key. When you come to the end of the file, it will say END in inverse video. In order to leave the less command and get back to the command line, press the Q key.
 
 Summary:
 
 Commands: 
-* cat, cat > filename, less
-* Get out of the less-function and return to the command line: type q
+* {{cat}}, {{cat > filename}}, {{less}}
+* Get out of the {{less}} program and return to the command line: type {{q}}
 
 !!Commands to manipulate the contents of files
 
@@ -125,30 +126,30 @@ Summary:
 
 __grep__
 
-Another central command is __grep__. It stands for "get regular expression", and pulls out all the lines that are of the type you have specified. Write {{grep J n-list}} and you get Jane and John as response. Write {{grep a n-list}} and you get Jane and Lena (but not Anne!) as response.
+Another central command is __grep__. It stands for "global regular expression print", and pulls out all the lines that are of the type you have specified. Write {{grep J n-list}} and you get Jane and John as response. Write {{grep a n-list}} and you get Jane and Lena (but not Anne!) as response.
 
 To search for more advanced expressions you use single or double quotation marks. The command {{grep mii filename}} in a Sami text finds both ''mii'' and ''huksemiid''. To search only for ''mii'' at the beginning of words you may write {{grep ' mii' filename}}. To search for the word ''mii'' you may write {{grep -w mii filename}}
 
 __rev__
 
-The command __rev__ reverses lines. Write {{rev n-list}}, and see what happened.
+The command {{rev}} reverses lines. Write {{rev n-list}}, and see what happens.
 
 Did you see that? All names are now written backwards. That in itself is not so exciting, perhaps, but when combined with other commands it will be very useful to us.
 
 
 
 Summary:
-* Command: rev, reverse line ('father' becomes 'rehtaf')
+* Command: {{rev}}, reverse line ('father' becomes 'rehtaf')
 
 
 !!Combining commands with |
 
-The character __|__ or pipe, is one of the main symbols in unix. On the Macintosh, the pipe is found on alt-7, on other computers, the pipe symbol can be found on the key to the left of the number 1 on the top left of the keyboard. With __|__ we combine multiple commands, or rather: we send the output from the first command as input to the next. We will now combine the commands __rev__ and __sort__, and we do it in the following way: {{rev n-list | sort | rev}}. What has happened? We have reversed the names in our file, reversed the list, and reversed back to normal left-to-right-text. The result is a reverse sorted list of the names we started out with.
+The character __|__ or pipe, is one of the main symbols in unix. On the Macintosh, the pipe is found on alt-7, on other computers, the pipe symbol can be found on the key to the left of the number 1 on the top left of the keyboard. With __|__ we combine multiple commands, or rather: we send the output from the first command as input to the next. We will now combine the commands __rev__ and __sort__, and we do it in the following way: {{rev n-list | sort | rev}}. What has happened? We have reversed the names in our file, sorted the list, and reversed back to normal left-to-right-text. The result is a reverse sorted list of the names we started out with.
 
 
 
 Summary:
-The pipe symbol __|__ takes the output from the previous command as input to the next.
+The pipe symbol __|__ ''pipes'' the output of one command as input to the next.
 
 __wc__
 
@@ -217,7 +218,7 @@ cat n-text | tr ' ' '\n'
 }}}
 
 
-!!Creative laziness: reusing the same command
+!!Creative laziness: reusing the same command
 
 Very soon the commands become long. Instead of typing the same command again and again, you may use the arrow keys. The key __Up Arrow__ gives you the previous command. To execute it you must obviously press the ENTER key). __Up Arrow__ once again gives you the command before the previous one.
 
