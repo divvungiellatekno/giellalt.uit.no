@@ -117,6 +117,20 @@ individual pages.
 
 See [a separate document|../infra/infraremake/In-sourceDocumentation.html].
 
+Tips for in-surce documentation:
+* open two terminal widows
+* run forrest in one
+* run {{make}} in the other
+
+To run forrest:
+
+{{{
+forrest run -Dforrest.jvmargs="-Dfile.encoding=utf-8 -Djava.awt.headless=true"
+}}}
+
+To debug, edit the generated jspwiki file till the error is found, then correct
+it in lexc.
+
 !!! Tag conventions in the Giella infrastructure
 
 * [Language Independent Tags In The Giella
