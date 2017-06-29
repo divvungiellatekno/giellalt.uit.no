@@ -2,45 +2,93 @@
 
 Dokumeanta čilge mo galgá buoridit prestable-kataloga fin-smX ja nob-smX paralleallafiillaid.
 
+!!!Katalogat
+Proseassa: Vuos konverteret, ja dan maŋŋil parallelliseret.
+
+* __orig__: originálafiila (pdf, txt dahje html) ja meta-fiila (xsl)
+* __converted__: originálafiillat konverterejuvvojit xml-formáhtan. 
+Dáid fiillaid ii galgga divvut, muhto sáhttá rahpat daid jus háliida 
+geahččat mo konverteren lea lihkkostuvvan, omd. mo prográmma dovdá gielaid.
+* __tmx__: fiillat mat lea parallelliserejuvvon. Mii háliidit divvut 
+orig-máhpas nu ollu go vejolaš nu ahte tmx-fiillat automáhtalaččat 
+šaddet buorit. Sihko fiillaid mat eai sisttisdollet parallealla teavsttaid.
+
+
+!!!Bargovuohki
+
 # Iskka tmx-fiilla prestable-katalogas
 # Divo xsl-fiilla orig-katalogas
 # Parallellisere ođđasit
 # jna.
 
-!!!Iskka tmx-fiilla prestable-katalogas
+!!Iskka tmx-fiilla prestable-katalogas
 
 Mana buot nob2sma/fin2smX-tmx-katalogaid alfabehtalaččat
 čađa (vuos ''freecorpus/prestable/tmx/nob2sma/admin/depts/other_files'' 
 ja dan maŋŋel čuovvovaš kataloga (''udir.no'') jna.:
+Lea vejolaš ráhpat buot fiillaid oktanaga kommandolinjjás: {{open *.tmx}}
+dahje dušše oasi, jos lea hui máŋgga fiilla: {{open a*.tmx}} jna.
 
-Jos .tmx-fiillas ii leat parallealla sisdoallu, de geahččal rievdadit xsl-fiilla.
+Jos .tmx-fiillas ii leat parallealla sisdoallu:
+* raba fiillaid orig-máhpas, oaidnit sisdoalu: 
+** html {{open fiila.html}}, dahje 
+** pdf {{open fiila.pdf}} dahje 
+** txt {{open fiila.txt}} 
+* {{see fiila.html.xsl}} redigeret xsl-fiilla.
+* vej. {{see fiila.html}} redigeret html-fiilla.
 
-Lea vejolaš ráhpat buot fiillaid oktanaga kommandolinjjás: {{open *.html}}
-dahje dušše oasi, jos lea hui máŋgga fiilla: {{open a*.html}} jna.
-
-!!!Divo xsl-fiilla orig-katalogas
+!!Divo xsl-fiilla orig-katalogas
 
 Mo rievddadit xsl-fiilla jos paralleallafiillas lea feaila:
 
 * jos paralleallafiila ii leatge parallealla, de váldde liŋkka eret
 ** oza ''"parallels"''
-* jos multilingual/monolingual ii leat riekta, de divu
-** oza ''"monolingual"''
-* ''mlangs'' galgá leat ok (dušše gielat, mat leat dokumeanttas)
+* jos multilingual/monolingual ii leat riekta, de divo
+** oza ''"monolingual"'' (1 mearkkaša ahte lea monolingual)
+**  divo, jus dárbu: <xsl:variable name="mainlang" select="'sma'"/>
+**  divo, jus dárbu: <xsl:variable name="mlangs"> 
+** ''mlangs'' galget dušše gielat, mat leat dokumeanttas
+** ''mlangs'' galgá leat guorus jus monolingual
 * lasit almmuhanjagi (jus ii leat), jus lea vejolaš dan oaidnit
 ** oza ''"year"''
-* geavahit iešguđetlágan skip-funkšuvnnaid (Reetta diehtá)
+* geavat iešguđetlágan skip-funkšuvnnaid (Reetta diehtá)
+
+!!Divo html-fiilla orig-katalogas
+* Raba geahččat sisdoalu: {{open fiila.html}}
+* Raba divvut: {{see fiila.html}}
+* Raba geahččat konverterema (omd. gielladovdama): converted-máhpas {{see fiila.html.xml}}. Dán fiilla it galgga divvut, danne go dat genererejuvvo
+
+!Maid sáhtát divvut orig-fiillas?
+Sáhtát orig-fiillas sihkkut metateavstta, mii bilida parallelliserema dahje gielladovdama, omd.
+* Powered by ..., ja dalle ii galgga leat ''eng'' xsl-fiillas
+
+Sáhtát orig-fiillas divvut čielga typo, mii bilida parallelliserema, omd.
+* jus lea čuokkis gos galgá leat rihkku
 
 
-!!!Parallellisere ođđasit
+!!Parallellisere ođđasit
 
-jus lea rievdadan xsl-fiilla de vuos {{realign --convert fiillanamma}}
-ja dan maŋŋel {{realign fiillanamma}}
+jus lea rievdadan xsl-fiilla de 
+* vuos {{realign --convert fiila.tmx}}
+* ja dan maŋŋel {{realign fiila.tmx}}
 
-Jos ii veahket, de váldde tmx-fiilla eret prestable-katalogas:
+Jos ii veahket, de sihko tmx-fiilla ja dan html-veršuvnna prestable-katalogas, e.g.
 
 {{{
-svn rm fiila.tmx
-svn rm fiila.tmx.html
-svn ci -m "ii lean parallealla" fiila.tmx
+svn rm prestable/tmx/nob2sma/facta/fiila.tmx
+svn rm prestable/tmx/nob2sma/facta/fiila.tmx.html
+svn ci -m "ii lean parallealla" prestable/tmx/nob2sma/facta/fiila.tmx prestable/tmx/nob2sma/facta/fiila.tmx.html 
 }}}
+
+ 
+
+!!Konverterenprográmma buggat
+Čále listui ahte lea bugga, ja makkár dat lea, omd BUG-punktum dahje BUG-mellomtittel dahje BUG-språkgjenkjenning
+
+omd mo listu sáhttá leat (go kommentára lea linnjá álggus, de lea álki sorteret:
+{{{
+OK :  prestable/tmx/nob2sma/facta/gielemnastedh.no/apen-barnehagedag.html.tmx.html
+Sihkkon :  prestable/tmx/nob2sma/bible/osko/index.php_kat_id=102_art_id=88.html.tmx.html
+To_be_fixed BUGpunktum (dahton loahpas) :  prestable/tmx/nob2sma/admin/sd/samediggi.no/sametinget-inviterer-til-duodjikonferanse-27.-28.-januar-2016.html.tmx.html
+}}}
+
