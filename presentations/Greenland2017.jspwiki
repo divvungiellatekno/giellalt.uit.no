@@ -157,10 +157,27 @@ See [this document|../infra/infraremake/AddingMorphologicalTestData.html]
 
 !!! Developer Tools
 
-Short intro to the tools in the {{devtools/}} directory.
+Short intro to the tools in the {{devtools/}} directory:
+
+{{{
+check_analysis_regressions.sh
+generate-*-wordforms.sh
+test_ospell-office_suggestions.sh
+}}}
 
 !!! Refactoring the code
 
 When the Yaml files are covering the relevant parts of lexc, one can rewrite the
 lexc code and at the same time ensure that the analysis doesn't change. One can
 also use one of the {{devtools/}} tools to help in that process.
+
+This can also be seen the other way: when you know what area of the grammar you
+want to change, you write yaml tests to specify the intended output, and work on
+the grammar until you get there.
+
+!!!Excercises and practical work
+
+* correct bugs identified
+* search for new bugs
+* change tags
+* run tests
