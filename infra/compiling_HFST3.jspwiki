@@ -10,16 +10,30 @@ HFST3 abstracts over the different backends, and will make it easy to add
 support for new backends in the future, to support even more FST source code and
 transducer conversion options.
 
-!!! The simple installation
+!!! The simple installation (you download ready-made programs)
 
 Run these commands:
+
+__On Mac:__
 {{{
 curl http://apertium.projectjj.com/osx/install-nightly.sh > install-nightly.sh
 chmod a+x install-nightly.sh
 sudo ./install-nightly.sh
 }}}
 
-This downloads a shell script (1), makes it executable (2), and runs it (3). The shell script in turn will download and install prebuilt OSX binaries for:
+__On Linux ubuntu:__
+{{{
+wget https://apertium.projectjj.com/apt/install-nightly.sh -O - | sudo bash
+sudo apt-get -f install apertium-all-dev
+}}}
+
+__On Linux fedora (e.g. on gtlab):__
+{{{
+curl https://apertium.projectjj.com/rpm/install-nightly.sh |sudo bash
+sudo apt-get -f install apertium-all-devel
+}}}
+
+This downloads a shell script (1), makes it executable (2), and runs it (3). The shell script in turn will download and install prebuilt binaries for:
 
 * hfst
 * vislcg3
@@ -28,7 +42,7 @@ This downloads a shell script (1), makes it executable (2), and runs it (3). The
 You get the latest version of all required tools in one go, no compilation required! :)
 Rerun with regular intervals to get the latest updates.
 
-!!! Installing the hard way
+!!! Installing the hard way (you build the programs yourself)
 
 If you want to configure and compile the source code, do as follows:
 
