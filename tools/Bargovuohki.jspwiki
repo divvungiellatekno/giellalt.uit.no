@@ -54,19 +54,51 @@ Mo rievddadit xsl-fiilla jos paralleallafiillas lea feaila:
 * lasit almmuhanjagi (jus ii leat), jus lea vejolaš dan oaidnit
 ** oza ''"year"''
 * geavat iešguđetlágan skip-funkšuvnnaid (Reetta diehtá)
+* čuokkis gos galgá leat rihkku mii fikset .xsl-fiillas
+
+
+
+!!Divo html-konverteren corpustools/htmlcontentconversion.py
+
 
 !!Divo html-fiilla orig-katalogas
 * Raba geahččat sisdoalu: {{open fiila.html}}
 * Raba divvut: {{see fiila.html}}
 * Raba geahččat konverterema (omd. gielladovdama): converted-máhpas {{see fiila.html.xml}}. Dán fiilla it galgga divvut, danne go dat genererejuvvo
 
+
 !Maid sáhtát divvut orig-fiillas?
+
+Nu unnit go vejolaš. Jos lea vejolaš fikset ášši .xsl-fiillas, de daga dan.
+Jos lea jierpmálaš divvut prestable-tmx-fiillas, de daga dan.
+
+__Metateaksta__
+ 
 Sáhtát orig-fiillas sihkkut metateavstta, mii bilida parallelliserema dahje gielladovdama, omd.
 * Powered by ..., ja dalle ii galgga leat ''eng'' xsl-fiillas
 
-Sáhtát orig-fiillas divvut čielga typo, mii bilida parallelliserema, omd.
-* jus lea čuokkis gos galgá leat rihkku
+Fuom, ahte "buhtis" metateaksta (taggaid haga) lea álkit sihkkut .xsl-fiillas.
 
+__html-taggat__
+
+Jos parallelliseren manná endorii html-taggaid haga, ja lea váttis daid divvut .xsl:as, de daid sáhttá rievdadit originálas. Muhto jos lea álkibut divvut tmx-teavstta, de daga na:
+
+# svn mv prestable/../fiila.tmx stable/../fiila.tmx + svn ci 
+# rievdat <tu>-nodaid
+# sjekke sisa divvojuvvon veršuvnna
+
+
+Tagga (+ attribuhtta) lea vejolaš váldit eret das:
+ 
+{{$GTHOME/tools/CorpusTools/corpustools/htmlcontentconverter.py}} 
+
+Prinsihpas lea maid vejolaš dahkat dan juohke fiillas, .xsl:as:
+
+{{{
+    <xsl:variable name="skip_elements" select="'.//body/div[1]/h2[1]'"/>
+}}}
+
+muhto dat ii velge doaimma.
 
 !!Parallellisere ođđasit
 
@@ -90,6 +122,10 @@ svn rm prestable/tmx/nob2sma/facta/fiila.tmx.html
 svn ci -m "ii lean parallealla" prestable/tmx/nob2sma/facta/fiila.tmx prestable/tmx/nob2sma/facta/fiila.tmx.html 
 }}}
 
+Lea vejolaš
+* váldit eret teavstta nob-fiillas
+* váldit nob-teavstta eret smX-fiillas
+** muhto buoret lea dahkat dan tmx-fiillas prestable-katalogas stable-katalogii.
  
 
 !!Konverterenprográmma buggat
