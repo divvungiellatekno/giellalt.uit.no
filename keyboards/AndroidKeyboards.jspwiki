@@ -1,11 +1,8 @@
 !!!Local setup and build instructions
 
-To ensure you have all bits in place for building Android keyboard apps, follow
-the instructions on
-[github|https://github.com/divvun/kbdgen/blob/master/docs/targets/android.md].
-
-Also, we use [Fastlane|http://fastlane.tools] to automatise certain aspects of
-mobile app building.
+# Follow the instructions on
+  [github|https://github.com/divvun/kbdgen/blob/master/docs/targets/android.md].
+# Install [Fastlane|http://fastlane.tools].
 
 In addition to that, there are a couple of more things to be aware of:
 * you need access to the signing certificate - ask Børre or Sjur
@@ -25,8 +22,26 @@ kept around in plain text!
 
 The passwords are used to unlock the signing certificate.
 
+__NB!__ To ensure that the version number gets correctly updated in the apk file
+remove the android/deps/ dir before building. This needs to be automated in the
+future.
+
 !!!Google Play instructions
 
 The first time you build a new keyboard app, there is a certain amount of
 manual work in Google Play. After this, updates to most things can be done using
-the command line via fastlane.
+the command line via fastlane. (__NB!__ This is not yet implemented!)
+
+!!First time setup
+
+# You need to give the app a name and an ID
+# You need to provide a minimum of screen shots and descriptions for the
+  Google Play store entry (what users are going to see when they open the Play
+  page for the app)
+# You also need to provide an icon, normally the same as the app icon
+
+Both screen shots and icon should be in exact the correct size/resolution.
+Please see the [icon page|Icons.html] for a command to resize graphic files.
+
+Google will guide you through all the necessary steps, just follow the on-screen
+instructions.
