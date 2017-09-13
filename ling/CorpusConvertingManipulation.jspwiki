@@ -62,7 +62,7 @@ I denne:
 !!Skip words
 ! pdf
 
-Denne bør forklares nærmere
+Dette fungerer bare når det ikke er span eller em e.l. Hva gjør vi når det er det?
 {{{
     <xsl:template match="p[parent::body][not(./em | ./span)][text()]">
         <xsl:variable name="text" select='current()' />
