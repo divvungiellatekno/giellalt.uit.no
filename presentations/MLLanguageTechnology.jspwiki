@@ -19,16 +19,73 @@ Both technologies developed here at HU :-)
 
 Both formalisms should be easily recognisable by linguists.
 
-!Example - twolc
+!Example — twolc
 
-!Example - xfst / rewrite rules
+{{{
+Alphabet m p ;
 
-!Example - lexc
+Rules
 
-!Conclusion
+"N:m rule"
+N:m <=>  _ p: ;
 
-End result: computer model of morphology and morphophonology. This model can analyse and generate word forms.
+"p:m rule"
+p:m <=> :m _  ;
+}}}
 
+Target changes:
+
+{{{
+kaNpat
+kammat
+}}}
+
+!Example — rewrite rules
+
+The same changes written using rewrite rules:
+
+{{{
+[ N -> m || _ p ]
+.o.
+[ p -> m || m _ ];
+}}}
+
+Rewrite rules are ordered, twolc rules are not.
+
+!Example — lexc
+
+A very simplistic English lexicon:
+
+{{{
+Multichar_Symbols
++V +Pres +3Sg +PresPtc +Past
+
+! Lexicon containing lexical stems:
+LEXICON Root
+ walk V ;
+ talk V ;
+ pack V ;
+
+! Lexicon containing POS tag only:
+LEXICON V
+ +V: V-suff ;
+
+! Lexicon containing inflectional suffixes and corresponding tags:
+LEXICON V-suff
+ +Pres+3Sg:s   # ;
+     +Past:ed  # ;
+  +PresPtc:ing # ;
+     +Pres:    # ;
+}}}
+
+!Summary
+
+End result: computer model of morphology and morphophonology. This model can
+analyse and generate word forms.
+
+!!Sentence level technology
+
+VISLCG3 - xxx
 
 !!!Tools for linguistic research
 
@@ -36,12 +93,41 @@ End result: computer model of morphology and morphophonology. This model can ana
 * analysers
 * generators
 * analysed text
-
 * try out different phonological models of a language
 * use model to process (analyse) text
 
+!!Explicit Grammars
+
+* Writing for a computer forces you to be explicit about every aspect of the
+  grammar.
+* This can bring forth new areas of the grammar to research. Examples from the
+  work on the Sámi languages:
+** compounding
+** derivations
+** phonological alternations in Inari Sami
+** North Sámi syntax
+
+!!Analysers
+
+* morphological analysers can themselves be used as a tool for resarch (see
+  "Analysing text", next)
+* a full-size lexicon can be used as source material for lexical research
+
+!!Generators
+
+* morphological generators will ruthlessly display all overgenerations, and thus
+  give valuable feedback about the grammar model, and the assumptions built in.
+
+!!Use Model To Process (Analyse) Text
+
+* The most important use of a morphological analyser is to analyse text.
+  Together with disambiguation and syntactic analysis, this can be used to
+  build an analysed corpus that can be searched for different linguistic
+  patterns.
+
 => Korp (searchable corpus of analysed texts)
 
+[images/Korp.png]
 
 !!!Tools for speakers of minority languages
 
