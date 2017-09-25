@@ -156,12 +156,14 @@ enough work).
 
 !!!Tools for speakers of minority languages
 
+The listed tools are all supported by the Giella infrastructure.
+
 * keyboards (desktop and mobile, soon with spellers)
 * spell checkers
 * morphologically aware hyphenators
 * morphologically aware dictionaries
 * grammar checkers
-* MT
+* Machine translation
 * iCALL
 * text-to-speech
 
@@ -207,14 +209,80 @@ modes:
 * The speller is essentially the lexical fst pluss an error model to create
   suggestions for misspelled words
 * presently all spellers built using the Giella infrastructure is using Hfst
+* every analyser can be turned into a speller in the Giella infrastructure,
+  using a single configure option
+* spellers are presently built for LibreOffice, and through an external service
+  also for MS Office for Windows (for languages known to Windows)
+* work is ongoing to build system-wide spellers for Windows, macOS and Linux
 
 !!Morphologically Aware Hyphenators
+
+* especially important for compounding languages
+* built just like spellers using the lexical fst, but such that word boundaries
+  + hyphenation rules converts input strings to the hyphenated counterparts
+
 !!Morphologically Aware Dictionaries
+
+* if not making spellers first, then morphologically aware dictionaries is
+  typically the alternative first tool to build
+* morphological analysis is used on the input to arrive at a list of lemma
+  candidates for a given input
+* this is very important for languages with complex morphophonology or a lot of
+  prefixation, but is generally helpful for all languages with a decent amount
+  of morphology
+
 !!Grammar Checkers
-!!Mt
+
+* the first grammar checker in the Giella infrastructure is being built now
+* it uses a modified version of the morphological analyser together with
+  targeted CG rules for error detection and correction
+* at least the following error types are targeted in this first version:
+** wrongly split compounds ("pika juna" vs "pikajuna")
+** congruency errors
+** real word errors
+
+To handle wrongly split compounds, we convert word boundaries in compounds into
+spaces, and try to analyse the result. If we get an analysis, it is given as an
+error candidate, subject to further disambiguation and error detection rules.
+
+!!Machine translation
+
+* morphological analysis -> disambiguation -> transfer dictionary -> lexical
+  selection -> transfer rules -> output generation
+* we use Apertium as our MT infrastructure
+* analysers, generators and disambiguators are built in the Giella
+  infrastructure
+* present target is:
+** mainly related languages
+** mainly understanding
+* further ahead:
+** better quality and coverage
+** possibly near-production quality between near-related languages
+
 !!Icall
+
+* language technology is used in several places to
+** analyse student input
+** analyse text to generate new excercises
+
 !!Text-To-Speech
 
+* so far only one TTS system: North Sámi
+* built using commercial and closed-source technology
+* we want to replace as much as possible using open-source technology:
+** text processing using Hfst and Vislcg3
+** synthesis probably using the Festival system
 
+!!!Conclusions
 
-
+* The Giella infrastructure is targeted at low-resource and small language
+  communities, initially the Sámi ones
+* it supports building a number of essential tools for both research and the
+  language communities themselves
+* everything is open source as far as possible
+* our infrastructure is just one of several, but it does showcase what is
+  possible to do
+* the decission to do everything rule-based is driven by three observations:
+** with little data, current alternative technologies are not usable
+** as long as there are speakers, there are language workers
+** reuse is essential - one can not afford to do the same job multiple times
