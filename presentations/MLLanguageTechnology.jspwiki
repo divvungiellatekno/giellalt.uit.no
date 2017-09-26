@@ -198,7 +198,17 @@ modes:
     Á Š E R T Y U I O P Â
     A S D F G H J K L Ä Đ
       Ž Z Č C V B N M Ŋ
+
+longpress:
+  Á: Q
+  A: Å   Á À Â Ã Ạ
+  á: q
+  a: å   á à â ã ạ
 }}}
+
+* [Skolt Sami desktop keyboard|../keyboards/kbdlangdocs/sms/sms-macos.yaml]
+
+(Demo: Skolt Sámi macOS keyboard)
 
 !!Spell Checkers
 
@@ -214,6 +224,8 @@ modes:
 * spellers are presently built for LibreOffice, and through an external service
   also for MS Office for Windows (for languages known to Windows)
 * work is ongoing to build system-wide spellers for Windows, macOS and Linux
+
+(Demo: gaelic)
 
 !!Morphologically Aware Hyphenators
 
@@ -245,6 +257,8 @@ To handle wrongly split compounds, we convert word boundaries in compounds into
 spaces, and try to analyse the result. If we get an analysis, it is given as an
 error candidate, subject to further disambiguation and error detection rules.
 
+(Demo: [grammar checker|http://gtweb.uit.no/gc/])
+
 !!Machine translation
 
 * morphological analysis -> disambiguation -> transfer dictionary -> lexical
@@ -259,6 +273,8 @@ error candidate, subject to further disambiguation and error detection rules.
 ** better quality and coverage
 ** possibly near-production quality between near-related languages
 
+(Demo using Ávvir)
+
 !!Icall
 
 * language technology is used in several places to
@@ -272,6 +288,8 @@ error candidate, subject to further disambiguation and error detection rules.
 * we want to replace as much as possible using open-source technology:
 ** text processing using Hfst and Vislcg3
 ** synthesis probably using the Festival system
+
+(Demo using Ávvir)
 
 !!!Conclusions
 
@@ -290,3 +308,9 @@ error candidate, subject to further disambiguation and error detection rules.
 !!Language coverage
 
 [images/gtlangs_circumpolar_names.png]
+
+!!!Hands-on on Thursday
+
+* design a mobile keyboard
+* add a word to the lexc source code, build a speller and test it in LO
+** requires unix shell + some svn checkouts
