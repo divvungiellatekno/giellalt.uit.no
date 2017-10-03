@@ -68,14 +68,14 @@
             command to tokenise, analyse and print the output in a CG
             compatible format is:</p>
 
-            <source>cat testfile.txt | hfst-tokenise --giella-cg tools/preprocess/tokeniser-disamb-gt-desc.pmhfst</source>
+            <source>cat testfile.txt | hfst-tokenise --giella-cg tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst</source>
 
             <p>In case the transducer contains weights, the constraint grammar may make use of them, as follows</p>
 
-            <source>cat text | hfst-tokenise --giella-cg tools/preprocess/tokeniser-disamb-gt-desc.pmhfst | ...</source>
+            <source>cat text | hfst-tokenise --giella-cg tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst | ...</source>
 
             <p>Please note that the file
-                <code>tools/preprocess/tokeniser-disamb-gt-desc.pmhfst</code> is
+                <code>tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst</code> is
                 not built by default. To enable building it, configure as
                 follows:</p>
             <source>./configure --with-hfst --enable-tokenisers</source>
