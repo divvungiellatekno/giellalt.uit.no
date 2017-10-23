@@ -47,6 +47,67 @@ Vi trenger entrier for  verdiger som 'Der/l' eller 'VAbess' i ordboken.
 
 Status: TODO
 
+!! BEHANDLING AV DERIVASJONER MED FLERE ANALYSER
+
+
+! 1: Når samme lemma + dertagg med og uten Err/Orth: 
+Oppslag og høyremarg: vis bare den uten Err/Orth
+
+{{{
+"skuvla+N+Der/Dimin"
+
+skuvllaš
+skuvllaš	skuvla+N+Der/Dimin+N+Sg+Nom <==========
+skuvllaš	skuvla+N+Der/Dimin+N+Sg+Gen+Err/Orth-nom-gen
+skuvllaš	skuvla+N+Der/Dimin+N+Sg+Acc+Err/Orth-nom-acc
+}}}
+
+! 2: Når samme lemma + dertagg uten Err/Orth: vis bare en gang
+Oppslag: vis bare en gang   Høyremarg: vis alle analyser
+
+{{{
+"skuvla+N+Der/Dimin"
+
+skuvllažiid
+skuvllažiid	skuvla+N+Der/Dimin+N+Pl+Gen  
+skuvllažiid	skuvla+N+Der/Dimin+N+Pl+Acc
+}}}
+
+! 3: Når alle lemma + dertagg er med Err/Orth: vis bare en gang
+Oppslag: vis bare en gang   Høyremarg: vis alle analyser
+
+{{{
+kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Nom  
+kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Gen+Err/Orth-nom-gen
+kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Acc+Err/Orth-nom-acc
+
+}}}
+
+
+! 4: Når det er både lemma og lemma + dertagg: 
+Oppslag: vis bare lemma som er uten dertagg   Høyremarg: vis bare lemma som er uten dertagg ?
+
+{{{
+geavahit	geavvat+V+IV+Der/h+V+TV+Inf
+geavahit	geavahit+V+TV+Inf     <==========
+}}}
+
+! 5: Når det lemma + dertagg og lemma + dertagg + dertagg:
+Oppslag: vis bare lemma med færrest dertagger   Høyremarg: vis bare lemma med færrest dertagger  ?
+
+{{{
+geavahuvvot	geavvat+V+IV+Der/h+V+TV+Der/PassL+V+IV+Inf
+geavahuvvot	geavahit+V+TV+Der/PassL+V+IV+Inf  <==========
+
+geavahuvvogoahtit	geavvat+V+IV+Der/h+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf
+geavahuvvogoahtit	geavahit+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf  <==========
+}}}
+
+
+
+
+
+
 
 
 !! Muligens ordbok for Cornish-English
