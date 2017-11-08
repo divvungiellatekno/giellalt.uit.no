@@ -61,6 +61,7 @@ __Grammatikkontroll:__
 * ser orda i samanheng, analyserer heile setninga
 * kan finna feil som stavekontrollen ikkje kan finna (ekteordsfeil, dvs skrivefeil som resulterer i eit anna, ekte ord)
 * kan òg finna feil mellom ord (morfosyntaktiske feil)
+* prosjektet har til no berre jobba med nordsamisk, men rammeverket er på plass for alle språk
 
 Demo
 
@@ -75,15 +76,59 @@ Divvun har ein eigen infrastruktur for å byggja tastatur for:
 
 Alt frå same base.
 
+Målsetjing: å gjera det lett og effektiv å skriva dei ulike samiske språka.
+
 !!Tastatur (2)
 
 * Kan òg eksportera til CLDR-format
-* CLDR blir brukt som ressurs for alle dei store operativsystema
-* Dvs at etter at tastaturet har vorte definert, kan vi gjera vårt for at tastaturet skal finnast over alt
+** CLDR blir brukt som ressurs for alle dei store operativsystema
+** Dvs at etter at tastaturet har vorte definert, kan vi gjera vårt for at tastaturet skal finnast over alt
 * Giellagáldu bør vera vedtaksorgan for samisk tastaturutforming, dvs at GG sine vedtak om tastaturutforming bør bli offisiell standard
-* slike standardar er viktige
+* jobbar no med å få ferdig enaresamisk tastatur slik at det er på plass i god tid før studenteksamen våren 2018
+** studenteksamen blir skrive på eit Linux-system, så vi __må__ ha ein Linux-definisjon av tastatura
+* vil gjerne gjera det same med skoltesamisk
+* har laga tastatur for lule- og sørsamisk
 
 !!Tekst-til-tale
+
+* gjer at datamaskina kan lesa opp tekst for brukaren
+* (kort demo)
+* vi vil i framtida standardisera tekstprosesseringa slik at alle språk i infrastrukturen vår har den biten på plass
+
 !!Språklæring
-!!Ordbøker
+
+* Det meste gjort av Giellatekno
+* men vi har ein mobilapp for å læra seg grunnleggjadne sørsamisk, utvikla i lag med Aajege på Røros
+* [gielese.no|http://gielese.no]
+
 !!Oversettelse
+
+* Mykje gjort av Giellatekno
+* Divvun har hatt eit prosjekt i lag med GT for å laga maskinomsetjing frå nordsamisk til lule- og sørsamisk
+** kvaliteten enno ikkje bra nok, sørsamisk meir ulik nordsamisk enn venta
+* I tillegg har vi nedlastbare omsetjingsminne for profesjonelle omsetjarar
+* vi jobbar med å få på plass ein arbeidsbenk for omsetjarar
+* termar og tilgang på termsamlingar viktig for omsetjarane
+
+!!Ordbøker og terminologi
+
+* Giellatekno har NDS
+* Divvun har [satni.org|http://satni.org]
+* Innhaldet er stort sett det same, men det meste av termane i termwikien er berre tilgjengeleg i [satni.org|http://satni.org]
+* Dei to webappane har ulik filosofi og fungerer delvis ulikt -> ulike målgrupper og bruksområde
+
+Demo
+
+!!Ordbøker og terminologi (2)
+
+* Divvun har utvikla Termwikien med basis i det arbeidet som er gjort ved Helsingfors universitet
+* Divvun har tilpassa og vidareutvikla Termwikien
+* .. og vil gjerne utvikla han vidare for at Termwikien skal bli så godt eit verkty som mogleg for Giellagáldu
+* endringar i Termwikien blir lagt inn i satni.org kvar kveld
+* Termane frå termwikien blir brukt fleire stader:
+** dei blir lagt inn i analysatorane / stavekontrollane
+** dei blir lagt inn i maskinomsetjinga
+
+!!Ordbøker og terminologi (3)
+
+[images/TermWikiProcess.png]
