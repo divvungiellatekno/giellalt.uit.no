@@ -18,7 +18,7 @@ Now you are ready for the merge.
 
 !!How to edit the und.timestamp file
 
-You shall edit the top of the file only.
+You should edit the top of the file only.
 
 Before you touch it the 2-3 first lines of
 {{giella-templates/langs-templates/und/und.timestamp}} look like
@@ -44,8 +44,8 @@ Added WANT_OAHPA option for analysers for all languages (until now only generato
 }}}
 
 Then you check in the edited und.timestamp and the files that were changed in 
-{{giella-templates/langs-templates/und/}}, preferabely __in the same checkin__ and
-__with the same message__ as you added to und.timestamp.
+{{giella-templates/langs-templates/und/}}, preferabely __in the same commit__
+and __with the same message__ as you added to und.timestamp.
 
 
 !!!Preferred: Merge all languages using make
@@ -224,3 +224,40 @@ Make sure that the language code is listed in:
 
 If not, add it to the list of language codes in those files. The same holds for
 the same files in the other {{langs}} directories.
+
+!!!Conflicts after the merge
+
+The basis for the scalability of the infrastructure is to avoid svn conflicts,
+so that all major updates can be rolled out automatically. From time to time
+you need to change things that will eventually lead to conflicts, either
+systematically or more randomly depending on the language.
+
+!!Systematic conflicts
+
+These can be because there has been some change to the use of the language code
+placeholder:
+
+{{{
+__UND__
+}}}
+
+In this case, merge as usual, and then do the following:
+
+{{{
+svn resolve --accept theirs-full */path/to/conflict/file
+
+time make replace_langcodes FILE=path/to/conflict/file
+}}}
+
+Now everything should be ok again, __BUT:__
+Review the changes before committing!
+
+There can also be other causes of systematic conflicts, review in each case, and
+try to find an automated approach to resolving the conflicts.
+
+!!Random conflicts
+
+If there are just random conflicts because you needed to update one of the
+language template files (template source files), then there is no other way than
+resolving the conflicts manually. Preferably use a graphical merge and diff tool
+to ensure you only changes things that need to be changed.
