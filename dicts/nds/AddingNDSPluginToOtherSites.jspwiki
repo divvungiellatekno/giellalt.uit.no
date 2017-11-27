@@ -29,7 +29,7 @@ the selectors refer only to things that involve NDS. If this turns out not to
 be the case, report a bug.
 
 {{{
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
           href="http://PROJNAME.oahpa.no/static/css/neahttadigisanit.css"></link>
 }}}
 
@@ -42,16 +42,17 @@ is present when the file is called.
 
 
 {{{
-    <script type="text/javascript" 
+    <script type="text/javascript"
             src="http://PROJNAME.oahpa.no/static/js/neahttadigisanit.jquery.min.js"></script>
 }}}
 
+You may add the JS file in the footer.
 
 !! Initializing the plugin
 
 The final step is to call the plugin. Typically, you will want to do this
 within a jQuery event-- usually when the document is ready. This code may be
-included in its own {{script}} node, but must run after the {{.js}} file has been
+included in its own {{script}} node (which you can place in the footer), but must run after the {{.js}} file has been
 included above.
 
 {{{
@@ -60,11 +61,13 @@ included above.
 
         // Initialize and configure NDS
         $(document).selectToLookup({
-            // This specifies the dictionary set to 
+            // This specifies the dictionary set to
             api_host: 'http://PROJNAME.oahpa.no/',
         });
     });
 }}}
+
+
 
 For most purposes you should be able to just copy and paste this JS snippet
 without changes. If you need another dictionary set, you may alter the
@@ -79,6 +82,7 @@ Mind the trailing slash.
 
 We are in the process of  making this functionality available on sites using
 SSL. The document will be updated when this is available.
+If PROJNAME = sanit you can replace http with https in all urls.
 
 !! Contact
 
