@@ -32,6 +32,7 @@ Sammensatte ord fungerer slik idag:
 * viessohaddi	viessu+N+Cmp/SgNom+Cmp#haddi+N+Sg+Nom
 * Både viessu og (#)haddi sendes til ordboka og vi får oversettelse av begge: 
 ** viessu = hus, haddi = pris
+* Hvis viessohaddi også er i ordboka, så blir også denne presentert med oversetting, øverst
 
 Derivasjoner (alle som starter med Der/ ):
 * borralit	borrat+V+TV+Der/l+V+Inf
@@ -50,7 +51,7 @@ Status: TODO
 !! BEHANDLING AV DERIVASJONER MED FLERE ANALYSER
 
 
-! 1: Når samme lemma + dertagg med og uten Err/Orth: 
+! 1: Når samme lemma + Der-tagg med og uten Err/Orth: 
 Oppslag og høyremarg: vis bare den uten Err/Orth
 
 {{{
@@ -62,7 +63,7 @@ skuvllaš	skuvla+N+Der/Dimin+N+Sg+Gen+Err/Orth-nom-gen
 skuvllaš	skuvla+N+Der/Dimin+N+Sg+Acc+Err/Orth-nom-acc
 }}}
 
-! 2: Når samme lemma + dertagg uten Err/Orth:
+! 2: Når samme lemma + Der-tagg uten Err/Orth:
 Oppslag: vis bare en gang - Høyremarg: vis alle analyser
 
 {{{
@@ -73,7 +74,7 @@ skuvllažiid	skuvla+N+Der/Dimin+N+Pl+Gen
 skuvllažiid	skuvla+N+Der/Dimin+N+Pl+Acc
 }}}
 
-! 3: Når alle lemma + dertagg er med Err/Orth:
+! 3: Når alle lemma + Der-tagg er med Err/Orth:
 Oppslag: vis bare en gang - Høyremarg: vis alle analyser
 
 {{{
@@ -84,23 +85,23 @@ kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Acc+Err/Orth-nom-acc
 }}}
 
 
-! 4: Når det er både lemma og lemma + dertagg: 
-Oppslag: vis bare lemma som er uten dertagg - Høyremarg: vis bare lemma som er uten dertagg ?
+! 4: Når det er både lemma og lemma + Der-tagg: 
+Oppslag: vis både leksikalisert lemma (øverst) og lemma med Der-tagg 
 
 {{{
-geavahit	geavvat+V+IV+Der/h+V+TV+Inf
-geavahit	geavahit+V+TV+Inf     <==========
+geavahit	geavahit+V+TV+Inf           <=
+geavahit	geavvat+V+IV+Der/h+V+TV+Inf <=
 }}}
 
-! 5: Når det lemma + dertagg og lemma + dertagg + dertagg:
-Oppslag: vis bare lemma med færrest dertagger - Høyremarg: vis bare lemma med færrest dertagger  ?
+! 5: Når det lemma + Der-tagg og lemma + Der-tagg  + Der-tagg :
+Oppslag: vis bare lemma med færrest dertagger - Høyremarg: vis bare lemma med færrest Der-tagg ? Vet ikke
 
 {{{
 geavahuvvot	geavvat+V+IV+Der/h+V+TV+Der/PassL+V+IV+Inf
-geavahuvvot	geavahit+V+TV+Der/PassL+V+IV+Inf  <==========
+geavahuvvot	geavahit+V+TV+Der/PassL+V+IV+Inf  <=
 
 geavahuvvogoahtit	geavvat+V+IV+Der/h+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf
-geavahuvvogoahtit	geavahit+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf  <==========
+geavahuvvogoahtit	geavahit+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf  <=
 }}}
 
 
