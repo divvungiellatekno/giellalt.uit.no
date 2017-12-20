@@ -4,7 +4,8 @@ Languages may be added to one of these three directories:
 
 # $GTHOME/langs (for languages we work on, or which have full-size transducers)
 # $GTHOME/experiment-langs (experiments of different kinds)
-# $GTHOME/startup-langs (when we do not know whether the work will lead to anything or not)
+# $GTHOME/startup-langs (when we do not know whether the work will lead to
+  anything or not)
 
 There are also a couple of directories for a few languages with a closed license
 and restricted access. Their structure is identical to the open ones above.
@@ -25,13 +26,35 @@ putting double quotes around the whole list:
 
 * {{make NEW_LANGS="LANGCODE1 LANGCODE2 LANGCODE3"}}
 
-{{./autogen.sh}} and {{./configure}} should only be required the first time.
+{{./autogen.sh}} and {{./configure}} should only be required the first time. If
+you get a message like:
+
+{{{
+make: *** No targets specified and no makefile found.  Stop.
+}}}
+
+then you need to run:
+
+{{{
+./autogen.sh
+./configure
+}}}
+
+After running these commands, everything should work as described.
 
 !!Result
 
-The above command will create a new directory for the specified language, and populate it with the required makefiles, autoconf files and template source files. The files are automatically added (but not committed) to svn, and all relevant {{svn:ignore}} properties are set.
+The above command will create a new directory for the specified language, and
+populate it with the required makefiles, autoconf files and template source
+files. The files are automatically added (but not committed) to svn, and all
+relevant {{svn:ignore}} properties are set.
 
-In addition, the new language code is added to {{$GTHOME/langs/Makefile.am}} and {{$GTHOME/langs/configure.ac}}. When you have checked the new language, and found that everything is ok, please {{svn commit}} ''both'' the new language dir, and the {{configure.ac}} and {{Makefile.am}} files. If the changes in those two files are not committed, the new language will be left out of future updates to the infrastructure.
+In addition, the new language code is added to {{$GTHOME/langs/Makefile.am}} and
+{{$GTHOME/langs/configure.ac}}. When you have checked the new language, and
+found that everything is ok, please {{svn commit}} ''both'' the new language
+dir, and the {{configure.ac}} and {{Makefile.am}} files. If the changes in those
+two files are not committed, the new language will be left out of future updates
+to the infrastructure.
 
 Now, to start doing real work, you must do one set of preparations still:
 
@@ -41,7 +64,10 @@ cd LANGCODE
 ./configure
 }}}
 
-Now you can start editing the source files, and whenever you want to make sure everything compiles, run {{make}}. Run {{make check}} to ensure that all defined tests are passed. Remember to update the test suits as you enhance the linguistic model!
+Now you can start editing the source files, and whenever you want to make sure
+everything compiles, run {{make}}. Run {{make check}} to ensure that all defined
+tests are passed. Remember to update the test suits as you enhance the
+linguistic model!
 
 !!Setting up the documentation page for the new language
 
@@ -64,20 +90,27 @@ where
    tools, also organised according to language
 
 
-This directory contains infrastructure for testing proofing tools for a number of languages. At present, only spellers are tested, but more tool types will be added in the future. The prerequisite for being able to test a speller is:
+This directory contains infrastructure for testing proofing tools for a number
+of languages. At present, only spellers are tested, but more tool types will be
+added in the future. The prerequisite for being able to test a speller is:
 
-* at least one speller gold-standard document for the targeted language, stored in {{{$GTFREE/[pre]stable/goldstandard/converted/}}}
+* at least one speller gold-standard document for the targeted language, stored
+  in {{{$GTFREE/[pre]stable/goldstandard/converted/}}}
 * a speller lexicon available in the test infra for that language
 * a command line speller for the lexicon(s) in the test infra
 
-The command to set up the basic testing infrastructure for a new language is exactly as above, with only one path adjustment:
+The command to set up the basic testing infrastructure for a new language is
+exactly as above, with only one path adjustment:
 
 # {{cd $GTBIG/prooftesting}}
 # {{$GTCORE/scripts/new-language.sh LANGCODE}}
 
 !!Result
 
-A new language will be added to the testing infrastructure, ready to be populated with speller lexicons. Add new lexicons in the appropriate places (see the other languages for examples), and you should be ready to prepare the testing for your new language:
+A new language will be added to the testing infrastructure, ready to be
+populated with speller lexicons. Add new lexicons in the appropriate places
+(see the other languages for examples), and you should be ready to prepare the
+testing for your new language:
 
 {{{
 cd LANGCODE
@@ -85,7 +118,7 @@ cd LANGCODE
 ./configure
 }}}
 
-If everything is ok, at least one of the speller tests listed at the end of the {{./configure}} step should return ''yes'', after which you can just run {{make}}. If there is test data available in {{$GTFREE}}, the test(s) will run, and after a while the test results are written to an xml file.
-
-__TODO:__
-* add a build step to install the xml file in a location available to {{forrest}}, so that the test results can be viewed online as html and nice graphs
+If everything is ok, at least one of the speller tests listed at the end of the
+{{./configure}} step should return ''yes'', after which you can just run
+{{make}}. If there is test data available in {{$GTFREE}}, the test(s) will run,
+and after a while the test results are written to an xml file.
