@@ -3,41 +3,60 @@
 "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
     <header>
-        <title>The pipeline for the xserve corpus analysis</title>
+        <title>The pipeline for the corpus analysis</title>
     </header>
 
     <body>
         <section>
-            <title>Analysis</title>
-
-            <p>The analysis is done on the <code>boerre</code> account on <code>stallo</code>.</p>
-
-            <ol>
-                <li>Repositories are updated and converted files are fetched from the xserve to stallo. Details are found in <a href="https://gtsvn.uit.no/langtech/trunk/tools/stallo-analysis/pre_analysis.sh">$GTHOME/tools/stallo-analysis/pre_analysis.sh</a></li>
-                <li>Analysis is done on stallo. Details are found in <a href="https://gtsvn.uit.no/langtech/trunk/tools/stallo-analysis/analyse.sh">$GTHOME/tools/stallo-analysis/analyse.sh</a></li>
-                <li>Analysed files are synced to the xserve. Details are found in <a href="https://gtsvn.uit.no/langtech/trunk/tools/stallo-analysis/sync_analysed.sh">$GTHOME/tools/stallo-analysis/sync_analysed.sh</a></li>
-            </ol>
-
-            <p>The two first parts are done by this cron job:
-                <code>43 01 * * * . $HOME/.bash_profile &amp;&amp; $GTHOME/tools/stallo-analysis/pre_analysis.sh &amp;&amp; qsub -o $HOME/analysis.log -j oe $GTHOME/tools/stallo-analysis/analyse.sh</code>
+            <title>Pre analysis</title>
+            <p>
+                Tokenisers are built once a day on another machine than stallo.
+                The comments in
+                <a href="https://gtsvn.uit.no/langtech/trunk/tools/stallo-analysis/build-tokenisers.sh">
+                    $GTHOME/tools/stallo-analysis/build-tokenisers.sh
+                </a>
+                details what is being done.
             </p>
-            <p>The third part is done by this cron job:
-                <code>00 09 * * * source $HOME/.bash_profile &amp;&amp; $GTHOME/tools/stallo-analysis/sync_analysed.sh</code>
+            <p>The tokeniser build jobs are kicked off by this cronjob
+                <code>14 23 * * * export GTHOME=$HOME/gtsvn &amp;&amp; svn up -q $GTHOME/tools/stallo-analysis/build-tokenisers.sh &amp;&amp; $GTHOME/tools/stallo-analysis/build-tokenisers.sh</code>
+            </p>
+            <p>
+                The hfst tools are updated at least once a week from the nightly apertium repo.
+            </p>
+        </section>
+        <section>
+            <title>Analysis</title>
+            <p>
+                The analysis is done on the <code>boerre</code> account on <code>stallo</code>.
+                The comments in
+                <a href="https://gtsvn.uit.no/langtech/trunk/tools/stallo-analysis/analyse.sh">
+                    $GTHOME/tools/stallo-analysis/analyse.sh
+                </a>
+                details what is being done, including
+                <ul>
+                    <li>where converted files are fetched from</li>
+                    <li>what pipeline is used to analyse the converted files</li>
+                    <li>where analysed files are sent to</li>
+                </ul>
+            </p>
+            <p>The analysis is kicked off by this cronjob on stallo:
+                <code>00 01 * * * . $HOME/.bash_profile &amp;&amp; ls -l /home/boerre/svnrepos/main/langs/*/tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst &amp;&amp; svn up $GTHOME/tools/stallo-analysis/analyse.sh &amp;&amp; sbatch $GTHOME/tools/stallo-analysis/analyse.sh</code>
             </p>
         </section>
         <section>
             <title>Files and compilers</title>
-
-            <p>The xfst, hfst, vislcg3 and CorpusTools tools are installed in <code>~boerre/bin</code></p>
-
+            <p>
+                These are the repositeries found on stallo:
+            </p>
             <ul>
                 <li>The langtech repo: <code>~boerre/svnrepos/main/</code></li>
-                <li>The freecorpus repo: <code>~/boerre/svnrepos/freecorpus/</code></li>
-                <li>The boundcorpus repo: <code>~/boerre/svnrepos/boundcorpus/</code></li>
+                <li>The freecorpus repo: <code>~boerre/svnrepos/freecorpus/</code></li>
+                <li>The boundcorpus repo: <code>~boerre/svnrepos/boundcorpus/</code></li>
             </ul>
-
-            <p>The "xfst" mode found in <a href="https://gtsvn.uit.no/langtech/trunk/tools/CorpusTools/corpustools/xml/modes.xml">$GTHOME/tools/CorpusTools/corpustools/xml/modes.xml</a> is the pipeline for analysing files.</p>
-
+            <p>
+                The xfst, hfst, vislcg3 and CorpusTools tools are installed in <code>~boerre/bin</code>
+                on stallo.
+            </p>
             <section>
                 <title>hfst: Build commands</title>
                 <source>cd ~/hfst/
@@ -50,7 +69,6 @@ module load gcc/4.9.1
 make
 make install</source>
             </section>
-
             <section>
                 <title>vislcg3: Build commands</title>
                 <source>module load cmake/3.1.1
@@ -62,12 +80,20 @@ svn up
 make
 make install</source>
             </section>
-
             <section>
                 <title>CorpusTools: Install commands</title>
                 <source>cd ~/svnrepos/main/tools/CorpusTools/
 svn up
 python setup.py install --user --install-scripts=$HOME/bin</source>
+            </section>
+            <section>
+                <title>Environment variables on stallo</title>
+                <p>
+                    These environment variables are set on stallo to make hfst and vislcg3
+                    work as expected:
+                </p>
+                <source>export PATH=$HOME/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/lib:$LD_LIBRARY_PATH</source>
             </section>
         </section>
     </body>
