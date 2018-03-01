@@ -1,4 +1,4 @@
-There are typically to maintenance cases:
+There are typically two maintenance cases. You want to:
 
 * set some (default) {{svn:ignore}} on a new directory 
 * change the {{svn:ignore}} on a directory from the default/existing to
@@ -8,8 +8,8 @@ Both will be described below.
 
 !!!Set svn:ignore
 
-The commands to update the {{svn:ignore}} property for all dirs in all languages
-are:
+The (two) commands to update the {{svn:ignore}} property for all dirs in all languages
+in the langs/ catalogue are (do ''cd startup-langs'' etc for the others):
 
 {{{
 cd langs/
@@ -71,7 +71,8 @@ They are applied to the template type as indicated by the last part of their
 filename ({{langs}} or {{prooftesting}}).
 
 Open the desired file, edit it following the code structure that is there, and
-when done, run the svn:ignore commands described above.
+when done, run the svn:ignore commands described above. Look for the name of the folder
+you want to change svn:ignore for, and add the required strings.
 
 __NB!__ Remember to commit the changes to these scripts after you have edited
 them!, and to commit the changes to each and every catalogue that got the new setting.
