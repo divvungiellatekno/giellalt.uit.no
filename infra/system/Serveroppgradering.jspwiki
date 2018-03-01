@@ -1,48 +1,196 @@
-
 Her spesifiserer vi kva vi treng.
+
+Det er tre ulike saker
+
+# Ny maskin som erstatning for divvun-servaren
+# Nye virtuelle servarar
+# Utvida minne for eksisterane virtuelle servarar
+
+!!! Ny fysisk maskin som erstatning for divvun-servaren
+
+Stoda no:
+
+* 33% av opprinnelig størrelse (fra 830GB til 230GB)
+
+
+Tenester som går på XServen no:
+* nettsidene blir bygde (forrest via static-divvun.py)
+* nettsidene blir servert (giellatekno.uit.no, divvun.no, xx)
+* spellerserver x 2
+* nedlastingsfiler (stavekontrollar, tastatur, ...)
+
+Tenester som IKKJE går på XServen no (men tidlegare):
+* Jabber
+* Bugzilla
+* Korpusbygging (no på gtweb)
+* SEE-servaren => bør setjast i gang
+* TimeMachine => bør setjast i gang att
+
+Framtida: 
+# Få opp så mykje som mogleg av det som gjekk der før på virtuelle servarar
+# vurdera stoda etter at dei virtuelle maskinene er på plass og prosessane flytta
+
+!!! Nye virtuelle servarar
+Steinar ventar på svar frå oss...
+
+!!! Utvida plåtelager for eksisterande virtuelle servarar
+
+!!Eksisterande plåtelagerutviding: 500 > 700 GB
+Steinar ventar på svar frå oss...
+
+Den "fysiske" disken er utvidet, vi må selv utvide filsystemet som ligger på den.
+
+!!Meir plåtelagerutviding
+Diskusjon + skriv inn nedanfor
 
 
 !!!Oversyn
 
+!!Prosessar og tenester vi har eller planlegg
+
+* Oahpa x 29 (gtoahpa + gtlab) -> prod: gtoahpa; testing: gtlab, begge treng fleire CPU-ar
+* NDS x 17 (gtoahpa + gtweb)   -> alle på satni.uit.no
+* konteaksta x 2 (gtoahpa + gtlab) -> gtoahpa
+* spellerserver x 2 (xserve) -> divvun.uit.no
+* grammatikkontrollserver (gtweb) -> divvun.uit.no
+* termwiki (satni.uit.no) - ok
+* satni.org (satni.uit.no) - ok
+* serving av nettsider x 4 (xserve) -> til ulike serverar avhengig av domene(?)
+* bygging av nettsider x 4 (xserve) (cpu-intensiv) - ok (men leggja til svn-repo av html som cache mellom bygginga og servinga?)
+* jabber (xserve) -> divvun.uit.no/giellatekno.uit.no
+* bugzilla (xserve) -> divvun.uit.no/giellatekno.uit.no
+* Korp x 6 (gtweb) - ok
+* gïelese (gtweb) - ok
+* Jorgal/MT-testing/Apertium x 2 (gtweb) - ok
+* cgi-bin (morfologisk analyse & generering) x 1 (per session) (gtweb) - ok
+* svn (gtsvn) - ok
+* git (gtsvn) - ok
+
+Planlagt/i kjømda:
+* oppdateringsserver/nedlasting for Páhka -> divvun.uit.no
+* REST -> virtuelt domene api.giella.uit.no mappa til  divvun.uit.no/giellatekno.uit.no (ei felles virtuell maskin)
+* byggjetenester for produkta våre (?) -> xserve
+* byggje fst-ar -> xserve
+* automatiserte oppdateringstenester (devops) -> xserve
+** nøyaktig innhald er enno ikkje spesifisert
+** mobilappar, tastatur, stavekontrollar, grammatikkontrollar, ordbøker, ...
+** oppdaterte nettenester: nettstavekontroll, nettgrammatikkontroll, nettordbøker, ...
+** automatisert testing og tilbakemelding
+** ...
+
+
+
+
 !! Hostnavn: gtsvn.uit.no
+
+Kor fort stig lagringsbruken frå svn? Når når vi taket?
+
 * CPU: 1
 * MINNE: 8GB
-* DISK 500GB
-* OS:
-* Export av felles disk?  ja/nei
+* OS: CentOS release 6.9 (Final)
+* Brukarkontoar: nokre få service-kontoar for dei relevante tenestene
+* Export av felles disk? Nei. Separat disk for versjonskontroll. Ev felles disk på xxx?
+** Tidlegare: Hjemmedisken for de andre virtuelle tjenerne
+* DISK
+{{{
+Filesystem            Size  Used Avail Use% Mounted on
+                       15G  6,8G  7,2G  49% /
+                      493G  460G  7,7G  99% /export # ligg på gtsvn, blir delt (=er felles) med alle andre maskiner
+}}}
+* 77G /home/svn
+
+Vi trenger å utvide / til gtsvn.uit.no fra 500GB til 700 GB
+
+Home har 102 katalogar
+
+
+Prosessar & tenestar på maskina:
+* svn
+* git
+* tjener for heimekatalogdeling (/export) => må fasast ut!
 
 !! Hostnavn: gtaohpa.uit.no
 * CPU:2
 * MINNE 8GB
-* DISK: 100GB
-* OS:  ?
-* Montering av fellesdisk: ja/nei
+* OS: CentOS release 6.9 (Final)
+* Brukarkontoar: ?
+* Montering av fellesdisk: ja
+* DISK:
+{{{
+                      9,5G  8,5G  527M  95% /
+}}}
+
+Prosessar & tenestar på maskina:
+* oahpa, konteaksta, 
+* NDS for sme, sma
+
+
 
 !! Hostnavn: gtlab.uit.no
-* CPU:
-* MINNE:
+* CPU: 2
+* MINNE: 8GB
+* OS: Fedora 24 (Twenty Four)
+* Brukarkontoar: ?
+* Montering av fellesdisk: ja
 * DISK:
-* OS:
-* Montering av fellesdisk: ja/nei
+{{{
+   21G   17G  2,6G  87% /
+}}}
+
+Prosessar & tenestar på maskina:
+* Oahpa for alle dei andre språka
+** kor mange språk?
+** er det ein eller fleire prosessar pr språk? dvs kor mykje last pr språk?
 
 !! Hostnavn: gtweb.uit.no
-* CPU:
-* MINNE
+* CPU: 2
+* MINNE: 8GB
+* OS: Fedora 26
+* Brukarkontoar: ?
+* Montering av fellesdisk: ja
 * DISK:
-* OS:
-* Montering av fellesdisk:
+{{{
+      115G   92G   19G  84% / (med analyserte tekster)
+}}}
 
-!! Hostnavn:  divvun.uit.no
+Prosessar & tenestar på maskina:
+* grammatikkontrollserver
+* satni.org (delvis)
+
+!! NY MASKIN: Hostnavn:  divvun.uit.no
 * CPU:
 * MINNE:
 * DISK:
 * OS:
+* Brukarkontoar: ?
 * Montering av fellesdisk:
 
-!! Hostnavn: giellatekno.uit.no
+Prosessar & tenestar på maskina:
+* heimesideservar
+
+!! NY MASKIN: Hostnavn: giellatekno.uit.no
 * CPU:
 * MINNE:
 * DISK
 * OS:
+* Brukarkontoar: ?
 * Montering av fellesdisk:
- 
+
+Prosessar & tenestar på maskina:
+* jabber
+* bugzilla
+* heimesideservar
+
+!! Hostnavn: satni.uit.no
+* CPU: 1
+* MINNE: 4GB
+* OS: Fedora 25 (Server Edition)
+* Brukarkontoar: ?
+* Montering av fellesdisk:
+* DISK
+{{
+    /dev/mapper/fedora-root     15G   11G  4,4G  72% /
+}}
+Prosessar & tenestar på maskina:
+* satni.org (delvis)
+* termwikien
