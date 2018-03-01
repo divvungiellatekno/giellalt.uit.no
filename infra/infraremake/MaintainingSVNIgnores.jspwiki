@@ -8,8 +8,16 @@ Both will be described below.
 
 !!!Set svn:ignore
 
-The (two) commands to update the {{svn:ignore}} property for all dirs in all languages
-in the langs/ catalogue are (do ''cd startup-langs'' etc for the others):
+The (two) commands to update the {{svn:ignore}} property for all dirs in all
+languages in the {{langs/}} catalogue are (do {{cd startup-langs}} etc for the
+others):
+
+{{{
+cd langs/
+make svnignores
+}}}
+
+An older, now deprecated and less robust way of doing it is:
 
 {{{
 cd langs/
@@ -18,15 +26,12 @@ cd langs/
 
 !!How it works
 
-The shell script above works on all language-containing dirs following the basic
-design of the new infrastructure, e.g. both the {{$GTHOME/prooftesting/}} and
-the {{$GTHOME/langs/}} dirs, even though they have very different directory
-structures, and different {{svn:ignore}} needs. This is handled by calling
-another shell script that is specific to each type of directory structure.
-
-The shell script above loops over all languages found in the directory you are
-located in (by peeking inside {{Makefile.am}}, and for each language runs the
-actual set-ignore shell script.
+The {{make}} target loops over all languages defined in the {{make}} variable
+{{ALL_LANGS}} in the file {{langs/Makefile.am}}, checks that the language
+directory exists, and then calls a template-specific shell script
+({{$GIELLA_CORE/scripts/set-svn-ignores-langs.sh}} in the case of {{langs/}}
+dirs, {{$GIELLA_CORE/scripts/set-svn-ignores-prooftesting.sh}} in the case of
+{{prooftesting/}} dirs).
 
 After you have run the above commands, all dirs will have updated {{svn:ignore}}
 properties, but usually this applies only to one or a few dirs per language -
@@ -62,7 +67,7 @@ __Please__ review the changes before committing them!
 !!!Change svn:ignore
 
 To change the actual ignore patterns, you must change the shell scripts that set
-them. They are:
+them. They are the ones mentioned earlier:
 
 * {{$GTCORE/scripts/set-svn-ignores-langs.sh}}
 * {{$GTCORE/scripts/set-svn-ignores-prooftesting.sh}}
@@ -71,14 +76,9 @@ They are applied to the template type as indicated by the last part of their
 filename ({{langs}} or {{prooftesting}}).
 
 Open the desired file, edit it following the code structure that is there, and
-when done, run the svn:ignore commands described above. Look for the name of the folder
-you want to change svn:ignore for, and add the required strings.
+when done, run the svn:ignore commands described above. Look for the name of the
+folder you want to change {{svn:ignore}} for, and add the required strings.
 
 __NB!__ Remember to commit the changes to these scripts after you have edited
-them!, and to commit the changes to each and every catalogue that got the new setting.
-
-!!!Known shortcomings/bugs
-
-The shell scripts doesn't know how to handle other language dirs than the
-default ones ({{langs/}} and {{prooftesting/}}). That is, it won't work in e.g.
-{{startup-langs/}}.
+them! And do commit the changes to each and every catalogue that got new
+ignore patterns.
