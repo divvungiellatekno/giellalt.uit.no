@@ -1,4 +1,4 @@
-The gtsvn server runs our svn service and the saami termwiki.
+The gtsvn server runs our svn service and our git service.
 
 !!!svn server
 Check whether the termwiki is up and running by clicking [https://victorio.uit.no/langtech]
@@ -6,14 +6,3 @@ Check whether the termwiki is up and running by clicking [https://victorio.uit.n
 If the page does not appear, start the apache server by logging into gtsvn and running the command:
 {{{sudo service httpd start}}}
 
-!!!termwiki
-termwiki depends on the services httpd, mysqld and parsoid.
-
-Check whether the termwiki is up and running by clicking [http://gtsvn.uit.no/termwiki]
-
-If the page does not appear, start the services needed by running these commands:
-{{{
-sudo service apache start
-sudo service mysqld start
-sudo service parsoid start
-}}}
