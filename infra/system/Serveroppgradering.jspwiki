@@ -79,11 +79,11 @@ Planlagt/i kjømda:
 ** ...
 
 
-
-
-!! Hostnavn: gtsvn.uit.no
-
 Kor fort stig lagringsbruken frå svn? Når når vi taket?
+
+----
+
+!! Hostnavn: gtsvn.uit.no
 
 * CPU: 1
 * MINNE: 8GB
@@ -109,7 +109,9 @@ Prosessar & tenestar på maskina:
 * git
 * tjener for heimekatalogdeling (/export) => må fasast ut!
 
-!! Hostnavn: gtaohpa.uit.no
+----
+
+!! Hostnavn: gtaohpa.uit.no
 * CPU:2
 * MINNE 8GB
 * OS: CentOS release 6.9 (Final)
@@ -125,8 +127,9 @@ Prosessar & tenestar på maskina:
 * NDS for sme, sma
 
 
+----
 
-!! Hostnavn: gtlab.uit.no
+!! Hostnavn: gtlab.uit.no
 * CPU: 2
 * MINNE: 8GB
 * OS: Fedora 24 (Twenty Four)
@@ -142,7 +145,9 @@ Prosessar & tenestar på maskina:
 ** kor mange språk?
 ** er det ein eller fleire prosessar pr språk? dvs kor mykje last pr språk?
 
-!! Hostnavn: gtweb.uit.no
+----
+
+!! Hostnavn: gtweb.uit.no
 * CPU: 2
 * MINNE: 8GB
 * OS: Fedora 26
@@ -157,40 +162,42 @@ Prosessar & tenestar på maskina:
 * grammatikkontrollserver
 * satni.org (delvis)
 
-!! NY MASKIN: Hostnavn:  divvun.uit.no
-* CPU:
-* MINNE:
-* DISK:
-* OS:
-* Brukarkontoar: ?
-* Montering av fellesdisk:
+----
+
+!! NY MASKIN: Hostnavn: divvun.uit.no
+* CPU: 2
+* MINNE: 8 Gb
+* DISK: 100 (80) + 250
+* OS: CentOS
+* Brukarkontoar: ITadmin + Børre, Ciprian, Chiara
+* Montering av fellesdisk: Fikk egen disk
 
 Prosessar & tenestar på maskina:
-* heimesideservar
-
-!! NY MASKIN: Hostnavn: giellatekno.uit.no
-* CPU:
-* MINNE:
-* DISK
-* OS:
-* Brukarkontoar: ?
-* Montering av fellesdisk:
-
-Prosessar & tenestar på maskina:
+* heimesideservar (apache + html) (+ ev bygging for divvun.no, giellatekno.uit.no, dicts.uit.no, sjå merknadmerknad nedanforanfor)
 * jabber
-* bugzilla
-* heimesideservar
+* bugzilla (cgi-bin m.m. perl)
+* stavekontrolltjener (nodejs)
 
-!! Hostnavn: satni.uit.no
+Andre prosessar/tenester?
+* interaktive sider frå giellatekno-sidene (analysesider - cgi-bin)
+** blir henta frå gtweb
+* byggja forrest? ev ikkje, alternativ: byggja på annan maskin, og sjekka inn i svn, deretter berre sjekka ut frå svn på denne maskina
+** på gtbig :-)
+
+
+
+----
+
+!! Hostnavn: satni.uit.no
 * CPU: 1
 * MINNE: 4GB
 * OS: Fedora 25 (Server Edition)
 * Brukarkontoar: ?
 * Montering av fellesdisk:
 * DISK
-{{
+{{{
     /dev/mapper/fedora-root     15G   11G  4,4G  72% /
-}}
+}}}
 Prosessar & tenestar på maskina:
 * satni.org (delvis)
 * termwikien
