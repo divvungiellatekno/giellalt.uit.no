@@ -33,12 +33,12 @@
                     $GTHOME/tools/stallo-analysis/analyse.sh
                 </a>
                 details what is being done, including
+            </p>
                 <ul>
                     <li>where converted files are fetched from</li>
                     <li>what pipeline is used to analyse the converted files</li>
                     <li>where analysed files are sent to</li>
                 </ul>
-            </p>
             <p>The analysis is kicked off by this cronjob on stallo:
                 <code>00 01 * * * . $HOME/.bash_profile &amp;&amp; ls -l /home/boerre/svnrepos/main/langs/*/tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst &amp;&amp; svn up $GTHOME/tools/stallo-analysis/analyse.sh &amp;&amp; sbatch $GTHOME/tools/stallo-analysis/analyse.sh</code>
             </p>
