@@ -14,6 +14,21 @@ cd $GTHOME/langs/sme/tools/grammarcheckers
 make dev
 }}}
 
+!!make options in sme
+
+!check which kind of options there are in ones make configuration
+
+{{{
+grep '/configure' $GTHOME/langs/sme/config.log
+}}}
+
+!possible make configuration
+
+{{{
+cd $GTHOME/langs/sme
+./configure --with-hfst --without-xfst --enable-syntax --enable-grammarchecker \ 
+--enable-tokenisers --enable-alignment --enable-reversed-intersect --enable-spellers
+}}}
 
 !!!Linguistic commands
 
