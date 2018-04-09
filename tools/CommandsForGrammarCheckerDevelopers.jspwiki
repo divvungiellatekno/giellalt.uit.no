@@ -1,34 +1,35 @@
 !!!Non-linguistic commands
 
-!!update vislcg3, hfst, etc.
+!!Update vislcg3, hfst, etc.
 {{{su service
 <passord>
 sudo ./install-nightly.sh
 <passord>
-Ctrl-D 
+Ctrl-D
 }}}
 
-!!get modes to work
+!!Get modes to work
 {{{
 cd $GTHOME/langs/sme/tools/grammarcheckers
 make dev
 }}}
 
-!!make options in sme
+!!Make options in sme
 
-!check which kind of options there are in ones make configuration
+!Check which kind of options there are in ones make configuration
 
 {{{
 grep '/configure' $GTHOME/langs/sme/config.log
 }}}
 
-!possible make configuration
+!Possible make configuration
 
 {{{
 cd $GTHOME/langs/sme
-./configure --with-hfst --without-xfst --enable-syntax --enable-grammarchecker \ 
+./configure --with-hfst --without-xfst --enable-syntax --enable-grammarchecker \
 --enable-tokenisers --enable-alignment --enable-reversed-intersect --enable-spellers
 }}}
 
 !!!Linguistic commands
 
+tbw
