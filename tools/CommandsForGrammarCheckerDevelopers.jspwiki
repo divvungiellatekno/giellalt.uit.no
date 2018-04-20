@@ -1,6 +1,6 @@
 !!!Non-linguistic commands
 
-!!Update vislcg3, hfst, etc.
+!!update vislcg3, hfst, etc.
 {{{su service
 <passord>
 sudo ./install-nightly.sh
@@ -8,28 +8,56 @@ sudo ./install-nightly.sh
 Ctrl-D
 }}}
 
-!!Get modes to work
+!!get modes to work
 {{{
 cd $GTHOME/langs/sme/tools/grammarcheckers
 make dev
 }}}
 
-!!Make options in sme
+!!make options in sme
 
-!Check which kind of options there are in ones make configuration
+!check which kind of options there are in ones make configuration
 
 {{{
 grep '/configure' $GTHOME/langs/sme/config.log
 }}}
 
-!Possible make configuration
+!possible make configuration
 
 {{{
 cd $GTHOME/langs/sme
-./configure --with-hfst --without-xfst --enable-syntax --enable-grammarchecker \
---enable-tokenisers --enable-alignment --enable-reversed-intersect --enable-spellers
+./configure --with-hfst --without-xfst --enable-grammarchecker \ 
+--enable-alignment --enable-reversed-intersect
 }}}
 
-!!!Linguistic commands
+!make commands
 
-tbw
+{{{
+cd $GTHOME/langs/sme
+time make -j
+}}}
+
+{{{
+cd $GTHOME/giella-shared/
+make
+}}}
+
+!make hfst only
+
+{{{
+cd $GTHOME/langs/sme/src
+time make -j analyser-gramcheck-gt-desc.hfstol 
+}}}
+
+!!!Working on websites
+
+{{{
+cd $GTHOME/xtdoc/techdoc
+f8
+}}}
+
+in Safari:
+{{{
+http://localhost:8888/doc/tools/CommandsForGrammarCheckerDevelopers.html
+}}}
+
