@@ -9,47 +9,95 @@ Apertium needs three components:
 
 !!!Compiling the source and target languages
 
+
+For each language pair you first compile each language.
+
 __Compiling the Saami languages and Finnish and Estonian__
 
-The Saami languages and Finnish are compiled in the respective folders in $GTHOME/langs/.
-The compilation procedure will then store the binary files in /usr somewhere, 
-and the apertium compilers will read them from that location. 
-Before compiling each language, the configure option must be tuned to MT usage:
+Go to the language folder, here e.g. sme, and set up the configuration for MT:
 
 {{{
 cd langs/sme/
-./configure --with-hfst --enable-apertium --without-xfst
-time make
-sudo make install
+./configure --with-hfst --enable-apertium --enable-reverse-intersect
 }}}
 
-Now, be prepared to __wait__.
- (''make'' is the time-consuming command).
+The Saami languages and Finnish are compiled in the respective folders in {{$GTHOME/langs/}}.
+Estonian is compiled in the same way, but in $GTHOME/startup-langs/est/ 
+(do not use langs/est).
+The compilation procedure will then store the binary files in {{tools/mt/apertium}} in 
+each language folder and the apertium compilers will read them from that location. 
+Before compiling each language, the configure option must be tuned to MT usage:
+
+Compile as usual:
+
+{{{
+time make -j
+}}}
+
+Now, be prepared to __wait__, from 15 minutes to several hours depending upon 
+the language and your computer. 
+
 While waiting, do the same for the other language(s) you want. Go to the
 folder of the other language you want to translate as well (''sma, smj, smn''), 
 so that one for e.g. ''sme-sma'' must compile ''sme'' __and__ ''sma''.
 Remember to reset the .configure option afterwards, e.g. to 
-{{./configure}} to get the setting you use for FST work.
-
-__Compiling Bokmål, Nynorsk (for sme-nob and nob-nno)__
-
-''See below.''
+{{./configure}} if that is what you use for FST work.
 
 
-!!Compiling the MT program itself
+To chech the file, write:
 
-The language pairs are in different locations, according to how good they are. 
+{{{
+ls -l tools/mt/apertium/*.gz
+}}}
 
-* in apertium/trunk: ''apertium-sme-nob, apertium-nob-nno''
-* in apertium/nursery: ''apertium-sme-sma, apertium-sme-smj, apertium-sme-smn, apertium-sme-fin''
-* in apertium/incubator:  ''apertium-fin-est''
+If everything went well, you have new .gz files in the apertium folder.
 
-Now you must, in the folder of the language pair you want, do
+__Compiling Bokmål, Nynorsk (for sme-nob, sma-nob, smj-nob and nob-nno)__
+
+
+For these languages, we do not use the Giellatekno version, but the one
+on Apertium github, for nob:
+
+* [https://github.com/apertium/apertium-nob]
+
+The rule of thumb: Giellatekno/Divvun languages in langs/ and startup-langs/,
+other languages on Apertium github.
+
+In the apertium-nob folder do:
 
 {{{
 ./autogen.sh
 make
-sudo make install
+}}}
+
+The same will hold for any of the languages on Apertium github. 
+
+
+
+!!Compiling the MT program itself
+
+All language pairs (also the Giellatekno/Divvun ones, e.g. sme-sma) are 
+stored on Apertium github:
+
+* [https://github.com/apertium/apertium-sme-nob]
+* [https://github.com/apertium/apertium-sme-sma]
+* etc. for other language pairs, cf. [the full list|https://github.com/apertium]
+
+Now you must, in the folder of the language pair you want, set up
+a pointer to the respective languages:
+
+For sme-sma (pairs with two giella languages), do this in the Apertium folder, e.g. {{apertium-sme-sma}}:
+
+{{{
+./autogen.sh --with-lang1=/path/to/giellatekno/langs/sme/tools/mt/apertium --with-lang2=/path/to/giellatekno/langs/sma/tools/mt/apertium
+make
+}}}
+
+For pairs with one Apertium language, e.g. sme-nob, do this in {{apertium-sme-nob}}:
+
+{{{
+./autogen.sh --with-lang1=/path/to/giellatekno/langs/sme/tools/mt/apertium --with-lang2=/path/to/apertium-nob
+make
 }}}
 
 The command to test that everything is ok is, in each folder:
@@ -80,12 +128,12 @@ cg-proc --version
 }}}
 
 If the number you get (__0.9.9.10195__) is lower than the error message
-requires, you should update. It may be, however, that the version number
+requires, you should update vislcg3. It may be, however, that the version number
 is ok but you still get the error message. In that case, you have old 
 binary files although you have updated your compeler. In that case,
 
-* in the apertium-LANG1-LANG2 folder, write ''make clean''
-* in the $GTHOME/langs/LANG/ folder, write ''sudo make uninstall''
+* in the apertium-LANG1-LANG2 folder, write ''make clean'' 
+* in the $GTHOME/langs/LANG/ folder, delete the tools/mt/apertium/*.gz files
 
 Thereafter, repeat the installation procedure.
 
@@ -95,21 +143,4 @@ Thereafter, repeat the installation procedure.
 
 
 
-
-__Compiling Bokmål, Nynorsk (for sme-nob and nob-nno)__
-
-See below
-
-For these languages, we do not use the Giellatekno version, but the one
-in apertium/languages/apertium-nob, etc. You must check out the apertium branch 
-{{apertium/languages/apertium-nob}} (and -nno, eventually). In that catalogue
-you must do
-
-{{{
-./autogen.sh
-make
-sudo make install
-}}}
-
-The same will hold for any of the languages in {{apertium/languages}}.
 
