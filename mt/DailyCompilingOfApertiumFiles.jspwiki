@@ -1,5 +1,4 @@
 
-
 Apertium needs three components:
 
 # The source language
@@ -9,33 +8,30 @@ Apertium needs three components:
 
 !!!Compiling the source and target languages
 
-
 For each language pair you first compile each language.
 
-__Compiling the Saami languages and Finnish and Estonian__
+__Compiling the Saami languages and Finnish and Estonian in the giella infrastructure__
 
-Go to the language folder, here e.g. sme, and set up the configuration for MT:
+We assume you have [installed the giella infrastructure already|http://giellatekno.uit.no/doc/infra/GettingStarted.html]. The Saami languages and Finnish are found in their respective folders in {{$GTHOME/langs/}}.
+
+Go to the relevant language folder, here e.g. {{sme}}, and set up the configuration for MT:
 
 {{{
-cd langs/sme/
+cd $GTHOME/langs/sme/
 ./configure --with-hfst --enable-apertium --enable-reverse-intersect
 }}}
 
-The Saami languages and Finnish are compiled in the respective folders in {{$GTHOME/langs/}}.
-Estonian is compiled in the same way, but in $GTHOME/startup-langs/est/ 
-(do not use langs/est).
-The compilation procedure will then store the binary files in {{tools/mt/apertium}} in 
-each language folder and the apertium compilers will read them from that location. 
-Before compiling each language, the configure option must be tuned to MT usage:
-
-Compile as usual:
+Estonian is set up in the same way, but in $GTHOME/startup-langs/est/ 
+(do not use langs/est). Compile as usual:
 
 {{{
 time make -j
 }}}
 
 Now, be prepared to __wait__, from 15 minutes to several hours depending upon 
-the language and your computer. 
+the language and your computer.  The compilation procedure will store the binary 
+files in {{tools/mt/apertium}} in 
+each language folder and the apertium compilers will read them from that location.  
 
 While waiting, do the same for the other language(s) you want. Go to the
 folder of the other language you want to translate as well (''sma, smj, smn''), 
@@ -43,35 +39,27 @@ so that one for e.g. ''sme-sma'' must compile ''sme'' __and__ ''sma''.
 Remember to reset the .configure option afterwards, e.g. to 
 {{./configure}} if that is what you use for FST work.
 
-
 To chech the file, write:
 
 {{{
 ls -l tools/mt/apertium/*.gz
 }}}
 
-If everything went well, you have new .gz files in the apertium folder.
+If everything went well, you have new {{.gz}} files in the apertium folder.
 
-__Compiling Bokmål, Nynorsk (for sme-nob, sma-nob, smj-nob and nob-nno)__
+__Compiling Bokmål (for sme-nob, sma-nob, smj-nob)__
 
-
-For these languages, we do not use the Giellatekno version, but the one
+For Bokmål, we do not use the Giellatekno version, but the one
 on Apertium github, for nob:
 
 * [https://github.com/apertium/apertium-nob]
-
-The rule of thumb: Giellatekno/Divvun languages in langs/ and startup-langs/,
-other languages on Apertium github.
 
 In the apertium-nob folder do:
 
 {{{
 ./autogen.sh
-make
+make -j
 }}}
-
-The same will hold for any of the languages on Apertium github. 
-
 
 
 !!Compiling the MT program itself
@@ -83,28 +71,28 @@ stored on Apertium github:
 * [https://github.com/apertium/apertium-sme-sma]
 * etc. for other language pairs, cf. [the full list|https://github.com/apertium]
 
-Now you must, in the folder of the language pair you want, set up
+For each language pair you must, in the folder of the language pair, set up
 a pointer to the respective languages:
 
 For sme-sma (pairs with two giella languages), do this in the Apertium folder, e.g. {{apertium-sme-sma}}:
 
 {{{
 ./autogen.sh --with-lang1=/path/to/giellatekno/langs/sme/tools/mt/apertium --with-lang2=/path/to/giellatekno/langs/sma/tools/mt/apertium
-make
+make -j
 }}}
 
 For pairs with one Apertium language, e.g. sme-nob, do this in {{apertium-sme-nob}}:
 
 {{{
 ./autogen.sh --with-lang1=/path/to/giellatekno/langs/sme/tools/mt/apertium --with-lang2=/path/to/apertium-nob
-make
+make -j
 }}}
 
 The command to test that everything is ok is, in each folder:
 
 {{{
-echo ja | apertium -d . sme-nob
-echo ja | apertium -d . sme-sma
+echo ja | apertium -d. sme-nob
+echo ja | apertium -d. sme-sma
 etc.
 }}}
 
