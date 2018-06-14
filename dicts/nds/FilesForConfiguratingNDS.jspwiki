@@ -83,8 +83,8 @@ The options setting may contain the following keys:
 {{{
   liv:
     tool: '/usr/bin/lookup'
-    file: '/opt/smi/liv/bin/liv.fst'
-    inverse_file: '/opt/smi/liv/bin/liv.fst'
+    file: '/opt/smi/liv/bin/analyser-dict-gt-desc.xfst'
+    inverse_file: '/opt/smi/liv/bin/generator-dict-gt-norm.xfst'
     format: 'xfst'
     options:
       compoundBoundary: "+Use/Circ#"
@@ -107,8 +107,9 @@ Tools:
 Morphology:
   olo:
     tool: *LOOKUP
-    file: [*OPT, '/olo/bin/olo.fst']
-    inverse_file: [*OPT, '/olo/bin/iolo.fst']
+    file: [*OPT, '/olo/bin/analyser-dict-gt-desc.xfst']
+    inverse_file: [*OPT, '/olo/bin/generator-dict-gt-norm.xfst']
+    options:
 }}}
 
 Note how string concatenation is handled.
