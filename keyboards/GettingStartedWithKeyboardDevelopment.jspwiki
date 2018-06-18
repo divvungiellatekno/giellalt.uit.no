@@ -148,19 +148,13 @@ if [ -z "$WINEPREFIX" ]; then
 fi
 
 INNO=http://www.jrsoftware.org/download.php/is-unicode.exe
-KBDI=https://github.com/bbqsrc/kbdi/releases/download/v0.1.0/kbdi-i386.exe
 MSKLC=https://download.microsoft.com/download/1/1/8/118aedd2-152c-453f-bac9-5dd8fb310870/MSKLC.exe
-
-KBDIDIR=$(pwd)
 
 echo "Getting Inno Setup…"
 curl -OL "$INNO"
 
 echo "Getting MSKLC…"
 curl -O "$MSKLC"
-
-echo "Getting kbdi…"
-curl -Lk "$KBDI" -o kbdi.exe
 
 echo "Installing dotnet20 with winetricks…"
 winetricks -q dotnet20
@@ -181,7 +175,6 @@ echo "export WINEARCH=\"win32\""
 echo "export WINEPREFIX=\"$WINEPREFIX\""
 echo "export INNO_PATH=\"\$WINEPREFIX/drive_c/Program Files/Inno Setup 5\""
 echo "export MSKLC_PATH=\"\$WINEPREFIX/drive_c/Program Files/Microsoft Keyboard Layout Creator 1.4\""
-echo "export KBDI=\"${KBDIDIR}/kbdi.exe\""
 }}}
 
 After having saved the script and made it executable, run it, and follow the
