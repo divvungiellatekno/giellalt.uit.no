@@ -1,24 +1,31 @@
 
-To ensure stability we have several servers:
-
-Virtual servers
-* gtsvn : svn goes here
-* gtlab : this is for experimenting
-* gtoahpa : online oahpa (and sma/sme NDS)
-* gtweb : online analysers, online dictionaries (minus sma/sme NDS)
-
-Physical servers:
-* xserve: storage of analysed text, download site, etc.
-* stallo: Fast computer for corpus analysis
 
 
-Admin documentation/log:
-* private/admin/README-admin-gtoahpa.txt: for changes, package installation, and other things that must remain private.
 
-General practices:
-* Admin group on the four (following CentOS) are to add users to the wheel group (usermod -G wheel USER).
 
-!! Gtoahpa - high level overview
+Here we document our servers and common machines. If some servers are down, see our [in case of a crisis document| ../../infra/DontPanic.html]
+
+!!!List over the machines
+
+* divvun.uit.no
+* gtlab.uit.no
+* gtoahpa-01.uit.no
+* gtoahpa.uit.no
+* gtsvn-01.uit.no
+* gtsvn.uit.no 
+* gtweb.uit.no
+* satni.uit.no
+* stallo.uit.no (shared server)
+
+Each machine is documented below.
+
+!!! divvun.uit.no
+
+!!! gtlab.uit.no
+
+!!! gtoahpa-01.uit.no
+
+!!! gtoahpa.uit.no
 
 Gtoahpa runs CentOS release 6.2. Univ_oahpa is installed on gtoahpa, and uses nginx (httpd), mysql, python, django and fastcgi with flup.
 
@@ -29,7 +36,26 @@ Gtoahpa runs CentOS release 6.2. Univ_oahpa is installed on gtoahpa, and uses ng
 
 In addition to the private admin tech documentation, certain config files have been checked in in the same location under the gtoahpa/ directory.
 
-!! The other servers - high level overview
+!!! gtsvn-01.uit.no
 
-tbw.
+!!! gtsvn.uit.no 
+
+!!! gtweb.uit.no
+
+!!! satni.uit.no (oppgradert)
+
+!!! stallo.uit.no
+
+
+
+
+!!!Other documentation
+
+Admin documentation/log:
+* private/admin/README-admin-gtoahpa.txt: for changes, package installation, and other things that must remain private.
+
+General practices:
+* Admin group on the four (following CentOS) are to add users to the wheel group (usermod -G wheel USER).
+
+
 
