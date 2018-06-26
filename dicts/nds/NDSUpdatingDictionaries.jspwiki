@@ -222,6 +222,14 @@ Production servers currently check code out from ''tags/apps/dicts/nds/nds-stabl
 
 !!! More on Fabric
 
+!!The Fabric system.
+
+The Fabric system itself (cf [fabric.org|http://fabfile.org/] is run,
+and documented, in {{neahtta/fabfile.py}}. This file contains both
+the actual commands and some documentation.
+
+!!Using Fabric
+
 Most of the process here is delegated to other commands, and this is because
 Fabric is a system for executing commands locally or remotely on other systems.
 
@@ -237,7 +245,7 @@ Commands can also be chained, for example (here with guusaaw as DICT):
 }}}
 
 This would execute everything after guusaaw in order: compilation, testing, and
-restart.
+restart. Chaining restart_service is not recommended, one should inspect the output of test_configuration (that everything is ok) before restarting.
 
 !!! More comments on the CENTOS (gtoahpa) operative system
 
