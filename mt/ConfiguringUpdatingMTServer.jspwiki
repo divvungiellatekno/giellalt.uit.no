@@ -50,3 +50,15 @@ ssh gtweb /home/apy/dump-missing-words
 }}}
 
 
+
+!!!If jorgal is	down
+
+The jorgal.uit.no page may give	the message {{Oversettelse ikke tilgjengelig!}}
+
+This command should help:
+
+{{{
+  ssh -t gtweb
+    sudo systemctl restart apy
+    }}}
+
