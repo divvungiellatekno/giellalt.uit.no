@@ -23,9 +23,9 @@
         solution for the Xerox tools.
       </p>
       <p>The new command is as follows:</p>
-      <source>cat testfile.txt | hfst-tokenise --gtd tools/preprocess/tokeniser-disamb-gt-desc.pmhfst</source>
+      <source>cat testfile.txt | hfst-tokenise --gtd tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst</source>
       <p>Please note that the file
-        <code>tools/preprocess/tokeniser-disamb-gt-desc.pmhfst</code> is
+        <code>tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst</code> is
         not built by default. To enable building it, configure as follows:</p>
       <source>./configure --with-hfst --enable-tokenisers</source>
       <p>Below follows the description for how to use the Perl-based solution
@@ -60,7 +60,7 @@ Options (note that for most languages not all options are available):
 
       <p>Example use:</p>
 
-      <source>cat file.txt | preprocess --abbr=$GTHOME/langs/sma/tools/preprocess/abbr.txt | lookup ...</source>
+      <source>cat file.txt | preprocess --abbr=$GTHOME/langs/sma/tools/tokenisers/abbr.txt | lookup ...</source>
       </section>
 
       <section>
