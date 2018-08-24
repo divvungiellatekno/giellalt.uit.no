@@ -88,7 +88,7 @@ frå hfst-tokenise:
 
 {{{
 $ cat sme.corpus.txt | hfst-tokenise \
---gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc.pmhfst \
+--giella-cg $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc.pmhfst \
 | cg-conv -N 2>/dev/null |grep -v $'Qst\|Foc\|^\t'|grep Err/SpaceCmp \
 | cut -f1 | sort | uniq -c | sort -nr 
 }}}

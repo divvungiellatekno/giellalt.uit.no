@@ -46,10 +46,10 @@ Numerical Matches in CG:
 !!!Kommandoer
 
 * disambiguerer flerordsuttrykk:\\
-  {{echo dalle go |hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-disamb-gt-desc.pmhfst | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3}}
+  {{echo dalle go |hfst-tokenise --giella-cg $GTHOME/langs/sme/tools/preprocess/tokeniser-disamb-gt-desc.pmhfst | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3}}
 * siste deler flerordsuttrykk opp i egne kohorter:\\
- {{echo dalle go |hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-disamb-gt-desc.pmhfst | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3 | cg-mwesplit}}
-* {{echo Leago skuvla busses? |hfst-tokenise --gtd $GTHOME/langs/sme/tools/preprocess/tokeniser-disamb-gt-desc.pmhfst}}
+ {{echo dalle go |hfst-tokenise --giella-cg $GTHOME/langs/sme/tools/preprocess/tokeniser-disamb-gt-desc.pmhfst | vislcg3 -g $GTHOME/langs/sme/tools/preprocess/mwe-dis.cg3 | cg-mwesplit}}
+* {{echo Leago skuvla busses? |hfst-tokenise --giella-cg $GTHOME/langs/sme/tools/preprocess/tokeniser-disamb-gt-desc.pmhfst}}
 * bruk av &SUGGEST-programmet: prøver å generere former (i pipeline etter grammatikkontroll):\\
  {{divvun-suggest generator-gt-norm.hfstol errors.xml | divvun-suggest $GTHOME/langs/sme/src/generator-gt-norm.hfstol $GTHOME/langs/sme/tools/grammarcheckers/errors.xml}}
 
