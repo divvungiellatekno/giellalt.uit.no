@@ -23,7 +23,20 @@
         solution for the Xerox tools.
       </p>
       <p>The new command is as follows:</p>
-      <source>cat testfile.txt | hfst-tokenise --giella-cg tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst</source>
+      <source>cat testfile.txt | hfst-tokenise --giella-cg tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst| vislcg3 -g tools/tokenisers/mwe-dis.cg3 | cg-mwesplit | vislcg3 -g src/syntax/disambiguator.cg3</source>
+
+      <p>Here is the same command, with comments</p>
+      <source>
+	cat testfile.txt | \
+	hfst-tokenize --giella-cg --weight-classes=1 tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst | \
+	# tokenize and analyse, with constraint grammar as setting
+	vislcg3 -g tools/tokenisers/mwe-dis.cg3 | cg-mwesplit | \
+	# identify, disambiguate and format  multiword expressions
+	vislcg3 -g src/syntax/disambiguator.cg3
+	# and then to normal disambiguation, and eventually further steps
+      </source>
+
+
       <p>Please note that the file
         <code>tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst</code> is
         not built by default. To enable building it, configure as follows:</p>
