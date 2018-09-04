@@ -51,7 +51,67 @@ For informasjon om maskinene, sjå [Virtual Servers|../VirtualServershtml]
 
 ----
 
-!!!Serveroppdateringar
+!!! Status for servarmigrasjon
+
+!!gtsvn og gtsvn-01
+
+! 4.9.18
+* Status
+** Ikke flyttet
+* Vurdering
+** Problem: Diskplass for svn
+** Vi har i dag 493 GB for gtsvn, der 340 GB er heimekatalogar
+   og 80 GB er svn-repositorium. Vi har bede om 200 GB for gtsvn-01. 
+   Vi ber no om 1 TB til gtsvn-01.
+
+Arbeidsgang
+* Trinn 0: Få 1 TB på gtsvn-01 (__Trond, Sjur__)
+* Trinn 1: flytta alle repoar (git og svn) over til gtsvn-01 (__Børre__)
+* Trinn 2: byta dns på gtsvn (til gtsvn-gml) og gtsvn-01 (til gtsvn, med alias victorio?) (__Børre__)
+** hugs å oppdatera export-sti for heimekatalogar på andre maskiner
+* Trinn 3: flytta alle heimekatalogane frå gtsvn-gml til gtlab når gtlab er klar for det
+* Trinn 4: slå av og avslutta gtsvn-gml
+
+!!gtoahpa og gtoahpa-01
+
+! 4.9.18
+* Revisjon av oahpa
+** sms_oahpa ==> done
+** sma_oahpa ==> done
+** konteaksta ==> done
+** sme_oahpa ==> todo
+** smn_oahpa ==> todo
+** sjd_oapa ==> todo
+** mange oahpa-instanser som vi må finne ut av om vi skal overføre eller ikke ==> todo
+** kuvsje ==> todo
+** sme-NDS ==> todo til satni.org
+** sma-NDS ==> todo til satni.org
+
+
+!!gtweb
+
+! 4.9.18
+Ingenting er gjort, vi ventar på gtoahpa.
+
+!!gtlab
+! 4.9.18
+Ingenting er gjort. Gtlab kjem til slutt.
+
+!!divvun.uit.no
+! 4.9.18
+* Problem: få stavekontrollserver til å fungere med redirection fra port til sti
+* Løsning: bruke grammatikkontrollserveren som Kevin har laget, men med helt grunnleggende oppsett.
+
+!!satni.uit.no
+* sme-NDS ==> todo fra gtoahpa til satni.uit.no
+* sma-NDS ==> todo fra gtoahpa til satni.uit.no
+* alle NDS fra gtweb til satni.uit.no ==> todo
+* alle andere type dicts fra gtweb til satni.uit.no  ==> todo
+
+
+----
+
+!!!Kravspesifikasjon for nye serverar
 
 Dette er kravspesifikasjonen.
 
@@ -59,7 +119,7 @@ Dette er kravspesifikasjonen.
 
 * CPU: 1
 * MINNE: 8GB
-* HD: 200 GB
+* HD: 200 GB -- Vi vil ha 1 TB. TODO: Diskuter med IT.
 * OS: CentOS release 6.9 (Final) - det noverande systemet er ok
 
 Prosessar & tenestar som skal gå på maskina:
@@ -187,7 +247,9 @@ Endringar i høve til noverande oppsett:
 * Disk (/home): auka til 700GB
 * OS: endra til CentOS 7
 
-!!!Arbeidsgang
+!!!Arbeidsgang bestemt på tidlegare møte
+
+NB! Sjå oppdatert liste over arbeid lenger opp i dokumentet, under status.
 
 # IT: setja opp lokale diskar og partisjonar på alle maskiner
 # D/GT: kopiera data for NDS m.m. frå export-disk til lokale diskar
