@@ -190,17 +190,40 @@ Alt ok, ventar på fleire feil :-)
 
 
 !!!ADJEKTIVFRASER
-Alt ok, ventar på fleire feil :-)
 
-!!! KVANTORAR
+!!Ellipse: AP utan N
+
+{{{
+Golbma vuosttas dahket bargolávdegotti.|apertium -d. sme-nob
+Tre første de gjør arbeidsutvalget.
+De tre første utgjør arbeidsutvalget.
+}}}
+
+Problemet er at utan N i subjektet sett programmet inn "de", jf.:
+
+{{{
+Golbma vuosttas miellahtu dahket bargolávdegotti
+Tre første medlemmer gjør arbeidsutvalget.
+}}}
+
+!!! KVANTORFRASER
 
 !!Num + N
 Alt ok, ventar på fleire feil :-)
 
 
+!!! PREPOSISJONSFRASER
+
+{{{
+Norgga Sámediggi lea oassálastán čoahkkimiidda Norgga ráđđehusa delegašuvnna bokte.
+Norge Sametinget har deltatt i til møter delegasjonen i Norges regjering via.
+}}}
+
+
+
+
 !!! ADVERB
 Alt ok, ventar på fleire feil :-)
-
 
 
 
@@ -568,7 +591,16 @@ SELECT ("fordi"i) (0 ("<go>"i)) (-1 a + nom) ;
 
 
 !!! FORMATERING
-Alt ok, ventar på fleire feil :-)
 
+!!Feil i stor bokstav av namn
+
+{{{
+Stivrras lea soahpamuš ČálliidLágádusain oastit bálvalusaid.
+Styret har en avtale Med forfatterforlaget kjøpe tjenestene.
+Styret har en avtale med Forfatterforlaget om å kjøpe tjenestene.
+}}}
+
+Problemet er at når eit namn i oblik kasus blir omsett til preposisjon
++luss det tilsvarande norske namnet, får preposisjonen stor bokstav
 
 
