@@ -1,254 +1,3 @@
-Liste over ting som må forbedres i transfer filene
-
-Fenomena er lauseleg gruppert etter type (med store bokstavar på nivå 3)
-For å få betre oversikt flyttar vi ting som er ok over i dokumentet [Solved Transfer Problems|SolvedTransferProblems.html]
-
-
-Skriv slik: 
-* Øverste overskrift: store bokstavar, tema
-* Midtre overskrift: Små bokstavar, undergruppe
-* Lågaste overskrift: Einskildsaker, disponer gjerne slik:
-** eksempel: sme + mt + korrekt (evt store bokst for nøkkelord), 
-** deretter drøfting 
-** deretter generalisering
-
-!!! NORSK MORFOLOGI
-!! Bøyning i nob
-
-
-!Ordklasse og bøying for N/A på -sk
-
-{{{
-Eilif Aslaksen lea máŋgii vuoitán Finnmárkku journalistasearvvi journalistabálkkašumi ja jagis 2015 son vuittii Sámi journalistabálkkašumi
-Eilif Aslaksen har mange ganger vunnet Finnmarks journalistklubbs journalistpremie og 2015 vant han Samisks journalistpremie
-}}}
-
-''samisks''
-
-Problemet er at ''samisk'' blir analysert som substantiv. 
-
-Lene: delvis løst i transferregler (t4x). Men fordi det er 
-mange ord med samisk, engelsk osv som får substantivbøyning i nob, 
-så bør dette løses i nob, dvs at substantiver som ender på -sk, 
-ikke får en genetiv s.
-
-Trond: Problemet med ei slik løysing er at det finst ord på -sk som har -s, som i 
-(det autentiske dømet) ''Norsk arktisk torsks dumpingssalg gjennom årtider.''
-Derimot finn eg ikkje ''engelsks'' på Google. Eg skal sjå om det er 
-mogleg å dele -sk opp i to grupper.
-
-
-
-!manglende bindestrek guio mellom acro og substantiv
-
-__OG, VM, EM__
-
-{{{
-OG-golli
-#OLgull
-OL-gull
-}}}
-
-Output frå sme:
-{{{
-echo  OG-golli | apertium -d. sme-nob-postchunk
-^OL<n><sg><ind><guio>$^gull<n><nt><sg><ind>$^.<sent><clb>$
-}}}
-
-Analyse av nob:
-{{{
-echo VM-gull | apertium -d. unob-sme-morph
-^VM-gull/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>/VM-gull<n><nt><sg><ind>/VM-gull<n><nt><pl><ind>$^./.<sent><clb>$
-}}}
-
-Desse var leksikalisert i bidix men ikkje i nob, dei er no leksikalisert
-(og sølv og bronse kjem).
-
-Akronym + substantiv med bindestrek er delvis løyst:
-Det fungerer for akronym med contlex 
-
-{{{
-VM__n 
-}}}
-
-i nob.dix. Det er det dei færreste akronyma som har, så
-vi må sannsynlegvis splitte mange substantiveksika for å få akronym
-og andre ord kvar for seg.
-
-Eit akronym som både har dette leksikonet og står i bidix er ''AS'', jf:
-
-{{{
-AS-áigi|apertium -d. sme-nob
-AS-tid
-}}}
-
-Andre akronym skal få tilsvarande handsaming (kjem etter kvart).
-
-
-
-
-
-!!! PRONOMEN
-!!Fjerne pronomen
-Alt ok, ventar på fleire feil :-)
-
-!! Genus av han/ho
-Alt ok, ventar på fleire feil :-)
-
-!!! SUBSTANTIV OG SUBSTANTIVFRASER
-!!Ubestemtheit
-{{{
- på latinen 
-}}}
-
-språknamn.ILL = på språknomn.ubestemtform
-
-
-
-!!Bestemtheit
-Alt ok, ventar på fleire feil :-)
-
-
-
-
-
-
-! Fleirtalsobjekt i bestemt form
-Alt ok, ventar på fleire feil :-)
-
-
-! Bar NP
-
-Legg til maydetind i bidix for å få ubestemt artikkel:
-* For fleirtals-N sett vi ikkje inn ''en''
-* ''en'' skal ikkje inn for ord for:
-** utellelig, masse, stoff
-** visse ord: guolli, boazu, hoahppu (fisk, rein, hast ...)
-
-!Bar N i faste uttrykk
-
-{{{
-Son lea barggus.
-H_n er i arbeidet.
-H_n er i arbeid.
-}}}
-
-Vi treng ei liste over slike (og undersøke unntaka der ''i arbeidet'' er ok). 
-
-FIXED for sem_act når hovedverbet er til venstre og er ''leat''.
-
-{{{
-Son lea barggus.
-Hun/han er i arbeid.
-
-Maid áiggot bargat go heaittát barggus?
-Hva skal du gjøre når du slutter i jobben?
-}}}
-
-
-!! A + N i adjektivfraser
-
-! A + N som ubestemt NP
-
-{{{
-Buorre mánnávuohta bistá eallinagi
-Gode barndommen varer livstiden
-En god barndom varer livstiden
-}}}
-
-Ein setningsinitial streng ''AN'' skal bli ''en A N''.
-
-
-!!Genitiv, possessor, osb.
-
-
-! Possessorfrase med to genitivar
-
-{{{
-Nieidda áhči biila
-Bil til jentas far
-Bilen til jentas far
-
-Nieidda áhči biila lea boaris
-Bilen til jentas faren er gammel
-Bilen til jentas far er gammel
-}}}
-
-__Generaliseringa er__ \\
-Alle N2-gen N1 som blir overført til ''N1 til N2'' skal ha bestemt N1 og ubestemt N2.
-
-
-
-!!Illativ
-Alt ok, ventar på fleire feil :-)
-
-!!Lokativ
-Alt ok, ventar på fleire feil :-)
-
-!!Komitativ
-Alt ok, ventar på fleire feil :-)
-
-
-
-!!Essiv
-Alt ok, ventar på fleire feil :-)
-
-!!Numerus
-Alt ok, ventar på fleire feil :-)
-
-
-!!!ADJEKTIVFRASER
-
-!!Ellipse: AP utan N
-
-{{{
-Golbma vuosttas dahket bargolávdegotti.|apertium -d. sme-nob
-Tre første de gjør arbeidsutvalget.
-De tre første utgjør arbeidsutvalget.
-}}}
-
-Problemet er at utan N i subjektet sett programmet inn "de", jf.:
-
-{{{
-Golbma vuosttas miellahtu dahket bargolávdegotti
-Tre første medlemmer gjør arbeidsutvalget.
-}}}
-
-!!! KVANTORFRASER
-
-!!Num + N
-Alt ok, ventar på fleire feil :-)
-
-
-!!! PREPOSISJONSFRASER
-
-!!Fleire preposisjonar
-
-!Preposisjonane "i" og "til" frå verb og illativ
-
-{{{
-Norgga Sámediggi lea oassálastán čoahkkimiidda Norgga ráđđehusa delegašuvnna bokte.
-Norge Sametinget har deltatt i til møter delegasjonen i Norges regjering via.
-}}}
-
-* oassálastit = delta i
-* čoahkkimiidda = til møter
-
-Vi må med andre ord fjerne i (fjerne preposisjonar introdusert av verb) 
-når dei står foran preposisjonar frå kasus.
-
-Fleire døme:
-delta i på komiteens neste møter
-
-FIXED:
-
-Oversettelsen i bidix fra "delta i" til "delta", og så blei oassálastit lagt til i "ill-i"-verblista
-
-
-{{{
-Norgga Sámediggi lea oassálastán čoahkkimiidda.
-Norge Sametinget har deltatt i møter.
-}}}
 
 
 !!! ADVERB
@@ -360,8 +109,8 @@ lage regler i t4x for å legge til "om". Eksempler, X markerer innsetting av om
 !!Ein "det" for mykje
 
 !Apposisjon 
+Alt ok, ventar på fleire feil :-)
 
-/// LØST for numeraler ala (53) etter navn, i nominativ. Arbeider videre med andre syntaktiske sammenhenger etterhvert som de dukker opp.
 
 
 
@@ -377,7 +126,6 @@ Alt ok, ventar på fleire feil :-)
 Alt ok, ventar på fleire feil :-)
 
 !!Eit subjekt (pro) for lite
-sjekka hit
 
 !Koordinering
 
@@ -404,31 +152,11 @@ Alt ok, ventar på fleire feil :-)
 !!!ORDSTILLING
 
 !!Ordstilling i NP
-
-!Ordet gitta utanfor NP
-
-FIXED:
-{{{
-Vuosttaš plánaid mielde lei Stáda Geaidnodoaimmahat sávvan beassat cegget gaskaboddosaš šalddi GITTA DÁLÁ šaldái
-Første etter planene hadde Statens Vegvesen ønsket å få sette opp midlertidig bru helt til nåværende bru.
-}}}
-
-Det som skjer er at adverbet ''gitta'' blir analysert som del av NPen, og dermed som del av den resulterande PPen.
-''gitta'' må på ei liste over adverb som ikkje skal vere del av NPen, det gjeld kanskje til og med alle adverb.
+Alt ok, ventar på fleire feil :-)
 
 
 !!Internt i NP
-
-FIXED:
-{{{
-Mii sávvat beassat cegget gaskaboddosaš šalddi gitta dálá šaldái.
-Vi ønsker å få sette opp midlertidig bru helt til nåværende bru.
-}}}
-
-__Generaliseringa er:__ \\
-gitta blir chunka inni NP-en og kjem derfor etter P
-
-
+Alt ok, ventar på fleire feil :-)
 
 !! Leddsetning: ordstilling for setningsadverb
 
@@ -455,20 +183,7 @@ __Generaliseringa er:__ //
 
 
 !! Heilsetning: ordstilling for setningsadverbial
-
-!Adv Inf
-
-{{{
-Dan dihte fertejit dál bidjat ođđa gaskaboddosaš šalddi billahuvvon šaldi báldii.
-Derfor må  man sette nå ny midlertidig bru ved siden av den ødelagte brua. 
-Derfor må  man nå sette ny midlertidig bru ved siden av den ødelagte brua. 
-}}}
-
-
-__Generaliseringa er:__ //
-* XP VFIN ADVL SUBJ VINFIN
-* XP VFIN SUBJ ADVL VINFIN
-adverbialet rett etter subjektet
+ok
 
 !!Adverbial etter hovudverbet
 
@@ -512,8 +227,8 @@ Alt ok, ventar på fleire feil :-)
 
 {{{
 Finnmarken lea beaivválaš áviisa mii almmuhuvvo Čáhcesullos Finnmárkkus ja lea vuođđuduvvon jagis 1899
-Finnmarken er en daglig avis som publiseres i Vadsø i Finnmark og den blei grunnlagt i 1899
 Finnmarken er en daglig avis som publiseres i Vadsø i Finnmark og det er blitt grunnlagt i 1899
+Finnmarken er en daglig avis som publiseres i Vadsø i Finnmark og den blei grunnlagt i 1899
 }}}
 
 Genus den/det som subjekt i andre del av koordinasjon blir styrt av subjektet i første del.
@@ -557,16 +272,16 @@ __Problemet er:__ \\
 
 !!Verb
 
-!ii oro
+!ii oro + Actio Ess = Inf
 
 {{{
 gutnabalva ii oro váikkuheamen girdijohtolahkii dán guovllus
-askeskya ikke synes påvirker lufttrafikken i dette området
+askeskya synes ikke påvirker lufttrafikken i dette området
 askeskya ser ikke ut til å påvirke lufttrafikken i dette området
 }}}
 
 
-
+sjekka hit
 
 !!!EIN DEL SAKER ORDNA ETTER DIAGNOSE (tag), og ikkje etter grammatikk
 
