@@ -492,15 +492,15 @@ Pl3
 Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene (dette gjelder bare VD). Vær OBS på at det kan være homonymi med lemmaer i norm-fst, uten at begge er med i dict. For å få generert riktig bøyningsparadigme til dict-entryen, må de behandles på samme måte, selv om bare det ene lemmaer er med i dict. 
 
  
-!Ikke-systematisk homonomi - eksempel fra sma
+!Ikke-systematisk homonymi - eksempel fra sma
 <l> elementet får attributten hid="1" eller hid="2". Lemmaene er merka tilsvarende i norm-fst.
  
  
-!Systematisk homonomi - ekesmpler fra sme
+!Systematisk homonymi - ekesmpler fra sme
  
 || Nom  || Gen  	|| norsk 	|| norm-fst-analyse	 
 | lohkki |  lohki  	|  lokk		| lohkki+N+Sg+Nom
-| lohkki |  lohkki 	|  lesar 	| lohkki+N+Actor+Sg+Nom
+| lohkki |  lohkki 	|  lesar 	| lohkki+N+NomAg+Sg+Nom
 
 Her må den ene merkes med tag (actor) i genereringa fra norm-fst. Med denne tagen kan de unngår man homonymi i dict. I xml-filene:
 
@@ -528,15 +528,16 @@ Her må den ene merkes med tag (actor) i genereringa fra norm-fst. Med denne tag
 En annen systematisk homonymi:
 || Nom  	|| Gen  || norsk 	|| norm-fst-analyse	 
 |  beassi 	| beasi  |  reir	| beassi+N+Sg+Nom
-|  beassi  	| beassi |  never	| beassi+G3+N+Sg+Nom
+|  beassi  	| beassi |  never	| beassi+N+G3+Sg+Nom
 
 
 Vi har følgende tagger for substantiver:
 || tagger || fil
-| N+Actor |  nounActor_smenob.xml
-| N		  |  nounCommon_smenob.xml
-| G3+N	  |  nounG3_smenob.xml
-| N+Prop  |  nounProper_smenob.xml 
+| N+NomAg |  
+| N		  |  
+| N+G3	  |  
+| N+G7	  |  
+| N+Prop  |  
 
 
 
