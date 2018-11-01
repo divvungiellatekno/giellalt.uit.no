@@ -1,0 +1,131 @@
+
+!!!Avansert søk (CQP) i Korp
+
+Korp bruker søkespråket CQP (Corpus Query Protocol), som er laga i Stuttgart for Corpus Workbenchin. Den enkleste måten å bruke CQP på er å  starte ut med ''Utvidet'' søk i Korp, og deretter klikke på ''CQP-uttrykk''. Søket fra ''Utvidet'' står som et utgangspunkt for videre søk i CQP.
+
+
+!!!De vanligeste søkeuttrykka
+
+CQP-søk viser til de grammatiske trekka til ordformene ved hjelp av navna på kategoriene trekka er medlem av.
+
+|| Navn     || Betydning
+|  word	    | ordform
+| lemma	    | ordets oppslagsform
+| lemmacomp	| oppslagsform med sammensetningsgrense
+| pos       | ordklasse
+| msd       | morfosyntaktisk analyse
+| ref       | ordets ordenstall i setninga
+| dephead   | dependensordets (mornodens) ordenstall
+| deprel    | dependensrelasjonen til mornoden
+
+En oversikt over ordklasser ('''pos''') og morfosyntaktiske trekk ('''msd''') for hver ordklasse fins her (LENKE).
+
+
+
+!!!Grunnleggende søk i CQP
+
+!!Søkevilkår for enkeltord
+
+Basis for ordformsøk er attributta knytta til hver ordform. Vilkåra er som regel i klammeparanteser, og de bestemmer hvilke verdier attributtene må ha for å oppfylle søkekriteriet. Hvis søket bare består av ei ordform, uten vilkår til attributtet, trenger det ikke å bruke klammeparanteser.
+
+Eksempel:
+
+
+||CQP-uttryk     || Betydning
+| "kaste"         | ordet (ordforma) "kaste"
+| [lemma="kaste"] | ordformene som har "kaste" som grunnform
+| [pos="N"]       | ordformer som har ordklassekode N (dvs. alle substantiv)
+
+Ordsøk kan bestå av ulike attributtkombinasjoner, som blir satt sammen av de logiske operatorene '''&''' ("og"), '''|''' ("eller"), '''!''' (negasjon, "ikke") og '''->''' (implikasjon). Det er mulig å gruppere attributta med hjelp av paranteser. Som sammenligningsoperator bruker vi '''=''' ("er lik") eller '''!=''' ("er ikke lik").
+
+Eksempel:
+
+||CQP-uttryk              || Betydning
+| [lemma="tre" & pos="N"] | ordformer som har "tre" som grunnform og "N" som ordklassekode
+| [lemma="språk" & !(deprel="subj"|deprel="obj")] |ordformer som har "språk" som grunnform og en dependensrelasjon som ikke er subj eller obj.
+| lemma="språk" & word!=lemma] | ordformer som har "språk" som grunnform og ordform som er forskjellig fra grunnforma
+
+Merk at det er mulig å vise til attributtverdi på begge sider av sammenligningsoperatoren.
+
+
+!!Regulære uttrykk
+
+Det er også mulig å bruke regulære uttrykk i søket. F.eks. vil "lek[et].*" finne ord som begynner på "leke" eller "lekt". [lemma="kor.+"] vil finne ordformene som begynner med "kor", og inneholder minst en bokstav i tillegg til "kor".
+
+Regulære uttryk kan bruke følgende elementer:
+
+|| Symbol || Representerer || Eksempel
+| bokstaver og tall | seg selv |   
+| .       | hvilket tegn som helst |   
+| [...]   | symbolrekke, hvilket som helst av symbola | [aeiouyæøå] en vokal
+| [^...]  | komplement: et hvilket som helst symbol som ikke er der |  [^aeiouyæøå] et symbol som ikke er vokal
+
+{{{
+https://www.kielipankki.fi/tuki/korp-edistynyt/
+
+RS	peräkkäisyys: säännölliseen lausekkeeseen R täsmäävää merkkijonoa seuraa säännölliseen lausekkeeseen S täsmäävä merkkijono	[a-zåäö][0-9] täsmää pienaakkoseen ja sitä seuraavaan numeroon
+(…)	ryhmittely	
+R*	toisto nolla tai useampia kertoja; R voi olla yksittäinen merkki, merkkijoukko tai sulkeilla ryhmitelty säännöllinen lauseke	a.* täsmää kaikkiin a:lla alkaviin merkkijonoihin, a(bc)* merkkijonoihin a, abc, abcbc, abcbcbc, …
+R+	toisto yhden tai useampia kertoja	hy+vä täsmää merkkijonoihin hyvä, hyyvä, hyyyvä, …
+R{n}	toisto täsmälleen n kertaa	
+R{m,n}	toisto m…n kertaa	
+R?	valinnaisuus (toisto nolla tai yksi kertaa)	samai?staa täsmää merkkijonoihin samastaa ja samaistaa
+R|S	vaihtoehdot: joko R:ään tai S:ään täsmäävä merkkijono	tuoda|viedä täsmää merkkijonoon tuoda tai viedä, (luesk|kirjoit|kats)ella merkkijonoon lueskella, kirjoitella tai katsella
+\c	suojaus: suojaa erikoismerkin c niin, että lauseke täsmää siihen kirjaimellisesti	\. täsmää vain pisteeseen
+Monisanaisten ilmausten hakeminen ja sanetason säännölliset lausekkeet
+Yksinkertaisimmillaan monisanaisia ilmauksia haetaan CQP-kyselyllä, jossa yksittäisten saneiden hakuehdot on kirjoitettu peräkkäin välilyönneillä erotettuina:
+
+CQP-lauseke	merkitys
+"mistä" "syystä"	peräkkäiset sananmuodot ”mistä”, ”syystä”
+"mistä" [pos!="N"]	sananmuoto ”mistä”, jota seuraava sana ei ole substantiivi
+[pos="A" & deprel="attr"] [pos!="N"]	attribuuttina toimiva adjektiivi, jota seuraava sana ei ole substantiivi
+Yhtä (yleensä hakasulkeiden sisällä olevaa) yksittäisen saneen hakuehtoa voi ajatella yhtenä Korpin laajennetun haun ”laatikkona”, jossa voi määritellä useita eri attribuuttiehtoja. Kuten laajennetun haun laatikoita voi yhdistellä peräkkäin hakemaan monisanaista ilmausta, myös CQP-kyselyssä saneiden hakuehtoja voi liittää peräkkäin. CQP-kyselyissä on kuitenkin mahdollista käyttää ryhmittelyjä, jotka eivät ole mahdollisia Korpin laajennetussa haussa.
+
+Korpissa monisanaiset CQP-kyselyt kohdistuvat aina yhden virkkeen sisälle. Hakutuloksessa osumana näkyy koko hakuehtoon täsmäävä sanejono.
+
+Sanetasolla voi käyttää myös osaa säännöllisten lausekkeiden operaatioista. Perusyksikköinä ovat yksittäisten saneiden hakuehdot. Käytettävissä olevat operaatiot ovat toisto-operaatiot ?, *, +, {n} ja {m,n}; vaihtoehtoisuus |; sekä ryhmittely sulkeilla. Lisäksi tyhjät hakasulkeet [] viittaavat mihin tahansa saneeseen, eli se muistuttaa merkkitason säännöllisten lausekkeiden pistemerkintään.
+
+Esimerkkejä:
+
+CQP-lauseke	merkitys
+[lemma="maailma"] []* [lemma="kieli"]	sanan ”maailma” jokin muoto, jota seuraa sanan ”kieli” jokin muoto, niin että välissä voi olla nolla tai useampia sanoja
+("siksi" | "sen" "vuoksi") [deprel!="subj"]{1,5} [deprel="main"]	”siksi” tai ”sen vuoksi”, jota seuraa 1–5 ei-subjektia ja niiden jälkeen pääverbi
+Dependenssien haku
+
+Dependenssisuhteiden hakemisessa voidaan haluta esim. etsiä rakenteet, joissa tietyn saneen pääsanana on tietty toinen sane. Olennaisia attribuutteja ovat erityisesti ref (sanan numero virkkeessä) ja dephead (sanan pääsanan numero) sekä deprel (dependenssirelaatio).
+
+Dependenssisuhteiden hakemisessa tarvitaan erityisesti CQP-kyselykielen ominaisuuksia, joilla hakuehdoissa voi vertailla eri saneiden attribuutteja keskenään. Jotta saneisiin pystyy viittaamaan, ne täytyy nimiöidä liittämällä lisäämällä saneen hakuehdon eteen nimiö (label) kaksoispisteellä erotettuna, esim. a:[deprel="subj"]. Nimiöidyn saneen attribuuttien arvoihin voi viitata muiden saneiden hakuehdoissa muodossa nimiö.attribuutti, esim. [dephead=a.ref].
+
+Esimerkkejä:
+
+CQP-lauseke	merkitys
+a:[deprel="main"] []* [lemma="kieli" & deprel="subj" & dephead=a.ref]	sana ”kieli”, joka on edellä olevan a-nimiöidyn pääverbin subjekti
+a:[deprel="attr"] []* [deprel="subj" & ref=a.dephead]	subjekti ja sen etumääre (a-nimiöity), joiden välissä voi olla nolla tai useampia sanoja
+a:[deprel="subj"] b:[dephead=a.ref] c:[dephead=b.ref] [dephead=c.ref]	subjekti ja sitä seuraava kolmen määritesaneen ketju (kunkin pääsana on edellinen sana)
+Näissäkin tapauksissa hakutuloksessa osumana näkyy koko hakuehtoon täsmäävä sanejono.
+
+Huomaa myös, että CQP-kyselyissä saneiden hakuehtojen järjestys määrää hakuosuman saneiden järjestyksen. Jos esim. haluaa etsiä verbin ja sen subjektin niiden keskinäisestä järjestyksestä riippumatta, täytyy joko tehdä kaksi erillistä hakua, joissa toisessa subjekti edeltää verbiä ja toisessa verbi subjektia, tai yhdistää nämä lausekkeet sanetason |-operaattorilla.
+
+Saneiden hakuehdoissa voi viitata vain edellä olleisiin nimiöityihin saneisiin. Jäljempänä tuleviin saneisiin viittaaminen edellyttää globaalin rajoitteen käyttämistä. Globaali rajoite tulee hakuehdon loppuun kaksoiskaksoispisteen jälkeen, ja siinä voi viitata nimiöityjen saneiden attribuutteihin.
+
+Esimerkiksi:
+
+CQP-lauseke	merkitys
+s:[lemma="jäsen" & deprel="subj"] []* v:[pos="V" & deprel="main"] []* o:[lemma="tuki" & deprel="obj"] :: s.dephead = v.ref & o.dephead = v.ref	subjekti ”jäsen” (s), jota seuraa (mahdollisesti muiden sanojen jälkeen) pääverbi (v), jota seuraa (mahdollisesti muiden sanojen jälkeen) objekti ”tuki” (o)
+Myös aiemmat esimerkit voi esittää vaihtoehtoisesti globaalien rajoitteiden avulla, esim.
+
+a:[deprel="subj"] b:[] c:[] d:[] :: b.dephead=a.ref & c.dephead=b.ref & d.dephead=c.ref
+tuottaa saman tuloksen kuin
+
+a:[deprel="subj"] b:[dephead=a.ref] c:[dephead=b.ref] [dephead=c.ref]
+Muita esimerkkejä globaalien rajoitteiden käytöstä
+
+Yllä mainittujen globaalien rajoitteiden avulla voi hakea myös esimerkiksi rakenteita, joissa sama sana esiintyy useita kertoja, mutta sana voi olla mikä tahansa. Esimerkiksi:
+
+CQP-lauseke	merkitys
+a:[] "ja" b:[] :: a.word=b.word	ja-sanan kummallakin puolella on sama sana (sananmuoto)
+a:[lemma!="olla"] b:[] :: a.lemma=b.lemma & a.word!=b.word	peräkkäin on saman sanan (joka ei ole olla) kaksi eri sananmuotoa
+a:[word!="[-.,:;()]"] []* b:[] []* c:[] :: a.word=b.word & b.word=c.word	virkkeessä esiintyy sama sananmuoto (ei välimerkki) kolme kertaa tai useammin (varoitus: tämä haku on hyvin hidas eikä välttämättä tuota tuloksia etenkään suurista korpuksista)
+Hae Kielipankki-portaalista:
+
+}}}
