@@ -33,17 +33,17 @@ Eksempel:
 
 ||CQP-uttryk     || Betydning
 | "kaste"         | ordet (ordforma) "kaste"
-| [lemma="kaste"] | ordformene som har "kaste" som grunnform
-| [pos="N"]       | ordformer som har ordklassekode N (dvs. alle substantiv)
+| [[lemma="kaste"] | ordformene som har "kaste" som grunnform
+| [[pos="N"]       | ordformer som har ordklassekode N (dvs. alle substantiv)
 
 Ordsøk kan bestå av ulike attributtkombinasjoner, som blir satt sammen av de logiske operatorene '''&''' ("og"), '''|''' ("eller"), '''!''' (negasjon, "ikke") og '''->''' (implikasjon). Det er mulig å gruppere attributta med hjelp av paranteser. Som sammenligningsoperator bruker vi '''=''' ("er lik") eller '''!=''' ("er ikke lik").
 
 Eksempel:
 
 ||CQP-uttryk              || Betydning
-| [lemma="tre" & pos="N"] | ordformer som har "tre" som grunnform og "N" som ordklassekode
-| [lemma="språk" & !(deprel="subj"|deprel="obj")] |ordformer som har "språk" som grunnform og en dependensrelasjon som ikke er subj eller obj.
-| lemma="språk" & word!=lemma] | ordformer som har "språk" som grunnform og ordform som er forskjellig fra grunnforma
+| [[lemma="tre" & pos="N"] | ordformer som har "tre" som grunnform og "N" som ordklassekode
+| [[lemma="språk" & !(deprel="subj"|deprel="obj")] | ordformer som har "språk" som grunnform og en dependensrelasjon som ikke er subj eller obj.
+| [[lemma="språk" & word!=lemma] | ordformer som har "språk" som grunnform og ordform som er forskjellig fra grunnforma
 
 Merk at det er mulig å vise til attributtverdi på begge sider av sammenligningsoperatoren.
 
@@ -57,8 +57,8 @@ Regulære uttryk kan bruke følgende elementer:
 || Symbol || Representerer || Eksempel
 | bokstaver og tall | seg selv |   
 | .       | hvilket tegn som helst |   
-| [...]   | symbolrekke, hvilket som helst av symbola | [aeiouyæøå] en vokal
-| [^...]  | komplement: et hvilket som helst symbol som ikke er der |  [^aeiouyæøå] et symbol som ikke er vokal
+| [[...]   | symbolrekke, hvilket som helst av symbola | [[aeiouyæøå] en vokal
+| [[^...]  | komplement: et hvilket som helst symbol som ikke er der |  [[^aeiouyæøå] et symbol som ikke er vokal
 
 {{{
 https://www.kielipankki.fi/tuki/korp-edistynyt/
