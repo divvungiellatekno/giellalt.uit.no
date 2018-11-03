@@ -19,9 +19,10 @@ I korpuset er hver ordform merka med lemma, ordklasse, grammatiske egenskaper og
 | msd       | morfosyntaktisk analyse (f.eks. presens, entall, ...)
 | ref       | ordets posisjon i setninga (markert som et tall for 1., 2. ord, osv)
 | dephead   | dependensordets (mornodens) ordenstall
-| deprel    | dependensrelasjonen til mornoden (subj, obj, osv.)
+| dep       | dependensrelasjonen til mornoden (subj, obj, osv.)
 
-En oversikt over ordklasser (__pos__) og morfosyntaktiske trekk (__msd__) for hver ordklasse fins her (__LENKE kommer__).
+Med utgangspunkt i __Utvidet__ kan du å velge __ordklasse__, __grammmatisk analyse__ eller __dependensrelasjon__, finne den verdien du vil ha, og velge den. Deretter kan du trykke på __CQP-uttrykk__ og finne ut hvordan kategorien du vil bruke blir skrevet i CQP. En oversikt over ordklasser (__pos__) og morfosyntaktiske trekk (__msd__) for hver ordklasse fins her (__LENKE kommer__). 
+
 
 
 
@@ -34,8 +35,8 @@ Grunnlaget for søk på enkeltord er attributtene (dvs. kategoriene i tabellen o
 Eksempel:
 
 ||CQP-uttryk     || Betydning
-| "trener"         | ordet (dvs. ordforma) "trener" 
-| [[lemma="kaste"] | ordformene som har (substantivet) "trener" som grunnform
+| "giella"         | ordet (dvs. ordforma) "giella" 
+| [[lemma="giella"] | ordformene som har (substantivet) "giella" som grunnform
 | [[pos="N"]       | ordformer som har ordklassekode N (dvs. alle substantiv)
 
 Ordsøk kan bestå av ulike attributtkombinasjoner, som blir satt sammen av de logiske operatorene __&__ ("og"), __|__ ("eller"), __!__ (negasjon, "ikke") og __->__ (implikasjon). Det er mulig å gruppere attributta med hjelp av paranteser. Som sammenligningsoperator bruker vi __=__ ("er lik") eller __!=__ ("er ikke lik").
@@ -44,17 +45,17 @@ Ordsøk kan bestå av ulike attributtkombinasjoner, som blir satt sammen av de l
 Eksempel:
 
 ||CQP-uttryk                    || Betydning
-| [[lemma="tre" & pos="N"]       | ordformer som har "tre" som grunnform og "N" som ordklassekode
-| [[lemma="språk" & !(deprel="subj"|deprel="obj")] | ordformer som har "språk" som grunnform og en dependensrelasjon som ikke er subj eller obj.
-| [[lemma="språk" & word!=lemma] | ordformer som har "språk" som grunnform og ordform som er forskjellig fra grunnforma
+| [[lemma="čálli" & pos="N"]       | ordformer som har "čálli" som grunnform og "N" som ordklassekode
+| [[lemma="giella" & !(deprel="SUBJ→"|deprel="SUBJ→")] | ordformer som har "giella" som grunnform og en dependensrelasjon som ikke er SUBJ→ eller SUBJ→.
+| [[lemma="giella" & word!=lemma] | ordformer som har "giella" som grunnform og ordform som er forskjellig fra grunnforma
 
-Merk at det er mulig å vise til attributtverdi på begge sider av sammenligningsoperatoren.
+Merk at det er mulig å vise til attributtverdi på begge sider av sammenligningsoperatoren. Merk også at pilene i dependensuttrykkene peker ''fra'' datternode ''til'' mornode. Uttrykket →N blir lagt til et (uspesifisert) ledd som modifiserer et substantiv, og uttrykket SUBJ→ blir lagt til et subjekt som modifiserer et ledd til høyre for seg.
 
 
 !!Regulære uttrykk
 
 
-Det er også mulig å bruke regulære uttrykk i søket. F.eks. vil "lek[[et].*" finne ord som begynner på "leke" eller "lekt". [[lemma="kor.+"] vil finne ordformene som begynner med "kor", og inneholder minst en bokstav i tillegg til "kor".
+Det er også mulig å bruke regulære uttrykk i søket. F.eks. vil "čohkká[ij].*" finne ord som begynner på "čohkkáj" eller "čohkkái" og inneholder null eller flere bokstaver. [[word="d.t"] vil finne ordformene som begynner med "d", slutter på "t", og har en bokstav i midten.
 
 
 
@@ -77,7 +78,7 @@ Regulære uttryk kan bruke følgende elementer:
 | \c                | tegnet \ brukes til søk av et spesialtegn | \. | et punktum (der bare . ville ha vært et arbitrært tegn) 
 
 
-__Merk!__ <n> og <m,n> i tabellen ovafor skal skrives {n} og {m,n} i CQP.
+__Merk!__ <n> og <m,n> i tabellen ovafor skal skrives {n} og {m,n} i CQP. [[lemma="d.{1,2}t"] vil dermed gi ord som har ei grunnform som begynner på d, slutter på t, og har 1 eller 2 bokstaver i midten.
 
 
 
@@ -88,9 +89,9 @@ Den enkleste måten å søke etter flere ord eller uttrykk på er å skrive dem 
 
 
 || CQP-uttrykk   || Betydning
-| "hvorfor" "det" | orda ”hvorfor” og ”det” etter hverandre
-| "den" [[pos!="N"]	| ordforma ”den”, slik at neste ord ikke er et substantiv
-| [[pos="A" & deprel="attr"] [[pos!="N"] | et adjektiv som fungerer som attributt, der neste ord ikke er substantiv
+| "man" "dihte" | orda ”man” og ”dihte” etter hverandre
+| "den" [[pos!="N"]	| ordforma ”dat”, slik at neste ord ikke er et substantiv
+| [[pos="A" & deprel="→N"] [[pos!="N"] | et adjektiv som fungerer som attributt til et substantiv men der neste ord ikke er et substantiv
 
 Det er mulig å gruppere vilkår i søka, på samme måten som i utvida søk, men med flere muligheter. Søk etter flere ord får bare treff innafor ei og samme setning. Søket blir vist som treff på hele søkestrengen.
 
@@ -103,23 +104,23 @@ Eksempel:
 
 
 || CQP-uttrykk	|| Betydning
-| [[lemma="skulle"] [[]* [[lemma="gå"] | ei eller anna form av ordet ”skulle” og lenger ute i setninga ei form av ordet ”gå” ("skal kanskje gå, skulle ha gått", ...)
-| ("snart" ǀ "i" "morgen") [[deprel!="subj"]{1,3} [[deprel="main"] | ”snart” eller ”i morgen”, og deretter 1–3 ord som ikke er subjekt, og deretter hovedverbet
+| [[lemma="áigut"] [[]* [[lemma="vuolgit"] | ei eller anna form av ordet ”áibut” og lenger ute i setninga ei form av ordet ”vuolgit” ("skal kanskje gå, skulle ha gått", ...)
+| ("snart" ǀ "i" "morgen") [[deprel!="SUBJ→"]{1,3} [[deprel="FMV"] | ”snart” eller ”i morgen”, og deretter 1–3 ord som ikke er subjekt, og deretter hovedverbet
 
 
 !!Dependenssøk
 
 For å søke etter dependensrelasjoner er det mulig å søke etter strukturer der ordet et visst ord er dependens til er et visst annet ord, dvs. kjerneordet i dependensrelasjonen. Viktige attributter er særlig {{ref}} (nummeret, eller posisjonen, til ordet i setninga) og {{dephead}} (nummeret til kjerneordet) og {{deprel}} (dependensrelasjon).
 
-For å søke etter dependensrelasjoner trengs nettopp egenskapene til CQP-søkespråket, for å sammenligne attributtene til de ulke ordformene. For å vere i stand til å vise til ordformer må de bli identifisert, med å legge en merkelapp til søkevilkåret for ordforma, adskilt med et kolon, f.eks. a:[[deprel="subj"]. Deretter er det mulig å vise til attributtet til ordforma som har fått en merkelapp med søkeuttrykket ''merkelapp.attributt'', f.eks. [[dephead=a.ref].
+For å søke etter dependensrelasjoner trengs nettopp egenskapene til CQP-søkespråket, for å sammenligne attributtene til de ulke ordformene. For å vere i stand til å vise til ordformer må de bli identifisert, med å legge en merkelapp til søkevilkåret for ordforma, adskilt med et kolon, f.eks. a:[[deprel="SUBJ→"]. Deretter er det mulig å vise til attributtet til ordforma som har fått en merkelapp med søkeuttrykket ''merkelapp.attributt'', f.eks. [[dephead=a.ref].
 
 
 Eksempel:
 
 || CQP-uttrykk	|| Betydning
-| a:[[deprel="main"] [[]* [[lemma="giella" & deprel="subj" & dephead=a.ref] | ordet ”giella”, når det er subjektet til hovedverbet til venstre i setninga (merka med a)
-| a:[[deprel="attr"] [[]* [[deprel="subj" & ref=a.dephead] | subjekt og ledded som modifiserer det (merka med a), slik at det mellom dem kan være null eller flere ord
-| a:[[deprel="subj"] b:[[dephead=a.ref] c:[[dephead=b.ref] [[dephead=c.ref] | subjekt i en frase der de tre følgende orda står som dependent til ordet foran seg
+| a:[[deprel="FMV"] [[]* [[lemma="giella" & deprel="←SUBJ" & dephead=a.ref] | ordet ”giella”, når det er subjektet til hovedverbet til venstre i setninga (merka med a)
+| a:[[deprel="→N"] [[]* [[deprel="SUBJ→" & ref=a.dephead] | subjekt og leddet som modifiserer det (merka med a), slik at det mellom dem kan være null eller flere ord
+| a:[[deprel="SUBJ→"] b:[[dephead=a.ref] c:[[dephead=b.ref] [[dephead=c.ref] | subjekt i en frase der de tre følgende orda står som dependent til ordet foran seg
 
 
 
@@ -132,15 +133,15 @@ Eksempel:
 
 
 || CQP-uttrykk	|| Betydning
-| s:[[lemma="medlem" & deprel="subj"] [[]* v:[[pos="V" & deprel="main"] [[]* o:[[lemma="støtte" & deprel="obj"] :: s.dephead = v.ref & o.dephead = v.ref | subjekt ”medlem” (s), og deretter (evt. etter andre ord) hovedverb (v), og deretter (evt. etter andre ord) objektet ”støtte” (o)
+| s:[[lemma="miellahttu" & deprel="SUBJ→"] [[]* v:[[pos="V" & deprel="FMV"] [[]* o:[[lemma="doarjja" & deprel="←OBJ"] :: s.dephead = v.ref & o.dephead = v.ref | subjekt ”miellahttu” (s), og deretter (evt. etter andre ord) hovedverb (v), og deretter (evt. etter andre ord) objektet ”støtte” (o)
 
 Også de tidligere eksempla er det mulig å presenter ved hjelp av globale avgrensinger, f.eks. er det slik at søket:
 {{{
-a:[deprel="subj"] b:[] c:[] d:[] :: b.dephead=a.ref & c.dephead=b.ref & d.dephead=c.ref
+a:[deprel="SUBJ→"] b:[] c:[] d:[] :: b.dephead=a.ref & c.dephead=b.ref & d.dephead=c.ref
 }}}
 gir samme resultat som søket
 {{{
-a:[deprel="subj"] b:[dephead=a.ref] c:[dephead=b.ref] [dephead=c.ref]
+a:[deprel="SUBJ→"] b:[dephead=a.ref] c:[dephead=b.ref] [dephead=c.ref]
 }}}
 
 
@@ -150,7 +151,7 @@ Ved hjelp av de globale avgrensingene ovafor er det mulig å søke etter f.eks. 
 
 || CQP-uttrykk                     || Betydning
 | a:[[] "og" b:[[] :: a.word=b.word           |  samme ordform på begge sider av ordet "og"
-| a:[[lemma!="ha"] b:[[] :: a.lemma=b.lemma & a.word!=b.word | samme lemma to ganger etter hverandre, likevel slik at det i de to tilfellene ikke har samme ordform.
+| a:[[lemma!="leat"] b:[[] :: a.lemma=b.lemma & a.word!=b.word | samme lemma to ganger etter hverandre, likevel slik at det i de to tilfellene ikke har samme ordform.
 
 
 
