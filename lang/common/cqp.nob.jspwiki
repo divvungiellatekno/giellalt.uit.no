@@ -19,7 +19,7 @@ I korpuset er hver ordform merka med lemma, ordklasse, grammatiske egenskaper og
 | msd       | morfosyntaktisk analyse (f.eks. presens, entall, ...)
 | ref       | ordets posisjon i setninga (markert som et tall for 1., 2. ord, osv)
 | dephead   | dependensordets (mornodens) ordenstall
-| dep       | dependensrelasjonen til mornoden (subj, obj, osv.)
+| dep       | dependensrelasjonen til mornoden (SUBJ→, ←ADVL, osv.)
 
 Med utgangspunkt i __Utvidet__ kan du å velge __ordklasse__, __grammmatisk analyse__ eller __dependensrelasjon__, finne den verdien du vil ha, og velge den. Deretter kan du trykke på __CQP-uttrykk__ og finne ut hvordan kategorien du vil bruke blir skrevet i CQP. En oversikt over ordklasser (__pos__) og morfosyntaktiske trekk (__msd__) for hver ordklasse fins her (__LENKE kommer__). 
 
@@ -46,7 +46,7 @@ Eksempel:
 
 ||CQP-uttryk                    || Betydning
 | [[lemma="čálli" & pos="N"]       | ordformer som har "čálli" som grunnform og "N" som ordklassekode
-| [[lemma="giella" & !(deprel="SUBJ→"|deprel="SUBJ→")] | ordformer som har "giella" som grunnform og en dependensrelasjon som ikke er SUBJ→ eller SUBJ→.
+| [[lemma="giella" & !(deprel="SUBJ→"|deprel="←SUBJ")] | ordformer som har "giella" som grunnform og en dependensrelasjon som ikke er SUBJ→ eller ←SUBJ.
 | [[lemma="giella" & word!=lemma] | ordformer som har "giella" som grunnform og ordform som er forskjellig fra grunnforma
 
 Merk at det er mulig å vise til attributtverdi på begge sider av sammenligningsoperatoren. Merk også at pilene i dependensuttrykkene peker ''fra'' datternode ''til'' mornode. Uttrykket →N blir lagt til et (uspesifisert) ledd som modifiserer et substantiv, og uttrykket SUBJ→ blir lagt til et subjekt som modifiserer et ledd til høyre for seg.
@@ -90,7 +90,7 @@ Den enkleste måten å søke etter flere ord eller uttrykk på er å skrive dem 
 
 || CQP-uttrykk   || Betydning
 | "man" "dihte" | orda ”man” og ”dihte” etter hverandre
-| "den" [[pos!="N"]	| ordforma ”dat”, slik at neste ord ikke er et substantiv
+| "dat" [[pos!="N"]	| ordforma ”dat”, slik at neste ord ikke er et substantiv
 | [[pos="A" & deprel="→N"] [[pos!="N"] | et adjektiv som fungerer som attributt til et substantiv men der neste ord ikke er et substantiv
 
 Det er mulig å gruppere vilkår i søka, på samme måten som i utvida søk, men med flere muligheter. Søk etter flere ord får bare treff innafor ei og samme setning. Søket blir vist som treff på hele søkestrengen.
@@ -104,8 +104,8 @@ Eksempel:
 
 
 || CQP-uttrykk	|| Betydning
-| [[lemma="áigut"] [[]* [[lemma="vuolgit"] | ei eller anna form av ordet ”áibut” og lenger ute i setninga ei form av ordet ”vuolgit” ("skal kanskje gå, skulle ha gått", ...)
-| ("snart" ǀ "i" "morgen") [[deprel!="SUBJ→"]{1,3} [[deprel="FMV"] | ”snart” eller ”i morgen”, og deretter 1–3 ord som ikke er subjekt, og deretter hovedverbet
+| [[lemma="leat"] [[]* [[lemma="boahtit"] | ei eller anna form av ordet ”leat” og lenger ute i setninga ei form av ordet ”boahtit” ("leatgo jo boahtán", "lean boahtime", ...)
+| ("farggá" ǀ "vahku" "maŋŋel") [[deprel!="SUBJ→"]{1,3} [[deprel="FMV"] | ”farggá” eller ”vahku maŋŋel”, og deretter 1–3 ord som ikke er subjekt, og deretter hovedverbet
 
 
 !!Dependenssøk
