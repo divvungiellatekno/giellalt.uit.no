@@ -21,7 +21,7 @@ I korpuset er hver ordform merka med lemma, ordklasse, grammatiske egenskaper og
 | dephead   | dependensordets (mornodens) ordenstall
 | dep       | dependensrelasjonen til mornoden (SUBJ→, ←ADVL, osv.)
 
-Med utgangspunkt i __Utvidet__ kan du å velge __ordklasse__, __grammmatisk analyse__ eller __dependensrelasjon__, finne den verdien du vil ha, og velge den. Deretter kan du trykke på __CQP-uttrykk__ og finne ut hvordan kategorien du vil bruke blir skrevet i CQP. En oversikt over ordklasser (__pos__) og morfosyntaktiske trekk (__msd__) for hver ordklasse fins her (__LENKE kommer__). 
+Med utgangspunkt i __Utvidet__ kan du å velge __ordklasse__, __grammatisk analyse__ eller __dependensrelasjon__, finne den verdien du vil ha, og velge den. Deretter kan du trykke på __CQP-uttrykk__ og finne ut hvordan kategorien du vil bruke blir skrevet i CQP. En oversikt over ordklasser (__pos__) og morfosyntaktiske trekk (__msd__) for hver ordklasse fins her (__LENKE kommer__). 
 
 
 
@@ -118,7 +118,8 @@ For å søke etter dependensrelasjoner trengs nettopp egenskapene til CQP-søkes
 Eksempel:
 
 || CQP-uttrykk	|| Betydning
-| a:[[deprel="FMV"] [[]* [[lemma="giella" & deprel="←SUBJ" & dephead=a.ref] | ordet ”giella”, når det er subjektet til hovedverbet til venstre i setninga (merka med a)
+| a:[[deprel="FMV"] [[]* [[lemma="giella" & deprel="←SUBJ" & dephead=a.ref] | ordet ”giella”, når det er subjektet og står til høgre for hovudverbet \\ dephead=a.ref betyr: min dephead er a
+| a:[[lemma ="giella" & deprel="SUBJ→"] [[]* [[deprel="FMV" & ref=a.dephead] | ordet ”giella”, når det er subjekt og står til venstre for hovedverbet  \\ ref=a.dephead betyr: eg er målet for a's dephead-referanse
 | a:[[deprel="→N"] [[]* [[deprel="SUBJ→" & ref=a.dephead] | subjekt og leddet som modifiserer det (merka med a), slik at det mellom dem kan være null eller flere ord
 | a:[[deprel="SUBJ→"] b:[[dephead=a.ref] c:[[dephead=b.ref] [[dephead=c.ref] | subjekt i en frase der de tre følgende orda står som dependent til ordet foran seg
 
