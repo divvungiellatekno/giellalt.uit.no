@@ -1,0 +1,366 @@
+Hej,
+
+Så har jeg noget at se på, nemlig en sme.nor.dict fil (vedlagt). Den skal lave oversættelsesopslag, semantisk disambiguering og tag-tilpasning på én gang, således at man hurtigt kan overskue og ændre alt relevant ved det enkelte opslag. Derfor har jeg prøvet at flytte cg-regler for semantisk disambiguering ind i filen (søg på fx P1=), hvad der ikke var let :). Jeg skulle skelne mellem tag-kontekster og tag=set kontekster på den ene side, og ægte sets på den anden. Sidstnævte har fået et %-pærfix og jeg har lavet en præ-cg (smecg.nor.cg), der indføjger dem som <%...> sekundære tags i kohorten, så de kan ses af sme.nor.dict.
+
+Problemet er konteksterne. Der var heldigvis ofte bare nor target og sme i 0-kontekst, og det går sådan set fint for +1/-1 kontekster også, og jeg har endda håndteret mange LINKs som omskrivning til tal-kontekster. Men der er et problem - formalismen er lavet til dependens-træer (D=daughter GD=granddaughter, H=head, GM=grandmother), og de er ikke brugt i cglex. I stedet er der *-kontekster og BARRIER i cglex. Jeg kan muligvis tilføje * i formalismen, men hvis det kombinere med LINK og BARRIER bliver det svært. Løsningen må, for mig at se, snarere være at omskrive disse relativ få steder til dependens, fx D=(<H> @OBJ) for et humant objekt i et verbumsopslag, i stedet for *1 (<H> @OBJ BARRIER CLB OR V). Kan I prøve at se, om og i hvilken grad det er muligt, i sme.nor.dict filen?
+
+Det andet problem er pardefs, som jeg blankt indrømmer, jeg ikke helt har fattet endnu :)
+
+Vedlagt er en liste af de pardefs der forekom i cgdix i forbindelse med oversættelsesopslag (replace_patternsE). Min idé er at erstatte disse med en replace/insert-opskrift i sme.nor.dict: [from->to], og der kan være flere end én: [sg_m_RL_f__n] [pl->sg][n->n±m]
+'±' bliver til ' ' (space) i output, tomrum er bare et beskyttet tegn i .dict-formatet. Af samme grund er der '=' alle de steder i ord og lemmata, hvor i har mellemrum inde i ordet.
+
+Kan I færdiggøre og/eller kommentere omskrivningerne i pardef-filen?
+
+Uden [...] kan _... tilhæfting efter konteksterne forresten også bruges til bare at angive en oversættelse af det ord, der instantieres af konteksten. som [+...] eller [...+] kan det bruges til at efterstille eller foranstille et ord efter/før den normale oversættelse af kontekstordet. Det kan være meget nyttigt til on-the-fly tilpasninger direkte i .dict-filen.
+
+Teoretisk kan jeg også bare videresende pardefs til output, og så kan de implementeres af en efterfølgende cg, evt. den samme, der også laver MOVE etc. Men jeg synes, det ville som sagt være fint, at have alt lokalt i en .dict fil, hvis det er muligt.
+
+Morfologisk generering havde jeg tænkt mig skulle laves i et script til sidst, der selv splejser fst-input sammen for norsk, ved at se på input-kohorten. Så den sidste CG skal tilføje/ændre de ting, som .dict filen (læs: den MT-kerne, der læser den) ikke har nået.
+
+Der er nogle enkelte uregelmæssigheder, jeg har udskrevet i toppen af .dict filen, hvor en cglex-regel syntes at gå efter en oversættelse, der slet ikke var i  cgdix. Muligvis pga af et matching-problem i mit script. Men der er tale om ret få tilfælde, som i måske kan klare ved inspektion i filen.
+
+En sidste ting: Normalt har jeg altid en POS for et .dict opslag (som _POS efter lemma), men cgdix havde entries uden POS, som så er blevet til _X. Er det korrekt gættet, at sme-input alligevel HAR en POS? Fordi så kan den evt. benyttes, eller også må MT-kernen slå op i dict med _X, når den ikke kan finde en "tilladt" ordklasse i input (N, A, ADV, V, PRON?)
+
+Vi burde have lavet noget hands-on med det her i Tromsø, det ville have været meget nemmer face2face :)
+
+Mange hilsner,
+Eckhard
+
+
+On 12/3/18 4:41 PM, Lene Antonsen wrote:
+Hei!
+
+En kommentar til min kommentar om pipeline.
+Svaret er selvfølgelig at skillet mellom pipelinene skjer ved leksikonet, fordi der finne vi morfologisk informasjon. Så svaret gir seg selv. Da er det ingen grunn til å beholde informasjon om samisk morfologi etter dette. Vi kan erstatt med norsk morfologi, og syntaks.
+
+- Lene
+
+﻿Lene Antonsen <lene.antonsen@uit.no> skrev følgende den 03.12.2018, 16:12:
+
+    Hei!
+         Beklager, jeg har ikke sett din epost, selv om den var kommet til min innboks.
+         Jeg lurer litt på hvordan du har tenkt dette. Har du tenkt at man skal utvide CG-beahandlinga innafor apertium-systemet? Eller ta filene ut av aperitum-systemet og gjøre hele transformasjonen uten apertium og xml. Det var dette siste alternativet jeg trodde at vi landet på, selv om vi diskuterte det første alternativet først.
+         
+    For å være sikker på at vi har samme plan, burde vi kanskje snakke sammen?
+
+         Kommentar til det andre spørsmålet ditt:
+
+    I utgangspunktet ville det være fint å endre morfologien til norsk morfologi underveis i pipeline, men siden vi har flere MT-språkpar med nordsamisk som SL, så ville det er viktig å se på hvor i pipelinen språkparene skal gå til til forskjellige pipeliner.
+
+         Slik ser output i cg-format etter cglex:
+
+echo mánnábiigá|hfst-proc --weight-classes 1 -w -p '/Users/lan000/github/apertium-sme-nob/sme-nob.automorf.hfst' | cg-proc '/Users/lan000/github/apertium-sme-nob/sme-nob.mor.rlx.bin' | cg-proc -1 -n -w '/Users/lan000/github/apertium-sme-nob/sme-nob.syn.rlx.bin' | apertium-pretransfer| lt-proc -b '/Users/lan000/github/apertium-sme-nob/sme-nob.autobil.bin' | cg-proc '/Users/lan000/github/apertium-sme-nob/sme-nob.lex.bin' | cg-conv
+    "<mánnabiigá>" n sem_hum sg nom @HNOUN
+    	"barnevakt" n f sem_hum sg nom @HNOUN
+
+         Et eksempel med lexical selection:Slik ser output i cg-format før cglex:
+
+echo 'mii lohkat girjji'|hfst-proc --weight-classes 1 -w -p '/Users/lan000/github/apertium-sme-nob/sme-nob.automorf.hfst' | cg-proc '/Users/lan000/github/apertium-sme-nob/sme-nob.mor.rlx.bin' | cg-proc -1 -n -w '/Users/lan000/github/apertium-sme-nob/sme-nob.syn.rlx.bin' | apertium-pretransfer| lt-proc -b '/Users/lan000/github/apertium-sme-nob/sme-nob.autobil.bin' | cg-conv
+    "<mun>" prn pers p1 pl nom @SUBJ→
+    	"vi" prn pers p1 mf pl nom @SUBJ→
+    "<lohkat>" vblex tv indic pres p1 pl @+FMAINV
+    	"telle" vblex pers-pro pres p1 pl @+FMAINV
+    	"lese" vblex pers-pro pres p1 pl @+FMAINV
+    	"si" vblex pers-pro pres p1 pl @+FMAINV
+    "<girji>" n sem_txt sg acc @←OBJ
+    	"bok" n f maydetind sem_txt sg acc @←OBJ
+
+         Et eksempel med lexical selection:Slik ser output i cg-format etter cglex, dvs at lex-fila bare velger oversetting, hvis det er flere:
+
+echo 'mii lohkat girjji'|hfst-proc --weight-classes 1 -w -p '/Users/lan000/github/apertium-sme-nob/sme-nob.automorf.hfst' | cg-proc '/Users/lan000/github/apertium-sme-nob/sme-nob.mor.rlx.bin' | cg-proc -1 -n -w '/Users/lan000/github/apertium-sme-nob/sme-nob.syn.rlx.bin' | apertium-pretransfer| lt-proc -b '/Users/lan000/github/apertium-sme-nob/sme-nob.autobil.bin' | cg-proc '/Users/lan000/github/apertium-sme-nob/sme-nob.lex.bin' | cg-conv
+    "<mun>" prn pers p1 pl nom @SUBJ→
+    	"vi" prn pers p1 mf pl nom @SUBJ→
+    "<lohkat>" vblex tv indic pres p1 pl @+FMAINV
+    	"lese" vblex pers-pro pres p1 pl @+FMAINV
+    "<girji>" n sem_txt sg acc @←OBJ
+    	"bok" n f maydetind sem_txt sg acc @←OBJ
+
+         Hilsen Lene
+
+
+
+
+                          On 11/28/18 6:17 PM, Eckhard Bick wrote:
+        > Hej igen,
+        >
+        > Ok, jeg begynder at forstå formålet med pardef.
+        >
+        > Men kan du lige vise, hvordan tilføjelserne kommer til at se ud, når
+        > cg3 kører cglex.txt?
+        >
+        > Altså følgende i cg-format:
+        >
+        > ^nom<SN><@HNOUN><ind><f><sg><nom><agreem-pro>{^barnevakt<n><f><sg><ind>$}$^sent<SENT>{^.<sent><clb>$}$
+        >
+        >
+        > Fordi det er jo er cg-format, der skal komme ud af det
+        > lexicon&transfer-modul jeg forsøger at lave. Som så er input til en cg
+        > med MOVE regler etc., som så igen er input til generatoren.
+        >
+        > Min idé var sådan set, at bruge pardef'ene som en opskrift for at lave
+        > om på morfologiske tags (eller tilføje dem), således at når en pardef
+        > siger at norsk skal være pl, så bliver sg i input erstattet med pl. På
+        > denne måde "ser" den sidste cg noget tæt på norsk morfologi, og
+        > tagsene kan direkte høstes ind i fst'en. Det er på den måde jeg gør de
+        > med grønlandsk.
+        >
+        > Men hvis I hellere vil det, kan jeg også bare "parkere"
+        > {^barnevakt<n><f><sg><ind>$} som et sekundært tag, og lade de samiske
+        > tags stå. Men under alle omstændigheder skal jeg lige se et eller
+        > flere eksempler på hvordan pardef-styrede ting ser ud i cg-format.
+        >
+        > Interessant opgave :)
+        >
+        > MH
+        > Eckhard
+        >
+        >
+        > On 11/28/18 4:37 PM, Lene Antonsen wrote:
+        >> Hei, Eckhard!
+        >>
+        >> Takk for brev med spørsmål, det er fint at du spør. Her er noen svar:
+        >>
+        >> 1)
+        >> <e r="LR" betyr "restricted translation direction to Left to Right",
+        >> i motsetningn til RL, right to left.
+        >> bidix-filene kan i prinsippet brukes begge veger, fra sme-nob (LR) og
+        >> nob-sme (RL), men vi har ikke noe oppsett for det andre alternativet,
+        >> så det er ikke i bruk for dette språkparet. Her bruker vi alle
+        >> entryene som ikke er merket RL.
+        >>
+        >> For andre språkpar, der systemet går begge veier, er RL og LR
+        >> selvfølgelig viktig, det avgrenser oversettelsene.. F.eks. kan et
+        >> fao-dan-system ha danske lånord i fao som vi vil oversette (med seg
+        >> selv) til dansk, men fra dansk til færøysk vil vi oversette til de
+        >> færøyske orda. I slike tilfelle er paret r=LR, altså bare fao->dan,
+        >> og ikkje dan-> fao.
+        >>
+        >>
+        >> 2)
+        >> pardef er morfologiske tagger pluss ektratagger som gir informasjon
+        >> om nob ordet til transfer. Eksemplet med m_RL_f__n viser til
+        >> forskjellen mellom retninger, i tilfelle man lager et nob-sme
+        >> oppsett. Bakgrunnen for m_RL_f osv. er selvfølgelig m/f-variasjonen i
+        >> bokmål.
+        >>
+        >> Men som du ser, så legges det ikke til så mange morfologiske tagger i
+        >> denne fila, fordi de fleste legges til i transferfilene. Eksemplet
+        >> ditt blir slik etter første transferfil:
+        >> ^nom<SN><@HNOUN><ind><f><sg><nom><agreem-pro>{^barnevakt<n><f><sg><ind>$}$^sent<SENT>{^.<sent><clb>$}$
+        >>   Om pardefs for dette ordet:
+        >>      <pardef n="unc_m_RL_f__n" c="Generate nob masc, but analyse fem
+        >> (eventually, when we move on to nob->sme).
+        >>                                   Add unc tag iff going from sme to
+        >> nob (for ensuring indefiniteness in transfer).">
+        >>        <e><p><l></l><r><s n="m"/></r></p><par n="unc__n"/></e>
+        >>        <e r="RL"><p><l></l><r><s n="f"/></r></p><par n="unc__n"/></e>
+        >>      </pardef>
+        >>         <pardef n="unc__n" c="Add unc tag iff going from sme to nob
+        >> (currently just used for ensuring indefiniteness in transfer).">
+        >>        <e r="LR"><p><l></l> <r><s n="unc"/></r></p></e>
+        >>        <e r="RL"><p><l></l> <r></r></p></e>
+        >>        <e
+        >> r="RL"><p><l>EMPTY_LEFT_SIDE_HACK</l><r>EMPTY_LEFT_SIDE_HACK</r></p></e>
+        >>      </pardef>
+        >>      (Nå gjelder ingen av linjene som er merket RL.)
+        >>
+        >> Denne informasjon om nob ordet som er viktig for transferfilene
+        >> f.eks.
+        >>      <sdef n="unc"      c="May be uncountable"/>
+        >>      <sdef n="maydetind" c="May take an indefinite determiner"/>
+        >>
+        >> Det er også pardefs som lager adjektiv av noun, og sg noun selv om
+        >> sme input er pl. Eksempler:
+        >> <e><p><l>boaresolmmoš<s n="n"/></l><r>eldre<s n="adj"/></r></p><par
+        >> n="n__adj"/></e>
+        >>
+        >> <e><p><l>bivdu<s n="n"/><s n="sem_act"/></l><r>fiske<s n="n"/><s
+        >> n="nt"/></r></p><par n="sg__n"/></e>
+        >>
+        >>   bivdu kan være pluralis på sme, men skal alltid bli singularis på nob
+        >>
+        >> 3)
+        >>
+        >>      > (b) hvor mange <s ...> kan der være, og hvad fortæller de?
+        >>
+        >> Vi kan ha så mange <s ...> som vi trenger. Formatet er <s
+        >> n="feature"/>, der s forteller at dette er en node, n= forteller at
+        >> den har en verdi, og verdien kommer i hermetegn. Vi skriver ikke
+        >> kategori, så verdiene må være unike. Jf:
+        >>
+        >> knappebelte<s n="n"/><s n="m"/>  ==> et substantiv ("n") i nøytrum
+        >> ("nt").
+        >>
+        >> 4)
+        >>      > Jeg går ud
+        >>      > fra, at det i eksemplet er m=maskulinum, men er den oplysning
+        >>      > nødvendig her? Kan generatoren ikke læse den ind fra en
+        >> ordbogsfil?
+        >>      >
+        >>      > <e><p><l>mánnu<s n="N"/></l><r>måned<s n="N"/><s
+        >> n="m"/></r></p><par
+        >>      > n="maydetind__n"/></e>
+        >>
+        >> Det er omvendt: bidix + transferfiler bygger lemma + tagstreng (der
+        >> den delen av taggstrengen som ikke kommer fra sme-nob.dix kommer fra
+        >> sme-nob.t?x).
+        >> ^nom<SN><@HNOUN><ind><m><sg><nom><agreem-pro><maydetind>{^måned<n><m><sg><ind>$}
+        >>
+        >> Det du refererer til som en ordbogsfil er altså en nob-transduser,
+        >> som tar lemma+taggstreng (fra bidix +
+        >> transfer):^måned<n><m><sg><ind>$ som input og gir ordform som output.
+        >>
+        >> echo "^måned<n><m><sg><ind>$" |lt-proc -g sme-nob.autogen.bin
+        >> måned
+        >>
+        >> 5)
+        >>      > Og, forresten, hvad betyder "maydetind__n", der virker lidt
+        >> mindre som
+        >>      > en tag-erstatnings-foreskrift ...
+        >>
+        >> maydetind:
+        >>        <sdef n="maydetind" c="May take an indefinite determiner"/>
+        >>      Taggen "maydetind" brukes i transferreglene, dvs at i visse
+        >> tilfeller blir det lagt til en artikkel på nob, hvis denne taggen er
+        >> der (eple), mens andre tilfeller ikke har det (astma):
+        >>
+        >> <e><p><l>eahppel<s n="n"/></l><r>eple<s n="n"/><s
+        >> n="nt"/></r></p><par n="maydetind__n"/></e>
+        >> <e><p><l>ástmá<s n="n"/></l><r>astma<s n="n"/><s n="m"/></r></p></e>
+        >>
+        >> Dette får så konsekvens for output (med eller uten artikkelen "et"):
+        >>
+        >> Mus lea eahppel.|apertium -d. sme-nob
+        >> Jeg har et eple.
+        >>
+        >> Mus lea astma.|apertium -d. sme-nob
+        >> Jeg har astma.
+        >>
+        >> Den leksikografiske jobben var å skille mellom de to typene
+        >> substantiv (eple... vs. astma...) og tagge med maydetind i leksikon.
+        >> Det har vi gjort.
+        >>
+        >> 6)
+        >>
+        >> du skriver:
+        >> Tromsø/Apertium har et as-is-format, dvs.
+        >> mánnabiigá:barnevakt_[m_RL_f__n] betyr at "barnevakt" har visse
+        >> eigenskapar
+        >>
+        >> mens ditt format er dynamisk, dvs.
+        >> mánnabiigá -> barnevakt under vilkår XYZ
+        >>
+        >> Men også  vårt .dix-format er dynamisk, på samme måte som gramtrans:
+        >>
+        >> Jf. følgjande par fra sme-nob.dix:
+        >>
+        >> <e><p><l>lohkat<s n="vblex"/><s n="tv"/></l><r>lese<s n="vblex"/><s
+        >> n="pers-pro"/></r></p><par n="__verb"/></e>
+        >> <e><p><l>lohkat<s n="vblex"/><s n="tv"/></l><r>si<s n="vblex"/><s
+        >> n="pers-pro"/></r></p><par n="__verb"/></e>
+        >> <e><p><l>lohkat<s n="vblex"/><s n="tv"/></l><r>telle<s n="vblex"/><s
+        >> n="pers-pro"/></r></p><par n="__verb"/></e>
+        >>
+        >> Dette tilsvarer ditt format:
+        >>
+        >> lohkat -> lese
+        >> lohkat -> si
+        >> lohkat -> telle
+        >>
+        >> Hilsen Lene og Trond
+        >>
+ 
+ 
+ 
+ 
+         >>
+        >>
+        >> Eckhard Bick <eckhard.bick@mail.dk> skrev følgende den 28.11.2018,
+        >> 14:46:
+        >>
+        >>      Og hvad betyder <e r="LR"?
+        >>           MH
+        >>      Eckhard
+        >>           On 11/28/18 2:30 PM, Eckhard Bick wrote:
+        >>      > Hej Lene og cc/ Trond,
+        >>      >
+        >>      > Tak for filerne!
+        >>      >
+        >>      > Jeg har lige set, at jeg kan køre jeres cg'er, og åbnet de to
+        >> .txt filer.
+        >>      >
+        >>      > Og dér har jeg med det samme et par spørgsmål, som jeg håber i
+        >> lige
+        >>      > hurtigt vil svare på:
+        >>      >
+        >>      > (a) Hvordan håndteres jeres pardefs? Er det opskrifter til at
+        >> lave om
+        >>      > på morfologiske tags? Min idé ville være at appende dem til
+        >>      > oversættelserne, der hvor mit system har opskrifter af den
+        >> art. Mine
+        >>      > er x->y, men jeres skal nok have et as-is format, fx
+        >>      >
+        >>      > :barnevakt_[m_RL_f__n]
+        >>      >
+        >>      > Men hvad betyder det konkrete eksempel, altså hvilke ændringer
+        >> udløser
+        >>      > det?
+        >>      >
+        >>      > <e><p><l>mánnabiigá<s n="N"/></l><r>barnevakt<s
+        >> n="N"/></r></p><par
+        >>      > n="m_RL_f__n"/></e>
+        >>      >
+        >>      > (b) hvor mange <s ...> kan der være, og hvad fortæller de? Jeg
+        >> går ud
+        >>      > fra, at det i eksemplet er m=maskulinum, men er den oplysning
+        >>      > nødvendig her? Kan generatoren ikke læse den ind fra en
+        >> ordbogsfil?
+        >>      >
+        >>      > <e><p><l>mánnu<s n="N"/></l><r>måned<s n="N"/><s
+        >> n="m"/></r></p><par
+        >>      > n="maydetind__n"/></e>
+        >>      >
+        >>      > Og, forresten, hvad betyder "maydetind__n", der virker lidt
+        >> mindre som
+        >>      > en tag-erstatnings-foreskrift ...
+        >>      >
+        >>      > Mange hilsner,
+        >>      > Eckhard
+        >>      >
+        >>      >
+        >>      > On 11/28/18 11:46 AM, Lene Antonsen wrote:
+        >>      >>
+        >>      >> Hei!
+        >>      >>
+        >>      >> Takk for lærerike dager!
+        >>      >>
+        >>      >> Vedlagt er følgende filer:
+        >>      >>
+        >>      >> cgdix.txt – leksikon
+        >>      >>
+        >>      >> cglex.txt – lexicon selection regler
+        >>      >>
+        >>      >> (I disse to filene har jeg endret taggene fra apertiumformat til
+        >>      >> giellateknoformat, bortsett fra noen tagger for nob)
+        >>      >>
+        >>      >> Dependensanalyn består av
+        >>      >>
+        >>      >> disambiguator.cg3 + functions.cg3 + depencency.cg3
+        >>      >>
+        >>      >> Trenger du innputsetninger for testing?
+        >>      >>
+        >>      >> Her er laboratoriesetninger med tre forskjellig oversettinger av
+        >>      >> ‘lohkat’
+        >>      >>
+        >>      >> Mun logan girjji ihttin, logai oahpaheaddji. Son vulggii lohkat
+        >>      >> sávzzaid.
+        >>      >>
+        >>      >> Jeg leser boka i morgen, sa læreren. Hun/han reiste for å
+        >> telle sauene.
+        >>      >>
+        >>      >> Den morfologiske analysen er i vedlagte fil: cgtestsentence.
+        >>      >>
+        >>      >> Gi beskjed om hvilket materiale du trenger ellers.
+        >>      >>
+        >>      >> - Hlsen  Lene
+
