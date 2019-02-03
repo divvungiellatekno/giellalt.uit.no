@@ -26,21 +26,36 @@ Det andet problem er pardefs, som jeg blankt indrømmer, jeg ikke helt har fatte
 
 {{replace_patternsE.txt}} er en liste af de pardefs der forekom i cgdix i forbindelse med oversættelsesopslag (replace_patternsE). Min idé er at erstatte disse med en replace/insert-opskrift i sme.nor.dict: 
 
-* [from->to], 
-* der kan være flere end én: [sg_m_RL_f__n] [pl->sg][n->n±m]
+{{{
+[from->to], 
+der kan være flere end én: [sg_m_RL_f__n] [pl->sg][n->n±m]
+}}}
 
 '±' bliver til ' ' (space) i output, tomrum er bare et beskyttet tegn i .dict-formatet. Af samme grund er der '=' alle de steder i ord og lemmata, hvor i har mellemrum inde i ordet.
 
 __Kan I færdiggøre og/eller kommentere omskrivningerne i pardef-filen?__
 
 !!Understreg
-Uden [...] kan _... tilhæfting efter konteksterne forresten også bruges til bare at angive en oversættelse af det ord, der instantieres af konteksten. som [+...] eller [...+] kan det bruges til at efterstille eller foranstille et ord efter/før den normale oversættelse af kontekstordet. Det kan være meget nyttigt til on-the-fly tilpasninger direkte i .dict-filen.
 
-Teoretisk kan jeg også bare videresende pardefs til output, og så kan de implementeres af en efterfølgende cg, evt. den samme, der også laver MOVE etc. Men jeg synes, det ville som sagt være fint, at have alt lokalt i en .dict fil, hvis det er muligt.
+Uden {{[...]}} kan{{ _...}} tilhæfting efter konteksterne forresten
+også bruges til bare at angive en oversættelse af det ord, der
+instantieres af konteksten. som {{[+...]}} eller {{[...+]}} kan det
+bruges til at efterstille eller foranstille et ord efter/før den
+normale oversættelse af kontekstordet. Det kan være meget nyttigt til
+on-the-fly tilpasninger direkte i .dict-filen.
+
+Teoretisk kan jeg også bare videresende pardefs til output, og så kan
+de implementeres af en efterfølgende cg, evt. den samme, der også
+laver MOVE etc. Men jeg synes, det ville som sagt være fint, at have
+alt lokalt i en .dict fil, hvis det er muligt.
 
 
-!!Morfologisk generering 
-Morfologisk generering havde jeg tænkt mig skulle laves i et script til sidst, der selv splejser fst-input sammen for norsk, ved at se på input-kohorten. Så den sidste CG skal tilføje/ændre de ting, som .dict filen (læs: den MT-kerne, der læser den) ikke har nået.
+!!Morfologisk generering
+
+Morfologisk generering havde jeg tænkt mig skulle laves i et script
+til sidst, der selv splejser fst-input sammen for norsk, ved at se på
+input-kohorten. Så den sidste CG skal tilføje/ændre de ting, som .dict
+filen (læs: den MT-kerne, der læser den) ikke har nået.
 
 
 
