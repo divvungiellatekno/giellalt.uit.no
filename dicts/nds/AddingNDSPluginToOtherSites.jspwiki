@@ -30,7 +30,7 @@ be the case, report a bug.
 
 {{{
     <link rel="stylesheet"
-          href="http://PROJNAME.oahpa.no/static/css/neahttadigisanit.css"></link>
+          href="https://PROJNAME.oahpa.no/static/css/neahttadigisanit.css"></link>
 }}}
 
 Here you will need to replace PROJNAME with the project you are using, i.e.,
@@ -43,7 +43,7 @@ is present when the file is called.
 
 {{{
     <script type="text/javascript"
-            src="http://PROJNAME.oahpa.no/static/js/neahttadigisanit.jquery.min.js"></script>
+            src="https://PROJNAME.oahpa.no/static/js/neahttadigisanit.jquery.min.js"></script>
 }}}
 
 You may add the JS file in the footer.
@@ -62,7 +62,7 @@ included above.
         // Initialize and configure NDS
         $(document).selectToLookup({
             // This specifies the dictionary set to
-            api_host: 'http://PROJNAME.oahpa.no/',
+            api_host: 'https://PROJNAME.oahpa.no/',
         });
     });
 }}}
@@ -73,16 +73,29 @@ For most purposes you should be able to just copy and paste this JS snippet
 without changes. If you need another dictionary set, you may alter the
 {{api_host}} setting:
 
-* South Saami / Norwegian - http://baakoeh.oahpa.no/
+* South Saami / Norwegian - https://baakoeh.oahpa.no/
 * More coming soon...
 
 Mind the trailing slash.
 
-!! Note on HTTPS and SSL
+!! Custome language pair
 
-We are in the process of  making this functionality available on sites using
-SSL. The document will be updated when this is available.
-If PROJNAME = sanit you can replace http with https in all urls.
+If you want to use the plugin with a custom language pair, you can specify it in the script tag as follows:
+
+{{{
+    <script type="text/javascript" id='nds_script' data-lang='iso_source,iso_target'
+            src="https://PROJNAME.oahpa.no/static/js/neahttadigisanit.jquery.min.js"></script>
+}}}
+
+Where you need to replace iso_source with the iso for the source language, and iso_target with the iso for the target language.
+
+For example, if you use sanit.oahpa.no and you want to customize the plugin so that it shows North-Sámi to Norwegian as your custom default, add the following:
+
+{{{
+    <script type="text/javascript" id='nds_script' data-lang='sme,nob'
+            src="https://sanit.oahpa.no/static/js/neahttadigisanit.jquery.min.js"></script>
+}}}
+
 
 !! Contact
 
