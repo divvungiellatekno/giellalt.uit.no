@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Forrest site.xml
+
+    This file contains an outline of the site's information content.  It is used to:
+    - Generate the website menus (though these can be overridden - see docs)
+    - Provide semantic, location-independent aliases for internal 'site:' URIs, eg
+    <link href="site:changes"> links to changes.html (or ../changes.html if in
+      subdir).
+      - Provide aliases for external URLs in the external-refs section.  Eg, <link
+                                        href="ext:cocoon"> links to http://cocoon.apache.org/
+
+    See http://forrest.apache.org/docs/linking.html for more info
+    -->
+    <!-- $Id$ -->
+<site href="" label="Divvun" tab="Ruoktu"
+	xmlns="http://apache.org/forrest/linkmap/1.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:ns="http://apache.org/forrest/linkmap/1.0">
+
+	<xi:include href="doc/site-frag.xml" />
+	<xi:include href="doc/site-proof-frag.xml" />
+	<xi:include href="ttsdoc/site-frag.xml" />
+	<svn label="Subversion">
+		<svn1 href="doc/infra/setup-svn.html" label="Setup svn" />
+		<svn2 href="doc/tools/docu-svn-user.html" label="Howto use SVN" />
+		<svn3 href="doc/infra/system/addsvn-users.html" label="Admin svn users" />
+	</svn>
+</site>

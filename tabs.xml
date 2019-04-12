@@ -1,0 +1,36 @@
+<!DOCTYPE tabs PUBLIC "-//APACHE//DTD Cocoon Documentation Tab V1.1//EN"
+                      "http://forrest.apache.org/dtd/tab-cocoon-v11.dtd">
+<tabs title="Divvun"
+      software="Divvun"
+      copyright="Norgga Sámedikkis"
+      xmlns:xi="http://www.w3.org/2001/XInclude" >
+<!-- The rules for tabs are:
+       @dir will always have '/@indexfile' added.
+       @indexfile gets appended to @dir if the tab is selected. Defaults to 'index.html'
+       @href is not modified unless it is root-relative and obviously specifies a directory
+        (ends in '/'), in which case /index.html will be added
+       If @id's are present, site.xml entries with a matching @label will be in that tab.
+       Tabs can be embedded to a depth of two. The second level of tabs will only be
+        displayed when their parent tab is selected.
+    -->
+<!-- The id attribute in the tab tag has to match the tab attribute in site.xml -->
+	<tab href="http://divvun.no" label="Ruoktu" />
+
+	<tab href="http://divvun.no/adm" label="Administrašuvdna" />
+
+    <tab href="http://giellatekno.uit.no" label="Giellatekno" />
+
+    <!-- The Tech-Doc tab -->
+    <xi:include href="doc/tabs-frag.xml#xpointer(/tabs/tab[@id='TechDoc'])" />
+
+    <!-- The Proofing Tech-Doc tab -->
+    <xi:include href="doc/tabs-frag.xml#xpointer(/tabs/tab[@id='proof'])" />
+
+    <!-- The Words Tech-Doc tab
+    <xi:include href="wordsdoc/tabs-frag.xml" /> -->
+
+    <!-- The TTS documentation tab -->
+    <xi:include href="ttsdoc/tabs-frag.xml" />
+
+	<tab href="http://divvun.no/future/index.html" label="Future"/>
+</tabs>
