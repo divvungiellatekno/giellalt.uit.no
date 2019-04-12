@@ -14,23 +14,15 @@
         displayed when their parent tab is selected.
     -->
 <!-- The id attribute in the tab tag has to match the tab attribute in site.xml -->
-	<tab href="http://divvun.no" label="Ruoktu" />
-
-	<tab href="http://divvun.no/adm" label="Administrašuvdna" />
-
-    <tab href="http://giellatekno.uit.no" label="Giellatekno" />
-
     <!-- The Tech-Doc tab -->
-    <xi:include href="doc/tabs-frag.xml#xpointer(/tabs/tab[@id='TechDoc'])" />
+    <xi:include href="tabs-frag.xml#xpointer(/tabs/tab[@id='TechDoc'])" />
 
     <!-- The Proofing Tech-Doc tab -->
-    <xi:include href="doc/tabs-frag.xml#xpointer(/tabs/tab[@id='proof'])" />
+    <xi:include href="tabs-frag.xml#xpointer(/tabs/tab[@id='proof'])" />
 
     <!-- The Words Tech-Doc tab
     <xi:include href="wordsdoc/tabs-frag.xml" /> -->
 
     <!-- The TTS documentation tab -->
     <xi:include href="ttsdoc/tabs-frag.xml" />
-
-	<tab href="http://divvun.no/future/index.html" label="Future"/>
 </tabs>
