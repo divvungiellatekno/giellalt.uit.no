@@ -1,0 +1,22 @@
+
+
+Se also seperate pages on [compound|CompoundTags.html], [semantic|SemanticTags.html], [syntax|docu-sme-syntaxtags.html] and [dependency|docu-deptags.html] tags.
+
+
+Note the tag format when the same entry has more than one tag:
+
+{{{
+Sem/Tagname1
+Sem/Tagname1_Tagname2
+}}}
+
+All combinations shall be listed in the file {{root.lexc}}.
+In the {{disambiguator.cg3}} file there will be sets:
+
+{{{
+Sem/Tagname1 = Sem/Tagname1 Sem/Tagname1_Tagname2
+Sem/Tagname2 = Sem/Tagname1_Tagname2
+}}}
+
+Documentation on the tags forthcoming.
+
