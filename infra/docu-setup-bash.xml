@@ -6,61 +6,14 @@
     <title>Setup of bash</title>
 
     <authors>
-      <person email="tomi.pieski@hum.uit.no" name="Tomi Pieski" />
-
       <person email="sjurnm@mac.com" name="Sjur Moshagen" />
-
       <person email="borre.gaup@samediggi.no" name="Børre Gaup" />
     </authors>
   </header>
 
   <body>
     <section>
-      <title>Install the <em>right</em> version of bash</title>
-<warning>This document is not up-to-date!</warning>
-      <p>A new bash is required to get rid of the Saami characters problem in
-      Mac's. First we need to: <a
-      href="http://www.hmug.org/pub/MacOS_X/BSD/Libraries/System/readline/">
-      get</a> and install readline. Download the newest version. Move the readline directory to /tmp and
-      install it (replace x and y with current version numbers):</p>
-
-      <source>
-ssh adminis@localhost
-(asks admin password)
-mv Desktop/readline-x.y tmp
-cd /tmp/readline-x.y
-sudo make install
-    </source>
-
-      <p>Then, <a
-      href="http://www.hmug.org/pub/MacOS_X/BSD/Applications/Shells/bash/">get</a>
-      and install bash. Download the newest version:</p>
-
-      <p>As admin:</p>
-
-      <source>
-mv Desktop/bash-x.y.z tmp
-cd /tmp/bash-x.y.z
-./configure
-sudo make install
-    </source>
-
-      <p>After that, configure Terminal to open bash-3.0 as default login
-      shell:</p>
-
-      <p>Terminal(Pääte)-&gt;Settings(Asetukset) (or press Command-,). Check
-      the second radio button and write path as:
-      <code>/usr/local/bin/bash</code></p>
-
-      <p><em>Alternatively</em>, to enable new bash when starting bash in
-      Terminal, do following:</p>
-
-      <source>sudo mv /bin/bash /bin/bash-old
-sudo ln -s /usr/local/bin/bash /bin/bash
-sudo mv /usr/share/man/man1/bash.1 /usr/share/man/man1/bash-old.1</source>
-
-      <p>The last command is for having manual pages for the new bash.</p>
-    </section>
+      <title>Notes on the bash shell</title>
 
     <section>
       <title>Setup environment variables</title>
@@ -101,12 +54,13 @@ export LOCALE=UTF-8
 export LESSCHARSET='utf-8'
     </source>
       </section>
+      </section>
 
       <section>
-        <title>Example .bashrc</title>
+        <title>Examples to add to the .profile file</title>
 
         <source>
-# .bashrc
+# .profile
 
 # User specific aliases and functions
 
@@ -116,7 +70,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 #alias-tillegg
-alias em="emacs -nw"
+alias em="emacs -nw" # if needed
 alias l="less"
 alias ll="ls -l"
 alias la="ls -a"
@@ -129,30 +83,9 @@ alias who="who | sort"
     </section>
 
     <section>
-      <title>Setting up 8-bit input</title>
+      <title>Tweaking the shell</title>
 
-      <note>This is <strong>NOT</strong> needed anymore in <strong>Leopard /
-      MacOS X 10.5.x</strong>. 8-bit input
-      as well as full UTF-8 support is built in and working without needing
-      additional setup - at least for new computers (old computers being
-      upgraded is not yet tested).</note>
-
-      <p>To enable input and output processing of 8-bit bytes, put the
-      following lines into the file '.inputrc' (without quotes, in your home
-      directory) - without these instructions, bash will only operate in
-      7-bits, which is not sufficient for UTF-8 (it's an 8-bit encoding!):</p>
-
-      <source>
-# Enable 8bit input
-set meta-flag on
-set input-meta on
-
-# Turns off 8th bit stripping
-set convert-meta off
-
-# Keep the 8th bit for display
-set output-meta on
-
+<source>
 # Will display all alternatives for completion after one tab keypress
 set show-all-if-ambiguous On
       </source>
