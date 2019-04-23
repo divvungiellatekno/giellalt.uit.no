@@ -55,7 +55,7 @@
       recognition, and found some alternatives. We picked (TextCat|), a
       perl-based tool licensed under a GPL license. It is now installed in
       gt/scripts/, and rudimentary user doc can be found in our <a
-      href="/doc/ling/langrec.html">intranet</a>.</p>
+      href="/ling/langrec.html">intranet</a>.</p>
 
       <p>What is left to do now, is to integrate language recognition with the
       corpus processing, adding language information automatically to at least
@@ -110,7 +110,7 @@ gt/common/src/proper-nouns.xml
 &lt;propndict&gt;
     &lt;entry id="Guovdageaidnu"&gt;
         &lt;sem&gt;
-          plc sur 
+          plc sur
         &lt;/sem&gt;
         &lt;form lg="sme"&gt;
           &lt;cnt&gt;DEATNU&lt;/cnt&gt;
@@ -127,7 +127,7 @@ gt/common/src/proper-nouns.xml
         &lt;form lg="eng nno nob swe"/&gt;
           &lt;lm&gt;Kautokeino&lt;/lm&gt;
         &lt;/form&gt;
-    &lt;/entry&gt;  
+    &lt;/entry&gt;
     &lt;entry id="India"&gt;
         &lt;sem&gt;
           fem plc
@@ -178,25 +178,25 @@ gt/common/src/proper-nouns.xml
             <ul>
               <li><strong>&lt;lm&gt;</strong> - lemma, only needed if different
               from the <strong>id</strong> of the entry</li>
-  
+
               <li><strong>&lt;stem&gt;</strong> - gives the stem if different
               from <strong>&lt;lm&gt;</strong></li>
-  
+
               <li><strong>&lt;cont&gt;</strong> - the continuation lexicon. The
               string here is concatenated with the strings given in
               <strong>&lt;sem&gt;</strong> (one at a time) separated by a
               hyphen, forming the set of possible continuation lexicons. If
               <em>no</em> &lt;cont&gt; is given, the name is not included in the
               compiled lexicon for that language.</li>
-  
+
               <li><strong>&lt;sem&gt;</strong> - contains override semantic
               classification - see the India example above, Finnish entries, for
               a use case</li>
-  
+
               <li>if the same information is shared among several languages, the
               <strong>@lg</strong> can (or preferably should) contain multiple
               entries separated by a space</li>
-  
+
               <li>the <strong>&lt;form&gt;</strong> element can be empty if all
               information can be deduced from the <strong>@id</strong> of the
               entry (such as when there's no known continuation class, and the

@@ -15,9 +15,9 @@ Ctrl-D
 
 
 !!update grammarchecker tools, vislcg3, hfst, apertium
-{{{cd divvun-suggest 
+{{{cd divvun-suggest
 git pull
-sudo bash scripts/mac-build 
+sudo bash scripts/mac-build
 }}}
 
 
@@ -55,7 +55,7 @@ grep '/configure' $GTHOME/langs/sme/config.log
 
 {{{
 cd $GTHOME/langs/sme
-./configure --with-hfst --without-xfst --enable-grammarchecker \ 
+./configure --with-hfst --without-xfst --enable-grammarchecker \
 --enable-alignment --enable-reversed-intersect
 }}}
 
@@ -75,7 +75,7 @@ make
 
 {{{
 cd $GTHOME/langs/sme/src
-time make -j analyser-gramcheck-gt-desc.hfstol 
+time make -j analyser-gramcheck-gt-desc.hfstol
 }}}
 
 !!!Working on websites
@@ -87,7 +87,7 @@ f8
 
 in Safari:
 {{{
-http://localhost:8888/doc/tools/CommandsForGrammarCheckerDevelopers.html
+http://localhost:8888/tools/CommandsForGrammarCheckerDevelopers.html
 }}}
 
 !!!Install grammar checker in LibreOffice (Mac)

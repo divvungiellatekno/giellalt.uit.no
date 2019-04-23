@@ -29,65 +29,65 @@ Uløyseleg problem med split compounds, må fiksast i preprossessering før OBT-
 !!Problem
 
 {{{
-hum-tf4-ans143:obt ttr000$ echo "Jorden var øde og tom, og mørke lå over havdypet. " | ./bin/mtag-osx64 |vislcg3  -g src/nob_morf.cg3 
+hum-tf4-ans143:obt ttr000$ echo "Jorden var øde og tom, og mørke lå over havdypet. " | ./bin/mtag-osx64 |vislcg3  -g src/nob_morf.cg3
 
 "<jorden>"
-	"jord" subst appell mask be ent 
+	"jord" subst appell mask be ent
 "<var>"
-	"være" verb pret a5 pr1 pr2 <aux1/perf_part> 
+	"være" verb pret a5 pr1 pr2 <aux1/perf_part>
 "<øde>"
-	"øde" adj ub m/f ent pos 
-	"øde" adj fl pos 
-	"øde" subst appell nøyt ub ent 
-	"øde" adj nøyt ub ent pos 
+	"øde" adj ub m/f ent pos
+	"øde" adj fl pos
+	"øde" subst appell nøyt ub ent
+	"øde" adj nøyt ub ent pos
 "<og>"
-	"og" konj 
+	"og" konj
 "<tom>"
-	"tom" adj ub m/f ent pos 
+	"tom" adj ub m/f ent pos
 "<,>"
-	"$," <komma> 
+	"$," <komma>
 "<og>"
-	"og" konj clb 
+	"og" konj clb
 "<mørke>"
-	"mørk" adj fl pos 
-	"mørke" subst appell nøyt ub ent 
+	"mørk" adj fl pos
+	"mørke" subst appell nøyt ub ent
 "<lå>"
-	"ligge" verb pret i2 tr11 pa4 a5 
+	"ligge" verb pret i2 tr11 pa4 a5
 "<over>"
-	"over" prep 
+	"over" prep
 "<havdypet>"
-	"havdyp" subst appell nøyt be ent 
+	"havdyp" subst appell nøyt be ent
 "<.>"
-	"$." clb <punkt> 
+	"$." clb <punkt>
 
 
 
-hum-tf4-ans143:obt ttr000$ echo "Jorden var øde og tom, og mørke lå over havdypet. " | ./bin/mtag-osx64 |vislcg3  -g src/nob_morf-prestat.cg3  | OBT-Stat/bin/run_obt_stat.rb 
+hum-tf4-ans143:obt ttr000$ echo "Jorden var øde og tom, og mørke lå over havdypet. " | ./bin/mtag-osx64 |vislcg3  -g src/nob_morf-prestat.cg3  | OBT-Stat/bin/run_obt_stat.rb
 
 "<jorden>"
-	"jord" subst appell mask be ent 
+	"jord" subst appell mask be ent
 "<var>"
-	"være" verb pret a5 pr1 pr2 <aux1/perf_part> 
+	"være" verb pret a5 pr1 pr2 <aux1/perf_part>
 "<øde>"
-	"øde" adj ub m/f ent pos 
+	"øde" adj ub m/f ent pos
 "<og>"
-	"og" konj 
+	"og" konj
 "<tom>"
-	"tom" adj ub m/f ent pos 
+	"tom" adj ub m/f ent pos
 "<,>"
-	"$," <komma> 
+	"$," <komma>
 "<og>"
-	"og" konj clb 
+	"og" konj clb
 "<mørke>"
-	"mørke" subst appell nøyt ub ent 
+	"mørke" subst appell nøyt ub ent
 "<lå>"
-	"ligge" verb pret i2 tr11 pa4 a5 
+	"ligge" verb pret i2 tr11 pa4 a5
 "<over>"
-	"over" prep 
+	"over" prep
 "<havdypet>"
-	"havdyp" subst appell nøyt be ent 
+	"havdyp" subst appell nøyt be ent
 "<.>"
-	"$." clb <punkt> 
+	"$." clb <punkt>
 }}}
 
 !!Oppsummering
@@ -154,7 +154,7 @@ __GJERAST:__
 !! Status quo
 
 Trond har kompletert dokumentasjonen, og sjekka kor mykje av dokumentasjonen vi
-kan visa til andre. /doc/tools/autshumato.html
+kan visa til andre. /tools/autshumato.html
 
 Resultat etter testing:
 * omsetjingsminnet funkar bra, både med OpenOffice, og med Word-filer
@@ -162,11 +162,11 @@ Resultat etter testing:
 ** løysing: ein må starta Java med rett encoding-parameter
 * har ikkje testa MT (feil språkpar / retning)
 * "Glossary" __funkar__. Glossary = terminologi som rein tekst (TSV) eller tbx-fil.
-* "Dictionary" funkar ikkje? Dictionary = StarDict-format, 
-  Autshumato leverer kanskje berre funksjonailitet på Windows. 
+* "Dictionary" funkar ikkje? Dictionary = StarDict-format,
+  Autshumato leverer kanskje berre funksjonailitet på Windows.
   Dette må testast og arbeidast vidare med.
-* Hunspell: funkar på Linux i Omega-T, truleg er det eit 
-  DLL-problem (dvs som over, Autshumato kjem berre med 
+* Hunspell: funkar på Linux i Omega-T, truleg er det eit
+  DLL-problem (dvs som over, Autshumato kjem berre med
   Windows-DLL, og med Linux- og Mac-bibliotek burde Hunspell funka der òg.
 
 Enkel terminologi/"glossary" kan lagast slik:
