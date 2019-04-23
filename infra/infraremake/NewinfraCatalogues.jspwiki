@@ -1,8 +1,8 @@
 
-This is an overview of the file structure for each language 
+This is an overview of the file structure for each language
 catalogue found in our (new) infrastructure, i.e.
-over the directories {{giella-core, langs}} located under our main catalogue. 
-Also the file README in {{$GTHOME}} describes some basic properties of 
+over the directories {{giella-core, langs}} located under our main catalogue.
+Also the file README in {{$GTHOME}} describes some basic properties of
 the new infrastructure.
 
 
@@ -10,8 +10,8 @@ the new infrastructure.
 
 The starting point is the mother catalogue {{$GTHOME}} (called ''main''
 if you follow [the standard checkout procedure|../../tools/docu-svn-user.html].
-It contains (a.o.) the catalogues {{giella-core, langs}}, the former is for 
-language-independent files, and the latter is for language-specific files, 
+It contains (a.o.) the catalogues {{giella-core, langs}}, the former is for
+language-independent files, and the latter is for language-specific files,
 one subfolder for each language.
 
 !! giella-core
@@ -129,7 +129,7 @@ include $(top_srcdir)/am-shared/lesc-include.am
 
 This statement includes the majority of the build instructions. You should never need to touch the included file.
 
-!! The orthography folder 
+!! The orthography folder
 
 Here we take care of initial capitalisation, and of spellrelax. Note that
 spellrelax now will be language-specific.
@@ -141,7 +141,7 @@ This folder contains files for conversion to IPA.
 
 !! The syntax folder under langs/$LANG/src/
 
-This folder contains {{disambiguation.cg3}}. 
+This folder contains {{disambiguation.cg3}}.
 
 The files {{functions.cg3, dependency.cg3}} for for sma/sme/smj are in
 {{giella-shared/smi/src/syntax/}}. Faroese also uses the common
@@ -165,8 +165,8 @@ So far we have morphology tests only, but there is a setup for syntax and phonol
 !! Transducers
 
 
-What kind of and how many transducers we produce varies from language to language. 
-The binary files are stored in {{$LANG/src}}, with 
-[the following name conventions|TransducerNamesInTheNewInfra.html]. 
+What kind of and how many transducers we produce varies from language to language.
+The binary files are stored in {{$LANG/src}}, with
+[the following name conventions|TransducerNamesInTheNewInfra.html].
 
-For some languages (at least sme and sma) the content of and difference between the transducers is explained on [the documentation page of each language|../../lang/index.html]
+For some languages (at least sme and sma) the content of and difference between the transducers is explained on [the documentation page of each language|/lang/index.html]
