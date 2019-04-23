@@ -1,1 +1,0 @@
-../../words/dicts/smenob/00readme.txt
