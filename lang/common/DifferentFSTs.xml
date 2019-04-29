@@ -2,13 +2,13 @@
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
 <document xml:lang="en">
   <header>
-    <title>Different FSTs and how they are interacting with tags</title>
+    <title>Different FSTs and how they interact with tags</title>
   </header>
 
   <body>
     <section>
       <title>Overview</title>
-<p>This is an overview over FSTs which are compiled and their egenskaper.</p>
+<p>This is an overview over FSTs which are compiled and their properties.</p>
 <ul>
 <li><strong>Removing paths</strong>: Paths marked with  +Dial/- and +Use/NG are removed for MT (generator-mt-gt-norm) and Oahpa: (generator-oahpa-gt-restr). The tags are invisible in other FSTs. Paths with  +Err/Orth and +Err/Lex are removed for all alle norm-analysers and norm-generatorers, and the tags are visible in other FSTs. +Use/MT should be removed for all FSTs except for MT, but this is not implemented. The tag is invisible.</li>
 <li><strong>+MWE</strong> is added to entries which should be tokenised as multiwords exspressions. The tag is invisible.</li>
@@ -72,19 +72,19 @@
           </tr>
           <tr>
             <td>analyser-gt-desc</td>
-            <td>Err/Orth, Err/Lex, +vN</td>
-            <td>Sem/-taggar</td>
+            <td>+Err/Orth, +Err/Lex, +vN</td>
+            <td>+Sem/tags</td>
           </tr>
           <tr>
             <td>analyser-disamb-gt-desc</td>
-            <td>Err/Orth, Err/Lex, Sem/-taggar, Allegro</td>
+            <td>+Err/Orth, +Err/Lex, +Sem/tags, +Allegro</td>
             <td>+vN</td>
           </tr>
 </table>
 
     </section>
     <section>
-      <title>Generatorar</title>
+      <title>Generators</title>
         <table>
           <tr>
             <td><strong>FST</strong></td>
