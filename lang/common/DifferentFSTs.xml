@@ -43,10 +43,10 @@
             <td></td>
           </tr>
           <tr>
-            <td>analyser-dict-gt-desc-mobile 1)</td>
+            <td>analyser-dict-gt-desc-mobile</td>
             <td>+NomAg +G3 +G7 +Allegro, +HomN +vN +Use/NGminip +Coll +TV +IV</td>
             <td>+Sem/tags, +OLang/*, +MWE, +vN</td>
-            <td></td>
+            <td>analyser-dict-gt-desc-mobile is compiled with orthography/spellrelax-mobile-keyboard.regex in addition to the ordinary spellrelax.regex</td>
           </tr>
          <tr>
             <td>analyser-gt-norm</td>
@@ -60,10 +60,14 @@
             <td>+Sem/tags, +OLang/*, +MWE, +Use/NGminip, +Allegro, +vN</td>
             <td>FST made for testing, it is parallel with the generator.</td>
           </tr>
+          <tr>
+            <td>analyser-for apertium-MT</td>
+            <td>coming</td>
+            <td>coming</td>
+            <td></td>
+          </tr>
         </table>
-<p>analyser-dict-gt-desc-mobile is compiled with orthography/spellrelax-mobile-keyboard.regex in additin to the ordinary spellrelax.regex.</p>
 
-<p>Morfologisk analyse presentert på web vs. til disambiguering:</p>
         <table>
           <tr>
             <td><strong>FST</strong></td>
@@ -88,109 +92,51 @@
         <table>
           <tr>
             <td><strong>FST</strong></td>
-            <td><strong>obligatoriske</strong></td>
-            <td><strong>valgfrie</strong></td>
+            <td><strong>Mandatory</strong></td>
+            <td><strong>Optional</strong></td>
           </tr>
           <tr>
             <td>generator-gt-desc</td>
             <td>-</td>
-            <td>IV, TV, vN, Coll, Allegro, Use/NGminip, NomAg, G3, G7, Hom1 (sma), Hom2 (sma)</td>
+            <td>+NomAg +G3 +G7 +Allegro +HomN +vN +Use/NGminip +Coll +TV +IV</td>
           </tr>
           <tr>
             <td>generator-gt-norm</td>
             <td>-</td>
-             <td>IV, TV, vN, Coll, Allegro, Use/NGminip, NomAg, G3, G7, Hom1 (sma), Hom2 (sma)</td>
+            <td>+NomAg +G3 +G7 +Allegro +HomN +vN +Use/NGminip +Coll +TV +IV</td>
          </tr>
           <tr>
             <td>generator-dict-gt-norm</td>
-            <td>NomAg, G3, G7, Hom1 (sma), Hom2 (sma), vN, Coll, Use/NGminip, Allegro</td>
-             <td>IV, TV</td>
+            <td>+NomAg +G3 +G7 +Allegro +HomN +vN +Use/NGminip +Coll</td>
+             <td>+TV +IV</td>
          </tr>
           <tr>
             <td>generator-oahpa-gt-norm</td>
-            <td>NomAg, G3, G7, Hom1 (sma), Hom2 (sma), Coll</td>
-             <td>IV, TV, vN, Allegro, Use/NGminip</td>
+            <td>+NomAg +G3 +G7 +HomN +Coll</td>
+             <td>+IV +TV +vN, +Allegro +Use/NGminip</td>
          </tr>
           <tr>
-            <td>generator-oahpa-gt-restr_GG</td>
+            <td>generator-oahpa-gt-restr_XX</td>
             <td>= generator-oahpa-gt-norm + Allegro</td>
-             <td>men strengar med Use/NG og Dial/-GG skal ikke med i kompileringa</td>
+             <td>Removes paths with +Use/NG and the other dialects (Dial/), if there are more dialects</td>
          </tr>
           <tr>
-            <td>generator-oahpa-gt-restr_KJ</td>
-            <td>= generator-oahpa-gt-norm + Allegro</td>
-             <td>men strengar med Use/NG og Dial/-KJ skal ikke med i kompileringa</td>
-         </tr>
-          <tr>
-            <td>generator-oahpa-gt-restr_SH</td>
-            <td>= generator-oahpa-gt-norm</td>
-             <td>men strengar med Use/NG og Dial/-SH skal ikke med i kompileringa (sma)</td>
-         </tr>
-          <tr>
-            <td>generator-oahpa-gt-restr_L</td>
-            <td>= generator-oahpa-gt-norm</td>
-             <td>men strengar med Use/NG og Dial/-L skal ikke med i kompileringa (sma)</td>
-         </tr>
+            <td>generator-for apertium-MT</td>
+            <td>coming</td>
+            <td>coming</td>
+            <td></td>
+          </tr>
 </table>
 
-<p>Dialekt-fst-ane er no implementerte. Dei må testast slik at vi veit at dei fungerer som dei skal.</p>
     </section>
-    <section>
-      <title>Ferdige FST-ar</title>
-        <table>
-          <tr>
-            <td><strong>FST-namn</strong></td>
-            <td><strong>Tag-merknader m.m.</strong></td>
-         </tr>
 
-<tr><td> analyser-mt-apertium-desc.sma      </td>
-<td>Sem/-tagger for sme-sma, filtrert mot bidix (gjort på Apertium-sida)</td></tr>
-<tr><td> analyser-mt-apertium-desc.smj      </td>
-<td>Sem/-tagger for sme-smj, filtrert mot bidix (gjort på Apertium-sida)</td></tr>
-<tr><td> generator-mt-apertium-norm         </td>
-<td>uten Sem/tagger</td></tr>
-<tr><td> analyser-mt-gt-desc.sma            </td>
-<td>GT-taggar</td></tr>
-<tr><td> analyser-mt-gt-desc.smj            </td>
-<td>--"--</td></tr>
-<tr><td> generator-mt-gt-norm               </td>
-<td>--"--</td></tr>
-<tr><td> analyser-mt-gt-desc                </td>
-<td>grunnlag for .sma og .smj</td></tr>
-<tr><td> analyser-raw-gt-desc               </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> analyser-dict-gt-desc              </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> analyser-dict-gt-desc-mobile       </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> analyser-gt-norm                   </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> analyser-oahpa-gt-norm             </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> analyser-gt-desc                   </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> analyser-disamb-gt-desc            </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> generator-gt-desc                  </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> generator-gt-norm                  </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> generator-dict-gt-norm             </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> generator-oahpa-gt-norm            </td>
-<td>testa, verkar ok</td></tr>
-<tr><td> generator-oahpa-gt-norm-dial_$DIAL </td>
-<td>testa, verkar ok</td></tr>
-</table>
-<p>Dette burde vera alle fst-ar for alle formål som gjeld meir enn eitt språk.</p>
-
-    </section>
     <section>
-      <title>Korleis kompilere i langs/sme</title>
+      <title>How to compile in langs/LANG</title>
 
 <p><code>./configure</code></p>
 
-<p>Eksempel på parameterverdiar:<code>./configure --enable-dicts etc.</code></p>
+<p>Examples for parameters:<code>./configure --enable-dicts etc.</code></p>
+<p>How to see the parameters which are set: <code>head config.log</code></p>
 
 <ul>
 <li>--enable-spellers       build any/all spellers [default=no]</li>
@@ -200,27 +146,6 @@
 <li>--enable-apertium       enable apertium transducers [default=no]</li>
 </ul>
 
-    </section>
-    <section>
-      <title>(Shell-)skript som manglar</title>
-<ul>
-<li>preprocess</li>
-<li>Oppsett for dis-regresjonstesting mot gullstandard (gt/sme/script/)</li>
-<li>mange andre skript skrive for sme</li>
-<li>lookup2cg</li>
-<li>look</li>
-<li>mhrdis</li>
-<li>~/main/gt/script/init.d/lookup-init.sh</li>
-</ul>
-    </section>
-    <section>
-      <title>Notatar framover</title>
-<ol>
-<li>Sme til nyinfra</li>
-<li>Nyinfra-namn i /opt/smi etc.</li>
-<li>vurdering av 4x sme-lex </li>
-<li>Ny vurdering av error-greina (sme-L1 + sme-L2?)</li>
-</ol>
     </section>
 
     </body>
