@@ -77,21 +77,9 @@ rm test/src/gt-norm-yamls/*
 Get the yaml-file you want to test, e.g.: 
 {{{
 svn up test/src/gt-norm-yamls/V-mato_gt-norm.yaml
-make check
+sh test/yaml-check.sh
 }}}
 
-!!Compare the lingvistic output of all yaml-tests for a certain PoS
-Remove all yamltests (check in your local modifications first!) - the example is for verbs:
-{{{
-rm test/src/gt-norm-yamls/*
-}}}
-
-Get the yaml-file you want to test, e.g.: 
-{{{
-svn up test/src/gt-norm-yamls/U-all_gt-norm.yaml
-}}}
-
-make check
 
 !!Make/update all yaml-tests in one for a certain PoS (and a certain pattern?)
 This example is adding all verbs into one file:
