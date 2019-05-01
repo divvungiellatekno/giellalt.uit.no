@@ -1,30 +1,34 @@
+!!Legge til l_ref feature også i NDS
 
-!!Bug 2406 (egentlig ikke new feature)
+Se [om l_ref|dictionarywork.html#Bruk+av+l_ref+i+xml++%28gjelder+bare+VD%29]
 
-Kontekst som dette, blir ikke presentert.
-- entry_context: "mun"
-  tag_context: "V+Ind+Prs+Sg1"
-  template: "(mun) {{ word_form }}"
+!! Legge til informasjon om stammetype
 
-Status: DONE
+substantiv, verb, adjektiv
 
-!!Ny logo (og mindre logo for Reader)
+* 2syll = likestavelsesstamme
+* 3syll = ulikestavelsesstamme
+* Csyll = kontrakt stamme
+
+info hentes fra kontinuasjonsleksikonene i 
+main/langs/sme/src/morphology/stems/nouns.lexc
+
+f.eks. substantiv \\
+jáhkka+Sem/Clth:jáhkka GOAHTI-A ;
+
+
+{{{
+<l pos="N" stem="2syll">jáhkka</l>
+}}}
+
+GOAHTI-A er for 2syll.
+
+Liste over kontinuasjonsleksikonene vs. stem type er i \\
+trunk/words/dicts/smenob/scripts/nouns_stemtypes.txt
 
 Status: TODO
 
-!!Oppdatere bokmerke
-Det er sjekket inn korrigert feedback-adresse (giellatekno@hum.uit.no > giellatekno@uit.no)
-i fila apps/dicts/nds/src/neahtta/static/js/bookmarklet.js
 
-
-Denne skal oppdateres i grensesnittet.
-
-Status: DONE
-
-!!Linker til Korp fra finsmn og nobsma
-link til tospråklig korpus på samme måte som fra nobsme
-
-Status: DONE
 
 !!Forbedret presentasjon av derivasjoner (behandle derivasjoner som sammensatte ord)
 
@@ -44,9 +48,9 @@ Dette skal også gjelde noen infinitte verbformer, f.eks.
 * Også VAbess skal sendes til ordboka, hvor det skal være en entry med forklaringer for denne
 ** borrat = spise, VAbess = uten å gjøre det
 
-Vi trenger entrier for  verdiger som 'Der/l' eller 'VAbess' i ordboken. 
+Vi trenger entrier for  verdier som 'Der/l' eller 'VAbess' i ordboken. 
 
-Status: TODO
+Status: DONE
 
 !! BEHANDLING AV DERIVASJONER MED FLERE ANALYSER
 
@@ -105,31 +109,6 @@ geavahuvvogoahtit	geavahit+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf  <=
 }}}
 
 
-!! Legge til informasjon om stammetype
-
-substantiv, verb, adjektiv
-
-* 2syll = likestavelsesstamme
-* 3syll = ulikestavelsesstamme
-* Csyll = kontrakt stamme
-
-info hentes fra kontinuasjonsleksikonene i 
-main/langs/sme/src/morphology/stems/nouns.lexc
-
-f.eks. substantiv \\
-jáhkka+Sem/Clth:jáhkka GOAHTI-A ;
-
-
-{{{
-<l pos="N" stem="2syll">jáhkka</l>
-}}}
-
-GOAHTI-A er for 2syll.
-
-Liste over kontinuasjonsleksikonene vs. stem type er i \\
-trunk/words/dicts/smenob/scripts/nouns_stemtypes.txt
-
-Status: TODO
 
 
 
@@ -195,6 +174,35 @@ Det hadde vore betre å lenkje direkte til artikkelen, men for å få til det m�
 Klikk på eit symbol og få translitterasjon
 
 TODO: Gå attende i svn-historia og få fram IPA-fst-en (i dag er den endra til eit ortografisk output). Som alternativ kunne vi vurdere Wiktionary sitt skript.
+
+!!DONE
+
+!Bug 2406 (egentlig ikke new feature)
+
+Kontekst som dette, blir ikke presentert.
+- entry_context: "mun"
+  tag_context: "V+Ind+Prs+Sg1"
+  template: "(mun) {{ word_form }}"
+
+Status: DONE
+
+!Ny logo (og mindre logo for Reader)
+
+Status: TODO
+
+!Oppdatere bokmerke
+Det er sjekket inn korrigert feedback-adresse (giellatekno@hum.uit.no > giellatekno@uit.no)
+i fila apps/dicts/nds/src/neahtta/static/js/bookmarklet.js
+
+
+Denne skal oppdateres i grensesnittet.
+
+Status: DONE
+
+!Linker til Korp fra finsmn og nobsma
+link til tospråklig korpus på samme måte som fra nobsme
+
+Status: DONE
 
 
 
