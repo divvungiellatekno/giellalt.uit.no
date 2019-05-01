@@ -1,19 +1,19 @@
 !!!Sjekkliste før ordboka genereres og kompileres
 
 !!Generelt for alle NDS-ordbøkene
-* det skal ikke være dubletter
-** Kommando: {{{cat *.xml|grep '<l '|sort | uniq -d}}}
-* alle lemmaene som skal genereres må ha lemma i norm-fst
-** Kommando (eksempel fra fkv): {{{cat N_*.xml|grep '<l '|tr '<' '>'|cut -d">" -f3|ufkvNorm|grep '?'}}}
-* sjekke at eksempler har stor forbokstav og punktum, og sjekke rettskriving v.hj. av analyse eller retteprogram
-* stedsnavn med flere <mg> - den vanligste mg bør stå først fordi det er den oversettelsen som brukes i miniparadigmet 
-* Sjekk oversettelsene, eksempelsetningene og oversettelsene av eksempelsetningene:
-** Grep dem ut i ei separat fil hver og se på dem med stavekontroll i et tekstbehandlingsprogram (eller analysepgram for de språka der det ikke fins stavekontroll)
-{{{
-cat N_*.xml|grep '<t '|tr '<' '>'|cut -d">" -f3|see
-cat N_*.xml|grep '<x>'|tr '<' '>'|cut -d">" -f3|see
-cat N_*.xml|grep '<xt>'|tr '<' '>'|cut -d">" -f3|see
-}}}
+Ordboka skal være xml-valid. Kommando: {{{xmllint --valid FIL.xml > /dev/null}}}
+Det skal ikke være dubletter. Kommando: {{{cat FIL.xml|grep '<l '| tr '<' '>' | cut -d '>' -f3 |sort | uniq -d}}}
+Alle lemmaene som skal genereres må ha lemma i norm-fst. Kommando for å sjekke om lemmaene er riktig skrevet og/eller er i FST: {{{cat FIL.xml|grep '<l '|tr '<' '>'|cut -d '>' -f3|uXNorm|grep '?'}}}
+Kommando for å sjekke at lemmaet er lemma i LEXC: (kommer)
+
+Sjekk at eksempler har stor forbokstav og punktum: {{{grep '<x>' FIL.xml |l }}} 
+
+Sjekke rettskriving
+Eksempel fra smanob: {{{grep '<x>' N_smanob.xml |tr '<' '>' | cut -d '>' -f3 |preprocess | usmaNorm | grep '?' |grep -v CLB |l}}}
+ 
+Eksempel fra nobsma: {{{grep '<xt>' N_nobsma.xml |tr '<' '>' | cut -d '>' -f3 |preprocess | usmaNorm | grep '?' |grep -v CLB |l}}}
+
+Stedsnavn med flere <mg> - den vanligste mg bør stå først fordi det er den oversettelsen som brukes i miniparadigmet 
 
 !!Spesielt for nordsamisk
 * sjekk at alle lemmaer (adjektiver, verb, substantiver, numeraler, pronIndef og propernouns) som genererer med enn en grunnform, merkes med v1 osv i fst og vmax i dict-filene. Eksempel på kommando for å sjekke dette. Pass på at isme-norm.fst er kompilert med at v1-taggene går til 0 i tag-not-save.regex før kommandoene:
@@ -30,9 +30,9 @@ grep '<l ' adjective_smenob.xml | grep -v vmax | tr "<" ">" | cut -d ">" -f3 |
 * evt. legge til illpl="no" og pg="no" i leksikonfilene
 * evt. legge til l_ref
 
-!!Sjekkliste for den nykompilerte ordboka
+!!!SJEKKLISTE for den nykompilerte ordboka
 
-!Minst 2-3 ord fra hver ordklassefil - og sjekk
+!!Minst 2-3 ord fra hver ordklassefil - og sjekk
 * hvordan ordklasse er presentert
 * entalls- og flertallsstedsnavn
 * flertallslemmaer
@@ -54,7 +54,7 @@ grep '<l ' adjective_smenob.xml | grep -v vmax | tr "<" ">" | cut -d ">" -f3 |
 * at sublemmaer er med
 * at evt. spellrelax fungerer
 
-!Minst ett ord fra hver statisk fil
+!!Minst ett ord fra hver statisk fil
 * hvordan ordklasse er presentert
 * analysetaggene
 * at linking fungerer
