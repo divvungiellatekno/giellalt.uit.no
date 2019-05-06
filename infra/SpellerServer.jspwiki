@@ -38,7 +38,22 @@ The code for the server is found at
 npm start
 }}}
 
-!!!To install a new language
+
+!!!How to update a speller
+
+# Log in to the account, attach to {{screen}} by screen -RD
+# Go to the screen where the server is not running {{ctrl a SPACE}}
+# check the age of the relevant language
+# copy from your local machine a newer speller: \\
+   {{scp tools/spellcheckers/fstbased/desktop/hfst/smn.zhfst  morespellerservers@divvun.no:ck-ospell/etc/}}
+# check it got the new date
+# go the screen where the server is running {{ctrl a SPACE}}
+# Stop the server {{ctrl c}}
+# Start the server with {{npm start}}
+# exit {{ctrl a SHIFT D shift D}}
+
+
+!!!How to install a new language
 
 # Log in to the account, attach to {{screen}}
 # {{Ctrl-c}} (stop the speller server)
@@ -52,6 +67,7 @@ npm start
 # {{git pull}}
 # {{npm install}}
 # {{npm start}}
+
 
 !!!Depending on particular branches/commits
 
