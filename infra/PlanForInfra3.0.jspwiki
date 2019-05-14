@@ -32,13 +32,41 @@
 
 !!! Ulemper
 
-* arbeidet med giella-shared-filer blir meir komplisert
+* arbeidet med giella-shared-filer blir meir komplisert fordi vi krev at ein skal kunna operera med svn (git-svn)
+
+Her er nokre idear til korleis det kan gjerast:
+
+* git submodule: funkar ikkje med svn-utsjekking frå github
+* git subtree: funkar med git-svn (trur eg, må testast!), men blandar koden frå begge repoa i eitt lokalt tre
+* lokal utsjekking som del av autogen.sh:
+
+# sjekk om det er .git eller .svn
+# sjekk ut lista av depsar med rett verkty (git eller svn)
+# gå vidare med autogen.sh-oppsettet
+
+Problem med denne siste løysinga: krev separat oppdatering av dependensane, det
+går ikkje automatisk med {{svn up}} (men kanskje med {{svn up *}}). Eller så med
+eit eige make-mål: {{make update}}, som sjekkar at all kode og alle dependensane
+er nyaste versjon.
+
+Ein annan variant: eit separat skript med eit forklårande namn:
+
+{{{get-dependencies-for-svn-users.sh}}}
+
+og med klåre instruksjonar om å køyra dette fyrst (ein gong). Dette kan ein
+kombinera med versjonstestar av dependensane for å oppdaga når dei er utdaterte,
+og gje ei passande melding då (eller berre automatisk oppdatera dei).
+
+Om eit slikt oppsett fungerer tilfredsstillande for svn-brukarar, kan
+git-brukarar få det same automatisk med {{git submodule}}, og då burde alle vera
+nøgde.
 
 !!! Git-infra-vedlikehald
 
-* oppdatera alle språk til å nytta ny versjon av dep X
-* fletta inn endringar frå eit templat:
-** sjekka dato for siste templatfletting i kvart språk (versjonsnr kan ikkje nyttast i git)
-** sjekka endringar i templatet etter den datoen
-** fletta inn diffen mellom templat og lokale filer
-** sjekka inn og dytta ut endringane halv-automatisk
+Oppdatera alle språk til å nytta ny versjon av dep X (t.d. {{giella-shared}})
+fletta inn endringar frå eit templat:
+* sjekka dato for siste templatfletting i kvart språk (versjonsnr kan ikkje
+  nyttast i git)
+* sjekka endringar i templatet etter den datoen
+* fletta inn diffen mellom templat og lokale filer
+* sjekka inn og dytta ut endringane halv-automatisk
