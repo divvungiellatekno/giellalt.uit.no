@@ -1,10 +1,26 @@
 !!! Plan for neste infra-oppgradering
 
+Planen inneheld nokre hovudelement, og mange små delsteg. Hovudelementa er:
+
+* fleire fellesfiler
+* enklare katalogstruktur
+* testdata og testskript nærmare kjeldekoden testen gjeld
+* flytta frå vår eigen svn til Github
+
+!!! Fleire fellesfiler
+
 * felles numeralfil
 * felles acro-fil for samiske språk (ikkje eigentleg infra-spesifikt)
+
+!!! Enklare katalogstruktur
+
 * flatare katalogstruktur - tools-katalogen berre på to nivå (tools/$TOOLTYPE/)
+** unnatak for MT - vi vil framleis skilja mellom apertium og cg-mt
 * leggja til full støtte for BCP47 som namn på språkkatalogane, ikkje berre ISO
   639-3;
+
+!!! Testar nærmare testobjekt
+
 * flytta testane til underkatalogar til dei katalogane vi vil testa:
 ** døme: {{test/src/morphology/}} blir flytta til {{src/morphology/test/}}
 ** dette fylgjer den eine vanlege praksisen i open-kjeldekode-miljøet (det
@@ -14,6 +30,7 @@
    til å fungera like smidig som det gjer no
 
 !!! Flytta til github:
+
 * språkuavhengige byggje- og konfig-filer i eige repo, som submodul for kvart
   språk
 * giella-shared og giella-core som sub-modular (men kan overkøyrast ved bygging
