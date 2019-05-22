@@ -9,27 +9,51 @@ Proseassa: Vuos konverteret, ja dan maŋŋil parallelliseret.
 * __converted__: originálafiillat konverterejuvvojit xml-formáhtan. 
 Dáid fiillaid ii galgga divvut, muhto sáhttá rahpat daid jus háliida 
 geahččat mo konverteren lea lihkkostuvvan, omd. mo prográmma dovdá gielaid.
-* __prestable__: fiillat mat lea parallelliserejuvvon. Mii háliidit divvut 
+* __prestable__: dárkkistuvvon parallelliserejuvvon fiillat. Mii háliidit divvut 
 orig-máhpas nu ollu go vejolaš nu ahte tmx-fiillat automáhtalaččat 
 šaddet buorit. Sihko fiillaid mat eai sisttisdollet parallealla teavsttaid.
 
+!!Gohččumat
+
+Ovdamearkan nob-sma
+
+!Gávdnojitgo paralleallafiillat dihto giellabáras dihto máhpas?
+Omd. nobsma: Doaibmá freecorpusis ja boundcorpusis:
+
+grep -rl '"sma" location="..*"' --include=*.xsl orig/nob/science/
+
+!Konverteret fiillaid dihto máhpas
+convert2xml orig/nob/science/
+
+convert2xml orig/sma/science/
+
+
+!Parallelliseret fiillaid dihto máhpas
+
+parallelize -l2 sma converted/nob/science/
+
+!Reparallelliseret dihto fiilla
+Go leat rievdadan xsl-fiillas
+
+reparallelize FIILANAMMA.tmxhtml
 
 !!!Bargovuohki
 
 # Iskka tmx-fiilla __prestable__-katalogas
 # Divo xsl-fiilla __orig__-katalogas
-# Vejolaččat divo html-fiillas (jus dárbu)
-# Vejolaččat raba fiilla __converted__-katalogas geahččat omd gielladovdama, muhto ále divo dán fiillas.
-# Parallellisere ođđasit
-# jna.
+# Vejolaččat raba fiilla __converted__-katalogas geahččat omd. gielladovdama dahje eará mii ii leat doaibman nugo galggašii, muhto ále divo dán fiillas.
+# Parallellisere ođđasit: {{reparallelize tmxhtml}}
+# Go leat duhtavaš, dahje don it sáhte fikset eanet xsl-fiillas, de sirddát fiilla omd. prestable/tmx/nob2sme/ ja šekket sisa (vuos svn add). 
+Čále logas leago parallelliseren OK vai ii.
+# Jus parallelliseren ii leat OK, de sáhtát divvut prestable-fiilla, ja de šekket ođđašit sisa kommentáraiguin (muital maid leat bargan).
 
-!!Iskka tmx-fiilla prestable-katalogas
+!!Iskka tmx-fiilla tmx-katalogas
 
-Mana buot nob2sma/fin2smX-tmx-katalogaid alfabehtalaččat
-čađa (vuos ''freecorpus/prestable/tmx/nob2sma/admin/depts/other_files'' 
+Mana buot omd. nob2sma-katalogaid alfabehtalaččat
+čađa (vuos ''freecorpus/tmx/nob2sma/admin/depts/other_files'' 
 ja dan maŋŋel čuovvovaš kataloga (''udir.no'') jna.:
-Lea vejolaš ráhpat buot fiillaid oktanaga kommandolinjjás: {{open *.tmx}}
-dahje dušše oasi, jos lea hui máŋgga fiilla: {{open a*.tmx}} jna.
+Lea vejolaš rahpat buot fiillaid oktanaga kommandolinjjás: {{open *.tmx}}
+dahje dušše oasi, jos leat hui ollu fiillat: {{open a*.tmx}} jna.
 
 Jos .tmx-fiillas ii leat parallealla sisdoallu:
 * raba fiillaid orig-máhpas, oaidnit sisdoalu: 
