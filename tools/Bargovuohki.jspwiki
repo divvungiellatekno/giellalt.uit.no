@@ -19,10 +19,22 @@ orig-máhpas nu ollu go vejolaš nu ahte tmx-fiillat automáhtalaččat
 
 Ovdamearkan nob-sma
 
+!Kompileret tokeniser gielaide maid dárbbašat
+
+sihke nob- ja sma-máhpain:
+
+{{{
+./configure --prefix=$HOME/.local --without-xfst --with-hfst --enable-tokenisers --enable-reversed-intersect --enable-alignment
+}}}
+
+make -j
+
 !Gávdnojitgo paralleallafiillat dihto giellabáras dihto máhpas?
 Omd. nobsma: Doaibmá freecorpusis ja boundcorpusis:
 
+{{{
 grep -rl '"sma" location="..*"' --include=*.xsl orig/nob/science/
+}}}
 
 !Konverteret fiillaid dihto máhpas
 convert2xml orig/nob/science/
@@ -35,7 +47,7 @@ convert2xml orig/sma/science/
 parallelize -l2 sma converted/nob/science/
 
 !Reparallelliseret dihto fiilla
-Go leat rievdadan xsl-fiillas
+Go leat rievdadan xsl-fiillas, de dát gohččun sihke konvertere ja parallellisere ođđasit:
 
 reparallelize FIILANAMMA.tmxhtml
 
