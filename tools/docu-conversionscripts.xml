@@ -13,135 +13,23 @@
       <title>Conversion scripts</title>
 
       <p>The conversion scripts are located in
-      <code>gt/script</code>. They are of two different types:
-      perl scripts (*.pl) and xfst scripts. The xfst scripts are compiled,
-      they have filename.regex as source file names and filename.fst as
-      binary file names.</p>
+      <code>$GTHOME/gt/script</code> and in
+      <code>$GTHOME/giella-core/scripta</code>.
+      The intention is to move all of them to giella-core.</p>
 
-      <p>The scripts have different functions. Some scripts convert input text
-      to the internal format used by the program, whereas other scripts convert
-      the output of the program into a format suitable for output.</p>
-
-      <p>Note that the unix utility <strong>iconv</strong> contains ready-made
+      <p>The unix utility <strong>iconv</strong> contains ready-made
       conversion routines for many code tables. The syntax is as follows:</p>
 
       <p>
-    <code>$ iconv --from-code=ISO-8859-1 --to-code=UTF-8 &lt; old_file
-    > new_file</code>
+    <code>$ iconv --from-code=ISO-8859-1 --to-code=UTF-8 &lt; old_file > new_file</code>
       </p>
 
-      <p>A list of code tables is listed with <strong>iconv --list</strong>.
-      This of course does not help in converting text to our internal format,
-      but in the future it may be used for conversion to utf-8.</p>
-
-      <section>
-         <title>Naming the scripts</title>
-     <p>The scripts are named &quot;sourceform-targetform.scripttype&quot;.
-     The perl script converting Latin 6 input to the internal 7-bit digraph
-     system <em>á, c1, d1, n1, s1, t1, z1</em>, is called
-     <strong>latin6-7bit.pl</strong>.</p>
-
-     <p>There are at the moment script for converting from ws2, Latin6 and
-     mac (here called &quot;linmac&quot;, since mac files are translated
-     to something else when the files are moved to Linux. &quot;Something
-     else&quot; is here called &quot;linmac&quot; (mac as observed on
-     Linux), and taken as a starting point for the conversion script.</p>
-      </section>
-
-      <section>
-    <title>Scripts converting input text to and from internal digraphs (&quot;7bit&quot;)</title>
-    <section>
-      <title>Perl scripts</title>
-
-      <p>The perl scripts contain conversion lines of the format
-      <strong>s/\273/t1/g</strong>. This line converts a t-stroke to t1.
-      The code position (in the code table Latin 6, used a.o. by Statens
-      Kartverk) is hexadecimal BB. Perl uses octal notation, and the octal
-      value of BB is 273.</p>
-
-          <p>Note that there are two different scripts, utf8-7bit.pl and
-      utf8.pl. The former converts from utf8 to 7bit, the other one is
-      some sort of all-in-one-script that converts from different formats
-      (mac saved as utf8, text written on Win9x saved as utf8, etc. to
-      7-bit. Testing is needed to see whether this is a relevant
-      partition, in any case, the utf8-7bit.pl works in cases where the
-      input signal has <strong>not</strong> been corrupted, i.e. it takes
-      real utf8 as input.</p>
+      <p>A list of code tables is listed with <strong>iconv --list</strong>.</p>
 
     </section>
 
-    <section>
-      <title>xfst scripts</title>
-
-      <p>The &lt;encoding>-7bit.regex files are files that convert from
-      the given encoding to the internal format.</p>
-
-      <p>The 7bit-&lt;encoding>.regex files are files that convert to the
-      given encoding from the internal format.</p>
-
       <section>
-        <title>Compiling .regex files</title>
-
-        <p>To make use of the .regex files you may have to compile them to
-        .fst files. Go to the <em>script</em> directory and have a look at
-        the .regex and .fst files. If the .regex file is older than the
-        .fst file with the same name, you may use the .fst file right on,
-        and you do not need to compile. If the .fst file is older or do
-        not exist, you must compile it. Do that by <strong>while in the
-        script directory</strong> type the command:</p>
-
-            <source>make all
-</source>
-          </section>
-
-      <section>
-        <title>Using the resulting .fst files for North Sámi</title>
-
-        <p>In order to convert from encoding X to internal format, be in
-        the script directory, and type the following command:</p>
-
-            <source>cat &lt;&amp;lt;encoding>-filename> | lookup -flags mbTT -f &lt;encoding>-7bit.fst
-        </source>
-
-        <p>It will will convert a file from a given encoding to the
-        internal format.</p>
-
-            <p>In order to analyse a file in a given encoding, go to the
-        gt/sme directory. To analyze a file in the ws2 (aka. levi, WinSam2)
-        encoding type the command</p>
-
-        <source>cat  | preprocess --abbr=bin/abbr.txt | lookup -flags mbTT -f ws2-sme | less
-        </source>
-
-            <p>Upon executing this command the input file will first be
-        tokenized, then converted to the internal format, analyzed and the
-        output will be in the same encoding as the input file.</p>
-
-            <note>XXX But is this a good idea? we must evaluate this. It is
-        hard to see how anyone would like his input back to ws2 on a Linux
-        terminal. Tests on input is needed here.TT</note>
-
-            <p>The lookup file ws2-file has this content (The file format is
-        documented in Beesley/Karttunen, p. 442):</p>
-
-        <source>sme sme.fst
-fws2    ../script/ws2-7bit.fst
-tws2    ../script/7bit-ws2.fst
-
-fws2 sme tws2
-        </source>
-            <p>This file converts the input from the ws2 encoding to the
-        internal format. The input will then be analyzed with the sme.fst
-        file and the result is converted back to the ws2 format.</p>
-
-        <p>The other &lt;encoding>-sme files follow the same pattern.</p>
-
-      </section>
-    </section>
-      </section>
-
-      <section>
-    <title>The case conversion scripts</title>
+    <title>Case conversion scripts (capital/small letters)</title>
 
     <section>
       <title>Initial capital letter</title>
@@ -151,15 +39,22 @@ fws2 sme tws2
       located in the language-specific directories. They form an integrated
       part of the Makefiles, and the resulting parsers contain the ability
       of recognising initial capital letters.</p>
-
     </section>
 
     <section>
+      <title>Letters in all caps (with hfst-tokenize)</title>
 
-      <title>Letters in all caps</title>
+      <p>Hfst's combined preprocessor and morphological analyser is able to
+      handle input written with capital letters. See
+      <a href="../ling/preprocessor.html">this introduction to preprocessing</a>.
+      </p>
 
-      <p>There are also scripts to allow for words written in all caps,
-      called allcaps.regex. By the help of such scripts,
+    </section>
+    <section>
+      <title>Letters in all caps (with xfst)</title>
+
+      <p>Using xfst, analysing words written in all caps is not that easy.
+      There is a script called allcaps.regex. By using this script,
       (&quot;Duodji&quot; is accepted, as is &quot;DUODJI&quot;,
       but &quot;DuoDji&quot; is not. These are also located in the src
       directories (so far only for sme), and are integrated in the
@@ -188,59 +83,8 @@ fws2 sme tws2
 
       </section>
 
-      <section>
 
-        <title>The scripts converting 7bit to html</title>
 
-        <p>Børre?</p>
-        <p>or should this be documented on the webinterace page?</p>
-
-      </section>
-
-      <section>
-        <title>Scripts converting from &quot;alien&quot; fileformats to 7bit</title>
-        <section>
-
-          <title>pdf to 7bit converters</title>
-
-          <p>The script pdfto7bit.pl is a script that converts pdf files to
-      7bit. It is used like this:</p>
-
-      <source>pdfto7bit.pl [option] &lt;filename></source>
-
-      <p>The options allowed are:</p>
-      <ul>
-        <li>-e: output the even pages</li>
-        <li>-o: output the odd pages</li>
-      </ul>
-
-      <p>To use it you will have to have the <em>gt/script</em> catalog in
-      your path. Type this at the command prompt.</p>
-
-      <source>PATH=&quot;~/[path to the gt directory]/gt/script:$PATH&quot;
-      </source>
-      <p>After this you can type &quot;pdfto7bit.pl&quot; at the command
-      prompt to use it. Typical uses are shown below</p>
-
-      <ul>
-        <li>To analyze a pdf file, go to the <em>gt/sme</em> directory,
-        and type: <code>pdfto7bit.pl &lt;filename.pdf> | preprocess
-        --abbr=bin/abbr.txt |lookup -flags mbTT sme.fst | less.</code>
-        The more advanced uses, documented in the
-        <a href="docu-sme-manual.html" >sme-manual</a>
-        can also be used.</li>
-        <li>
-          <code>for pdffile in [directory of pdf files]/*.pdf
-          do
-          pdfto7bit.pl $pdffile > [directory of text files]/`basename $pdffile .pdf`.txt
-          done
-        </code>. This command takes a batch of pdf files, converts them to text files and saves them in a given directory. The command <em>`basename $pdffile .pdf`.txt</em> assures that a pdf file named: foo.pdf is saved as foo.txt.</li>
-        <li>Some pdf documents have sámi and norwegian text on every other page. The options <em>-e</em> and <em>-o</em> is to overcome this problem. If the sámi text is on the even pages of the offending document type the following at the command prompt: <source>pdfto7bit.pl -e &lt;name of offending file></source>
-        </li>
-      </ul>
-    </section>
-      </section>
       
-    </section>
   </body>
 </document>
