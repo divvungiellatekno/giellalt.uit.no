@@ -409,7 +409,6 @@
 
   <tools href="tools/" label="Tools" tab="tools">
     <index href="tools.html" label="Index" />
-    <see href="subethaedit.html" label="SubEthaEdit" />
     <forrest label="Forrest documentation publishing">
       <menus href="forrest.html" label="Menus and tabs" />
       <layout href="ForrestLayout.html" label="Forrest layout" />
@@ -451,8 +450,9 @@
           href="docu-svn-user-svnx.html"
           label="SvnX" />
       </svn>
-      <emacs label="Emacs">
-          <emacs-ref
+      <emacs label="Editors">
+        <see description="Our main editor, with tailored modes" href="subethaedit.html" label="SubEthaEdit" />
+        <emacs-ref
             description="GNU Emacs, a unix text editor"
             href="docu-emacs.html"
             label="Emacs" />
@@ -460,7 +460,6 @@
             description="Emacs modes for internal use"
             href="docu-emacs-modes.html"
             label="Emacs modes" />
-      </emacs>
       <xmlsh
         description="XML shell - intro"
         href="UsingXMLSH.html"
@@ -469,11 +468,13 @@
         description="FileMerge Usage and bugs"
         href="FileMerge.html"
         label="Using FileMerge" />
-    </basic>
     <xmlmind href="xmlmind-dictsetup.html" label="XML Mind" />
     <Vex href="UsingTheVexXmlEditor.html" label="Vex editor for Eclipse" />
-    <bugzilla href="docu-gnats.html" label="Bug database" />
-    <usevoikko href="UsingVoikkoWithHfst.html" label="How to Use Voikko+HFST"/>
+      </emacs>
+    </basic>
+    <bugzilla label="Bug database">
+      <bz description="registry of error reports" href="docu-gnats.html" label="Bugzilla" />
+    </bugzilla>
     <grammar label="Grammar tools">
       <lookup
         description="Analysis program"
@@ -491,6 +492,7 @@
         description="How to test analysis and generation using HfstTester.py"
         label="Testing"
         href="HfstTester.html"/>
+      <usevoikko href="UsingVoikkoWithHfst.html" label="How to Use Voikko+HFST"/>
       <lookup2cg
         description="Convert from lookup to cg output"
         label="lookup2cg" />
@@ -531,11 +533,12 @@
         href="docu-svn-user-tortoisesvn.html"
         label="TortoiseSVN" />
     </windows>
-    <obsolete label="Obsolete tools">
+    <!--
+    <obsolete label="Tools we no longer use">
       <lynx  description="Textbased webbrowser" href="docu-lynx.html" label="Lynx" />
       <links description="Textbased webbrowser" href="docu-links.html" label="Links" />
       <RCS   description="RCS - the really old version control system" href="docu-rcs.html" label="RCS"/>
-      <gobby href="gobby.html" description="Collaborative editor -- obsolete" label="Gobby" />
+      <gobby href="gobby.html" description="Collaborative editor, obsolete" label="Gobby" />
       <svnconv
         description="Remember during conv to svn"
         href="svnconv_remember.html"
@@ -548,7 +551,8 @@
         description="(Usage notes for old tool)"
         href="cgii-usage.html"
         label="(Old vislcg usage notes)" />
-    </obsolete>
+	</obsolete>
+     -->
   </tools>
 
   <dicts href="dicts/" label="Dictionaries" tab="dicts">
@@ -647,14 +651,16 @@
 
     <gramcheck href="gramcheck/" label="Grammar checker" tab="gramchk">
       <index href="GrammarCheckerDocumentation.html" label="Overview"/>
-      <doc href="" label="Documentation">
-        <plan href="/proof/gramcheck/doc/GrammarCheckerPlans.html" label="Original plan"/>
+      <doc href="" label="General documentation">
         <lingsoft href="/proof/gramcheck/doc/LingsoftGrammarChecker.html" label="LS Swedish Grammar Checker"/>
-        <disamb-adapt href="/proof/gramcheck/doc/disambiguator-adaption.html" label="Disambiguator adaption"/>
-        <wform-generation href="/proof/gramcheck/doc/grammarchecker-generation-of-forms.html" label="Word form generation"/>
         <preproc href="/proof/gramcheck/doc/PreprocessorSpecification.html" label="Preprocessor specification"/>
         <finngc  href="/proof/gramcheck/doc/LSFinnishGrammarCheckerCategories.html" label="Finnish GC categories"/>
       </doc>
+      <smedoc href="" label="North Saami grc">
+        <plan href="/proof/gramcheck/doc/GrammarCheckerPlans.html" label="Original plan"/>
+        <disamb-adapt href="/proof/gramcheck/doc/disambiguator-adaption.html" label="Disambiguator adaption"/>
+        <wform-generation href="/proof/gramcheck/doc/grammarchecker-generation-of-forms.html" label="Word form generation"/>
+      </smedoc>
       <meetings href="meetings/" label="Meetings">
         <x2017 label="2017">
           <meeting label="2017-12-18" href="2017-12-18.html"/>
