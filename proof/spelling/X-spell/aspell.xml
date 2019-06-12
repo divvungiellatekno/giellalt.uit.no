@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
                           "http://forrest.apache.org/dtd/document-v20.dtd">
-<document xml:lang="en"> 
-    <header> 
+<document xml:lang="en">
+    <header>
         <title>Aspell Documentation</title>
 
 	<authors>
@@ -11,25 +11,25 @@
 	  <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
 	</authors>
 
-    </header> 
-    <body> 
-	  
+    </header>
+    <body>
+
 	  <p>This is a document for the technical documentation
 	     of our spellers based on open source, by example from Debian this
 	     presently includes Aspell, iSpell and MySpell.
 	     </p>
-	     
+
 	     <p>It is hastily written, and will be split up in sensible subdocuments
 	        as soon as we have time to do so. Just now it is here as a survival
 	        kit for aspell newcomers.</p>
-	     
+
 
       <section>
         <title>File Overview</title>
-	     
+
 	     <p>The files are in the gt/sme/aspell directory. Cf. the list with
 	        explanation:</p>
-	     
+
 	     <dl>
 	     <dt>Makefile.pre</dt>
 	     <dd>This file is used when generating Makefile in distribution
@@ -37,33 +37,33 @@
 
         <dt>configure</dt>
         <dd>Used for generating the Makefile in distribution package</dd>
-        
+
         <dt>info</dt>
         <dd>The info file is the main file which contains most of the information.</dd>
-                
+
         <dt>sme.cmap</dt>
         <dd>File contains the mappings of the characters into aspell internal
             format used in our wordlist.</dd>
-        
+
         <dt>sme.cset </dt>
         <dd>File contains the characterset of the characters used in aspell
             internal format.</dd>
-        
+
         <dt>sme.cwl  </dt>
         <dd>This is compressed form of the wordlist.</dd>
-        
+
         <dt>sme.dat  </dt>
         <dd>Data file of the language.</dd>
-        
+
         <dt>sme.multi</dt>
         <dd>Listing of the dictionary files</dd>
-        
+
         <dt>sme.wl   </dt>
         <dd>Wordlist</dd>
-        
+
         <dt>sme_affix.dat</dt>
         <dd>Contains the affixes of the language.</dd>
-        
+
         <dt>sme_phonet.dat ???</dt>
         <dd>It is possible to define some substitution sequences as more likely
             than others.
@@ -71,7 +71,7 @@
 
        </dl>
       </section>
-	     
+
       <section>
         <title>The format of the files</title>
 
@@ -136,20 +136,20 @@ SFX I   i                   ái                      i
             <p>The suffix lexica are</p>
 
             <dl>
-              <dt>PFX A</dt><dd>North-, South-, prefixes to proper nouns</dd>  
-              <dt>PFX B</dt><dd>ii-, the negative prefix</dd>  
+              <dt>PFX A</dt><dd>North-, South-, prefixes to proper nouns</dd>
+              <dt>PFX B</dt><dd>ii-, the negative prefix</dd>
               <dt>SFX E</dt><dd>the suffixes for the Prop lexica ACCRA (V-final) and LONDON
-                       (odd-syll C-final)</dd> 
+                       (odd-syll C-final)</dd>
               <dt>SFX F</dt><dd>suffixes for the Prop lexica NYSTØ (heavy vow), C-FI-NEN
-                       and CNAME (C-final)</dd>  
+                       and CNAME (C-final)</dd>
               <dt>SFX G</dt><dd>suffixes for the Prop lexicon BERN (even-syll C-final)</dd>
-              <dt>SFX H</dt><dd>suffixes for GOAHTI etc, even-syll nouns</dd> 
+              <dt>SFX H</dt><dd>suffixes for GOAHTI etc, even-syll nouns</dd>
               <dt>SFX I</dt><dd>suffixes for STAHTA, IIJA, even-syll nouns without illative
-                       vow alt</dd>  
-              <dt>SFX J</dt><dd>suffixes for SEAMU </dd>  
-              <dt>SFX K</dt><dd>suffixes for MALIS, BU/MUS</dd>  
-              <dt>SFX L</dt><dd>suffixes for DIMINC</dd>  
-              <dt>SFX N</dt><dd>suffixes for verbs.</dd>  
+                       vow alt</dd>
+              <dt>SFX J</dt><dd>suffixes for SEAMU </dd>
+              <dt>SFX K</dt><dd>suffixes for MALIS, BU/MUS</dd>
+              <dt>SFX L</dt><dd>suffixes for DIMINC</dd>
+              <dt>SFX N</dt><dd>suffixes for verbs.</dd>
             </dl>
 
             <p>At present, the status is</p>
@@ -187,7 +187,7 @@ SFX N Y 149
              to sme_affix.dat.</p>
 
 <source>
-SFX M   0            
+SFX M   0
 SFX M   it            a                 it
 SFX M   it            an                it
 SFX M   it            at                it
@@ -315,9 +315,5 @@ SFX M   0            keahttá            t
         </section>
 
       </section>
-
-	
-	   by $Author: boerre $</p>
-
     </body>
 </document>

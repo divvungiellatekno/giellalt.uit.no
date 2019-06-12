@@ -22,7 +22,7 @@
 
       <p>The pages are available for calling the tools in different languages. For
       the time being, the supported user interface languages are English,
-      North, Lule and South Saami, Finnish, Russian and Norwegian. 
+      North, Lule and South Saami, Finnish, Russian and Norwegian.
       The tools are available to a varying extent for
       the approximately 30 languages found on the frontpage.</p>
 
@@ -46,17 +46,17 @@
           variable definitons and their initial values.</li>
 
           <li>LANG-num.cgi<br /> (where LANG = the languages for which there
-          are numeral generators: fin, kom, mhr, nno, rus, sjd, sma, sme, smj, 
+          are numeral generators: fin, kom, mhr, nno, rus, sjd, sma, sme, smj,
           smn, sms, yrk. </li>
         </ul>
 
         <p>All the scripts are developed in the svn-directory, under the module
         <code>gt/scripts/cgi-scripts</code>. The official location of
         cg-scripts is on gtweb, at the cgi-bin directory under /var/www. The latest
-        versions are moved to the official directory. There is a script doing 
+        versions are moved to the official directory. There is a script doing
         this, <code>cgi-export</code> exporting the latest version of the
         release-tagged cgi-scripts to the directory. The user must have root
-        privileges to be able to run the script. In practice, we have been 
+        privileges to be able to run the script. In practice, we have been
         copying the files to the official directory manually.</p>
 
         <p>The cgi-bin script smi.cgi is located on gtweb, at the cgi-bin
@@ -70,7 +70,7 @@
 
         <p>The minimum requirements for an analyzer to work is the
         file<code>lang.fst.</code></p>
-        
+
         <p><a href="QuasicodeForKeepingTrackOfTransducers.html">Procedures for copying new fsts to /opt/smi is found here</a>.</p>
       </section>
 
@@ -132,7 +132,7 @@ chmod 775 /opt/smi/lang/bin/*</source>
         <title>Changes to forrest documentation</title>
 
         <p>In order to create a new interface language: First: Please don't. We already
-        have seven. Then, if you still want one: First create a page for the language, 
+        have seven. Then, if you still want one: First create a page for the language,
         LANG.xml and store it
         to<code>xtdoc/gtuit/src/documentation/content/xdocs/</code>. Then add
         links to the analysis pages as shown on the other LANG.xml pages.</p>
@@ -143,8 +143,8 @@ chmod 775 /opt/smi/lang/bin/*</source>
         interface texts in the catalogue cgi, e.g. for English the file:</p>
 
         <source>xtdoc/gtuit/src/documentation/content/xdocs/cgi/cgi-eng.xml</source>
-        
-        <p>Note that there are seven x 2 files in the cgi catalogue, and eight 
+
+        <p>Note that there are seven x 2 files in the cgi catalogue, and eight
         language will then give rise to two new files.</p>
       </section>
     </section>
@@ -192,7 +192,7 @@ chmod 775 /opt/smi/lang/bin/*</source>
         ..</code>. (this is not in use)</li>
 
         <li>then:
-        <ol> 
+        <ol>
          <li>either execute the script <code>cgi-export</code>. The tagged files are
          exported from the cvs to the official directory. (this option is presently not in use)</li>
          <li>or (the option in use) copy the cgi-bin files manually to the var/www/smi/cgi-bin directory.</li>
@@ -211,9 +211,6 @@ chmod 775 /opt/smi/lang/bin/*</source>
       <p>The url to the cgi-bin scripts is:
       <code>http://sami-cgi-bin.uit.no/cgi-bin/smi/</code>, and it is now moving to
             <code>http://gtweb-bin.uit.no/cgi-bin/smi/</code></p>
-
-      
-      $Author$</p>
     </section>
   </body>
 </document>
