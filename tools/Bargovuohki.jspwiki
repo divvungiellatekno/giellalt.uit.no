@@ -16,12 +16,21 @@ orig-máhpas nu ollu go vejolaš nu ahte tmx-fiillat automáhtalaččat
 šaddet buorit.
 
 !!Gohččumat
+Dihtogielalaš gohččumat geavahit nob2sma ovdamearkan
 
-Ovdamearkan nob-sma
+!Viežžat corpustools ođđaseamos veršuvnna
+
+Go leat main/tools/CorpusTools/
+
+{{{
+python setup.py install --user --install-scripts=$HOME/bin
+}}}
+
+
 
 !Kompileret tokeniser gielaide maid dárbbašat
 
-sihke nob- ja sma-máhpain:
+sihke langs/nob- ja langs/sma-máhpas:
 
 {{{
 ./configure --prefix=$HOME/.local --without-xfst --with-hfst --enable-tokenisers --enable-reversed-intersect --enable-alignment
@@ -32,19 +41,19 @@ make install
 }}}
 
 !Gávdnojitgo paralleallafiillat dihto giellabáras dihto máhpas?
-Omd. nobsma: Doaibmá freecorpusis ja boundcorpusis:
+Doaibmá freecorpusis/ ja boundcorpus/ -máhpain:
 
 {{{
 grep -rl '"sma" location="..*"' --include=*.xsl orig/nob/science/
 }}}
 
-!Konverteret fiillaid dihto máhpas
+!Konverteret buot fiillaid dihto máhpas
 convert2xml orig/nob/science/
 
 convert2xml orig/sma/science/
 
 
-!Parallelliseret fiillaid dihto máhpas
+!Parallelliseret buot fiillaid dihto máhpas
 
 parallelize -l2 sma converted/nob/science/
 
@@ -55,7 +64,7 @@ reparallelize FIILANAMMA.tmxhtml
 
 !!!Bargovuohki
 
-# Iskka tmx-fiilla __prestable__-katalogas
+# Iskka tmx-fiilla __tmx__-katalogas (mii ii leat svn:s)
 # Divo xsl-fiilla __orig__-katalogas
 # Vejolaččat raba fiilla __converted__-katalogas geahččat omd. gielladovdama dahje eará mii ii leat doaibman nugo galggašii, muhto ále divo dán fiillas.
 # Parallellisere ođđasit: {{reparallelize tmxhtml}}
