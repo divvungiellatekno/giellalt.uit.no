@@ -9,67 +9,75 @@
 
   <body>
     <section>
-      <title>A flowchart of the parsing process</title>
+      <p>The flowchart shows  parsing done with two different analysers: Method 1, for hfst analysers
+      where pre- and postprocessing is integrated in the morphological analysis,
+      and method 2, for xfst analysers, using perl for pre- and postprocessing
+      of the text.</p>
 
-      <source>        Action taken..              ..by the means of the command:
-        **************            ******************************
-
-    |--------------------|
-    | take incoming text |        sme$ cat corp/filename.txt |
-    |--------------------|
+      <section><title>Method 1 (hfst)</title>
+      <source>        Action taken..              ..by means of the commands:
+        **************              ****************************
++------------------------------+
+|     take incoming text       |    cat filename.txt |
++------------------------------+
              \/
- |--------------------------|
- | preprocessing it:        |
- | moving one word per line,|     preprocess --abbr=bin/abbr.txt |
- | finding sentence bound.  |
- |--------------------------|
++------------------------------+  
+| divide it into sentences and |
+| words and give each token    |
+| all possiblemorphological    |    hfst-tokenise -g tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst |
+| analyses                     |  
++------------------------------+  
              \/
-|-----------------------------|
-| morphological analysis:     |
-| give each word all possible |   lookup -flags mbTT -utf8 bin/sme.fst |
-| analyses                    |
-|-----------------------------|
++------------------------------+
+| disambiguating the m-analysis|  
+| (= picking only the relevant |    vislcg3 -g src/syntax/disambiguation.cg3 |
+| morphological analyse)       |  
++------------------------------+
              \/
-|-----------------------------|
-| processing the output into  |
-| a format that fits the dis- |   lookup2cg |
-| ambiguator, w/a perlscript  |
-|-----------------------------|
++------------------------------+
+| adding syntactic functions   |    vislcg3 -g src/syntax/functions.cg3 |     
++------------------------------+
              \/
-|------------------------------|
-| adding syntactic tags        |
-| disambiguating the m-analysis|
-| picking only the relevant    |   vislcg3 --g src/sme-dis.rle
-| morphological analyses.      |
-| disambiguating the s-analysis|
-|------------------------------|
-
++------------------------------+
+| adding depenency relations   |    vislcg3 -g src/syntax/dependency.cg3 
++------------------------------+
 </source>
+      </section>
+            <section><title>Method 2 (xfst)</title>
 
-      <p>Starting in May 2005, the file vislcg also assigns syntactic tags,
-      and at the end of the file it also disambiguate them.</p>
+Method 2 differs only in that the morphological analysis is divided in 3 separate components
+	    
+      <source>        Action taken..              ..by means of the commands:
+        **************              ****************************
++------------------------------+
+|     take incoming text       |    cat filename.txt |
++------------------------------+
+             \/
+ +--------------------------+
+ | preprocessing it:        |
+ | moving one word per line,|       preprocess --abbr=bin/abbr.txt |  # method 1 |
+ | finding sentence bound.  |    
+ +--------------------------+
+             \/
+|-----------------------------+
+| morphological analysis:     |
+| give each word all possible |    lookup -flags mbTT -utf8 src/analyser-gt-desc.xfst |
+| analyses                    |
+|-----------------------------+  
+             \/
+|-----------------------------+
+| processing the output into  |
+| a format that fits the dis- |    lookup2cg 
+| ambiguator, w/a perlscript  |  
+|-----------------------------+
+            \/
+	   ...
+  ( then continue with disambiguation as shown above )
+      </source>
+	    </section>
+	    <p>The commands assume you stand in the directory of the language you work with.
+	    Method 2 may also be used with hfst (hfst-lookup), but method 1 works only for hfst.</p>
 
-      <p>In order for the command to work, one must stand in the sme (etc.)
-      directory. The files are in different directories, for the following
-      reasons:</p>
-
-      <ul>
-        <li>The text file is in the corp directory (any text can be used)</li>
-
-        <li>Starting in june 2005, our new xml corpus is in a separate corp
-        directory, not in cvs.</li>
-
-        <li>The binary files (the files that are compiled) are in the bin
-        directory</li>
-
-        <li>The lookup2cg script is a perlscript, common to all languages, and
-        hence in the ../script directory</li>
-
-        <li>The .rle file is a source file, it is not compiled, and it is
-        hence in the src directory</li>
-      </ul>
-
-      <p>Hmm, one could perhaps claim that this is somewhat confusing</p>
 
       
     </section>
