@@ -1,19 +1,30 @@
+This page gives an overview of our technical documentation.
 
-This is a list of our technical documentation.
-
-!!!Use
-
-!!How to use our infrastructure
-
+!!!Introduction
 * [Directory structure|infraremake/NewinfraCatalogues.html], see also a list
   of [new infra catalogues|infraremake/NewinfraCatalogues.html])
 * [Getting started with the new infra|infraremake/GettingStartedWithTheNewInfra.html] (Our files and the tools required to run them)
+
+!!How to write documentation
 * [How to write documentation as comments in your source code|infraremake/In-sourceDocumentation.html]
+* [How to debug (correct ERRORS) in the documentation written in the  source code|infraremake/DebuggingSourceDocumentation.html]
+* [Forrest debugging|infraremake/ForrestDebugging.html] (when the documentation does not generate)
+
+
+!!Finite state transducers (FSTs)
+!Compiling the FSTs
 * [How To Use XML Files As Lexc Sources|infraremake/HowToUseXMLFilesAsLexcSources.html]
+* [How to compile our abbreviation handler abbr.txt|infraremake/AbbreviationCompilation.html]
+
+!FST manipulation
+* [How to enable tags in natural languages|infraremake/HowToEnableTagsInNaturalLanguages.html]
+* [Example of file sizes with optimisations|infraremake/ExampleOfFileSizesWithOptimisations.html]
+* [Lookup and composition - a direction primer|infraremake/LookupAndComposition_ADirectionPrimer.html]
+* [Understanding up and down in hfst and xerox|infraremake/LookupAndComposition_ADirectionPrimer.html]
+* [Transducer name conventions in our infrastructure|infraremake/TransducerNamesInTheNewInfra.html]
 
 
-!Maintaining test scripts
-
+!!Maintaining test scripts
 * [Adding test data in the new infra|infraremake/AddingMorphologicalTestData.html]
 * [Adding new test scripts in the new infra|infraremake/TestScriptsInTheNewInfra.html]
 * [Build your own tests|infraremake/BuildYourOwnTests.html]
@@ -21,27 +32,7 @@ This is a list of our technical documentation.
 * [Ideas for testing our transducers|infraremake/IdeasForNewinfraTesting.html]
 
 
-!Debugging
-
-* [How to debug (correct ERRORS) in the documentation written in the  source code|infraremake/DebuggingSourceDocumentation.html]
-* [Forrest debugging|infraremake/ForrestDebugging.html] (when the documentation does not generate)
-
-
-!FST manipulation
-
-* [How to enable tags in natural languages|infraremake/HowToEnableTagsInNaturalLanguages.html]
-* [Example of file sizes with optimisations|infraremake/ExampleOfFileSizesWithOptimisations.html]
-* [Lookup and composition - a direction primer|infraremake/LookupAndComposition_ADirectionPrimer.html]
-* [Understanding up and down in hfst and xerox|infraremake/LookupAndComposition_ADirectionPrimer.html]
-* [Transducer name conventions in our infrastructure|infraremake/TransducerNamesInTheNewInfra.html]
-
-!Text analysis
-
-* [How to compile our abbreviation handler abbr.txt|infraremake/AbbreviationCompilation.html]
-
-
-!Spellers
-
+!!Spellers (flytt til neste meny?)
 * [How to configure and optimise spellers|infraremake/HowToConfigureAndOptimiseSpellers.html]
 * [Building and using a weighted speller|infraremake/BuildingAndUsingAWeightedSpeller.html] (in Norwegian)
 * [Hunspell howto|hunspell.html]
@@ -49,8 +40,8 @@ This is a list of our technical documentation.
 * [Building Mac Voikko|BuildingMacVoikko.html]
 * [Installing and updating the online demo speller server|SpellerServer.html]
 
-!!Technical maintenance
 
+!!Technical maintenance
 * [New infra maintenance|infraremake/NewInfraMaintenance.html] (how to manipulate tags in fsts, etc.)
 * [How to merge template updates|infraremake/HowToMergeUpdatesFromCore.html]
 * [In-source documentation specification|infraremake/In-sourceDocumentationSpecification.html]
@@ -60,25 +51,23 @@ This is a list of our technical documentation.
 
 
 !Makefile and configuration settings
-
 * [Multiple configurations and out of source building|infraremake/MultipleConfigurationsAndOutOfSourceBuilding.html]
 * [List of defined automake conditionals|infraremake/ListOfDefinedAutomakeConditionals.html]
 * [Makefile names and organisation|infraremake/MakefileNamesAndOrganisation.html]
 
 
 !Servers, users and access administration
-
 * [Our servers gtsvn, gtlab, gtoahpa and gtweb|VirtualServers.html]  // [Server Programs and Logs|ServerProgramsAndLogs.html]
 * [Plan for larger servers and more disc space (Serveroppgradering)|system/Serveroppgradering.html]
 * [Maintaining users and access administration|system/UsersAndAccessAdministration.html] (admin)
 
 
 
-!!Older documentation
+!!!Older documentation
 
 This documents the move from "old" to "new" (present) infrastructure, in 2012.
 
-!Planning the move to newinfra
+!!Planning the move to newinfra
 
 (This documentation is  kept for historical reasons)
 
@@ -89,7 +78,7 @@ This documents the move from "old" to "new" (present) infrastructure, in 2012.
 * [New infra progress|infraremake/NewInfraProgress.html]
 * [New infra technical overview|infraremake/NewInfraTechnicalOverview.html]
 
-!The move from the old to the new infrastructure
+!!The move from the old to the new infrastructure
 
 * [Web file names from the old infra|infraremake/WebFilenamesFromOldinfra.html]
 * [How to move a language from the old infra to the new|infraremake/HowToMoveALanguageFromTheOldInfraToTheNew.html]
