@@ -5,23 +5,21 @@ This page gives an overview of our technical documentation.
   of [new infra catalogues|infraremake/NewinfraCatalogues.html])
 * [Getting started with the new infra|infraremake/GettingStartedWithTheNewInfra.html] (Our files and the tools required to run them)
 
-!!How to write documentation
-* [How to write documentation as comments in your source code|infraremake/In-sourceDocumentation.html]
-* [How to debug (correct ERRORS) in the documentation written in the  source code|infraremake/DebuggingSourceDocumentation.html]
-* [Forrest debugging|infraremake/ForrestDebugging.html] (when the documentation does not generate)
 
-
-!!Finite state transducers (FSTs)
-!Compiling the FSTs
+!!!Transducers (FSTs)
+!!Compiling the FSTs
+* Autotools
 * [How To Use XML Files As Lexc Sources|infraremake/HowToUseXMLFilesAsLexcSources.html]
 * [How to compile our abbreviation handler abbr.txt|infraremake/AbbreviationCompilation.html]
 
-!FST manipulation
+!!FST manipulation
 * [How to enable tags in natural languages|infraremake/HowToEnableTagsInNaturalLanguages.html]
 * [Example of file sizes with optimisations|infraremake/ExampleOfFileSizesWithOptimisations.html]
 * [Lookup and composition - a direction primer|infraremake/LookupAndComposition_ADirectionPrimer.html]
 * [Understanding up and down in hfst and xerox|infraremake/LookupAndComposition_ADirectionPrimer.html]
 * [Transducer name conventions in our infrastructure|infraremake/TransducerNamesInTheNewInfra.html]
+* [Infrastructure maintenance|infraremake/NewInfraMaintenance.html] (how to manipulate tags in fsts, etc.)
+* [FST technology overview & future perspective|FSTTechnologyOverview.html]
 
 
 !!Maintaining test scripts
@@ -31,7 +29,7 @@ This page gives an overview of our technical documentation.
   - [as slideshow|infraremake/slidy/BuildYourOwnTests.html]
 * [Ideas for testing our transducers|infraremake/IdeasForNewinfraTesting.html]
 
-
+!!!Applications
 !!Spellers (flytt til neste meny?)
 * [How to configure and optimise spellers|infraremake/HowToConfigureAndOptimiseSpellers.html]
 * [Building and using a weighted speller|infraremake/BuildingAndUsingAWeightedSpeller.html] (in Norwegian)
@@ -40,23 +38,29 @@ This page gives an overview of our technical documentation.
 * [Building Mac Voikko|BuildingMacVoikko.html]
 * [Installing and updating the online demo speller server|SpellerServer.html]
 
+!!Grammarcheckers
+* Tja
 
-!!Technical maintenance
-* [New infra maintenance|infraremake/NewInfraMaintenance.html] (how to manipulate tags in fsts, etc.)
+!!!Technical maintenance
 * [How to merge template updates|infraremake/HowToMergeUpdatesFromCore.html]
-* [In-source documentation specification|infraremake/In-sourceDocumentationSpecification.html]
 * [Maintaining SVN ignores|infraremake/MaintainingSVNIgnores.html]
 * [How to add a new language to the infrastructure|infraremake/HowToAddANewLanguage.html]
-* [FST technology overview & future perspective|FSTTechnologyOverview.html]
 
 
-!Makefile and configuration settings
+!!Makefile and configuration settings
 * [Multiple configurations and out of source building|infraremake/MultipleConfigurationsAndOutOfSourceBuilding.html]
 * [List of defined automake conditionals|infraremake/ListOfDefinedAutomakeConditionals.html]
 * [Makefile names and organisation|infraremake/MakefileNamesAndOrganisation.html]
 
+!!How to write documentation
+* Forrest, Jspwiki
+* [How to write documentation as comments in your source code|infraremake/In-sourceDocumentation.html]
+* [How to debug (correct ERRORS) in the documentation written in the  source code|infraremake/DebuggingSourceDocumentation.html]
+* [Forrest debugging|infraremake/ForrestDebugging.html] (when the documentation does not generate)
+* [In-source documentation specification|infraremake/In-sourceDocumentationSpecification.html]
 
-!Servers, users and access administration
+
+!!!Servers, users and access administration
 * [Our servers gtsvn, gtlab, gtoahpa and gtweb|VirtualServers.html]  // [Server Programs and Logs|ServerProgramsAndLogs.html]
 * [Plan for larger servers and more disc space (Serveroppgradering)|system/Serveroppgradering.html]
 * [Maintaining users and access administration|system/UsersAndAccessAdministration.html] (admin)

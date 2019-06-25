@@ -46,9 +46,29 @@
   </admin>
 
   <infrastructure href="infra/" label="Infrastructure" tab="infra">
-    <index href="Infrastructure.html" label="Work environment" />
-    <svnrepos href="OurSVNRepositories.html" label="SVN repositories"/>
-    <hunspell href="hunspell.html" label="Hunspell howto"/>
+    <index href="Infrastructure.html" label="Overview" />
+    <!-- hit -->
+    <intro label="Getting started">
+        <gettingstarted href="GettingStartedWithTheNewInfra.html" label="Getting started" />
+        <catalogs       href="NewinfraCatalogues.html" label="New infra directory structure" />
+    </intro>
+    <transducers label="Transducers (FSTs)">
+      <compiling label="Compiling the FSTs">
+        <xmlaslexc      href="HowToUseXMLFilesAsLexcSources.html" label="XML as lexical source files"/>
+      </compiling>
+      <fstmanipulation label="FST manipulation">
+      </fstmanipulation>
+      <fsttesting label="FST testing">
+        <lexctests      href="AddingMorphologicalTestData.html" label="How to add morphological test data." />
+        <testing        href="TestScriptsInTheNewInfra.html" label="How to add new test scripts" />
+        <buildtests     href="BuildYourOwnTests.html" label="Build Your Own Tests"/>
+        <propernountest href="debug_propernouns.html" label="Howto debug propernouns"/>
+      </fsttesting>
+      
+    </transducers>
+    <applications label="Application infra">
+      <infraspell label="Speller infra">
+	    <hunspell href="hunspell.html" label="Hunspell howto"/>
     <voikko href="CompilingVoikkoWithHfst.html" label="Setting up Voikko with HFST"/>
     <macvoikko href="BuildingMacVoikko.html" label="Building MacVoikko"/>
     <spellerserver href="SpellerServer.html" label="Speller Server"/>
@@ -59,6 +79,11 @@
       <voikkorelease href="BuildEverythingForVoikkoLOForRelease.html" label="Build a release version of Voikko+hfst oxt" />
       <lovoikkolibs href="LibreOfficeVoikkoLibraries.html" label="LO-Voikko libraries"/>
     </voikkoLO>
+      </infraspell>
+    </applications>
+
+    <techmaintenance label="Technical maintenance">
+    <svnrepos href="OurSVNRepositories.html" label="SVN repositories"/>
     <install label="Installation and setup">
       <setupoverv href="install-overview.html" label="New user overview" />
       <xcode      href="InstallingXCode.html"  label="Installing XCode" />
@@ -78,8 +103,17 @@
       <cygwin href="CygwinSetup.html" label="Setting up Cygwin" />
       <SettingUpServer href="SettingUpAMultiuserServer.html" label="Configuring a server" />
     </install>
+    </techmaintenance>
     <compspeed href="CompilationSpeedTests.html" label="Compilation Speed Tests" />
-
+    <webinterface href="docu-webinterface.html" label="Web interface" />
+    <cgi-bin href="docu-cgi-bin.html" label="Web scripts" />
+    <offline href="offline.html" label="Connecting to the computer" />
+    <docu-sys href="docu-sys-todo.html" label="Todo on system" />
+    <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
+    <macports href="MacPorts.html" label="MacPorts installation" />
+    <remake href="infraremake/" label="Infrastructure Make-over" >
+    
+    <servers label="Servers, users, access">
     <sysadm href="system/" label="Sys. admin">
       <checkinstall href="checkinstall.html" label="Packaging software for victorio" />
       <svnserve href="svnserve.html" label="Setup of svnserve on victorio" />
@@ -98,27 +132,18 @@
         <Meeting href="../../admin/technical/2018-03-09Servers.html" label="Serveroppgr.møte" />
       </ServerUpgrade>
     </sysadm>
+    </servers>
 
-    <webinterface href="docu-webinterface.html" label="Web interface" />
-    <cgi-bin href="docu-cgi-bin.html" label="Web scripts" />
-    <offline href="offline.html" label="Connecting to the computer" />
-    <docu-sys href="docu-sys-todo.html" label="Todo on system" />
-    <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
-    <macports href="MacPorts.html" label="MacPorts installation" />
-    <remake href="infraremake/" label="Infrastructure Make-over" >
 
       <index          href="index.html" label="Index page" />
 
       <basics label="Basics">
-        <gettingstarted href="GettingStartedWithTheNewInfra.html" label="Getting started with the new infra" />
         <kurs           href="KursINyInfra.html" label="Kurs i ny infra"/>
         <baultpresent   href="NewInfraBAULTPresentation.html" label="New Infra BAULT Presentation" />
         <edmonpresent   href="EdmontonInfrastructurePresentation.html" label="Edmonton Infrastructure Presentation" />
 
         <newlang        href="HowToAddANewLanguage.html" label="How to add a new language" />
         <commentdocs    href="In-sourceDocumentation.html" label="How to write documentation as comments." />
-        <catalogs       href="NewinfraCatalogues.html" label="New infra directory structure" />
-        <xmlaslexc      href="HowToUseXMLFilesAsLexcSources.html" label="XML as lexical source files"/>
       </basics>
 
       <oldinfrarel label="Related to the old infra">
@@ -126,12 +151,6 @@
         <movelang       href="HowToMoveALanguageFromTheOldInfraToTheNew.html" label="Moving a language from old to new infra" />
       </oldinfrarel>
 
-      <lingtesting label="Testing">
-        <lexctests      href="AddingMorphologicalTestData.html" label="How to add morphological test data." />
-        <testing        href="TestScriptsInTheNewInfra.html" label="How to add new test scripts" />
-        <buildtests     href="BuildYourOwnTests.html" label="Build Your Own Tests"/>
-        <propernountest href="debug_propernouns.html" label="Howto debug propernouns"/>
-      </lingtesting>
 
       <infradebugging label="Debugging">
         <forrestdebugging href="ForrestDebugging.html" label="Debugging Forrest"/>
