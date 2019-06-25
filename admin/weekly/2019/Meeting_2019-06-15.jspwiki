@@ -1,0 +1,110 @@
+S&T-møte 25.6.2019
+
+!!!Saksliste
+* Utlysing 
+* xserve
+* sørsamisk konf
+* nodalida
+* dok
+* cg-mt
+* abbreviations
+* Paris
+
+
+!!!Utlysing
+
+Utlysing av programmerarstillingane: norsk tekst er sendt inn for lenge sidan, har vorte vidareformidla til nivå 1. Engelsk tekst vart sendt inn i dag.
+
+!!!xserve
+
+SEE-oppsettet var ikkje på plass med tanke på omstartar. Sjur har retta det slik at SEE no kjem opp automatisk neste gong maskina blir starta på nytt.
+
+!!!sørsamisk konferanse i haust
+
+Konferanse om sørsamisk grammatikk, med mål om å få fram
+ny kunnskap om grammatikken.
+
+Framdrift for vitskaplege innlegg
+* Frist for å sende inn: 19.8.
+* Tid for å lese gjennom: 3 veker
+
+Publisering i Nordlyd: Sjur jobbar med saka.
+
+!!!nodalida
+
+30.9.-2.10., ein dags overlapp med sørsamiskseminaret.
+
+Det er fleire som planlegg innlegg, men alle kjende så langt er knytta til workshop den 30.9., slik at folk kan nå begge arrangementa.
+
+!!!Uppsala
+
+I november. Usikkert kven som dreg, om nokon.
+
+!!!Teknisk dokumentasjon - omorganisering
+
+Dvs [giellalt|https://giellalt.uit.no].
+
+
+Infrastruktur
+
+{{{
+FST-
+- kompilering
+- testing
+- ...
+Applikasjonar
+- proof
+- mt
+- gc
+Servers
+Sysadm
+}}}
+
+!!!cg-mt
+
+Sjur har sett på dette.
+
+Her har vi ein perl-kode som føreset at ting ligg på bestemte plassar i høve til perl-fila.
+Vi må i staden ha eksplisitte stiar.
+
+# Referer til lukka kode i $PRIV eller tilsvarande <=
+# Referer til lukka kode i  ~/bin og dokumenter installering
+
+Det minst komplekse er (1), vi går for det. Kunsten er å referere til filer 
+eksplisitt (definere referansane) og ikkje implisitt, som i dag. 
+
+
+!!!Abbreviations
+
+Trond testar no splitting av sme-forkortingar i generelle og språkspesifikke filer:
+
+{{{
+LE Root
+Abbreviations ;
+
+LE Abbreviations 
+Abbreviation-sme ; ! til språkspesifikk
+Abbreviation-smi ; ! til fellesfila
+}}}
+
+
+Mange språk har ikkje den nye preprosesseringa, t.d. nob.
+For parallellisering (t.d. sma-nob) må vi dermed nytta det gamle oppsettet med preprocess osb.
+
+__Trond__ tar dette vidare.
+
+!!Forkortingar og korpusprosessering
+
+No kan det sjå ut som om parallelize.py bruker verken ny eller gamal, men derimot tca2
+i parallellisering. I så tilfelle vil heile denne diskusjonen vere irrelevant for
+korpusparallellisering, i alle fall heilt til vi endrar parallelize.py.
+
+Det er mogleg at det å bruke tca2 for parallellisering inneber at vi __må__ bruke
+tca2 også for tokenisering. Dette må vi diskutere med __Børre__.
+
+For desse endringane treng vi før- og etter-testar, for mange ulike språk.
+
+
+!!!Paris
+
+Sjur svarar Sametinget, og melder seg som mogleg representant.
