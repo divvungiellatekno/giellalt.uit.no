@@ -57,37 +57,35 @@
     <index href="Infrastructure.html" label="Overview" />
 
     <intro label="Getting started">
-        <gettingstarted href="GettingStartedWithTheNewInfra.html" label="Getting started" />
-        <catalogs       href="NewinfraCatalogues.html" label="New infra directory structure" />
+        <gettingstarted href="infraremake/GettingStartedWithTheNewInfra.html" label="Getting started" />
+        <catalogs       href="infraremake/NewinfraCatalogues.html" label="Directory structure" />
         <offline href="offline.html" label="Connecting to the computer" /> <!-- ssv .slett -->
     <svnrepos href="OurSVNRepositories.html" label="SVN repositories"/>
-      <basics label="Basics">
-        <kurs           href="KursINyInfra.html" label="Kurs i ny infra"/>
-        <newlang        href="HowToAddANewLanguage.html" label="How to add a new language" />
-        <commentdocs    href="In-sourceDocumentation.html" label="How to write documentation as comments." />
-      </basics>
+        <kurs           href="infraremake/KursINyInfra.html" label="Kurs i ny infra"/>
+        <commentdocs    href="infraremake/In-sourceDocumentation.html" label="How to write documentation as comments." />
     </intro>
 
     <transducers label="Transducers (FSTs)">
-      <compiling label="Compiling the FSTs">
+      <compiling href="infraremake/" label="Compiling the FSTs">
         <xmlaslexc      href="HowToUseXMLFilesAsLexcSources.html" label="XML as lexical source files"/>
+        <AMconditionals href="ListOfDefinedAutomakeConditionals.html" label="List Of Defined Automake Conditionals" />
       </compiling>
-      <fstmanipulation label="FST manipulation">
+      <fstmanipulation href="infraremake/" label="FST manipulation">
        <enabletags href="HowToEnableTagsInNaturalLanguages.html" label="Enable Tags"/>
-      </fstmanipulation>
         <filesize       href="ExampleOfFileSizesWithOptimisations.html" label="Example Of File Sizes With Different Optimisations" />
-      <fsttesting label="FST testing">
+      </fstmanipulation>
+      <fsttesting href="infraremake/" label="FST testing">
         <lexctests      href="AddingMorphologicalTestData.html" label="How to add morphological test data." />
         <testing        href="TestScriptsInTheNewInfra.html" label="How to add new test scripts" />
         <buildtests     href="BuildYourOwnTests.html" label="Build Your Own Tests"/>
         <propernountest href="debug_propernouns.html" label="Howto debug propernouns"/>
-    <compspeed href="CompilationSpeedTests.html" label="Compilation Speed Tests" />
+    <compspeed href="../CompilationSpeedTests.html" label="Compilation Speed Tests" />
       </fsttesting>
     </transducers>
-      <advanced label="Advanced topics">
+      <advanced href="infraremake/" label="Advanced topics">
+        <newlang        href="HowToAddANewLanguage.html" label="How to add a new language" />
         <updownconcepts href="LookupAndComposition_ADirectionPrimer.html" label="Up and Down Clarifications"/>
         <multiconfs     href="MultipleConfigurationsAndOutOfSourceBuilding.html" label="Multiple configurations"/>
-        <AMconditionals href="ListOfDefinedAutomakeConditionals.html" label="List Of Defined Automake Conditionals" />
       </advanced>      
   </infrastructure>
 
@@ -99,7 +97,7 @@
       <macports href="MacPorts.html" label="MacPorts installation" />
       <forrest href="forrest-howto.html" label="Forrest howto" />
       <forri18n href="forrest-i18n.html" label="Forrest i18n" />
-        <forrestdebugging href="ForrestDebugging.html" label="Debugging Forrest"/>
+        <forrestdebugging href="infraremake/ForrestDebugging.html" label="Debugging Forrest"/>
       <nikola href="nikola.html" label="Nikola howto"/>
       <webserver href="webserver.html" label="The webservers" />
       <setup-emacs href="setup-emacs-howto.html" label="Setup emacs" />
@@ -117,7 +115,7 @@
     <webinterface href="docu-webinterface.html" label="Web interface" />
     <cgi-bin href="docu-cgi-bin.html" label="Web scripts" />
 
-      <infradevs label="For Infrastrucure developers">
+      <infradevs href="infraremake/" label="For Infrastrucure developers">
         <maintenance    href="NewInfraMaintenance.html" label="Infra maintenance" />
         <coremerge      href="HowToMergeUpdatesFromCore.html" label="How to merge template updates" />
         <commentdocs    href="In-sourceDocumentationSpecification.html" label="Specification for comments as documentation" />
@@ -131,27 +129,26 @@
 
 
 
-    <applicationinfra label="Application infra" tab="applinfra">
+    <applicationinfra href="infra/" label="Application infra" tab="applinfra">
       <index href="ApplicationInfrastructure.html" label="Overview" />
-      <infraspell label="Speller infra">
+      <infraspell href="infraremake/" label="Speller infra">
 	    <buildingspell href="BuildingSpellingCheckers.html" label="Building Spelling Checkers"/>
-	    <hunspell href="hunspell.html" label="Hunspell howto"/>
-        <voikko href="CompilingVoikkoWithHfst.html" label="Setting up Voikko with HFST"/>
-        <macvoikko href="BuildingMacVoikko.html" label="Building MacVoikko"/>
-        <spellerserver href="SpellerServer.html" label="Speller Server"/>
+	    <hunspell href="../hunspell.html" label="Hunspell howto"/>
+        <voikko href="../CompilingVoikkoWithHfst.html" label="Setting up Voikko with HFST"/>
+        <macvoikko href="../BuildingMacVoikko.html" label="Building MacVoikko"/>
+        <spellerserver href="../SpellerServer.html" label="Speller Server"/>
         <confspellers   href="HowToConfigureAndOptimiseSpellers.html" label="How To Configure And Optimise Spellers"/>
         <compounding    href="HowToControlCompoundingInSpellers.html" label="How To Control Compounding In Spellers" />
         <weighted       href="BuildingAndUsingAWeightedSpeller.html" label="Build and use weighted fst's as spell checkers" />
 
-    <voikkoLO label="Building the LibreOffice Voikko extension">
+      </infraspell>  
+    <voikkoLO href=""  label="Building the LibreOffice Voikko extension">
       <voikkoLO href="BuildingTheVoikkoExtensionForLibreOffice.html" label="Preparations and final steps"/>
       <hfst-voikkoLO href="BuildingHfst-ospellForInclusionInVoikko.html" label="Building hfst-ospell for inclusion in Voikko"/>
       <voikkoUL href="BuildLibvoikkoAsUniversalBinary.html" label="Building Voikko as a Static Universal Binary"/>
       <voikkorelease href="BuildEverythingForVoikkoLOForRelease.html" label="Build a release version of Voikko+hfst oxt" />
       <lovoikkolibs href="LibreOfficeVoikkoLibraries.html" label="LO-Voikko libraries"/>
     </voikkoLO>
-      </infraspell>
-  
     </applicationinfra>
 
 <!-- Servers etc -->        
