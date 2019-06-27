@@ -45,9 +45,10 @@
     <meetings href="http://giellatekno.uit.no/bugzilla/" label="Bugzilla" />
   </admin>
 
-  <infrastructure href="infra/" label="Infrastructure" tab="infra">
+  <!-- The infrastructure menu -->
+  <infrastructure href="infra/" label="Transducer infrastructure" tab="infra">
     <index href="Infrastructure.html" label="Overview" />
-    <!-- hit -->
+
     <intro label="Getting started">
         <gettingstarted href="GettingStartedWithTheNewInfra.html" label="Getting started" />
         <catalogs       href="NewinfraCatalogues.html" label="New infra directory structure" />
@@ -66,7 +67,9 @@
       </fsttesting>
       
     </transducers>
-    <applications label="Application infra">
+
+    <applicationinfra label="Application infra" tab="applinfra">
+      <index href="ApplicationInfrastructure.html" label="Overview" />
       <infraspell label="Speller infra">
 	    <hunspell href="hunspell.html" label="Hunspell howto"/>
     <voikko href="CompilingVoikkoWithHfst.html" label="Setting up Voikko with HFST"/>
@@ -80,9 +83,36 @@
       <lovoikkolibs href="LibreOfficeVoikkoLibraries.html" label="LO-Voikko libraries"/>
     </voikkoLO>
       </infraspell>
-    </applications>
+  
+    </applicationinfra>
 
-    <techmaintenance label="Technical maintenance">
+        
+      <servers  label="Servers, users, access" tab="servers">
+	<index href="ServersAndUsers.html" label="Overview"/>
+        <sysadm href="system/" label="Sys. admin">
+      <checkinstall href="checkinstall.html" label="Packaging software for victorio" />
+      <svnserve href="svnserve.html" label="Setup of svnserve on victorio" />
+      <privgit href="AccessToPrivateGit.html" label="Setting up Access To Private Git"/>
+      <addremove href="addremove.html" label="Add and remove users to the servers" />
+      <addsvnusers href="addsvn-users.html" label="Adding users to svn and svnmail" />
+      <manualsvnmail href="manually-send-svn-email.html" label="Manually send svn email" />
+      <groups href="groups.html" label="Group administration" />
+          </sysadm>
+	  <serverwork href="infra" label="Servers">
+      <svn-sys href="svn-setup.html" label="Subversion conversion" />
+      <divvun href="divvun-server.html" label="Instructions on how to restart the divvun web-service" />
+      <restartchecks href="ServiceChecksAfterSystemRestarts.html" label="Service Checks After System Restarts" />
+      <autopass href="auto-pass.html" label="Automatic login by using ssh" />
+      <SignCert href="SettingUpSigningCertificates.html" label="How to set up signing certificates"/>
+      <ServerUpgrade label="Serveroppgradering">
+        <Spec href="Serveroppgradering.html" label="Spesifisering"/>
+        <Meeting href="../../admin/technical/2018-03-09Servers.html" label="Serveroppgr.møte" />
+      </ServerUpgrade>
+      </serverwork>
+    </servers>
+
+    <techmaintenance label="Technical maintenance" tab="techmaintenance">
+      <index href="TechnicalMaintenance.html" label="Overview"/>
     <svnrepos href="OurSVNRepositories.html" label="SVN repositories"/>
     <install label="Installation and setup">
       <setupoverv href="install-overview.html" label="New user overview" />
@@ -103,7 +133,6 @@
       <cygwin href="CygwinSetup.html" label="Setting up Cygwin" />
       <SettingUpServer href="SettingUpAMultiuserServer.html" label="Configuring a server" />
     </install>
-    </techmaintenance>
     <compspeed href="CompilationSpeedTests.html" label="Compilation Speed Tests" />
     <webinterface href="docu-webinterface.html" label="Web interface" />
     <cgi-bin href="docu-cgi-bin.html" label="Web scripts" />
@@ -112,27 +141,6 @@
     <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
     <macports href="MacPorts.html" label="MacPorts installation" />
     <remake href="infraremake/" label="Infrastructure Make-over" >
-    
-    <servers label="Servers, users, access">
-    <sysadm href="system/" label="Sys. admin">
-      <checkinstall href="checkinstall.html" label="Packaging software for victorio" />
-      <svnserve href="svnserve.html" label="Setup of svnserve on victorio" />
-      <privgit href="AccessToPrivateGit.html" label="Setting up Access To Private Git"/>
-      <addremove href="addremove.html" label="Add and remove users to the servers" />
-      <addsvnusers href="addsvn-users.html" label="Adding users to svn and svnmail" />
-      <manualsvnmail href="manually-send-svn-email.html" label="Manually send svn email" />
-      <groups href="groups.html" label="Group administration" />
-      <svn-sys href="svn-setup.html" label="Subversion conversion" />
-      <divvun href="divvun-server.html" label="Instructions on how to restart the divvun web-service" />
-      <restartchecks href="ServiceChecksAfterSystemRestarts.html" label="Service Checks After System Restarts" />
-      <autopass href="auto-pass.html" label="Automatic login by using ssh" />
-      <SignCert href="SettingUpSigningCertificates.html" label="How to set up signing certificates"/>
-      <ServerUpgrade label="Serveroppgradering">
-        <Spec href="Serveroppgradering.html" label="Spesifisering"/>
-        <Meeting href="../../admin/technical/2018-03-09Servers.html" label="Serveroppgr.møte" />
-      </ServerUpgrade>
-    </sysadm>
-    </servers>
 
 
       <index          href="index.html" label="Index page" />
@@ -193,11 +201,9 @@
     <eXist label="eXist">
         <install href="eXist-install-testapp.html" label="Install eXist testapp"/>
     </eXist>
+    </techmaintenance>
   </infrastructure>
 
-  <dictionaries href="dicts/" label="Dictionaries" tab="infra">
-    <index href="engine_overview.html" label="Engine overview" />
-  </dictionaries>
 
   <lang href="lang/" label="Languages" tab="lang">
     <index href="index.html" label="Overview" />
@@ -1253,6 +1259,8 @@
     <satniInfo href="info.html" label="Info about Satni.org config"/>
     <testingsatni href="StressTesting.html" label="Stress testing satni.org"/>
     <satniREST href="RESTEndPoints.html" label="REST end points"/>
+    <engine href="engine_overview.html" label="Engine overview" />
+
     </satni>
     </projects>
     <linguistics href="" label="Lexicographic work">
