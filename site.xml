@@ -45,36 +45,104 @@
     <meetings href="http://giellatekno.uit.no/bugzilla/" label="Bugzilla" />
   </admin>
 
+
+
+
+
+
+
   <!-- The infrastructure menu -->
+
   <infrastructure href="infra/" label="Transducer infrastructure" tab="infra">
     <index href="Infrastructure.html" label="Overview" />
 
     <intro label="Getting started">
         <gettingstarted href="GettingStartedWithTheNewInfra.html" label="Getting started" />
         <catalogs       href="NewinfraCatalogues.html" label="New infra directory structure" />
+        <offline href="offline.html" label="Connecting to the computer" /> <!-- ssv .slett -->
+    <svnrepos href="OurSVNRepositories.html" label="SVN repositories"/>
+      <basics label="Basics">
+        <kurs           href="KursINyInfra.html" label="Kurs i ny infra"/>
+        <newlang        href="HowToAddANewLanguage.html" label="How to add a new language" />
+        <commentdocs    href="In-sourceDocumentation.html" label="How to write documentation as comments." />
+      </basics>
     </intro>
+
     <transducers label="Transducers (FSTs)">
       <compiling label="Compiling the FSTs">
         <xmlaslexc      href="HowToUseXMLFilesAsLexcSources.html" label="XML as lexical source files"/>
       </compiling>
       <fstmanipulation label="FST manipulation">
+       <enabletags href="HowToEnableTagsInNaturalLanguages.html" label="Enable Tags"/>
       </fstmanipulation>
+        <filesize       href="ExampleOfFileSizesWithOptimisations.html" label="Example Of File Sizes With Different Optimisations" />
       <fsttesting label="FST testing">
         <lexctests      href="AddingMorphologicalTestData.html" label="How to add morphological test data." />
         <testing        href="TestScriptsInTheNewInfra.html" label="How to add new test scripts" />
         <buildtests     href="BuildYourOwnTests.html" label="Build Your Own Tests"/>
         <propernountest href="debug_propernouns.html" label="Howto debug propernouns"/>
+    <compspeed href="CompilationSpeedTests.html" label="Compilation Speed Tests" />
       </fsttesting>
-      
     </transducers>
+      <advanced label="Advanced topics">
+        <updownconcepts href="LookupAndComposition_ADirectionPrimer.html" label="Up and Down Clarifications"/>
+        <multiconfs     href="MultipleConfigurationsAndOutOfSourceBuilding.html" label="Multiple configurations"/>
+        <AMconditionals href="ListOfDefinedAutomakeConditionals.html" label="List Of Defined Automake Conditionals" />
+      </advanced>      
+  </infrastructure>
+
+    <techmaintenance  href="infra/" label="Technical maintenance" tab="techmaintenance">
+      <index href="TechnicalMaintenance.html" label="Overview"/>
+    <install label="Installation and setup">
+      <setupoverv href="install-overview.html" label="New user overview" />
+      <xcode      href="InstallingXCode.html"  label="Installing XCode" />
+      <macports href="MacPorts.html" label="MacPorts installation" />
+      <forrest href="forrest-howto.html" label="Forrest howto" />
+      <forri18n href="forrest-i18n.html" label="Forrest i18n" />
+        <forrestdebugging href="ForrestDebugging.html" label="Debugging Forrest"/>
+      <nikola href="nikola.html" label="Nikola howto"/>
+      <webserver href="webserver.html" label="The webservers" />
+      <setup-emacs href="setup-emacs-howto.html" label="Setup emacs" />
+      <setup-bash href="docu-setup-bash.html" label="Setup bash" />
+      <jspwiki-howto href="jspwiki-howto.html" label="How to write a jspwiki document" />
+      <upgrade-bugzilla href="upgrade-bugzilla.html" label="Howto upgrade bugzilla" />
+      <leopard-upgrade href="leopard-upgrade.html" label="Howto upgrade to Leopard" />
+      <snow-leopard-upg href="snow-leopard-upgrade.html" label="Upgrade notes for Snow Leopard" />
+      <maverick-upgrade href="MaverickUpgradeNotes.html" label="Upgrade notes for OSX 10.9/Maverick" />
+      <hfst3 href="compiling_HFST3.html" label="Howto install HFST3" />
+      <cygwin href="CygwinSetup.html" label="Setting up Cygwin" />
+      <SettingUpServer href="SettingUpAMultiuserServer.html" label="Configuring a server" />
+      <install href="eXist-install-testapp.html" label="Install eXist testapp"/>
+    </install>
+    <webinterface href="docu-webinterface.html" label="Web interface" />
+    <cgi-bin href="docu-cgi-bin.html" label="Web scripts" />
+
+      <infradevs label="For Infrastrucure developers">
+        <maintenance    href="NewInfraMaintenance.html" label="Infra maintenance" />
+        <coremerge      href="HowToMergeUpdatesFromCore.html" label="How to merge template updates" />
+        <commentdocs    href="In-sourceDocumentationSpecification.html" label="Specification for comments as documentation" />
+        <xducernames    href="TransducerNamesInTheNewInfra.html" label="Transducer names" />
+        <makefileorg    href="MakefileNamesAndOrganisation.html" label="Makefile names and organisation" />
+        <cginamesoldinf href="WebFilenamesFromOldinfra.html" label="Web file names from the old infra" />
+        <svnignores     href="MaintainingSVNIgnores.html" label="Maintaining SVN Ignores"/>
+      </infradevs>
+
+    </techmaintenance>
+
+
 
     <applicationinfra label="Application infra" tab="applinfra">
       <index href="ApplicationInfrastructure.html" label="Overview" />
       <infraspell label="Speller infra">
+	    <buildingspell href="BuildingSpellingCheckers.html" label="Building Spelling Checkers"/>
 	    <hunspell href="hunspell.html" label="Hunspell howto"/>
-    <voikko href="CompilingVoikkoWithHfst.html" label="Setting up Voikko with HFST"/>
-    <macvoikko href="BuildingMacVoikko.html" label="Building MacVoikko"/>
-    <spellerserver href="SpellerServer.html" label="Speller Server"/>
+        <voikko href="CompilingVoikkoWithHfst.html" label="Setting up Voikko with HFST"/>
+        <macvoikko href="BuildingMacVoikko.html" label="Building MacVoikko"/>
+        <spellerserver href="SpellerServer.html" label="Speller Server"/>
+        <confspellers   href="HowToConfigureAndOptimiseSpellers.html" label="How To Configure And Optimise Spellers"/>
+        <compounding    href="HowToControlCompoundingInSpellers.html" label="How To Control Compounding In Spellers" />
+        <weighted       href="BuildingAndUsingAWeightedSpeller.html" label="Build and use weighted fst's as spell checkers" />
+
     <voikkoLO label="Building the LibreOffice Voikko extension">
       <voikkoLO href="BuildingTheVoikkoExtensionForLibreOffice.html" label="Preparations and final steps"/>
       <hfst-voikkoLO href="BuildingHfst-ospellForInclusionInVoikko.html" label="Building hfst-ospell for inclusion in Voikko"/>
@@ -86,7 +154,7 @@
   
     </applicationinfra>
 
-        
+<!-- Servers etc -->        
       <servers  label="Servers, users, access" tab="servers">
 	<index href="ServersAndUsers.html" label="Overview"/>
         <sysadm href="system/" label="Sys. admin">
@@ -104,6 +172,7 @@
       <restartchecks href="ServiceChecksAfterSystemRestarts.html" label="Service Checks After System Restarts" />
       <autopass href="auto-pass.html" label="Automatic login by using ssh" />
       <SignCert href="SettingUpSigningCertificates.html" label="How to set up signing certificates"/>
+    <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
       <ServerUpgrade label="Serveroppgradering">
         <Spec href="Serveroppgradering.html" label="Spesifisering"/>
         <Meeting href="../../admin/technical/2018-03-09Servers.html" label="Serveroppgr.møte" />
@@ -111,85 +180,31 @@
       </serverwork>
     </servers>
 
-    <techmaintenance label="Technical maintenance" tab="techmaintenance">
-      <index href="TechnicalMaintenance.html" label="Overview"/>
-    <svnrepos href="OurSVNRepositories.html" label="SVN repositories"/>
-    <install label="Installation and setup">
-      <setupoverv href="install-overview.html" label="New user overview" />
-      <xcode      href="InstallingXCode.html"  label="Installing XCode" />
-      <localisation href="docu-localisation.html" label="Localisation issues" />
-      <forrest href="forrest-howto.html" label="Forrest howto" />
-      <forri18n href="forrest-i18n.html" label="Forrest i18n" />
-      <nikola href="nikola.html" label="Nikola howto"/>
-      <webserver href="webserver.html" label="The webservers" />
-      <setup-emacs href="setup-emacs-howto.html" label="Setup emacs" />
-      <setup-bash href="docu-setup-bash.html" label="Setup bash" />
-      <jspwiki-howto href="jspwiki-howto.html" label="How to write a jspwiki document" />
-      <upgrade-bugzilla href="upgrade-bugzilla.html" label="Howto upgrade bugzilla" />
-      <leopard-upgrade href="leopard-upgrade.html" label="Howto upgrade to Leopard" />
-      <snow-leopard-upg href="snow-leopard-upgrade.html" label="Upgrade notes for Snow Leopard" />
-      <maverick-upgrade href="MaverickUpgradeNotes.html" label="Upgrade notes for OSX 10.9/Maverick" />
-      <hfst3 href="compiling_HFST3.html" label="Howto install HFST3" />
-      <cygwin href="CygwinSetup.html" label="Setting up Cygwin" />
-      <SettingUpServer href="SettingUpAMultiuserServer.html" label="Configuring a server" />
-    </install>
-    <compspeed href="CompilationSpeedTests.html" label="Compilation Speed Tests" />
-    <webinterface href="docu-webinterface.html" label="Web interface" />
-    <cgi-bin href="docu-cgi-bin.html" label="Web scripts" />
-    <offline href="offline.html" label="Connecting to the computer" />
-    <docu-sys href="docu-sys-todo.html" label="Todo on system" />
-    <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
-    <macports href="MacPorts.html" label="MacPorts installation" />
-    <remake href="infraremake/" label="Infrastructure Make-over" >
 
 
-      <index          href="index.html" label="Index page" />
+  <presentations href="presentations/" label="Presentations" tab="present">
+    <index           href="PresentationsAboutInfra.html" label="Overview" />
+        <baultpresent   href="NewInfraBAULTPresentation.html" label="Infra Presentation (BAULT)" />
+        <baultpresentslides   href="slidy/NewInfraBAULTPresentation.html" label="The BAULT slides" />
+        <edmonpresent   href="EdmontonInfrastructurePresentation.html" label="Infrastructure Presentation (Edmonton)" />
+        <edmonpresentslides   href="slidy/EdmontonInfrastructurePresentation.html" label="Edmonton slides" />
+    <GGmeeting       href="Giellagáldu-møte2017.html" label="Giellagáldu-møte 2017" />
+    <minLangMT       href="MLLanguageTechnology.html" label="Minority Language LT" />
+    <Greenland2017   href="Greenland2017.html" label="Greenland 2017" />
+  </presentations>
 
-      <basics label="Basics">
-        <kurs           href="KursINyInfra.html" label="Kurs i ny infra"/>
-        <baultpresent   href="NewInfraBAULTPresentation.html" label="New Infra BAULT Presentation" />
-        <edmonpresent   href="EdmontonInfrastructurePresentation.html" label="Edmonton Infrastructure Presentation" />
 
-        <newlang        href="HowToAddANewLanguage.html" label="How to add a new language" />
-        <commentdocs    href="In-sourceDocumentation.html" label="How to write documentation as comments." />
-      </basics>
-
+<!-- Old infra docu -->
+<oldinfrastr href="infra/" label="Old documentation" tab="oldinfra">
+      <index href="OldInfraDocumentation.html" label="Overview"/>
       <oldinfrarel label="Related to the old infra">
         <fstnamesoldnew href="FstNamesInOldAndNewInfra.html" label="Fst names in the old and new infra"/>
         <movelang       href="HowToMoveALanguageFromTheOldInfraToTheNew.html" label="Moving a language from old to new infra" />
       </oldinfrarel>
-
-
-      <infradebugging label="Debugging">
-        <forrestdebugging href="ForrestDebugging.html" label="Debugging Forrest"/>
-      </infradebugging>
-
-      <intermediate label="Intermediate">
-        <natlangtags    href="HowToEnableTagsInNaturalLanguages.html" label="How To Enable Tags In Natural Languages" />
-        <confspellers   href="HowToConfigureAndOptimiseSpellers.html" label="How To Configure And Optimise Spellers"/>
-        <filesize       href="ExampleOfFileSizesWithOptimisations.html" label="Example Of File Sizes With Different Optimisations" />
-        <compounding    href="HowToControlCompoundingInSpellers.html" label="How To Control Compounding In Spellers" />
-      </intermediate>
-
-      <advanced label="Advanced topics">
-        <weighted       href="BuildingAndUsingAWeightedSpeller.html" label="Build and use weighted fst's as spell checkers" />
-        <updownconcepts href="LookupAndComposition_ADirectionPrimer.html" label="Up and Down Clarifications"/>
-        <multiconfs     href="MultipleConfigurationsAndOutOfSourceBuilding.html" label="Multiple configurations"/>
-        <AMconditionals href="ListOfDefinedAutomakeConditionals.html" label="List Of Defined Automake Conditionals" />
-      </advanced>
-
-      <infradevs label="For Infrastrucure developers">
-        <maintenance    href="NewInfraMaintenance.html" label="New infra maintenance" />
-        <coremerge      href="HowToMergeUpdatesFromCore.html" label="How to merge template updates" />
-        <commentdocs    href="In-sourceDocumentationSpecification.html" label="Specification for comments as documentation" />
-        <xducernames    href="TransducerNamesInTheNewInfra.html" label="Transducer names" />
-        <makefileorg    href="MakefileNamesAndOrganisation.html" label="Makefile names and organisation" />
-        <cginamesoldinf href="WebFilenamesFromOldinfra.html" label="Web file names from the old infra" />
+     <migrationdoc label="Move to newinfra">
         <cginamesoldinf href="MovingPLXAndHunspellToTheNewInfra.html" label="Moving plx and Hunspell to the new infra"/>
-        <svnignores     href="MaintainingSVNIgnores.html" label="Maintaining SVN Ignores"/>
-      </infradevs>
-
-      <olddocs label="Project details">
+     </migrationdoc>
+      <olddocs href="infraremake/" label="Project details">
         <infraremake    href="InfraRemake.html" label="Overview" />
         <overview       href="NewInfraOverview.html" label="New infra overview" />
         <docugenerators href="DocumentationGenerators.html" label="Inline documentation" />
@@ -197,12 +212,8 @@
         <remakeprogress href="NewInfraProgress.html" label="Progress" />
         <tecoverw       href="NewInfraTechnicalOverview.html" label="Technical Overview" />
       </olddocs>
-    </remake>
-    <eXist label="eXist">
-        <install href="eXist-install-testapp.html" label="Install eXist testapp"/>
-    </eXist>
-    </techmaintenance>
-  </infrastructure>
+</oldinfrastr>
+
 
 
   <lang href="lang/" label="Languages" tab="lang">
@@ -1320,12 +1331,6 @@
     </compilingkeyboards>
   </keyboards>
 
-  <presentations href="presentations/" label="Presentations" tab="present">
-    <index           href="PresentationsAboutInfra.html" label="Overview" />
-    <GGmeeting       href="Giellagáldu-møte2017.html" label="Giellagáldu-møte 2017" />
-    <minLangMT       href="MLLanguageTechnology.html" label="Minority Language LT" />
-    <Greenland2017   href="Greenland2017.html" label="Greenland 2017" />
-  </presentations>
 
   <proofdoc href="proof/" label="Proofing documentation" tab="proof">
 
