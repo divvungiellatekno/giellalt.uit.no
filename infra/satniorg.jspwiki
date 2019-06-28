@@ -7,13 +7,22 @@ __TODO:__ Write what to do in case of an emergency.
 Some information can be found [here|../apps/satni/Setup.html].
 
 !!!termwiki
-termwiki depends on the services httpd, mysqld and parsoid.
+The termwiki stops once in a while because the root disk is filled with log files and such.
 
-Check whether the termwiki is up and running by clicking [http://satni.uit.no/termwiki]
-
-If the page does not appear, start the services needed by running these commands:
+There is a cronjob that takes care of deleting unneeded log files:
 {{{
-sudo service apache start
-sudo service mysqld start
-sudo service parsoid start
+00 21 * * * find /var/log -name "*log-*"|xargs rm -v
+10 21 * * * dnf clean all
+20 21 * * * yum clean all
+}}}
+
+* The first line removes archived log files (this needs to be done first, the next lines will warn about a full disk otherwise)
+* The next two lines removes cached package info
+
+If the termwiki is down, manually perform the jobs above, in the listed order, then do the following commands. This should be enough to get termwiki on its feet again.
+
+{{{
+sudo systemctl restart mysqld
+sudo systemctl restart php-fpm
+sudo systemctl restart httpd
 }}}
