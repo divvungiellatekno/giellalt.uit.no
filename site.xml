@@ -62,7 +62,6 @@
         <offline href="offline.html" label="Connecting to the computer" /> <!-- ssv .slett -->
     <svnrepos href="OurSVNRepositories.html" label="SVN repositories"/>
         <kurs           href="infraremake/KursINyInfra.html" label="Kurs i ny infra"/>
-        <commentdocs    href="infraremake/In-sourceDocumentation.html" label="How to write documentation as comments." />
     </intro>
 
     <transducers label="Transducers (FSTs)">
@@ -75,6 +74,9 @@
        <enabletags href="HowToEnableTagsInNaturalLanguages.html" label="Enable Tags"/>
         <filesize       href="ExampleOfFileSizesWithOptimisations.html" label="Example Of File Sizes With Different Optimisations" />
       </fstmanipulation>
+      <fstdocumentation href="infraremake/" label="How to write documentation">
+        <commentdocs    href="infraremake/In-sourceDocumentation.html" label="How to write documentation as comments." />
+      </fstdocumentation>
       <fsttesting href="infraremake/" label="FST testing">
         <lexctests      href="AddingMorphologicalTestData.html" label="How to add morphological test data." />
         <testing        href="TestScriptsInTheNewInfra.html" label="How to add new test scripts" />
@@ -132,50 +134,58 @@
 
     <applicationinfra href="infra/" label="Application infra" tab="applinfra">
       <index href="ApplicationInfrastructure.html" label="Overview" />
-      <infraspell href="infraremake/" label="Speller infra">
-	    <buildingspell href="BuildingSpellingCheckers.html" label="Building Spelling Checkers"/>
-	    <hunspell href="../hunspell.html" label="Hunspell howto"/>
-        <voikko href="../CompilingVoikkoWithHfst.html" label="Setting up Voikko with HFST"/>
-        <macvoikko href="../BuildingMacVoikko.html" label="Building MacVoikko"/>
-        <spellerserver href="../SpellerServer.html" label="Speller Server"/>
-        <confspellers   href="HowToConfigureAndOptimiseSpellers.html" label="How To Configure And Optimise Spellers"/>
-        <compounding    href="HowToControlCompoundingInSpellers.html" label="How To Control Compounding In Spellers" />
-        <weighted       href="BuildingAndUsingAWeightedSpeller.html" label="Build and use weighted fst's as spell checkers" />
-
-      </infraspell>  
-    <voikkoLO href=""  label="Building the LibreOffice Voikko extension">
-      <voikkoLO href="BuildingTheVoikkoExtensionForLibreOffice.html" label="Preparations and final steps"/>
-      <hfst-voikkoLO href="BuildingHfst-ospellForInclusionInVoikko.html" label="Building hfst-ospell for inclusion in Voikko"/>
-      <voikkoUL href="BuildLibvoikkoAsUniversalBinary.html" label="Building Voikko as a Static Universal Binary"/>
-      <voikkorelease href="BuildEverythingForVoikkoLOForRelease.html" label="Build a release version of Voikko+hfst oxt" />
-      <lovoikkolibs href="LibreOfficeVoikkoLibraries.html" label="LO-Voikko libraries"/>
-    </voikkoLO>
+      <spellersinfra href="infraremake/" label="Spellers">
+        <compilespellers href="" label="Compile spellers">
+         <buildingspell href="BuildingSpellingCheckers.html" label="Building Spelling Checkers"/>
+          <confspellers   href="HowToConfigureAndOptimiseSpellers.html" label="How To Configure And Optimise Spellers" />
+          <weighted       href="BuildingAndUsingAWeightedSpeller.html" label="Build and use weighted fst's as spell checkers" />
+          <compounding    href="HowToControlCompoundingInSpellers.html" label="How To Control Compounding In Spellers" />
+          <voikko href="../CompilingVoikkoWithHfst.html" label="Setting up Voikko with HFST"/>
+          <macvoikko href="../BuildingMacVoikko.html" label="Building MacVoikko"/>
+          <spellerserver href="../SpellerServer.html" label="Speller Server"/>
+         <hunspell href="../hunspell.html" label="Hunspell howto"/>
+      </compilespellers>  
+      <voikkoLObuild href=""  label="LibreOffice Voikko">
+        <voikkoLO href="../BuildingTheVoikkoExtensionForLibreOffice.html" label="Preparations and final steps"/>
+        <hfst-voikkoLO href="../BuildingHfst-ospellForInclusionInVoikko.html" label="Building hfst-ospell for inclusion in Voikko"/>
+        <voikkoUL href="../BuildLibvoikkoAsUniversalBinary.html" label="Building Voikko as a Static Universal Binary"/>
+        <voikkorelease href="../BuildEverythingForVoikkoLOForRelease.html" label="Build a release version of Voikko+hfst oxt" />
+        <lovoikkolibs href="../LibreOfficeVoikkoLibraries.html" label="LO-Voikko libraries"/>
+      </voikkoLObuild>
+    </spellersinfra>
+    <gramminfra>
+    </gramminfra>
     </applicationinfra>
 
 <!-- Servers etc -->        
-      <servers  label="Servers, users, access" tab="servers">
+      <servers  href="infra/" label="Servers, users, access" tab="servers">
 	<index href="ServersAndUsers.html" label="Overview"/>
         <sysadm href="system/" label="Sys. admin">
-      <checkinstall href="checkinstall.html" label="Packaging software for victorio" />
-      <svnserve href="svnserve.html" label="Setup of svnserve on victorio" />
-      <privgit href="AccessToPrivateGit.html" label="Setting up Access To Private Git"/>
-      <addremove href="addremove.html" label="Add and remove users to the servers" />
-      <addsvnusers href="addsvn-users.html" label="Adding users to svn and svnmail" />
-      <manualsvnmail href="manually-send-svn-email.html" label="Manually send svn email" />
-      <groups href="groups.html" label="Group administration" />
-          </sysadm>
-	  <serverwork href="infra" label="Servers">
-      <svn-sys href="svn-setup.html" label="Subversion conversion" />
-      <divvun href="divvun-server.html" label="Instructions on how to restart the divvun web-service" />
-      <restartchecks href="ServiceChecksAfterSystemRestarts.html" label="Service Checks After System Restarts" />
-      <autopass href="auto-pass.html" label="Automatic login by using ssh" />
-      <SignCert href="SettingUpSigningCertificates.html" label="How to set up signing certificates"/>
-    <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
-      <ServerUpgrade label="Serveroppgradering">
-        <Spec href="Serveroppgradering.html" label="Spesifisering"/>
-        <Meeting href="../../admin/technical/2018-03-09Servers.html" label="Serveroppgr.møte" />
-      </ServerUpgrade>
-      </serverwork>
+         <checkinstall href="checkinstall.html" label="Packaging software for victorio" />
+         <svnserve href="svnserve.html" label="Setup of svnserve on victorio" />
+         <privgit href="AccessToPrivateGit.html" label="Setting up Access To Private Git"/>
+         <addremove href="addremove.html" label="Add and remove users to the servers" />
+         <addsvnusers href="addsvn-users.html" label="Adding users to svn and svnmail" />
+         <manualsvnmail href="manually-send-svn-email.html" label="Manually send svn email" />
+	 <groups href="groups.html" label="Group administration" />
+         <usersandacces href="UsersAndAccessAdministration.html" labels="Maintaining users and access administration" />
+        </sysadm>
+
+	<serverwork href="infra" label="Servers">
+	  <virtualservers href="VirtualServers.html" label="Our servers" />
+	  <serverprograms href="ServerProgramsAndLogs.html" label="Server Programs and Logs" />
+          <svn-sys href="svn-setup.html" label="Subversion conversion" />
+          <divvun href="divvun-server.html" label="Instructions on how to restart the divvun web-service" />
+          <restartchecks href="ServiceChecksAfterSystemRestarts.html" label="Service Checks After System Restarts" />
+         <autopass href="auto-pass.html" label="Automatic login by using ssh" />
+         <SignCert href="SettingUpSigningCertificates.html" label="How to set up signing certificates"/>
+	 <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
+
+	</serverwork>
+         <ServerUpgrade label="Serveroppgradering">
+          <Spec href="Serveroppgradering.html" label="Serveroppgradering"/>
+	  <Meeting href="../../admin/technical/2018-03-09Servers.html" label="Serveroppgr.møte" />
+         </ServerUpgrade>
     </servers>
 
 
