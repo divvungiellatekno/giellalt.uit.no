@@ -65,20 +65,22 @@
         <kurs           href="infraremake/KursINyInfra.html" label="Kurs i ny infra"/>
     </intro>
 
-    <transducers label="Transducers (FSTs)">
       <compiling href="infraremake/" label="Compiling the FSTs">
 	<fsttech href="../FSTTechnologyOverview.html" label="FST technology overview"/>
         <xmlaslexc      href="HowToUseXMLFilesAsLexcSources.html" label="XML as lexical source files"/>
         <AMconditionals href="ListOfDefinedAutomakeConditionals.html" label="List Of Defined Automake Conditionals" />
+        <multiconfs     href="MultipleConfigurationsAndOutOfSourceBuilding.html" label="Multiple configurations"/>
       </compiling>
       <fstmanipulation href="infraremake/" label="FST manipulation">
        <enabletags href="HowToEnableTagsInNaturalLanguages.html" label="Enable Tags"/>
         <filesize       href="ExampleOfFileSizesWithOptimisations.html" label="Example Of File Sizes With Different Optimisations" />
+        <updownconcepts href="LookupAndComposition_ADirectionPrimer.html" label="Up and Down Clarifications"/>
       </fstmanipulation>
       <fstdocumentation href="infraremake/" label="How to write documentation">
         <debugdoc href="/proof/gramcheck/GrammarCheckerDocumentation.html" label="How to debug (correct ERRORS) in the documentation written in the  source code"/>
         <debugforrest href="ForrestDebugging.html" label="Forrest debugging"/>
         <commentdocs    href="In-sourceDocumentation.html" label="How to write documentation as comments." />
+        <docugenerators href="DocumentationGenerators.html" label="Inline documentation" />
       </fstdocumentation>
       <fsttesting href="infraremake/" label="FST testing">
         <lexctests      href="AddingMorphologicalTestData.html" label="How to add morphological test data." />
@@ -87,12 +89,6 @@
         <propernountest href="debug_propernouns.html" label="Howto debug propernouns"/>
     <compspeed href="../CompilationSpeedTests.html" label="Compilation Speed Tests" />
       </fsttesting>
-    </transducers>
-      <advanced href="infraremake/" label="Advanced topics">
-        <newlang        href="HowToAddANewLanguage.html" label="How to add a new language" />
-        <updownconcepts href="LookupAndComposition_ADirectionPrimer.html" label="Up and Down Clarifications"/>
-        <multiconfs     href="MultipleConfigurationsAndOutOfSourceBuilding.html" label="Multiple configurations"/>
-      </advanced>      
   </infrastructure>
 
     <techmaintenance  href="infra/" label="Technical maintenance" tab="techmaintenance">
@@ -101,11 +97,6 @@
       <setupoverv href="install-overview.html" label="New user overview" />
       <xcode      href="InstallingXCode.html"  label="Installing XCode" />
       <macports href="MacPorts.html" label="MacPorts installation" />
-      <forrest href="forrest-howto.html" label="Forrest howto" />
-      <forri18n href="forrest-i18n.html" label="Forrest i18n" />
-        <forrestdebugging href="infraremake/ForrestDebugging.html" label="Debugging Forrest"/>
-      <nikola href="nikola.html" label="Nikola howto"/>
-      <webserver href="webserver.html" label="The webservers" />
       <setup-emacs href="setup-emacs-howto.html" label="Setup emacs" />
       <setup-bash href="docu-setup-bash.html" label="Setup bash" />
       <jspwiki-howto href="jspwiki-howto.html" label="How to write a jspwiki document" />
@@ -118,17 +109,25 @@
       <SettingUpServer href="SettingUpAMultiuserServer.html" label="Configuring a server" />
       <install href="eXist-install-testapp.html" label="Install eXist testapp"/>
     </install>
+    <webpageinfra href="" label="Web page infra">
     <webinterface href="docu-webinterface.html" label="Web interface" />
-    <cgi-bin href="docu-cgi-bin.html" label="Web scripts" />
+    <cgi-bin href="docu-cgi-bin.html" label="The cgi-bin environemt" />
+      <forrest href="forrest-howto.html" label="Forrest howto" />
+      <forri18n href="forrest-i18n.html" label="Forrest i18n" />
+        <forrestdebugging href="infraremake/ForrestDebugging.html" label="Debugging Forrest"/>
+      <nikola href="nikola.html" label="Nikola howto"/>
+      <webserver href="webserver.html" label="The webservers" />
+  </webpageinfra>
 
-      <infradevs href="infraremake/" label="For Infrastrucure developers">
+      <infradevs href="infraremake/" label="Maintenance">
         <maintenance    href="NewInfraMaintenance.html" label="Infra maintenance" />
         <coremerge      href="HowToMergeUpdatesFromCore.html" label="How to merge template updates" />
         <commentdocs    href="In-sourceDocumentationSpecification.html" label="Specification for comments as documentation" />
         <xducernames    href="TransducerNamesInTheNewInfra.html" label="Transducer names" />
         <makefileorg    href="MakefileNamesAndOrganisation.html" label="Makefile names and organisation" />
         <cginamesoldinf href="WebFilenamesFromOldinfra.html" label="Web file names from the old infra" />
-        <svnignores     href="MaintainingSVNIgnores.html" label="Maintaining SVN Ignores"/>
+	<svnignores     href="MaintainingSVNIgnores.html" label="Maintaining SVN Ignores"/>
+        <newlang        href="HowToAddANewLanguage.html" label="How to add a new language" />
       </infradevs>
 
     </techmaintenance>
@@ -163,33 +162,34 @@
 <!-- Servers etc -->        
       <servers  href="infra/" label="Servers, users, access" tab="servers">
 	<index href="ServersAndUsers.html" label="Overview"/>
+
+	<serverwork href="" label="Servers">
+	  <virtualservers href="VirtualServers.html" label="Our servers" />
+	  <serverprograms href="ServerProgramsAndLogs.html" label="Server Programs and Logs" />
+          <svn-sys href="system/svn-setup.html" label="Subversion conversion" />
+          <divvun href="system/divvun-server.html" label="Instructions on how to restart the divvun web-service" />
+          <restartchecks href="system/ServiceChecksAfterSystemRestarts.html" label="Service Checks After System Restarts" />
+         <autopass href="system/auto-pass.html" label="Automatic login by using ssh" />
+         <SignCert href="system/SettingUpSigningCertificates.html" label="How to set up signing certificates"/>
+	 <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
+         <checkinstall href="system/checkinstall.html" label="Packaging software for victorio" />
+         <svnserve href="system/svnserve.html" label="Setup of svnserve on victorio" />
+
+	</serverwork>
+         <ServerUpgrade label="Server upgrade">
+          <Spec href="system/Serveroppgradering.html" label="Serveroppgradering"/>
+	  <Meeting href="../admin/technical/2018-03-09Servers.html" label="Møte sept 2018" />
+         </ServerUpgrade>
+
         <sysadm href="system/" label="Sys. admin">
-         <checkinstall href="checkinstall.html" label="Packaging software for victorio" />
-         <svnserve href="svnserve.html" label="Setup of svnserve on victorio" />
-         <privgit href="AccessToPrivateGit.html" label="Setting up Access To Private Git"/>
          <addremove href="addremove.html" label="Add and remove users to the servers" />
          <addsvnusers href="addsvn-users.html" label="Adding users to svn and svnmail" />
          <manualsvnmail href="manually-send-svn-email.html" label="Manually send svn email" />
 	 <groups href="groups.html" label="Group administration" />
          <usersandacces href="UsersAndAccessAdministration.html" labels="Maintaining users and access administration" />
-        </sysadm>
-
-	<serverwork href="infra" label="Servers">
-	  <virtualservers href="VirtualServers.html" label="Our servers" />
-	  <serverprograms href="ServerProgramsAndLogs.html" label="Server Programs and Logs" />
-          <svn-sys href="svn-setup.html" label="Subversion conversion" />
-          <divvun href="divvun-server.html" label="Instructions on how to restart the divvun web-service" />
-          <restartchecks href="ServiceChecksAfterSystemRestarts.html" label="Service Checks After System Restarts" />
-         <autopass href="auto-pass.html" label="Automatic login by using ssh" />
-         <SignCert href="SettingUpSigningCertificates.html" label="How to set up signing certificates"/>
-	 <xserve-g5 href="xserve-g5.html" label="The new X Serve and the G5" />
-
-	</serverwork>
-         <ServerUpgrade label="Serveroppgradering">
-          <Spec href="Serveroppgradering.html" label="Serveroppgradering"/>
-	  <Meeting href="../../admin/technical/2018-03-09Servers.html" label="Serveroppgr.møte" />
-         </ServerUpgrade>
-    </servers>
+         <privgit href="AccessToPrivateGit.html" label="Setting up Access To Private Git"/>
+        </sysadm>	 
+      </servers>
 
 
 
@@ -203,6 +203,29 @@
     <minLangMT       href="MLLanguageTechnology.html" label="Minority Language LT" />
     <Greenland2017   href="Greenland2017.html" label="Greenland 2017" />
   </presentations>
+
+
+
+<oldinfrastr href="infra/" label="Old documentation" tab="oldinfra">
+      <index href="OldInfraDocumentation.html" label="Overview"/>
+      <oldinfrarel href="infraremake/" label="Related to the old infra">
+        <fstnamesoldnew href="FstNamesInOldAndNewInfra.html" label="Fst names in the old and new infra"/>
+        <movelang       href="HowToMoveALanguageFromTheOldInfraToTheNew.html" label="Moving a language from old to new infra" />
+      </oldinfrarel>
+     <migrationdoc href="infraremake/" label="Move to newinfra">
+        <cginamesoldinf href="MovingPLXAndHunspellToTheNewInfra.html" label="Moving plx and Hunspell to the new infra"/>
+     </migrationdoc>
+      <olddocs href="infraremake/" label="Project details">
+        <infraremake    href="InfraRemake.html" label="Overview" />
+        <overview       href="NewInfraOverview.html" label="New infra overview" />
+        <docugenerators href="DocumentationGenerators.html" label="Inline documentation" />
+        <remakeplan     href="NewInfraPlan.html" label="Plans" />
+        <remakeprogress href="NewInfraProgress.html" label="Progress" />
+        <tecoverw       href="NewInfraTechnicalOverview.html" label="Technical Overview" />
+      </olddocs>
+</oldinfrastr>
+
+
 
 
   <lang href="lang/" label="Languages" tab="lang">
