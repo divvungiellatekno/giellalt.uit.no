@@ -1,0 +1,202 @@
+Stavekontrollar for mobiltelefonar, møte 14., 15. og 18.1.2019
+
+Saker:
+* erfaringar
+* korleis kan vi gjera forslaga betre
+
+!!!Maja
+
+* la ut lenke på sma-FB
+** mange syntest det var bra
+** kjempebra med stavekontroll!!!
+* må prøva ut meir
+* forslagsmekanismen: same problem som i Word/LO
+* veldig positivt å få stavekontrollen rett i fjeset - ser problema tydelegare
+* nokre har problem med å få stavekontrollen til å fungera / få oppdateringa på plass
+** manglar info om telefon(modell), OS-versjon, m.m.
+
+!!!Duommá
+
+* den er bra men ubegripeleg (forslagsmekanismen)
+* han er ikkje konsekvent (sjå Zulip) - kva er det som står i hermeteikn?
+  Truleg det ein sjølv har skrive når det ikkje finst retteforslag
+
+!!!Elena
+
+* får mange heilt ville forslag
+* treng ikkje vera samiske ord
+* skriv: 'Viellka' (ønsker Viellja) - Miella Giella Niellja
+** stor fyrstebokstav triggar forslag som er namn -> straff namn høgare
+
+!!!Børre
+
+* problemet er at han gjer rettingar for tidleg - treng (statistisk basert) ordfullføring
+* forslaga når ein kjem halvvegs i ordet er berre tull
+
+!!!Sjur
+
+* Siden lansering: over 2000 personer har oppdatert tastaturet i iOS
+* Kræsjlogg indikerer at det blir brukt mye
+
+!!!Feilmodell
+
+Er dokumentert [her|http://giellalt.uit.no/proof/TheSpellerErrorModel.html].
+
+!!Filene som bestemmer vekta til forslaga
+
+Analysatorvektene blir spesifiserte i denne katalogen
+{{tools/spellcheckers/fstbased/desktop/weighting/}} av desse to filene:
+
+* spellercorpus.raw.txt
+* tags.reweight
+
+Og vektene i feilmodellen ligg her:
+{{tools/spellcheckers/fstbased/desktop/hfst/}}, og er desse fem filene:
+
+* editdist.default.txt
+* final_strings.default.txt
+* initial_letters.default.txt
+* strings.default.txt
+* words.default.txt
+
+Endeleg vekt på forslag = analysatorvekt + vekt frå feilmodell
+
+Byt ut {{desktop}} med {{mobile}} for vektinga for mobilkstavekontrollen!
+
+!!! Resultat etter fleire rettingar
+
+!! smj
+
+{{{
+$ echo Viellka | divvunspell -S -z smj-mobile.zhfst | head -n 15
+Reading from stdin...
+Input: Viellka                [INCORRECT]
+Viellja                11.609375
+Giella                18.619987
+Giellda                20.51159
+Vielja                21.89746
+Viellde                23.090923
+Viellida                23.590923
+Viellit                23.590923
+Vielljaj                23.590923
+Vielljan                23.590923
+Vierkka                23.590923
+Viehka                27.546875
+Miella                29.163086
+Vieleda                31.302734
+Jiella                32.590923
+}}}
+
+!! sma
+
+{{{
+vïelle - 
+vielle - 
+
+$ echo Vïellke | divvunspell -s -z tools/spellcheckers/fstbased/mobile/hfst/sma-mobile.zhfst | head
+Reading from stdin...
+Input: Vïellke                [INCORRECT]
+Vïelle                21.18164
+Vïelline                21.371094
+Vaellie                23.181967
+Vellie                23.181967
+Vïelje                23.181967
+Vïelli                23.181967
+Vïellide                23.181967
+Vïellige                23.181967
+Vïelleme                26.300001
+
+$ echo Vielle | divvunspell -s -z tools/spellcheckers/fstbased/mobile/hfst/sma-mobile.zhfst | head
+Reading from stdin...
+Input: Vielle                [INCORRECT]
+Vielie                8.183745
+Bielie                10.1075735
+Vïelle                12.181641
+
+Vuelie                12.585113
+Voelpe                13.037261
+Gielie                14.714215
+Velle                15.181967
+Vellie                15.181967
+Vislie                16.010395
+}}}
+
+!! sme
+
+{{{
+$ time echo dáhtttu | divvunspell -s -z tools/spellcheckers/fstbased/mobile/hfst/se-mobile.zhfst | head
+Reading from stdin...
+Input: dáhtttu                [INCORRECT]
+dáhtto                0.5107422
+dáhttu                5.6054688
+sáhttu                12.048828
+fáhttu                14.301799
+máhttu                15.249023
+gáhttu                15.301799
+dáhttut                16.82129
+dáhtu                17.313477
+dáhttui                18.386719
+
+$ time echo muhtin | divvunspell -S -z tools/spellcheckers/fstbased/mobile/hfst/se-mobile.zhfst | head
+Reading from stdin...
+Input: muhtin                [CORRECT]
+johtin                5.9035645
+mohtin                6.301799
+muhtin                8.017578
+mohton                8.301799
+mohtun                8.301799
+lohtin                8.419841
+muhtun                9.350586
+muhtton                14.301799
+murdin                14.537883
+
+$ time echo muhtun | divvunspell -S -z tools/spellcheckers/fstbased/mobile/hfst/se-mobile.zhfst | head
+Reading from stdin...
+Input: muhtun                [CORRECT]
+mohton                -2.6982012
+muhtton                3.3017988
+mohttun                5.3018
+mohtun                6.301799
+muhtun                7.350586
+muhto                7.4472656
+mihton                8.301799
+mohtin                8.301799
+lohtun                8.419841
+
+
+muhtin
+muhtin muhtin+Pron+Indef+Attr 0,000000
+muhtin muhtin+Pron+Indef+Sg+Nom 0,000000
+muhtun
+muhtun muhtun+Pron+Indef+Attr 0,000000
+muhtun muhtun+Pron+Indef+Sg+Nom 0,000000
+}}}
+
+
+jag skriver "muhtin" venstre: "muhtin" mitten: "johtin" høgre: "mohtin"
+
+
+jag skriver "muhtun" venstre: "mohttun" mitten: "mohton" høgre: muhtton
+
+
+aha: jag skriver "dáhtttu" venstre: "sáhttu" mitten: "dáhtto" høgre: "dáhttu"
+
+
+jag skriver "positiiválaččat" venstre: ""positiiválaččat"" (inom citationstecken) mitten: "positiivvalaččat"
+
+{{{
+echo positiiválaččat | divvunspell -S -z tools/spellcheckers/fstbased/mobile/hfst/se-mobile.zhfst | head
+Reading from stdin...
+Input: positiiválaččat                [INCORRECT]
+positiivvalaččat                4.286133
+}}}
+
+Det betyr: det til venstre (i hermeteikn) er det du skriv, og det i midten er det som stavekontrollen føreslår, dvs berre eitt forslag.
+
+For å arbeida med forslaga:
+
+# justér vekt (feilmodell, tagger)
+# kompiler
+# test:
+## manuelt
+## automatisk: {{devtools/test_ospell-office_suggestions.sh}}
