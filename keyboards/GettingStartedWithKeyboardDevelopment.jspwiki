@@ -25,15 +25,15 @@ sudo pip-3.5 install lxml PyICU PyYAML
 Also, it is a good idea to set up
 [your signing environment|../infra/system/SettingUpSigningCertificates.html].
 
-Finally, run these commands before starting the work on a specific language:
+!!Getting the source code
 
-{{{
-cd $GTHOME/keyboards/XXX # replace XXX with the language you want to work with
-./autogen.sh
-./configure
-}}}
+All keyboard code is now moved to [github|https://github.com/giellalt], and each
+language has its own repository. Find the language you want to work with, and check it
+out using either git or svn.
 
-Now you are ready to start the real work!
+__NB!__ The whole keyboard infrastructure is changing at the moment, as the keyboard
+compiler tool ([kbdgen|https://github.com/divvun/kbdgen]) is being reworked to support
+a cleaner keyboard resource layout. There might be surprises.
 
 !!!Introduction
 
