@@ -1,8 +1,3 @@
-
-
-
-
-
 Here we document our servers and common machines. If some servers are down, see our [in case of a crisis document|DontPanic.html]
 
 !!!List over the machines
@@ -10,10 +5,10 @@ Here we document our servers and common machines. If some servers are down, see 
 * divvun.uit.no
 * gtlab.uit.no
 * gtoahpa-01.uit.no
-* gtoahpa.uit.no
+* gtdict.uit.no
 * gtsvn-01.uit.no
 * gtsvn.uit.no
-* gtweb.uit.no
+* gtweb-01.uit.no
 * satni.uit.no
 * stallo.uit.no (shared server)
 
@@ -23,49 +18,80 @@ Each machine is documented below.
 
 !!! gtlab.uit.no
 
+* Specifications:
+** OS: Fedora 28
+** CPU: 8
+** Minne: 16GB
+
+* Running services:
+** none
+
 !!! gtoahpa-01.uit.no
 
-* konteaksta (http://gtoahpa-01.uit.no/konteaksta/)
-* sms_oahpa_project (http://gtoahpa-01.uit.no/nuorti/)
-* sma_oahpa_project (http://gtoahpa-01.uit.no/aarjel/)
+* Specifications:
+** OS: Centos 7
+** CPU: 8
+** Minne: 16GB
 
-!!! gtoahpa.uit.no
+* Running services:
+** oahpa
+*** sme_oahpa_project ([http://oahpa.no/davvi/])
+*** sms_oahpa_project ([http://oahpa.no/nuorti/])
+*** sma_oahpa_project ([http://oahpa.no/aarjel/])
+*** sjd_oahpa_project ([http://oahpa.no/kiilt/])
+*** smn_oahpa_project ([http://oahpa.no/aanaar/])
+*** est_oahpa_project ([http://oahpa.no/eesti/])
+*** vro_oahpa_project ([http://oahpa.no/voro/])
+*** fkv_oahpa_project ([http://oahpa.no/kveeni/])
+*** myv_oahpa_project ([http://oahpa.no/erzya/])
+*** crk_oahpa_project ([http://oahpa.no/nehiyawetan/])
+** others
+*** konteaksta ([http://oahpa.no/konteaksta/])
+*** kuvsje ([http://kuvsje.oahpa.no/])
 
-* konteaksta (nå omdirigert til gtoahpa-01)
-* oahpa
-** crk_oahpa
-** kpv_oahpa
-** sjd_oahpa
-** sms_oahpa
-** fkv_oahpa
-** udm_oahpa
-** yrk_oahpa
-** rus_oahpa
-** smaoahpa
-** univ_oahpa
-** hdn_oahpa
-** myv_oahpa
-** smn_oahpa
-** vro_oahpa
-* kursa
-* neahtta
-** sanit (sme)
-** baakoeh (sma)
+!!! gtdict.uit.no
 
-Gtoahpa runs CentOS release 6.2. Univ_oahpa is installed on gtoahpa, and uses nginx (httpd), mysql, python, django and fastcgi with flup.
+* Specifications:
+** OS: Centos 7
+** CPU: 8
+** Minne: 16GB
 
-* nginx: http://nginx.org/
-* nginx/fastcgi/flup: http://wiki.nginx.org/PythonFlup
-* flup: http://trac.saddi.com/flup/
-* django: http://djangoproject.com/
-
-In addition to the private admin tech documentation, certain config files have been checked in in the same location under the gtoahpa/ directory.
+* Running services:
+** NDS:
+*** [https://sanit.oahpa.no]
+*** [https://baakoeh.oahpa.no]
+*** [https://kyv.oahpa.no]
+*** [https://muter.oahpa.no]
+*** [https://saanih.oahpa.no]
+*** [https://vada.oahpa.no]
+*** [https://bahkogirrje.oahpa.no]
+*** [https://saan.oahpa.no]
+*** [https://sanat.oahpa.no]
+*** [https://sonad.oahpa.no]
+*** [https://valks.oahpa.no]
 
 !!! gtsvn-01.uit.no
 
 !!! gtsvn.uit.no
 
-!!! gtweb.uit.no
+!!! gtweb-01.uit.no
+
+* Specifications:
+** OS: Centos 7
+** CPU: 4
+** Minne: 16GB
+
+* Running services:
+** korp
+*** sme, smj, sma, smn, sms, nob_parallel and fin_parallel ([http://gtweb.uit.no/korp])
+*** fkv, fit, vep, vro, fkv_parallel ([http://gtweb.uit.no/f_korp/])
+*** kpv, koi, udm, mdf, myv, mrj, mhr ([http://gtweb.uit.no/u_korp/])
+*** tyv ([http://gtweb.uit.no/tyv_korp/])
+** others
+*** gïelese ([http://gielese.no/])
+*** Jorgal/MT-testing/Apertium ([https://gtweb.uit.no/jorgal/])
+*** cgi-bin
+*** webdicts
 
 !!! satni.uit.no (oppgradert)
 

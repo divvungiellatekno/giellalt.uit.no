@@ -1,22 +1,24 @@
 !!!Oversyn over prosessar og tenester vi har eller planlegg
 
-Her står først oversyn over maskinene vi har __no__ (denne lista må bli oppdatert kontinuerleg), 
-situasjonen i april 2018, deretter kravspesifikasjonar ("Serveroppdateringar") for oppdatering, 
+Her står først oversyn over maskinene vi har __no__ (denne lista må bli oppdatert kontinuerleg),
+situasjonen i april 2018, deretter kravspesifikasjonar ("Serveroppdateringar") for oppdatering,
 og til slutt ei arbeidsliste.
 
 !!Status, eksisterande maskiner
 
 For informasjon om maskinene, sjå [Virtual Servers|../VirtualServers.html]
 * divvun.uit.no
-* gtlab.uit.no
-* gtoahpa-01.uit.no
-* gtoahpa.uit.no
 * gtsvn-01.uit.no
-* gtsvn.uit.no 
+* gtsvn.uit.no
 * gtweb.uit.no
+* gtweb-01.uit.no
+* gtlab.uit.no (oppgradert)
+* gtoahpa-01.uit.no
+* gtoahpa.uit.no (slettet)
 * satni.uit.no (oppgradert)
+* gtdict.uit.no
 
-(oppdatert 22.6.18)
+(oppdatert 29.7.19)
 
 
 !!Situasjonen i april 2018 (før oppdatering og nye servarar)
@@ -53,8 +55,12 @@ For informasjon om maskinene, sjå [Virtual Servers|../VirtualServers.html]
 
 !!! Status for servarmigrasjon
 
-!!gtsvn og gtsvn-01
+!!divvun.uit.no
+! 4.9.18
+* Problem: få stavekontrollserver til å fungere med redirection fra port til sti
+* Løsning: bruke grammatikkontrollserveren som Kevin har laget, men med helt grunnleggende oppsett.
 
+!!gtsvn og gtsvn-01
 ! 4.9.18
 * Status
 ** Ikke flyttet
@@ -73,43 +79,55 @@ Arbeidsgang
 * Trinn 3: flytta alle heimekatalogane frå gtsvn-gml til gtlab når gtlab er klar for det
 * Trinn 4: slå av og avslutta gtsvn-gml
 
-!!gtoahpa og gtoahpa-01
+!!gtweb og gtweb-01
 
-! 4.9.18
-* Revisjon av oahpa
-** sms_oahpa ==> done
-** sma_oahpa ==> done
+! 29.7.19
+* Alle NDS-instanser ==> done til gtdict
+* Alle Korp-instanser ==> done til gtweb-01
+* gïelese ==> done til gtweb-01
+* Jorgal/MT-testing/Apertium ==> done til gtweb-01
+* cgi-bin (morfologisk analyse & generering) ==> done til gtweb-01
+
+* gtweb-migrasjon til gtoahpa-01 er gjennomfort
+* __Tidsplan__: loggfiler skal lagres under svn og gtweb skal slettes i slutten av juli/begynnelsen av august
+
+!!gtlab DONE
+! 29.7.19
+* Oppgradert med følgende:
+** CPU: 8
+** Minne: 16GB
+** OS: Fedora 28
+
+!!gtoahpa og gtoahpa-01 DONE
+
+! 29.7.19
+* Oahpa-instanser som vi har bestemt å overføre:
+** sme_oahpa  ==> done
+** sma_oahpa  ==> done
+** sms_oahpa  ==> done
+** sjd_oahpa  ==> done
+** smn_oahpa  ==> done
+** est_oahpa  ==> done
+** vro_oahpa  ==> done
+** fkv_oahpa  ==> done
+** myv_oahpa  ==> done
+** crk_oahpa  ==> done
+* Andre tjenester:
+** kuvsje ==> done
 ** konteaksta ==> done
-** sme_oahpa ==> todo
-** smn_oahpa ==> todo
-** sjd_oapa ==> todo
-** mange oahpa-instanser som vi må finne ut av om vi skal overføre eller ikke ==> todo
-** kuvsje ==> todo
-** sme-NDS ==> todo til satni.org
-** sma-NDS ==> todo til satni.org
-* __Tidsplan__: gtoahpa-migrasjon til gtoahpa-01 i slutten av januar 2019
+** sme-NDS ==> done til gtdict
+** sma-NDS ==> done til gtdict
 
-!!gtweb
+* gtoahpa-migrasjon til gtoahpa-01 er gjennomfort, loggfiler er lagret under svn og gtoahpa er slettet
 
-! 4.9.18
-* Ingenting er gjort, vi ventar på gtoahpa.
-* __Tidsplan__: gtweb-migrasjon til gtweb-01 i månadsskiftet februar/mars 2019
+!!gtdict DONE
+* Alle NDS-instanser er overført her
 
-!!gtlab
-! 4.9.18
-Ingenting er gjort. Gtlab kjem til slutt.
-
-!!divvun.uit.no
-! 4.9.18
-* Problem: få stavekontrollserver til å fungere med redirection fra port til sti
-* Løsning: bruke grammatikkontrollserveren som Kevin har laget, men med helt grunnleggende oppsett.
-
-!!satni.uit.no
-* sme-NDS ==> todo fra gtoahpa til satni.uit.no
-* sma-NDS ==> todo fra gtoahpa til satni.uit.no
-* alle NDS fra gtweb til satni.uit.no ==> todo
-* alle andere type dicts fra gtweb til satni.uit.no  ==> todo
-
+!!satni.uit.no DONE
+! 29.7.19
+* Oppgradert
+* alle NDS-instanser er på gtdict
+* andre dicts som var på gtweb er på gtweb-01
 
 ----
 
