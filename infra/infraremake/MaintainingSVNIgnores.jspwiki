@@ -6,9 +6,23 @@ There are typically two maintenance cases. You want to:
 
 Both will be described below.
 
+__Two notes before you begin:__
+
+Make sure the variable GIELLA_TEMPLATES is set in your .profile file. If not, add
+export GIELLA_TEMPLATES=/path/to/$GTHOME/giella-templates/langs-templates to .profile.
+
+Your {{langs/Makefile}} may be outdated. If in doubt, update it.
+In your {{*langs/}} catalogue, do the following:
+
+{{{
+./autogen.sh && ./configure
+}}} 
+
+Then you should be ready to begin.
+
 !!!Set svn:ignore
 
-The (two) commands to update the {{svn:ignore}} property for all dirs in all
+The following two commands update the {{svn:ignore}} property for all dirs in all
 languages in the {{langs/}} catalogue are (do {{cd startup-langs}} etc for the
 others):
 
@@ -17,12 +31,6 @@ cd langs/
 make svnignores
 }}}
 
-An older, now deprecated and less robust way of doing it is:
-
-{{{
-cd langs/
-../giella-core/scripts/update-all-ignores.sh
-}}}
 
 !!How it works
 
