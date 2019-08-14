@@ -1,110 +1,13 @@
-!!Legge til l_ref feature også i NDS
+!! Forbedre presentasjon av sammensatte ord
 
-Se [om l_ref|dictionarywork.html#Bruk+av+l_ref+i+xml++%28gjelder+bare+VD%29]
-
-!! Legge til informasjon om stammetype
-
-substantiv, verb, adjektiv
-
-* 2syll = likestavelsesstamme
-* 3syll = ulikestavelsesstamme
-* Csyll = kontrakt stamme
-
-info hentes fra kontinuasjonsleksikonene i 
-main/langs/sme/src/morphology/stems/nouns.lexc
-
-f.eks. substantiv \\
-jáhkka+Sem/Clth:jáhkka GOAHTI-A ;
-
-
-{{{
-<l pos="N" stem="2syll">jáhkka</l>
-}}}
-
-GOAHTI-A er for 2syll.
-
-Liste over kontinuasjonsleksikonene vs. stem type er i \\
-trunk/words/dicts/smenob/scripts/nouns_stemtypes.txt
+Se "Sammensetninger i nds" i [180926|/admin/giellatekno/180926.html]
 
 Status: TODO
-
-
-
-
-!! BEHANDLING AV DERIVASJONER MED FLERE ANALYSER
-
-
-! 1: Når samme lemma + Der-tagg med og uten Err/Orth: 
-Oppslag og høyremarg: vis bare den uten Err/Orth
-
-{{{
-"skuvla+N+Der/Dimin"
-
-skuvllaš
-skuvllaš	skuvla+N+Der/Dimin+N+Sg+Nom <==========
-skuvllaš	skuvla+N+Der/Dimin+N+Sg+Gen+Err/Orth-nom-gen
-skuvllaš	skuvla+N+Der/Dimin+N+Sg+Acc+Err/Orth-nom-acc
-}}}
-
-Status: DONE
-
-
-! 2: Når samme lemma + Der-tagg uten Err/Orth:
-Oppslag: vis bare en gang - Høyremarg: vis alle analyser
-
-{{{
-"skuvla+N+Der/Dimin"
-
-skuvllažiid
-skuvllažiid	skuvla+N+Der/Dimin+N+Pl+Gen  
-skuvllažiid	skuvla+N+Der/Dimin+N+Pl+Acc
-}}}
-
-Status: TODO
-
-! 3: Når alle lemma + Der-tagg er med Err/Orth:
-Oppslag: vis bare en gang - Høyremarg: vis alle analyser
-
-{{{
-kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Nom  
-kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Gen+Err/Orth-nom-gen
-kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Acc+Err/Orth-nom-acc
-
-}}}
-Status: DONE
-
-
-! 4: Når det er både lemma og lemma + Der-tagg: 
-Oppslag: vis både leksikalisert lemma (øverst) og lemma med Der-tagg 
-
-{{{
-geavahit	geavahit+V+TV+Inf           <=
-geavahit	geavvat+V+IV+Der/h+V+TV+Inf <=
-}}}
-
-Status: DONE
-
-! 5: Når det lemma + Der-tagg og lemma + Der-tagg  + Der-tagg :
-Oppslag: vis bare lemma med færrest dertagger - Høyremarg: vis bare lemma med færrest Der-tagg ? Vet ikke
-
-{{{
-geavahuvvot	geavvat+V+IV+Der/h+V+TV+Der/PassL+V+IV+Inf
-geavahuvvot	geavahit+V+TV+Der/PassL+V+IV+Inf  <=
-
-geavahuvvogoahtit	geavvat+V+IV+Der/h+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf
-geavahuvvogoahtit	geavahit+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf  <=
-}}}
-
-Status: DONE
-
-
 
 
 !! Ordbok for nordsamisk-spansk
 
 Status: TODO
-
-
 
 
 !!Syntetisk tale (TTS) for nordsamisk
@@ -163,6 +66,11 @@ Klikk på eit symbol og få translitterasjon
 
 TODO: Gå attende i svn-historia og få fram IPA-fst-en (i dag er den endra til eit ortografisk output). Som alternativ kunne vi vurdere Wiktionary sitt skript.
 
+!! Ny logo (og mindre logo for Reader)
+
+Status: TODO
+
+
 !!DONE
 
 !Bug 2406 (egentlig ikke new feature)
@@ -172,38 +80,29 @@ Kontekst som dette, blir ikke presentert.
   tag_context: "V+Ind+Prs+Sg1"
   template: "(mun) {{ word_form }}"
 
-Status: DONE
-
-!Ny logo (og mindre logo for Reader)
-
-Status: TODO
 
 !Oppdatere bokmerke
 Det er sjekket inn korrigert feedback-adresse (giellatekno@hum.uit.no > giellatekno@uit.no)
 i fila apps/dicts/nds/src/neahtta/static/js/bookmarklet.js
 
-
 Denne skal oppdateres i grensesnittet.
 
-Status: DONE
 
 !Linker til Korp fra finsmn og nobsma
 link til tospråklig korpus på samme måte som fra nobsme
-
-Status: DONE
 
 
 !Forbedret presentasjon av derivasjoner (behandle derivasjoner som sammensatte ord)
 
 Sammensatte ord fungerer slik idag:
 * viessohaddi	viessu+N+Cmp/SgNom+Cmp#haddi+N+Sg+Nom
-* Både viessu og (#)haddi sendes til ordboka og vi får oversettelse av begge: 
+* Både viessu og (#)haddi sendes til ordboka og vi får oversettelse av begge:
 ** viessu = hus, haddi = pris
 * Hvis viessohaddi også er i ordboka, så blir også denne presentert med oversetting, øverst
 
 Derivasjoner (alle som starter med Der/ ):
 * borralit	borrat+V+TV+Der/l+V+Inf
-* Vi ønsker at både borrat og Der/l skal sendes til ordboka, hvor det skal være en entry med forklaringer: 
+* Vi ønsker at både borrat og Der/l skal sendes til ordboka, hvor det skal være en entry med forklaringer:
 ** borrat = spise, Der/l = gjøre noe raskt, eller starte en bevegelse
 
 Dette skal også gjelde noen infinitte verbformer, f.eks.
@@ -211,8 +110,93 @@ Dette skal også gjelde noen infinitte verbformer, f.eks.
 * Også VAbess skal sendes til ordboka, hvor det skal være en entry med forklaringer for denne
 ** borrat = spise, VAbess = uten å gjøre det
 
-Vi trenger entrier for  verdier som 'Der/l' eller 'VAbess' i ordboken. 
-
-Status: DONE
+Vi trenger entrier for  verdier som 'Der/l' eller 'VAbess' i ordboken.
 
 
+!Legge til l_ref feature også i NDS
+
+Se [om l_ref|dictionarywork.html#Bruk+av+l_ref+i+xml++%28gjelder+bare+VD%29]
+
+! Legge til informasjon om stammetype
+
+substantiv, verb, adjektiv
+
+* 2syll = likestavelsesstamme
+* 3syll = ulikestavelsesstamme
+* Csyll = kontrakt stamme
+
+info hentes fra kontinuasjonsleksikonene i
+main/langs/sme/src/morphology/stems/nouns.lexc
+
+f.eks. substantiv \\
+jáhkka+Sem/Clth:jáhkka GOAHTI-A ;
+
+
+{{{
+<l pos="N" stem="2syll">jáhkka</l>
+}}}
+
+GOAHTI-A er for 2syll.
+
+Liste over kontinuasjonsleksikonene vs. stem type er i \\
+trunk/words/dicts/smenob/scripts/nouns_stemtypes.txt
+
+
+! Behandling av derivasjoner med flere analyser
+
+
+* 1: Når samme lemma + Der-tagg med og uten Err/Orth:
+Oppslag og høyremarg: vis bare den uten Err/Orth
+
+{{{
+"skuvla+N+Der/Dimin"
+
+skuvllaš
+skuvllaš	skuvla+N+Der/Dimin+N+Sg+Nom <==========
+skuvllaš	skuvla+N+Der/Dimin+N+Sg+Gen+Err/Orth-nom-gen
+skuvllaš	skuvla+N+Der/Dimin+N+Sg+Acc+Err/Orth-nom-acc
+}}}
+
+
+* 2: Når samme lemma + Der-tagg uten Err/Orth:
+Oppslag: vis bare en gang - Høyremarg: vis alle analyser
+
+{{{
+"skuvla+N+Der/Dimin"
+
+skuvllažiid
+skuvllažiid	skuvla+N+Der/Dimin+N+Pl+Gen
+skuvllažiid	skuvla+N+Der/Dimin+N+Pl+Acc
+}}}
+
+
+* 3: Når alle lemma + Der-tagg er med Err/Orth:
+Oppslag: vis bare en gang - Høyremarg: vis alle analyser
+
+{{{
+kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Nom
+kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Gen+Err/Orth-nom-gen
+kántuvrraš	kantuvra+Err/Orth-a-á+N+Der/Dimin+N+Sg+Acc+Err/Orth-nom-acc
+
+}}}
+
+
+* 4: Når det er både lemma og lemma + Der-tagg:
+Oppslag: vis både leksikalisert lemma (øverst) og lemma med Der-tagg
+
+{{{
+geavahit	geavahit+V+TV+Inf           <=
+geavahit	geavvat+V+IV+Der/h+V+TV+Inf <=
+}}}
+
+
+* 5: Når det lemma + Der-tagg og lemma + Der-tagg  + Der-tagg :
+Oppslag: vis bare lemma med færrest dertagger - Høyremarg: vis bare lemma med færrest Der-tagg ? Vet ikke
+
+{{{
+geavahuvvot	geavvat+V+IV+Der/h+V+TV+Der/PassL+V+IV+Inf
+geavahuvvot	geavahit+V+TV+Der/PassL+V+IV+Inf  <=
+
+geavahuvvogoahtit	geavvat+V+IV+Der/h+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf
+geavahuvvogoahtit	geavahit+V+TV+Der/PassL+V+IV+Der/InchL+V+Inf  <=
+}}}
