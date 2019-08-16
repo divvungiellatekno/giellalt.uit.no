@@ -33,6 +33,8 @@ python setup.py install --user --install-scripts=$HOME/bin
 sihke langs/nob- ja langs/sma-máhpas:
 
 {{{
+./autogen.sh
+
 ./configure --prefix=$HOME/.local --without-xfst --with-hfst --enable-tokenisers --enable-reversed-intersect --enable-alignment
 
 make -j
