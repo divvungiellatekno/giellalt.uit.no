@@ -3,10 +3,13 @@
 !!update vislcg3, hfst, etc.
 {{{su service
 <passord>
+cd source
 sudo ./install-nightly.sh
 <passord>
 Ctrl-D
 }}}
+
+
 
 !!update vislcg3, hfst, etc. (for Duommá)
 {{{sudo ./install-nightly.sh
@@ -81,7 +84,7 @@ time make -j analyser-gramcheck-gt-desc.hfstol
 !!!Working on websites
 
 {{{
-cd $GTHOME/xtdoc/techdoc
+cd $GTHOME/xtdoc/commontechdoc
 f8
 }}}
 
@@ -93,7 +96,11 @@ http://localhost:8888/tools/CommandsForGrammarCheckerDevelopers.html
 !!!Install grammar checker in LibreOffice (Mac)
 
 
-* Get newest version: [http://gtweb.uit.no/gc/lo/divvun-mac-sme-2018-04-24.oxt]
+* Get newest version: (Link from Sjur in Zulip)
 * Open LibreOffice
-* Tools>Extension Manager>Add: divvun-mac-sme-2018-04-24.oxt
+* Tools>Extension Manager>fkv_LO-voikko-5.0.oxt
+* Remove
+* Restart LibreOffice
+* Tools>Extension Manager>Add>Downloads>divvun-...oxt (newest downloaded version)
+* Replace older divvun version>Ok
 * Restart LibreOffice
