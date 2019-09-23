@@ -336,6 +336,30 @@ guossodimieddne€biebbmoieddne</source>
                 </ol>
             </section>
         </section>
+
+        <section>
+            <title>Summary + new error types</title>
+            <p>(xml element name after conversion to xml is specified after the symbol used for the actual markup)</p>
+            <dl>
+                <dt>§ - &lt;error&gt; - unclassified </dt>
+                  <dd>Unclassified errors, never used, kept for backwards compatibility</dd>
+                <dt>$ - &lt;errorort&gt; - orthorgraphic/non-word errors</dt>
+                  <dd>Traditional typos resulting in non-words, typically targeted by spelling checkers</dd>
+                <dt>¢ - &lt;errorortreal&gt; - orthorgraphic/real-word errors</dt>
+                  <dd>Spelling errors resulting in another, real word, impossible to target by traditional spelling checkers</dd>
+                <dt>£ - &lt;errormorphsyn&gt; - morphosyntactic errors</dt>
+                  <dd>Errors involving the morphosyntax of the language</dd>
+                <dt>¥ - &lt;errorsyn&gt; - syntactic errors</dt>
+                  <dd>Purely syntactic errors</dd>
+                <dt>€ - &lt;errorlex&gt; - lexical errors</dt>
+                  <dd>Errors due to wrong or bad lexeme chosen</dd>
+                <dt>∞ - &lt;errorlang&gt; - foreign language</dt>
+                  <dd>Text written in a foreign or technical language, irrelevant for testing (text marked up as this will be ignored during testing)</dd>
+                <dt>‰ - &lt;errorformat&gt; - formatting errors</dt>
+                  <dd>Errors due to wrong or bad formatting: extra spaces, wrong quote marks, etc.</dd>
+            <dl>
+        </section>
+
         <p>By following these guidelines the resulting files should be readily useable for (speller) testing, as soon as
         they are converted to xml.</p>
     </body>
