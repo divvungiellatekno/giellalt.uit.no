@@ -1,10 +1,37 @@
-
+l
 We use parallel texts from our corpora both in Korp (SIKOR) and for translation memories.
+The parallel files are made in the corpus repositories (see
+[the Corpus documentation|../ling/ParallelCorpusConversion.html] for info on how to make them).
 
-The parallel files are in the corpus repositories (see the Corpus documentation), and are
-moved to Korp. In addition to that, we bundle all .tmx files together and put them in
-[https://victorio.uit.no/biggies/trunk/mt/omegat/]. We store the translation memories
-into the {{tm}} subfolder of the {{omegat}} folder.
+!!! Translation memories
+
+We also bundle all parallel files together and put them in a folder called {{omegat}}
+([https://victorio.uit.no/biggies/trunk/mt/omegat/]). We store the translation memories
+into the {{tm}} subfolder of each of the language pairs in the {{omegat}} folder.
+The collections are in the so-called tmx format. For easy access we have listed them below
+(control-click (right-click) on the tmx file you want and download it).
+
+* [Finnish - South Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/fin-nob/tm/]
+* [Finnish - South Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/fin-sme/tm/]
+* [Finnish - South Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/fin-smn/tm/]
+* [Finnish - South Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/fin-sms/tm/]
+* [Norwegian - Finnish|https://victorio.uit.no/biggies/trunk/mt/omegat/nob-fin/tm/]
+* [Norwegian - South Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/nob-sma/tm/]
+* [Norwegian - North Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/nob-sme/tm/]
+* [Norwegian - Lule Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/nob-smj/tm/]
+* [Russian - Komi|https://victorio.uit.no/biggies/trunk/mt/omegat/rus-kpv/tm/]
+* [South Saami - Norwegian|https://victorio.uit.no/biggies/trunk/mt/omegat/sma-nob/tm/]
+* [North Saami - Norwegian|https://victorio.uit.no/biggies/trunk/mt/omegat/sme-nob/tm/]
+* [North Saami - South Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/sme-sma/tm/]
+* [North Saami - Lule Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/sme-smj/tm/]
+* [North Saami - Inari Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/sme-smn/tm/]
+
+The translation memory files may then be used in programs like the following:
+
+* [OmegaT|omegat.eng.html] 
+* [Autshumato|autshumato.html]
+* [Trados|https://sv.wikipedia.org/wiki/Trados] (commercial software)
+* ... and many others.
 
 The folders under {{mt/omegat}} are built so that they may be downloaded and used
 as a project folder for OmegaT.
