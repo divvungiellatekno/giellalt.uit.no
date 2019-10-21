@@ -1,0 +1,62 @@
+Jupyter
+
+
+Dokumentasjon for bruk av Bokhylla som korpus
+
+* Det du trenger for å kjøre jupyter:
+** [Anaconda|https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x] (en pythondistribusjon)
+** eller desse to kommandoane \\
+pip install -U pip setuptools \\
+pip3 install jupyter
+* Start jupyter, i terminalen: \\
+jupyter notebook
+
+Merk at det øverst til høgre i sida du står skal stå __Python3__.
+
+Lars sitt seminar:
+
+[https://github.com/Yoonsen/Seminar_NB_september_2019]
+
+
+Døme: 
+
+I denne mappa, opme fila:
+
+{{01 Bygg Korpus med konkordans}}
+
+
+Finne bokhylla:
+
+{{{
+import dhlab.nbtext as nb
+from dhlab.module_update import css
+%matplotlib inline
+}}}
+
+Definere korpus:
+
+{{{
+korpusFriis = nb.book_corpus(period=(1820, 1948), lang='sme', limit=1000000000)
+}}}
+
+Søke i bokhylla som korpus:
+
+{{{
+nb.urn_concordance(word = 'giella', urns = korpusFriis, before = 10, after = 10, size = 20)
+}}}
+
+
+Lemma	
+ID	
+Eng Gloss	
+POS	
+Level	
+Word source	
+Ex. ID	
+Form	
+Analysis	
+Example Sentence	
+Translation	
+Reference	
+Topic(s)	
+
