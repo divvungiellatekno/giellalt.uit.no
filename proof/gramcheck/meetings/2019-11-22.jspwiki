@@ -1,0 +1,300 @@
+Grammatikkontrollmøte 2019.11.22
+
+Tilstades: Sjur, Linda, Duommá, Børre
+
+realword error: 115 i boundcorpus
+
+Jf. {{sme/tools/grammarcheckers/errordata/real-word-errors_correct-corpus}}
+
+Døme:
+
+{{{
+Dal dovdat ahte dađistaga manas¢(adv,mix|maŋás) mannat.
+Mun oaivvildan ahte ii leat riekta ahte dusse¢(adv,conc|dušše) stáhta galgá mearridit, Mikkel Per Persen Sara joatká.
+Leahko¢(verb,con|Leatgo) sáhkkii?
+Leatgo sáhkii¢(adj,conc|sáhkkii)?
+Dasa lassin lágiduvvo oktasaš oassi, mas fáddan¢(noun,á|fáddán) lea juoigan.
+Davvi-Amerihká álgoálbmogat leat dan rájes go eurohpalaččat bohte dohko, vásihan vilgesolbmuid dáfus vealáheami¢(noun,á|vealaheami) ja álbmotgoddima.
+}}}
+
+Døme på confusion pair frå stadieveksling:
+{{{
+vázzán
+vázzán    vázzi+N+NomAg+Sg+Nom+PxSg1
+vázzán    vázzi+N+NomAg+Sg+Gen+PxSg1
+vázzán    vázzi+N+NomAg+Sg+Acc+PxSg1
+vázzán    vázzit+V+IV+PrfPrc
+vázzán    vázzit+V+IV+Ind+Prt+ConNeg
+vázzán    vázzát+V+IV+PrfPrc
+vázzán    vázzát+V+IV+Der/NomAct+N+Sg+Nom
+vázzán    vázzát+V+IV+Der/NomAct+N+Sg+Gen+Allegro
+vázzán    vázzát+V+IV+Actio+Gen
+vázzán    vázzát+V+IV+Actio+Nom
+vázzán    vázzát+V+IV+Ind+Prt+ConNeg
+vázzán    vázzát+V+IV+Ind+Prs+Sg1
+
+váccán 
+váccán    vázzit+V+IV+Ind+Prs+Sg1
+}}}
+
+Frekvensliste fra lista ovenfor
+
+{{{
+$ cat gurk.txt |tr ' ' '\n'|grep ¢| sed -E 's/(.*)¢.*/\1/'| sed -e 's/(//' -e 's/)//'|sort |uniq -c|sort -n
+      1 ahte
+      1 alu
+      1 attašii
+      1 atte
+      1 ággi
+      1 áiddo
+      1 áŋke
+      1 báberlippu
+      1 báhkkat
+      1 bálda
+      1 bearáš
+      1 biškui
+      1 biviin
+      1 bláđii
+      1 čilgehusasis
+      1 čuvvoda
+      1 Dahko
+      1 Dalvet
+      1 dádjat
+      1 dála
+      1 deaivái
+      1 diehttit
+      1 dohkko
+      1 Dohpe
+      1 duhka
+      1 duorgat
+      1 dusse
+      1 eanáš
+      1 fáddan
+      1 fáktadieđuid
+      1 fáro
+      1 fátta
+      1 fáttat
+      1 fierpmut
+      1 Gasku
+      1 gassa
+      1 gassabohkandoaimmat
+      1 gáhčče
+      1 giegaid
+      1 gielddan
+      1 girkonjárgii
+      1 govvádemiide
+      1 guhkká
+      1 guhkku
+      1 gummiineaset
+      1 hálit
+      1 ieža
+      1 jo
+      1 juhke
+      1 justá
+      1 kultureanádaga
+      1 Leahko
+      1 leamas
+      1 lihkalit
+      1 lippu
+      1 Lippuin
+      1 lippus
+      1 lohkkan
+      1 Luohpet
+      1 mana
+      1 manas
+      1 masa
+      1 máksolippu
+      1 mánat
+      1 mánnat
+      1 meallun
+      1 mo
+      1 muitii
+      1 muorrat
+      1 nammat
+      1 njahkalin
+      1 nohkat
+      1 oahpat
+      1 ohpet
+      1 olle
+      1 olli
+      1 ovddabeali
+      1 ovddabealli
+      1 Riššet
+      1 ruvttui
+      1 sáhkii
+      1 sáhtašeimmet <-----
+      1 sáhtit
+      1 seakka
+      1 sihta
+      1 skáhpot
+      1 stáđisnuvvan
+      1 tihppenlippus
+      1 varra <-----
+      1 vealáheami
+      1 viimmát
+      1 viimmátge
+      1 vuojat
+      1 vuostalastan
+      1 vuovderápmái
+      2 berre
+      2 divttat
+      2 dulljiid
+      2 okte
+      2 rájat
+      2 sáhtašii <-----
+}}}
+
+Frekvensliste over feiltyper
+{{{
+$ cat gurk.txt |tr ' ' '\n'|grep ¢| sed -E 's/.*¢(.*)/\1/'| sed -e 's/(//' -e 's/)//'|cut -f1 -d"|" | sort | uniq -c | sort -n
+      1 adj,a
+      1 adj,á
+      1 adj,conc
+      1 adj,lime
+      1 cc,vow
+      1 indef,vowc
+      1 nom,init
+      1 noun,cs
+      1 noun,fin
+      1 noun,mix
+      1 pers,vow
+      1 pp,conc
+      1 pp,svow
+      1 pron,á
+      1 prop,cap
+      1 recipr,vow
+      1 verb,ascii
+      1 verb,con
+      1 verb,fin
+      1 verb,lime
+      1 verb,mix
+      1 verb,svow
+      1 verb,vow
+      2 noun,a
+      2 num,svow
+      2 verb,a
+      3 adv,á
+      3 noun,typo
+      4 adv,a
+      5 adv,conc
+      5 noun,svow
+      7 adv,mix
+     10 verb,á
+     12 noun,á
+     12 verb,conc
+     17 noun,conc
+
+$ cat gurk.txt |tr ' ' '\n'|grep ¢| sed -E 's/.*¢(.*)/\1/'| sed -e 's/(//' -e 's/)//'|cut -f1 -d"|" | cut -f2 -d"," |sort | uniq -c | sort -n
+      1 ascii
+      1 cap
+      1 con
+      1 cs
+      1 init
+      1 vowc
+      2 fin
+      2 lime
+      3 typo
+      4 vow
+      9 a
+      9 mix
+      9 svow
+     27 á
+     36 conc
+}}}
+
+Meir om samanblandingspar:
+* stadieväxling:  hp vs hpp, tk vs tkk etc
+* geminat xyy vs xy: pp vs hp, tt vs ht etc   {{ahte¢(verb,conc|atte)}}
+* 1Sg-PrfPrc, Gen-Nom, guhkku¢(pp,conc|guhku).
+* máksolippu-máksolihpu Gen-Nom
+* korte passiver
+
+Kan vi tagga problematiske konsonantsentrum? Dvs potensielle feilkjelder utan å seia at det faktisk er feil. 1 exempel: __dusse__ vs __dušše__
+
+Suoma ráđđehusa ásahan virgeolmmošbargojoavku evttoha Lappi oarjedavveoassái Enodaga, Gihttela, Muonio ja Kolari laktima oktasaš gielddan.
+
+Andre problem:
+
+{{{
+        correct errors not found in dc
+                {'correct': 'gieldan', 'errorinfo': 'noun,conc', 'type': 'errorortreal', 'start': 251, 'error': 'gielddan', 'end': 259}
+}}}
+
+
+{{{
+{"errs":[["leamas",70,76,"typo","Ii leat sátnelisttus",["leamaš","leamašan","lean"],"Čállinmeattáhusat"],["gánnehatti",83,93,"typo","Ii leat sátnelisttus",["gánnáhahtti","gánnáhaddi","gánnehahtti","gánnehasti"],"Čállinmeattáhusat"]],"text":"Go olbmot leat heaitán eanadoaluin, lea dainna go eará ealáhusat leat leamas eanet gánnehatti. "}
+{"errs":[["vuostalagai",64,75,"typo","Ii leat sátnelisttus",["vuostálaga","vuostálagaid","vuostálagain","vuostálagas","vuostálagat"],"Čállinmeattáhusat"]],"text":"Dál leat riika rájat boahtán min gaskii, ja ealáhusat biddjojit vuostalagai. "}
+{"errs":[["guohttomat",9,19,"typo","Ii leat sátnelisttus",["guohttumat","guohtumat"],"Čállinmeattáhusat"],["áidujuvvun",26,36,"typo","Ii leat sátnelisttus",["áidojuvvon"],"Čállinmeattáhusat"]],"text":"Dál leat guohttomat eanaš áidujuvvun sisa, nu ahte álki lea diehttit gos ealánat leat. "}
+{"errs":[["ressursahálddašeami",24,43,"typo","Ii leat sátnelisttus",["resurssahálddašeami"],"Čállinmeattáhusat"]],"text":"árvvus ahte EO váikkuha ressursahálddašeami guovtte ládje: "}
+{"errs":[["stuoramus",107,116,"typo","Ii leat sátnelisttus",["stuorimus","stuorámus"],"Čállinmeattáhusat"],["ruotagillii",154,165,"typo","Ii leat sátnelisttus",["ruoŧagillii"],"Čállinmeattáhusat"]],"text":"Muhto dál lea šaddan sierra girjerájus Bajitdurtnosis man namma lea Nordkalottbiblioteket ja mas lea varra stuoramus čoakkáldat Davvikalohta birra; sihke ruotagillii, suomagillii, dárogillii, sámegilliija vel eará gielaide. "}
+{"errs":[["gohččoduvvo",48,59,"typo","Ii leat sátnelisttus",["gohčoduvvo"],"Čállinmeattáhusat"]],"text":"Giella lea masa seamma go dat mii Norgga bealde gohččoduvvo Norgga bealde. "}
+{"errs":[["ruovttos",6,14,"typo","Ii leat sátnelisttus",["ruovttus","roavttus"],"Čállinmeattáhusat"],["sámegielaja",58,69,"typo","Ii leat sátnelisttus",["sámegielaga","sámegielaba"],"Čállinmeattáhusat"]],"text":"Sihke ruovttos ja dáppe lea golmmagielat guovlu gos sihke sámegielaja kveanagiella/meänkieli lea dulbmojuvvon, muhto áŋke mii riidalit gaskaneamet. "}
+{"errs":[["guovddáš váttisvuođat",90,111,"msyn-compound","\"guovddáš váttisvuođat\" orru leamen goallossátni",["guovddášváttisvuođat"],"Goallosteapmi"],["váldoteman",117,127,"typo","Ii leat sátnelisttus",["váldotemán"],"Čállinmeattáhusat"],["rehalaš",136,143,"typo","Ii leat sátnelisttus",["rehálaš"],"Čállinmeattáhusat"]],"text":"Ferte guorahallat ahte lea go dárbu govvádemiide, galget go Otnábeaivve inuihtaservvodaga guovddáš váttisvuođat leat váldoteman Idlouta rehalaš ja visot muitaleaddji teavsttain. "}
+{"errs":[["Idlout",0,6,"typo","Ii leat sátnelisttus",[],"Čállinmeattáhusat"],["dáidagin",44,52,"typo","Ii leat sátnelisttus",["dáiddan"],"Čállinmeattáhusat"],["máhtašii",63,71,"typo","Ii leat sátnelisttus",["máhtášii","máhttášii","máhcašii","máttašii"],"Čállinmeattáhusat"]],"text":"Idlout ii hálit ieš govvidit iežas bargguid dáidagin: \"Juos in máhtašii čállit ja lávlut, livččen eahpelihkostuvvan olmmoš. "}
+{"errs":[["musihkii",60,68,"typo","Ii leat sátnelisttus",["musihkkii"],"Čállinmeattáhusat"]],"text":"Ráhkisvuohta gal ii bistán beare guhkká, muhto ráhkisvuohta musihkii buolligođii fas gulul. "}
+{"errs":[["Dahko",0,5,"typo","Ii leat sátnelisttus",["Dahkko"],"Čállinmeattáhusat"]],"text":"Dahko bokte bivdit ahte čađahuvvo guorahallan mo Unjárgga gielda hálddaša guovttegielat ruđaid maid gielda oažžu Sámedikkis. "}
+{"errs":[["cavkileamiid",14,26,"typo","Ii leat sátnelisttus",["cavgilemiid"],"Čállinmeattáhusat"],["fástaspáltán",67,79,"typo","Ii leat sátnelisttus",[],"Čállinmeattáhusat"],["reportašain",81,92,"typo","Ii leat sátnelisttus",["reportášain"],"Čállinmeattáhusat"],["hápmenjurdagiin",94,109,"typo","Ii leat sátnelisttus",["hábmenjurdagiin"],"Čállinmeattáhusat"],["jne",110,113,"typo","Ii leat sátnelisttus",["já","ja","jna","juná"],"Čállinmeattáhusat"]],"text":"Suohkan sihta cavkileamiid das, mat berrešedje leat mielde siiddus fástaspáltán, reportašain, hápmenjurdagiin jne. "}
+{"errs":[["huksejuvvoi",37,48,"typo","Ii leat sátnelisttus",["huksejuvvui","hoksejuvvui"],"Čállinmeattáhusat"]],"text":"Mii eat gal nu vuostalastan go Porsa huksejuvvoi. "}
+{"errs":[["dákkar",20,26,"typo","Ii leat sátnelisttus",["dákkár"],"Čállinmeattáhusat"]],"text":"- De don oaivvildat dákkar huksen din boazodollui sáhtašii roassun šaddat? "}
+{"errs":[["duovdat",4,11,"typo","Ii leat sátnelisttus",["duovdaga"],"Čállinmeattáhusat"],["jávka",55,60,"typo","Ii leat sátnelisttus",["jávkan"],"Čállinmeattáhusat"]],"text":"Dal duovdat ahte dađistaga manas mannat. Loahpas várra jávka boazodoallu ge. "}
+{"errs":[["gávnojit",27,35,"typo","Ii leat sátnelisttus",["gávdnojit","gávnnjit"],"Čállinmeattáhusat"]],"text":"Čájáhus bistá nu guhkká go gávnojit juovlastálut doppe. "}
+{"errs":[["bálkášupmi",28,38,"typo","Ii leat sátnelisttus",["bálkkašupmi"],"Čállinmeattáhusat"]],"text":"Ja dat (lea maiddái stuorra bálkášupmi olles dan duoddjái. "}
+{"errs":[["muhttomin",16,25,"typo","Ii leat sátnelisttus",["muhtumin"],"Čállinmeattáhusat"]],"text":"Sus lávejit ain muhttomin fitnat olbmot su luhtte geat leat oahppamin duddjot. "}
+{"errs":[["aigu",9,13,"typo","Ii leat sátnelisttus",[],"Čállinmeattáhusat"],["privahta",58,66,"typo","Ii leat sátnelisttus",["priváhta","priváhtta"],"Čállinmeattáhusat"]],"text":"Seminára aigu loktet diliid mat leat atnon sámenissoniid ”privahta ja bearašbirrasa” dillin almmolašvuhtii – ja dá leat dilit mas menddo unnán ságastallo almmolaččat. "}
+{"errs":[["“Elles",43,49,"punct-aistton-left","Boasttuaisttonmearkkat",[""],"Aisttonmearkkat"]],"text":"Petra Biret Magga lea sáhkavuorus gohčodan “Elles sámi mánáid kultuvra!”. "}
+{"errs":[["magistter",25,34,"typo","Ii leat sátnelisttus",["magisttar"],"Čállinmeattáhusat"]],"text":"Skuvlejupmi: Pedagogihka magistter/ Luohkáoahpaheaddji Lappi universitehtas. "}
+{"errs":[["riikačoahkkimii",38,53,"typo","Ii leat sátnelisttus",["riikkačoahkkimii"],"Čállinmeattáhusat"],[".ja.12.golggotmánu",69,87,"no-space-after-punct-mark","Ii leat gaska \".\" maŋis",[".12.golggotmánu"],"Sátnegaskameattáhusat"],[".ja.12.golggotmánu",69,87,"no-space-after-punct-mark","Ii leat gaska \".\" maŋis",[".ja.golggotmánu"],"Sátnegaskameattáhusat"],[".ja.12.golggotmánu",69,87,"no-space-after-punct-mark","Ii leat gaska \".\" maŋis",[".ja.12"],"Sátnegaskameattáhusat"]],"text":"Sámeálbmot bellodat bovde 10. dábálaš riikačoahkkimii girkonjárgii 11.ja.12.golggotmánu. "}
+{"errs":[["miellahtuvuohta",9,24,"typo","Ii leat sátnelisttus",["miellahttuvuohta","miellahttuvuođa"],"Čállinmeattáhusat"],["riikačoahkkimii",40,55,"typo","Ii leat sátnelisttus",["riikkačoahkkimii"],"Čállinmeattáhusat"]],"text":"Njuolgga miellahtuvuohta ii ahte áirasa riikačoahkkimii. "}
+{"errs":[["stivralahttun",88,101,"typo","Ii leat sátnelisttus",["stivrralahttun"],"Čállinmeattáhusat"]],"text":"Ságajođiheaddji Torkel Rasmussen lassin válljejuvvui várraságajođiheaddjin Karen Kitti, stivralahttun Heidi Kitti, Niilo Kalevi Länsman ja Siskko Länsman. "}
+{"errs":[["sámegielabálvalusaid",44,64,"typo","Ii leat sátnelisttus",[],"Čállinmeattáhusat"]],"text":"– Juo dála dilis lea dievas bargu vuođustit sámegielabálvalusaid dárbbu ja ain stuorit gielddas dat livččii jo mihá garrasit hástalus. "}
+}}}
+
+{{{
+Go olbmot leat heaitán eanadoaluin, lea dainna go eará ealáhusat leat leamas eanet gánnehatti.  
+Ovdal eai gávdnon rájat.  
+Dál leat riika rájat boahtán min gaskii, ja ealáhusat biddjojit vuostalagai.  
+— Ollogat oaivvildit atte boazu billista luomejekkiid.  
+Dál leat guohttomat eanaš áidujuvvun sisa, nu ahte álki lea diehttit gos ealánat leat.  
+Eiseválddit eai dáhtuin seakka rabas.  
+čálusráidui gullet iešguđetlágan temágihppagat mat deattuhit guorahallamiid, bagadeami, diehtojuohkima ja jurdagiid O97 Sámi ráhkadeamis.  
+čilgehusteavsttat fas kommenterejit hástalusaid.  
+Dán hástalussii ii gávdno álkis čoavddus, danin go olbmuid árvvut, árvvuid dihtomielalašvuohta, sosiála oktavuođat ja gaskavuođat nuppiid olbmuiguin leat nu guovddážis.  
+čađaheami lea álkimus rievdadit go bargguin, rámmain ja čoavdima vejolašvuođain lea juogalágan oktavuohta.  
+árvvus ahte EO váikkuha ressursahálddašeami guovtte ládje:  
+Muhto dál lea šaddan sierra girjerájus Bajitdurtnosis man namma lea Nordkalottbiblioteket ja mas lea varra stuoramus čoakkáldat Davvikalohta birra; sihke ruotagillii, suomagillii, dárogillii, sámegil
+liija vel eará gielaide.  
+Giella lea masa seamma go dat mii Norgga bealde gohččoduvvo Norgga bealde.  
+Sihke ruovttos ja dáppe lea golmmagielat guovlu gos sihke sámegielaja kveanagiella/meänkieli lea dulbmojuvvon, muhto áŋke mii riidalit gaskaneamet.  
+Guovdageainnus lea lávlunjoavku, gáffebára, teáhter, kino, heastastáljat ja máŋga iešguđetlágan searvvi- dego) dánsunsearvi, musihkkariid searvi, risttalaš searvvit ja bridge-klubba.  
+lágádusa prošeaktačilgehussii go čilgehusasis nu mo dat hábmejuvvo ja struktureret ja berre várret ággi bagadeapmái.  
+Ferte guorahallat ahte lea go dárbu govvádemiide, galget go Otnábeaivve inuihtaservvodaga guovddáš váttisvuođat leat váldoteman Idlouta rehalaš ja visot muitaleaddji teavsttain.  
+Idlout ii hálit ieš govvidit iežas bargguid dáidagin: "Juos in máhtašii čállit ja lávlut, livččen eahpelihkostuvvan olmmoš.  
+Ráhkisvuohta gal ii bistán beare guhkká, muhto ráhkisvuohta musihkii buolligođii fas gulul.  
+Dahko bokte bivdit ahte čađahuvvo guorahallan mo Unjárgga gielda hálddaša guovttegielat ruđaid maid gielda oažžu Sámedikkis.  
+Gasku dehálaš guovddášbáikkiide:  
+Riddu lea sullii 8 miilla guhkku.  
+Gáivuotna lea dál neahtas! Dán oktavuođas sihtat oktavuođaid Gáivuona nuoraiguin, maiddái singuin geat ásset ieža báikkiin man nu sivas.  
+Suohkan sihta cavkileamiid das, mat berrešedje leat mielde siiddus fástaspáltán, reportašain, hápmenjurdagiin jne.  
+Mii eat gal nu vuostalastan go Porsa huksejuvvoi.  
+- De don oaivvildat dákkar huksen din boazodollui sáhtašii roassun šaddat?  
+Leahko sáhkii?  
+Dasa lassin lágiduvvo oktasaš oassi, mas fáddan lea juoigan.  
+Davvi-Amerihká álgoálbmogat leat dan rájes go eurohpalaččat bohte dohko, vásihan vilgesolbmuid dáfus vealáheami ja álbmotgoddima.  
+- Mun oaivvildan ii leat riekta ahte dusse stáhta galgá mearridit, Mikkel Per Persen Sara joatká.  
+Dal duovdat ahte dađistaga manas mannat. Loahpas várra jávka boazodoallu ge.  
+Čájáhus bistá nu guhkká go gávnojit juovlastálut doppe.  
+Ja dat (lea maiddái stuorra bálkášupmi olles dan duoddjái.  
+Dál duddjo dušše muhttomin.  
+Sus lávejit ain muhttomin fitnat olbmot su luhtte geat leat oahppamin duddjot.  
+Seminára aigu loktet diliid mat leat atnon sámenissoniid ”privahta ja bearašbirrasa” dillin almmolašvuhtii – ja dá leat dilit mas menddo unnán ságastallo almmolaččat.  
+Petra Biret Magga lea sáhkavuorus gohčodan “Elles sámi mánáid kultuvra!”.  
+Skuvlejupmi: Pedagogihka magistter/ Luohkáoahpaheaddji Lappi universitehtas.  
+Sámeálbmot bellodat bovde 10. dábálaš riikačoahkkimii girkonjárgii 11.ja.12.golggotmánu.  
+Njuolgga miellahtuvuohta ii ahte áirasa riikačoahkkimii.  
+Ságajođiheaddji Torkel Rasmussen lassin válljejuvvui várraságajođiheaddjin Karen Kitti, stivralahttun Heidi Kitti, Niilo Kalevi Länsman ja Siskko Länsman.  
+Tove Skutnabb-Kangas vuostálasttii ceaggat dán oaivila.  
+Sámedikkis lea ovddasvástádus muittuhit stáhtaid, ahte dálkkádat-rievdan garrasit čuohcá álbmogiidda mat ellet láhka luonddu.  
+Suoma ráđđehusa ásahan virgeolmmošbargojoavku evttoha Lappi oarjedavveoassái Enodaga, Gihttela, Muonio ja Kolari laktima oktasaš gielddan.  
+– Juo dála dilis lea dievas bargu vuođustit sámegielabálvalusaid dárbbu ja ain stuorit gielddas dat livččii jo mihá garrasit hástalus.  
+Čielga diehttu 
+}}}
