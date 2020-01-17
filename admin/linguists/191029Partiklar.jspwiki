@@ -142,11 +142,10 @@ Spørsmål:
 * Kva skal vera taggen? 
 
 Svar:
-* Viss vi ser "leahan" som er samansetjing (som biila i láibebiila) blir "han" lemma
+* Viss vi ser "leahan" som er samansetjing (som biila i láibebiila) blir "han"
+  lemma
 
-Jf. analysen av desse to:
-
-Her ser vi korleis biila og han blir lemma i hfst-tokenise, og indirektet korleis det kunne ha vorte det for čohkkahan:
+Jf. analysen av desse to — ''láibebiila'' og ''čohkkáhan'':
 
 {{{
 usme:
@@ -158,16 +157,20 @@ echo "láibebiila" | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst
 		"láibi" N Sem/Food Cmp/SgNom Cmp <W:10.0>
 
 usme:
-I dag har vi
 čohkkáhan	čohkkát+V+IV+Ind+Prs+Sg3+Foc/han 
-
-Her kunne vi i staden ha:
- čohkkát+V+IV+Ind+Prs+Sg3#han+Pcle+Foc
 
 hfst-tokenise:
 	"han" Pcle <W:0.0> "<han>"
 		"čohkkát" V IV Imprt Sg2 <W:0.0> "<čohkká>"
 }}}
+
+For usme-analysen kunne vi i staden ha:
+{{{
+čohkkát+V+IV+Ind+Prs+Sg3#han+Pcle+Foc
+}}}
+
+Her ser vi korleis ''biila'' og ''han'' blir lemma i hfst-tokenise, og indirekte
+korleis det kunne ha vorte det for ''čohkkahan''.
 
 !!!Partiklar vs. adverb
 
@@ -183,7 +186,8 @@ Partikler:
 ** Pcle <pol>  etter ordet det står til: -ge (pos/neg, = kin/kAAn)
 ** Pcle <foc> på andreplass i setninga: alle andre enklitiske
 ** Pcle <qst> go
-* Dei som ikkje blir skrive i lag med verten på finsk side (og ikkje må stå på andreplass (?))
+* Dei som ikkje blir skrive i lag med verten på finsk side (og ikkje må stå
+  på andreplass (?))
 
 
 {{{
@@ -231,8 +235,8 @@ grep LIA src/morphology/stems/* |wc -l
     2175
 }}}
 
-Begrunnelse: Dette gir mulighet for å kompilere en egen HFST for LIA-analyse, og vi risikerer ikke ikke at ordene 
-gir for mange analyser i andre sammenhenger
+Begrunnelse: Dette gir mulighet for å kompilere en egen HFST for LIA-analyse, og
+vi risikerer ikke at ordene gir for mange analyser i andre sammenhenger
 
 
 
