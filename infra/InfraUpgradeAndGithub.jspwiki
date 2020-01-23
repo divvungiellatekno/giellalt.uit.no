@@ -1,0 +1,113 @@
+The present GiellaLT infrastructure has been serving us well in terms of
+scalability and maintainability. But over the years, a number of limiting issues
+have popped up, both from linguists and external groups we are cooperating with,
+and from a technical point of view.
+
+Another aspect is that the present version control system, with a self-hosted
+subversion repository, is arcane and invisible, and also not easy to administer
+the users of. To both increase visibility and cooperation, as well as making it
+easier to publish regular updates, we should consider moving to github or a
+similar hosted and distributed version control system.
+
+This document is a first overview of things to work on, and list possible
+solutions.
+
+!!! Directory structure
+
+The present structure is way too deep and hard to navigate. It also hard-code
+certain coding patterns related to phonology, and the tests are too far away
+from the code it should test. There are three different steps to be take here:
+
+# merge {{src/morphology/}} and {{src/phonology}}
+# flatten the {{tools/}} directory tree, so that it has only one subdir level
+# move all test dirs to being subdirs of the actual source code they are testing
+
+!!! Isolate dependencies and common build elements
+
+Each language source code has a number of dependencies, both on other parts of
+the GiellaLT infra, and of external tools and repos. As it is now, most of these
+dependencies users have to install themselves, which creates a heavy and brittle
+getting started process. Ideally one should only have to check out a single
+language dir, and then run a setup script that handles all the rest.
+
+Specifically, the following chnages are ideas to follow up:
+
+* remove the {{am-shared/}} dir, and instead sym-link to it or check it out as
+  a submodule or similar within a {{.deps/}} directory, done by the
+  {{autogen.sh}} script; a requirement of the solutionis that it must still be
+  compatible with the various build systems we need to support
+* do the same for the various {{giella-shared/}} dirs
+* do the same for {{giella-core/}}
+
+The end result of the points above should be that it should be enough to check
+out one language dir, then run {{./autogen.sh}}, and then you are ready to go.
+It should also work the same although one has checked out all languages, or the
+whole {{$GTHOME}} tree (but then using a common {{.deps}} dir one level up, or
+symlinks to the various {{giella-shared}} and {{giella-core}} bits).
+
+These changes should also remove the need to merge changes in {{am-shared/}},
+but we need to ensure that the {{.deps/am-shared/}} dir is kept up-to-date all
+the time, for all types of setups.
+
+!!! Github move concerns
+
+If / when we move to Github, and thus git, there are a number of maintenance
+scenarios we have to work out in front of the move. We have already moved all
+keyboards [there|https://github.com/giellalt], and they can serve as a test case
+for the language repos.
+
+Benefits of the move:
+
+* vastly increased code visibility and accessibility
+* easier cooperation and contribution
+* automatized user management/account creation
+* easy CI and CD
+
+To avoid the cost of a huge and slow, single repo for all languages, each
+language will become a repo of its own. But this does require the ability to
+easily update the code across all or some repositories in a simple way. It also
+makes it necessary to be able to administer all repositories collectively.
+
+!! Update data across all repositories
+
+One of the reasons we have been able to scale well in terms of languages (with
+more than hundred languages in all our repos pr january 2020), is that we have a
+consisted directory and file structure. From time to time we need to do changes
+en mass to all repos, and that needs to be possible also after the move to
+Github. And there will still be the need to update both single files and batches
+of files based on some template data.
+
+One promising tool to handle such chores is
+[Silver Platter|https://www.jelmer.uk/silver-platter-intro.html]. It is a tool
+to loop over a number of repositories, and apply the same changes to all of
+them. There might be other similar tools, this is just a first suggestion.
+Silver Platter is available on [GitHub|https://github.com/jelmer/silver-platter]
+and is open source.
+
+!! GitHub multiple repo admin
+
+By moving to GitHub, with one language = one repo, there is also a need to
+easily administer all repos en block. So far there does not seem to exist a tool
+that does what we need, so we might have to build it ourselves. Here's a list of
+possible actions performed on all or a subset of repos, and required features:
+
+* perform actions on repos whose name are matching a given regex (e.g. all repos
+  matching {{keyboard-*}}, or all repos mathcing {{*-sm?}}, etc)
+* rename all/multiple repos
+* set default branch for all/multiple repos
+* add all/multiple repos to a team
+* set access restrictions for all/multiple repos
+
+There will certainly be more, but this at least gives a first impression of the
+required features.
+
+!! Private repos
+
+We have a couple of languages which are closed-source and private for various
+reasons. You can have private repos also in GitHub, but that requires payments.
+One can also self-host git repos, but then we loose the co-administration and
+scalability benefits of the infrastructure - we can't have multiple ways of
+doing one thing.
+
+These are concerns we need to discuss thoroughly before we decide to switch to
+GitHub.
