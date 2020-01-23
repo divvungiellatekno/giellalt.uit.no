@@ -104,10 +104,36 @@ required features.
 !! Private repos
 
 We have a couple of languages which are closed-source and private for various
-reasons. You can have private repos also in GitHub, but that requires payments.
+reasons. You can have private repos also in GitHub, but only with max three
+collaborators, unless payments are involved.
 One can also self-host git repos, but then we loose the co-administration and
 scalability benefits of the infrastructure - we can't have multiple ways of
 doing one thing.
 
 These are concerns we need to discuss thoroughly before we decide to switch to
 GitHub.
+
+After further investigation, it looks like UiT could apply for the
+[GitHub Campus Program|https://education.github.com/schools], which would give
+us access to GitHub Enterprise Cloud, which would give us umlimnited
+collaborators for
+[private repos|https://github.com/pricing#feature-comparison]. A request for
+getting this for UiT has been sent to [orakelet|https://uit.no/om/orakelet].
+
+!! Teams and nested teams
+
+We should consider whether
+[nested teams|https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-teams]
+are useful for our purposes.
+One obvious need is to be able to communicate with various groups of committers:
+
+* Tromsø people only
+* all committers
+* Edmonton people only
+* project people only
+* etc
+
+The only trouble is: one can still not force an email upon everyone -
+notifications can be turned off individually, and are controlled individually.
+Thsi is something that has been
+[requested by a lot of people|https://github.com/isaacs/github/issues/569].
