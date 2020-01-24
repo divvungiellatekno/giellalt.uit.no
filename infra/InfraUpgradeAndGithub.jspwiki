@@ -182,3 +182,16 @@ Possible use cases for such groupings:
 
 There might be better ways of achieving these goals in the Git(Hub) universe,
 but we need something that will help us group languages.
+
+!! Name collisions
+
+Because languages are grouped in several subdirs, we have a couple of cases
+where one language is described more than once. This is the case for at least
+{{est}} and {{sms}}. When/if moving to GitHub, each language will become a repo
+of its own, with the repo name being the language code. Thus we get repo name
+collisions for the mentioned languages.
+
+In both cases one of the two descriptions is in {{experiment-langs/}}, so one
+can consider repo names like {{lang-est-x-exp}} (keeping the part after
+{{langs-}} BCP-47 compatible). There certainly are other alternatives, the main
+point is just to remember to consider this, and find a good solution.
