@@ -155,6 +155,18 @@ We also need to consider how to best ensure that people are using the correct
 version/revision of those dependencies, both for {{@HEAD}} and when rebuilding
 past versions.
 
+A third concern is that we need to ensure that the main development is done
+without breaking releases. Using the
+[git-flow model|https://nvie.com/posts/a-successful-git-branching-model/],
+the default commit branch in github should be the {{develop}} branch. This
+should be accompanied with both existing and new tests to ensure that the code
+is mostlly releasable at any point. Further information about {{git-flow}} can
+be found:
+
+* [here|https://datasift.github.io/gitflow/IntroducingGitFlow.html]
+* [here|https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/git-flow]
+   for [Tower|https://www.git-tower.com/mac?utm_source=learn-website&utm_medium=navigation]
+
 !! Multiple languages in one go
 
 The present infra groups languages in different subdirs:
