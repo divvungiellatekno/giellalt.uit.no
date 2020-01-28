@@ -33,7 +33,8 @@ language dir, and then run a setup script that handles all the rest.
 
 Specifically, the following changes are ideas to follow up:
 
-* remove the {{am-shared/}} dir, and instead sym-link to it or check it out as
+* remove the {{am-shared/}} dir, and instead havd a common/shared {{am-shared/}}
+  dir in {{giella-shared/}} (or core?) and sym-link to it or check it out as
   a submodule or similar within a {{.deps/}} directory, done by the
   {{autogen.sh}} script; a requirement of the solutionis that it must still be
   compatible with the various build systems we need to support
