@@ -14,13 +14,14 @@ solutions.
 
 !!! Directory structure
 
-The present structure is way too deep and hard to navigate. It also hard-code
+The present structure is way too deep and hard to navigate. It also hard-codes
 certain coding patterns related to phonology, and the tests are too far away
-from the code it should test. There are three different steps to be take here:
+from the code it should test. There are three different steps to be taken here:
 
 # merge {{src/morphology/}} and {{src/phonology}}
 # flatten the {{tools/}} directory tree, so that it has only one subdir level
 # move all test dirs to being subdirs of the actual source code they are testing
+  e.g. {{test/tools/spellcheckers/}} should be moved to {{tools/spellcheckers/test/}}
 
 !!! Isolate dependencies and common build elements
 
