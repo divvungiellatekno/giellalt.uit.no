@@ -18,7 +18,10 @@ The present structure is way too deep and hard to navigate. It also hard-codes
 certain coding patterns related to phonology, and the tests are too far away
 from the code it should test. There are three different steps to be taken here:
 
-# merge {{src/morphology/}} and {{src/phonology}}
+# merge {{src/morphology/}} and {{src/phonology}} to a new dir {{fst/}}, and
+  reorganise the whole {{src/}} dir to reflect technology rather than linguistic
+  groups - the linguistic splitup really never was completely consistent and
+  logical;
 # flatten the {{tools/}} directory tree, so that it has only one subdir level
 # move all test dirs to being subdirs of the actual source code they are testing
   e.g. {{test/tools/spellcheckers/}} should be moved to {{tools/spellcheckers/test/}}
