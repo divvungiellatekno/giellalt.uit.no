@@ -103,7 +103,7 @@ possible actions performed on all or a subset of repos, and required features:
 * set default branch for all/multiple repos
 * add all/multiple repos to a team
 * set access restrictions for all/multiple repos
-* add/update/remove git submodules, including revision
+* add/update/remove git submodules, including revision for said submodule
 * get list of all repos matching a certain pattern, potentially with repo URL
   or documentation site URL, to include in overview documentation or reports
 
@@ -201,6 +201,10 @@ Possible use cases for such groupings:
 There might be better ways of achieving these goals in the Git(Hub) universe,
 but we need something that will help us group languages.
 
+Also, the grouping should be bidirectional, such that a given language repo
+"knows" what group(s) it belongs to. And as indicated, one language can be a
+member of multiple such groups.
+
 !! Name collisions
 
 Because languages are grouped in several subdirs, we have a couple of cases
@@ -213,3 +217,12 @@ In both cases one of the two descriptions is in {{experiment-langs/}}, so one
 can consider repo names like {{lang-est-x-exp}} (keeping the part after
 {{lang- }} BCP-47 compatible). There certainly are other alternatives, the main
 point is just to remember to consider this, and find a good solution.
+
+This is also a reminder that we need to update the script for setting up a new
+language, in two ways:
+
+* it must support the new git repo structure
+* it should accept a full BCP-47 tag, not only ISO 639-3 language codes
+
+The second point could be fixed while we are still in svn, but the first one
+obviously needs to be fixed as we move to git.
