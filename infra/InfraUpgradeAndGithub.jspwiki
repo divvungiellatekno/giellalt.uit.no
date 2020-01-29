@@ -22,7 +22,8 @@ from the code it should test. There are three different steps to be taken here:
   reorganise the whole {{src/}} dir to reflect technology rather than linguistic
   groups - the linguistic splitup really never was completely consistent and
   logical;
-# flatten the {{tools/}} directory tree, so that it has only one subdir level
+# flatten the {{tools/}} directory tree, so that it has only (or mostly) one
+  subdir level
 # move all test dirs to being subdirs of the actual source code they are testing
   e.g. {{test/tools/spellcheckers/}} should be moved to {{tools/spellcheckers/test/}}
 
@@ -39,7 +40,7 @@ Specifically, the following changes are ideas to follow up:
 * remove the {{am-shared/}} dir, and instead havd a common/shared {{am-shared/}}
   dir in {{giella-shared/}} (or core?) and sym-link to it or check it out as
   a submodule or similar within a {{.deps/}} directory, done by the
-  {{autogen.sh}} script; a requirement of the solutionis that it must still be
+  {{autogen.sh}} script; a requirement of the solution is that it must still be
   compatible with the various build systems we need to support
 * do the same for the various {{giella-shared/}} dirs
 * do the same for {{giella-core/}}
@@ -56,7 +57,7 @@ the time, for all types of setups.
 
 !!! Github move concerns
 
-If / when we move to Github, and thus git, there are a number of maintenance
+When we move to Github, and thus git, there are a number of maintenance
 scenarios we have to work out in front of the move. We have already moved all
 keyboards [there|https://github.com/giellalt], and they can serve as a test case
 for the language repos.
@@ -77,7 +78,7 @@ makes it necessary to be able to administer all repositories collectively.
 
 One of the reasons we have been able to scale well in terms of languages (with
 more than hundred languages in all our repos pr january 2020), is that we have a
-consisted directory and file structure. From time to time we need to do changes
+consistent directory and file structure. From time to time we need to do changes
 en mass to all repos, and that needs to be possible also after the move to
 Github. And there will still be the need to update both single files and batches
 of files based on some template data.
