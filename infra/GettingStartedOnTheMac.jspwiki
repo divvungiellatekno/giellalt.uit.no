@@ -16,15 +16,14 @@ Then you need a number of tools for the build chain.
 On the Mac, you can get them by running the following commands:
 
 {{{
-sudo port install autoconf automake libtool python37 py37-pip wget bison cmake gawk saxon
+sudo port install autoconf automake libtool python37 py37-pip wget bison cmake gawk saxon \
+py37-beautifulsoup4 py37-lxml py37-pysvn py37-html5lib py27-feedparser p5-xml-twig antiword wv libxslt poppler tidy p5-xml-libxml texlive-bin-extra
 
 sudo port select --set python3 python37
 
-sudo pip-3.7 install PyYAML
+pip-3.7 install --user PyYAML pexpect pyth pytidylib
 
-python3 -m pip install pexpect --user
-
-sudo cpan install Text::Brew XML::LibXML
+cpan install Text::Brew XML::LibXML
 }}}
 
 
@@ -32,19 +31,6 @@ sudo cpan install Text::Brew XML::LibXML
 
 Certain tasks can require additional software. Here's some additional software
 you might need depending on what you need to do.
-
-
-!If you want to do corpus work, then also do this:
-
-{{{
-sudo port install \
-python27 py27-pip py27-beautifulsoup4 py27-unittest2 py27-lxml py-pysvn \
-py27-html5lib py27-feedparser p5-xml-twig antiword wv libxslt poppler tidy \
-p5-xml-libxml texlive-bin-extra
-
-sudo port select --set python python27
-sudo pip-2.7 install pyth pytidylib
-}}}
 
 !If you want to have documentation pages locally on your own machine, you need Forrest:
 
@@ -86,8 +72,8 @@ __linguistic programming tools:__
 * One or more of:
 ** [Xerox tools|http://www.fsmbook.com] -
    Freely available, faster compilation, but not open source and no spellers.
-   The software is found under the link 
-   [NewSoftware|https://web.stanford.edu/~laurik/.book2software/], 
+   The software is found under the link
+   [NewSoftware|https://web.stanford.edu/~laurik/.book2software/],
    __Binaries Only__ is enough. Unpack the files and store them in e.g.
    /usr/local/bin/.
 ** [HFST tools|compiling_HFST3.html] -
