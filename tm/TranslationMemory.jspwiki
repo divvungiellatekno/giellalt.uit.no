@@ -1,16 +1,13 @@
-l
-We use parallel texts from our corpora both in Korp (SIKOR) and for translation memories.
-The parallel files are made in the corpus repositories (see
-[the Corpus documentation|../ling/ParallelCorpusConversion.html] for info on how to make them).
+This page contains resources for use in Computer-assisted translation (CAT) software (cf. the [English Wikipedia article|https://en.wikipedia.org/wiki/Computer-assisted_translation] for an explanation, as well as this [comparison of CAT software|https://en.wikipedia.org/wiki/Comparison_of_computer-assisted_translation_tools].
 
 !!! Translation memories
 
-We also bundle all parallel files together and put them in a folder called {{omegat}}
-([https://victorio.uit.no/biggies/trunk/mt/omegat/]). We store the translation memories
-into the {{tm}} subfolder of each of the language pairs in the {{omegat}} folder.
-The collections are in the so-called tmx format. For easy access we have listed them below
-(control-click (right-click) on the tmx file you want and download it).
-
+We have made translation memories for several language pairs.  The
+collections are in the so-called tmx format, and can be used by all
+CAT programs listed in the software comparison article quoted
+above. For easy access we have listed them below (control-click
+(right-click) on the tmx file you want and download it). The sentence
+pairs are mainly taken from official documents.
 
 * [Finnish - Inari Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/fin-smn/tm/]
 * [Finnish - North Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/fin-sme/tm/]
@@ -27,9 +24,11 @@ The collections are in the so-called tmx format. For easy access we have listed 
 * [Russian - Komi|https://victorio.uit.no/biggies/trunk/mt/omegat/rus-kpv/tm/]
 * [South Saami - Norwegian|https://victorio.uit.no/biggies/trunk/mt/omegat/sma-nob/tm/]
 
+If you use __OmegaT__, add the .tmx file to the {{tm}} folder.
+
 !!! Glossary files
 
-Correspondingly, we have made glossary files. Note that they are in beta stage.
+Correspondingly, we have made some glossary files. They are tab separated lists.
 
 * [Finnish - Inari Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/fin-smn/glossary/]
 * [Finnish - North Saami|https://victorio.uit.no/biggies/trunk/mt/omegat/fin-sme/glossary/]
@@ -46,15 +45,9 @@ Correspondingly, we have made glossary files. Note that they are in beta stage.
 * [Russian - Komi|https://victorio.uit.no/biggies/trunk/mt/omegat/rus-kpv/glossary/]
 * [South Saami - Norwegian|https://victorio.uit.no/biggies/trunk/mt/omegat/sma-nob/glossary/]
 
+For __OmegaT__, add the file to the {{glossary}} folder.
 
-The translation memory files may then be used in [many programs for computer-assisted translation|https://en.wikipedia.org/wiki/Category:Translation_software].
+!!!Segmentation file
 
-The folders under {{mt/omegat}} are built so that they may be downloaded and used
-as a project folder for OmegaT.
-
-Here are the link to parallel text with explanation in
-[English|../tools/ParallelTexts.html], 
-[Finnish|../tools/Rinnakkaistekstit.html], 
-[Norwegian|../tools/Parallelltekster.html], 
-[North Saami|../tools/Balddalasteavsttat.html].
+If you translate from North Saami and use __OmegaT__, you may download a [segmentation file|https://victorio.uit.no/biggies/trunk/mt/omegat/sme-nob/omegat/segmentation.conf], and put it in the {{omegat}} folder. 
 
