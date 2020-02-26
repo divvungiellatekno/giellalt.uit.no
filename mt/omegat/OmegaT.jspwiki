@@ -3,7 +3,7 @@
 The user documentation page for OmegaT refers to installation and user documentation, and can be found here:
 
 * [Installation instructions|http://wiki.apertium.org/wiki/Apertium_OmegaT_Native]
-* [Documentation|http://omegat.org/documentation]
+* [Documentation|http://omegat.org/documentation] (Go for the __English html__ one)
 
 !!!Adapting to our language pairs
 
@@ -16,10 +16,10 @@ For the time being, the folders are at [https://gtsvn.uit.no/biggies/trunk/mt/om
 
 The idea is to put the following resources into the following subdirectories:
 
-* into {{dictionary}}: our dictionaries (OmegaT [documentation|http://omegat.sourceforge.net/manual-standard/en/chapter.dictionaries.html])
-* into {{glossary}}: term lists, partly fad-marked pairs, partly from satni.org, cf [documentation|http://omegat.sourceforge.net/manual-standard/en/chapter.glossaries.html]
-* into {{tm}}: our parallel texts, __all files fused into one .tmx file__ (or one per theme), cf [documentation|http://omegat.sourceforge.net/manual-standard/en/chapter.translation.memories.html]
-* into {{omegat}}: a file segmentation.conf, for doing sentence level segmentation, cf. [documentation|http://omegat.sourceforge.net/manual-standard/en/chapter.segmentation.html]
+* into {{dictionary}}: our StarDict dictionary smenob (OmegaT [documentation|http://omegat.sourceforge.io/manual-standard/en/chapter.dictionaries.html])
+* into {{glossary}}: term lists, partly fad-marked pairs, partly from satni.org, cf [documentation|http://omegat.sourceforge.io/manual-standard/en/chapter.glossaries.html]
+* into {{tm}}: our parallel texts, __all files fused into one .tmx file__ (or one per theme), cf [documentation|http://omegat.sourceforge.io/manual-standard/en/chapter.translation.memories.html]
+* into {{omegat}}: a file segmentation.conf, for doing sentence level segmentation, cf. [documentation|http://omegat.sourceforge.io/manual-standard/en/chapter.segmentation.html]
 
 The source and target folders are given ''svn ignore'' status, as we develop the folders we should determine what other files to ignore and what to share.
 
@@ -28,36 +28,40 @@ The source and target folders are given ''svn ignore'' status, as we develop the
 
 The language pairs are of three types:
 
-# smesmn, smesmj, smesmn: The main thing here is MT, glossaries and
+# __smesmn, smesmj, smesmn:__ The main thing here is MT, glossaries and
   dictionaries are less interesting since they are already in bidix,
   and since we do not have a OmegaT-compatible tokenizer to look up
   inflected words.
-# nobsme, nobsmj, nobsma, finsme, finsmn, finsms: Here we have no MT
+# __nobsme, nobsmj, nobsma, finsme, finsmn, finsms:__ Here we have no MT
   (except for finsme, which is not much developed). The focus here is
   on glossaries (fad project, etc.) and translation memory
-# smasme, smjsme, smnsme, smenob: these we ignore in OmegaT for now.
+# __smasme, smjsme, smnsme, smenob:__ these we ignore in OmegaT for now.
   They are mainly made for understanding, not for text production.
 
 !!!Working plan
 
-# Add glossaries
-# Develop segmentation.conf
-# Test and evaluate
+# Add glossaries (__done for nobsmX__)
+# Improve mt  (__done for nobsmX__)
+# Develop segmentation.conf (__in progress for sme__)
+# Test and evaluate 
 
 !!!Future plans
 
 Adding more resources:
 
-* Analysers for lemmatisation of dictionary lookup
-* Proofing tools
+* Improve segmentation.conf
+* Investigate the settings pane for optimal choices
+* Add proofing tools (hunspell)
+* Lemmatisation of dictionary lookup (FST or StarDict)
 
 !!!HFST Tokenizer
 
 You can get the hfst tokenizer ready compiled. You need to download:
+
 *[Hfst
   tokenizer|http://divvun.no/static_files/omegat-hfst-tok/omegat-hfst-tokenizer-0.3.jar]
 *[Hfst lookup library|http://divvun.no/static_files/omegat-hfst-tok/hfst-1.1.5.jar]
-*[HPPC|http://central.maven.org/maven2/com/carrotsearch/hppc/0.7.2/hppc-0.7.2.jar] (OmegaT 3.x)
+*[HPPC|http://central.maven.org/maven2/com/carrotsearch/hppc/0.7.2/hppc-0.7.2.jar] (OmegaT 3.x - TODO - not found)
 
 And put them into {{~/Library/Preferences/OmegaT/plugins}} (create the dir if it's not there)
 
