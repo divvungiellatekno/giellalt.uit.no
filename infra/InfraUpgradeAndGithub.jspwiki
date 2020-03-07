@@ -25,7 +25,8 @@ from the code it should test. There are three different steps to be taken here:
 # flatten the {{tools/}} directory tree, so that it has only (or mostly) one
   subdir level
 # move all test dirs to being subdirs of the actual source code they are testing
-  e.g. {{test/tools/spellcheckers/}} should be moved to {{tools/spellcheckers/test/}}
+  e.g. {{test/tools/spellcheckers/}} should be moved to
+  {{tools/spellcheckers/test/}}
 
 !!! Isolate dependencies and common build elements
 
@@ -76,9 +77,16 @@ makes it necessary to be able to administer all repositories collectively.
 
 !! Procedure for moving
 
-See [https://github.com/subethaedit/UniversalDetector]. What's missing from that
-receipt are the last steps to set up a new {{remote origin}} for each language,
-and then push the repo to the new {{origin}}.
+See [https://github.com/subethaedit/UniversalDetector]. Follow that receipt for
+each language in each {{langs}} dir. Then run the following commands:
+
+{{{
+git remote add origin <git@github.com:my-user/new-repo.git>
+git push origin -u master
+}}}
+
+After that we should have a set of language repos in GitHub, with the full
+history of each language.
 
 !! Update data across all repositories
 
@@ -177,7 +185,7 @@ be found:
 
 * [here|https://datasift.github.io/gitflow/IntroducingGitFlow.html]
 * [here|https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/git-flow]
-   for [Tower|https://www.git-tower.com/mac?utm_source=learn-website&utm_medium=navigation]
+  for [Tower|https://www.git-tower.com/mac?utm_source=learn-website&utm_medium=navigation]
 
 !! Multiple languages in one go
 
@@ -243,5 +251,6 @@ to do it. Some pointers:
 * [BugzillaMigrate|https://github.com/dill/BugzillaMigrate]
 * [StackOverflow discussion|https://stackoverflow.com/questions/7281304/migrate-bugzilla-issues-to-github-issue-tracker]
 * [bugzilla2github|https://github.com/berestovskyy/bugzilla2github]
-* see also the [llvm bugz->github switch dicsussion|https://groups.google.com/forum/#!msg/llvm-dev/CyTzrV1JwfA/k-09hspAAAAJ]
+* see also the
+  [llvm bugz->github switch dicsussion|https://groups.google.com/forum/#!msg/llvm-dev/CyTzrV1JwfA/k-09hspAAAAJ]
 * [W3C Bugzilla shutdown|https://www.w3.org/2019/01/bugzilla-shutdown.html]
