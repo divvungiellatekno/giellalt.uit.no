@@ -1,13 +1,23 @@
 
 
-Text is preprocessed and made into words and sentences. In order to do the latter we need to handle abbreviations. The linguistic sides of the issue are found [in this document|/lang/sme/docu-sme-preprocessor.html], here we look at the compilation.
+Text is preprocessed and made into words and sentences. In order to do
+the latter we need to handle abbreviations. The linguistic sides of
+the issue are found
+[in this document|/lang/sme/docu-sme-preprocessor.html], here is
+[a more specific documentation on the linguistic reasoning|../../ling/preprocessor.html]
+see also the [Preprocessor Specification|../../proof/gramcheck/doc/PreprocessorSpecification.html]
+on the pmatch fst behind the hfst method.
+
+Here we look at how to compile and use the preprocessor that deals
+with the abbreviations.
 
 !!!Abbreviation handling with hfst
 
-Compile and test with the following setting (here with sme as example):
+This is the recommended approach. Compile and test with the following
+setting (here with sme as example):
 
 {{{
-./configure --with-hfst --eable-tokenisers
+./configure --with-hfst --enable-tokenisers
 make
 echo "dr. Watson."|hfst-tokenise  $GTHOME/langs/sme/tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst
 }}}
