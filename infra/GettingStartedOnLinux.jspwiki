@@ -2,6 +2,9 @@ This page is a part of the overall [Getting started|GettingStarted.html] page.
 It describes what you need to install on __Linux__ to be ready to develop
 language tools for your language.
 
+Note that this documentation is relevant when you want to participate in '''building and developing the grammatical tools''' yourself. If you only want to use the ready-made grammatical analysers, see the [Linguistic analysis page|ling/LinguisticAnalysis.html].
+
+
 !!!System setup
 
 * You need a __text editor__.
@@ -44,19 +47,6 @@ poppler-utils wget python3-svn wv python3-feedparser subversion openjdk-11-jdk c
 python3-tidylib python3-yaml libxml-libxml-perl libtext-brew-perl
 }}}
 
-!!Note for Java avoiders
-
-Some of the tools above require or use Java, notably Saxon and Forrest. Saxon is
-used to convert XML-based source files into Lexc files, and Forrest is used to
-validate documentation extracted from the source files.
-
-None of these functions are strictly required for developing language tools. The
-lexc files converted from XML are stored in svn, and if Saxon is not available,
-the lexc files will be used as is. And if Forrest is not available, the step for
-building documentation out of source code comments will just be skipped.
-
-That is, __Java is not required__ to do development using the Divvun/Giellatekno
-infrastructure, __unless__ you specifically work with xml-based lexicons.
 
 !!!Linguistic software
 
@@ -72,5 +62,28 @@ __linguistic programming tools:__
    Open source. Needed for turning your morphology and lexicon into a
    spellchecker
 
+Now go back to to [Getting Started page|GettingStarted.html] for the next step towards building, using and developing the linguistic analysers.
+
+There is also [a page giving the overview for linguistic download|anonymous-svn.html] in order to download and compile the analysers. TODO (write these two together).
+
+
+!!Additional software
+
+
 If you want to work with proofing tools, see ''Proofing tools to install''
 [here|install-overview.html]
+
+
+!!Note for Java avoiders
+
+Some of the tools above require or use Java, notably Saxon and Forrest. Saxon is
+used to convert XML-based source files into Lexc files, and Forrest is used to
+validate documentation extracted from the source files.
+
+None of these functions are strictly required for developing language tools. The
+lexc files converted from XML are stored in svn, and if Saxon is not available,
+the lexc files will be used as is. And if Forrest is not available, the step for
+building documentation out of source code comments will just be skipped.
+
+That is, __Java is not required__ to do development using the Divvun/Giellatekno
+infrastructure, __unless__ you specifically work with xml-based lexicons.

@@ -2,6 +2,8 @@ This page is a part of the overall [Getting started|GettingStarted.html] page.
 It describes what you need to install on the __Mac__ to be ready to develop
 language tools for your language.
 
+Note that this documentation is relevant when you want to participate in '''building and developing the grammatical tools''' yourself. If you only want to use the ready-made grammatical analysers, see the [Linguistic analysis page|ling/LinguisticAnalysis.html].
+
 !!!System setup
 
 * You need a __text editor__ - we recommend
@@ -28,10 +30,42 @@ cpan install Text::Brew XML::LibXML
 }}}
 
 
+
+!!!Linguistic software
+
+You need tools to convert your linguistic source code (lexicons, morphology,
+phonology, syntax, etc.) into usefull tools like analysers, generators,
+hyphenators and spellers. Install the following
+__linguistic programming tools:__
+
+* One or more of:
+** [Xerox tools|http://www.fsmbook.com] -
+   Freely available, faster compilation, but not open source and no spellers.
+   The software is found under the link
+   [NewSoftware|https://web.stanford.edu/~laurik/.book2software/],
+   __Binaries Only__ is enough. Unpack the files and store them in e.g.
+   /usr/local/bin/.
+** [HFST tools, vislcg3, foma|compiling_HFST3.html] -
+
+
+
+Now go back to to [Getting Started page|GettingStarted.html] for the next step towards building, using and developing the linguistic analysers.
+
+There is also [a page giving the overview for linguistic download|anonymous-svn.html] in order to download and compile the analysers. TODO (write these two together).
+
+
 !!Additional software
 
-Certain tasks can require additional software. Here's some additional software
+Developing special tools in addition to the core linguistic analysers can require 
+additional software. Here's some additional software
 you might need depending on what you need to do.
+
+
+!Sorfware for proofing development
+
+If you want to work with proofing tools, see
+''Proofing tools to install'' [here|install-overview.html]
+
 
 !If you want to have documentation pages locally on your own machine, you need Forrest:
 
@@ -63,22 +97,3 @@ building documentation out of source code comments will just be skipped.
 
 That is, __Java is not required__ to do development using the Divvun/Giellatekno
 infrastructure, __unless__ you specifically work with xml-based lexicons.
-
-!!!Linguistic software
-
-You need tools to convert your linguistic source code (lexicons, morphology,
-phonology, syntax, etc.) into usefull tools like analysers, generators,
-hyphenators and spellers. Install the following
-__linguistic programming tools:__
-
-* One or more of:
-** [Xerox tools|http://www.fsmbook.com] -
-   Freely available, faster compilation, but not open source and no spellers.
-   The software is found under the link
-   [NewSoftware|https://web.stanford.edu/~laurik/.book2software/],
-   __Binaries Only__ is enough. Unpack the files and store them in e.g.
-   /usr/local/bin/.
-** [HFST tools, vislcg3, foma|compiling_HFST3.html] -
-
-If you want to work with proofing tools, see
-''Proofing tools to install'' [here|install-overview.html]
