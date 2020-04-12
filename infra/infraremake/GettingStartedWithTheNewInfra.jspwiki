@@ -8,25 +8,26 @@ auxiliary programs needed are described in our
 !!!Check out the source code
 
 
-!!1. Only the GT core and the wanted language(s)
-
 If you only do linguistic analysis for a limited number of languages you will
 do fine by only checking out the core modules, and then each language
 separately. It will save you a lot of download time and disk space.
 
-It can be wise to create a separate directory for holding the core and
-language modules. The command to do this is (with the name of the directory
-set to "langtech"): {{mkdir langtech}}. Then {{cd langtech}} and continue.
+
+!!Check out the core modules
 
 There are two required core modules:
 ; giella-core: core scripts and technical data required for the build system
 ; giella-shared: resources shared among all languages or language groups
 
-!!Check out the core modules
-
-To check out the core modules and prepare them, do this:
+To check out the core modules and prepare them, open a terminal window.
+Then make a separate folder for giella language technology. Call it 
+e.g. {{giella}} or {{main}} or whatever you want. Then go into the folder 
+(we here assume you called it ''giella'' and check out the two core
+modules:
 
 {{{
+mkdir giella # only once
+cd giella
 svn co https://gtsvn.uit.no/langtech/trunk/giella-core
 svn co https://gtsvn.uit.no/langtech/trunk/giella-shared
 cd giella-core
@@ -39,81 +40,73 @@ cd ../giella-shared
 make
 }}}
 
-To make the core modules accessible, there are two methods: one intended for
-single users, and one intended for multiuser servers (but it works fine for
-single users as well).
-
-__EITHER:__ The first method uses environmental variables, one called
-GIELLA_CORE and the other GIELLA_SHARED.
-They must be manually set. Add the following line to your {{.profile}} file:
+To make the core modules accessible, add the following line to your {{.profile}} or
+{{.bashrc}} file (found in your home directory):
 
 {{{
-export GIELLA_CORE=/path/to/your/giella-core/dir
-export GIELLA_SHARED=/path/to/your/giella-shared/dir
+export GIELLA_CORE=$HOME/giella/giella-core/dir
+export GIELLA_SHARED=$HOME/giella/giella-shared/dir
 }}}
 
-Replace {{/path/to/your/giella-core/dir}} with the real path on your system, and
-the same for {{/path/to/your/giella-shared/dir}}. You can
-get them by using the command {{pwd}} after you did the {{./configure}} command
-above. Then open a new terminal window. Now you are done.
+We here assumed that you made a folder {{giella}} in your home directory, 
+if you used another name or placed the folder somewhere else you should adjust the 
+paths in the above commands accordingly.  Then 	open a new terminal window. Now you are done.
 
-__OR:__ The server method is to install some of the components of the core modules. For each module, after you did {{make}} above, do:
-
-{{{
-sudo make install
-}}}
+''If you do this on a server'': For each module, after you did {{make}} above, do: 
+''sudo make install''.
 
 That is it. __NB!__ This method requires that you redo the installation every
 time the core modules are updated, although should not happen too often.
 
 !!Check out the languages you want
 
-Then, for each language you want to work with, do the following:
+Then, for each language you want to work with, make a language folder next to the 
+{{giella-core}} and {{giella-shared}} modules, and check out the language(s) you want
+(the --username option is not needed unless you want to contribute with your work. 
+See below if you do), by giving these commands:
 
 {{{
+cd $HOME/giella # or wherever you put it
+mkdir langs # only once
+cd langs
 svn co https://gtsvn.uit.no/langtech/trunk/langs/LANGCODE --username <your_username>
 }}}
 
 where {{LANGCODE}} is the ISO 639-3 three-letter code for the language. You
-can see a list of the languages we currently have by looking at
-[https://gtsvn.uit.no/langtech/trunk/langs/].
+can see a list of the languages we currently have by looking at our
+[langs|https://gtsvn.uit.no/langtech/trunk/langs/], [startup-langs|https://gtsvn.uit.no/langtech/trunk/startup-langs/] and [experiument-langs|https://gtsvn.uit.no/langtech/trunk/experiment-langs/] folders. The language behind the codes you find on the __Find a language__ box on [this page|https://en.wikipedia.org/wiki/ISO_639-3] (or see [this list|../../lang/index.html]).
 
 When you have checked out the language(s) you want to work with, then you
-are ready to...
+are ready to ''actually getting started with your language''.
 
 
 
+!!!Getting started with your language
 
-!!Everything
-
-If you are working with many languages, or with both linguistic analysis and
-e.g. language learning (Oahpa) or dictionaries, you want to check out
-everything. That process is documented
-[on a separate page|/tools/docu-svn-user.html#The+first+commands].
-
-
-
-!!!Actually getting started with your language
-
-When everything is installed and checked out, then do the following:
+When you have installed and checked out qw explained above, do the following:
 
 {{{
-cd $GTLANG
+cd $HOME/giella/fin
 ./autogen.sh -l
 ./configure
 }}}
 
-where $GTLANG is the directory name of the language you want to work with. Now
+(replace __fin__, the code for Finnish, with the language(s) you checked out). Now
 you are ready to start working. More info about where to find the different
 pieces of source code can be found on [this page|NewinfraCatalogues.html].
 
-To build the transducers and other tools for linguistic analysis, egdo:
+__NOTE__ that the command {{./configure}} assume that you checked out the 
+__Xerox compilers__ (see the Getting s
+
+To build the transducers and other tools for linguistic analysis, do:
 
 {{{make}}}
 
 To run the preinstalled tests, do:
 
 {{{make check}}}
+
+
 
 __WARNING__
 
