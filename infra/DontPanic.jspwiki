@@ -8,7 +8,7 @@ What to do if ...
 
 !!Get them up and running
 
-* For the ''gtsvn, gtlab, gtoahpa, gtweb'' servers at uit.no
+* For the ''gtsvn-01, gtlab, gtoahpa-01, gtweb-01'' servers at uit.no
 ** Call ''IT, Seksjon for applikasjoner og tjenester'' (see plan/admin/emergency.txt)
 * For the xserve, the ''divvun.no'' server
 ** Call Børre Gaup (the server is in the cellar under the A wing, second door to the left)
@@ -17,15 +17,16 @@ What to do if ...
 
 The following processes need to be restarted, and in the following way.
 
-* [instructions for gtweb (interactive web programs, MT, webdicts and NDS)|/ped/common/httpdserversgtweb.html]
+* [instructions for gtweb-01 (interactive web programs, MT, webdicts)|/ped/common/httpdserversgtweb.html]
 * [the speller server (divvun.no)|SpellerServer.html]
-* [instructions for gtoahpa (oahpa.no, NDS and Konteaksta)|/ped/common/httpdserver.html]
-* [instructions for gtlab (testing.oahpa.no and VIEW (Russian Konteaksta))|/ped/common/GtlabRestart.html]
+* [instructions for gtoahpa-01 (oahpa.no and Konteaksta)|/ped/common/httpdserver.html]
+* [instructions for gtdict (NDS)|/ped/common/httpdserversgtdict.html]
+* [instructions for gtlab (testing.oahpa.no)|/ped/common/GtlabRestart.html]
 * [instructions for restarting nginx|/ped/common/RestartingNginx.html]
 * [instructions for Gïelese|../apps/gielese/GieleseRestarting.html] (TODO: Update documentation)
 ** Look for commands with ''restart...''
-* [Instructions for gtsvn|gtsvn.html] 
-* [Instructions for the satni.org server|satniorg.html] 
+* [Instructions for gtsvn-01|gtsvn.html]
+* [Instructions for the satni.org server|satniorg.html]
 * [When the webpages are not rebuilt|SiteBuildProblems.html]
 * [Instructions for xserve|xserve.html] (SubEthaEdit, Jabber, Bugzilla)
 
@@ -34,27 +35,6 @@ The following processes need to be restarted, and in the following way.
 (tbw.)
 
 (We want automatic testing of web service availability.)
-
-!!!gtweb is slow at reading/writing to /home
-
-The directories under /home on gtweb are actually hosted on gtsvn, and accessed through NFS (Network File System). Sometimes, for some reason, gtsvn's nfs stops working as it should, and anything that needs access to /home on gtweb turns really slow/doesn't work at all. For example, svn checkouts hang, apy hangs on listLanguagePairs, etc.
-
-Under normal circumstances, when you're logged into gtweb, you should get
-
-{{{
-$ showmount -e gtsvn.uit.no
-Export list for gtsvn.uit.no:
-/export/home 129.242.6.143,129.242.4.65,129.242.4.64,129.242.4.63,129.242.4.60
-}}}
-while when it's broken, that command tends to give something like
-{{{
-$ showmount -e gtsvn.uit.no
-clnt_create: RPC: Port mapper failure - Unable to receive: errno 111 (Connection refused)
-}}}
-
-The simple solution is to e-mail ''IT, Seksjon for applikasjoner og tjenester'' (see plan/admin/emergency.txt) or someone else with root access on gtsvn and ask them to restart gtsvn.
-
-It might also be possible to simply (re)start the {{{rpcbind}}} command on gtsvn, e.g. ssh into a sudoer account on gtsvn and {{{sudo service rpcbind restart}}}.
 
 !!!A server is very slow
 
