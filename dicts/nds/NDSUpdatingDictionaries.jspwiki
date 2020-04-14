@@ -5,15 +5,10 @@ resetting of the surver must be run.
 Administering NDS requires the use of Fabric, which is a system for performing
 processes remotely.
 
-All of the examples here use the ''gtweb'' dictionaries, and require logging in
-as the ''neahtta'' user. Note that on ''gtoahpa'', the compile process is
+All dictionaries are on gtdict, and require logging in
+as the ''neahtta'' user. The compile process is
 restricted, so that only the lexicon will be able to be compiled, but ''not''
 the FST files. FSTs must be compiled manually (see below in ''Updating the FSTs'').
-
-NB: Neahttadigisánit (sme, sma, etc.) or sanit.oahpa.no/sánit.oahpa.no is
-currently on gtoahpa, but other services are located on gtweb: sanat.oahpa.no,
-valks.oahpa.no. For these you will need to log into gtweb, though the following
-examples may show gtoahpa as the hostname in the command prompt
 
 !!!Updating the lexica on gtweb and gtoahpa
 
@@ -28,20 +23,15 @@ fab PROJECT restart_service
 __The longer explanation:__
 
 
-1.) ''Log in to the server via SSH as the NDS user (user name: neahtta)''
+1.) ''Log in to the server via SSH''
 
-If you have root access, log in to gtweb, and thereafter do {{sudo su neahtta}}
-If you do not have root access, you can still log in by having your public SSH
-key added to neahtta's authorized_keys. See [SSH|/tools/SSH.jspwiki] on
-how to make an SSH keypair if you don't have one already, then ask someone with
-access (e.g.  Kevin/Trond/Jaska/Ryan) to append your public key to the
-/home/neahtta/.ssh/authorized_keys file.
+Log in to gtdict, and thereafter do {{sudo su neahtta}}
 
 Note that when logged in as the NDS user, the python virtualenv should be
 activated automatically, and you will see this before the command prompt:
 
 {{{
-    (env)[neahtta@gtweb ~]$ 
+    (env)[neahtta@gtweb ~]$
 }}}
 
 (If you do not see this, do the following commands from the home directory of
@@ -56,8 +46,8 @@ When you see (env) in the command prompt, continue.
 	fab DICT compile_dictionary
 }}}
 
-Replace DICT below with sanat, vada, etc. (to ''fab vada compile_dictionary'' etc.)
- 
+Replace DICT below with sanit, baakoeh, etc. (to ''fab sanit compile_dictionary'' etc.)
+
 If you have problems here, make sure that the environment variables for
 ''GTHOME'', and ''GTCORE'' are set, however the ''neahtta'' user should
 automatically be configured properly. Either you will see errors, or you can
@@ -80,7 +70,7 @@ dictionaries are in the locations that the config expects, and alternatively
 restarting the server process.
 
 __NB:__ The files checked in to SVN are different from those actually used in
-production on the server, this is to prevent accidental overwritings via ''svn up''. 
+production on the server, this is to prevent accidental overwritings via ''svn up''.
 Thus, you will need to edit and check in ''configs/DICT.config.yaml.in'',
 which is fine for use in development work, but the servers instances will be
 running from ''confgis/DICT.config.yaml''.
@@ -110,10 +100,10 @@ When everything is working, run the following:
 
 !!!Updating the FSTs
 
-There are two ways to update the FSTs. For both of these options, you must 
+There are two ways to update the FSTs. For both of these options, you must
 know first where the FSTs for each dictionary and language should lie.
 FST locations are defined in the relevant config file in
-''configs/DICT.config.yaml'', in the ''Morphology'' section near the top. 
+''configs/DICT.config.yaml'', in the ''Morphology'' section near the top.
 (Note the difference mentioned above between ''.yaml.in'' and ''.yaml''.
 
 As above, you can use the test command to see if the files were updated.
@@ -124,19 +114,19 @@ As above, you can use the test command to see if the files were updated.
 
 If you see any errors, be sure to correct them.
 
-!! Updating on your own (NB: necessary on gtoahpa)
+!! Updating on your own
 
 The first way to update FSTs is to do so on your own, using whichever method
 you are comfortable with, typically following the usual procedure for
 ''$GTSVN/langs/'', and then copying them manually to the specified locations.
 
-To find the FST locations: 
+To find the FST locations:
 
 {{{
     fab DICT test_configuration
 }}}
 
-This will output the following: 
+This will output the following:
 
 {{{
     SoMe:
@@ -162,6 +152,8 @@ When you compile the analyzers on your own, copy them to these paths, and test
 that their permissions allow them to be accessible to the neahtta user.
 
 !! Updating via Fabric
+
+Note: on gtdict this will work only by removing 'gtdict.uit.no' in the variable {{no_fst_install}} in the fabfile.py.
 
 Fabric provides a quick shortcut to the build processes for each language.
 
@@ -195,12 +187,12 @@ config directory as a prerequisite to the install targets.
 
 Go to neahtta and configure the dictionaries
 
-{{{ 
+{{{
     cd ~/neahtta/
     fab DICT test_configuration
 }}}
 
-Here, replace DICT with the relevant name in configs/ that you are working on (the list of DICTs above). 
+Here, replace DICT with the relevant name in configs/ that you are working on (the list of DICTs above).
 
 If everything is good and there are no errors, you'll see FST paths, and some happy cyan text at the end.
 
@@ -208,7 +200,7 @@ If everything is good and there are no errors, you'll see FST paths, and some ha
 
 Either use the fab process, or relevant system commands.
 
-{{{ 
+{{{
     cd ~/neahtta/
     fab DICT restart_service
 }}}
@@ -241,20 +233,8 @@ Two benefits for people who need to run these processes frequently are:
 Commands can also be chained, for example (here with guusaaw as DICT):
 
 {{{
-    fab guusaaw compile test_configuration restart_service
+    fab sanit compile test_configuration restart_service
 }}}
 
-This would execute everything after guusaaw in order: compilation, testing, and
+This would execute everything after sanit in order: compilation, testing, and
 restart. Chaining restart_service is not recommended, one should inspect the output of test_configuration (that everything is ok) before restarting.
-
-!!! More comments on the CENTOS (gtoahpa) operative system
-
-In order to start with reboot on CENTOS:
-
-{{{
-    chkconfig --list  (list all)
-    chkconfig SERVICE on
-}}}
-
-where __SERVICE__ is a variable for nds-sanit.service, etc.
-
