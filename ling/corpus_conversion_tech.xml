@@ -151,30 +151,24 @@ dánska-norgalaš
     <section>
       <title>Language recognition</title>
 
-      <p>The newly created xml-document is parsed and the language of each
-      paragraph is recognized using the tool langrec. The tool is described in
-      the document <a href="langrec.html">langrec.html</a>. The langrec tool
-      is not perfect in recognizing different Saami languages using short
-      pieces of text and if the text is very short, it confuses to other
-      languages as well. The tool is improved with word models, which are
-      contain lists of most common words in each language. These wordlists are
-      used in addition to the original language models that generated from
-      text corpus using text_cat. The wordlists are used only if the anguage
-      models failed to produce a unique result. The word models enhance the
-      recognizion of short paragraphs, especially when e.g. Bokmål should be
-      selected instead of some Saami language, since the short uninflected
-      words occur so often also in short pieces of text.</p>
+      <p>The newly created xml-document is parsed and the language of
+      each paragraph is recognized using the tool
+      <code>pytextcat</code>. The tool is described in the document <a
+      href="langrec.html">Language recognition using
+      pytextcat</a>. The language recognition tool is not perfect, but
+      mostly it gets it right.</p>
 
-      <p>The document always has a main language, and only the differing
-      languages are marked in the xml-structure. By default, all the
-      languages: sme, smj, sma, fin, swe, nob, nno, swe, isl, ger, dan, eng
-      can occur in the document and they are taken into account in the
-      categorization process. However, since the e.g. the different Sámi
-      language easily confuse with each other and Finnish, the language
-      recognizion can be restricted to some subset of these languages. The
-      document can be explicitely marked as monolingual, or multilingual
-      containg text fractions of some of the abovementioned languages. The
-      variables are available in the file-specific xsl-file.</p>
+      <p>The document always has a main language, and only the
+      differing languages are marked in the xml-structure. By default,
+      all the languages in the language model (there are many) can
+      occur in the document and they are taken into account in the
+      categorization process. However, since the e.g. the different
+      Sámi language easily confuse with each other and Finnish, the
+      language recognizion can be restricted to some subset of these
+      languages. The document can be explicitely marked as
+      monolingual, or multilingual containg text fractions of some of
+      the abovementioned languages. You should set these variables in
+      the file-specific xsl-file.</p>
     </section>
 
     <section>
