@@ -15,9 +15,9 @@ the FST files. FSTs must be compiled manually (see below in ''Updating the FSTs'
 For the impatient: __The short version:__
 
 {{{
-fab PROJECT compile
-fab PROJECT test_configuration
-fab PROJECT restart_service
+    fab DICT compile
+    fab DICT test_configuration
+    fab DICT restart_service
 }}}
 
 __The longer explanation:__
@@ -205,12 +205,9 @@ Either use the fab process, or relevant system commands.
     fab DICT restart_service
 }}}
 
-NB: you may be prompted for your the neahtta sudo password, and if this doesn't
+NB: you may be prompted for the neahtta sudo password, and if this doesn't
 work, something is broken and developers must fix it.
 
-!!! Production server notes
-
-Production servers currently check code out from ''tags/apps/dicts/nds/nds-stable-prod'', and configuration subdirectories are checked out from trunk (''svn switch''). This means that only important prod-ready changes will be available from an svn up, but linguists may still work in configuration directories and update them when they will.
 
 !!! More on Fabric
 
