@@ -36,7 +36,7 @@ Then, run the compile command for the specific project you are working on.
 }}}
 
 Where PROJNAME is a variable for the dictionary project, ex. ''sanit, baakoeh'',
-etc. 
+etc.
 
 This will compile only the languages in this project, and avoids errors for
 languages that are not available in the system.
@@ -46,7 +46,7 @@ languages that are not available in the system.
 The following command will compile everything, and may result in some errors if
 a locale is not installed on the system. If you do not need these locales, this
 is not a problem, and you should use the project-specific command above. If you
-need these locales, this is a problem, and see below on the section on 
+need these locales, this is a problem, and see below on the section on
 ''Adding new locales''.
 
 {{{
@@ -57,7 +57,7 @@ need these locales, this is a problem, and see below on the section on
 
 !! Extracting strings due to code changes.
 
-Sometimes you (or other maintainers) want to revise or enlarge 
+Sometimes you (or other maintainers) want to revise or enlarge
 the dictionary interface. This should be done in the underlying
 html files, e.g. here:
 
@@ -82,7 +82,7 @@ Then, extract strings´, either for one specific dictionary project, or for all:
 	fab PROJNAME extract_strings
 	fab extract_strings
 }}}
- 
+
 
 !! Recompiling translations for production server
 
@@ -91,7 +91,7 @@ Then, extract strings´, either for one specific dictionary project, or for all:
 # write the command (again, exchange PROJNAME with your own dictionary): \\ {{fab PROJNAME compile_strings}}
 
 If everything went good and there were no errors, continue, otherwise if you
-need help troubleshooting see the section below 
+need help troubleshooting see the section below
 (''Common error messages and troubleshooting'').
 
 Then, you need to restart the relevant services.
@@ -102,13 +102,13 @@ Then, you need to restart the relevant services.
 
 (Where PROJNAME is a standin for the project name, e.g., ''baakoeh'', ''valks'', ''sanit'', etc.)
 
-!!!Writing localisation 
+!!!Writing localisation
 
 
 !!Translating the string to the localisation language
 
-To write ''localisation'' (translate the interface to different languages) you 
-have to find the place of the specific file to localise 
+To write ''localisation'' (translate the interface to different languages) you
+have to find the place of the specific file to localise
 
 {{{neahtta>find . -name "templates" -type d
 ./configs/language_specific_rules/templates
@@ -122,11 +122,11 @@ have to find the place of the specific file to localise
 There you find your directory (follow your ISO code). Edit the lines
 labeled ''msgstr'' in the file {{LC_MESSAGES/messages.po}}.	Note from the
 examples the way the quotation marks are put, with errors here the file
-will not work. Do __not__ change the text on the lines marked ''#:'' or 
+will not work. Do __not__ change the text on the lines marked ''#:'' or
 ''msgid''.
 
-Then check in your changes, and then to update the server, 
-follow the procedure in the section 
+Then check in your changes, and then to update the server,
+follow the procedure in the section
 __Recompiling translations for production server__.
 below.
 
@@ -168,17 +168,17 @@ in order to see how this works for Oahpa.
 
 !!!To set up and maintain the localisation infrastructure
 
-Internationalization (i18n) in Neahttadigisánit uses Flask-Babel 
+Internationalization (i18n) in Neahttadigisánit uses Flask-Babel
 which is an interface for flask to the Python Babel extension
 
 # [Flask and Babel documentation|http://packages.python.org/Flask-Babel/]
 # [Babel documentation|http://babel.edgewall.org]
- 
-Translation strings are marked as they were in the ''Oahpa'' programs, 
+
+Translation strings are marked as they were in the ''Oahpa'' programs,
 but NDS uses a slightly different
 template engine, there are however no major differences.
 
-Marking translation strings in templates: 
+Marking translation strings in templates:
 [Jinja documentation|http://jinja.pocoo.org/docs/templates/#i18n-in-templates]
 
 !! Running the commands
@@ -198,14 +198,14 @@ This comes in three main steps:
 # Make sure .dat files exist
 # Generate a .po file for the locale
 # Check in the .po files
- 
-The easiest place to do this will be on the {gtweb} server, because the
+
+The easiest place to do this will be on the {gtdict} server, because the
 environment is already configured with the required tools. Otherwise, if you
 wish to do this on your local machine, you will need to set up your environment before this works.
 
 See: [Developing NDS|NDSDeveloping.html]
 
-All further steps assume that you are doing this on gtweb, if you are
+All further steps assume that you are doing this on gtdict, if you are
 developing, you will know what paths you need to update.
 
 !! Dat files
@@ -213,9 +213,9 @@ developing, you will know what paths you need to update.
 Unknown locales such as crk and sma need to be defined somewhere. North Saami
 is in existence in se.dat, se_NO.dat and se_FI.dat, but this does not help with
 languages without two-letter codes.
- 
+
 Thus, for those we need to copy some files.
- 
+
 (1) Find out where they are with the following command, which will
     output something similar to the below:
 
@@ -240,7 +240,7 @@ Thus, for those we need to copy some files.
 
 {{{
     cp se.dat \
-       sma.dat  
+       sma.dat
 }}}
 
 Thus the new locale will be able to be initialized with the init command below.
@@ -253,7 +253,7 @@ required here it is fine to do it this way.
 
 First make sure that all the message files have been updated to the most recent
 version of the code, by extracting all strings (above).
- 
+
 Now you can initialize a translation.
 
 {{{
@@ -266,28 +266,28 @@ Where LANG is the ISO code for the language project.
 
 
 !!! Additional notes...
- 
+
 !!Activating the virtual environment
- 
+
 If you do not see the environment enabled in the command prompt when you log in
 as the Neahttadigisánit user, run the following from this user's home directory:
 
 {{{
-    source neahtta_env/bin/activate 
+    source neahtta_env/bin/activate
 }}}
 
 If you do not see changes to the command prompt name, check ''which python'' to
 make sure it is active if you do not see it in the bash prompt. If it still
 doesn't work, there are probably problems with virtualenv.
- 
+
 Typically you should see something like:
 
 {{{
-    (neahtta_env)[neahtta@gtoahpa gtsvn/]$ 
+    (neahtta_env)[neahtta@gtdict ~]$
 }}}
 
 !!! ISO notes and internationalization language code vs. lexicon/FST language code
- 
+
 Because most browsers report what language they use using the 2-character ISO
 639-1 code, any localization that has a 2-character code, (north sámi has se,
 so lucky!), we must use this code. If it doesn't, then creating new
@@ -295,9 +295,9 @@ localizations with the 3-character code (ISO 639-2) will be necessary. Also,
 neahtta.py may not actually handle some of these 3-character localizations as
 well, so this will need to be fixed.
 
- 
+
 !!! Currently supported localizations:
- 
+
 May be found in translations/, but for ease of finding out:
 
 # fi Finnish
@@ -320,7 +320,7 @@ May be found in translations/, but for ease of finding out:
 
 This means that the locale directory is missing a .dat file for the locale.
 Follow the procedure in the 'Adding new locales' section **or** ensure that you
-are running the fab process only for the project you are working on. 
+are running the fab process only for the project you are working on.
 
 !! catalog translations/sma/LC_MESSAGES/messages.po is marked as fuzzy, skipping
 
@@ -332,4 +332,3 @@ alternatively determine why there are no line numbers.
 Sometimes the first translation string in the catalogue will be marked fuzzy,
 but this is because it is blank. The first message must be blank for the
 meta-data, so delete the fuzzy comment if it appears, but leave the string.
-
