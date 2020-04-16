@@ -1,5 +1,5 @@
 
-This document explains how to start new Neahttadigisánit projects. 
+This document explains how to start new Neahttadigisánit projects.
 
 !!! Starting a new project
 
@@ -35,7 +35,7 @@ your project name.
 
 !! Create additional directories and files
 
-TODO: 
+TODO:
 
 !! Fabfile
 
@@ -82,22 +82,6 @@ work (maybe user friendly tag file?)
 
 !!! Server-side configuration
 
-!! Gtweb-specific
-
-Since the dictionaries on ''gtweb'' all compile FSTs and install them as an
-automatic part of the ''fab'' compile process, it is a good idea to confirm
-that the process will have the necessary permissions to write to the necessary
-directories in the server infrastructure. After you have configured all the
-languages in a project, add them to the list in the following file and check it
-in.
-
-{{{
-    $GTHOME/apps/dicts/nds/neahtta/gtweb_cron_permission_pairs
-}}}
-
-This file is periodically checked on ''gtweb'' and write permissions will be
-given to the NDS project user group for each directory via a cron task.
-
 !! Adding opt directories for FST deployment
 
 If, while editing the Makefile, you are creating new languages in the ''opt''
@@ -105,11 +89,10 @@ directory for deployment, there are three things to do:
 
 # create ''/opt/smi/LANG/bin''
 # check permissions on directories ''/opt/smi/LANG/bin'' and ''/opt/smi/LANG'', if it is owned by the group ''neahtta'', and writeable by that group
-# add ''LANG'' to the cron script above
 
 !! Configuring nginx
 
-TODO: 
+TODO:
 
 !! Installing an init.d script
 
@@ -124,7 +107,7 @@ Now that we have a running instance, it's time for some extra configuration.
 For languages that have a translation available in the interface, a flag is
 necessary for the menu. Wikipedia provides pretty much all flags in SVG format,
 and automatically converts to PNG. To get a roughly 20 x 15 px flag, use the
-following steps: 
+following steps:
 
 * Find the flag {{.svg}} page in wikipedia, e.g. by browsing to the language
   page or region page, and click on the flag:
@@ -178,7 +161,7 @@ targets.
 {{{
     .PHONY: baakoeh-install
     baakoeh-install: GT_COMPILE_LANGS := sma nob
-    baakoeh-install: install_langs_fsts 
+    baakoeh-install: install_langs_fsts
 
     .PHONY: baakoeh
     baakoeh: GT_COMPILE_LANGS := sma nob
@@ -213,7 +196,7 @@ work.
 ! Lexicon in the Makefile
 
 Editing the Makefile is a little tricky. You will need to add a target
-for the lexicon file or files. 
+for the lexicon file or files.
 
 Lexica are compiled using a ''Saxon'' process, and the Makefile contains
 some variables that can be used as shortcuts. For languages using
@@ -244,7 +227,7 @@ be copied before the Saxon process is run.
 
 Make note of the filename that you intend to output this to, and add it
 to the language installation’s lexicon target, for example, __kyv-lexica__,
-__muter-lexica__, and also the remove target 
+__muter-lexica__, and also the remove target
 (such as __rm-kyv-lexica__ etc.).
 
 
@@ -289,7 +272,7 @@ following:
 Where {{YYY}} is the language ISO path. Note the weird way that forming
 paths with aliases is handled here in YAML, they may be strings or
 lists, and if they are lists, they will be automatically concatinated
-into strings. This must be done because YAML does not allow string 
+into strings. This must be done because YAML does not allow string
 concatenation with aliases/variables.
 
 ! ''Languages''  section
@@ -366,7 +349,7 @@ ISO, we must have these defined here.
 __Intended__: Linguists
 
 If you wish to have paradigms visible in the language, you will need two
-things: 
+things:
 
  * ''Tagsets'' files: [NDS Linguistic Settings|NDSLinguisticSettings.html]
  * ''.paradigm'' files:  [NDS Linguistic Settings|NDSLinguisticSettings.html]
@@ -390,7 +373,7 @@ Things to consider:
 !!!Linguistic requirements
 
 __Intended__: Linguists
- 
+
 * The xml format of the lexicon should match sme-nob or sma-nob format as
   closely as possible ({{words/dicts/smanob/src}})
 * morphological analysers (FSTs, described below)
@@ -401,11 +384,11 @@ __Intended__: Linguists
    marked in the lexicon in some way, for exampl, plural-only proper noun
    paradigms for North Saami
 * description of attributes in the XML that need to be displayed to the user
- 
+
 !!! Collecting the materials...
 
 !! FSTs
- 
+
 ! Lookup FST
 
 Lookup FST tags may be in any format, as these can be relabeled for users at a
@@ -431,34 +414,34 @@ It is best to use the analysers compiled with
 ''--enable-dicts'', because this will strip extraneous tags.
 
 !Spell relax FST
- 
+
 Spell relaxing FSTs should follow the exact same format as the lookup FST, but
 naturally point to the normative lemmas, or whatever lemmas will be used in
 lookups in the lexicon. These could be of three types:
 
- 
-# Normalizing non-standard spellings 
-# Compensating for keyboards without certain characters 
+
+# Normalizing non-standard spellings
+# Compensating for keyboards without certain characters
 # Switching orthographies, e.g., accepting latin for cyrillic, or vice versa.
 
 Whatever the use case, the analyzed lemma must match up with the lexicon
 entry.
 
-Spellrelax behaviour is governed in {{$GTHOME/langs/$LANG/src/orhtography}}. 
-Here, there are two scripts: ''spellrelax.regex'' and 
+Spellrelax behaviour is governed in {{$GTHOME/langs/$LANG/src/orhtography}}.
+Here, there are two scripts: ''spellrelax.regex'' and
 ''spellrelax-mobile-keyboard.regex''. These will result in two analysers,
 the first containing the spellrelax.regex rules, and the latter will
-contain the rules for both regex files. The latter is intended for the 
+contain the rules for both regex files. The latter is intended for the
 SoMe option (see e.g. [sanit.oahpa.no|http://sanit.oahpa.no]).
 
 * analyser-dict-gt-desc.xfst
 * analyser-dict-gt-desc-mobile.xfst
 
-Put variation __within__ the norm, and variation invisible to the user, 
+Put variation __within__ the norm, and variation invisible to the user,
 in the former file, and ad hoc / dirty hack variation in the latter.
 
 ! Compound marking
- 
+
 Must have a defined (and consistent) method for marking compounds:
 
 {{{
@@ -471,9 +454,9 @@ Must have a defined (and consistent) method for marking compounds:
 __Compound marker__: {{{ "  + #" }}}
 
 This setting can be configured in the YAML settings file.
- 
+
 ! Derivation marking
- 
+
 Must also be able to specify how all derivational suffixes are marked, because
 this affects how lexicalized words are displayed when a derivation has a
 lexicalized form.
@@ -490,18 +473,18 @@ __Derivation marker__: {{{ "suff." }}}
 
 This setting can be configured in the YAML settings file.
 
- 
+
 ! Generation FST
- 
+
 For generation, currently sme and sma use the typical tag format for GT, but,
 we have a special generator FST that removes non-standard forms. Also, sma has
 some special entries that are marked with a hid attribute
 (göövledh+1, göövledh+2) were generation depends on
 meaning. These must be included in the generation FST.
 
- 
+
 !! Lexicon
- 
+
 It may be that the analysis FST does not match absolutely with the lexicon, and
 this is okay. But, if this is so, it is important to know where the differences
 are.
