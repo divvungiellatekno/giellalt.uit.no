@@ -25,8 +25,7 @@ For more information on tagsets, see [NDS Linguistic settings|NDSLinguisticSetti
              The 'aclocal' program is part of the GNU Automake package:
 }}}
 
-This usually means there's a problem with the path variable, on gtweb and
-gtoahpa, the correct versions of automake should be installed. Observe the
+This usually means there's a problem with the path variable, on gtdict, the correct versions of automake should be installed. Observe the
 output of ''which automake'', and check that it leads to the proper version.
  
 
@@ -49,7 +48,7 @@ what exists in {{itwewina/includes.template}}. Copy the two JS include lines
 for SoundManager and audio_links.js
 
 
-! gtoahpa or gtweb language compile process errors
+! gtdict language compile process errors
 
 Occasionally an installation problem will arise due to source updates or
 updates within {{giella-core}}. Occasionally the problems can be fixed by using
@@ -77,9 +76,11 @@ In the case of the second, see the section ''Dat files'' in [NDS Localisations|N
 
 Cause: File permissions and owners on certain files have been overridden.
 
-Fix: 
-* Check that the language ISO is in the file {{~/neahtta/gtweb_cron_permission_pairs}}.
-  This will ensure that the language permissions are fixed if they change. The cron script runs 
+Fix:
+* Run the following:
+{{{
+    	chown neahtta:neahtta /opt/smi/ISO/bin/*
+}}} 
 
 Cause: The FSTs have not actually compiled. 
 
