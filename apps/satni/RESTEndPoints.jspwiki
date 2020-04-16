@@ -2,7 +2,7 @@
 REST points are called in file at $GTHOME/apps/risten2/frontend/assets/js/components/satni/satni.rest.js
 
 !!Dictionaries
-[http://satni.uit.no:8080/exist/restxq/satni/dictionaries] returns list of dictionaries and terminilogies in satni database. It also returns localized names for diciotnaries and terminologies in north sami, julev sami, south sami, swedish and norwegian. Below is the response given today:
+[https://satni.uit.no/satnibackend/dictionaries] returns list of dictionaries and terminilogies in satni database. It also returns localized names for diciotnaries and terminologies in north sami, julev sami, south sami, swedish and norwegian. Below is the response given today:
 {{{
 [
   {
@@ -209,13 +209,13 @@ REST points are called in file at $GTHOME/apps/risten2/frontend/assets/js/compon
 }}}
 
 !!Search
-http://satni.uit.no:8080/exist/restxq/satni/search returns search result for queries that are three character long or longer.
+https://satni.uit.no/satnibackend/search returns search result for queries that are three character long or longer.
 There are two query parameters for search:
 *query= Query string sent to the database, which compiles a regex "^<query>*"
 *dict= Optional parameter to specify which dictionary or terminiology to query. If no dictionary is specified, all dictionaries are queried.
 
 *Example:
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=muna]
+[https://satni.uit.no/satnibackend/search?query=muna]
 {{{
 [
   {
@@ -262,13 +262,11 @@ There are two query parameters for search:
 }}}
 
 *Example with dictionaries specified
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=cin&dict=smanob]
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=cin&dict=nobsma]
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=cin&dict=smenob]
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=cin&dict=nobsme]
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=cin&dict=mekanikk-1999]
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=cin&dict=termwiki]
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=cin&dict=SD-terms]
+[https://satni.uit.no/satnibackend/search?query=cin&dict=smanob]
+[https://satni.uit.no/satnibackend/search?query=cin&dict=nobsma]
+[https://satni.uit.no/satnibackend/search?query=cin&dict=smenob]
+[https://satni.uit.no/satnibackend/search?query=cin&dict=nobsme]
+[https://satni.uit.no/satnibackend/search?query=cin&dict=termwiki]
 {{{
 [
   {
@@ -289,7 +287,7 @@ There are two query parameters for search:
 }}}
 
 *Example with all dictionaries
-[http://satni.uit.no:8080/exist/restxq/satni/search?query=hel&dict=all]
+[https://satni.uit.no/satnibackend/search?query=hel&dict=all]
 {{{
 [
   {
@@ -309,10 +307,10 @@ There are two query parameters for search:
 }}}
 
 !!Article search
-http://satni.uit.no:8080/exist/restxq/satni/article/<article> returns article or articles.
+https://satni.uit.no/satnibackend/article/<article> returns article or articles.
 
 *Example
-[http://satni.uit.no:8080/exist/restxq/satni/article/munanleikkuri]
+[https://satni.uit.no/satnibackend/article/munanleikkuri]
 {{{
 [
   {
@@ -364,7 +362,7 @@ http://satni.uit.no:8080/exist/restxq/satni/article/<article> returns article or
 }}}
 
 *Example
-[http://satni.uit.no:8080/exist/restxq/satni/article/kiet%C3%A2]
+[https://satni.uit.no/satnibackend/article/kiet%C3%A2]
 {{{
 { {
   "term": "kietâ",
@@ -411,7 +409,7 @@ http://satni.uit.no:8080/exist/restxq/satni/article/<article> returns article or
 Fourth REST point returns metadata information about a dictionary or terminology. Difference is that this REST address returns an XML fragment.
 
 *Example
-[http://satni.uit.no:8080/exist/restxq/satni/dictionary/termwiki]
+[https://satni.uit.no/satnibackend/dictionary/termwiki]
 {{{
 <dictionary>
     <meta id="termwiki" name="Termwiki">
