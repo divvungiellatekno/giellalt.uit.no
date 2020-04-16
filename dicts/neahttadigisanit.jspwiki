@@ -10,7 +10,7 @@ developmental work on Neahttadigisánit.
 
 !! Using the NDS JavaScript Plugin on other sites.
 
-__Neahttadigisánit__ provides an [in-browser plugin|http://sanit.oahpa.no/read/] 
+__Neahttadigisánit__ provides an [in-browser plugin|http://sanit.oahpa.no/read/]
 that allows you to look up words by clicking on them. It is available by
 bookmarklet, a bookmark that you click while on any site to include the
 functionality, but it is also simple to include on other sites. For an example,
@@ -40,7 +40,7 @@ how-to guide:
 !!Technical documentation
 
 * [Source file directory|https://gtsvn.uit.no/langtech/trunk/apps/dicts/nds/src/] (Each subfolder contains a __README.md__ file describing its content)
-* [Flask: The software used for NDS|nds/FlaskSoftware.html] 
+* [Flask: The software used for NDS|nds/FlaskSoftware.html]
 * [Developing in NDS and virtualenv|nds/NDSDeveloping.html]
 * [Troubleshooting|nds/NDSTroubleshooting.html]
 
@@ -58,7 +58,7 @@ The file {{app.config.yaml}} contains the following things, and is in
  * Paradigm generation: these are for the word detail views only, and these forms
    will be generated and presented to users.
  * Tag rewrites: Tags in FSTs or Lexicon files will be rewritten before being presented
-   to users. 
+   to users.
 
 * [Detailed explanation of the configuration files|nds/ConfigFiles.html]
 * [More explanations on the same files|nds/FilesForConfiguratingNDS.html]
@@ -66,25 +66,13 @@ The file {{app.config.yaml}} contains the following things, and is in
 
 !Restarting the service
 
-
-This documentation may be obsolete. See the ''Dont panic'' link for
-updated info on restart.
-
-(__TODO:__ ''Delete obsolete documentation'')
-
-On gtoahpa, there are definitions in /etc/init.d that allow you to restart, and
-start the service via the following commands:
+Log in to gtdict, switch to user neahtta, go to /home/neahtta/neahtta and issue:
 
 {{{
-
-    sudo service neahttadigisanit restart
-    sudo /etc/init.d/neahttadigisanit restart
-
+      fab DICT restart_service
 }}}
 
-This is a shortcut which restarts the process defined in neahttadigisanit.fcgi,
-so if any issues crop up, that is the place to start debugging. Alternatively,
-run the development server to check for errors with `python neahtta.py`.
+where DICT is the relevant name for the dictionary to restart.
 
 The service must be restarted each time lexica, FSTs, or the configuration file
 have been updated. Sometimes this may take a little while, as XML files need to
@@ -96,7 +84,5 @@ be reparsed, and data structures for autocomplete need to be prepared.
 
 !!Meetings
 
-* 2013: [4.2.|nds/referat/130204.html]  
-* 2016: [20.9.|nds/referat/160920.html]  
-
-
+* 2013: [4.2.|nds/referat/130204.html] 
+* 2016: [20.9.|nds/referat/160920.html] 
