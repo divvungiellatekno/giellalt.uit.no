@@ -29,11 +29,10 @@ Each language folder contains the following subfolders:
 * {{src}} (this is where the linguistic source files are)
 ** {{filters}} (language-specific filters)
 ** {{hyphenation}} (each phenomenon its folder)
-** {{morphology}} (see below)
+** {{fst}} (see below)
 ** {{orthography}} (capital letters, spellrelax)
 ** {{phonetics}} (for different scripts for phonetic transcription)
-** {{phonology}} (morphophonology: the twolc files)
-** {{syntax}} (see below)
+** {{cg3}} (see below)
 * {{test}} (see below)
 * {{tools}} (tools we build, both proofing tools and other tools)
 
@@ -52,13 +51,12 @@ und$ tree -d
 ├── src
 │   ├── filters
 │   ├── hyphenation
-│   ├── morphology
+│   ├── fst
 │   │   ├── affixes
 │   │   └── stems
 │   ├── orthography
 │   ├── phonetics
-│   ├── phonology
-│   ├── syntax
+│   ├── cg3
 │   ├── tagsets
 │   └── transcriptions
 ├── test
@@ -76,6 +74,7 @@ und$ tree -d
     ├── hyphernators
     ├── mt
     │   ├── apertium
+    │   └── cgbased
     │   └── filters
     ├── shellscripts
     ├── tokenisers
@@ -101,7 +100,7 @@ clitics.lexc
 compounding.lexc
 }}}
 
-! The morphology Makefile.am
+! The morphology Makefile.am in src/fst
 
 The makefile defines two, perhaps four variables (the two first must be defined)
 
@@ -128,12 +127,12 @@ spellrelax now will be language-specific.
 This folder contains files for conversion to IPA.
 
 
-!! The syntax folder under langs/$LANG/src/
+!! The cg3 folder under langs/$LANG/src/
 
 This folder contains {{disambiguation.cg3}}.
 
 The files {{functions.cg3, dependency.cg3}} for for sma/sme/smj are in
-{{giella-shared/smi/src/syntax/}}. Faroese also uses the common
+{{giella-shared/smi/src/cg3/}}. Faroese also uses the common
 {{dependency.cg3}}, but has its own {{functions.cg3}}.
 
 !! The test catalogue under langs/$LANG
