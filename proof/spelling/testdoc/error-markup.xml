@@ -29,7 +29,7 @@
                 resulting xml, the name of the element will be &lt;error&gt;.</p>
                 </section>
                 <section>
-                <title>Orthographic errors, non-words - wrong$(error classification|correct)</title>
+                <title>Orthographic errors, non-words - {wrong}${error classification|correct}</title>
                     <p>Traditional misspellings confined to single (error) strings, that is, errors that don't need an analysis
                     of the surrounding words to be detected and corrected. In the resulting xml, the element is named
                     &lt;errorort&gt;. These errors do always lead to non-words in the text, such that a speller should be able
@@ -39,15 +39,15 @@
                         <dd>
                             <dl>
                                 <dt>pos</dt>
-                                <dd> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem | resip | indef |
-                                pcle | prop | typo | mix | x )</dd>
+                                <dd> { noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem | resip | indef |
+                                pcle | prop | typo | mix | x }</dd>
                                 <dt>errtype</dt>
                                 <dd>The value of this attribute is language specific. For details, see below.</dd>
                             </dl>
                         </dd>
                     </dl>
                 <section>
-                    <title>Orthographic errors, real-words - wrong¢(error classification|correct), same as for non-words, see above</title>
+                    <title>Orthographic errors, real-words - {wrong}¢{error classification|correct}, same as for non-words, see above</title>
                     <p>Misspellings confined to single words, but stilll need an analysis of the surrounding words to be
                     detected and corrected. In the resulting xml, the element is named &lt;errorortreal&gt; These errors,
                     although orthographical in nature, lead to other. real words, such that a traditional speller is unable to
@@ -55,11 +55,11 @@
                     <dl>
                         <dt>Gammel annotering: Attributes:</dt>
                         <dd>
-                            <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem |
-                            resip | indef | pcle | prop | typo | x )<br/><strong>errtype</strong> ( a | á | conc | svow | vowc | vow
+                            <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem |
+                            resip | indef | pcle | prop | typo | x }<br/><strong>errtype</strong> { a | á | conc | svow | vowc | vow
                             | con | mono | diph | lime | meta | suf | cmp | ascii | typo | cap | min |
-                            mix)<br/>
-                            <strong>errcase</strong> ( gen )<br/><strong>corrcase</strong> ( nom )
+                            mix }<br/>
+                            <strong>errcase</strong> { gen }<br/><strong>corrcase</strong> { nom }
                         </dd>
                         <dt>Some explanations:</dt>
                         <dd>
@@ -85,7 +85,7 @@
                     </dl>
                 </section>
                 <section>
-                    <title>Morphosyntactic errors - (context wrong)£(pos,gf,cat,orig,errtype|context correct)</title>
+                    <title>Morphosyntactic errors - {context wrong}£{pos,gf,cat,orig,errtype|context correct}</title>
                     <p>Errors that require an analysis of (parts of) the sentence or surrounding words to be detected and
                     corrected. In the resulting xml, the element is named &lt;errormorphsyn&gt;.</p>
                     <dl>
@@ -94,14 +94,14 @@
                             <ul>
                                 <li>Brukt feil kasus:
                                     <ul>
-                                        <li>Enkel annotering: Mun liikon dien girjji£girjái . </li>
-                                        <li>Detaljert annotering:  Mun (liikon dien girjji)£(n,case,acc-ill|liikon dien girjái) .</li>
+                                        <li>Enkel annotering: Mun liikon dien {girjji}£{girjái}. </li>
+                                        <li>Detaljert annotering:  Mun {liikon dien girjji}£{n,case,acc-ill|liikon dien girjái}.</li>
                                     </ul>
                                 </li>
                                 <li>Analytisk bøyning istedenfor syntetisk bøyning:
                                     <ul>
-                                        <li>Enkel annotering: Dat lea (eanemus dábálaš)£dábálaččamus váriin ja duoddariin.</li>
-                                        <li>Detaljert annotering:  Dat lea (eanemus dábálaš)£(adj,superl,analyt-synt|dábálaččamus) váriin ja duoddariin.</li>
+                                        <li>Enkel annotering: Dat lea {eanemus dábálaš}£{dábálaččamus váriin ja duoddariin}.</li>
+                                        <li>Detaljert annotering:  Dat lea {eanemus dábálaš}£{adj,superl,analyt-synt|dábálaččamus} váriin ja duoddariin.</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -110,11 +110,11 @@
                     <dl>
                         <dt>Gammel annotering: Attributes:</dt>
                         <dd>
-                            <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop |pers | refl | dem | resip | indef | x )<br/>
-                            <strong>gf</strong> ( subj | obj | advl | fin | infin | spred | opred | pcle | interj | app | conj | pph | x | attr )<br/>
-                            <strong>cat</strong> ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | cmp | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br/>
-                            <strong>orig</strong> ( nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | imprt | pot | infinite | cond | conneg | ger | vgen | x )<br/>
-                            <strong>errtype</strong> ( agr | case | tense | mode | number | mix | x )
+                            <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop |pers | refl | dem | resip | indef | x }<br/>
+                            <strong>gf</strong> { subj | obj | advl | fin | infin | spred | opred | pcle | interj | app | conj | pph | x | attr }<br/>
+                            <strong>cat</strong> { nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | cmp | imprt | pot | infinite | cond | conneg | ger | vgen | x }<br/>
+                            <strong>orig</strong> { nomsg | nompl | gensg | genpl | illsg | illpl | locsg | locpl | comsg | compl | ess | sg1prt | sg2prt | sg3prt | du1prt | du2prt | du3prt | pl1prt | pl2prt | pl3prt | sg1prs | sg2prs | sg3prs | du1prs | du2prs | du3prs | pl1prs | pl2prs | pl3prs | attr | pred | word | comp | superl | imprt | pot | infinite | cond | conneg | ger | vgen | x }<br/>
+                            <strong>errtype</strong> { agr | case | tense | mode | number | mix | x }
                         </dd>
                         <dt>Some explanations:</dt>
                         <dd>
@@ -140,7 +140,7 @@
                      </dl>
                 </section>
                 <section>
-                    <title>Syntactic errors - redundantword¥0 or word¥(word missingword) or word¥(missingword word)</title>
+                    <title>Syntactic errors - {redundantword}¥{0} or {word}¥{word missingword} or {word}¥{missingword word}</title>
                     <p>Also these errors require a partial or full analysis of (parts of) the sentence or surrounding words to
                      be detected and corrected. In the resulting xml, the element is named &lt;errorsyn&gt;.</p>
                     <dl>
@@ -149,14 +149,14 @@
                             <ul>
                                 <li>Unødvending ord, enkel annotering:
                                     <ul>
-                                        <li>SNF doaibmá dál juo dego¥0 resursaguovddážin. </li>
-                                        <li>Gaup searvvai mielde¥0 guoimmuhanprográmmii</li>
+                                        <li>SNF doaibmá dál juo {dego}¥{0} resursaguovddážin. </li>
+                                        <li>Gaup searvvai {mielde}¥{0} guoimmuhanprográmmii.</li>
                                     </ul>
                                 </li>
                                 <li>Manglende ord, enkel annotering:
                                     <ul>
-                                        <li>Fápmudusskovvi galgá leat stivrras ovdal¥(ovdal go) riikačoahkkin álgá.</li>
-                                        <li>Dat lei vuosttaš girji sámiid birra máid sápmelaš čállán¥(lea čállán) .</li>
+                                        <li>Fápmudusskovvi galgá leat stivrras {ovdal}¥{ovdal go} riikačoahkkin álgá.</li>
+                                        <li>Dat lei vuosttaš girji sámiid birra máid sápmelaš {čállán}¥{lea čállán}.</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -165,8 +165,8 @@
                     <dl>
                         <dt>Gammel annotering: Attributes:</dt>
                         <dd>
-                            <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | det | resip | indef | punct | x )<br/>
-                            <strong>errtype</strong> ( wo | pph | redun | missing | cmp | x )
+                            <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | det | resip | indef | punct | x }<br/>
+                            <strong>errtype</strong> { wo | pph | redun | missing | cmp | x }
                         </dd>
                         <dt>Some explanations:</dt>
                         <dd>
@@ -181,7 +181,7 @@
                     </dl>
                 </section>
                 <section>
-                    <title>Lexical errors - wrong€(wrongPoS,correctPoS|correct)</title>
+                    <title>Lexical errors - {wrong}€{wrongPoS,correctPoS|correct}</title>
                      <p>Errors where the real error is only in the chosen word used, that is, another word would be better or
                      correct; to be able to detect and correct such errors, we need in addition to syntactic analysis also a
                      dictionary component with sufficiently rich syntactic and semantic markup of the entries, as well as
@@ -194,18 +194,18 @@
                             <ul>
                                 <li>Brukt adjektiv istedenfor adverb:
                                     <ul>
-                                        <li> ovddimus€(adv-adj|ovddimusat)</li>
+                                        <li> {ovddimus}€{adv-adj|ovddimusat}</li>
                                     </ul>
                                 </li>
                                 <li>Brukt feil verb:
                                     <ul>
-                                        <li>Go su ráđđehus eretgeassádii€(verb|geassádii) , juolludii Stuorradiggi Nygaardsvoldii gudnebálkká.</li>
+                                        <li>Go su ráđđehus {eretgeassádii}€{verb|geassádii}, juolludii Stuorradiggi Nygaardsvoldii gudnebálkká.</li>
                                     </ul>
                                 </li>
                                 <li>Brukt annet språk istedenfor samisk:
                                     <ul>
-                                        <li> og€(foreign|ja)</li>
-                                        <li> august€(foreign|borgemánnu)</li>
+                                        <li> {og}€{foreign|ja}</li>
+                                        <li> {august}€{foreign|borgemánnu}</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -214,9 +214,9 @@
                     <dl>
                         <dt>Gammel annotering: Attributes:</dt>
                         <dd>
-                            <strong>pos</strong> ( noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | resip | indef | x )<br/>
-                            <strong>orig</strong> ( noun | verb | adj | adv | num | interj | ppan | cc | cs | pcle | prop | pers | refl | dem | resip | indef | x )<br/>
-                            <strong>errtype</strong> ( der | w | foreign | x )
+                            <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | resip | indef | x }<br/>
+                            <strong>orig</strong> { noun | verb | adj | adv | num | interj | ppan | cc | cs | pcle | prop | pers | refl | dem | resip | indef | x }<br/>
+                            <strong>errtype</strong> { der | w | foreign | x }
                         </dd>
                         <dt>Some explanations:</dt>
                         <dd>
@@ -228,13 +228,13 @@
                     </dl>
                 </section>
                 <section>
-                    <title>Formatting errors, wrong‰(error classification|correct) </title>
+                    <title>Formatting errors, {wrong}‰{error classification|correct} </title>
                     <p>Formatting errors include punctuation, hyphens, citation marks and spacing.</p>
                     <dl>
                         <dt>Annotering: Attributes:</dt>
                         <dd>
-                            <strong>errtype</strong> ( space | notspace | hyph | nothyph | cit | punc
-                            | notpunc | <br/>
+                            <strong>errtype</strong> { space | notspace | hyph | nothyph | cit | punc
+                            | notpunc | }<br/>
                         </dd>
                         <dt>Some explanations:</dt>
                         <dd>
@@ -261,45 +261,45 @@
             <section>
                 <title>Markup EXAMPLES</title>
                 <p>Here are some examples of error/correction markup and how they are converted to xml:</p>
-                <source>nourra$(a,meta|nuorra)
+                <source>{nourra}${a,meta|nuorra}
 
 &lt;errorort pos="n" errtype="meta" corr="nuorra"&gt;nourra&lt;/errorort&gt; </source>
-                <source>(Nieiddat leat nuorra)£(a,spred,nompl,nomsg,agr|Nieiddat leat nuorat).
+                <source>{Nieiddat leat nuorra}£{a,spred,nompl,nomsg,agr|Nieiddat leat nuorat}.
 
 &lt;errormorphsyn cat="nompl" const="spred" correct="Nieiddat leat nuorat" errtype="agr" orig="nomsg" pos="adj"&gt;Nieiddat leat \
       &lt;errorort correct="nuorra" errtype="meta" pos="adj"&gt;nourra&lt;/errorort&gt;&lt;/errormorphsyn&gt;.</source>
-                <source>Mun (riŋgen nieidda lusa)¥(x,pph|riŋgen niidii) ihttin.
+                <source>Mun {riŋgen nieidda lusa}¥{x,pph|riŋgen niidii} ihttin.
 
 Mun &lt;errorsyn pos="x" errtype="pph" corr="riŋgen niidii"&gt;riŋgen nieidda lusa&lt;/errorsyn&gt; ihttin.</source>
-                <source>Son lei ovtta¥(num,redun| ) viesus.
+                <source>Son lei {ovtta}¥{num,redun| } viesus.
 
 Son lei &lt;errorsyn pos="num" errtype="redun" corr=""&gt;ovtta&lt;/errorsyn&gt; viesus.</source>
-                <source>Mun barggan nu dábálaš€(adv,adj,der|dábálaččat).
+                <source>Mun barggan nu {dábálaš}€{adv,adj,der|dábálaččat}.
 
 Mun barggan nu &lt;errorlex pos="adv" origpos="adj" errtype="der" corr="dábálaččat"&gt;dábálaš&lt;/errorlex&gt;.</source>
                 <p>Nesting:</p>
-                <source>(Nieiddat leat nourra$(adj,meta|nuorra))£(adj,spred,nompl,nomsg,agr|Nieiddat leat nuorat).
+                <source>{Nieiddat leat nourra}${adj,meta|nuorra}}£{adj,spred,nompl,nomsg,agr|Nieiddat leat nuorat}.
 
 &lt;errormorphsyn pos="adj" const="spred" cat="nompl" orig="nomsg" errtype="agr" corr="Nieiddat leat nuorat"&gt;
 Nieiddat leat &lt;errorort pos="adj" errtype="meta" corr="nuorra"&gt;nourra&lt;/errorort&gt;&lt;/errormorphsyn&gt;.</source>
-                <source>Mus leat (guokte ganddat§(n,á|gánddat))£(n,nump,gensg,nompl,case|guokte gándda).
+                <source>Mus leat {guokte ganddat§{n,á|gánddat}}£{n,nump,gensg,nompl,case|guokte gándda}.
 
 Mus leat &lt;errormorphsyn cat="gensg" const="nump" correct="guokte gándda" errtype="case" orig="nompl" pos="n"&gt;
 guokte &lt;error correct="gánddat"&gt;ganddat&lt;/error&gt;&lt;/errormorphsyn&gt;.</source>
                 <source>
-Mus (leat (okta máná)£(n,spred,nomsg,gensg,case|okta mánná))£(v,v,sg3prs,pl3prs,agr|lea okta mánná).
+Mus {leat {okta máná}£{n,spred,nomsg,gensg,case|okta mánná}}£{v,v,sg3prs,pl3prs,agr|lea okta mánná}.
 
 Mus &lt;errormorphsyn cat="sg3prs" const="v" correct="lea okta mánná" errtype="agr" orig="pl3prs" pos="v"&gt;
 leat &lt;errormorphsyn cat="nomsg" const="spred" correct="okta mánná" errtype="case" orig="gensg" pos="n"&gt;
 okta máná&lt;/errormorphsyn&gt;&lt;/errormorphsyn&gt;.</source>
                 <!--          <source>muitlat§muitalat
 {mun muitalat}£{mun muitalan}
-guossodimieddne€biebbmoieddne</source>
+{guossodimieddne}€{biebbmoieddne}</source>
 
           <p>And some more complex examples with nesting:</p>
 
-          <source>{mun (muitlat§muitalat)}£{mun muitalan}
-(guossodmieddne§guossodimieddne)€biebbmoieddne</source> -->
+          <source>{mun {muitlat§muitalat}}£{mun muitalan}
+{guossodmieddne}§guossodimieddne}€{biebbmoieddne}</source> -->
             </section>
             <section>
                 <title>Markup RULES</title>
@@ -316,7 +316,7 @@ guossodimieddne€biebbmoieddne</source>
                     </li>
                     <li>
                         <strong>$ is the spelling correction mark</strong> - use it directly after the wrongly spelled word,
-                        followed by the correction, as in error$correction. Example: <em>volvo$Volvo</em>. NB! there should be
+                        followed by the correction, as in {error}${correction}. Example: <em>{volvo}${Volvo}</em>. NB! there should be
                         <strong>NO space</strong> on either side of the correction mark $.
                     </li>
                     <li>
@@ -330,16 +330,16 @@ guossodimieddne€biebbmoieddne</source>
                     <li>
                         <strong>enclose multiword corrections in parenthesis</strong> - since the conversion to xml needs a way
                         of knowing where the correction ends, we need to tell it if it is not at the end of the first word after the
-                        correction symbol. Example: <em>Norggabealde§(Norgga bealde)</em>
+                        correction symbol. Example: <em>{Norggabealde}§{Norgga bealde}</em>
                     </li>
                     <li>
                         <strong>separate punctuation that is not part of the correction</strong> with a space, or use
-                        parentheses around the correction. Example: "<em>buolasta§(buolašta).</em>" or "<em>buolasta§buolašta
+                        parentheses around the correction. Example: "<em>{buolasta}§{buolašta}.</em>" or "<em>{buolasta}§{buolašta}
                         .</em>" (the example text is the text within the quotes, <strong>including</strong> the punctuation).
                     </li>
                     <li>
                         <strong>remember the case</strong> - the correction should have the same case pattern as the spelling
-                        error. Example: <em>Mannjá§Maŋŋá</em>, <strong>NOT</strong> <em>Mannjá§maŋŋá</em> (note the case of the
+                        error. Example: <em>{Mannjá}§{Maŋŋá}</em>, <strong>NOT</strong> <em>{Mannjá}§{maŋŋá}</em> (note the case of the
                         initial letter). The exception is of course when the error is missing capitalisation, as in names spelled
                         lower case, etc.
                     </li>
