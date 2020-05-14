@@ -27,6 +27,6 @@ rm -rf $GTFREE/correct-no-gs/converted
 convert2xml --goldstandard $GTFREE/orig/sme/realword
 cd $GTLANGS/lang-sme/devtools/
 $GTCORE/devtools/gramcheck_tester2.py $SOMEWHERE/se.zcheck $GTFREE/correct-no-gs/converted/sme
-$GTCORE/devtools/gramcheck_comparator.py --filtererror errorlex errormorphsyn
+$GTCORE/devtools/gramcheck_comparator.py correct-no-gs --filtererror errorlex errormorphsyn
 }}}
 ** bidjat čoahkkinreferahtta gosanu -- $GTHOME/techdoc/proof/gramcheck/meetings/
