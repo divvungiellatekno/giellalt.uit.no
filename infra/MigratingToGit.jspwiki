@@ -1,5 +1,5 @@
 
-This document tells you how to migrate your giella language files from svn to the new repository at github (the migration happened 13.5.2020). We recommend you continue to work with the files using the usual svn commands. If you are more familiar with git, scroll down to the section __Git users__ below. Otherwisw, 
+This document tells you how to migrate your giella language files from svn to the new repository at github (the migration happened 13.5.2020). We recommend you continue to work with the files using the usual __svn commands__. If you are more familiar with git, scroll down to the section __Git users__ below. 
 
 
 
@@ -15,12 +15,13 @@ The new check-out URL is specific to each language, and follows this pattern:
 {{svn co https://github.com/giellalt/lang-XXX.git/trunk lang-XXX}}
 # After you have checked out, cd into lang-XXX, and run: 
 {{./autogen.sh}}
+
 This will automatically check out giella-shared and giella-core parallel to lang-XXX. You need to cd into each of these directories, and run ./autogen.sh && ./configure there. 
 
 
-When done, cd back to lang-XX, and run:
+When done, cd back to lang-XXX, and run:
 
-./configure ...
+{{./configure}}
 
 Then continue as normal.
 
@@ -39,25 +40,23 @@ In your home catalogue you have a bash settings file .profile (= standard for us
 Open it (with see or your favourite editor):
 {{see ~/.profile}}
 
-Then add the following lines to the file:
+Then add the following lines to the file (assuming here that you called the folder where you put lang-XXX {{lang}}, change it into whatever you called it:
 
 {{{
-export GIELLA_CORE="$HOME/git/giellalt/giella-core"
-export GIELLA_SHARED="$HOME/git/giellalt/giella-shared"
-export GTLANGS="$HOME/git/giellalt"
+export GTLANGS="$HOME/lang"
 }}}
 
 
 !!Troubleshooting
 
-If you by accident checked out the lang-XXX __before__ you deleted the $GTHOME/giella-* catalogues, the system will be guided to the wrong files (these will not be updated). In that case, the system has created symlinks of this type (standing in {{lang-XXX}} you see it by typing {{ls -l ../}}:
+If you by accident checked out the lang-XXX __before__ you deleted the old $GTHOME/giella-* catalogues, the system will be guided to the wrong files (which will not be updated). In that case, the system has created symlinks of this type (standing in {{lang-XXX}} you see it by typing {{ls -l ../}}:
 
 {{{
 giella-core --> /Path/to/your/GTHOME/giella-core
 giella-shared --> /Path/to/your/GTHOME/giella-shared
 }}}
 
-In that case, delete these symlinks, delete the giella- folders in $GTHOME, and check them out manually next to the lang-XXX folder:
+In that case, delete these symlinks, delete the giella- folders in $GTHOME, and check them out manually next to the lang-XXX folder (i.e. in the {{lang}} folder:
 
 {{{
 svn co https://github.com/giellalt/giella-core.git/trunk giella-core
