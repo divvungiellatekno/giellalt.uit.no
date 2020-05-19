@@ -1,0 +1,70 @@
+19.05.2020
+13:00-15:15
+
+Børre, Linda
+
+grammatihkkadivvunprográmma evalueren (realword errors/orth)
+
+
+* Ritva fiillat leat dál freecorpusis ($GTFREE/orig/sme/realword)
+* analysa doaibmá dál jus hacke dan
+* se.zcheck sáhttá maid hacket nu ahte doaibmá nu ahte evalueren lea vejolaš
+
+
+se.zcheck - mo ráhkadit manualalaččat:
+
+se.zcheck fiilla sisdoallu:
+
+{{{
+unzip -l /tmp/se.zcheck
+Archive: /tmp/se.zcheck
+Length Date Time Name
+--------- ---------- ----- ----
+110236404 2020-05-08 08:41 tokeniser-gramcheck-gt-desc.pmhfst
+425906 2020-05-08 08:41 valency.bin
+106842 2020-05-08 08:41 mwe-dis.bin
+1382939 2020-05-08 08:41 grc-disambiguator.bin
+673797 2020-05-08 08:41 grammarchecker-release.bin
+46224867 2020-05-08 08:42 acceptor.default.hfst
+38096986 2020-05-08 08:41 errmodel.default.hfst
+45347 2020-05-08 08:41 spellchecker.bin
+29914247 2020-05-08 08:41 generator-gramcheck-gt-norm.hfstol
+113010 2020-05-08 08:41 errors.xml
+6485 2020-05-08 07:46 pipespec.xml
+12114 2020-05-08 08:41 analyser-gt-whitespace.hfst
+38167 2020-05-08 08:41 analyser-gt-errorwhitespace.hfst
+1382899 2020-05-08 08:41 after-speller-disambiguator.bin
+--------- -------
+228660010 14 files
+}}}
+
+* juohke háve go rievdadan cg-fiillaid (valency, mwe-dis, grc-disambiguator, grammarchecker-release) de ferten rahkadit bin-fiillaid go čuožžu lang-sma-máhpas:
+** cg-comp tools/tokenisers/mwe-dis.cg3 ~/Desktop/gramdivvun/mwe-dis.bin
+** cg-comp tools/grammarcheckers/grammarchecker-release.cg3 ~/Desktop/gramdivvun/grammarchecker-release.bin
+** cg-comp tools/grammarcheckers/grc-disambiguator.cg3 ~/Desktop/gramdivvun/grc-disambiguator.bin
+** cg-comp src/cg3/valency.cg3 ~/Desktop/gramdivvun/valency.bin
+* cd ~/Desktop/gramdivvun
+** /Users/lwi001/Desktop/gramdivvun:s - rahkadit ođđa se.zcheck --- mo: vuodjit zip ../se.zcheck *
+
+1. boasttocealkka
+2. vuodjit prográmma mii merke feaillaid -- status quo
+3. evalueret = buohtastahttit -- real-
+a) errormarkup -- galggalii leat gárvisin, muhto gii diehtá
+b) prográmma-output
+
+
+TODO:
+* evaluerenprográmma: oažžut real- fárrui (Børre)
+    ** hástalusat? - eará feaillaid (FPat)
+    ** real sáhttá merkejuvvot typon nai (grammarcheckerprográmmas)
+* dokumentašuvdna:
+** mo geavahit Børre prográmma (nu ahte Linda sáhttá vuodjit dán) 
+{{{
+rm -rf $GTFREE/correct-no-gs/converted # sihkku boares konverterejuvvon fiillaid
+svn up $GTFREE/orig/sme/ # viežžá ođasmahttojuvvon fiillaid
+convert2xml --goldstandard $GTFREE/orig/sme/grammar-realword # konvertere fiillaid
+cd $GTFREE
+$GTCORE/devtools/gramcheck_tester2.py ~/Desktop/se.zcheck $GTFREE/correct-no-gs/converted/sme # vuodjá grammarcheckera, ráhkada .pickle-fiilla
+$GTCORE/devtools/gramcheck_comparator.py ~/Desktop/se.zcheck correct-no-gs --filtererror errorlex errormorphsyn # lohká .pickle-fiilla, ráhkada raportta
+}}}
+** bidjat čoahkkinreferahtta gosanu -- $GTHOME/techdoc/proof/gramcheck/meetings/
