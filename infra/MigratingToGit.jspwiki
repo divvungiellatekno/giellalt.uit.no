@@ -1,4 +1,4 @@
-
+A
 This document tells you how to migrate your giella language files from svn to the new repository at github (the migration happened 13.5.2020). 
 
 
@@ -113,6 +113,35 @@ When committing and pushing, your username and password is your GitHub username 
 Any graphical git glient will do.
 
 If you want to use the command line, you should look into __gut__ (documentation forthcoming).
+
+Gut should be installed as follows: First you install ''rust'', then ''gut''.
+
+Rust can be installed following [this instruction|https://www.rust-lang.org/learn/get-started].
+
+If you have an old dysfunctional rust, as happened to this writer, do: {{sudo port uninstall rust}},
+then go on and install rust as shown in the link above.
+
+Then open a new shell, or do {{. .profile}} to tell your computer that you have rust.
+
+
+Then install gut from [github.com/divvun/gut|https://github.com/divvun/gut].
+
+In a suitable folder, e.g. the {{lang}} folder, do (and note the final dot at the last command):
+
+{{{
+git clone https://github.com/divvun/gut.git
+cd gut
+cargo install --path .
+}}}
+
+Thereafter you need to set up gut:
+
+{{{
+gut init
+MEIR KJEM HER
+}}}
+
+In order to use ''gut'', have a lok at [the gut usage page|https://github.com/divvun/gut/blob/master/USAGE.md].
 
 !Troubleshooting
 
