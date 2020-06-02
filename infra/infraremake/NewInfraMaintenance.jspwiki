@@ -172,3 +172,14 @@ See the following sites for useful documentation and help:
 * use AC_PROG etc for defining programs and tools;
 * use the special MKDIR variable (check the docu for the full name)
 * don't require more than really necessary - let the rest be optional, this will allow most stuff to be built on more systems
+
+!!! Makefile debugging
+
+Install [make2graph|https://github.com/lindenb/makefile2graph]
+
+```
+make -Bnd sma-mobile.zhfst | make2graph | dot -Tpng -o sma-mobile-dag.png
+```
+
+Result: a visual representation of the dependency graph, making it easy to spot wrong dependency chains, and
+where the problem most likely is.
