@@ -1,0 +1,79 @@
+03.06.2020
+10:20-10:50
+
+Børre, Linda
+
+grammatihkkadivvunprográmma evalueren (realword errors/orth)
+
+
+findings for today:
+how do we count different markings of errors (by dc vs. corpus)=
+example:
+
+this is interesting: errorortreal -> typo
+
+Ráđđehus gohččui Guolástus- ja riddodepartemeantta fuolahit ahte Stuorradikki ávžžuhusmearrádus čuovvoluvvo.  <- $GTFREE/correct-no-gs/converted/sme/grammar-realword/real-nsgill-asgnom.correct.txt.xml
+~~~~~~
+	dc errors not found in correct
+		['čuovvoluvvo', 96, 107, 'typo', 'Ii leat sátnelisttus', ['čuovvuluvvo'], 'Čállinmeattáhus'] 
+~~~~~~
+	correct and dc align, and correction found in dc
+		errorortreal -> typo >>>> is this counted as a true positive? -- yes but only in Overall precision etc. -- not in grammarchecker_errors_errorortreal precision (are we sure?)
+		gohččui -> gohčui, position 1
+		
+this is weird:
+{{{
+errorortreal -> real-Ess-PrfPrc
+errorortreal -> real-Derh-Inf
+errorortreal -> real-ImprtPl2-Inf
+errorortreal -> real-ImprtPl2-PrsPl3
+}}}
+Buot real- meattáhusat gártet seamma luohkkái go 
+
+---> Grammatihkkadárkksteaddji evttoha «lohkko», manuála divvumuš lea «lohku» (correct detection, false correction)
+{{{
+==========
+Das oaivvildan ahte go eaiggát geassá gávpečorraga, de han dat lohkku juo dan dáfus ahte ožžot " njuovvanlogga " dahje loguid vuvdon bohccuid olis.  <- $GTFREE/correct-no-gs/converted/sme/grammar-realword/real-imprtdu1-derpassprssg3.correct.txt.xml
+~~~~~~
+	dc errors not found in correct
+		['"', 95, 96, 'punct-aistton-left', 'Boasttuaisttonmearkkat', ['”'], 'Aisttonmearkkat']
+		['"', 111, 112, 'punct-aistton-right', 'Boasttuaisttonmearkkat', ['”'], 'Aisttonmearkkat']
+~~~~~~
+	correct and dc align, correction not among suggestions
+		errorortreal -> real-ImprtDu1-NSgNom
+		lohkku -> lohkko -> [lohku]
+}}}
+
+$GTFREE/report.correct-no-gs.txt
+
+TODO:
+* mannat $GTFREE/report.correct-no-gs.txt čađa (Linda)
+* vuodjit ođđa analysa (Linda)
+{{{
+rm -rf $GTFREE/correct-no-gs/converted # sihkku boares konverterejuvvon fiillaid
+svn up $GTFREE/orig/sme/ # viežžá ođasmahttojuvvon fiillaid
+convert2xml --goldstandard $GTFREE/orig/sme/grammar-realword # konvertere fiillaid
+cd $GTFREE
+$GTCORE/devtools/gramcheck_tester2.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck $GTFREE/correct-no-gs/converted/sme # vuodjá grammarcheckera, ráhkada .pickle-fiilla
+$GTCORE/devtools/gramcheck_comparator.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck correct-no-gs --filtererror errorlex errormorphsyn # lohká .pickle-fiilla, ráhkada raportta
+}}}
+
+cp $GTFREE/report.correct-no-gs.txt $GTFREE/report.correct-no-gs.txt.backup-by-linda-to-save-own-comments-because-boerre-suggested-so-but-this-name-does-not-need-to-be-that-long-haha-at-least-we-are-having-a-good-laugh
+
+svn revert $GTFREE/report.correct-no-gs.txt
+
+Mo gávdnat orig fiillaid (ja fikset dábálaš čállinmeattáhusaid), barga nu:
+$GTFREE/correct-no-gs/converted/sme/grammar-realword/real-nsgill-asgnom.correct.txt.xml
+>
+$GTFREE/orig/sme/grammar-realword/real-nsgill-asgnom.correct.txt
+
+
+
+%Precision TP/TP+(((804/804+10=0.98771498771 - 98.88\%
+%Recall TP/TP+FN=804/804+189=0.80966767371 - 80.97\%
+%Accuracy TP+TN/TP+TN+FP+FN=804+1013/804+1013+189+10=
+%1817/2016=0.90128968254 - 90.13\%
+
+boahtte čoahkkin:
+10.06. dii. 10:00
+12.06. dii. 10:00
