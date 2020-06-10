@@ -1,0 +1,57 @@
+GramDivvun-evaluerenčoahkkin
+
+10.06.2020
+10:15-
+
+Børre, Linda
+
+doing:
+FileMerge: comparing report.correct-no-gs-20200609.txt and      report.correct-no-gs.txt
+
+problems:
+duoddjái is fixed on commandline, but not in the evaluation (Ávnnas válljema rájes gitta gárvves duoddjái.)
+old se.zcheck -≥ doing make in lang-sme should be the cure for this
+
+ls -l $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck
+-rw-r--r--  1 lwi001  1907360568  54323268  5 Jun 12:44 /Users/lwi001/lang-sme/tools/grammarcheckers/se.zcheck
+
+todo:
+* check the date of the current se.zcheck file: ls -l $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck
+* lang-sme: run make
+* check if there is a new se.zcheck file: ls -l $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck
+* run again:
+{{{
+rm -rf $GTFREE/correct-no-gs/converted # sihkku boares konverterejuvvon fiillaid
+svn up $GTFREE/orig/sme/ # viežžá ođasmahttojuvvon fiillaid
+convert2xml --goldstandard $GTFREE/orig/sme/grammar-realword # konvertere fiillaid
+cd $GTFREE
+$GTCORE/devtools/gramcheck_tester2.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck $GTFREE/correct-no-gs/converted/sme # vuodjá grammarcheckera, ráhkada .pickle-fiilla
+$GTCORE/devtools/gramcheck_comparator.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck correct-no-gs --filtererror errorlex errormorphsyn # lohká .pickle-fiilla, ráhkada raportta
+}}}
+
+
+
+check:
+Son diđii ahte oktii ollii Johani Nousuniemi ealahat ahkkái, ja dalle lei sus vejolašvuohta beassat dan doibmii. --- ealahat
+* gonagasreivve gohččui čuohppat dimbariid Várjjaga ođđa girkui ja Čáhcesullo ođđa ámtamánnigárdimii Njávdánvuvddiin {Niemi 1983: 333}. -- typo
+* Iđđes gohččui áddjá báhpa ja su eamida boahtit guossái.
+* Dát dovdomearkkat leat maid boazodoalu muohtakarakteriseremis, mas omd. geavahit dajaldagaid assás geardni dan saddjái go dárkilis mihtidemiin, ahte lea omd. 10 cm geardni {Eira et al., 2011, sisa sáddejuvvon}.  
+* Árbbolaččat- teakstaduojis lea teaksta hábmejuvvon nu ahte muhtimin persovnna perspektiiva ihtá goalmmátpersovdna-muitaleaddjin, dan saddjái go ahte mun-muitaleaddji govvida persovnna jurdagiid.  <- /Users/lwi001/freecorpus/correct-no-gs/converted/sme/grammar-realword/real-nsgill-asgnom.correct.txt.xml
+* Duogáš vuohkkái, ahte addit jahkásaš dieđáhusa Stuorradiggái Sámedikki doaimma birra, ja prinsihpalaš dieđáhusa Norgga sámepolitihka birra juohke stuorradiggeáigodagas, lea Sámi vuoigatvuođalávdegotti vuosttas oassečielggadus NAČ 1984:18 "Sámiid riektidili birra".  <- /Users/lwi001/freecorpus/correct-no-gs/converted/sme/grammar-realword/real-nsgill-asgnom.correct.txt.xml --- riektedili
+* 30-vuođas daddjo, ahte maŋŋá go ekonomiija sirdašuvai iešbirgejumis márkanekonomiijii, de nissonolbmuid barggut eai atnon šat seamma árvosažžan boazodoalus go almmáiolbmuid barggut.  <- /Users/lwi001/freecorpus/correct-no-gs/converted/sme/grammar-realword/real-imprtsg1-derpassprfprc.correct.txt.xml
+~~~~~~ seamma
+
+* Giellaplánen juohkku lingvistihkas árbevirolaččat golbma dássái: stáhtus-, korpus- ja Robert L. Coopera (1989) modeallas maiddái giellaoahpahusplánemii (acquisititon planning).  <- /Users/lwi001/freecorpus/correct-no-gs/converted/sme/grammar-realword/real-imprtdu1-derpassprssg3.correct.txt.xml (other language)
+~~~~~~
+
+
+Thank you:
+B.G.
+for providing the grammarchecker evaluator (a program for the automatic evaluation),
+technical support and fruitful methodological and linguistic discussions.
+
+The grammarchecker evaluator consists of 2 scripts for evaluating the current grammarchecker (or part of it) and counting false/true positives/negatives and providing statistics for precision/recall, both general and ordered by error type.
+$GTCORE/devtools/gramcheck_tester2.py # makes the raw data
+$GTCORE/devtools/gramcheck_comparator.py # makes a text based report from the raw data
+
+
