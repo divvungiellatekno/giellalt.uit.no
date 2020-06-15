@@ -1,0 +1,55 @@
+GramDivvun-evaluerenčoahkkin
+
+15.06.2020
+10:00-11:15
+13:30-15:10
+
+Børre, Linda
+
+done:
+* got a new se.zcheck
+* Linda ran a new evaluation and updated the report file
+* much better results: overall precision went up 41.8%->75.8%, recall went up: 23.4%->44.4%
+* discussed conventions with Ritva
+* we made sure that Precision and Recall involve the correct numbers
+* Børre updated devtools/gramcheck_comparator.py
+* Børre explained calculation of number in the script to me
+* we discussed addition of correction evaluation to see if we get the right fixes independent of the label
+
+Čilgehus:
+* "_not_markedup" meattáhusat maid grammarchecker raportere muhto eai leat merkejuvvon
+* label -- meattáhusnamma
+
+
+
+
+error correction
+
+Correction evaluation numbers could be calculated using these definitions:
+GramDivvun found, not in markup or in markup but wrongly corrected by GramDivvun --- false positive
+   * correct detection, wrong correction
+   * not in markup
+GramDivvun did not find or found but did not correct -- false negative
+   * correct detection, no correction
+   * in markup, not found by grammarchecker
+GramDivvun found and corrected as in markup --- true positive
+   * correct detection, correct correction
+
+
+
+todo:
+* keep fixing other mistakes than real- in the source files
+* lang-sme: run make
+* check if there is a new se.zcheck file: ls -l $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck
+* run again:
+{{{
+rm -rf $GTFREE/correct-no-gs/converted # sihkku boares konverterejuvvon fiillaid
+svn up $GTFREE/orig/sme/ # viežžá ođasmahttojuvvon fiillaid
+convert2xml --goldstandard $GTFREE/orig/sme/grammar-realword # konvertere fiillaid
+cd $GTFREE
+$GTCORE/devtools/gramcheck_tester2.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck $GTFREE/correct-no-gs/converted/sme # vuodjá grammarcheckera, ráhkada .pickle-fiilla
+$GTCORE/devtools/gramcheck_comparator.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck correct-no-gs --filtererror errorlex errormorphsyn # lohká .pickle-fiilla, ráhkada raportta
+}}}
+
+
+
