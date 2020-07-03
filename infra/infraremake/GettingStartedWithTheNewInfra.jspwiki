@@ -5,81 +5,18 @@ The required steps for setting up the computer and installing the
 auxiliary programs needed are described in our
 [Getting Started guide|../GettingStarted.html].
 
-!!!Check out the source code
+!!!Check out the source code for language modelling
 
-
-If you only do linguistic analysis for a limited number of languages you will
-do fine by only checking out the core modules, and then each language
-separately. It will save you a lot of download time and disk space.
-
-
-!!Check out the core modules
-
-There are two required core modules:
-; giella-core: core scripts and technical data required for the build system
-; giella-shared: resources shared among all languages or language groups
-
-To check out the core modules and prepare them, open a terminal window.
-Then make a separate folder for giella language technology. Call it 
-e.g. {{giella}} or {{main}} or whatever you want. Then go into the folder 
-(we here assume you called it ''giella'' and check out the two core
-modules:
-
-{{{
-mkdir giella # only once
-cd giella
-svn co https://gtsvn.uit.no/langtech/trunk/giella-core
-svn co https://gtsvn.uit.no/langtech/trunk/giella-shared
-cd giella-core
-./autogen.sh
-./configure
-make
-cd ../giella-shared
-./autogen.sh
-./configure
-make
-}}}
-
-To make the core modules accessible, add the following line to your {{.profile}} or
-{{.bashrc}} file (found in your home directory):
-
-{{{
-export GIELLA_CORE=$HOME/giella/giella-core/dir
-export GIELLA_SHARED=$HOME/giella/giella-shared/dir
-}}}
-
-We here assumed that you made a folder {{giella}} in your home directory, 
-if you used another name or placed the folder somewhere else you should adjust the 
-paths in the above commands accordingly.  Then 	open a new terminal window. Now you are done.
-
-''If you do this on a server'': For each module, after you did {{make}} above, do: 
-''sudo make install''.
-
-That is it. __NB!__ This method requires that you redo the installation every
-time the core modules are updated, although should not happen too often.
-
-!!Check out the languages you want
-
-Then, for each language you want to work with, make a language folder next to the 
-{{giella-core}} and {{giella-shared}} modules, and check out the language(s) you want
-(the --username option is not needed unless you want to contribute with your work. 
-See below if you do), by giving these commands:
-
-{{{
-cd $HOME/giella # or wherever you put it
-mkdir langs # only once
-cd langs
-svn co https://gtsvn.uit.no/langtech/trunk/langs/LANGCODE --username <your_username>
-}}}
-
-where {{LANGCODE}} is the ISO 639-3 three-letter code for the language. You
-can see a list of the languages we currently have by looking at our
-[langs|https://gtsvn.uit.no/langtech/trunk/langs/], [startup-langs|https://gtsvn.uit.no/langtech/trunk/startup-langs/] and [experiument-langs|https://gtsvn.uit.no/langtech/trunk/experiment-langs/] folders. The language behind the codes you find on the __Find a language__ box on [this page|https://en.wikipedia.org/wiki/ISO_639-3] (or see [this list|../../lang/index.html]).
-
-When you have checked out the language(s) you want to work with, then you
-are ready to ''actually getting started with your language''.
-
-
+# First, decide what language(s) you are interested in working on, from 
+  [the following list|https://giellalt.uit.no/lang/index.html]
+# The alphabetic list on the page gives the ISO code of all the languages
+# Then go to the page of the source code: [github.com/giellalt|https://github.com/giellalt].
+  Let us say you are interested in Eastern Mari. The ISO code is '''mhr''', 
+  and the address is [github.com/giellalt/lang-mhr|https://github.com/giellalt/lang-mhr]. 
+  Exchange ''mhr'' with the code of the language you want.
+# The GitHub page will show an INSTALLATION file with instructions. You may also
+  see [this page|https://giellalt.uit.no/infra/MigratingToGit.html] for more
+  specific instructions (start at point 2).
 
 !!!Getting started with your language
 
