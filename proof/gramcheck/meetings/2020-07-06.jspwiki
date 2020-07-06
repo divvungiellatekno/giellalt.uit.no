@@ -1,0 +1,79 @@
+Gramchk Evalueren
+
+Linda, Børre
+13:15-14:50
+
+* python script váttisvuođat dalle go lea goallosáni oassi (orru leamen fst váttisvuohta)
+* terminála analysa lea riekta, muhto se.zcheck gávdná typo
+* mo ráhkadit ođđa meetings máhppa
+* refereret realword error-korpusii artihkkaliin
+
+This cannot be both fn and fp...
+
+Koarra lávlui ja vihaheapmi sáhtii álggahuvvot.  <- /Users/lwi001/freecorpus/correct-no-gs/converted/sme/grammar-realword/real-nomagill-prtsg3.correct.txt.xml
+~~~~~~
+	GramDivvun did not find manually marked up error (fn2)
+		{'correct': 'lávllui', 'type': 'errorortreal', 'start': 7, 'error': 'lávlui', 'end': 13}
+~~~~~~
+	GramDivvun found error which is not manually marked up (fp2)
+		[' lávlui', 6, 13, 'real-NomAgIll-PrtSg3', 'Sátni šaddá eará go oaivvilduvvo', ['lávllui'], 'Čállinmeattáhus dán oktavuođas']
+
+===> tp		
+		
+same here:
+==========
+Raporta buktá ovdan daid guovddášgáibádusaid, maid sámi searvvuš ja sámi konfereansat leat buktán ovdan julggaštusaineaset ja sámedikkiid iežaset barggus.  <- /Users/lwi001/freecorpus/correct-no-gs/converted/sme/grammar-realword/real-plnompxsg2-plnom.correct.txt.xml
+~~~~~~
+	GramDivvun did not find manually marked up error (fn2)
+		{'correct': 'konfereanssat', 'type': 'errorortreal', 'start': 73, 'error': 'konfereansat', 'end': 85}
+~~~~~~
+	GramDivvun found error which is not manually marked up (fp2)
+		[' konfereansat', 72, 85, 'real-PlNomPxSg2-PlNom', 'Sátni šaddá eará go oaivvilduvvo', ['konfereanssat'], 'Čállinmeattáhus dán oktavuođas']
+
+==========
+
+
+what is counted? &typo or Err/Orth/ Err/Lex???
+
+Muhto lea álo eahpesihkkarvuohta das vuosihitgo variašuvnnat giellarievdama, dahje gulletgo dihto ahkái.  <- /Users/lwi001/freecorpus/correct-no-gs/converted/sme/grammar-realword/real-nsgill-asgnom.correct.txt.xml
+~~~~~~
+	GramDivvun found error which is not manually marked up (fp2)
+		['álo', 10, 13, 'typo', 'Ii leat sátnelisttus', [], 'Čállinmeattáhus'] >>> fixed
+
+"<álo>"
+        "állu" N Sem/Plant Sg Gen Allegro <W:0.0> @>N MAP:22511:r227
+        "álo" Adv <W:0.0> @<ADVL MAP:22995
+        "álo" v1 A Sem/Dummytag Attr Err/Lex <W:0.0> @>N MAP:22059:r86 &typo
+
+
+echo "Okta ovdamearka lea go Beaskáđas oažžu 1645 ruvnno jus návdi goddá njiŋŋálasa, muhto jus dat seamma njiŋŋálas vuoddju, de oažžu 3960 ruvnno."|divvun-checker -a $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck
+
+ls -l $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck
+
+1907360568 54339389 30 Jun 18:28 lang-sme/tools/grammarcheckers/se.zcheck
+
+
+
+rahkadit gramcheck/meetings 2 subkatalogat - MO?
+
+mkdir <my-new-directory>
+svn mv <the-files-i-want-to-move> <my-new-directory>/
+svn ci -m"Moved files to bla-bla"
+
+Jus nubbi gohččun ii doaimma, de čális
+svn add <my-new-directory> ja vuoje boahtte gohččumiid.
+
+
+
+Min realword error korpus, mo dasa galgá refereret:
+omd -> https://gtsvn.uit.no/freecorpus/orig/sme/grammar-realword
+
+TODO:
+* LINDA:
+** talk to TOMMI about the " lávlui" problem and see if he can resolve it
+** recompile lang-sme, and see which se.zcheck I get and run the sentence with njiŋŋálas
+
+* BØRRE:
+** in case TOMMI can't fix it, change " lávlui" to "lávlui"
+** fix links on website (to keyboard installer files)
+
