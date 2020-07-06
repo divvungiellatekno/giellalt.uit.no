@@ -1,18 +1,24 @@
 26.05.2020
-10:30-11:20
+10:30-12:00
 
 Børre, Linda, Ritva, Duommá
 
 mo sáhttá hacket make nu ahte grammatihkkadivvunprográmma doaibmá?
 
-
+lang-sme-máhpas:
 * geahča makkár configure dus lea: 
     head config.log
 * bija dakkár configure jus ii lean ovdalgihtii: 
     ./configure --with-hfst --without-xfst --without-forrest --enable-grammarchecker
+
+lang-sme/tools/grammarcheckers-máhppii
 * sirde daid fiillaid iežat dihtorii:
     acceptor.default.hfst.gz
     errmodel.default.hfst.gz
+    JA (soaitá):
+    generator-gramcheck-gt-norm.hfstol.gz
+    errors.xml
+    analyser-gt-errorwhitespace.hfst
 * páhkke daid olggos
 * bija daid lang-sme/tools/grammarcheckers mahpii
 * čális lang-sme:as ja geahča makkár dáhton lea:
@@ -20,4 +26,5 @@ mo sáhttá hacket make nu ahte grammatihkkadivvunprográmma doaibmá?
 * čális lang-sme:as
     touch tools/grammarcheckers/acceptor.default.hfst
     touch tools/grammarcheckers/errmodel.default.hfst
-
+* teste:
+    echo "Bures" | tools/grammarcheckers/modes/trace-smegramrelease-dev.mode
