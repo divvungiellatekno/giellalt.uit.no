@@ -7,15 +7,45 @@ Note that this documentation is relevant when you want to participate in '''buil
 !!!System setup
 
 * You need a __text editor__ - we recommend
-   [SEE|http://www.codingmonkeys.de/subethaedit/index.html] - then you can
-   collaborate with us over the net straight from your hard disk (only the
-   things you explicitly share or invite peope to).
+   [SubEthaEdit|https://apps.apple.com/us/app/subethaedit/id728530824] - then
+   you can collaborate with us over the net straight from your hard disk (only the
+   things you explicitly share or invite peope to). Try [see://divvun.no] and see if
+   you find someone to code or write with!
 * Basic programming tools (in this order):
 ** [Xcode|InstallingXCode.html]
-** [MacPorts|http://www.macports.org]
+** [MacPorts|http://www.macports.org] (to install other tools, see below; if you
+   already use HomeBrew, install the tools below using that one instead)
 
 Then you need a number of tools for the build chain.
 On the Mac, you can get them by running the following commands:
+
+!! Catalina and newer (macOS 10.15+)
+
+Catalina comes with Python 3.7 built-in, and also Perl 5.18. By default, that should
+be good enough, and the commands below work with the pre-installed versions of
+both. If you require newer versions of Perl or Python, you probably know what you
+need to do.
+
+! Minimal install
+
+{{{
+sudo port install autoconf automake libtool wget gawk saxon
+
+pip3 install --user PyYAML pexpect pyth pytidylib
+
+cpan install Text::Brew
+}}}
+
+! Additional installs if working with corpus files
+
+{{{
+sudo port install py37-beautifulsoup4 py37-lxml py37-pysvn py37-html5lib \
+py27-feedparser p5-xml-twig antiword wv libxslt poppler tidy p5-xml-libxml
+
+cpan install XML::LibXML
+}}}
+
+!! Pre Catalina (macOS 10.14.* and older):
 
 {{{
 sudo port install autoconf automake libtool python37 py37-pip wget bison cmake gawk saxon \
@@ -55,20 +85,22 @@ Now go back to to [Getting Started page|GettingStarted.html] for the next step t
 There is also [a page giving the overview for linguistic download|anonymous-svn.html] in order to download and compile the analysers. TODO (write these two together).
 
 
-!!Additional software
+!!!Additional software
 
 Developing special tools in addition to the core linguistic analysers can require 
 additional software. Here's some additional software
 you might need depending on what you need to do.
 
 
-!Sorfware for proofing development
+!!Software for proofing development
 
 If you want to work with proofing tools, see
 ''Proofing tools to install'' [here|install-overview.html]
 
 
-!If you want to have documentation pages locally on your own machine, you need Forrest:
+!! Documentation web server locally
+
+If you want to have documentation pages locally on your own machine, you need Forrest:
 
 * [Forrest|http://forrest.apache.org] to validate the documentation comments.
   You get it by following [these instructions|forrest-howto.html].
