@@ -1,0 +1,106 @@
+!!!Talesynteseprosjektet
+
+Tilstede:
+* Sjur Nørstebø Moshagen
+* Joseph Fjellgren
+* Tomi Pieski
+* Børre Gaup, 
+* Berit Anne Bals Baal (via iChat)
+* Lisa Monica Aslaksen.
+
+Sted: Alta
+
+!!!Talesyntese
+Oversett tekst til lydskrift. Lag lyd ut fra lydskriften.
+
+!!! Oppsummering over arbeid hittil
+* Opptak av mannlig og kvinnelig stemme - Ferdigstilt
+* Mer enn 2,5 timer tale pr stemme, og mer enn nok setninger
+* Sendt prøver til Helsingfors Universitet, de har godkjent kvaliteten
+* Jobbet med fonologiske regler for å lage IPA-transkripsjon. Fungererer stort 
+  sett bra, men litt problemer fordi man er avhengig av grammatisk informasjon, 
+  ikke bare ortografisk informasjon, som vi har nå.
+* Vi har allerede konvertering fra tall til tekst, nemlig dato, klokkeslett og enkelttall.
+
+!!!Videre jobb
+* Rette tekstene, slik at de samsvarer med det som faktisk ble lest opp
+* Dele lydmaterialet, slik at det er en fil per setning.
+* Dele tekstmaterialet tilsvarende, med samme filnavn som for lydfilene
+* gjøre ferdig preprosessering:
+** Klargjøre akronymer og forkortelser for lydskrift
+** konvertere dato og andre talluttrykk til tekst
+* transkribere tekst til IPA med preprosesseringsmodulene
+* Rette på transkripsjon der det er nødvendig
+
+En underleverandør syr dette sammen til en pakke som kan lastes ned og brukes
+på Windows, Mac og Linux. Dette er en jobb som skal lyses ut.
+
+Sjur har begynt å lage en kravspesifikasjon.
+
+Prosjektleder sørger for at tidsfrister og lignende holdes.
+
+Prosjektet har blitt finansiert av restpenger fra Divvun og har blitt jobbet med
+ved siden av det andre Divvun har holdt på med.
+
+Tidsfrist for ferdigstilling: slutten av 2012
+
+* Mye arbeid med kravspesifikasjon og anbudsrunder gjenstår.
+* Få en avtale med en leverandør til sommeren.
+* Berit Annes del blir ferdig i løpet av i år.
+* Finne underleverandør og få alt på plass vil ta mest tid.
+
+!!!Preprosessering
+
+Det meste er enkelt, og allerede på plass. Problemområder som krever mer avanserte løsninger er:
+* disambiguering av lengdeopposisjoner som ikke kan avledes direkte av ortografien.
+  Eksempel: ''besset'' - {{/bes:et/}} vs {{/be:s:et/}}, som er to ulike verb. Et
+  annet eksempel er skillet mellom G3 og G2 for visse typer stadieveksling, der
+  lengdeforskjellen ikke uttrykkes i ortografien.
+* identifisering av kasus ved talluttrykk der kasus ikke er uttrykt i ortografien
+
+Det finnes to alternativ:
+
+!!Regelbasert preprosessering
+
+Bruke constraint grammar for å velge rett lengde på vokal:
+
+* Transduser tar vanlig tekst inn, og lager morfologisk analyse
+* analysen gis til constraint grammar for å disambiguere innkommende tekst.
+* Resultatet herfra sendes inn i en ny transduser som lager IPA.
+
+Fordeler:
+* vi får korrekt håndtering av lengde i alle situasjoner
+* vi kan bruke CG til å legge til mer informasjon som gir bedre prosodi
+
+Ulemper:
+* et mer komplekst system
+* avstanden mellom ortografiske inndata og IPA-utdata er stor, vi risikerer at
+  vi genererer IPA som ikke motsvarer den teksten som ble sendt inn (f.eks. ved
+  tvetydig generering av samme lemma+tagg-sekvens)
+* håndteringen av ukjente ord kan bli mer problematisk
+
+!!Statistisk preprosessering
+
+* all konvertering til IPA skjer i en transduser, inkl. konvertering fra tall til tekst
+* ved flertydige konverteringer disambiguerer man med en statistisk modell
+* modellen krever at den trenes på et manuelt disambiguert korpus
+
+Fordeler:
+* relativt enkelt oppsett
+* det er en enkel sti fra ortografiske inndata til IPA-tekst, som vil gjøre systemet
+  mer robust med tanke på skrivefeil og ukjente ord
+
+Ulemper:
+* den statistiske modellen vil av og til ta feil, og vi vil få feilsyntese (det
+  er vanskelig å vurdere hvor stort det problemet er, det må testes)
+* det finnes ikke rom for å bygge ut syntesen med mer avansert modulering av
+  prosodi bygd på en grammatisk analyse av teksten
+
+!!!Tekniske krav
+
+* eksisterende ressurser skal brukes så langt som mulig
+* mest mulig åpen kildekode
+* HFST som transduser-teknologi
+* kun binære bibliotek i runtime-pakken - ikke Perl eller andre skript-språk
+** ... som betyr at segmentering, preprosessering og inndeling i setninger må
+   gjøres direkte i fst-en, ev. i en etterfølgende prosess

@@ -1,0 +1,506 @@
+\documentclass[a4paper,english]{article}
+\usepackage{babel}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+
+\usepackage{hyperref}
+\usepackage{graphics}
+
+\begin{document}
+
+\title{Preproject for integrating speech synthesis in the work with Sámi language technology}
+
+%\author{Trond Trosterud\\Faculty of the humanities\\University of Tromsø}
+
+\maketitle
+
+\tableofcontents
+
+
+% disp
+% summary
+% plans/visions for real project
+% - better prosody than possible with existing systems
+% - correct handling of G2/G3 distinction
+% - Martti, you mentioned something about integration?
+% content of preproject
+%% Prereauisites (what do we have)
+%% Split according to phases: (what shall we do)
+%% Kickoff meeting
+
+%% An abstract with the quantity example would be nice here.
+
+
+\section{Principal objective and sub-goals}
+%Note: This section is from the e-application, and may be removed.
+
+The goal of the pre-project is to bring together the co-operating parts, the text-based Sámi language technology in Tromsø with the language technology researchers in Helsinki. The project will clarify what is needed to produce synthetic speech for North and Lule Sámi.  
+
+A further goal is to integrate both the grammatical analysers made in Tromsø and the new synthetic speech in a larger net of language technology applications for the Sámi languages.  This will be done by implementing a demonstration version of a Sámi text-to-speech synthesiser utilising technologies from both Tromsø and Helsinki. Central here is both the open-source transducer compiler initiative at the University of Helsinki, as well as the language technology industry. Another partner in the cooperation is the Norwegian Sámi Parliament.
+
+The result will provide a fundament for applying for further grants, both on the national, Nordic and EU level.
+
+\section{Project summary} %Note: This section is from the e-application, and may be removed.
+
+The overall goals of the pre-project are: 
+
+\begin{itemize}
+\item Create a common platform for cooperation with the speech milieu in Helsinki
+\item Co-ordinate with the efforts made at the Sámi parliament and at Odin, the  Norwegian Department publisher
+\item Investigate further possibilities for using the speech synthesiser in different applications
+ \begin{itemize}
+  \item Speech synthesis in pedagogical programs
+  \item Speech synthesis integrated with electronic dictionaries
+  \item Speech synthesis for the visually impaired and other handicapped groups?
+ \end{itemize}
+\item Find relevant co-operation partners and financing sources
+\item Write applications for a larger project, on national, Nordic and EU level 
+\end{itemize}
+
+As part of meeting the above goals, we will also have to do the following:
+
+\begin{itemize}
+\item to make an inventory for a Sámi speech synthesis project
+\item to make very precise estimates for what it will take to make a synthetic voice
+\item to make a working demo version (proof of concept) within the pre-project; this will better ensure further financing.  It will also make the estimation of the final project easier and more realistic.
+\item to investigate how a Sámi speech synthesiser may be integrated into other programs, in grammar-based pedagogical programs, dictionaries and spellers, in addition to its basic use as a standalone for reading web pages etc.
+\end{itemize}
+
+The language technology milieu in Tromsø now needs international co-operation within new sub-fields, on a broader basis. This pre-project is an attempt at creating that.
+
+
+\section{Rationale = plans/visions for real project}
+
+The Sámi language community faces, like any other language community, the challenges of language technology. A language not keeping up with the development in automatic information processing will not be able to function as an administrative language. The work done with Sámi language technology is thus of the utmost importance to the language ecologic situation in the Nordic countries. The sole centre of Sámi language technology research has so far been the University of Tromsø.  With a basis in Tromsø, a group on approximately eight persons work on basic tools: grammar-based text analysis and wordform generation, and on proofing tools. There is no other work going on within language technology in Tromsø.
+
+% her bør det stå korfor UiT skal prioritere dette, som f.eks:
+The Sámi language technology project at the university of Tromsø has been text-based till now. With this initiative, we take a major step towards a broader perspective, and a more integrated language technology. In Tromsø, we now face a situation where we want to integrate our basic tools with other applications, such as speech recognition and synthesis, information retrieval and machine translation. In order to do that, we need to extend our international co-operation. The proposed project is an attempt at doing that. We go to Finland for several reasons. First, language technology research in Finland is in the international forefront. Second, Finnish is both genetically and typologically so close to Sámi that the challenges facing the workers are in many cases the same. Academic research on Finnish text-to-speech has paid much attention to prosody (sentence intonation, focus patterns, etc.).  A good prosodic component is dependent upon our parser, and establishing a good co-operation with them will thus make a good starting point for broadening the perspective of our work.
+
+Speech synthesis is a natural next step for many reasons. One is that there is a demand for speech synthesis in the language community. The Sámi parliament wants a voice component in their spell-checker, and the leading Sámi publisher Dávvi Girji plans to record a whole dictionary. The Tromsø milieu already participates in international projects for making pedagogical programs. The teaching of Sámi in public schools is or will be net-based more often than is the case for e.g. Norwegian, since classes are small and qualified teachers not always available. In short, many different instances are looking for speech solutions, and it is important to give this work a solid linguistic foundation.
+
+An important part of the rationale for language technology is the needs of people with various disabilities. Such applications more often than not involve a combination of lexical, grammatical and speech-based resources. In order to be able to utilize the text-based tools made in Tromsø, there is a need for including speech as well. The Norwegian governmental website \url{http://odin.dep.no} wants to offer versions of their Sámi web pages for the visually impaired, and also Rikstrygdeverket would like to provide such services. In addition, the large group of adult Sámi speakers who never learned to write their own language. With the proofing tools project now being done, combined with speech technology as described in this document, these speakers will have completely new possibilities to use their own language.
+
+The project itself contains two parts: To translate text to a textual phonetic representation, and to turn this representation into sound. In order to get a good phonetic representation, we need a good analysis of Sámi phonology. We aim at announcing a ph.d. student or postdoc fellow to do the theoretical groundwork needed for this. The work will also form the basis of a much needed phonology part of a Sámi reference grammar. Contrary to paper-based generative grammar, this framework provides instant control of the proposed rule set (errouneous rules will be revealed by errouneous output). 
+
+Conversely, on the sound generation side, the challenge is partly to make bi- and triphones for a language with a complex phonological structure, where quantity is central, and partly to integrate intonation and focussing patterns into the resulting voice.
+
+
+
+\section{Prerequisites for the work}
+
+\subsection{Text-based resources as basis for a text-to-speech (TTS) synthesiser}
+
+At the University of Tromsø, we have during the last six years developed parsers and disambiguators for North and Lule Sámi (The grammatical analyser may be inspected at the site \url{http://giellatekno.uit.no}). The grammatical parsers are written as grammar-based bottom-up analysers. The morphological analysers are based upon finite-state transducers, modeling the grammar as a float scheme of root and affix lexica, and with a separate transducer for dealing with the numerous non-segmental morphophonological processes of Sámi. The disambiguator makes it possible to pick the correct morphological and syntactic analysis, based upon context, and it is based upon constraint grammar. Large parts of the root lexicon is tagged for phonetical properties overshadowed in the official orthography. When the analyser is able to identify a given wordform as an instance of a particular root, then these phonetical properties will be accessible to the TTS system as well.
+
+The development of the analysers is part of ongoing work at the University of Tromsø. At present, we analyse unknown text with a recall (percentage of correct analyses retained) of 98 \% - 99 \%, and a precision (percentage of unambigous analyses) of 80 \% - 94 \%, dependent upon text genre. These numbers are for fine-grained analysis, the numbers for simple part of speech disambiguation are far better. The main problem for the analyser is the low lexical recognition rate, for new genres, it may drop as low as 85 \%. Although bad for the grammatical analyser, this need not be that crucial to a synthetic speech component, as there will always be the fallback of reading the letter string as such. The parser is continuously being improved, though, and the recognition rate is expected to grow substantially during the next two years. Note also that since we use a bottom-up approach, the analyser is so robust that a failure of recognizing a given word form more often than not has no negative effect upon the analysis of the remaining sentence.
+% ok as state-of-the-art?
+
+
+\subsection{From text to sound}
+
+
+High quality text-to-speech synthesis (TTS) requires at least the following components to work:
+
+\begin{enumerate}
+ \item pre-processor for tokenizing different input strings into units that can be further analyzed into words and punctution, 
+ \item a syntactic tagger for marking words with their part-of-speech classes, 
+ \item prosody models for controlling speech melody and rhythm using the tagged information, 
+ \item a signal generation component to render the eventual speech signals.  
+\end{enumerate} 
+ 
+Much work concerning the preprocessing of raw text and the linguistic analysis has already been done in Tromsø, as shown above.  The Department of General Linguistics at the University of Helsinki has been developing a speech synthesizer for Finnish, a language closely related to Sámi.  The project is especially concentrated on producing highest quality prosody which is in turn dependent on high level linguistic analysis.  At the moment the project is using linguistic technology similar to the Norwegian project.  The closeness of the two languages and the technology used makes the adaptation of a new language a straightforward process.
+
+Given that the grammatical analyser is able to analyse the sentence, it makes it possible to build a more advanced TTS application than can be done on the basis of a letter string taken from a wordform lexicon alone.
+
+A letter string like the Norwegian \textit{for} is ambiguous, it is pronounced differently as a past tense verb form and as a preposition. Having a grammatical analyser makes it possible to pick the correct form. In Sámi, focus particles like \textit{-ge} cause the words they attach to to get an F0 rise (a rise in the base frequency), this may be captured only if we are able to distinguish a clitic \textit{-ge} like \textit{Osloge} ("also Oslo") from the (non-clitic)  \textit{-ge} in \textit{Leif Åge}.
+
+There are several reasons for seeking international cooperation with milieus in Finland. Compared to the Norwegian TTS research teams, the Finnish ones have experiences with a language similar to the Sámi ones.
+
+Both languages have phonological quantity i.e. distinctive length of phones, and this quantitive opposition plays both a lexical and a grammatical role, whereas quantity basically serves a lexical function only in Norwegian. Both languages have fixed word-initial stress, and for both, prominence of words is signalled by pitch ( a rise in the fundamental frequency). 
+
+Word order as a signal of prominence (emphasis) is less important in Finnish and Sámi as in Germanic, here, the discourse clitics play a central role in grammaticalising emphasis. What is needed for a good TTS is an analyser capable of finding discourse clitics, and subsequently a prosody component that can adjust the relevant features accordingly.
+
+Both Finnish and Sámi are inflectional languages, with adverbial cases instead of prepositions and particles. Thus, a strategy of deaccenting function words and accenting lexical words does not work well. Accentuating every lexical word in a sentence like \textit{i DAG vil eg DRA til SKOlen} yields an acceptable result, but a comparative strategy will not work for Finnish or Sámi, where every single word will get accentuated. The parallel Finnish sentence \textit{TÄnään HAluaisin LÄHteä KOUluun} is overaccentuated, whereas \textit{TÄnään haluaisin lähteä KOUluun} would be better. In order to distinguish between the different lexical words, we need a syntactic analysis. Moreover, with literally hundreds of wordforms representing each lexeme, it is impossible to find a Finnish or Sámi verb or noun without access to a morphological component. Also, the abbreviation and number expansion component is dependent upon a syntactical analysis of the context in which the numeral or abbreviation occurs, since they are inflected for case.
+
+The bottom line is that any text-to-speech system will benefit from getting as much information about the input text as possible, and the information needed for Sámi is much of the same type as what is needed for Finnish. 
+
+%%% F0 discussion moved to the end.
+
+The proposed co-operation will build upon a currently developed Concept-to-Speech/Text-to-Speech project at the University of Helsinki.  Within the project the group has been working on synthesis infrastructure which enables the development of new, very high quality voices in an efficient manner.  The infrastructure consists of a set of tools, principal of which is a Python and XML based application which collects the information from various sources (such as the syntactic analyzer) and works as the principal frontend of the synthesizer. 
+
+The synthesis technique used by the University of Helsinki group is based on Hidden Markov Models (HMM's).  Compared to traditional synthesis techniques the HMM based synthesis (HTS) is both extremely flexible and robust; while the modern unit selection synthesizers may sound very natural, they tend to fail when confronted with new and rare material, such as proper names.  The HTS framework, on the other hand, handles unseen cases smoothly.  Moreover it allows for effective prosody control, which in turn renders the linguistic structure of the utterances clearly audible.  This is especially important in noisy, real world, situations. Additionally, the technique of training a voice is data driven and not much explicit phonetic knowledge of the target language is needed and attention can be paid to higher level problems pertaining to prosody and linguistic structure. A HMM synthesizer recently won an international challenge \url{http://www.festvox.org/blizzard/blizzard2005.html}, where different corpus-based synthesizer techniques were compared, further emphasising the feasibilty of our approach. 
+
+In summary the University of Tromsø will offer the following existing resources to the project:
+%% the items below should be spelled out for the layman to understand.
+
+\begin{itemize}
+\item  tokeniser (words must be recognised as such, and numbers and abbreviations must be spelled out)
+\item  tagger (wordforms must get an adequate grammatical analysis)
+\item  lexicon (a set of stems, including information on morphological behaviour, and on deviant phonology)
+\end{itemize}
+
+The Finnish speech synthesis project is documented in the following articles \cite{specom05} and \cite{HLT}.  The existing resources provided by the University of Helsinki team include the following:
+
+\begin{enumerate}
+ \item An integrated system with a language independent front-end and a HTS-based signal generation module.
+ \item Methods for tagging speech data for statistical modelling.  These include automatic segmental alignment and automatic prosodic tagging. 
+\end{enumerate}
+
+It should be noted here that the linguistic frontend proposed can be related to several actual speech synthesisers.  The output can be in a standard form (such as VoiceXML) that most synthesisers understand.  This gives any synthesiser the ability to produce the features defined in the standard. These include such features as, for instance, emphasis and speaking rate which can be used to make the messages clearer.
+
+The linguistic analysis of the current version of the Finnish synthesiser (which can be heard at \url{http://www.ling.helsinki.fi/cts/}, in function from Dec. 5 2005) is based on a similar constraint grammar based technology (functional dependency grammar from Connexor) as is being developed in Tromsø.  The high level syntactic analysis provided by the Tromsø group enables the mapping of linguistic structures to prosodic features on a level which increases the intelligibility of the synthetic speech significantly.  Nevertheless, the integration of the different technologies is not a trivial task and it requires profound knowledge of linguistics and phonetics in general as well as good programming skills.  The proposed co-operation meets these requirements well.  
+
+
+\section{The concrete phases of the preproject}
+
+% Kutte ned på denne delen???
+% Snakke med Curt.
+
+The pre-project will have a kick-off meeting, and a meeting late in the process. Between these two events, the first part of the period will concentrate upon a mapping of resources, making a demo version (including the identification of problematic spots) and looking at possible extensions. The final phase of the project will concentrate upon writing applications.
+
+\subsection{Kick-off meeting, resource inventory}
+
+The main axis in this pre-project is the cooperation between the language technology centre in Tromsø and the speech technology centre in Helsinki. The pre-project will arrange a kick-off meeting, in the form of a seminar, where the goal is to establish a common platform for the work and to map the existing resources more thoroughly.
+
+\subsection{Making a demo version of the analyser}
+
+In order to write good applications, we need as precise estimates for the forthcoming workload as possible. In order to get that, it will be necessary to go into some of the crucial decision processes beforehand. An important part of the pre-project will thus be to make a demo version of the analyser. The reason for this is twofold:
+
+\begin{itemize}
+\item It will give a good picture of status quo, and of where more basic research is needed
+\item It will put us in a good position for writing applications at the end of the pre-project period
+\end{itemize}
+
+This will involve among other things the following decisions:
+
+\begin{itemize}
+\item {Deciding a dialect basis for the synthetic speech and to investigate whether more than one dialect can be modelled}
+%%% ?? These could be changed into more relevant points
+\item {Deciding upon system for transcription}
+\item {Investigating the phoneme set}
+\end{itemize}
+
+%% this also looks like repetition
+A central goal of this project pivots around the prosody of Sámi language.  Since Sámi and Finnish are very similar in this respect, the work done on Finnish prosody at the University of Helsinki will be a substantial advantage to the project.  That is, with respect to prosody the project will commence at an advanced level and the prospects are looking very good both technologically and scientifically. The prosody of Sámi is not well described (but see \cite{RIEPMO84}), so for this topic the project will give new insight.
+
+The work in Helsinki will consist of the following tasks:
+
+\begin{itemize}
+\item Speech corpus design and speaker selection and recording 
+\item Integration of the information in the Sámi lexicon, morphological transducer and syntactic analyser into the TTS frontend
+\item Speech data preparation (analysis, segmental alignment, prosodic tagging)
+\item Training a synthetic voice and building of the demo system 
+\end{itemize}
+
+%Smaller meetings: - <5 partner meetings (potential partners, that is) (not in budget, therefore removed)
+
+
+\subsection{Writing the application}
+
+An important part of the pre-project is deciding upon sources for financing. Sámi projects lend themselves to several project types, both national (Norway, Sweden, Finland), Nordic and EU. Within this pre-project, we will consider the major research funds in Norway, Finland, the Nordic countries and EU, as well as funding for more specific projects from with the Sámi Parliaments, ministries of Interior, Social welfare or Health, aiming at making specific applications for disabled people or for pedagogical purposes.
+
+Another important task is to investigate the possibility for more partners. One possible extension is to include more languages. A natural choice would be Estonian, an EU language with much similarities with Sámi (both are at the extreme fusional end of the Uralic morphological continuum, both have a 3-way consonant gradation opposition, and none of them have good speech synthesis applications).
+
+Making concrete applications could also alleviate the need for commercial actors, e.g. in the form of the universities doing the basic research, and commercial players making applications financed by e.g. governmental bodies with interest in working solutions rather than in basic research. Such a scenario is a very likely outcome of the project proper, but it might be premature to spend resources on it at the pre-project stage.
+
+A speech synthesiser is an interesting object in itself, and a source for more insight into the language via the construction process. For practical applications, the synthesiser must be integrated into other programs in order to be of any use. The preproject will try to find possible commercial partners to integrate the synthesiser with a set of operating systems and end user applications. Such end user applications includes but is not limited to the following:
+
+\begin{itemize}
+\item pedagogical programs
+\item language learning
+\item special needs programs:
+\begin{itemize}
+\item  dyslectic writing aid (read aloud while writing)
+\item  for blind people
+\item  others
+\end{itemize}
+\end{itemize}
+
+One partner already interested is the Norwegian Sámi parliament. They have a spell checker project which needs a synthetic voice, and will, as a central institution when it comes to Sámi matters, be a natural partner when it comes to applying for money for the main project.
+
+\subsection{The second meeting}
+
+Late in the pre-project period, but well before a major application deadline, we will have a second meeting in order to sum up the experiences and explicitly discuss open issues. A major topic at this meeting will be evaluating the demo version and drawing conclusions from its strengths and weaknesses. The main topic will be project planning and subsequent application writing.
+
+
+\section{Summary}
+
+The milestones of the project are as follows:
+
+\begin{itemize}
+\item M1 +0:  start (January 1st, 2007)
+\item M2 +1:  kick-off, start of partner search
+\item M3 +3:  application writing starts (we will probably write applications to several instances
+\item M4 +9:  final conference, demo
+\item M5 +12: applications sent, pre-project over
+\end{itemize}
+
+We apply for 150 000,- NOK from NFR for the preproject "Sámi Text-To-Speech".
+
+% •	Maksimalt støttebeløp vil være 150 000,- og støtten er begrenset til ett år og  maksimalt 50 % av påløpte kostnader. 
+% •	Medfinansiering fra UiTø skal være minst 50 % og må dekkes innafor fakultetenes ordinære budsjetter.
+
+\bibliography{smespeech}
+\bibliographystyle{alpha}
+
+\end{document}
+
+
+
+%% Discusiions
+
+% Trond / *Antti f0 discussion
+% to get an F0 rise -> to receive a strong accent? on parenthesis ok. maybe we should list somewhere the similarities
+%of Finnish and sámi in this respect. Finnish also signals prominence with f0 only. In english accent is often realized with
+%duration or not? 
+
+% -han and -pa and such are good predictors of prominence in Finnish. We don't make distinction, because f0 rise has no other
+% function on Finnish and probably Sámi. 'emphasized' is another useful word here, meaning strongly prominent in our hazy 
+%terminology. Strong point :) But apart from the terminology, do you understand my point about the similiraties of FInnish and 
+%sámi in this respect? right. ok
+
+% Yes. The basic sentence intonation is intital F0 peak and then a steady slope, but it is possible to mark later 
+% cconstituent by F0 rise. Then there is double marking:
+% Focus cliticon AND F0 rise on the constituent it attaches to. (luckily for us). This holds for Sámi and Finnish.
+% Although -kin is written as a separate word in Sámi and hgomophonous with "kuin". That's for our disambiguator to solve.
+% just a second, have an other question in from the side
+
+% predicators of prominence? or of F0 rise?
+% Ok. What I thought of ´was the theme-rheme structure, and I interpreted your "prominence" as a semantic/pragmatic
+% Well, "emphasis" is semantics, if I ever saw such a term. What I mean is:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% In order to find out how intonation influences upon information structure, these two should be kept conceptually apart. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ops, ops. "signals accent with f0 only". So, what do you mean by "accent"? In my lg, "accent" <=> F0 rise. (or, I avoid the word).
+% hmm, is it true, by the way, what about -hAn ?
+% I always avoided English inonation studies, as they always mess up exactly this issue (Accent is something important and/or an F0 rise, says Cruttenden)
+% well, in my view of intonation F0 shape is what counts. But I admit that it isn't exactly what a layperson wants to see.
+% The Cruttenden problem is that he messes up intonation and information, when he defines one in term of the other, he is not able to study their interaction.
+% I think dB increase is somthing else
+
+
+
+
+% Trond / Martti discussion
+
+
+
+%% Sjur and Antti: I leave part of the discussion between Martti and me here, as it is illuminating (at least some of it), some of it could be integrated as well, perhaps. Trond.
+% there is a possibility here that the integration requires more work (the hidden bomb)
+%% Integration could in the long run be a problem; should we acknowledge it here as one of the things to inspect for the larger project?
+%% yes, we need substantial content for the real project, as follows:
+% preproject: finding the hidden bombs
+% real problem: disarming them (to stay in the metaphor)
+
+% a problem could be how to access the fine-grained vowel info:
+% a = baseform + grammartags käsi+N+Sg+Ade liike+N+Sg+Nom+Clt
+% b = stem with fine-grained vowels, suffixes and diacritial marks, archiphonemes käTE$llA 
+% c = surface grapheme string kädellä 
+% a:b = morphological transducer, b:c = kimmo-type twol transducer, composition gives a:c, and b is gone.
+% what are the phonetic consequences here? I can't see any big problems as long as the orthography is fairly consistent.
+% but it isn't always so. Say, we have short i and long i. In the lexicon (level b) we mark long i-s as i2. Our transducer sme.fst is an a:c transducer, whereas our sme.save is a:b and twol-sme.bin is b:c (lexicon-free). gt/sme/bin/
+% if we want to access the b level, we could of course go c -> a with isme.fst (the inverted a:c transducer)
+% and thereafter a:b with the sme.save.
+% But will it fly? Can we do such trixing and still keep both you and runtime requirements happy?
+% This is where our demo comes in.
+%% You are right. It is for the demo to reveal the real problems.  But I think we looked at
+%% it and it's a matter of keeping the quantity info in the synth input.
+% so, how do we express this in an honest, modest and convincing way...
+%% Good question? How about an example?
+%% 17759 in the noun list, e1 is a short, allegro e.
+%% well, we will not solve this tonight
+%% I see. But you do have the information available, so it should not be a problem.
+%% perhaps I am just overly pessimistic.
+%% You shouldn't be. :-) It seems that you have all the "phonemes" defined already.  For us
+%% it is just a mapping from text to speech ;-)
+%% graphemes, I should say. Well, I have underlying j, at least (i when written postvocally is a consonant)
+%% As long as they stand for something consistent in the spoken language, we are home free!
+
+%% nom:acc: juolgi : juolggi phonet: juo.lø.gi : jüölg.gi (üö adhoc for "shorter diphthong")
+%% this løg sequence is l'g on the b level.
+%% and differs from loan word lg as in "algebra". 
+%% But you do have that information available, do you? That is, we don't have to guess.
+%% yes, always: the string "a:b continuationlexicon ;" = "juol0gi:juol'gi GOAHTI ;"
+%% So we always get a different but consistent string from your analysis.  As long as the modeled 
+%% speaker is doing the same, we can do the mapping.
+%% well, here comes a bomb: We have precomposed compounds:
+%% áige#gir0ji:áige#gir'ji GOAHTI ;
+%% this first part is here ájøge, cf. the basic noun
+%% ái0gi:áj'gi VIVVA ;
+%% the transducer gives both:
+%% áigegirji
+%% áigegirji       áigi+N+Sg+Nom#girji+N+Sg+Nom (see the invisible "0" in áigi?)
+%% áigegirji       áige#girji+N+Sg+Nom
+%% but well, we could use version 158 (the first version), I guess.
+%% perhaps everything is fine, perhaps not.
+%% Doesn't the parser handle this problem?
+%% yes, but we have a preprocessor that choses the lexical compounds over the derived ones (known as Lex Karlsson within disambiguation). And for syntax, the relevant part is the inflection of girji, not of áigi (in the compound, that is).
+%% this little discussion tells me that we will need our 300 000 NOK to get to know each other.
+%% this meant as a very positive comment indeed...
+%% Indeed! We will have to adapt your tools for speech purposes and in the long run it will require
+%% a fair amount of work, but the end result from my point of view will be an excellent TTS system.
+%% We've joking about making the world's best system for a very small language ;-)
+%% Guess how many lgs have their keyboards prewired, out of the box, on all three major OS, wherever you buy your
+%% computer... (appr. 70, and Sámi is one of them...)
+%% Yes! Let's make Sámi an example for the rest of the world. :-)
+%% here we talk business...
+
+%% Minä ostan maitoakin: (the point here is the focus particle)
+%% "<Mun>"
+%%         "mun" Pron Pers Sg1 Nom @SUBJ
+%% "<oastán>"
+%%         "oastit" V TV PrfPrc @PrcN>
+%% "<mielkkige>"
+%%         "mielki" N Sg Acc Foc @OBJ
+%% "<.>"
+%% Is there a study showing how they (foc. particles) behave phonetically?  My suspicion is that
+%% it's there so that no phonetic means have to be used.
+%% there is a thesis on prosody from 1973, but it wasn't that good.
+%% I think we will get at least some distance by simply assuming the Finnish pattern, and then adjust as
+%% we hear the result...
+%% In any case, this is a basic research question and it's good to have them as well.  After all, 
+%% we are not doing mere development work.  I have a special scientific interest in the prosody
+%% and especially the speech melody of Fenno-Ugric languages.  Should we mention these interests in
+%% the application, as well?
+%% yes, we should (if it were a normal application we definitely should, here we also get money in order to
+%5 get to know each other, and I hope it doesn't harm giving the impression we know each other too well.
+%% Anyway, there is more than enough to learn and adjust for 300000, so every common interest to begin with
+%% is positive.)
+%% Thus: modeling a language is a good, perhaps the best, way to get to know it.
+%% if we go for heavy prosodic work we will reseive attention from the optimality theory gang here at the 
+%% university. I don't know whether you see this as a good or a bad thing.
+%% (we have a centre of excellency here: [http://uit.no/castl] [http://uit.no/castl/Phonology/4], the research dept see it as a good thing 
+%% to cooperate with them. As a syntactician and morphologist, I cannot, they are chomskyan minimalists, 
+%% but perhaps you could, within prosody. Curt Rice's work on stress is very good, in my opinion.
+%% Patrik Bye, for example, wrote his phD on cns grad in Sámi and Estonian from an OT point of view.
+%% We should probably mention them in the application, as the university think it is good to cooperate with the good ones.
+%% They are probably in the Autosegmental Metrical camp regarding intonation.  I am tending to be
+%% in the "functional camp" with the Chinese, tones, not pitch accents.
+%% Yes, I would think so, and they are definitely not in any functional camp, that I can tell you.
+%% Proposals for cooperation with them should be on low-level things, agreeing upon facts, such things.
+%% Are they doing experimental work? It seems a bit theoretical to me.
+%% No, I don't think they are, never seen any, anyway. But I don't know their work well enough.
+%% Does it, then, hurt us if we don't mention them?
+%% No, I don't think so. I could always say positive things about them if asked. Or whatever.
+%% Ok. We are the pragmatical people.
+%% So, let's have a look at the text below.
+%% Ok.
+
+
+
+% discussion on what to include
+
+
+% Sjur, tlf: +358-9-49 75 29
+
+%more topics? (including applications for the speech synthesis)
+%% Pre-project will help in finding the possible application areas and map the possible future projects?
+%% status quo is 6 pages of pdf text...
+%% which is good, the problem is no longer that we have too little text.
+%% Great!  What we need now is a good summary of the application.  In the Finnish Akatemia application
+%% I always take great care of that: the most important thing in an appl. is the first sentence
+%% that everybody will read.  I think that we could use the quantity problem as an example.
+%% Does this document have an abstract/summary? Or will it be a separate doc?
+%% What I did was I took the two texts from the web page, the shortest and the short one, and glued in here. They now live one in lines 34ff and 43ff, respectively.
+%% We will have to reconsider them when we glue them back.
+
+% To include??
+% When it comes to additionalthe question is how much work it takes, and to what extent we shall do it 
+% we must either provide a standard plugin or make the package ourselves
+% 
+% a. the voice ist he only sami part => we may provide a plugin (e.g. reading webpages)
+% b. the program to plug it into is sámi as well (we must make the mother app as well) (e.g. spellers for dyslectics)
+
+
+
+
+
+
+%% Economy discussion
+
+
+
+%% (antti.suni@ling.helsinki.fi).
+%% Rather than use the term "application writing" could we use "project planning"?  OK!
+%% hmm. yes and no. It is a prettier term, but we have appl wr bec of the rationale behind the preproject. Could we do A and B?
+%% I agree: both A and B.
+
+% Budget (to be put into the online appl form)
+
+%% BTW, how do we handle the imaginary money from my working month?  Should we actually
+%% make the budget larger and apply only for the real needs?  That is, the real budget
+%% would be the 300k NOK + ~5k euro from UH.
+
+% Here comes the feedback from our admin:
+% Hei,
+% Lønn og sosiale kostnader ltr. 56 (deg) utgjør per år 507511, per mnd. 42293
+%  - " " for ltr. 36 (vit.ass kode 1018 - med høyere utdanning plasseres i ltr 36) utgjør per pr kr 360917, per mnd. 30076.
+% Ta kontakt om du trenger ytterligere hjelp. % Mvh % Unni 
+
+% Cost plan (in NOK 1000) 	
+%                                       2006
+% Personnel costs and indirect costs	 140      # Personnel costs, Tromsø
+% Purchase of R and D services	         140      # Personnel costs, Helsinki
+% Equipment	                               0      
+% Other operating costs	                  70      # Travelling, meetings
+% Totals                                 350
+% 
+% Funding plan (in NOK 1000) 	
+%                              2006
+% Own funding	                150      # U Tromsø
+% International funding	         50      # U Helsinki
+% Other public-sector funding     -      
+% from nrf                      150      # NFR
+% Total                         350
+% 
+% 3500,- = 30000,- NOK in Finland
+%          45000,- NOK in Norway
+% 
+% Quantifying part:
+% month cost = appr 45000,- (32000 to the worker and 45000 total)
+% 300000 = 7 months
+% 300000 = 5 months + 75000 = 3 NM + 3 FM + 1MarttiM + 75000,- = 3x0000 for the whole proj
+% but then there are money from UHki also...
+
+% travel = 52000 + 10 x 460 + 10 x 590 = 11000,-
+
+% Norw: 
+%Lønn og sosiale kostnader ltr. 56 (deg) utgjør per år 507511, per mnd. 42293
+% - " " for ltr. 36 (vit.ass kode 1018 - med høyere utdanning plasseres i ltr 36) utgjør per pr kr 360917, per mnd. 30076.
+
+%% What shall we include in the text of this??
+
+% A Two conferences (we need a timeframe:
+%   - one at the beginning, the kickoff meeting
+%   - one towards the end, collecting all partners and participants, and working out the main parts of the application
+%   => work (months) in preparation
+%   => costs for arranging (travel, food, hotel)
+% B Demo version ("text in tromsø, speech in helsinki")
+%   - frontend text-to-ipa and investigation of lexicon compatibility
+%     => 1 month
+%   - backend  ipa-to-speech, survey of Sámi phonotactics?
+%     => 1-2 months
+% C Looking at the field as a whole, finding partners? other themes? languages?
+%   Application writing
+%   => months 4-5
+
+% Work in Helsinki will consist of the following tasks:
+% - speech corpus design and speaker selection and recording (1 month)
+% - data preparation (analysis, segmental alignment, prosodic tagging) (1 month)
+% - integration of the demo system (2 months)
+% 
+% Smaller meetings:
+% - <5 partner meetings (potential partners, that is)
+% 
+% Timeframe (this is a preproject, we're doing other things in parallel, and things take time, especially the application writing, but also finding and discussing with potential partners):
+%  - one year? (a bit shorter, perhaps, we should be geared towards deadlines, but...)
+%  - kick-off meeting in start+2
+%  - final in start+9
+% Known application deadlines:
+% NFR deadline in June?
+% Nordic deadline?
+% EU deadline?

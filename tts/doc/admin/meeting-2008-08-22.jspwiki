@@ -1,0 +1,169 @@
+!!!Meeting on Sámi Synthetic speech
+
+* Time: 080822
+* Participants: __Patrik Bye, Trond Trosterud, Martti Vainio__
+
+
+!!!Presentation, background
+
+Who are we and what do we do:
+
+* hki 
+* divvun
+* giellatekno
+* patrik + intonation
+
+!!Patrik
+
+* segmental phon, noticed that no work on Sámi intonation done.
+* 3-4 yrs project (meeting in September)
+* Kickoff on basic empirical work in May
+* Get hold of radio material, pedagogical tapes
+  just to see what intonational phenomena we have
+* use the first year of the project for such things
+
+* Two paid positions: Patrik + a phD.
+* Applied to NFR to maybe get a third position as well.
+* Autosegmental, metrical phonology, ToBi for Sámi
+* Primarily North, also Lule and perhaps South.
+
+!!Martti
+
+* Done work on Finnish, Sámi would probably be closer to Finnsih
+* ToBi for Finnish?
+  Martti: Not very fruitful for Finnish, we do not have those types
+  of intonational structures.
+* We have one type of accent
+* Important: Detaching form from function.
+* Synthesis framework: Statistical intonation model.
+* We leave it to the system to determine the contours.
+* The system should learn the functions.
+
+Collaborating?
+* Patrik from Martti's synthesis?
+* Martti from Patrik's phon analysis?
+
+We would probably get information from each other, but we
+are primarily interested in your raw data (for synthesis).
+
+Technically: Hki needs a good signal:
+Recordings under laboratory conditions.
+We have been using "the red books" (audio books for the blind)
+
+We have rule-based accentuation:
+The words are marked up according to their prominence
+* 0 - copulas, function words
+* 1 - verbs
+* 2 - nouns, adjectives
+* 3 - emphasis, like in narrow focus
+
+No question intonation in Finnish.
+
+* what about focus-triggering clitics? -- yes, utilized
+* do you base yourself upon a syntactic analysis?) -- yes
+* In addition, there is an analysis of the information structure (given - new)
+
+!!Trond
+
+We have the syntactic analysis + a forthcoming dependency analysis
+
+* xerox two-level morphology + lexc 
+* vislcg3 disambiguation and dependency
+
+{{{
+"<Mu>"
+	"mun" Pron Pers Sg1 Gen @>P #1->2 
+"<birra>"
+	"birra" Po @ADVL #2->0   <========== #2->(5/4)
+"<son>"
+	"son" Pron Pers Sg3 Nom @SUBJ> #3->4 
+"<lea>"
+	"leat" <aux> V IV Ind Prs Sg3 @FS-STA #4->0 
+"<hupman>"
+	"hupmat" <mv> V TV PrfPrc @ICL-AUX< #5->4 
+"<.>"
+	"." CLB #6->0 
+
+"<Munge>"
+	"mun" Pron Pers Sg1 Nom Foc/ge @SUBJ> #1->2 
+"<lean>"
+	"leat" <aux> V IV Ind Prs Sg1 @FS-STA #2->0 
+"<boahtán>"
+	"boahtit" <mv> V IV PrfPrc @ICL-AUX< #3->2 
+"<.>"
+	"." CLB #4->0 
+}}}
+
+
+!!!Material
+
+Radio news would be good, and studio programs.
+
+!!!Documents and background info
+
+* Former application on tts project (Trond/Martti/Antti)
+* Application/description of intonation project (Patrik)
+* Report on Sámi tts to the Sámi Parliament (Sjur Moshagen 2003)
+* Governmental whitepaper 2008 requiring Sámi tts (paragraph "Talesyntese" here):
+[http://www.regjeringen.no/nn/dep/kkd/Dokument/Proposisjonar-og-meldingar/Stortingsmeldingar/2007-2008/stmeld-nr-35-2007-2008-/10/2/3.html?id=520174]
+
+
+!!!Forthcoming milestones
+
+Meeting between Divvun and the Sámi parliament in october
+
+Upcoming deadlines?
+
+!!!Work planning, division of labour
+
+Autumn 08:
+
+* Exchange papers and background documents. 
+* Look for upcoming grant proposal deadlines
+** Norway... 
+** Finland.. Martti to have a look
+* Would it be possible to make a Sámi-as-Finnish before october?
+  Let us try:
+** identify the Finnish text input format (Martti)
+** make the same for Sámi (Patrik, Trond)
+*** syllabify the Sámi text
+*** turn the result into "Finnish orthography"
+** Feed the result to the finnish tts and lean back.  
+
+
+Spring 09 and onwards:
+* Discuss formats for and evt. exchange empirical material
+
+
+!!!Resources
+
+!!Needed
+
+TODO: 
+* not a diphone system, but an hmm-based system. 
+* One man-year for Sámi segmental tts. ==> suggest 3 years (which includes
+* getting to know the system and making the usual mistakes and false starts)
+
+Find out how much to make tts 
+
+!!Available
+
+* Martti: Finnish Academy researcher
+* Antti: Funding for him until next summer
+* Some grant proposals: ...
+* Evt. hiring new persons for working on Sámi.
+
+
+Q: Is it possible to integrate with standard OS's (Win/Mac) and common end-user applications (dyslectic, proofreading, screenreaders, etc.)?
+
+The answer is yes. Web-based is easy. Integrating in mobile phones or text 
+processors is a different thing but it is possible (done by commercal companies,
+like e.g. Bitlips).
+
+
+!!!Next meeting
+
+Within a month.
+
+Before that: the SPE rules and the Finnish example.
+
