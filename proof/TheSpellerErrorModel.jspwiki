@@ -4,8 +4,8 @@ different parts on and off.
 
 !!!Makefile configurations
 
-The file {{tools/spellcheckers/fstbased/desktop/hfst/Makefile.am}} looks like
-this, with default values as given by the {{und/}} template:
+The file {{tools/spellcheckers/Makefile.mod-desktop-hfst.am}} looks like
+this, with default values as given by the {{und/}} template (there is a corresponding file for mobile phone spellers, so that they can be made different from the desktop spellers):
 
 {{{
 # This is the default weight for all editing operations in the error model:
@@ -81,7 +81,7 @@ so we stick to the default editing distance 2 default value.)
 The file used to specify the letters of the error model is:
 
 {{{
-tools/spellcheckers/fstbased/desktop/hfst/editdist.default.txt
+tools/spellcheckers/editdist.default.txt
 }}}
 
 In that file you specify the whole alphabet used for the error model (that is,
