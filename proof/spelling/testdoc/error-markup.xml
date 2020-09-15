@@ -106,6 +106,16 @@
                                 </li>
                             </ul>
                         </dd>
+                        <p>
+	                        <dt>agreement errors:</dt>
+	                        <source>{Doalut bistte}£{verb,fin,pl3prs,conneg,infl|Doalut bistet} gitta dii. {16:00}¥{missing|16:00 rádjai}.</source>
+	                        <source>{Mat lea}£{verb,fin,sg3prs,pl3prs,kongr|Mat leat} {tnjealját}${adj,typo|njealját} čiega koordináhtat?</source>
+	                        <dt>case errors:</dt>
+	                        <source>Jus mii nannet {máhttu}£{noun,obj,accsg,nomsg,case|máhtu} ja diđolašvuođa dáid birra dutkamušaid bokte, de lea álgoálbmogiidda álkit ákkastallat áigumušaid ja politihka, muitala Retter.</source>
+	                        <source>Sázo {linjá}£{noun,obj,accsg,nomsg,case|linjjá}</source>
+	                        <dt>comparative errors:</dt>
+	                        <source>Mađi váddásut fáddá, dađi {unnit}£{adv,advl,comp,pos,infl|unnibut} gullojit minoritehtajienat.</source>
+	                    </p>
                     </dl>
                     <dl>
                         <dt>Gammel annotering: Attributes:</dt>
@@ -140,7 +150,7 @@
                      </dl>
                 </section>
                 <section>
-                    <title>Syntactic errors - {redundantword}¥{0} or {word}¥{word missingword} or {word}¥{missingword word}</title>
+                    <title>Syntactic errors - {redundantword}¥{0} or {word}¥{word missingword} or {word}¥{missingword word} or word order errors</title>
                     <p>Also these errors require a partial or full analysis of (parts of) the sentence or surrounding words to
                      be detected and corrected. In the resulting xml, the element is named &lt;errorsyn&gt;.</p>
                     <dl>
@@ -162,6 +172,12 @@
                             </ul>
                         </dd>
                     </dl>
+                    <dl>
+	                    <dt>Examples</dt>
+	                    <p>
+		                    <source>gitta dii. {16:00}¥{missing|16:00 rádjai}.</source>
+		                </p>
+	                </dl>
                     <dl>
                         <dt>Gammel annotering: Attributes:</dt>
                         <dd>
@@ -251,11 +267,18 @@
                 <section>
                     <title>Nesting</title>
                     <p>The three types can be nested, with the spelling error being the innermost one. That is, the following
-                    nesting is allowed: <code>syntactic &gt; morphosyntactic &gt; lexical &gt; spelling</code>.</p>
+                    nesting is allowed: <code>syntactic &gt; morpho-syntactic &gt; lexical &gt; spelling</code>.</p>
                     <p>Parentheses are used to identify the range of the error. When nesting error markup, parentheses are
                     required. Parentheses are also required when the error is followed by punctuation that is not part of the
                     error or correction - the parenthesis will make sure the punctuation stays outside the error correction
-                    markup.</p>
+                    markup.
+                    </p>
+                    <dt>Examples:</dt>
+                    <p>Here is a nested spelling error and a syntactic compound error:
+                    <source>{njuolggo {linjás}${noun,conc|linjjás}}¥{noun,cmp|njuolggolinjjás}</source>
+                    Here are two morpho-syntactic errors with the same scope:
+                    <source>{{Sis geas lea ovddasvástádus}£{pers,subj,nompl,locpl,case|Sii geas lea ovddasvástádus}}£{rel,hab,nompl,nomsg,kongr|Sii geain lea ovddasvástádus} lágidit kaféa bohtet dii. 12.00 ja {kaféa {rahppasa}¢{verb,conc|rahpasa}}€{der|kaféa rahppojuvvo} dii. 13.00.</source>
+                    </p>
                 </section>
             </section>
             <section>
