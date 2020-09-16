@@ -85,7 +85,7 @@
                     </dl>
                 </section>
                 <section>
-                    <title>Morphosyntactic errors - {context wrong}£{pos,gf,cat,orig,errtype|context correct}</title>
+                    <title>Morpho-syntactic errors - {context wrong}£{pos,gf,cat,orig,errtype|context correct}</title>
                     <p>Errors that require an analysis of (parts of) the sentence or surrounding words to be detected and
                     corrected. In the resulting xml, the element is named &lt;errormorphsyn&gt;.</p>
                     <dl>
@@ -95,7 +95,7 @@
                                 <li>Brukt feil kasus:
                                     <ul>
                                         <li>Enkel annotering: Mun liikon dien {girjji}£{girjái}. </li>
-                                        <li>Detaljert annotering:  Mun {liikon dien girjji}£{n,case,acc-ill|liikon dien girjái}.</li>
+                                        <li>Detaljert annotering:  Mun liikon dien {girjji}£{n,case,acc-ill|girjái}.</li>
                                     </ul>
                                 </li>
                                 <li>Analytisk bøyning istedenfor syntetisk bøyning:
@@ -154,7 +154,7 @@
                      </dl>
                 </section>
                 <section>
-                    <title>Syntactic errors - {redundantword}¥{0} or {word}¥{word missingword} or {word}¥{missingword word} or word order errors</title>
+                    <title>Syntactic errors - {redundantword}¥{pos,redun|} or {word}¥{pos, missing|word missingword} or word order errors</title>
                     <p>Also these errors require a partial or full analysis of (parts of) the sentence or surrounding words to
                      be detected and corrected. In the resulting xml, the element is named &lt;errorsyn&gt;.</p>
                     <dl>
@@ -163,14 +163,15 @@
                             <ul>
                                 <li>Unødvending ord, enkel annotering:
                                     <ul>
-                                        <li>SNF doaibmá dál juo {dego}¥{0} resursaguovddážin. </li>
-                                        <li>Gaup searvvai {mielde}¥{0} guoimmuhanprográmmii.</li>
+                                        <li>SNF doaibmá dál juo {dego}¥{cs,redun|} resursaguovddážin. </li>
+                                        <li>Gaup searvvai {mielde}¥{po,redun|} guoimmuhanprográmmii.</li>
+                                        <li>SNF doaibmá dál juo {dego resursaguovddážin}¥{cs,redun|resursaguovddážin} sámi nissoniid ja sohkabealdásseárvvu várás, muhto ain aivve fal eaktodáhtolaš, nuvttá doaibman.</li>
                                     </ul>
                                 </li>
                                 <li>Manglende ord, enkel annotering:
                                     <ul>
-                                        <li>Fápmudusskovvi galgá leat stivrras {ovdal}¥{ovdal go} riikačoahkkin álgá.</li>
-                                        <li>Dat lei vuosttaš girji sámiid birra máid sápmelaš {čállán}¥{lea čállán}.</li>
+                                        <li>Fápmudusskovvi galgá leat stivrras {ovdal}¥{missing|ovdal go} riikačoahkkin álgá.</li>
+                                        <li>Dat lei vuosttaš girji sámiid birra máid sápmelaš {čállán}¥{missing|lea čállán}.</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -259,19 +260,38 @@
                         <dt>Some explanations:</dt>
                         <dd>
                             space = there should be a space<br/>
-                            notspace = there should not be a space<br/>
+                            notspace = there should not be any space<br/>
+                            singlespace = there should only be a single space<br/>
                             hyph = hyphenation is missing<br/>
                             nothyph = hyphenation should not be used<br/>
                             cit = citation<br/>
                             punc = punctuation<br/>
                             notpunc = there should not be punctuation
                         </dd>
+                        <dt>Space before a comma, perioid, exclamation mark or question mark:</dt>
+                        <dd>
+	                        <source>odne{ ,}‰{notspace|,} ihttin.</source>
+                        </dd>
+						<dt>too many spaces, where there should be a single space:</dt>
+                        <dd>
+	                        <source>{1.  Skovvi}‰{singlespace|1. Skovvi}</source>
+	                        <source>{1.         Skovvi}‰{singlespace|1. Skovvi}</source>
+                        </dd>
+						<dt>citation mark errors:</dt>
+                        <dd>
+	                        <source>Nordkapp Sámiid Searvvi ovdaolmmoš: {«}‰{cit|”}{Mearrasameakšuvdna}${noun,á|Mearrasámeakšuvdna}{»}‰{cit|”} ii leat ávkin sámiide</source>
+                        </dd>
+						<dt>punctuation mark errors:</dt>
+                        <dd>
+	                        <source>— Leaibevuona sápmelaččaid váttisvuođaid{.}‰{punc|,} muhto dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.</source>
+	                        <source>Su mielas váttisvuođaid {buvttalii}${verb,á|buvttálii} ee. gieldda mearehis stuora viidodaga lassin maid sámegielat bálvalusaid {ollašuhttin}‰{punc|ollašuhttin.}</source>
+                        </dd>
                     </dl>
                 </section>
                 <section>
                     <title>Nesting</title>
                     <p>All types can be nested, with the spelling error being the innermost one. That is, the following
-                    nesting is allowed: <code>formatting &gt; syntactic &gt; morpho-syntactic &gt; lexical &gt; spelling</code>.</p>
+                    nesting is allowed: <code>formatting &gt; syntactic &gt; morpho-syntactic &gt; lexical &gt; spelling &gt; syntactic compound</code>.</p>
                     <p>Parentheses are used to identify the range of the error. When nesting error markup, parentheses are
                     required. Parentheses are also required when the error is followed by punctuation that is not part of the
                     error or correction - the parenthesis will make sure the punctuation stays outside the error correction
@@ -287,6 +307,14 @@
                         </dd>
                     </dl>
                 </section>
+            </section>
+            <section>
+                <title>Scope: How much should be marked up?</title>
+                <p>1) Whatever is one token in our lexicon, i.e. usually one word, but in the case of multi word expressions, it can be several words 2) As many tokens/words as need to be changed to correct the error</p>
+            <p>In the case of "eara beaivi", only "eara" should be marked</p>
+            <source>{eara}${error classification|eará} beaivi</source>
+	        <p>In the case of "earret eara", "earret eara" should be marked as it is a multi word expression</p>
+	        <source>{earret eara}${error classification|earret eará}</source> 
             </section>
             <section>
                 <title>Markup EXAMPLES</title>
@@ -350,7 +378,7 @@ okta máná&lt;/errormorphsyn&gt;&lt;/errormorphsyn&gt;.</source>
                         <strong>NO space</strong> on either side of the correction mark $.
                     </li>
                     <li>
-                        <strong>skip foreign text</strong> - we assume that text in other languages are properly detected, or
+                        <strong>Skip foreign text</strong> - we assume that text in other languages are properly detected, or
                         manually marked in the xsl file. That is: DON'T add spelling error markup to passages in Norwegian -
                         instead, try to enforce or add xml markup designating the passage as being in Norwegian. Single words used
                         as part of a sami sentence (in situ loans), should NOT be marked, either, since we can't know what the
@@ -358,7 +386,7 @@ okta máná&lt;/errormorphsyn&gt;&lt;/errormorphsyn&gt;.</source>
                         Norwegian).
                     </li>
                     <li>
-                        <strong>enclose multiword corrections in parenthesis</strong> - since the conversion to xml needs a way
+                        <strong>Enclose multiword corrections in parenthesis</strong> - since the conversion to xml needs a way
                         of knowing where the correction ends, we need to tell it if it is not at the end of the first word after the
                         correction symbol. Example: <em>{Norggabealde}§{Norgga bealde}</em>
                     </li>
@@ -368,13 +396,13 @@ okta máná&lt;/errormorphsyn&gt;&lt;/errormorphsyn&gt;.</source>
                         .</em>" (the example text is the text within the quotes, <strong>including</strong> the punctuation).
                     </li>
                     <li>
-                        <strong>remember the case</strong> - the correction should have the same case pattern as the spelling
+                        <strong>Remember the case</strong> - the correction should have the same case pattern as the spelling
                         error. Example: <em>{Mannjá}§{Maŋŋá}</em>, <strong>NOT</strong> <em>{Mannjá}§{maŋŋá}</em> (note the case of the
                         initial letter). The exception is of course when the error is missing capitalisation, as in names spelled
                         lower case, etc.
                     </li>
                     <li>
-                        <strong>always provide a correction!</strong> The markup is useless if it isn't complete.
+                        <strong>Always provide a correction!</strong> The markup is useless if it isn't complete.
                     </li>
                     <li>
                         <strong>Both</strong> the <strong>untouched original</strong> and the <strong>corrected
@@ -434,6 +462,11 @@ okta máná&lt;/errormorphsyn&gt;&lt;/errormorphsyn&gt;.</source>
                     <p>here is a nested one (two errors in the same phrase, but with a different scope)</p>
                     <source>{{blogg}${noun,vow|blogga} čállosa}¥{noun,cmp|bloggačállosa}</source>
                 </section>
+                <section>
+                    <title>Split compounds</title>
+                    <p>these are marked as syntactic errors as the alternative is that the words are syntactically related to each other:</p>
+                    <source>omd {mánáid}¥{noun,hyph|mánáid-} ja {nuoraiddoaimmaguin}${noun,typo|nuoraiddoaimmaiguin}</source>
+                </section>
             </section>
         </section>
 
@@ -442,21 +475,21 @@ okta máná&lt;/errormorphsyn&gt;&lt;/errormorphsyn&gt;.</source>
             <p>(xml element name after conversion to xml is specified after the symbol used for the actual markup)</p>
             <dl>
                 <dt>§ - &lt;error&gt; - unclassified </dt>
-                  <dd>Unclassified errors, never used, kept for backwards compatibility</dd>
+                <dd>Unclassified errors, never used, kept for backwards compatibility</dd>
                 <dt>$ - &lt;errorort&gt; - orthorgraphic/non-word errors</dt>
-                  <dd>Traditional typos resulting in non-words, typically targeted by spelling checkers</dd>
+                <dd>Traditional typos resulting in non-words, typically targeted by spelling checkers</dd>
                 <dt>¢ - &lt;errorortreal&gt; - orthorgraphic/real-word errors</dt>
-                  <dd>Spelling errors resulting in another, real word, impossible to target by traditional spelling checkers</dd>
-                <dt>£ - &lt;errormorphsyn&gt; - morphosyntactic errors</dt>
-                  <dd>Errors involving the morphosyntax of the language</dd>
+                <dd>Spelling errors resulting in another, real word, impossible to target by traditional spelling checkers</dd>
+                <dt>£ - &lt;errormorphsyn&gt; - morpho-syntactic errors</dt>
+                <dd>Errors involving the morpho-syntax of the language</dd>
                 <dt>¥ - &lt;errorsyn&gt; - syntactic errors</dt>
-                  <dd>Purely syntactic errors</dd>
+                <dd>Purely syntactic errors</dd>
                 <dt>€ - &lt;errorlex&gt; - lexical errors</dt>
-                  <dd>Errors due to wrong or bad lexeme chosen</dd>
+                <dd>Errors due to wrong or bad lexeme chosen</dd>
                 <dt>∞ - &lt;errorlang&gt; - foreign language</dt>
-                  <dd>Text written in a foreign or technical language, irrelevant for testing (text marked up as this will be ignored during testing)</dd>
+                <dd>Text written in a foreign or technical language, irrelevant for testing (text marked up as this will be ignored during testing)</dd>
                 <dt>‰ - &lt;errorformat&gt; - formatting errors</dt>
-                  <dd>Errors due to wrong or bad formatting: extra spaces, wrong quote marks, etc.</dd>
+                <dd>Errors due to wrong or bad formatting: extra spaces, wrong quote marks, etc.</dd>
             </dl>
         </section>
 
