@@ -1,0 +1,171 @@
+Korpusmerken-bargobadji
+
+dás: Linda, Ritva, Børre, Inga, Duommá
+
+dii: 13:00-15:00
+
+
+* Mo merket jus leat molsaeavttut:
+
+Molssaeaktu 1:    — Leaibevuona sápmelaččaid váttisvuođaid{.}‰{punc|,} muhto dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.
+
+Molssaeaktu 2:    — Leaibevuona sápmelaččaid váttisvuođaid. {muhto}‰{cap|Muhto} dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.
+
+Børre: go leat eanet go okta molssaeaktu: merkenvuogis ferte gávdnat hierarkiijja
+
+
+Molssaeaktu 1:    — Leaibevuona sápmelaččaid váttisvuođaid{.}‰{punc|,} muhto dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.}///{Leaibevuona sápmelaččaid váttisvuođaid. {muhto}‰{cap|Muhto} dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.}
+
+
+Molssaeaktu 2:    — Leaibevuona sápmelaččaid váttisvuođaid{{.}‰{punc|,} muhto}///{. {muhto}‰{cap|Muhto}} dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.
+
+
+=> Børre geahččala doaibmágo
+
+* punct, punkt dahje punc???? -- galgá leat "punct"
+
+=> Børre vuodjá search-and-replace
+
+=> Børre dahká kommmánnduv, majna dåhkki åhtsåt vihketyjpajt ja mij vuoset makkir dokumentan vihke gávnnu. Buojk. "cmp"
+{{{
+grep -r --include=*.correct.* cmp $GTFREE/orig/smj $GTBOUND/orig/smj
+}}}
+Split compounds - should they be syntactic or real word errors
+
+=> syntactic errors
+
+
+
+All types can be nested, with the spelling error being the innermost one. That is, the following nesting is allowed: formatting > syntactic > morpho-syntactic > lexical > spelling > syntactic compound.
+
+Moai sávve ovdamearkkaid:
+
+{njuolggo {linjás}${noun,conc|linjjás}}¥{noun,cmp|njuolggolinjjás}
+{njuolggo{        }‰{singlespace| }{linjás}${noun,conc|linjjás}}¥{noun,cmp|njuolggolinjjás}
+
+
+
+
+    {1.  Skovvi}‰{singlespace|1. Skovvi}    
+    => GramDivvun merke ná: ["1. skovvi"
+
+    {1.         Skovvi}‰{singlespace|1. Skovvi}
+
+    odne{ ,}‰{notspace|,} ihttin.
+=> ferte ná: {odne ,}‰{notspace|odne,} ihttin.
+
+=> GramDivvun merke ná: ["odne ,"
+
+
+
+
+
+Mo šekket makkár hierarkiijjas "nesting" doaibmá:
+
+echo "njuolggo   linjás"| divvun-checker
+ -a /usr/share/voikko/4/se.zcheck
+
+{"errs":[["njuolggo linjás",0,17,"double-space-before","Leat guokte gaskka ovdal \"linjás\"",["njuolggo linjás"],"Sátnegaskameattáhus"],["njuolggo linjás",0,17,"typo","Ii leat sátnelisttus",["njuolggo linjás","linjjás"],"Čállinmeattáhus"]],"text":"njuolggo linjás"}
+
+1. formatting - double space
+2. spelling error (linjás)
+3. compound error
+
+echo "njuolggo linjás"| divvun-checker -a /usr/share/voikko/4/se.zcheck
+
+{"errs":[["linjás",9,15,"typo","Ii leat sátnelisttus",["linjjás"],"Čállinmeattáhus"]],"text":"njuolggo linjás"}
+
+echo "njuolggo linjjás"| divvun-checker -a /usr/share/voikko/4/se.zcheck
+
+{"errs":[["njuolggo linjjás",0,16,"msyn-compound","\"njuolggo linjjás\" orru leamen goallossátni",["njuolggolinjjás"],"Goallosteapmi"]],"text":"njuolggo linjjás"}
+
+
+
+
+
+* Go eat leat sihkarat makkár meattáhus lea, muhto háliidat dattetge merket meattáhusa, de dan "errortype" lea: §
+
+Unclassified errors - {wrong}§{correct}
+
+Errors of unknown type. By default such errors will be treated as spelling errors (see below). In the resulting xml, the name of the element will be <error>.
+
+
+
+
+* How should this be marked up? As an orthographic error (non-word or realword)? A formatting error (missing space)? "oahppoja" is analyzed as a dynamic compound of "oahppu" and "idja", so we get an analysis.
+
+Guovdageaidnu lea guovddáš sámi {oahppoja}${x,cmp|oahppo- ja} dutkanbáiki.
+
+Duommá: hmmmm....
+Ritva: typo ja de ¥     => {{oahppoja}${typo,space|oahppo ja} dutkanbáiki}¥{cmp,hyph|oahppo- ja dutkanbáiki}
+Inga: ${typo|!!!
+Linda: typo dahje formateren
+
+morpho-syntactic
+
+
+Feiltyper – eksempler:
+typo = tastefeil, eks.
+{laet}${typo|leat}
+
+NEW: SNF doaibmá dál juo {dego}¥{cs,redun|} resursaguovddážin.
+
+OLD: SNF doaibmá dál juo {dego}¥{cs|0} resursaguovddážin.
+
+
+OLD:
+{{njuolggadusaide leat boahtán guokte nuppástusa mii}£{rel,subj,nompl,nomsg,kongr|njuolggadusaide leat boahtán guokte nuppástusa mat} nanne sámegiela sajádaga}£{verb,fin,pl3prs,sg3prs,kongr|njuolggadusaide leat boahtán guokte nuppástusa mat nannejit sámegiela sajádaga}
+
+NEW:
+njuolggadusaide leat boahtán guokte nuppástusa {mii}£{rel,subj,nompl,nomsg,kongr|mat} {nanne}£{verb,fin,pl3prs,sg3prs,kongr|nannejit} sámegiela sajádaga
+
+
+OLD:
+Mun {liikon dien girjji}£{n,case,acc-ill|liikon dien girjái}.
+
+NEW:
+Mun liikon dien {girjji}£{n,case,acc-ill|girjái}.
+
+
+go doaimmat - vaikke vel dat livčče {{biras seastevačča}¥{adj,cmp|birasseastevačča}}£{adj,spred,nompl,accsg,kongr|birasseastevaččat}
+
+
+Questions:
+
+split compounds:
+joatkit dálá doaimmaiguin dego mannan jagi, omd {mánáid}¥{noun,hyph|mánáid-} ja {{nuoraiddoaimmaguin}${noun,typo|nuoraiddoaimmaiguin}
+
+
+What should the scope of the error be?
+here we have two possible fixes that refer to both parts of the error:
+* dego resursaguovddáš
+* resursaguovddážin
+
+SNF doaibmá dál juo {dego resursaguovddážin}¥{cs,redun|resursaguovddážin} sámi nissoniid ja sohkabealdásseárvvu várás, muhto ain aivve fal eaktodáhtolaš, nuvttá doaibman. Manne ?
+
+In the case of "eara beaivi", only "eara" should be marked
+
+{eara}${error classification|eará} beaivi
+In the case of "earret eara", "earret eara" should be marked as it is a multi word expression
+
+{earret eara}${error classification|earret eará}
+
+
+This is wrong:
+Guovdageaidnu lea guovddáš sámi {oahppoja}${x,cmp|oahppo- ja} dutkanbáiki.
+
+split compound things:
+Ossodagat addet maiddái doarjaga dutkamii, {geahččalan ja ovdánahttinbargui}${noun,punct|geahččalan- ja ovdánahttinbargui}, ja servet riikkaidgaskasaš ovttasbargguide sin fágasurggiineaset.
+
+Guovdageainnus ja Diehtosiiddas leat maiddai eará guovddáš sámi ásahusat, nu go Sámedikki {oahpahus-, giella ja kulturossodat}${noun,punct|oahpahus-, giella- ja kulturossodat}, Sámi árkiiva, Gáldu- Álgoálbmotvuoigatvuođaid gelbbolašvuođaguovddáš ja Riikkaidgaskasaš boazodoalloguovddáš.
+
+Guovdageainnus lea lávlunjoavku, gáffebára, teáhter, kino, heastastáljat ja máŋga iešguđetlágan {searvvi- dego}${punct,punct|searvvi – dego} dánsunsearvi, musihkkariid searvi, risttalaš searvvit ja bridge-klubba.
+
+{Bierggu, guoli ja
+mielkebiepmuide lassin}£{noun,advl,illsg,gensg,case|Birgui, guollái ja mielkebiepmuide lassin} čogge olbmot murjjiid ja urtasiid mat
+geavahuvvojedje dállodoalus. Urtasat geavahuvvojedje maid dálkkasin.
+
+{Ivgobađa}${prop,cmp|Ivgubađa}
+Márkanbáiki lea Davvi-Romssa Musea váldorusttet Omasvuona
+suohkanis.
+--- vowel??
