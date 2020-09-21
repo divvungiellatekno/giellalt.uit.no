@@ -165,6 +165,7 @@
                                 <li>Unødvending ord, enkel annotering:
                                     <ul>
                                         <li>SNF doaibmá dál juo {dego}¥{cs,redun|} resursaguovddážin. </li>
+                                        <li>NOT: SNF doaibmá dál juo {dego}¥{cs|0} resursaguovddážin.</li>
                                         <li>Gaup searvvai {mielde}¥{po,redun|} guoimmuhanprográmmii.</li>
                                         <li>SNF doaibmá dál juo {dego resursaguovddážin}¥{cs,redun|resursaguovddážin} sámi nissoniid ja sohkabealdásseárvvu várás, muhto ain aivve fal eaktodáhtolaš, nuvttá doaibman.</li>
                                     </ul>
@@ -255,8 +256,8 @@
                     <dl>
                         <dt>Annotering: Attributes:</dt>
                         <dd>
-                            <strong>errtype</strong> { space | notspace | hyph | nothyph | cit | punc
-                            | notpunc | }<br/>
+                            <strong>errtype</strong> { space | notspace | hyph | nothyph | cit | punct
+                            | notpunct | }<br/>
                         </dd>
                         <dt>Some explanations:</dt>
                         <dd>
@@ -266,12 +267,15 @@
                             hyph = hyphenation is missing<br/>
                             nothyph = hyphenation should not be used<br/>
                             cit = citation<br/>
-                            punc = punctuation<br/>
-                            notpunc = there should not be punctuation
+                            punct = punctuation<br/>
+                            notpunct = there should not be punctuation
                         </dd>
                         <dt>Space before a comma, perioid, exclamation mark or question mark:</dt>
                         <dd>
-	                        <source>odne{ ,}‰{notspace|,} ihttin.</source>
+	                        <p>mark previous word and following word or token:</p>
+	                        <source>{odne ,}‰{notspace|odne,} ihttin.</source>
+	                        <p>not like this:</p>
+							<source>odne{ ,}‰{notspace|,} ihttin.</source>	                        
                         </dd>
 						<dt>too many spaces, where there should be a single space:</dt>
                         <dd>
@@ -284,15 +288,19 @@
                         </dd>
 						<dt>punctuation mark errors:</dt>
                         <dd>
-	                        <source>— Leaibevuona sápmelaččaid váttisvuođaid{.}‰{punc|,} muhto dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.</source>
-	                        <source>Su mielas váttisvuođaid {buvttalii}${verb,á|buvttálii} ee. gieldda mearehis stuora viidodaga lassin maid sámegielat bálvalusaid {ollašuhttin}‰{punc|ollašuhttin.}</source>
+	                        <source>— Leaibevuona sápmelaččaid váttisvuođaid{.}‰{punct|,} muhto dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.</source>
+	                        <source>Su mielas váttisvuođaid {buvttalii}${verb,á|buvttálii} ee. gieldda mearehis stuora viidodaga lassin maid sámegielat bálvalusaid {ollašuhttin}‰{punct|ollašuhttin.}</source>
                         </dd>
                     </dl>
                 </section>
              </section>
+            <section>
+            <title>Markup SCOPE</title>
+            <p>We differentiate between different types of errors that people make, depending on the type of analysis
+            needed to detect and correct the error. We also use the annotation for errors in learner texts.</p>
                 <section>
                     <title>Nesting</title>
-                    <p>All types can be nested, with the spelling error being the innermost one. That is, the following
+                    <p>All types can be nested, this is still a bit undecided and will be updated in a bit. That is, the following
                     nesting is allowed: <code>formatting &gt; syntactic &gt; morpho-syntactic &gt; lexical &gt; spelling &gt; syntactic compound</code>.</p>
                     <p>Parentheses are used to identify the range of the error. When nesting error markup, parentheses are
                     required. Parentheses are also required when the error is followed by punctuation that is not part of the
@@ -307,17 +315,42 @@
                             <p>Here are two morpho-syntactic errors with the same scope:</p>
                             <source>{{Sis geas lea ovddasvástádus}£{pers,subj,nompl,locpl,case|Sii geas lea ovddasvástádus}}£{rel,hab,nompl,nomsg,kongr|Sii geain lea ovddasvástádus} lágidit kaféa bohtet dii. 12.00 ja {kaféa {rahppasa}¢{verb,conc|rahpasa}}€{der|kaféa rahppojuvvo} dii. 13.00.</source>
                         </dd>
+                        <dt>How to check the hierarchy of nesting:</dt>
+                        <dd>
+                            <p>run the following commands in the terminal:</p>
+                            <source>$> echo "njuolggo   linjás"| divvun-checker
+ -a $GTLANGS/langs-sme/tools/grammarcheckers/se.zcheck</source>
+                            <source>{"errs":[["njuolggo linjás",0,17,"double-space-before","Leat guokte gaskka ovdal \"linjás\"",["njuolggo linjás"],"Sátnegaskameattáhus"],["njuolggo linjás",0,17,"typo","Ii leat sátnelisttus",["njuolggo linjás","linjjás"],"Čállinmeattáhus"]],"text":"njuolggo linjás"}
+</source>
+							<source>$> echo "njuolggo linjás"| divvun-checker -a $GTLANGS/langs-sme/tools/grammarcheckers/se.zcheck</source>
+							<source>{"errs":[["linjás",9,15,"typo","Ii leat sátnelisttus",["linjjás"],"Čállinmeattáhus"]],"text":"njuolggo linjás"}</source>
+							<source>$> echo "njuolggo linjjás"| divvun-checker -a $GTLANGS/langs-sme/tools/grammarcheckers/se.zcheck</source>
+							<source>{"errs":[["njuolggo linjjás",0,16,"msyn-compound","\"njuolggo linjjás\" orru leamen goallossátni",["njuolggolinjjás"],"Goallosteapmi"]],"text":"njuolggo linjjás"}</source>
+						<p>The order of nesting is the following:</p>
+						<ol>
+							<li>formatting: double space (innermost)</li>
+							<li>spelling error (linjás)</li>
+							<li>compound error (outermost)</li>
+						</ol>
+                        </dd>
                     </dl>
-            </section>
-            <section>
-                <title>Scope: How much should be marked up?</title>
-                <p>1) Whatever is one token in our lexicon, i.e. usually one word, but in the case of multi word expressions, it can be several words 2) As many tokens/words as need to be changed to correct the error</p>
-            <p>In the case of "eara beaivi", only "eara" should be marked</p>
-            <source>{eara}${error classification|eará} beaivi</source>
-	        <p>In the case of "earret eara", "earret eara" should be marked as it is a multi word expression</p>
-	        <source>{earret eara}${error classification|earret eará}</source> 
-            </section>
-            <section>
+		            </section>
+		            <section>
+	                <title>What is a token?</title>
+	                <p>1) Whatever is one token in our lexicon, i.e. usually one word, but in the case of multi word expressions, it can be several words 2) As many tokens/words as need to be changed to correct the error</p>
+		            <p>In the case of "eara beaivi", only "eara" should be marked</p>
+		            <source>{eara}${error classification|eará} beaivi</source>
+			        <p>In the case of "earret eara", "earret eara" should be marked as it is a multi word expression</p>
+			        <source>{earret eara}${error classification|earret eará}</source> 
+	            	</section>
+		            <section>
+	                <title>Alternative corrections</title>
+	                <p>If an error can be corrected in different ways, we order the corrections from more likely to less likely and separate the alternatives by three slashes</p>
+		            <p>The following error can be corrected in two ways: 1) change period into comma 2) leave the period and capitalize the subsequent word:</p>
+		            <source>— Leaibevuona sápmelaččaid váttisvuođaid{{.}‰{punc|,} muhto}///{. {muhto}‰{cap|Muhto}} dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.</source>
+	            	</section>
+				</section>
+	            <section>
                 <title>Markup EXAMPLES</title>
                 <p>Here are some examples of error/correction markup and how they are converted to xml:</p>
                 <source>{nourra}${a,meta|nuorra}
@@ -359,11 +392,13 @@ okta máná&lt;/errormorphsyn&gt;&lt;/errormorphsyn&gt;.</source>
 
           <source>{mun {muitlat§muitalat}}£{mun muitalan}
 {guossodmieddne}§guossodimieddne}€{biebbmoieddne}</source> -->
-            </section>
+           </section>
            <section>
                 <title>Markup CHALLENGES</title>
                 <p>How should this be marked up? As an orthographic error (non-word or realword)? A formatting error (missing space)? "oahppoja" is analyzed as a dynamic compound of "oahppu" and "idja", so we get an analysis.</p>
             <source>Guovdageaidnu lea guovddáš sámi {oahppoja}${x,cmp|oahppo- ja} dutkanbáiki.</source>
+            <p>We decided on the following way</p>
+            <source>{{oahppoja}${typo,space|oahppo ja} dutkanbáiki}¥{cmp,hyph|oahppo- ja dutkanbáiki}</source>
             </section>
             <section>
                 <title>Markup RULES</title>
