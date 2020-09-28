@@ -24,18 +24,20 @@
             <p>We differentiate between different types of errors that people make, depending on the type of analysis
             needed to detect and correct the error. We also use the annotation for errors in learner texts.</p>
             <section>
-                <title>Unclassified errors - {wrong}§{correct}</title>
+                <title>Unclassified errors</title>
+                <source>TEMPLATE: {wrong}§{correct}</source>
                 <p>Errors of unknown type. By default such errors will be treated as spelling errors (see below). In the
                 resulting xml, the name of the element will be &lt;error&gt;.</p>
                 </section>
                 <section>
-                <title>Orthographic errors, non-words - {wrong}${error classification|correct}</title>
+                <title>Orthographic errors, non-words</title>
+                	<source>TEMPLATE: {wrong}${error classification|correct}</source>
                     <p>Traditional misspellings confined to single (error) strings, that is, errors that don't need an analysis
                     of the surrounding words to be detected and corrected. In the resulting xml, the element is named
                     &lt;errorort&gt;. These errors do always lead to non-words in the text, such that a speller should be able
                     to detect them.</p>
                     <dl>
-                        <dt>Gammel annotering: Attributes:</dt>
+                        <dt>Mark-up attributes:</dt>
                         <dd>
                             <dl>
                                 <dt>pos</dt>
@@ -48,13 +50,14 @@
                     </dl>
                 </section>
                 <section>
-                    <title>Orthographic errors, real-words - {wrong}¢{error classification|correct}, same as for non-words, see above</title>
+                    <title>Orthographic errors, real-words</title>
+                	<source>TEMPLATE: {wrong}¢{error classification|correct} (almost same as for non-words, see above)</source>
                     <p>Misspellings confined to single words, but stilll need an analysis of the surrounding words to be
                     detected and corrected. In the resulting xml, the element is named &lt;errorortreal&gt; These errors,
                     although orthographical in nature, lead to other. real words, such that a traditional speller is unable to
                     detect them.</p>
                     <dl>
-                        <dt>Gammel annotering: Attributes:</dt>
+                        <dt>Mark-up attributes:</dt>
                         <dd>
                             <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pers | refl | dem |
                             resip | indef | pcle | prop | typo | x }<br/><strong>errtype</strong> { a | á | conc | svow | vowc | vow
@@ -86,17 +89,18 @@
                     </dl>
                 </section>
                 <section>
-                    <title>Morpho-syntactic errors - {context wrong}£{pos,gf,cat,orig,errtype|context correct}</title>
+                    <title>Morpho-syntactic errors</title>
+                    <source>TEMPLATE: {wrong form}£{pos,gf,cat,orig,errtype|correct form}</source>
                     <p>Errors that require an analysis of (parts of) the sentence or surrounding words to be detected and
                     corrected. In the resulting xml, the element is named &lt;errormorphsyn&gt;.</p>
                     <dl>
-                        <dt>Eksempler på ny annotering</dt>
+                        <dt>Examples for mark-up</dt>
                         <dd>
                             <ul>
-                                <li>Brukt feil kasus:
+                                <li>Wrong case:
                                     <ul>
-                                        <li>Enkel annotering: Mun liikon dien {girjji}£{girjái}. </li>
-                                        <li>Detaljert annotering:  Mun liikon dien {girjji}£{n,case,acc-ill|girjái}.</li>
+                                        <li>Simple mark-up: Mun liikon dien {girjji}£{girjái}. </li>
+                                        <li>Detailed mark-up:  Mun liikon dien {girjji}£{n,case,acc-ill|girjái}.</li>
                                     </ul>
                                 </li>
                                 <li>Analytisk bøyning istedenfor syntetisk bøyning:
@@ -129,7 +133,7 @@
                         </dd>
                     </dl>
                     <dl>
-                        <dt>Gammel annotering: Attributes:</dt>
+                        <dt>Mark-up attributes:</dt>
                         <dd>
                             <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop |pers | refl | dem | resip | indef | x }<br/>
                             <strong>gf</strong> { subj | obj | advl | fin | infin | spred | opred | pcle | interj | app | conj | pph | x | attr }<br/>
@@ -161,14 +165,15 @@
                      </dl>
                 </section>
                 <section>
-                    <title>Syntactic errors - {redundantword}¥{pos,redun|} or {word}¥{pos, missing|word missingword} or word order errors</title>
+                    <title>Syntactic errors</title>
+                    <source>TEMPLATE: {redundantword}¥{pos,redun|} OR {word}¥{pos, missing|word missingword} OR word order errors</source>
                     <p>Also these errors require a partial or full analysis of (parts of) the sentence or surrounding words to
                      be detected and corrected. In the resulting xml, the element is named &lt;errorsyn&gt;.</p>
                     <dl>
-                        <dt>Eksempler på ny annotering</dt>
+                        <dt>Examples for mark-up</dt>
                         <dd>
                             <ul>
-                                <li>Unødvending ord, enkel annotering:
+                                <li>Unneccessary words:
                                     <ul>
                                         <li>SNF doaibmá dál juo {dego}¥{cs,redun|} resursaguovddážin. </li>
                                         <li>NOT: SNF doaibmá dál juo {dego}¥{cs|0} resursaguovddážin.</li>
@@ -176,7 +181,13 @@
                                         <li>SNF doaibmá dál juo {dego resursaguovddážin}¥{cs,redun|resursaguovddážin} sámi nissoniid ja sohkabealdásseárvvu várás, muhto ain aivve fal eaktodáhtolaš, nuvttá doaibman.</li>
                                     </ul>
                                 </li>
-                                <li>Manglende ord, enkel annotering:
+                                <li>Unneccessary clauses:
+                                    <ul>
+                                        <li>{Dat mij la tjielgas la}¥{clause,redun|Tjielgas la}</li>
+                                        <li>more examples?</li>
+                                    </ul>
+                                </li>
+                                <li>Missing words:
                                     <ul>
                                         <li>Fápmudusskovvi galgá leat stivrras {ovdal}¥{missing|ovdal go} riikačoahkkin álgá.</li>
                                         <li>Dat lei vuosttaš girji sámiid birra máid sápmelaš {čállán}¥{missing|lea čállán}.</li>
@@ -194,7 +205,7 @@
 		                </dd>
 	                </dl>
                     <dl>
-                        <dt>Gammel annotering: Attributes:</dt>
+                        <dt>Mark-up attributes:</dt>
                         <dd>
                             <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | det | resip | indef | punct | x }<br/>
                             <strong>errtype</strong> { wo | pph | redun | missing | cmp | x }
@@ -212,7 +223,8 @@
                     </dl>
                 </section>
                 <section>
-                    <title>Lexical errors - {wrong}€{wrongPoS,correctPoS|correct}</title>
+                    <title>Lexical errors</title>
+                    <source>TEMPLATE: {wrong}€{wrong PoS,correct PoS|correct}</source>
                      <p>Errors where the real error is only in the chosen word used, that is, another word would be better or
                      correct; to be able to detect and correct such errors, we need in addition to syntactic analysis also a
                      dictionary component with sufficiently rich syntactic and semantic markup of the entries, as well as
@@ -220,15 +232,15 @@
                      not in the nearest future, but the need to mark up texts for these errors is real now. In the resulting xml,
                      the element is named &lt;errorlex&gt;.</p>
                     <dl>
-                        <dt>Eksempler på ny annotering</dt>
+                        <dt>Examples for mark-up</dt>
                         <dd>
                             <ul>
-                                <li>Brukt adjektiv istedenfor adverb:
+                                <li>Used an adjective instead of an adverb:
                                     <ul>
                                         <li> {ovddimus}€{adv-adj|ovddimusat}</li>
                                     </ul>
                                 </li>
-                                <li>Brukt feil verb:
+                                <li>Used wrong verb:
                                     <ul>
                                         <li>Go su ráđđehus {eretgeassádii}€{verb|geassádii}, juolludii Stuorradiggi Nygaardsvoldii gudnebálkká.</li>
                                     </ul>
@@ -243,7 +255,7 @@
                         </dd>
                     </dl>
                     <dl>
-                        <dt>Gammel annotering: Attributes:</dt>
+                        <dt>Mark-up attributes:</dt>
                         <dd>
                             <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | resip | indef | x }<br/>
                             <strong>orig</strong> { noun | verb | adj | adv | num | interj | ppan | cc | cs | pcle | prop | pers | refl | dem | resip | indef | x }<br/>
@@ -259,7 +271,8 @@
                     </dl>
                 </section>
                 <section>
-                    <title>Formatting errors, {wrong}‰{error classification|correct} </title>
+                    <title>Formatting errors</title>
+                    <source>{wrong}‰{error classification|correct}</source>
                     <p>Formatting errors include punctuation, hyphens, citation marks and spacing.</p>
                     <dl>
                         <dt>Annotering: Attributes:</dt>
@@ -355,6 +368,13 @@
 							<li>spelling error (linjás)</li>
 							<li>compound error (outermost)</li>
 						</ol>
+                        </dd>
+                        <dt>Other types:</dt>
+                        <dd>
+                            <p>Here is a nested morpho-syntactic error, a lexical error and a word order error (syntactic):</p>
+                            <source>{{vuordedahtte {sjaddá}£{ind-pot|sjattasj}}€{w|dávk sjattasj}}¥{wo|sjattasj dávk} 
+
+</source>
                         </dd>
                     </dl>
 		            </section>
