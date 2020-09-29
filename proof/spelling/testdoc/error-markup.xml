@@ -28,6 +28,14 @@
                 <source>TEMPLATE: {wrong}§{correct}</source>
                 <p>Errors of unknown type. By default such errors will be treated as spelling errors (see below). In the
                 resulting xml, the name of the element will be &lt;error&gt;.</p>
+                    <dl>
+	                    <dt>Examples</dt>
+	                    <dd>
+		                    <source>Hm. maahta {son}${pcle,vowc|sån} ahte tjoeverem {{daab}${dem,con|daam} bloggen
+{{darjoedh}${{}verb,vow|darjodh}}}£{noun,x,acksg,gensg,case|daam bloggem darjodh}
+{{vytnije}${noun,mix|vætnoe} {bloggine}}§{x,x|vætnoebloggine}.</source>
+		                </dd>
+	                </dl>
                 </section>
                 <section>
                 <title>Orthographic errors, non-words</title>
@@ -94,45 +102,6 @@
                     <p>Errors that require an analysis of (parts of) the sentence or surrounding words to be detected and
                     corrected. In the resulting xml, the element is named &lt;errormorphsyn&gt;.</p>
                     <dl>
-                        <dt>Examples for mark-up</dt>
-                        <dd>
-                            <ul>
-                                <li>Wrong case:
-                                    <ul>
-                                        <li>Simple mark-up: Mun liikon dien {girjji}£{girjái}. </li>
-                                        <li>Detailed mark-up:  Mun liikon dien {girjji}£{n,case,acc-ill|girjái}.</li>
-                                    </ul>
-                                </li>
-                                <li>Analytisk bøyning istedenfor syntetisk bøyning:
-                                    <ul>
-                                        <li>Enkel annotering: Dat lea {eanemus dábálaš}£{dábálaččamus} váriin ja duoddariin.</li>
-                                        <li>Detaljert annotering:  Dat lea {eanemus dábálaš}£{adj,superl,analyt-synt|dábálaččamus} váriin ja duoddariin.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </dd>
-                        <dt>agreement errors:</dt>
-                        <dd>
-	                        <source>{Doalut bistte}£{verb,fin,pl3prs,conneg,infl|Doalut bistet} gitta dii. {16:00}¥{missing|16:00 rádjai}.</source>
-	                        <source>{Mat lea}£{verb,fin,sg3prs,pl3prs,kongr|Mat leat} {tnjealját}${adj,typo|njealját} čiega koordináhtat?</source>
-                        </dd>
-                        <dt>case errors:</dt>
-                        <dd>
-	                        <source>Jus mii nannet {máhttu}£{noun,obj,accsg,nomsg,case|máhtu} ja diđolašvuođa dáid birra dutkamušaid bokte, de lea álgoálbmogiidda álkit ákkastallat áigumušaid ja politihka, muitala Retter.</source>
-                            <source>Sázo {linjá}£{noun,obj,accsg,nomsg,case|linjjá}</source>
-                        </dd>
-                        <dt>comparative errors:</dt>
-                        <dd>
-	                        <source>Mađi váddásut fáddá, dađi {unnit}£{adv,advl,comp,pos,infl|unnibut} gullojit minoritehtajienat.</source>
-                        </dd>
-                        <dt>NOT a morpho-syntactic error:</dt>
-                        <dd>
-	                        <source>{Illá jáhkken dat lei duohta.}£{Illá jáhkken ahte dat lei duohta.}</source>
-	                        <p>SHOULD BE a syntactic error instead</p>
-	                        <source>Illá {jáhkken}¥{missing|jáhkken ahte} dat lei duohta.</source>
-                        </dd>
-                    </dl>
-                    <dl>
                         <dt>Mark-up attributes:</dt>
                         <dd>
                             <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop |pers | refl | dem | resip | indef | x }<br/>
@@ -162,6 +131,44 @@
                             gensg = acc/gen sg<br/>
                             genpl = acc/gen pl
                         </dd>
+                     </dl>
+                    <dl>
+                        <dt>Examples for mark-up</dt>
+                        <dd>
+                            <ul>
+                                <li>Case errors:
+                                    <ul>
+                                        <li>Simple mark-up: <source>Mun liikon dien {girjji}£{girjái}.</source> </li>
+                                        <li>Detailed mark-up:  <source>Mun liikon dien {girjji}£{n,case,acc-ill|girjái}.</source></li>
+                                        <li>Detailed mark-up: <source>Jus mii nannet {máhttu}£{noun,obj,accsg,nomsg,case|máhtu} ja diđolašvuođa dáid birra dutkamušaid bokte, de lea álgoálbmogiidda álkit ákkastallat áigumušaid ja politihka, muitala Retter.</source></li>                                        
+                                        <li>Detailed mark-up: <source>Sázo {linjá}£{noun,obj,accsg,nomsg,case|linjjá}</source></li>                                
+                                    </ul>
+                                </li>
+                                <li>Analytical (instead of synthetic) inflection:
+                                    <ul>
+                                        <li>Simple mark-up: <source>Dat lea {eanemus dábálaš}£{dábálaččamus} váriin ja duoddariin.</source> </li>
+                                        <li>Detailed mark-up: <source>Dat lea {eanemus dábálaš}£{adj,superl,analyt-synt|dábálaččamus} váriin ja duoddariin.</source> </li>
+                                    </ul>
+                                </li>
+                                <li>Comparative error:
+                                    <ul>
+                                        <li>Detailed mark-up: <source>Mađi váddásut fáddá, dađi {unnit}£{adv,advl,comp,pos,infl|unnibut} gullojit minoritehtajienat.</source></li>
+                                    </ul>
+                                </li>                                
+                                <li>Agreement errors:
+                                    <ul>
+                                        <li>Detailed mark-up: <source>{Doalut bistte}£{verb,fin,pl3prs,conneg,infl|Doalut bistet} gitta dii. {16:00}¥{missing|16:00 rádjai}.</source></li>
+                                        <li>Detailed mark-up: <source>{Mat lea}£{verb,fin,sg3prs,pl3prs,kongr|Mat leat} {tnjealját}${adj,typo|njealját} čiega koordináhtat?</source></li>
+                                    </ul>
+                                </li>
+                                <li>NOT a morpho-syntactic error:
+                                    <ul>
+                                        <li> <source>{Illá jáhkken dat lei duohta.}£{Illá jáhkken ahte dat lei duohta.}</source></li>
+                                        <li>SHOULD BE a syntactic error instead: <source>Illá {jáhkken}¥{missing|jáhkken ahte} dat lei duohta.</source></li>
+                                    </ul>
+                                </li>
+                            </ul>
+	                    </dd>
                      </dl>
                 </section>
                 <section>
