@@ -173,7 +173,7 @@
                 </section>
                 <section>
                     <title>Syntactic errors</title>
-                    <source>TEMPLATE: {redundantword}¥{pos,redun|} OR {word}¥{pos, missing|word missingword} OR word order errors</source>
+                    <source>TEMPLATE: {redundantword}¥{pos,redun|} OR {word}¥{pos, missing|word missingword} OR word order errors {word1 word2}¥{pos_word1,wo|word2 word1} OR wrong clause type</source>
                     <p>Also these errors require a partial or full analysis of (parts of) the sentence or surrounding words to
                      be detected and corrected. In the resulting xml, the element is named &lt;errorsyn&gt;.</p>
                     <dl>
@@ -198,9 +198,22 @@
                                     <ul>
                                         <li>Fápmudusskovvi galgá leat stivrras {ovdal}¥{missing|ovdal go} riikačoahkkin álgá.</li>
                                         <li>Dat lei vuosttaš girji sámiid birra máid sápmelaš {čállán}¥{missing|lea čállán}.</li>
+                                        <li>Muđui ii leat mu eallimis nu {ollu}¥{rel,missing|ollu maid} govvádallat, eará go jurdagat ja gudnihipmu.</li>
                                     </ul>
                                 </li>
-                            </ul>
+                                <li>Word order:
+                                    <ul>
+                                        <li>Soaitá munnje liikot, in dieđe, muhto in jáhke {dat lea sivva ge}¥{pcle,wo|dat ge lea sivva}</li>
+                                        <li>{Sihkkarit dáruiduvvon mearrasámit leat}¥{verb,wo|Leat sihkkarit dáruiduvvan mearrasámit}.</li>
+                                    </ul>
+                                </li>
+                                <li>Wrong clause type:
+                                    <ul>
+                                        <li>Ja de geahčai birra ja jearai {jus {oktaFge}${indef,typo|oktage} máhtii}¥{clause,indirect|máhttágo oktage} sámegiela, ja ii oktage vástidan (ieš in duostan in maidige jietnadit), ja de ieš logai moadde strofa sámegillii čuvgežit.</li>
+                                        <li>Ja de geahčai birra ja jearai máhttágo oktage sámegiela, {ja ii}¥{clause,negfoc|iige} oktage vástidan (ieš in duostan in maidige jietnadit), ja de ieš logai moadde strofa sámegillii čuvgežit.</li>
+                                    </ul>
+                                </li>                            
+                             </ul>
                         </dd>
                     </dl>
                     <dl>
@@ -215,7 +228,8 @@
                         <dt>Mark-up attributes:</dt>
                         <dd>
                             <strong>pos</strong> { noun | verb | adj | adv | num | interj | pp | cc | cs | pcle | prop | pers | refl | dem | det | resip | indef | punct | x }<br/>
-                            <strong>errtype</strong> { wo | pph | redun | missing | cmp | x }
+                            <strong>errtype</strong> { wo | pph | redun | missing | cmp | x }<br/>
+                            <strong>clause type</strong> { indirect | acc_inf | acc_prfprc | relative | negfoc | main | x }
                         </dd>
                         <dt>Some explanations:</dt>
                         <dd>
@@ -225,6 +239,7 @@
                             dupl = duplicate<br/>
                             missing = missing word, or punctation when it is crucial for the interpretation<br/>
                             cmp = should be compound<br/>
+                            clause = wrong clause type<br/>
                             x = unknown
                         </dd>
                     </dl>
@@ -324,7 +339,7 @@
 	                        <source>— Leaibevuona sápmelaččaid váttisvuođaid{.}‰{punct|,} muhto dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.</source>
 	                        <source>Su mielas váttisvuođaid {buvttalii}${verb,á|buvttálii} ee. gieldda mearehis stuora viidodaga lassin maid sámegielat bálvalusaid {ollašuhttin}‰{punct|ollašuhttin.}</source>
                         </dd>
-						<dt>not a comma:</dt>
+						<dt>No comma:</dt>
                         <dd>
 	                        <source>{Maŋŋel doaluid, fertebehtet}‰{notcomma|Maŋŋel doaluid fertebehtet} {rehkenastit dietnasa ja čállet dan unna girjjážii}£{verb,infin,infinite,pl3prs,number|rehkenastit dietnasa ja čállit dan unna girjjážii} mii lea ruhta-kássas.</source>
                         </dd>
@@ -333,6 +348,7 @@
 	                        <source>{1980 logus}‰{hyph|1980-logus}</source>
 	                        <p>SHOULD BE:</p>
 	                        <source>{1980 logus}¥{noun,cmp|1980-logus}</source>
+	                        <source>gullat eambbo {aht’}${cc,svow|ahte}</source>
                         </dd>
                     </dl>
                 </section>
@@ -397,7 +413,7 @@
 	                <title>Alternative corrections</title>
 	                <p>If an error can be corrected in different ways, we order the corrections from more likely to less likely and separate the alternatives by three slashes</p>
 		            <p>The following error can be corrected in two ways: 1) change period into comma 2) leave the period and capitalize the subsequent word:</p>
-		            <source>— Leaibevuona sápmelaččaid váttisvuođaid{{.}‰{punc|,} muhto}///{. {muhto}‰{cap|Muhto}} dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.</source>
+		            <source>— Leaibevuona sápmelaččaid váttisvuođaid{{.}‰{punct|,} muhto}///{. {muhto}‰{cap|Muhto}} dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.</source>
 	            	</section>
 				</section>
 	            <section>
