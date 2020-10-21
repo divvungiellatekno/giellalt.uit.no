@@ -1,0 +1,116 @@
+CG-workshop 21.10.2020
+
+dii. 11:00-12:30
+
+Linda, Inga
+
+
+
+Boasstot sij viehkedij                 riekta: viehkedi 
+sij lij                                         li 
+dåj ij                                          i
+    ## Sij viehkedij mijáv dehkajt målssot
+    ## Iŋŋgá, Piera ja Linda lij dehkajt målssum
+
+ADD:msyn-congr-PrtSg3-PrsPl3 (&msyn-congr-PrtSg3-PrsPl3) TARGET (Prt Sg3) IF (*-1 (N Nom Pl) OR (Pron Nom Pl) OR (Pron Nom Pl3) BARRIER NOT-ADV-PCLE LINK NOT 0 (Pron Nom Sg3) OR (N Nom Sg)) ;
+    ## Sij viehkedij mijáv dehkajt målssot
+
+
+viehkedij
+viehkedij	viehkedit+V+TV+Ind+Prt+Sg3	0,000000
+
+viehkedi
+viehkedi	viehkedit+V+TV+Ind+Prs+Pl3	0,000000
+viehkedi	viehkedit+V+TV+Ind+Prt+Sg2	0,000000
+
+
+lij
+lij	liehket+V+IV+Ind+Prt+Sg3+v1	0,000000
+
+li
+li	liehket+V+IV+Ind+Prs+Pl3	0,000000
+
+lij
+lij	liehket+V+IV+Ind+Prt+Sg3+v1	0,000000
+
+ADD:msyn-liehket-congr-condsg2-condpl3 (&msyn-liehket-congr-condsg2-condpl3) TARGET (Cond Sg2) IF (*-1 (N Nom Pl) OR (Pron Nom Pl) OR (Pron Nom Pl3) BARRIER NOT-ADV-PCLE ) ;
+
+
+ADD:msyn-liehket-congr-condsg2-condpl3 (&msyn-liehket-congr-condsg2-condpl3) TARGET (Cond Sg2) IF (*-1 (N Nom Sg) BARRIER NOT-ADV-PCLE LINK *-1 CC BARRIER NOT-Attr LINK -1 (N Nom Sg) )  ;
+
+    ## gånnå {vuorasulmutja ja skihppe lulu}£{kongr|skihppe ja vuorasulmutja lulun} {idja-biejvve huvsov}¢{cmp,X-1|idja-biejvvehuvsov} ja sujtov oadtjot.
+    ## Árran ja UiT lulu aktistattjat barggat.
+
+
+SET NOT-Attr = WORD - Attr ;
+
+COPY:msyn-liehket-congr-condsg2-condpl3 (Pl3 &SUGGEST) EXCEPT (Sg2 &msyn-liehket-congr-condsg2-condpl3) TARGET (&msyn-liehket-congr-condsg2-condpl3) ;
+
+
+de        Cc ; ! (Pcle only, "så".) we do like in sme, vrd. Nickel
+ge        Cc ;
+goappátja Cc ;
+ja        Cc ;
+jale      Cc ;
+jali      Cc ;
+jalik     Cc ;
+juobi     Cc ;
+juogu     Cc ;
+masku     Cc ;
+mavas     Cc ;
+!men       Cc ; !not smj
+vaj       Cc ;
+val       Cc ;
+valla     Cc ;
+váj       Cc ;
+vájbi     Cc ;
+
+gos buohccit ja boarisolbmot [fas/ muhtumin, gal] livccet (Sg2->Pl3)
+
+tools/grammarcheckers/grammarchecker.cg3
+
+lulu
+    liehket+V+IV+Cond+Sg2 &msyn-liehket-congr-condsg2-condpl3
+=>  liehket+V+IV+Cond+Pl3 &SUGGEST
+
+ADD:msyn-liehket-congr-condsg2-condpl3 (&msyn-liehket-congr-condsg2-condpl3) TARGET (Cond Sg2) IF (*-1 (N Nom Pl) OR (Pron Nom Pl) OR (Pron Nom Pl3) BARRIER NOT-ADV-PCLE ) ;
+
+COPY:msyn-liehket-congr-condsg2-condpl3 (Pl3 &SUGGEST) EXCEPT (Sg2 &msyn-liehket-congr-condsg2-condpl3) TARGET (&msyn-liehket-congr-condsg2-condpl3) ;
+
+
+
+
+sij	sån+Pron+Pers+Pl3+Nom
+muhtema	muhtem+Pron+Indef+Pl+Nom
+
+gos buohccit ja boarisolbmot livccet 
+subj (Pl) V 
+
+lulu
+lulu	liehket+V+IV+Cond+ConNeg	0,000000
+lulu	liehket+V+IV+Cond+Sg2	0,000000
+
+lulun
+lulun	liehket+V+IV+Cond+Pl3	0,000000
+
+sij oadtju
+
+juohke vearba?
+sihke barastavval- barahisstavvalvearbbat
+* sihke
+
+
+
+
+oažžun -> oaččun
+áigun -> áiggun/áigon
+Mun áigun
+
+áigun
+áigun	áigut+V+IV+Actio+Gen	0,000000
+áigun	áigut+V+IV+Actio+Nom	0,000000
+áigun	áigut+V+TV+Actio+Gen	0,000000
+áigun	áigut+V+TV+Actio+Nom	0,000000
+áigun	áigut+V+TV+Der/NomAct+N+Sg+Gen+Allegro	0,000000
+áigun	áigut+V+TV+Der/NomAct+N+Sg+Nom	0,000000
+
