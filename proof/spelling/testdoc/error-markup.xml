@@ -294,10 +294,10 @@
                 </section>
                 <section>
                     <title>Formatting errors</title>
-                    <source>{wrong}‰{error classification|correct}</source>
+                    <source>TEMPLATE: {wrong}‰{error classification|correct}</source>
                     <p>Formatting errors include punctuation, hyphens, citation marks and spacing.</p>
                     <dl>
-                        <dt>Annotering: Attributes:</dt>
+                        <dt>Annotation: Attributes:</dt>
                         <dd>
                             <strong>errtype</strong> { space | notspace | hyph | nothyph | cit | punct
                             | notpunct | }<br/>
@@ -349,6 +349,26 @@
 	                        <p>SHOULD BE:</p>
 	                        <source>{1980 logus}¥{noun,cmp|1980-logus}</source>
 	                        <source>gullat eambbo {aht’}${cc,svow|ahte}</source>
+                        </dd>
+                    </dl>
+                </section>
+                <section>
+                    <title>Foreign language errors</title>
+                    <source>TEMPLATE: {wrong}‰{error classification}</source>
+                    <p>Formatting errors include text in foreign language and urls.</p>
+                    <dl>
+                        <dt>Annotation: Attributes:</dt>
+                        <dd>
+                            <strong>errtype</strong> { url | }<br/>
+                        </dd>
+                        <dt>Some explanations:</dt>
+                        <dd>
+                            url = this is an url<br/>
+                        </dd>
+                        <dt>Url format:</dt>
+                        <dd>
+	                        <p>mark url and say it's an url:</p>
+	                        <source>Prošeavttas gávdno lassidiehtu mielčuovvu čujuhusas: {http://www.arcticgovernance.org}∞{url}/ Prošeaktajođiheaddji, dr Robert Corell muitalii prošeavtta duogážis ja mearkkašumis.</source>
                         </dd>
                     </dl>
                 </section>
