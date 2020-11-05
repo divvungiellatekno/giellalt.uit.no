@@ -1,0 +1,182 @@
+CG-workshop 05.11.2020
+
+dii. 10:00-12:30
+
+Linda, Inga, Marja-Liisa, (Sjur onehaččat)
+
+* ovddeš bargu:
+
+julevsámegiella Sg3 galgá Pl3
+
+* otná čuolbmá: kásusmeattáhus man ollu konstrukšuvnnas
+
+boasttut                        - riekta
+Mon ennuv kiirjijd láá tiilájum? - Mon ennuv kirjeh láá tiilájum? 
+Man ollu girjjiid leat diŋgojuvvon? - Man ollu girjjit leat diŋgojuvvon?
+Paljonko kirjoja on tilattu? 
+
+Suomagiela partitiiva hehtte ja buktá sámegillii akkusatiivva passiivacealkagiid subjektii.
+
+cd github/giellalt/lang-smn
+echo "cealkka" | tools/grammarcheckers/modes/trace-smngram-dev.mode
+
+ls tools/grammarcheckers/modes/
+
+
+less tools/grammarcheckers/modes/trace-smngram-dev.mode
+
+
+#!/bin/sh
+
+hfst-tokenise -g '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/tokeniser-gramcheck-gt-desc.pmhfst' \
+ | divvun-blanktag '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/analyser-gt-whitespace.hfst' \
+ | vislcg3 --trace -g '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/mwe-dis.cg3' \
+ | cg-mwesplit \
+ | divvun-cgspell -n 10 -b 15 -w 5000 -u 0.400000 -l '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/acceptor.default.hfst' -m '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/errmodel.default.hfst' \
+ | vislcg3 --trace -g '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/disambiguator.cg3' \
+ | vislcg3 --trace -g '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/spellchecker.cg3' \
+ | vislcg3 --trace -g '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/grc-disambiguator.cg3' \
+ | vislcg3 --trace -g '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/grammarchecker.cg3' \
+ | divvun-suggest -g '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/generator-gramcheck-gt-norm.hfstol' -m '/Users/molthuis/github/giellalt/lang-smn/tools/grammarcheckers/errors.xml' -l smn
+~
+~
+
+
+
+
+
+administrators-MacBook-Pro:lang-smn molthuis$ echo "Mon ennuv kiirjijd láá tiilájum?"| tools/grammarcheckers/modes/trace-smngram-dev.mode
+"<Mon>"
+	"mii" Pron <smn> <smn> Interr Sg Gen <W:0.0> SELECT:3294:Interr SUBSTITUTE:7295 SUBSTITUTE:7294
+;	"Mo" N Prop Sem/Plc Sg Ill <W:0.0> REMOVE:2257:PronNotProp
+;	"Mo" N Prop Sem/Sur Sg Ill <W:0.0> REMOVE:2257:PronNotProp
+;	"mii" Pron Indef Sg Acc Known <W:0.0> SELECT:3294:Interr
+;	"mii" Pron Indef Sg Gen <W:0.0> SELECT:3294:Interr
+;	"mii" Pron Interr Sg Acc Known <W:0.0> SELECT:3294:Interr REMOVE:6961:KillAcc
+;	"mii" Pron Rel Sg Acc Known <W:0.0> SELECT:3294:Interr
+;	"mii" Pron Rel Sg Gen <W:0.0> SELECT:3294:Interr
+;	"mon" Adv <W:0.0> SELECT:3294:Interr
+: 
+"<ennuv>"
+	"ennuv" Adv <smn> <smn> <W:0.0> SUBSTITUTE:7289 SUBSTITUTE:7288
+: 
+"<kiirjijd>"
+	"kirje" N <smn> <smn> Sem/Txt Pl Acc <W:0.0> SUBSTITUTE:7288 SUBSTITUTE:7287 &msyn-pass-accsubj MAP:2377:msyn-pass-accsubj
+msyn-pass-accsubj
+	"kirje" N <smn> <smn> Sem/Txt Pl <W:0.0> SUBSTITUTE:7288 SUBSTITUTE:7287 Nom &msyn-pass-accsubj &SUGGEST MAP:2377:msyn-pass-accsubj COPY:2378:msyn-pass-accsubj
+kirje+N+Pl+Nom	? kirjeh
+: 
+"<láá>"
+	"leđe" V <smn> <smn> IV Ind Prs Pl3 <W:0.0> MAP:4523:+FAUXVCop SUBSTITUTE:7290 @+FAUXV SUBSTITUTE:7289
+: 
+"<tiilájum>"
+	"tiiláđ" Ex/V Ex/TV Der/Pass V <smn> <smn> IV PrfPrc <W:0.0> MAP:4609:-FMAINV SUBSTITUTE:7290 @-FMAINV SUBSTITUTE:7289
+;	"tiiláđ" Ex/V Ex/TV Der/Pass V IV Ind Prt ConNeg <W:0.0> REMOVE:2803:muhtoNotConNeg
+;	"tiiláđ" V TV Imprt Sg1 <W:0.0> REMOVE:2124:NotImprtAfterLede
+"<?>"
+	"?" CLB <W:0.0>
+:\n
+
+
+#!!Accusative subjects in passive 
+
+# b) Suomâkielâ partitiiv passiivráhtusijn; sämikielâst passiiv ohtâvuođâst lii nominatiiv já verbâ maaŋgâlovvoost.
+MAP:msyn-pass-accsubj (&msyn-pass-accsubj) TARGET N IF (0C Acc + Pl)(1 Der/Pass + Pl3 OR LEXICALISED-PASS-V + Pl3)(NOT 1 PrfPrc OR TV);
+
+MAP:msyn-pass-accsubj (&msyn-pass-accsubj) TARGET N IF (0C Acc + Pl)(1 COMMA LINK 1 Rel LINK *1 COMMA LINK 1 Der/Pass + Pl3 OR LEXICALISED-PASS-V + Pl3 LINK NOT 0 PrfPrc OR TV);
+COPY:msyn-pass-accsubj (Nom &SUGGEST) EXCEPT (Acc &msyn-pass-accsubj) TARGET (N Pl &msyn-pass-accsubj);
+
+
+#fi	Saamenkielisiä nimityksiä käytetään vähän. - 
+##	Sämikielâlijd nomâttâsâid kiävttojeh uccáá. 
+#$ 	Sämikielâliih nomâttâsah kiävttojeh uccáá. 
+#$ Sämikielâliih nomâttâsah, moh láá ovdil kevttum, kiävttojeh tääl uccáá.
+#% Sämikielâlijd nomâttâsâid, moh láá ovdil kevttum, kiävttojeh tääl uccáá.
+
+
+MAP:msyn-pass-accsubj (&msyn-pass-accsubj) TARGET N IF (0C Acc + Pl)(1 ("leđe") + Pl3 OR Sg3) (2 PrfPrc + Der/Pass OR LEXICALISED-PASS-V);
+COPY:msyn-pass-accsubj (Nom &SUGGEST) EXCEPT (Acc &msyn-pass-accsubj) TARGET (N Pl &msyn-pass-accsubj);
+
+#% Mon ennuv kiirjijd láá tiilájum?
+#$ Mon ennuv kirjeh láá tiilájum? 
+
+#% Tävirijd láppojii ääitist.
+#$ Tävireh láppojii ääitist.
+
+#% Tävirijd láá lappum ääitist.
+#$ Tävireh láá lappum ääitist. 
+
+#% Tävirijd lii lappum ääitist.
+#$ Tävireh láá lappum ääitist.
+
+
+
+
+echo kirjeh | hfst-flookup -q src/generator-gramcheck-gt-norm.hfst
+
+echo kirjeh | hfst-flookup -q src/generator-gramcheck-gt-norm.hfst
+kirjeh	kirje+CmpN/SgN+CmpN/SgG+N+Sem/Txt+Pl+Nom	0,000000
+kirjeh	kirje+CmpN/SgN+CmpN/SgG+N+Pl+Nom	0,000000
+
+administrators-MacBook-Pro:lang-smn molthuis$ echo lodeh | hfst-flookup -q src/generator-gramcheck-gt-norm.hfst
+lodeh	lodde+N+Sem/Ani-bird+Pl+Nom	0,000000
+lodeh	lodde+N+Pl+Nom	0,000000
+
+
+administrators-MacBook-Pro:lang-smn molthuis$ husmn
+kiirjijd
+kiirjijd	kirje+N+Pl+Acc	0,000000
+
+kirjeh
+kirjeh	kirje+N+Pl+Nom	0,000000
+
+
+
+** vearbameattáhus
+
+Tääbbin lii puoh noomah. "Täällä on kaikki nimet."
+Tääbbin láá puoh noomah. "Täällä ovat kaikki nimet."
+
+Dáppe lea buot namat.
+Dáppe leat buot namat. 
+
+
+
+administrators-MacBook-Pro:lang-smn molthuis$ ls tools/grammarcheckers/modes
+smndis-dev.mode                       smngram0-morph.mode                   trace-smngram-nospell0-morph.mode
+smndis-dev0-morph.mode                smngram1-blanktag.mode                trace-smngram-nospell1-blanktag.mode
+smndis-dev1-mwe-dis.mode              smngram2-mwe-dis.mode                 trace-smngram-nospell2-mwe-dis.mode
+smndis-dev2-mwe-split.mode            smngram3-mwe-split.mode               trace-smngram-nospell3-mwe-split.mode
+smndis-dev3-spell.mode                smngram4-spell.mode                   trace-smngram-nospell4-disam.mode
+smndis-dev4-blanktag.mode             smngram5-disam.mode                   trace-smngram-nospell5-gc.mode
+smndis-dev5-disam.mode                smngram6-cg.mode                      trace-smngram-release.mode
+smndis-dev6-cg.mode                   smngram7-cg.mode                      trace-smngram-release0-morph.mode
+smngram-dev.mode                      smngram8-gc.mode                      trace-smngram-release1-blanktag.mode
+smngram-dev0-morph.mode               smnspell.mode                         trace-smngram-release2-mwe-dis.mode
+smngram-dev1-blanktag.mode            smnspell0-morph.mode                  trace-smngram-release3-mwe-split.mode
+smngram-dev2-mwe-dis.mode             smnspell1-mwe-dis.mode                trace-smngram-release4-spell.mode
+smngram-dev3-mwe-split.mode           smnspell2-mwe-split.mode              trace-smngram-release5-disam.mode
+smngram-dev4-spell.mode               smnspell3-spell.mode                  trace-smngram-release6-cg.mode
+smngram-dev5-disam.mode               smnspell4-disam.mode                  trace-smngram-release7-cg.mode
+smngram-dev6-cg.mode                  smnspell5-cg.mode                     trace-smngram-release8-gc.mode
+smngram-dev7-cg.mode                  smnspell6-cg.mode                     trace-smngram.mode
+smngram-dev8-gc.mode                  trace-smndis-dev.mode                 trace-smngram0-morph.mode
+smngram-nospell.mode                  trace-smndis-dev0-morph.mode          trace-smngram1-blanktag.mode
+smngram-nospell0-morph.mode           trace-smndis-dev1-mwe-dis.mode        trace-smngram2-mwe-dis.mode
+smngram-nospell1-blanktag.mode        trace-smndis-dev2-mwe-split.mode      trace-smngram3-mwe-split.mode
+smngram-nospell2-mwe-dis.mode         trace-smndis-dev3-spell.mode          trace-smngram4-spell.mode
+smngram-nospell3-mwe-split.mode       trace-smndis-dev4-blanktag.mode       trace-smngram5-disam.mode
+smngram-nospell4-disam.mode           trace-smndis-dev5-disam.mode          trace-smngram6-cg.mode
+smngram-nospell5-gc.mode              trace-smndis-dev6-cg.mode             trace-smngram7-cg.mode
+smngram-release.mode                  trace-smngram-dev.mode                trace-smngram8-gc.mode
+smngram-release0-morph.mode           trace-smngram-dev0-morph.mode         trace-smnspell.mode
+smngram-release1-blanktag.mode        trace-smngram-dev1-blanktag.mode      trace-smnspell0-morph.mode
+smngram-release2-mwe-dis.mode         trace-smngram-dev2-mwe-dis.mode       trace-smnspell1-mwe-dis.mode
+smngram-release3-mwe-split.mode       trace-smngram-dev3-mwe-split.mode     trace-smnspell2-mwe-split.mode
+smngram-release4-spell.mode           trace-smngram-dev4-spell.mode         trace-smnspell3-spell.mode
+smngram-release5-disam.mode           trace-smngram-dev5-disam.mode         trace-smnspell4-disam.mode
+smngram-release6-cg.mode              trace-smngram-dev6-cg.mode            trace-smnspell5-cg.mode
+smngram-release7-cg.mode              trace-smngram-dev7-cg.mode            trace-smnspell6-cg.mode
+smngram-release8-gc.mode              trace-smngram-dev8-gc.mode
+smngram.mode                          trace-smngram-nospell.mode
+
