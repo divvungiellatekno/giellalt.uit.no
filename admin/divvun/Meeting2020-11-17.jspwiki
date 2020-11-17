@@ -1,0 +1,130 @@
+2020.10.17 Divvun-møte
+
+Til stades: Sara Marja, Siri, Tommi, Børre, Linda, Duommá, Inga, Sjur
+
+Saker:
+* sidan sist
+* arbeid framover
+* ymse
+
+!!! Sidan sist
+
+!! Duommá
+* samla setningar til yáml-test for gramcheck
+* gramchk testing
+
+!! Børre
+* gramyaml
+** tester i anførselstegn
+** bytta til libdivvun som sjekker i stedet for divvun-checker. Sjekking av 290
+   setninger gikk ned fra 7m10s til 24s på maskina mi.
+** lage bug i lang-sme der man ber om å kjøre gramyaml som en del av make check
+** lage bug om divvun-checker der –spec og –version ikke fungerer
+** debugge –spec/--variant opsjonen i divvun-checker, fant ut at om man kjører
+   den i samme katalog som pipespec.xml ligger i, så funker det
+** endre gramyaml til å bruke den logikken, og da funka spec/variant i testene
+** gramyaml-artikkel sammen med Linda og Tommi
+* GDPR-møte
+* smj missinglist fra Anders Kintel sin ordbok
+* møte om svn/github/bugzilla
+* fikse linker på hjemmesida
+* ordboksmøte med Sara Marja, Sjur og Trond
+* jobbe med å forbedre logging i sátni.org
+* hjelpe Duommá med å få maskina på føttene (installere MacPorts,
+  apertium-nightly, sjekke ut lang-sme & co)
+* Legge inn sma-liste fra Gïelegaaltije
+
+!! Linda
+* fikse Duommá sine bugger
+* noen gamle bugger
+* mwe-dis 
+* lage yaml filer med få eksempler der Duommá kan legge til
+* artikkelsamtaler med Børre og Tommi
+* CG-workshop med Inga - lulesamisk GramDivvun + valens
+
+!! Ritva 
+* Error mark-up
+* Se gjennom gullkorpus og gjøre om «gammel merking»
+* Samle eksempelsetninger til neste Error mark-up møte/workshop
+
+!! Tommi
+* bytte til linux-bærbar
+* møte om github med alle
+* møte om gramyamls artikkel med 
+* github-markdown-tabeller konvertiert
+
+!! Inga
+* Sortert missinglist fra Anders Kintels ordbok, nå er den på ca 1200 ord
+  (Børre har laget missinglister)
+* Lagt til ord fra missing_from_AK
+* 220 korrekturforslag sendt til Anders Kintel fra lulesamisk-norsk
+* Grammatikkkontroll: Arbeidsmøte med Linda, fire nye regler.
+* Samlet feil å skrive regler til
+* Mindre yaml-rettinger
+
+!! Siri
+* missinglista
+* TW
+* Alle ord blir ikke skjekket in
+
+!! Sara Marja
+* møte om svn/github/bugzilla
+* ordboksmøte med Børre, Sjur og Trond
+* spm om Korp: hvorfor er ikke kildelista tilgjengelig på Korp som 
+* Note/kommentar som må tas med GG: ''lidteraturesjïele'' vs ''litterature''.
+  Har sendt spörsmål pr. mail til Gïelegaaltije og fått svar om at det er "tt"
+  som gjelder. 
+
+!! Sjur
+* GDPR-møte med Kluge-advokat, Børre, Brendan, Chiara
+* meldte ulike feil i `gut`, ny versjon er no ute
+* retta nokre feil i smj
+* fiksa Tower-lisens via UiT
+* møte om Bugzilla vs Github Issues, personvern m.m. (har sjekka inn starten på
+  retningsliner)
+* installerte macOS 11 Big S(j)ur i VM
+* testa Divvun-installeraren på macOS 11, fann feil med MacDivvun, meldte vidare
+* møte om ordbøker
+
+!!! Arbeid framover
+
+* stavekontrolltestbenk
+* grammatikkontrolloppdatering
+* stavekontrolloppdatering
+
+!!! Ymse
+
+Møte om stavekontrolltesting rett etterpå!
+
+!!! Stavekontrolltestingsmøte
+
+Til stades: Børre, Tommi, Sjur
+
+Tema: web app/sidegenerering
+
+Ting som manglar:
+* sortering på: tid, redigeringsavstand, plasseringa til det rette forslaget
+* litt meir statistikk:
+** % etter redigeringsavstand
+** betre CSS for statistikken
+* sjå over fargekodinga
+
+For å få statisk html for stavekontrolltestinga:
+
+{{{
+npm run build
+}}}
+
+Legg ut resultata på GitHub pages. Kan spesifiserast for kvart repo i github.
+
+* html blir kopiert som dei er
+* md prosessert med Jekyll (som standard)
+* kan byggja med eigne verkty / Github Actions
+
+Kvart repo får nettside etter dette mønsteret:
+* giellalt.github.io/lang-XXX/ - doc/-katalogen i kvart repo bør bli denne sida.
+* giellalt.github.io - krev eit eige repo som heiter det same.
+
+Ev. så vil vi at giellalt.github.io skal få url giellalt.uit.no. I så fall kan
+det gjerast
+[slik|https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site].
