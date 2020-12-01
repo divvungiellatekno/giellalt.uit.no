@@ -1,122 +1,35 @@
-!!!Adding a new language to the infrastructure
+!!!Adding a new language to the Github infrastructure
 
-Languages may be added to one of these three directories:
+Languages reside within the [GiellaLT|https://github.com/giellalt] organisation,
+and new languages should be added there.
 
-# {{$GTHOME/langs}} (for languages we work on, or which have full-size transducers)
-# {{$GTHOME/experiment-langs}} (experiments of different kinds)
-# {{$GTHOME/startup-langs}} (when we do not know whether the work will lead to
-  anything or not)
+!!Prerequisites
 
-There are also a couple of directories for a few languages with a closed license
-and restricted access. Their structure is identical to the open ones above.
+You need [gut|https://github.com/divvun/gut] to be able to add a new language
+the way it is intended.
 
 !!How to add a new language
 
-We here show how to add new languages to {{$GTHOME/langs/}} (for adding to the
-two other directories, exchange "langs" with "startup-langs" etc.)
+Follow [these instructions|https://github.com/divvun/giellalt-svn2git/blob/master/doc/GutUsageExamples.md#task-10-add-a-new-language].
 
-# {{cd $GTHOME/langs}}
-# {{./autogen.sh}}
-# {{./configure}}
-# {{make NEW_LANGS=LANGCODE}}
+When done, also add entries in the registry and check the README file.
 
-where LANGCODE  is the 3-letter ISO 639-3 code for the language you want to add.
-You can also add more than one language by separating the codes with spaces, and
-putting double quotes around the whole list:
+To get spellers via the Divvun Manager (nightly channel only in the beginning), there are two more steps:
 
-* {{make NEW_LANGS="LANGCODE1 LANGCODE2 LANGCODE3"}}
-
-{{./autogen.sh}} and {{./configure}} should only be required the first time. If
-you get a message like:
-
-{{{
-make: *** No targets specified and no makefile found.  Stop.
-}}}
-
-then you need to run:
-
-{{{
-./autogen.sh
-./configure
-}}}
-
-After running these commands, everything should work as described.
-
-! Possible issue or update
-
-If you get a message similar to the following (replace {{NNN}} with your actual user name, and {{....}} with the path to the file):
-
-{{{
-$ make NEW_LANGS=LANGCODE
-makefilerevdate=$( LC_ALL=C svn info  --xml configure.ac | fgrep '<date>' | sed -e 's/date//g' | tr -d '<>/') ; \
-		svn merge -r{$makefilerevdate}:HEAD /Users/NNN/..../giella-templates/langs-templates/configure.ac configure.ac \
-			--ignore-ancestry --accept postpone ; \
-		echo " *** " ; \
-		echo " *** The file /Users/NNN/..../langs/configure.ac has been updated! ";\
-		echo " *** Please review and commit the changes before continuing! " ; \
-		echo " *** " ; \
-		exit 1
- *** 
- *** The file /Users/NNN/..../langs/configure.ac has been updated! 
- *** Please review and commit the changes before continuing! 
- *** 
-make: *** [configure.ac] Error 1
-}}}
-
-then the file {{configure.ac}} has an old timestamp. To fix this, just do this:
-
-{{{
-touch langs/configure.ac
-}}}
-
-On the __other__ hand, if you get the following message:
-
-{{{
-$ make
-makefilerevdate=$( LC_ALL=C svn info  --xml configure.ac | fgrep '<date>' | sed -e 's/date//g' | tr -d '<>/') ; \
-		svn merge -r{$makefilerevdate}:HEAD /Users/NNN/..../giella-templates/langs-templates/configure.ac configure.ac \
-			--ignore-ancestry --accept postpone ; \
-		echo " *** " ; \
-		echo " *** The file /Users/NNN/..../langs/configure.ac has been updated! ";\
-		echo " *** Please review and commit the changes before continuing! " ; \
-		echo " *** " ; \
-		exit 1
---- Merging r183809 through r186029 into '/Users/NNN/..../langs/configure.ac':
-U    /Users/NNN/..../langs/configure.ac
- *** 
- *** The file /Users/NNN/..../langs/configure.ac has been updated! 
- *** Please review and commit the changes before continuing! 
- *** 
-make: *** [configure.ac] Error 1
-}}}
-
-— notice the two extra lines:
-
-{{{
---- Merging r183809 through r186029 into '/Users/NNN/..../langs/configure.ac':
-U    /Users/NNN/..../langs/configure.ac
-}}}
-
-— then follow the instructions given above, and commit the changes to {{configure.ac}}.
+* fill in details in the {{manifest.toml.in}} file
+* set up github actions (for now, should be automatic in the future)
+* create an entry in pahkat (description forthcoming)
 
 !!Result
 
-The above command will create a new directory for the specified language, and
+The above steps will create a new directory for the specified language, and
 populate it with the required makefiles, autoconf files and template source
-files. The files are automatically added (but not committed) to svn, and all
-relevant {{svn:ignore}} properties are set.
+files.
 
-In addition, the new language code is added to {{$GTHOME/langs/Makefile.am}} and
-{{$GTHOME/langs/configure.ac}}. When you have checked the new language, and
-found that everything is ok, please {{svn commit}} ''both'' the new language
-dir, and the {{configure.ac}} and {{Makefile.am}} files. If the changes in those
-two files are not committed, the new language will be left out of future updates
-to the infrastructure.
-
-Now, to start doing real work, you must do one set of preparations still:
+To start doing real work, you must do one set of preparations still:
 
 {{{
-cd LANGCODE
+cd lang-LANGCODE
 ./autogen.sh
 ./configure
 }}}
