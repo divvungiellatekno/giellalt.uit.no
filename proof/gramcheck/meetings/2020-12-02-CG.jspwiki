@@ -1,0 +1,413 @@
+
+CG-workshop 02.12.2020
+
+dii. 10:00-11:15
+
+Linda, Inga
+
+Inga la dahkam ådå yaml, valla dat ij dåjma:
+svhum-hsl-m0289:lang-smj lwi001$ gramcheck-test.py -c test/grammarcheckers/msyn-sme_bastard_neg1-2.yaml 
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in xml:lang 'smj', trying 'en'
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in any xml:lang
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in xml:lang 'smj', trying 'en'
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in any xml:lang
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in xml:lang 'smj', trying 'en'
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in any xml:lang
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in xml:lang 'smj', trying 'en'
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in any xml:lang
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg" in xml:lang 'smj', trying 'en'
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg" in any xml:lang
+divvun-suggest: WARNING: No <description> for "msyn-sme_bastard_neg2" in xml:lang 'smj', trying 'en'
+
+
+-------------------------------------------------------
+Test 1/7: Iehke ittjij {vuolggám}¢{vuolge} davás iektu.
+-------------------------------------------------------
+[1/7][FAIL fn1] vuolggám:vuolge (errorortreal) => vuolggám:[] (msyn-sme_bastard_neg2)
+Test 1 - Passes: 0, Fails: 1, Total: 1
+
+-------------------------------------------
+Test 2/7: Mån ittjiv {diehtám}¢{diede} dav.
+-------------------------------------------
+[2/7][FAIL fn1] diehtám:diede (errorortreal) => diehtám:[] (msyn-sme_bastard_neg2)
+Test 2 - Passes: 0, Fails: 1, Total: 1
+
+------------------------------------------------------------------------------
+Test 3/7: Gå jåvsådijma davás de ejma {diehtám}¢{diede} sån galgaj vuona sisi.
+------------------------------------------------------------------------------
+[3/7][FAIL fn1] diehtám:diede (errorortreal) => diehtám:[] (msyn-sme_bastard_neg2)
+Test 3 - Passes: 0, Fails: 1, Total: 1
+
+---------------------------------------------------------------------------
+Test 4/7: ja ittjiv {vissjam}¢{visjá} basádit  åvddål gå lidjiv biesskedam.
+---------------------------------------------------------------------------
+[4/7][FAIL fn1] vissjam:visjá (errorortreal) => vissjam:[] (msyn-sme_bastard_neg2)
+Test 4 - Passes: 0, Fails: 1, Total: 1
+
+-------------------------------------------------------------------------
+Test 5/7: valla danna {iv}¢{ittjiv} {dádjadum}¢{dádjada} majdik ja ittjiv
+          máhttám gähttjalimev dahkat.
+-------------------------------------------------------------------------
+[5/7][PASS tp] iv:ittjiv (errorortreal) => iv:[ittjiv] (msyn-sme_bastard_neg)
+[5/7][FAIL fp2] : () => máhttám:[] (msyn-sme_bastard_neg2)
+[5/7][FAIL fn1] dádjadum:dádjada (errorortreal) => dádjadum:[] (msyn-sme_bastard_neg2)
+Test 5 - Passes: 1, Fails: 2, Total: 3
+
+-------------------------------------------------------------------------------
+Test 6/7: Muv plána lij Vuodnaj mannat bállov tjievtjatjit, valla {ij}¢{ittjij}
+          navti {sjaddam}¢{sjatta}.
+-------------------------------------------------------------------------------
+[6/7][PASS tp] ij:ittjij (errorortreal) => ij:[ittjij] (msyn-sme_bastard_neg)
+[6/7][FAIL fp2] : () => plána:[pládna, plánna] (typo)
+[6/7][FAIL fn1] sjaddam:sjatta (errorortreal) => sjaddam:[] (msyn-sme_bastard_neg2)
+Test 6 - Passes: 1, Fails: 2, Total: 3
+
+-------------------------------------------------------------------------------
+Test 7/7: Árjakluoven lij boadnjásj gut ittjij sidá hiejttet noajdástallamis ja
+          {ij}¢{ittjij} {miededam}¢{miededa} sån lij mejdek boasstot dahkam.
+-------------------------------------------------------------------------------
+[7/7][PASS tp] ij:ittjij (errorortreal) => ij:[ittjij] (msyn-sme_bastard_neg)
+[7/7][FAIL fp2] : () => Árjakluoven:[Árjepluoven, Árja-luoven, girjakluoven, kajakluoven, urjakluoven, Ørjekluoven, Árja-luovden, Árja-suoven, Árja-ruoven] (typo)
+[7/7][FAIL fn1] miededam:miededa (errorortreal) => miededam:[] (msyn-sme_bastard_neg2)
+Test 7 - Passes: 1, Fails: 2, Total: 3
+
+Total passes: 3, Total fails: 10, Total: 13
+True positive: 3
+False positive 1: 0
+False positive 2: 3
+False negative 1: 7
+False negative 2: 7
+Precision: 50.0%
+Recall: 30.0%
+F₁ score: 37.5%
+
+
+	# negation (sme pattern)
+	# ----------------------
+	# ittjiv diehtám/iv diehtám -> ittjiv diede
+	
+ADD:msyn-sme_bastard_neg (&msyn-sme_bastard_neg) TARGET ("ij" Neg Ind Prs) IF (*1 PrfPrc BARRIER NOT-ADV-PCLE - ("mige") - Acc) ;
+    ## Ij riek sjaddam nav ahte bloggiv åvdep vahkko.
+    ## ja iv vissjam basádit  åvddål gå lidjiv biesskedam
+    ## valla danna iv dádjadum majdik ja ittjiv máhttám gähttjalimev dahkat
+    ## Árjakluoven lij boadnjásj mij ittjij sidá hiejttet noajdástallamis ja	ij miededam	sån lij mejdek boasstot dahkam ,
+    ## Gå ällobargge Jåhkåmåhkke gieldan	e adnám	vaj ålggorijkka viddnudahka ij galggam boahtet billat sijá lájddumijt
+    ## Juska	ij mierredum	makkir vehkudagá máhtti ávkkiduvvat suodjalimguovlo sisbielen
+    ## Muv plána lij Vuodnaj mannat bállov tjievtjatjit, valla ij navti sjaddam.
+    ## Basecampa ij álggám nav buoret.
+
+COPY:msyn-sme_bastard_neg (Prt &SUGGEST) EXCEPT (Prs) AFTER Ind TARGET (&msyn-sme_bastard_neg) ;
+
+ADD:msyn-sme_bastard_neg2 (&msyn-sme_bastard_neg2) TARGET PrfPrc IF (*-1 ("ij" Neg Ind) BARRIER NOT-ADV-PCLE - ("mige") - Acc) ;
+
+COPY:msyn-sme_bastard_neg2 (ConNeg &SUGGEST) EXCEPT (PrfPrc &msyn-sme_bastard_neg2) TARGET (&msyn-sme_bastard_neg2) ;
+
+
+"<vuolggám>"
+	"vuolgget" Area/NO V <smj> <smj> IV PrfPrc <W:0.0> MAP:3258 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012 &msyn-sme_bastard_neg2 ADD:816:msyn-sme_bastard_neg2
+msyn-sme_bastard_neg2
+	"vuolgget" Area/NO V <smj> <smj> IV <W:0.0> MAP:3258 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012 ConNeg &SUGGEST ADD:816:msyn-sme_bastard_neg2 COPY:818:msyn-sme_bastard_neg2
+vuolgget+Area/NO+V+IV+ConNeg	?
+	"vuolgget" Area/SE V <smj> <smj> IV PrfPrc <W:0.0> MAP:3258 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012 &msyn-sme_bastard_neg2 ADD:816:msyn-sme_bastard_neg2
+msyn-sme_bastard_neg2
+	"vuolgget" Area/SE V <smj> <smj> IV <W:0.0> MAP:3258 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012 ConNeg &SUGGEST ADD:816:msyn-sme_bastard_neg2 COPY:818:msyn-sme_bastard_neg2
+vuolgget+Area/SE+V+IV+ConNeg	?
+
+
+
+# mij instead of gut
+#-------------------
+
+mij
+mij	mij+Pron+Interr+Sg+Nom	0,000000
+mij	mij+Pron+Rel+Sg+Nom	0,000000
+mij	mij+Pron+Interr+Sg+Nom	0,000000
+mij	mij+Pron+Rel+Sg+Nom	0,000000
+mij	mån+Pron+Pers+Pl1+Nom	0,000000
+mij	mån+Pron+Pers+Pl1+Nom	0,000000
+
+gut
+gut	guhti+Pron+Interr+Sg+Nom	0,000000
+gut	guhti+Pron+Rel+Sg+Nom	0,000000
+gut	guhti+Pron+Interr+Sg+Nom	0,000000
+gut	guhti+Pron+Rel+Sg+Nom	0,000000
+
+£ option + 3
+
+ma
+ma	ma+N+ABBR+Gram/IAbbr+Attr	0,000000
+ma	ma+N+ABBR+Gram/IAbbr+Pl+Nom	0,000000
+ma	ma+N+ABBR+Gram/IAbbr+Sg+Gen	0,000000
+ma	ma+N+ABBR+Gram/IAbbr+Sg+Nom	0,000000
+ma	ma+N+ABBR+Gram/IAbbr+Attr	0,000000
+ma	ma+N+ABBR+Gram/IAbbr+Pl+Nom	0,000000
+ma	ma+N+ABBR+Gram/IAbbr+Sg+Gen	0,000000
+ma	ma+N+ABBR+Gram/IAbbr+Sg+Nom	0,000000
+ma	mij+Pron+Interr+Pl+Nom	0,000000
+ma	mij+Pron+Rel+Pl+Nom	0,000000
+ma	mij+Pron+Interr+Pl+Nom	0,000000
+ma	mij+Pron+Rel+Pl+Nom	0,000000
+
+
+guoktásijn	guovtes+N+Coll+Pl+Ine	0,000000
+guoktásijn	guovtes+N+Coll+Sg+Com	0,000000
+guoktásijn	guovtes+N+Coll+Pl+Ine	0,000000
+guoktásijn	guovtes+N+Coll+Sg+Com	0,000000
+guoktásijn	guoktása+Pron+Indef+Pl+Ine	0,000000
+guoktásijn	guoktása+Pron+Indef+Pl+Ine	0,000000
+
+
+dajda	dajdda+A+Pl+Nom	0,000000
+dajda	dajdda+A+Sg+Gen	0,000000
+dajda	dajdda+A+Pl+Nom	0,000000
+dajda	dajdda+A+Sg+Gen	0,000000
+dajda	dat+Pron+Dem+Pl+Ill+Attr	0,000000
+dajda	dat+Pron+Dem+Pl+Ill	0,000000
+dajda	dat+Pron+Dem+Pl+Ill+Attr	0,000000
+dajda	dat+Pron+Dem+Pl+Ill	0,000000
+
+sidjij	sån+Pron+Pers+Pl3+Ill	0,000000
+sidjij	sån+Pron+Pers+Pl3+Ill	0,000000
+
+
+ADD:msyn-mij-gut (&msyn-mij-gut) TARGET ("mij") IF (*-1 (N Coll) OR (Sem/Hum) OR (Sem/Mal) OR (Sem/Fem) OR (Sem/Sur) OR (Pron Dem) OR (Pron Pers) OR (Pron Indef) BARRIER NOT-ADV-PCLE) ;
+COPY:msyn-mij-gut ("gut" &SUGGEST) EXCEPT ("mij" &msyn-mij-gut) TARGET (&msyn-mij-gut) ;  
+
+-1
+* dáj guoktásijn (N Coll)
+* dajda (Pron Dem)
+* sidjij (Pron Pers)
+* moattes (Pron Indef)
+* boadnjásj Sem/Hum
+* dåktår badjen Sem/Hum
+* Máret Sem/Fem
+* Sem/Mal
+* Sem/Sur
+* ulmutjav virggáj Sem/Hum
+
++1
+* ráddna Sem/Hum
+* fáŋŋgaj lidjin váldedum
+* lij dålåv dahkamin mij lij muv ráddna. SUBJ COPULAS Sem/Hum
+
+## Ja gåktu de manáj dáj guoktásijn {ma}£{gudi} galggin dunnuv viedtjat?
+
+## ja lidjin ájn vil tjállám bårde nali, láhpav dajda ma maŋŋela båhti.
+
+## Åja, ma fáŋŋgaj lidjin váldedum?
+
+## Dá gåjt dal moattes ma båhtin ma lidjin lahka berraha, 
+
+## Árjakluoven lij boadnjásj {mij}£{gut} ittjij sidá hiejttet noajdástallamis ja ittjij miededa sån lij mejdek boasstot dahkam.
+
+## Men de bådij dåktår badjen mij máhtij tyskav sáhkadit
+
+## lij dålåv dahkamin mij lij muv ráddna.
+
+## {”Måske-aksjåvnnå}${conc-sk-ssk|Måsske-aksjåvnnå}” åtsåj rudájt, ja biedjin {ulmutjav virggáj mij}£{x|ulmutjav virggáj gut}
+
+
+
+"<Ja>"
+	"ja" CC <smj> <smj> <W:0.0> MAP:1949 SELECT:1983 SUBSTITUTE:4019 @CVP SUBSTITUTE:4018
+;	"ja" CC <W:0.0> @CNP MAP:1949 SELECT:1983
+: 
+"<gåktu>"
+	"gåktu" Adv <smj> <smj> <W:0.0> SUBSTITUTE:4012 SUBSTITUTE:4011
+: 
+"<de>"
+	"de" Adv <smj> <smj> <W:0.0> SELECT:1783 SUBSTITUTE:4012 SUBSTITUTE:4011
+;	"de" CC <W:0.0> SELECT:1783
+: 
+"<manáj>"
+	"mannat" V <smj> <smj> IV Ind Prt Sg3 <W:0.0> MAP:3251 SUBSTITUTE:4013 @+FMAINV SUBSTITUTE:4012
+: 
+"<dáj>"
+	"dát" Pron <smj> <smj> Dem Pl Com <W:0.0> SUBSTITUTE:4018 SUBSTITUTE:4017
+	"dát" Pron <smj> <smj> Dem Pl Gen <W:0.0> SUBSTITUTE:4018 SUBSTITUTE:4017
+;	"dát" Pron Dem Pl Com Attr <W:0.0> IFF:3187
+: 
+"<guoktásijn>"
+	"guoktása" Pron <smj> <smj> Indef Pl Ine <W:0.0> SUBSTITUTE:4018 SUBSTITUTE:4017
+	"guovtes" N <smj> <smj> Coll Pl Ine <W:0.0> SUBSTITUTE:4011 SUBSTITUTE:4010
+	"guovtes" N <smj> <smj> Coll Sg Com <W:0.0> SUBSTITUTE:4011 SUBSTITUTE:4010
+: 
+"<ma>"
+	"ma" N <smj> <smj> Sem/Time ABBR"+Gram/IAbbr" Pl Nom <W:0.0> SELECT:2685 SUBSTITUTE:4011 SUBSTITUTE:4010
+;	"ma" N Sem/Time ABBR"+Gram/IAbbr" Attr <W:0.0> REMOVE:2100
+;	"ma" N Sem/Time ABBR"+Gram/IAbbr" Sg Gen <W:0.0> SELECT:2685
+;	"ma" N Sem/Time ABBR"+Gram/IAbbr" Sg Nom <W:0.0> SELECT:2685
+;	"mij" Pron Interr Pl Nom <W:0.0> SELECT:2685
+;	"mij" Pron Rel Pl Nom <W:0.0> SELECT:2685
+: 
+"<galggin>"
+	"galggat" V <smj> <smj> IV Ind Prt Pl3 <W:0.0> MAP:3222 SELECT:3890 SUBSTITUTE:4013 @+FAUXV SUBSTITUTE:4012
+;	"galggat" V IV Ind Prs Du1 <W:0.0> @+FAUXV MAP:3222 SELECT:3890
+: 
+"<dunnuv>"
+	"dån" Pron <smj> <smj> Pers Du2 Acc <W:0.0> SUBSTITUTE:4018 SUBSTITUTE:4017
+: 
+"<viedtjat>"
+	"viedtjat" V <smj> <smj> TV Inf <W:0.0> MAP:3271 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012
+"<?>"
+	"?" CLB <W:0.0>
+
+"<.>"
+	"." CLB <W:0.0>
+:\n
+
+--------------------------------------------------------------------------------------------------------------
+
+"<de>"
+	"de" Adv <smj> <smj> <W:0.0> SELECT:1783 SUBSTITUTE:4012 SUBSTITUTE:4011
+;	"de" CC <W:0.0> SELECT:1783
+: 
+"<bådij>"
+	"boahtet" V <smj> <smj> IV Ind Prt Sg3 <W:0.0> SELECT:1389 MAP:3251 SUBSTITUTE:4013 @+FMAINV SUBSTITUTE:4012
+;	"båhte" N Sem/State-sick Pl Com <W:0.0> SELECT:1389
+;	"båhte" N Sem/State-sick Pl Gen <W:0.0> SELECT:1389
+: 
+"<dåktår>"
+	"dåktår" N <smj> <smj> Sem/Hum Sg Nom <W:0.0> SUBSTITUTE:4011 SUBSTITUTE:4010
+: 
+"<badjen>"
+	"badjen" Adv <smj> <smj> <W:0.0> SUBSTITUTE:4012 SUBSTITUTE:4011
+;	"badjen" Po <W:0.0> REMOVE:2754
+: 
+"<mij>"
+	"mij" Pron <smj> <smj> Rel Sg Nom <W:0.0> SELECT:2869 SUBSTITUTE:4018 SUBSTITUTE:4017 &msyn-mij-gut ADD:919:msyn-mij-gut
+msyn-mij-gut
+	"gut" Pron <smj> <smj> Rel Sg Nom <W:0.0> SELECT:2869 SUBSTITUTE:4018 SUBSTITUTE:4017 &SUGGEST ADD:919:msyn-mij-gut COPY:920:msyn-mij-gut
+gut+Pron+Rel+Sg+Nom	?
+;	"mij" Pron Interr Sg Nom <W:0.0> SELECT:2869
+;	"mån" Pron Pers Pl1 Nom <W:0.0> SELECT:2869
+: 
+"<máhtij>"
+	"máhttet" V <smj> <smj> TV Ind Prt Sg3 <W:0.0> MAP:3242 SUBSTITUTE:4013 @+FMAINV SUBSTITUTE:4012
+;	"máhttet" Err/Orth V TV Ind Prt Sg3 <W:0.0> @+FMAINV MAP:3242 REMOVE:4004:errsub
+: 
+"<tyskav>"
+	"Jyske" N <smj> Prop Sem/Org Sg Acc <W:31.9964> <WA:17.9964> <spelled> "Jyskev"S PROTECT:1231 SELECT:1339 ADD:6:spelled SELECT:3133 SUBSTITUTE:4010 &SUGGESTWF &typo
+typo
+	"Byske" N <smj> Prop Sem/Plc Sg Acc <W:31.9964> <WA:17.9964> <spelled> "Byskev"S PROTECT:1231 SELECT:1339 ADD:6:spelled SELECT:3133 SUBSTITUTE:4010 &SUGGESTWF &typo
+typo
+	"Byske" N <smj> Prop Sem/Sur Sg Acc <W:31.9964> <WA:17.9964> <spelled> "Byskev"S PROTECT:1231 SELECT:1339 ADD:6:spelled SELECT:3133 SUBSTITUTE:4010 &SUGGESTWF &typo
+typo
+;	"dujskagiella" v2 N Sem/Lang Sg Acc <W:22.9964> <WA:12.9964> <spelled> "tuskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"dæsska" N Sem/Furn Sg Acc <W:26.9964> <WA:12.9964> <spelled> "deskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"disska" N Sem/Furn_Ctain-abstr Sg Acc <W:26.9964> <WA:12.9964> <spelled> "diskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"gaskav" Po <W:29.7441> <WA:9.74414> <spelled> "gaskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"gasska" N Sem/Feat-measr_Plc Sg Acc <W:29.7441> <WA:9.74414> <spelled> "gaskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"gasskat" V TV Ind Prs Sg1 <W:29.7441> <WA:9.74414> <spelled> "gaskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"loasskat" V IV Ind Prs Sg1 <W:32.9964> <WA:12.9964> <spelled> "låskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"másska" N Sem/Clth Sg Acc <W:32.9964> <WA:12.9964> <spelled> "máskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"risskat" V IV Ind Prs Sg1 <W:32.9964> <WA:12.9964> <spelled> "riskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"sasskat" V IV Ind Prs Sg1 <W:32.9964> <WA:12.9964> <spelled> "saskav"S PROTECT:1231 SELECT:1339 &SUGGESTWF &typo ADD:6:spelled SELECT:3133
+;	"tyskav" ? SELECT:1339
+: 
+"<sáhkadit>"
+	"sáhkadit" V <smj> <smj> IV Inf <W:0.0> MAP:3271 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012
+;	"sáhkadit" V IV Imprt Pl2 <W:0.0> REMOVE:2990
+:\n
+
+--------------------------------------------------------------------------------------------------------------------
+
+"<Árjakluoven>"
+	"Árjepluovve" N <smj> Prop Sem/Plc Sg Ine <W:31.9964> <WA:17.9964> <spelled> "Árjepluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+typo
+	"Árjepluovve" N <smj> Prop Sem/Sur Sg Ine <W:31.9964> <WA:17.9964> <spelled> "Árjepluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:32.9964> <WA:22.9964> <spelled> "Árja-luoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"Árja" N Prop Sem/Org Cmp/SgNom Cmp/OblHyph Cmp
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:37.9964> <WA:17.9964> <spelled> "kajakluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"kajáhkka" Area/SE N Sem/Dummytag Cmp
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:37.9964> <WA:17.9964> <spelled> "urmakluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"urmak" A Cmp/SgNom Cmp
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:37.9964> <WA:17.9964> <spelled> "árakluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"árak" A Cmp/SgNom Cmp
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:37.9964> <WA:17.9964> <spelled> "girjakluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"girjak" A Cmp/SgNom Cmp
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:37.9964> <WA:17.9964> <spelled> "rájakluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"rájak" A Cmp/SgNom Cmp
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:37.9964> <WA:27.9964> <spelled> "urjakluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"Urja" N Prop Sem/Plc Sg Gen Cmp/SgNom Der/k N Cmp
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:41.9964> <WA:27.9964> <spelled> "Ørjekluoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"Ørje" N Prop Sem/Plc Sg Gen Cmp/SgNom Der/k N Cmp
+typo
+	"luovve" N <smj> Sem/Plc Sg Ine <W:42.9964> <WA:22.9964> <spelled> "Irja-luoven"S PROTECT:1231 SELECT:1565 ADD:6:spelled SUBSTITUTE:4010 &SUGGESTWF &typo
+		"Irja" N Prop Sem/Fem Cmp/SgNom Cmp/OblHyph Cmp
+typo
+;	"Árjakluoven" ? SELECT:1565
+: 
+"<lij>"
+	"liehket" V <smj> <smj> IV Ind Prt Sg3 v1 <W:0.0> MAP:3242 SUBSTITUTE:4013 @+FMAINV SUBSTITUTE:4012
+: 
+"<boadnjásj>"
+	"boadnjásj" N <smj> <smj> Sem/Hum Gram/Dimin Sg Nom <W:0.0> SUBSTITUTE:4011 SUBSTITUTE:4010
+;	"boaddnje" Ex/N Sem/Hum Der/Dimin N Sg Nom <W:0.0> REMOVE:1295
+: 
+"<mij>"
+	"mij" Pron <smj> <smj> Rel Sg Nom <W:0.0> SELECT:2869 SUBSTITUTE:4018 SUBSTITUTE:4017 &msyn-mij-gut ADD:919:msyn-mij-gut
+msyn-mij-gut
+	"gut" Pron <smj> <smj> Rel Sg Nom <W:0.0> SELECT:2869 SUBSTITUTE:4018 SUBSTITUTE:4017 &SUGGEST ADD:919:msyn-mij-gut COPY:920:msyn-mij-gut
+gut+Pron+Rel+Sg+Nom	?
+;	"mij" Pron Interr Sg Nom <W:0.0> SELECT:2869
+;	"mån" Pron Pers Pl1 Nom <W:0.0> SELECT:2869
+: 
+"<ittjij>"
+	"ij" V <smj> <smj> IV Neg Ind Prt Sg3 <W:0.0> MAP:3214 SUBSTITUTE:4013 @+FAUXV SUBSTITUTE:4012
+: 
+"<sidá>"
+	"sihtat" V <smj> <smj> TV Ind ConNeg <W:0.0> SELECT:1534 SELECT:1543 MAP:3219 SUBSTITUTE:4013 @-FAUXV SUBSTITUTE:4012
+;	"sihtat" V TV Imprt ConNeg <W:0.0> SELECT:1534 SELECT:1543
+;	"sihtat" V TV Imprt Sg2 <W:0.0> SELECT:1534
+;	"sihtat" V TV Ind Prs Sg2 <W:0.0> SELECT:1534
+;	"sihtat" V TV VGen <W:0.0> SELECT:1534
+: 
+"<hiejttet>"
+	"hiejttet" V <smj> <smj> TV Inf <W:0.0> MAP:3271 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012
+: 
+"<noajdástallamis>"
+	"noajdástallat" V <smj> <smj> IV Actio Ela <W:0.0> MAP:3291 SELECT:3812 SUBSTITUTE:4013 @<ADVL SUBSTITUTE:4012
+;	"noajdástallat" Ex/V IV Der/NomAct N Sg Ela <W:0.0> SELECT:3812
+: 
+"<ja>"
+	"ja" CC <smj> <smj> <W:0.0> MAP:1949 SELECT:2034 SUBSTITUTE:4019 @CVP SUBSTITUTE:4018
+;	"ja" CC <W:0.0> @CNP MAP:1949 SELECT:2034
+: 
+"<ittjij>"
+	"ij" V <smj> <smj> IV Neg Ind Prt Sg3 <W:0.0> MAP:3214 SUBSTITUTE:4013 @+FAUXV SUBSTITUTE:4012
+: 
+"<miededa>"
+	"miededit" V <smj> <smj> TV Ind ConNeg <W:0.0> SELECT:1534 MAP:3239 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012
+;	"miededit" V TV Imprt Sg2 <W:0.0> SELECT:1534
+;	"miededit" V TV Ind Prs Sg2 <W:0.0> SELECT:1534
+;	"miededit" V TV VGen <W:0.0> SELECT:1534
+: 
+"<sån>"
+	"sån" Pron <smj> <smj> Pers Sg3 Nom <W:0.0> SUBSTITUTE:4018 SUBSTITUTE:4017
+: 
+"<lij>"
+	"liehket" V <smj> <smj> IV Ind Prt Sg3 v1 <W:0.0> MAP:3223 SUBSTITUTE:4013 @+FAUXV SUBSTITUTE:4012
+: 
+"<mejdek>"
+	"mige" Pron <smj> <smj> Indef Pl Acc <W:0.0> SUBSTITUTE:4018 SUBSTITUTE:4017
+: 
+"<boasstot>"
+	"boasstot" Adv <smj> <smj> <W:0.0> SUBSTITUTE:4012 SUBSTITUTE:4011
+: 
+"<dahkam>"
+	"dahkat" V <smj> <smj> TV PrfPrc <W:0.0> MAP:3254 SELECT:3905 SUBSTITUTE:4013 @-FMAINV SUBSTITUTE:4012
+;	"dahkat" Ex/V TV Der/NomAct N Sg Nom <W:0.0> SELECT:3905
+;	"dahkat" V TV Actio Nom <W:0.0> @X MAP:3303 SELECT:3905
+"<.>"
+	"." CLB <W:0.0>
+:\n
+
