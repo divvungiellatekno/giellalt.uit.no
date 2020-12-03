@@ -1,0 +1,113 @@
+Trond og Sjur-møte 3.12.2020
+
+!!!Saker:
+* dokumentasjon, nettsider
+* fst-problem
+* lisensar
+* eksternt samarbeid
+* taleteknologi
+* ordprediksjon
+* KMD-møtet
+
+
+!!! dokumentasjon, nettsider
+
+Vi har automaisk dette domenet: {{giellalt.github.io}}. Alle repoar får url som
+dette: {{giellalt.github.io/reponamn}}.
+
+Mogleg strategi: 
+
+Vi har to domener på github: Eitt for berre tromsørelaterte ting og eitt for ting som også er relevant uavhengig av arbeidsstad.
+
+# Generelt: brorparten av techdocsida giellalt.uit.no som github-framsida vår.
+# Tromsø: Tromsødelen (sjå nedanfor) i giellalt.uit.no (på github)
+
+Noverande {{techdoc/}} inneheld desse katalogane
+
+{{{
+admin => uit
+apps
+borin
+clarino
+dicts
+freiburg
+images
+infra
+keyboards => github.com/giellalt/lang-* => giellalt.github.io/lang-* 
+lang => github.com/giellalt/lang-* => giellalt.github.io/lang-*
+ling => stort sett uit (korpus, ...)
+localisation
+ml
+mt
+presentations
+proof
+proofresearch
+raw
+system
+tm
+tools
+tts
+}}}
+
+Oppsummering:
+* vi vil ta i bruk automatisk dokumentasjonsbygging/nettsidebygging i github
+* vi går over til Markdown som hovudformat, html går bra i tillegg, andre format ved behov
+* techdoc blir delt i to, som skissert over
+
+!!! fst-problem
+
+Sjur viste til [hfst/issues/492|https://github.com/hfst/hfst/issues/492]. Vi fann svaret.
+
+!!! lisensar
+
+Utsett til seinare. Trond kan sjå over dei det gjeld.
+
+!!! eksternt samarbeid
+
+Ulike prinsipielle spørsmål:
+
+!!Dokumentasjon
+Må bli betre
+
+!!Taggharmonisering
+To nivå av standardisering:
+
+!Lingvistisk standardisering: 
+
+Morfosyntaktisk heller enn morfologisk.
+Dette er diskusjonen om glossing vs. grammatikk, og om vi skal tagge bøyingsklasse.
+
+Vi vil ha ei morfosyntaktisk tagging (ikkje tagge bøyingsklasse osb.) og vi vil ikkje ha glossing. Men det finst eit opplegg for glossing for dei som må ha det. Så dei fleste burde bli fornøgde.
+
+!Typografisk standardisering: 
+
+Form på grensesymbol:
+* Utan grense: Tag. Det vil vi ikkje ha.
+* Einsidig grense: {{+Tag}} eller {{Tag+}}
+* Tosidig grense:
+{{{
+[Tag] eller %{Tag%} eller <Tag> eller ...
+}}}
+
+Vi bør kunna støtta ulike, klårt identifiserbare taggtypar.
+
+Form på tekst
+* Tag eller TAG eller tag - trivielt og irrelevant frå ein teknisk synsstad. Bør vera mest mogleg likt, men ikkje noko vi treng insistera på.
+
+Handsaming av sitat av språkmateriale:
+{{Tag/sitat}} eller ... {{+sitat/+sitat}}
+
+!!Filnamnkonvensjon
+Forkortinga gt- er ein refleks av byggjestrukturen - den er fast. Vi bør opna opp for fleire alternativ, jf over. I dag støttar vi berre {{-apertium-}} som eit derivert format for MT.
+
+!!! taleteknologi
+
+Til seinare. Datamaskina er klar.
+
+!!! ordprediksjon
+
+Studentprosjekt i Gøteborg - Sjur orienterte.
+
+!!! KMD-møtet
+
+Sjur orienterte.
