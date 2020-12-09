@@ -29,37 +29,12 @@ need to do.
 ! Minimal install
 
 {{{
-sudo port install autoconf automake libtool wget gawk saxon subversion
+sudo port install autoconf automake libtool python39 py39-pip py39-yaml wget bison cmake gawk saxon \
+antiword wv libxslt poppler tidy subversion
 
-pip3 install --user PyYAML pexpect pyth pytidylib
-
-cpan install Text::Brew
+sudo port select --set pip3 pip39
+sudo port select --set python3 python39
 }}}
-
-! Additional installs if working with corpus files
-
-{{{
-sudo port install py37-beautifulsoup4 py37-lxml py37-pysvn py37-html5lib \
-py27-feedparser p5-xml-twig antiword wv libxslt poppler tidy p5-xml-libxml
-
-cpan install XML::LibXML
-}}}
-
-!! Pre Catalina (macOS 10.14.* and older):
-
-{{{
-sudo port install autoconf automake libtool python37 py37-pip wget bison cmake gawk saxon \
-py37-beautifulsoup4 py37-lxml py37-pysvn py37-html5lib py27-feedparser p5-xml-twig antiword \
-wv libxslt poppler tidy p5-xml-libxml
-
-sudo port select --set python3 python37
-
-pip-3.7 install --user PyYAML pexpect pyth pytidylib
-
-cpan install Text::Brew XML::LibXML
-}}}
-
-
 
 !!!Linguistic software
 
