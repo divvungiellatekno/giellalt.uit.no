@@ -1,0 +1,320 @@
+Neural Network grammarchecking meeting
+
+Linda, Tommi, Mika
+
+15:00-
+
+* Can we publish parts of boundcorpus?
+* UD - Mika split some of the words and 
+* Tommi used the whole freecorpus (not enough for a word-based model)
+    ** assuming that it is correct (aligning it with itself)
+    ** and then the marked-up corpus (aligning an incorrect with a correct version of the corpus)
+
+* with neural networks we assume that the answer is in the data (meaning we have a correct version of things)
+
+ wc -l data/src-gtfree-train.text
+786,573 data/src-gtfree-train.text
+
+https://sites.google.com/view/deelio-ws/home_1
+Marianna Apidianaki (University of Helsinki)
+
+* CorpusTools:
+https://giellalt.uit.no/ling/CorpusTools.html#To+own+home+directory+(recommended)
+
+# divvun / giella spesifisk:
+export GIELLA_LIBS=${HOME}/giella-libs/
+export GTLANGS=$HOME/github/giellalt/
+export GTHOME=$HOME/github/giellalt/giella-core/
+export GTCORE=$HOME/langtech/
+export GTFREE=$HOME/freecorpus
+export GTBOUND=$HOME/boundcorpus 
+
+
+* is it possible that it is misaligned?
+
+TO DO:
+* Tommi and Linda can look at the script
+* ask can Chiara contribute?
+* look at Tommis script to see if something is off
+* Mika needs to download the whole freecorpus
+* Linda checks boundcorpus - converted/sme/news
+* taking sentences from the newscorpus - Tommi/Linda
+* setting up an article
+
+
+
+{
+            "correct": "vuosttašriegádanvuoigatvuođa",
+            "error": [
+                "vuosttaža",
+                "riegádeapmi",
+                "vuoigatvuođa"
+            ]
+        },
+
+ccat ../boundcorpus/converted/sme/news/assu/1997/a12-97/* | tools/grammarcheckers/modes/trace-smegramrelease-dev.mode | less
+
+"<Biret áhkku>"
+        "Biret-áhkku" N Sem/Hum Sg Nom Err/SpaceCmp <W:0.0> SELECT:299
+3:fallback SELECT:2993:fallback @<SUBJ MAP:23615 &msyn-compound #7->7 
+ADD:3824:msyn-compound ADD:3824:msyn-compound ADD:3824:msyn-compound
+msyn-compound
+        "Biret-áhkku" N Sem/Hum Sg Nom <W:0.0> SELECT:2993:fallback SE
+LECT:2993:fallback @<SUBJ MAP:23615 &SUGGEST #7->7 ADD:3824:msyn-compo
+und ADD:3824:msyn-compound COPY:3842:compound
+Biret-áhkku+N+Sg+Nom    Biret-áhkku
+        "Biret-áhkku" N Sem/Hum Sg Nom <W:0.0> SELECT:2993:fallback SE
+LECT:2993:fallback @<SUBJ MAP:23615 &SUGGEST #7->7 ADD:3824:msyn-compo
+und COPY:3842:compound
+Biret-áhkku+N+Sg+Nom    Biret-áhkku
+        "Biret-áhkku" N Sem/Hum Sg Nom <W:0.0> SELECT:2993:fallback SE
+LECT:2993:fallback @<SUBJ MAP:23615 &SUGGEST #7->7 ADD:3824:msyn-compo
+und ADD:3824:msyn-compound ADD:3824:msyn-compound COPY:3842:compound
+Biret-áhkku+N+Sg+Nom    Biret-áhkku
+
+Err/MissingSpace
+==============
+
+"<seammaláhkái>"
+        "seamma ládje" v2 Err/MissingSpace Adv <W:0.0> @<ADVL MAP:23069 &msyn-unspace-compound #23->23 ADD:3844:msyn-compound ADD:3844:msyn-compound ADD:3844:msyn-compound SUBSTITUTE:8865
+msyn-unspace-compound
+        "seamma ládje" v2 Adv <W:0.0> @<ADVL MAP:23069 &SUGGEST #23->23 ADD:3844:msyn-compound ADD:3844:msyn-compound ADD:3844:msyn-compound COPY:3848:compound SUBSTITUTE:8865
+seamma ládje+v2+Adv     seamma láhkai
+        "seamma ládje" v2 Adv <W:0.0> @<ADVL MAP:23069 &SUGGEST #23->23 ADD:3844:msyn-compound COPY:3848:compound SUBSTITUTE:8865
+seamma ládje+v2+Adv     seamma láhkai
+        "seamma ládje" v2 Adv <W:0.0> @<ADVL MAP:23069 &SUGGEST #23->23 ADD:3844:msyn-compound ADD:3844:msyn-compound COPY:3848:compound SUBSTITUTE:8865
+seamma ládje+v2+Adv     seamma láhkai
+
+
+
+<unk> means unknown
+
+Word-based model
+SENT: potentially erroneous sentence
+PRED: corrected version -- most probable thing is that the sentence starts with "Sámediggi..."
+
+    [2020-12-17 18:08:51,852 INFO]
+    SENT 947: ['Árabajásgeassinbálvalusaid', 'árvvoštallan', 'ollašuhtto', 'ovttas', 'mánáin', 'ja',
+'su', 'vánhemiiguin,', 'sogain,', 'bargoveagain', 'ja', 'ovttasbargobeliiguin.', 'Bajásgeassin', 'lea',
+'čatnasan', 'kultuvrra', 'ja', 'servodaga', 'nuppástuvvamii.', 'Doaibmabirrasiid', 'rievdadusat',
+'váikkuhit', 'árabajásgeassindoaimma', 'ollašuhttima', 'jeavddalaš', 'árvvoštallamii,', 'dan', 'mielde',
+'doaimma', 'ovddideapmái,', 'ulbmiliid', 'ásaheapmái', 'ja', 'ollášuhttimii.', 'Árabajásgeassima',
+'sisdoalu', 'árvvoštallamiin', 'ovddidit', 'árabajásgeassima', 'árgga', 'doaimma', 'nu,', 'ahte',
+'árabajásgeassin', 'sáhtašii', 'buorebut', 'dávistit', 'juohke', 'máná', 'dárbbuid', 'ja',
+'árabajásgeassin', 'oktan', 'bálvalushápmin', 'bearraša', 'dárbbuide.', '¶']
+    PRED 947: Sámediggi áigu ahte ahte lea <unk> ja <unk> ja ja <unk> ja ja <unk> ja ja <unk> ja ja
+<unk> ja ja <unk> ja ja <unk> ja <unk> ja ja <unk> ja ja <unk> ja <unk> ja ja <unk> ja <unk> ja ja <unk>
+ja ja <unk> ja <unk> ja ja <unk> ja <unk> ja <unk> ¶
+    PRED SCORE: -125.5965
+
+    [2020-12-17 18:08:51,852 INFO]
+    SENT 948: ['Árvvoštallama', 'ollašuhttima', 'bealis', 'galggašii', 'ovttaskasdási', 'plánemis',
+'meroštallat', 'mo', 'dieđu', 'čohkket,', 'geat', 'árvvoštallet,', 'goas', 'ja', 'mo.', 'Doaimma',
+'árvvoštallamii', 'gullá', 'maiddái', 'máná', 'áican', 'ja', 'su', 'árgga', 'oidnosiin', 'dahkan,',
+'ahte', 'merket', 'bajás', 'mánái', 'guoskevaš', 'áicamiid.', 'Áican', 'veahkeha', 'bajásgeassi',
+'earuhit', 'máná', 'ovdáneami', 'muttuid', 'ja', 'persovnalaš', 'sárgosiid.', 'Dilálašvuođain,', 'main',
+'bajásgeassis', 'badjána', 'fuolla', 'mánás,', 'lea', 'earenoamáš', 'dehálaš', 'bisánit', 'áicat',
+'máná', 'doaimma', 'ja', 'das', 'dáhpáhuvvan', 'nuppástusaid.', 'Beaivválaš', 'áican', 'addán',
+'mávssolaš', 'dieđu', 'vánhemiidda.', 'Áican', 'ja', 'dokumenteren', 'leat', 'maiddái', 'buorit',
+'gaskaoamit', 'máná', 'oasálašvuođa', 'ovddideamis.', 'Bajásgeassi', 'áicá', 'maiddái', 'máná',
+'beroštumiid', 'vai', 'sáhttá', 'plánet', 'doaimmas', 'mánálagabuš', 'ja', 'guođđá', 'saji', 'máná',
+'iežas', 'evttohusaide.', 'Máná,', 'vánhemiid', 'ja', 'soga', 'addán', 'máhcahat', 'veahkeha',
+'bargoveaga', 'diehtit', 'gos', 'leat', 'lihkostuvvan', 'ja', 'gos', 'lea', 'ovddidanveara.', '¶']
+    PRED 948: Sámediggi áigu ahte ahte lea <unk> ja lea <unk> ja <unk> ja ja <unk> ja ja <unk> ja ja
+<unk> ja ja <unk> ja ja <unk> ja ja <unk> ja ja <unk> ja <unk> ja ja <unk> ja ja <unk> ja <unk> ja ja
+<unk> ja <unk> ja ja <unk> ja <unk> ja ja <unk> ja <unk> ja ja <unk> ja <unk> ja ja <unk> ja <unk>
+
+Character-based model
+[2020-12-21 18:04:34,363 INFO]
+SENT 162: ['b', 'a', 'j', 'á', 's', 'g', 'e', 'a', 's', 's', 'i', 'n', 'd', 'o', 'a', 'i', 'm', 'm',
+'a', 'i', 'n', '.', '_', '¶']
+PRED 162: m i i _ m i i _ m i i _ m i i _ m i i _ m i i
+PRED SCORE: -11.7571
+
+
+čájáhuslanja
+čájáhuslanja        čájáhus+N+Cmp/SgGen+Cmp#lanja+N+Err/Lex+Sg+Nom        0,000000
+čájáhuslanja        čájáhus+N+Cmp/SgGen+Cmp#latnja+N+Sg+Acc        0,000000
+čájáhuslanja        čájáhus+N+Cmp/SgGen+Cmp#latnja+N+Sg+Gen+Allegro        0,000000
+čájáhuslanja        čájáhus+N+Cmp/SgGen+Cmp#latnja+N+Sg+Gen        0,000000
+čájáhuslanja        čájáhus+N+Cmp/SgNom+Cmp#lanja+N+Err/Lex+Sg+Nom        0,000000
+čájáhuslanja        čájáhus+N+Cmp/SgNom+Cmp#latnja+N+Sg+Acc        0,000000
+čájáhuslanja        čájáhus+N+Cmp/SgNom+Cmp#latnja+N+Sg+Gen+Allegro        0,000000
+čájáhuslanja        čájáhus+N+Cmp/SgNom+Cmp#latnja+N+Sg+Gen        0,000000
+čájáhuslanja        čájáhuslatnja+N+Sg+Acc        0,000000
+čájáhuslanja        čájáhuslatnja+N+Sg+Gen+Allegro        0,000000
+čájáhuslanja        čájáhuslatnja+N+Sg+Gen        0,000000
+
+Sámediggepresideanta
+Sámediggepresideanta        sámediggepresideanta+N+Sg+Nom        0,000000
+Sámediggepresideanta        sámediggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Acc+Err/Orth0,000000
+Sámediggepresideanta        sámediggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Gen+Err/Orth0,000000
+Sámediggepresideanta        sámediggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Nom        0,000000
+Sámediggepresideanta        sápmi+N+Cmp/SgGen+Cmp#diggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Acc+Err/Orth        0,000000
+Sámediggepresideanta        sápmi+N+Cmp/SgGen+Cmp#diggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Gen+Err/Orth        0,000000
+Sámediggepresideanta        sápmi+N+Cmp/SgGen+Cmp#diggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Nom        0,000000
+Sámediggepresideanta        sápmi+N+Err/Orth+Cmp/SgGen+Cmp#diggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Acc+Err/Orth        0,000000
+Sámediggepresideanta        sápmi+N+Err/Orth+Cmp/SgGen+Cmp#diggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Gen+Err/Orth        0,000000
+Sámediggepresideanta        sápmi+N+Err/Orth+Cmp/SgGen+Cmp#diggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Nom        0,000000
+Sámediggepresideanta        Sámediggi+N+Prop+Sem/Org+Cmp/SgNom+Cmp/NoHyph+Cmp#presideanta+N+Sg+Acc+Err/Orth        0,000000
+Sámediggepresideanta        Sámediggi+N+Prop+Sem/Org+Cmp/SgNom+Cmp/NoHyph+Cmp#presideanta+N+Sg+Gen+Err/Orth        0,000000
+Sámediggepresideanta        Sámediggi+N+Prop+Sem/Org+Cmp/SgNom+Cmp/NoHyph+Cmp#presideanta+N+Sg+Nom        0,000000
+Sámediggepresideanta        sámediggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Acc+Err/Orth0,000000
+Sámediggepresideanta        sámediggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Gen+Err/Orth0,000000
+Sámediggepresideanta        sámediggi+N+Cmp/SgNom+Cmp#presideanta+N+Sg+Nom        0,000000
+
+Tubal-Kainas
+Tubal-Kainas        Tubal+N+Prop+Sem/Mal+Cmp/SgNom+Cmp/Hyph+Cmp#Kain+Err/Orth+N+Prop+Sem/Mal+Sg+Loc        0,000000
+Tubal-Kainas        Tubal+N+Prop+Sem/Mal+Cmp/SgNom+Cmp/Hyph+Cmp#Kain+N+Prop+Sem/Mal+Sg+Loc+Err/Orth        0,000000
+Tubal-Kainas        Tubal-Kain+N+Prop+Sem/Sur+Sg+Loc+Err/Orth        0,000000
+Tubal-Kainas        Tubal-Kain+N+Prop+Sem/Sur+Sg+Loc+Err/Orth        0,000000
+
+
+[
+        {
+            "correct": "Stueng",
+            "error": [
+                "Stueng"
+            ]
+        },
+        {
+            "correct": "háliidii",
+            "error": [
+                "háliidii"
+            ]
+        },
+        {
+            "correct": "ge",
+            "error": [
+                "ge"
+            ]
+        },
+        {
+            "correct": "oažžut",
+            "error": [
+                "oažžut"
+            ]
+        },
+        {
+            "correct": "johtui",
+            "error": [
+                "johtui"
+            ]
+        },
+        {
+            "correct": "buoret",
+            "error": [
+                "buoret"
+            ]
+        },
+        {
+            "correct": "oktavuođa",
+            "error": [
+                "oktavuođa"
+            ]
+        },
+        {
+            "correct": "sámi",
+            "error": [
+                "sámi"
+            ]
+        },
+        {
+            "correct": "ja",
+            "error": [
+                "ja"
+            ]
+        },
+        {
+            "correct": "Bolivia",
+            "error": [
+                "Bolivia"
+            ]
+        },
+        {
+            "correct": "eamiálbmot",
+            "error": [
+                "eami",
+                "álbmot"
+            ]
+        },
+        {
+            "correct": "nuoraid",
+            "error": [
+                "nuoraid"
+            ]
+        },
+        {
+            "correct": "gaskkas",
+            "error": [
+                "gaskkas"
+            ]
+        },
+        {
+            "correct": ",",
+            "error": [
+                ","
+            ]
+        },
+        {
+            "correct": "go",
+            "error": [
+                "go"
+            ]
+        },
+        {
+            "correct": "nuorat",
+            "error": [
+                "nuorat"
+            ]
+        },
+        {
+            "correct": "leat",
+            "error": [
+                "leat"
+            ]
+        },
+        {
+            "correct": "eamiálbmogiid",
+            "error": [
+                "eami",
+                "álbmogiid"
+            ]
+        },
+        {
+            "correct": "boahtteáigi",
+            "error": [
+                "boahtteáigi"
+            ]
+        },
+        {
+            "correct": ",",
+            "error": [
+                ","
+            ]
+        },
+        {
+            "correct": "mahkáš",
+            "error": [
+                "mahkáš"
+            ]
+        },
+        {
+            "correct": "nuoraid",
+            "error": [
+                "nuoraid"
+            ]
+        },
+        {
+            "correct": "lonuhanprográmma",
+            "error": [
+                "lonuheapmi",
+                "prográmma"
+            ]
+        },
+        {
+            "correct": ".",
+            "error": [
+                "."
+            ]
+        }
