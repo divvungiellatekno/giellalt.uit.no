@@ -1,0 +1,86 @@
+
+CG-workshop 06.01.2021
+
+dii. 11:00-12:00
+
+Linda, Inga
+
+ADD:msyn-sme_bastard_neg (&msyn-sme_bastard_neg) TARGET ("ij" Neg Ind Prs) IF (*1 PrfPrc BARRIER NOT-ADV-PCLE - ("mige") - Acc) ;
+COPY:msyn-sme_bastard_neg (Prt &SUGGEST) EXCEPT (Prs) AFTER Ind TARGET (&msyn-sme_bastard_neg) ;
+
+ADD:msyn-sme_bastard_neg2 (&msyn-sme_bastard_neg2) TARGET PrfPrc IF (*-1 ("ij" Neg Ind) BARRIER NOT-ADV-PCLE - ("mige") - Acc) ;
+COPY:msyn-sme_bastard_neg2 (Ind ConNeg &SUGGEST) EXCEPT (PrfPrc &msyn-sme_bastard_neg2) TARGET (&msyn-sme_bastard_neg2) ;
+
+
+BASTAR neg2: Danna ittjiv dádjaduvá majdik
+ådå pass-active: Danna ittjiv dádjada majdik
+
+Test 5/7: valla danna {iv}£{ittjiv} {dádjadum}£{dádjada} majdik ja ittjiv {máhttám}£{máhte} gähttjalimev dahkat.
+
+valla danna iv dádjadum majdik ja ittjiv máhttám gähttjalimev dahkat.
+
+
+dádjaduvá	dádjadit+V+TV+Der/PassL+V+IV+Ind+ConNeg
+
+Area/SE Ex/V Ex/TV Der/PassL Area/SE V IV Ind ConNeg
+
+jårggålit+Ex/V+Ex/TV+Der/PassL+V+IV+Ind+ConNeg	?
+"jårggålit" Ex/V Ex/TV Der/PassL V IV Ind ConNeg <W:0.0> REMOVE:2976
+jårggåluvá jårggålit+V+TV+Der/PassL+V+Ind+ConNeg	0,000000
+
+
+"<jårggåluvá>"
+        "jårggålit" Area/NO Ex/V Ex/TV Der/PassL Area/NO V <smj> <smj> IV Imprt Sg2 <W:0.0> SELECT:1389 SELECT:2995 MAP:3253 SUBSTITUTE:4015 @+FMAINV SUBSTITUTE:4012
+        "jårggålit" Area/SE Ex/V Ex/TV Der/PassL Area/SE V <smj> <smj> IV Imprt Sg2 <W:0.0> SELECT:1389 SELECT:2995 MAP:3253 SUBSTITUTE:4015 @+FMAINV SUBSTITUTE:4012
+;       "jårggålit" Area/NO Ex/V Ex/TV Der/PassL Area/NO V IV Imprt ConNeg <W:0.0> SELECT:1389
+;       "jårggålit" Area/NO Ex/V Ex/TV Der/PassL Area/NO V IV Ind ConNeg <W:0.0> SELECT:1389
+;       "jårggålit" Area/NO Ex/V Ex/TV Der/PassL Area/NO V IV Ind Prs Sg2 <W:0.0> SELECT:1389 SELECT:2995
+;       "jårggålit" Area/NO Ex/V Ex/TV Der/PassL Area/NO V IV VGen <W:0.0> SELECT:1389
+;       "jårggålit" Area/SE Ex/V Ex/TV Der/PassL Area/SE V IV Imprt ConNeg <W:0.0> SELECT:1389
+;       "jårggålit" Area/SE Ex/V Ex/TV Der/PassL Area/SE V IV Ind ConNeg <W:0.0> SELECT:1389
+;       "jårggålit" Area/SE Ex/V Ex/TV Der/PassL Area/SE V IV Ind Prs Sg2 <W:0.0> SELECT:1389 SELECT:2995
+;       "jårggålit" Area/SE Ex/V Ex/TV Der/PassL Area/SE V IV VGen <W:0.0> SELECT:1389
+
+
+
+"<Danna>"
+	"dat" Pron <smj> <smj> Dem Sg Ine <W:0.0> SUBSTITUTE:4020 SUBSTITUTE:4017
+: 
+"<ittjiv>"
+	"ij" V <smj> <smj> IV Neg Ind Prt Sg1 <W:0.0> MAP:3216 SUBSTITUTE:4015 @+FAUXV SUBSTITUTE:4012
+: 
+"<dádjadum>"
+	"dádjadit" Ex/V Ex/TV Der/PassS V <smj> <smj> IV PrfPrc <W:0.0> MAP:3260 SUBSTITUTE:4015 @-FMAINV SUBSTITUTE:4012 &msyn-sme_bastard_neg2 ADD:820:msyn-sme_bastard_neg2
+msyn-sme_bastard_neg2
+	"dádjadit" Ex/V Ex/TV Der/PassS V <smj> <smj> IV <W:0.0> MAP:3260 SUBSTITUTE:4015 @-FMAINV SUBSTITUTE:4012 Ind ConNeg &SUGGEST ADD:820:msyn-sme_bastard_neg2 COPY:822:msyn-sme_bastard_neg2
+dádjadit+Ex/V+Ex/TV+Der/PassS+V+IV+Ind+ConNeg	?
+: 
+"<majdik>"
+	"mige" Pron <smj> <smj> Indef Pl Acc <W:0.0> SUBSTITUTE:4020 SUBSTITUTE:4017
+:\n
+
+svhum-hsl-m0266:lang-smj Inga$ 
+
+1Pers Neg - PrfPrc Pass - OBJ Acc
+
+            1. ferte ConNeg
+            2. ferte leat aktiiva
+----------
+[5/7][PASS tp] iv:ittjiv (errormorphsyn) => iv:[ittjiv] (msyn-sme_bastard_neg)
+[5/7][PASS tp] máhttám:máhte (errormorphsyn) => máhttám:[máhte] (msyn-sme_bastard_neg2)
+[5/7][FAIL fn1] dádjadum:dádjada (errormorphsyn) => dádjadum:[] (msyn-sme_bastard_neg2)
+Test 5 - Passes: 2, Fails: 1, Total: 3
+
+
+ADD:msyn-mij-gut (&msyn-mij-gut) TARGET ("mij") IF (*-1 (N Coll) OR (Sem/Hum) OR (Sem/Mal) OR (Sem/Fem) OR (Sem/Sur) OR (Pron Dem) OR (Pron Pers) OR (Pron Indef) BARRIER NOT-ADV-PCLE) ;
+COPY:msyn-mij-gut ("gut" &SUGGEST) EXCEPT ("mij" &msyn-mij-gut) TARGET (&msyn-mij-gut) ;  
+
+COPY:msyn-mij-gut ("guhti" &SUGGEST) EXCEPT ("mij" &msyn-mij-gut) TARGET (&msyn-mij-gut) ;  
+    
+    ## Åja, ma fáŋŋgaj lidjin váldedum? válldet fáŋŋgaj + OBJ-Hum
+    ## Åja, ma lidjin váldedum fáŋŋgaj?   
+
+
+dádjadum-dádjaduvvam
+mån ittjiv dádjaduvá
+
