@@ -36,6 +36,16 @@ sudo port select --set pip3 pip39
 sudo port select --set python3 python39
 }}}
 
+You also need to ensure that the following is set in {{.profile}} or similar:
+
+{{{
+export LC_ALL=no_NO.UTF-8
+export LANG=no_NO.UTF-8
+export LOCALE=no_NO.UTF-8
+}}}
+
+Adapt the actual locale to whatever you want, but the variables MUST be set, and the locale MUST be UTF-8.
+
 !!!Linguistic software
 
 You need tools to convert your linguistic source code (lexicons, morphology,
