@@ -1,0 +1,53 @@
+12.01.2021
+13:15-14:55
+
+Chiara, Tommi, Linda, (Sjur)
+
+
+* the first thing to do is split the data
+* gtfree.bash: take the corpus and convert it and put it in2 files 
+* the same happens with the boundcorpus with gtbund.bash
+* next is text2chars.py: ensure that words are aligned, and adds space in between characters
+* data_generator.py: original version to split compounds from Mika
+* compoundsplitgt.py: same as Mika version but works with our corpus
+* Der/... Sem/... Ex/... Gram/...
+
+TODO: 
+* making these script output json
+* pos analysis
+* Chiara checks Børre's pipeline to make sure we can use that one and then take POS from there
+* Deadline for applying to Sigma2: 22.02.2021.
+https://www.sigma2.no/call-e-infrastructure-resources-20211
+https://www.sigma2.no/how-apply-resources 
+
+which corpus should we use for what:
+
+1. training
+2. validation 15%
+3. evaluation 15%
+
+admin, facta and science in freecorpus are the biggest
+news is the biggest in boundcorpus
+in total 6,8 giga
+5 are boundcorpus
+
+2.8M        freecorpus/orig/sme/Len
+1.1G        freecorpus/orig/sme/admin - training
+8.5M        freecorpus/orig/sme/bible - training
+4.5M        freecorpus/orig/sme/blogs
+437M        freecorpus/orig/sme/facta - training
+5.0M        freecorpus/orig/sme/ficti - eval
+480K        freecorpus/orig/sme/grammar-realword
+ 14M        freecorpus/orig/sme/laws - eval
+420K        freecorpus/orig/sme/news - eval
+ 40K        freecorpus/orig/sme/odda_mahppa
+275M        freecorpus/orig/sme/science - eval
+440K        freecorpus/orig/sme/speccorp
+2.1M        freecorpus/orig/sme/wikipedia
+1.8G        total
+
+~1.6G training
+
+suggestion:
+* leave boundcorpus untouched
+* use only freecorpus: 
