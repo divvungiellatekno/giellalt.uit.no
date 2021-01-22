@@ -38,7 +38,7 @@ To process many files at a time, wrap the above commands in a {{for}} loop or si
 
 {{{
 for i in *.xml; do echo $i; saxonXSL -s:$i -xsl:$GIELLA_CORE/devtools/forrest_xml2plain_xml.xsl -o:$i.html; done
-find . -name "*.ht*" | while read i; do pandoc -f html -t markdown_github "$i" -o "${i%.*}.md"; done
+find . -name "*.ht*" | while read i; do pandoc -f html -t gfm "$i" -o "${i%.*}.md"; done
 }}}
 
 And finally, to retain document history, it is best to do content change and document renaming as two distinct operations, due to {{git}}s unwillingness to track files. That is, do as follows:
@@ -56,10 +56,10 @@ When all documents are converted, one needs to check and update links. Documenta
 
 !!! pandoc
 
-Installer {{pandoc}} med MacPorts, Brew eller med eiga pakke:
+Install {{pandoc}} using MacPorts, Brew or download package:
 
 * {{sudo port install pandoc}}
 * {{brew install pandoc}}
 * [Installeringspakke for nedlasting|https://github.com/jgm/pandoc/releases/tag/2.11.3.2]
 
-Meir info på [heimesida deira|https://pandoc.org/index.html].
+More info on the [home page|https://pandoc.org/index.html].
