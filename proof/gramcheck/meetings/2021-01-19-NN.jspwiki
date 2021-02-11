@@ -1,0 +1,14 @@
+Neural Network
+
+19.01.2021
+14:30-15:00
+Chiara, Tommi, Linda
+
+which analysis do we use to get the part-of-speech
+hfst-tokenise --print-all --giella-cg --no-weights --unique tokeniser-disamb-gt-desc.pmhfst | vislcg3 --grammar mwe-dis.bin | cg-mwesplit | vislcg3 --grammar disambiguator.bin | vislcg3 --grammar korp.bin | vislcg3 --grammar dependency.bin
+
+lang-sme/src/cg3/disambiguator.cg3
+
+TODO
+* splitting script writes to file correct and splitted, and a second script analyse those and add pos to json
+* if more analyses, take the first one
