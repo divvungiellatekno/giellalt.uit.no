@@ -1,0 +1,847 @@
+NN-meeting:
+
+17.02.2021
+13:00-14:30
+
+Tommi, Chiara, Linda
+
+
+target: original sentences
+source: 
+pred: output of NN
+
+* it does find errors - 
+** f.eks. eana čujuheapmi cealkimuša > eanačujuhancealkámuša
+** joatkka skuvlla > joatkkaskuvlla
+* it capitalizes things that shouldnt be captialized: čáhcerávggat > Čáhcerávggat
+* why are there so many double exclamation marks? (also in the middle of words, which are not compounds, after other punctuation, at the beginning of lines, etc.) 
+* suspicious characters?  §§§ are in source texts because legalese
+* splitting is problematic:
+** III Árbbolaččat-trilogiija guorahallan!! > III árbbolaš trilogiija ija guorahallan!!
+* the problem with fixing this back to Árbbolaččat is that árbbolaš is a correct form as well and we would probably wanna fix it to árbbolaš-triologiija without interfering too much with the writer's authority. If we fix it to Árbbolaččat-trilogiija, we do a lexical fix in addition to the grammatical one, assuming that the writer is speaking about a known book.
+** fix splitter to ignore hyphenated words except for - -> " "
+* this is a successful correction: miessi mánu>miessemánu
+* successful, but it should be capitalized (first letter), the splitting went wrong: journála ovddas vástideaddjái>journálaovddasvástideaddjái
+* capitalization problem: Eaiggátguovttos> eaiggátguovttos, this is a splitting problem: eaiggát guovttos
+* láhka ásahusaid> láhkaásahusaid
+* molssa evttolaš oahpahus vugiide>molssaevttolaš oahpahusvugiide went well (two compounds in a row)
+* Nuoramus ahki joavkku nisu olbmot>!Nuoramus ahkejoavkku nissonolbmot (successfull and two compounds in a row)
+
+
+
+TODO:
+* technical things:
+** Chiara fixed the PoS things and is running the scripts, but it takes time
+* article structure:
+** NN is possible, but of course we just check for one error type
+** NN is time-consuming if we wanna do it 100% right, and be sure that everything is reliable
+** describe the effort to make it work:
+splitter and actually we used our rule-based things for making it (fst, morphological disambiguator)
+alternatively, we could ask someone to use 5 years to mark-up the corpus -- can we find out how time that usually takes??
+* our rule based system (yaml tests for compound errors):
+Test 1016 - Passes: 1, Fails: 0, Total: 1
+
+Total passes: 1287, Total fails: 237, Total: 1524
+True positive: 1181
+True negative: 106
+False positive 1: 5
+False positive 2: 70
+False negative 1: 4
+False negative 2: 158
+Precision: 94.0%
+Recall: 87.9%
+F₁ score: 90.9%
+* maybe we should run the neural network on this one, after we have sufficiently trained it
+* the output is not quite presentable, we don't get any error message
+* maybe we could compare the time effort for both
+** for the rule-based system we should look at when we started mwe-dis.cg3 (and look at the log)
+
+eanačujuhancealkámuša rájes." ¶!!Sámi árbevierus gávdnojit earret!!eará gufihttarat, Čáhcerávggat ja!!háldit mat gullet sámi áddejupmái!!
+ja máilmmálaš govvádussii .!!guovlu man siskkobealde juolludit doarjagiid)!!čájeha ahte leat eanet geat!!eai leat čađahan joatkkaskuvlla!!
+riikka gaskamearálaš logu ektui!!
+.!!Go báikki olbmot geavahuvvojit!!
+diehtogáldun skuvllas, dat addá!!sidjiide árvvu ja dákkár!!bargovuohki čatná skuvlla ja!!
+lagasbirrasa oktavuođaid .!!čállojuvvon speallansániid sisttisdoalli celkosat!!dagahit 27 % su ovttageardán!!
+sámegiel celkosiin ja lohkosániid!!
+sisttisdoalli celkosat 36 % dain!!(gč!!Áhkku jurddaša ahte garra dálki!!govvida Kátjá eallima, ja dilli!!
+Kátjás internáhtaskuvllas nanne ge!!áhku jurdagiid .!!
+Maggas lei buorre ovdamearka; veháš!!dasto go ođđa ortografiija!!
+lei dohkkehuvvon bođii evttohus, ahte!!dat galgá ođasmáhttot .!!ruhtadandepartemeanta ovddasvástádusguovllut: ekonomalaš politihkka,!!stáhta budjeahtta, vearropolitihkka, ruhtadanmárkanáššit, speallaáššit,!!gaskariikkalaš ekonomalaš ovttasbargu, fitnodagat!!
+stáhtalaš oamastemiin ja gielddalaš!!ekonomiija ja láhkaásahusa!!.!!muhtunlágan juogaduvvon eaiggáduššanvuoigatvuođa, man birra!!ságastallu 1600-logus romárrievttálaš!!
+minstara mielde, muhto ii goassige!!
+dohkkehuvvošivčče Ruoŧas." (Maŋimučča!!oahpat min illudit singuin geat!!leat ilus ja arvvosmahttit sin,!!geat leat čađa váiban ja!!
+doaivu huvvan .!!Seamma gusto gielddahálddahussii .!!
+eanavuovdinstivra mieđihii ohcamii!!.!!
+Dasgo dii lehpet ieža rávkojuvvon!!árbet bures sivdnádus .!!Máhttolokten galgá leat vel!!doaimmas ovtta skuvlajagi, jagi 2019/2020!!.!!Dát ovddastit meahcceealáhusdoaimmaid!!ollislaš sisaboađuid." ¶!!
+Muhtimin lea áibbas čielggas, ahte!!boares riektegálduid ja dálá!!áddejumit eai heive oktii, omd!!.!!
+Vaikko diehtu ja áddejupmi deattuhuvvojit!!akademalaš máilmmis, de dán!!dutkanmátkkis áddejupmi lea muhtumin!!
+boahtán easkka maŋimužžan .!!Bivdima eaktun lea datte ahte!!lea oaggungoarta .!!sámegielat rávisolbmot máhttet!!
+lohkat ja čállit iežaset giela.-!!sámegiela nubbin giellan dahje!!
+vierisgiellan hállit leat gárgehan!!gielladáidduset eatnigiela dássái!!ja atnet dan lunddolaččat ruovttus,!!astoáiggis, skuvllas sihke barggus bálddalaga!!eará gielaiguin .!!
+Lágas miessemánu 15 .!!Danin eaŋgalsgiella válljejit!!
+hápmebuohtastahttima .!!birasgáhttendepartemeanta ahte jearaldat!!
+lea njiedjan sullii 18%!!dállodoaluin 1978:s gitta sullii!!11% 1984:s .!!
+Sámegiela 2 informánttain hállet!!37 proseantta álo dahje dávjá!!sámegiela skihpáriiguin .!!duvle ledjen bovdejuvvon doallat!!sáhkavuoru sámi seminárii gos!!
+ságastallojuvvui sámi ja eamiálbmogiid!!dutkamis .!!vihkkedallot sámegažaldagaid joatkkabarggus" (Mu!!
+Fylkkadoavttir galgá bivdit Datatilsynet!!addit cealkámuša .!!professor dr.art., Sámi allaskuvla!!
+/Samisk!!Jus ohcan guoská guovlluide mat!!
+leat olggobealde guorahallanguovllu, de ohcan!!maiddái adnojuvvo guorahallanvuoigatvuođa ohcamuššan!!.!!konstituerejit suopmana, dego mat!!
+Kárášjoga suopmana .!!§ 32 Mearkavuoigatvuohta ¶!!
+Nu gohčodii fáldi Niels Knag!!1690-jagiin ¶!!Stuorra eanetlohku dážain lea!!guhká maŋŋil soađi almmá dárkilat!!jurddašemiin oaidnán "Finnmárkku!!
+geavaheddjiin oktiibuot) ja 4 proseanta!!2013:s SED-guovlluin oktiibuot .!!
+finnmárkkuopmodat sáhttá addit earrásiidda!!go gieldda dahje fylkka ássiide!!
+lasi beassama ávkkástallat ođasmuvvi valljodagain!!nugo namahuvvo §§ 22 ja!!
+23 ¶!!muhto dán áigge geavahuvvo!!Jearaldatpartihkal -bat!!Lehtola čujuha maid dasa mo!!sámit leat doaibman dutkanmateriálan!!
+akademiijas ja deattuha: “The!!
+1989, Kosmo ja Lenvik 1985)!!ráhkada gaskavuođa gaskal!!ekologiija ja!!ekonomiija .!!atnui ja gilvit Stáhta gulli!!
+eanaoasi...", ja váldo atnui!!1800-logus dannego eanačujuhusa!!cealkámuša mielde manai olu njoazit!!go vurdon, ja go muhtumat!!
+eai ásaiduvvan eatnamiidda maid ledje!!ožžon .!!Beaivegirjjiide Heaika čállá iežas!!mearkkašumiid eallima, dáhpáhusaid ja!!
+siidaguimmiid hárrái .!!Muohta deddogoahtá beaivvi lieggasis ja!!čáhci goaikugoahtá reastalasain vuosttas!!
+geardde .!!árvosátni guhtta mearkkaša ahte!!oahppis lea earenoamáš buorre gelbbolašvuohta!!
+fágas .!!III Árbbolaččat-trilogiija guorahallan!!
+247 sáhttá maid jearrat: mii!!lea lihkostuvvat? Lea go lihkostuvvat!!
+šaddat málárin, ja dovddus ¶!!suoidnemánu 1.b.2008, miessemánu!!30.b.2008 resolušuvnnain nr .!!journálaovddasvástideaddjái lea biddjon!!
+ovddasvástádus árvvoštallat, guđe dieđut!!galget leat journálas .!!Čállingiela oahpahallamis man vuođđun!!lea hállangiella, lea jurdda beassat!!
+oahppat bustávaid ja jietnadagaid gaskavuođa,!!vai dan vuođul nu fargga!!go vejolaš juvssašii ortográfalaš!!
+lohkandási .!!eaiggátguovttos leigga iežaska váhkara!!vuolgima maŋŋil mearridan ahte soai!!heaittášeigga doallamis buvdda muhtin jagi!!
+geažes .!!Sámedikki virgái biddjojuvvon bargit!!galget leat láhkamearrádusaid vuollásaččat,!!
+mat gustojit stáhta virgeolbmuide!!
+nu guhkás go dat heive!!.!!Departemeanta sáhttá mearridit láhkaásahusaid!!
+molssaevttolaš oahpahusvugiide go!!oahpahusa ii sáhte fállat skuvlla!!iežas oahpaheddjiiguin.” Fylkkamánne árvvoštallan čájeha!!ahte Álttá joatkkaskuvla ollašuhttá!!dán láhkaparagráfa sámi oahppiid!!oahpahusas ja skuvllas leat buorit!!
+rutiinnat čađahit oahpahusa sámegielas!!.!!de Saussure mielde mearkavuogádaga!!
+ráhkadusas ii leat mihkkige merkejuvvoma!!ja merkejeaddji duohkin dahje olggobealde!!
+.!!Son dadjá ahte maiddái preposišuvdna!!ja substantiiva sáhttá goallostuvvon nu!!go ovdamearkkas badjel vári!!,!!
+álge 2014, oppalaš oassi lea!!mearriduvvon, fágaplána oassi lei!!
+gulaskuddamis ođđajagimánus– cuoŋománnui 2016)!!.!!Suohkanis ledje ođđajagimánu!!
+1 .!!Nuoramus ahkejoavkku nissonolbmot!!fárrejit eanemusat Tromssa gávpogii .!!
+3 joatkkaskuvla oahpu čađaheapmi!!¶!!máksot galge leansmánni mátkegolut, dasto!!kommišuvdnaovdaolbmo bálká,!!
+kanturdoallu ja mátkkit .!!
+guovtteoasat namaid gaskkas ledje!!22 nama mat eai gula!!nammačohkiide .!!
+oaivvilda leat dehálažžan ahte sámi!!kulturmuitosuodjalusguovlludoaimma!!ovdáneamis ferte leat mihttomearrin!!
+gávnnahit dakkár hálddašanvuogádaga mii!!doaibmá dohkálaččat daid ektui geat!!áimmahuššet geavaheaddjiid dárbbu .!!
+2001: 85.) Moadde jahkemáná!!sáhttá maid gullat geardduheamen ja!!jitnosit dadjamin ođđa sániid maid!!
+gullá go lea nuppiin ságastallamin!!.!!
+davvistáhta áigo heaittihit šlávavuođa,!!muhto máttastáhtaid áigo doalahit!!
+dan .!!govus 5.19 Vuotnalinjáin Finnmárkkus!!ja Davvi-Romssas ¶!!meahcceealáhusdoalliin ii leat!!
+dál láhkamearriduvvon gáibádus ealáhusbartasadjái,!!muhto eanavuovdineiseválddit sáhttet!!Finnmárkku eanavuovdinkantuvrra vuovdima!!ja láigoheami mearrádusa § 9!!
+mielde (Mearrádusa!!Guovddáš atná digitála diehtojuohkinreaidduid!!
+deaŧalažžan iežas gaskkustanbarggus ja!!lea ásahan sierra neahttauskkádaga!!.!!
+Erohus Nidarosa ja Davvi-Hålogalándda!!bismagottiin, de ii gullo!!julevsámegiella fásta Bådåddjo!!duopmogirkus .!!johkagaskkain gokko lea!!
+riikkarádjá dahkaba fylkkamánni!!ja ¶!!Seammás fas moaitá ahte!!sámegiella gullo, oidno ja!!
+geavahuvvo beare unnán, danne go!!buohkat dárustit .!!Muitaleaddji olggobeale posišuvdna fas!!doaibmá čálli Jovnna-Ándde jietnan!!mii čujuha su servodatberošteaddji!!
+artihkkaliidda ja sámi servodahkii, viiddit!!dási perspektiivvas .!!ealáska, de lea váttis dápmat”!!
+243 Sámegiela etnolingvisttalaš!!ceavzinnávccaid .!!earrodearvvuođat muitalusas káfestallanbottut!!
+govvidit ráfálaš ja buriid ságastallamiid!!.!!Lea stuora ovdamunnin veadjit!!
+oaidnit giela ráhkaduslaš beliid ja!!gielalaš hámiid ja mearkkašumiid oktavuođaid,!!go dat lea maid buorre!!
+vuođđun ođđa gielaid oahppamii .!!Saari dutkamuša fáddan lea, makkár!!gova dát fitnodagat addet sápmelašvuođas!!iežaset máidnungovaid vuođul .!!
+dorvonjárgga rádjastašuvdna!!Kárášjogas .!!bivdosajiid čujuheami ja!!
+ruovttoluotta váldima mearrádusaid váidagiid!!galgá meannudit suoidnemánu 15!!
+.!!álggahussan" ahte stáhta eatnamiid ii!!galgan vuovdit go dat dárbbašuvvui!!bohccuid ja omiid geasseguohtumiidda!!
+ja "Boazosápmelaččaid!!láhkaossodat joatká dasto ossodaga!!ja áittardeaddji ovddeš cealkámušaide čujuheamen,!!almmá namuheamen áittardeaddji várašumi!!
+miessemánu 7 .!!Oahpaheaddji virggis lea ohppiid ovdáneapmi!!ja ahtanuššan dehálaš .!!
+Miellahtut ásahusain, ráđiin ja!!nammagottiin ¶!!169 ollašuhttimii, sáhttá maid dadjat!!ahte ulbmildárkomat dorjot .!!álbmothivvodaga rievdan!!
+logijagiáigodagas lea baicca!!eanet oktasaš buot osiide guovllus;!!buot guovlluin lea olmmošlohku!!njiedjan .!!
+váidalanálbmotgudni ¶!!
+Ovttasbargu gaskal searvegottiid dahje!!proavássuohkana dásis, ja lágidit!!leairra dahje čoahkkanemiid gos!!oskkuoahpahusa sámi mánáide ja!!
+nuoraide lea guovddážis .!!Lean dovdan dárbbu čálit!!beaivegirjji iežan vásáhusain ja!!jurdagiin dutkanmátkki áigge .!!
+Gállá loakkui beatnagiiguin šlunddi mielain!!ruoktot .!!
+gonagas addá dárkilut láhkaásahusaid!!gozihanlávdegotti áššemeannudeami!!
+hárrái .!!1992-lága § 17 .!!
+Ávkkálašvuođa dalá gustojeaddji Njuolggadusain Eatnamiid!!čujuhusas ássansajiide ¶!!Son navdá, ahte eanaš!!
+eamiservodagain ii leat sierra!!doabadáidagii dego oarjemáilmmis!!
+(vrd!!Lága ulbmil ferte navdot leat!!nuppi beales heađuštit ahte luđolaš!!murjenvuoigatvuohta dahkko guovlluin gos!!sáhttet vahágahttit eatnamiid dikšuma dahje!!
+guovllu atnima geažil ja nuppi!!beales váfistit álbmoga murjenvuoigatvuođa!!
+guovlluin gos dan sáhttá dahkat!!
+vahágahttima haga .!!12% Sámegielagiin vástidedje ahte!!sii ledje hui duhtameahttumat, ja!!dušše 1% dárogielagiin vástidedje!!ahte ledje ”hui!!
+Dat nuppástusat bohtet das ahte!!juolludaneavttut gielddaid gaskkas ja!!
+fylkkagielddaid gaskkas rievdaduvvojit .!!go galgá válddahallat bivdovuoigatvuođa!!sáivačázis ¶!!Duoji bokte oahppat sámekultuvrra!!
+sihke árbevirolaš dieđu ja!!máhtu, mii lea maiddái čálekeahtes!!ja lunddolaččat gorudii vurkejuvvon diehtu,!!
+jávohis diehtu .!!sámi oahpaheaddjit sirdet árbevirolaš!!
+kultuvrra boahttevaš buolvvaide 21 ¶!!
+Dat lokte báikki olbmuid árvvu!!ja stáhtusa skuvlamáilmmis ja!!
+skuvla fidne dieđu, maid ii!!leat makkárge girjerájus .!!
+Áiggon ovdamearkan dáid ávdnasiid!!vulobealde válddahallat 14 duopmočállosa, mat!!buohkat gustojit dálá Sis-Finnmárkui, ja!!mat njulgestaga guoskkahit guovddáš gažaldaga!!ráđđet dán guovllu luondduriggodagaid, ja!!
+geat dalle ledje subjeaktan dákkár!!vuoigatvuođaide .!!Jus fylkkasuohkan nammada eará!!
+stivrra skuvlii go skuvlalávdegotti, galget!!unnimusat guokte ohppiid ráđi áirasa!!leat mielde dan stivrras .!!skuvlagiella lea kognitiivvalaččat eambbo!!gáibideaddji go árgabeaigiella!!
+maiddái danin go!!árgabeaivegielas lea dávjá!!olu konteakstadoarjja .!!Praktihkalaččat mearkkaša dat ahte sii,!!geaid giellalávdegotti oaivvilda!!eai šatta guovttegielagiin, ožžot dál!!
+juo gievrras giellavuogádaga .!!
+ássiidlohku 57 188 57!!035 ¶!!
+Muhtin muddui guorahallá fáttáid dego!!eaiggátvuođa, ruđalaš dili, juohkima, sisdoala!!ja giellageavaheami .!!álgodiimmus Thea hárjehallá geavahit!!
+muhtun dajaldagaid, maid oahpaheaddji jurddaša!!su sáhttit dárbbašit oahppoaktiviteahta!!oktavuođas .!!oahppit sáhttet maiddái lassidieđuid!!fáddábarggus ohcat vaikkeba girjjiin!!
+dahje neahtas .!!Oahppi ferte beassat dovdat ahte!!riektačállinhárjehusat lea su!!čállimii veahkkin, ja rávven ja!!
+neavvun berre dahkkot nu ahte!!oahppi beassá vásihit ovdáneami .!!gaski ja Wilsona jurdagat leat!!
+vástádusat dieđalaš jurdagiidda ja gažaldagaide!!maid sámi filosofa Alf Isak!!Keskitalo ovdanbuvttii davviriikkaid!!etnográfaidčoahkkimis juo 1974!!.!!
+áigetávval: Oahpahus- ja!!kulturministeriija ja!!
+Oahpahushálddahus čállet ovttas Lappi!!guovlluhálddahusdoaimmahagain ja!!Sámedikkiin plánaid gáiddusoahpahusa!!
+ávkkástallamis oahpaheamis ja dan ordnemis!!jagi 2014 loahpa rádjái .!!Riikkaantikvára lea nubbi guovddáš!!hálddašanorgána mearridanválddiin .!!1993, oktan Hálddašanjoavkku čielggademiin!!
+.!!dahje, nugo lea daddjon!!ON-soahpamuša 27 .!!
+gonagasriikkain ¶!!divodanbarggut leat sin dieđáhusa!!mielde gárvásat miessemánus 2022!!
+.!!Nissoniid buotlágan vealaheami jávkkadeami!!
+oktasašsoahpamuša gohcinkomitea lea!!addán oppalaš ávžžuhus nr 18!!(1991)!!Das leat visot maid don!!dárbbašat, earret eará guorus!!
+válgalihput maid ieš beasat!!deavdit .!!dábáleamos vealaheapmi maid sápmelaččat almmuhedje!!lei čearddalaš vealaheapmi, ja de!!vealaheapmi sohkabeali ja geográfalaš!!gullevašvuođa dihte .!!dárogiella lea nanus ja!!dat gullo juohke sajes ja!!measta juohkehaš skuvlagis hálddaša!!dárogiela .!!
+eadni Č lasiha ahte ášši!!lei viehka čielggas ahte nu!!galggai leat, vai mánát ohppet!!guktuid gielaid albmaláhkai .!!
+Dáža sámit guođohišgohte fas!!1957-58 jagiin .!!boazodoalu riektedili ovdanbuktin!!lea sturrodaga dáfus stuorámus!!
+eaŋkaloassi vuoigatvuođaide Finnmárkku eatnamiid!!ja čáziid guorahallamis, ja lea!!maiddái sihke boares ja guovddáš!!geavahanvuohki .!!jus divššohas lea hui ráfeheapmi!!ásahusas dahje bieđđá dohkketmeahttumit doppe,!!
+fágalaš ovddasvástideaddji sáhttá mearridit,!!ahte divššohas galgá divššu dahje!!
+eará divššohasaid vuhtiiváldima geažil orrut!!ollásit dahje muhtin veardde sierra!!eará divššohasain ja bargiin, geat!!eai oassálastte divššohasa dikšumii eaige!!fuolaheapmái .!!
+cuoŋománu 25.b .!!Dohko galgá maid ásahuvvot!!rehketdoallokantuvra olles Finnmárkku!!doibmii .!!
+Baicce čájehuvvo ahte matematihkalaš ja!!gielalaš ovdáneapmi geavvá olbmo matematihkalaš!!ja gielalaš návccaid vuorrováikkuhusain!!.!!
+3.7.5 Eará sáivabivdu Finnmárkkus!!688 Pasvik 689 Grense- Jakobselv!!
+¶!!Dáin leat luopmánat bivnnut mosat!!
+ja mas lea stuorimus ruđalaš!!mearkkašupmi .!!go dasa leat sierra ákkat,!!ásahusaid mat eai deavdde dán!!láhkaásahus gáibádusaid, sáhttet dohkkehit!!
+gaskaboddasaččat .!!govus 4.31 čájeha ahte!!
+Boazolohku Lulli-Trøndelagas/Hedemárkkus lea oalle!!dásset, seammás go boazolohku!!eambbo rievddada Davvi-Trøndelaga ja!!
+oalle ollu Tromssas ja Nordlánddas!!.!!distaga 20.9.2016 čoahkkanit universitehtaid ovddasteaddjit!!Romsii ságastallat sámedutkamušaide etihkalaš!!
+linnjemiin (Rovaniemen!!validitehtakriteraide váikkuhit maiddái ráddjehusat,!!mat bohciidit daid gaskaomiid!!
+iešvuođain, maid bokte diehtu lea!!govviduvvon .!!sámegiela 2 63 %!!37 % 0 % 0!!
+% 100 % 49 ¶!!assimilerenpolitihka álgu ja loahppa!!
+¶!!§ 27 Dárkilet eavttut ođasmuvvi!!valljodagaid ávkkástallamii ja ávkkástallama gáržžádusat!!Finnmárkkuopmodat sáhttá mearridit dárkilet!!
+mearrádusaid ođasmuvvi valljodagaid ávkkástallamii nugo!!namahuvvo §§ 22 bustáva a!!rájes f rádjai ja §!!
+23 bustáva a rájes e!!rádjai .!!Iežá ahkejoavkkuin lei jagi!!2009 ain dievdduid eanetlohku, muhto!!
+nissonoassi dain lea –!!§ 45 vuosttaš lađđasa mearrádus!!lea gustovaš lága fápmuiboahtima rájes!!
+jus eará ii leat mearriduvvon!!konsešuvdnaeavttuin mat leat almmuhuvvon!!ovdal dán áigodaga .!!Dalle sáhttet várret beaivemeari!!
+hávdádusipmilbálvalussii ovttas!!ja sogat dihtet álggu rájis!!
+ahte ožžot dan báhpa gean!!háliidit .!!tabealla čájeha maid ahte 2017!!lei Sámi allaskuvllas!!olahusjahkebuvttadeamis oahppočuoggáid!!
+áigodagas, go olahedje oktiibuot 2862!!oahppočuoggá .!!sámegielatoahppit sámástit eanaš áiggi,!!
+muhto dárogielat ohppiiguin dárustit!!.!!
+189) oaivvilda ahte olbmo!!eatnigiella sáhttá leat dat!!
+giella, man son máhttá funet!!dahje ii ollenge .!!7 Tabealla 07615: Sámi!!statistihkka .!!
+mearrádusaid vuosttaš lađđasa mielde sáhttá!!bággočađahat bággočađahanlága!!
+13 .!!1951 bivdolágas, muhto geavadis ráddjejuvvui!!vuoigatvuohta veaháš, go ráfáiduhttima spiehkastat!!
+mearralottiid ektui gáržžui gustot!!buotlágan lottiide (earret!!báktesárgomat leat logahallon Sállánisge!!
+.!!Stuorimus gávpogat davvin leat ollu!!unnibut go stuora gávpogat muđui!!riikkas .!!
+olmmošlohku Norggas 1891 20!!786 2 000 917 1900!!19 677 2 240 032!!1910 18 590 2 391!!782 1920 20 735 2!!
+649 775 1930 20 704!!2 814 194 1950 8!!778 3 156 950 1970!!
+10 535 3 874 133!!¶!!1969-mannosaš lágain nr .!!doahpaga sisdoalu sáhttá čilget!!definišuvnnain (Laurén!!Namuhuvvon ráddjemii gártá prinsihpas gullat!!sihke váldái addit lágaid ja!!
+ásahusaid, ja gealbu dahkat!!eaŋkilmearrádusaid ja háldduid!!eaiggáduššanráđđejumi vuođul .!!
+Departemeanta lea váldán oktavuođa elektrovnnalaš!!divššohasjournálaid skáhppojeaddjiiguin čielggadit, dagahit!!go dearvvašvuođabargiidlága ja!!
+dán láhkaásahusa gáibádusat váttisvuođaid!!dálá elektrovnnalaš journálavuogádagaid geavaheaddjiide!!.!!
+Dasto čatno Ol-Erke noaidevuhtii,!!ja ahte son 78 dat!!lea fillen Ánne jápmimii: “Heargi!!
+jearaldatcealkagiid olis .!!eaŋgalsgielas lea nannoseamos sajádat!!
+DVD- ja videofilmmaid!!giellašiljus .!!Oahppi sáhttá maiddái geavahit iešguđetlágan!!
+teknihkaid muitát sániid, ovdamearkka!!dihtii sáhttá lávlla leat veahkkin!!
+dás (Alisaari!!dáláš oahppodássi SED-guovllu!!ohppiin geat álge vuođđokursii!!1994 rájes 1996 rádjái ¶!!eanavuovdinkantuvra čujuha dál!!
+luossabivdosajiid!!eanavuovdinlága gustojeaddji njuolggadusaid!!mielde .!!
+Eatge duššefal dan, muhto mii!!illudit velá áŧestusaideamet dihtiige!!.!!Dalle, nugo dál, de ledje!!
+doaresbealde suohkanat main lei váilevaš!!ealáhusmárkan ja alla bargguhisvuohta,!!mat eanemus doaimmahedje ja doaimmahit!!
+doaibmabidjobargguid, dahje nugo dán áiggi!!dadjet; ealáhusovddideami .!!299 čuo.) gažaldaga ahte leigo!!
+biddjon váldodeaddu!!sámesiidalahtuid oktasaš vuoigatvuhtii!!vai ovttaskasat juhkkon vuoigatvuhtii!!sámesiidda siskkobealde .!!Muhto velá juohke vuoktačalbmi!!din oaivvis lea lohkkojuvvon .!!
+Jietnavuostáváldi galgá addit!!jienasteaddjái jienastanlihppokonfaluhta ja!!
+čujuha su dohko, gosa!!jienastanlihput leat biddjojuvvon .!!
+§ 16-3 .!!Eai lean nu oallugat muitalan!!ámmátolbmuide, ja eai dákko!!ge lean mearkkašahtti čearddalaš!!erohusat nissonolbmuid gaskkas (sápmelaččat!!Lean álo leamaš giellaberošteaddji!!
+ja dan dihte lohkan!!sámegiela iežan váldoávnnasin!!Oulu universitehtagiellagaskainstituhtas!!
+.!!Das guorahalan mo váldopersovdna!!Heaika bargá vai šaddá čállin!!
+ja suokkardan iešguđet beliid mat!!leat čadnon su čállinprošeavttaide!!.!!
+geassemánu 22 .!!Giela vehkiin gaskkustuvvojit maiddái dovddut,!!
+miellaguottut ja jáhku mat!!buot váikkuhit matematihka oahpahallamii .!!
+tabealla 4.12 čájeha seamma!!ovdánantendeanssaid lullisámegielas!!
+vuođđoskuvllas go oppalaččat!!sámegiela ektui .!!fuomášan guovtti oahppiteavsttain ahte!!
+persovdnapronomenat geavahuvvojit boasttuláhkái!!čáledettiin .!!
+eanet ođđa láhkanjuolggadusat leat!!evttohuvvon dán čuoggás ¶!!Máhtte dadjá Na lea bat!!
+gal dus dollaruovdi dasgo!!son jurddaša ahte ¶!!Muđui gustojit dat mat leat!!
+eará lágain mearriduvvon dan hárrái!!mo váidaga, áššečuoččaldahttin jna!!.!!Danne álggii baicce ieš lohkat!!
+ja oahpai eanemusat ovtta!!sámegielat ustibis .!!
+čáhcesuolu ¶!!norga stáhtan ovdal 1966 ii!!oppanassiige lean álbmotrievttálaš geatnegasvuohta!!riikka sámi álbmoga ektui .!!Dát várri lea vuomis dahjege!!vuolimusas áiteváriid ráiddus, mii!!lea Njiljoga gáttis .!!Muhtumat eai liiko dasa, ja!!muhtimat respekterejit dan ja muhtimat!!
+liikojit dasa hui bures ja!!háliidit oahppat sámegiela .!!mat dohkkejit gilvimii lea viehka!!
+unnán dán guovllus, seammásgo dárbbašuvvo!!lassieatnamiidda dálá eanadoaluide!!
+.!!
+Dasto lea fas alladit proseanta,!!geat ipmirdit sámegiela “buot!!Son lei máŋgii vásihan ahte!!sámegielat olbmot eai váldán!!vuhtii su váilevaš sámegiela!!máhtu, muhto sámástedje su birra!!vaikko olles beaivvi .!!Maŋimuš molssaeaktu lei jurddašuvvon!!Finnmárkku hárrái .!!
+Ovdal navdojuvvui ahte beare individuálalaš!!iešvuođat, nu mo giellagelbbolašvuohta!!ja iešluohttámušdovdu, váikkuhit oahppi dáhttui!!sártnodit nuppigillii .!!
+Prošeakta lea suokkardallan movt boahtteáiggi!!hástalusat váikkuhit boazodollui ja!!daid báikegottiide, movt dát buoremusat!!
+sáhtáše dáidda hástalusaide heivehallat ja!!movt ovddidit sihkkarastin dihte!!boazodoalu ceavzima boahttevaš buolvvaide!!(Magga!!
+opmodagat, ja Stáhta Eatnamiin Finnmárkkus,!!lea Stáhta eanaeaiggáda buot!!Vuoigatvuođat Bivddu ektui .!!
+ealli nammii, gilohaddi gaskal!!28,50 ja 31,50 ru .!!sámegiela joavku ¶!!Buhtes dutkanfáddán duodji lea!!
+šaddan oalle easkká .!!Ásahettiin boazoguovlluid galgá vuhtii!!
+váldot leat go johttisámit!!doložis doaimmahan boazodoalu doppe!!.!!
+Mii leat meahcceháldi mánát!!ja imaštallat hui issorasat, geat!!doai guttahis heabuheamit oba leahppige?!!
+Dánu jolgebeahtti boahtit heađuštit luonddu!!ja min ráfi meahccái!” (31)!!
+sojahanhámiid ja sátne-ortnega!!.!!Erenoamáš fuolalaš galgá leat ragatáigge,!!guottetáigge, mearkun-, rátkkašan- ja!!
+njuovadanáigge .!!geavaha, go čilgen kollektiiva!!váldopersovnna ja katalysáhtora oktavuođa!!
+.!!Oaivvildan dušše ahte nissonolmmoš!!hárve oažžu dan árvvu mii!!
+sutnje gulašii .!!lágain jávohisvuođa- ja dieđihangeatnegasvuođa!!jna .!!
+rievdaduvvon lágain miessemánu 13!!.!!Sámedikkiid hárrái šaddá gažaldahkan,!!dagahago gáidanoktavuohta, maid objektiiva eaktu!!
+gáibida, dan, ahte Sámedikkiide!!levvet eanetloguálbmoga miellahtut!!
+.!!Sis 63 proseantta hállet álo!!
+dahje dávjá sámegiela oahpaheaddjiiguin!!skuvllas .!!Čohkkájin eatniguoktáin áhčiin olggobeal’!!
+stobu uvssa ovddas .!!sotnabeaivve suomagielat namma!!boahtá fástui njiedjamis .!!
+8-10) ja luonddumuittut (§§!!Nuppiiguin sániiguin sápmelaš jávohuvvama kultuvrra!!geahčadettiin lea dehálaš muitit maiddái!!stáhtaid sihke kolonialisttalaš doaimmaid!!
+ja assimilerenpolitihka váikkuhusaid!!sámeservoša dálá dillái ja!!maiddái dáid doaimmaid vejolaš váikkuhusaid!!¶!!olggobeale muitaleaddji ihtá maid!!
+Jovnna-Ánde ...mun!!Soahpamušat, lágat ja njuolggadusat hábmejit!!paradigmamolsuma sihke Norgga ja!!¶!!
+Olu searvegottiin gos orrot!!sápmelaččat, gávdno báikkálaš gelbbolašvuohta ja!!
+vásihusat .!!tabealla 5.14 Diehtotávvalat ¶!!
+Ovdamearkka dihte rašes áššiid!!eai muital vai riidu ii!!buollá .!!Sihke Kárenina ja kollektiiva!!váldopersovdna doaibmaba birrasis váhnemiid!!haga .!!LHBTIQ-olbmuid olmmošvuoigatvuođaid ollašuvvama!!ja hástalusaid birra Suoma!!
+láhkaásaheami dáfus ¶!!2008; Näkkäläjärvi 2007: 110–126; Ohcejoga!!gielda 2009; vásáhusat gieddebarggus!!.!!
+Erenomáš jávohis Suomas ássi sápmelaččaid!!siskkáldas seksuála- ja/dahje!!
+sohkabealleunnitlohkun badjánit dutkamušas!!
+transolbmot ja homodievddut .!!ovddasvástádus čuovvut máná ovdáneami!!dan botta lea fuolahusguovddážis!!
+fuolahusguovddáš ja stáhta regionála!!Mánáidsuodjaluseiseválddit galget dárkilit!!čuovvut máná ovdáneami .!!
+akšuvdnadutkaniešvuođaid vuolgá universitehta!!dahjege allaskuvlla dutki ja!!skuvlla oahpaheaddji ovttasbarggus (!!2002: 91, 101, 104–105) Yle!!
+Sámi rádiosáddagiin besset gullosii!!iešguđet sámegielat ja suopmanat!!miehtá viiddis ¶!!ođđa giellašiljuid ja media!!
+vuostáiváldin, 7 .!!Jáhkkimis gávdnojit birrasiid 14-15.000!!luođi oktiibuot dain arkiivvain .!!
+sihke Norgga ja Suoma stáhtat!!leat dohkkehan sámi giellalága!!.!!5.1 Vuoigatvuohta lohkat sámegiela!!
+¶!!atne vel dalle gilis!!juogalágan ođđaássin ja!!danin vehá vierášedje .!!Dasa lassin geahčadeamis galggalii váldit!!vuhtii vuollel 18-jahkásaš vuoigatvuođa!!
+erenomášfuolaheapmái ja dearvvašvuođa ja!!
+ovdáneami suodjaleapmái dalle go čálgan!!lea ain gaskan .!!ánuhehket, rohkadallet) spiehkkasa beassášáiggi!!eará sotnabeivviid láhtenlaš namahusain!!dainna lágiin, ahte dat ii!!leat boahtán beaivvi antifonas, muhto!!
+rohkosmihtožiin, mat ordnejuvvojedje Romas 300–logu!!rájes .!!giellaoahpaheamis deattuhuvvo vuosttaš jagiid!!čálamáhtu duddjon nu ahte!!
+oahppit ohppet lohkat ja čállit!!.!!etnihkalaš bivttas ja etnisitehta čatnasit!!
+čavga oktii, go bivttas lea!!dávjá mearkkašahtti etnisitehta mearka,!!
+mii oidno ja mii geavahuvvo!!almmuhit joavkku dahje ovttaskas olbmo!!
+identitehta olmmošjoavkkuid vuorrováikkuhusas!!.!!4.1 Vokálaguovddáža monoftoŋggat ¶!!stuorradiggi mearrida .!!láigolihttováttisvuohta lea muđui!!
+guoskkahuvvon 4.2.9 .!!cealkkiha ahte ii galgga eanet!!
+loaktit go maid galgá sáhttit!!ávkkástallat agibeaivái .!!2 ideálamodeallan gohčoduvvo danne!!go dain ii oainne maidege!!
+čađaheami birra, dušše duogášjurdaga!!(Todal!!
+Dat ahte dán guorahallamis oalle!!moattes vástidedje ahte sii leat!!vealahuvvon doaibmahehttejumiset dihte sáhttá!!leat go doaba doaibmahehttejupmi!!assosiere doahpagii doaimmashehttejupmi, iige doahpagii!!hedjonan doaibmanávccaide, mii lea eanet!!
+fátmmasteaddji doaba (K.L!!guolástanstivrrat galget meannudit buot!!gažaldagaid main lea mearkkašupmi guolástanealáhussii,!!biebmanealáhussiige, muhto ii leat mielde!!dábálaš áššemeannudeamis .!!dán barggus lean geavahan!!
+teakstakorpusa viiddiduvvon ohcan -doaimma!!dát mearkkaša nappo ahte dát!!mearrádus ii sáhte addit!!boazosápmelaččaide seamma sierra!!
+guollebivdovuoigatvuođa go mii!!Deanu, Álttá ja ¶!!Dávjá lea nu ahte guovttegielasteapmi!!baicce gullo hállamis, go hállan!!
+lea eanet spontána, ja dalle!!ii álo geargga smiehtastit mo!!
+sátni heivešii sámegillii .!!§ 64 Jeagelbordin (jeageldoahpun)!!Dán juksat lea áiggiid čađa!!
+geahččalan moanaid doarjjaortnegiid ja!!
+liigedoaibmabijuid bokte .!!kollektiiva váldopersovdna doaibmá guovtti!!birrasis, namalassii márkan- ja!!
+meahccebirrasis .!!Rektor Deanu kulturskuvllas maŋŋil!!2000 .!!Sii leat nu gohčoduvvon!!
+tránsa-olbmot .!!2014 dieđihedje okta gávccádasoassi!!searvegottiin Nidarosas, okta!!
+njealjátoassi searvegottiin!!Lulli-Hålogalánddas ja bealli!!searvegottiin Davvi-Hålogalánddas ahte!!sii ledje geavahan veaháš!!sámegiela ipmilbálvaluseallimis!!
+muhtomin maŋemus jagis .!!Oppanassiige sáhttá imaštallat, doaibmágo!!boazodoallu muhtunlágan pántafáŋgan!!
+stáhta čárvvasteamis sámi guovddášguovlluid!!birra .!!
+sitáhtain boahtá bures oidnosii ahte!!Buvdabarggu heaittiheapmi lea!!gudneášši .!!
+din osku ferte maiddái geahččaluvvot,!!vai dat šattašii máidnojupmin ja!!hearvásvuohtan ja gudnin go!!Jesus Kristus almmustuvvá .!!Dáinna jearaldagain crossahárjeheaddji háliida!!bostalit áhči .!!
+Juos olmmoš ovdamearkan čuohpai!!
+muoraid muhtun vuovddis dahje guođohii!!šibihiid dihto guovllus dainna jáhkuin!!ahte sus lei vuoigatvuohta dasa!!, de sáhttá oažžut dakkár!!geavahanvuoigatvuođa dohkkehuvvot .!!Mearusoasi vuosttas oassi lea!!
+nappo juogo ikona dahje indeaksa!!.!!Buot dát fuomášumit čuhce munnje!!ja lei erenoamáš láittasáicat!!
+man hearkkes dilis sámegiella!!duođai lei, erenoamážit nuoraid gaskkas!!.!!Fertet váldit vuhtii sihke čielga!!
+lingvisttalaš beliid, muhto maiddái!!
+sosiolingvisttalaš beliid .!!Hárve vánhemat čájehedje heajain!!vuostemiela .!!
+váikko omiid guohtuma vuoigatvuohta "stáhta!!Mun in leat dutkanguovllus!!deaivan ollesolbmuid geat máhttet!!dušše sámegiela .!!
+badjesápmelaččat Dáža Deanu Capella!!Gielddas, ja ii oktage eará!!báikki Dáža, leat vuoigaduvvon bivdit!!guliid dán Deanus gitta Geavgŋái."!!¶!!Ja jus it máhte veahá!!
+ge sámegiela ovdalaččas go!!álggát joatkkaskuvlii .!!
+71 Sihke SGD ja NSD!!diehtovuođđu leat geavahuvvon gáldun!!dán artihkkalis .!!
+Olbmot fárrejit stuorit čoahkkebáikkiide!!.!!čujuha riektejoavku, ahte ï¾§ 110!!a álgoálbmotrievtti oktavuođas!!buktá ovdan navdinprinsihpa (presumpšuvdnaprinsihpa)!!
+28 ja 31) čilge ahte!!máŋggabealat ovdánahttin lea dehálaš!!bajásgeassinulbmil sámi árbevierus!!.!!
+Mávssu lahtuide ja sadjásašlahtuide!!máksá dat orgána, mii lea!!nammadan guoskevačča .!!
+fylkkanammagoddi s ¶!!Go galgá árvvoštallat fertego giliid!!
+meahcceriggodagaid háldduid áddet!!eaiggátháldun ja danin maid!!vuđđosin gáibidit eanaeaiggáduššanvuoigatvuođa, fertejit eambo!!
+dagaldagat vihkkedallot vuostálaga .!!nammasemantihkalaččat lea maid vejolaš!!hámi bokte gávdnat navdinákka!!
+namaide ¶!!69) kritihkalaččat oaidnit primitiivvalaš-psykologalaš!!čilgehusaid, maiguin oarjemáilmmi!!
+olggobeal olbmuid láhttema leat!!figgan dulkot .!!Das čujuhuvvui nuortaguovllu váraide!!ja ahte gielladilli lei!!
+vearráneamen .!!mearriduvvui ahte § 9 olis!!eaige vieris borgárat sáhttán eatnamiin!!
+makkárge geavahanvuoigatvuođa háhkat .!!Dás lea dehálaš čujuhit ahte!!áššis ii eahpiduvvon ahte!!riektenjuolggadusat leat seamma go!!riikkas muđui, earret ahte sápmelaččaid!!
+boazodoallu dagaha sierra gažaldagaid!!.!!gerddiid juovlamánus) dolle dikki sápmelaččaiguin!!
+juohke namuhuvvon čearuin dalá!!
+dáža-ruoŧa oktasašguovllus, ja seammaláhkai!!dálá Ruŧŧii ja Supmii (Eanodat,!!ovttaskas oasit dahje ovttaskassálbma/sálmmat lávlojuvvon!!
+sámegillii, dahje eará sámegielat!!elemeanttat geavahusas ipmilbálvalusas/girkolaš meanuin .!!Iige gávdno eará materiála,!!
+geavahanguorahallamat dahje dutkanraporttat!!mat muitalit man láhkai sámi!!mediat váikkuhit sámi mánáid ja!!nuoraid giellamáhttui, giellageavaheapmái dahje!!
+identitehttii .!!guorra suvvui muđui gielddarievtti!!vuođustussii ja čujuhuvvui ahte eiseválddit!!
+geain lei váldi ledje eatnat!!gerddiid dan mearridan, ja doalahan!!rastabuođuid gildosa .!!luohtedutki ¶!!Ollesolmmožin lea maid vásihan!!ahte Badje-Deanu olbmot eai!!
+háliit suinna sámástit .!!2003 geassemánu 27 .!!
+Girjji olggoža ovddabealli lea iešguđet!!ruoná ivnniin .!!ovdal namain Sámedikki!!
+ealáhusfoanda .!!dieđut 4/2008 32 logaldallamii!!Kárášjogas 20043, mas son!!
+cuiggodii váilevaš sámi perspektiivva!!sámeskuvllain ja jođiheaddjit leat!!ovttaoaivilis suinna .!!
+Sápmelaččaid eallin lea duohta, visot!!árbevirolaš čovdosiin lea leamašan!!
+ceavzimis jearaldat .!!Son čállá ahte leat unnán!!teavsttat mat kritihkalaččat gieđahallet!!dutkanmetodologiijaid álgoálbmogiid!!
+vásáhusaid hárrái .!!Dieđusge gártá oahpaheaddji álohii heivehit!!bargguid oahppi dási mielde, lei!!dal gielalaš dahje kognitiivvalaš ovdáneamis!!sáhka, muhto dat goit álkidivčče!!
+oahpaheaddji árgabeaivvi jos gávdnošedje!!oahpponeavvut mat jo ovddežis!!leat juoga muddui heivehuvvon dálá!!
+gielladillái .!!dieđihangeatnegasvuohta § 9 .!!3.2 Dutkančuozáhat ¶!!Bártniin dábálašfágas geat eai!!čađahan 5 jagi sisa, leat!!
+13 % gazzan oanehis dahje!!
+guhkes universitehta- ja!!allaskuvlaoahpu .!!árbevirolaš sámeduodji lea!!álbmotduodji, mii lea gárggiidan duoji!!evolušuvnna bokte iešguđege duodjára kreatiivvalaš!!
+iskkademiid boađusin .!!68) oaivvilda dattetge ahte ođđa!!áigodat, ealáskahttináigodat, álgá sámegiela!!
+historjjás 1990-logu álggus .!!ovdamearkkaide (221)-(944)!!
+Heaika čájeha ahte sus leat!!
+gulahallandáiddut maiguin son oažžu!!buori oktavuođa olbmuiguin, mii muittuha!!
+mo ¶!!almmolaš virgeolmmoš lea bealát!!láhčit vuođu mearrádussii dahje mearridit!!hálddašanáššis ¶!!
+Dallánaga go listtat leat dohkkehuvvon,!!
+galget luohttámušolbmot oažžut dieđáhusa!!dan birra ja oažžut dohkkehuvvon!!
+listta máŋgosa .!!Bargu lea čállon sámegillii!!.!!
+1702 gávpemearrádusas ahte go!!"ohcet!!oahppoplánat ¶!!
+dego ovdalis, sápmelaš siskkáldas!!unnitloguid gieđahalli kapihttalis, buktui!!ovdan de vuođđolága 6!!
+§:a ovttaveardásašvuođanjuolggadus guoská ovttaveardásaččat!!
+maiddái seksuála- ja!!sohkabealleunnitloguide gullevaš olbmuid,!!
+vaikko sii eai máinnašuvvoge sierra!!vealahangildui gullevaš joavkun, degomat!!
+lámisolbmot .!!Boazodoalloláhkalávdegotti!!
+ii datte gávnnahan heivvolažžan mearridit!!konkrehta rájáid daid guovlluide gos!!
+boazosápmelaččat sáhttet jođihit!!boazodoaluset .!!
+Go suoidnemánu 1 .!!III Árbbolaččat-trilogiija guorahallan!!189 ¶!!
+jienastan maŋemus stuorradiggeválggas!!¶!!giellamolsun álggii Sámis ovddeš!!
+áiggi politihkalaš dili dihte, ja!!dákkár historjjálaš duohtavuođat sáhttet ain!!váikkuhit sámegiela ceavzinnávccaide!!
+.!!čállá ahte luđiin sáhtii nuppi!!bilkidit, nugo ovdamearkkas vuhtto.27!!Luohti lea persovnnalaš, maid olmmoš!!
+oamasta .!!Rievdaduvvon suoidnemánu 16 .!!
+oahppoplána (L97Sámegiella)!!Kategoriijat sirdojuvvojit vuosttažettiin!!
+váhnemiin mánáide, ja dasto “servodaga”!!guovllut muđui Sáltoduoddara davábealde!!¶!!3 čállingiella lei stuorimus!!hástalus (eanáš)!!
+2005) Lea váttis govahallat ahte!!Isak Saba lea leamaš buriin!!mielain mielde dáruiduhttindoaimmain skuvllas!!
+.!!
+38 proseantta eai liiko nu!!bures go olbmot hállet!!gránnjáriikka giela ja 35!!proseantta eai háliit gullat go!!olbmot hállet gránnjáriikka giela!!
+.!!vuollediftoŋggat ja /!!ovdal lei gielddastivrras, lága §!!
+5 láhkavuođuin váldi gárvvistit!!sierralágan ásahusaid buot!!mohtorjohtolahkii .!!
+2014: 27; 2015-1: 27; 2015-2:!!27.) 2.4.3 Oahpahus sámegillii!!¶!!
+riikkastivrra ja báikkálaš!!ámmátdoaimmahat erenoamáš áddejupmi ahte!!olles Finnmárku lea "Gonagasa!!Suttesjohgohppi lea oassi nammačoahkis!!gos leat namat Suttes johka!!ja Suttesjohnjárga .!!Dalle oaidná ahte 61 proseantta!!
+Sámegiela 1 informánttain ja!!13 proseantta Sámegiela 2!!informánttain álo sámástit sámegielat!!
+oarbiniiguin .!!Máná árgabeai giellamáhttu!!lea deaŧalaš giellamáhttu go!!dat leat dat giella man!!vehkiin gulahallá sámegielat birrasis!!
+ja mainna galgá sáhttit duddjot!!alccesis máŋggabealat aktiiva!!giellamáhtu sihke skuvllas ja!!iežas lagašbirrasis .!!
+mađi eambbo oahppočuoggáid ja!!kandidáhta okta UA-ásahus buvttada,!!dađi eambbo ruhtada departemeanta ásahusa!!
+.!!Skadjávár-Mávnna :!!Finnmárkui leat fuođđolága §!!31 ja cuoŋománu 19!!.!!bajábealde áššiin ovdanboahtá!!
+sámeguovlluplakáhtat vuolggahuvvojedje čiekŋalis!!stáhtaberoštumiid .!!Bearjadaga ledjen fas olgun, vulgen!!
+Drivii maŋŋit, go moadde olbmo!!mat ledje leahkán sámefeasttas!!
+mannan basi mu hástale boahtit!!.!!našunála mihttu lea ahte 30%!!vuođđoskuvlaohppiin galget!!kulturskuvllaide (Stuoradiggedieđáhus!!NAČ 1984:18: Sámiid riektesajádaga!!
+birra .!!ohcan oktan cealkámušaiguin sáddejuvvo!!boazodoallohálddahusa bokte!!eanadoallodepartementii .!!
+2.5.1.1 Eanavuovdinlága mearrádusaid!!várddus ¶!!OAHPPI 6 6 7!!4 2 19 ¶!!
+sámeservoša ovddasteaddjit ja maiddái!!iešguđet virgeoapmahačča ovddasteaddjit ja!!
+dutkit .!!lávdegoddi cealká (s.10-11):!!Dehálabbot sáhttá leat ahte!!
+lihttoláigoheapmi ja bealle!!fállávuoigatvuohta mearkkašii almennehiid!!árbevirolaš anu dáhkádussan, erenoamážit!!
+garra proseassanjuolggadusain boanddaid ektui!!geat iešráđálaččat juhke almennehiid (Landsloven!!Media viggamuš doaibmat giellagáhttejeaddjin!!
+lea ¶!!Vai sáhttá sirdit eatnamiid heaittihuvvon!!doalus, evttohii eanavuovdinkantuvra!!1977:s ahte galggašii sáhttit álgit!!
+sierra mihtidemiin viessosajiide ja!!doalloeatnamiidda .!!sápmelaččaid rádioguldaleami dieđalaš gieđahallan!!ii jur gávdno Suoma beale!!Sámis .!!Sápmelaččaid ruovttuguovllus ássi sápmelaš!!Lámisolbmuide sáhttá leat hui!!
+váttis oažžut barggu, daningo barggut!!eai gávdno seamma bures go!!gávpogiin .!!
+Norggas lea sierra ovddasvástádus!!addit ovttadássásaš dearvvašvuođa- ja!!
+fuolahusbálvalusaid sápmelaččaide sin!!eamiálbmot stáhtusa olis (Sosiála-!!departemeanta sáhttá mearridit láhkaásahusaid!!ávkkástallama čađaheami birra, earret eará!!
+¶!!gonagasa Christian III Báktelágas!!.!!mearri evangeliumgirjjis molsašuddá eará!!basiid .!!
+giellamolsundilis livččii vejolaš!!ahte boarrásut mánát hállet vehádatgiela,!!
+muhto nuorabut eai .!!nubbingielagiidda sáhttá álgovuorus hui!!
+váttis áddet metafora ja!!
+sii dárbbašit danin vuos oahppat!!árgabeaivve abstrákta doahpagiid, nugo!!ovdamearkka dihte dovdduide čatnon!!doahpagiid dego: beroštupmi, ráhkisvuohta, ohcalit,!!áibbašit .!!
+allaskuvlla notáhta) .!!Jus lea sierramielalašvuohta gaskal!!fylkkamánni ja Statskog mearrida!!¶!!III Árbbolaččat-trilogiija guorahallan!!
+219 áiggi stuorra gávpogis Ruoŧas!!.!!visot girječállit leat sápmelaččat!!
+ja girjjit leat čállojuvvon!!davvisámegillii .!!Goitge lei dát duššo birrasiid!!bealli dan 40 % mii!!
+lei dán guovtti suohkana ollislaš!!jienastusloguoassi dalle go!!ledje sierra válgabiires vuosttaš!!sámediggeválggas jagi 1989!!
+.!!Dábálaččat barget juste ná eanaš!!grammatihkkafáttáin sámegieldiimmuin, oahppogirjjis!!
+.!!Eat go beasa unna mánáža!!oaidnit? Lea go nieiddaš vai!!
+bártnáš? (Vars!!Vaikko dálá dutkanbirrasat hilgot!!
+dan vuođđojurdaga mii lei!!guovddážis nálle spesialisttalaš dutkamis, de!!dattege dát historjjálaš noađđi mielddisbuktá!!ahte otná dutkiin geat dutket!!sápmelaččaid dearvvašvuođa lea earenoamáš!!ovddasvástádus fuolahit ahte!!dutkanbargu lea ehtalaččat dohkálaš!!
+ja dálá lágaid mielde .!!Váhnen guovttos atniba dan hui!!dehálažžan máná sámegiela oččodeames!!.!!
+ovdamearkkat cealkagiin main lea!!
+unnán variašuvdna: ¶!!Mihku Biehtára válddahallan eallinvuohki!!
+lea munnje alccen maid oahpis,!!
+go lean dakkára oaidnán iežan!!lagasbirrasis .!!
+dálá mánáide leat digitála!!veahkkeneavvut nugo telefovnnat ja!!dihtorat oalle dábálaččat .!!
+Heaika maid luvve iežas Birgitta!!ja gávpoteallima muittus, dál!!son iežas eavttuid mielde vállje!!maid bargá ja maid oastá!!
+.!!bákterusttetdoaimmat ja luvvosiid!!váldin sáhttet dattege dagahit dákkár!!
+riidduid .!!ruovttuguovllu olggobealde doaibmi eiseválddit,!!geaid doaibmaguovllus orrot!!mearkkašahtti ollu sámegielat!!
+olbmot sámegielagiid oppalaš mearri!!ektui galget sihkkarastit, ahte!!bálvaleapmi dárbbut sámegielaiguin leat!!váldon vuhtii ovttaveardásašvuođaplánas .!!
+dán prošeavtta oahpaheaddjit leat čiekŋudan!!iežaset sámi árbevirolaš oahpaheapmái!!nugo lean dan dás válddahallan!!.!!heajain náittosbáras ja konfirmašuvnnas!!konfirmánttas galget leat ođđa gávttit!!.!!
+láigohanohcama galggai sáddejuvvot guoski!!gieldda leansmánnái ja meannuduvvot Finnmárkku!!
+eatnamiid luobahannjuolggadusaid mielde .!!lea Laestadius ožžon filbmakontrávtta!!ja girjjit galget goappašagat filmatiserejuvvot!!.!!kulturmuitolága § 4:s!!logahallo kulturmuittuin mat leat!!automáhtalaččat ráfáiduhtton lága mielde .!!
+ahte norgga láhkagustui!!Sis-Finnmárkuige 1751 rájes, ii!!mávsse ahte sámit masse!!eaiggáduššanvuoigatvuođa dahje eará vuoigatvuođaid!!giddodagaide mat sis ležže ovdal!!dan áiggi .!!láhkaásahusa § 1 .!!
+Mii guorrasit Bávlosa neavvagii ahte!!oskkus Kristusii leat mii buohkat!!dássásaččat, beroškeahttá čearddalašvuođas, sohkabealis!!dahje našunalitehtas .!!
+Dieđut leat čadnojuvvon dihto!!eallindillái dađi mielde makkár!!
+dilis don ássin leat .!!Sihke ovdabargguin ja!!
+johtučállosiin lea báhkkoduvvon ahte!!
+nuppástuhttit plána váldoáššálaččat dušše!!dahkko lága § 28-1!!mearrádusa mielde, ja ahte!!
+eaŋkalsierralobit eanaš dušše addojit!!gaskaboddosaš ja áigeráddjejuvvon spiehkastagain!!.!!
+kapihttalis addá dievaslaš geahčastaga oahppiid!!loguin geain lea oahpahus!!sámegielas dahje sámegillii!!
+vuođđoskuvllas .!!Unjárgga gielddas lea guovttegielat!!álbmot, gos sámegiella ja!!
+dárogiella leat ovttaárvosaččat .!!Ráđđi galgá maiddái oainnuset cealkit!!ja ovddidit evttohusaid áššiide mat!!
+guske ohppiid lagasbirrasii .!!earret earágo atná deastta!!
+álbmotrievttálaš prinsihpaid dulkonvuođđun!!de orru dás riekta dárkot!!gažaldaga iešguđet eaiggátháldduid vuođul!!
+háhkat dahje massit eaiggáduššanvuoigatvuođa!!1751 maŋŋilge go buot lea!!árvvoštallan, bijakeahttá váldodeattu válljet!!dihto ráđđenvugiid maid anášii!!eambo "opmodathuksejeaddjin"!!
+ná cealká son guhte doallá!!čieža nástti olgeš gieđastis, ja!!
+guhte váccaša čieža golli lámppá!!gaskkas: ¶!!102 1989-90 s .!!vuoigatvuohta oažžut oahpahusa seavagielas ja!!seavagillii nuppi lađđasa mielde lea!!ráddjejuvvon daid oahpahusprográmmaide ja!!
+prográmmasurggiide mat fállojuvvojit daid!!skuvllain .!!
+Dalle dat geahčadit dásseárvvu!!ja ovttaveardásašvuođaprinsihpaid .!!Dat mearkkaša ahte muhtin eará!!
+persovdnahástala váldopersovnna, juogalágan!!vugiin mii dagaha sudno gaskii!!vuostálasvuođa .!!Lávllodettiin ja guoskkadettiin iežas ámadadjui,!!
+nappo daguid ja njálmmálaš!!lávlla sániid bokte, Risten muitá!!sáni njálbmi ,!!mun dutkkan mo ođđa!!
+sámepolitihkka čađahuvvo almmolaš ásahusain,!!skuvllain ja mánáidgárddiin ja!!mo ođđa sámepolitihkka váikkuha!!
+bargoeallimii ja giellageavaheapmái!!bargoeallimis .!!vuovdedoallohoavda Álttás lei!!ovdal Romssa fylkkavuovdehoavdda!!vuollásaš, ja ledje barggut miehtá!!Finnmárkku ja ovtta gielddas Romssas!!
+.!!anárašgiella/anáraš- ja suomagiella 71!!
+gávdnojedje dán dutkamušas dušše Anáris!!ja Ohcejogas .!!Jagiid 1994, 2000 ja 2007!!čájehit logut goitge ceahkkálas lassáneami!!
+oasis geat jotket njuolga alit!!ohppui, ja jagi 2007 lei!!
+oassi 6 proseantapoeaŋŋa badjelis!!riikkagaskameari .!!Go gáibida mieđis eavttuid mieđihit!!
+ealáhusbarttaid ohcamiidda, ferte seamma!!gustot joavdobarttaide .!!ja earát 2012) addá buori!!
+ja dárkilis gova das mo!!giellaguovddážat leat organiserejuvvon ja!!daid doaimmaid .!!508, mas boahtá ovdan, ahte!!
+Norgga rievtti impedimeantameroštallama ovddidii Norgga!!sierra duopmostuollu "Høyfjellskommisjonen"!!Son lea diekkár nisu mii!!váldá saji ja lea máŋgga!!
+dáfus ovddabealde áiggis ja doaibmá!!
+sámepolitihka, bargoolbmuid ja!!
+nissonáššiid bealušteaddjin .!!101 háhkamis ja roggamis!!minerálavalljodagaid (minerálalága)!!Dát vuoigatvuođavuođđu ii leat!!
+adnon .!!Ovdal go dát dáhpáhuvvá, de!!govviduvvo ođđa áiggi nuppástuvvan!!Biret-Káre dilis go son!!
+nuorran lea vuosttas olmmoš Máhtebáikkis!!gii lea virggálaččat bargu haga,!!go ii leat vázzán go!!bákkolaš álbmotskuvlla (ÁII,!!Etihkalaš čuolmmat sáhttet dáhpáhuvvat olles!!dutkanproseassas ii ge dušše!!
+jearahallamis .!!Ávdnasat mat leat Alimusriektái!!ovddiduvvon čájehit maiddái, oaivvildan, ahte!!
+gieldda ássiid gaskas ferte leat!!leamaš hui dovddus, ainjuo maŋit!!jagiid, ahte giđđalodden ii!!
+lean lobálaš, vaikko sáhttáge orrut!!ahte duođai lea loddejuvvon muhtun!!
+muddui ja iige mihkkege leat!!dahkkon dan hárrái .!!Stáhta geaidnodoaimmahagas Finnmárkkus dieđihuvvo!!ahte fylkkas lea sullii 4000!!
+km almmolaš geainnu .!!boazodoallolága §§ 6-8),!!lea boazodoallohálddahusas!!
+váldoovddasvástádusa norgga!!boazodoalu hálddašeamis .!!kapihttala vuođul ii sáhte geavahit!!seamma láhkarihkkuma vuostá .!!
+ealáhuslohpi sáhttá váldojuvvot eret!!
+go: ¶!!eai spektrográmmat ge duođaš ahte!!lea erohus vokálaguhkkodagain .!!Suopma lea aktiiva doaibmi!!lámisolbmuid vuoigatvuođaid ovddideaddjin ja!!bealušteaddjin maiddái riikkaidgaskasaš dásis!!
+.!!iešgova ovddideapmái leat sihke áican!!ja árvvoštallanmáhttu dehálaš .!!
+go báikegoddi gullá ahte!!Ánne lea jápmán, de sidjiide!!
+šaddá hui ahkit, ja guovllu!!olbmot dego bieđganit ja álget!!gaskaneaset riidalit .!!Das lea olu eanet!!kodamolsun gielaid gaskkal .!!1857 láhkaalmennetvuvddiid birra!!
+eaktudii ahte stáhta lei!!stáhtaalmennehiid eaiggádin, ja seamma!!guoská geassemánu 22 .!!diekkár miellaguottut meroštallangažaldagas!!
+leat leamaš vuođđun Dutkanráđi!!ruhtadeamis sámi dutkamii juo dalá!!
+rájes .!!ja ahte sávzaguohtuma berrešii!!ordnejuvvot sierra guohtonguovlluin .!!Lei áddjás bargu duddjot!!datne-árppuin .!!norggas eai lágit suohkanstivra!!
+ja fylkkadiggeválggaid aktanaga!!stuorradiggeválggaiguin .!!Luondu sáhttá maid iešalddis leat!!oahppama sisdoallu .!!čállá ahte 8 sámi!!ássannamat leat dán girjjis!!
+vuoliduvvon dahje jaskkodahttojuvvon, ja girjji!!lohkkiide addo govva das ahte!!Dárogielat namat leat dat!!
+rievttes namat, ja nammačilgehusat!!dorjot dáža norrøna áiggi ássama!!.!!
+Seamma gusto ovtta sadjásašlahttui, gii!!lea dán golbmasa sadjásašlahttu!!.!!Vuollegis goddinlogus sáhttá leat!!oktavuohta dainna ahte bivdojoavku!!
+mas ovdal ledje hárjánan bivdit!!ja geat maŋemus jagiid leat!!doaimmahan eanas boraspire jávkademiid,!!leat bidjan eret vearjjuid vuosttaldeapmin!!
+go prošeakta Eallit Luonddus /!!jearai njeallje gažaldaga sámegiela!!
+ja identitehta birra ássiin muhtun!!suohkaniin, guovlluin olggobealde stuora gávpogiid!!davábeale ¶!!
+Balto čállá ahte máinnašupmi lea!!eahpenjulges bajásgeassinvuohki, mainna ollesolmmoš!!fuomášuhttá máná daguidis bokte, ii!!
+ge njuolgut cuiggot .!!Sii jerret ahte gii dán!!galggašii ráhkadit go sii eanas!!
+geavahit áiggi ohcat, heivehit ja!!máŋgii ieža ráhkadit oahppomateriálaid!!mat heivejit sin ohppiide .!!Dákkár gáibádus ii rihko mange!!áigemeari .!!
+dásseárvoláhka gomihuvvon 2004/21,!!
+5 § .!!Mieđis doaibmabijuid hárrái, oaivvilduvvo!!
+várra (ee.)!!2002:s lei 13!!ovdaskuvlamánás julevsámi!!fálaldat, 2008:s lei lohku 27!!.!!
+Ferte dakkaviđi rievdadit njuolggadusaid mat!!gullet fága- ja diibmojuogusteapmái!!
+ohppiide geain lea sámegiella!!nubbingiellan vuođđoskuvllas, vai sámegiela!!
+válljet ii šatta liigenoađđin!!.!!máŋggadáfot vealaheami galggalii dovddastit!!ovttaveardásaš láhkaásaheamis .!!nuppi beales čájehuvvo ain moanaid!!
+surggiin ahte stáhtaalmennehaga ja!!stáhtaeatnamat Finnmárkkus leat!!sulla lágaid .!!logut gustojit davvisámegillii,!!julevsámegillii ja!!lullisámegillii oktii Norgga!!bealde ráji .!!
+Dalle lea baicca lassánan sámegiel!!ohppiidlohku .!!Alit oahpahusfálaldaga sámegielas!!lea mielde lokteme sámegiela!!árvvu sihke sápmelaččain, ja maiddái!!stuoraservodagas .!!giellamolsuma jorgalahttima mearkkat ¶!!SED-guovllus leat su .!!Niittyvuopio.) Gáregasnjárggas bádji!!ii leat vel ollašuvvan, muhto!!Duodjegávpi lea rabas!!turismaáigge .!!
+Soai attiiga mánnáseaskka vahkkoruđa!!.!!siidduin ovdanbuktá Korpijaakko viidát!!
+ruoŧa-suoma eanaopmodaga vuoigatvuođa!!
+historjjá .!!Dás vuollelis čilgejuvvo oanehaččat!!
+galbajoavkkuid juohku, mii lea!!analysa vuođđun .!!Artihkal 14 ii leat dábálaš!!vealahangieldu, muhto dat laktása EOS:s!!
+dovddastuvvon vuoigatvuođaide ja friddjavuođaide, mat!!leat maid soahpamuša!!
+lassebeavdegirjjiin dovddastuvvon vuoigatvuođat!!ja friddjavuođat .!!
+ohcanmeannudemiid ovddas maid!!hálddašanorgána addá .!!Dás mearriduvvo ahte eavttut maid!!Eanadoallodepartemeanta bidjá go!!
+doaibmabidju gáibida konsešuvnna 1974!!lága mielde, galgá maiddái biddjot!!go eanavuovdineiseválddit šiehtadallet!!
+minerálroggamis stáhta matrikulerekeahtes eatnamiin!!.!!Okta dahje máŋga bargiid ovddasteaddjit!!galget ovttas fágalaš jođiheddjiiguin bearráigeahččat!!ahte oahppofitnodaga čuovvu lága!!ja láhkaásahusa bakte mearriduvvon!!
+geatnegasvuođaid .!!leat maŋemus áiggiid ožžon nana!!
+čujuhusaid ealáhusa aktevrrain ahte fylkka!!Boraspirehálddahus ii ovddas!!ealáhusa ja ahte dálá dilálašvuođat!!daguhit ahte eanegat ja eanegat!!árvvoštallet heaitit .!!
+dadjet rudneguohtumin dalle go!!muohtaeatnamis leat dego rutnit,!!mat dábálaččat leat šaddan njáhcun!!bievlan čakčat/skábman .!!Go cealkagis lea infinihttahápmi!!
+nugo (64),!!váldoservodaga i doarjjo dáid!!proseassaid ja olbmuid vuoigatvuođaid iežaset!!
+kultuvrii .!!Go leat garra árttat dása,!!
+de sáhttet láhkaásahusat maid!!spiehkastit dáin paragráfain .!!Stuorra oassi Norgga beal Sámi!!
+oassálastiin dadje ahte bellodatpolitihkka!!lea bissehan dahje ollásit bilidan!!
+sámi iešmearridanviggat .!!
+riektedieđa 1 3 2!!
+¶!!leat ain dušše dárogillii!!.!!Lárin bovde Liná spábbačiekčamiid!!
+boahtit geahččat, ja nu son!!dahká .!!Orru danin čájeheamen ahte!!sámerádio odne joksá viidábut!!
+sámi álbmoga go ovdal, muhto!!dan ovddas fertejit máksit!!dárogielat báikkálaš mediat .!!
+nissonolbmuid duojit eai váldo!!
+vuhtii, go ruđaid juolludit visttiid!!várás .!!
+monne- ja!!uvjaeanaeaiggátvuoigatvuođa nuppástusat!!maid fuođđoláhka dagahii, leat!!
+hui oanehaččat vuođustuvvon lága!!ovdabargguin .!!stáhta vuvddiid direktoráhta ásahuvvui!!1957:s, ja ¶!!ruovttuoahpahusa suohkanlaš goziheapmi ¶!!bargguidis dávistemiin lágaide, láhkaásahusaide!!ja bargonjuolggadusaide" .!!
+Duogušteami vuosttas lađđasa vuođul mearrida!!Guolástusdirektoráhta, mii meroštallá lassisálaža!!ja dan árvvu .!!Go varas nisoláibeváilu!!Birggeha viesus, de dat ii!!leat dušše láibi mii materiálalaččat!!váilu .!!
+vuođđolágas sápmelaččaide dorvvastuvvo!!riektesajádaga namalassii!!eamiálbmogin .!!departemeanta sáhttá mearridit ahte!!riikka-eari oassi dahje!!joavkoeari oassi mii lea!!
+ovtta dahje eanet fanasjoavkkuid!!várás, galgá buktojuvvot ja vuvdojuvvot!!
+dihto guovlluid gádderusttegiidda muohkadeapmái!!(guovloearri)!!
+Livččen maiddái ráhkadan ságastallama vuođul!!jurddakártta távvalii gosa ledjen!!
+čállit ohppiidevttohusaid .!!dát giellavierru lea stáđásmuvvan!!dannego sii ledje mánnán juo!!dávjá ovttas earáiguin, geat eai!!máhttán sámegiela dahje máhtte!!
+suomagiela buorebut go!!sámegiela .!!Dan rájes go ovddádusbellodaga!!šattai oassin sámediggeválggain!!jagis 2005, lea trenda dán!!
+rádjái vuosihan ahte!!sámediggeválggain dán bellodaga!!guorraseami rievdamiin orru sodju nuppe!!ládje go dain rievdamiin mat!!
+guorraseamis leat stuorradiggeválggain!!.!!guovttegielatvuođadoarjaga haga livčče!!mearkkašahtti uhcit doaibmabijut!!čađahuvvon .!!Muhtin sivva dasa lea ahte!!leat nu unna logožat, ja!!
+ahkebeassádagaid sturrodat mearkkaša maid!!ollu ohppiidlohkui .!!5.2.3 Eretfárren SED-guovllus ¶!!
+bissovaš ássansajiid dáfus ja!!geasseviesuide ja guođoheaddjibarttaide!!fertejit boazodoallit dáid mearrádusaid!!
+mielde adnot geavaheaddjin, muhto muđui!!ii leat nu .!!Gieldu guoská ovdamearkka dihte!!olbmo heađušteapmi dan dihte ahte!!son lea transolbmo bearašlahttu!!
+.!!6.2 29 Sámegielas lea!!álo deaddosániid álggos, mii!!addá lunddolaš ritmahoahkamiidda ja!!
+divttaide .!!sámi oahpahusguovddáža!!
+silbaduodjeoahpaheaddji Samuel Valkeapää!!livččii ilus, jos eanet!!sámenuorat boađášedje Sápmái ja!!gaccašedje maid oahpu sámeguovllus!!.!!
+645 bakte), 2004 suoidnemánu!!
+2.b .!!Vuovddi ja giliovdánahttima ossodat!!lea biddjon Girkonjárgii, gos leat!!3 olbmo barggus, ja sullii!!
+10 fásta vuovdebargi .!!Muđui ovdanboahtá mearrádusas evttolaččat ahte!!matrikulerekeahtes eatnamiidda lea stáhta dán!!
+oktavuođas ipmirduvvon eanaeaiggádin .!!kulturmuittuid ráfáiduhttinrádji)sas, gos sámit!!ruoŧa bealde eai šat beasa!!johtit geasseguohtonbáikkiide sulluin!!
+rittus, ja mii de mielddisbuvttii!!ahte fertejedje guođđit ovdalaš!!
+geasseorohagaid .!!vai galgá ipmirdit dán kapihttala!!loguid, de dárbbaša diehtit fága!!Sámi giella ja kultuvra!!
+ohppiidlogu leat oassin das!!maid dás gohčodit sámegiella!!nubbingiellan skuvlajagi 2005/06 .!!veallahuvvan álbmogat miehtá máilmmi!!juogadit intellektuála ja vuoiŋŋalaš oktonasvuođa,!!
+mas čuovvu váilevaš iešluohttámuš, árgivuohta!!bargat juoidá iežaset diliin ja!!
+jáhku dasa ahte gillámuš ja!!bávččas maid koloniseren buktá, lea!!
+muhtinláhkai ánssášuvvon .!!sarvvisvuotna (1994)!!jus juoga doaimmahuvvo dáid mearrádusaid!!dahje dán lága olis addojuvvon!!
+mearrádusaid vuostá, de galgá!!boazodoallostivra dahje guovllustivra,!!go almmolaš fuolaid geažil nu!!
+berre, addit dárbbašlaš gohččumiid heaittihit!!lobihisvuođa, dás maiddái gohččut njulget!!
+ja gaikut lobihemet ceggejuvvon visttiid,!!rusttegiid jna .!!Sámegiela 4 -joavkku!!Sii muitalit iežaset geavahit ollu!!
+áiggi ieža ráhkadallat bargobihtáid!!ja eará oahpponeavvuid .!!
+Finnmárkkus ii gusto Tønnesen:a mielde!!dát oppalaš eaktu, go!!geavahanvuoigatvuođat leat álgovuolggalaččat, ja!!
+sáhttá maiddái dahkat jáhkehahttin ahte!!ovddeš áiggi atnu adnojuvvui mearkkašit!!sierravuoigatvuođaid .!!
+Smith guorahallamiid mielde álgoálbmogiin!!lea dárbu bissut autenttalažžan .!!Suodjalus dieđiha hárjehallama áiggis ja!!
+báikkis nu ahte!!eanavuovdineiseválddit dihtet dan!!
+.!!suomagiella 34 28 82!!¶!!Muhtin bargguin šaddá geavahit!!hállangiela ja čállingiela!!oktanaga .!!
+Muhto jos dis lea bahča!!gáđašvuohta ja riidalanhállu váimmus,!!de allet rábmo iežadet alletge!!
+gielis duohtavuođa vuostái .!!Dakkár vuoruheapmi ráhkada vuođu!!dutkanbirrasii mii láhčá dili!!
+gelbbolašvuođahuksemii ja buori stipendiáhtta-!!ja oahpahanbirrasa .!!NF raporta nr .!!
+Eará kategoriijain -!!Oahpahussuorggis lean vuohttán váilevaš!!oahpaheami sámi muitalanvugiin studeredettiin!!
+journalistan sámi allaskuvllas, muhto!!oarjemáilmmi muitalanvugiid gal!!ohppen .!!almmuhii goalmmát stáhtaváldi cealkámuša,!!
+mii guoskkai sápmelaččaide .!!Lea bagadallon makkár surggiin bargiin!!lea šiehtadallanvuoigatvuohta, vihkkedallanvuoigatvuohta ja!!diehtojuohkinvuoigatvuohta .!!Nuoraid kvalitatiiva jearahallamiin boahtá ovdan!!ahte eai čále teakstadieđuid!!
+sámegillii teknihkalaš váttisvuođaid ja!!ekonomalaš sivaid geažil: Telefovnnas ii!!leat sámegiel sátnegirji, eai leat!!
+sámegiela erenoamáš bustávat ja!!šaddá divrasabbon sáddet dieđuid jos!!
+čállá sámegillii .!!árbevierru ja geavat sáhtášedje!!leat dulkonmomeanttat .!!dálá álbmotdearvvašvuođainstituhtain .!!
+Dát oassi lea várra!!1100-logu loahpa dahje!!1200-logu álggu rájes .!!
+Duoji váldofága .!!Dutkanmateriála guorahallamis lean dorvvastan!!
+10 |!!Diet guoská sihke ekonomalaš, kultuvrralaš,!!ealáhuspolitihkalaš ja resursa- ja!!
+geopolitihkalaš rievdademiide .!!giliolbmuid fuomášemiid duohtan .!!Loguiguin dahká dat 132 bargi!!mekanihkalaš industriijas ja 111!!bargi media- ja kulturealáhusain!!.!!
+Go olmmošlohku unnán ovdána,!!de dat maiddái váikkuha negatiivvalaččat!!guosseealáhusaide .!!áššiin, maid vuođđun lea!!mielladearvvašvuođadikšunlága §!!6-4, galgá doallat čoahkkimiid .!!LK06 lea Norgga našuvnnalaš!!oahppoplána .!!
+olbmo birgenlágiid sámi konteavsttas!!.!!báberláhka journálii, jus ávdnasat!!
+eai skánnejuvvo elektrovnnalaš journálii dahje!!vuostáiváldojuvvo elektrovnnalaččat nu ahte daid!!sáhttá vurket elektrovnnalaš journálii .!!Go girjjiid ja teavsttaid lohká,!!de hárjána oaidnit riekta čállojuvvon!!dahje normerejuvvon teavstta, mii fas!!maŋŋá boahtá ávkin čállimii .!!
+olgomuseas sáhttá oaidnit sápmelaččaid!!dološ ássan-, bivdo-, ja!!fievrredankultuvrra osiid .!!sámegiela sirdáseapmi mánáide ¶!!
+muitalus govvida nammaválljema gutni!!ja árvvu, seammás go maiddái!!čalmmustahttá vuordámušaid máná šaddamii ja!!eallinvugiide .!!
+oahppanjoksosat Sápmelaš!!mánáidgárdeoahpaheaddjioahppu gealbudahttá!!kandidáhta doaimmahit!!
+mánáidgárdeoahpaheaddji ámmáha!!máŋggabealat ja rievdeservodagas!!.!!
+Dasa lassin sáhttet sin mánát,!!geat leat dahje leat leamaš!!
+jienastuslogus, gáibidit ahte besset!!jienastuslohkui .!!joatkka-skuvla-oahppodássi ¶!!
+girkodulkka Kárášjogas .!!dát govadat govvida ahte ollu!!
+válgabiires leat “lonuhan!!lassin dáid bargguide lea!!birasgáhttendepartemeanta addán!!
+luondduhálddašandirektoráhtii dihto!!bargguid sihke lága ja!!
+láhkaásahusaid mearrádusaid dulkomiin .!!Vaikko dalle lei erenoamáš fiinna!!39 giđđa, de son ii!!šat fáhtehallan daidda seamma dovdamušaide,!!
+maid čáppa beaivvádatbeaivvit lávejedje!!sus čuoččáldahttit” (s.47)!!Riekti sáhttá maiddái dohkkehit ahte!!
+proseassajođiheaddjit geat eai leat!!advokáhtat ovddidit guoddalusa njálmmálaččat .!!
+48) čállá ahte eatnigiela!!namahusa geavahit giela birra maid!!eadni hállá mánáinis .!!vaikko orrot čavga nationálarámmat!!
+muhtimiid mielas, de ferte deattuhit,!!ahte skuvlaláhka ja sámi!!skuvlanjuolggadusat rahpet vejolašvuođa nannet!!
+sámi perspektiivva .!!
+maiddái iežan masterbarggu!!
+dutkanproseassa sáhtán čilget bajábealde!!namuhuvvon čuoggáid bokte .!!Sisaboađu ¶!!
+gii kapihttala 2 fápmuiboahtimis lea!!Statskog SFa virgehas ja geas!!
+lea bargobáiki Finnmárkku fylkkas!!ja gii lea Statskog SFa!!
+meahccebálvalusas, adnojuvvo fápmuiboahtináiggi rájes!!Stáhta luonddugeahču virgehassan!!.!!Fárret eret ruovttusuohkanis lea!!
+dávjá bistevaš ja dat ahte!!fárret fas ruovttoluotta!!ruovttubáikái lea juoga mii!!ii dáhpáhuvvá nu dávjá, earenoamážiid!!boaittobealsuohkaniidda davvin .!!
+Dákkár stuorra dutkanprošeavttas jearaldagat!!galggašedje boahtit dutkanprošeavtta jođiheaddjiin!!
+.!!Ná dutkanmateriála sáhttá álkibut!!
+dulkot, go ovttastahttá dán guokte!!bargovuogi .!!
+geassemánu 16 .!!Helander maid buktá ovdamearkkaid!!mo sáhttá stoahkat sániiguin ja!!hárjehallat ođđa vearbbaid ja substantiivvaid!!
+gávdnat sániid sadjái mat dávjá!!geavahuvvojit, ovdamearkka dihte mannat!!
+-vearbba!!rissebávttis .!!13) fas čállá ahte olbmot!!dávjá válljejit geavahit riikka!!majoritehtagiela gaskaneaskka vaikko!!goappašagat máhtášedjege sámegiela .!!
+duođašteigga dutkamušaineaskka, ahte!!giellamolsunproseassa lei jođus!!
+¶!!fuođđolágas lea vuolit prinsihppa!!ahte eanaeaiggádis lea oktovuoigatvuohta!!
+monnet ja uvjet .!!eanadoallolága § 6!!
+doalahii vel 1775 njuolggadusaid nu!!ahte fáldi sáhtii čujuhit!!
+ássanbáikkiid "ávdin!!eatnašat soitet jurddašit ahte giela!!vuogádatlaš beliid oahpahallan lea seamma!!go dat mii dáhpáhuvvá skuvlla!!giellaoahppadiimmuin .!!Moai jáhkke Finnmárkkulága šaddat!!
+ávkin buot Finnmárkku ássiide, sámi!!álbmogii ja oppa Norgii .!!Jagi seavdnjadamos beaivi lea juovllaid!!áigge, giđđadássebeaivi lea!!
+Márjjábeaivi, jagi čuovgadeamos beaivi lea!!
+Jonssot ja čakčadássebeaivi!!fas lea Mihkalmas-áiggebiibbala!!
+mielde .!!oasi dearvvašvuođabargiidlágas oktan!!mearkkašumiiguin) .!!
+Go lea sáhka čálamáhtu!!huksemis, de biddjo fuomášupmi giela!!
+hápmebeallái, mii lea guovddážis lohkamis!!ja čállimis .!!Vuosttaš gergehii 2006, dasto gergehii!!nubbi 2007, guovttis 2008, okta!!2010, okta 2011, ja okta!!
+nákkáhalai doavttergrádii!!
+ođđajagimánus 2015 .!!viessosajit jna.) .!!Stáhta lea áiggiid čađa rivven!!
+sápmelaččain nu olu guohtuneatnamiid!!ja vuoigatvuođaid maid ovddas eai!!
+leat goassege buhtadusa máksán .!!sámegiela 4 2 %!!
+5 % 91 % 2!!% 100 % 44 ¶!!politiijabargi geas muđui!!ii leat sáhkkohanváldi, sáhttá oažžut!!
+válddi čállit álkes sáhku .!!mii dal historjjálaš vuolggasadji!!leš, lea dál riektegeavadis!!
+mearriduvvon gustojeaddji riektin ahte murren-,!!guohton-, geassesajdoallo- ja láddjehatvuoigatvuohta!!dušše gullá eanadoalliide, geahča ee!!.!!Fárrejin deike čakčat 1998, jagi!!dan maŋŋá go diet čájálmas!!lágiduvvui Vuovdaguoikkas .!!
+govus 5.38 Sámegiela joavkkuid!!sámegiela geavaheapmi ollesolbmuiguin!!
+.!!vierrogiella ¶!!1951-mannosaš lága nr .!!Mun ferten oahppat sihke min!!sámegiela ja girjegiela.” ¶!!Guovdageainnus lea dál!!birasgáhttema ja luondduhálddašeami!!váldolávdegoddi mii meannuda!!buot sierralohpeohcamiid!!
+eanavuovdinláhkaásahusaid §!!8a mielde .!!finnmárkkus gos sámekultuvra ain!!lea nanus (omd!!Sápmelaš seksuála- ja!!
+sohkabealleunnitloguid vásihan!!Máŋggadáfot vealaheapmi ¶!!
+Divrráid, Siellaga, Loabága, Rivttága, Skániid,!!Ivvárstáđiid, Harstad, Bjarkøy ja!!
+giehtavuona gielddat) .!!Dákkár áššit šaddet dieđus oahpaheaddji!!iežas árvvoštallama ja gealbbu duohken!!mearridit, nu guhká go eai!!leat mearriduvvon uhcimus meari sánit!!maid oahppit galget máhttit čállit!!juohke jahkeceahki maŋŋel .!!
+lámisvuhtii laktáseaddji dutkamuša čađahedje!!
+ovdal dávjá nu ahte!!lámisolbmot eai ieža eaige!!sin ovddasteaddji organisašuvnnat váldon mielde!!dutkanproseassa .!!
+Dán joavkkus leat namat, maid!!čállinvuogit leat mearriduvvon sihke!!sáme- ja kveanagillii, muhto dát!!
+buohtalasnamat eai leat vel!!váldon vuhtii báikenammagalbbain!!.!!
+olmmoš, guhte eahpida leat gártan!!gildojuvvon vealaheami vuollái, sáhttá bivdit!!áššis dásseárvoáittardeaddji rávvagiid!!ja neavvuid .!!
+Kristiina čájeha dakkár iešvuođa ahte!!son háliidivččii iežas ravget loahpalaččat!!bođuid ovddežis, árbevirolaš doaimmas!!
+ođđa áigásat doibmii .!!Dán áššis addojuvvui guovtti Ruoŧa!!
+sámeorohahkii buhtadus ee .!!Dát oktasašsoahpamuš lea dehálaš!!sápmelaččaid dáfus ovdamearkka dihte!!
+dalle jos virgeoapmahaččat dahje!!ii-sápmelaš dahkkit vealahit!!sámenissoniid ja maiddái jos!!vejolaččat sámeservoša siste nissonat!!vealahuvvojit .!!Stuorit oassi sámi dievdoolbmuin!!
+almmuhedje guovtte dahje golmmalágan veahkaválddálašvuođa,!!go buohtastahttá earáid ektui, geat!!eai leat sápmelaččat .!!Sámediggi lea sámi álbmoga!!
+ovddasteaddji orgána, ja lea ráđđehussii!!sámepolitihka deháleamos premissaaddi!!.!!
+vearroláhka čađahii dan sadjái!!"dábálaš!!Allern čilge ahte!!
+gierdomuitalanvuogis ii leat!!juotna guovddážis, muhto mielladilálašvuohta!!.!!1965 eanavuovdinlága mielde!!
+oktan gullevaš láhkaásahusaiguin ja!!mearrádusaiguin .!!54, miessemánu 27 .!!stuorámus oassi ođđa hálliin leat!!
+oahppangiela olggobealde ruovttu, nu!!mo skuvllas dahje eará!!oahppoarenain .!!divtte juohke ođđa sohkabuolvva!!dovddiidit du .!!Su mielas galggašiige oktanaga hállat!!giela seailluheami ja giela ealáskahttima!!birra, go lea sáhka!!árbevieruid ealáskahttima birra .!!iešguđetge siidda boazolohku galgá!!§ 60 vuođul ovddiduvvot!!
+boazodoallostivrii loahpalaš nannemii!!ja dohkkeheapmái .!!Riektejoavku galgá čielggadit ja!!
+ahte govttolamos galggašii leat ahte!!sámeálbmoga vuoigatvuođagažaldaga maiddái!!lea Riektejoavkku váldofáddá!!.!!
+universitehta vuođđokurssaid giella-, girjjálašvuođa-!!ja kulturhistorjáoasit nannejedje!!mu hálu joatkit sámegieloahpuin, ja!!
+nu geavai ahte mun 1999!!
+gergen sámi girjjálašvuođa váldofágain, ja!!dál barggan sámi girjjálašvuođa!!PhD-dutkosiin .!!
+Vaikko vel dutkanguovlluin leat!!
+iešguđetlágan historjját, lunddolaččat servodagat leat!!earáláganat, sámegiela dilit leat!!
+iešguđetláganat, báikkit leat guhkkin nuppiin!!eret, de lean liikká válljen!!dáid báikkiid danin go dáin!!báikkiin sámegiella lea áiggiid!!
+mielde gártan unnitlogugiellan!!.!!Man ollu Guovdageainnu logut!!livčče rievdadan loguid mat leat,!!šattašii dušše árvaladdan .!!Guovddáš lágidii golbma vahkku!!giellalávgunkurssa ovdalgo Sámi!!
+allaskuvlafálaldaga álggahuvvui (Antonsen!!dárogiela ii .!!davviuvssas lea koloniserema buozalmasvuođaid!!kártendoahpagastima (conceptualize)!!Birggeha miellaláhki lea dego!!baromehter mii mihtida mo Máhtebáikki!!
+sosiála eallin doaibmá .!!eará guovllut Oarje-Finnmárkkus oktiibuot!!0–49 dekára 50–99 dekára 100–199!!dekára 200 dekára ja eambbo!!
+148 36 31 43 38!!73 12 5 15 41!!–50,7 –66,7 –83,9 –65,1 7,9!!
+¶!!Dát dutkamuš duođašta ahte juste!!
+dákkár dilli lea muhtin ođđa!!
+mediašlájaid geavaheames .!!Lea hilgun luoikkahanšiehtadusa dahje!!dáhkádusšiehtadusa gustovaš eavttuid, nu!!
+go dáid njuolggadusaid, dahje Norgga!!kulturráđi, sihkkarastinlávdegoddi dahje!!departemeantta mearridan eavttuid .!!máhttoloktemis bohte stuorit gáibádusaid!!
+ohppiide, mii mielddisbuktá eanet!!ovddasvástádus oahppamii, oaivvilda Ánne,!!ja lohká ahte go!!
+sámegiella boahtá lassin eará!!fágaide, de oahppit váibaluvvot ja!!sin mielas de lea álkimus!!válljet eret sámegiela .!!Buot galbbain lea fylkka namma!!
+dušše fal dárogillii iige!!ovttage fylkkarádjegalbbas leat!!
+sámegiel buohtalasnamat dohkkehuvvon mielde!!.!!máŋga boares olmmošlohkan Norggas!!leat dál digitaliserejuvvon ja biddjon!!
+internehttii (geahča!!Johtti jietnaattidettiin ja jietnaattidettiin ásahusas!!galget leat unnimustá guokte!!
+Jietnavuostáváldi leat das!!.!!Riekta čállima njuolggadusaid sáhttá buorebut!!áddet go dat čilgejuvvojit giela!!fonologalaš ja morfologalaš vuogádaga vuođul!!
+.!!Komitea ávžžuha stáhta fállat dieđu!!sihke lámis nissoniid birra ja!!sin dilis ja maid stáhta!!doaimmain, maid ulbmilin lea suodjalit!!sin, vai sis livčče ovttaveardásaš!!vejolašvuođat skuvlejupmái, bargui, dearvvašvuođabálvalusaide!!ja vejolašvuhtii oassálastit servodatlaš ja!!
+kultuvrralaš eallimii .!!gáldu: Statistihkkalaš guovddášdoaimmahat Govva!!3 čájeha ovdáneami suohkaniid!!
+guovddášgráda ektui .!!rávisolbmuin geain lea riekti!!
+oažžut joatkkaoahpahus lea maid!!riekti oažžut duohta gelbbolašvuođa árvvoštallojuvvot!!
+ja oažžumis gealboduođaštusa .!!Gielddat berrejit ásahit fásta!!dulkaveaga , kánske ovttasbarggus!!nubbi nuppiin .!!
+Vástideaddjiin njeallje proseantta ii guldal!!Yle Sámi rádioprográmmaid goassige!!.!!Bargojoavku galgá dán oktavuođas!!bidjat vuođđun lávdegotti mandáhtii!!
+addon njuolggadusaid .!!
+man vuođul mánná beassá oahppat!!ahte čállingiellage lea!!gulahallangaskaoapmi .!!
+Mearrádusa ferte geahččat ovttas gohččosiin!!eanamihtideaddjái gii galggai čujuhit!!
+eatnamiid ássansajiide .!!Nu guhká go eai lean!!olu ássit ii lean váttis!!gávdnat buohkaide saji, muhto maŋimušjagiid!!ovdal 1885 bohte moanat!!sadjegáibádusat ja ii lean!!
+fáldái álo seamma álki mearridit!!geas lei gáibádus oažžut saji!!ja geas ii .!!Issát geahččá roahkkaolbmuid guvlui!!
+ja čohkkeda vuosttas beaŋkaráđđii!!Nillá ja ¶!!1983 nammaduvvui bargojoavku mii!!galggai dárkilat geahčadit ovttasbargoordnema!!gaskal fylkka eanavuovdinkantuvrra!!
+ja vuovdehálddašemiid .!!Oasálastin falástallamis lea njiedjan!!nuoraidskuvlla rájes, go de!!
+vástidedje birrasiid 60 proseanta ahte!!ledje aktiivvalaččat joavkkuin dahje servviin!!(Bakken,!!
+sámegiela 4 0 %!!0 % 86 % 14!!% 100 % 44 ¶!!báikenamat leat dahje leat!!
+leamaš álo muhtun giela!!sátneráju oassi .!!
+suoma sámerádio guovddáš!!sisdoallun ledje jo!!álgojagiid ja vel máŋgalot!!jagi dan maŋŋá ođđasat ja!!vuoiŋŋalaš sáddagat .!!Goappaš čearddalaš joavkkuin gávdne čielga!!erohusaid sohkabeliid gaskkas iešdieđihuvvon!!
+iešsoardin geahččalit hárrái .!!ovdabargguid mearkkašumi traktáhtaid dulkomis!!
+(buo!!Perspektiiva lea olggobeale muitaleaddjis!!ja dat bidjá dán cealkaga!!
+ja Máret-Ánne válljema historjjálaš!!perspektiivii man otnábeaivvi lohkki!!bures ádde .!!
+Sodju lea ahte veaháš stuorát!!
+oassi ohppiin čuvvot dál!!sámegiella nubbegiellan 2 .!!
+§ 29 gávccát lađđasis ovdanboahtá!!ahte ovddasvástádus čihččet lađđasa!!mielde dušše gusto orohagaide .!!čuovui seamma minstara go olles!!
+riikkas ja Davvi-Norggas muđui,!!muhto rievdadus lei stuorit!!SED-guovllus .!!ávkkástallanrievtti áigodagas», ja eanet!!
+ođđa áigásat vuoigatvuođaid dovddasteaddji oainnu!!.!!
+Dán mearrádusa čuovvu goittotge, ahte!!álgoálbmogis ferte vuos jearrat!!ráđi, ovdalgo dákkár sirdimii addojuvvo!!vejolašvuohta .!!Jus siidda boazolohku lea!!
+alit go boazolohku mii!!lea mearriduvvon vuosttaš dahje nuppi!!lađđasa mielde, de galgá siida!!
+ráhkadit unnidanplána .!!earret dán, ii leat dássážii!!leamaš sáhka priváhta eaiggáduššanvuoigatvuođas!!
+eatnamiidda ja riggodagaide jus ii!!leat háhkan eanavuovdinlága!!
+njuolggadusaid mielde .!!Eanaš sámegiela 3 ja!!4 informánttat eai sámás goassege!!skuvllas .!!
+Ságastallamat sániid mearkkašumiid birra, daid!!sojahuvvon ja suorggiduvvon hámiid birra!!ja makkár cealkkaoktavuođaid daid!!sáhttá geavahit, duddjojit giellamáhtu!!mii lea ávkin maiddái!!čállingiela oahpahallamis .!!
+Mun goit ádden dan leat!!seamma áššin go sámekultuvra!!.!!
+Vearbba boran vuolggasadji lea!!V oaivi ja dán posišuvnnas!!das ii leat vel oabbá!!
+.!!ođđajagimánu 1.b .!!2.3.1 Sámegieloahpahus joatkkaskuvllas!!olles riikkas ¶!!Jos ložže golmmagielat meroštallama!!
+nu ahte golmmagielat lea!!son guhte máhttá juoba veaháš!!hállat dan golmma gielas main!!dás lea sáhka, de 29:s!!dahjege 15 proseantta informánttain devdet!!golmmagielat eavttuid Deanuleagi!!
+golmma gielas: dárogielas, sámegielas!!ja suomagielas .!!
+statistihka fágalaš guorahallanjoavku» lea loahpahan!!iežaset nuppi njealjejahkásaš nammaduvvonáigodaga,!!ja joavku lea almmuhan oktiibuot!!
+gávcci raportta fágaartihkkaliiguin, Sámi logut!!muitalit 1 –!!Suopma lea ratifiseren ON:id!!oktasašsoahpamuša lámisolbmuid vuoigatvuođain!!
+jagi 2016 ja lokten!!lámisolbmuid vuoigatvuođaid buorideami oktan!!iežas riikkaidgaskasaš!!olmmošvuoigatvuohtapolitihka guovddáš áššin!!
+.!!
+Diet oktilašvuohta lea ain vuođđuduvvon!!sámi čearddalašvuhtii, ja sámekultuvra!!
+lea guoddi oassin oktasaš joavkku!!identitehtadovdui .!!Juolludeapmi lea dađistaga lassánan ja!!
+doarjjaortnet viiddiduvvui maiddái gokčat!!guovttegielat hálddašeami goluid .!!Das celko baicce ná: Go!!lea dárbbašlaš válljet dáro-, sáme-!!
+ja kveanagiela nama gaskkas,!!de galgá deattuhit, guđemuš namas!!
+lea guhkimus árbevierru ja!!guđemuš nama dovdet buoremusat dan!!báikkis .!!buohcceviesu jođiheapmi buohcceviessu!!
+galgá organiserejuvvot nu ahte juohke!!dásis lea ovddasvástideaddji jođiheaddji!!.!!Easttan dása eai dárbbaš leat!!
+dušše vuođđogirjji suokkardeami fuobmán,!!muhto sáhttet maid leat gielalaš!!váttisvuođat .!!
+Nuppi beales leat earret ohcci!!ealáhusberoštumiid, báikkálaš meahcceávkkástallama!!árbevierutge dehálaš dagaldat .!!
+Historjjálaš váikkuhusaid geažil eai oahppan!!sii čállit sámegillii skuvllas!!.!!
+Sámi arkiiva Guovdageainnus lea!!vuos álggahan dásis .!!
+dearvvašvuođa- ja eallinlágidutkamis, maid Sámi!!dearvvašvuođadutkanguovddáš dál lea!!
+jođiheame, lea birasmirkoeksponeren!!álbmogis okta fáddán dutkamušas .!!
+Sosiála- ja dearvvašvuođadirektoráhta!!ja KITH (Kompetansesenter!!47, njukčamánu 8 .!!
+Gávdnat smávva erohusaid go guoská!!šearbmaáigái gaskal sámegielat!!ja dárogielat nuorain .!!
+Dattetge ii galgga maŋidit!!journálačállima dárbbašmeahttumit, iige goassige!!nu guhká ahte šaddá dohkkemeahttun!!divššu ektui dahje divššohasa eará!!
+čuovvuleami ektui, dahje iešalddis!!duođaštusovddasvástádusa ektui .!!Ii leat gal oba eahpádus!!
+ge revišuvnna duohta čilgehus!!guohtundilálašvuođa ja!!doaibmaekonomiija birra lea!!duohta .!!
+háliidan maiddái giitit iežan lagamusaid,!!
+geat álohii leat dorjon ja!!veahkehan losses beivviid čađa, ja!!giitit ahte mun dál dás!!viimmat čohkkán gárvves masterčállosiin!!njuni ovddas .!!SF) sáhttá gohččut lihttoláigolaš!!
+ordnet gohcci dahje eará mat!!gullet čázádaga hálddašeapmái .!!ja leat unnimus nieiddat geat!!
+leat čađahan dábálašfágalaš!!oahpposuorggi (31%)!!dán artihkkalis lean árvalan vuogi!!movt sáhttá meroštallat SED-guovllu!!
+obbalaš árvoháhkan .!!sámi parallealla seammaárvosaš oahppoplánat!!
+leat oahppoplánat mat gustojit!!hálddašanguovlluid oahppoplánaid, ja oassi!!sámi oahppoplánat joatkkaoahpahusa!!prográmmafágain dieđusge fátmmasta!!prográmmafágaid .!!Postkolonialisma lea teorehtalaš rávdnji!!mii lea geavahuvvon 1990 jagiid!!
+rájes .!!oahppit geain ii leat oahpahus!!sámegielas ¶!!
+ođđajagimánu 1.b.2008,!!juovlamánu 21.b.2007 res.nr.1575) .!!Iežas árvvoštallan iežas sámegiel dáidduin!!ja hehttehusat dahje jurdagat das!!manin lea váttis hállagoahtit .!!
+sohkabealrollat ja kontrolla!!ovtta sámi birrasis” (1991)!!Sámi allaskuvla válddii oktavuođa!!Walesa oahpaheaddjeoahpuin ja sin!!
+ovttasbargguin álggahedje guovttegielatvuođa pedagogihka!!oahpu ¶!!Dutkamušas geavahan dokumeantaanaliissa, jearahallanskovi, áiccademiid,!!
+áššejearahallamiid ja kvalitatiiva!!dutkanjearahallamiid .!!Ruđalaš ja eará buhtadusat eai!!veahket nu guhká go!!
+eamiálbmogat ieža eai vuos!!gieđahala servošiiddiset siskkáldas doaibman- ja!!láhttenhámiid, mat sordet sin ja!!
+maid sii leat áiggi mielde!!ieža oamastan .!!Doppe lea asehis álbmás eananvuođđu,!!
+gos leat buorit jeageleatnamat!!ja galbma dálvvit unnán muohttagiin,!!mii dagaha dássedis ja sihkkaris!!
+dálveguohtumiid siseatnamis, seammás go!!sulluin ja njárggain leat rássás!!šattolaš ja álbmás eananvuođut!!váriin, gos leat ruonas!!geasseguohtumat .!!Maid sáhtát don dahkat!!
+illudandihte váhnemiiddát? ¶!!Minerálahálddašandirektoráhtta sáhttá mearridit!!áigemeari goas čorgenbarggut!!galget leat čađahuvvon .!!mii diehtit ahte!!finihttavearbahámit sodjet áiggi,!!logu, persovnna ja vuogi mielde!!ja infinihttahámit eai soja!!
+.!!
+Mu mielas lea suohtas oahppat!!sámegiela .!!Oahpaheaddjit lohket alddiineaset leat unnán!!
+gelbbolašvuohta oahpahit sámegiela nuppigiela!!dásis, ja seammás lea unnán!!doarjjabargoaddiin .!!Dárbbašuvvo dutkojuvvon ja analyserejuvvon diehtu!!
+sápmelašvuođas ja sámiid dilis sihke!!sámiid ja ii-sámiid gaskkas!!.!!dál doalahit giela Moskavuonas siskkimusas!!nuorttabealde Romssas, ja maiddái sis!!geat leat fárren dohko eará!!guovlluin Davvikalohtas .!!modálavearbbaid ja dakkár vearbbaid,!!mat muittuhit modálavearbbaid (veardit!!Rievdaduvvon lágain geassemánu 15!!
+.!!
+go leat veardidan 1970-1998!!áigodaga jámolašvuođastatistihka 1970!!
+olmmošlohkama čearddalašvuođadieđáhusain leat!!gávnnahan veaháš stuorit jámolašvuođa sámi!!dievdduid gaskkas (6!!
+1966-mannosaš lága nr .!!Son liiko Nillái go oaidná!!
+ahte son bargá servodaga!!ovdanámi ovddas: “–!!Geahčadan mo persovnna iešvuođat ihtet!!teavsttas, mo lea lohkki vuosttas!!
+govvapersovnnas ja vástida go!!dát persovnna iežas govvádusaide ja!!muitalusa dáhpáhusaide, ovdamearkka dihte!!
+go perspektiiva molsašuvvá muitaleaddji-dásiid!!gaskkas .!!
+Lassin Nina Erdahla goarrun ja!!
+designa bargobádjái, de ledje maiddái!!bargobájit dánsumis, grafittis, pop-artas,!!musihkas ja collages .!!
+lávženjuorrama .!!sohkabealleidentitehtii dahje!!
+sohkabeali ovdanbuktimii laktáseaddji!!siva vuođul .!!Kuhmunen lea dán sirdinproseassas!!láidesteaddji rollas go áiccalmahttá ja!!
+bidjá dáhpáhusaid stuorát kontekstii, nugo!!Klein čuoččuha leat dehálaš go!!
+mánáid jierpmi (intelligeanssa)!!Buvttadeamit main leat dievdorešissevrra!!juohkásit 3 oanehis ja 3!!
+guhkes dokumentárafilbmii, 5 oanehis!!fikšuvdnafilbmii ja 1!!animašuvdnafilbmii .!!boatkanjuolat govvidit daid erohusaid!!.!!Oaidnu das ahte lámisvuohta lea!!ovttaskas olbmo iešvuohta lea duddjon!!
+vuođu maiddái máŋga iešguđet akademalaš!!
+oahppoávdnasii ja maid servodatlaš!!
+institušuvdnii .!!
+fas gohčoda luxus brándan Anáris!!doaibmi Samekki -fitnodaga!!
+guhkes ja cieggan geavat ferte!!adnot mearridan ahte stáhta dál!!lea stáhtaalmennehiid eaiggát, ja!!lágamánneriekti aiddo dal guorrasa!!
+dasa maid gielddarievtti!!ovdaolmmoš lea dása dadjan."!!¶!!govus 5.51 Informánttaid sámegiela!!doaladumit .!!
+Etnográfalaš dutkamušain dat lea!!sirdojuvvon báikkálašvuhtii (!!dilálašvuođaid nu ahte" sáhttá doaimmahit!!
+unnitloguid kultuvrra .!!2001 njukčamánu 2 .!!
+Erenomáš dilálašvuođat vuhttojit datte, erenoamážit!!dat ahte mearrádusat várrelága!!§ 18 mielde várrelága!!vuođul (§!!maŋimuš dilálašvuohta, ahte bivdovaljiid!!
+eai sáhte dálonat ollásit ávkkástallat,!!lea vánit riekta dál, go!!dilli lea áibbas muhttojuvvon, nugo!!
+Richter Hanssen ja Prestbakmo leaba!!válddahallan iežaska čielggademiin Sámi!!vuoigatvuođalávdegoddái .!!
+dutkanguoibmin anán dán oktavuođas!!olbmuid geaiguin lean gulahallan dutkamuša!!
+áigge ja geaid njuolggositáhtaid!!geavahan barggustan .!!miessemánu 31 .!!
+áhpe hilggohasaid (hilgogálvvuid)!!
+geassemánu 30 .!!ođđajagimánu 1 .!!2.1.5 1751, Sámekodisilla dáhkádusat!!¶!!
+dárogielat gaskadási ja!!Badjedási gaskkas ii leat!!erohus informánttaid oassálastinproseanttas!!sámegiela ohppui .!!
+maŋit sátnehápmi juohke!!sátnepáras lea diftoŋganjuolgama!!boađus .!!
+2009; Alaraudanjoki 2009.) Sáhttá leat!!nu ahte sámegiela 3!!informánttat geat eai loga šat!!sámegiela, leat oahppan sámegiela!!
+mánáidgárddis ja ovdal lohkan!!sámegiela skuvllas .!!go informánttat muitalit vealaheamis, mii!!vuođđuduvvá sin váttuide, sii eai!!álo čilge dárkilit vealahitgo sin!!váldoálbmoga ovddasteaddjit vai!!sámeservošii gullevaš olbmot .!!
+ovdamearkka dihte: tearbma seaguhit!!,!!6.5.1 Vuosttaš logijahki: 1988-1999!!Vuosttaš logijagi leat 17!!filmma buvttaduvvon .!!Nákkočoavddus ii leat gii!!ovddemuš anii eaiggáduššanvuoigatvuođa sáni!!.!!
+Jus ásaiduvvon dili galgá nuppástuhttit,!!ferte dán dalle dahkat!!
+láhkanuppástusain dahje jus stáhta!!eaiggádin bidjá doaimmaid johtui." ¶!!
+tabealla 2.18 Oassi nuorain geat!!atne unnimus ovtta eahkeda vahkkui!!šearbmadoaimmaide geográfalaš juogu ektui!!
+.!!áššegoluid maid lea mieđihan!!
+ovtta beallái nuppi lađđasa njuolggadusaid!!mielde, sáhttá bággobearaš!!
+duopmonjuolggadusaid mielde .!!dákkár smávva rávvagiiguin besse mánát!!
+árvvoštallat dilálašvuođaideaset ja daguideaset,!!ja dasto hutkat buriid ja!!govttolaš čovdosiid .!!
+Loahpalaš bohtosat almmuhuvvojit seamma sajis!!go bismágottit leat dárkkistan!!
+dihte rehkenastán visot jienaid .!!Govttolaš birgejumi prinsihpa mielde ii!!ovttage vearroboanddas lean lohpi!!eaiggáduššat eanet eatnamiid go dárbbašii!!
+vai livččii "birge!!Sápmelaččat, olbmot; agis 30-49!!jagi, oahppoguhkkodaga 13-16!!jagi, bearašdienas 301 000!!
+–!!4.1Sámegiella mánáidgárddis ¶!!
+ja geassemánu 30 .!!Oanehis geahčastat lagašhistorjái čájeha!!ahte dákkár hehttenpolitihkka –!!oađđinváttisvuođaid gávdnostupmi orruleamen maiddái!!
+unnit váttisvuohta sápmelaččaid gaskkas, muhto!!lea geažuhuvvon ahte dát dáidá!!govvidit earálágan oainnu ja guottuid!!oađđimii fenomenan .!!
+Servodaga dásis gielalaš ealáskahttin sáhttá!!
+mearkkašit, ahte áitatvuloš!!vehádatgiella oččoda saji ođđa!!giellašiljuide dego oahpahussii ja!!mediaide gos majoritehtagiella lea!!
+ráđđen ovdal .!!§ 14 Jus náittosdilli!!dahje ovttasássan nohká ¶!!§ 24 Sierranas vuoigatvuohta báikkálaš!!ávkkástallamii ovttaskas olbmuide dahje olmmošjoavkkuide,!!geat gullet báikegoddái ja!!geaid eallinvuođus ollásit dahje!!oassálassii čatnasa ođasmuvvi valljodagaid ávkkástallamii!!gili lahka, sáhttá gielda gitta!!10 jagi rádjai háválassii addit!!sierranas vuoigatvuođa ávkkástallat ođasmuvvi valljodagain,!!nugo namahuvvo §§ 22 ja!!23 dárkileappot albmaduvvon guovlluin gielddas!!.!!
+Dan sadjái bođii § 4!!mii attii giliássiide vuoigatvuođa!!čujuhit lastavuovddi dálloatnui!!stáhtaeatnamiin .!!
+orohatstivra sáhttá dihto áššiin!!addit stivrajođiheaddjái ovttas!!stivračálliin dahje ovttas eará!!stivrralahtuin fápmudusa doaibmat stivrra!!
+ovddas .!!vuoigatvuohta subjeavtta fertešii sáhttit čujuhit!!.!!
+Ođđa dás lei go!!
+eanavuovdinhoavda jođihii!!eanavuovdinstivrra ja!!eanavuovdinkantuvrra .!!
+Dáidaga sáhttá dieđusge oaidnit kultuvrralaš!!iđan, man olggosbuktinvuogit molsašuddet!!kultuvrraid mielde .!!giellaoahpu dego eaŋgalsgiela!!diimmuin .!!
+guovttegielat oahpahus lea oahpahus,!!mas guovttegiela oahpaha ja!!
+guovtti gillii oahpahuvvo .!!fáddásánit: sámegiella, giellalávgun, giellabeassi,!!sámegiela ealáskahttin, dáhpáhusdutkamuš, sámi!!
+árrabajásgeassin ¶!!Diekkár dilálašvuođain lea vuđolaččat dokumenterejuvvon!!ahte mánát eai oahpagiela!!jođáneappot go rávis olbmot, dávjá!!
+lea baicca nuppe ládje.31 Dasa!!lassin eai dárbbaš mánát nu!!stuora sátneráju go galget!!
+sáhttit gulahallat, juoga mii dagaha!!ahte orru dego mánát oahpaše!!giela jođáneappot .!!Sii galget šaddat doaibmi!!
+guovttegielatvuohta .!!ohpihii lea sámegiela geavaheames!!mearkkašahtti erohusat gielddaid gaskkas!!
+.!!
+dábálaččat meroštallo olgunastinásadeapmin ja!!
+rumašlaš árjjalaš vuohtan olgunjoavddus!!
+birasnuppástuhtti ja luondduvásáhusaid!!áigumušain .!!
+1984) mielde ahte fertii ovdanboahtit!!láigolihttogirjjis "ahte!!viessobarggut leat dehálaš oassin!!
+¶!!válgajagi .!!
+dieppe lea?” máŋgga láhkai!!sámegillii .!!Deanu gielda geavaha ovddimusat láivves!!oahpahusmálle go dárogielat!!
+mánáidgárddiin geahččalit oahpahit mánáide!!sámegiela .!!Divššohas sáhttá váidalit bákkolaš!!
+mielladearvvašvuođadivššu ásahanmearrádusa!!gitta 3 mánu dan rájes,!!go dikšu lea loahpahuvvon .!!Giittán maiddái universitehta lektora Fredrik!!Harhoff buriid ságastallamiid ovddas .!!
+globála dárbu luondduviisodagaide ja!!eallima gáhttemii ¶!!čállingiela ovddideamis guovddáš áššin!!
+lea ahte oahppit besset beaivválaš!!čállimiin darvvihit dán giellamáhtu!!alcceseaset aktiivvalaš giellageavahangálgan!!.!!
+280), ahte dán áiggi ii!!lean sis geat ásse!!olggobeal fylkka vuoigatvuohta bivdit!!
+Finnmárkkus .!!Datte oaivvildan ahte álbmotriekti!!sáhttá bidjat rievttálaš cakkiid almmolaš!!
+beali boahttevaš mearrádusaide, maiddái lágaide!!ja luondduriggodagaid meassamiidda main!!lea mearkkašupmi sámegillii, -kultuvrii!!
+eamidieđu dieđalaš saji lea!!váttis meroštallat, vaikko dat lea!!seammasullasaš go ekologalaš!!
+etnografiija .!!
+dán oasis čilgen daid!!
+materiálaháhkama metodaid maid lean!!geavahan, maid vuorddán gávdnat, ja!!makkár beliid lean šaddat vuhtiiváldit!!ja vihkkedallat .!!máná-guoktá jearaldat Ii bat!!
+dasa ferte leat báhppa implisere,!!ahte lea dušše báhppa gii!!sáhttá gásttašit eahpáračča ja dan!!
+láhkai addit sutnje ráfi .!!Sámegiela joavkkuid vástádusain eai!!leat čielga erohusat .!!Son lei beassan ráfis guorahallat!!
+iežas dili ja olbmo eallima!!oppalohkái .!!Sii ohppet dehálaš beliid čállimis,!!
+ja ahte čállingiella lea!!earálágan go hállangiella .!!ášši mii ii leat vel!!boahtán ovdan doarvái bures lea!!
+gáddeláva nubbi bealli; dat!!
+ahte báikkálaš olbmuid huksenlobit!!leat dál hui ráddjejuvvon ja!!máŋgasat eai oaččo šat hukset!!
+iežaset eatnamiidda Deatnogáttis .!!giellanjuolggadusat 2018) .!!almmuhuvvon: I 2007 gihpa 6!!
+Fápmuiboahtin: 2007-07-01 Rievdada: Láhka-1959-10-23,!!Láhka 1978-06-09-49, Láhka-1979-12-77 .!!árbevirolaš duojithan leat ovddiduvvon!!sámeeallima dárbbuide ja turista!!dárbu lea jáhkkimis oalle earálágan!!go árbevirolaš duoji dárbu!!
+lea leamašan .!!1863 eanavuovdinlága §!!
+8:s mii fámuhuhtii eaiggátvuoigatvuođa!!gáržžidemiid mat ledje mearriduvvon!!
+1775-cealkámuša njuolggadusaid mielde .!!2017: 18.) Dát sitáhta galgá!!
+leat vuođđun doaibmabijuide gielddas,!!
+maid gieldda doaimmahusat galget ráhkadit!!.!!Analysa vuođđun leat guokte!!
+dutkangažaldaga .!!Raporttas galgá gozihanlávdegoddi!!čilget gozihandoaimmas, árvvoštallat stivrra!!
+jahkemuitalusa ja dilálašvuođaid maid!!dat siskkilda, ja árvvoštallat mo!!dát láhka doaibmá ja leago!!
+sávahahtti dan nuppástuhttit .!!Manaimet Kemi joga gáddái bassat!!láhtteránuid vai gerget goikat!!beaivvi áigge dalle go vuolgá!!
+áiggiljohtui .!!
+Ráđi oaiveulbmil lea doarjut!!sámi identitehta, kultuvrra ja oassálastima!!
+girkus ja servodagas .!!jurdagat sámedutkamušaide etihkalaš gažaldagain!!
+●!!čiežajahkásaš sátneriggodaga gárggiidahttin!!
+skuvllas ¶!!Hiphop lei dalle stuorra!!
+nuorra dáiddalihkadusa mas DJat!!(disk!!mohtorjohtolatlága mielde, ja!!ferte juohke jagi ohcat ¶!!juolgenohtain 21 gos ovdanboahtá!!ahte konsonántačoahkis lea neutralisašuvdna!!
+go sokkis lea guhkes vokála,!!muhto ii dalle go sokkis!!lea oanehis vokála .!!
+mánát sámi mánáidgárddiin ja!!
+sámi mánáidgárdeossodagain!!
+dárogielat mánáidgárddiin 882!!929 925 905 789 758!!
+728 ¶!!57 5 jurddabohtosat ................................................................................!!sámegiela eksámenat leat čađahuvvon!!
+Sámi allaskuvllas, Romssa universitehtas ja!!Davvi universitehtas, ja maiddái dat!!ovddeš ásahusat mat leat ovttastuhtton!!dáiddaásahusaide .!!
+Maiddai ohcanjearaldagaid juogán guovtti!!jovkui; ohcanjearaldagaide mas lea!!miehtevearba, ja ohcanjearaldagaide mas!!
+lea biehttalanvearba .!!luondduhálddašandirektoráhta .!!Dan barggus leat oassin analysas!!iskosat 100 heakkas, iešguđetlágán!!boazodoalloorohagain .!!joatká dárogillii DO ja!!
+SO1 gaskkas ságastallanspealuid birra,!!08:44-09:12)) 7 .!!láhka guoská vuođđoskuvlaoahpahussii!!
+ja joatkkaoahpahussii almmolaš skuvllain!!ja oahpahusfitnodagain jus eará!!ii leat earenoamážiid mearriduvvon .!!
+sihke Sámedikkit ja!!váldoservodagaid hálddahusorgánat –!!Gáibádus, mii lea vuođđuduvvon iehčanas!!álbmotrievtti vuđđosii, bissu ain!!vaikko eaiggáduššanvuoigatvuohta lea masson!!
+ollásit dahje belohahkii siskkáldas rievtti!!ovdáneames .!!bargonávccahisvuođaruhta lea lágalaš!!
+oadjoortnet ¶!!Go besset oahpásmuvvat ja hárjánit!!gielaid buohtastahttimii ja guovttegielasteami sihke!!poehtalaš ja humoristtalaš beliide,!!de dat maid veahkeha duddjot!!
+metalingvisttalaš ja kontrastiiva áddejumi!!mii lea eaktun sáhttit jorgalit!!teavsttaid nuppi gielas nubbái .!!
+Dat doarju váldoálbmoga máŋggakultuvrralaš!!áddejumi, muhto duvdá eret!!sámegielagiid kultuvrra váibmosis, gielas!!.!!Olbmo lundui leamaš álo mihtilmas!!
+čábbodaga dárbu ja dan ovddideapmi,!!
+ja nu son lea čiŋahan!!atnodujiid .!!Dearvvašvuođakapihtal lea čoahkkáigeassu!!
+dearvvašvuođaiskat mat leat čađahuvvon!!sápmelaččaid gaskkas Norggas .!!
+álggahankonferánsa boazodoalu birra!!¶!!Dán gávcci skuvllas golbma leat!!Ohcejoga gielddas: Gáregasnjárgga!!
+skuvla, Ohcejohnjálmmi skuvla ja!!Njuorggáma skuvla .!!
