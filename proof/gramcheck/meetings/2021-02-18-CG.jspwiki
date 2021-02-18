@@ -1,0 +1,69 @@
+
+CG-workshop 18.02.2021
+
+dii. 10:00-11:55
+
+Linda, Inga
+
+
+* BARRIERS
+* kompleaksa subjeavttat (NOT-NPMOD)
+* testet njuolggadusa (dušše oalgecealkaga konteavsttain vaikko eará konteavsttain livččii maid buoret)
+* bidjat ruođuid dán sájis go čállit AND dalle go lea ođđa eaktu
+
+ittjij sámegiella tijmaj ålggolin gullu.
+Neg     Subj        Adv     ADV     ConNeg
+>
+sámegiella ittjij tijmaj ålggolin gullu.
+
+    ## sujna lej bierggo majna ittjij sån sidá dahkat gasskabiejvev.
+    ## Sån lej sijdan gånnå ij áhttje málesta biebmov.
+    #$ sån lej sijdan gånnå ij lim ållo biebbmo.
+
+    ## ij vuoras áddjá vuojne tjállet -- Attr
+    ## ij suv áddjá vuojne tjállet --- Pron Gen
+    ## e guokta ádjá vuojne tjállet -- (Num Sg Nom)
+    ## ij dát áddjá vuojne tjállet  -- Dem Pron Nom 
+    ## ij nubbe áddjá -- Indef Pron Sg Nom 
+    ## e moadda ádjá --- Indef Sg Nom
+    ## ij vuostasj áddjá  Attr
+    ## ij nieidda áddjá --- N Gen
+    ## ij váiban áddjá --- PrfPrc
+
+
+gæhttjat vaj ittjij sámegiella tijmaj ålggolin gullu.
+
+ADD:syn-subj-before-neg (&syn-subj-before-neg) TARGET Neg + $$V-PERS IF (1 (Pron Nom) + $$V-PERS LINK NOT 0 NEG-PRON OR ("ietja")) (NEGATE *1 ("?") LINK 1 EOS)  ; 
+
+
+
+
+ADD:syn-subj-before-neg (&syn-subj-before-neg) TARGET Neg + Sg3 IF (1 (N Sg Nom)) (NEGATE *1 ("?") LINK 1 EOS) ; 
+
+ADD:syn-subj-before-neg (&syn-subj-before-neg) TARGET Neg + Pl3 IF (1 (N Pl Nom)) (NEGATE *1 ("?") LINK 1 EOS) ;
+
+MOVE:syn-subj-before-neg &syn-subj-before-neg AFTER (1 (N Nom) OR (Pron Nom));
+
+    ## gæhttjat vaj ittjij sámegiella tijmaj ålggolin gullu.
+    
+    
+LIST NEG-PRON = Foc/Neg-k ("nágin") ;
+mige, majdik, aktak, gudik, - Foc/Neg-k
+nágin, ietja
+
+Oahppe e ietja diede
+
+[lemma = "ij"][msd = ".*Nom.*"]
+
+[lemma = ij]
+
+
+    #$ Dile li sierraláhkáj , ja 	ij aktak 	åtsådallamijs máhte sirdeduvvat mekánalattjat sáme guovlojda . 
+
+
+
+NSRa ájggu joarkket bargojnis åvddånahttet luonnduj gulluvasj æládusájt ma nanniji sáme kultuvrav ja bisodi årromav smávsajijn , valla sæmmi båttå de	ij luonndo	galga gierddat .
+
+
+
+
