@@ -1,0 +1,78 @@
+NN and rule-based grammarchecker evaluation
+
+13:10-14:10
+
+Børre, Tommi, Linda
+
+
+*evaluation corpus should come from boundcorpus
+* how big is it?
+* how many compound errors do we find there?
+
+
+
+which corpus should we use for what:
+
+1. training
+2. validation 15%
+3. evaluation 15%
+
+admin, facta and science in freecorpus are the biggest
+news is the biggest in boundcorpus
+in total 6,8 giga
+5 are boundcorpus
+
+2.8M        freecorpus/orig/sme/Len
+1.1G        freecorpus/orig/sme/admin - training
+8.5M        freecorpus/orig/sme/bible - training
+4.5M        freecorpus/orig/sme/blogs
+437M        freecorpus/orig/sme/facta - training
+5.0M        freecorpus/orig/sme/ficti - eval
+480K        freecorpus/orig/sme/grammar-realword
+ 14M        freecorpus/orig/sme/laws - eval
+420K        freecorpus/orig/sme/news - eval
+ 40K        freecorpus/orig/sme/odda_mahppa
+275M        freecorpus/orig/sme/science - eval
+440K        freecorpus/orig/sme/speccorp
+2.1M        freecorpus/orig/sme/wikipedia
+1.8G        total
+
+~1.6G training
+
+suggestion:
+* leave boundcorpus untouched
+* use only freecorpus: 
+
+
+
+Which kind of corpus can we use for evaluation of GramDivvun
+
+test-howto.md
+
+```bash
+for i in naacl-2021-1 naacl-2021-2 naacl-2021-3 bisect1-993bbab 0695483-20210127 216d00d-20210127
+do
+  gramcheck_comparator.py se.$i.zcheck $GTFREE/nodalida2019/goldstandard/converted/sme $GTBOUND/nodalida2019/goldstandard/converted/sme 2> /dev/null
+done
+```
+
+gramcheck_comparator.py  se.$i.zcheck $GTFREE/goldstandard/converted/sme  $GTBOUND/goldstandard/converted/sme 2> /dev/null
+
+-> 
+$GTFREE/goldstandard/converted/sme $GTBOUND/goldstandard/converted/sme 2> /dev/null
+?
+
+  505  cd $GTBOUND 
+  506  convert2xml --goldstandard orig/sme 
+  507  ccat -a -c goldstandard/converted/sme|sed 's/¶/\n/g'|wc -l
+
+size of the error marked-up corpus:
+❯ ccat -a -c goldstandard/converted/sme|sed 's/¶/\n/g'|wc 
+  10754  105446  922199
+  
+how many syntactic errors do we got in the marked-up corpus:
+ grep -r ¥ --include "*.correct.txt" orig/sme
+ grep -r "<errorsyn" goldstandard/converted/sme
+ 
+ grep -r "<errorsyn" ~/boundcorpus/goldstandard/converted/sme | fgrep cmp -c
+93
