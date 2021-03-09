@@ -1,0 +1,494 @@
+12.02.2021
+15:35-
+Børre, Linda
+
+TODO:
+
+
+
+real-DerhActNom-PrfPrc
+
+Total passes: 1266, Total fails: 266, Total: 1532
+True positive: 679
+True negative: 587
+False positive 1: 14
+False positive 2: 60
+False negative 1: 5
+False negative 2: 187
+Precision: 90.2%
+Recall: 78.0%
+F₁ score: 83.6%
+
+
+real-Derh-Inf
+
+Test 796 - Passes: 1, Fails: 0, Total: 1
+
+Total passes: 888, Total fails: 40, Total: 928
+True positive: 423
+True negative: 465
+False positive 1: 3
+False positive 2: 10
+False negative 1: 5
+False negative 2: 22
+Precision: 97.0%
+Recall: 94.0%
+F₁ score: 95.5%
+
+
+syn-compounds
+
+
+----------
+Test 404/932: Son čállá earet eará ná: Juohke háve go manat nohkat, de galggat dadjat: RIGGODAT - "ja don fuobmát man fápmu dien sánis lea."
+----------
+[404/932][FAIL fp2] : () => ":[”] (punct-aistton-left)  -- missing mark-up
+[404/932][FAIL fp2] : () => ":[] (punct-aistton-left)  -- missing mark-up
+Test 404 - Passes: 0, Fails: 2, Total: 2
+
+----------
+Test 478/932: čárve čorbmat, nanne vuoiŋŋat!
+----------
+[478/932][FAIL fp2] : () => vuoiŋŋat:[vuoigŋat] (real-Derh-Inf) --- should bbe fixed
+Test 478 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 497/932: Temáide čadnon sámegielkurssas leat bálkkut main juohke fáddá bistá guovtti eahkedis njealji eahkedii, ja oasseváldit besset searvat daidda fáttáide maidda háliidit.
+----------
+[497/932][FAIL fp2] : () => Temáide čadnon:[Temáidečadnon] (msyn-compound) --- should be fixed
+Test 497 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 580/932: Jus leat gaskal 12 ja 18 jagi boaris ja beroštat eanandoalus, dahje jus it leat vel mearridan makkár oahpu galggat gazzat maŋŋil 10. luohká, de heive - "prošeakta dutnje."
+----------
+[580/932][FAIL fp2] : () => ":[”] (punct-aistton-left)
+[580/932][FAIL fp2] : () => ":[] (punct-aistton-left)
+Test 580 - Passes: 0, Fails: 2, Total: 2
+
+----------
+Test 582/932: Vuojidettiin lea hui dehálaš dássedit čohkkát dahje čuoččut. ---   - "Vuojidettiin lea hui dehálaš dássedit čohkkát dahje {čuoččut}¢{čuožžut}." # čohkkát TP
+----------
+[582/932][FAIL fp2] : () => čuoččut:[čuožžut] (real-Derh-Inf)
+Test 582 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 652/932: Son čierastii olles luohká vulos – ja bisui čuoččut. ---   - "Son čierastii olles luohká vulos – ja bisui {čuoččut}¢{čuožžut}." #čuoččut  TP
+----------
+[652/932][FAIL fp2] : () => čuoččut:[čuožžut] (real-Derh-Inf)
+Test 652 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 653/932: Ráhkástallat sáhttá maid sierra rumašguottuin ovdamearkka dihte čuoččut, čohkkut, dehe veallut. --   - "Ráhkástallat sáhttá maid sierra rumašguottuin ovdamearkka dihte {čuoččut}¢{čuožžut}, čohkkut, dehe veallut." #čuoččut TP
+----------
+[653/932][FAIL fp2] : () => čuoččut:[čuožžut] (real-Derh-Inf)
+Test 653 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 710/932: Rt. 1982 s. 241, cealká ahte meassamiid mat dása guske, ii sáhttán eahpitkeahttá atnit lea rihkkun makkárge álbmotrievttálaš geatnegasvuođaid masa Norga lei čadnon (geahča erenoamážit s. 299).
+----------
+[710/932][PASS tp] rihkkun:rihkkon (errorortreal) => rihkkun:[rihkkon] (real-DerNomActSgGen-PrfPrc)
+[710/932][FAIL fp2] : () => geahča:[geahččá] (typo) ---- this is a disambiguation issue
+----------
+Test 843/932: Lieggasat dálkkit dagahit maiddái ahte lea vuordimis ođđa šattuid ihttit, vuovddit suhkot ja duoddarat unnot.
+----------
+[843/932][PASS tp] ihttit:ihtit (errorortreal) => ihttit:[ihtit] (real-ImprtPl2-Inf)
+[843/932][FAIL fp2] : () => vuovddit:[vuovdit] (real-Derh-Inf) --- fixed
+Test 843 - Passes: 1, Fails: 1, Total: 2
+
+Test 710 - Passes: 1, Fails: 1, Total: 2
+
+----------
+Test 857/932: Dat orro dego boahtit áigume mu lusa.
+----------
+[857/932][FAIL fp2] : () => orro:[orru] (typo) --- TP? but not marked up
+Test 857 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 902/932: "Spábbačiekčan lea vuosttažettin joavku bargu, ja dat ii doaimma Nordlys joavkkus" Ovddeš Nordlys hárjehalli Roald A. Sandvik.
+----------
+[902/932][PASS tp] vuosttažettin:vuosttažettiin (errorort) => vuosttažettin:[vuosttažettiin] (typo)
+[902/932][PASS tp] joavku bargu:joavkobargu (errorsyn) => joavku bargu:[joavkobargu] (msyn-compound)
+[902/932][FAIL fp2] : () => ":[”] (punct-aistton-left) -- missing mark-up
+[902/932][FAIL fp2] : () => ":[”] (punct-aistton-right) -- missing mark-up
+Test 902 - Passes: 2, Fails: 2, Total: 4
+
+----------
+Test 912/932: Maiddái "sámeáššiid stuorradiggedieđáhusas" namahuvvo sis-eatnan guolásteapmi vuoruheapmin ealáhusovdaneamis.
+----------
+[912/932][PASS tp] sis-eatnan guolásteapmi:siseatnanguolásteapmi (errorsyn) => sis-eatnan guolásteapmi:[siseatnanguolásteapmi] (msyn-compound)
+[912/932][PASS tp] ealáhusovdaneamis:ealáhusovdáneamis (errorort) => ealáhusovdaneamis:[ealáhusovdáneames, ealáhusovdáneamis] (typo)
+[912/932][FAIL fp2] : () => ":[”] (punct-aistton-left)  -- missing mark-up
+[912/932][FAIL fp2] : () => ":[”] (punct-aistton-right)  -- missing mark-up
+Test 912 - Passes: 2, Fails: 2, Total: 4
+
+
+False negatives
+
+----------
+Test 22/932: Ruovttubálvalusaid ovttadatjođiheaddji Sara Kristine Losa ii jáhke ásodagaid guhká šat čuoččut guorusin. ---- fixed
+----------
+[ 22/932][FAIL fn2] čuoččut:čuožžut (errorortreal) => :[] ()
+Test 22 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 28/932: Turistaguovttis Helmut Gabriel ja Carlo láveba juohke geasi máhcat Geavgŋái oaggut. -- fixed
+----------
+[ 28/932][FAIL fn2] máhcat:máhccat (errorortreal) => :[] ()
+Test 28 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 32/932: Go giđđa boahtá, geahččá son gii lea bajásšaddan Guovdageainnus albmái, dego livččii vuordimen juoidá gáhčat almmis. -- fixed
+----------
+[ 32/932][FAIL fn2] gáhčat:gáhččat (errorortreal) => :[] ()
+Test 32 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 33/932: Statistihkalaš guovddášdoaimmahat einnosta bargguhisvuođa lassánit beliin dán jagi ja NAV dieđiha áššemeannudanáiggi guhkut ja vejolaččat dahkkojit vuoruheamit dan geažil go leat váttisvuođat bargomárkanis. --- fixed
+----------
+[ 33/932][FAIL fn2] guhkut:guhkkut (errorortreal) => :[] ()
+Test 33 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 40/932: Juos háliidat fáktádieđuid suohkana birra, gávnnat daid ja juos dovddat beroštumi bargagoahtit suohkanis, sávvamis sáhttit addit maid dieđuid rabas virggiid birra. -- fixed
+----------
+[ 40/932][FAIL fn2] gávnnat:gávdnat (errorortreal) => :[] ()
+Test 40 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 655/932: Vaikke Siri Broch Johansen lea lávlun guhká, muhto lohká iežas dál gávnnahan buoremussan oahppat jiena geavahit buorebut. -- fixed
+----------
+[655/932][FAIL fn2] lávlun:lávlon (errorortreal) => :[] ()
+Test 655 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 663/932: Politiijat leat otne vákšun johtolaga Guovdageainnus. -- fixed
+----------
+[663/932][FAIL fn2] vákšun:vákšon (errorortreal) => :[] ()
+Test 663 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 665/932: Dasa galgá maid čállit gean lea dikšun dahje // ja máná nama ja jagi. -- fixed
+----------
+[665/932][FAIL fn2] dikšun:dikšon (errorortreal) => :[] ()
+Test 665 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 671/932: Mii leat nagodan lasihit doarjagiid giellaguovddážiidda, muhto doarjagat sámegiela hálddašanguovllu gielddaide ja fylkkagielddaide leat bissun guhká seamma dásis. -- fixed
+----------
+[671/932][FAIL fn2] bissun:bisson (errorortreal) => :[] ()
+Test 671 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 679/932: Ii munnje gal olus váikkut, go daid dálvviid go lean dáppe gárdun in leat báljo oaidnán ovttage olbmo, juste dál oainnán ja gulan Čorgaša olbmuid ealu čohkkemin, muđui in leat ovttage oaidnán dáppe, loahpaha Jan Larsen guhte eallenagi lea guovllus gárdun. --- fixed
+----------
+[679/932][PASS tp] gárdun:gárdon (errorortreal) => gárdun:[gárdon] (real-DerNomActSgGen-PrfPrc)
+[679/932][FAIL fn2] gárdun:gárdon (errorortreal) => :[] ()
+Test 679 - Passes: 1, Fails: 1, Total: 2
+
+----------
+Test 683/932: Buot golbma veršuvnna leat hearvagirjjit, ja main leat maiddái máŋga sárguma, maid Turi ieš lea sárgun. -- fixed
+----------
+[683/932][FAIL fn2] sárgun:sárgon (errorortreal) => :[] ()
+Test 683 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 684/932: Jus de mearridit searvat, de oaččut eambbo dieđuid barggu birra, ja oaččut maid hui fiinna fáttarduođaštusa, man beakkán Lars Pirak lea sárgun. -- fixed
+----------
+[684/932][FAIL fn2] sárgun:sárgon (errorortreal) => :[] ()
+Test 684 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 690/932: Go lei dárkun, de dadjalii. #cuoppu - control N -- fixed
+----------
+[690/932][FAIL fn2] dárkun:dárkon (errorortreal) => :[] ()
+Test 690 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 691/932: Dát smávva čuvllat, leat maid gorrojuvvon biktasiin mat ledje nie baskun. #nie PrfPrc dahje A -- fixed
+----------
+[691/932][FAIL fn2] baskun:baskon (errorortreal) => :[] ()
+Test 691 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 692/932: Ii lean šlivgun go váile 10 minuvtta, de almmái huikkáda ahte dál de lea diddi gitta.
+----------
+[692/932][FAIL fn2] šlivgun:šlivgon (errorortreal) => :[] () #cuoppu
+Test 692 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 693/932: Go mánát ledje lávlon Boares goaskkis de son, ovddeš Deatnogáttenuoraid juoigi, háliidii gullat vel eambbo, vaikke mánát ledje olu jo lávlun. #olu mii bargá ahte ferte PrfPrc --- fixed
+----------
+[693/932][FAIL fn2] lávlun:lávlon (errorortreal) => :[] ()
+Test 693 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 695/932: Áibbas loahpageahčen, go dat buoiddes áhkku lea lávlun, go gusat lea máhccan ruoktut ja go duohtavuohta galgá beaivečuvgii, de lea dušše okta dohkálaš valáštallan - spábbačiekčan. -- fixed
+----------
+[695/932][FAIL fn2] lávlun:lávlon (errorortreal) => :[] ()
+Test 695 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 698/932: Sii leat lávlun nu ahte jietna lea juo šaddagoahtán oalle sieđas dadjalastá Láila Haugom Nordfjell, muhto prošeaktajođiheaddji Liv Tone Boine illuda go nu bures manná. -- fixed
+----------
+[698/932][FAIL fn2] lávlun:lávlon (errorortreal) => :[] ()
+Test 698 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 699/932: Sii leat lávlun ja čuojahan iežaset min váimmuide. -- fixed
+----------
+[699/932][FAIL fn2] lávlun:lávlon (errorortreal) => :[] ()
+Test 699 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 700/932: Son lea lávlun ja čállán lávlagiid dan rájes go lei unni, ja lea juo lea oassálastán MGP jr. --- coordination -- fixed
+----------
+[700/932][FAIL fn2] lávlun:lávlon (errorortreal) => :[] ()
+Test 700 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 704/932: Dán čavčča leat rássan oažžut raporttaid dain doaibmabidjoeaiggádiin geat leat ožžon juolluduvvot doarjagiid, muhto geat leat rihkkun raporterenáigemeriid. #+Obj --- fixed
+----------
+[704/932][FAIL fn2] rihkkun:rihkkon (errorortreal) => :[] ()
+Test 704 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 709/932: Fásttubeaivvit leat šaddi- ja dievvimánu áiggis ja daid áiggiid čoahkkanedje muŋkkat oahpahallat eallinnjuolggadusaid ja dovddastit jos ledje rihkkun njuolggadusaid. #+Obj -- fixed
+----------
+[709/932][FAIL fn2] rihkkun:rihkkon (errorortreal) => :[] ()
+Test 709 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 718/932: Sara mielas lea oalle mearkkalaš go okta gii ieš galgá hálddašit lágaid lea rihkkun daid. #+Obj --- fixed
+----------
+[718/932][FAIL fn2] rihkkun:rihkkon (errorortreal) => :[] ()
+Test 718 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 722/932: Dan oktavuođas sii livčče sáhttán čájehit ahte sii leat rollamodeallat ja šállošit sin ektui geaid sii leat rihkkun ja loavkašuhttán. #coordination / OBJ - Subj Inf-V PrfPrc --- fixed
+----------
+[722/932][FAIL fn2] rihkkun:rihkkon (errorortreal) => :[] ()
+Test 722 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 732/932: Ja livččiimet dáhttun ahte mearrasámiid vuoigatvuođat livčče čovdojuvvon áigái juo, muhto dát vuoigatvuođat leat ovdánan smávva lávkkiiguin. #ahte-Obj -- fixed
+----------
+[732/932][FAIL fn2] dáhttun:dáhtton (errorortreal) => :[] ()
+Test 732 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 735/932: Bargiidbellodaga sámediggejoavku lea reivvestis sámediggepresidentii dáhttun ahte čoahkkimis Girko-, oahpahus-, dutkandepartemeanta (GOD) politihkalaš jođiheaddjiiguin, bearjadaga 17.9. dán jagi, erenoamážit ferte deattuhit guokte ášši. --- fixed
+----------
+[735/932][FAIL fn2] dáhttun:dáhtton (errorortreal) => :[] ()
+Test 735 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 736/932: Eat lean olus dáhttun, muhto ii lean ávki. #olus is the clue - nesten ikkje
+----------
+[736/932][FAIL fn2] dáhttun:dáhtton (errorortreal) => :[] ()
+Test 736 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 751/932: Kárášjoga várresátnejođiheaddji Nils Gaup lohká ahte sii eai šaddan váldit ovdan áideášši gieldda ovdalávdegotti čoahkkimis, nu go son lei áigun. --- fixed
+----------
+[751/932][FAIL fn2] áigun:áigon (errorortreal) => :[] ()
+Test 751 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 769/932: Bearraša rolla servodagas lea dađis láivun. #dađis (etterhvert) is the clue --- fixed
+----------
+[769/932][FAIL fn2] láivun:láivon (errorortreal) => :[] ()
+Test 769 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 770/932: Seamma guoská jus miehtá jagi it leat leamaš barggus dahje leat molsun virgeoasi. --- fixed
+----------
+[770/932][FAIL fn2] molsun:molson (errorortreal) => :[] ()
+Test 770 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 776/932: Mikkelsen muitala ahte sus ii lean oalle jáhkku bihttái go álggos gulai dan birra, muhto go lea oaidnán dan, de lea molsun oaivila. -- fixed
+----------
+[776/932][FAIL fn2] molsun:molson (errorortreal) => :[] ()
+Test 776 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 779/932: Dalle lei Bargiidbellodat Sámedikki njunnošis, muhto dál lea bellodat molsun oainnu. -- fixed
+----------
+[779/932][FAIL fn2] molsun:molson (errorortreal) => :[] ()
+Test 779 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 780/932: Lujávrilaš sámenieida, Marina Klotshkova (22) lea báltun Norggas. #we don't know why (bli skremt)
+----------
+[780/932][FAIL fn2] báltun:bálton (errorortreal) => :[] ()
+Test 780 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 782/932: Nu ahte dat lohku gal lea unnun. #lohku ii leat human 
+----------
+[782/932][FAIL fn2] unnun:unnon (errorortreal) => :[] ()
+Test 782 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 783/932: Nissonovddasteapmi lea unnun 33,3 %:s 1989:s, gitta 25,6 % rádjai dán áigodagas. #Nissonovddasteapmi ii leat human
+----------
+[783/932][FAIL fn2] unnun:unnon (errorortreal) => :[] ()
+Test 783 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 787/932: Skuvlašalljus gávdno darfegoahti man leat easka divvun. --- fixed
+----------
+[787/932][FAIL fn2] divvun:divvon (errorortreal) => :[] ()
+Test 787 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 789/932: Dál leat divvun nugo márffiid. -- fixed
+----------
+[789/932][FAIL fn2] divvun:divvon (errorortreal) => :[] ()
+Test 789 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 791/932: Daid erohusaid leat ožžon ovdan go leat ráhkadan spesifihkka tabeallaid ja diagrámmaid, maid leat ovdandivvun danin vai vuđoleappot sáhttit čájehit sámegiela hálddašanguovllu gielladili. -- fixed
+----------
+[791/932][FAIL fn2] ovdandivvun:ovdandivvon (errorortreal) => :[] ()
+Test 791 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 800/932: Empiralaš materiála háhkkan lea dáhpáhuvvan semistruktuvrralaš jearahallamiiguin. -- subj PrfPrc
+----------
+[800/932][FAIL fn2] háhkkan:háhkan (errorortreal) => :[] ()
+Test 800 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 848/932: Lávus ja goađis lea dollasadji guovdu ja boarrásat oađđet sokkiin. --- fixed
+----------
+[848/932][FAIL fn2] oađđet:ođđet (errorortreal) => :[] ()
+Test 848 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 858/932: Márkomeannu orro maid dáid beivviid lágideame maŋemus festivála, ja dál dieđiha maiddái Heia festivála ahte sii vuollánit heajos ruhtadili geažil. ---not an error! the marking probably changed
+----------
+[858/932][FAIL fn2] orro:orru (errorortreal) => :[] ()
+Test 858 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 862/932: Jus dat gii geahččá du ieš-almmuheami anilda ahte dárbbahat dutkama oaččut bovdehusa vuostáváldimii. --- fixed
+----------
+[862/932][FAIL fn2] oaččut:oažžut (errorortreal) => :[] ()
+Test 862 - Passes: 0, Fails: 1, Total: 1
+
+----------
+Test 865/932: Oktiibuot 13 Norgga doaktára leat leamaš mielde dáid iskkadan bargguin.
+----------
+[865/932][FAIL fn2] iskkadan bargguin:iskkadanbargguin (errorsyn) => :[] ()
+Test 865 - Passes: 0, Fails: 1, Total: 1 -- fixed
+
+----------
+Test 914/932: Fertet maiddái geahččalit gávdnat áššiid maid čállit lulli sámeguovlluin, lohká Buljo. -- fixed (wrongly annotated)
+----------
+[914/932][FAIL fn2] lulli sámeguovlluin:lullisámiguovlluin (errorsyn) => :[] ()
+Test 914 - Passes: 0, Fails: 1, Total: 1
+
+
+real-DerNomActSgGen-PrfPrc
+Total passes: 1231, Total fails: 302, Total: 1533
+True positive: 640
+True negative: 591
+False positive 1: 21
+False positive 2: 59
+False negative 1: 5
+False negative 2: 217
+Precision: 88.9%
+Recall: 74.2%
+F₁ score: 80.9%
+
+
+
+ # Yaml tests
+Get numbers for the yamltest included in this directory:
+
+```bash
+for i in naacl-2021-1 naacl-2021-2 naacl-2021-3
+do
+  gramcheck-test.py -s se.$i.zcheck yamltests/*.yaml
+done
+```
+
+## Yaml test results 20210125
+
+### naacl-2021-1 Pre-Yaml
+```
+Total passes: 637, Total fails: 338, Total: 975
+True positive: 134
+True negative: 503
+False positive 1: 0
+False positive 2: 28
+False negative 1: 8
+False negative 2: 302
+Precision: 82.7%
+Recall: 30.2%
+F₁ score: 44.2%
+```
+
+### naacl-2021-2 Yaml-álgu
+```
+Total passes: 952, Total fails: 12, Total: 964
+True positive: 439
+True negative: 513
+False positive 1: 0
+False positive 2: 7
+False negative 1: 0
+False negative 2: 5
+Precision: 98.4%
+Recall: 98.9%
+F₁ score: 98.7%
+```
+
+### naacl-2021-3 Post-yaml
+```
+Total passes: 927, Total fails: 43, Total: 970
+True positive: 421
+True negative: 506
+False positive 1: 1
+False positive 2: 20
+False negative 1: 0
+False negative 2: 22
+Precision: 95.2%
+Recall: 95.0%
+F₁ score: 95.1%
+```
+
+### se.bisect1-993bbab.zcheck
+If you would like to see lang-sme at this point in svn, try this command
+```
+svn up -r {2020-12-16}
+```
+
+```
+Total passes: 956, Total fails: 7, Total: 963
+True positive: 441
+True negative: 515
+False positive 1: 1
+False positive 2: 4
+False negative 1: 0
+False negative 2: 2
+Precision: 98.9%
+Recall: 99.5%
+F₁ score: 99.2%
+```
+
+### se.0695483-20210127.zcheck
+```
+Total passes: 906, Total fails: 64, Total: 970
+True positive: 396
+True negative: 510z
+False positive 1: 4
+False positive 2: 16
+False negative 1: 0
+False negative 2: 44
+Precision: 95.2%
+Recall: 90.0%
+F₁ score: 92.5%
+```
+
+'fn2': 'GramDivvun did not find manually marked up error'
