@@ -1,0 +1,103 @@
+!!!Taggmøte 2. mars 2021
+Tilstede: Sjur, Trond, Inga, Lene, Thomas
+
+
+!!Samansetjingstaggar i GiellaLT:
+
+!Tre klassar:
+* deskriptive taggar: +Cmp/*
+** desse kjem i affixes/nouns.lexc, compounds.lexc legg til Cmp#
+* normative taggar: +CmpN/*
+** Her er CmpN/SgN default som aleinetag, lagt til i stems/nouns.lexc
+* normative posisjonstaggar: +CmpNP/*
+** desse avgrensar berre normativ posisjon (prefiks, fyrst, berre i slutten, ikkje i det heile, osb)
+
+
+!Hvilke tagger skal vi bruke når det er førsteleddet er forkortet eller ikke-assimilert lån?
+Eksempler med ny tagg +Cmp/Unass
+* asylårdnik     +Cmp/Unass   asyl+ådnik (asyl er ikke produktiv)
+* asijllaårdnik  +Cmp/SgNom  asijlla+årdnik
++CmpNP/Pref (Prefiks) Normativ Posisjon 
+
+balkong og kultur er produktive:
+* balkoaŋŋa+årdnik  +Cmp/SgNom
+* balkong+årdnik                +Cmp/Unass   
+* balkoaŋŋa+N+Sem/Dummytag+Cmp/Unass:balkong%> R ;
+* balkoaŋ+årdnik                +Cmp/Sh
+* +CmpNP/Pref+Cmp/SgNom:r%> R ; !short cmp, "kulturskåvllå"  , fra affix-fila, KULTUVRRA:
+
+
+balkoaŋŋa+N+Sem/Dummytag:balkong%> R ; (Her mangler Cmp-tagg, bør det være +Cmp/Unass eller +Cmp/Sh ?)
+
+
+
+!!Problemet er harmonisering
+Vi må ha et system som gjør det mulig å gå fra språk til språk
+
+* For analyse: tagger forteller om typen Cmp
+* For generering i MT: sammensetninga som ikke er foretrukket, skal ha en annen tagg, eller en ekstra tagg
+
+
+!Det er behov for å skille mellom sammensetninger (dvs. vi kan ikke gjøre dem valgfrie)
+* eatnigiella  +Cmp/SgGen  (morsmål)
+* eadneluopmu  +Cmp/SgNom    (morpermisjon)
+* etniidbeaivi +Cmp/PlGen  (morsdag)
+
+Mulig løsning
+* Den foretrukne vil aldri være +Cmp/Unass
+* Hvis den foretrukne er den lange formen, kan vi legge +Cmp/Sh til den korte
+* Hvis den foretrukne er den korte formen, kan vi legge +Cmp/Long til den korte
+Men da vil ikke analysen fortelle alltid gi god informasjon
+
+
+Det er mulig å legge til regel i tools/mt/apertium/tagger/modify.regex fra smj:
+* +Cmp/Sh > +Cmp/SgNom
+
+{{{
+balkoaŋŋaårdnik
+balkoaŋŋaårdnik    balkoaŋŋa+N+G3+Cmp/SgNom+Cmp#årdnik+v1+N+Sg+Nom    0,000000
+balkoaŋŋaårdnik    balkoaŋŋa+N+G3+Cmp/SgNom+Cmp#årdnik+v1+N+Sg+Nom    0,000000
+
+balkongårdnik
+balkongårdnik    balkoaŋŋa+N+Cmp#årdnik+v1+N+Sg+Nom    0,000000
+balkongårdnik    balkoaŋŋa+N+Cmp#årdnik+v1+N+Sg+Nom    0,000000
+
+kultuvrraårdnik +Cmp/SgNom+Cmp/Long
+kulturårdnik   +Cmp/SgNom
+}}}
+
+
+Oversikt fra smj root:
+{{{
++CmpNP/All       !!≈ * __@CODE@__ - ... in all positions, __default__, this tag does not have to be written
++CmpNP/First     !!≈ * __@CODE@__ - ... only be first part in a compound or alone
++CmpNP/Pref      !!≈ * __@CODE@__ - ... only __first__ part in a compound, NEVER alone
++CmpNP/Last      !!≈ * __@CODE@__ - ... only be last part in a compound or alone
++CmpNP/Suff      !!≈ * __@CODE@__ - ... only __last__ part in a compound, NEVER alone
++CmpNP/None      !!≈ * __@CODE@__ - ... does not take part in compounds
++CmpNP/Only      !!≈ * __@CODE@__ - ... only be part of a compound, i.e. can never
+
++CmpN/SgN      !!≈ * __@CODE@__ Singular Nominative !! Unmarked = Default
++CmpN/SgG      !!≈ * __@CODE@__ Singular Genitive
++CmpN/PlG      !!≈ * __@CODE@__ Plural Genitive
++CmpN/PlN      !!≈ * __@CODE@__ Plural Nominative, propers!
++CmpN/SgNomLeft  !!≈ * __@CODE@__ Singular Nominative
++CmpN/SgGenLeft  !!≈ * __@CODE@__ Singular Genitive
++CmpN/PlGenLeft  !!≈ * __@CODE@__ Plural Genitive
+
+ +Cmp          !!≈ * __@CODE@__ - Dynamic compound. This tag should always be part
+
+ +Cmp/Attr     !!≈ * __@CODE@__ - Attributive
+ +Cmp/SgNom    !!≈ * __@CODE@__ - Singular Nominative
+ +Cmp/SgGen    !!≈ * __@CODE@__ - Singular Genitive
+ +Cmp/PlGen    !!≈ * __@CODE@__ - Plural Genitiv
+ +Cmp/SplitR   !!≈ * __@CODE@__ - This is a split compound with the other part to
+               !!                 => Arbeids- = +Cmp/SplitR
+ +Cmp/SplitL   !!≈ * __@CODE@__ - This is a split compound with the other part to the left
+ +Cmp/Sh       !!≈ * __@CODE@__ - testing +Cmp/Sh
+ +Cmp/Hyph     !!≈ * __@CODE@__ - on dynamic compounds that have a hyphen
+ +Cmp/NoHyph   !!≈ * __@CODE@__ - On compounds that COULD have had a hyphen (and usually have), but doesn't
+ +Cmp/SoftHyph !!≈ * __@CODE@__ - Tags compounds containing SOFT HYPHENS (U+00AD)
+ +Cmp/Cit      !!≈ * __@CODE@__ - Tags citation compounds, which can in principle
+ 
+ }}}
