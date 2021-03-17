@@ -1,0 +1,89 @@
+!!!Giellateknomøte 17.03.2021
+Trond, Lene, Chiara
+
+!!Saker
+* Saker frå siste møte
+* Korp oppdatering
+* NDS
+* Studenter
+* Flytte Kursa wordpress til egen server
+
+
+!! Saker frå siste møte
+* Digitaliseringstiltak på UiT
+** Trond og Lene sendte søknad, men vi fikk avslag
+* Der/Comp og Der/Superl for sms i ny versjon
+** Trond har lagt til Der/Comp og Der/Superl i lag med +Der, men ny pos-tag etterpå manglar. Han fikser dette i dag.
+* fin-sme MT
+** syntaktiske tagger er enda ikke inkludert i MT
+
+!!Korp oppdatering
+
+!f_korp
+under arbeid, grensesnitt + innhold oppdatering
+
+!SIKOR
+__Chiara__ lager grep-corpus for samisk så snart Tronds endringer i sms er med
+
+!Semantiske taggar
+Seemantiske tagger skal ikke filtreres bort, men være med i Korp.
+Vi gjer forenklinga på Korp-sida.
+
+{{{
+cat src/fst/root.lexc |grep 'Sem/'|wc -l
+     282
+cat src/fst/root.lexc |grep 'Sem/'|cut -d"_" -f1|sort|uniq|wc -l
+     153
+}}}
+
+
+__Lene__ lager forslag til forenkling av semtagger, til i mårra
+
+!Bibelen
+Ingen svar frå Noreg eller Finland [enno].
+
+!Sametingsavtalen for bruk av tekstar
+Vurdering: Gå direkte til Sametinget
+
+!HFST-konfigurering for korpusanalyse
+__Trond__ diskuterer dette med Sjur og Børre
+
+{{{
+./configure --with-backend-format=openfst-tropical --enable-tokenisers
+}}}
+
+!NDS som integrert del av Korp-grensesnittet
+Dette er på lista over forbetring i Korp.
+
+!!NDS
+* Chiara arbeider for å få HFST (med vekter) for sma
+* vi vil gå over til HFST for alle språk
+
+
+__Lene__ skal skrive dokumentasjon om ordavledninger og linke fra NDS-artikler
+
+Det er ønske Legge inn eksplisitt stjernesøk i selve xml-fila (dvs at søket ikke blir sendt til analysator), evt. som regexsøk. Dvs at regex-søket innledes med f.eks. % . 
+__Chiara__ ser på dette etter Korp-oppdateringa
+
+Sette opp automatisk oppdatering av NDS på server. __Chiara__ ser på dette når hun har tid.
+
+!NDS-ordbok-IP
+__Trond__ diskuterer med Orakelet.
+# Sikre at alle i same rom har same IP-adresse (og ingen andre har den same adressa?), evt. innlogging?
+# Sette opp IP-boksar og ha internett på tråd
+
+!Forbetringar
+Vi oppdaterer lista i dokumentasjonen.
+
+!!Studenter
+
+Vi bør arrangere sommarjobbprosjekt for studentar, både samisk masterstudenter og IT-studenter
+
+__Trond__ sjekker økonomien, vi alle tenker på temaer
+
+
+!!Flytte Kursa wordpress til egen server
+
+__Trond og Chiara__ ser på dette.
+
+
