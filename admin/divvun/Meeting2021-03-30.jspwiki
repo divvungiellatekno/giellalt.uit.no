@@ -1,0 +1,112 @@
+Divvun-møte 30.3.2021
+
+Til stades: Duommá, Børre, Linda, Tommi, Inga, Katri, Sara, Siri, Sjur
+
+Saker:
+* Sidan sist
+* Årsrapport
+* Arbeid framover
+* Ymse
+
+!!! Sidan sist
+
+!! Duommá
+* ej mottagit text til tále frå Acapela
+* ej gjort annet enn gram-chk yaml
+* og gram-chk testing o forbedring - word additions, disambiguahtor, bugzilla, errorth forms
+
+!! Børre
+* Artikkel / grammatikktestverktøy
+** filnavn i grammatikktestresultat
+** forbedre håndteringen av mellomromsfeil
+* sátni.org
+** møte med folket bak julev.no
+** dokumentere api
+** jobbet med lemmatiser/generator etter modell fra NDS
+* Fikse sertifikat- og apache-oppsett gtsvn.uit.no/pahkat.uit.no
+
+Nettsideproblem:
+* divvun.no med andre lokale enn dei som allereie finst (berre for Safari på Mac, ok for alle andre) - ikkje ok enno
+* SEE-server - ikkje på nett enno?
+
+!! Linda
+* yaml-tester i lag med Duommá (kongruens)
+* artikkel om regresjonstester ilag med Børre og Tommi
+* fiksing av feiloppmerking i goldstandard etc.
+* fiksing av regressjonstestartikkelen
+* yaml make fila
+* CG-workshop med Inga
+
+Vi treng ein modul for å indentifisera språk, både i grammatikkontrollen og for taleprosesseringa.
+
+!! Tommi
+* divvun-normaliser 
+* naacl-artikkel oppdatering for en ny workshop
+* en statuscake for pahkat.uit.no og
+* jobba litt med smj lånordgenerator medn guesser:
+    {{echo xyzurista | hfst-lookup guesser-gt-desc.anl.hfstol}}
+* fikk svar fra sigma2.no
+
+!! Inga
+* Samlet og rettet på tekster fra vårt freekorpus for bruk i TTS
+* TTS-møte
+* Cg-workshop med Linda
+* Rettet på MT-oversettelser
+* Ordboksmøte med Ntec
+* Smårettinger og lagt til enkeltord
+
+!! Katri
+* tts-møte
+* Abstrakt till fonologikonferensen nästan färdig: min presentation ska diskutera quantity för samiska språken och hur kan de beaktas vid byggandet av en TTS
+* espeak-tts: jobbat med G3 ord som är ortografisk homonymer i nom&gen: espeak har inte en syntaktisk disambiguator; i estnisk samma problem, ortografiskt homonym G3 och G2 uttalas inte annorlunda -> output har "finsk accent"
+* Installerat, lärt mig att använda och eksperimenterat med Merlin-tts (DNN parametric synthesis): training användar GPU nu och jag får Merlin att fungera med Engelsk data -> börjar med Lule Saami data
+* Lite mera python skripter för att processera data vidare om behövs/göra systematisk ändringar etc
+
+Sigma2 kan snart nyttast til meir krevande trening.
+
+!! Sara Marja 
+* missing
+* term wiki
+* har sett på feil i stavekontrollen, paradigmegenereringa
+
+!! Siri
+* Missinglista
+* Termwiki
+* rettet i ordböker
+* Jobbet litt med Lenes liste, treng litt hjelp - Sjur ser på det, og Sara er med :)
+
+!! Sjur
+* Møte med ny instituttleder, informert om oss.
+* tts-møte
+* Fiksa byggefeil i crk (sammen med Tino)
+* Møte med Linda og Inga om å få yaml-testinga til å fungere
+* Trond har laget skript for å lage cg-lister ut fra lexc-koden, diskusjon om det
+* har jobba med tekstnormalisering (abbr og tal til full tekst) i sme og smj
+* forenkla stavekontrollbygging
+* testa ny versjon av libdivvun
+* budsjett og rekneskap for Divvun
+* Kintel-ordboksmøte
+
+!! Göteborg
+* På Windows så synkroniseres språkinnstillinger på nettet med ein av dei siste oppdateringane. På grunn av det forsvinner språk, har jobbet med å løse det.
+* meir arbeid med one-click-installer
+* skal gjera LO-integreringa
+
+!! Edmonton/Alberta/Canada
+* har laga ferdig Python-bindinga mot Divvunspell
+
+!!! Årsrapport
+
+Kommentarar til utkastet:
+* satni.org: tidlegare 300 treff pr dag i 2019, har stige til 3300/dag no
+* låneordsgeneratoren bør inn i 2.2(?), framhev at det forenklar kvardagen, da språkbrukere får ut tilpassede ord til (lule)samisk. Dette vil også kunne effiktivisere arbeidet i GG.
+* Anders Kintel si ordbok i 1.3: bør nemnast at det er lulesamisk-norsk og norsk-lulesamisk
+* omsetjingsverkty: jobba for å forbetra maskinomsetjinga og integrera den i omsetjingsverktyet, den mest aktive brukaren er veldig nøgd
+* 1.3 - leksikografi/terminologi: sørsamisk er ikkje nemnt - vi får lister frå GG som vi legg inn.
+* flytting til GitHub: websider skal også flyttast. Står lite om artiklar og akademisk publisering, skriv litt meir?
+
+!!! Arbeid framover
+* gjera ferdig årsrapport
+
+!!! Ymse
+* neste møte tysdag 6.4.2021
