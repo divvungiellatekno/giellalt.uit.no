@@ -1,130 +1,127 @@
-!!!Speller meeting
+# Speller meeting
 
 What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 Variablar for installeraren:
 
 * Variablar relevante for om ting funkar i det heile:
-** Office-versjon: 2003, 2007, 2010, 2013
-** Windows-versjon: XP, Vista, W7, W8
-** språkkode: ISO (se-NO) vs LCID (1083)
-** bit-versjon for Windows: 32b vs 64b
+    - Office-versjon: 2003, 2007, 2010, 2013
+    - Windows-versjon: XP, Vista, W7, W8
+    - språkkode: ISO (se-NO) vs LCID (1083)
+    - bit-versjon for Windows: 32b vs 64b
 * variablar uavhengig av grunnleggjande funksjonalitet:
-** Office-utgåve: home/student vs pro/full
-** installeringsmodus: admin/rot/nett vs lokal brukar vs terminalserver
+    - Office-utgåve: home/student vs pro/full
+    - installeringsmodus: admin/rot/nett vs lokal brukar vs terminalserver
 
 Verkty for debugging:
 * dependencywalker
 
-__DONE:__
+**DONE:**
 * run dependencywalker on our dll's to check what the dependencies are, and
-  possibly add dependency reqiurements to the MSI package (__Børre__) - nothing
+  possibly add dependency reqiurements to the MSI package (**Børre**) - nothing
   found
 * check with Geir Tore whether we can get a couple of Windows and Office
-  versions for testing (__Børre__) - waiting for mail about access to those
+  versions for testing (**Børre**) - waiting for mail about access to those
   versions from Anders Ryssdal
 
-__TODO:__
+**TODO:**
 * test MSI package, esp. with admin install and different Win/Office combos
-  (__UiT/IT, Sjur__)
+  (**UiT/IT, Sjur**)
 * compare different sets of registry entries, to try to find differences tbat
-  can explain the terminal server bug (__Børre__)
+  can explain the terminal server bug (**Børre**)
 * we need to get feedback on how the new installer works when installed as admin
-  - does it work for all users without further actions? (__Børre__)
+  - does it work for all users without further actions? (**Børre**)
 
-__POSTPONED:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
-* send a request to an NSIS developer e-mail list (__Sjur__)
-* try to find an NSIS script for building MSI packages (__Børre__)
+**POSTPONED:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (**Sjur**)
+* try to find an NSIS script for building MSI packages (**Børre**)
 * add Windows 8 support to our installer (if possible)
 
-!!!PLX conversion
+# PLX conversion
 
-One ommission - that can't explain the reduced size - is that particles like ''almma, bat, ges, han'' have been lost in the latest spellers. — FIXED in the latest svn, but no speller yet, and thus no speller test results.
+One ommission - that can't explain the reduced size - is that particles like *almma, bat, ges, han* have been lost in the latest spellers. — FIXED in the latest svn, but no speller yet, and thus no speller test results.
 
 Remaining PLX bugs:
 
-!!First PRI
+## First PRI
 
-!Words are accepted and suggested in their compounding-form
-| cmp-form-suggestions	  |	váigas, suolo                           | 581,909,803,912
+### Words are accepted and suggested in their compounding-form
+|  cmp-form-suggestions	  |	váigas, suolo                           | 581,909,803,912
 
-!Discovered one case of compounds without hyphen:
-| non-hyph noun+acro cmps | muoreNRK | 805		| FIXED
+### Discovered one case of compounds without hyphen:
+|  non-hyph noun+acro cmps | muoreNRK | 805		| FIXED
 
-!REGRESSION - HYPH-SUGGESTIONS
-| hyphened suggestion	| guolli-busse,rátnu-biellu, stohpu-spiidni-	| 397,489,721,802 etc
+### REGRESSION - HYPH-SUGGESTIONS
+|  hyphened suggestion	| guolli-busse,rátnu-biellu, stohpu-spiidni-	| 397,489,721,802 etc
 
-!REGRESSION - DOESN'T RECOGNIZE SOME ACRO/PROP+NOUN, seems random
-| PROP+NOUN	| Oslo-biila, Helsset-vuođđuduvvan, Unicode-doarjja, SF-muorra	| 397,426,611,930,931
+### REGRESSION - DOESN'T RECOGNIZE SOME ACRO/PROP+NOUN, seems random
+|  PROP+NOUN	| Oslo-biila, Helsset-vuođđuduvvan, Unicode-doarjja, SF-muorra	| 397,426,611,930,931
 
-!REGRESSION
-| NO STEM-VOWEL SHORTENING	| rátnu-biellu, 						| 489
+### REGRESSION
+|  NO STEM-VOWEL SHORTENING	| rátnu-biellu, 						| 489
 
-!REGRESSION
-| DOUBLE HYPH-SUGG	| SF--muora, 						| 611
+### REGRESSION
+|  DOUBLE HYPH-SUGG	| SF--muora, 						| 611
 
-!REGRESSION
-| NO HYPH PREF+NOUN	| julevua-gielas, juleva-gielas | 629
+### REGRESSION
+|  NO HYPH PREF+NOUN	| julevua-gielas, juleva-gielas | 629
 
 This is analysed as:
-{{{
+```
 a-gielas	a-giella+N+Sg+Loc
 julevu-	julevu+N+RCmpnd
-}}}
+```
 
-''a-gielas'' is an entry in the lexicon {{HyphNouns}}, a set of nouns requiring hyphens in front of them.
-Solution: tag all words in {{LEXICON HyphNouns}} as {{+CmpN/First}}.
+*a-gielas* is an entry in the lexicon `HyphNouns`, a set of nouns requiring hyphens in front of them.
+Solution: tag all words in `LEXICON HyphNouns` as `+CmpN/First`.
 
-!REGRESSION
-| ALPH+NOUN	| u-joavku						| 785,818
+### REGRESSION
+|  ALPH+NOUN	| u-joavku						| 785,818
 
+## First and a half PRI
 
-!!First and a half PRI
+### compounds
+|  DEVERBAL+noun+clit not rec. | vástidanproseantage, hárjehaddanmuorragen | 451
 
-!compounds
-| DEVERBAL+noun+clit not rec. | vástidanproseantage, hárjehaddanmuorragen | 451
+## Second Last PRI
 
-
-!!Second Last PRI
-
-!Section for Tags-not-working
-| doesn't follow cmp-tags | sámedikkepresideanta  			 | 489
-| +CmpN/None in comp-sugg | 1883-as, Juovla-CD-as            | 508,717
-| +Use/SpellNoSugg        | alhpabet gets suggested: a,đ etc | 461
+### Section for Tags-not-working
+|  doesn't follow cmp-tags | sámedikkepresideanta  			 | 489
+|  +CmpN/None in comp-sugg | 1883-as, Juovla-CD-as            | 508,717
+|  +Use/SpellNoSugg        | alhpabet gets suggested: a,đ etc | 461
 
 Bugs below this line can be left out of the next release if we are short on time.
 ----
 
-!Compounds
-| imposs" cmps along w num.| 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145  | NEW SUGGESTION: geažideapmi-gárvu-
-| num cmp:s on 0-          | 051-nummarat										 | 631
-| name/noun+adv cmps	   | Kuorak-ain, NRK-an									 | 642,913
-| hyphened suggestions	   | deahtta-samus +A+Attr +Noun						 | 940
-| non-ex. word accepted    | saame    											 | 658
+### Compounds
+|  imposs" cmps along w num.| 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145  | NEW SUGGESTION: geažideapmi-gárvu-
+|  num cmp:s on 0-          | 051-nummarat										 | 631
+|  name/noun+adv cmps	   | Kuorak-ain, NRK-an									 | 642,913
+|  hyphened suggestions	   | deahtta-samus +A+Attr +Noun						 | 940
+|  non-ex. word accepted    | saame    											 | 658
 
-!!Last PRI
-| doesn't understand caps  | 1700-LOHKU               | 647
-| Left cmp-tags don't work | biilarievttijođiheaddjái | 819 | THESE ARE NOW RECOGNIZED, BUT DOESN'T GET SUGGESTED
+## Last PRI
+|  doesn't understand caps  | 1700-LOHKU               | 647
+|  Left cmp-tags don't work | biilarievttijođiheaddjái | 819 | THESE ARE NOW RECOGNIZED, BUT DOESN'T GET SUGGESTED
 
+**DONE:**
+* **Tomi** has solved one more PLX bug (muoraNRK bug), but it looks like it has caused several regressions.
 
-__DONE:__
-* __Tomi__ has solved one more PLX bug (muoraNRK bug), but it looks like it has caused several regressions.
+**TODO:**
+* investigate the reduced PLX file size (**Tomi**)
+* solve the remaining PLX bugs one by one (**Tomi**)
 
-__TODO:__
-* investigate the reduced PLX file size (__Tomi__)
-* solve the remaining PLX bugs one by one (__Tomi__)
-
-!!!Release plan
+# Release plan
 
 * December 1:
-** PLX bugs solved
-** Alpha installer (MSI package built using WIX)
+    - PLX bugs solved
+    - Alpha installer (MSI package built using WIX)
 * December 10: Beta release
 * December 20: Divvun 3 release

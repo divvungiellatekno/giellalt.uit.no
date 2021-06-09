@@ -1,7 +1,6 @@
-
 Giellateknomøte 14.10.
 
-!!!Saksliste
+# Saksliste
 
 * Programmerarstillinga
 * programmerer-stillinga
@@ -15,35 +14,34 @@ Giellateknomøte 14.10.
 * Rommet
 * Diskusjonen om artiklar (slutten av diskusjonen)
 
+# Saker
 
-!!!Saker
-
-!! programmerer-stillinga
+##  programmerer-stillinga
 
 Trond har snakka med Eystein, som delegerer intervjuansvaret til Trond. 
 Administrasjonen kan ikke hjelpe til med det praktiske med intervjuene. 
 Trond engasjerer en til å gjøre dette for oss.
 
-!! phd-stillinger
+##  phd-stillinger
 
-! programmerer phd.
+###  programmerer phd.
 
 Vi venter på instituttet. 
 
-! lingvistisk phd
+###  lingvistisk phd
 
 Trond tar opp saka.
 
-!! bidix
+##  bidix
 
-!ordbok til bidix
+### ordbok til bidix
 Ciprian sjekka inn i går:
 
 sme<tab>POS<tab>smn<tab>POS
 
 finsmn/trans_dict/all_sme2smn.csv
 
-{{{
+```
 albma   A       rievtis A 
 albma   A       vuoigâ  A
 albma   A       puigâ   A
@@ -70,29 +68,29 @@ astat   V       ostâstuđ        V
 astat   V       terttiđ V
 astat   V       ostâđ   V   <===
 astat   V       lijgodiđ        V
-}}}
+```
 
 Desse skal over i bidix-format. 
 
-# Ciprian lager et skript for Levenshtein.
-# Ciprian viser til filene
-# Vi studerer filene, og
-# diskuterer (denne veka)
+1. Ciprian lager et skript for Levenshtein.
+1. Ciprian viser til filene
+1. Vi studerer filene, og
+1. diskuterer (denne veka)
 
-!Homonymi i bidix
+### Homonymi i bidix
 
-{{{
+```
 finsmn/trans_dict$ wc -l all_sme2smn.csv  19390 all_sme2smn.csv
 finsmn/trans_dict$ cut -f1 all_sme2smn.csv |sort -u | wc -l    6401
 finsmn/trans_dict$ cut -f3 all_sme2smn.csv |sort -u | wc -l    9455
-}}}
+```
 
 I dag har vi
 
-{{{
+```
  <e><p><l>gárdin<s n="n"/></l><r>kärdi<s n="n"/></r></p></e>
  <e><p><l>gárdin<s n="n"/></l><r>muorâkärdi<s n="n"/></r></p></e>
-}}}  
+```  
 
 Når det er flere smn for en sme: generere apertium-sme-smn.sme-smn.lrx
 
@@ -101,6 +99,7 @@ status i fst, rekkjefølgje i ordboka, redigeringsavstand til sme, ...
 Vi må sjå på dei når vi kjem så langt.
 
 <rules>
+
  
   <rule weight="1.0">
     <match lemma="gárdin" tags="n.*"><select lemma="muorâkärdi" tags="n.*"/></match>
@@ -120,26 +119,24 @@ Vi må sjå på dei når vi kjem så langt.
 
 </rules>
 
-
-
-!! Automatarbeid, smn
+##  Automatarbeid, smn
 
 Mål: Utnytte informasjonen i kolonnene i smn-ordbøkene
 
-# Viss formene i kolonne y er bøyingsform av lemmaet i kolonne x er alt bra.
-# Viss ikkje sjekkar vi.
+1. Viss formene i kolonne y er bøyingsform av lemmaet i kolonne x er alt bra.
+1. Viss ikkje sjekkar vi.
 
 Verb + bøyingsformer er:
 
-{{{
+```
 cat smnfin/inc/2015/Saami-suoma_ERRATA_03072015.csv |grep 'đ '|cut -f1
-}}}
+```
 
 Script: For ord nr 2, 3 på kvar linje, har dei lemma = ord 1?
 
 Desse to filene har same innhald, og er dei som er i best stand.
 
-{{{
+```
 aLanâddâđ  aLanâd     
 aLaniđ  allaan     
 a'ldadâllâđ  a'ldadâlâm     
@@ -147,12 +144,12 @@ aldaniđ
 a'ldediđ  aldeed     
 alediđ       
 a'lgâttiđ  aalgât     
-almaaštâllâđ  almaaštâlâm  }}}
+almaaštâllâđ  almaaštâlâm  ```
 
-# smnfin/inc/2015/Saami-suoma_ERRATA_03072015.csv 
-# smnfin/src/Saami-suoma_ERRATA_03072015_smnfin.xml 
+1. smnfin/inc/2015/Saami-suoma_ERRATA_03072015.csv 
+1. smnfin/src/Saami-suoma_ERRATA_03072015_smnfin.xml 
 
-{{{
+```
 cat finsmn/src/all_finsmn.xml |grep 'wf='
 
   <t pos="" wf="páárust">párustiđ</t>
@@ -164,30 +161,28 @@ cat finsmn/src/all_finsmn.xml |grep 'wf='
   <t pos="" l_par="härnätä jtkta" wf="háárdám">härdiđ</t>
   <t pos="" l_par="härnätä jtkta toistuvasti" wf="haardâš">ha'rdâččiđ</t>
   <t pos="" l_par="olla ärtyisä" wf="kyeccist">kye'cistiđ</t>
-}}}
+```
 
 I beste fall er dei to identisk, som her:
 
-{{{
+```
 smnfin:
 addiittâllâđ  addiittâlâm addiittâl     
 finsmn:
             <t pos="" l_par="toisiaan" wf="addiittâlâm addiittâl">addiittâllâđ</t>
-}}}
-
+```
 
 Døme på verb med fleire enn ei wf:
 
-{{{
+```
 "moostâm masta">mostâđ</t>
 "ibárdâs paijeel">moonnâđ</t>
 "iä'náduum iä'náduVá">iä'náduđ</t>
-}}}
-
+```
 
 Døme på verb med berre ei wf:
 
-{{{
+```
 "ramâččâdâm">ramâččâttâđ</t>
 "kobdánâd">kobdánâddâđ</t>
 "kobdoot">ko'bdottiđ</t>
@@ -196,25 +191,23 @@ Døme på verb med berre ei wf:
 "keelijd">kelijdiđ</t>
 
 cat finsmn/src/all_finsmn.xml |grep 'wf='|grep 'đ</t>'|sed 's/wf=/™/'|cut -d"™" -f2|grep ' '
-}}}
-
+```
 
 Men i finsmn er einskildformer vs. fleirordsuttrykk disambiguert.
 
 Lene og Trond ser på dette, med utgangspunkt i finsmn.
 
-! todo-lista
+###  todo-lista
 
 Trond og Ciprian ser på det.
 
-
-!! Dubletter i korpus
+##  Dubletter i korpus
 
 Ciprian har prosessert data. Vi har dublettpar av to typer:
 
  (1) filer men nesten samme naven
 
-{{{
+```
 2015-10-13/sme/news/minaigi/2000/75-103/nmk-buljoglad.txt.xml
 2015-10-13/sme/news/minaigi/2000/75-103/_nmk-buljoglad.txt.xml
 
@@ -224,15 +217,16 @@ Ciprian har prosessert data. Vi har dublettpar av to typer:
 2015-10-13/sme/news/minaigi/2000/75-103/od-ingaguttorm.txt.xml
 2015-10-13/sme/news/minaigi/2000/75-103/_od-ingaguttorm.txt.xml
 ...
-}}}
+```
 
  (2) filer med uliker navn (se BZ bug #2092)
+
  
 
-# Same fil med ulike namn
-# Same fil med like namn med ulike konvensjonar
-# Nesten same fil med ulike namn
-# Nesten same fil med like namn med ulike konvensjonar
+1. Same fil med ulike namn
+1. Same fil med like namn med ulike konvensjonar
+1. Nesten same fil med ulike namn
+1. Nesten same fil med like namn med ulike konvensjonar
 
 Tomi hadde eit skript for å sjekke dublettar i korpus.
 
@@ -240,10 +234,9 @@ Vi tar initiativ til eit møte med Divvun om dette.
 
 Det er også andre dublettar:
 
-[Bug om dubletter i smn|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2081]
+[Bug om dubletter i smn](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2081)
 
-
-!! Detmars invitasjon til Tübingen
+##  Detmars invitasjon til Tübingen
 
 November-desember?
 
@@ -261,44 +254,40 @@ Førebu oss på ei breitt perspektiv:
 
 Fortelje om oss sjølv-foredrag (samiske språk, samisk språkteknologi)
 
-
-!! Bruk av arbeidstid
+##  Bruk av arbeidstid
 
 Når det gjelder engasjementer og samarbeid med andre
 
 * klar delegering av opplæring/oppfølging
 * krav om bruk av dokumentasjon og egne notater
 * vurdere arbeidsfelt mot
-** forkunnskaper og tilstedeværelse
-** tidsbruk til opplæring og oppfølging
+    - forkunnskaper og tilstedeværelse
+    - tidsbruk til opplæring og oppfølging
 * begrense tidsbruk i forhold til samarbeidspartnere, tidsbruk skal knyttes 
   opp mot felles publikasjoner
 
-! Prioriterte område
+###  Prioriterte område
 
 * MT
 * leksikografi
 * modellering av morfologi <= vekta automater
 * ICALL 
 
-
-!! Rommet
+##  Rommet
 
 Sjur har kontakt med Kyrre, som diskuterer eit konkret tilbod med oss denne veka. 
 Deretter diskuterer vi rom + framtidsperspektiv.
 
-
-!! gtweb
+##  gtweb
 
 ... vart oppdatert denne veka. Det avslørte at 
-[don't panic-sida|/infra/DontPanic.html]
+[don't panic-sida](/infra/DontPanic.html)
 ikkje var eksplisitt nok. Vi har etter det oppdatert dokumentasjonen, og 
 den er betre.
 
-__Tiltak:__ Lene går gjennom dokumentasjonen og kommenterer.
+**Tiltak:** Lene går gjennom dokumentasjonen og kommenterer.
 
-
-!! Diskusjonen om artiklar (slutten av diskusjonen)
+##  Diskusjonen om artiklar (slutten av diskusjonen)
 
 * smesma-artikkel NEJALT - intern deadline 27.10 - 
 * Umeå: sirkumpolar (sjå førre møte)
@@ -308,11 +297,3 @@ __Tiltak:__ Lene går gjennom dokumentasjonen og kommenterer.
 * Tromsø2 (4.2.16) - 15.11. Formal approaches to Saami linguistics (inarisamisk morfofonologi?)
 * Uleåborg (vente for å få med bidix og MT)
 * SDÁ som kanal?
-
-
-
-
-
-
-
-

@@ -9,8 +9,7 @@ Til stades:
 * Trond Trosterud
 * Børre Gaup
 
-
-[Referansedokument|/infra/system/Serveroppgradering.html] frå tidlegare
+[Referansedokument](/infra/system/Serveroppgradering.html) frå tidlegare
 diskusjonar.
 
 Situasjon:
@@ -18,7 +17,6 @@ Situasjon:
 Har fire + ein servarar (satni.uit.no er den femte), vil ha to til.
 
 Dei fire er for små. La oss sjå alt i samaheng, gå gjennom kva vi treng og vurdere kva som kan vere annleis.
-
 
 * Ordbok x 17
 * Oahpa x 29 (lookup-server for 2 oahpa-versjonar, ssv. 4 ulike program)
@@ -29,11 +27,10 @@ Diskplass:
 gtsvn sin /home blir eksportert til dei andre VM-ane
 
 Det er tre problemtypar:
-# lagre analyserte data (stallo, xserve)
-# lagre svn-data som grunnlag for kompilering (gtlab, gtweb, evt. gtoahpa), ein
-# katalog for kvar  brukar
-# lagre svn-data for dei webprogramma som går der
-
+1. lagre analyserte data (stallo, xserve)
+1. lagre svn-data som grunnlag for kompilering (gtlab, gtweb, evt. gtoahpa), ein
+1. katalog for kvar  brukar
+1. lagre svn-data for dei webprogramma som går der
 
 ----
 
@@ -41,23 +38,22 @@ operativsystem: vi må ha nye operativsystem, kompilatorane treng nye linux-vers
 * centOS 7 er det vi støttar
 * centOS 7.4 -- fungerer det der?
 
-
 Forslag:
 * webtenarar:
-** berre få admin-brukarar
-** må kunna installera pakker med oppdatert hfst, vislcg3, apertium, osb
-** skal ikkje brukast til å byggja fst-ar
+    - berre få admin-brukarar
+    - må kunna installera pakker med oppdatert hfst, vislcg3, apertium, osb
+    - skal ikkje brukast til å byggja fst-ar
 * brukarmaskin (gtlab)
-** bør få meir RAM, 16 er ok, gjerne mange CPU:
-** alle kan logga inn
-** kan kompilera kva som helst
-** Spm: ei eller to brukarmaskiner (viss to: ei for generering...)
-** kompilering: 
-** kompilatorpakker
-*** hfst og andre ''kompilatorar'' treng vi som regel ikkje å kompilere sjølv
+    - bør få meir RAM, 16 er ok, gjerne mange CPU:
+    - alle kan logga inn
+    - kan kompilera kva som helst
+    - Spm: ei eller to brukarmaskiner (viss to: ei for generering...)
+    - kompilering: 
+    - kompilatorpakker
+        - hfst og andre *kompilatorar* treng vi som regel ikkje å kompilere sjølv
     (men vi bør vere i stand til det)
-** lingvistiske pakker
-** Dei nattlege lingvistiske pakkene vi får frå Tino må vi kunne kompilere sjølv (fordi vi utviklar nye)
+    - lingvistiske pakker
+    - Dei nattlege lingvistiske pakkene vi får frå Tino må vi kunne kompilere sjølv (fordi vi utviklar nye)
 
 Tino bygger 
 * kompilatorar: vislcg3, hfst, ..
@@ -91,6 +87,6 @@ AD-brukere for divvun.uit.no:
 
 Denne lista kan vi sjå over seinare - treng Trond og Sjur innlogging her? Kanskje heller Chiara?
 
-Innloggingseks: {{ssh bga001@divvun.uit.no}}
+Innloggingseks: `ssh bga001@divvun.uit.no`
 
 Må logga inn frå intranettet, dvs ekstern pålogging krev VPN.

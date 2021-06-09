@@ -1,110 +1,110 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 11.04.2005
 * Time: 14.00 Norw. time
 * Place: Wherever we are :-)
 * Tools: Phone, iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review, participants
-# Reviewing the task list from a week ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Linguistics
-# Term db
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review, participants
+1. Reviewing the task list from a week ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Linguistics
+1. Term db
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!Task list since last meeting:
-* __Tomi__: to check orig. doc. integrity in the OO file format
-**  discussion postponed till the XML format is settled/defined
-* __Tomi__: Move the corpus discussion from newsgroup to forrest
-* __Thomas__: continue work with verbs / modals
-* __Børre__: correct image linking in termdb and divvun projects
-**  will look into it this week
-* __All__: discuss our own corpus format in the newsgroup - to be continued.
-**  continue
-* __Tomi and Børre__: identify the input encodings antiword can handle
-**  to continue to look into this: it is still possible that char conv.
+# Task list since last meeting:
+* **Tomi**: to check orig. doc. integrity in the OO file format
+    -  discussion postponed till the XML format is settled/defined
+* **Tomi**: Move the corpus discussion from newsgroup to forrest
+* **Thomas**: continue work with verbs / modals
+* **Børre**: correct image linking in termdb and divvun projects
+    -  will look into it this week
+* **All**: discuss our own corpus format in the newsgroup - to be continued.
+    -  continue
+* **Tomi and Børre**: identify the input encodings antiword can handle
+    -  to continue to look into this: it is still possible that char conv.
     can be done within antiword.
-* __Sjur, Børre__: terminology database
-* __Børre__: divvun.no:
-**  to set up the documentation and integration with CVS
-* __Børre__: should make the How-To tab appear as intended:
-**  still to be done
-* __Børre__: add automatic version-stamp: add $Author$ to some docs, replace
+* **Sjur, Børre**: terminology database
+* **Børre**: divvun.no:
+    -  to set up the documentation and integration with CVS
+* **Børre**: should make the How-To tab appear as intended:
+    -  still to be done
+* **Børre**: add automatic version-stamp: add $Author$ to some docs, replace
     e-mail with project e-mail address (Børre will ask Leif Åge).
-* __Børre__: wiki - will follow up on the UTF-8 problem
-**  temporary workaround: use Latin 1-encoding for the memos
-**  Børre will continue to look into the chaperon tools (chaperon is used for
+* **Børre**: wiki - will follow up on the UTF-8 problem
+    -  temporary workaround: use Latin 1-encoding for the memos
+    -  Børre will continue to look into the chaperon tools (chaperon is used for
     converting Wiki to XML)
-* __Trond__: forrest run in cochise:
-**  Still awaiting latest report from Trond
-* __Trond, Børre, all__: fix the links
-**  Børre will check if there are still more link problems
+* **Trond**: forrest run in cochise:
+    -  Still awaiting latest report from Trond
+* **Trond, Børre, all**: fix the links
+    -  Børre will check if there are still more link problems
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 14.08. Agenda accepted as is.
 
 Present: Maaren, Sjur, Thomas, Tomi, Trond, Børre
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-* __Tomi__: to check orig. doc. integrity in the OO file format
-**  discussion postponed till the XML format is settled/defined
-* __Tomi__: Move the corpus discussion from newsgroup to forrest
-**  has been doing XSLT for docbook to our xml format (docbook2sme.xsl)
-* __Thomas__: continue work with verbs / modals
-**  Finished.
-**  __Maaren__: I have now time (at last) to work with this project, starting tomorrow.
+* **Tomi**: to check orig. doc. integrity in the OO file format
+    -  discussion postponed till the XML format is settled/defined
+* **Tomi**: Move the corpus discussion from newsgroup to forrest
+    -  has been doing XSLT for docbook to our xml format (docbook2sme.xsl)
+* **Thomas**: continue work with verbs / modals
+    -  Finished.
+    -  **Maaren**: I have now time (at last) to work with this project, starting tomorrow.
     I`ll take contact with Trond
-* __Børre__: correct image linking in termdb and divvun projects
-**  That's done.
-* __All__: discuss our own corpus format in the newsgroup - to be continued.
-**  continue
-* __Tomi and Børre__: identify the input encodings antiword can handle
-**  Børre looked at it before easter. antiword assumes everything is cp1252 or Unicode.
+* **Børre**: correct image linking in termdb and divvun projects
+    -  That's done.
+* **All**: discuss our own corpus format in the newsgroup - to be continued.
+    -  continue
+* **Tomi and Børre**: identify the input encodings antiword can handle
+    -  Børre looked at it before easter. antiword assumes everything is cp1252 or Unicode.
     It would be easiest to do the conversion of non-Unicode input with a perl-script
     operating on the (erroneous) output of antiword. The reason for that is that
     most of the encodings are "private" ones.
-* __Sjur, Børre__: terminology database
-**  Still working with it...
-* __Børre__: divvun.no:
-**  to set up the documentation and integration with CVS
+* **Sjur, Børre**: terminology database
+    -  Still working with it...
+* **Børre**: divvun.no:
+    -  to set up the documentation and integration with CVS
     This must be integrated with the systems at the UIT, and Børre will contact the 
     IT persons at UIT
-* __Børre__: should make the How-To tab appear as intended:
-**  still to be done
-* __Børre__: add automatic version-stamp: add $Author$ to some docs, replace
+* **Børre**: should make the How-To tab appear as intended:
+    -  still to be done
+* **Børre**: add automatic version-stamp: add $Author$ to some docs, replace
     e-mail with project e-mail address (Børre will ask Leif Åge).
-**  The issue concerning Author tag is solved.
-**  Still missing a project e-mail.
-* __Børre__: wiki - will follow up on the UTF-8 problem
-**  temporary workaround: use Latin 1-encoding for the memos
-**  Børre will continue to look into the chaperon tools (chaperon is used for
+    -  The issue concerning Author tag is solved.
+    -  Still missing a project e-mail.
+* **Børre**: wiki - will follow up on the UTF-8 problem
+    -  temporary workaround: use Latin 1-encoding for the memos
+    -  Børre will continue to look into the chaperon tools (chaperon is used for
     converting Wiki to XML)
-* __Trond__: forrest run in cochise:
-**  Hasn't been testing more since easter
-**  When forrest runs on cochise, you can start up a browser at your own local
+* **Trond**: forrest run in cochise:
+    -  Hasn't been testing more since easter
+    -  When forrest runs on cochise, you can start up a browser at your own local
     machine with the address http://cochise.uit.no:<your portnumber>/, and look
     at the documentation that way.
-**  Despite the warnings, most of the documentation is generated when using ''forrest''
-    to generate static HTML sites. The generated documentation is found in ''./build/site/''
-**  We can now start moving the old documentation to the attic.
-* __Trond, Børre, all__: fix the links
-**  Lot's of links to .txt files are broken. Trond and Børre takes a look at that
+    -  Despite the warnings, most of the documentation is generated when using *forrest*
+    to generate static HTML sites. The generated documentation is found in *./build/site/*
+    -  We can now start moving the old documentation to the attic.
+* **Trond, Børre, all**: fix the links
+    -  Lot's of links to .txt files are broken. Trond and Børre takes a look at that
     issue.
 
-!!!3. Documentation - divvun.no
+# 3. Documentation - divvun.no
 
 Børre is going to contact the main sysadm and discuss the technical details.
 Deadline: we return to it on the next meeting.
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 * Min Áigi: Svein Nordsletta at Min Áigi has been in contact with Per Edvard 
 Klemetsen. From the e-mail:
@@ -132,14 +132,14 @@ stored before it is processed. We'll return to this issue in the newsgroup.
 
 Sámi placenames in Finland will become available as well.
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 * deadline for corpus format
-** __25.4.__
+    - **25.4.**
 * perl scrip for unicode conv.
-** __Tomi:__ by next meeting
+    - **Tomi:** by next meeting
 
-!!!6. Linguistics
+# 6. Linguistics
 
 Maaren will start working 2 d/w, Thomas has been working with the transitivity of 
 the verbs, continuing Lena's work.
@@ -150,49 +150,49 @@ autumn.
 
 More serious linguistic work on Lule Sámi to be started at the beginning of the summer.
 
-!!!7. Term db
+# 7. Term db
 
 The beta version will be done within a week :-)
 
-!!!8. Other issues
+# 8. Other issues
 
 None.
 
-!!!9. Summary, task lists
+# 9. Summary, task lists
 
 TODO:
 
-* __Tomi__: Move the corpus discussion from newsgroup to forrest
-**  has been doing XSLT for docbook to our xml format (docbook2sme.xsl)
-**  awaiting final XML format
-* __Thomas__: continue work with verb transitivity. Contact Olavi about
+* **Tomi**: Move the corpus discussion from newsgroup to forrest
+    -  has been doing XSLT for docbook to our xml format (docbook2sme.xsl)
+    -  awaiting final XML format
+* **Thomas**: continue work with verb transitivity. Contact Olavi about
     his dictionary.
-* __Maaren__: Will work with this project, starting tomorrow.
-**  I`ll take contact with Trond and Thomas (telephone meeting Tuesday 12.4.)
-* __All__: discuss our own corpus format in the newsgroup - to be continued.
-**  deadlline: __25.4.__
-* __Tomi and Børre__: identify the input encodings antiword can handle
-** Tomi makes a perl-script, Børre helps out on that one.
-* __Børre__: divvun.no:
-**  to set up the documentation and integration with CVS
+* **Maaren**: Will work with this project, starting tomorrow.
+    -  I`ll take contact with Trond and Thomas (telephone meeting Tuesday 12.4.)
+* **All**: discuss our own corpus format in the newsgroup - to be continued.
+    -  deadlline: **25.4.**
+* **Tomi and Børre**: identify the input encodings antiword can handle
+    - Tomi makes a perl-script, Børre helps out on that one.
+* **Børre**: divvun.no:
+    -  to set up the documentation and integration with CVS
     This must be integrated with the systems at the UIT, and Børre will contact the 
     IT persons at UIT
-**  Coordinate with Sjur as well
-**  Still missing a project e-mail address. Børre contacts Leif Åge.
-* __Sjur, Børre__: terminology database
-**  Still working with it...
-* __Børre__: should make the How-To tab appear as intended:
-**  still to be done
-* __Børre__: wiki - will follow up on the UTF-8 problem
-**  temporary workaround: use 8-bit encoding for the memos (=MacRoman works correctly)
-**  convert all memos to MacRoman
-* __Trond, Børre, all__: fix the links
-**  Børre will check if there are still more link problems
-**  Lot's of links to .txt files are broken. Trond and Børre takes a look at that
+    -  Coordinate with Sjur as well
+    -  Still missing a project e-mail address. Børre contacts Leif Åge.
+* **Sjur, Børre**: terminology database
+    -  Still working with it...
+* **Børre**: should make the How-To tab appear as intended:
+    -  still to be done
+* **Børre**: wiki - will follow up on the UTF-8 problem
+    -  temporary workaround: use 8-bit encoding for the memos (=MacRoman works correctly)
+    -  convert all memos to MacRoman
+* **Trond, Børre, all**: fix the links
+    -  Børre will check if there are still more link problems
+    -  Lot's of links to .txt files are broken. Trond and Børre takes a look at that
     issue.
-* __Børre__: contact Min Áigi, discussing possible practical arrangements for cooperation.
+* **Børre**: contact Min Áigi, discussing possible practical arrangements for cooperation.
 
-!!!10. Next meeting, closing
+# 10. Next meeting, closing
 
 Next meeting: 18.04.2005 10.00
 

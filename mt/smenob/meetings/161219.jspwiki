@@ -1,35 +1,33 @@
-!!!Møte 16. desember 2016
+# Møte 16. desember 2016
 
 Hangouts: Kevin, Trond, Lene
 
-!!Saker:
-# Strukturen i sme-nob vs. sme-smX
-# Debugging av regr test
-# Modes
-# hfst vs bin (notater)
-# Feilmeldingar
-# Regresjonstestar
+## Saker:
+1. Strukturen i sme-nob vs. sme-smX
+1. Debugging av regr test
+1. Modes
+1. hfst vs bin (notater)
+1. Feilmeldingar
+1. Regresjonstestar
 
-
-!!Strukturen i sme-nob vs. sme-smX
+## Strukturen i sme-nob vs. sme-smX
 * apertium-sme-nob.sme-nob.val - ikke i bruk
 * apertium-sme-nob.sme-nob.lex
 
-!hfst vs bin
+### hfst vs bin
 
 Kommando for å analysere sme:
 
-{{{
+```
 echo ja|hfst-lookup .deps/sme-nob.automorf-trimmed.hfst 
 echo ja|hfst-lookup .deps/sme.automorf.hfst 
 
 make nob-sme # lagar nob→sme-filene
 echo "sátni<n><sg><acc>" | hfst-lookup .deps/sme.autogen.hfst 
-}}}
-
+```
 
 Norsk skal vi analysere slik:
-{{{
+```
 echo "hei" |  lt-proc -e ../../languages/apertium-nob/nob.automorf.bin 
 (-e må med for å ha analyse av (dynamisk) samansette ord)
 
@@ -38,34 +36,35 @@ $ echo "hei" | apertium -d ../../languages/apertium-nob nob-morph
 
 Slik gjer Kevin (denne klarer også dynamisk samansette ord):
 $ echo "hei" | apertium -d . unob-sme-morph 
-}}}
+```
 
-{{{
+```
 echo Regjeringen | apertium -d . unob-sme-morph 
 ^Regjeringen/Regjeringen<np><cog>/regjering<n><m><sg><def>/regjering<n><m><sg><def>$^./.<sent><clb>$
 
 "<Ráđđehus>"
         "ráđđehus" N <sme> Sem/Org Sg Nom
+
         
  <e><p><l>ráđđehus<s n="n"/><s n="org"/></l><r>regjering<s n="n"/></r></p><par n="m_RL_f__n"/></e>
+
        
 
 <e><p><l>ráđđehus<s n="n"/><s n="sem_org"/></l><r>regjering<s n="n"/></r></p><par n="m_RL_f__n"/></e>
 <e><p><l>Regjeringen<s n="np"/><s n="sem_org"/></l><r>Regjeringen<s n="np"/></r></p></e>
-}}}
+```
 
 nob-morph skil seg frå lt-proc ved å godta reserverte teikn.
 
 (og hugsar alltid å ta med -e)
 
+## Debugging av regr test
 
-!!Debugging av regr test
-
-!Pronomen
+### Pronomen
 * prn får un
 * 1. person får mf
 
-{{{
+```
 echo jeg|apertium -d nob nob-morph
 ^jeg/jeg<n><nt><sg><ind>/jeg<n><nt><pl><ind>/jeg<prn><pers><p1><mf><sg><nom>$^./.<sent><clb>$
 
@@ -86,24 +85,23 @@ apertium-sme-nob$ echo "mun lean dáppe"|apertium -d. sme-nob-dgen
 
 echo "Son oaidná mu."|apertium -d. sme-nob-postchunk
 ^Han<prn><pers><p3><m><sg><nom>$ ^se<vblex><pres>$ ^jeg<prn><pers><p1><mf><sg><acc>$^..<sent><clb>$
-}}}
+```
 
 cd ../../languages/apertium-nob
 svn up && make
 
 Taggstrengane er identisk (gjeld også 3. person), men vi får likevel #.
 
-
-!Eigennamn
+### Eigennamn
 * propernouns: fjerne sem_sur og cog og top i bidix
 
-{{{
+```
 <e><p><l>bidjat<s n="vblex"/><s n="tv"/></l><r>sette<s n="vblex"/><s n="pers"/></r></p><par n="__verb"/></e>
-}}}
+```
 
 Mathisen sem_sur    -   Mathisen   cog  
 
-{{{
+```
 <e><p><l>Mathisen<s n="np"/></l><r>Mathisen<s n="np"/></r></p><par n="__np"/></e>
     <pardef n="__np" c="The nob tags are not output by transfer.">
 
@@ -126,25 +124,21 @@ tf4-hsl-m0024:apertium-sme-nob trond$ echo "Mun lean dáppe."|apertium -d. sme-n
 
 tf4-hsl-m0024:apertium-sme-nob trond$ echo "Son oaidná mu."|apertium -d. sme-nob-morph
 ^Son/son<pcle>/son<prn><pers><p3><sg><nom>$ ^oaidná/oaidnit<vblex><tv><indic><pres><p3><sg>$ ^mu/mun<prn><pers><p1><sg><acc>/mun<prn><pers><p1><sg><gen>$^../..<sent>$
-}}}
+```
 
-{{{
+```
 Lene:
 echo "Son oaidná mu."|apertium -d. sme-nob
 Han ser meg.
 
-
 sme-nob          Maŋŋá go Máhttolokten doaibmagođii, de lea dát ruhtadoarjja jávkan.
         - Etter at Kunnskapsløftet begynte å fungere, så har denne pengestønaden forsvunnet.
         + Etter at Kunnskapsløftet begynteåfungere, så har denne pengestønaden forsvunnet.
-}}}
-
+```
 
 (ev. endra sem_sur→cog i bidix; sidan me matchar på taggane etter "cog"-taggen òg)
 
-
-
-{{{
+```
 
 apertium-sme-nob$ echo Várggát | apertium -d. sme-nob
 Vardø
@@ -158,7 +152,7 @@ apertium-sme-nob$ echo Mun lean Várggáin | apertium -d. sme-nob-syntax
         "leat" vblex iv indic pres p1 sg @+FMAINV
 "<Várggáin>"
         "Várggát" np top pl loc @←ADVL-ine MAP:1865:V<advl SELECT:2249
-;        "Várggát" np pl loc @←ADVL-ine MAP:1865:V<advl SELECT:2249
+* **"Várggát" np pl loc @←ADVL-ine MAP:1865:V<advl SELECT**: 2249
 "<.>"
         "." sent
 
@@ -167,7 +161,6 @@ apertium-transfer: Rule 46 Mun<prn><pers><p1><sg><nom><@SUBJ^Prn<SN><@SUBJ→><p
 echo Mun lean Lene Antonsen | apertium -d. sme-nob-chunker
 
 apertium-transfer: Rule 46 Mun<prn><pers><p1><sg><nom><@SUBJ^Prn<SN><@SUBJ→><p1><mf><sg><nom>{^jeg<prn><pers><p1><mf><sg><nom>$}$ ^vcop<SV><@+FMAINV><indic><pres><p1><sg><impers><NC>{^være<vblex><pres>$}$ ^pre_nom<SN><@←SPRED><ind><f><nom><pers>{^Lene<np><f>$ ^Antonsen<np>$}$^default<default>{^.<sent><clb>$}$
-
 
 apertium-sme-nob$ usme
 Ammerud
@@ -183,53 +176,44 @@ Ammerud        Ammerud+N+Prop+Sem/Plc+Sg+Acc
 
 $ echo 22 jahkásaš Tine Chris Mathisen fárrii áibbas okto máddin Sápmái.|apertium -d . sme-nob-dgen
 
-
 $ echo '^Tine<np><ant><f>$'|lt-proc -g ../../languages/apertium-nob/nob.autogen.bin
 Tine
 
-
 ^22<num><arab><sg><nom>$ ^ihásâš<adj>$ ^Tine<np><ant><f><attr>$ ^Chris<np><ant><m><attr>$ ^Mathisen<np><sg><nom>$ ^varriđ<vblex><indic><pret><p3><sg>$ ^aaibâs<adv>$ ^ohtuu<adv>$ ^mäddi<n><ess>$ ^Säämi<np><top><sg><ill>$^.<sent>$^.<sent>$
-
 
 ^22<det><qnt>un<pl>$ ^år gammel<adj><sint><pst><un><pl><ind>$ ^Tine<np><f>$ ^Chris<np><m>$ ^Mathisen<np>$ ^flytte<vblex><pret>$ ^helt<adv>$ ^alene<adv>$ ^sørfra<adv>$ ^til<pr>$ ^Sameland<np><top>$^..<sent><clb>$
 
 <e><p><l>Tine<s n="np"/><s n="ant"/><s n="f"/></l><r>Tine<s n="np"/><s n="ant"/><s n="f"/></r></p><par n="__np"/></e>
 
-
-
 #22<det><qnt>un<pl> år gammel #Tine<np><f> #Chris<np><m> #Mathisen<np> #han<prn><p3><m><sg><nom> flyttet helt alene sørfra til Sameland.
 
 $ echo Tine|apertium -d . nob-sme-morph 
 ^Tine/Tine<np><ant><f>$^./.<sent><clb>$
-}}}
+```
 
+###  Personlege pronomen
 
-! Personlege pronomen
-
-{{{
+```
 postchunk: ^jeg<prn><pers><p1><mf><sg><nom>$ 
 nob fst:  ^jeg/jeg<n><nt><sg><ind>/jeg<n><nt><pl><ind>/jeg<prn><pers><p1><mf><sg><nom>$^./.<sent><clb>$
 
-
 echo '^jeg<prn><pers><p1><mf><sg><nom>$'|lt-proc -g sme-nob.autogen.bin
 jeg
-}}}
+```
 
-
-!!Modes
+## Modes
 
 Kevin har eit script for å lage alle stega i debugginga, alt her er ikkje sjekka (inn).
 
-__TILTAK__
+**TILTAK**
 
 * [[X] Kevin reinskar opp og sjekkar inn
 * [[X] sjekk at filene er like som vanlege sme-smi-par
 * [[X] fiks: apertium-createmodes.awk: modes/sme-nob-disam.mode seen twice
 
-!!hfst vs bin
+## hfst vs bin
 
-
-{{{
+```
 echo "Mii manahit oahpaheaddjiid."|apertium -d. sme-nob-disam|cg-conv -a
 "<Mii>"
         "mii" prn ind sg nom
@@ -281,8 +265,6 @@ echo "Mii manahit oahpaheaddjiid."|apertium -d. sme-nob-disam|cg-conv -a
 "<..>"
         ".." sent
 
-
-
 Kevin får:
  echo "Mii manahit oahpaheaddjiid."|apertium -d. sme-nob-disam|cg-conv -a
 "<Mii>"
@@ -301,38 +283,34 @@ Kevin får:
 "<..>"
         ".." sent
 
-
-
 tf4-hsl-m0024:apertium-sme-nob trond$ echo "Mii manahit oahpaheaddjiid."|apertium -d ../../nursery/apertium-sme-smn  sme-smn-disam|cg-conv -a
 "<Mii>"
         "mun" prn pers p1 pl nom SELECT:4004:miiPersRight
-;        "mii" prn ind sg nom SELECT:4004:miiPersRight
-;        "mii" prn itg sg nom SELECT:4004:miiPersRight
-;        "mii" prn rel sg nom SELECT:4004:miiPersRight
+* **"mii" prn ind sg nom SELECT:4004**: miiPersRight
+* **"mii" prn itg sg nom SELECT:4004**: miiPersRight
+* **"mii" prn rel sg nom SELECT:4004**: miiPersRight
 "<manahit>"
         "manahit" vblex tv indic pres p1 pl @+FMAINV SELECT:4680:VPl1IfMiiLeft MAP:7945:+FMAINV
-;        "mannat" ex_vblex ex_iv der_h vblex tv indic pres p1 pl REMOVE:2268:derV
-;        "mannat" ex_vblex ex_iv der_h vblex tv indic pres p3 pl REMOVE:2268:derV
-;        "mannat" ex_vblex ex_iv der_h vblex tv indic pret p2 sg REMOVE:2268:derV
-;        "mannat" ex_vblex ex_iv der_h vblex tv inf REMOVE:2268:derV
-;        "manahit" vblex tv indic pres p3 pl SELECT:4680:VPl1IfMiiLeft
-;        "manahit" vblex tv indic pret p2 sg SELECT:4680:VPl1IfMiiLeft
-;        "manahit" vblex tv inf SELECT:4680:VPl1IfMiiLeft
+* **"mannat" ex_vblex ex_iv der_h vblex tv indic pres p1 pl REMOVE:2268**: derV
+* **"mannat" ex_vblex ex_iv der_h vblex tv indic pres p3 pl REMOVE:2268**: derV
+* **"mannat" ex_vblex ex_iv der_h vblex tv indic pret p2 sg REMOVE:2268**: derV
+* **"mannat" ex_vblex ex_iv der_h vblex tv inf REMOVE:2268**: derV
+* **"manahit" vblex tv indic pres p3 pl SELECT:4680**: VPl1IfMiiLeft
+* **"manahit" vblex tv indic pret p2 sg SELECT:4680**: VPl1IfMiiLeft
+* **"manahit" vblex tv inf SELECT:4680**: VPl1IfMiiLeft
 "<oahpaheaddjiid>"
         "oahpaheaddji" n nomag pl acc SELECT:9407:AccTV2
         "oahpaheaddji" n nomag sem_hum pl acc SELECT:9407:AccTV2
-;        "oahpaheaddji" n nomag pl gen SELECT:9407:AccTV2
-;        "oahpaheaddji" n nomag sem_hum pl gen SELECT:9407:AccTV2
+* **"oahpaheaddji" n nomag pl gen SELECT:9407**: AccTV2
+* **"oahpaheaddji" n nomag sem_hum pl gen SELECT:9407**: AccTV2
 "<.>"
         "." sent
 
 "<.>"
         "." sent
-}}}
+```
 
-
-
-!!Feilmeldingar
+## Feilmeldingar
 
 Kva input er det som gir dette? 
 make
@@ -342,24 +320,23 @@ Linjene 2131 og 2308 skriv ut <b/> utan pos-attributt.
 
 Feilmeldinga mi kjem ikkje att etter kompilering, no får eg denne:
 
-{{{
+```
 tf4-hsl-m0024:apertium-sme-nob trond$ touch apertium-sme-nob.sme-nob.t1x 
 tf4-hsl-m0024:apertium-sme-nob trond$ make
 apertium-validate-transfer apertium-sme-nob.sme-nob.t1x
 apertium-preprocess-transfer apertium-sme-nob.sme-nob.t1x sme-nob.t1x.bin
 Warning (3625): Paths to rule 27 blocked by rule 21.
-}}}
+```
 men rule 27 seier:
-{{{
+```
         <rule comment="REGLA: NOM (tl: NOM, VERB)
                    This is a catch-all rule; it's OK that some paths are blocked by previous rules.">
-}}}
+```
 
-!!Regresjonstestar
+## Regresjonstestar
 Bruk
-{{{
+```
 $ t/update-latest 
 $ svn diff t
-}}}
+```
 for å køyra regresjonstestane og lagra resultatet i filer som er lagra i SVN – så får du ein diff med sist gong nokon køyrte testen.
-

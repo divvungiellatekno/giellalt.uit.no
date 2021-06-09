@@ -1,318 +1,285 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 20.11.2006
 * Time: 09.30 Norw. time
 * Place: Where we are
 * Tools: SubEthaEdit, iChat
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:45.
 
-Present: __Sjur, Thomas, Tomi, Trond__
+Present: **Sjur, Thomas, Tomi, Trond**
 
-Absent: __Børre, Maaren, Saara__
+Absent: **Børre, Maaren, Saara**
 
 Agenda accepted as is.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!! Børre
+##  Børre
 * contact writers who already have received contracts
 * send file rename script to NSI; get their corpus
-** Sent script, made it work on NSI.
+    - Sent script, made it work on NSI.
 * consider a script for automatic testing of the spell checker in Word
-** Fetched documentation for AppleScript and Microsoft Word
+    - Fetched documentation for AppleScript and Microsoft Word
 * consider more testing routines
 * update Maaren's Forrest installation to r430284
-* {{sma}} discussions with SD (with __Sjur__, __Trond__)
+* `sma` discussions with SD (with **Sjur**, **Trond**)
 * add a simple password protection to risten.no in the G5
 * consider infra for testing feedback
 * get an Intel Mac for testing Windows spellers; get a WinXP license from SD
 * check corpus contract issue
 * port all i18n work to the main branch (from the i18n branch)
-** Done on a local machine, will wait with committing untill next week
+    - Done on a local machine, will wait with committing untill next week
    when I'm back.
 * update all forrest installations, including local patches
-** Have uploaded a tarball available at
+    - Have uploaded a tarball available at
    [http://divvun.no/static_files/forrest.som.funker-2006.11.07.tar.gz]
 * revitalize the Aspell work
-** Sent an email to skolelinux' sami maillist, with a short instruction on how
+    - Sent an email to skolelinux' sami maillist, with a short instruction on how
    to build an aspell package from our fullword list
-** Have wrestled with our fullword list, to find out how to build an aspell
+    - Have wrestled with our fullword list, to find out how to build an aspell
    package as efficiently as possible. Conclusion: we will have to work on 
    the affix list.
 * check corpus contract issue in a meeting Wednesday 9.30
-** Done together with __Sjur__ and __Trond__, sent an answer to __Harald Gaski__
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - Done together with **Sjur** and **Trond**, sent an answer to **Harald Gaski**
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-
-!! Maaren
+##  Maaren
 * investigate the generated word form list sent to Polderland - use the command
-  {{make wordlist TARGET=sme}} in ''victorio''
-** done some
+  `make wordlist TARGET=sme` in *victorio*
+    - done some
 * investigate unrecognised word forms in the hyphenator
-** done some
+    - done some
 
-
-
-!! Saara
+##  Saara
 * finalize server of the Xerox tools.
-** waiting for pardigm grammar?
+    - waiting for pardigm grammar?
 * help Trond with some shell commands
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** done some
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - done some
 * other things:
-** continue bible work: sme and smj nts, nno and nob available ots, 
+    - continue bible work: sme and smj nts, nno and nob available ots, 
    swe nt and available ot and fin nt. 
    bible documentation is almost ready as well.
 
-
-
-!! Sjur
+##  Sjur
 * name lexicon:
-** refactor SD-terms editor code
-** implement missing propnouns editing functions
-** implement improvements decided upon in Tromsø
-*** tried to finalise the SD-terms code refactoring - found probblems in eXist
+    - refactor SD-terms editor code
+    - implement missing propnouns editing functions
+    - implement improvements decided upon in Tromsø
+        - tried to finalise the SD-terms code refactoring - found probblems in eXist
     re file URL for imported modules
-*** problems with the old risten.no installation (the present site) - fixed some
+        - problems with the old risten.no installation (the present site) - fixed some
     but there are still problems with editing; instead of trying to patch the
     old code -> will try to make the present codebase stable enough to be taken
     into use, and upload that one
 * hire linguist and programmer
 * make new list of unrecognised forms in the hyphenator
-** tried, but found new problems with the Xerox tools
+    - tried, but found new problems with the Xerox tools
 * investigate unrecognised word forms in the hyphenator
 * decide how to specify compounding behaviour info in the lexicon
-* {{sma}} discussions with SD (with __Børre__, __Trond__)
+* `sma` discussions with SD (with **Børre**, **Trond**)
 * check why some SUB-marked entries got included in the normative transducer
 * consider a script for automatic testing of the spell checker in Word
 * consider more testing routines
 * consider infra for testing feedback
 * get an Intel Mac for testing Windows spellers; get a WinXP license from SD
 * ask Julie Eira about SD employee seminar
-** done - we should attend
+    - done - we should attend
 * check corpus contract issue
-** done
+    - done
 * meeting discuss names and multilinguality Tuesday 14.11 12.30
-** done
-* redo the derived words work for {{smj}}
+    - done
+* redo the derived words work for `smj`
 * revitalize the Aspell work
 * check corpus contract issue in a meeting Wednesday 9.30
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 * other things:
-** bug hunting in the new Xerox tools
+    - bug hunting in the new Xerox tools
 
-
-
-
-!! Thomas
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt 
-** not done
-* redo the derived words work for {{smj}}
-** not done
+##  Thomas
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt 
+    - not done
+* redo the derived words work for `smj`
+    - not done
 * investigate unrecognised word forms in hyphenator
-** not done
+    - not done
 * decide how to specify compounding behaviour info in the lexicon
-** not done
+    - not done
 * check why some SUB-marked entries got included in the normative transducer
-** not done
+    - not done
 * create / check the paradigm grammar
-** not done
+    - not done
 * investigate the generated word form list sent to Polderland - use the command
-  {{make wordlist TARGET=sme}} in ''victorio''
-** done
+  `make wordlist TARGET=sme` in *victorio*
+    - done
 * meeting discuss names and multilinguality Tuesday 14.11 12.30
-** done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not done
+    - done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - not done
 
-
-
-
-!! Tomi
+##  Tomi
 * make first version of the PLX data generation in lexc2xspell
-** first version is out
+    - first version is out
 * add hyphenation points to the generated output
-** they are being added
+    - they are being added
 * revitalize the Aspell work
-** helped Børre on this one
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not done
+    - helped Børre on this one
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - not done
 
-
-
-
-!! Trond
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-* get more {{sma}} texts, first the Bible / NT
-** Finally got hold of {{sma}} Bible texts, they are forthcoming.
+##  Trond
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+* get more `sma` texts, first the Bible / NT
+    - Finally got hold of `sma` Bible texts, they are forthcoming.
 * add corpus user accounts and access issues to Bugzilla
-** Done.
-* fix the corpus tag list in the {{cwb/}} directory
-** Still awaiting disamb clarification
+    - Done.
+* fix the corpus tag list in the `cwb/` directory
+    - Still awaiting disamb clarification
 * investigate unrecognised word forms in the hyphenator
-** Done some work with Sjur
+    - Done some work with Sjur
 * decide how to specify compounding behaviour info in the lexicon
-** Don't remember this one
-* {{sma}} discussions with SD (with __Børre__, __Sjur__)
-** Now forthcoming
+    - Don't remember this one
+* `sma` discussions with SD (with **Børre**, **Sjur**)
+    - Now forthcoming
 * check corpus contract issue
-** Done
+    - Done
 * meeting discuss names and multilinguality Tuesday 14.11 12.30
-** Meeting held, will continue
-* redo the derived words work for {{smj}}
-** Did we do this? No, not yet
+    - Meeting held, will continue
+* redo the derived words work for `smj`
+    - Did we do this? No, not yet
 * check corpus contract issue in a meeting Wednesday 9.30
-** Done.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+    - Done.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-
-
-!!!3. Documentation
+# 3. Documentation
 
 TODO:
-* update all forrest installations, including local patches (__Børre__)
-* port all i18n work to the main branch (from the i18n branch) (__Børre__)
+* update all forrest installations, including local patches (**Børre**)
+* port all i18n work to the main branch (from the i18n branch) (**Børre**)
 
+# 4. Corpus gathering
 
-
-!!!4. Corpus gathering
-
-__Trond__ talked with __Bierna Bientie__, got permission to use the texts, so
+**Trond** talked with **Bierna Bientie**, got permission to use the texts, so
 far as bound texts. We shall contact SD to get the texts they have there, he
 will send whatever they don't have.
 
-The texts at SD are available via __Sig-Britt Persson__, __Sjur__ will ask her
+The texts at SD are available via **Sig-Britt Persson**, **Sjur** will ask her
 about them.
 
-__TODO:__
-* get {{sma}} Bible / NT texts (__Trond__)
-** partly done
-* Discussions with the Sámi Parliament about {{sma}} (__Børre, Sjur, Trond__)
-* send the filename renaming script to NSI; get their corpus (__Børre__)
-* ask SD/Sig-Britt Persson about some of the South Sámi bible texts (__Sjur__)
+**TODO:**
+* get `sma` Bible / NT texts (**Trond**)
+    - partly done
+* Discussions with the Sámi Parliament about `sma` (**Børre, Sjur, Trond**)
+* send the filename renaming script to NSI; get their corpus (**Børre**)
+* ask SD/Sig-Britt Persson about some of the South Sámi bible texts (**Sjur**)
 
-
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 Nothing new on any of the sub-issues.
 
-!!User accounts and access
+## User accounts and access
 
 TODO:
-* add the issue with subissues to Bugzilla (__Trond__)
-** done
+* add the issue with subissues to Bugzilla (**Trond**)
+    - done
 
+## More texts to the graphical corpus interface:
 
-
-!!More texts to the graphical corpus interface:
-
-No new texts available in the web interface yet. __Saara__ and __Trond__ have
+No new texts available in the web interface yet. **Saara** and **Trond** have
 got access to the Oslo computer, and could in principle add texts themselves.
 Some instructions will be necessary, though.
 
 TODO:
-* add text to the server (__Lars__)
-* Discuss with Lars (__Trond__)
+* add text to the server (**Lars**)
+* Discuss with Lars (**Trond**)
 
+## Aligner
 
-!!Aligner
+**Øystein Reigem** has commented **Børre's** work, and will perhaps look at it.
 
-__Øystein Reigem__ has commented __Børre's__ work, and will perhaps look at it.
+**TODO:**
+* gather more parallel texts (**Trond**)
+* try out NT alignment strategies (**Saara**)
 
-__TODO:__
-* gather more parallel texts (__Trond__)
-* try out NT alignment strategies (__Saara__)
-
-
-
-!!Language recognition
+## Language recognition
 
 TODO:
 
-* get more {{sma}} texts, first the Bible / NT (__Trond__)
-** done, more forthcoming
+* get more `sma` texts, first the Bible / NT (**Trond**)
+    - done, more forthcoming
 
+# 6. Infrastructure
 
+## Xerox tools wrapped as servers
 
-!!!6. Infrastructure
-
-!!Xerox tools wrapped as servers
-
-Tomi has modified the server a bit, causing it to __NOT__ work with the perl
+Tomi has modified the server a bit, causing it to **NOT** work with the perl
 client at the moment. It should not be a big deal to fix it (three lines?).
-__Saara__ will fix it.
+**Saara** will fix it.
 
 The paradigm grammar needs to be written for Saara to be able to finish the
 server. The format should follow the Noun sample below:
 
-{{{
+```
 N+Number+Case+Possessive?+Clitic?
 A
 V
 Adv
-}}}
+```
 
 Can we do without clitics? We would like to just list them in a PLX format that
 allows correct behaviour:
 
-{{{
+```
 Is
 InC lex
 MeC lex
 FiC clit
-}}}
+```
 
-That is, we want {{mánás + go}} to be accepted, without letting {{mánás}} make
-compounds freely. We don't know how to specify this in the PLX format. __Sjur__
+That is, we want `mánás + go` to be accepted, without letting `mánás` make
+compounds freely. We don't know how to specify this in the PLX format. **Sjur**
 will discuss clitics with Polderland, to solve this issue.
 
-__TODO:__
-* finalise the paradigm generator (requires paradigm grammar) (__Saara__)
-* fix the corpus tag list in the {{cwb/}} directory (__Trond__)
-* create / check the paradigm grammar as exemplified above (__Thomas__)
+**TODO:**
+* finalise the paradigm generator (requires paradigm grammar) (**Saara**)
+* fix the corpus tag list in the `cwb/` directory (**Trond**)
+* create / check the paradigm grammar as exemplified above (**Thomas**)
 * update the generating transducer to only be normative, and without the 
-  subclass tags (__Sjur__)
-* discuss clitics in PLX format with Polderland (__Sjur__)
-* update the corpus/cwb tags (__Trond__)
+  subclass tags (**Sjur**)
+* discuss clitics in PLX format with Polderland (**Sjur**)
+* update the corpus/cwb tags (**Trond**)
 
-
-
-
-!!Hyphenator
+## Hyphenator
 
 TODO:
-* make new list of unrecognised forms (__Sjur__)
-** tried but failed because of problems with the Xerox tools
-* investigate unrecognised word forms (__Maaren, Thomas, Trond, Sjur__)
+* make new list of unrecognised forms (**Sjur**)
+    - tried but failed because of problems with the Xerox tools
+* investigate unrecognised word forms (**Maaren, Thomas, Trond, Sjur**)
 
+# 7. Linguistics
 
+## Names and multilinguality
 
-!!!7. Linguistics
-
-!!Names and multilinguality
-
-{{{
+```
 In the terms-sme.xml file:
 <entry id="Helsset">
   <appl excl="speller,hyph"/> -- just an example! --
@@ -329,43 +296,40 @@ In the terms-sme.xml file:
     <sense ref="Helsingfors"/>
   </senses>
 </entry>
-}}}
+```
 
 TODO:
 * separate meeting for discussing this issue, Tuesday 14.11 after
-  lunch (12.30) (__Trond, Thomas, Sjur__)
-** done; new tasks added below
-
+  lunch (12.30) (**Trond, Thomas, Sjur**)
+    - done; new tasks added below
 
 TODO:
-# finish first version of the editing (__Sjur, Tomi__)
-# add @type=secondary and @excl=speller,hyph to all names marked with !SUB
-  (__Saara__)
-# test editing of the xml files. If ok, then: (__Sjur, Thomas, Trond__)
-# make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
+1. finish first version of the editing (**Sjur, Tomi**)
+1. add @type=secondary and @excl=speller,hyph to all names marked with !SUB
+  (**Saara**)
+1. test editing of the xml files. If ok, then: (**Sjur, Thomas, Trond**)
+1. make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
   well) (the morphological section should be kept intact, in e.g.
-  propernoun-sme-morph.txt) (__Sjur, Saara__)
-# convert propernoun-($lang)-lex.txt to a derived file from common xml files
-  (__Sjur, Tomi, Saara__)
-# start to use the xml file as source file
-# clean terms-sme.xml such that all names have the correct tag for their use
-  (e.g. @type=secondary) (__Thomas, Maaren, linguists__)
-# merge placenames which are errouneously in different entries: e.g. Helsinki,
-  Helsingfors, Helsset (__linguists__)
-# publish the name lexicon on risten.no (__Sjur__)
-# add missing parallel names for placenames (__linguists__)
-# add informative links between first names like Niillas and Nils
-  (__linguists__)
+  propernoun-sme-morph.txt) (**Sjur, Saara**)
+1. convert propernoun-($lang)-lex.txt to a derived file from common xml files
+  (**Sjur, Tomi, Saara**)
+1. start to use the xml file as source file
+1. clean terms-sme.xml such that all names have the correct tag for their use
+  (e.g. @type=secondary) (**Thomas, Maaren, linguists**)
+1. merge placenames which are errouneously in different entries: e.g. Helsinki,
+  Helsingfors, Helsset (**linguists**)
+1. publish the name lexicon on risten.no (**Sjur**)
+1. add missing parallel names for placenames (**linguists**)
+1. add informative links between first names like Niillas and Nils
+  (**linguists**)
 
-
-
-!Cohort policy
+### Cohort policy
 
 A further issue is whether we should reconsider our cohort policy. Today, Sur
-and Plc are __different__ readings. An alternative would be to have them as
+and Plc are **different** readings. An alternative would be to have them as
 secondary tags, not in conflict with each other:
 
-{{{
+```
 "<Trosterud>"
         "Trosterud" N Prop Sur Sg Nom <<< @HNOUN
         "Trosterud" N Prop Plc Sg Nom <<< @HNOUN
@@ -373,51 +337,43 @@ secondary tags, not in conflict with each other:
         "Trosterud" N Prop Sg Nom <Sur> <Plc> <<< @HNOUN
 "<Trosterud>"
         "Trosterud" N Prop Sg Nom &Sur &Plc <<< @HNOUN
-}}}
+```
 
 This issue is dependent on CG3, and is delayed untill we know more about the
 possibilities with it.
 
-
-!!Derivation and spellers like Aspell
+## Derivation and spellers like Aspell
 
 TODO:
-* redo the work for {{smj}}, including discussion regarding ''Actio''
-  (__Thomas, Sjur, Trond__)
+* redo the work for `smj`, including discussion regarding *Actio*
+  (**Thomas, Sjur, Trond**)
 
-
-
-
-!!North Sámi
+## North Sámi
 
 The following words are included in the normative list despite being marked
 with !SUB:
 
-{{{
+```
 accompagnerejun
 ábuhuvvože
 ábuhuvvože      ábuhit+V+TV+Pass+Pot+Prs+Du1
 áccohallagođežedne
-}}}
+```
 
 TODO:
 * investigate the generated word form list sent to Polderland - use the command
-  {{make wordlist TARGET=sme}} in ''victorio'' (__Maaren__, __Thomas__)
+  `make wordlist TARGET=sme` in *victorio* (**Maaren**, **Thomas**)
 * check why some SUB-marked entries got included in the normative transducer
-  (__Thomas, Sjur__)
+  (**Thomas, Sjur**)
 
-
-
-!!Lule Sámi
+## Lule Sámi
 
 TODO:
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-  (__Thomas, Trond__)
-* hire new linguist (__Sjur__)
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+  (**Thomas, Trond**)
+* hire new linguist (**Sjur**)
 
-
-
-!!!8. Name lexicon infrastructure
+# 8. Name lexicon infrastructure
 
 Decided in Tromsø:
 * add logging facilities to the interface
@@ -429,13 +385,12 @@ Decided in Tromsø:
 * display existing language entries when adding a new language to a record
 * add editor to change single, existing entries
 
-
 Details can be found in [the meeting
 memo.|/admin/physical_meetings/tromso-2006-08-propnoun.html]
 
 TODO:
-* develop the needed XQueries and UI (__Sjur, Tomi__)
-* add a simple password protection to risten.no in the G5 (__Børre__)
+* develop the needed XQueries and UI (**Sjur, Tomi**)
+* add a simple password protection to risten.no in the G5 (**Børre**)
 
 Postponed:
 * data synchronisation between risten.no and the cvs repo
@@ -443,125 +398,111 @@ Postponed:
   construct entries like we have now from the different parts of a complex name
   entry
 
+# 9. Spellers
 
-!!!9. Spellers
+## Polderland data generation
 
-!!Polderland data generation
-
-__Tomi__ has made the first version of the PLX data generation, it ran for 6,5
-hours before it crashed, and generated all entries until line {{13639}} in the
-{{noun-sme-lex.txt}} file (''njuvdin''):
-{{{
+**Tomi** has made the first version of the PLX data generation, it ran for 6,5
+hours before it crashed, and generated all entries until line `13639` in the
+`noun-sme-lex.txt` file (*njuvdin*):
+```
 13639 njuvdin:njuvdim BOAHTIN ;
-}}}
+```
 
-The generated PLX file contains {{1 439 273}} lines, roughly 32 Mb.
+The generated PLX file contains `1 439 273` lines, roughly 32 Mb.
 
-__Tomi:__ The hyphenator produces multiple suggestions. __Sjur:__ it needs to be
+**Tomi:** The hyphenator produces multiple suggestions. **Sjur:** it needs to be
 used with the hyphenation filter.
 
-__TODO:__
+**TODO:**
 * decide how to specify compounding behaviour info for the lexicon
-  (__Thomas, Trond, Sjur__)
-* make first version of the PLX data generation (__Tomi__)
-** done
-* add hyphenation points to the generated output (__Tomi__)
-** done
+  (**Thomas, Trond, Sjur**)
+* make first version of the PLX data generation (**Tomi**)
+    - done
+* add hyphenation points to the generated output (**Tomi**)
+    - done
 * update the hyphenation filter to always return one - if there are multiple
   alternatives after all the other filtering, pick the one with the most
-  hyphenation points (__Saara__)
-* make PLX lexicon for all open POSes (__Tomi__)
-* add derivations to the PLX generation (__Tomi__)
-* add compound stems to the PLX generation (__Tomi__)
-* add closed POS and clitics to PLX generation (__Tomi__)
+  hyphenation points (**Saara**)
+* make PLX lexicon for all open POSes (**Tomi**)
+* add derivations to the PLX generation (**Tomi**)
+* add compound stems to the PLX generation (**Tomi**)
+* add closed POS and clitics to PLX generation (**Tomi**)
 
-
-
-
-!!Automatic testing of the Word spellchecker
+## Automatic testing of the Word spellchecker
 
 It should be possible to write a script that runs texts through Word from the
 command line, using a combination of shell script and AppleScript. MS Word has
 the needed AppleScript commands to run the spell checker.
 
 TODO:
-* consider a script for automatic testing (__Sjur, Børre__)
-* consider more testing routines (__Sjur, Børre__)
-* consider infra for testing feedback (__Børre, Sjur__)
+* consider a script for automatic testing (**Sjur, Børre**)
+* consider more testing routines (**Sjur, Børre**)
+* consider infra for testing feedback (**Børre, Sjur**)
 * get an Intel Mac for testing Windows spellers; get a WinXP license from SD
-  (__Børre, Sjur__)
+  (**Børre, Sjur**)
 
+## Aspell
 
-
-!!Aspell
-
-__Børre__ has worked on the Aspell code, mainly to be able to explain how it
-works and help out __Petter Reinholdtsen__, who would like to include the
-Aspell {{sme}} speller in Linux distributions. He already gave back some
+**Børre** has worked on the Aspell code, mainly to be able to explain how it
+works and help out **Petter Reinholdtsen**, who would like to include the
+Aspell `sme` speller in Linux distributions. He already gave back some
 improvements to our code.
 
 TODO:
-* revitalize the Aspell work (__Børre, Sjur, Tomi__)
-** Børre and Tomi did some
+* revitalize the Aspell work (**Børre, Sjur, Tomi**)
+    - Børre and Tomi did some
 
 TODO when the major part of the PLX conversion is done:
-* add Aspell/Hunspell data generation to the lexc2xspell (__Tomi__ - after the
+* add Aspell/Hunspell data generation to the lexc2xspell (**Tomi** - after the
   PLX data generation is finished)
-* study Hunspell, perhaps also Soikko (__Børre, Sjur, Tomi__)
+* study Hunspell, perhaps also Soikko (**Børre, Sjur, Tomi**)
 
+# 10. Other
 
-
-!!!10. Other
-
-!!Corpus contracts
+## Corpus contracts
 
 TODO:
 * check corpus contract issue in a meeting Wednesday 9.30
-  (__Børre, Sjur, Trond__)
-** done
-* publish corpus contracts and project infra on NoDaLi-sta (__Sjur__)
+  (**Børre, Sjur, Trond**)
+    - done
+* publish corpus contracts and project infra on NoDaLi-sta (**Sjur**)
 
+## Bug fixing
 
-
-!!Bug fixing
-
-__62__ open Divvun/Disamb bugs, and __24__ risten.no bugs
+**62** open Divvun/Disamb bugs, and **24** risten.no bugs
 
 Guess: 1/3 of the bugs are fixed already (?)
 
-
-!!Task lists as iCal entries
+## Task lists as iCal entries
 
 TODO:
-* update Maaren's Forrest installation to r430284 (__Børre__)
+* update Maaren's Forrest installation to r430284 (**Børre**)
 
-
-
-!!Employee seminar in Alta
+## Employee seminar in Alta
 
 SD has an employee seminar in Alta 7.-8. December - should we go there? Yes.
 
 TODO:
-* ask Julie Eira about SD employee seminar (__Sjur__)
-** done
-* send in hotel room list (__Divvun__)
+* ask Julie Eira about SD employee seminar (**Sjur**)
+    - done
+* send in hotel room list (**Divvun**)
 
-
-!!!11. Next meeting, closing
+# 11. Next meeting, closing
 
 The next meeting is 27.11.2006, 09:30 Norwegian time.
 
 The meeting was closed at 11:28.
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!! Boerre
+##  Boerre
 
 * contact writers who already have received contracts
 * consider a script for automatic testing of the spell checker in Word
 * consider more testing routines
 * update Maaren's Forrest installation to r430284
-* {{sma}} discussions with SD (with __Sjur__, __Trond__)
+* `sma` discussions with SD (with **Sjur**, **Trond**)
 * add a simple password protection to risten.no in the G5
 * consider infra for testing feedback
 * get an Intel Mac for testing Windows spellers; get a WinXP license from SD
@@ -569,73 +510,63 @@ The meeting was closed at 11:28.
 * port all i18n work to the main branch (from the i18n branch)
 * update all forrest installations, including local patches
 * send in hotel room list for employee seminar
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Maaren
+##  Maaren
 
 * investigate the generated word form list sent to Polderland - use the command
-  {{make wordlist TARGET=sme}} in ''victorio''
+  `make wordlist TARGET=sme` in *victorio*
 * investigate unrecognised word forms in the hyphenator
 * send in hotel room list for employee seminar
 
-
-
-!! Saara
+##  Saara
 
 * finalize server of the Xerox tools.
 * help Trond with some shell commands
 * update namelex2xml
-* add {{nor}} output file to namelex2xml
+* add `nor` output file to namelex2xml
 * update hyph-filter.pl
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Sjur
+##  Sjur
 
 * name lexicon:
-** refactor SD-terms editor code
-** implement missing propnouns editing functions
-** implement improvements decided upon in Tromsø
+    - refactor SD-terms editor code
+    - implement missing propnouns editing functions
+    - implement improvements decided upon in Tromsø
 * hire linguist and programmer
 * make new list of unrecognised forms in the hyphenator
 * investigate unrecognised word forms in the hyphenator
 * decide how to specify compounding behaviour info in the lexicon
-* {{sma}} discussions with SD (with __Børre__, __Trond__)
+* `sma` discussions with SD (with **Børre**, **Trond**)
 * check why some SUB-marked entries got included in the normative transducer
 * consider a script for automatic testing of the spell checker in Word
 * consider more testing routines
 * consider infra for testing feedback
 * get an Intel Mac for testing Windows spellers; get a WinXP license from SD
-* redo the derived words work for {{smj}}
+* redo the derived words work for `smj`
 * revitalize the Aspell work
 * check corpus contract issue in a meeting Wednesday 9.30
 * update the generating transducer to only be normative
 * discuss clitics in PLX format with Polderland
 * publish corpus contracts and project infra on NoDaLi-sta
 * send in hotel room list for employee seminar
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+##  Thomas
 
-
-!! Thomas
-
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt 
-* redo the derived words work for {{smj}}
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt 
+* redo the derived words work for `smj`
 * investigate unrecognised word forms in hyphenator
 * decide how to specify compounding behaviour info in the lexicon
 * check why some SUB-marked entries got included in the normative transducer
 * create / check the paradigm grammar
 * investigate the generated word form list sent to Polderland - use the command
-  {{make wordlist TARGET=sme}} in ''victorio''
+  `make wordlist TARGET=sme` in *victorio*
 * send in hotel room list for employee seminar
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Tomi
+##  Tomi
 
 * make PLX lexicon for all open POSes
 * add derivations to the PLX generation
@@ -643,18 +574,16 @@ The meeting was closed at 11:28.
 * add closed POS and clitics to PLX generation
 * revitalize the Aspell work
 * send in hotel room list for employee seminar
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+##  Trond
 
-
-!! Trond
-
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-* get more {{sma}} texts
-* update the corpus tag list in the {{cwb/}} directory
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+* get more `sma` texts
+* update the corpus tag list in the `cwb/` directory
 * investigate unrecognised word forms in the hyphenator
 * decide how to specify compounding behaviour info in the lexicon
-* {{sma}} discussions with SD (with __Børre__, __Sjur__)
-* redo the derived words work for {{smj}}
-* update the corpus/cwb tags (__Trond__)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* `sma` discussions with SD (with **Børre**, **Sjur**)
+* redo the derived words work for `smj`
+* update the corpus/cwb tags (**Trond**)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).

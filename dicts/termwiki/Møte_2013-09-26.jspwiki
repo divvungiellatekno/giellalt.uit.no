@@ -1,11 +1,11 @@
-!!!Risten2 & Termwiki
+# Risten2 & Termwiki
 
 Topics:
 * import
 * export
 * next steps
 
-!!!import
+# import
 
 Concepts are imported, but without subcategories. The next step is to import the expressions - all expressions in all language files.
 
@@ -17,19 +17,19 @@ When done, add a news field on the front page highlighting the new data.
 
 Change default language to SME, other languages as translations. The translations should be administered by Giellagáldu, to make sure all languages are kept up to date.
 
-__TODO:__
+**TODO:**
 * finish import of expressions
 * add subcategories
 
-!!!export
+# export
 
 presently there are three code bases (at least):
 * java class by Antti (producing xml directly)
-** Antti is on a two-week vacation, no java before he is back
+    - Antti is on a two-week vacation, no java before he is back
 * scala program by Tomi (using the media wiki php export script as the first step)
 * Børre's import script if "reversed"
 * an export php script producing a csv with the concept pages, made by Antti
-** leaves out categories and their ID's - not usable
+    - leaves out categories and their ID's - not usable
 
 Tomi's code:
 
@@ -43,21 +43,21 @@ The different categories are handled by the PHP script (exporting one category a
 Questions:
 * how can we automatise the PHP export (now it requires a manual form + download)
 
-__TODO:__
+**TODO:**
 * fix remaining termcenter issues
 * use the numeric namespace id as the term collection id, + "termwiki":
-** {{termwiki-1234}}
+    - `termwiki-1234`
 * add support for multilingual definitions etc
 * add support for related concepts
-** replace the string-based concept ID with the numerical concept ID used in the
-   termcenter file: {{Boazodoallu:guolmmámiessi}} => {{194}}
-*** use the numeric id as an xpointer ref to the related concept
-*** in eXist, when displaying related concepts, look up that concept and expand
+    - replace the string-based concept ID with the numerical concept ID used in the
+   termcenter file: `Boazodoallu:guolmmámiessi` => `194`
+        - use the numeric id as an xpointer ref to the related concept
+        - in eXist, when displaying related concepts, look up that concept and expand
     XIncludes, returning a list of language-tagged expressions - then one can
     display the expression for that concept that is closest to the language
     preferences of the user
 * print language files
-** combine senses for each language entry: if entry A is used for concepts 1 and
+    - combine senses for each language entry: if entry A is used for concepts 1 and
    2, language entry A has two senses, one pointing to concept 1, and another
    pointing to concept 2.
 * automatise downloading
@@ -65,7 +65,7 @@ __TODO:__
 * create metadata files (stored in svn) to hold metadata needed for Risten2 but
   not found in the Termwiki (for each category)
 
-!!!Next steps
+# Next steps
 
 * import smaller collections from SMA and other languages
 * merge Mekanikk-termer with the existing term collections

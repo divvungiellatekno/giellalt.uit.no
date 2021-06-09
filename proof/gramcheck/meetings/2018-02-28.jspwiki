@@ -6,7 +6,7 @@ Saker:
 * status
 * arbeid som står att
 
-!!!Status
+# Status
 
 * alternative/overlappande forslag fungerer no i webdemo
   (proof of concept for «dego lávvomuorran» er i CG-en, -r160987)
@@ -22,21 +22,21 @@ Saker:
 * debugging ulike forslag frå gramspell og hunspell; støtte for hunspell i apy
   (slik at Ávvir kan velja sjølv kva dei vil bruka)
 * cgspell:
-** cache
-** skip-if-unknowns-per-sentence-ratio-at-least
+    - cache
+    - skip-if-unknowns-per-sentence-ratio-at-least
 * fin-fin_gram
 * rettingar for å gjera det mogleg for Tino å pakka divvun-gramcheck
   (no mogleg å installera som .rpm og .deb!, har man-sider)
 * ymse bugfix i cgspell, webdemo, woodwing
 * fungerande LibreOffice-demo basert på libreoffice-voikko testa på mac og
   linux, treng UI for preferansar
-** divvun-gramcheck byggar no sti-uavhengige mac-bibliotek for bundling i
+    - divvun-gramcheck byggar no sti-uavhengige mac-bibliotek for bundling i
    LO-pluginen frå Travis
-** LO-pluginen ser ut til å fungera som bundle (utan å ha hfst osb. installert
+    - LO-pluginen ser ut til å fungera som bundle (utan å ha hfst osb. installert
    først) på mac
 * begynt å sjå på macdivvun.service
 
-!!!Problem
+# Problem
 Setning med to ord som får separat blåstrek, istf ein samanhengande
 («eambbo diđolažžan»):
 
@@ -51,30 +51,30 @@ forslaga frå stavekontrollen, men heller disambiguera forslaga for seg.
 Det andre problemet som Ávvir har rapportert er regresjonar. Dei må rapporterast
 meir spesifikt, så skal vi sjå på det.
 
-!!!Arbeid som står att
+# Arbeid som står att
 
-* døypa om repositoriet til libdivvun (__Kevin__)
-** generell intro om korleis libdivvun kan nyttast òg til andre ting enn
+* døypa om repositoriet til libdivvun (**Kevin**)
+    - generell intro om korleis libdivvun kan nyttast òg til andre ting enn
    gramcheck
-** skilja ut config som er spesifikk for gramcheck (vs andre framtidige
+    - skilja ut config som er spesifikk for gramcheck (vs andre framtidige
    konfigurasjonar)
-** planar om framtidig bruk: TTS, analyse/parsing
-* macOS-integrering? (__Kevin__)
-** basert på https://github.com/divvun/macdivvun-service 
+    - planar om framtidig bruk: TTS, analyse/parsing
+* macOS-integrering? (**Kevin**)
+    - basert på https://github.com/divvun/macdivvun-service 
 * innstillingar i webdemo for kva for feiltypar som finst, og kva ein vil slå av
-  og på (__Kevin__)
-* LO-UI for innstillingar (__Kevin__)
+  og på (**Kevin**)
+* LO-UI for innstillingar (**Kevin**)
 * leggja til spellchecker.bin (frå spellchecker.cg3) i pipeline-spesifiseringa
-  (__Sjur__)
+  (**Sjur**)
 * cron-jobb på woodwingprod Ávvir for å henta se.zcheck og oppdatera pipeline +
   hald sme-sme_spell.mode oppdatert basert på pipespec.xml + rask sanity-check
-  ved utpakking (__Kevin__)
-* laga shell script (for {{make check}}) som testar at alt er på plass og
+  ved utpakking (**Kevin**)
+* laga shell script (for `make check`) som testar at alt er på plass og
   fungerer for:
-** grammatikkontrollen
-** gramcheck-light (= stavekontroll med disambiguerte forslag)
-* be Tino om å leggja til {{make check}} for sme, smj, sma, smn (?), og
-  rapportera ved feil + ikkje leggja ut ny versjon dersom feil (__Sjur__)
+    - grammatikkontrollen
+    - gramcheck-light (= stavekontroll med disambiguerte forslag)
+* be Tino om å leggja til `make check` for sme, smj, sma, smn (?), og
+  rapportera ved feil + ikkje leggja ut ny versjon dersom feil (**Sjur**)
 * byggja LO-pluggen for Windows
 
 Alle timane er brukte, Sjur sjekkar om det er mogleg å utvida kontrakten for å

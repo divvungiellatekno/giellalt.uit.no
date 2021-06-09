@@ -1,159 +1,157 @@
-
-!!!Meeting setup
+# Meeting setup
 
 * Date: 21.02.2006
 * Time: 09.30 Norw. time
 * Place: Wherever we are :-)
 * Tools: iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:44.
 
-Present: __Børre, Maaren, Sjur, Thomas, Tomi__
+Present: **Børre, Maaren, Sjur, Thomas, Tomi**
 
-Absent: __Maaren, Saara, Trond__
+Absent: **Maaren, Saara, Trond**
 
-Main secretary: __Børre__
+Main secretary: **Børre**
 
 Agenda shortened substantially due to time constraints.
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-!! Børre
+##  Børre
 * send out contracts with accompanying letter
-**  Anders Kintel
+    -  Anders Kintel
 * Gather public texts, preferrably also parallel ones
-**  Gathered some from samediggi, will add them soonish
+    -  Gathered some from samediggi, will add them soonish
 * Continue converting text from input format to our xml
-**  Not done
+    -  Not done
 * convert nob and nno bible texts to be used as part of a parallel corpus
-**  Not done
+    -  Not done
 * review the paratext2xml converter
-**  Not done
+    -  Not done
 * convert smj NT to paratext
-**  not done, we don't have the nny and nob NT paratexts
+    -  not done, we don't have the nny and nob NT paratexts
 * Call Ove Sæth and Olavi Korhonen
-**  Not done
+    -  Not done
 * Correct Forrest integration for new projects and project ideas
-**  Helped Sjur a bit
+    -  Helped Sjur a bit
 * Move complex name lexicon issue to bugzilla
-**  Not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    -  Not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * work with risten.no
-** Not done. Worked with top ten missinglist
+    - Not done. Worked with top ten missinglist
 * discuss with relevant people regarding seminar on proofing tools, normativity
   and SGL in February/March, including place.
-** waiting for an answer from SGL when and where is best to hold normativity seminar. 
+    - waiting for an answer from SGL when and where is best to hold normativity seminar. 
 
-!! Saara
+##  Saara
 * continue discussion on the new lexicon format
 * Move the issue "Refine language detection for Finnish" to Bugzilla
-** done.
+    - done.
 * Move the issue "Finnish the review of the hyphenation detection" to Bugzilla
-** done.
+    - done.
 * Add version information of the tools to part of the corpus infra.
-** done.
+    - done.
 * Fix the preprocess script and optimize it.
 * finalize an improved working version of the CGI and command line scripts for
   corpus additions
-** done.
+    - done.
 * update conversion from lexc to xml (proper names) with the latest refinements
-** not done.
+    - not done.
 * Try to add numeral treatment as part of the analyzator.
-** not done.
-* Look at crontab ga/ directory issue with __Trond.__
-** not done. I will move the gt2ga.sh -script to darwin this week,
+    - not done.
+* Look at crontab ga/ directory issue with **Trond.**
+    - not done. I will move the gt2ga.sh -script to darwin this week,
 because it is way too slow in cochise. The more extensive test
 routines are postponed for now.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** Changed the status of some corpus infra bugs to fixed.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - Changed the status of some corpus infra bugs to fixed.
 
-!! Sjur
+##  Sjur
 * Follow up the lawyer treatment of the contracts
-* Lule Sámi twol problems, with __Thomas__ and __Trond__
-* project planning with __Trond__, continued
+* Lule Sámi twol problems, with **Thomas** and **Trond**
+* project planning with **Trond**, continued
 * Follow up on place names from Norge Digitalt
 * Evaluate SFST as speller (and analyzer) lexicon
 * write a background document on the corpus contracts
 * public tender:
-** review draft tender document from Finnut
-*** almost ready, to be published next Monday or Tuesday
-* smj G3 issue with __Thomas__ and __Trond__
-* sme G3 issue with __Thomas__ and __Trond__
-* call EDD/__Christian Emil Ore__ about national place name lexicon
+    - review draft tender document from Finnut
+        - almost ready, to be published next Monday or Tuesday
+* smj G3 issue with **Thomas** and **Trond**
+* sme G3 issue with **Thomas** and **Trond**
+* call EDD/**Christian Emil Ore** about national place name lexicon
 * risten.no/proper noun lexicon development: fix bugs, continue development
-** more work
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - more work
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Thomas
+##  Thomas
 * work on North Sámi compounding and derivation
 **nothing due to sickleave
 * review corpus usage documentation
 **nothing due to sickleave
-* smj G3 issue with __Sjur__ and __Trond__
+* smj G3 issue with **Sjur** and **Trond**
 **nothing due to sickleave
-* sme G3 issue with __Sjur__ and __Trond__
+* sme G3 issue with **Sjur** and **Trond**
 **nothing due to sickleave
 
-!! Tomi
+##  Tomi
 * move aspell UTF-8 suffix bug to Bugzilla
 * corpus infrastructure:
-** dtd location (both public and internal)
+    - dtd location (both public and internal)
 * Document aspell infrastructure: finish doc/proof/spelling/X-spell/aspell.xml
   (it's almost done, but there are a couple of loose ends)
 * new proper name lexicon
-** discuss the new lexicon format and other issues in the newsgroup
-** Look into data synchronisation of proper nouns between risten.no and CVS
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - discuss the new lexicon format and other issues in the newsgroup
+    - Look into data synchronisation of proper nouns between risten.no and CVS
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 * Other
-** On sick leave
+    - On sick leave
 
-!! Trond
+##  Trond
 * Work on corpus texts with Børre.
 * Contact the Finnish and Swedish Bible societies to get Bible texts.
-* Look at ga/ directory issue with __Saara.__
+* Look at ga/ directory issue with **Saara.**
 * News group discussion followup.
 * Do a bug report (if not done) on commandline (mis)behaviour in the Xerox tools
 * Ask IT guys for an e-mail adress for corpus upload script:
   corpus@giellatekno.uit.no (forwarded to Børre)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-!!!3. Linguistics
+# 3. Linguistics
 
-!!North Sámi
+## North Sámi
 
 Maaren has been adding words from the top-ten missing list.
 
-!!Lule Sámi
+## Lule Sámi
 
 We need to get a working version of the Lule Sámi lexicon by Monday next week.
 The lexicon doesn't need to be "complete" in any way, but should approach 6-7000
 lemmas.
 
-__Børre, Thomas and Trond__ will convert the material to lexc, in
-cooperation with __Sjur__.
+**Børre, Thomas and Trond** will convert the material to lexc, in
+cooperation with **Sjur**.
 
+# 4. Other
 
-!!!4. Other
-
-!!SGL Seminar
+## SGL Seminar
 
 SGL has now been elected, with the folowing members:
 
@@ -165,23 +163,22 @@ SGL has now been elected, with the folowing members:
 
 SGL/normativity seminar:
 *  all members = potentially/likely all languages
-** not all languages, only North Sámi
+    - not all languages, only North Sámi
 *  date? As early as possible, end of February/beginning of March
-*  place? __Maaren__ will investigate
-** I am waiting for the answer from Laila. Place? Do you have ideas?
+*  place? **Maaren** will investigate
+    - I am waiting for the answer from Laila. Place? Do you have ideas?
    Karasjok, Helsinki, Kautokeino? Date: end of March?
 
+## Leaves and vacations
 
-!!Leaves and vacations
-
-* __Maaren__ will be away from the end of March and three weeks.
-* __Sjur__ is on winter holidays this week, as well as __Maaren__ from Wednesday
-* __Børre__ will be in Karesuando in two weeks, but will be working (some, at
+* **Maaren** will be away from the end of March and three weeks.
+* **Sjur** is on winter holidays this week, as well as **Maaren** from Wednesday
+* **Børre** will be in Karesuando in two weeks, but will be working (some, at
   least:-)
 
-!!!5. Summary, task list
+# 5. Summary, task list
 
-!! Børre
+##  Børre
 * send out contracts with accompanying letter
 * Gather public texts, preferrably also parallel ones
 * Continue converting text from input format to our xml
@@ -191,14 +188,14 @@ SGL/normativity seminar:
 * Call Ove Sæth and Olavi Korhonen
 * Correct Forrest integration for new projects and project ideas
 * Move complex name lexicon issue to bugzilla
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * work with top-ten missing list
 * discuss with relevant people regarding seminar on proofing tools, normativity
   and SGL in March/April, including place.
 
-!! Saara
+##  Saara
 * continue discussion on the new lexicon format
 * Move the issue "Refine language detection for Finnish" to Bugzilla
 * Move the issue "Finnish the review of the hyphenation detection" to Bugzilla
@@ -208,59 +205,59 @@ SGL/normativity seminar:
   corpus additions
 * update conversion from lexc to xml (proper names) with the latest refinements
 * Try to add numeral treatment as part of the analyzator.
-* Look at crontab ga/ directory issue with __Trond.__
+* Look at crontab ga/ directory issue with **Trond.**
 * Create a parallel corpora of the new testaments.
 * Routine for adding new languages to the propernoun xml-structure.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 * Follow up the lawyer treatment of the contracts
-* Lule Sámi twol problems, with __Thomas__ and __Trond__
-* project planning with __Trond__, continued
+* Lule Sámi twol problems, with **Thomas** and **Trond**
+* project planning with **Trond**, continued
 * Follow up on place names from Norge Digitalt
 * Evaluate SFST as speller (and analyzer) lexicon
 * write a background document on the corpus contracts
 * public tender:
-** review draft tender document from Finnut
-* smj G3 issue with __Thomas__ and __Trond__
-* sme G3 issue with __Thomas__ and __Trond__
-* call EDD/__Christian Emil Ore__ about national place name lexicon
+    - review draft tender document from Finnut
+* smj G3 issue with **Thomas** and **Trond**
+* sme G3 issue with **Thomas** and **Trond**
+* call EDD/**Christian Emil Ore** about national place name lexicon
 * risten.no/proper noun lexicon development: fix bugs, continue development
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Thomas
+##  Thomas
 * convert the Lule sámi lexicon
 * write convertion list for Lule sámi propernoun cont. lexicas and define the lexicas
 * work on North Sámi compounding and derivation
 * review corpus usage documentation
-* smj G3 issue with __Sjur__ and __Trond__
-* sme G3 issue with __Sjur__ and __Trond__
+* smj G3 issue with **Sjur** and **Trond**
+* sme G3 issue with **Sjur** and **Trond**
 
-!! Tomi
+##  Tomi
 * move aspell UTF-8 suffix bug to Bugzilla
 * corpus infrastructure:
-** dtd location (both public and internal)
+    - dtd location (both public and internal)
 * Document aspell infrastructure: finish doc/proof/spelling/X-spell/aspell.xml
   (it's almost done, but there are a couple of loose ends)
 * new proper name lexicon
-** discuss the new lexicon format and other issues in the newsgroup
-** Look into data synchronisation of proper nouns between risten.no and CVS
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - discuss the new lexicon format and other issues in the newsgroup
+    - Look into data synchronisation of proper nouns between risten.no and CVS
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Trond
+##  Trond
 * Work on corpus texts with Børre.
 * Contact the Finnish and Swedish Bible societies to get Bible texts.
-* Look at ga/ directory issue with __Saara.__
+* Look at ga/ directory issue with **Saara.**
 * News group discussion followup.
 * Do a bug report (if not done) on commandline (mis)behaviour in the Xerox tools
 * Ask IT guys for an e-mail adress for corpus upload script:
   corpus@giellatekno.uit.no (forwarded to Børre)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-!!!6. Next meeting, closing
+# 6. Next meeting, closing
 
 27.02.2006 09:30
 

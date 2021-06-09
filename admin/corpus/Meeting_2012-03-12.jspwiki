@@ -1,18 +1,17 @@
-!!!Korpusmøte 12.3. 20012
+# Korpusmøte 12.3. 20012
 
 Til stades: Berit Merete, Børre, Ciprian, Sjur, Trond
 
-!!!Saksliste
+# Saksliste
 
 * Status 
 * Ordparallellisering
 * L1-korpus (aviskorpuset)
 
-!!! Status 
+#  Status 
 
 Børre har laga typos-filer, og arbeidd med dei. Rettingane går inn i toktmx (og dermed tmx).
 Vi har 1687 filer i i toktmx.
-
 
 3300 rettingar er lagt inn, dei rettar brorparten av skrivefeila i parallellkorpuset, dvs alle ukjente ord med minst 3 førekomstar i dei største filene i korpuset.
 
@@ -30,9 +29,9 @@ Missing
 
 * For omsetjingsminnet vil vi ha usmeNorm + retting
 * For ordparallelliseringa vil vi ha usme og lemma
-** usme analyserer 3131 av de 31391 ord
-** 3304 kjende skrivefeil, dvs feil med retting
-*** usme kjenner ikke igjen 25496 av de linjene som ikke har rettelse
+    - usme analyserer 3131 av de 31391 ord
+    - 3304 kjende skrivefeil, dvs feil med retting
+        - usme kjenner ikke igjen 25496 av de linjene som ikke har rettelse
 
 Her er alle missing-ordformer med frekvens 10 eller over i sme-delen av parallellkorpuset:
 
@@ -45,23 +44,21 @@ Prioriterngar framover med ukjende ord:
 * OCR-feil - vi gjer ikkje meir no
 * tradisjonelle skrivefeil - vi gjer ikkje meir no
 
-__TILTAK:__
-* legg til ID frå TCA2 i toktmx-fila (som id-attributt) (__Børre__)
-* ikkje fjern tome setningspar i toktmx, men fjern dei i tmx (__Børre__)
+**TILTAK:**
+* legg til ID frå TCA2 i toktmx-fila (som id-attributt) (**Børre**)
+* ikkje fjern tome setningspar i toktmx, men fjern dei i tmx (**Børre**)
 * sjekk at innhaldet ser ut til å vera rett språk i konverteringa frå toktmx til
-  tmx (__Børre__)
+  tmx (**Børre**)
 
-
-!!! Ordparallellisering
+#  Ordparallellisering
 
 Ciprian har hatt Mac-havari, og kjem ikkje vidare før han har ei ny fungerande maskin.
 
-
 Analyse: 
 * sme: apertium vs. giellatekno. Giellatekno var 4x betre.
-** gt
+    - gt
 * nob: apertium nob i sme-nob er OBT-Ordbanken som er trimma til nb-nn
-** obt
+    - obt
 
 giza: Kommandoane som i Lene sin artikkel evt. som i Apertium sin katalog
 
@@ -69,7 +66,7 @@ Ordparallelisering - start:
  - gikk gjennom Francis sin lista med bare en fil:
 
 Problempar i toktmx:
-{{{
+```
   <header segtype="sentence" o-tmf="OmegaT TMX" adminlang="en-US" srclang="nob" datatype="plaintext"/>
   <body>
     <tu>
@@ -98,13 +95,9 @@ Problempar i toktmx:
         <seg></seg>
       </tuv>
     </tu>
-}}}
+```
 
-
-
-
-
-!!! L1-korpus (aviskorpuset)
+#  L1-korpus (aviskorpuset)
 
 Deepdict- og CLARINO-prosjekta (forbetra CG og korpus) skal analysera einspråkleg tekst, dvs original sme-tekst (ikkje omsett tekst).
 
@@ -112,6 +105,6 @@ Vi må sjå over konverteringa av aviskorpuset. Observerte feil er:
 * overskriftar og etterfylgjande tekst i same avsnitt (dvs som same setning)
 * bokstavproblem: t.d. bug #1291 om á som macroman 0087.
 
-!!!Neste møte
+# Neste møte
 
 fredag 16. mars 2012 kl. 11.

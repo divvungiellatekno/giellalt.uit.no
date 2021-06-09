@@ -1,260 +1,256 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 19.11.2007
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat/Skype
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from last week
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from last week
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 10:15.
 
-Present: __Børre, Ilona, Per-Eric, Sjur, Thomas, Tomi__
+Present: **Børre, Ilona, Per-Eric, Sjur, Thomas, Tomi**
 
-Absent: __Risten, Trond__
+Absent: **Risten, Trond**
 
 Agenda accepted as is.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!!Børre
-* move __Steinar's__ error markup in  the xml files to (a copy of) the original
-** not done
+## Børre
+* move **Steinar's** error markup in  the xml files to (a copy of) the original
+    - not done
 * fix Unicode bug in Hunspell conversion java code
-** don't know the reason for this one
-* fix [bug 550|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550]
-** not done
+    - don't know the reason for this one
+* fix [bug 550](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550)
+    - not done
 * move Bugzilla to the G5.
-** done
+    - done
 * fix Windows CD installation bug
-** not done
+    - not done
 * discuss more parallel texts
-** nothing con
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - nothing con
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!!Ilona
-* lexicalise {{smj}} missing words
-** Done.. at least most of it.
-* other {{smj}} tasks, ask __Thomas__
+## Ilona
+* lexicalise `smj` missing words
+    - Done.. at least most of it.
+* other `smj` tasks, ask **Thomas**
 
-!!Maaren
+## Maaren
 * lexicalise actio compounds
 
-!!Per-Eric
+## Per-Eric
 * lexicalise words from the Olavi missing list
-** Worked and still working. It will be ready this week, some strange words  left. We have to make a new missng list to see which words are left.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** Nothing to fix
+    - Worked and still working. It will be ready this week, some strange words  left. We have to make a new missng list to see which words are left.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - Nothing to fix
 
-!!Risten
+## Risten
 * finish the design/text for the CD and the cover
-** done
+    - done
 * set up CD-printing printer
 * try to burn a CD at SD
-** done
+    - done
 * get price and schedule for printed CD cover
 
-!!Saara
+## Saara
 * add new XSL/XML headers for proofing test docs
 * Set up ways of adding meta-information for proofing correct corpus docs
   (source info, used in testing or not, added to lexicon or not)
 * add nested error markup to xml conversion
-** almost finished, just some testing left
+    - almost finished, just some testing left
 * discuss more parallel texts
 
-!!Sjur
+## Sjur
 * work on the XML name editor/risten.no integration
-** nothing - this will have to wait till Divvun2
+    - nothing - this will have to wait till Divvun2
 * set up risten.no on the G5 again
-** really tried last week, to help __Trond__ with some work, but failed (eXist
+    - really tried last week, to help **Trond** with some work, but failed (eXist
    couldn't reliably restore files from a local backup, leaving the dictionary
    and term collections incomplete and useless; and Forrest rejected to change
    port despite explicit requests for it, and port-crashed with the existing
    divvun.no site running off the same computer, this made the whole portal
    dysfunctional)
 * test new and nested error markup
-** __Saara__ tried getting it in place, but is not finished with her work, thus
+    - **Saara** tried getting it in place, but is not finished with her work, thus
    nothing to test yest
 * get command line hyphenator for automated testing of the hyph-lexicons
-** done
+    - done
 * add hyphenation testing
-** first rough version done
+    - first rough version done
 * improve paradigm testing
-** done
-* fix [bug 550|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550]
-** not yet
+    - done
+* fix [bug 550](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550)
+    - not yet
 * follow-up support for the sami languages in OpenOffice.org
-** done, they will be included in the next OOo release - 2.4
+    - done, they will be included in the next OOo release - 2.4
 * fix Windows CD installation bug
-** not yet done
+    - not yet done
 * fix circularity issue in nonrec transducers
-** __Tomi__ did this on his own - great!
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - **Tomi** did this on his own - great!
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!!Thomas
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
-** not this week
+## Thomas
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
+    - not this week
 * check for bad hyphenation
-** not this week
+    - not this week
 * look at test cases still not behaving properly 
-** worked
+    - worked
 * paradigm testing
-** worked a lot
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** worked
+    - worked a lot
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - worked
 
-!!Tomi
+## Tomi
 * Hunspell lexicon conversion
-** not done
+    - not done
 * fix circularity issue in nonrec transducers
-** fixed
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - fixed
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 * other
-** installed Leopard
+    - installed Leopard
 
-!!Trond
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
+## Trond
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
 * fix hyphenation of derivations, inflections
-* telephone meeting with __Sjur__ and the faroese group re faroese speller
+* telephone meeting with **Sjur** and the faroese group re faroese speller
 * fix circularity issue in nonrec transducers
 * discuss more parallel texts
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-!!!3. Documentation
+# 3. Documentation
 
 Nothing new.
 
-__TODO:__
-* fix [bug 550|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550]
-  (__Børre, Sjur__)
+**TODO:**
+* fix [bug 550](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550)
+  (**Børre, Sjur**)
 
-!!!4. Corpus infrastructure
+# 4. Corpus infrastructure
 
 Nothing.
 
-!!!5. Infrastructure
+# 5. Infrastructure
 
 Bugzilla is up and running again.
 
-__TODO:__
-* add Jabber account in iChat (__all__)
+**TODO:**
+* add Jabber account in iChat (**all**)
 
-!!!6. Linguistics
+# 6. Linguistics
 
-!!North Sámi
+## North Sámi
 
-__TODO:__
-* fix hyphenation of derivations (__Thomas, Tomi, Sjur, Trond__)
-** now tested, and much improved, but still needs improvements and further
+**TODO:**
+* fix hyphenation of derivations (**Thomas, Tomi, Sjur, Trond**)
+    - now tested, and much improved, but still needs improvements and further
    investigation
-* fix circularity issue (__Sjur, Tomi, Trond__)
-** __Tomi__ fixed it
+* fix circularity issue (**Sjur, Tomi, Trond**)
+    - **Tomi** fixed it
 
-!!Lule Sámi
+## Lule Sámi
 
-__TODO:__
+**TODO:**
 * lexicalise words from the Olavi missing list, but check against the pdf
-  original where in doubt (__Per-Eric__)
-** almost finished - only parts of the letter ''r'' still missing
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources, and
-  increase {{smj}} coverage (__Trond, Thomas, Svenne__)
-* look at missing baseforms (__Thomas__)
-** done
+  original where in doubt (**Per-Eric**)
+    - almost finished - only parts of the letter *r* still missing
+* `sme->smj` lexicon conversion to build bilingual lexicon resources, and
+  increase `smj` coverage (**Trond, Thomas, Svenne**)
+* look at missing baseforms (**Thomas**)
+    - done
 
+# 7. Name lexicon infrastructure
 
-!!!7. Name lexicon infrastructure
-
-This sub-project needs to get up and running soon. Mainly __Sjur's__ task.
+This sub-project needs to get up and running soon. Mainly **Sjur's** task.
 
 Decisions made in Tromsø can be found in [this meeting
 memo.|/admin/physical_meetings/tromso-2006-08-propnoun.html]
 
-__TODO:__
-# set up Tomcat and risten.no on the G5 again (__Sjur, Børre__)
-## install risten.no
-### really tried, but got problems
-# fix bugs in lexc2xml; add comments to the log element (__Saara__)
-# finish first version of the editing (__Sjur__)
-# test editing of the xml files. If ok, then: (__Sjur, Thomas, Trond__)
-# make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
+**TODO:**
+1. set up Tomcat and risten.no on the G5 again (**Sjur, Børre**)
+    1. install risten.no
+        1. really tried, but got problems
+1. fix bugs in lexc2xml; add comments to the log element (**Saara**)
+1. finish first version of the editing (**Sjur**)
+1. test editing of the xml files. If ok, then: (**Sjur, Thomas, Trond**)
+1. make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
   well) (the morphological section should be kept intact, in e.g.
-  propernoun-sme-morph.txt) (__Sjur, Saara__)
-# convert propernoun-($lang)-lex.txt to a derived file from common xml files
-  (__Sjur, Tomi, Saara__)
-# implement data synchronisation between [risten.no|http://www.risten.no] and
+  propernoun-sme-morph.txt) (**Sjur, Saara**)
+1. convert propernoun-($lang)-lex.txt to a derived file from common xml files
+  (**Sjur, Tomi, Saara**)
+1. implement data synchronisation between [risten.no](http://www.risten.no) and
    the cvs repo, and possibly other servers (ie the G5 as an alternative server
    to the public risten.no - it might be faster and better suited than the
    official one; also local installations could be treated the same way)
-# start to use the xml file as source file
-# clean terms-sme.xml such that all names have the correct tag for their use
-  (e.g. @type=secondary) (__Thomas, Maaren, linguists__)
-# merge placenames which are errouneously in different entries: e.g. Helsinki,
-  Helsingfors, Helsset (__linguists__)
-# publish the name lexicon on risten.no (__Sjur__)
-# add missing parallel names for placenames (__linguists__)
-# add informative links between first names like Niillas and Nils
-  (__linguists__)
+1. start to use the xml file as source file
+1. clean terms-sme.xml such that all names have the correct tag for their use
+  (e.g. @type=secondary) (**Thomas, Maaren, linguists**)
+1. merge placenames which are errouneously in different entries: e.g. Helsinki,
+  Helsingfors, Helsset (**linguists**)
+1. publish the name lexicon on risten.no (**Sjur**)
+1. add missing parallel names for placenames (**linguists**)
+1. add informative links between first names like Niillas and Nils
+  (**linguists**)
 
+# 8. Proofing tools
 
-!!!8. Proofing tools
-
-!!Hunspell
+## Hunspell
 
 TODO:
-# Follow-up support for the sami languages in OpenOffice.org (__Børre, Sjur__)
-## done, scheduled for version 2.4
-# Hunspell lexicon conversion (__Tomi, Børre__)
-## improved, nouns compile much improved, adjectives also converts, but with
+1. Follow-up support for the sami languages in OpenOffice.org (**Børre, Sjur**)
+    1. done, scheduled for version 2.4
+1. Hunspell lexicon conversion (**Tomi, Børre**)
+    1. improved, nouns compile much improved, adjectives also converts, but with
    errors, verbs are quite rough
 
-!!Testing
+## Testing
 
-!Spelling Error Markup
+### Spelling Error Markup
 
 This will wait till after the release.
 
-__TODO:__
+**TODO:**
 * Set up ways of adding meta-information (source info, used in testing or not,
-  added to lexicon or not) (__Saara__)
-* move __Steinar's__ error markup in the xml files to (a copy of) the original
-  (__Børre, Kimme__)
-* add nested error markup to xml conversion (__Saara__)
-* test new and nested error markup (__Sjur__)
+  added to lexicon or not) (**Saara**)
+* move **Steinar's** error markup in the xml files to (a copy of) the original
+  (**Børre, Kimme**)
+* add nested error markup to xml conversion (**Saara**)
+* test new and nested error markup (**Sjur**)
 
+### Automated testing
 
+**TODO:**
+* add hyphenation testing (**Sjur**)
+    - rough version added
+* improve paradigm testing report (**Sjur**)
+    - done
 
-!Automated testing
-
-__TODO:__
-* add hyphenation testing (__Sjur__)
-** rough version added
-* improve paradigm testing report (__Sjur__)
-** done
-
-!MS Office
+### MS Office
 
 An important aspect of this testing is to document in the user guide anything
 that could be a problem for users.
 
-__TODO:__
-* test the proofing tools with all MS Office applications (__Børre, Thomas__)
+**TODO:**
+* test the proofing tools with all MS Office applications (**Børre, Thomas**)
 
-!!Lexicon conversion to the PLX format
+## Lexicon conversion to the PLX format
 
 PLX conversion update: we will soon get an updated speller engine with flags for
 marking word-initial, word-internal and word-final positions. That will make it
@@ -262,75 +258,72 @@ possible for us to resolve some outstanding issues in the PLX conversion.
 
 Open issues based on test results:
 
-!smj
+### smj
 482 - still problematic (prefix), 484 - double hyphens suggested; 552 - now fixed!, Svierigadárogielan - still rejected (prefix)
 
-!sme
+### sme
 397 - double hyphens (name+name), 419, 425 - roman
-number, 431 - does not accept the correct string, but DO suggest the same; also hyphen final forms are accepted, but not the same form when part of a compound, 452 - ''miel'' is a prefix, 461 - ''ovda'' accepted, almost 50 %
+number, 431 - does not accept the correct string, but DO suggest the same; also hyphen final forms are accepted, but not the same form when part of a compound, 452 - *miel* is a prefix, 461 - *ovda* accepted, almost 50 %
 (17) gets correct suggestion, 489, 522, 524, Guovdageainnu-láđđi not accepted.
-{{{
+```
 Guovdageaidnu-láđđi  nom-
 Guovdageainnu-láđđi  gen-
-}}}
+```
 It should be Guovdageaidnu-láđđi OR Guovdageainnu láđđi. The first one is
 suggested + Guovdageainnutláđđi
 
-''Harstad-biila'' (nom) is ok, whereas gen. '' Harstada-biila'' is not, ie the
+*Harstad-biila* (nom) is ok, whereas gen. *Harstada-biila* is not, ie the
 same pattern.
-{{{
+```
 ovda-
 ovda-	ovda+Cmpnd
-}}}
+```
 
-__TODO:__
-* look at test cases still not behaving properly (__Thomas, Tomi__)
+**TODO:**
+* look at test cases still not behaving properly (**Thomas, Tomi**)
 
-!!InDesign tools
+## InDesign tools
 
-__TODO:__
-* add hyphenation testing (__Sjur__)
-** done but not finished
+**TODO:**
+* add hyphenation testing (**Sjur**)
+    - done but not finished
 
-
-!!Hyphenators
+## Hyphenators
 
 We should look into the possibility of generating pattern-based hyphenation for
 OOo. It shouldn't be too hard, or require too much work, but needs
 investigation. => Divvun2.
 
-__TODO:__
-* get command line hyphenator (__Sjur__)
-** done
+**TODO:**
+* get command line hyphenator (**Sjur**)
+    - done
 
-
-!!Release version
+## Release version
 
 Schedule and tasks for the remaining weeks:
 
-__TODO:__
-* try to burn a CD at SD (__Risten, Leif-Åge__)
-** done, it is working exactly as one burned on the Mac
-* finish text to go on the CD cover (__Risten__)
-** done
-* set up CD-printing printer (__Risten__)
-** in the works
-* fix Windows CD installation bug (__Sjur, Børre__)
-** not yet done
-* get price and schedule for printed CD cover (__Risten__)
-** not received
-* fix remaining bugs - golden master by next Monday (__all__)
-* finalise InDesign hyphenator (__Sjur, Børre, Thomas__)
-** testing
-** documentation
-** installation
-* update usage and installation documentation (__Børre, Thomas, Sjur__)
-* translate all new documentation (__all__)
-* QA all documentation (__all__)
-* do as much hunsopell as possible (__Børre, Tomi__)
+**TODO:**
+* try to burn a CD at SD (**Risten, Leif-Åge**)
+    - done, it is working exactly as one burned on the Mac
+* finish text to go on the CD cover (**Risten**)
+    - done
+* set up CD-printing printer (**Risten**)
+    - in the works
+* fix Windows CD installation bug (**Sjur, Børre**)
+    - not yet done
+* get price and schedule for printed CD cover (**Risten**)
+    - not received
+* fix remaining bugs - golden master by next Monday (**all**)
+* finalise InDesign hyphenator (**Sjur, Børre, Thomas**)
+    - testing
+    - documentation
+    - installation
+* update usage and installation documentation (**Børre, Thomas, Sjur**)
+* translate all new documentation (**all**)
+* QA all documentation (**all**)
+* do as much hunsopell as possible (**Børre, Tomi**)
 
-
-!!Actual release
+## Actual release
 
 December 11-13, one of these days.
 
@@ -338,98 +331,96 @@ Hotel rooms received for all except Ilona, will be received for her as well.
 
 There will be a release party in the afternoon.
 
-!!!9. Other
+# 9. Other
 
-!!Corpus contracts
+## Corpus contracts
 
 Delayed till after final release.
 
 TODO:
 * publish corpus contracts and project infra as open-source on NoDaLi-sta
-  (__Sjur__)
+  (**Sjur**)
 
-!!Faroese
+## Faroese
 
-Speller for {{fao}} using our infrastructure and the knowledge we have.
+Speller for `fao` using our infrastructure and the knowledge we have.
 
-__TODO:__
-* set up a telephone meeting with them and __Sjur__ (__Trond__)
+**TODO:**
+* set up a telephone meeting with them and **Sjur** (**Trond**)
 
-!!Bug fixing
+## Bug fixing
 
 When fixing bugs, record the version number containing the fix in the Bugzilla
 bug report, such that for each bug, we know exactly when it should have been
 fixed, in what file(s) and what version.
 
-__69__ open Divvun/Disamb bugs (__35__ of these 56 are speller-related bugs,
-__34__ are other bugs), and __23__ risten.no bugs
+**69** open Divvun/Disamb bugs (**35** of these 56 are speller-related bugs,
+**34** are other bugs), and **23** risten.no bugs
 
+## Dictionaries
 
-!!Dictionaries
-
-__TODO__:
+**TODO**:
 * eXist on G5 - done
 * risten.no on G5 - homepage done, but needs port tweaking/changing
 * risten.no XQuery framework - done
 * XInclude conversion script - done
 * homepage on the documetation pages - draft done
 
-!!Parallel corpora
+## Parallel corpora
 
-__TODO:__
-* discuss more parallel texts (__Børre, Saara, Trond__)
+**TODO:**
+* discuss more parallel texts (**Børre, Saara, Trond**)
 
+## SD yearly personell seminar
 
-!!SD yearly personell seminar
+6.-7. December. **Sjur** has discussed it with Julia, and we won't go there.
 
-6.-7. December. __Sjur__ has discussed it with Julia, and we won't go there.
-
-!!Software updates
+## Software updates
 
 * Leopard, 10.5
-** Ilona - Doesn't have a proper DVD yet.
-** Trond
-** Per-Eric
+    - Ilona - Doesn't have a proper DVD yet.
+    - Trond
+    - Per-Eric
 
-!!!10. Next meeting, closing
+# 10. Next meeting, closing
 
 The next meeting is 26.11.2007, 09:30 Norwegian time.
 
 The meeting was closed at 11:34.
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!!Boerre
+## Boerre
 
-* move __Steinar's__ error markup in  the xml files to (a copy of) the original
-* fix [bug 550|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550]
+* move **Steinar's** error markup in  the xml files to (a copy of) the original
+* fix [bug 550](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550)
 * fix Windows CD installation bug
 * discuss more parallel texts
 * finalise InDesign hyphenator
 * update usage and installation documentation
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!!Ilona
+## Ilona
 
-* lexicalise {{smj}} missing words
-* other {{smj}} tasks, ask __Thomas__
+* lexicalise `smj` missing words
+* other `smj` tasks, ask **Thomas**
 * Buy the DVD for Leopard
 
-!!Maaren
+## Maaren
 * lexicalise actio compounds
 
-!!Per-Eric
+## Per-Eric
 
 * lexicalise words from the Olavi missing list
 * derivations tests
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!!Risten
+## Risten
 
 * set up CD-printing printer
 * get price and schedule for printed CD cover
 
-!!Saara
+## Saara
 
 * add new XSL/XML headers for proofing test docs
 * Set up ways of adding meta-information for proofing correct corpus docs
@@ -437,37 +428,37 @@ The meeting was closed at 11:34.
 * add nested error markup to xml conversion
 * discuss more parallel texts
 
-!!Sjur
+## Sjur
 
 * work on the XML name editor/risten.no integration
 * set up risten.no on the G5 again
 * test new and nested error markup
 * improve hyphenation testing
-* fix [bug 550|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550]
+* fix [bug 550](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550)
 * fix Windows CD installation bug
 * finalise InDesign hyphenator
 * update usage and installation documentation
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!!Thomas
+## Thomas
 
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
 * check for bad hyphenation
 * look at test cases still not behaving properly 
 * paradigm testing
 * test the proofing tools with all MS Office applications
 * finalise InDesign hyphenator
 * update usage and installation documentation
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!!Tomi
+## Tomi
 
 * Hunspell lexicon conversion
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!!Trond
+## Trond
 
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
-* telephone meeting with __Sjur__ and the faroese group re faroese speller
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
+* telephone meeting with **Sjur** and the faroese group re faroese speller
 * discuss more parallel texts
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).

@@ -1,23 +1,23 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 08.08.2005
 * Time: 10.00 Norw. time
 * Place: Wherever we are :-)
 * Tools: Phone, iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from a week ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Speller infrastructure
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from a week ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Speller infrastructure
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 10:08.
 
@@ -27,78 +27,78 @@ Absent: Maaren, Thomas, Trond
 
 Main secretary: Børre
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-!! Tomi
+##  Tomi
 * three-part compounding
-** Nothing done
+    - Nothing done
 * decapitalisation of proper nouns when (if?) compounded, and when derived 
   (the oslolaš issue)
-** Got a tip from Trond about a Xerox example, but did not have a look at
+    - Got a tip from Trond about a Xerox example, but did not have a look at
    the book, and no time do anything with it
 * corpus infrastructure: dtd location (both public and internal) 
-** Not done
+    - Not done
 * corpus infrastructure: file and dir organisation
-** Nothing done
+    - Nothing done
 * Aspell: A simple wordlist based speller
-** Working!!
-** ... but it's rather big:
-*** word list (plain text) is 587 Mb, and after munch-list option it is 433 Mb
-** It is rather slow, because it has no affix-file, and the wordlist is huge.
-** Tomi will try to make an affix list, based on our lexicon files
-** New aspell in cochise!!
-*** You can use it temporarily from /home/tomi/bin/aspell and 
+    - Working!!
+    - ... but it's rather big:
+        - word list (plain text) is 587 Mb, and after munch-list option it is 433 Mb
+    - It is rather slow, because it has no affix-file, and the wordlist is huge.
+    - Tomi will try to make an affix list, based on our lexicon files
+    - New aspell in cochise!!
+        - You can use it temporarily from /home/tomi/bin/aspell and 
     /home/tomi/bin/prezip-bin
-*** The new aspell should be installed in a regular location, replacing the old
+        - The new aspell should be installed in a regular location, replacing the old
     one, but that should be checked with sysadm (Roy Dragseth) to make sure we
     don't break anything
 * Follow up on CVS mailing:
-** check that all received forwarded mail
-*** Børre and Sjur is receiving mail as intended now
-*** Børre is suggesting that a cvs diff is attached to the commit mails, with
+    - check that all received forwarded mail
+        - Børre and Sjur is receiving mail as intended now
+        - Børre is suggesting that a cvs diff is attached to the commit mails, with
     a diff size limit of, say, 500 lines (excess parts will be skipped)
-** set up Thomas and Maaren when they're back from vacation
-*** They're still on vacation   
+    - set up Thomas and Maaren when they're back from vacation
+        - They're still on vacation   
 
-!! On vacation last week
+##  On vacation last week
 
-! Trond
+###  Trond
 * On vacation, issues from last week repeated at the end of the memo
 
-! Maaren
+###  Maaren
 * On vacation, issues from last week repeated at the end of the memo
 
-! Thomas
+###  Thomas
 * On vacation, issues from last week repeated at the end of the memo
 
-! Sjur
+###  Sjur
 * On vacation, issues from last week repeated at the end of the memo
 
-! Børre
+###  Børre
 * On vacation, issues from last week repeated at the end of the memo
 
-!!!3. Documentation - divvun.no
+# 3. Documentation - divvun.no
 
-!!Forrest war crashes Tomcat
+## Forrest war crashes Tomcat
 
 We have the same problem with risten.no. This blocks the addition of new
 functionality (like RSS feeds and jspwiki support), but won't stop us from
 updating the content.
 
 Steps to fix this bug (add):
-# Take a backup of the present war file (it can be found within the Tomcat webapps/ dir)
-# Make sure TWICE that you have that backup in a safe place
-# Test both 5.0.29 and 5.5.9 versions of Tomcat, to see if there is any difference
+1. Take a backup of the present war file (it can be found within the Tomcat webapps/ dir)
+1. Make sure TWICE that you have that backup in a safe place
+1. Test both 5.0.29 and 5.5.9 versions of Tomcat, to see if there is any difference
   (or the combination of Tomcat and Forrest)
-# try to identify when the bug was introduced (somewhere around the middle of June)
-# Report the findings to the Forrest user list
+1. try to identify when the bug was introduced (somewhere around the middle of June)
+1. Report the findings to the Forrest user list
 
-!!Automated update script
+## Automated update script
 
 Set up the cron job on cochise. Permissions are set correct now, divvun.no can be
 manually updated.
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 The correct directory for corpus legal things is adm/legal/. The Oslo example should
 be added as well. Børre will start with that today.
@@ -108,33 +108,33 @@ and checked by a lawyer.
 
 THEN we can start to gather texts:-)
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 Do documentation.
 
-!!!6. Speller infrastructure
+# 6. Speller infrastructure
 
-!!aSpell
+## aSpell
 
 Is working, see above. Needs further optimisation before it is useful, cf the size
 discussion. Size target: At least below 10 Mb, wish: 6 Mb or less.
 
 Write documentation here as well.
 
-!!MS Office spellers
+## MS Office spellers
 
-To be specified in the [outsourcing tech-spec|http://divvun.no/adm/outsourcing/tech-spec.html]. What
+To be specified in the [outsourcing tech-spec](http://divvun.no/adm/outsourcing/tech-spec.html). What
 about direct integration with MS Office? See 
-[this page|http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q262605&] from MS.
+[this page](http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q262605&) from MS.
 
-!!OpenOffice.org
+## OpenOffice.org
 
 Questions:
 
-!1) Is it possible to use Aspell with OOo?
+### 1) Is it possible to use Aspell with OOo?
 
-No. From the [site|http://lingucomponent.openoffice.org/]:
-{{{
+No. From the [site](http://lingucomponent.openoffice.org/):
+```
 Background
 Lingucomponent was started by Kevin Hendricks to integrate various open source spell
 checkers into the OpenOffice.org build. With a little prodding from Kevin Atkinson,
@@ -148,63 +148,63 @@ kh.
 
 MySpell, which builds on almost any system, is used to support spell checking in
 OpenOffice.org.
-}}}
+```
 
 Links to possibly useful stuff:
-* [ispell to myspell converter|http://www.szofi.hu/gnu/magyarispell/]
+* [ispell to myspell converter](http://www.szofi.hu/gnu/magyarispell/)
 * [iSpell+MySpell+Aspell combining
    effort|http://www.opensubscriber.com/message/aspell-devel@gnu.org/1757987.html]
-* [Enchant project|http://www.abisource.com/projects/enchant/]
+* [Enchant project](http://www.abisource.com/projects/enchant/)
 
-!2) Is the Aspell source files compatible with MySpell?
+### 2) Is the Aspell source files compatible with MySpell?
 
 To be investigated. Goal: to simplify
 maintenance as much as possible, ie to have as few source and target formats as possible.
 
-!!!7. Other
+# 7. Other
 
-!!Headphones
+## Headphones
 
 The project will buy headphones, to help with online project meetings. Small and light!
 
-!!!8. Summary, task list
+# 8. Summary, task list
 
-!! Børre
+##  Børre
 * Add crontab specification for the cvs update/export script Tomi made
 * investigate Forrest war + Tomcat issue
 * reopen the jspwiki + UTF-8 issue
 * Contact Svenska bibelsällskapet
 * Add issue to forrest issue tracker about utf-8 ihtml documents.
-** Check for existing bug reports, it might already be in there
+    - Check for existing bug reports, it might already be in there
 * Continue forrest i18n research
-** Sometimes abides the =locale=se/smj/fi in the url (the document gets
+    - Sometimes abides the =locale=se/smj/fi in the url (the document gets
    correctly selected). The menus and tabs are translated to the language
    that the browser asks for.
-*** A lot is up for i18n within Forrest. Suggestion: we wait and see a while.
+        - A lot is up for i18n within Forrest. Suggestion: we wait and see a while.
 * discuss with Anders Kintel about whether we could get the Sámi-Norwegian dictionary
   ahead of acceptance
-** wait till Thomas is back from vacation
+    - wait till Thomas is back from vacation
 * add the Oslo contract to cvs, and begin writing a contract draft
 * Follow up on CVS mailing:
-** check that all received forwarded mail
-** set up Thomas and Maaren when they're back from vacation
+    - check that all received forwarded mail
+    - set up Thomas and Maaren when they're back from vacation
 
-!! Sjur
+##  Sjur
 * risten.no bugs and fixes
 * complete the action summary after our half-year evaluation
 * follow up on:
-** voice group-chat not working to Sámediggi
-** Maaren has problems with SubEthaEdit (can't connect)
+    - voice group-chat not working to Sámediggi
+    - Maaren has problems with SubEthaEdit (can't connect)
 * To the board:
-** write proposal for permanent maintenance organisation
-** write draft specification for the outsourced tasks
-** write half-yearly project report with progress and bugdet status
-** write agenda
-** Deadline for the board tasks: 3 weeks ahead of meeting (date not decided, but
+    - write proposal for permanent maintenance organisation
+    - write draft specification for the outsourced tasks
+    - write half-yearly project report with progress and bugdet status
+    - write agenda
+    - Deadline for the board tasks: 3 weeks ahead of meeting (date not decided, but
   in September)
 * add Divvun to the UNESCO Hall-of-Fame list
 
-!! Tomi
+##  Tomi
 * Aspell: Create the affix file, work on automatic conversion from LEXC to affix file
 * investigate Aspell/MySpell/OOo issues
 * three-part compounding
@@ -213,25 +213,25 @@ The project will buy headphones, to help with online project meetings. Small and
 * corpus infrastructure: dtd location (both public and internal)
 * corpus infrastructure: file and dir organisation
 * Follow up on CVS mailing:
-** check that all received forwarded mail
-** set up Thomas and Maaren when they're back from vacation
+    - check that all received forwarded mail
+    - set up Thomas and Maaren when they're back from vacation
 
-!! On vacation
+##  On vacation
 
 Tasks are transferred to the following weeks until they return from vacation, to
 keep the tasks alive and updated. New tasks may be added:-)
 
-! Maaren
+###  Maaren
 * The missing list, both the overall missing list from our xml corpus, and a file-for-file
   review, in order to get different terminology
 * Go through the missing list from risten.no
 * send new letter to SGL about Lule Sámi possessives
 
-! Thomas
+###  Thomas
 * write new letter to SGL about Lule Sámi possessives
 * work with Lule Sami substantives
 
-! Trond
+###  Trond
 * Work on the bug list (Lule Sámi).
 * Work on compounds (three-part + oslolaš, with Tomi)
 * Work on the corpus interface (with Lars)
@@ -239,7 +239,7 @@ keep the tasks alive and updated. New tasks may be added:-)
 * Get the new version of the New Testament
 * Check Hans-Ragnars names.
 
-!!!8. Next meeting, closing
+# 8. Next meeting, closing
 
 15.08.2005 10:00
 

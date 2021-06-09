@@ -8,7 +8,7 @@ Saker:
 * Lanseringsdato
 * testrutiner
 
-!!! Sidan sist/status
+#  Sidan sist/status
 
 * Duommá har jobbat med å testa å førbedre gram-checker:
 * mest NEGATE 0 Err/Orth i disamb-filen
@@ -17,41 +17,41 @@ Saker:
 * Begynt å jobbe med falske positiver for realword errors
 * Sjur har jobba med å få integreringa mot ulike program og system på plass (dvs Gøteborg)
 
-!!! Arbeidsmål mot lansering
+#  Arbeidsmål mot lansering
 
 Beta-lansering i august:
-# analyse med err/orth + stavekontroll = stavekontroll med litt betre forslag
+1. analyse med err/orth + stavekontroll = stavekontroll med litt betre forslag
   (fordi errorth svarar til raud strek, men gjev berre eitt forslag)
-## for sma og smj legg vi inn ein regel heilt i starten av disambfila som
+    1. for sma og smj legg vi inn ein regel heilt i starten av disambfila som
    fjernar alle errorth, slik at vi ikkje får falsk alarm ved at disambigueringa
    vel errorth der det ikkje er motivert
-## for sme kan vi ha ein slik regel på slutten (Linda)
-# særskrivingsfeil - 33 false positives i bugzilla #2547 (Linda)
-## detaljar på neste møte
-# vi må retta alle «my only friend the end»-feil (Sjur og Kevin)
-# teiknsetjingsreglar (Linda, Kevin)
-# hermeteikn (Kevin) - er dette òg ein tastaturfeil? dvs finst dei korrekte hermeteikna på tastaturet?
+    1. for sme kan vi ha ein slik regel på slutten (Linda)
+1. særskrivingsfeil - 33 false positives i bugzilla #2547 (Linda)
+    1. detaljar på neste møte
+1. vi må retta alle «my only friend the end»-feil (Sjur og Kevin)
+1. teiknsetjingsreglar (Linda, Kevin)
+1. hermeteikn (Kevin) - er dette òg ein tastaturfeil? dvs finst dei korrekte hermeteikna på tastaturet?
 
 Andre ting til august:
 * dokumentasjon for alle feiltypane
-** døme på feiltypen
-** referanse til kor feilen er normert (GG, Nickel, Riektačállinrávvagat, osb)
+    - døme på feiltypen
+    - referanse til kor feilen er normert (GG, Nickel, Riektačállinrávvagat, osb)
 * annan brukardokumentasjon:
-** installering
-** bruk
+    - installering
+    - bruk
 * testing, testing! (Allihoopa)
 
 1.0-lansering til jul:
-# realword errors (áibbas, álo, ballán, biddjui, bidjui, čohkka, čohkke, čohkken, earret, girjji, hallan, heaŋgát, jámas, logát, luohte-compound, luohte-hyph-compound, oainnat, oastit, sakka, vuosttaš)
-# grammatical errors (syn-aččat, syn-not-dego)
-# kommareglar
+1. realword errors (áibbas, álo, ballán, biddjui, bidjui, čohkka, čohkke, čohkken, earret, girjji, hallan, heaŋgát, jámas, logát, luohte-compound, luohte-hyph-compound, oainnat, oastit, sakka, vuosttaš)
+1. grammatical errors (syn-aččat, syn-not-dego)
+1. kommareglar
 
-!!! Lanseringsdatoar
+#  Lanseringsdatoar
 
 * Beta-lansering 15. august
 * 1.0-lansering 3. desember
 
-!!! testrutiner
+#  testrutiner
 
 * gullstandardkorpus med precision og recall-testing (->Børre)
-* analyseregresjonstesting mot kjent korpus ({{devtools/check_analysis_regressions.sh}})
+* analyseregresjonstesting mot kjent korpus (`devtools/check_analysis_regressions.sh`)

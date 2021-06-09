@@ -1,17 +1,15 @@
-
 FAD-Møte 18.10.2012
 
 Til stades: Børre, Ciprian, Marja, Trond, Berit Merete
 
-!!! Saker:
+#  Saker:
 
 * Ordparallellisering
 * Setningsparallellisering
 * Rutiner
-** Arbeidsfordeling
+    - Arbeidsfordeling
 * Arbeid framover
 * Neste møte
-
 
 Issues for the next meeting:
 1. documenting the whole working cycle
@@ -25,19 +23,17 @@ work_in_progress>wc -l input_data_t*/*
   150781 input_data_toktmx/data.nob
   150781 input_data_toktmx/data.sme
 
-
 3. analysis and improvement of the output file of the word alignment step
 
-
-!!! Ordparallellisering
+#  Ordparallellisering
 
 Vi har eit ordparallellisert output, men det er ikkje brukbart,
 pga. problem med tredobbel preprosessering. Sjå punkt om rutiner
 lenger ned.
 
-!!! Setningsparallellisering
+#  Setningsparallellisering
 
-!!! Rutiner
+#  Rutiner
 
 Oversikt over heile pipeline
 
@@ -50,18 +46,18 @@ toktmx er setningsalignment. Det bør gå til ???, tmx bør gå
 til preprosessering.
 
 * tmx: 
-** <seg>Báiki: Samelandssenter, Kárášjohka</seg>
-** <seg>Áigi: guovvamánu 23. - 26. b. 1999</seg>
+    - <seg>Báiki: Samelandssenter, Kárášjohka</seg>
+    - <seg>Áigi: guovvamánu 23. - 26. b. 1999</seg>
 * toktmx: 
-** <seg>Báiki : Samelandssenter , Kárášjohka</seg>
-** <seg>Áigi : guovvamánu 23. - 26. b. 1999</seg>
+    - <seg>Báiki : Samelandssenter , Kárášjohka</seg>
+    - <seg>Áigi : guovvamánu 23. - 26. b. 1999</seg>
 
 tca2 må ha tokenisert input. Ergo har vi toktmx.
 For vidare analyse treng vi utokenisert. Vi får utokenisert
-ved å endre frå toktmx til tmx med {{toktmx2tmx.py}}.
+ved å endre frå toktmx til tmx med `toktmx2tmx.py`.
 
 Problemet er at obt har ein preprosesserar inne i taggaren sin.
-Dei må ha __setning__ som input, og ikkje __ord-per-linje__.
+Dei må ha **setning** som input, og ikkje **ord-per-linje**.
 
 tmx og toktmx er ikkje i sync fordi vi har konvertert til
 toktmx men ikkje til tmx. Det er to ulike trinn, til toktmx
@@ -70,22 +66,20 @@ automatisert.
 
 tmx er originalstreng. 
 
-
 Rutine:
 Konvertere til xml: convert2xml.pl
 Finne parallelle filer: pick-parallel-doc.pl
 Sentence alignment: corpus-parallel.py -> gir toktmx
 Pynte toktmx: toktmx2tmx.py -> gir tmx
 
-# ta toktmx som input
-# køyr corpusparallel.py
-
+1. ta toktmx som input
+1. køyr corpusparallel.py
 
 01_readme_FAD-pipeline.txt
 
-!! Forbetring
+##  Forbetring
 
-{{{
+```
 plan- og bygningsloven:
 
 "<plan->"
@@ -94,27 +88,23 @@ plan- og bygningsloven:
         "og" konj 
 "<bygningsloven>"
         "bygningslov" subst appell mask be ent <*lov> 
-}}}
-
+```
 
 /big/gt/sme/corp/forvaltningsordbok/second_run/work_in_progress/20121014_data
 
+##  Arbeidsfordeling
+1. Konvertering, sentencealignment, wordalignment (**Ciprian**)
+1. Missinglister (**BM, Márjá**)
 
+#  Arbeid framover
+1. Konvertere orig på nytt og overføre data til prestable. (**Ciprian**)
+1. Sentencealigne på nytt (**Ciprian**)
+1. Lage nye sme-missinglister (**Ciprian**)
+1. Gå gjennom sme-missingliste, inkl oaţţut, oñña, ieţas (**BM, Márjá, Børre**)
+1. Til mandag kl 12: Lage liste over filpar som ikke blir overført til prestable (**Ciprian**)
+1. Gå igjennom liste over filpar som ikke blir overført til prestable (**BM, Márjá**)
+1. Legge ut dokumentasjon om hvordan rette opp feil i fil-parallelisering (**BM, Børre**)
+1. Legge ut dokumentasjon om hvordan rette opp feil i setningsparallelisering (**BM, Børre**)
 
-!! Arbeidsfordeling
-# Konvertering, sentencealignment, wordalignment (__Ciprian__)
-# Missinglister (__BM, Márjá__)
-
-!!! Arbeid framover
-# Konvertere orig på nytt og overføre data til prestable. (__Ciprian__)
-# Sentencealigne på nytt (__Ciprian__)
-# Lage nye sme-missinglister (__Ciprian__)
-# Gå gjennom sme-missingliste, inkl oaţţut, oñña, ieţas (__BM, Márjá, Børre__)
-# Til mandag kl 12: Lage liste over filpar som ikke blir overført til prestable (__Ciprian__)
-# Gå igjennom liste over filpar som ikke blir overført til prestable (__BM, Márjá__)
-# Legge ut dokumentasjon om hvordan rette opp feil i fil-parallelisering (__BM, Børre__)
-# Legge ut dokumentasjon om hvordan rette opp feil i setningsparallelisering (__BM, Børre__)
-
-!!! Neste møte
-__Fredag 26. oktober kl 10__
-
+#  Neste møte
+**Fredag 26. oktober kl 10**

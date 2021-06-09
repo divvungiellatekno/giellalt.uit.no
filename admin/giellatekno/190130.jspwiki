@@ -1,27 +1,25 @@
-!!!Giellateknomøte 30.1.2019
+# Giellateknomøte 30.1.2019
 
 Tilstede: Trond, Chiara, Lene
 
-
-!!Saksliste
+## Saksliste
 
 * Servarflytting
 * TTS på server
 * NDS
 * SIGEL/SIGEND
 
+## Servarar
 
-!!Servarar
-
-!Flytting av oahpaversjonar
+### Flytting av oahpaversjonar
 
 Chiara jobber med crkoahpa, men fikk feilmelding ved innstallering av databasen med skriptet. Det er filer som ikke er svn eller dokumentert. Hun har skrevet mail til R og H. Hun har installert med gammel database og gammel Django-versjon.
 
 Alternativ: Lag virtual environment og køyr gammal django + gammal database.
 
-__Oversyn over versjonane__
+**Oversyn over versjonane**
 
-{{{
+```
 er flytta
 515640 sme_oahpalog 6
  63312 sma_oahpalog 4
@@ -43,9 +41,9 @@ på lager
     23 rup_oahpalog
     12 udm_oahpalog
      0 mdf_oahpalog
-}}}
+```
 
-!På gtoahpa 
+### På gtoahpa 
 
 Alberta
 * crk_oahpalog TBA
@@ -79,33 +77,30 @@ På gtlab:
 * mrj_oahpa Trond har sendt mail til Jeremy Bradley
 * vep_oahpa Jaska spør
 
+##  TTS på eigen server
 
-!! TTS på eigen server
-
-!TTS på server
+### TTS på server
 
 Trond ordnar dette. Jf. [http://divvun.no/no/tale/tale.html].
 
-!!NDS
+## NDS
 
-!NDS og eigen servar
+### NDS og eigen servar
 
 Sjur vil diskutere dette, det kan vi gjere.
 
-!Referere til NDS
+### Referere til NDS
 
 Korleis skal det bli gjort, kven er forfattarar.
 Vi tenkjer på format for dette og kjem attende til det.
 
-!!Debugging
+## Debugging
 
-!valks, kyv krasjar
+### valks, kyv krasjar
 
 Problemet held fram, vi kjem til å sjå på dette.
 
-
-
-{{{
+```
 
 >wc -l dicts/*.xml|sort -nr
  22461653 totalt
@@ -209,4 +204,4 @@ Problemet held fram, vi kjem til å sjå på dette.
         6 dicts/chr-all.xml
         0 dicts/mhreng.xml
         0 dicts/engcrk-cans.xml
-}}}
+```

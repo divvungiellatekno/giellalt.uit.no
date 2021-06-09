@@ -1,4 +1,4 @@
-Møte om [bug 2377|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2377]
+Møte om [bug 2377](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2377)
 
 Til stede: Sjur, Ciprian, Trond, Thomas, Linda, Lene
 
@@ -8,7 +8,7 @@ Saksliste:
 * Semtaggar og kompileringstid
 * Generelt om kompileringstid
 
-!!!Taggambiguitet
+# Taggambiguitet
 
 Det er problemtatisk for Korp at det er ambiguitet mellom en del tagger. F.eks. er søkefunksjonen som er mest brukervennlig, er å søke etter "inneholder Nom" som  .*Nom.* eller .*Ess.*
 
@@ -17,7 +17,7 @@ Taggene:
 * NomAg (ambigiøst med Nom) =>  Nmag
 * VGen => Vgen
 
-Vedtak: endra taggane __i Korp__ (og berre der). Endra taggar: sjå over.
+Vedtak: endra taggane **i Korp** (og berre der). Endra taggar: sjå over.
 
 Eksempel på hva som er bra i CG:
 * CG regler som slår (og skal slå) både ved Actio Loc og Loc
@@ -28,60 +28,56 @@ Eksempel på hva som er dårlig i CG:
 
 Problematisk:
 * Nom og NomAg er begge substantiver
-** Mulig streng +N+NomAg+Sg+Nom
+    - Mulig streng +N+NomAg+Sg+Nom
 
 Vi endrar ingen ting i lexc eller CG (i alle fall ikkje no).
 
-!!!Dobbelttagga POS-taggar
+# Dobbelttagga POS-taggar
 
 Dobbeltagga POS (NN, VV, etc) - heller prefiks?
 
 Vedtak:
 * Ex/N, Ex/A, Ex/V, ...
-** Ex = "tidlegare" "/" som i derivasjonskonvensjonen vår, og deretter original 
+    - Ex = "tidlegare" "/" som i derivasjonskonvensjonen vår, og deretter original 
    ("tidlegare") ordklasse
-** Resultatet blir at vi får apertiumtaggen direkte: <ex_n> etc.
+    - Resultatet blir at vi får apertiumtaggen direkte: <ex_n> etc.
 
-
-
-!!!Semtaggar og kompileringstid
+# Semtaggar og kompileringstid
 
 Taggane blir endra:
 
 * I functions.cg3
 * I disambigation.cg3
 * CG frå giella til apertium: map semtag med liten forbokstav
-** Her bør vi heller gjere for CG som vi gjer for fst
-** ha automatisk overgang frå t.d. +Sem/Hum til <sem_hum>, for alle taggar
-** deretter, i ei separat fil, endre <a> til <adj> osb.
+    - Her bør vi heller gjere for CG som vi gjer for fst
+    - ha automatisk overgang frå t.d. +Sem/Hum til <sem_hum>, for alle taggar
+    - deretter, i ei separat fil, endre <a> til <adj> osb.
 
 Eit undersett av dei genererte taggane, nemleg dei semantiske taggane, 
 bir drege ut, og lista skal heretter bli lagra i svn + ein opsjon som gjer at ein kan slå av bygginga av semtagg-lista.
 
 Det vil gjera det slik at ein ikkje treng å byggja semtagg-lista og regexar baserte på den om ein ikkje vil, og berre når det kjem ny versjon i svn vil ein byggja desse på nytt.
 
-
-!!!Generelt om kompileringstid
+# Generelt om kompileringstid
 
 Grammatikkontroll-config:
-{{{
+```
 ./configure --with-hfst --without-xfst --enable-grammarchecker --enable-tokenisers --enable-alignment --enable-reversed-intersect --enable-morpher
-}}}
+```
 
 Tek under 13 min for Sjur (utan twolc-kompilering)
 
 Apertium-config:
-{{{
+```
 ./configure --with-hfst --without-xfst --enable-alignment --enable-reversed-intersect --enable-apertium --with-backend-format=foma
-}}}
+```
 
 Tek ca 11 min for Sjur.
 
 Optimalisering:
-{{{--with-backend-format=foma}}}
+```--with-backend-format=foma```
 
 Tvingar Hfst til å bruka eit uvekta fst-format, som igjen gjer at Foma blir brukt til kompileringa der det er mogleg. Både Foma og mangel på vektar gjer at det går raskare.
 
-__NB!!!__ Om ein endrar backend-format, __MÅ__ ein køyra {{make clean}} fyrste
+**NB!!!** Om ein endrar backend-format, **MÅ** ein køyra `make clean` fyrste
 gongen, for å unngå feilmeldingar pga fst-ar av ulikt format.
-

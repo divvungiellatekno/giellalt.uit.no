@@ -2,12 +2,9 @@
 
 Børre, Tommi, Linda
 
-
 *evaluation corpus should come from boundcorpus
 * how big is it?
 * how many compound errors do we find there?
-
-
 
 which corpus should we use for what:
 
@@ -41,8 +38,6 @@ suggestion:
 * leave boundcorpus untouched
 * use only freecorpus: 
 
-
-
 Which kind of corpus can we use for evaluation of GramDivvun
 
 test-howto.md
@@ -67,14 +62,15 @@ $GTFREE/goldstandard/converted/sme $GTBOUND/goldstandard/converted/sme 2> /dev/n
 size of the error marked-up corpus:
 ❯ ccat -a -c goldstandard/converted/sme|sed 's/¶/\n/g'|wc 
   10754  105446  922199
+
   
 how many syntactic errors do we got in the marked-up corpus:
  grep -r ¥ --include "*.correct.txt" orig/sme
  grep -r "<errorsyn" goldstandard/converted/sme
+
  
  grep -r "<errorsyn" ~/boundcorpus/goldstandard/converted/sme | fgrep cmp -c
 93
-
 
 TODO:
 * script for changing the evaluation corpus into NN format - maybe it's already there

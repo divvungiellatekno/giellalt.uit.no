@@ -1,79 +1,79 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 08.03.2005
 * Time: 10.00 Norw. time
 * Place: Wherever we are:-)
 * Tools: Phone, iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from a week ago
-# Documentation - status
-# Corpus gathering
-# Corpus infrastructure
-# Linguistics
-# Term db
-# Other issues?
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from a week ago
+1. Documentation - status
+1. Corpus gathering
+1. Corpus infrastructure
+1. Linguistics
+1. Term db
+1. Other issues?
+1. Summary, task lists
+1. Closing
 
-!!!Last week's task list:
+# Last week's task list:
 
-* __Sjur, Børre, Tomi__: terminology database
-* __Børre__: will set up a separate main tab How-To
-* __All__: we move from .profile to .bash_profile, __Børre__: docu to be updated
-* __Børre__: mpage & UTF-8 - file a bug in Bugzilla, with the solution postponed 
+* **Sjur, Børre, Tomi**: terminology database
+* **Børre**: will set up a separate main tab How-To
+* **All**: we move from .profile to .bash_profile, **Børre**: docu to be updated
+* **Børre**: mpage & UTF-8 - file a bug in Bugzilla, with the solution postponed 
     to Tiger (OS 10.4)
-* __Børre__:
-**  update emacs and xml-mode: Børre has a solution, will document
-**  check automatic version-stamp in cvs $id$? As above.
-* __Trond__: will follow up the issue with binary postings in news
-* __Børre__: wiki support in forrest works, will follow up on the UTF-8 problem
-* __Børre + Trond__: set up computers, check forrest in cochise
+* **Børre**:
+    -  update emacs and xml-mode: Børre has a solution, will document
+    -  check automatic version-stamp in cvs $id$? As above.
+* **Trond**: will follow up the issue with binary postings in news
+* **Børre**: wiki support in forrest works, will follow up on the UTF-8 problem
+* **Børre + Trond**: set up computers, check forrest in cochise
     issue is still open, Trond has problems from home and other locations
-* __Børre__: divvun.no -
+* **Børre**: divvun.no -
     to be continued now that the IT staff is back from Jokkmokk
 
-!!!1. Opening, agenda review
+# 1. Opening, agenda review
 
 Opened at 10.12. Additions to the agenda:
 
 * PaNoLa-Plus (under "Other")
 
-!!!2. Reviewing the task list from a week ago
-* __Sjur, Børre, Tomi__: terminology database
-**  Not completed yet.
-* __Børre__: will set up a separate main tab How-To
-**  Not appearing as intended yet
-* __All__: we move from .profile to .bash_profile, __Børre__: docu to be updated
-**  Document checked in
-* __Børre__: mpage & UTF-8 - file a bug in Bugzilla, with the solution postponed 
+# 2. Reviewing the task list from a week ago
+* **Sjur, Børre, Tomi**: terminology database
+    -  Not completed yet.
+* **Børre**: will set up a separate main tab How-To
+    -  Not appearing as intended yet
+* **All**: we move from .profile to .bash_profile, **Børre**: docu to be updated
+    -  Document checked in
+* **Børre**: mpage & UTF-8 - file a bug in Bugzilla, with the solution postponed 
     to Tiger (OS 10.4) - still to be done
-**    PS contains the correct UTF-8 strings
-* __Børre__:
-**  update emacs and xml-mode: Børre has a solution, will document
+    -    PS contains the correct UTF-8 strings
+* **Børre**:
+    -  update emacs and xml-mode: Børre has a solution, will document
     Done. Docu in gt/doc/infra/
-**  check automatic version-stamp in cvs $id$? As above.
-    __Børre__: add it somewhere in the docu, should perhaps set up a FAQ?
-* __Trond__: will follow up the issue with binary postings in news
-**  called and e-mailed, no answer so far. Will continue
-* __Børre__: wiki support in forrest works, will follow up on the UTF-8 problem
-**  still an issue
-**  temporary workaround: use Latin 1-encoding for the memos
-* __Børre + Trond__: set up computers, check forrest in cochise
+    -  check automatic version-stamp in cvs $id$? As above.
+    **Børre**: add it somewhere in the docu, should perhaps set up a FAQ?
+* **Trond**: will follow up the issue with binary postings in news
+    -  called and e-mailed, no answer so far. Will continue
+* **Børre**: wiki support in forrest works, will follow up on the UTF-8 problem
+    -  still an issue
+    -  temporary workaround: use Latin 1-encoding for the memos
+* **Børre + Trond**: set up computers, check forrest in cochise
     issue is still open, Trond has problems from home and other locations
-**    Should be solved, docu at gt/doc/infra/forrest-howto.xml
-* __Børre__: divvun.no -
+    -    Should be solved, docu at gt/doc/infra/forrest-howto.xml
+* **Børre**: divvun.no -
     to be continued now that the IT staff is back from Jokkmokk
-**  Forgot it... :-(
+    -  Forgot it... :-(
 
-!!!3. Documentation - status
+# 3. Documentation - status
 
 We should aim at generating static html. There is "forrest run" dynamically,
 and "forrest site" that makes static html pages. 
 
-{{{
+```
 X [0] doc/lang/sms/src/verb-sms-lex.txt
       BROKEN: No pipeline matched request: doc/lang/sms/src/verb-sms-lex.txt
 X [0] doc/ling/vislcg.html
@@ -85,7 +85,7 @@ X [0] index_smi.html
 X [0] doc/lang/smj/docu-sme-flowchart.html 
       BROKEN: /Users/trondtro/xtdoc/sd/src/documentation/content/xdocs/doc/lang/smj/
       docu-sme-flowchart.xml (No such file or directory)
-}}}
+```
 
 Link problems:
 * link to other documentation (internal links) broken(?)
@@ -97,7 +97,7 @@ replaced with links to excerpts.
 
 Forrest on cochise is still problematic: no such command
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 Thomas has done a lot of work last week, many positive answers (see last week's 
 meeting memo).
@@ -108,7 +108,7 @@ Lule, Southern and Anár sámi. Some private texts too.
 We need a contract to use when making agreements with people and organisations.
 Børre will look at the one used in Oslo
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 The antiword issue: Antiword thinks everything is in Unicode in word, and converts that
 to whatever 8-bit characters et we want (the -m option). Our problem is that we want a
@@ -117,7 +117,7 @@ many-to-one machine, and not a one-to-many-machine.
 Use antiword to convert from .doc to docbook format. Then perl postprocesses the
 errors in the .xml files that have Levi and the other private hacks 
 
-!!!6. Linguistics
+# 6. Linguistics
 
 Thomas: I have now gone through all the 54 northern sami adjectival sublexicas in 
 sme-lex.txt. and - with the exception of two bugs (reported to Bugzilla) - all the 
@@ -132,17 +132,17 @@ Trond, Lena: Worked on transitivity in verbs. Checked so far: -ot verbs, -eret ^
 words, work started on DIEHTI verbs. The standard version of the n, a, v are now 
 reversly sorted in cvs, in order to facilitate systematic lexicon work..
 
-!!!7. Term db
+# 7. Term db
 
 Sjur and Børre will continue working on that until the official opening at wednesday
 16th. After that there will be no one to maintain it, and it needs documentation, but
 the workload will be much smaller (hopefully).
 
-!!!8. Other issues
+# 8. Other issues
 
-!! PaNoLa-Plus
+##  PaNoLa-Plus
 
-{{{
+```
 FIN1) Asiakas syö lounasta. (The client is eating lunch.) (FIN1a)
 A1
 STA:cl(fcl)
@@ -162,7 +162,7 @@ P:v(fin,imperf,ind,1sg)	unohdin
 Od:cl(icl)
 =S:n(sg,gen)	ajan
 =P:v(pcp1,act,sg,gen)	kuluvan
-}}}
+```
 
 [http://visl.sdu.dk/], cf. e.g. Finnish, under languages:
 
@@ -177,31 +177,31 @@ problemer i et kontrastivt perspektiv"
 
 What we will need from the project is a view on syntactic analysis (S, Od, P, A, ...)
 
-!! Easter
+##  Easter
 
 Wednesday 1/2 day, Thursday and Friday off, as well as Monday.
 
-!!!9. Summary, task lists
+# 9. Summary, task lists
 
-* __Børre__: mpage & UTF-8 - file a bug in Bugzilla, with the solution postponed 
+* **Børre**: mpage & UTF-8 - file a bug in Bugzilla, with the solution postponed 
     to Tiger (OS 10.4) - still to be done
-* __Trond__: will follow up the issue with binary postings in news
-**  called and e-mailed, no answer so far. Will continue
-* __Børre__: correct image linking in termdb and divvun projects
-* __All__: discuss our own corpus format in the newsgroup - what do we want and need?
-* __Tomi__: identify the input encodings antiword can handle
-* __Sjur, Børre__: terminology database
-* __Børre__: divvun.no -
+* **Trond**: will follow up the issue with binary postings in news
+    -  called and e-mailed, no answer so far. Will continue
+* **Børre**: correct image linking in termdb and divvun projects
+* **All**: discuss our own corpus format in the newsgroup - what do we want and need?
+* **Tomi**: identify the input encodings antiword can handle
+* **Sjur, Børre**: terminology database
+* **Børre**: divvun.no -
     to be continued now that the IT staff is back from Jokkmokk
-* __Børre__: should make the How-To tab appear as intended
-* __Børre__: add automatic version-stamp in cvs $id$ somewhere in the docu, 
+* **Børre**: should make the How-To tab appear as intended
+* **Børre**: add automatic version-stamp in cvs $id$ somewhere in the docu, 
   should perhaps set up a FAQ?
-* __Børre__: wiki support in forrest works, will follow up on the UTF-8 problem
-**  temporary workaround: use Latin 1-encoding for the memos
-* __Trond__: check forrest in cochise, issue is still open.
-**    Should be solved, docu at gt/doc/infra/forrest-howto.xml
-* __Trond, Børre, all__: fix the links
+* **Børre**: wiki support in forrest works, will follow up on the UTF-8 problem
+    -  temporary workaround: use Latin 1-encoding for the memos
+* **Trond**: check forrest in cochise, issue is still open.
+    -    Should be solved, docu at gt/doc/infra/forrest-howto.xml
+* **Trond, Børre, all**: fix the links
 
-!!!10. Closing
+# 10. Closing
 
 Closed at 12.10

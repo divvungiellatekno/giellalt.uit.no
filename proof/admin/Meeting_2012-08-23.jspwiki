@@ -1,4 +1,4 @@
-!!!PLX Meeting
+# PLX Meeting
 
 Participants: Tomi, Thomas, Sjur
 
@@ -6,9 +6,9 @@ Participants: Tomi, Thomas, Sjur
 * issues in PLX - overview
 * plan forward to a new release
 
-!!!New infra and PLX
+# New infra and PLX
 
-Should we move {{smj}} and {{sma}} to new infra?
+Should we move `smj` and `sma` to new infra?
 
 Benefits:
 * better support for systematic and automatic testing
@@ -17,13 +17,13 @@ Benefits:
 Risks and drawbacks:
 * we risk delaying the new speller even more
 
-Risk mitigation: we don't move {{sme}}, so if we can't get PLX conversion in the new infra to work properly, we just won't update {{smj}} and {{sma}} now. They will have to wait a bit, after Inga Lill and Maja has worked more on the material.
+Risk mitigation: we don't move `sme`, so if we can't get PLX conversion in the new infra to work properly, we just won't update `smj` and `sma` now. They will have to wait a bit, after Inga Lill and Maja has worked more on the material.
 
-!!!Issues in PLX - overview
+# Issues in PLX - overview
 
 Status:
-__Thomas__ has marked some derivations +Use/-Spell, and instead lexicalized:
-{{{
+**Thomas** has marked some derivations +Use/-Spell, and instead lexicalized:
+```
 +Der/t
 +Der/ár
 +Der/huhtti
@@ -31,19 +31,19 @@ __Thomas__ has marked some derivations +Use/-Spell, and instead lexicalized:
 +Der/stuvva
 +Der/viđá
 +Der/supmi
-}}}
+```
 
 +Der/veara is marked +Err/Sub and a closed class of words now instead makes two word phrases with Po/Attr "veara"
 
 Next aim is to have a look at LEXICON NAMAT as well to see if the similar trimming can be done here.
 
-__Tomi__ has started a new {{sma}} speller compilation today - filter compilation takes a lot of time the first time.
+**Tomi** has started a new `sma` speller compilation today - filter compilation takes a lot of time the first time.
 
 Main issue: compounding does not work as intended for a number of constructions.
 
 Additional issue: some word forms are not accepted in the regular speller, even though they are in the test speller. We try to correct this by making the full speller not so huge by restricting some processes (mainly derivations, see above), and by modelling some derivations as PLX compounds instead of derivations (= generated full forms in the PLX format, e.g. -vuohta).
 
-!!Vuohta
+## Vuohta
 
 -vuohta can be added to all adjectives, but not all nouns.
 Further compounding of vuohta- needs to use the genitive form -vuođa-.
@@ -54,7 +54,7 @@ We already have 1039 words on -vuohta in our lexicon, ie lexicalised derivations
 
 We remove -vuohta as a derivation completely from the speller, and instead lexicalise the most frequent ones.
 
-!!!Plan forward to a new release
+# Plan forward to a new release
 
 1. check if we can get a full speller that behaves as the test speller
 2. if they behave the same, use the PLX conversion test bench to work out the remaining issues

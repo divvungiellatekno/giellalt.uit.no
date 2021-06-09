@@ -1,8 +1,8 @@
-!!!Giellatekno-møte 22.4. 2015
+# Giellatekno-møte 22.4. 2015
 
 Ciprian, Lene, Trond
 
-!!Saksliste
+## Saksliste
 
 * korpus
 * undervisning på bachelorprogrammet språk-sinn-samfunn
@@ -10,21 +10,19 @@ Ciprian, Lene, Trond
 * smenob/nobsme attributter
 * frekvenssorterte lister for sme-tekster
 
+##  Korpus og Korp
 
-
-!! Korpus og Korp
-
-!Korp
+### Korp
 
 Ciprian arbeider med
 * Korp-grensesnittet må bli oppdatert
 * Lemgram / Ordbild må på plass.
 * translations: _xxx, må rettes eller oversettes fortest mulig
-** (corpora-LG.json		locale-LG.json)
+    - (corpora-LG.json		locale-LG.json)
 * translating news: korp/frontend/news/gt_news.json
-** Denne fila skal også lokaliserast (Cip)
+    - Denne fila skal også lokaliserast (Cip)
 
-{{{
+```
 newsdata([  
   {  
     "h":{  
@@ -43,20 +41,20 @@ newsdata([
     },
     "d":"2015-04-20"
   },
-}}}
+```
 
 Problem med lokalisering:
 
 Viss du ikkje har like mange original:omsetjing i json-fila 
 kjem ingenting på nett.
 
-{{{
+```
 main/apps/korp/frontend/translations
 
 locale-nb.json:    "show_diagram" : "Visa trenddiagram_xxx",
 locale-nb.json:    "non_time_before" : "Saknar tidsuppmärkning: _xxx",
 locale-nb.json:    "non_time_after" : " av valt material_xxx",
-}}}
+```
 
 Tiltak: Forbetre omsetjing fortest mulig
 * Legge til xxx: Cip
@@ -64,7 +62,6 @@ Tiltak: Forbetre omsetjing fortest mulig
 * nb: Lene
 * se: Lene
 * sv: Trond
-
 
 Refere til Korp (SIKOR) bør oppdateres fortest mulig.
 
@@ -77,7 +74,7 @@ Her er infoboksen:
 tekstsamling. <http://gtweb.uit.no/korp/> (version 01.03.2015)
 * SIKOR. UiT The Arctic University of Norway and the Norwegian Saami Parliament’s Saami text collection. <http://gtweb.uit.no/korp/> (version01.03.2015)
 ----
-!Korpus
+### Korpus
 
 Dette må følges opp:
 * Setningsparallisering
@@ -85,8 +82,7 @@ Dette må følges opp:
 * Ikke maskinlesbare Dieđut-tekster (Børre?)
 * Oppfølging av Kimberli (Trond)
 
-
-!! Undervisning på bachelorprogrammet språk-sinn-samfunn
+##  Undervisning på bachelorprogrammet språk-sinn-samfunn
 Gillian R har tatt kontakt om å tilby et nytt bachelorprogram språk-sinn-samfunn med engelsk om undervisningsspråk
 * 1000 nivå kurs:
 * 2000 nivå kurs: derav ett til tre kurs med språkteknologi (à 10 poeng)
@@ -103,8 +99,7 @@ I tillegg har vi eit framlegg til språkteknologi for samisk, eit kurs med ei li
 SAM-30xx
 * "Emnet gir innføring i språkteknologi for samisk ved UiT. Denne kunnskapen vil gi studenten innsikt i datalingvistisk modellering og forståelse for språkteknologien bak sluttbrukerprogrammer og et automatisk analysert korpus. Studenten vil også få innsikt i utforming og testing av formelle språkmodeller. Studenter som ønsker det, kan arbeide videre med f.eks. endelige tilstandsautomater eller føringsgrammatikk på kurset SAM-3090 Spesialemne i samisk språkvitenskap."
 
-
-!! Oppsummering Ulan-Ude-reisa
+##  Oppsummering Ulan-Ude-reisa
 
 Arrangør: Buryaad statlige universitet v/ Jargal Badagarov:
 [http://giellatekno.uit.no/conf/ulanude15/UlanUde.html]
@@ -112,74 +107,64 @@ Arrangør: Buryaad statlige universitet v/ Jargal Badagarov:
 Trond og Francis holdt kurs i FST for 15 personar for følgende språk:
 
 * tyv: tuvinsk (tyrkisk)
-** Resultat: Analysator, leksikon på 6500 ord, morfofonologi, 85% dekning av eit korpus 1M ord, sjekka inn i Apertium
+    - Resultat: Analysator, leksikon på 6500 ord, morfofonologi, 85% dekning av eit korpus 1M ord, sjekka inn i Apertium
 * bxr: burjatisk (mongolsk)
-** Resultat: twolc, substantivbøying, leksikon på 400 ord
-** Resultat 2: Start på program for konvertering frå burjatisk til IPA
+    - Resultat: twolc, substantivbøying, leksikon på 400 ord
+    - Resultat 2: Start på program for konvertering frå burjatisk til IPA
 * khk khalkamongolsk (med personer fra Ulan Bator)
-** Resultat: PC-KIMMO-versjon av morfofonologien overført til twolc, leksikon på 500 ord
+    - Resultat: PC-KIMMO-versjon av morfofonologien overført til twolc, leksikon på 500 ord
 * evn: evenkisk (tungusisk)
-** Resultat: Analysator, 550 ord, storparten av morfofonologien, og 25% dekning av eit korpus på 13500 ord
+    - Resultat: Analysator, 550 ord, storparten av morfofonologien, og 25% dekning av eit korpus på 13500 ord
 * xwo: todo oirat (mongolsk)
-** Resultat: demo-analysator med eitt ord (!), men inkludert i analysator med mongolsk -> latinsk under og latinsk -> mongolsk over, etter oppsettet frå præriecree (takk til Sjur for hjelp)
+    - Resultat: demo-analysator med eitt ord (!), men inkludert i analysator med mongolsk -> latinsk under og latinsk -> mongolsk over, etter oppsettet frå præriecree (takk til Sjur for hjelp)
 * xal: Kalmyk (mongolsk), 
-** Resultat: rudimentær analysator, 50 ord
+    - Resultat: rudimentær analysator, 50 ord
 * kjh: Khakas (tyrkisk), 
-** Resultat: ikkje innsjekkingar
+    - Resultat: ikkje innsjekkingar
 
 Dessutan laga vi demoversjonar av stavekontrollar for bxr, khk, evn, xal. Merk at det er ein bug i Libreoffice-voikko for val av språk via ISO-kode, den er rapportert til Harri.
 
-!Oppfølging:
+### Oppfølging:
 
 * Rådgivning, de gjør arbeidet med FST sjøl
 * Forslag om nettverk for å finansiere samlinger og studentutvekslinger
-** Jargal suggests building a so-called “Thematic Network” (http://www.uarctic.org/media/817524/uarctic-guidelines-for-establishing-new-tns-oct2014.pdf) within the University of Arctic. The theme will be what unites us (building grammatical models and making both research and practical applications based on those models).
+    - Jargal suggests building a so-called “Thematic Network” (http://www.uarctic.org/media/817524/uarctic-guidelines-for-establishing-new-tns-oct2014.pdf) within the University of Arctic. The theme will be what unites us (building grammatical models and making both research and practical applications based on those models).
 * Møte i arktisk universitet med delegasjon fra UiT til Ulan-Ude i juni i år.
 
-!! smenob/nobsme attributter
+##  smenob/nobsme attributter
 
 Merking godkjente oversettinger og samiske stedsnavn
 
 * Vi bör merke namn etter autoritativ kjelde (Kartverk, Giellagáldu, ..)
 * Vi bör ikkje stryke ord vi ikkje kjenner eller rettskriving vi er skeptisk til, som er vedtatt
 
-!Merking av namn
+### Merking av namn
 
 * Geo: Lene + Cip har diskutert, og har kontroll
 * Normativt attributt
-** attributtnamn: norm
-** attributtverdi: SGG = Sámi giellagáldu, SR = Sámi giellaráđđi, Lov = vedtatt i hht til lov om stadnamn , SGL = Sámi giellalávdegoddi
+    - attributtnamn: norm
+    - attributtverdi: SGG = Sámi giellagáldu, SR = Sámi giellaráđđi, Lov = vedtatt i hht til lov om stadnamn , SGL = Sámi giellalávdegoddi
 * Kjelde-attributt
-** attributtnamn: src
-** attributtverdi: SK = Statens kartverk, KAL = Kåven et al, Qv = Qvigstad, PS = Pekka Sammallahtis ordbok, SA = Sámi atlas, ...
+    - attributtnamn: src
+    - attributtverdi: SK = Statens kartverk, KAL = Kåven et al, Qv = Qvigstad, PS = Pekka Sammallahtis ordbok, SA = Sámi atlas, ...
 * Giellagáldu lister er innsjekka i smenob/inc/placenames og smenob/inc/ready_togo. Der er det bl.a. 250 namn på ei liste, SGG_Eurohpa_riikkat.xlsx
 
 Dette skal vere dokumentert på sida vår for ordbøker.
 
 Attributtene for src og norm legges på t-nivå.
 
-!Konklusjon:
+### Konklusjon:
 
-# FAD som attributt blir flytta frå <e> til <t>
-# Lista over opprinnelege ord frå FAD blir greppa ut og lagra som ei liste
+1. FAD som attributt blir flytta frå <e> til <t>
+1. Lista over opprinnelege ord frå FAD blir greppa ut og lagra som ei liste
   under heimesida til FAD-prosjektet
-# Skilnaden ( alle - FAD ) kjem dermed fram av å diffe total lemmaliste og FAD-liste
-# I tillegg legg vil {{comment="..."}}  som attributt for kommetarer i alle elementer der vi ser behov for det
+1. Skilnaden ( alle - FAD ) kjem dermed fram av å diffe total lemmaliste og FAD-liste
+1. I tillegg legg vil `comment="..."`  som attributt for kommetarer i alle elementer der vi ser behov for det
 
-!! Freqkvenssorterte lister for sme-tekster
+##  Freqkvenssorterte lister for sme-tekster
 
 Vi bør ha en deadline for denne? 
 Cip har gjort det men ikkje lagt det på serveren
-# Cip lagar skript på servaren
-# ... og gjev lenkje til Lene
-# ... og dermed til side / vidare
-
-
-
-
-
-
-
-
-
-
+1. Cip lagar skript på servaren
+1. ... og gjev lenkje til Lene
+1. ... og dermed til side / vidare

@@ -1,360 +1,359 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 06.06.2006
 * Time: 09.30 Norw. time
 * Place: Where we are
 * Tools: SubEthaEdit, iChat
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:59.
 
-Present: __Sjur, Thomas, Trond, Børre, Tomi__
+Present: **Sjur, Thomas, Trond, Børre, Tomi**
 
-Absent: __Maaren, Saara__
+Absent: **Maaren, Saara**
 
 Agenda accepted as is.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!! Børre
+##  Børre
 * corpus collection:
-** send out contracts with accompanying letter
-*** Synnøve Persen
-** Gather public texts, preferrably also parallel ones
-*** http://finnmarksloven.no gathered, fully parallel
-** Send out letters to the rest of the Iđut authors
-** send contract to __Kurt Tore Andersen__
-*** Done
-** call __Brita Kåven__ again
-*** Not done
-** contact __Ája__ (Kåfjord)
-*** No answer
-** Send renaming scripts to __R. Valkeapää__
-*** Done
-** call __Bård Eriksen__
-*** Not done
-** send contracts to Čálliid Lágádus
-*** Not done
+    - send out contracts with accompanying letter
+        - Synnøve Persen
+    - Gather public texts, preferrably also parallel ones
+        - http://finnmarksloven.no gathered, fully parallel
+    - Send out letters to the rest of the Iđut authors
+    - send contract to **Kurt Tore Andersen**
+        - Done
+    - call **Brita Kåven** again
+        - Not done
+    - contact **Ája** (Kåfjord)
+        - No answer
+    - Send renaming scripts to **R. Valkeapää**
+        - Done
+    - call **Bård Eriksen**
+        - Not done
+    - send contracts to Čálliid Lágádus
+        - Not done
 * corpus conversion:
-** Continue converting text from input format to our xml
-*** Done
-** convert nob and nno bible texts to be used as part of a parallel corpus
-** convert fin, swe to paratext or directly to our XML
-** review the paratext2xml converter
-** convert smj NT to paratext
-*** Not done
-** complete __Min Áigi__ metadata
-*** Some done
+    - Continue converting text from input format to our xml
+        - Done
+    - convert nob and nno bible texts to be used as part of a parallel corpus
+    - convert fin, swe to paratext or directly to our XML
+    - review the paratext2xml converter
+    - convert smj NT to paratext
+        - Not done
+    - complete **Min Áigi** metadata
+        - Some done
 * corpus access:
-** meeting 9.6. (postponed to 15(?).6) t 9.30: discuss and decide upon the exact
+    - meeting 9.6. (postponed to 15(?).6) t 9.30: discuss and decide upon the exact
    access policy we want
-*** Done
-** set upp the unix group structure for corpus users (also __Saara, Trond__)
+        - Done
+    - set upp the unix group structure for corpus users (also **Saara, Trond**)
 * set up Bugzilla automatic reminders for open issues; ask Thor-Øivind if needed
-** Not done
+    - Not done
 * test Gobby (with others)
-** done
+    - done
 * document use of Gobby within our project if above test is ok
-** Not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - Not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * On sick leave
 
-!! Saara
+##  Saara
 * Create a parallel corpora of the new testaments
 * add more texts to the graphical corpus interface
 * Implement parallel corpus upload in web upload script
-** not done
+    - not done
 * Install Gobby
-** not done
-* set upp the unix group structure for corpus users (also __Børre, Trond__)
+    - not done
+* set upp the unix group structure for corpus users (also **Børre, Trond**)
 * Test the aligners once again
-** not done
+    - not done
 * refine the xml output of the xml-tagged analyses
-** waiting Tomi's ccat implementation
+    - waiting Tomi's ccat implementation
 * convert or adapt the received PHP for paradigm generation to our needs
-** done some planning.
+    - done some planning.
 * remove headers and footers from antiword documents, other improvements
-** done, now improving handling of pdf-documents
+    - done, now improving handling of pdf-documents
 * discuss parallel corpus markup
-** done
+    - done
 * extend the DTD with parallel markup
-** do we want that? In the newsgroup, I proposed to keep the marking
-   separate from corpus db. __Sjur:__ I think I meant the markup in the header
+    - do we want that? In the newsgroup, I proposed to keep the marking
+   separate from corpus db. **Sjur:** I think I meant the markup in the header
    to link parallel files, which you have done now.
 * Implement cleaning the corpus text in the file-specific xsl file
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 * public tender:
-** collect the last clarifying answers, and make a final proposal to the board
-*** still no answer from PL. If it doesn't arrive today, we'll make our proposal
+    - collect the last clarifying answers, and make a final proposal to the board
+        - still no answer from PL. If it doesn't arrive today, we'll make our proposal
     to the board based on the information at hand.
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
-** started some work on integrating M4 processing of the twol code - needed to
+    - started some work on integrating M4 processing of the twol code - needed to
    adapt the twol to different scenarios
 * name lexicon:
-** implement editing functions
-** finalise refactoring for multiple collections (regular search interface)
-*** investigation ready, and the concept phase is over, only implementation left
+    - implement editing functions
+    - finalise refactoring for multiple collections (regular search interface)
+        - investigation ready, and the concept phase is over, only implementation left
 * change corpus summary processing to generate smaller pages
-** nothing yet
+    - nothing yet
 * meeting 23.5. t 9.30: discuss and decide upon the exact access policy we want
-** done
+    - done
 * test Gobby (with others)
-** not done
+    - not done
 * discuss parallel corpus markup
-** not really
+    - not really
 * move the SEE 2.5 extension list to Bugzilla
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 * other:
-** monthly reports for April and May
-** fixed a bug in the Forrest JSPWiki input plugin that produced invalid HTML
+    - monthly reports for April and May
+    - fixed a bug in the Forrest JSPWiki input plugin that produced invalid HTML
    for nested lists.
 
-!! Thomas
+##  Thomas
 * investigate Actio compounding, first sme, later smj
-** done North-sámi three-syll
-* discuss findings with __Maaren__, and later all of us
-** not done, Maaren is on sickleave
+    - done North-sámi three-syll
+* discuss findings with **Maaren**, and later all of us
+    - not done, Maaren is on sickleave
 * add proper numeral analysis/treatment to smj
-** not done
+    - not done
 * add loanwords (e.g. latin -ere verbs) to smj
-** not done
+    - not done
 * work on compounding
-** soon finished
+    - soon finished
 * lule sámi incoming words
-** finished
+    - finished
 * bug-fixing
-** done some
+    - done some
 * sme G3 issue
-** not done
+    - not done
 
-!! Tomi
+##  Tomi
 * new proper name lexicon
-** data synchronisation of proper nouns between risten.no and CVS
-*** not done
-** XQuery refactoring and code development for our proper noun editor
-*** not done
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - data synchronisation of proper nouns between risten.no and CVS
+        - not done
+    - XQuery refactoring and code development for our proper noun editor
+        - not done
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
-*** not done
+        - not done
 * read aligner docu, install, provide feedback
-** not done
+    - not done
 * Set up the mechanism for the hash-mark transducer package
-** not done
+    - not done
 * refine the xml output of the xml-tagged analyses
-** done, but is it ready?
+    - done, but is it ready?
 * convert or adapt the received PHP for paradigm generation to our needs
-** not done
+    - not done
 * test Gobby (with others)
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Trond
+##  Trond
 * better smj NT text
-** Not done, must finish Swedish work with Saara and Børre first.
-* get fin, swe, nob and nno NT and OT in __paratext__ format
-** Still waiting for Oslo
+    - Not done, must finish Swedish work with Saara and Børre first.
+* get fin, swe, nob and nno NT and OT in **paratext** format
+    - Still waiting for Oslo
 * install aligner, test it and give feedback
-** Not done
+    - Not done
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
-** Not done  
+    - Not done  
 * meeting 9.6. t 9.30: discuss and decide upon the exact access policy we want
-** Done
-* set upp the unix group structure for corpus users (also __Børre, Saara__)
-** Done
+    - Done
+* set upp the unix group structure for corpus users (also **Børre, Saara**)
+    - Done
 * test Gobby (with others)
-** Done on a regular basis, also last week.
+    - Done on a regular basis, also last week.
 * discuss parallel corpus markup
-** Discussed with Lars and Saara, made good progress, and we will send texts 
+    - Discussed with Lars and Saara, made good progress, and we will send texts 
    this week.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-!!!3. Documentation
+# 3. Documentation
 
 TODO:
 * documentation on how to apply for a user account for the corpus repo
-  (__Børre__)
-** we will administer the corpus user accounts ourselves
-** We first have to discuss and decide what we want before __Børre__ can write
+  (**Børre**)
+    - we will administer the corpus user accounts ourselves
+    - We first have to discuss and decide what we want before **Børre** can write
    documentation (see further down)
-*** done
-* Write both user and admin documentation (__Børre__, review: __Sjur, Thomas__)
-** User documentation probably in several languages. This covers how to apply
+        - done
+* Write both user and admin documentation (**Børre**, review: **Sjur, Thomas**)
+    - User documentation probably in several languages. This covers how to apply
    for an account, on what grounds one can apply, and pointers to documentation
    telling how to use the corpus.
-** Admin documentation, telling how we set the permissions to the corpus files,
+    - Admin documentation, telling how we set the permissions to the corpus files,
    and whatever other processes and tasks needed to set up a corpus account.
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
-!!Collecting
+## Collecting
 
-See a [previous meeting memo|Meeting_2006-01-16] for what's to be done.
+See a [previous meeting memo](Meeting_2006-01-16) for what's to be done.
 
 TODO:
-* Send out the rest of the letters (__Børre__)
+* Send out the rest of the letters (**Børre**)
 
 New contracts:
 * none last 2 weeks
 
-!!Olavi Korhonen's Lule Sámi dictionary.
+## Olavi Korhonen's Lule Sámi dictionary.
 
 TODO:
-* set up user account/corpus access for Olavi (__Børre__)
-** we need the infrastructure for corpus access in place first
-*** decided, but still not implemented
-* Contact __Olavi Korhonen__, to actually get the dictionary
+* set up user account/corpus access for Olavi (**Børre**)
+    - we need the infrastructure for corpus access in place first
+        - decided, but still not implemented
+* Contact **Olavi Korhonen**, to actually get the dictionary
 
-!!KIO Grafisk and the Iđut books
+## KIO Grafisk and the Iđut books
 
-__TODO__:
-* send letter to Kurt Tore Andersen (__Børre__)
-** done
-* send letters to the other authors (__Børre__)
-** sent to Synnøve Persen
-** Erling Persen has lost his files, only source is Iđut
+**TODO**:
+* send letter to Kurt Tore Andersen (**Børre**)
+    - done
+* send letters to the other authors (**Børre**)
+    - sent to Synnøve Persen
+    - Erling Persen has lost his files, only source is Iđut
 
-!!Bible texts
-
-TODO:
-* get nob and nno NT and OT in __paratext__ format. (__Trond__)
-** waiting for Oslo
-* convert smj NT to paratext (__Børre__)
-** waiting for an NT in paratext format (whatever language will do)
-* convert fin, swe to paratext or directly to our XML (__Børre__)
-
-!!Davvi Girji
-
-__TODO__:
-* call Brita Kåven again towards the end of the week (__Børre__)
-** not done
-* call the authors (__Børre__)
-** not more
-
-!!Min Áigi
-
-__TODO__:
-* complete metainformation (__Børre__)
-** continued, not finished
-
-!!Kåfjord
-
-__TODO__:
-* contact Ája (__Børre__)
-** no answer, will try again
-
-!!Sámi Instituhtta
+## Bible texts
 
 TODO:
-* send renaming scripts to R. Valkeapää (__Børre__)
-** done
+* get nob and nno NT and OT in **paratext** format. (**Trond**)
+    - waiting for Oslo
+* convert smj NT to paratext (**Børre**)
+    - waiting for an NT in paratext format (whatever language will do)
+* convert fin, swe to paratext or directly to our XML (**Børre**)
 
-!!Čálliid Lágádus
+## Davvi Girji
+
+**TODO**:
+* call Brita Kåven again towards the end of the week (**Børre**)
+    - not done
+* call the authors (**Børre**)
+    - not more
+
+## Min Áigi
+
+**TODO**:
+* complete metainformation (**Børre**)
+    - continued, not finished
+
+## Kåfjord
+
+**TODO**:
+* contact Ája (**Børre**)
+    - no answer, will try again
+
+## Sámi Instituhtta
+
+TODO:
+* send renaming scripts to R. Valkeapää (**Børre**)
+    - done
+
+## Čálliid Lágádus
 
 [http://www.calliidlagadus.org/]
 
 TODO:
-* send contracts (__Børre__)
-** not done
+* send contracts (**Børre**)
+    - not done
 
-!!Árran
+## Árran
 
 TODO:
-* call Bård Eriksen (__Børre__)
-** Done
+* call Bård Eriksen (**Børre**)
+    - Done
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
-!!General
+## General
 
 Errors in the Antiword conversions found when parsing the xml corpus.
 
-There are also problems with the PDF conversion. __Børre__ has found a 
-[tool|http://multivalent.sf.net] which will produce xml output, he sent the 
-link to __Saara__.
+There are also problems with the PDF conversion. **Børre** has found a 
+[tool](http://multivalent.sf.net) which will produce xml output, he sent the 
+link to **Saara**.
 
 TODO:
 * remove headers and footers from antiword documents, other improvements
-  as needed (__Saara__)
-** in the works, also improvements to the PDF conversion
+  as needed (**Saara**)
+    - in the works, also improvements to the PDF conversion
 
-!!User accounts and access
+## User accounts and access
 
 TODO:
 * discuss and decide upon the exact access policy we want to give corpus users;
-  meeting on Tuesday May 23, at 9.30 (__Børre, Sjur, Trond__)
-** meeting done, [full memo available.|/infra/corpus_policy.html]
+  meeting on Tuesday May 23, at 9.30 (**Børre, Sjur, Trond**)
+    - meeting done, [full memo available.](/infra/corpus_policy.html)
 
-__Conclusion:__ we have the following classes of users:
+**Conclusion:** we have the following classes of users:
 
-* Users that __don't__ need a unix shell
-** linguists doing research on singleton examples
-** historians and other people interested in content, not in form
-* Users that __do__ need a unix shell
-** linguists doing research on texts as a whole
-** linguists with separate analysis tools
-** language technology developers
+* Users that **don't** need a unix shell
+    - linguists doing research on singleton examples
+    - historians and other people interested in content, not in form
+* Users that **do** need a unix shell
+    - linguists doing research on texts as a whole
+    - linguists with separate analysis tools
+    - language technology developers
 
-!Shell access
+### Shell access
 
 External users will get their own user account, belonging to the groups
-{{myself}} and {{bound}}, and will be able to install their own tools and
+`myself` and `bound`, and will be able to install their own tools and
 programs for corpus processing, analysis, etc.
 
-To let the {{bound}} group members be able to analyse, we need to do some minor
-adjustments - as {{other}} they automatically have full access to the Xerox
-tools, and the compiled fst's are available in {{/opt/smi/sme/bin/sme-num.fst}}
-etc. The Xerox tools and vislcg are available in {{/opt/Xerox/bin}}. A couple of
-tools are missing right now, and need to be added to {{/opt/}} by a crontab.
+To let the `bound` group members be able to analyse, we need to do some minor
+adjustments - as `other` they automatically have full access to the Xerox
+tools, and the compiled fst's are available in `/opt/smi/sme/bin/sme-num.fst`
+etc. The Xerox tools and vislcg are available in `/opt/Xerox/bin`. A couple of
+tools are missing right now, and need to be added to `/opt/` by a crontab.
 
 TODO:
-* make a group {{bound}} for our external corpus users, which: (__Børre__)
-** gives access to read our bound texts
-** gives access to execute/run the tools in {{/opt}}
-* export to {{/opt}} (with cron) tools that the project team members find in 
+* make a group `bound` for our external corpus users, which: (**Børre**)
+    - gives access to read our bound texts
+    - gives access to execute/run the tools in `/opt`
+* export to `/opt` (with cron) tools that the project team members find in 
   their cvs tree (the bound users do not have a cvs tree, and therefore need 
-  these tools in {{/opt}} in order to conduct linguistic analyses) (__Tomi__)
-** ccat (and some perl scripts?)
-** other tools?
+  these tools in `/opt` in order to conduct linguistic analyses) (**Tomi**)
+    - ccat (and some perl scripts?)
+    - other tools?
 * make shell script wrappers for the most common commands for user friendlyness
-  (__Trond__)
+  (**Trond**)
 * write user account form, probably ask for copy of existing ones from the IT
-  centre (__Trond__ and __Sjur__)
-* possibly deploy the user account form as an HTML form (__Børre__)
-* write documentation for our {{bound}} users, with pointers to the ordinary 
-  documentation (__Børre, Trond__)
+  centre (**Trond** and **Sjur**)
+* possibly deploy the user account form as an HTML form (**Børre**)
+* write documentation for our `bound` users, with pointers to the ordinary 
+  documentation (**Børre, Trond**)
 * write documentation for how to apply for a user account (where's the form, to
-  whom do I send the form, who needs it, etc.) (__Børre__)
-* make our own guidelines for the user application processing (__Børre__)
-* make a test user (__Børre__)
-* test corpus access as test user (__Trond__)
+  whom do I send the form, who needs it, etc.) (**Børre**)
+* make our own guidelines for the user application processing (**Børre**)
+* make a test user (**Børre**)
+* test corpus access as test user (**Trond**)
 
-
-!Web browser access
+### Web browser access
 
 Users of only the free corpus won't need anything but a browser.
 
@@ -368,142 +367,142 @@ TODO:
 * delay other tasks until we are ready to go public?
 * user management for access to bound texts
 
-!!More texts to the graphical corpus interface:
+## More texts to the graphical corpus interface:
 
 TODO:
-# refine xml-tagged output (__Saara__ and __Tomi__)
-## done, but still open if it is finished
-# add text to the server (__Lars__)
+1. refine xml-tagged output (**Saara** and **Tomi**)
+    1. done, but still open if it is finished
+1. add text to the server (**Lars**)
 
-!!Aligner
+## Aligner
 
-__Trond__ and __Saara__ will continue this issue.
+**Trond** and **Saara** will continue this issue.
 
 We need markup of parallelism in the corpus DTD, at least an indication of which
-documents belong together. Discussion to continue in the newsgroup (__Saara__
+documents belong together. Discussion to continue in the newsgroup (**Saara**
 has started it - please respond!).
 
 TODO:
-* discuss parallel corpus markup (__Saara, Trond, Sjur, others__)
-** done
-* extend the DTD (__Saara__)
-** done
+* discuss parallel corpus markup (**Saara, Trond, Sjur, others**)
+    - done
+* extend the DTD (**Saara**)
+    - done
 
-!!Language recognition
+## Language recognition
 
-Still waiting for more __smj__ text to improve it.
+Still waiting for more **smj** text to improve it.
 
-!!Free and non-free texts
+## Free and non-free texts
 
-Anything? Final check with __Børre__ and __Saara__ - waiting for them to return.
-Nothing more according to __Børre__. Only texts which are explicitly marked as
-''free'' are now included in the {{free/}} directory.
+Anything? Final check with **Børre** and **Saara** - waiting for them to return.
+Nothing more according to **Børre**. Only texts which are explicitly marked as
+*free* are now included in the `free/` directory.
 
-!!Corpus summary
+## Corpus summary
 
 Forrest goes into an endless loop when processing these files. It happens when
 converting the XML to Forrest format. More info on our
-[bugzilla|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=309]
+[bugzilla](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=309)
 
 TODO:
-* trim generated corpus summary pages (__Sjur__)
-** suggestion: lump together files with content less than X paragraphs (X < 5?)
-** nothing done yet
+* trim generated corpus summary pages (**Sjur**)
+    - suggestion: lump together files with content less than X paragraphs (X < 5?)
+    - nothing done yet
 
-!!!6. Infrastructure
+# 6. Infrastructure
 
-!!Paradigm generation
+## Paradigm generation
 
 Goal: Reuse Greenlandic code for paradigm generation.
 
 TODO:
-* convert or adapt the received PHP to our needs (__Tomi__ or __Saara__)
-** __Saara__ has started to look at it
+* convert or adapt the received PHP to our needs (**Tomi** or **Saara**)
+    - **Saara** has started to look at it
 
-!!Hyphenator
+## Hyphenator
 
 TODO:
 * correct the treatment of hyphenation of word boundaries and exceptions (fst
-  gymnastics) (__Sjur, Trond__)
-** Sjur has started some work with M4 integration
+  gymnastics) (**Sjur, Trond**)
+    - Sjur has started some work with M4 integration
 * Update the sme and sma hyphenator rule sets with the insights gained from smj
   updates
-** Thomas has updated sme
-** update (some of) sma (__Trond__ during summer vacation)
+    - Thomas has updated sme
+    - update (some of) sma (**Trond** during summer vacation)
 
-!!Automatic Bugzilla reminder for untouched bugs
+## Automatic Bugzilla reminder for untouched bugs
 
 TODO:
 * set up Bugzilla to send automatic reminders for bugs not touched in a given
-  timeframe; ask Thor-Øivind for help if needed (__Børre__)
-** in the meantime: Bugzilla as [RSS
-feed|feed://giellatekno.uit.no/bugzilla/buglist.cgi?query_format=specific&bug_status=__open__&product=&content=&ctype=rss]
+  timeframe; ask Thor-Øivind for help if needed (**Børre**)
+    - in the meantime: Bugzilla as [RSS
+feed|feed://giellatekno.uit.no/bugzilla/buglist.cgi?query_format=specific&bug_status=**open**&product=&content=&ctype=rss]
 
-!!JSPWiki update
+## JSPWiki update
 
-__Sjur__ has corrected and improved the jspwiki parsing in Forrest, and
-found that mixed lists should __not__ be supported. We should check
+**Sjur** has corrected and improved the jspwiki parsing in Forrest, and
+found that mixed lists should **not** be supported. We should check
 whether we have any such lists anywhere, and correct them, otherwise we risk
 that they are not rendered in HTML, and as such impose an information loss.
-__Sjur__ has sent in a patch to Forrest that will correct nested list
+**Sjur** has sent in a patch to Forrest that will correct nested list
 behaviour, but it will at the same time make mixed lists invisible except for
 the first level. It seems that mixed lists aren't part of the wiki format.
 
 Mixed list example:
-{{{
-# something numbered
-** some sub-thing with a bullet
+```
+1. something numbered
+    - some sub-thing with a bullet
 
 * something bulleted
-## some sub-thing with a number
-}}}
+    1. some sub-thing with a number
+```
 
-__Sjur__ tried to grep, but multiline pattern matching is beyond him. __Tomi__:
+**Sjur** tried to grep, but multiline pattern matching is beyond him. **Tomi**:
 Here's the pattern to use:
-{{{
+```
 egrep -C 3 -R "^\*.*[$]*{1,16}\#" *
-}}}
+```
 
 TODO:
 * grep for all occurences of ^* followed by a line ^## and vice versa (the
-  patterns above) - send the list of identified documents to __Sjur__ (__Tomi__)
-** done during the meeting
+  patterns above) - send the list of identified documents to **Sjur** (**Tomi**)
+    - done during the meeting
 
-!!!7. Linguistics
+# 7. Linguistics
 
-!!Name double-tagging
+## Name double-tagging
 
 Conclusion, in a principled fashion: 
 
-# hardcoded sem-tags win
-# There is a sem-tag conversion procedure: according to a hierarchy of sem-tags:
+1. hardcoded sem-tags win
+1. There is a sem-tag conversion procedure: according to a hierarchy of sem-tags:
   Any Plc can be interpreted as Sur, etc. (to be spelled out)
 
 TODO:
-* Make a section under {{gt/doc/lang/smi/}}, add a chapter
-  __Common linguistic resources__ under the __Languages__ section in
-  {{site-frag.xml}}, and add the document below to that section (__Børre__)
+* Make a section under `gt/doc/lang/smi/`, add a chapter
+  **Common linguistic resources** under the **Languages** section in
+  `site-frag.xml`, and add the document below to that section (**Børre**)
 * write guidelines for annotators wrt. to name tagging and put them under 
-  {{gt/doc/lang/smi}}. A short version of the
+  `gt/doc/lang/smi`. A short version of the
   guidelines goes as follows: \\Systematic
-  ambiguity (the __Trosterud__ (plc/sur) and __Aftenposten__ (org/obj) types)
+  ambiguity (the **Trosterud** (plc/sur) and **Aftenposten** (org/obj) types)
   should not be doubletagged, but given primary tags (plc, org) only.
-  Doubletagging should be confined to exceptional  cases (__Eira__
-  (Fem/Sur/Plc), __Janne__ (Fem/Mal), such things. These guidelines should be
-  added to our documentation file. (__Trond__)
+  Doubletagging should be confined to exceptional  cases (**Eira**
+  (Fem/Sur/Plc), **Janne** (Fem/Mal), such things. These guidelines should be
+  added to our documentation file. (**Trond**)
 * when adding new names, only use one sem-tag unless there are known objects
-  which belong to different sem classes(?) (__all linguists__)
-* write disamb rules to implement the system above (__Trond, Linda__)
+  which belong to different sem classes(?) (**all linguists**)
+* write disamb rules to implement the system above (**Trond, Linda**)
 
-!!North Sámi
+## North Sámi
 
 TODO:
-* investigate Actio compounding (__Thomas__)
-** done North-sámi three-syll
-* discuss findings with __Maaren__, and later all of us (__Thomas__)
-** not done, Maaren is on sickleave
+* investigate Actio compounding (**Thomas**)
+    - done North-sámi three-syll
+* discuss findings with **Maaren**, and later all of us (**Thomas**)
+    - not done, Maaren is on sickleave
 
-!Actio compounding
+### Actio compounding
 
 It is definitely productive. Whether this is a problem for our speller(s), we
 don't know yet, but if there's a lot of overlap or parallel forms with the same
@@ -518,85 +517,86 @@ overgeneration is a speller's worst enemy :-)
 
 TODO:
 * investigate and identify under which conditions Actio compounding is possible
-  (__Thomas__)
+  (**Thomas**)
 
-!!Lule Sámi
+## Lule Sámi
 
 TODO:
 * 50 unknown words left+2 abbr. +moaddi etc (numerals) need more checks
-  (__Thomas__)
-** done except for abbr. and numerals
-*** add abbr to a new abbr lexicon file
-*** numerals are covered by the next task
-* add proper numeral analysis/treatment (__Thomas__)
-** not done
-* add loanwords (e.g. latin -ere verbs) (__Thomas__)
-** not done
+  (**Thomas**)
+    - done except for abbr. and numerals
+        - add abbr to a new abbr lexicon file
+        - numerals are covered by the next task
+* add proper numeral analysis/treatment (**Thomas**)
+    - not done
+* add loanwords (e.g. latin -ere verbs) (**Thomas**)
+    - not done
 
-!!!8. Name lexicon infrastructure
+# 8. Name lexicon infrastructure
 
 TODO:
-# finish refactoring for multiple collections in the search interfarce
-  (__Sjur__)
-## investigation done, still not implemented
-# develop the needed XQueries and interface (__Sjur, Tomi__)
-## nothing this week
-# data synchronisation between risten.no and the cvs repo (__Tomi__)
-## discussion started on eXist-list, nothing useful came up. We need to
+1. finish refactoring for multiple collections in the search interfarce
+  (**Sjur**)
+    1. investigation done, still not implemented
+1. develop the needed XQueries and interface (**Sjur, Tomi**)
+    1. nothing this week
+1. data synchronisation between risten.no and the cvs repo (**Tomi**)
+    1. discussion started on eXist-list, nothing useful came up. We need to
    reformulate the question from our perspective, and bring it up again
-   (__Sjur__)
-### not yet done
+   (**Sjur**)
+        1. not yet done
 
-!!!9. Public tender
+# 9. Public tender
 
 Nothing received from PL yet. They have an extended deadline today. After that
 we will decide upon the information we have.
 
 TODO:
 * final evaluation based on the answers to the clarification letters
-** waiting for the PL answer
+    - waiting for the PL answer
 * present the final report to the board, and bring their decision into action
 
-!!!10. Other
+# 10. Other
 
-!!Summer vacation
+## Summer vacation
 
-From __Bitte__: "I følge fjorårets liste tok iallefall Børre ut 10 dager av
+From **Bitte**: "I følge fjorårets liste tok iallefall Børre ut 10 dager av
 årets ferie og Tomi tok 8 dager, dvs at Børre kan ta 3 uker med lønn og Tomi 3
 uker og 2 dager. De kan selvsagt låne av neste års ferie dersom de ønsker det."
 
 She would like to receive a final vacation plan soon.
 
-|| Who  || When
-| Børre  | 24.7 - 20.8
-| Linda  | ?
-| Maaren | on sick leave
-| Saara  | July
-| Sjur   | at least 2 weeks in July, but still open
-| Thomas | 3.7 - 7.8
-| Trond  | 3.7 - 14.8 (last two weeks off at summer school)
-| Tomi   | 8.7 - 16.7, 2 more weeks in July and/or August
+|   Who  | When
+| --- | --- 
+|  Børre  | 24.7 - 20.8
+|  Linda  | ?
+|  Maaren | on sick leave
+|  Saara  | July
+|  Sjur   | at least 2 weeks in July, but still open
+|  Thomas | 3.7 - 7.8
+|  Trond  | 3.7 - 14.8 (last two weeks off at summer school)
+|  Tomi   | 8.7 - 16.7, 2 more weeks in July and/or August
 
-!!Bug fixing
+## Bug fixing
 
-__43__ open Divvun/Disamb bugs (two down!), and __25__ risten.no bugs
+**43** open Divvun/Disamb bugs (two down!), and **25** risten.no bugs
 
 Guess: 1/3 of the bugs are fixed already (?)
 
-Please help __Saara__ with [bug
+Please help **Saara** with [bug
 279|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=279]
  (Perl locale). Not much help...
-__Saara__ will contact __Roy__ on this issue.
+**Saara** will contact **Roy** on this issue.
 
-!!Gobby
+## Gobby
 
 TODO:
-* install Gobby (__Saara__)
-* test it (__Tomi, Trond, Sjur, Børre, Lars?__)
-** done
-* if successful, document its use within our project (__Børre__)
+* install Gobby (**Saara**)
+* test it (**Tomi, Trond, Sjur, Børre, Lars?**)
+    - done
+* if successful, document its use within our project (**Børre**)
 
-!!SEE 2.5 extensions
+## SEE 2.5 extensions
 
 Future extensions and whish modes:
 * write a perl script to extract all TODO items and sort them according to
@@ -607,16 +607,16 @@ Future extensions and whish modes:
 * vislcg mode
 
 TODO:
-* move the above list to Bugzilla (__Sjur__)
+* move the above list to Bugzilla (**Sjur**)
 
-!!Task lists as iCal entries
+## Task lists as iCal entries
 
 With the latest corrections to the Wiki parsing, and with the tasks at the end
 of the document, we should be able to use the intermediate XML format to extract
 the info needed to create iCal entries for all tasks.
 
 iCal entries look like the following:
-{{{
+```
 BEGIN:VTODO
 DTSTAMP:20060619T090920Z
 ORGANIZER;CN=Børre Gaup:MAILTO:boerre@skolelinux.no
@@ -631,19 +631,19 @@ DUE:20050824T073000Z
 COMPLETED:20050622T050540Z
 PERCENT-COMPLETE:100
 END:VTODO
-}}}
+```
 
-A reference can be found at [Wikipedia|http://en.wikipedia.org/wiki/ICalendar]
+A reference can be found at [Wikipedia](http://en.wikipedia.org/wiki/ICalendar)
 
 References should be of the type:
-{{{
+```
 /doc/admin/weekly/2006/Tasks_2006-06-19_Sjur.ics
-}}}
+```
 
 TODO:
-* create iCal entries from our meeting memos (__Sjur__ or __Børre__)
+* create iCal entries from our meeting memos (**Sjur** or **Børre**)
 
-!!!11. Next meeting, closing
+# 11. Next meeting, closing
 
 26.06.2006 09:30
 
@@ -651,41 +651,41 @@ Sjur might be away, will inform you later.
 
 Closed at 11:20.
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!! Boerre
+##  Boerre
 
 * corpus collection:
-** send out contracts with accompanying letter
-** Gather public texts, preferrably also parallel ones
-** Send out letters to the rest of the Iđut authors
-** call __Brita Kåven__ again
-** contact __Ája__ (Kåfjord)
-** call __Bård Eriksen__
-** send contracts to Čálliid Lágádus
-** Contact __Olavi Korhonen__, to actually get the dictionary
+    - send out contracts with accompanying letter
+    - Gather public texts, preferrably also parallel ones
+    - Send out letters to the rest of the Iđut authors
+    - call **Brita Kåven** again
+    - contact **Ája** (Kåfjord)
+    - call **Bård Eriksen**
+    - send contracts to Čálliid Lágádus
+    - Contact **Olavi Korhonen**, to actually get the dictionary
 * corpus conversion:
-** Continue converting text from input format to our xml
-** convert nob and nno bible texts to be used as part of a parallel corpus
-** convert fin, swe to paratext or directly to our XML
-** review the paratext2xml converter
-** convert smj NT to paratext
-** complete __Min Áigi__ metadata
+    - Continue converting text from input format to our xml
+    - convert nob and nno bible texts to be used as part of a parallel corpus
+    - convert fin, swe to paratext or directly to our XML
+    - review the paratext2xml converter
+    - convert smj NT to paratext
+    - complete **Min Áigi** metadata
 * corpus access:
-** make a group {{bound}} for our external corpus users
-** possibly deploy the user account form as an HTML form
-** make a test user
-** Write both user and admin documentation
+    - make a group `bound` for our external corpus users
+    - possibly deploy the user account form as an HTML form
+    - make a test user
+    - Write both user and admin documentation
 * set up Bugzilla automatic reminders for open issues; ask Thor-Øivind if needed
 * document use of Gobby within our project
 * create document & document entry for name double-tagging
-* create iCal entries from our meeting memos (or __Sjur__)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* create iCal entries from our meeting memos (or **Sjur**)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * On sick leave
 
-!! Saara
+##  Saara
 
 * Create a parallel corpora of the new testaments
 * add more texts to the graphical corpus interface
@@ -696,27 +696,27 @@ Closed at 11:20.
 * refine the xml output of the xml-tagged analyses
 * convert or adapt the received PHP for paradigm generation to our needs
 * remove headers and footers from antiword documents, other improvements
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 
 * public tender:
-** collect the last clarifying answers, and make a final proposal to the board
+    - collect the last clarifying answers, and make a final proposal to the board
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
 * name lexicon:
-** implement editing functions
-** finalise refactoring for multiple collections (regular search interface)
+    - implement editing functions
+    - finalise refactoring for multiple collections (regular search interface)
 * change corpus summary processing to generate smaller pages, see
-  [bug report|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=309]
+  [bug report](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=309)
 * move the SEE 2.5 extension list to Bugzilla
-* create iCal entries from our meeting memos (or __Børre__)
+* create iCal entries from our meeting memos (or **Børre**)
 * review user and admin documentation for corpus access
 * write user account form, probably ask for copy of existing ones from the IT
   centre (with Trond)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Thomas
+##  Thomas
 
 * investigate productivity of Actio compounding in smj
 * investigate and identify under which conditions Actio compounding is possible
@@ -727,34 +727,34 @@ Closed at 11:20.
 * sme G3 issue
 * review user documentation for corpus access
 * create smj abbr file 
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Tomi
+##  Tomi
 
 * new proper name lexicon
-** data synchronisation of proper nouns between risten.no and CVS
-** XQuery refactoring and code development for our proper noun editor
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - data synchronisation of proper nouns between risten.no and CVS
+    - XQuery refactoring and code development for our proper noun editor
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
 * read aligner docu, install, provide feedback
 * Set up the mechanism for the hash-mark transducer package
 * test the new xml output of the xml-tagged analyses
-* export corpus tools to {{/opt}} (with cron)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* export corpus tools to `/opt` (with cron)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Trond
+##  Trond
 
 * better smj NT text
-* get fin, swe, nob and nno NT and OT in __paratext__ format
+* get fin, swe, nob and nno NT and OT in **paratext** format
 * install aligner, test it and give feedback
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
 * make shell script wrappers for the most common commands for user friendlyness
 * write user account form, probably ask for copy of existing ones from the IT
   centre (with Sjur)
-* write documentation for our {{bound}} users, with pointers to the ordinary 
+* write documentation for our `bound` users, with pointers to the ordinary 
   documentation  
 * write documentation on double-tagging names
 * discuss web-only user access management with Oslo
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).

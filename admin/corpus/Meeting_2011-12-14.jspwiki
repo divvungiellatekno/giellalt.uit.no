@@ -1,35 +1,30 @@
-!!!Parallelliseringsmøte 14.12.2011
-
+# Parallelliseringsmøte 14.12.2011
 
 Berit Merete, Børre, Sjur, Trond
 
-
-!!!Saksliste
+# Saksliste
 
 * status quo for testbed for gullkorpus
 * status quo for gullkorpus
 * arbeid framover
 
+# Status quo for testbed for gullkorpus
 
-!!!Status quo for testbed for gullkorpus
+* Tabell er oppe og køyrer, **fint**.
 
-* Tabell er oppe og køyrer, __fint__.
-
-{{{cat fad_gull_diff_test-res.txt |tr '\n' '™'|sed 's/The diff for /€/g;'|sed 's/The tmx diff /€/g;' | tr '€' '\n' |grep 'nob '|tr '™' '\n'|l}}}
+```cat fad_gull_diff_test-res.txt |tr '\n' '™'|sed 's/The diff for /€/g;'|sed 's/The tmx diff /€/g;' | tr '€' '\n' |grep 'nob '|tr '™' '\n'|l```
 
 Dette gjev output av typen:
 
-{{{
+```
 @@ -74 +77,2 @@
 
 -Lámispenš. 16–66 jagi – pr.  1000 ássi(1999 )
 +Lámispenš .
 +16–66 jagi – pr.  1000 ássi(1999 )
-}}}
-
+```
 
 Den andre typen av feil er:
-
 
 Setningspar:
 
@@ -40,97 +35,89 @@ The tmx diff is
 Alle innbyggerne i den enkelte kommune har rett til utnyttelse av visse naturressurser innenfor kommunens grenser , blant annet egg- og dunsanking og begrenset hogst .	
 Buot gieldda ássiin galgá leat vuoigatvuohta ávkkástallat dihto luondduvalljodagain gieldda rájáid siskkobealde , earret eará mannet , uvjet ja murret dihto mearrái .
 
-{{{
+```
 -Buot gieldda ássiin galgá leat vuoigatvuohta ávkkástallat dihto luondduvalljodagain gieldda rájáid siskkobealde , earret eará mannet , uvjet ja murret dihto mearrái .
 +Buot gieldda ássiin galgá leat vuoigatvuohta ávkkástallat dihto luondduvalljodagain gieldda rájáid siskkobealde , earret eará mannet , uvjet ja murret dihto
 +mearrái .
-}}}
-
+```
 
 Anker:
 
 ocean / hav*, sjø* / meara*, mearr* / meri*, mere* / meara*, X / saelht* saalht*
 
-Den abstrakte tydinga er vanlegare enn den konkrete, så vi må få ''begrenset, grad'' inn på norsk.
+Den abstrakte tydinga er vanlegare enn den konkrete, så vi må få *begrenset, grad* inn på norsk.
 
-
-__TILTAK__
+**TILTAK**
 
 * Diffane som del av testresultat:
-** alle tre versjonar: tmx, sme, nob.
-** sme, nob separat
+    - alle tre versjonar: tmx, sme, nob.
+    - sme, nob separat
 * Korpus av forkortingar
-** dra ut par {{asdf.}} vs. {{asdf.}} frå gull/konvertert-fil-para (__Børre__)
-** evaluere, og lagre som unit-test-dokument (__Berit Merete, Trond__)
+    - dra ut par `asdf.` vs. `asdf.` frå gull/konvertert-fil-para (**Børre**)
+    - evaluere, og lagre som unit-test-dokument (**Berit Merete, Trond**)
 
-!!!Status quo for gullkorpus
+# Status quo for gullkorpus
 
 Vi har no to runder
 
+**TILTAK**
+* Penare tabell (**Sjur**)
 
-__TILTAK__
-* Penare tabell (__Sjur__)
-
-{{{
+```
 4/345  341/345
 3/345  342/345
 
 25% 75% 0,0x%
-}}}
+```
 
-!!!Arbeid framover
+# Arbeid framover
 
 Spm. er strategi for forbetring:
 
-!!Forbetring
+## Forbetring
 
-
-!tca2-parametersetjing
+### tca2-parametersetjing
 
 Bruk gullkorpuset som referanse, og sjå om det er mogleg å få betre resultat ved hjelp av andre parameterverdiar i tca2.
 
-[Jf. dokumentasjon|/tools/TCA2_parameters.html]. Vi bruker i dag standardverdiar, som er laga for norsk-engelsk.
+[Jf. dokumentasjon](/tools/TCA2_parameters.html). Vi bruker i dag standardverdiar, som er laga for norsk-engelsk.
 
-# Setningslengde (eit empirisk spm)
-# Dice
-# Vekting av dei ulike komponentane
+1. Setningslengde (eit empirisk spm)
+1. Dice
+1. Vekting av dei ulike komponentane
 
-__TILTAK__
-* Test dei tre parameterverdiane (__Børre__)
+**TILTAK**
+* Test dei tre parameterverdiane (**Børre**)
 
+### Ankerfil
 
-!Ankerfil
+1. Lese ankerfila med eit kritisk blikk (**Børre, Trond, Berit Merete**)
+1. Top-down: Køyr korpuset gjennom anker-fst-en, og legg til nye anker frå toppen, sjå på mest frekvente missing, (**Sjur**)
+    1. prestable/tmx/.../sme/... og gjennom ein anchor.fst for sme
+    1. prestable/tmx/.../nob/... og gjennom ein anchor.fst for nob
+    1. Legge til i anchor (**Børre, Trond, Berit Merete**)
+1. Korpusdrive: Gå gjennom gullkorpuset, og legg til ord frå dei setningane som er feilparallellisert
 
-# Lese ankerfila med eit kritisk blikk (__Børre, Trond, Berit Merete__)
-# Top-down: Køyr korpuset gjennom anker-fst-en, og legg til nye anker frå toppen, sjå på mest frekvente missing, (__Sjur__)
-## prestable/tmx/.../sme/... og gjennom ein anchor.fst for sme
-## prestable/tmx/.../nob/... og gjennom ein anchor.fst for nob
-## Legge til i anchor (__Børre, Trond, Berit Merete__)
-# Korpusdrive: Gå gjennom gullkorpuset, og legg til ord frå dei setningane som er feilparallellisert
-
-
-!abbr-jobbing
+### abbr-jobbing
 
 Det føreset nye gullfiler (eller å berre lese gjennom resultat)
 
-__TILTAK__
+**TILTAK**
 Berit Merete og Trond held fram.
 
-!Forbetre konverteringa
+### Forbetre konverteringa
 
 pdf: Fjerne topp- og bunntekst.
 
-!!Terskelnivå
+## Terskelnivå
 
 Når har vi eit bra nok resultat til å bedrive ordparallellisering?
 
-__TILTAK__
-* Spørre folk (__Trond__)
+**TILTAK**
+* Spørre folk (**Trond**)
 
-
-!!!Neste møte
+# Neste møte
 
 20.12. kl. 10.00.
 
 (nb! Nye resultat til neste møte)
-

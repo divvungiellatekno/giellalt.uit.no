@@ -8,7 +8,7 @@ Møte T&S 22.9.2015
 * søknader
 * see-modi
 
-!!!python på stallo
+# python på stallo
 
 No news are not good news.
 
@@ -16,36 +16,35 @@ make check  (sma):
 * lemma-generering - ok
 * yaml-testar: feil
 
-{{{
+```
   File "/home/sjur/langtech/main/gtcore/scripts/morph-test.py", line 419, in run_test
     raise LookupError('`%s` had an error:\n%s' % (self.program, self.results['err']))
-__main__.LookupError: `['/home/sjur/bin/lookup', '-flags', 'mbTT']` had an error:
+**main**.LookupError: `['/home/sjur/bin/lookup', '-flags', 'mbTT']` had an error:
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 (Error code: -11)
 FAIL
-}}}
+```
 
 Problemet kokar ned til:
 
-{{{
+```
 $ echo gïeli | lookup -flags mbTT src/analyser-gt-desc.xfst 
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 ERROR in 'LOOKUP' at input line 0 :
 output buffer overflow
-}}}
+```
 
 For trond:
-{{{
+```
 [trond@stallo-2 sma]$ echo gïeli | lookup -flags mbTT src/analyser-gt-desc.xfst 
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 gïeli	gïele+N+Pl+Gen
 gïeli	gïeledh+V+TV+Ind+Prt+Sg3
-}}}
-
+```
 
 Sjur med hfst:
 
-{{{
+```
 $ echo gïeli | hfst-lookup -q ../hfst/src/analyser-gt-desc.hfst
 gïeli	aarph+N+Cmp#aarph+N+Cmp#aarph+N+Cmp#aarph+N+Cmp#aarph+N+Cmp#gïele+N+Pl+Gen	0,000000
 gïeli	aarph+N+Cmp#aarph+N+Cmp#aarph+N+Cmp#aarph+N+Cmp#gïele+N+Pl+Gen	0,000000
@@ -64,11 +63,10 @@ Jf. src/morphology/stems/nouns.lexc:aarph+N+CmpNP/Pref+CmpN/SgN:aarph R ;
   2189  svaale+N+CmpNP/Pref+CmpN/SgN:svaale R ;
   2190  geesjele+N+CmpNP/Pref+CmpN/SgN:geesjele R ;
 
-
 $ echo gïeli | hfst-lookup -q ../hfst/src/analyser-gt-desc.hfstol 
 ^C
 $ echo gïeli | hfst-optimized-lookup -w ../hfst/src/analyser-gt-desc.hfstol 
-*** glibc detected *** hfst-optimized-lookup: malloc(): memory corruption (fast): 0x0000000003ddff20 ***
+        - glibc detected *** hfst-optimized-lookup: malloc(): memory corruption (fast): 0x0000000003ddff20 ***
 ======= Backtrace: =========
 /lib64/libc.so.6[0x3bc1475e66]
 /lib64/libc.so.6[0x3bc1479cdf]
@@ -170,24 +168,23 @@ hfst-optimized-lookup[0x403f85]
 ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
 Aborted
 $
-}}}
+```
 
 Hfst for Trond:
 
-{{{
+```
 configure: error: You requested --with-hfst: hfst is too old. OR: no other fst tools were found (Xerox, Foma).
 checking whether hfst is at least 3.8.2 and has the required tools... /home/sjur/bin/hfst-info:
 error while loading shared libraries: libimf.so: cannot open shared object file: No such file or directory
-}}}
-
+```
 
 Konklusjon:
 
-# Trond køyrer og testar med xerox (funkar for Trond sjølv om det ikkje funkar for Sjur)
-# Trond testar hfst for aarph-feilen
-# Deretter ser vi
+1. Trond køyrer og testar med xerox (funkar for Trond sjølv om det ikkje funkar for Sjur)
+1. Trond testar hfst for aarph-feilen
+1. Deretter ser vi
 
-!!!gt-servarane
+# gt-servarane
 
 Problem den siste tida. Oppsummering for arbeidet vidare:
 
@@ -195,7 +192,7 @@ Problem den siste tida. Oppsummering for arbeidet vidare:
 * samanfatting av problemmeldingane frå servarane
 * analyse og tiltak for forbetring
 
-!!!tal-fst-ane
+# tal-fst-ane
 
 Bug nr. 1538. Det er tre ulike fst-typar (tal, dato, klokke). Retninga høgre:venstre
 er spesifisert i filnamna, dvs. vi vil ha tal:tekst i lexc-koden:
@@ -211,27 +208,27 @@ Konklusjon:
 
 Vi må rydde opp i dette:
 
-# Vi inviterer relevante personar til dugnad for sine respektive språk
-# ... og ber Heli om å rydde opp i Oahpa-konfigureringa
+1. Vi inviterer relevante personar til dugnad for sine respektive språk
+1. ... og ber Heli om å rydde opp i Oahpa-konfigureringa
 
-!!!bugzilla
+# bugzilla
 
 Aktivitet i det siste, bra. Vi følgjer opp.
 
-!!!stavekontroll og vektar
+# stavekontroll og vektar
 
 Bug i OpenFST med negative vektar i regulære uttrykk. Buggen hindrar oss i å
 laga ferdig stavekontrollar, Sjur ser på om det er mogleg å jobba rundt problemet.
 
-!!!Søknader
+# Søknader
 
-!! ML - enare-samisk
+##  ML - enare-samisk
 
 Søknadsfrist neste veke.
 
-!! Jaska - 
+##  Jaska - 
 
-{{{
+```
 Jack Rueter:
 	Hi, Sjur
 	I just got a message from Ivan Ryabov in Saransk.
@@ -254,10 +251,10 @@ Sjur Nørstebø Moshagen:
 Jack Rueter:
 	Everything has to be turned in before the 25th to be safe
 	the final time is some time on the 25th, I’ll have to look inthe pdf-s
-}}}
+```
 
 Trond og Sjur sender CV, seinast i morgon.
 
-!!! see-modi
+#  see-modi
 
 Utsett til neste gong.

@@ -1,4 +1,4 @@
-!!!Remaking make using GNU autotools?
+# Remaking make using GNU autotools?
 
 [http://sources.redhat.com/automake/automake.html]
 
@@ -18,13 +18,13 @@ Implications:
 * nested buildling
 * template for populating
 
-After some discussion, with pointers to alternatives and to discussions on the about problems with the autotools set, we settled on [CMake|http://www.cmake.org] as our first attempt at creating a more sane build infrastructure.
+After some discussion, with pointers to alternatives and to discussions on the about problems with the autotools set, we settled on [CMake](http://www.cmake.org) as our first attempt at creating a more sane build infrastructure.
 
 Download:
 http://cmake.org/cmake/resources/software.html
 
 An example of a CMake dependency + build instruction:
-{{{
+```
 PROJECT(Document)
 IF(LATEX_COMPILE)
   ADD_CUSTOM_COMMAND(
@@ -43,6 +43,6 @@ IF(DVIPDF_COMPILE)
     ARGS      ${Document_SOURCE_DIR}/TDocument.dvi
     )
 ENDIF(DVIPDF_COMPILE)
-}}}
+```
 
-So, we could try to do something concrete, e.g. build some part of {{sme}} using cmake.
+So, we could try to do something concrete, e.g. build some part of `sme` using cmake.

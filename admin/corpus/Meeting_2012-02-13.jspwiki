@@ -1,9 +1,8 @@
-!!!Parallelliseringsmøte 13.2.2012
+# Parallelliseringsmøte 13.2.2012
 
 Berit Merete, Børre, Sjur, Ciprian, Trond
 
-
-!!!Saksliste
+# Saksliste
 
 * status for gullkorpus
 * status for parallellføringa
@@ -11,10 +10,9 @@ Berit Merete, Børre, Sjur, Ciprian, Trond
 * status for ordparallellisering
 * arbeid framover
 
+# Status for gullkorpus
 
-!!!Status for gullkorpus
-
-__Status:__ Siste test fredag 10.2, 424 feil (96,65 %).
+**Status:** Siste test fredag 10.2, 424 feil (96,65 %).
 
 Problemområde som står att:
 * doc-til-xml er for dårleg
@@ -24,56 +22,56 @@ Problemområde som står att:
   identifiserer dokumentfragment som skal ignorererast ved parallellføring vil
   vera ei hjelp i å forbetra parallellføringa i framtida
 
-!!!Status for parallellføringa
+# Status for parallellføringa
 
 * 1528 tmx-filer i nob2sme
 * 139 tmx-filer i sme2nob (i det minste 92 av dem må flyttes til nob2sme)
-** >1620 nob2sme
-** <47 sme2nob
+    - >1620 nob2sme
+    - <47 sme2nob
 
 Ord:
 * 1,89 mill ord
 * 2,32 mill ord
 
 Kommandoar:
-{{{
+```
 ccat -a -l sme -r $GTFREE/prestable/converted/sme/ | wc -w
 ccat -a -l nob -r $GTFREE/prestable/converted/nob/ | wc -w
-}}}
+```
 
-__TILTAK__
+**TILTAK**
 * Grovtest: tail -40 på alle tmx-filer. Dersom det dukkar opp problem:
 * problemfiler blir fjerna
 
 tail -50 depts/other_files/*x|see
 
-!!!Status for fase 1
+# Status for fase 1
 
 Fase 1: Setningsparallellisere
-# forbetre parallelliseringa (__Børre__)
-# leggje til nye tekstar (__Børre__)
-# teste tmx i Autshumato (__Sjur__)
-# setje strek og ordparallellisere - dato: __10.2.__
+1. forbetre parallelliseringa (**Børre**)
+1. leggje til nye tekstar (**Børre**)
+1. teste tmx i Autshumato (**Sjur**)
+1. setje strek og ordparallellisere - dato: **10.2.**
 
 Alt er gjort.
 
-!!!Status for ordparallellisering - fase 2
+# Status for ordparallellisering - fase 2
 
 Dokumentert, bortsett frå ein kommando.
 
-__TILTAK__
-* setja opp infra som krevst (__Ciprian__)
-* køyra ordparallelliseringa (__Ciprian__)
+**TILTAK**
+* setja opp infra som krevst (**Ciprian**)
+* køyra ordparallelliseringa (**Ciprian**)
 * resultata skal vera ferdige 30.03.2012
 
-!!Fase 2b:
+## Fase 2b:
 
 * laga ekte TMX
-** utan ekstra mellomrom osb.
-** med autokorrektur?
+    - utan ekstra mellomrom osb.
+    - med autokorrektur?
 * dokumentera bruken av dei, for to system:
-** Autshumato/OmegaT
-** Trados
+    - Autshumato/OmegaT
+    - Trados
 * laga distribusjonspakker
 
 Kva blir brukt ute i verda?
@@ -88,37 +86,37 @@ Siri Broch Johansen:
 * Samiske omsetjingar blir handtert av Semantix AS, som kontaktar frilansarar.
   Sjå [http://semantix.no/]
 
-__TILTAK__
-* endra katalognamn og filending: (__Børre__)
-** filending:
-*** .tmx = ekte tmx (for bruk til omsetjarprogram som Trados og Autshumato)
-*** kva med gamal: .tmx => .toktmx
-** katalognamn:
-*** $GTFREE/prestable/tmx = __EKTE__ tmx
-*** $GTFREE/prestable/toktmx = __gamal__ tmx, tokenisert tmx, berre brukbart til ordparallellisering
+**TILTAK**
+* endra katalognamn og filending: (**Børre**)
+    - filending:
+        - .tmx = ekte tmx (for bruk til omsetjarprogram som Trados og Autshumato)
+        - kva med gamal: .tmx => .toktmx
+    - katalognamn:
+        - $GTFREE/prestable/tmx = **EKTE** tmx
+        - $GTFREE/prestable/toktmx = **gamal** tmx, tokenisert tmx, berre brukbart til ordparallellisering
 * kjøpa 1 Trados Freelance-lisens? Nei, vi ventar
-* køyra autokorrektur med typos-lista på sme-tekstane (__Børre__)
-* køyra vanleg stavekontroll (__Børre, Sjur__)
-* sjå på resultata (__BeritM__)
-* legge inn nye feil i {{typos.txt}} (__BeritM__)
+* køyra autokorrektur med typos-lista på sme-tekstane (**Børre**)
+* køyra vanleg stavekontroll (**Børre, Sjur**)
+* sjå på resultata (**BeritM**)
+* legge inn nye feil i `typos.txt` (**BeritM**)
 * køyra manuell etterkorrektur?
-* dokumentera Autshumato m TMX (__Børre, Sjur__)
-** installasjon av Autshumato
-** oppsett
-** installera TMX
-** bruka programmet med TMX
-** helst sjå på:
-*** stavekontroll
-*** ordbøker
-*** terminologi
+* dokumentera Autshumato m TMX (**Børre, Sjur**)
+    - installasjon av Autshumato
+    - oppsett
+    - installera TMX
+    - bruka programmet med TMX
+    - helst sjå på:
+        - stavekontroll
+        - ordbøker
+        - terminologi
 
-!!!Arbeid framover
+# Arbeid framover
 
 * tmx, sjå fase 2b over
 * ordparallellisering, sjå over
 * rapport
 
-!!!Neste møte
+# Neste møte
 
 Fredag 17.2. kl 8:30
 

@@ -1,7 +1,6 @@
-# Møte 10.12.2020
+1. Møte 10.12.2020
 
 kl. 10:00-11:40
-
 
 Når skal vi legge ut regler:
 Precision: 75%
@@ -16,7 +15,7 @@ kommando for å teste:
 gramcheck-test.py -c test/grammarcheckers/real-NomAgIll-PrtSg3.yaml
 ```
 
-# Oversikt over stoda
+1. Oversikt over stoda
  Regel                      |  FP |  FN |   TP |   TN | Kommentar | Yaml | ferdig
 :-------------------------- | ---:| ---:| ----:| ----:| --------- | ---- | ------
 real-Derh-Inf               |   0 |   9 |   70 |  165 | -- e ute  | x    | D
@@ -46,8 +45,7 @@ Liste over regeltypar vi vil ha med:
 - `real-DerNomActSgGen-PrfPrc `
 - `real-DerNomActSgGen-PrsSg1 `
 
-
-## `real-Derh-Inf`
+    1. `real-Derh-Inf`
 ```
 Total passes: 660, Total fails: 3, Total: 663
 True positive: 171
@@ -61,7 +59,7 @@ Recall: 100.0%
 F₁ score: 99.1%
 ```
 
-## `real-Derh-Inf.notfixed`
+    1. `real-Derh-Inf.notfixed`
 ```
 Total passes: 32, Total fails: 124, Total: 156
 True positive: 18
@@ -75,7 +73,7 @@ Recall: 36.0%
 F₁ score: 22.5%
 ```
 
-## `real-NomAgIll-PrtSg3`
+    1. `real-NomAgIll-PrtSg3`
 ```
 Total passes: 324, Total fails: 13, Total: 337
 True positive: 145
@@ -89,7 +87,7 @@ Recall: 96.0%
 F₁ score: 95.7%
 ```
 
-## `real-NomAgIll-PrtSg3.notfixed.yaml`
+    1. `real-NomAgIll-PrtSg3.notfixed.yaml`
 ```
 Total passes: 5, Total fails: 26, Total: 31
 True positive: 5
@@ -103,8 +101,7 @@ Recall: 100.0%
 F₁ score: 27.8%
 ```
 
-
-## `real-PlNomPxSg2-PlNom`
+    1. `real-PlNomPxSg2-PlNom`
 ```
 Total passes: 2, Total fails: 0, Total: 2
 True positive: 1
@@ -118,12 +115,11 @@ Recall: 100.0%
 F₁ score: 100.0%
 ```
 
-## `real-PlNomPxSg2-PlNom.notfixed`
+    1. `real-PlNomPxSg2-PlNom.notfixed`
 
 `No such file or directory`
 
-
-## `real-Ess-PrfPrc` + Actio Gen/Actio Nom
+    1. `real-Ess-PrfPrc` + Actio Gen/Actio Nom
 ```
 Total passes: 488, Total fails: 298, Total: 786
 True positive: 479
@@ -137,12 +133,11 @@ Recall: 87.4%
 F₁ score: 76.3%
 ```
 
-## `real-Ess-PrfPrc.notfixed` + Actio Gen/Actio Nom
+    1. `real-Ess-PrfPrc.notfixed` + Actio Gen/Actio Nom
 
 NoneType' object is not iterable
 
-
-## `real-DerNomActSgGen-PrfPrc`
+    1. `real-DerNomActSgGen-PrfPrc`
 ```
 Total passes: 861, Total fails: 167, Total: 1028
 True positive: 222
@@ -156,7 +151,7 @@ Recall: 91.7%
 F₁ score: 72.7%
 ```
 
-## `real-DerNomActSgGen-PrfPrc-notfixed`
+    1. `real-DerNomActSgGen-PrfPrc-notfixed`
 ```
 Total passes: 28, Total fails: 246, Total: 274
 True positive: 20
@@ -170,7 +165,7 @@ Recall: 12.8%
 F₁ score: 14.0%
 ```
 
-## `real-DerNomActSgGen-PrsSg1`
+    1. `real-DerNomActSgGen-PrsSg1`
 
 ```sh
 gramcheck-test.py -c test/grammarcheckers/real-DerNomActSgGen-PrsSg1.yaml
@@ -180,7 +175,7 @@ expected <block end>, but found '<scalar>'
   in "test/grammarcheckers/real-DerNomActSgGen-PrsSg1.yaml", line 1156, column 75
 ```
 
-## `real-Derh-Inf.yaml`
+    1. `real-Derh-Inf.yaml`
 ```
 Total passes: 661, Total fails: 2, Total: 663
 True positive: 171
@@ -194,7 +189,7 @@ Recall: 100.0%
 F₁ score: 99.4%
 ```
 
-## `real-NomAgIll-PrtSg3.yaml`
+    1. `real-NomAgIll-PrtSg3.yaml`
 ```
 Total passes: 328, Total fails: 9, Total: 337
 True positive: 145
@@ -208,7 +203,7 @@ Recall: 98.6%
 F₁ score: 97.0%
 ```
 
-## `real-NomAgIll-PrtSg3.notfixed.yaml`
+    1. `real-NomAgIll-PrtSg3.notfixed.yaml`
 
 Total passes: 5, Total fails: 26, Total: 31
 True positive: 5
@@ -221,8 +216,7 @@ Precision: 16.1%
 Recall: 100.0%
 F₁ score: 27.8%
 
-
-## syn-compound.yaml
+    1. syn-compound.yaml
 
 Total passes: 84, Total fails: 1, Total: 85
 True positive: 71
@@ -235,14 +229,11 @@ Precision: 98.6%
 Recall: 100.0%
 F₁ score: 99.3%
 
-
-
-## Om testinga
+    1. Om testinga
 
 * ka brukte du for å regne ut TP, FP, FN? -- Google docs eller Terminalen?
 - selve testfilan uten analyse (siden analysen ikke fungerte)
 konklusjonen: yaml-testan burde være på plass for å teste
-
 
 Yaml-tester til nå:
 ```
@@ -271,7 +262,6 @@ syn-compound.notfixed.yaml
 syn-compound.yaml
 ```
 
-
 Ting som skal gjerast:
 
 - Linda skal lage yaml filer for de typan som mangler
@@ -281,8 +271,6 @@ Ting som skal gjerast:
 - Sjur skal leggja inn støtte for yaml-testing
 	- ikkje enno
 - release: 10.12.2020
-
-
 
 ```
 ----------

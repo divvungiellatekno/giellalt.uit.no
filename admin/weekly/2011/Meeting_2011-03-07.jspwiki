@@ -1,31 +1,30 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 07.03.2011
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat
 
-!!!Agenda
+# Agenda
 
-!!!Opening, agenda review, participants
+# Opening, agenda review, participants
 
 * Opened at 09:45
-* Present: __Berit Merete, Biret-Anne, Børre, Ciprian, Lene, Maja, Sjur, Thomas, Tomi, Trond__
+* Present: **Berit Merete, Biret-Anne, Børre, Ciprian, Lene, Maja, Sjur, Thomas, Tomi, Trond**
 
+# Project review
 
-!!!Project review
-
-* __kort__ oppsummering frå kvart prosjekt, der ein legg fram:
-** status (kva er ferdig, kva ligg etter skjema, kva kjem no)
-** særlege punkt som treng meir merksemd -> separat møte (men punkta bør nemnast for alle, slik at vi kan sjå avhengigheiter som elles blir oversedde)
+* **kort** oppsummering frå kvart prosjekt, der ein legg fram:
+    - status (kva er ferdig, kva ligg etter skjema, kva kjem no)
+    - særlege punkt som treng meir merksemd -> separat møte (men punkta bør nemnast for alle, slik at vi kan sjå avhengigheiter som elles blir oversedde)
 
 Det blir altså ein litt annan struktur enn tidlegare - meir prosjektorientert. Vi prøver det ut, og ser korleis det funkar.
 
 Prosjekta er (rapportør i parentes):
 
 *Divvun 2.1:
-** installerarane (Børre)
-** buggar (Tomi)
+    - installerarane (Børre)
+    - buggar (Tomi)
 *TTS (Biret Ánne)
 *Divvun-omorganisering (Sjur)
 *Testbenkprosjektet (Sjur)
@@ -46,8 +45,8 @@ Andre, kvilande prosjekt (inga rapportering - lista er ikkje komplett)
 * smanob
 * korpusgrensesnitt
 
-!!!Divvun 2.1:
-!!installerarane 
+# Divvun 2.1:
+## installerarane 
 
 Børre:
 
@@ -57,10 +56,10 @@ W7, O2010, Samisk høgskole-folk har installert.
 Problem: Sørsamisk på nye Windowsmaskiner.
 
 Ta kontakt med folk som skal teste:
-* sma: __Trond__ (gjort)
-* smj: __Børre__
+* sma: **Trond** (gjort)
+* smj: **Børre**
 
-!!buggar
+## buggar
 
 Tomi:
 * hard-hyphen bug seems to be fixed
@@ -70,59 +69,60 @@ Tomi:
 Divvun 2.1 meeting Friday 10 AM: Børre, Sjur, Thomas, Tomi
 * Wednesday at 16:00: deadline for lexical changes before compilation
 
-!!!TTS
+# TTS
 
-__Biret Ánne:__
+**Biret Ánne:**
 
 * Klare til å gjere opptak med mannleg røyst, når han har tid.
 * Beraren av den kvinnelege røysta er sjukemeldt, det tar vi etterpå.
 * opptaksrom på konservatoriet - betre akkustikk / mindre støy der
 
-!!!Divvun-omorganisering (Sjur)
+# Divvun-omorganisering (Sjur)
 
 Ingenting har skjedd. Sametinget og Universtietet ventar på departementet.
 
-!!!Testbenkprosjektet (Sjur)
+# Testbenkprosjektet (Sjur)
 
 Ingenting har skjedd pga. sjukemelding, men prosjektet må bli ferdig.
 
-!!!smekorpus (Børre)
+# smekorpus (Børre)
 
 Ciprian har parallellisert det.  Francis har sendt ein del attendemeldingar 
 om konverteringsfeil.
 
 Det er framleis ting som skjer i konverteringa ("." = ok, "|" = feil):
 
-{{{
+```
 convert2xml.pl --shallow orig
 Processing files
-|||||||||||||||||||||..||||.||||..|.|||||make: *** [all] Error 1
-}}}
+|  ||||||||||..||.||..|.|||make: *** [all] Error 1
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+```
 
-!!!smakorpus (Børre)
+# smakorpus (Børre)
 
 Det ligg tekstar der, men vi har ikkje oversikt over kva som er parallelt og 
 kva som ikkje er det.
 
 Parallellisering av sma:
-# Tekstar må identifiserast som parallelle - det er gjort
-# Deretter må anchor.txt vere ferdig (status quo: ca 300/1100 open)
-# Så kan vi setningsparallellisere
+1. Tekstar må identifiserast som parallelle - det er gjort
+1. Deretter må anchor.txt vere ferdig (status quo: ca 300/1100 open)
+1. Så kan vi setningsparallellisere
 
-__TODO:__
-# Samle inn tekstar (__Børre__) - gjort
-# Leggja inn metadata om parallelle tekstar (__Børre__) - gjort
-# Dokumenter parallelliseringsskript (__Ciprian__)
-# Legg inn buggmeldingar om problem med å køyra Ciprian-skripta (__Børre__)
-# Gjer ferdig anchor.txt (__Maja__)
-# Parallelliser (__Ciprian__, evt. __Børre__) (modulo java)
+**TODO:**
+1. Samle inn tekstar (**Børre**) - gjort
+1. Leggja inn metadata om parallelle tekstar (**Børre**) - gjort
+1. Dokumenter parallelliseringsskript (**Ciprian**)
+1. Legg inn buggmeldingar om problem med å køyra Ciprian-skripta (**Børre**)
+1. Gjer ferdig anchor.txt (**Maja**)
+1. Parallelliser (**Ciprian**, evt. **Børre**) (modulo java)
 
-!!!smenob (Berit Merete)
+# smenob (Berit Merete)
 
 * har lært å bruka programma
 * identifisert problem kring re- og te-elementa
 
-!!!VD-ÅD-lansering Mac/Win/iPxd (Ciprian)
+# VD-ÅD-lansering Mac/Win/iPxd (Ciprian)
 * now, both VD and ÅD are updated
 * VD-pipeline now updated along the ÅD, i.e., more general wrt. features
   comming from the fst
@@ -130,72 +130,69 @@ __TODO:__
 * planned: some version for mobile OS non-iPx
 * [http://www.androidzoom.com/android_applications/stardict]
 
-__TODO:__
-* Samle e-postliste for agitprop (__Sjur; Maja, Børre__)
-* Sende info om nye ordbøker + ny Divvun-versjon samtidig neste veke (__XXX__)
+**TODO:**
+* Samle e-postliste for agitprop (**Sjur; Maja, Børre**)
+* Sende info om nye ordbøker + ny Divvun-versjon samtidig neste veke (**XXX**)
 * SGM om stedsnavn i sma
 
-!!!Forvaltningsordbok (Ciprian)
+# Forvaltningsordbok (Ciprian)
 * ad, on the GT&DIVVUN side the pipeline works
 * actually, we can try to prove to make the word alignment too
 * problems:
-** input form tca02-sentence aligner: it does not accept anything that it is "detected" as sentence from our preprocessing step (at the moment, manual correction)
-** Francis detected some coding errors which we should check, especially, Børre,
+    - input form tca02-sentence aligner: it does not accept anything that it is "detected" as sentence from our preprocessing step (at the moment, manual correction)
+    - Francis detected some coding errors which we should check, especially, Børre,
 so that we can improve our corpus/processing routines
 * Berit Merete har starta
 
-
-__TODO__
+**TODO**
 * Finne terskelnivå på kandidatar (0.1, 0.x, …)
 * Nytt møte og evaluere, sjå korleis det går
-** Møte omtrent 14.3. (__BM, Cip, Francis, Lene, Trond__)
+    - Møte omtrent 14.3. (**BM, Cip, Francis, Lene, Trond**)
 
-
-!!!Kunnskapsforlaget -- sme-ordbok (Trond)
+# Kunnskapsforlaget -- sme-ordbok (Trond)
 Trond orienterte.
 
-!!!MT-170 (Trond)
+# MT-170 (Trond)
 Trond orienterte.
 
-!!!sma-oahpa (Lene)
+# sma-oahpa (Lene)
 Kritiske tekniske ting ser ut til å bli på plass denne veka.
 
 Neste lingvistiske utfordring er adjektiv, for å få dei på plass i Morfa-S.
 I midten av april skal alt av eigenskapar vere ferdig, deretter 
 er det debugging.
 
-!!!nu-oahpa (Biret Ánne)
+# nu-oahpa (Biret Ánne)
 Oppdaga litt rot med den infoen kurslærar får (frå aktivitetsloggen), 
 det skal det ryddast opp i. Oppdaga buggar i morfa-C.
 
-!!!Barentsprosjektet (Trond)
+# Barentsprosjektet (Trond)
 Møte i dag for å få i gang søknadsskrivinga.
 
-!!!dis-abstract til Riga (Lene)
+# dis-abstract til Riga (Lene)
 * To lange tekstar.
 * tekstene og missinglistene og tilhørende typos-lister er her:
-** private/gt/sma/testcorp/
-** bruk typoslista i denne mappa
-
+    - private/gt/sma/testcorp/
+    - bruk typoslista i denne mappa
 
 To ting er aktuelt:
 * Vi har ei lang missing-liste (både subformer og manglande leksem)
 * Sublemma med standardlemma som oppslagsform, slik:
-** ''standardlemma:sublemma contlex ;''
+    - *standardlemma:sublemma contlex ;*
 
-__TODO__
+**TODO**
 * Lingvistisk møte for å samkøyre sme, sma
-** Saker: 
-*** ordavleiing
-*** taggar
-** Tidspunkt: __tysdag kl. 0900__
-** Kven: __Biret Merete, Lene, Maja, Thomas, Trond__
+    - Saker: 
+        - ordavleiing
+        - taggar
+    - Tidspunkt: **tysdag kl. 0900**
+    - Kven: **Biret Merete, Lene, Maja, Thomas, Trond**
 
-!!!Eventuelt
+# Eventuelt
 
 Ingenting.
 
-!!!Neste veke:
+# Neste veke:
 
 * Møte til vanleg tid.
 * Divvun 2.1. + VD/ÅD-lansering

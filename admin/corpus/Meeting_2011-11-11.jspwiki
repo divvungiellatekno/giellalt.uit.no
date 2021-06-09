@@ -1,15 +1,13 @@
-!!!Corpus meeting 11.11.11. :-)
+# Corpus meeting 11.11.11. :-)
 
-
-!!Agenda
+## Agenda
 
 * Status quo, 
 * Evaluation
 * Next steps
 * More intelligent suggestions, anyone?
 
-
-!!Status quo
+## Status quo
 
 * First conversion ready wednesday.
 * Second conversion underway.
@@ -31,39 +29,37 @@ Here it seems the texts are different:
 
 prestable/tmx/smenob/vuollasa-asahusat.html_id=115192.tmx.html
 
-!!Filenames and directory structure
+## Filenames and directory structure
 
 Root tmx dir:
 
-{{{
+```
 prestable/tmx/SOURCELANG2TARGETLANG/
-}}}
+```
 
-Below this point we follow the directory structure found elsewhere, ie {{GENRE/subdirs/file.tmx}}. This should give us:
+Below this point we follow the directory structure found elsewhere, ie `GENRE/subdirs/file.tmx`. This should give us:
 
-{{{
+```
 prestable/tmx/nob2sme/admin/depts/regjeringen.no/xxx.tmx
-}}}
+```
 
 * Include bullet as sentence border??? 
 
-
-__TODO__
+**TODO**
 * Check a corpus against different-size anchor files, and measure 
-  time use. (__Børre__)
+  time use. (**Børre**)
 * Add more words to anchor.txt, and possibly modularise / remove 
-  some files (__Trond, Børre__) 
-** Common anchor file: {{anchor.txt}} 
-** Genre-specific files: {{anchor_admin.txt, anchor_bible.txt, …}}
+  some files (**Trond, Børre**) 
+    - Common anchor file: `anchor.txt` 
+    - Genre-specific files: `anchor_admin.txt, anchor_bible.txt, …`
 * Harmonise the nob and sme abbr.txt files.
-** Testcase: STM55, 
-* Improve encoding: Search for black question marks in the whole corpus (__Børre__)
-** 13 files contain the black marks (see below).
-
+    - Testcase: STM55, 
+* Improve encoding: Search for black question marks in the whole corpus (**Børre**)
+    - 13 files contain the black marks (see below).
 
 Black question mark files:
 
-{{{
+```
 $ grep -lr '�' * | grep -v '\.svn'
 nob/admin/depts/other_files/OTP200620070025000SE_12.html.xml
 nob/admin/depts/regjeringen.no/7-narmere-om-planbestemmelsene.html_id=571096.xml
@@ -78,11 +74,11 @@ sme/admin/depts/regjeringen.no/horingsbrev.html_id=499754.xml
 sme/admin/depts/regjeringen.no/raehus-rahkadahtta-samegiela-doaibmaplan.html_id=514922.xml
 sme/admin/depts/regjeringen.no/sami.html_id=615757.xml
 smj/admin/depts/other_files/HP_2009_samisk_sprak_lulesam.pdf.xml
-}}}
+```
 
-!!Evaluation
+## Evaluation
 
-!Conversion
+### Conversion
 
 ŋ not converted: samediggi-article-3002.html.tmx.html:
 
@@ -91,35 +87,32 @@ gelasgiela .
 
 Personen som blir ansatt må beherske skandinavisk språk , samisk og engelsk .
 
-
 mnd. is not sentence final:
 
-{{{
+```
 Forøvrig tilsettes arbeidstakere etter gjeldende lover , reglement og overenskomster , herunder lønn og pensjon , samt 6 mnd .
 	prøvetid .
-}}}	
-
+```	
 
 Capital letter in names divides sentence: (boerre: I think the sentence division comes from the .)
 
-{{{
+```
 Mun doaivvun strategiija maid mii plánet váikkuha ahte bargu ollislaš ja dássásaš bálvalusain sámi álbmoga váste šaddá álkit ja beaktileappot , dadjá várrepresideanta Ragnhild L .	
 Nystad .
 
 Jeg håper strategien vi legger opp til vil bidra til at arbeidet med å oppnå helhetlige og likeverdige tjenester til det samiske folket vil bli lettere og mer effektivt , sier visepresident Ragnhild L .
 	Nystad .
-}}}
+```
 
-
-!The 1-0 issue
+### The 1-0 issue
 
 There are two types of 1-0 cases:
 
-# The sentence is __missing__ in the other language
-# The 1-0 status reveals an alignment __error__ (the match is in the neighbour pair)
+1. The sentence is **missing** in the other language
+1. The 1-0 status reveals an alignment **error** (the match is in the neighbour pair)
 
 Trond's impressionistic feeling: (1) is the overwhelmingly most common one.
 
-!!Next meeting
+## Next meeting
 
 Middle of next week.

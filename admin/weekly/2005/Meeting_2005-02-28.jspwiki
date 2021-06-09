@@ -1,115 +1,114 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 28.02.2005
 * Time: 09.30 Norw. time
 * Place: Wherever we are:-)
 * Tools: Phone, iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from a week ago (see below)
-# Documentation:
-## are we ready to remove the old HTML docs?
-## is the Wiki format for meeting memos ok?
+1. Opening, agenda review
+1. Reviewing the task list from a week ago (see below)
+1. Documentation:
+    1. are we ready to remove the old HTML docs?
+    1. is the Wiki format for meeting memos ok?
     That is, can it be used during the meeting?
-# Corpus gathering
-# Corpus infrastructure
-# Linguistics
-# Language technology:
-## compilation problems on cochise
-# Term db
-# Other issues:
-## Pargas seminar: who is going?
-# Summary, task lists
-# Closing
+1. Corpus gathering
+1. Corpus infrastructure
+1. Linguistics
+1. Language technology:
+    1. compilation problems on cochise
+1. Term db
+1. Other issues:
+    1. Pargas seminar: who is going?
+1. Summary, task lists
+1. Closing
 
-!!!Last week's task list:
+# Last week's task list:
 
-* __Børre__: suggest port numbers in the documentations
+* **Børre**: suggest port numbers in the documentations
 * Continue .profile discussion in news, conclusion this week
-* __Børre__: mpage & UTF-8
-* __Sjur__: Post a description on how to patch XXE for Alt key support
-* __Børre__: contact Anne-Britt today, and send the letter.
-* __Børre and Trond__: update emacs and xml-mode, check automatic version-stamp
+* **Børre**: mpage & UTF-8
+* **Sjur**: Post a description on how to patch XXE for Alt key support
+* **Børre**: contact Anne-Britt today, and send the letter.
+* **Børre and Trond**: update emacs and xml-mode, check automatic version-stamp
   in cvs $id$?
-* __Sjur__: Send e-mail to Trond regarding binary files on the news group
-* __Børre__: wiki support in forrest
-* __Trond__: invite Lars N
-* __Børre + Trond__: set up computers, check forrest in cochise
-* __Børre__: divvun.no
-* __Tomi/Børre__: do some work for Sjur on the termdb
+* **Sjur**: Send e-mail to Trond regarding binary files on the news group
+* **Børre**: wiki support in forrest
+* **Trond**: invite Lars N
+* **Børre + Trond**: set up computers, check forrest in cochise
+* **Børre**: divvun.no
+* **Tomi/Børre**: do some work for Sjur on the termdb
 
-!!!1. Opening, agenda review
+# 1. Opening, agenda review
 Opened 9.32, agenda accepted.
 
-!!!2. Reviewing the task list from a week ago (see below)
-* __Børre__: suggest port numbers in the documentations:
+# 2. Reviewing the task list from a week ago (see below)
+* **Børre**: suggest port numbers in the documentations:
     in the documentation now (under infra/forrest), will set up
     a separate main tab How-To
 * Continue .profile discussion in news, conclusion this week
     we move from .profile to .bash_profile, docu to be updated
-* __Børre__: mpage & UTF-8
+* **Børre**: mpage & UTF-8
     nothing happened last week
     - file a bug in Bugzilla, with the solution postponed to Tiger (OS 10.4)
-* __Sjur__: Post a description on how to patch XXE for Alt key support
+* **Sjur**: Post a description on how to patch XXE for Alt key support
     posted a description in news, ok
-* __Børre__: contact Anne-Britt today, and send the letter.
+* **Børre**: contact Anne-Britt today, and send the letter.
     Berit Karen has asked Børre to check the address list, letter
     was sent last week
-* __Børre and Trond__: update emacs and xml-mode, check automatic version-stamp
+* **Børre and Trond**: update emacs and xml-mode, check automatic version-stamp
   in cvs $id$?
     it seems to work for Sjur, more info needed
-* __Sjur__: Send e-mail to Trond regarding binary files on the news group
+* **Sjur**: Send e-mail to Trond regarding binary files on the news group
     e-mail sent, Trond forwarded it, but the issue is still open.
     Trond will follow up the issue.
-* __Børre__: wiki support in forrest
+* **Børre**: wiki support in forrest
     done, except the UTF-8 problem
-* __Trond__: invite Lars N
+* **Trond**: invite Lars N
     Trond has sent e-mail with invitation, Lars has answered and will participate. 
-* __Børre + Trond__: set up computers, check forrest in cochise
+* **Børre + Trond**: set up computers, check forrest in cochise
     issue is still open, Trond has problems from home and other locations
-* __Børre__: divvun.no
+* **Børre**: divvun.no
     IT staff were in Jokkmokk last week, nothing has happened
-* __Tomi/Børre__: do some work for Sjur on the termdb
+* **Tomi/Børre**: do some work for Sjur on the termdb
     Tomi was home with fever last week, Børre has looked at it
 
-
-!!!3. Documentation:
+# 3. Documentation:
 * Are we ready to remove the old HTML docs?
-**   Not until forrest works on cochise, no.
-**   Marit is fine with emacs in cochise, Børre will add info about XML
+    -   Not until forrest works on cochise, no.
+    -   Marit is fine with emacs in cochise, Børre will add info about XML
      mode in emacs to the docs, and also install in cochise
 * is the Wiki format for meeting memos ok?
   That is, can it be used during the meeting? Yes.
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 The letter is sent.
 
-__Thomas:__ Mikael Svonni has promised to give us his lexicon/dictionary. Asbjörg Skåden
+**Thomas:** Mikael Svonni has promised to give us his lexicon/dictionary. Asbjörg Skåden
 - Skániid girjie - has promised us her texts. And we will receive texts from
 the Swedish gov, Ministry of Agriculture: North, Lule and South Sámi.
 
 Thomas and Trond have discussed a letter to the Swedish ministry of agriculture,
 regarding what format we preferred to receive text in. See next agenda topic.
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 Good discussions both offline and online. So far we have suggestions for:
 * dir/file structure
 * some of the meta information
 * processing of incoming texts
-**    For .doc input: antiword via DocBook to xml is a strong candidate
-**    For .pdf we have no good solution yet
-**    For .html input: Not looked at yet, but html > xml should be easy.
-**    For .txt: Here we are interested in using Lars Nygård's txt structure guesser.
-**    The encoding issue: We have identified between 5 and 10 different formats,
+    -    For .doc input: antiword via DocBook to xml is a strong candidate
+    -    For .pdf we have no good solution yet
+    -    For .html input: Not looked at yet, but html > xml should be easy.
+    -    For .txt: Here we are interested in using Lars Nygård's txt structure guesser.
+    -    The encoding issue: We have identified between 5 and 10 different formats,
       and need more work on the conversion scripts (Børre has started working on
       such scripts for antiword).
-**    Other formats: we don't know which yet
+    -    Other formats: we don't know which yet
 * thus, preferred formats are so far (in descending order): .doc, *.html, *.txt, *.pdf
 * target format (suggestions in newsgroup, this discussion is still open)
 
-!!!6. Linguistics
+# 6. Linguistics
 Paradigms are looking better and better, more like what they should be. 
 Adjectives improving.
 
@@ -119,44 +118,43 @@ String categories still to cover:
   "SGML", but not "sgml")
 * These strings can be covered by regular expressions in lexc number generator,
   acronym generator.
-* For HTML addresses, something like: {{{ http://[a-z]+.[a-z0-9]+.{com,org,etc.} }}}
+* For HTML addresses, something like: ``` http://[a-z]+.[a-z0-9]+.{com,org,etc.} ```
 * Trond files bug reports.
 
-!!!7. Language technology
+# 7. Language technology
 Compilation problems on cochise:
 *    lexicon compiles fine on the Mac, but not in cochise
 *    Trond has written a letter to Ken and Lauri (the authors of the Xerox tools),
      and will file it as an internal bug report as well.
 
-!!!8. Term db
+# 8. Term db
 Technical deadline: Friday this week.
 iTet is still «dead» (the contact person is not responding).
 
-!!!9. Other issues:
+# 9. Other issues:
 Pargas seminar:
 *   who is going?
-**      Sjur and Børre go, one more (Tomi or Thomas)
+    -      Sjur and Børre go, one more (Tomi or Thomas)
 *  topics of the seminar:
-**      User, developer and normative body perspective.
+    -      User, developer and normative body perspective.
 
-!!!10. Summary, task lists
+# 10. Summary, task lists
 
-* __Sjur, Børre, Tomi__: terminology database
-* __Børre__: will set up a separate main tab How-To
-* __All__: we move from .profile to .bash_profile, __Børre__: docu to be updated
-* __Børre__: mpage & UTF-8 - file a bug in Bugzilla, with the solution postponed 
+* **Sjur, Børre, Tomi**: terminology database
+* **Børre**: will set up a separate main tab How-To
+* **All**: we move from .profile to .bash_profile, **Børre**: docu to be updated
+* **Børre**: mpage & UTF-8 - file a bug in Bugzilla, with the solution postponed 
     to Tiger (OS 10.4)
-* __Børre__:
-**  update emacs and xml-mode: Børre has a solution, will document
-**  check automatic version-stamp in cvs $id$? As above.
-* __Trond__: will follow up the issue with binary postings in news
-* __Børre__: wiki support in forrest works, will follow up on the UTF-8 problem
-* __Børre + Trond__: set up computers, check forrest in cochise
+* **Børre**:
+    -  update emacs and xml-mode: Børre has a solution, will document
+    -  check automatic version-stamp in cvs $id$? As above.
+* **Trond**: will follow up the issue with binary postings in news
+* **Børre**: wiki support in forrest works, will follow up on the UTF-8 problem
+* **Børre + Trond**: set up computers, check forrest in cochise
     issue is still open, Trond has problems from home and other locations
-* __Børre__: divvun.no -
+* **Børre**: divvun.no -
     to be continued now that the IT staff is back from Jokkmokk
 
-!!!11. Closing
+# 11. Closing
 
 Closed at 10.57
-

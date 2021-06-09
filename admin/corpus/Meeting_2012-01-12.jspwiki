@@ -1,26 +1,23 @@
-!!!Parallelliseringsmøte 12.1.2012
-
+# Parallelliseringsmøte 12.1.2012
 
 Berit Merete, Børre, Sjur
 
-
-!!!Saksliste
+# Saksliste
 
 * status for testbed for gullkorpus
 * status for gullkorpus
 * status for parallellføringa
 * arbeid framover
 
-
-!!!Status for testbed for gullkorpus
+# Status for testbed for gullkorpus
 
 Ferdig.
 
-!!!Status for gullkorpus
+# Status for gullkorpus
 
 Stadige justeringar og rettingar. Finnmarkslova parallellført på nytt, retta opp, og lagt inn som ny versjon av gullstandarden - spara ein god del manuelt arbeid med å forbetra gullstandarden.
 
-!!!Status for parallellføringa
+# Status for parallellføringa
 
 Børre har testa seg fram til vinnarverdiar for tca2. Dette har gjeve ei markant betring for samla parallellføring av gullstandarddokumenta:
 
@@ -29,21 +26,21 @@ Børre har testa seg fram til vinnarverdiar for tca2. Dette har gjeve ei markant
 
 Likevel ein del regresjonar, særleg gjeld det §-teiknet. Eit døme frå Finnmarksloven:
 
-{{{
+```
 -Meahcceduopmostuollu sáhttá gáibidit , ahte guoskevaš diggeriekti čađaha gažademiid .
 -§ 42 Váidalus ja guoddalus Meahcceduopmostuolu mearrádusain sáhttá váidalit Alimusriektái .
 +Meahcceduopmostuollu sáhttá gáibidit , ahte guoskevaš diggeriekti čađaha gažademiid . §
 +42 Váidalus ja guoddalus Meahcceduopmostuolu mearrádusain sáhttá váidalit Alimusriektái .
-}}}
+```
 
 Problemet må liggja i tca2, sidan det er den einaste komponenten / prosessen som varierer mellom dei to resultata.
 
-BM & Børre har laga ein ny kategori forkortingar, {{num-noab}}, som skal fungera som ein kombinasjon av {{tr-numab}} og {{noab}}, t.d. ''su'' som ikkje er forkorting når han står sist i setninga, men ei forkorting dersom det kjem eit taluttrykk etterpå.
+BM & Børre har laga ein ny kategori forkortingar, `num-noab`, som skal fungera som ein kombinasjon av `tr-numab` og `noab`, t.d. *su* som ikkje er forkorting når han står sist i setninga, men ei forkorting dersom det kjem eit taluttrykk etterpå.
 
-!!!Arbeid framover
+# Arbeid framover
 
-__Tiltak:__
-* forbetra segmenteringa av §-teiknet (__Børre__)
-* blankteikn - halda fram med å justera gullstandarden slik at han er det vi vil ha (__Berit__)
-* betra på pdf-til-xml-konverteringa (__Børre__ har starta, men ingen synlege resultat enno)
-* byggja ut {{preprocess}} til å handtera {{num-noab}}-forkortingar (__Børre__)
+**Tiltak:**
+* forbetra segmenteringa av §-teiknet (**Børre**)
+* blankteikn - halda fram med å justera gullstandarden slik at han er det vi vil ha (**Berit**)
+* betra på pdf-til-xml-konverteringa (**Børre** har starta, men ingen synlege resultat enno)
+* byggja ut `preprocess` til å handtera `num-noab`-forkortingar (**Børre**)

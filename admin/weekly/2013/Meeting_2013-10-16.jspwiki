@@ -1,26 +1,26 @@
-!!!Møte, Trond, Sjur 15.11.
+# Møte, Trond, Sjur 15.11.
 
 * Kanada-kurs
 * TSL-WS
 * LREC
 
-!!!Kanada-kurs
+# Kanada-kurs
 
-Kjerneproblem: alias ({{usme}}) vs diskplass/svn-fart
+Kjerneproblem: alias (`usme`) vs diskplass/svn-fart
 
-Alternativ: shellscript av typen {{usme-gt.sh.in -> usme-gt.sh}}
+Alternativ: shellscript av typen `usme-gt.sh.in -> usme-gt.sh`
 
-{{make install}} -> {{/usr/local/bin/usme-gt.sh}}
+`make install` -> `/usr/local/bin/usme-gt.sh`
 * med ferdige stiar til xfst/hfst
 * testa for fst-ar:
-** lokal fyrst
-** installert deretter
-** relativt i høve til $0?
+    - lokal fyrst
+    - installert deretter
+    - relativt i høve til $0?
 
-Vi må definera variablar av typen {{$GTHOME_CIW}} for å kunna finna lokal fst. Dette må sjekkast i autoconf, og brukaren må få tilbakemelding om dette.
+Vi må definera variablar av typen `$GTHOME_CIW` for å kunna finna lokal fst. Dette må sjekkast i autoconf, og brukaren må få tilbakemelding om dette.
 
 Dette er meldinga folk får når dei ikkje har definert GTHOME eller GTCORE:
-{{{
+```
 could not find a giellatekno core scripts in:
        $GTCORE/scripts
        $GTHOME/gtcore/scripts
@@ -30,10 +30,10 @@ could not find a giellatekno core scripts in:
        b. cd gtcore/scripts && ./autogen.sh && ./configure && make install
        c. gtsetup.sh
 EOT
-}}}
+```
 
 Dokumentasjon på nettet:
-{{{
+```
 The first commands
 Go to your home directory (write cd), and give the following command:
 
@@ -44,23 +44,23 @@ After you have checked out, please run the following script, and follow the on-s
 
 main/gt/script/gtsetup.sh
 With the above commands, you have now on your local computer a copy of the source code and the environment is set up properly.
-}}}
+```
 
 Både configure-meldinga og nettdokumentasjonen er utdatert eller uforståeleg. Begge må oppdaterast.
 
 Konklusjon:
 
-{{{
+```
 * Sjur lagar script som skissert
-* Sjur oppdaterer configure til å sjekka og informera betre om $GTCORE og {{$GTLANG___UND__}}
+* Sjur oppdaterer configure til å sjekka og informera betre om $GTCORE og `$GTLANG_**UND**`
 * Antti etc. sjekkar ut berre dei språka dei treng
-}}}
+```
 
-!!!TSL-WS
+# TSL-WS
 
 Sjur må gje ein tittel og eit samandrag til presentasjonen sin på TromSLang-workshoppen for språkteknologi.
 
-!!!LREC
+# LREC
 
 Ny frist 24. kl 23.59.
 

@@ -1,56 +1,53 @@
-!!!TTS-arbeidsplan
+# TTS-arbeidsplan
 
+## Prioritering:
 
-!!Prioritering:
+1. Preprosessering
+1. Ispedd andre ting
 
-# Preprosessering
-# Ispedd andre ting
-
-
-!!Lingvistikk
+## Lingvistikk
 * tekst-til-ipa (fonologiske reglar) - forbetringar
-* modell av samisk prosodi (diskuter med __Patrik__)
+* modell av samisk prosodi (diskuter med **Patrik**)
 * forbetringar av taggaren for å matsje prosodimodellen
 
 * Diskutere prosodi med Helsingfors
 * Snakk med Patrik om kva vi vil ha
 
-!!Preprosessering
+## Preprosessering
 
 Konvertering av ulike slags forkorta uttrykk til rein tekst, som deretter kan
 konverterast til ein fonologisk streng.
 
-
 * arabiske tal: sme-num.txt
-** {{cd gtsvn/gt/sme/src/}}
-** {{xfst -e "read lexc sme-num.txt"}}
-** {{up}}
-** {{234}}
-** [http://www.stanford.edu/~laurik/fsmbook/examples/NumbersToNumerals.html]
+    - `cd gtsvn/gt/sme/src/`
+    - `xfst -e "read lexc sme-num.txt"`
+    - `up`
+    - `234`
+    - [http://www.stanford.edu/~laurik/fsmbook/examples/NumbersToNumerals.html]
 * romartal: ser ut til at det ikkje er dekka
-** det finst fst-ar ferdig for romartal til arabisk
-** [http://dingo.sbs.arizona.edu/~sandiway/ling538-08/lecture18.pdf]
+    - det finst fst-ar ferdig for romartal til arabisk
+    - [http://dingo.sbs.arizona.edu/~sandiway/ling538-08/lecture18.pdf]
 * forkortingar: ikkje dekka
 * datoar: delvis dekka
-** common/src/num.txt gjev datotagging
-** Neste skritt er dato-til-ord (ikkje gjort)
-** B-Á: skriv oppsett for dato-til-ord, som vi kan formalisere ut i frå
+    - common/src/num.txt gjev datotagging
+    - Neste skritt er dato-til-ord (ikkje gjort)
+    - B-Á: skriv oppsett for dato-til-ord, som vi kan formalisere ut i frå
 * klokkeslett: clock-sme.lexc 12:35 -> ord
 * titlar: ikkje dekka (er ikkje dette forkortingar? ja, truleg)
 * ukjende namn, inkl namn med boktavar som ligg utanfor dei nordiske alfabeta
 
 Kasusbøying av taluttrykk som del av ein kasusbøygd frase/NP
 
-{{{
+```
 cd gtsvn/gt/common/src/
 xfst -e "read lexc num.txt"
 save num.fst
 lookup num.fst
 12.12.1234
-}}}
+```
 
 Andre talformat
-{{{
+```
 6,50  seks-femti kuus-ja-viiskymmentä
 12 23 23 
 
@@ -58,18 +55,18 @@ Andre talformat
 95500234 => 955 00 234 mobil initial 4, 5, 9
 12345678 => 12 345 678,- NOK/€
 12.345.678 => 12 345 678,- NOK/€
-}}}
+```
 fst for desse og andre talformat
 
-!!Arbeidsoppgåver
+## Arbeidsoppgåver
 
 Børre:
 * Sett opp dokumentasjonsinfrastruktur for tts
 
 B-Á ser på:
 * eksisterande kode:
-** gt/common/src/num.txt
-** gt/sme/src/sme-num.txt
+    - gt/common/src/num.txt
+    - gt/sme/src/sme-num.txt
 * kompiler og vurder og sjekk om det finst andre ting også
 * fsmbook.com
 * skriv kvasikode på det som manglar
@@ -78,29 +75,26 @@ B-Á ser på:
 B-Á, T, S:
 * skriv automatar ut i frå kvasikode
 
-
-!!Informantar
+## Informantar
 
 * Mannleg røyst -- Per K. Hætta?
-** B-Á: snakk med han / NRK?
+    - B-Á: snakk med han / NRK?
 
-!!Samarbeid
+## Samarbeid
 Ta kontakt med Helsingfors univ.
 * Sjur, deretter alle.
 
-
-!!Andre samiske språk?
+## Andre samiske språk?
 
 I kor stor grad skal vi ha med dei andre språka frå starten av
 
 * Preprosessering på sma, smj parallelt med sme-arbeidet
-** Først gjere sme (prøve og feile)
-** Deretter gjere sma, smj (før vi gløymer korleis vi gjorde sme)
+    - Først gjere sme (prøve og feile)
+    - Deretter gjere sma, smj (før vi gløymer korleis vi gjorde sme)
 * Ferdige opptak av alle tre språk
-** Lage tekstar
-** Finne folk til å lese inn
+    - Lage tekstar
+    - Finne folk til å lese inn
 * Tekst-til-IPA
-** __Berit Ánne, Thomas, Patrik, Trond, Bruce, lulesame __ (mest mogleg Bruce)
-** __Berit Ánne, Thomas, Patrik, Trond, Ove, sørsame__ (mest mogleg Ove)
-** Manuelt setje inn pausemerke i tekstane til lydbanda
-
+    - **Berit Ánne, Thomas, Patrik, Trond, Bruce, lulesame** (mest mogleg Bruce)
+    - **Berit Ánne, Thomas, Patrik, Trond, Ove, sørsame** (mest mogleg Ove)
+    - Manuelt setje inn pausemerke i tekstane til lydbanda

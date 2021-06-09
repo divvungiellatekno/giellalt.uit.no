@@ -1,23 +1,19 @@
-
-
 Referat, Giellateknomøte, 25. mars. \\
 Trond, Ciprian, Lene
 
-!!!Saksliste
+# Saksliste
 
 * Prosjekt om vekta automatar
 * Referanser i Korp
 * Fad-ord inn i smenob
 
-
-!! Prosjekt om vekta automatar
+##  Prosjekt om vekta automatar
 
 Trond orienterte om prosjektsøknaden Weight-training til ERC + diskusjon.
 
+##  Referanser i Korp
 
-!! Referanser i Korp
-
-!Namn, referanse
+### Namn, referanse
 
 Jussi og Lene sine kommentarar til Korp:
 
@@ -25,45 +21,43 @@ Jussi og Lene sine kommentarar til Korp:
 * feil forfatter på artikkel => filer deles opp
 * viktig at det er samme dato for alle delkorpusene (ellers blir det vanskelig å referere)
 * 'Sámi korpus' fungerer dårlig som navn i tekst
-** Eksempler på problemer (fra Jussi):
-{{{
+    - Eksempler på problemer (fra Jussi):
+```
 ...originally published within about the past three decades and made available 
 by Sámi Korpus at UiT The Arctic University of Norway...
 ...texts made available by the Sámi korpus corpus at UiT...
 ...the more than two thousand occurrences of illudit ‘rejoice; celebrate’ 
 in the available North Saami corpus (Sámi korpus) also include...
-}}}
+```
 
 Idemyldring rundt namn:
 
-{{{
+```
 SAMTE
 Samte
 SamT
 samde
-}}}
+```
 
-Konklusjon: ''Samte'' (forkorting for Sámi teaksta / samisk tekst / Saami text)
+Konklusjon: *Samte* (forkorting for Sámi teaksta / samisk tekst / Saami text)
 
-
-!Author
+### Author
 
 Cip: Short description of the author problem in Korp.
 
-# presentation issue in Korp: Surname and family name are not presented one after the other \\
+1. presentation issue in Korp: Surname and family name are not presented one after the other \\
  => something to debug in Korp
-# many documents registered with our corpus lack the info on authors: huge amount of "UNKNOWN" labels
-# as noted by Jussi, SDA and Diedut get wrong author labels because they are not split by article \\
+1. many documents registered with our corpus lack the info on authors: huge amount of "UNKNOWN" labels
+1. as noted by Jussi, SDA and Diedut get wrong author labels because they are not split by article \\
  => split by article
-# what about the instances with several authors? Only the first is shown by Korp and/or registered with the cqp? \\
+1. what about the instances with several authors? Only the first is shown by Korp and/or registered with the cqp? \\
  => use first author pluss et.Al.
-# Korp-implementation issue: in the current version, it is not possible
+1. Korp-implementation issue: in the current version, it is not possible
 just to show the author without giving the possibility to search for
 (contrary to what we agreed upon). I have proposed a change from this implementation at the meeting in Gothenburg last year. \\
   => I have to check possible changes.
 
-
-!! Fad-ord inn i smenob
+##  Fad-ord inn i smenob
 Lene har gått gjennom csv listene og Ciprian har generert nye xmlfiler:
 
 100 % overlapp mellom lemma og tg i fad og gt: fad2merge check fad vs source xml
@@ -71,25 +65,25 @@ Lene har gått gjennom csv listene og Ciprian har generert nye xmlfiler:
 
 Innhald i fad2merge:
 
-{{{
+```
 00_readme.txt     
 check_fad-vs-sna/ 
 check_fad-vs-src/xml_data/auto/total/ total match men mer/annen info i fad, x = extra
 check_fad-vs-src/xml_data/manual/   de med 'm', skal redigeres manuelt
 fad-sna2merge/    
 inc/              
-}}}
+```
 
 full match, men mer informasjon, lagt fad2merge/check_fad-vs-src/xmldata, og
 er merka med x="fad"
 
-!Vedtak:
+### Vedtak:
 * Lene går gjennom xml-filene før Ciprian fullfører merge
 * decl="yyy" gen="m" for nob og swe skal fjernes fra alle ordboksfiler
 
 Døme:
 
-{{{
+```
    <e usage="vd">
       <lg>
          <l pos="N">máksinnákca</l>
@@ -115,4 +109,4 @@ Døme:
          </tg>
       </mg>
    </e>
-}}}
+```

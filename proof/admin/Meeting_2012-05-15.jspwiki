@@ -1,12 +1,12 @@
-!!!Problem i siste SME-Hunspell (2012-05-10)
+# Problem i siste SME-Hunspell (2012-05-10)
 
 * arabiske tal manglar (1917s -> 1917:s)
 * dei fleste talord manglar: maŋga -> máŋga
-** Alle som har +A- og +Num-analyse manglar
-** reine talord 1-1000000 (som skrivne ord) er med, inkl. okta
+    - Alle som har +A- og +Num-analyse manglar
+    - reine talord 1-1000000 (som skrivne ord) er med, inkl. okta
 * klitika manglar: oktage
 * ord med punktum blir ikkje akseptert som inndata, og får ikkje forslag:
-** dr -> dr.
+    - dr -> dr.
 * st.dieđ.
 * akronym får ikkje rett forslag: NSRas	NSR:s
 
@@ -16,14 +16,14 @@ Acro-forslag.
 Vi testa klitika, og har eit minimalt eksempel som kan sendast til Hunspell-folk
 for å illustrera problemet.
 
-__TODO:__
-* arabiske tal med kasusendingar (__Børre__)
-** etter mønster frå engelsk Hunspell
-* spørsmål om klitika til Hunspell-liste/forfattar (__Børre__)
-** kva er gale med clitics.aff og *.dic sidan savvodingis ikkje blir akseptert,
+**TODO:**
+* arabiske tal med kasusendingar (**Børre**)
+    - etter mønster frå engelsk Hunspell
+* spørsmål om klitika til Hunspell-liste/forfattar (**Børre**)
+    - kva er gale med clitics.aff og *.dic sidan savvodingis ikkje blir akseptert,
    men savvogis blir?
 * legg inn phon-rules for NSR:s (dvs kasus-endingar ved akronym) og for NRKa>NRK
-  (__Børre__)
+  (**Børre**)
 
 Gjer det slik for heile alfabetet med store bokstavar:
 * K'a -> K

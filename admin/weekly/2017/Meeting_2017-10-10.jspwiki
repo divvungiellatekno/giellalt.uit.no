@@ -1,6 +1,6 @@
 T&S 10.10.2017
 
-!!!Saker:
+# Saker:
 * møterommet
 * tastatur
 * GG-møte
@@ -11,27 +11,27 @@ T&S 10.10.2017
 * Skoltesamisk og Kela
 * nye kontorplassar
 
-!!!møterommet
+# møterommet
 
 Sjur har laga ei skisse. Det som evt. manglar er argument for korfor
 vi vil ha skjerm i begge endar (grunngjevinga er at vi vil ha fleksibilitet,
 t.d. ved presentasjonar: skjermen foran er for føredragshaldaren, skjermen bak
 er for deltakarane som ikkje er i Tromsø).
 
-Trond og Gt ser på den og __Trond__ sender vidare til Frode Lien, 
+Trond og Gt ser på den og **Trond** sender vidare til Frode Lien, 
 Eystein Dahl og Kyrre Soleng.
 
-!!!tastatur
+# tastatur
 
-!!win 7- vs 8+
+## win 7- vs 8+
 
 Ikkje alt for mykje ekstra arbeid, så vi prøver.
 
-!! smn for mac og windows
-Trond har testa og det fungerer, for Mac og for Win10. __Trond__ held kontakten
+##  smn for mac og windows
+Trond har testa og det fungerer, for Mac og for Win10. **Trond** held kontakten
 med Teija. 
 
-!!smn og den finske eksamensnemnda
+## smn og den finske eksamensnemnda
 
 * [https://fi.wikipedia.org/wiki/DigabiOS]
 * [https://github.com/digabi/digabi-os]
@@ -42,26 +42,26 @@ Examination Board of Finland (In Finnish: Ylioppilastutkintolautakunta).
 
 Dei vil ha tastatur på datamaskinene til studenteksamen til våren. To saker:
 * tastaturutforming
-** plasseringa av Đ - spørsmålet ute hjå enaresamane
+    - plasseringa av Đ - spørsmålet ute hjå enaresamane
 * teknisk implementering
-** berre linux? ser slik ut - debian 8
-** blir generert no (og fungerer): tastaturoppsett med redundante definisjonar
-** betre/burde vera: bruk import for mesteparten, definer berre diffen
+    - berre linux? ser slik ut - debian 8
+    - blir generert no (og fungerer): tastaturoppsett med redundante definisjonar
+    - betre/burde vera: bruk import for mesteparten, definer berre diffen
 
-!!!GG-møte
+# GG-møte
 
 Opne spørsmål:
 * tolking (simultan, konsekutiv, skriftleg?) - alle frå GG deltek
 * Møterom til 20+ personar + tolkeboksar? (8.-9.11.)
 * tema / saksliste:
-** Samarbeidsformer
-** ortografisk normering for språk X
-** syntaktisk normering (grammatikkontrollsaker)
-** termwiki-spørsmål/-trening
-** Seksjon for språkspesifikke diskusjonar med språk X for GG og Gt/D? Ja, helst
-** Eigen bolk for GG
+    - Samarbeidsformer
+    - ortografisk normering for språk X
+    - syntaktisk normering (grammatikkontrollsaker)
+    - termwiki-spørsmål/-trening
+    - Seksjon for språkspesifikke diskusjonar med språk X for GG og Gt/D? Ja, helst
+    - Eigen bolk for GG
 
-!!!Neste divvunveke
+# Neste divvunveke
 
 Veke 45 / 6.-10.11.
 
@@ -69,29 +69,29 @@ FinUgReVita må bli i januar-februar. IWCLUL er 8.-9. januar, vi inviterer
 ungararane frå 22.1. og framover, når det passar dei. Så justerer vi Divvun-veka
 etter det. Brev sendt.
 
-!!!Korpusinnsamling
+# Korpusinnsamling
 
 Oppfølgjing av [../../corpus/Meeting_2017-10-05.html].
 
 * Automatisk innsamla: I dag NRK, vi vil ha alle. 
-** __Børre__ følgjer det opp
+    - **Børre** følgjer det opp
 * Pølen:
-** .. er ei yaml-fil i freecorpus.
-** Det ligg ei liste å hente nye frå i
-  [ling/SaamiTextOnline.html|/ling/SaamiTextOnline.html] som Børre skal
+    - .. er ei yaml-fil i freecorpus.
+    - Det ligg ei liste å hente nye frå i
+  [ling/SaamiTextOnline.html](/ling/SaamiTextOnline.html) som Børre skal
   endre til ei maskinlesbar fil (hugs å endre SaamiTextOnline.html).
 * Divvun arbeider med å få tilsett ein innsamlar, oppfølgjing av Sametinget går
   inn i det.
-* Direkte tilgang til tekstar frå sentraladministrasjonen: __Sjur__ diskuterte
+* Direkte tilgang til tekstar frå sentraladministrasjonen: **Sjur** diskuterte
   det i førre møte i Oslo, og følgjer opp det.
 
-!!!Grammatikkontrollen
+# Grammatikkontrollen
 
 No er stavekontrollen integrert i grammatikkontrollen, men ikkje her:
 [http://gtweb.uit.no/gc/] (enno), eller i det nye scriptet på kommandolinja, 
 men det fungerer som pipeline. Spellerdelen (som kjem før grammatikkontroll) er:
 
-''cat text > tokeniser > valens > mwe > stavekontroll ...''
+*cat text > tokeniser > valens > mwe > stavekontroll ...*
 
 Utsnitt av output, der skrivefeil får forslag, ordna etter vekt, og
 der dei fire taggane til høgre for grammatikktaggane er:
@@ -101,7 +101,7 @@ der dei fire taggane til høgre for grammatikktaggane er:
 * ein tagg <spelled>
 * og sjølve rettingsforslaget (her: "<diehtit>)
 
-{{{
+```
 "<dieehttit>"
 	"dieehttit" ?
 	"diehtit" V Ind Prs Pl1 <W:15.8486> <WA:8.84863> <spelled> "<diehtit>"
@@ -113,17 +113,17 @@ der dei fire taggane til høgre for grammatikktaggane er:
 	...
 	"ihtit" V Der/NomAg N Pl Nom <W:20049.3> <WA:20029.3> <spelled> "<die-ihttit>"
 		"die" Adv Cmp/Cit Cmp/Hyph Cmp
-}}}
+```
 
 Merk siste linje, som har langt høgare vekt enn dei andre. Med dette oppsettet
 kan vi bruke CG-reglar til å fjerne (høgt vekta) framlegg vi rett og slett aldri
 vil vise, heller ikkje der dei ville ha kome på topp-5.
 
-!!Dokumentasjon
+## Dokumentasjon
 
 ... kjem snart.
 
-!!Integrering
+## Integrering
 
 * På nettsida vår: Snart
 * I LibreOffice: Ingenting der enno, men vi er no i ein posisjon der vi skal
@@ -132,28 +132,27 @@ vil vise, heller ikkje der dei ville ha kome på topp-5.
 * Nettlesarar: tja, og variabelt frå lesar til lesar
 * MS Office - skal lysast ut (prosessen er i gang)
 
-!!!TTS
+# TTS
 
-!!For sluttbrukarar
+## For sluttbrukarar
 
 Jf Bugzilla.
 
-!!For utvikling på huset
+## For utvikling på huset
 
 * NDS først i køa
-** jf [http://samas.no], øvst til høgre (MT)
+    - jf [http://samas.no], øvst til høgre (MT)
 * opplesing av heimesidene våre
 
 No skal vi setje opp ein servar. Kva skal vi gjere og kva skal Acapela gjere. 
 Kontakten går mellom Chiara/Ciprian og Acapela, med kopi til Sjur.
 
-!!!Skoltesamisk og Kela
+# Skoltesamisk og Kela
 
 Spørsmål frå Kela om skoltesamiske program:
 Det er brevveksling, saka går framover, vi ventar på svar.
 
-
-!!!Nye kontorplassar
+# Nye kontorplassar
 
 Både Trond og Sjur ber om kvar sin kontorplass for midlertidige stillingar.
 Kvar pâ vâr kant treng vi no og dâ dette, slik at eit smidig system med ein-to

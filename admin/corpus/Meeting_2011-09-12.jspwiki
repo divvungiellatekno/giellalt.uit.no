@@ -1,4 +1,4 @@
-!!!Korpus-møte
+# Korpus-møte
 
 Til stades: Børre, Sjur, Trond
 
@@ -11,32 +11,31 @@ Til stades: Børre, Sjur, Trond
 * Ta opp att doku-sida /doc/ling/corpus_maintenance.html
 * Andre saker?
 
-!!! nye metadata: kva slags bruk dokumentet er ok for (dokumentert med kva slags testar som har vorte køyrde)
+#  nye metadata: kva slags bruk dokumentet er ok for (dokumentert med kva slags testar som har vorte køyrde)
 
-!!Bruksområde
+## Bruksområde
 * grammatisk analyse
 * terminologi og ordbok
 * maskinomsetjing
 * stavekontroll
 * grammatikkontroll
 
-!!Krav til konvertering
+## Krav til konvertering
 * Konverteringsfeil på teiknnivå (bokstav inn - bokstav ut)
 * Konverteringsfeil på dokumentnivå (dokument inn - (del)dokument ut)
 * OCR-feil 
 * Språkattkjenningsfeil
-** Les text_cat xsl? Ja
-*** er text_cat for dårleg? Tja, med rett inndata er svaret ganske ok
-*** er modellane for dårleg? - for tidleg å seia, vi må testa med korrekt xsl
-** Står relevant data i xsl? -- nei
-*** Identifisere fleirspråklege filer, og leggje til info i deira xsl-filer
-*** Døme i sme/admin/other_files inneheld 30 av 60 filer (kanskje) nob.
-** Klarer text_cat å velje mellom språka når xsl er i orden?
-*** Börre: ja.
-*** Den største utfordringa: nob eller swe?
+    - Les text_cat xsl? Ja
+        - er text_cat for dårleg? Tja, med rett inndata er svaret ganske ok
+        - er modellane for dårleg? - for tidleg å seia, vi må testa med korrekt xsl
+    - Står relevant data i xsl? -- nei
+        - Identifisere fleirspråklege filer, og leggje til info i deira xsl-filer
+        - Døme i sme/admin/other_files inneheld 30 av 60 filer (kanskje) nob.
+    - Klarer text_cat å velje mellom språka når xsl er i orden?
+        - Börre: ja.
+        - Den største utfordringa: nob eller swe?
 
-
-!!!Språkattkjenning
+# Språkattkjenning
 
 * n-gram
 * ordlister
@@ -45,38 +44,36 @@ Til stades: Børre, Sjur, Trond
 text_cat er frå Groningen, og perlbasert. Brendan Molloy har laga ein ny
 versjon, for sin eigen del og for "miljøet", reinskrive i Python ut i frå artikkelen som Groningen-verktyet byggjer på.
 
-__TODO__
+**TODO**
 * Legge til språkinfo i xsl - halvautomatisk
 * ccat+analysator-test
 
-!!! automatiserte testar for så mykje som mogleg
+#  automatiserte testar for så mykje som mogleg
 
-!!Språkgjenkjenning og OCR-feil
+## Språkgjenkjenning og OCR-feil
 
 * ccat + analysator
-** be ccat om språk X
-** analyser språk X
-** sjekk forholdet mellom alle ord og ukjende ord: FAIL dersom ukjende er > 5 %
+    - be ccat om språk X
+    - analyser språk X
+    - sjekk forholdet mellom alle ord og ukjende ord: FAIL dersom ukjende er > 5 %
 
-!!Parallelle setningar
+## Parallelle setningar
 
 Gjeld berre parallelldokument
 
 * Mål: alle setningar skal vera parallelle, avvik maks 5 %
 * Metode: TCA
 
-!!! Status quo for innsamla data
+#  Status quo for innsamla data
 
-!!! Status quo for uinnsamla data
+#  Status quo for uinnsamla data
 
 * jus! nac1993 = NOU (den står i admin/dept/nou og i 
 * lovtekstar i 
 * opplæringslova står på sme, ikkje på nno
 
-!!! arbeidsprioritering framover
+#  arbeidsprioritering framover
 
-!!! kjøpa meir arbeidskraft?
+#  kjøpa meir arbeidskraft?
 
-!!! Andre saker?
-
-
+#  Andre saker?

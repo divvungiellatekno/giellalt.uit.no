@@ -1,21 +1,21 @@
-!!!Speller meeting
+# Speller meeting
 
 What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 Variablar for installeraren:
 
 * Variablar relevante for om ting funkar i det heile:
-** Office-versjon: 2003, 2007, 2010, 2013
-** Windows-versjon: XP, Vista, W7, W8
-** språkkode: ISO (se-NO) vs LCID (1083)
-** bit-versjon for Windows: 32b vs 64b
+    - Office-versjon: 2003, 2007, 2010, 2013
+    - Windows-versjon: XP, Vista, W7, W8
+    - språkkode: ISO (se-NO) vs LCID (1083)
+    - bit-versjon for Windows: 32b vs 64b
 * variablar uavhengig av grunnleggjande funksjonalitet:
-** Office-utgåve: home/student vs pro/full
-** installeringsmodus: admin/rot/nett vs lokal brukar vs terminalserver
+    - Office-utgåve: home/student vs pro/full
+    - installeringsmodus: admin/rot/nett vs lokal brukar vs terminalserver
 
 Verkty for debugging:
 * dependencywalker
@@ -28,93 +28,98 @@ Børre has installed different proofing tools recording registry settings before
 * Greenlandic 3 (Tino - MSI by WiX)
 * Bokmål installer from the Office 2010 Pro, English, with a Norwegian language pack (MS - MSI)
 
-There's [a separate document|WindowsInstallationTest.html] containing the test results for different combinations of MS Office and Windows  versions.
+There's [a separate document](WindowsInstallationTest.html) containing the test results for different combinations of MS Office and Windows  versions.
 
-__DONE:__
-* __Børre__ har installert og diffa mykje, sjå over
+**DONE:**
+* **Børre** har installert og diffa mykje, sjå over
 
-__TODO:__
-* study the diffs, especially the NOB proofing tool diff (__Børre__)
-* look at combinations of Windows XP and Office (__Børre__)
-* get a proper MS certificate, to remove the warning users get when installing (__Børre__)
-* write to Tino about the issues with his installer, link to installer test table (__Sjur__)
+**TODO:**
+* study the diffs, especially the NOB proofing tool diff (**Børre**)
+* look at combinations of Windows XP and Office (**Børre**)
+* get a proper MS certificate, to remove the warning users get when installing (**Børre**)
+* write to Tino about the issues with his installer, link to installer test table (**Sjur**)
 
-__POSTPONED:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
-* send a request to an NSIS developer e-mail list (__Sjur__)
-* try to find an NSIS script for building MSI packages (__Børre__)
+**POSTPONED:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (**Sjur**)
+* try to find an NSIS script for building MSI packages (**Børre**)
 * add Windows 8 support to our installer (if possible)
 
-!!!PLX conversion
+# PLX conversion
 
 Remaining PLX bugs:
 
-!!First PRI
+## First PRI
 
-||REGRESSION - DOESN'T RECOGNIZE SOME ACRO/PROP+NOUN, seems random
-| PROP+NOUN	          | Mihkalmas-beaivi            | 593 | WONTFIX
+|  REGRESSION - DOESN'T RECOGNIZE SOME ACRO/PROP+NOUN, seems random
+| --- 
+|  PROP+NOUN	          | Mihkalmas-beaivi            | 593 | WONTFIX
 
 Test speller behaves the same as real speller:
-{{{
+```
 Prompt: Check returns 0[0:0]/1, @0:16 for 'Mihkalmas-beaivi'
 Getting suggestions for Mihkalmas-beaivi...
 Suggestions:
 253	Mihkalmasbeaivi
-}}}
+```
 
-!!Second PRI
+## Second PRI
 
-||Section for Tags-not-working
-| doesn't follow cmp-tags | sámedikkepresideanta | 489		| FIXED
-| +CmpN/None in comp-sugg | 1883-as              | 508
+|  Section for Tags-not-working
+| --- 
+|  doesn't follow cmp-tags | sámedikkepresideanta | 489		| FIXED
+|  +CmpN/None in comp-sugg | 1883-as              | 508
 
-{{{
+```
 as	as+N+ACR+Sg+Acc
 as	as+N+ACR+Sg+Gen
 as	as+N+ACR+Sg+Nom
-}}}
+```
 
 Thomas demands this to be fixed:
 
-||SUGGESTIONS
-| STRANGE SUGGESTION-PRIORITIES | guollibusse > Vuolli-busse (and not the expected: guollebusse) | 397,917 | oaivebussiid, guollebussiid  not suggested   SEE ALSO 917  bargomáhtuid
+|  SUGGESTIONS
+| --- 
+|  STRANGE SUGGESTION-PRIORITIES | guollibusse > Vuolli-busse (and not the expected: guollebusse) | 397,917 | oaivebussiid, guollebussiid  not suggested   SEE ALSO 917  bargomáhtuid
 
-
-!!Second Last PRI
+## Second Last PRI
 
 Bugs from here on can be left out of the next release if we are short on time.
 
-||Compounds
-| imposs" cmps along w num.         | 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145 | NO SUGGESTIONS - GOOD - BUT:
-| imposs" cmps sákkasteapmifierbmi>	| (225) aseákkasteapmifierbmi		ase-              | 536      | REGRESSION
-| --"--                             | (225) asiákkasteapmifierbmi		asi-
-| --"--                             | (225) ásaákkasteapmifierbmi		ása-
-| --"--                             | (225) áseákkasteapmifierbmi		áse-
-| --"--                             | (225) ásoákkasteapmifierbmi		áso-
-| --"--                             | (225) ásuákkasteapmifierbmi		ásu-
-| --"--                             | (221) ášoákkasteapmifierbmi		ášo-
-| --"--                             | (221) ášuákkasteapmifierbmi		ášu-
-| num cmp:s on 0-                   | 051-nummarat                                        | 631
-| non-ex. word accepted             | saame                                               | 658
+|  Compounds
+| --- 
+|  imposs" cmps along w num.         | 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145 | NO SUGGESTIONS - GOOD - BUT:
+|  imposs" cmps sákkasteapmifierbmi>	| (225) aseákkasteapmifierbmi		ase-              | 536      | REGRESSION
+|  --"--                             | (225) asiákkasteapmifierbmi		asi-
+|  --"--                             | (225) ásaákkasteapmifierbmi		ása-
+|  --"--                             | (225) áseákkasteapmifierbmi		áse-
+|  --"--                             | (225) ásoákkasteapmifierbmi		áso-
+|  --"--                             | (225) ásuákkasteapmifierbmi		ásu-
+|  --"--                             | (221) ášoákkasteapmifierbmi		ášo-
+|  --"--                             | (221) ášuákkasteapmifierbmi		ášu-
+|  num cmp:s on 0-                   | 051-nummarat                                        | 631
+|  non-ex. word accepted             | saame                                               | 658
 
-!!Last PRI
+## Last PRI
 
-||Capitals
-| doesn't understand caps   | 1700-LOHKU                    | 647
+|  Capitals
+| --- 
+|  doesn't understand caps   | 1700-LOHKU                    | 647
 
-||REGRESSION
-| not recognized anymore recognized  | biilarievttijođiheaddjái | 819		
+|  REGRESSION
+| --- 
+|  not recognized anymore recognized  | biilarievttijođiheaddjái | 819		
 
-__DONE:__
-* __Tomi__ has solved even more PLX bugs
+**DONE:**
+* **Tomi** has solved even more PLX bugs
 
-__TODO:__
-* investigate the inconsistent PLX conversion bug, cf ''guollibusse'' (__Tomi__)
-* solve the remaining PLX bugs one by one (__Tomi__)
+**TODO:**
+* investigate the inconsistent PLX conversion bug, cf *guollibusse* (**Tomi**)
+* solve the remaining PLX bugs one by one (**Tomi**)
 
-!!!Release plan
+# Release plan
 
 The December 1 goal has passed, without meeting the targets. On the plus side is that the number of open PLX bugs have been greatly reduced, and Tomi are squashinhg PLX bugs all the time. It just takes more time than anticipated.
 
@@ -123,8 +128,8 @@ The installer was not easily solved by the WiX alternative - it turned out that 
 Re-scheduling the release plan:
 
 * New deadline December 20:
-** PLX bugs solved
-** if met, we'll release a 2.3 update using the NSIS installer, and mainly linguistic improvements for SME
+    - PLX bugs solved
+    - if met, we'll release a 2.3 update using the NSIS installer, and mainly linguistic improvements for SME
 * January 4: new Windows installer Alpha
 * January 10: Beta release, PLX fixes for SMA and SMJ
 * January 21: Divvun 3 release

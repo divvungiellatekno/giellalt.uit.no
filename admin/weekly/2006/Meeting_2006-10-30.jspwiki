@@ -1,283 +1,261 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 30.10.2006
 * Time: 09.30 Norw. time
 * Place: Where we are
 * Tools: SubEthaEdit, iChat
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:45.
 
-Present: __Børre, Maaren, Saara, Sjur, Thomas, Tomi, Trond__
+Present: **Børre, Maaren, Saara, Sjur, Thomas, Tomi, Trond**
 
-Absent: __none__
+Absent: **none**
 
 Agenda accepted as is.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!! Børre
+##  Børre
 * contact writers who already have received contracts
-** Elle Márjá Vars and Aage Solbakk. Both said they would give us texts.
+    - Elle Márjá Vars and Aage Solbakk. Both said they would give us texts.
 * Move norwegian documents in Min Áigi from sme to nob
-** Not done
+    - Not done
 * finish Forrest i18n work (pdf)
-** Fixed i18n in pdf together with __Sjur__. Cleaned up broken links.
+    - Fixed i18n in pdf together with **Sjur**. Cleaned up broken links.
 * cvs synching of the risten.no code in eXist (read-only)
-** Sjur did this
+    - Sjur did this
 * consider a script for automatic testing of the spell checker
-** Nothing done
+    - Nothing done
 * consider more testing routines
-** Nothing done
+    - Nothing done
 * update Maaren's Forrest installation to r430284
-** Not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** Not done
+    - Not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - Not done
 
-
-!! Maaren
+##  Maaren
 * investigate the generated word form list sent to Polderland - use the command
-  {{make pl-wordlist TARGET=sme}} in ''victorio''
-** done some
+  `make pl-wordlist TARGET=sme` in *victorio*
+    - done some
 * investigate unrecognised word forms in the hyphenator
-** done some
+    - done some
 
-
-
-!! Saara
+##  Saara
 * add more texts to the graphical corpus interface
 * finalize server of the Xerox tools.
-** Paradigm generator implemented. final testing still going on. The text
+    - Paradigm generator implemented. final testing still going on. The text
    interface is working well, but there are some bugs in xml-version.
-* generate parallel corpus files manually (with __Trond__)
+* generate parallel corpus files manually (with **Trond**)
 * export corpus tools to location available to all (with cron), cf news disc.
-** not done.
+    - not done.
 * help Trond with some shell commands
-** done some.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - done some.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!! Sjur
+##  Sjur
 * name lexicon:
-** refactor SD-terms editor code
-*** done some more
-** implement missing propnouns editing functions
-** implement improvements decided upon in Tromsø
+    - refactor SD-terms editor code
+        - done some more
+    - implement missing propnouns editing functions
+    - implement improvements decided upon in Tromsø
 * hire linguist and programmer
 * finish i18n work of Forrest
-** helped __Børre__ with the PDF i18n
+    - helped **Børre** with the PDF i18n
 * install our local copy of risten.no and propnouns on the G5
-** done
+    - done
 * investigate unrecognised word forms in the hyphenator
 * decide how to specify compounding behaviour info in the lexicon
-** proposal posted to the news
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - proposal posted to the news
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 * other:
-** participated in a Nordic language technology seminar in Gothenburg
-** cvs syncing of risten.no code on the G5 (with help from __Børre__)
+    - participated in a Nordic language technology seminar in Gothenburg
+    - cvs syncing of risten.no code on the G5 (with help from **Børre**)
 
-
-
-!! Thomas
+##  Thomas
 * refine smj proper noun lexica, cf. the propernoun-smj-lex.txt 
-** nothing this week
+    - nothing this week
 * find and study all derived verbs in our corpus
-** nothing this week
+    - nothing this week
 * suggest which derivations could be generated
-** nothing this week
+    - nothing this week
 * investigate unrecognised word forms in hyphenator
-** done some serious investigations
+    - done some serious investigations
 * investigate the generated word form list sent to Polderland - use the command
-  {{make pl-wordlist TARGET=sme}} in ''victorio''
-** done some serious investigations
+  `make pl-wordlist TARGET=sme` in *victorio*
+    - done some serious investigations
 * decide how to specify compounding behaviour info in the lexicon
-** working on it
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** worked
+    - working on it
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - worked
 
-
-!! Tomi
+##  Tomi
 * continue implementation of the speller lexicon conversion
-** continued
-* make generator as server, based on __Saara's__ code
-** Saara did
+    - continued
+* make generator as server, based on **Saara's** code
+    - Saara did
 * add lexc2xspell code to cvs
-** done
+    - done
 * add hyphenation points to the generated output
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Trond
+##  Trond
 * refine smj proper noun lexica, cf. the propernoun-smj-lex.txt
-** Not done, haven't done more than saying "bures" to Thomas a couple of times.
-* Get more {{sma}} texts to improve language recognition
-** I got a whole bunch of texts, but lost my memory stick (!) 
+    - Not done, haven't done more than saying "bures" to Thomas a couple of times.
+* Get more `sma` texts to improve language recognition
+    - I got a whole bunch of texts, but lost my memory stick (!) 
    More text is forthcoming, though.
 * study paragraphs with mixed content
-** Done some. There are systematic traits there, cf. discussion to come.
+    - Done some. There are systematic traits there, cf. discussion to come.
 * add corpus user accounts and access issues to Bugzilla
-** Not done.
+    - Not done.
 * investigate unrecognised word forms in the hyphenator
-** Don't remember this. Worked on sma hyphenator, though.
+    - Don't remember this. Worked on sma hyphenator, though.
 * decide how to specify compounding behaviour info in the lexicon
-** Blank.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+    - Blank.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
+# 3. Documentation
 
-!!!3. Documentation
-
-One small problem: Forrest seems to crash on raw HTML. __Børre__ will check it.
+One small problem: Forrest seems to crash on raw HTML. **Børre** will check it.
 
 TODO:
-* finish i18n work (__Børre__ and __Sjur__)
-** set up Tomcat at the faculty server, and install Forrest as war. Needs
+* finish i18n work (**Børre** and **Sjur**)
+    - set up Tomcat at the faculty server, and install Forrest as war. Needs
    testing before being deployed on the server! Thus, install it on the G5 first
    and see that it works, then on the faculty server.
-** i18n does not work in PDF ("Table of Content" won't translate)
-*** done - two strings still missing (we couldn't find their location)
-* check potential raw HTML bug/problem (__Børre__)
+    - i18n does not work in PDF ("Table of Content" won't translate)
+        - done - two strings still missing (we couldn't find their location)
+* check potential raw HTML bug/problem (**Børre**)
 
+# 4. Corpus gathering
 
+Two more authors contacted, both positive. **Åge Solbakk** is coming to Tromsø
+next week, **Børre** will meet with him then.
 
-!!!4. Corpus gathering
+**Børre** has been digging more in the SD archives, and found some more texts.
 
-Two more authors contacted, both positive. __Åge Solbakk__ is coming to Tromsø
-next week, __Børre__ will meet with him then.
+## sma
+**Inger Johansen** found **Trond's** memory stick, we thus have some `sma`
+texts, and we will also get 200 000 words from **Ove Lorentz** (there is
+probably overlap). **Bierna Bientie** has been travelling this autumn, should be
+back this week, **Trond** will contact him for `sma` Bible texts.
 
-__Børre__ has been digging more in the SD archives, and found some more texts.
-
-!!sma
-__Inger Johansen__ found __Trond's__ memory stick, we thus have some {{sma}}
-texts, and we will also get 200 000 words from __Ove Lorentz__ (there is
-probably overlap). __Bierna Bientie__ has been travelling this autumn, should be
-back this week, __Trond__ will contact him for {{sma}} Bible texts.
-
-!!smj
-The Disamb project plans to have an {{smj}} week next week, and would very much
+## smj
+The Disamb project plans to have an `smj` week next week, and would very much
 like to have some more texts by then.
 
-__TODO:__
-* continue to help NSI to get their corpus (__Børre__)
-** nothing last week, will visit them when going to Kautokeino this or next week
+**TODO:**
+* continue to help NSI to get their corpus (**Børre**)
+    - nothing last week, will visit them when going to Kautokeino this or next week
 * sma:
-** Bible (__Trond__).
-** Discussions with the Sámi Parliament (__Børre, Sjur__)
-* add as much {{smj}} texts as possible (__Børre__)
+    - Bible (**Trond**).
+    - Discussions with the Sámi Parliament (**Børre, Sjur**)
+* add as much `smj` texts as possible (**Børre**)
 
+# 5. Corpus infrastructure
 
-
-!!!5. Corpus infrastructure
-
-!!User accounts and access
+## User accounts and access
 
 TODO:
-* add the issue with subissues to Bugzilla (__Trond__)
-** not yet
+* add the issue with subissues to Bugzilla (**Trond**)
+    - not yet
 
-
-!!More texts to the graphical corpus interface:
+## More texts to the graphical corpus interface:
 
 We have sent approximately 10 texts to Oslo, aligned and with sme analysis. Now,
-the {{nob}} texts must be analysed and the texts added to the interface. We will
+the `nob` texts must be analysed and the texts added to the interface. We will
 not send more texts now, but use these ones for testing.
 
 TODO:
-* add text to the server (__Lars__)
-** Lars came back from holiday last week, which means it will probably soon be
+* add text to the server (**Lars**)
+    - Lars came back from holiday last week, which means it will probably soon be
    fixed
 
+## Aligner
 
+**TODO:**
+* report improvements in aligner back to **Øystein** (**Børre**)
+* gather more parallel texts (**Trond**)
+* try out NT alignment strategies (**Saara**)
 
-!!Aligner
-
-__TODO:__
-* report improvements in aligner back to __Øystein__ (__Børre__)
-* gather more parallel texts (__Trond__)
-* try out NT alignment strategies (__Saara__)
-
-
-!!Language recognition
+## Language recognition
 
 Trond and Saara has done some work on paragraphs with mixed content.
 
 Types of mixed paragraphs in the newspaper texts:
 
-# Norwegian quotations (titles, repliques, etc.)
-# Bilingual text, separated by some separator: (/)
-# Systematic omissions in the original translations
-# Technical text for the typographers
-# Names
-# Unsystematic Norwegian parts of sentences
-
+1. Norwegian quotations (titles, repliques, etc.)
+1. Bilingual text, separated by some separator: (/)
+1. Systematic omissions in the original translations
+1. Technical text for the typographers
+1. Names
+1. Unsystematic Norwegian parts of sentences
 
 Examples of the types:
 
-# Muhtomin láve friddjavuođadovdu ja eará háve fas dakkár dovdu ahte "Dere 
+1. Muhtomin láve friddjavuođadovdu ja eará háve fas dakkár dovdu ahte "Dere 
   tråkker faen ikke på meg lenger", logai Mari ovdalgo lávllestii maŋemus
   lávlaga ja konsearta lei ollislaš. ¶ Riikkaviidosaš aviisa Dagbladet lea
   jođihan dán iskkadeami. Logi eanemus liikojuvvon divttat leat earret eará
   Arnulf Øverland dikta «Du må ikke sove», ¶
-# Vi har spurt eldre samer om hvordan de hadde det før i tiden./ Mii leat
+1. Vi har spurt eldre samer om hvordan de hadde det før i tiden./ Mii leat
   jearahallan vuorraset sápmelaččain mo sis lei bajásšattadettiin? ¶
-# Du lihkkologut: 1, 14, 27 og 31 ¶
-# BILDE:Kjell Kemi og Mai Britt Utsi ¶ HOVEDSAK: Bilde av Sponheim og rein ¶
-# Eambbo dieđuid daid ortnegiid birra ja ohcanskoviid gávnnat min
+1. Du lihkkologut: 1, 14, 27 og 31 ¶
+1. BILDE:Kjell Kemi og Mai Britt Utsi ¶ HOVEDSAK: Bilde av Sponheim og rein ¶
+1. Eambbo dieđuid daid ortnegiid birra ja ohcanskoviid gávnnat min
   ruovttusiidduin,  www.slf.dep.no - Økologisk. Sáhtát maid ságastit SLF:ain,
   Šaddobuvttadeami- ja ekologalaš eanadoalu ossodat, Seksjon planteproduksjon og
   økologisk landbruk. ¶ 
-# 1992:s lei NSR sámi delegašuvnnas mii soabadii Justisministariin om opplegget
+1. 1992:s lei NSR sámi delegašuvnnas mii soabadii Justisministariin om opplegget
   for sedvanerettsundersoekelsen og folkerettsutredningen.
-
 
 The first is the most common one. In the MÁ corpus, there are 4000 strings with
 quotations, 2500 of them with directed (left/right) quotations.
 
 Suggestion for handling the types: 
-# Quoted strings: Pick out the quoted strings and check them separately
-## when? preprocessor or conversion to XML? conversion to XML, see below
-# Do nothing or look for known separators when the recognition returns
+1. Quoted strings: Pick out the quoted strings and check them separately
+    1. when? preprocessor or conversion to XML? conversion to XML, see below
+1. Do nothing or look for known separators when the recognition returns
   alternatives? Safest approach: pessimistic - do nothing.
-# Do nothing, and add "og" as a loan word in the lexicon (with !SUB!!!)
-# Identify the technical words BILDE, HOVEDSAK, then mark them as non-wanted(?)
-# Do nothing. (we go for CC "og")
-# Do nothing for the time being (bilingual analysis in the future?)
-
+1. Do nothing, and add "og" as a loan word in the lexicon (with !SUB!!!)
+1. Identify the technical words BILDE, HOVEDSAK, then mark them as non-wanted(?)
+1. Do nothing. (we go for CC "og")
+1. Do nothing for the time being (bilingual analysis in the future?)
 
 Conversion of quotations:
-{{{
+```
 <p lang=a>...dovdu ahte «Dere... » ...</p>
   -- converted to: --
 <p lang=a>...dovdu ahte <span type="quote" lang="nb">«Dere... »</span> ...</p>
-}}}
+```
 
 Types of quotations:
 * Directed: «», “”
 * Undirected: "" (if even number, easy, if odd, hard) <==
 
-
 Norwegian sequences could be strung together, and treated as an un-analyzible
 part of the sentence.
 
 Language distribution of paragraphs, as identified by the language recogniser:
-{{{
+```
 LANG  # hits - reality:
 sme   68431  - true
 nob   10595  - true
@@ -289,93 +267,86 @@ dan     482  - false
 ger     252  - false
 sma      81  - mostly true, some short paragraphs may be false
 isl       9  - false
-}}}
-
+```
 
 TODO:
 
-* get more {{sma}} texts, first the Bible / NT (__Trond__)
-* add {{<span>}} to the corpus processing, encapsulating identifiable sequences
-  of foreign language within them (__Saara__)
+* get more `sma` texts, first the Bible / NT (**Trond**)
+* add `<span>` to the corpus processing, encapsulating identifiable sequences
+  of foreign language within them (**Saara**)
 
+# 6. Infrastructure
 
-
-!!!6. Infrastructure
-
-!!Xerox tools wrapped as servers
+## Xerox tools wrapped as servers
 
 Paradigm generator is now finished (some problems with the XML still). The
-server interface has changed, __Tomis__ script needs to be updated.
+server interface has changed, **Tomis** script needs to be updated.
 
-__Saara__ needs paradigm grammars for all POSes, see the example for N:
-{{{
+**Saara** needs paradigm grammars for all POSes, see the example for N:
+```
 N+Subclass?+Number+Case+Possessive?+Clitic?
 V+
 A+
 Adv+
 Pron+
 ...
-}}}
+```
 
 The inflector (generator as server) has four output options:
-# short paradigm (nom, gen, gen pl)
-# standard paradigm (full w/o poss and clitics)
-# complete (incl poss. clitics)
-# take any single string including tags, return inflected form
+1. short paradigm (nom, gen, gen pl)
+1. standard paradigm (full w/o poss and clitics)
+1. complete (incl poss. clitics)
+1. take any single string including tags, return inflected form
 
 Input is one of:
 * Lemma + POS and grammar type (short / standard / complete)
 * Lemma + tag string
 
-__Next:__ add the hyphenation filter to the hyphenator server
+**Next:** add the hyphenation filter to the hyphenator server
 
-__TODO:__
-* improve and finish the present prototype (__Saara__)
-* fix the corpus tag list in the {{cwb/}} directory (__Trond__)
-* add the hyphenation filter to the hyphenator server (__Saara__)
-* create / check the paradigm grammar as exemplified above (__Maaren__)
+**TODO:**
+* improve and finish the present prototype (**Saara**)
+* fix the corpus tag list in the `cwb/` directory (**Trond**)
+* add the hyphenation filter to the hyphenator server (**Saara**)
+* create / check the paradigm grammar as exemplified above (**Maaren**)
 
+## Hyphenator
 
+### sma
 
-!!Hyphenator
-
-!sma
-
-__Trond__ had some discussions with __Ove Lorentz__. We have done "maximize
+**Trond** had some discussions with **Ove Lorentz**. We have done "maximize
 coda", he wants "maximize onset".
 
-!Unrecognised word forms
+### Unrecognised word forms
 
 The unrecognised forms are forms generated by the nonrec transducer, but
 come out as question marks after going through the hyphenating transducer.
 
 The command sequence is:
 
-# log in to victorio, move to gt/
-# {{make wordlist TARGET=sme}} (the result is: sme/wordlist-sme.txt.gz)
-# move wordlist-sme.txt.gz to local computer (or G5?)
-# {{make TARGET=sme}}      (gives sme.fst)
-# {{make hyph TARGET=sme}} (gives hyph-sme.fst)
-# gunzip wordlist-sme.txt.gz
-# cat wordlist-sme.txt | lookup -flags mbTT -utf8 bin/hyph-sme.fst > output.txt
+1. log in to victorio, move to gt/
+1. `make wordlist TARGET=sme` (the result is: sme/wordlist-sme.txt.gz)
+1. move wordlist-sme.txt.gz to local computer (or G5?)
+1. `make TARGET=sme`      (gives sme.fst)
+1. `make hyph TARGET=sme` (gives hyph-sme.fst)
+1. gunzip wordlist-sme.txt.gz
+1. cat wordlist-sme.txt | lookup -flags mbTT -utf8 bin/hyph-sme.fst > output.txt
 
 TODO:
-* Update the {{sma}} hyphenator rule set with the insights gained from {{smj}}
-  updates (__Trond__ during weekends)
-** done several updates, still more to be done
-* investigate unrecognised word forms (__Maaren, Thomas, Trond, Sjur__)
+* Update the `sma` hyphenator rule set with the insights gained from `smj`
+  updates (**Trond** during weekends)
+    - done several updates, still more to be done
+* investigate unrecognised word forms (**Maaren, Thomas, Trond, Sjur**)
 
-
-
-!!M4
+## M4
 
 It is problematic for the CG rules, as the rule numbering gets mixed up. The
 hope is that it is possible to get the same effect in CG3. We still have no 
 progress with CG3, though, but we will carry on the discussion with Odense.
 
-!!!7. Linguistics
+# 7. Linguistics
 
-!!Names and multilinguality
+## Names and multilinguality
 
 We need a more principled approach to this.
 
@@ -388,13 +359,13 @@ Observations:
 
 2) We can observe that "foreign" names in texts follows a domination pattern:
 majority language forms can be found in minority language texts as real names
-("Kautokeino produkter"), whereas minority language names ''almost always''
+("Kautokeino produkter"), whereas minority language names *almost always*
 occur in majority language texts as citations. And citations should not be
 considered a natural part of the text.
 
 3) When looking at our name classification, multilinguality varies according to:
 
-{{{
+```
 Ani - weak/none? (pet, myth anim.  names)
 Fem - weak (informative)
 Mal - weak (informative)
@@ -404,25 +375,25 @@ Plc - strong for the national and country names, weak (informative) for foreign
        names
 Sur - none
 Tit - strong (titles)
-}}}
+```
 
 Suggestion:
 
-We need to reconsider the ''all names in all languages'' policy. That policy is
-valid only for {{Fem, Mal,}} and {{Sur}} (and Ani and Tit?). For
-{{Obj, Org, Plc}} the rule should be that if they have multilingual names, each
+We need to reconsider the *all names in all languages* policy. That policy is
+valid only for `Fem, Mal,` and `Sur` (and Ani and Tit?). For
+`Obj, Org, Plc` the rule should be that if they have multilingual names, each
 name should only be used in it's own language. Then we need a modification
 saying that majority language names can be included in minority language
-lexicons __if attested__ in our corpus. Also, the majority language varies
+lexicons **if attested** in our corpus. Also, the majority language varies
 according to country (obviously), which means that in a speller context, we
 might consider tailoring spellers for each country, leaving out noise relating
 to majority language names from another country.
 
 A further issue is whether we should reconsider our cohort policy. Today, Sur
-and Plc are __different__ readings. An alternative would be to have them as
+and Plc are **different** readings. An alternative would be to have them as
 secondary tags, not in conflict with each other:
 
-{{{
+```
 "<Trosterud>"
         "Trosterud" N Prop Sur Sg Nom <<< @HNOUN
         "Trosterud" N Prop Plc Sg Nom <<< @HNOUN
@@ -430,27 +401,23 @@ secondary tags, not in conflict with each other:
         "Trosterud" N Prop Sg Nom <Sur> <Plc> <<< @HNOUN
 "<Trosterud>"
         "Trosterud" N Prop Sg Nom &Sur &Plc <<< @HNOUN
-}}}
+```
 
-
-!!Derivation and spellers like Aspell
+## Derivation and spellers like Aspell
 
 TODO:
-* find and study all derived words in our corpus (__Thomas__ and __Trond__)
-* suggest which derivations could be generated (__Thomas__)
-* lexicalise the rest (__Thomas__)
+* find and study all derived words in our corpus (**Thomas** and **Trond**)
+* suggest which derivations could be generated (**Thomas**)
+* lexicalise the rest (**Thomas**)
 
-
-
-!!North Sámi
+## North Sámi
 
 Unwanted word forms:
 * comparation of -laš derivations (they should not be generated in comparative
   and superlative)
 
-
 Questionable forms:
-{{{
+```
 a-a     a-a+Interj
 á-a     a-a+Interj  !SUB
 ASDF:a  ASDF+N+ACR+Sg+Gen
@@ -497,34 +464,29 @@ accompagnerejun V+TV+Der/j+Pass+PrfPrc
 ábuhuvvože      ábuhit+V+TV+Pass+Pot+Prs+Du1
 áccohallagođežedne V+IV+Der/alla+Der/goahti+Pot+Prs+Du1
 
-
 *en del var märkta !sub (med små bokstäver, av mej? Gör det nån skillnad?). Jag
 har ändrat dom. Märkt dock att ovanstående INTE hade små bokstäver.
-}}}
+```
 
-__NB!__ SUB marking has to be with uppercase {{SUB}} to be removed.
+**NB!** SUB marking has to be with uppercase `SUB` to be removed.
 
 TODO:
 * investigate the generated word form list sent to Polderland - use the command
-  {{make pl-wordlist TARGET=sme}} in ''victorio'' (__Maaren__, __Thomas__)
+  `make pl-wordlist TARGET=sme` in *victorio* (**Maaren**, **Thomas**)
 * alphabet letters need to be correctly inflected (colon as case separator)
-  (__Trond__) this issue is already fixed and added to cvs.
+  (**Trond**) this issue is already fixed and added to cvs.
 * check why some SUB-marked entries got included in the normative transducer
-  (__Thomas, Sjur__)
-* remove comparation from ''-laš'' derivations (__Thomas, Sjur__)
+  (**Thomas, Sjur**)
+* remove comparation from *-laš* derivations (**Thomas, Sjur**)
 
-
-
-!!Lule Sámi
+## Lule Sámi
 
 TODO:
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-  (__Thomas, Trond__)
-* hire new linguist (__Sjur__)
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+  (**Thomas, Trond**)
+* hire new linguist (**Sjur**)
 
-
-
-!!!8. Name lexicon infrastructure
+# 8. Name lexicon infrastructure
 
 Decided in Tromsø:
 * add logging facilities to the interface
@@ -536,17 +498,16 @@ Decided in Tromsø:
 * display existing language entries when adding a new language to a record
 * add editor to change single, existing entries
 
-
 Details can be found in [the meeting
 memo.|/admin/physical_meetings/tromso-2006-08-propnoun.html]
 
 TODO:
-* develop the needed XQueries and UI (__Sjur, Tomi__)
-* add the proper noun interface to the G5 (__Sjur__)
-** done, you can now try out the proper noun lexicon in risten.no.
-* cvs synching of the risten.no code in eXist (read-only) (__Børre__)
-** done
-* add a simple password protection to risten.no in the G5 (__Børre__)
+* develop the needed XQueries and UI (**Sjur, Tomi**)
+* add the proper noun interface to the G5 (**Sjur**)
+    - done, you can now try out the proper noun lexicon in risten.no.
+* cvs synching of the risten.no code in eXist (read-only) (**Børre**)
+    - done
+* add a simple password protection to risten.no in the G5 (**Børre**)
 
 Postponed:
 * data synchronisation between risten.no and the cvs repo
@@ -554,78 +515,71 @@ Postponed:
   construct entries like we have now from the different parts of a complex name
   entry
 
+# 9. Spellers
 
-!!!9. Spellers
-
-!!Speller data generation
+## Speller data generation
 
 It reads the lexc files, communicates with the server, xml communication needs
 to be redone. No speller output yet, needs to be done by this week. It outputs
 the entries built by the conversion engine.
 
-__TODO:__
-* add code to cvs (__Tomi__)
-** done
-* implement generator server based on Saara's code (__Tomi__)
-** done (by __Saara__)
+**TODO:**
+* add code to cvs (**Tomi**)
+    - done
+* implement generator server based on Saara's code (**Tomi**)
+    - done (by **Saara**)
 * decide how to specify compounding behaviour info for the lexicon
-  (__Thomas, Trond, Sjur__)
-** discussion started in news - please respond!
-* add hyphenation points to the generated output (__Tomi__)
+  (**Thomas, Trond, Sjur**)
+    - discussion started in news - please respond!
+* add hyphenation points to the generated output (**Tomi**)
 * planning meeting for the word form generator / data conversion script
-  (__Sjur, Saara, Tomi__)
-** discussion started in news
+  (**Sjur, Saara, Tomi**)
+    - discussion started in news
 
-
-!!Automatic testing of the Word spellchecker
+## Automatic testing of the Word spellchecker
 
 TODO:
-* consider a script for automatic testing (__Sjur, Børre__)
-* ask Polderland about testing tools (__Sjur__)
-** done
-* consider more testing routines (__Sjur, Børre__)
-* consider infra for testing feedback (__Børre, Sjur__)
+* consider a script for automatic testing (**Sjur, Børre**)
+* ask Polderland about testing tools (**Sjur**)
+    - done
+* consider more testing routines (**Sjur, Børre**)
+* consider infra for testing feedback (**Børre, Sjur**)
 * get an Intel Mac for testing Windows spellers; get a WinXP license from SD
-  (__Børre, Sjur__)
+  (**Børre, Sjur**)
 
+# 10. Other
 
-!!!10. Other
+## Bug fixing
 
-!!Bug fixing
-
-__64__ open Divvun/Disamb bugs, and __24__ risten.no bugs
+**64** open Divvun/Disamb bugs, and **24** risten.no bugs
 
 Guess: 1/3 of the bugs are fixed already (?)
 
+## Task lists as iCal entries
 
-!!Task lists as iCal entries
-
-__Børre__ should have a look at __Maaren's__ computer when he is in Kautokeino.
-
-TODO:
-* update Maaren's Forrest installation to r430284 (__Børre__)
-
-
-
-!!Employee seminar in Alta
-
-SD has an employee seminar in Alta 7.-8. December - should we go there? __Sjur__
-will ask __Julie Eira__ if we have to go there.
+**Børre** should have a look at **Maaren's** computer when he is in Kautokeino.
 
 TODO:
-* ask Julie Eira about SD employee seminar (__Sjur__)
+* update Maaren's Forrest installation to r430284 (**Børre**)
 
+## Employee seminar in Alta
 
-!!!11. Next meeting, closing
+SD has an employee seminar in Alta 7.-8. December - should we go there? **Sjur**
+will ask **Julie Eira** if we have to go there.
+
+TODO:
+* ask Julie Eira about SD employee seminar (**Sjur**)
+
+# 11. Next meeting, closing
 
 Next meeting 6.11.2006 at 9:30 (on the Swedish day in Finland - Swedish as the
 language, not the country:-) ).
 
 Closed at 12:14.
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!! Boerre
+##  Boerre
 
 * contact writers who already have received contracts
 * move norwegian documents in Min Áigi from sme to nob
@@ -633,95 +587,83 @@ Closed at 12:14.
 * consider more testing routines
 * update Maaren's Forrest installation to r430284
 * check potential raw HTML bug/problem
-* {{sma}} discussions with SD (with __Sjur__, __Trond__)
-* add as much {{smj}} texts as possible
-* report improvements in aligner back to __Øystein__
+* `sma` discussions with SD (with **Sjur**, **Trond**)
+* add as much `smj` texts as possible
+* report improvements in aligner back to **Øystein**
 * add a simple password protection to risten.no in the G5
 * consider infra for testing feedback
 * get an Intel Mac for testing Windows spellers; get a WinXP license from SD
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Maaren
+##  Maaren
 
 * investigate the generated word form list sent to Polderland - use the command
-  {{make wordlist TARGET=sme}} in ''victorio''
+  `make wordlist TARGET=sme` in *victorio*
 * investigate unrecognised word forms in the hyphenator
 * create / check the paradigm grammar as exemplified above
 
-
-
-!! Saara
+##  Saara
 
 * add more texts to the graphical corpus interface
 * finalize server of the Xerox tools.
 * improve text_cat with paragraphs of mixed content
-* generate parallel corpus files manually (with __Trond__)
+* generate parallel corpus files manually (with **Trond**)
 * export corpus tools to location available to all (with cron), cf news disc.
 * help Trond with some shell commands
 * plan the word form generator / data conversion script
-* add {{<span>}} to the corpus processing, encapsulating identifiable sequences
+* add `<span>` to the corpus processing, encapsulating identifiable sequences
   of foreign language within them
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Sjur
+##  Sjur
 
 * name lexicon:
-** refactor SD-terms editor code
-** implement missing propnouns editing functions
-** implement improvements decided upon in Tromsø
+    - refactor SD-terms editor code
+    - implement missing propnouns editing functions
+    - implement improvements decided upon in Tromsø
 * hire linguist and programmer
-* finish i18n work of Forrest with __Børre__
+* finish i18n work of Forrest with **Børre**
 * investigate unrecognised word forms in the hyphenator
 * decide how to specify compounding behaviour info in the lexicon
-* {{sma}} discussions with SD (with __Børre__, __Trond__)
+* `sma` discussions with SD (with **Børre**, **Trond**)
 * check why some SUB-marked entries got included in the normative transducer
-* remove comparation from ''-laš'' derivations
+* remove comparation from *-laš* derivations
 * plan the word form generator / data conversion script
 * consider a script for automatic testing of the spell checker in Word
 * consider more testing routines
 * consider infra for testing feedback
 * get an Intel Mac for testing Windows spellers; get a WinXP license from SD
 * ask Julie Eira about SD employee seminar
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+##  Thomas
 
-
-!! Thomas
-
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt 
-* find and study all derived words in our corpus (with __Trond__)
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt 
+* find and study all derived words in our corpus (with **Trond**)
 * suggest which derivations could be generated
 * investigate unrecognised word forms in hyphenator
 * decide how to specify compounding behaviour info in the lexicon
 * check why some SUB-marked entries got included in the normative transducer
-* remove comparation from ''-laš'' derivations
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* remove comparation from *-laš* derivations
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Tomi
+##  Tomi
 
 * continue implementation of the speller lexicon conversion
-* make generator as server, based on __Saara's__ code
+* make generator as server, based on **Saara's** code
 * add lexc2xspell code to cvs
 * add hyphenation points to the generated output
 * plan the word form generator / data conversion script
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+##  Trond
 
-
-!! Trond
-
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-* get more {{sma}} texts, first the Bible / NT
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+* get more `sma` texts, first the Bible / NT
 * add corpus user accounts and access issues to Bugzilla
-* fix the corpus tag list in the {{cwb/}} directory
+* fix the corpus tag list in the `cwb/` directory
 * investigate unrecognised word forms in the hyphenator
 * decide how to specify compounding behaviour info in the lexicon
-* {{sma}} discussions with SD (with __Børre__, __Sjur__)
-* find and study all derived words in our corpus (with __Thomas__)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* `sma` discussions with SD (with **Børre**, **Sjur**)
+* find and study all derived words in our corpus (with **Thomas**)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).

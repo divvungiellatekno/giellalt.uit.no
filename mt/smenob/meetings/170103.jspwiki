@@ -1,26 +1,26 @@
-!!!Møte 3. januar 2017
+# Møte 3. januar 2017
 
 Hangouts: Kevin, Lene
 
-!!Saker:
-# Behandling av semtagger (vs bidix-paradigme)
-# PoS-endring og transfer
-# Semtagger for proper nouns: cog vs top
-# Parallelltekst-skript
-# out whole vs clip-delar
-# Bruke advl-tagger med -ine og -ela
-# Variabler
-# Hyphen i sammensetninger
-# Guovdageainnu suohkana jođiheaddji
-# Hvordan finne svn-logg for Apertium
-# Hash-lister fra større oversettinger
+## Saker:
+1. Behandling av semtagger (vs bidix-paradigme)
+1. PoS-endring og transfer
+1. Semtagger for proper nouns: cog vs top
+1. Parallelltekst-skript
+1. out whole vs clip-delar
+1. Bruke advl-tagger med -ine og -ela
+1. Variabler
+1. Hyphen i sammensetninger
+1. Guovdageainnu suohkana jođiheaddji
+1. Hvordan finne svn-logg for Apertium
+1. Hash-lister fra større oversettinger
 
-!! Semtag vs bidix-paradigme
+##  Semtag vs bidix-paradigme
 
-!!Fra epost-diskusjon:
-__Lene skrev:__
+## Fra epost-diskusjon:
+**Lene skrev:**
 
-{{{
+```
 Vi har etterhvert fått mer og mer semtagger, både på substantiv og adjektiv. Taggene er i bruk også i disambiguering.
 
 I sme-smX blir taggene med over i apertium, sjøl om de ikke er med i dix, og de er dermed med i disambigueringa (bedre resultat)
@@ -36,10 +36,10 @@ I sme-smX blir taggene med over i apertium, sjøl om de ikke er med i dix, og de
 
 og de kan også brukes i transferreglene
 Taggene blir fjerna i t1x.
-}}}
+```
 
-__Kevin skrev:__
-{{{
+**Kevin skrev:**
+```
 I sme-nob har me brukt bidix-paradigme til tre relevante ting her:
 
 1. Til å endra/fjerna taggar som generelle reglar:
@@ -59,15 +59,14 @@ I sme-nob har me brukt bidix-paradigme til tre relevante ting her:
    <e><p><l><s n="inf"/></r><s n="inf"/></r>
    osb., får du ikkje med dei analysane som ikkje er spesifisert i
    paradigmet.
+
   
 Alle tre funksjonane er moglege å utføra på andre måtar, og eg ser
 fordelen med å sleppa å spesifisera sem-taggar i bidix; me må berre
 passa på at me ikkje mistar noko i omskrivinga.
 
-
 Punkt 1. er jo gjort med transferreglar i sme-smX, det kan me gjera her
 òg.
-
 
 Punkt 2. er vanskelegare – viss me ikkje skal spesifisera sem-taggar,
 kan me heller ikkje spesifisera taggar som kjem etter sem-taggen på
@@ -100,16 +99,14 @@ altså:
 </pardef>
 <e><p><l>bivvu<s n="n"/></l><r>klær<s n="n"/><s n="nt"/></r></p><par n="pl__n"/></e>
 
-
 Punkt 3. kan me nok løysa i rm-deriv-cmp.twol – det er kanskje bra å
 ha alt på éin plass der uansett?
-}}}
+```
 
-
-!! Leksikalske unntak spesifisert med paradigme
+##  Leksikalske unntak spesifisert med paradigme
 
 lemma n sg
-{{{
+```
     <e><p><l>vuovdi<s n="n"/></l><r>vyevdi<s n="n"/></r></p></e>
     <e><p><l>vuovdi<s n="n"/><s n="nomag"/></l><r>vyebdee<s n="n"/><s n="nomag"/></r></p></e>
 
@@ -117,16 +114,16 @@ lemma n sg
     <e><p><l>dikšu<s n="n"/><s n="nomag"/></l><r>tipšoo<s n="n"/><s n="nomag"/></r></p></e><!-- Dahkkinamma -->
 
     <e><p><l>gullevaš<s n="adj"/><s n="sem_dummytag"/><s n="attr"/></l><r>kuullâđ¹<s n="vblex"/><s n="prsprc"/></r></p></e>
-}}}
+```
 
-{{{
+```
    <e><p><l>bivvu<s n="n"/><!--sem--><s n="sg"/></l><r>klær<s n="n"/><s n="nt"/><s n="pl"/></r></p></e>
 $ echo '^bivvu<n><sem_clth><sg><nom>$' | lt-proc -b sme-nob.autobil.bin 
 ^bivvu<n><sem_clth><sg><nom>/@bivvu<n><sem_clth><sg><nom>$
-}}}
+```
 
 Mogleg alternativ:
-{{{
+```
 <pardef n="semtags">
   <e><p><l><s n="sem_clth"/></l><r></r></p></e>
   <e><p><l><s n="sem_jna."/></l><r></r></p></e>
@@ -138,19 +135,20 @@ Mogleg alternativ:
   <e><par n="semtags"/><p><l><s n="pl"/></l><r><s n="pl"/></r></p></e>
 </pardef>
 <e><p><l>bivvu<s n="n"/></l><r>klær<s n="n"/><s n="nt"/></r></p><par n="pl__n"/></e>
-}}}
+```
 (for å sleppa å eksplisitt spesifisera sem-taggar på unntaka òg)
 
 * TODO: sjekk at semtag-paradigme ikkje tek for lang tid å kompilera – viss det er treigt må me berre spesifisera manuelt som før, men tilpasse sme_bidix_sanity.sh til å sjekka at semtagg stemmer overens med sme-FST
 
-
-! rm-deriv-cmp i staden for paradigme-basert trimming
+###  rm-deriv-cmp i staden for paradigme-basert trimming
 
 * TODO: slepp gjennom det som no blir trimma ved bidix-paradigme, gå gjennom hash-listene neste dag og anten lag nye transfer-reglar, eller legg til fleire unntak i rm-deriv-cmp
 
-{{{
+```
    <rule comment="C[] NOM.GEN ADJ_ATTR NOM
+
    
+
    
         <choose><when><test> <!-- Lene: for sápmi.n.sg.gen samisk.adj -->
         <equal><clip pos="1" side="tl" part="a_adj"/><lit-tag v="adj"/></equal></test>
@@ -183,32 +181,28 @@ Mogleg alternativ:
         </let>
         </when>
         <otherwise>
-}}}
+```
 
-
-!! PoS-endring og transfer
+##  PoS-endring og transfer
 
 sápmi→samisk feiler når ordet ikkje er head i chunken (out_nom handterer det, men me har ingen macro for pre-nom)
 
 * TODO: ny macro for å legga til ord på pre-nom-variabelen; den macro-en må handtera at ein substantiv kan bli til adjektiv.
 * TODO: lag oversikt over alle PoS-endringar me har i bidix, og som må  handterast i transfer
 
-
-
-!! Semtagger for proper nouns: cog vs top
+##  Semtagger for proper nouns: cog vs top
 Alle top kan også være cog, pluss at mange går til feil paradigme i nob.dix
 
 Alle cog/top i nob.jdix har like paradigmer 
 
 TODO: legge til RL i nob.dix for generering uten cog eller top tagg
 
-!! Parallelltekst-skript
+##  Parallelltekst-skript
 
 [/mt/infra/Paralleltexts.html]
 (burde kanskje hatt P(osition-independent)WER òg? ofte nyttigare metrikk for gisting)
 
-
-!! out whole vs clip-delar
+##  out whole vs clip-delar
 
 I smenob brukes clip med enkeltdeler for output. Dette er mer robust i fohrold til endringer i tagging i source language.
 
@@ -217,42 +211,40 @@ I smesmX endrer vi tagstringen med regler og macro, og så clip whole ut. Dette 
 Fordel med å bytta til smesmX-metoden at ting blir likare på tvers av sme-par.
 Ulempe med å bytta: veldig mykje koda med clip-delar, stor jobb, kanskje mindre robust resultat(?). 
 
-
-!! Bruke advl-tagger med -ine og -ela
+##  Bruke advl-tagger med -ine og -ela
 * @<ADVL-ela  - fra (sted osb.), av (substans)
 * @<ADVL-ine - i, på
 * @ADVL-ela>
 * @ADVL-ine>
 
-{{{
+```
 echo Mun boađán skuvllas | apertium -d. sme-nob-syntax
 ^Mun<prn><pers><p1><sg><nom><@SUBJ→><MAP:1677:subj>Pers>$ ^boahtit<vblex><iv><indic><pres><p1><sg><@+FMAINV>$ ^skuvla<n><sem_edu_org><sg><loc><@←ADVL-ela><MAP:1865:V<advl>$^.<sent>$
 
 echo Mun ráhkadan láibbi čázis | apertium -d. sme-nob-syntax
 ^Mun<prn><pers><p1><sg><nom><@SUBJ→><MAP:1677:subj>Pers>$ ^ráhkadit<vblex><tv><indic><pres><p1><sg><@+FMAINV>$ ^láibi<n><sem_food><sg><acc><@←OBJ><MAP:2051:TV<obj>$ ^čáhci<n><sem_plc_substnc_wthr><sg><loc><@←ADVL-ela><MAP:1869:V<advl>$^.<sent>$
-}}}
+```
 
 * TODO: legg inn i def-macro set_caseprep; men merk: ADVL-ine/ela-choose bør  skje etter leksikalske unntak, sjå "grep 'def-list.*"loc-' *t1x".
-** etterpå, gå gjennom leksikalske unntak og fjern det som ine/ela-tek seg av
+    - etterpå, gå gjennom leksikalske unntak og fjern det som ine/ela-tek seg av
 
-{{{
+```
 echo Mun boađán doppe | apertium -d. sme-nob-syntax
 ^Mun<prn><pers><p1><sg><nom><@SUBJ→><MAP:1677:subj>Pers>$ ^boahtit<vblex><iv><indic><pres><p1><sg><@+FMAINV>$ ^doppe<adv><sem_plc><@←ADVL-ela><MAP:1865:V<advl><SELECT:2253>/¬doppe<adv><@←ADVL-ela><MAP:1865:V<advl><SELECT:2253>$^.<sent>$
-}}}
+```
 
 * TODO lexical selection regler for slike:
-** <e><p><l>doppe<s n="adv"/></l><r>der<b/>borte<s n="adv"/></r></p></e>
-** <e><p><l>doppe<s n="adv"/></l><r>der<b/>borte<b/>fra<s n="adv"/></r></p></e>
+    - <e><p><l>doppe<s n="adv"/></l><r>der<b/>borte<s n="adv"/></r></p></e>
+    - <e><p><l>doppe<s n="adv"/></l><r>der<b/>borte<b/>fra<s n="adv"/></r></p></e>
 
-{{{
+```
 $ echo "Mihttomearri lea beassat hálddašanguovllus."|apertium -d . sme-nob-syntax 
 ^Mihttomearri<n><sem_semcon><sg><nom><@SPRED→><MAP:1658:spred>SubjInf>$ ^leat<vblex><iv><indic><pres><p3><sg><@+FMAINV>$ ^beassat<vblex><iv><inf><@←SUBJ>$ ^hálddašeapmi<n><cmp_sgnom><cmp>+guovlu<n><sg><loc><@-F←ADVL-ela><MAP:1801:f<advl>$^..<sent>$
-}}}
+```
 
 @-F←ADVL-ela – ekvivalent med @←ADVL-ela
 
-
-!! Variabler
+##  Variabler
 http://wiki.apertium.org/wiki/Northern_Sámi_and_Norwegian/Regression_tests
 
 Setninger som er avhengig av variabler
@@ -271,42 +263,41 @@ Setninger som er avhengig av variabler
 
 ^det/den<det><dem><nt><sg>/den<prn><pers><p3><nt><sg><acc>/den<prn><pers><p3><nt><sg><nom>$^./.<sent><clb>$
 
-!det adv er ikke i nob
+### det adv er ikke i nob
 <e><p><l>dat<s n="pcle"/></l><r>det<s n="adv"/></r></p></e> 
 
-
-!!hyphen i sammensetninger
-{{{
+## hyphen i sammensetninger
+```
 echo lotto-speallu | apertium -d. sme-nob
 et lottospill
 echo lotto-speallu | apertium -d. sme-nob-disam
 ^lotto-speallu/lotto<n><sem_game><cmp_sgnom><cmp_hyph><cmp>+speallu<n><sg><nom>$^./.<sent>$
-}}}
+```
 * TODO: cmp_hyph => guio i taggendringsfila (lene studerer bruken av denne taggen, om det er eigentleg Err/Orth eller kva)
 
-{{{
+```
 $ echo '^lotto<n><m><sg><ind><guio>$'|lt-proc -d nob/nob.autogen.bin 
 lotto-
 
       <e><p><l><s n="cmp_sgnom"/><s n="cmp_hyph"/><s n="cmp"/></l><r><s n="sg"/><s n="nom"/></r></p></e> <!-- Lene added - we should have hyphen also at nob. -->
-}}}
+```
 
-!! Guovdageainnu suohkana sátnejođiheaddji mangler caseprep
+##  Guovdageainnu suohkana sátnejođiheaddji mangler caseprep
 
 Ordføreren i/av Kautokeino kommune
 
-{{{
+```
 <rule comment="C[] NOM.GEN NOM.GEN NOM
 "set_caseprep"
-}}}
+```
 
 Vi prøvde å debugge denne, men blei ikke ferdige
 
-!! svn-logg
+##  svn-logg
 [https://sourceforge.net/p/apertium/svn/HEAD/tree/languages/apertium-nob]
 
-!! Dagens hash-liste fra oversetting av free_facta
-{{{
+##  Dagens hash-liste fra oversetting av free_facta
+```
 2511 #samisk<sg><ind>
 2260 #som
  713 #samme<det><dem><nt><sp><def>
@@ -321,7 +312,7 @@ Vi prøvde å debugge denne, men blei ikke ferdige
  195 #samisk<sg><def>
  186 #selv<det><emph>
  176 #gymnas<n><m><sg><ind>
- 168 #Ávvir<np>  <== fra Aasen__np til Wikipedia__np
+ 168 #Ávvir<np>  <== fra Aasen**np til Wikipedia**np
  167 #ILO<np>
  166 #gymnas<n><m><sg><def>
  163 #nær<sup><def>
@@ -336,4 +327,4 @@ Vi prøvde å debugge denne, men blei ikke ferdige
   99 #Karen<np><cog>
   97 #ForfatternesForlag<np>
   95 #kjent<adj><sint><pst><un><sp><def>
-}}}  
+```  

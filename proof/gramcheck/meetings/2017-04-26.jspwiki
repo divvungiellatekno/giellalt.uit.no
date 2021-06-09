@@ -6,9 +6,9 @@ Saker:
 * sidan sist
 * arbeid framover
 
-!!!Sidan sist
+# Sidan sist
 
-!!Duommá
+## Duommá
 
 * som vanligt i framtiden har han jobbat med testkorpuset
 * legge til tagger i leksikonet
@@ -19,21 +19,22 @@ Saker:
 * ser hur reglerna kan utvecklas
 * etc etc etc
 
-!!Linda
+## Linda
 
 [http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2363]:
-{{{
+```
 #ADD:punct-sahcu (&punct-sáhcu) TARGET ("-" PUNCT) IF (NEGATE -1 CC);    
     ## Muitalusat -girji
 
-
     # particle readings
     # -----------------
+
     
 REMOVE:unspacecmp (Pcle) (0/0 ("mat" Pcle) LINK 0/2 N)(0 (N Pl Nom));
     ## bihtáidbargamat
     # assuming that mat only goes to verbs
     ## Dálkkádatrievdamat     dagahit stuorra hástalusaid álgoálbmotkultuvrraide , ealáhusheivehemiide ja servodatovdáneapmái . 
+
     
 REMOVE:unspacecmp (Pcle) (0/0 ("mat" Pcle) LINK 0/1 (N Sg Nom) OR (V Ind Prs Sg3 Err/Orth-a-á))(0 (N Pl Nom));    
     ## Juohke vahkku lea sierra lekšuvdna ( plána ) mas ovdanbohtet doaimmat ja barggut , lohkamušat ja     logaldallamat.
@@ -45,40 +46,40 @@ REMOVE:unspacecmp (V Foc/gis) (0 (N Sg Loc));
     ## báikkálaš álbmogis
     ## Mii vuovdit gollosiid sidjiide geat eanemusat fállet bidjegis. 
     ## 51_% galgá leahkit dan seamma     meinnegis     Stuorradikkis ovdal nu manná , muhto dasa mii goit leat bargame.     
-}}}
+```
 
 Problemord med analyse:
-{{{
+```
 álbmogis
 álbmogis    álbmot+N+Sg+Loc
 álbmogis    álbmot+N+Sg+Acc+PxSg3
 álbmogis    álbmot+N+Sg+Gen+PxSg3
 álbmogis    álbmut+V+TV+Ind+Prs+Du1+Foc/gis
 álbmogis    álbmut+V+TV+Ind+Prt+Pl3+Foc/gis
-}}}
+```
 
 Saka er ferdig, vi legg til nye reglar i mwe-dis om det trengst (eller fjerner stiar i lexc).
 
-!!Kevin
+## Kevin
 
 * døme i webdemo redigerbare av andre enn meg
 * ckeditor-plugin, med webdemo (ikkje basert på SCAYT)
-** http://gtweb.uit.no/gc/ck/
+    - http://gtweb.uit.no/gc/ck/
 * tilbakemeldingsmodul (divvun-suggest):
-** xml-format har no defaults m/regex på tagg
-** R:$2:17 betyr no «bytt ut '$2' i tittel med/form til ordet med ID:17
-*** ADDRELATION ($2) (&real-something) (0 (blah)) TO (*1 N); 
-*** "ord1" &real-something R:$2:17
-*** "andreordimellom"
-*** "ord2" N ID:17
-*** errors.xml: <title>$1 should be something-else when preceded by $2</title>
+    - xml-format har no defaults m/regex på tagg
+    - R:$2:17 betyr no «bytt ut '$2' i tittel med/form til ordet med ID:17
+        - ADDRELATION ($2) (&real-something) (0 (blah)) TO (*1 N); 
+        - "ord1" &real-something R:$2:17
+        - "andreordimellom"
+        - "ord2" N ID:17
+        - errors.xml: <title>$1 should be something-else when preceded by $2</title>
 * pipelessness (bruk som bibliotek):
-** heile pipelinen utanom hfst-tokenise kan no køyra utan bruk av pipes/IPC (Windows sitt stave-API tillet ingen interprogramkommunikasjon)
-** https://github.com/unhammer/vislcg3/tree/StreamApplicator 
+    - heile pipelinen utanom hfst-tokenise kan no køyra utan bruk av pipes/IPC (Windows sitt stave-API tillet ingen interprogramkommunikasjon)
+    - https://github.com/unhammer/vislcg3/tree/StreamApplicator 
 
-!!!Arbeid framover
+# Arbeid framover
 
-!!Duommá
+## Duommá
 
 * som vanligt i framtiden ska han jobbat med testkorpuset
 * legge til tagger i leksikonet
@@ -89,30 +90,30 @@ Saka er ferdig, vi legg til nye reglar i mwe-dis om det trengst (eller fjerner s
 * se hur reglerna kan utvecklas
 * etc etc etc
 
-!!Linda
+## Linda
 
 * fortsatt problemer med taggrekkefølge: jierpmálaš+A+Sg+Nom+Superl burde være jierpmálaš+A+Superl+Sg+Nom
-{{{
+```
 "<jierpmálaš>"
         "jierpmálaš" A Sem/Dummytag Sg Nom <W:0> @<SPRED MAP:17047:r3339 &syn-super-part2 #7->7 ADD:11628:syn-super-part2
 syn-super-part2
         "jierpmálaš" A Sem/Dummytag Sg Nom <W:0> @<SPRED MAP:17047:r3339 Superl &SUGGEST #7->7 COPY:11630:syn-super-part2
 jierpmálaš+A+Sg+Nom+Superl      ?
-}}}
+```
 
 TODO:
 * (X) Linda legg inn på Bugzilla
 * Kevin pratar med Tino
 
-!!Kevin
+## Kevin
 
 * tilbakemeldingsmodul (divvun-suggest)
-** alternative forslag på same ord
-** forslag på ord-med-subreadings?
+    - alternative forslag på same ord
+    - forslag på ord-med-subreadings?
 * pipeless bibliotek
-** hfst-tokenise inn i pipeless-prototyp
-** lesing av arkivformat
-** kodereinsk
+    - hfst-tokenise inn i pipeless-prototyp
+    - lesing av arkivformat
+    - kodereinsk
 
 Vi må ha eit møte med hfst-gjengen (Krister og Sam) for å diskutera gjenståande saker med pmatch/tokenise. Kevin kjem med forslag til tider som passar han, og Sjur tek det opp med Krister og Sam. Saker vi vil ta opp:
 

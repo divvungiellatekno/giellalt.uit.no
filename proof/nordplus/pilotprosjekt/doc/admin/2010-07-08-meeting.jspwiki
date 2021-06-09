@@ -1,11 +1,11 @@
-!!!Meeting
+# Meeting
 
 Three topics:
 * File naming convention
 * Corpus conversion
 * Running the spell checker test bench
 
-!!File naming convention
+## File naming convention
 
 Example:
 
@@ -15,30 +15,29 @@ Explanation:
 * nps = nordplus språk, ein id som knyttar teksten til dette prosjektet - start alle filnamn med desse bokstavane
 * 001 = løpenummer, slik du har det no
 * kafealagideapmi = ein kort tittel/eit kort namn som er knytta til innhaldet
-* {{.correct}} = alltid der for filer som inneheld feilmerking
+* `.correct` = alltid der for filer som inneheld feilmerking
 * .txt = viser til filtypen på vanleg måte
 
+## Corpus conversion
 
-!!Corpus conversion
-
-{{{
+```
 convert2xml.pl --lang=nob --corpdir=[FREECORPUS nps-00xx_Filnamn.correct.txt
 
 --no-decode - ved tekstfiler, dersom konverteringsprogrammet ikkje klarar å identifisera teiknsettet/-kodinga
 --nolog     - skriv alle logg-meldingar til skjermen istf til loggfil
 --test      - gjev meir detaljert konverteringsinformasjon
-}}}
+```
 
 About the corpus structure vs conversion process:
-{{{
+```
 freecorpus/goldstandard/orig/nob/ficti/FIL.txt
                         orig/nob/ficti/FIL.txt.xsl <= is created by conversion
                         converted/nob/ficti/FIL.txt.xml <= is created by conversion
-}}}
+```
 
-!!!Running the spell checker test bench
+# Running the spell checker test bench
 Here's the basic structure of the command for running the test bench:
-{{{
+```
 cd $GTHOME/gt
 make correct-test TARGET=nob TESTTOOL=hu DOC=../../freecorpus/goldstandard/converted/nob/ficti/nob-001_norge-mellomkrigstid.correct.txt.xml
-}}}
+```

@@ -10,26 +10,26 @@ Saker:
 * oppsummering av tts-betatestinga
 * cg-taggar og apertium (russisk)
 
-!!!Nyinfra for sme
+# Nyinfra for sme
 
 Vi vil ha - kva står att? 
-Taggen {{+Use/NA}} er no fjerna frå lexc. Den eine staden der han var i 
-bruk er han endra til {{+Use/MT}} (på linje med sma), med innhaldet
-''fjern i andre fst-ar enn apertium-generering''. 
+Taggen `+Use/NA` er no fjerna frå lexc. Den eine staden der han var i 
+bruk er han endra til `+Use/MT` (på linje med sma), med innhaldet
+*fjern i andre fst-ar enn apertium-generering*. 
 Dermed er han ikkje noko hinder for flyttinga.
 
 Lokaliserte taggar:
 
-{{{
+```
 src/analyser-nob-desc.xfst
 src/analyser-nob-norm.xfst
-}}}
+```
 
-Konverteringa er definert i {{src/tagsets/nob.regex}}. 
+Konverteringa er definert i `src/tagsets/nob.regex`. 
 I tillegg må ein be om at
-fst-en blir bygd, ved å leggja til liner som dette i {{Makefile.am}}:
+fst-en blir bygd, ved å leggja til liner som dette i `Makefile.am`:
 
-{{{
+```
 if WANT_MORPHOLOGY
 GT_ANALYSERS_XFST+= analyser-nob-desc.xfst \
 					analyser-nob-norm.xfst 
@@ -39,9 +39,7 @@ if WANT_GENERATION
 GT_GENERATORS_XFST+=generator-nob-desc.xfst \
 					generator-nob-norm.xfst 
 endif # WANT_GENERATION
-}}}
-
-
+```
 
 NB! Språkkoden i fst-namnet og i tagsetfila må vera den same.
 
@@ -51,64 +49,63 @@ Namnet -nob- refererer dermed til språket på
 
 Konklusjon: er vi klare til å flytta?
 Vi manglar svart frå Ciprian. Funkar ny infra for dict-genereringa? 
-Når svaret på dette spørsmålet er ''ja'' er vi klare til å flytta.
+Når svaret på dette spørsmålet er *ja* er vi klare til å flytta.
 
 Ciprian har problem med vislcg3, Sjur legg inn støtte for å slå av
 syntakskompilering, deretter kan Ciprian byggja og testa morfologiane slik
 han vil utan vislcg3-interferens.
 
-!!!Forrest
+# Forrest
 
 Korleis går det? 
 
-# kløyv gtuit-forrest i to likt Divvun
-# bygg ut gtuit til å vera fleirspråkleg slik Divvun er det
-# lag felles techdoc
+1. kløyv gtuit-forrest i to likt Divvun
+1. bygg ut gtuit til å vera fleirspråkleg slik Divvun er det
+1. lag felles techdoc
 
 Tidsplan: Denne/neste veke.
 
-!!!Korpusinnsamling
+# Korpusinnsamling
 
 jf. siste referat om romanar/oversyn.
 Vidare oppfylging etter Uppsala.
 
-!!!Bugzilla
+# Bugzilla
 
 Betre politikk for prioritering:
 
 * Den som meldar inn buggen set alvorlegheitsgrad
-**  (feature request ... blocker). 
-** Så kan sjølvsagt 
+    -  (feature request ... blocker). 
+    - Så kan sjølvsagt 
    alle involverte revidere alvorlegheitsgraden viss det
    viser seg at buggen er meir/mindre alvorleg enn vi
    først trudde.
 * Trond/Sjur/eigaren set prioritet 
-** (P1 ... P5)
+    - (P1 ... P5)
 * Vi tar prioriteringane alvorleg, og lar det
   vere samsvar med P og realitet.
 
-__bug 1363__, derivasjonar, hash og twol-reglar
+**bug 1363**, derivasjonar, hash og twol-reglar
 
-__Trond__ skriv ein meir konkret kommentar.
+**Trond** skriv ein meir konkret kommentar.
 
-
-!!!hfst
+# hfst
 
 Kjappare no? Lookup er mykje kjappare i 3.8.1 enn i 3.8.0. Ingen andre
 endringar.
 
-!!!Oppsummering av tts-betatestinga
+# Oppsummering av tts-betatestinga
 
 På ein skala frå 1 til 5 (best), vart røystene vurdert slik:
 
-{{{
+```
 MOS-samandrag:
                      Divvun/UiT:  Acapela:
 MOS norsk kvinnestemme:     3,71     3,71
 MOS samisk kvinnestemme:    3,68     3,68
 MOS norsk mannsstemme:      3,76     3,76
 MOS samisk mannsstemme:     3,61     3,62
-}}} 
+``` 
 
 Andre ting:
 
@@ -116,7 +113,7 @@ Andre ting:
 * viktig å sjekka kor lang tid det tek å gjennomføra testen
 * vi har no referansemateriale for framtidige eigne tts-system
 
-!!!cg-taggar og apertium (russisk)
+# cg-taggar og apertium (russisk)
 
 * Situasjonen var: langs/rus: +N i fst, n i cg
 * Trond endra til: langs/rus: +N i fst, n N i cg
@@ -125,7 +122,7 @@ Vi vil ikkje ha manuelle endringar, vi vil ha automatisk konvertering.
 
 Frå IRC/#hfst:
 
-{{{
+```
 [09:59am] spectre: TinoDidriksen, would it be hard to write a program or option
 		  for vislcg3 that reads a grammar file and outputs a list of
 		  tags/symbols and sets ?
@@ -156,27 +153,25 @@ Frå IRC/#hfst:
 [10:17am] TinoDidriksen: Hm. Well, I will make CG-3 dump single tags. How do
 		  you want sets dumped? Their whole definition, or just names, or what?
 [10:18am] spectre: whole definition
-}}}
+```
 
 Konklusjon: Vi vil ha russisk fungerande både i nyinfra og i Apertium,
 og fungerande, språkuavhengig tagkonvertering for CG.
 
 Genererte tagsetfiler blir ikkje ignorerte.
-Trond ser på {{set-svn-ignores-langs.sh}} for å retta på dette.
+Trond ser på `set-svn-ignores-langs.sh` for å retta på dette.
 
 Det gjeld:
-{{{
+```
 ?       sme/tools/mt/apertium/tagsets/apertium.relabel
 ?       sme/tools/mt/apertium/tagsets/apertiumtags.txt
-}}}
+```
 
 Filer som:
 
-{{{
+```
 ?       src/morphology/stems/smi-propernouns.lexc
 ?       src/morphology/stems/smi-sme-propernouns.lexc
-}}}
+```
 
 er gamle og skal slettast.
-
-

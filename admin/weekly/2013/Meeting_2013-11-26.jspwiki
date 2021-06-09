@@ -1,4 +1,4 @@
-!!!S&T-møte
+# S&T-møte
 
 Saker:
 * sme-fst-ar
@@ -10,33 +10,33 @@ Saker:
 * fst-kurs
 * Sirkumpolart samarbeid
 
-!!!sme-fst-ar
+# sme-fst-ar
 
 * filtrera semantiske taggar: filter for semantiske taggar blir no automatisk
   bygde av dei sem-taggane som er definerte i fst-en (dvs alle symbol som
-  byrjar på {{+Sem/}})
-** prop-sem-taggar: ''ikkje'' fjern sem-taggar etter {{+Prop}}
+  byrjar på `+Sem/`)
+    - prop-sem-taggar: *ikkje* fjern sem-taggar etter `+Prop`
 
-{{{
+```
 <e><p><l>Hamas<s n="N"/><s n="Prop"/><s n="Org"/></l><r>Hamas<s n="np"/></r></p><par n="__np"/></e>                                                          
-}}}
+```
 
 To oppryddingsoppgåver:
 * flytt sem-taggane i smi vekk frå underleksikona til hovudleksikon, og forenkla
   fortsetjingsleksikona (vi flyttar sem-taggane med ein regex som ein del av
   kompileringa)
-* legg på {{+Sem/}}-prefiks på alle sem-taggane i {{SMJ}}
+* legg på `+Sem/`-prefiks på alle sem-taggane i `SMJ`
 
-!!!tts-prosjektet
+# tts-prosjektet
 
 Krev oppfylging.
 
 * dei vil ha optimale data utan å fortelja eller spesifisera kva som er optimale data
 * dei har ikkje forstått at "samisk" = sme+nob+swe+fin - dei kan ikkje ta vekk maj-språka og berre laga "samisk" - då blir det ikkje samisk!
-** dette er forskjellig frå "korte sitat" (dvs setningar eller setningsfragment på maj.språka)
-** dette gjeld alle låneord, t.d. kultur-, alle -ere-verb, osb.
+    - dette er forskjellig frå "korte sitat" (dvs setningar eller setningsfragment på maj.språka)
+    - dette gjeld alle låneord, t.d. kultur-, alle -ere-verb, osb.
 
-!!!grammatikkontroll & stavekontroll - hfst-ospell og dependensar
+# grammatikkontroll & stavekontroll - hfst-ospell og dependensar
 
 hfst-ospell må kompilere på Windows, vi bruker ein xml-modul som har 
 dependensar. Men no er den xml-modulen bytta ut.
@@ -46,13 +46,13 @@ Vi zippar til zhfst, og distribuerer til folk. Dette var problematisk.
 
 Kan vi klare oss utan zipping? Alternativ:
 
-# bruk hfst-formatet direkte - kan innehalda mange fst-ar
-# gå tilbake til libvoikko-2-formatet (eller noko liknande)
+1. bruk hfst-formatet direkte - kan innehalda mange fst-ar
+1. gå tilbake til libvoikko-2-formatet (eller noko liknande)
 
 LibVoikko-lista: libarchive har dependensar, ja, men dei er valfrie.
 Bygg utan dependensar, og sjå om det fungerer.
 
-!!!korp
+# korp
 
 Korpuset blir ikke brukt:
 * det er ikkje synleg (folk kjenner ikkje til det)
@@ -61,30 +61,29 @@ Korpuset blir ikke brukt:
 
 Korp+FAD er svaret, så lenge vi kan få eit grensesnitt heilt utan knappar.
 
-!!!AK-ordbok
+# AK-ordbok
 
 Utsett til neste møte. Trond pratar med Ciprian.
 
-!!!FAD for sma, smj
+# FAD for sma, smj
 
 Vi skreiv svar og budsjett etter e-post frå FAD.
 
-!!!hfst-kurs o.l.
+# hfst-kurs o.l.
 
-!!Hfors
+## Hfors
 
 * Vidaregåande kurs med LexC2 (ordbøker), dokumentasjon, testing, CG
 * Januar 2014? 6-10.1. (helst) el. 20.-24.1.
 
-!!Tromsø
+## Tromsø
 
 * Innføringskurs for alle interesserte
-** Sjekke interesse og datoar:
+    - Sjekke interesse og datoar:
 * Besøk frå Tartu (v.6, 3.-7. februar (helst), ev. mars)
 * Lars v. 6, 7 eller 8.
 
-
-!!!Sirkumpolart samarbeid
+# Sirkumpolart samarbeid
 
 * Terminologi: sme, kpv, yrk, evn ? Alexandra Lavrillier
 * high north: Canada eller meir? Vi køyrer separate løp.

@@ -9,9 +9,9 @@ Saksliste
 * Korpus
 * Manuelt arbeid
 
-[Referat frå 17.12.|/dicts/fad2/referat/141217.html]
+[Referat frå 17.12.](/dicts/fad2/referat/141217.html)
 
-!!!Status
+# Status
 
 Kevin har lagt til korpus og endra på CorpusTools, m.a. språkattkjenning.
 Nytt på korpusfronten er framfor alt frå Sverige.
@@ -23,31 +23,28 @@ Alt i alt i freecorpus:
 
 mål: fadordbok vs fadterminologisamling
 
-!!!Lulesamifisering
+# Lulesamifisering
 
-!!Pipeline
+## Pipeline
 
 nobsme = src="fad" 
 
 * nob-freq i fad-korpuset og i allmennkorpus
 * f-f > a-f ==> kandidat for terminologi (eller berre gje opp t-aspektet)
-** manuell sjekking av kandidatlista: term eller ikkje? (evt. tull eller ikkje)
-** maskinell sjekking mot nob-sme
-** Kintel-sjekk
+    - manuell sjekking av kandidatlista: term eller ikkje? (evt. tull eller ikkje)
+    - maskinell sjekking mot nob-sme
+    - Kintel-sjekk
 * kandidat blir lulesamifisert
 * lulesamifiserte l-kandidaten blir delt i tre: 
-** kintelbelagt -> del i dagleg vs term vs tull
-** korpusbelagt -> manuell sjekk
-** totalt ubelagt -> omsetjing/nylaging -> Giellagáldu
+    - kintelbelagt -> del i dagleg vs term vs tull
+    - korpusbelagt -> manuell sjekk
+    - totalt ubelagt -> omsetjing/nylaging -> Giellagáldu
 
-
-
-
-!!Kvaliteten på lulesamifisering
+## Kvaliteten på lulesamifisering
 
 Programmet: Kjeldefila er sme2smj-lexeme.xfst
 
-{{{
+```
 cd $GTHOME/gt/smj/src/
 xfst -e "source sme2smj-lexeme.xfst" -e "save stack sme2smj.fst" -stop
 Bruk: 
@@ -62,10 +59,9 @@ kvaliteten på smesmj/src/*.xml
 echo čállit | lookup -q $GTHOME/words/dicts/smesmj/bin/smesmj.fst 
 
  cat words/dicts/nobsme/src/V_nobsme.xml|grep '<t '|grep '"fad"'|tr '<' '>'|cut -d">" -f3|lookup gt/smj/src/sme2smj.fst |see
-}}}
+```
 
 sme2smj.fst treng ein gjennomgang: Sandra, Thomas, Trond.
-
 
 Status på kvalitet:
 
@@ -73,21 +69,14 @@ Status på kvalitet:
 * av 361 ordbokslulesamifiserte, hadde 71 korpustreff
 * av 13112 fst-lulesamifiserte, hadde 124 korpustreff
 
-
-!!!Korpus
+# Korpus
 
 Absolutt halde fram.
 
-!!!Manuelt arbeid
+# Manuelt arbeid
 
 Sandra snakkar med folk.
 
-
-!!!Neste møte
+# Neste møte
 
 Onsdag 14.1. eller torsdag 22.1.
-
-
-
-
-

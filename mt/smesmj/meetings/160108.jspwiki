@@ -1,40 +1,30 @@
 Meeting 8.1.16
 Hangouts: Sandra, Lene
 
-!!!Áššit
+# Áššit
 * Bidix improvement
 * Transfer rules 
 * Next meeting
 
-!!Bidix improvement
+## Bidix improvement
 
 * Trond has made missing list from sme-corpus, in dev-directory. 
-** Missings without Cmp and Der, should be prioritated: {{sikor.sme.N.freq.nocmp.missing, sikor.sme.V.freq.noder.missing, sikor.sme.A.freq.nocmp.missing}}, and then we will make new missinglists before looking at other files.
+    - Missings without Cmp and Der, should be prioritated: `sikor.sme.N.freq.nocmp.missing, sikor.sme.V.freq.noder.missing, sikor.sme.A.freq.nocmp.missing`, and then we will make new missinglists before looking at other files.
 * Lene will revers sort smj lemmas in bidix so it will be easy for Sandra to correct the loanwords according to new normative rules. After that Ciprian can do the frequency sorting. Lene write email to Ciprian about this.
 * sanityoutput:  
-** propernouns should not be prioritated. One can look at e.g. pronouns by using "grep '<prn>:' sanityoutput"
-* wordpairs from giza-experiments is in: {{dev/giza_list.txt}} . Sandra can remove pairs she doesn't like, and then we can script the relevant part of the list to bidix.
+    - propernouns should not be prioritated. One can look at e.g. pronouns by using "grep '<prn>:' sanityoutput"
+* wordpairs from giza-experiments is in: `dev/giza_list.txt` . Sandra can remove pairs she doesn't like, and then we can script the relevant part of the list to bidix.
 * change back to Po, Pr and Adv in smj-lexc
 * Ciprian will (after the frequent sorting) add word pairs from termlists (sme-nob + nob-smj = sme-smj) and compare them to bidix.
 
-!!Transfer rules
-In {{rm-deriv-cmp.twol}} one can allow derivations. If they do not have the same tag in sme and smj, they have to be listed in {{def-attr n="a_deriv"}} and included in macro: {{convert-deriv1}}
+## Transfer rules
+In `rm-deriv-cmp.twol` one can allow derivations. If they do not have the same tag in sme and smj, they have to be listed in `def-attr n="a_deriv"` and included in macro: `convert-deriv1`
 
 We looked at agreement macro and rules in smn-t1x, and how to debug.
 * Lene will improve names for macro, and change the positions to a logical order.
-* Lene will improve documentation about debugging at the page about [apertium commands|/infra/ApertiumCommands.html].
+* Lene will improve documentation about debugging at the page about [apertium commands](/infra/ApertiumCommands.html).
 
-Hangouts meeting with Francis about transfer rules 14.1 at 11 a.m. Sandra will see if she can join. We will document more rules at [smX MT web-page|/infra/TransferRules_examples.html]
+Hangouts meeting with Francis about transfer rules 14.1 at 11 a.m. Sandra will see if she can join. We will document more rules at [smX MT web-page](/infra/TransferRules_examples.html)
 
-
-!!Next meeting
+## Next meeting
 Monday 1. February at 9 a.m., in Tromsø
-
-
-
-
-
-
-
-
-

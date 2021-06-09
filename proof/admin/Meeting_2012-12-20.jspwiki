@@ -1,148 +1,154 @@
-!!!Speller meeting
+# Speller meeting
 
 What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 Nothing new since the previous meeting.
 
-There's [a separate document|WindowsInstallationTest.html] containing the test results for different combinations of MS Office and Windows  versions.
+There's [a separate document](WindowsInstallationTest.html) containing the test results for different combinations of MS Office and Windows  versions.
 
-__DONE:__
-* __Børre__ has done further studies in the registry entry diffs.
-** Adding Speller in the following string causes the spellers to be registered (but not working) - for __all__ Sámi languages.
+**DONE:**
+* **Børre** has done further studies in the registry entry diffs.
+    - Adding Speller in the following string causes the spellers to be registered (but not working) - for **all** Sámi languages.
 
-{{{
+```
 Z'KpbtLFg=q~u8wq9[\[]6fSpeller>o?4P8a4R~=zb`Eohjn9!
-}}}
+```
 
-__TODO:__
-* look at combinations of Windows XP and Office (__Børre__)
-* get a proper MS certificate, to remove the warning users get when installing (__Børre__)
+**TODO:**
+* look at combinations of Windows XP and Office (**Børre**)
+* get a proper MS certificate, to remove the warning users get when installing (**Børre**)
 
-__POSTPONED:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
-* send a request to an NSIS developer e-mail list (__Sjur__)
-* try to find an NSIS script for building MSI packages (__Børre__)
+**POSTPONED:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (**Sjur**)
+* try to find an NSIS script for building MSI packages (**Børre**)
 * add Windows 8 support to our installer (if possible)
 
-!!!PLX conversion
+# PLX conversion
 
 Nothing new since last meeting 14.12. Tomi has made a new speller, but the test results were identical to the previous version.
 
 Remaining PLX bugs:
 
-!!Second PRI
+## Second PRI
 
-||REGRESSIONS
-| doesn't follow cmp-tags OR vowel-shortening | searvvepresideanta > searvepresideanta | 489
-| doesn't follow cmp-tags OR vowel-shortening | sámediggepresideanta Sámediggeáirrasin | 489,535,604,639
-| single letter suggestions                   | đ                                      | 461
-| alph+nouns not rec                          | a-muorra                               | 785,818
-| double hyph-sugg                            | SF--muorra                             | 818 - LexC bug, cf:
+|  REGRESSIONS
+| --- 
+|  doesn't follow cmp-tags OR vowel-shortening | searvvepresideanta > searvepresideanta | 489
+|  doesn't follow cmp-tags OR vowel-shortening | sámediggepresideanta Sámediggeáirrasin | 489,535,604,639
+|  single letter suggestions                   | đ                                      | 461
+|  alph+nouns not rec                          | a-muorra                               | 785,818
+|  double hyph-sugg                            | SF--muorra                             | 818 - LexC bug, cf:
 
-{{{
+```
 SF ACRO ;
 SF- ACRO ;
 SF-%012:SF-%012 ACRO ;
-}}}
+```
 
-||Fixed regressions
-| noun+Pro Num+Noun/Prop wo hyph | máliSoussiid, guovttiolbmo                            | 397,461,642,721,804,805 | FIXED
-| noun+Pro Num+Noun/Prop wo hyph | uvdnaLot, muorraNRK                                   | 595,649,805             | FIXED
-| doesn't follow cmp-tags        | ránubiellu > rátnobiellu beavddeguorra > beavdeguorra | 489,535,539,604         | FIXED
-| prop+noun not rec              | Finnmárku-duoddara                                    | 611,633                 | FIXED
-| prop+noun not rec              | Koskivuori-plánenreaiddut                             | 633                     | FIXED
-| non-ex word accepted           | loahpet, duvnnii, njealjat                            | 909,962                 | FIXED
-| non-ex word accepted           | adnii                                                 | 1143                    | FIXED
-| compound not recognized        | maŋŋegeašgálvu, lámpočuvggodeapmi             | 408,419,451,489,522,535,536,541 | FIXED
-| double hyph-sugg               | SF--ákkasteapmifierbmi                                | 536                     | FIXED
-| Px-forms make comp             | muorrastávrátgeavaheapmi, muorrastávrádegeavaheapmi   | 786                     | FIXED
-| alphabet as non-first compound part & suggested | CV-s                                 | 913                     | FIXED
-| non-words accepted                              | váigas                                              | 581,912  | FIXED
-| prop-noun cmps doesnt work                      | Oslo-biila, Pieski-lávvu | 397,426,593,609,611,633,649,802,930 | FIXED
-| prop-prop cmps doesnt work                      | Børde-Rene                                          | 575,634  | FIXED
-| prop-acr cmps doesnt work                       | Seskarö-cd                                          | 805      | FIXED
-| noun-hyphnoun cmps doesnt work                  | juleva-gielas                                       | 629      | FIXED
-| Px-forms make comp                              | muorrastávrátgeavaheapmi, muorrastávrádegeavaheapmi | 786      | FIXED
-| alphabet as non-first compound part & suggested | CV-s                                                | 913      | FIXED
-| imposs" cmps                                    | sákkasteapmifierbmi > ásaákkasteapmifierbmi         | 536      | FIXED
+|  Fixed regressions
+| --- 
+|  noun+Pro Num+Noun/Prop wo hyph | máliSoussiid, guovttiolbmo                            | 397,461,642,721,804,805 | FIXED
+|  noun+Pro Num+Noun/Prop wo hyph | uvdnaLot, muorraNRK                                   | 595,649,805             | FIXED
+|  doesn't follow cmp-tags        | ránubiellu > rátnobiellu beavddeguorra > beavdeguorra | 489,535,539,604         | FIXED
+|  prop+noun not rec              | Finnmárku-duoddara                                    | 611,633                 | FIXED
+|  prop+noun not rec              | Koskivuori-plánenreaiddut                             | 633                     | FIXED
+|  non-ex word accepted           | loahpet, duvnnii, njealjat                            | 909,962                 | FIXED
+|  non-ex word accepted           | adnii                                                 | 1143                    | FIXED
+|  compound not recognized        | maŋŋegeašgálvu, lámpočuvggodeapmi             | 408,419,451,489,522,535,536,541 | FIXED
+|  double hyph-sugg               | SF--ákkasteapmifierbmi                                | 536                     | FIXED
+|  Px-forms make comp             | muorrastávrátgeavaheapmi, muorrastávrádegeavaheapmi   | 786                     | FIXED
+|  alphabet as non-first compound part & suggested | CV-s                                 | 913                     | FIXED
+|  non-words accepted                              | váigas                                              | 581,912  | FIXED
+|  prop-noun cmps doesnt work                      | Oslo-biila, Pieski-lávvu | 397,426,593,609,611,633,649,802,930 | FIXED
+|  prop-prop cmps doesnt work                      | Børde-Rene                                          | 575,634  | FIXED
+|  prop-acr cmps doesnt work                       | Seskarö-cd                                          | 805      | FIXED
+|  noun-hyphnoun cmps doesnt work                  | juleva-gielas                                       | 629      | FIXED
+|  Px-forms make comp                              | muorrastávrátgeavaheapmi, muorrastávrádegeavaheapmi | 786      | FIXED
+|  alphabet as non-first compound part & suggested | CV-s                                                | 913      | FIXED
+|  imposs" cmps                                    | sákkasteapmifierbmi > ásaákkasteapmifierbmi         | 536      | FIXED
 
-__TODO - ALT.1:__
+**TODO - ALT.1:**
 * revert to the Monday morning state, when we only had the two first regressions above
 * compile (test speller) and check that we are back at the Monday morning state
 * dig through the meeting memos to find the date when the two regressions on Monday were introduced
 * check the diffs for that speller PLX conversion, to see if there are ways to correct the regressions
 * release (possibly with the two regressions we had Monday morning) before Xmas
 
-__TODO - ALT.2:__
+**TODO - ALT.2:**
 * build on the work done the last days
 * fix the regressions - there are quite a few of them
 * no release before Xmas
 
 We decided to follow Alternative 1, but regard Alternative 2 as an option after a release based on Alternative 1.
 
-!!Second Last PRI
+## Second Last PRI
 
 Bugs from here on can be left out of the next release if we are short on time.
 
-||Compounds
-| num cmp:s on 0-       | 051-nummarat | 631
-| non-ex. word accepted | saame        | 658
+|  Compounds
+| --- 
+|  num cmp:s on 0-       | 051-nummarat | 631
+|  non-ex. word accepted | saame        | 658
 
-!!Last PRI
+## Last PRI
+
  
-||Capitals
-| doesn't understand caps | 1700-LOHKU | 647
+|  Capitals
+| --- 
+|  doesn't understand caps | 1700-LOHKU | 647
 
 ----
 
-||Compound regressions
-| imposs" cmps along w num. | 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145 | NO SUGGESTIONS - GOOD - BUT:
-| imposs" cmps              | sákkasteapmifierbmi > aseákkasteapmifierbmi   etc   | 536
+|  Compound regressions
+| --- 
+|  imposs" cmps along w num. | 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145 | NO SUGGESTIONS - GOOD - BUT:
+|  imposs" cmps              | sákkasteapmifierbmi > aseákkasteapmifierbmi   etc   | 536
 
-__DONE:__
-* __Tomi__ has solved almost all PLX bugs
-* investigate the inconsistent PLX conversion bug, cf ''guollibusse'' (__Tomi__)
+**DONE:**
+* **Tomi** has solved almost all PLX bugs
+* investigate the inconsistent PLX conversion bug, cf *guollibusse* (**Tomi**)
 
-__TODO:__
-* solve the remaining PLX bugs one by one (__Tomi__)
+**TODO:**
+* solve the remaining PLX bugs one by one (**Tomi**)
 
-!!!Release plan
+# Release plan
 
 The December 1 goal has passed, without meeting the targets. On the plus side is that the number of open PLX bugs have been greatly reduced, and Tomi are squashinhg PLX bugs all the time. It just takes more time than anticipated.
 
 The installer was not easily solved by the WiX alternative - it turned out that the Greenlandic proofing tools installer has the same problems as we have.
 
-!!Release status
+## Release status
 
-We now have a speller with only a few known bugs, and most of them have fixes. By tomorrow we should have a speller with only one disturbing bug (the ''sámediggepresideantta'' bug). This is our release candiate! This is good enough, and contains a number of important linguistic updates for our users.
+We now have a speller with only a few known bugs, and most of them have fixes. By tomorrow we should have a speller with only one disturbing bug (the *sámediggepresideantta* bug). This is our release candiate! This is good enough, and contains a number of important linguistic updates for our users.
 
-__TODO:__
-# build a new speller with the remaining bug fixes (__Tomi__)
-# tag the present state with the string {{Divvun2.3RC1}} (__Tomi__)
-# update the adjectives with the noun changes (__Tomi__)
-# make new installers with latest SME speller (__Sjur__)
-# test newest speller in Word (__Thomas__)
-# test against gold standard corpus (__Sjur__)
-# release a public release candidate tomorrow morning (__Sjur__)
-# if no new serious bugs are found, release as Divvun 2.3 tomorrow afternoon (__all__)
-## update list of known bugs
-## write a short press release emphasising the linguistic updates for North Sámi, and noting that we still have certain problems with Win7/Office2010
+**TODO:**
+1. build a new speller with the remaining bug fixes (**Tomi**)
+1. tag the present state with the string `Divvun2.3RC1` (**Tomi**)
+1. update the adjectives with the noun changes (**Tomi**)
+1. make new installers with latest SME speller (**Sjur**)
+1. test newest speller in Word (**Thomas**)
+1. test against gold standard corpus (**Sjur**)
+1. release a public release candidate tomorrow morning (**Sjur**)
+1. if no new serious bugs are found, release as Divvun 2.3 tomorrow afternoon (**all**)
+    1. update list of known bugs
+    1. write a short press release emphasising the linguistic updates for North Sámi, and noting that we still have certain problems with Win7/Office2010
 
 Re-scheduling the release plan:
 
 * New deadline December 20:
-** PLX bugs solved
-** if met, we'll release a 2.3 update using the NSIS installer, and mainly linguistic improvements for SME
+    - PLX bugs solved
+    - if met, we'll release a 2.3 update using the NSIS installer, and mainly linguistic improvements for SME
 * January 4: new Windows installer Alpha
 * January 10: Beta release, PLX fixes for SMA and SMJ
 * January 21: Divvun 3 release
 
-!!!Next meeting
+# Next meeting
 
 Friday 21.12 at 10.00

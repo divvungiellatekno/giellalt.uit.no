@@ -1,13 +1,8 @@
-
-
-
 Parallelliseringsmøte 28.11.2011
-
 
 Børre, Sjur, Trond
 
-
-!!!Gullstandard
+# Gullstandard
 
 (tmx-format vs. tca2-format -> egentlig det samme. tca2 spytter ut to tekstfiler, der hver linje tilsvarer den parallelle teksten i den andre filen. I .tmx er disse linje pakket inn i en xml-snutt)
 
@@ -19,7 +14,7 @@ Det å jobbe i grafisk gjekk ikkje så bra (problem med å mate inn nye setninga
 
 (Der a, b er setningar i sme og 1, 2 er setningar i nob, og 0 = tom setning:)
 
-{{{
+```
 a-0
 0-1
 ==>
@@ -27,59 +22,52 @@ a-1
 0-0
 ==>
 a-1
-}}}
+```
 
 Situasjon:
 
-__a. b.__ vs. __1 2.__ (dvs. det mangla punktum etter setning 1)
+**a. b.** vs. **1 2.** (dvs. det mangla punktum etter setning 1)
 
 I dag seier gullstandarden:
 
-{{{
+```
 ab-12
-}}}
+```
 
 Det burde vi altså ikkje ha gjort. Vi burde dermed ha gjort slik:
 
-{{{
+```
 a-1
 b-2
-}}}
-
+```
 
 Resultatet er at vi har færre (eller fleire!) setningspar i gull enn i forlegget.
 
 Arbeidsmetode:
 
-* Lese i {{tmx/smenob/fil.tmx.html}}
-* Rette i {{tmx/gullstandard/nobsme/fil.tmx}}
+* Lese i `tmx/smenob/fil.tmx.html`
+* Rette i `tmx/gullstandard/nobsme/fil.tmx`
 
 Døme: 
-# jmf. er ikkje ei forkorting på norsk, men på samisk. Det må rettast.
-# Store bokstavar pluss punktum pluss arabiske tal har ulik handsaming på nob og sme.
+1. jmf. er ikkje ei forkorting på norsk, men på samisk. Det må rettast.
+1. Store bokstavar pluss punktum pluss arabiske tal har ulik handsaming på nob og sme.
 
-__TODO__:
+**TODO**:
 
-* Teste gullstandardfilene, lage testbenk (__Børre?__)
-** Køyr test 1 -- få resultat
-** Rette i abbr.txt og whatnot
-** Køyr test 2 -- få betre resultat
+* Teste gullstandardfilene, lage testbenk (**Børre?**)
+    - Køyr test 1 -- få resultat
+    - Rette i abbr.txt og whatnot
+    - Køyr test 2 -- få betre resultat
 * Lage eigen gullstandard berre med problematiske ting?
 
-
-!!!Ordparallellisering
+# Ordparallellisering
 
 Dette er neste steg.
 
-!!!Autshumato
+# Autshumato
 
-[Intern dokumentasjon for autsh|/tools/autshumato.html]
+[Intern dokumentasjon for autsh](/tools/autshumato.html)
 
+**TODO**
 
-__TODO__
-
-* Oppdater [den interne dokumentasjonen|/tools/autshumato.html] (__Sjur?__)
-
-
-
-
+* Oppdater [den interne dokumentasjonen](/tools/autshumato.html) (**Sjur?**)

@@ -6,15 +6,15 @@ Saker:
 * status
 * arbeid framover
 
-!!!Status
+# Status
 
 * zip-lesing nesten ferdig (manglar ein modul, alt anna funkar)
 * API for libchecker (namn todo) må dokumenterast, må laga døme på linking
   mot det
 * xml-format bare-bones, men fungerer
-** vi treng metadata i xml-fila
-*** korleis representera brukarval?
-*** generelle metadata
+    - vi treng metadata i xml-fila
+        - korleis representera brukarval?
+        - generelle metadata
 
 Diskusjon om metadata:
 
@@ -29,8 +29,8 @@ Generell informasjon:
 Brukarval – det som er innanfor kvar pipeline (ikkje verdt å laga ny pipeline
 for):
 * brukaren må kunna slå av og på ulike feiltypar som skal bli fanga opp, t.d.:
-** stor bokstav i byrjinga av ei setning
-** -a vs -e i infinitiv på nynorsk
+    - stor bokstav i byrjinga av ei setning
+    - -a vs -e i infinitiv på nynorsk
 
 I visse tilfelle er det best å ha ulike pipelines, med namn og språkkode
 (smj-NO vs smj-SE). I andre tilfelle er det val som bestemmer oppførselen til
@@ -41,41 +41,41 @@ kommandorekka:
   (der det er dialektvariasjon mellom monoftong og diftong)
 
 Etter diskusjonar kom vi fram til ein modell som Kevin har dokumentert i
-[koden|https://github.com/divvun/divvun-suggest/blob/66533a96c58b21450d189e8fac5e0fb7a617d1ee/test/lib/pipespec.xml#L65]
+[koden](https://github.com/divvun/divvun-suggest/blob/66533a96c58b21450d189e8fac5e0fb7a617d1ee/test/lib/pipespec.xml#L65)
 – penare dok. kjem etter kvart.
 
 Andre tema:
 * handteringa av store bokstavar:
-** vi ber om at ICU (el) blir lagt til i hfst-tokenise, slik at det er nok at
+    - vi ber om at ICU (el) blir lagt til i hfst-tokenise, slik at det er nok at
    analysatoren berre har leksikalsk form.
 * https://github.com/hfst/hfst/issues/361
 * https://github.com/hfst/hfst/issues/362
 * gramcheck-biblioteket nesten ferdig, jf zip-info lenger opp (github-master må
   oppdaterast)
 
-!!!Arbeid framover
+# Arbeid framover
 
 * gjera ferdig zip-lesinga og gramcheck-lib
 * kommandolineverkty for gramcheck-lib
-** bør m.a. kunna korrigera tekst i batsj-modus, slik at ein kan evaluera
+    - bør m.a. kunna korrigera tekst i batsj-modus, slik at ein kan evaluera
    grammatikkontrollen automatisk i høve til eit gullstandardkorpus
-** bør kunna ta ei liste med attr-verdi-par som argument for å spesifisera
+    - bør kunna ta ei liste med attr-verdi-par som argument for å spesifisera
    brukarval
-** bør ha ein modus der ein får ei liste med alle moglege brukarval, og
+    - bør ha ein modus der ein får ei liste med alle moglege brukarval, og
    tilgjengelege verdiar for kvar av dei
 * byta ut modes-fila med xml-fila som er ein del av zip-fila, og generer
   sh-skript frå den
 * laga ein gramcheck-generator for å generera forslag
 * endra hfst-tokenise til ikkje å konvertera taggar til CG-format
-** ... men gjer det i staden i fst-en med eit filter
-** endra tagg-parsinga til ikkje å vera avhengig av + som ein del av taggen
+    - ... men gjer det i staden i fst-en med eit filter
+    - endra tagg-parsinga til ikkje å vera avhengig av + som ein del av taggen
 * skriva/dokumentera gramcheck-API
 * lenka mot unicode-bibliotek og slå opp alle ord som har store bokstavar som
   om dei hadde små
-** som ein enkel preprosessering av input (+ soft-hyphen)
-** ved runtime, så ingen eksplosjon i fst-en
-** om dette fungerer, fjern A→a på førstebokstav av fst-en (dvs berre leksikalsk
+    - som ein enkel preprosessering av input (+ soft-hyphen)
+    - ved runtime, så ingen eksplosjon i fst-en
+    - om dette fungerer, fjern A→a på førstebokstav av fst-en (dvs berre leksikalsk
    form av kvart ord i fst-en)
 * laga gjettarar for alle opne ordklasser, inkl morfologi
-** sjekk om det går ut over fst-storleik
-** sjekk om det går ut over analysefart
+    - sjekk om det går ut over fst-storleik
+    - sjekk om det går ut over analysefart

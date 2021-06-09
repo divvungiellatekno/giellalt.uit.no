@@ -1,106 +1,106 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 06.06.2006
 * Time: 09.30 Norw. time
 * Place: Where we are
 * Tools: SubEthaEdit, iChat
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:37.
 
-Present: __Børre, Saara, Sjur, Thomas, Trond, Tomi__
+Present: **Børre, Saara, Sjur, Thomas, Trond, Tomi**
 
-Absent: __Maaren__, __Saara__ leaving 10.30.
+Absent: **Maaren**, **Saara** leaving 10.30.
 
-Agenda accepted as is, some additions under ''Other''.
+Agenda accepted as is, some additions under *Other*.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!! Børre
+##  Børre
 * corpus collection:
-** send out contracts with accompanying letter
-*** Harald Gaski and Lill-Tove Fredriksen
-** Gather public texts, preferrably also parallel ones
-*** Done
-** Continue converting text from input format to our xml
-*** Updating meta data in MinAigi, using Saaras script
-** convert nob and nno bible texts to be used as part of a parallel corpus
-*** Not done
-** review the paratext2xml converter
-*** Not done
-** convert smj NT to paratext
-*** Not done
-** Send out letters to the rest of the Iđut authors
-*** Not done
-** call Brita Kåven again towards the end of the week
-*** Not done
-** contact Ája (Kåfjord)
-*** Not done
-** create weekly cron job to mirror Odin URL and detect new/updated pages
-*** Done
-** wait for R. Valkeapää, call him this week
-*** He needed some renaming script, said I would send him some of ours.
+    - send out contracts with accompanying letter
+        - Harald Gaski and Lill-Tove Fredriksen
+    - Gather public texts, preferrably also parallel ones
+        - Done
+    - Continue converting text from input format to our xml
+        - Updating meta data in MinAigi, using Saaras script
+    - convert nob and nno bible texts to be used as part of a parallel corpus
+        - Not done
+    - review the paratext2xml converter
+        - Not done
+    - convert smj NT to paratext
+        - Not done
+    - Send out letters to the rest of the Iđut authors
+        - Not done
+    - call Brita Kåven again towards the end of the week
+        - Not done
+    - contact Ája (Kåfjord)
+        - Not done
+    - create weekly cron job to mirror Odin URL and detect new/updated pages
+        - Done
+    - wait for R. Valkeapää, call him this week
+        - He needed some renaming script, said I would send him some of ours.
 * public tender:
 * corpus access:
-** meeting 23.5. t 9.30: discuss and decide upon the exact access policy we want
-*** Not done
-** set upp the unix group structure for corpus users (also __Saara, Trond__)
-*** Not done
-* install Gobby for __Thomas and Maaren__, send {{/opt/local/}} tarball to
-  __Saara__
-** Done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - meeting 23.5. t 9.30: discuss and decide upon the exact access policy we want
+        - Not done
+    - set upp the unix group structure for corpus users (also **Saara, Trond**)
+        - Not done
+* install Gobby for **Thomas and Maaren**, send `/opt/local/` tarball to
+  **Saara**
+    - Done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * On sick leave
 
-!! Saara
+##  Saara
 * Create a parallel corpora of the new testaments.
 * add more texts to the graphical corpus interface
 * grammatical searchability in the graphical corpus interface
 * Implement links to parallel files in corpus header.
-** sent a note to the newsgroup.
+    - sent a note to the newsgroup.
 * Implement parallel corpus upload in web upload script
-** not done
+    - not done
 * Install Gobby
-** not done
-* clean the {{free/}} dir and test copying of only free texts to it
-** done
+    - not done
+* clean the `free/` dir and test copying of only free texts to it
+    - done
 * Add some language recognition flags to write into the xsl file
-** done
-* set up the unix group structure for corpus users (also __Børre, Trond__)
+    - done
+* set up the unix group structure for corpus users (also **Børre, Trond**)
 * count and examine pairs of proofread and nonproofed MinAigi files
-** done
-* evaluate addition of a text-only corpus in the Oslo interface (with __Trond__)
-** done
+    - done
+* evaluate addition of a text-only corpus in the Oslo interface (with **Trond**)
+    - done
 * improve add-hyph-tags.pl to handle XML-structures better.
-** done
+    - done
 * Updated decode.pm to handle msword titles.
-** almost ready
+    - almost ready
 * convert nob and nno bible texts to be used as part of a parallel corpus
-** We don't have parallel text markup in corpus.dtd.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - We don't have parallel text markup in corpus.dtd.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 * public tender:
-** waiting for answers from the board, then act
-*** received answers from all, as well as a clarifying e-mail from Finnut; sent
+    - waiting for answers from the board, then act
+        - received answers from all, as well as a clarifying e-mail from Finnut; sent
     a reply and comment based on the Finnut letter, suggesting that we continue
     to ask for clarification before we pick one of the offers as received; also
     checked the monetary situation for the whole project to guide the tender
@@ -108,20 +108,20 @@ Agenda accepted as is, some additions under ''Other''.
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
 * name lexicon:
-** implement editing functions
-** finalise refactoring for multiple collections (regular search interface)
-*** progress - all look-up functions are now multi-collection aware
+    - implement editing functions
+    - finalise refactoring for multiple collections (regular search interface)
+        - progress - all look-up functions are now multi-collection aware
 * change corpus-summary processing to generate smaller pages
-** not done
+    - not done
 * send bug report to Apple re filename matching and accented characters in
   Terminal
-** done
+    - done
 * meeting 23.5. t 9.30: discuss and decide upon the exact access policy we want
 * give copies of the SEE JSPWiki mode to others
-** checked in to CVS, it can be installed from there with a double-click
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - checked in to CVS, it can be installed from there with a double-click
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Thomas
+##  Thomas
 * correct hyphenation of exceptions (sme)
 **done
 * work on compounding and derivation
@@ -129,138 +129,138 @@ Agenda accepted as is, some additions under ''Other''.
 * sme G3 issue
 **nothing done this week
 
-!! Tomi
+##  Tomi
 * new proper name lexicon
-** data synchronisation of proper nouns between risten.no and CVS
-** XQuery refactoring and code development for our proper noun editor
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - data synchronisation of proper nouns between risten.no and CVS
+    - XQuery refactoring and code development for our proper noun editor
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
 * read aligner docu, install, provide feedback
 * install and test Gobby
 * Set up the mechanism for the hash-mark transducer package
 * add ccat option to analyse text while keeping the xml tags and structure
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Trond
+##  Trond
 * better smj NT text
-** Not done
-* get fin, swe, nob and nno NT and OT in __paratext__ format
-** Not done
+    - Not done
+* get fin, swe, nob and nno NT and OT in **paratext** format
+    - Not done
 * install aligner, test it and give feedback
-** Not done
+    - Not done
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
-** Not done
-* get/upgrade keys for __Børre's__ room for __Tomi__ and __Thomas__
-** No response from key office, the key person has been away
+    - Not done
+* get/upgrade keys for **Børre's** room for **Tomi** and **Thomas**
+    - No response from key office, the key person has been away
 * Rethink the doubletagging procedure for names, consider grammatically
   motivated semtag conversion routines ("Helsinki" from Plc to Obj to Org)
-** The rethinking is done, implementation is needed.
+    - The rethinking is done, implementation is needed.
 * Work on the graphical corpus tag list
-** Done some, but awaiting Tomi's script to get this issue going.
-* send __Saara__ smj files for language recognition
-** No new smj files.
+    - Done some, but awaiting Tomi's script to get this issue going.
+* send **Saara** smj files for language recognition
+    - No new smj files.
 * create a short smj word list to help the trigram heuristics
-** This was done earlier.
-* Call Árran again, and then transfer smj corpus discussions to __Børre__
-** Worked on this issue
-* Put __Saara__ and __Tero__ in contact with each other
-** Awaiting the dust to be settled after his new employment.
-* ask __Lars Nygård__ and __Tero Avellan__ to install Gobby 0.3
-** Issue open.
+    - This was done earlier.
+* Call Árran again, and then transfer smj corpus discussions to **Børre**
+    - Worked on this issue
+* Put **Saara** and **Tero** in contact with each other
+    - Awaiting the dust to be settled after his new employment.
+* ask **Lars Nygård** and **Tero Avellan** to install Gobby 0.3
+    - Issue open.
 * continue linguistic discussions while Maaren is in Tromsø
-** Had one session.
+    - Had one session.
 * meeting 23.5. t 9.30: discuss and decide upon the exact access policy we want
-** Not done
-* set upp the unix group structure for corpus users (also __Børre, Saara__)
-** Not done
-* evaluate addition of a text-only corpus in the Oslo interface (with __Saara__)
-** We still go for the "everything first" strategy
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
-** Worked on bugs.
+    - Not done
+* set upp the unix group structure for corpus users (also **Børre, Saara**)
+    - Not done
+* evaluate addition of a text-only corpus in the Oslo interface (with **Saara**)
+    - We still go for the "everything first" strategy
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
+    - Worked on bugs.
 
-!!!3. Documentation
+# 3. Documentation
 
 TODO:
 * documentation on how to apply for a user account for the corpus repo
-  (__Børre__)
-** we will administer the corpus user accounts ourselves
-** We first have to discuss and decide what we want before __Børre__ can write
+  (**Børre**)
+    - we will administer the corpus user accounts ourselves
+    - We first have to discuss and decide what we want before **Børre** can write
    documentation (see further down)
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
-!!Collecting
+## Collecting
 
-See a [previous meeting memo|Meeting_2006-01-16] for what's to be done.
+See a [previous meeting memo](Meeting_2006-01-16) for what's to be done.
 
 TODO:
-* Send out the rest of the letters (__Børre__)
+* Send out the rest of the letters (**Børre**)
 
 New contracts:
 * none last 2 weeks
 
-!!Olavi Korhonen's Lule Sámi dictionary.
+## Olavi Korhonen's Lule Sámi dictionary.
 
 TODO:
-* set up user account/corpus access for Olavi (__Børre__)
-** we need the infrastructure for corpus access in place first
+* set up user account/corpus access for Olavi (**Børre**)
+    - we need the infrastructure for corpus access in place first
 
-!!KIO Grafisk and the Iđut books
+## KIO Grafisk and the Iđut books
 
-__TODO__:
-* send letters to the authors (__Børre__)
-** talked to Kurt Tore Andersen, will get a letter from us (__Børre__)
+**TODO**:
+* send letters to the authors (**Børre**)
+    - talked to Kurt Tore Andersen, will get a letter from us (**Børre**)
 
-!!Bible texts
+## Bible texts
 
 We will get text from Finland, but still haven't received any. Swedish html has
 arrived, no paratext. Norsk bibelselskap has not sent 
 corrected New Testament versions for sme, and not paratext for nno/nob.
 
 TODO:
-* convert smj NT to paratext (__Børre__)
-* get fin, swe, nob and nno NT and OT in __paratext__ format. (__Trond__)
+* convert smj NT to paratext (**Børre**)
+* get fin, swe, nob and nno NT and OT in **paratext** format. (**Trond**)
 
-!!Davvi Girji
+## Davvi Girji
 
 Talked to Harald Gaski, he will send the contracts to the writers' organisation,
 to ensure the contract is ok.
 
-__TODO__:
-* call Brita Kåven again towards the end of the week (__Børre__)
-* call the authors (__Børre__)
-** Harald Gaski
+**TODO**:
+* call Brita Kåven again towards the end of the week (**Børre**)
+* call the authors (**Børre**)
+    - Harald Gaski
 
-!!Min Áigi
+## Min Áigi
 
-__TODO__:
+**TODO**:
 * send bug report to Apple (typing filenames in Terminal does not match, moving
   filenames across plattforms via tarballs creates problems - the names are not
-  the same!) (__Sjur__)
-** done
-* complete metainformation (__Børre__)
+  the same!) (**Sjur**)
+    - done
+* complete metainformation (**Børre**)
 
-!!Kåfjord
+## Kåfjord
 
 Promised to send us texts. Some texts have arrived, but nothing from Ája.
 
-__TODO__:
-* contact Ája (__Børre__)
-** Not done
+**TODO**:
+* contact Ája (**Børre**)
+    - Not done
 
-!!Sámi Instituhtta
+## Sámi Instituhtta
 
 TODO:
-* wait for R. Valkeapää, call him this week (__Børre__)
+* wait for R. Valkeapää, call him this week (**Børre**)
 
-!!Čálliid Lágádus
+## Čálliid Lágádus
 
-__Børre__ talked to them, they are positive, and will give us print-ready pdf's.
+**Børre** talked to them, they are positive, and will give us print-ready pdf's.
 [http://www.calliidlagadus.org/]
 
-!!Árran
+## Árran
 
 The negotiations are underway, they discuss it in a meeting today, and we have
 an appointment for later today or tomorrow (both their internal texts, and
@@ -268,139 +268,138 @@ discussions on Báhko). All further negotiations will go through Bård Eriksen
 / Báhko.
 
 TODO:
-* call Bård Eriksen (__Børre__)
+* call Bård Eriksen (**Børre**)
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
-!!User accounts and access
+## User accounts and access
 
 TODO:
 * discuss and decide upon the exact access policy we want to give corpus users;
-  meeting on Tuesday May 23, at 9.30 (__Børre, Sjur, Trond__)
-** still not done, new date: Friday 9.6.2006, at 9.30
+  meeting on Tuesday May 23, at 9.30 (**Børre, Sjur, Trond**)
+    - still not done, new date: Friday 9.6.2006, at 9.30
 * set upp the unix group structure to open for a new category of users:
   Linguists with access to the texts on the servers. Some of
-  __Børre, Saara, Trond__.
+  **Børre, Saara, Trond**.
 * make a text-only corpus in the Oslo interface (dump the texts on omilia), 
   thereby making them accessible to simple lexical lookup. The cost of doing
   this should be evaluated against what it takes waiting for the analysed
-  corpus to be in place. (__Saara, Trond__)
-** Discussion on this issue after the previous meeting
-*** Conclusion: skip the text-only version, and go for the analyzed one right
+  corpus to be in place. (**Saara, Trond**)
+    - Discussion on this issue after the previous meeting
+        - Conclusion: skip the text-only version, and go for the analyzed one right
     away
 
-!!More texts to the graphical corpus interface:
+## More texts to the graphical corpus interface:
 
 We need to get the infrastructure complete to be able to do this, then it
 should be a piece of cake.
 
 Main obstacle for further progress: a tool to analyse text while keeping the xml
-structure. Here's some ''very'' simple pseudo-code:
+structure. Here's some *very* simple pseudo-code:
 
-# parse xml
-# send each <p> node to lookup etc
-# analyse it
-# add </s><s> after each <.>, <!>, <?> mark
-# wrap up the analysis output in xml
-# put it in a <p>node again
+1. parse xml
+1. send each <p> node to lookup etc
+1. analyse it
+1. add </s><s> after each <.>, <!>, <?> mark
+1. wrap up the analysis output in xml
+1. put it in a <p>node again
 
-The first implementation in Perl (__Saara__), later possibly a C implementation
-(__Tomi__) for speed reasons.
+The first implementation in Perl (**Saara**), later possibly a C implementation
+(**Tomi**) for speed reasons.
 
 TODO:
-# make an analyser that retains the xml structure (__Saara__)
-# Finish the  tag unification (korpustags.txt) (__Trond__)
-## progressing, but open questions remain (awaiting text to see how things
+1. make an analyser that retains the xml structure (**Saara**)
+1. Finish the  tag unification (korpustags.txt) (**Trond**)
+    1. progressing, but open questions remain (awaiting text to see how things
    crash)
-# add text to the server (__Lars__)
+1. add text to the server (**Lars**)
 
-!!Aligner
+## Aligner
 
-__Trond__ and __Saara__ will continue this issue.
+**Trond** and **Saara** will continue this issue.
 
 We need markup of parallelism in the corpus DTD, at least an indication of which
-documents belong together. Discussion to continue in the newsgroup (__Saara__
+documents belong together. Discussion to continue in the newsgroup (**Saara**
 has started it - please respond!).
 
-!!Language recognition
+## Language recognition
 
 TODO:
-* create a short smj word list to help the trigram heuristics (__Trond__)
-** done (but the smj.lm file suffer from the narrow corpus base. The smj.wm
+* create a short smj word list to help the trigram heuristics (**Trond**)
+    - done (but the smj.lm file suffer from the narrow corpus base. The smj.wm
    file will also improve with more texts, but not that much)
-* Add some flag to write into the xsl file (__Saara__)
-** done
+* Add some flag to write into the xsl file (**Saara**)
+    - done
 
-!!Free and non-free texts
+## Free and non-free texts
 
 TODO:
 * test the script(s) copying texts to the free/ dir which are explicitly
-  marked as free (__Saara__)
-** done
+  marked as free (**Saara**)
+    - done
 
-!!Corpus summary
-
-TODO:
-* trim generated corpus summary pages (__Sjur__)
-** suggestion: lump together files with content less than X paragraphs (X < 5?)
-** nothing done
-
-!!Proofed vs unproofed corpus files
+## Corpus summary
 
 TODO:
-* count the number of parallel files of type unproofed/proofread (__Saara__)
-** done, 35 such file pairs
-** delayed for the time being, move to Bugzilla (__Sjur__)
+* trim generated corpus summary pages (**Sjur**)
+    - suggestion: lump together files with content less than X paragraphs (X < 5?)
+    - nothing done
 
-!!!6. Infrastructure
+## Proofed vs unproofed corpus files
 
-!!Paradigm generation
+TODO:
+* count the number of parallel files of type unproofed/proofread (**Saara**)
+    - done, 35 such file pairs
+    - delayed for the time being, move to Bugzilla (**Sjur**)
+
+# 6. Infrastructure
+
+## Paradigm generation
 
 Goal: Reuse Greenlandic code for paradigm generation.
 
 TODO:
-* Put __Saara__ and __Tero__ in contact with each other (__Trond__)
-** still open, awaiting both Tero and the more crucial corpus tasks
+* Put **Saara** and **Tero** in contact with each other (**Trond**)
+    - still open, awaiting both Tero and the more crucial corpus tasks
 * The paradigm generator should also have an xml-out option (for use in e.g.
   electronic dictionaries) - on hold till we know more about the generator
-** move to Bugzilla (__Sjur__)
+    - move to Bugzilla (**Sjur**)
 
-!!Hyphenator
+## Hyphenator
 
-__Thomas__ is finished with adding ^ tags to the __sme__ noun file.
+**Thomas** is finished with adding ^ tags to the **sme** noun file.
 
-__Trond__ and __Thomas__ have been working on the smj rule component, and have
+**Trond** and **Thomas** have been working on the smj rule component, and have
 improved both the treatment of weak grade consonant clusters (preconsonantal
 geminates) and on some loan word patterns.
 
 TODO:
 * correct the treatment of hyphenation of word boundaries and exceptions (fst
-  gymnastics) (__Sjur, Trond__)
-** Still not done - postponed till next week (w 24)
+  gymnastics) (**Sjur, Trond**)
+    - Still not done - postponed till next week (w 24)
 * Update the sme and sma rule sets with the insights gained from smj updates.
-* add exception marks to the sme lexicons (__Thomas__)
-** done
+* add exception marks to the sme lexicons (**Thomas**)
+    - done
 
-!!Automatic Bugzilla reminder for untouched bugs
+## Automatic Bugzilla reminder for untouched bugs
 
 We need to get a summary by e-mail for all bugs not touched in more than 5(?)
-weeks. Do we want it? Yes. It is possible? __Børre__ will look around, if
+weeks. Do we want it? Yes. It is possible? **Børre** will look around, if
 nothing found, he'll ask Thor-Øivind.
 
 TODO:
 * set up Bugzilla to send automatic reminders for bugs not touched in a given
-  timeframe; ask Thor-Øivind for help if needed (__Børre__)
+  timeframe; ask Thor-Øivind for help if needed (**Børre**)
 
+# 7. Linguistics
 
-!!!7. Linguistics
-
-!!North Sámi
+## North Sámi
 
 Topic: Actio+compound - how productive? How much does it destroy speller
 performeance by being close to real spelling errors with a high editing distance
 to the correct form?
 
-{{{
+```
 Spelling error from typos.txt:
 4       vuolggahansádji             vuolggasadji
 
@@ -419,13 +418,13 @@ vuolggahansadji vuolgga+N+SgNomCmp#ho+N+SgNomCmp#atnu+N+SgNomCmp#sadji+N+Sg+Nom
 vuolggahansadji vuolggahit+V+TV+Actio#sadji+N+Sg+Nom
 vuolggahansadji vuolggahit+V+TV+Actio#sadji+N+Sg+Nom
 vuolggahansadji vuolggahit+V+TV+Actio#sadji+N+Sg+Nom
-}}}
+```
 
 TODO:
 * Maaren is in Tromsø this week, we should continue our linguistic discussions
-** not done, and Maaren is now back in Guovdageaidnu (?)
+    - not done, and Maaren is now back in Guovdageaidnu (?)
 
-!!Lule Sámi
+## Lule Sámi
 
 There are some open issues in the marginal area of the smj transducer:
 * numerals, e.g. Our poor treatment of number words becomes more visible 
@@ -442,86 +441,87 @@ TODO:
 * add proper numeral analysis/treatment
 * add loanwords (e.g. latin -ere verbs)
 
-!!!8. Name lexicon infrastructure
+# 8. Name lexicon infrastructure
 
 TODO:
-# finish refactoring for multiple collections in the search interfarce
-  (__Sjur__)
-## progressing, still major work to be done
-# develop the needed XQueries and interface (__Sjur, Tomi__)
-## progressing, done some, commited
+1. finish refactoring for multiple collections in the search interfarce
+  (**Sjur**)
+    1. progressing, still major work to be done
+1. develop the needed XQueries and interface (**Sjur, Tomi**)
+    1. progressing, done some, commited
    (adding new term, create-termc-entry.xq)
-# data synchronisation between risten.no and the cvs repo (__Tomi__)
-## discussion started on eXist-list, nothing useful came up. We need to
+1. data synchronisation between risten.no and the cvs repo (**Tomi**)
+    1. discussion started on eXist-list, nothing useful came up. We need to
    reformulate the question from our perspective, and bring it up again
-   (__Sjur__)
+   (**Sjur**)
 
 Timeline:
 
 * One-time conversion lexc2xml (sme to common)
-** done (must be redone at D-day, but the *script* is done)
+    - done (must be redone at D-day, but the *script* is done)
 * editing functions in risten.no - what about editing in emacs/see/other editors
-** in the works
+    - in the works
 * Automatic converson: xml2lexc (modulo language) (based on ccat)
-  (ready to be executed) (__Tomi__)
-** not done
+  (ready to be executed) (**Tomi**)
+    - not done
 
-!!!9. Public tender
+# 9. Public tender
 
 TODO:
-* act, based on the answers (__Sjur__)
-** done: we are asking for more clarification, and then pick the best
-* write clarification letters to PL and LS (__Sjur__ with help from
-  __Børre, Trond__)
-** LS - done
-** PL - has started, not finished
+* act, based on the answers (**Sjur**)
+    - done: we are asking for more clarification, and then pick the best
+* write clarification letters to PL and LS (**Sjur** with help from
+  **Børre, Trond**)
+    - LS - done
+    - PL - has started, not finished
 
-!!!10. Other
+# 10. Other
 
-!!Summer vacation
+## Summer vacation
 
-|| Who  || When
-| Børre  | August
-| Linda  | ?
-| Maaren | ?
-| Saara  | July
-| Sjur   | at least some in July, but still open
-| Thomas | 3.7 - 7.8
-| Trond  | 3.7 - 14.8 (last two weeks off at summer school)
-| Tomi   | 8.7 - 16.7, 2 more weeks in July and/or August
+|   Who  | When
+| --- | --- 
+|  Børre  | August
+|  Linda  | ?
+|  Maaren | ?
+|  Saara  | July
+|  Sjur   | at least some in July, but still open
+|  Thomas | 3.7 - 7.8
+|  Trond  | 3.7 - 14.8 (last two weeks off at summer school)
+|  Tomi   | 8.7 - 16.7, 2 more weeks in July and/or August
 
-!!Bug fixing
+## Bug fixing
 
-__43__ open Divvun/Disamb bugs (two down!), and __25__ risten.no bugs
+**43** open Divvun/Disamb bugs (two down!), and **25** risten.no bugs
 
 Guess: 1/3 of the bugs are fixed already (?)
 
-Please help __Saara__ with [bug
+Please help **Saara** with [bug
 279|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=279]
  (Perl locale). Not much help...
-__Saara__ will contact __Roy__ on this issue.
+**Saara** will contact **Roy** on this issue.
 
 After the corpus issues have been somewhat settled, we should do a bug
 barnraising. ... and then a new one after the name lexicon is fixed.
 
-!Forrest: Unicode & JSPWiki
+### Forrest: Unicode & JSPWiki
 
-Sjur has identified a way of making {{forrest run}} read correctly the jspwiki
+Sjur has identified a way of making `forrest run` read correctly the jspwiki
 files (UTF-8 encoded):
 
-{{{
+```
 forrest run -Dforrest.jvmargs="-Dfile.encoding=utf-8"
-}}}
+```
 
 It is added to our Forrest documentation.
 
-!!RAM on our G5
+## RAM on our G5
 
 We got some defect RAM. Our business contact has received a whole party of
 defect RAM, they are investigating this. After that is resolved we will receive
 "good" RAM.
 
-!!Gobby
+## Gobby
 
 0.3 is working fine on Mac, Linux and Windows. Should be installed on all
 computers c.f.
@@ -536,108 +536,108 @@ computers c.f.
 * Tomi - ok
 * Trond - ok
 
-__Trond__ has asked __Lars Nygård__ and __Tero Avellan__ to
-install Gobby as well. __Per Langgård__ is already using it.
+**Trond** has asked **Lars Nygård** and **Tero Avellan** to
+install Gobby as well. **Per Langgård** is already using it.
 
-!!SEE 2.5 extensions
+## SEE 2.5 extensions
 
 TODO:
-* give the jspwiki syntax colouring mode to all (__Sjur__)
-** JSPWiki.mode checked in to cvs in {{gt/src/}} - just double-click the mode!
+* give the jspwiki syntax colouring mode to all (**Sjur**)
+    - JSPWiki.mode checked in to cvs in `gt/src/` - just double-click the mode!
 * write a perl script to extract all TODO items and sort them according to
   responsible person; wrap the script in a AppleScript available from the menu
 * other modes on the whish list:
-** twol mode
-** xfst mode
-** lexc mode
-** vislcg mode
+    - twol mode
+    - xfst mode
+    - lexc mode
+    - vislcg mode
 
-!!!11. Next meeting, closing
+# 11. Next meeting, closing
 
 12.06.2006 09:30
 
 Closed at 11:08
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!! Børre
+##  Børre
 * corpus collection:
-** send out contracts with accompanying letter
-** Gather public texts, preferrably also parallel ones
-** Continue converting text from input format to our xml
-** convert nob and nno bible texts to be used as part of a parallel corpus
-** review the paratext2xml converter
-** convert smj NT to paratext
-** Send out letters to the rest of the Iđut authors
-** send contract to __Kurt Tore Andersen__
-** call __Brita Kåven__ again
-** call __Harald Gaski__
-** contact __Ája__ (Kåfjord)
-** Send renaming scripts to __R. Valkeapää__
-** complete __Min Áigi__ metadata
-** call __Bård Eriksen__
+    - send out contracts with accompanying letter
+    - Gather public texts, preferrably also parallel ones
+    - Continue converting text from input format to our xml
+    - convert nob and nno bible texts to be used as part of a parallel corpus
+    - review the paratext2xml converter
+    - convert smj NT to paratext
+    - Send out letters to the rest of the Iđut authors
+    - send contract to **Kurt Tore Andersen**
+    - call **Brita Kåven** again
+    - call **Harald Gaski**
+    - contact **Ája** (Kåfjord)
+    - Send renaming scripts to **R. Valkeapää**
+    - complete **Min Áigi** metadata
+    - call **Bård Eriksen**
 * corpus access:
-** meeting 9.6. t 9.30: discuss and decide upon the exact access policy we want
-** set upp the unix group structure for corpus users (also __Saara, Trond__)
+    - meeting 9.6. t 9.30: discuss and decide upon the exact access policy we want
+    - set upp the unix group structure for corpus users (also **Saara, Trond**)
 * set up Bugzilla automatic reminders for open issues; ask Thor-Øivind if needed
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * On sick leave
 
-!! Saara
+##  Saara
 * Create a parallel corpora of the new testaments
 * add more texts to the graphical corpus interface
 * grammatical searchability in the graphical corpus interface
 * Implement links to parallel files in corpus header
 * Implement parallel corpus upload in web upload script
 * Install Gobby
-* set upp the unix group structure for corpus users (also __Børre, Trond__)
+* set upp the unix group structure for corpus users (also **Børre, Trond**)
 * Test the aligners once again
 * make an analyser that retains the xml structure for Oslo
 * discuss parallel text markup in newsgroup
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 * public tender:
-** write e-mail to PL and ask for more clarification
+    - write e-mail to PL and ask for more clarification
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
 * name lexicon:
-** implement editing functions
-** finalise refactoring for multiple collections (regular search interface)
+    - implement editing functions
+    - finalise refactoring for multiple collections (regular search interface)
 * change corpus-summary processing to generate smaller pages
 * meeting 23.5. t 9.30: discuss and decide upon the exact access policy we want
 * move to Bugzilla:
-** proofed/unproofed parallel text issue
-** xml output of paradigm generator
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - proofed/unproofed parallel text issue
+    - xml output of paradigm generator
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Thomas
+##  Thomas
 * hyphenation-rule-set 
 * work on compounding and derivation
 * lule sámi incoming words
 * sme G3 issue
 
-!! Tomi
+##  Tomi
 * new proper name lexicon
-** data synchronisation of proper nouns between risten.no and CVS
-** XQuery refactoring and code development for our proper noun editor
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - data synchronisation of proper nouns between risten.no and CVS
+    - XQuery refactoring and code development for our proper noun editor
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
 * read aligner docu, install, provide feedback
 * Set up the mechanism for the hash-mark transducer package
 * add ccat option to analyse text while keeping the xml tags and structure
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Trond
+##  Trond
 * better smj NT text
-* get fin, swe, nob and nno NT and OT in __paratext__ format
+* get fin, swe, nob and nno NT and OT in **paratext** format
 * install aligner, test it and give feedback
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
-* Put __Saara__ and __Tero__ in contact with each other
+* Put **Saara** and **Tero** in contact with each other
 * meeting 9.6. t 9.30: discuss and decide upon the exact access policy we want
-* set upp the unix group structure for corpus users (also __Børre, Saara__)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* set upp the unix group structure for corpus users (also **Børre, Saara**)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).

@@ -1,43 +1,42 @@
-!!! sme-nob MT møte 31.5.17
+#  sme-nob MT møte 31.5.17
 
 Tilstede: Kevin, Trond, Lene
 
-!!Saker:
-# Kompilering og størrelse av sme-nob.t1x.bin
-# Sámi dieđalaš áigečála  som pdf 
-# caseprep : vi har to systemer
-# om hvordan vi skal løse riktig valg av pro. 
-# ends-with og starts-with i test i regler t1x-fila
-# t4x må kunna handtera alle kombinasjonar
-# fungerer --trace på mac no? Ja.
-# bidix-sanity for nob
-# Fleirordsuttrykk, nob i bidix
-# Kronikk i Nordlys
+## Saker:
+1. Kompilering og størrelse av sme-nob.t1x.bin
+1. Sámi dieđalaš áigečála  som pdf 
+1. caseprep : vi har to systemer
+1. om hvordan vi skal løse riktig valg av pro. 
+1. ends-with og starts-with i test i regler t1x-fila
+1. t4x må kunna handtera alle kombinasjonar
+1. fungerer --trace på mac no? Ja.
+1. bidix-sanity for nob
+1. Fleirordsuttrykk, nob i bidix
+1. Kronikk i Nordlys
 
-
-!! Kompilering og størrelse av sme-nob.t1x.bin
+##  Kompilering og størrelse av sme-nob.t1x.bin
 apertium frå etter 26. mai skal gi mindre binærfiler av transfer.
 Der me før hadde t1x.bin på 15M, bør me no ha ca. 74K.
 
-{{{
+```
 apertium-sme-nob$ which apertium-preprocess-transfer
 /usr/local/bin/apertium-preprocess-transfer
 apertium-sme-nob$ ls -lah $(which apertium-preprocess-transfer)
 -rwxr-xr-x  1 root  wheel    50K 18 mai 06:26 /usr/local/bin/apertium-preprocess-transfer
-}}}
+```
 
 -rwxr-xr-x  1 root  admin  19480 May 26 15:24 /usr/local/bin/apertium-preprocess-transfer
 
-! TILTAK::
-* __Kevin__ har spørt Tino om korfor nightly har gammal preprocess-transfer, så oppdaterer me igjen seinare.
+###  TILTAK::
+* **Kevin** har spørt Tino om korfor nightly har gammal preprocess-transfer, så oppdaterer me igjen seinare.
 
-!!Sámi dieđalaš áigečála  som pdf 
+## Sámi dieđalaš áigečála  som pdf 
 Om det er mulig å tilby oversetting av Sámi dieđalaš áigečála sine artikler som er i pdf-format, se bz 2378. Dvs om det er mulig å legge inn convert2xml i pipelinen når vi på forhånd vet formatet på pdf-en. Jeg regner med at det blir rein tekst, uten tabeller og figurer og formattering
 
-! TILTAK::
-* __Kevin__ tar kontakt med Børre om dette.
+###  TILTAK::
+* **Kevin** tar kontakt med Børre om dette.
 
-!! caseprep : vi har to systemer
+##  caseprep : vi har to systemer
 
 t1x: caseprep på substantiv-chunks og på verb-chunks, ingen interaksjon mellom verb/substantiv her
 t2x interchunk: ein caseprep-variabel frå verbet kan *overstyra* den som er på substantivet (t2x kan sjå på to eller fleire chunks PR SUBST VERB osb.)
@@ -48,14 +47,14 @@ Viss verbet kjem etterpå treng vi caseprep i t2x, vi kan vise til chunking som 
 
 I andre tilfelle løyser vi det i t1x.
 
-!! om hvordan vi skal løse riktig valg av pro 
+##  om hvordan vi skal løse riktig valg av pro 
 Eksempel:
 
 Alle setningene under her får sin pro i denne regelen i tx3: <rule comment="REGLA: adv-FV.neg IV - out: pro 2 1
 
 I denne regelen er ikke hovedverbet med i vurdering av hvilken pro som skal inn, og det er hovedverbet som har taggingen "pers" "impers" (vi trenger også en ekstra tagging av verb som alltid skal ha 'det', som værverb)
 
-{{{
+```
 echo Ii lean arván. | apertium -d. sme-nob
 Det hadde ikke regnet.  <== værverb, bør ha en egen "detpers" tagg 
 H_n hadde ikke regnet.
@@ -67,62 +66,58 @@ Ii lean borran. | apertium -d. sme-nob
 Det hadde ikke spist.  <== hovedverbet er "pers", vi ønsker 'h_n'
 echo Ii lean guhton. | apertium -d. sme-nob
 Det hadde ikke beitet. <== hovedverbet er "impers", vi ønsker 'den'
-}}}
+```
 
 Endring /tillegg til taggen som i bidix i dag er "impers". Vi endrar taggen til:
 
-{{{
+```
 pers-pro  (verb som får  han/hun som subjekt) 
 agreem-pro   (verb som får  den/det)
 incongr-pro = inkongruent =   (verb som alltid får   "det", dvs. værverb, jf. liste i t1x)
-}}}
+```
 
-! TILTAK:
-* __Lene__ legger til tagger i bidix
-
+###  TILTAK:
+* **Lene** legger til tagger i bidix
 
 Kan vi løse problemet med riktig valg av pro nær finittverb, basert på hovudverb langt vekke, på annen måte enn å lage regler i t3x for alle varianter av slike setninger? Setningstypene er mange:
 * Ii borran.
 * Ii dalle borran.
 * Ii lean olles beaivvi borran. 
 
-
 Hovedverbet kommer lenger ut i setninga så variabel vil ikke fungere, må matcha heile chunken.
 
-! TILTAK:
+###  TILTAK:
 * Vi lager flere regler i t3x
-
-
 
 For vêrverb må me anten laga ny bidix-tagg (detpers?) eller ta i bruk def-list weather-verbs i t1x.
 
-{{{
+```
 echo Ii guhton. | apertium -d. sme-nob
 Det beitet ikke.  <== den
 echo Ii arván. | apertium -d. sme-nob
 Det regnet ikke.  <== det
 : er det fleire enn vêrverb som burde ha «det» som standard?
-}}}
+```
 
 Der me må disambiguera mellom h_n og den, kan me gi tvetydig tagging av verbet, både impers og pers:
 
-{{{
+```
 <e><p><l>šaddat<s n="vblex"/><s n="iv"/></l><r>bli<s n="vblex"/><s n="pers"/></r></p><par n="__verb"/></e>
 <e><p><l>šaddat<s n="vblex"/><s n="iv"/></l><r>bli<s n="vblex"/><s n="impers"/></r></p><par n="__verb"/></e>
-}}}
+```
 
 og så la lex-fila velja rett tagg:
 
-{{{
+```
 SELECT:fallback ("bli"i) + (impers) (0 ("<šaddat>"i)) ;
-}}}
+```
 
+##  ends-with og starts-with i test i regler t1x-fila
 
-!! ends-with og starts-with i test i regler t1x-fila
-
-{{{
+```
      <list-item v="jente"/>
           <list-item v=".*jente"/> <== ikkje slik
+
         
 Men slik:
 
@@ -140,9 +135,9 @@ $ grep -e -with /usr/local/share/apertium/transfer.dtd
 <!ATTLIST begins-with-list caseless (no|yes) #IMPLIED>
 <!ELEMENT ends-with-list (%value;,list)>
 <!ATTLIST ends-with-list caseless (no|yes) #IMPLIED>
-}}}
+```
 
-{{{
+```
       Tests if the left part contains the right part at the beginning.
       Both parts of the test may both be a clip (see below), a
       literal string ('lit'), a literal tag ('lit-tag') or the value of 
@@ -162,19 +157,19 @@ $ grep -e -with /usr/local/share/apertium/transfer.dtd
 -->
 <!ELEMENT begins-with-list (%value;,list)> 
 <!ATTLIST begins-with-list caseless (no|yes) #IMPLIED>
-}}}
+```
 
-!! t4x må kunna handtera alle kombinasjonar
+##  t4x må kunna handtera alle kombinasjonar
 Denne
-{{{
+```
   <rule comment="CHUNK: pre_pre_pre_pre_nom">
-}}}
+```
 
 finst ikkje for koordinasjonar – kan me få så lange chunks i koordinasjonar no?
 
 Viss t1x kan laga pre_pre_pre_pre_nom, så kan t2x laga 
 
-{{{
+```
 * pre_pre_pre_pre_nom_conj_pre_pre_pre_pre_nom 
 * pre_pre_pre_pre_nom_conj_pre_pre_pre_nom 
 * pre_pre_pre_pre_nom_conj_pre_pre_nom 
@@ -184,20 +179,20 @@ Viss t1x kan laga pre_pre_pre_pre_nom, så kan t2x laga
 *         pre_pre_nom_conj_pre_pre_pre_pre_nom 
 *             pre_nom_conj_pre_pre_pre_pre_nom 
 *                 nom_conj_pre_pre_pre_pre_nom 
-}}}
+```
 
 Kor lange rekkjer kan t1x lage? Opprinneleg: 3 x pre + nom. No er det meir.
 
-! TILTAK:
-* __Lene__ ser på det.
+###  TILTAK:
+* **Lene** ser på det.
 
-!! fungerer --trace på mac no? Ja.
+##  fungerer --trace på mac no? Ja.
 
 [https://sourceforge.net/p/apertium/tickets/97/] er lukka
 
 Det fungerer:
 
-{{{
+```
 tf4-hsl-m0024:apertium-sme-nob trond$ e Mun boakkun|apertium -d. sme-nob-interchunk1
 
 apertium-interchunk: Rule 39 Prn<SN><p1><mf><sg><nom>{^jeg<prn><pers><p1><mf><sg><nom>$}
@@ -206,32 +201,31 @@ apertium-interchunk: Rule 35 verb<SV><indic><pres><p1><sg><pers><NC>{^gå<vblex>
 
 apertium-interchunk: Rule 43 sent<SENT>{^.<sent><clb>$}
 ^Prn<SN><p1><mf><sg><nom>{^jeg<prn><pers><p1><mf><sg><nom>$}$ ^verb<SV><indic><pres><p1><sg><pers><NC>{^gå<vblex><pres>$}$^lemq<lemq>{^# hjulbeint$}$^sent<SENT>{^.<sent><clb>$}$
-}}}
+```
 
-
-!! bidix-sanity for nob
+##  bidix-sanity for nob
 
 [https://svn.code.sf.net/p/apertium/svn/nursery/apertium-sme-smn/dev/bidix-sanity.sh]
 
-{{{
+```
 %       Bissogealdinoaivi<np>:Soabbegealdinoaivi<np>:^Soabbegealdinoaivi/*Soabbegealdinoaivi$
 %       Buolláneatnanlássáš<np>:Puállâmeennâmláássáš<np>:^Puállâmeennâmláássáš/*Puállâmeennâmláássáš$
 %       reaisu<n>:reeisu<n>:^reeisu/reissu<n><sg><acc>/reissu<n><sg><gen>$ (==> vi hadde forventa <n><sg><nom>)
 %       oasálaš<n>:kuáskulâš<n>:^kuáskulâš/kuáskulâš<adj><attr>/kuáskulâš<adj><sg><nom>$
-}}}
+```
 
-{{{
+```
 viss L1 har blabla så skal L2 ha det same
 
 viss L1 <n><sg><nom> så skal L2 ha <n><GENUS><sg><indef>
 
 <e r="RL" lm="hva" c="sme-nob"><i>hva</i><par n="neste__det"/></e>
-}}}
+```
 
-! TILTAK:
-* __Kevin__ lagar sanity basert på sme-smn i sme-nob
+###  TILTAK:
+* **Kevin** lagar sanity basert på sme-smn i sme-nob
 
-!!Fleirordsuttrykk, nob i bidix
+## Fleirordsuttrykk, nob i bidix
 
 frå -r78846 [http://sprunge.us/HXPM]
 
@@ -241,22 +235,21 @@ Strategiar:
 * ved bålet → legg inn som «ved bålet», heilt grei
 * daglig leder → dette er innarbeida på norsk, så legg inn på same måte som 
 
-{{{
+```
 pardef "bærbar/_datamaskin__n"
-}}}
+```
 
-
-{{{
+```
 <e><p><l>nulpu<s n="n"/></l><r>rein<g><b/>uten<b/>horn</g><s n="n"/><s n="m"/></r></p></e>
 <e><p><l>boaggut<s n="vblex"/><s n="tv"/></l><r>gå<g><b/>hjulbeint</g><s n="vblex"/><s n="pers"/></r></p><par n="__verb"/></e>
-}}}
+```
 
 Strategiar:
 * første del bøyast -- fungerer med <g/> og <b/> (alt i <g/> må vera ubøyeleg, sjekk at transfer alltid bruker lemh/lemq rett, ikkje berre lem)
 * andre del bøyast -- >mann<b/><g>med<b/>hund<
 * begge delar bøyast
 
-{{{
+```
 echo Mus lea nulpu. | apertium -d. sme-nob
 Jeg har #rein.
 jj
@@ -268,18 +261,13 @@ Jeg går# hjulbeint = jorgal.uit.no
 
 echo nulpu lea doppe. | apertium -d. sme-nob
 #rein er der borte.
-}}}
+```
 
-! TILTAK:
-* __Trond__ ser på dem
+###  TILTAK:
+* **Trond** ser på dem
 
-!!Kronikk i Nordlys
+## Kronikk i Nordlys
 Andre moglege fora: forsking.no, Norsk Tidend.
 
-! TILTAK:
-__Lene__ lager mappe i art/2017 og tar kontakt med Nordlys. Og sender epost om resultatet.
-
-
-
-
-
+###  TILTAK:
+**Lene** lager mappe i art/2017 og tar kontakt med Nordlys. Og sender epost om resultatet.

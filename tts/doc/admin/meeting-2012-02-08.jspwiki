@@ -1,4 +1,4 @@
-!!!Talesynteseprosjektet
+# Talesynteseprosjektet
 
 Tilstede:
 * Sjur Nørstebø Moshagen
@@ -10,10 +10,10 @@ Tilstede:
 
 Sted: Alta
 
-!!!Talesyntese
+# Talesyntese
 Oversett tekst til lydskrift. Lag lyd ut fra lydskriften.
 
-!!! Oppsummering over arbeid hittil
+#  Oppsummering over arbeid hittil
 * Opptak av mannlig og kvinnelig stemme - Ferdigstilt
 * Mer enn 2,5 timer tale pr stemme, og mer enn nok setninger
 * Sendt prøver til Helsingfors Universitet, de har godkjent kvaliteten
@@ -22,13 +22,13 @@ Oversett tekst til lydskrift. Lag lyd ut fra lydskriften.
   ikke bare ortografisk informasjon, som vi har nå.
 * Vi har allerede konvertering fra tall til tekst, nemlig dato, klokkeslett og enkelttall.
 
-!!!Videre jobb
+# Videre jobb
 * Rette tekstene, slik at de samsvarer med det som faktisk ble lest opp
 * Dele lydmaterialet, slik at det er en fil per setning.
 * Dele tekstmaterialet tilsvarende, med samme filnavn som for lydfilene
 * gjøre ferdig preprosessering:
-** Klargjøre akronymer og forkortelser for lydskrift
-** konvertere dato og andre talluttrykk til tekst
+    - Klargjøre akronymer og forkortelser for lydskrift
+    - konvertere dato og andre talluttrykk til tekst
 * transkribere tekst til IPA med preprosesseringsmodulene
 * Rette på transkripsjon der det er nødvendig
 
@@ -49,18 +49,18 @@ Tidsfrist for ferdigstilling: slutten av 2012
 * Berit Annes del blir ferdig i løpet av i år.
 * Finne underleverandør og få alt på plass vil ta mest tid.
 
-!!!Preprosessering
+# Preprosessering
 
 Det meste er enkelt, og allerede på plass. Problemområder som krever mer avanserte løsninger er:
 * disambiguering av lengdeopposisjoner som ikke kan avledes direkte av ortografien.
-  Eksempel: ''besset'' - {{/bes:et/}} vs {{/be:s:et/}}, som er to ulike verb. Et
+  Eksempel: *besset* - `/bes:et/` vs `/be:s:et/`, som er to ulike verb. Et
   annet eksempel er skillet mellom G3 og G2 for visse typer stadieveksling, der
   lengdeforskjellen ikke uttrykkes i ortografien.
 * identifisering av kasus ved talluttrykk der kasus ikke er uttrykt i ortografien
 
 Det finnes to alternativ:
 
-!!Regelbasert preprosessering
+## Regelbasert preprosessering
 
 Bruke constraint grammar for å velge rett lengde på vokal:
 
@@ -79,7 +79,7 @@ Ulemper:
   tvetydig generering av samme lemma+tagg-sekvens)
 * håndteringen av ukjente ord kan bli mer problematisk
 
-!!Statistisk preprosessering
+## Statistisk preprosessering
 
 * all konvertering til IPA skjer i en transduser, inkl. konvertering fra tall til tekst
 * ved flertydige konverteringer disambiguerer man med en statistisk modell
@@ -96,11 +96,11 @@ Ulemper:
 * det finnes ikke rom for å bygge ut syntesen med mer avansert modulering av
   prosodi bygd på en grammatisk analyse av teksten
 
-!!!Tekniske krav
+# Tekniske krav
 
 * eksisterende ressurser skal brukes så langt som mulig
 * mest mulig åpen kildekode
 * HFST som transduser-teknologi
 * kun binære bibliotek i runtime-pakken - ikke Perl eller andre skript-språk
-** ... som betyr at segmentering, preprosessering og inndeling i setninger må
+    - ... som betyr at segmentering, preprosessering og inndeling i setninger må
    gjøres direkte i fst-en, ev. i en etterfølgende prosess

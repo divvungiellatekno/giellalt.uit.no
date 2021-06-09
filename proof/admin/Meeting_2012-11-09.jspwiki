@@ -1,4 +1,4 @@
-!!!Speller meeting
+# Speller meeting
 
 Release planning
 
@@ -6,51 +6,51 @@ What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 Decisions:
 * stick with NSIS
 * build MSI packages
 * look for outsourcing possibilities (see NSIS home page)
 
-!!Outsourcing possibilities
+## Outsourcing possibilities
 
 We got more info from Tino, quite helpful. No answer from the NSIS people yet.
 
-__Sjur__ also brought up some future possibilities with Tino regarding switching
+**Sjur** also brought up some future possibilities with Tino regarding switching
 away from PLX to HFST-based solutions. There are many open questions regarding
 that still.
 
-__DONE:__
-* follow-up on Tino for more info about greenlandic, future options (__Sjur__)
-* write to NSIS contacts (__Børre, Sjur__)
+**DONE:**
+* follow-up on Tino for more info about greenlandic, future options (**Sjur**)
+* write to NSIS contacts (**Børre, Sjur**)
 
-__TODO:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
+**TODO:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
 
-!!!PLX conversion
+# PLX conversion
 
 Hyphen issue in PLX conversion. Fixed:
-{{{
+```
 set flag-is-epsilon ON
-%- -> 0 || _ .#. ;
-}}}
+%- -> 0 | _ .#. ;
+```
 
 Tomi is testing the speller with the recent changes. When testing is done, a new
 speller will be built.
 
-__DONE:__
-* add a rewrite rule to remove string-final hyphens for RCmpnd words (__Tomi__)
-** solved problems with shortened/vowel-reduced compounds (for example
-   {{goahte}} was with hyphen)
+**DONE:**
+* add a rewrite rule to remove string-final hyphens for RCmpnd words (**Tomi**)
+    - solved problems with shortened/vowel-reduced compounds (for example
+   `goahte` was with hyphen)
 
-__TODO:__
+**TODO:**
 * next week: sit down and look thoroughly at the remaining PLX issues
-  (__Sjur, Tomi, Thomas__)
+  (**Sjur, Tomi, Thomas**)
 
-!!!Release plan
+# Release plan
 
 Meeting every afternoon, solving one issue at a time until we have a release
 candidate.

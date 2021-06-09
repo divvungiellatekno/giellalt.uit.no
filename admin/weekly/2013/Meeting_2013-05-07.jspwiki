@@ -1,40 +1,35 @@
-
 Trond og Sjur, 7.5. 2013
 
-
-
-!!!Taggekonvensjonar.
+# Taggekonvensjonar.
 
 Vi diskuterte denne saka, men skreiv ikkje referat, bortsett frå eitt punkt:
 
-
-{{{
+```
 1908
 "<sámi>" Hum Lang N Sg Gen  Hum N Sg Gen 
 	"sápmi" Hum N Sg Gen 
 	"sápmi" Hum Lang N Sg Gen <=== Duomma? T
-}}}
+```
 
 (Lene har ordna dette).	
 
+# Bugs
 
-!!!Bugs
-
-!!Bug 1663 - Dublettar i smi-propernouns.lexc
+## Bug 1663 - Dublettar i smi-propernouns.lexc
 
 Sjur ser på det i namne-møte.
 
 2000 nye homonym i sme (proper) - det burde ikkje ha hendt, kva har skjedd?
 
-{{{
+```
 cat smi-propernouns.lexc|tail +13|sort|uniq -d|wc -l     (109)
 cat smi-propernouns.lexc|tail +13|sed 's/% /%/g;'|cut -d" " -f1|sort|uniq
 -c|sort -nr|grep -v ' 1 '|wc -l     (167)
-}}}
+```
 
 Nokre døme på dette er :
 
-{{{
+```
 Skogheim:Skog^heim9 HEIM-plc ;
 Skogheim:Skog^heim9 HEIM-sur ;
 
@@ -44,23 +39,22 @@ Tanzania ACCRA-plc ;
 Joppe ACCRA-plc ;
 Joppe BETFAGE-plc ;
 Joppe ACCRA-sur ;
-}}}
+```
 
-!!Bug 1653 - Fjerne Actio+Nom og Actio+Gen, og Der/NomAct+Sg+Nom fra paradigmene for passive verb?
+## Bug 1653 - Fjerne Actio+Nom og Actio+Gen, og Der/NomAct+Sg+Nom fra paradigmene for passive verb?
 
 Ja, fint. 
 
 Thomas gjer det.
 
-
-!!Bug 1644 - Divvunprogrammet hopper ut av divvun-modus
+## Bug 1644 - Divvunprogrammet hopper ut av divvun-modus
 
 Sjå på dette.
 
-!!Bug 1633 - +Hom1 og +Hom2?
+## Bug 1633 - +Hom1 og +Hom2?
 Nye namn på taggane
 
-!!Buggar for manglande tekst i korpus
+## Buggar for manglande tekst i korpus
 
 * Skolehistorie 6
 * 1631	Siri Broch Johansen sine tekster mangler i korpus
@@ -70,6 +64,6 @@ Nye namn på taggane
 
 Sjur tar opp dette med Børre.
 
-!!!Bugg 1494 & 1542
+# Bugg 1494 & 1542
 
 Vart diskutert. Oppfylging i bugzilla.

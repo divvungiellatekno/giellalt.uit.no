@@ -1,8 +1,6 @@
-
-
 Onsdagsmøte 3.12.
 
-!!!Saksliste
+# Saksliste
 
 * forrest-deling
 * forrest-kontroll
@@ -12,41 +10,37 @@ Onsdagsmøte 3.12.
 * smenob/nobsme
 * fad2
 
+## Forrest-deling
 
-
-!!Forrest-deling
-
-# kopiere gtuit til gtuit2 (svn copy)
-# dele gtuit og techdoc, på denne måten: \\
+1. kopiere gtuit til gtuit2 (svn copy)
+1. dele gtuit og techdoc, på denne måten: \\
    -- flytte techdoc-symlink frå gtuit/.../doc direkte til "sd-techdocen"
-# la gtuit vere på nett, men endre alle namn i gtuit2
+1. la gtuit vere på nett, men endre alle namn i gtuit2
   Dette må bli gjort:
-## i nye fleirspråklege forrest vil alle filer av typen 
-   {{namn.xml}} vere einspråklege, vi må lage symlink med språkprefiks 
+    1. i nye fleirspråklege forrest vil alle filer av typen 
+   `namn.xml` vere einspråklege, vi må lage symlink med språkprefiks 
    for å få fleir enn eitt namn
-## språksuffiksa må vere en, fi, no, ru, se.
-# svn mv gtuit2 gtuit
+    1. språksuffiksa må vere en, fi, no, ru, se.
+1. svn mv gtuit2 gtuit
 
-Fjerne/kopiere symlink frå {{$GTHOMExtdoc/gtuit/../xdocs/techdoc}} til 
-{{$GTHOME/xtdoc/techdoc/..../xdocs/doc}} 
+Fjerne/kopiere symlink frå `$GTHOMExtdoc/gtuit/../xdocs/techdoc` til 
+`$GTHOME/xtdoc/techdoc/..../xdocs/doc` 
 
-{{$GTHOME/techdoc}} er i begge tilfelle den __ekte__ katalogen
-
+`$GTHOME/techdoc` er i begge tilfelle den **ekte** katalogen
 
 Vedtak:
 
 * Vi gjennomfører splitting av gtuit til gtuit (framsidene) og techdoc
-** Ciprian gjer dette etter 12.12.
+    - Ciprian gjer dette etter 12.12.
 * Omlegging til fleirspråkleg forrest eller ikkje kjem vi attende til
 
 Spørsmål:
 
-# Generere språkval inn på dei ulike sidene vs manuelt lage språkheader:
+1. Generere språkval inn på dei ulike sidene vs manuelt lage språkheader:
   Kan automatiske flaggrekker (krysslenkjing) bli gjort i "gammal" forrest?
-# Lokalisering av teksten på tab
+1. Lokalisering av teksten på tab
 
-
-!! Lenkjekontroll
+##  Lenkjekontroll
 
 Børre skal endre lenkesjekken til at det blir færre irrelevante alarmar
 Vi vil skilje mellom interne og eksterne lenkjer.
@@ -57,34 +51,30 @@ Framlegg:
 * Sjekke lenkjer frå dei eksterne filene våre
 * Automatisk endre daud lenkje med // DOKUMENTET EKSISTERER IKKJE // el.l.
 
-
-
-!! Forrest-kontroll
+##  Forrest-kontroll
 
 Oppdatering på Oahpa, dict, cgi
 
-* Oahpa: __Lene__ ser på nno-saka, men seinare
-* dict: Vi må sjekke dict-forrest http://dicts.uit.no (__Cip__)
-** 130 broken (men før nybygging)
-* Vi må oppdatere lokalisering på nds, særleg finsk (__Trond__)
+* Oahpa: **Lene** ser på nno-saka, men seinare
+* dict: Vi må sjekke dict-forrest http://dicts.uit.no (**Cip**)
+    - 130 broken (men før nybygging)
+* Vi må oppdatere lokalisering på nds, særleg finsk (**Trond**)
 * cgi:
-** slå saman ref til ordbøker (__Trond, Cip__)
-** Parametrisere fleirspråkleg dicts.uit.no som for gtuit (__Trond, Cip__) 
+    - slå saman ref til ordbøker (**Trond, Cip**)
+    - Parametrisere fleirspråkleg dicts.uit.no som for gtuit (**Trond, Cip**) 
    etter Kautokeino.
-** Sjekke dei sentrale gtuit-lenkjene (sjå ovafor)
+    - Sjekke dei sentrale gtuit-lenkjene (sjå ovafor)
 
-
-
-!!! Clarino
+#  Clarino
 
 * resurser
  ** Kva skal vi dele
  ** meta-data i CMDI-format
  ** format mapping
 * pid
-** hvor skal vi få pid fra
-** repositorium
-** pid resolver
+    - hvor skal vi få pid fra
+    - repositorium
+    - pid resolver
 
 Cip: Vi skal vere alfatestar for Nasjonalbiblioteket /
 Mo i Rana. Problemet med TROLLing er at det er ein
@@ -98,12 +88,12 @@ annan type repositorium
 Framlegg til liste over ressursar å dele 
 (Trond: Diskutere med Kone-prosjektet):
 
-fst-ane: Bruke {{/opt/smi}} på gtweb som base?
+fst-ane: Bruke `/opt/smi` på gtweb som base?
 Nei, fordi du må ha kjelden i pid-repositoriet.
 
 Dermed må vi lage eit script for oppdatering, t.d. årleg.
 
-{{{
+```
 faofst Faroese transducer
 finfst Finnish transducer
 fkvfst Kven Finnish transducer
@@ -161,14 +151,13 @@ giellatekno/divvun infrastructure
 sma open annotated corpus
 sme open annotated corpus
 smj open annotated corpus
-}}}
+```
 
-!!!Ordbøkene smenob/nobsme og fad2
+# Ordbøkene smenob/nobsme og fad2
 
 * På nett / fylkes- og kommunenivå
 * Språkkonsulentane
 * Termkandidatar + nob-lister
-
 
 Avtaler med forlaga
 Nasjonalbiblioteket
@@ -191,7 +180,6 @@ Så kom Jaska med eit anna problem: Sortering.
 
 Det er ikkje mogleg å sortere hans alfabet
 
-
 Loggar: Har vi logg frå Apertium?
 
 NDS ei veke = satni.org 7 mnd
@@ -202,15 +190,6 @@ Diskusjon om stor forbokstav i NDS: Trond skriv svar i disk
 * namn i NDS med stor bokstav
 * to-bokstavs-namn, kanskje i satni.org heller enn i apertium
 
-
-
-
-
-!!!Neste möte
+# Neste möte
 
 17.12.
-
-
-
-
-

@@ -2,20 +2,20 @@
 meattáhusmerken/GramDivvun
 Duommá, Linda ja Ritva 
 
-## Mun jáhkán gullat eambbo ahte’ eambbo biehkuma, mađi eambbo ovddasvástadusa šadda sáhka ahte sámi servodat sáhtta oažžut. 
+    1. Mun jáhkán gullat eambbo ahte’ eambbo biehkuma, mađi eambbo ovddasvástadusa šadda sáhka ahte sámi servodat sáhtta oažžut. 
 * NB!! Divvu "aht'", muhto ii sihko apostrofamearkka teavsttas: ahte'
-
 
 "<ahte>"
         "ahte" CS <W:0.0> @CVP MAP:13507:r11 SELECT:13525:r990 #5->5
-;       "ahte" CC <W:0.0> @CVP @CNP MAP:13510:r12 SELECT:13525:r990
-;       "ahte" CC Err/Orth <W:0.0> @CVP @CNP MAP:13510:r12 SELECT:13525:r990
-;       "ahte" CS Err/Orth Err/Spellrelax <W:0.0> REMOVE:2152
-;       "áhtat" V TV Ind Prs Du1 Err/Spellrelax <W:0.0> REMOVE:2152
-;       "áhtat" V TV Ind Prt Pl3 Err/Spellrelax <W:0.0> REMOVE:2152
-;       "áhtti" N Sem/Dummytag Sg Gen Allegro Err/Spellrelax <W:0.0> REMOVE:2152
+* **"ahte" CC <W:0.0> @CVP @CNP MAP:13510:r12 SELECT:13525**: r990
+* **"ahte" CC Err/Orth <W:0.0> @CVP @CNP MAP:13510:r12 SELECT:13525**: r990
+* **"ahte" CS Err/Orth Err/Spellrelax <W:0.0> REMOVE**: 2152
+* **"áhtat" V TV Ind Prs Du1 Err/Spellrelax <W:0.0> REMOVE**: 2152
+* **"áhtat" V TV Ind Prt Pl3 Err/Spellrelax <W:0.0> REMOVE**: 2152
+* **"áhtti" N Sem/Dummytag Sg Gen Allegro Err/Spellrelax <W:0.0> REMOVE**: 2152
 "<’>"
         "’" PUNCT RIGHT <W:0.0> #6->6
+
  
  Duommá lásihii "aht´Err/Orth", nu ahte dál goit doaibmá:       
 "<aht’>"
@@ -23,7 +23,7 @@ Duommá, Linda ja Ritva
 typo
         "ahte" CC <W:0.0> @CVP MAP:13510:r12 &typo &SUGGEST #5->5 ADD:8896:Err/Orth-any COPY:8905:Err/Orth-any
 ahte+CC ahte
-;       "ahte" CC Err/Orth <W:0.0> @CNP MAP:13510:r12 REMOVE:13712:r1466
+* **"ahte" CC Err/Orth <W:0.0> @CNP MAP:13510:r12 REMOVE:13712**: r1466
 : 
 
 echo "Teaksta." | tools/grammarcheckers/modes/trace-smegramrelease-dev.mode | less
@@ -47,7 +47,6 @@ NEG + FIN-V
 
 [msd = ".*V.*Neg.*"] [msd = ".*Prs.*" & ! lemma = "leat"]
 [msd = ".*V.*Neg.*" & msd != ".*ConNeg.*"] [msd =".*V.*" & msd != ".*ConNeg.*" & msd != ".*PrfPrc.*" & msd != ".*Inf.*"]
-
 
 dađi ... dađi
 [word = "dađi"][]{1,20}[word = "dađi"]

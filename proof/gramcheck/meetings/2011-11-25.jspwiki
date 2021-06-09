@@ -1,6 +1,6 @@
-!!!Grammatikkontrollprosjekt - møte
+# Grammatikkontrollprosjekt - møte
 
-!!!Feilkorpus
+# Feilkorpus
 
 * Lene's korpus - i "eatnigielteavsttat" er det mange "bra" feil - har gått genom över hälften, typ
 * samiske bloggene - http://indigenoustweets.com/blogs/se/
@@ -8,14 +8,14 @@
 * bruke våres 8 millionskorpus
 
 Døme på korleis vi automatisk kan finna real-word-feil:
-{{{
+```
 -it
 -at -boahtán boahtan (bytte på a og á og analysere for å se om det fins et lemma)
-}}}
+```
 
 Vi treng meir autentisk materiale - elevtekstar?
 
-!!E-post til lærere
+## E-post til lærere
 * invitasjon til samarbeid
 * bygger på Divvun - Divvun retter berre skrivefeil, ser ikkje samanhengar i setninga
 * grammatikkontrollen går vidare:
@@ -28,55 +28,53 @@ Vi treng meir autentisk materiale - elevtekstar?
 * grammatikkontrollen fritt tilgjengelig, som Divvun-programmene
 * får gjerne vera testbrukarar om dei er interessert (seinare, når vi har noko som kan testast)
 * berre visse typar feil, og ikkje i alle kontekstar
-** kan være frustrerende å få for mange feilmeldinger på korrekte konstruksjoner
+    - kan være frustrerende å få for mange feilmeldinger på korrekte konstruksjoner
 * feil vi prøver å fanga opp:
-** genitiv før postposisjon
-** number congruence verb-pred og subj-pred
-** valensfeil (feil kasus på objektet eller adverbialet til verbet)
-** kasusfeil
-** visse syntaktiske konstruksjoner (ahte vs. go)
-** ortografifeil som resulterer i nye ord ("vuosttáš")
+    - genitiv før postposisjon
+    - number congruence verb-pred og subj-pred
+    - valensfeil (feil kasus på objektet eller adverbialet til verbet)
+    - kasusfeil
+    - visse syntaktiske konstruksjoner (ahte vs. go)
+    - ortografifeil som resulterer i nye ord ("vuosttáš")
 * vi vil gjerne ha tilbakemelding om andre feil dei ser det kan vera nyttig å fanga opp
 * integrert i MS Office & OpenOffice/LibreOffice
 * Jobben deres: samle inn tekster, komprimere dem og sende pr e-post, synspunkt, seinare testing om dei er interessert, kanskje i lag med elevane
 
-!!!Andre spørsmål
+# Andre spørsmål
 
 * (nye) semantiske tagger i leksikon som er nyttige i feilfinninga og
   disambigueringa:
-** tagging +Hum +Org +Time +Plc +Ani +Txt (girji, lávlla, oppgave...)
+    - tagging +Hum +Org +Time +Plc +Ani +Txt (girji, lávlla, oppgave...)
   +Route +Measr +Wthr
   +Build +Edu
   +Activity/Event +Process +Object +CognitiveOBj +State
-** Eksempel
-*** Dákker dálkin ii mana olggos
-*** Dárkker dálkiid ii beasa murret
-*** Biegga, jealahas
+    - Eksempel
+        - Dákker dálkin ii mana olggos
+        - Dárkker dálkiid ii beasa murret
+        - Biegga, jealahas
 
-{{{
+```
 * valens i leksikon?
-** ikkje i leksikon, men i CG?
-** verb - subj human objektet - acc - tekst (čállit) <Ag_Nom_Hum__Th_Acc_Text>
+    - ikkje i leksikon, men i CG?
+    - verb - subj human objektet - acc - tekst (čállit) <Ag_Nom_Hum__Th_Acc_Text>
 		- subj human advl - ill - human <Ag_Nom_Hum__Go_Ill_Hum>
 		čállit <Ag_Nom_Hum__Th_Acc_Text> <Ag_Nom_Hum__Go_Ill_Hum>
-}}}
+```
 
 Per i dag i ei separat valensfil i xml-format, som ikkje er integrert med resten av infrastrukturen. Bør konverterast til eit format som kan integrerast med lexc / den leksikalske transduceren.
 
 * hva slags feilmeldinger
-** hvor detaljert må errortaggene være
-*** som no inntil vidare
+    - hvor detaljert må errortaggene være
+        - som no inntil vidare
 
-
-
-__TODO:__
-* integrera valens-xml i den morfologiske analysatoren (__Sjur__)
-* leggja til semantiske taggar i leksikonet (__Linda, Thomas__)
+**TODO:**
+* integrera valens-xml i den morfologiske analysatoren (**Sjur**)
+* leggja til semantiske taggar i leksikonet (**Linda, Thomas**)
 * skriva brev til lærarar om tekstinnsamling, potensielt samarbeid
-  (__Linda, Thomas, Børre__)
-** trond.are.anti@tana.kommune.no (rektor på Tana sameskole)
+  (**Linda, Thomas, Børre**)
+    - trond.are.anti@tana.kommune.no (rektor på Tana sameskole)
 
-!!!E-postutkast
+# E-postutkast
 
 Hallo! Sihtabet go ovttasbargat Divvun-teamain? Divvun-teama lea ráhkadišgoahtán grammatikkontrolla ja dárbbaha ollu feilkorpusa dan oktavuodas.
 

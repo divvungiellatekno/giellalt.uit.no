@@ -1,27 +1,27 @@
-!!! Meeting setup
+#  Meeting setup
 
 * Date: 31.01.2005
 * Time: 10.00 Norw. time
 * Place: Wherever we are:-)
 * Tools: Phone, iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-#  Opening
-#  Last week/since last meeting - short summary from each of us
-#  Infrastructure issues
-##    documentation system
-##    other?
-#  Corpus gathering - status
-#  Corpus infrastructure: how to continue (Tomi to be responsible)
-#  Term db: adjective description clean-up (for Thomas)
-#  Other issues
-#  Closing
+1.  Opening
+1.  Last week/since last meeting - short summary from each of us
+1.  Infrastructure issues
+    1.    documentation system
+    1.    other?
+1.  Corpus gathering - status
+1.  Corpus infrastructure: how to continue (Tomi to be responsible)
+1.  Term db: adjective description clean-up (for Thomas)
+1.  Other issues
+1.  Closing
 
-!!!1. Opening
+# 1. Opening
 10.10
 
-!!!2. Last week/since last meeting
+# 2. Last week/since last meeting
 * Maaren: no time
 * Thomas: looked at adjectives (details to be discussed after the meeting, with Trond)
 * Børre: done a few changes to the documentation system, didn't work, so will have to be redone
@@ -34,28 +34,28 @@
   university.
 * Sjur: project management + terminology database
 
-!!!3. Infrastructure issues
+# 3. Infrastructure issues
 * documentation system:
-** to start using the new documentation system, included the shared documentation,
+    - to start using the new documentation system, included the shared documentation,
           forrest needs to be updated. Subversion (svn) will have to be installed as a
           tool for that purpose.
-** for details, see notes at the end.
-** Sjur also believed we needed Forrest support in XMLEditor, but it was already
+    - for details, see notes at the end.
+    - Sjur also believed we needed Forrest support in XMLEditor, but it was already
           in place (potentially not for Marit, though).
 * Bugzilla:
-** Trond:
-***      not easy to see how to best organise bugs
-***      removed Web interface component
-***      added Infrastructure Product, with four components (CGI, Makefile,
+    - Trond:
+        -      not easy to see how to best organise bugs
+        -      removed Web interface component
+        -      added Infrastructure Product, with four components (CGI, Makefile,
                    documentation, localisation)
-** Sjur:
-***      updating/-grading Bugzilla? Latest stable is 2.18.x
-** general: a brief discussion on whether Bugzilla was the best option. While there
+    - Sjur:
+        -      updating/-grading Bugzilla? Latest stable is 2.18.x
+    - general: a brief discussion on whether Bugzilla was the best option. While there
                    certainly exists other nice alternatives, Bugzilla is installed and
                    working, and we'll not use any time on changing our bug tracking
                    and reporting system now (or ever, as long as it does its job).
 
-!!!4. Corpus gathering - status
+# 4. Corpus gathering - status
 Børre:
 * has talked to PE Klemetsen
 * has written a letter together with Trond and Sjur, now out for translation
@@ -69,41 +69,42 @@ More hints on who to contact in Finland? Juhani Lehtiranta has an electronic arc
 
 What about Sweden? Ask Mikael Svonni and Olavi Korhonen. Also look at [http://www.sofi.se/]
 
-!!!5. Corpus infrastructure: how to continue (Tomi to be responsible)
+# 5. Corpus infrastructure: how to continue (Tomi to be responsible)
 * location (and how)
 * format (but see Saara's notes, and cooperate with Lars Nygård in Oslo; also CSC
       in Helsinki)
 * conversion
 * integration with existing tools/infrastr.
 
-!!!6. Term db: adjective description clean-up (for Thomas)
+# 6. Term db: adjective description clean-up (for Thomas)
 * ok
 
-!!!7. Other issues
+# 7. Other issues
 * newsgroups: not working
 * still network problems
 
-!!!8. Closing
+# 8. Closing
 Closed at 11.45.
 
-!!!Notes to point 3
+# Notes to point 3
 
-!!Documentation system
+## Documentation system
 * Updating Forrest (via svn)
-** to install svn, download the following:
+    - to install svn, download the following:
           [http://metissian.com/downloads/macosx/subversion/subversion-client-1.1.3.dmg]
           see [http://subversion.tigris.org/project_packages.html] for non-Mac versions
-** then we need to change the user/owner of the forrest dir:
+    - then we need to change the user/owner of the forrest dir:
           - log in as admin
           - in a terminal window, type:
             sudo chown -R <boerre> /usr/local/forrest/
             (replace <boerre> with your real short user name)
-** finally, to update forrest, in the terminal type:
+    - finally, to update forrest, in the terminal type:
           svn up /usr/local/forrest/
 * needs to install Forrest-support into XMLEditor (send out archive)
 
-!!Other infrastructure
+## Other infrastructure
 * Upgrading Bugzilla to 2.18? Several new useful features and bugfixes.
-** see: [http://www.bugzilla.org/news/]
-** for security reasons, we should at least upgrade to the latest in the 2.16.x line
+    - see: [http://www.bugzilla.org/news/]
+    - for security reasons, we should at least upgrade to the latest in the 2.16.x line
+
         

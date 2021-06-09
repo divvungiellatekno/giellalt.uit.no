@@ -1,4 +1,4 @@
-!!!Sámi Speech Synthesis / TTS planning meeting
+# Sámi Speech Synthesis / TTS planning meeting
 
 Topics:
 * status
@@ -9,21 +9,20 @@ Financing:
 * Sjur meeting project board (ie money) next Thursday
 * Trond meeting Sámi Political Secretary next Thursday
 
-!!!Political view
+# Political view
 
 * price
 * timetable
 
+# Meetings
 
-!!!Meetings
-
-!! The Divvun project board meeting
+##  The Divvun project board meeting
 
 Based upon the 2003 report.
 
 Less than a year, and NOK ≈ 3.8 / 4.2 m
 
-!!Arbeids- og inkluderingsdepartementet, samisk avdeling 
+## Arbeids- og inkluderingsdepartementet, samisk avdeling 
 
 Forthcoming meeting.
 
@@ -34,18 +33,17 @@ Political setting:
 
 These political premises lead to the conclusion in 20.5.3[#1]
 
-!!20.5.3 Talesyntese
+## 20.5.3 Talesyntese
 
 "Stadig flere tjenester gjøres elektroniske og mye informasjon gjøres tilgjengelig i digital form, blant annet i biblioteker. For å kunne gi alle tilgang er det av flere pekt på behov for ytterligere innsats fra det offentlige, og mange aktører har pekt spesielt på tilgang til verktøy for talesyntese."
 
 "Tale har vist seg å være en effektiv måte å presentere informasjon på, enten den blir brukt alene, sammen med teksten, eller er synkronisert med teksten ved at markøren viser hvilket ord som blir lest. Taleprogram kan gi mennesker med lese- og skrivevansker tilgang til ulike typer tekst, fra fagbøker til aviser. Mennesker som skal lære norsk vil også kunne få god nytte av slik funksjonalitet. Sametinget har utredet om det er mulig å utvikle talesyntese for samiske språk. Talesyntesen er tenkt brukt som tilleggsverktøy i kombinasjon med ordinære korrekturprogram. Erfaring viser at bruk av talesyntese støtter både lese- og skriveprosessen. I tillegg vil talesyntese kunne bli brukt som grunnlag for å utvikle et moderne tjenestetilbud på mange felt."
 
+# Two views:
 
-!!!Two views:
+## 1 - we're done
 
-!!1 - we're done
-
-!!2 - we have just started
+## 2 - we have just started
 
 * sentence prosody, intonation studies
 * better empirical basis for the hmm model we have today 
@@ -59,15 +57,14 @@ The company will be reluctant to open up the system. Bringing the two together m
 
 For speech synthesis we will need a person who is capable of developing a tts.
 
-
-!!!Our view
+# Our view
 
 * Linguistically interesting
 * Working
 * Developing our research milieus
 * Companies must be chosen via public tender
 
-!!!Strategic goal
+# Strategic goal
 
 Establish an as independent production line as possible
 Be able to scale up the number of languages
@@ -84,14 +81,12 @@ production line for proprietary platforms
 
 Embedding applications into proprietary platforms is outside our scope
 
-# do the linguistics
-# see what the company does for microsoft
-# learn from that
-# do "the same" for unix platforms
+1. do the linguistics
+1. see what the company does for microsoft
+1. learn from that
+1. do "the same" for unix platforms
 
-
-
-!!!Prerequisites
+# Prerequisites
 
 Parsers: 
 * morphology, disambiguation, dependency: sme
@@ -102,8 +97,7 @@ Languages:
 * Lule Sámi: Like North Sámi, but writes the consonants with Swedish orthogrhaphic rules, and "has a more Scandinavian sound" (tt subjective)
 * South Sámi: Different from sme, smj: No consonant gradation, extensive umlaut, more diphthongs, more vowels., a "scandinavian-based orthography"
 
-
-!!!Work
+# Work
 
 Difference before and after 186
 
@@ -119,8 +113,7 @@ Recording is cheap, the cost is in the annotation:
 Labeling accentuation and breaks.
 1 day = 100 sentences
 
-
-!!What is the input from our intonation team?
+## What is the input from our intonation team?
 
 Work on the prediction side:
 Make a grammar for predicting the prosodic unit
@@ -138,10 +131,9 @@ Predicting abstract prominence:
 * focus particles
 * semantic issues
 
-# Syntactic analysis ==> 
-# information and intonantion structure, accent prediction => 
-# F0
-
+1. Syntactic analysis ==> 
+1. information and intonantion structure, accent prediction => 
+1. F0
 
 Product from our proof-of-concept demo.
 
@@ -153,28 +145,28 @@ Important development goals:
 Tasks for making the voice:
 * Training people
 * Developing the text-to-ipa (grapheme-to-phone(me))
-** 1 month / language
+    - 1 month / language
 * text corpora
-** selecting text, preprocessing text
-** 1 week / language?
+    - selecting text, preprocessing text
+    - 1 week / language?
 * speech corpora
-** hiring voice talent + studio
-** recordin in studio
-** preprocessing (splicing into chunks, files, etc)
+    - hiring voice talent + studio
+    - recordin in studio
+    - preprocessing (splicing into chunks, files, etc)
 * 2000 sentences / language (Finnish * 2)
-** 1 month of annotation (per speaker (voice))
-** Note that the cost of adding one more voice is relatively small,
+    - 1 month of annotation (per speaker (voice))
+    - Note that the cost of adding one more voice is relatively small,
    compared to other frameworks
 * Make the hmm model  <==================
-** [[with a unit selection model, it is not 1mth/lg but 6-12mth/lg]
+    - [[with a unit selection model, it is not 1mth/lg but 6-12mth/lg]
 * Syntax (external project)
-** Find the grammatical cues needed
+    - Find the grammatical cues needed
 * Intonation (syntactic and information structure to prosodic phrasing)
-** Predict F0 on the basis of syntax, semantics and information structure
-** Patrik's project = 4 man-years
-** Patriks recordings could feed into the project
-** Mapping syntax onto F0
-** Open question whether Sámi intonation is more complicated than Finnish
+    - Predict F0 on the basis of syntax, semantics and information structure
+    - Patrik's project = 4 man-years
+    - Patriks recordings could feed into the project
+    - Mapping syntax onto F0
+    - Open question whether Sámi intonation is more complicated than Finnish
 * Sum: 
 
 Labeling
@@ -194,9 +186,9 @@ Tasks for making TTS out of the voice:
 
 Tasks for making a product:
 * integrating with OSes and end user applications <=== major task, company
-** text encoding / Unicode and Sámi
-** parser integration / replacement - depends on the selected company
-** one-time job
+    - text encoding / Unicode and Sámi
+    - parser integration / replacement - depends on the selected company
+    - one-time job
 * installation packages
 * user documentation
 
@@ -211,23 +203,22 @@ The future of speech synthesis is in HMM synthesis.
 
 2008: 1/3 => 2/3 hmm, 1/3 US, nobody doing diphone
 
-
 * Tromsø/Divvun
-** (Syntax and Intonation outside the proj proper): research +parser work 1mth/l
-** Text and analysis: 5 months / lang
-** recording 1 w / lang
-** transcription: 1 month / lang + 1 mnth overhead for the first
-** Total: x man-months
+    - (Syntax and Intonation outside the proj proper): research +parser work 1mth/l
+    - Text and analysis: 5 months / lang
+    - recording 1 w / lang
+    - transcription: 1 month / lang + 1 mnth overhead for the first
+    - Total: x man-months
 * Helsinki
-**  Do consultation work 1month for the first voice, and then less
-**  ...?
-**  2-3 man-months
-** prototypes for 2 more langs: 2 month
+    -  Do consultation work 1month for the first voice, and then less
+    -  ...?
+    -  2-3 man-months
+    - prototypes for 2 more langs: 2 month
 * Company 
-**  Build voice
-**  Embed into programs
-**  x man-months
-**  y EUR
+    -  Build voice
+    -  Embed into programs
+    -  x man-months
+    -  y EUR
 
 Persons:
 * voice expert Hki
@@ -247,9 +238,9 @@ Sjur to integrate his former report and notes from this meeting
 Demo:
 
 * The Sámi sentences: 
-** sentences from 1-186,
-** the original Biret Ánne for the same sentences
-** sentences from the 187ff realm (... and hear the difference)
+    - sentences from 1-186,
+    - the original Biret Ánne for the same sentences
+    - sentences from the 187ff realm (... and hear the difference)
 
 hmm examples for Finnish: [http://homepages.inf.ed.ac.uk/jyamagis/]
 

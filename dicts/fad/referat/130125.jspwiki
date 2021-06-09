@@ -1,16 +1,15 @@
-!!!FAD- og korpusmøte 25.1.2013
+# FAD- og korpusmøte 25.1.2013
 
 Til stades: Berit Merete, Børre, Ciprian, Sjur, Trond
 
-!!! Saker:
+#  Saker:
 
 * Status
 * Arbeid framover med FAD
 * Autshumato
 * Neste møte
 
-
-!!! Status
+#  Status
 
 Cip har arbeidd i to pipelines, ap, gt (der gt betyr gt + obt).
 
@@ -18,7 +17,7 @@ Katalogen todo-done:
 
 Det er fem filer i 
 
-{{{
+```
 dhcp274-ans:src ttr000$ wc -l *l|sort -nr
   173322 total
    93995 done_fad_nobsme.20121130_nob-c_sme-c.xml
@@ -26,12 +25,11 @@ dhcp274-ans:src ttr000$ wc -l *l|sort -nr
    21203 done_fad_nobsme.20121130_nob-s_sme-c.xml
     7099 todo_fad_nobsme.20121130_nob-c_sme-c.xml
      573 todo_fad_nobsme.20121130_nob-s_sme-c.xml
-}}}
-
+```
 
 Det er ein systematisk feil i obt. Den gjev ikkje 
 
-{{{
+```
 echo riksvegvegnettet | obt/bin/mtag-osx64 
 "<riksvegvegnettet>"
 	"riksvegvegnettet" subst prop <<<
@@ -50,59 +48,59 @@ echo situasjonen | obt/bin/mtag-osx64
  echo hesdfstesituasjonen | obt/bin/mtag-osx64 
 "<hesdfstesituasjonen>"
 	"hesdfstesituasjonen" subst prop <<<
+
 		
 riksveg+N#+Cmp+veg+N#+Cmp+nett+N+Neu+Sg+Indef      
 riksveg+N#+Cmp+veg+N#+Cmp+nett+N+Neu+Sg+Indef	riksvegvegnett
-}}}
+```
 
 Def som kan reduserast til Indef:
 
-{{{
+```
 cat *l|grep l_gt |tr '<' '>'|cut -d">" -f3|unob|grep '+Def'|cut -f1|wc -l
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
      215
-}}}
+```
 
-!!! Arbeid framover med FAD
+#  Arbeid framover med FAD
 
-
-__TILTAK__
+**TILTAK**
 
 ordparallellisering
-# BM, Marja og Trond ser på dette:
-# rette 2 todo-filer i main/words/dicts/nobsme/terms/admin/src/todo-
-## todo-filene: rett sme manuelt i fil
-## I prosessen: sjå om det er ting som kan ordnast (halv)automatisk
-# nob
-## finpusse lemma
-## Redusere Def til Indef 
-### Finn dei: __Trond__
-### Putt dei inn på plass: __Ciprian__
-## analysere ord som ikkje får analyse __Trond__
-## 600 som ikke har lemma med gt-pipeline
-# Analysere ordformer og gje grunnformer
-# nobsme
-## Endre <mg> til <mg rank=""> (__Ciprian__)
-## Sette inn rank-verdiar manuelt 
-## Sortere mg etter rank-verdiar (__Ciprian__)
-# Autsh (sjå neste punkt)
+1. BM, Marja og Trond ser på dette:
+1. rette 2 todo-filer i main/words/dicts/nobsme/terms/admin/src/todo-
+    1. todo-filene: rett sme manuelt i fil
+    1. I prosessen: sjå om det er ting som kan ordnast (halv)automatisk
+1. nob
+    1. finpusse lemma
+    1. Redusere Def til Indef 
+        1. Finn dei: **Trond**
+        1. Putt dei inn på plass: **Ciprian**
+    1. analysere ord som ikkje får analyse **Trond**
+    1. 600 som ikke har lemma med gt-pipeline
+1. Analysere ordformer og gje grunnformer
+1. nobsme
+    1. Endre <mg> til <mg rank=""> (**Ciprian**)
+    1. Sette inn rank-verdiar manuelt 
+    1. Sortere mg etter rank-verdiar (**Ciprian**)
+1. Autsh (sjå neste punkt)
 
-{{{
+```
 grep 'l_gt_c="0"' *l |wc -l
      191
 grep 't_gt_c="0"' *l |wc -l
      369
-}}}
+```
 
-!!Ultimate mål:
+## Ultimate mål:
 * Forbetre allmennordboka med FAD-resultat
   (tja, det beste kan vera å ha dei kvar for seg)
 * Lage domenespesifikk FAD-ordbok
-** Risten2, evt. NSG
+    - Risten2, evt. NSG
 * Lage grensesnitt for parallellkorpus ( -> Korp )
 * Lage Auths-løysing
 
-!!! Autshumato
+#  Autshumato
 
 [/tools/autshumato.html]
 
@@ -110,27 +108,23 @@ Få omsetjarar til å bruke Authsumato
 
 * Tilby avgrensa omsetjingsminne
 * Dictionary og glossary (nob<tab>sme), to alternativ:
-** Tilby __autsh-Dictionary__ (nobsme minus vanlege ord)
-   og __autsh-glossary__ (FAD-ordboka? par som har 
+    - Tilby **autsh-Dictionary** (nobsme minus vanlege ord)
+   og **autsh-glossary** (FAD-ordboka? par som har 
    høgare domenefrekvens enn allmennfrekvens)
-** Domenespesifikk FAD er Dictionary og deira private er Glossary
+    - Domenespesifikk FAD er Dictionary og deira private er Glossary
 * med kvalitetssikring?
-** Tilby omsetjingsminnet in toto
-** Tilby å parallellisere tekstpar for folk
+    - Tilby omsetjingsminnet in toto
+    - Tilby å parallellisere tekstpar for folk
 
 Kandidatar til å teste: Arnstein, Sametingsomsetjarar, Mikkel Magnus Utsi? Dep?
 
-__TODO__
+**TODO**
 
-* Prøve Autshumato sjølv (__alle andre enn BM__)
-* Lære Autshumato til BM (__husk å dokumentere__)
+* Prøve Autshumato sjølv (**alle andre enn BM**)
+* Lære Autshumato til BM (**husk å dokumentere**)
 * Diskutere med Arnstein + vise
 
-!!! Neste møte
+#  Neste møte
 
 * Tromsø tysdag 29.1 kl. 13
 * Plenum: Veka etter der att (vi vurderer det)
-
-
-
-

@@ -4,21 +4,21 @@ Tilstades: Sjur, Linda, Duommá, Børre
 
 realword error: 115 i boundcorpus
 
-Jf. {{sme/tools/grammarcheckers/errordata/real-word-errors_correct-corpus}}
+Jf. `sme/tools/grammarcheckers/errordata/real-word-errors_correct-corpus`
 
 Døme:
 
-{{{
+```
 Dal dovdat ahte dađistaga manas¢(adv,mix|maŋás) mannat.
 Mun oaivvildan ahte ii leat riekta ahte dusse¢(adv,conc|dušše) stáhta galgá mearridit, Mikkel Per Persen Sara joatká.
 Leahko¢(verb,con|Leatgo) sáhkkii?
 Leatgo sáhkii¢(adj,conc|sáhkkii)?
 Dasa lassin lágiduvvo oktasaš oassi, mas fáddan¢(noun,á|fáddán) lea juoigan.
 Davvi-Amerihká álgoálbmogat leat dan rájes go eurohpalaččat bohte dohko, vásihan vilgesolbmuid dáfus vealáheami¢(noun,á|vealaheami) ja álbmotgoddima.
-}}}
+```
 
 Døme på confusion pair frå stadieveksling:
-{{{
+```
 vázzán
 vázzán    vázzi+N+NomAg+Sg+Nom+PxSg1
 vázzán    vázzi+N+NomAg+Sg+Gen+PxSg1
@@ -35,11 +35,11 @@ vázzán    vázzát+V+IV+Ind+Prs+Sg1
 
 váccán 
 váccán    vázzit+V+IV+Ind+Prs+Sg1
-}}}
+```
 
 Frekvensliste fra lista ovenfor
 
-{{{
+```
 $ cat gurk.txt |tr ' ' '\n'|grep ¢| sed -E 's/(.*)¢.*/\1/'| sed -e 's/(//' -e 's/)//'|sort |uniq -c|sort -n
       1 ahte
       1 alu
@@ -142,10 +142,10 @@ $ cat gurk.txt |tr ' ' '\n'|grep ¢| sed -E 's/(.*)¢.*/\1/'| sed -e 's/(//' -e 
       2 okte
       2 rájat
       2 sáhtašii <-----
-}}}
+```
 
 Frekvensliste over feiltyper
-{{{
+```
 $ cat gurk.txt |tr ' ' '\n'|grep ¢| sed -E 's/.*¢(.*)/\1/'| sed -e 's/(//' -e 's/)//'|cut -f1 -d"|" | sort | uniq -c | sort -n
       1 adj,a
       1 adj,á
@@ -200,28 +200,27 @@ $ cat gurk.txt |tr ' ' '\n'|grep ¢| sed -E 's/.*¢(.*)/\1/'| sed -e 's/(//' -e 
       9 svow
      27 á
      36 conc
-}}}
+```
 
 Meir om samanblandingspar:
 * stadieväxling:  hp vs hpp, tk vs tkk etc
-* geminat xyy vs xy: pp vs hp, tt vs ht etc   {{ahte¢(verb,conc|atte)}}
+* geminat xyy vs xy: pp vs hp, tt vs ht etc   `ahte¢(verb,conc|atte)`
 * 1Sg-PrfPrc, Gen-Nom, guhkku¢(pp,conc|guhku).
 * máksolippu-máksolihpu Gen-Nom
 * korte passiver
 
-Kan vi tagga problematiske konsonantsentrum? Dvs potensielle feilkjelder utan å seia at det faktisk er feil. 1 exempel: __dusse__ vs __dušše__
+Kan vi tagga problematiske konsonantsentrum? Dvs potensielle feilkjelder utan å seia at det faktisk er feil. 1 exempel: **dusse** vs **dušše**
 
 Suoma ráđđehusa ásahan virgeolmmošbargojoavku evttoha Lappi oarjedavveoassái Enodaga, Gihttela, Muonio ja Kolari laktima oktasaš gielddan.
 
 Andre problem:
 
-{{{
+```
         correct errors not found in dc
                 {'correct': 'gieldan', 'errorinfo': 'noun,conc', 'type': 'errorortreal', 'start': 251, 'error': 'gielddan', 'end': 259}
-}}}
+```
 
-
-{{{
+```
 {"errs":[["leamas",70,76,"typo","Ii leat sátnelisttus",["leamaš","leamašan","lean"],"Čállinmeattáhusat"],["gánnehatti",83,93,"typo","Ii leat sátnelisttus",["gánnáhahtti","gánnáhaddi","gánnehahtti","gánnehasti"],"Čállinmeattáhusat"]],"text":"Go olbmot leat heaitán eanadoaluin, lea dainna go eará ealáhusat leat leamas eanet gánnehatti. "}
 {"errs":[["vuostalagai",64,75,"typo","Ii leat sátnelisttus",["vuostálaga","vuostálagaid","vuostálagain","vuostálagas","vuostálagat"],"Čállinmeattáhusat"]],"text":"Dál leat riika rájat boahtán min gaskii, ja ealáhusat biddjojit vuostalagai. "}
 {"errs":[["guohttomat",9,19,"typo","Ii leat sátnelisttus",["guohttumat","guohtumat"],"Čállinmeattáhusat"],["áidujuvvun",26,36,"typo","Ii leat sátnelisttus",["áidojuvvon"],"Čállinmeattáhusat"]],"text":"Dál leat guohttomat eanaš áidujuvvun sisa, nu ahte álki lea diehttit gos ealánat leat. "}
@@ -247,9 +246,9 @@ Andre problem:
 {"errs":[["miellahtuvuohta",9,24,"typo","Ii leat sátnelisttus",["miellahttuvuohta","miellahttuvuođa"],"Čállinmeattáhusat"],["riikačoahkkimii",40,55,"typo","Ii leat sátnelisttus",["riikkačoahkkimii"],"Čállinmeattáhusat"]],"text":"Njuolgga miellahtuvuohta ii ahte áirasa riikačoahkkimii. "}
 {"errs":[["stivralahttun",88,101,"typo","Ii leat sátnelisttus",["stivrralahttun"],"Čállinmeattáhusat"]],"text":"Ságajođiheaddji Torkel Rasmussen lassin válljejuvvui várraságajođiheaddjin Karen Kitti, stivralahttun Heidi Kitti, Niilo Kalevi Länsman ja Siskko Länsman. "}
 {"errs":[["sámegielabálvalusaid",44,64,"typo","Ii leat sátnelisttus",[],"Čállinmeattáhusat"]],"text":"– Juo dála dilis lea dievas bargu vuođustit sámegielabálvalusaid dárbbu ja ain stuorit gielddas dat livččii jo mihá garrasit hástalus. "}
-}}}
+```
 
-{{{
+```
 Go olbmot leat heaitán eanadoaluin, lea dainna go eará ealáhusat leat leamas eanet gánnehatti.  
 Ovdal eai gávdnon rájat.  
 Dál leat riika rájat boahtán min gaskii, ja ealáhusat biddjojit vuostalagai.  
@@ -297,4 +296,4 @@ Sámedikkis lea ovddasvástádus muittuhit stáhtaid, ahte dálkkádat-rievdan g
 Suoma ráđđehusa ásahan virgeolmmošbargojoavku evttoha Lappi oarjedavveoassái Enodaga, Gihttela, Muonio ja Kolari laktima oktasaš gielddan.  
 – Juo dála dilis lea dievas bargu vuođustit sámegielabálvalusaid dárbbu ja ain stuorit gielddas dat livččii jo mihá garrasit hástalus.  
 Čielga diehttu 
-}}}
+```

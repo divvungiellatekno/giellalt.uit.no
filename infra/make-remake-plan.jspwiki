@@ -1,8 +1,8 @@
-!!!make remake
+# make remake
 
 Brief overview of present make-redo solution: Børre
 
-{{{
+```
 gt/Makefile - main entrance
 gt/analyser.mk - main entrance for analyzers and for tts phon-$lang.txt
 gt/mk-files/ - main entrance for whatever field they cover
@@ -14,13 +14,12 @@ gt/mk-files/ - main entrance for whatever field they cover
            /polderland.mk =>
            /speller.mk    =>
 gt/$LANG/Makefile - variables that are lang specific, esp. SRCS, also
-}}}
+```
 
 Sjur: What happens when we insert e.g. Greenlandic?
 Børre: Let us insert Greenlandic into the tree, see what works and what don't, and from that find a solution.
 
-
-{{gt/kal/phonrules.mk}} - specify xfst processing instead of twolc
+`gt/kal/phonrules.mk` - specify xfst processing instead of twolc
 
 move kal and kom from st/ & kt/ to gt/ in the make-redo branch
 
@@ -29,9 +28,9 @@ Sjur: That is a different thing. Sfst is a complete replacement for the xerox to
 Trond: fin is not in our vcs
 Børre: What we are discussing are xerox tools and in the future, be able to insert hfst into our tool chain, which read our xerox files fine.
 
-{{{
-make all TARGET=sme tool=[xerox|sfst|whatever] (reasonable default)
-}}}
+```
+make all TARGET=sme tool=[xerox|sfst](whatever) (reasonable default)
+```
 
 reasons for having parallel tool chains:
 * future flexibility
@@ -41,7 +40,6 @@ reasons for having parallel tool chains:
 Development goal:
 * All procedures on global level
 * On language-specific level only file specifications & linguistics
-
 
 COMPILER = twolc #-utf8
 
@@ -64,11 +62,8 @@ POLDERLAND=supported
 kal/Makefile
 PREFERRED_TWOLC=xfst
 
-
-
 if xfst, do a-b-c
 if twolc, do x-y-z
-
 
 make binary phonrules (name!! mphonrules)
 
@@ -78,7 +73,7 @@ orth-kal.txt  Kleinschmidt 2 modern
 ipa2sampa.pl   <==== totally lg-independent
 ipa2sampa.fst  <==== totally lg-independent
 
-{{{
+```
 twol: $(RULEBIN)
 $(RULEBIN): $(RULESRC)
 	@echo
@@ -91,12 +86,12 @@ $(RULEBIN): $(RULESRC)
 	quit \n" > tmp/twol-$(TARGET)-script
 	$(COMPILER) < tmp/twol-$(TARGET)-script
 	@rm -f tmp/twol-$(TARGET)-script
-}}}
+```
 
-# Here we build xfst-kal.bin, the morphophonological component.
-# This goal depends on xfst-kal.txt
+1. Here we build xfst-kal.bin, the morphophonological component.
+1. This goal depends on xfst-kal.txt
 
-{{{
+```
 xfst-kal.bin: ../bin/xfst-kal.bin
 ../bin/xfst-kal.bin: xfst-kal.txt
 	@echo
@@ -108,24 +103,21 @@ xfst-kal.bin: ../bin/xfst-kal.bin
 	$(XFST) < ../tmp/xfst-kal-script
 	@rm -f ../tmp/xfst-kal-script
 
-
 	@printf "read regex [[@\"../bin/kal-lex.save\"] .o. \
 	[@\"../bin/xfst-kal.bin\"]] ; \n\
 
 	printf "compile-source $(LEX)  \n\
 	read-rules ../bin/twol-fao.bin \n\
-}}}
+```
 
-# This target removes all !SUB-marked entries
-{{{
+1. This target removes all !SUB-marked entries
+```
 %.norm: $(TARGET)/int/%.norm
 $(TARGET)/int/%.norm: %.txt
         @echo
         @echo "*** Removing non-orthographic entries - norm ***" ;
 	@echo
 	@egrep -v '(SUB|\^NG\^)' $< > $@
-
-
 
 VPATH = $(TARGET)/src:$(TARGET)/bin:$(TARGET)/tmp
 
@@ -139,18 +131,18 @@ $(TARGET)/bin/$(TARGET).save: twol-$(TARGET)-descriptive.bin \
 	compose-result \n\
 	save-result $@ \n\
 	quit \n" > tmp/save-script
-}}}
+```
 
 Problem: name clashes
 Solution: More explicit names, clear file naming conventions
 
-!!!Make dependencies
+# Make dependencies
 
 * all targets available to all languages
 * every target checks for the existence of the required source files
 * if the resources do not exist, print an error message, listing the missing files
 * we need to visualise the depenedencies - the makefiles are too complex
-** [http://search.cpan.org/~srezic/GraphViz-Makefile-1.15/Makefile.pm] - a perl
+    - [http://search.cpan.org/~srezic/GraphViz-Makefile-1.15/Makefile.pm] - a perl
    module to produce Graph Viz output files diagramming Makefiles
 
 Make is not utilised
@@ -166,12 +158,9 @@ We have so many things there going on that we should have a stable prototype bef
 3.
 For the testbench we
 
-
 Börre: Calls for a new naming convention
 Trond: it is not uniform now.
 hyph: kal has hyph-kal.fst as a target, the big file seems to have hyph-fes
-
-
 
 Changing from make to other programs?
 
@@ -180,7 +169,6 @@ If we replace make with something else, it makes the job bigger
 We wll then have another learning curve
 The risks are larger as well
 If Saara is correct in that we have not made the best out of make yet, we shoul do that first
-
 
 Saara:
 What was actually the problem with the new make setup?
@@ -197,7 +185,6 @@ We may get lgs more uniform, but there will always be differences, thus we would
 Børre:
 We don't have implicit rules for going rom .txt to .fst
 
-
 $(TARGET)/bin/%.fst: %.lex
     commands
 
@@ -208,11 +195,7 @@ $(TARGET)/bin/hyph-%.fst: %.lex
 
 *-lex.txt:.fst
 
-
-
 hyph-%.fst: %.lex
-
-
 
 make TARGET=sme TOOL=hu speller
 isme.fst
@@ -240,7 +223,6 @@ and all binary final files are given a TOOL definition
 
 3 can be fixed (so, Per must relearn habits)
 
-
 The newer lgs are the well-behaving ones:
 ipk, fao, sjd
 
@@ -248,7 +230,6 @@ The older languages are the idiosyncratic ones
 sme, kal, kom
 sme has all morph in sme-lex
 sjd and ipk has it nicely distributed in noun-sjd-morph etc.
-
 
 first attempt
 split make-file and make everything working
@@ -259,7 +240,6 @@ start with a simple makefile, building stone by stone
 "demolish what we have into lego pieces and build a new castle"
 ... and the build
 
-
 So, we need a build analysis document.
 
 Ken Beesley (quote):
@@ -267,7 +247,6 @@ Ken Beesley (quote):
 "The structure of the makefile should be drawn with arrows on the wall, and kept in synch at all time"
 
 (Trond: or do this in a file, in a drawing program)
-
 
 Conclusion:
 
@@ -278,7 +257,7 @@ The cake pieces from Børres party should be put on hold (and perhaps be more ma
 New meeting, issues:
 - make lgs as identical as there is ground forM.
   - naming conventions
-Renaming must be __discussed__. This goes especially for the production line lgs (sme, smj, sma, kal, fit)
+Renaming must be **discussed**. This goes especially for the production line lgs (sme, smj, sma, kal, fit)
 Topics: new suffixes: noun-sme-lex.txt => noun-sme.lexc, sme-dis.rle _> sme-dis.cg3
 names like ateq- away.
 Start tagging revisions -- the current revision as the baseline version

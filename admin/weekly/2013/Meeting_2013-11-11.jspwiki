@@ -1,4 +1,4 @@
-!!!Gøteborg-oppsummering
+# Gøteborg-oppsummering
 
 fyrste føredrag
 * bra
@@ -18,20 +18,20 @@ Lars Borin:
 * estarane ei heil veke i jan/feb - overlapp? ikkje heilt men delvis?
 * kan ein av programmerarane koma? manglande framgang med deepdict
 * ciprian om deepdict: han har laga demo, har stoppa ved lemmatiseringa
-** kva slags lemma ved dynamisk samansetjing?
-** kva slags lemma ved avleiing? v -> n, v som lemma istf n
+    - kva slags lemma ved dynamisk samansetjing?
+    - kva slags lemma ved avleiing? v -> n, v som lemma istf n
 
-{{{
+```
 hus+N+Neu+Sg+Cmp#bygge+V+Der/ing+N+Fem+Sg
-}}}
+```
 
-!!kva slags lemma ved dynamisk samansetjing?
+## kva slags lemma ved dynamisk samansetjing?
 
 Sletta alle taggar før +Cmp og # (inkl. +Cmp)
 
 => hus#bygge+V+Der/ing+N+Fem+Sg
 
-!!kva slags lemma ved avleiing? v -> n, v som lemma istf n
+## kva slags lemma ved avleiing? v -> n, v som lemma istf n
 
 transformera v+lemma + derivasjon til n-lemma:
 
@@ -40,14 +40,14 @@ transformera v+lemma + derivasjon til n-lemma:
 #. snu
 #. komponer
 
-{{{
+```
 hus#bygge+V+Der/ing+N+Fem+Sg
 bygge+V+Der/ing+N+Fem+Sg -> bygging+N+Fem+Sg
 
 => hus#bygging+N+Fem+Sg
-}}}
+```
 
-{{{
+```
 1. $[ +Der/ing +N ? +Sg ] ; -> ny fst med berre Der/ing
 2. projiser +N ... +Sg på nedsida
 
@@ -65,10 +65,9 @@ bygging+N...+Sg:bygge+V+Der/ing+N .o. bygge+V+Der/ing+N...:bygging
 =>
 
 bygging+N...+Sg:bygging
-}}}
+```
 
-
-!!!Stor eng - glyf basert på n eller N?
+# Stor eng - glyf basert på n eller N?
 
 * no er det éin eng (eitt kodepunkt) som blir brukt for to ulike typografiske engar, ein N-lik og ein n-lik.
 * fontar varierer etter kva form dei bruker
@@ -82,42 +81,42 @@ bygging+N...+Sg:bygging
 Michael:
 "I agree that the N-form, not the n-form capital eng should be the default. It is historically the older form."
 
-
-||Språk              || n/N ||    Talarar || Land
-| Afrikanske språk:  |   n  |           - | -
-|  Bari              |   n  |     750 000 | Sør-Sudan, Uganda, Den Demokratiske Republikken Kongo
-|  Bemba             |   n  |   3 600 000 | Zambia
-|  Dinka             |   n  |   1 400 000 | Sør-Sudan
-|  Ewe               |   n  |   3 600 000 | Ghana, Togo
-|  Fula              |   n  |  25 000 000 | Benin, Burkina Faso, Chad, Gambia, Guinea, Kamerun, Mali, Mauretania, Niger, Nigeria, Senegal, den Sentral-Afrikanske Republikken, Sierra Leone, Sudan, Togo
-|  Ganda             |   n  |   1 400 000 | Uganda
-|  Mandingespråk:    |   n  |           - | -
-|   kassonke         |   n  |   1 600 000 | Mali, Senegal
-|   mandinka         |   n  |   1 300 000 | Gambia, Senegal
-|   kita maninka     |   n  |     450 000 | Mali
-|   jahanka          |   n  |      30 000 | Guinea
-|   marka            |   n  |     230 000 | Burkina Faso
-|   bambara–dyula    |   n  |   4 000 000 | Burkina Faso, Elfenbeinskysten, Mali
-|   aust-maninka     |   n  |   3 300 000 | Guinea, Mali, Liberia, Senegal, Sierra Leone, Elfenbeinskysten
-|   bolon            |   n  |      23 000 | Burkina Faso
-|   sinikere         |   n  |       6 000 | Burkina Faso
-|  Songhayspråk:     |   n  |           - | -
-|   zarma            |   n  |   2 500 000 | Niger
-|   koyraboro senni  |   n  |     400 000 | Mali
-|   koyra chiini     |   n  |     200 000 | Mali
-|   nordleg songhay  |   n  |           ? | Niger
-|  Tonga             |   n  |   1 100 000 | Zambia, Zimbabwe, Mozambique
-|  Wolof             |   n  |   4 200 000 | Senegal, Gambia, Mauretania
-| Amerikanske språk: |   ?  |           - | -
-|  O'odham           |   ?  |       9 750 | USA, Mexico
-| Australske språk:  |   ?  |           - | -
-|  Bandjalang        |   ?  |         100 | Australia
-|  Yolngu            |   ?  |           ? | Australia
-| Samiske språk:     |   N  |           - | -
-|  enaresamisk       |   N  |         300 | Finland
-|  lulesamisk        |   N  |       1 000 | Noreg, Sverige
-|  nordsamisk        |   N  |      21 000 | Finland, Noreg
-|  skoltesamisk      |   N  |         400 | Finland
+|  Språk              | n/N |    Talarar | Land
+| --- | --- | --- | --- 
+|  Afrikanske språk:  |   n  |           - | -
+|   Bari              |   n  |     750 000 | Sør-Sudan, Uganda, Den Demokratiske Republikken Kongo
+|   Bemba             |   n  |   3 600 000 | Zambia
+|   Dinka             |   n  |   1 400 000 | Sør-Sudan
+|   Ewe               |   n  |   3 600 000 | Ghana, Togo
+|   Fula              |   n  |  25 000 000 | Benin, Burkina Faso, Chad, Gambia, Guinea, Kamerun, Mali, Mauretania, Niger, Nigeria, Senegal, den Sentral-Afrikanske Republikken, Sierra Leone, Sudan, Togo
+|   Ganda             |   n  |   1 400 000 | Uganda
+|   Mandingespråk:    |   n  |           - | -
+|    kassonke         |   n  |   1 600 000 | Mali, Senegal
+|    mandinka         |   n  |   1 300 000 | Gambia, Senegal
+|    kita maninka     |   n  |     450 000 | Mali
+|    jahanka          |   n  |      30 000 | Guinea
+|    marka            |   n  |     230 000 | Burkina Faso
+|    bambara–dyula    |   n  |   4 000 000 | Burkina Faso, Elfenbeinskysten, Mali
+|    aust-maninka     |   n  |   3 300 000 | Guinea, Mali, Liberia, Senegal, Sierra Leone, Elfenbeinskysten
+|    bolon            |   n  |      23 000 | Burkina Faso
+|    sinikere         |   n  |       6 000 | Burkina Faso
+|   Songhayspråk:     |   n  |           - | -
+|    zarma            |   n  |   2 500 000 | Niger
+|    koyraboro senni  |   n  |     400 000 | Mali
+|    koyra chiini     |   n  |     200 000 | Mali
+|    nordleg songhay  |   n  |           ? | Niger
+|   Tonga             |   n  |   1 100 000 | Zambia, Zimbabwe, Mozambique
+|   Wolof             |   n  |   4 200 000 | Senegal, Gambia, Mauretania
+|  Amerikanske språk: |   ?  |           - | -
+|   O'odham           |   ?  |       9 750 | USA, Mexico
+|  Australske språk:  |   ?  |           - | -
+|   Bandjalang        |   ?  |         100 | Australia
+|   Yolngu            |   ?  |           ? | Australia
+|  Samiske språk:     |   N  |           - | -
+|   enaresamisk       |   N  |         300 | Finland
+|   lulesamisk        |   N  |       1 000 | Noreg, Sverige
+|   nordsamisk        |   N  |      21 000 | Finland, Noreg
+|   skoltesamisk      |   N  |         400 | Finland
 
 Kjelde: engelsk wikipedia
 

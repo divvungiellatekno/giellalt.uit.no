@@ -1,71 +1,71 @@
-!!!Møte Sjur og Trond
+# Møte Sjur og Trond
 
 Saker:
 * virtuelle servarar
 * Hunspell/InDesign-status
 * TTS
-** utlysing
-** tekst-til-IPA
+    - utlysing
+    - tekst-til-IPA
 * nye språk og ny infra
 * bugzilla-bugar
 * fad-ordbok
 * app/dings for fad
 
-
-!!!Virtuelle servarar
+# Virtuelle servarar
 
 *   gtsvn.uit.no - alle og berre svn-repositorium (inkl. korpus)
 *   gtweb.uit.no - andre nett-tenester enn svn og oahpa
 *   gtlab.uit.no - alt eksperimentelt (det er lov å velta denne servaren)
 * gtoahpa.uit.no - (stabil) oahpa
 
-!!Fysiske servarar:
+## Fysiske servarar:
 
 * gtsvn.uit.no - masking for dagens brukarkontoar + "gjestemaskin"
 * xserve (divvun.no / giellatekno.uit.no) - som i dag
+
  
 Ting som skal gjerast:
 * flytta svn over til ny servar (utan at svn-URL-ane blir endra)
-** (__Børre__)
+    - (**Børre**)
 * sette opp webtenestene (med same URL som tidlegare)
-** (__Børre, Trond__)
+    - (**Børre, Trond**)
 * flytta stabil oahpa 
-** (__Heli, Ryan__)
+    - (**Heli, Ryan**)
 * sette opp labben 
-** (i denne omgang: __Heli, Ryan__, seinare andre ad lib)
+    - (i denne omgang: **Heli, Ryan**, seinare andre ad lib)
 
 Tidsplan: 
 * Oahpa-arbeidet: som avtalt på møte.
 * svn og web: Sjur diskuterer med Børre og kjem attende med
   forslag. Mål: innan 17.5.
 
-!!! Hunspell/InDesign-status
+#  Hunspell/InDesign-status
 
 Status: Beta sist fredag.
 
-!!!TTS
+# TTS
 
-!!Utlysing
+## Utlysing
 
 Josef på Sametinget arbeider med det formelle ved utlysinga. Sjur 
 står for det tekniske. Utlysing denne eller neste veke.
 
-!!Tekst-til-IPA
+## Tekst-til-IPA
 
-Vi (__Sjur__) ber Tino om berre å sjå på input-sida, dvs implmentera ein 
+Vi (**Sjur**) ber Tino om berre å sjå på input-sida, dvs implmentera ein 
 Xerox-kohort-lesingsmodus. Utsida ser vi på seinare (vi må eksperimentera
 sjølve).
 
-!!!Nye språk og ny infra
+# Nye språk og ny infra
 
 * Framlegg: Jaska går over til å bruka ny infra
 * han er ein aktiv brukar, og dermed ein god testar
 * han har ikkje så mange dependensar enno
 * vi får tilbakemeldingar om ting som ikkje funkar
 
-!!!Bugzilla-bugar
+# Bugzilla-bugar
 
-!!Spesifikke lingvistikk-bugar
+## Spesifikke lingvistikk-bugar
 
 1284 og 1328 som spesifiser nedanfor.
 
@@ -73,46 +73,45 @@ Dei andre lingvistikk-bugane er rangert med P, som vist nedanfor.
 Sjur og Thomas ser på absolutt
 prioritering og kjem attende med framlegg om tidsfrister etc.
 
-! 1284
+###  1284
  - møte denne veka (1300 den 3.5.?)
 
-! 1328
+###  1328
  - disk. held fram i Bugz
 
-!1063	nor	P3	downcase-derived-proper.xfst doesn't allow initial upper case letter
+### 1063	nor	P3	downcase-derived-proper.xfst doesn't allow initial upper case letter
 Close?
 
-!1214	nor	P3	Tagproblematikk rundt ConNeg, sme versus sma
+### 1214	nor	P3	Tagproblematikk rundt ConNeg, sme versus sma
 
-# Thomas endre lexc
-# Lene endre dis
-# Thomas etc. endre gramchk
+1. Thomas endre lexc
+1. Lene endre dis
+1. Thomas etc. endre gramchk
 
 Dette tar vi etter at 1284 er gjennomført.
 
-!1254	nor	P2	Innføre svak bøyning av dat + substantiv?
+### 1254	nor	P2	Innføre svak bøyning av dat + substantiv?
 Neste veke?
 
-!1292	maj	P2	Manglende Pr og Po i vårt leksikon, noen må omdefineres fra Adv
+### 1292	maj	P2	Manglende Pr og Po i vårt leksikon, noen må omdefineres fra Adv
 
-!!P4
-!1275	nor	P4	Noereh! generer også noereh!
+## P4
+### 1275	nor	P4	Noereh! generer også noereh!
 Marginal men ergeleg.
 
-!1271	nor	P4	Lowercase Sami words accepted as uppercase for Prop and ACR
+### 1271	nor	P4	Lowercase Sami words accepted as uppercase for Prop and ACR
 Her er det også ein prinsipiell diskusjon om lemmatisering, jf. punktet om
 lemmatisering nedanfor. Vi diskuterer 1271 i samband med det.
 
-!!P5
-!1216	min	P5	Mulig overgererering av gerundium- og imperativ-former
-!1308	enh	P5	Noen deriverte verb viser ikke derivasjon i fst
-!1326	nor	P5	Indef pronomener - mangler og mulige feilanalyser
-!1296	enh	P5	guovttos
+## P5
+### 1216	min	P5	Mulig overgererering av gerundium- og imperativ-former
+### 1308	enh	P5	Noen deriverte verb viser ikke derivasjon i fst
+### 1326	nor	P5	Indef pronomener - mangler og mulige feilanalyser
+### 1296	enh	P5	guovttos
 
+## lexc-lemmatisering
 
-!!lexc-lemmatisering
-
-{{{
+```
 dearvvašvuođabirassihkarvuohta
 dearvvašvuođabirassihkkarvuohta
 
@@ -125,7 +124,6 @@ dievdosykkel
 
 doavttergrádakandidáhta
 doavttergrádakandidáhtta
-
 
 biepmoráhkadangursa
 biepmoráhkadankursa
@@ -140,30 +138,27 @@ biilamekanihkkár
 
 dearvvasvuođaminister
 dearvvasvuođaministtar
-}}}
+```
 
-!!Generelt
+## Generelt
 
 Bugzilla-rutinane er framleis ikkje så innarbeidde som dei burde vera.
 
-!!!Fad-ordbok
+# Fad-ordbok
 
 Saka står:
 
-# Ordparallellisering, __Ciprian__.
-# Annonsera tekstkorpuset som tilgjengeleg
-# Lage grensesnitt (__Trond__)
-# dookumentasjon for Autshumato og omsetjingsminne
+1. Ordparallellisering, **Ciprian**.
+1. Annonsera tekstkorpuset som tilgjengeleg
+1. Lage grensesnitt (**Trond**)
+1. dookumentasjon for Autshumato og omsetjingsminne
 
-__Tidsplan__
+**Tidsplan**
 
-# Individuelt arbeid fram til neste møte
-# Neste møte i midten av neste veke - 9. mai (evt. 8?)
+1. Individuelt arbeid fram til neste møte
+1. Neste møte i midten av neste veke - 9. mai (evt. 8?)
 
+# App/dings for fad
 
-!!!App/dings for fad
-
-Trond har laga [heimeside for prosjektet|/appsdoc/mobile/index.html] 
+Trond har laga [heimeside for prosjektet](/appsdoc/mobile/index.html) 
 og funne fram til dokumentasjon, inkludert rett fil.
-
-

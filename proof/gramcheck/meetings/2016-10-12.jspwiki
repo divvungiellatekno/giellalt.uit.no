@@ -11,31 +11,31 @@ Til stades: Linda, Kevin, Sjur
 * formathandtering
 * tegnsettingsregler
 
-!!! kontrakt for Kevin
+#  kontrakt for Kevin
 
 Vi diskuterte status. Sjur tek saka vidare med Trond.
 
-!!! status for hfst-tokenise og segmentering
+#  status for hfst-tokenise og segmentering
 
 Kevin flettar inn eigne tillegg. Sjur organiserer møte i Helsingfors med Sam,
 Krister og Kevin.
 
 Kevin døypar om --gtd til --giella-cg, og skriv meir dokumentasjon i hjelpeteksten.
 
-!!! sammesatte ord
+#  sammesatte ord
 
 * how to fix hyphen compound errors:
-** add a hyphen - done
-** take away the space - not done
+    - add a hyphen - done
+    - take away the space - not done
 
-Døme: __Davvi-Norggas__
-{{{
+Døme: **Davvi-Norggas**
+```
 Davvi Norggas leat sihke sámi olbmot ja dáččat eallán bálddalaga áiggiid čađa,
 náitaladdan ruossut rássut , eai leat čielga dieđut gostege mo lea mihkkege ja
 mii lea vuođđun .
-}}}
+```
 
-{{{
+```
 "<Davvi>"
         "davvi" N Sem/Plc Sg Nom <W:0> @SPRED> MAP:16919 &msyn-addhyphen #1->1 ADD:9013:addhyphen
 msyn-addhyphen
@@ -45,19 +45,19 @@ davvi+N+Cmp/SgNom+Cmp/SplitR    davve-,davvi-
 "<Norggas>"
         "Norga" §LO N Prop Sem/Plc Sg Loc <W:0> @HAB SELECT:3475:r855 MAP:16708:r497 #2->3 SUBSTITUTE:8686
         "Norga" §LO N Prop Sem/Sur Sg Loc <W:0> @HAB SELECT:3475:r855 MAP:16708:r497 #2->3 SUBSTITUTE:8686
-;       "norga" Err/Lex N Sem/Dummytag Sg Acc PxSg3 <W:0> SELECT:3475:r855
-;       "norga" Err/Lex N Sem/Dummytag Sg Gen PxSg3 <W:0> SELECT:3475:r855
-;       "norga" Err/Lex N Sem/Dummytag Sg Loc <W:0> SELECT:3475:r855
-;       "norga" Err/Lex NN Sem/Dummytag Der/Dimin N Sg Acc Err/Orth Err/Spellrelax <W:0> SELECT:3475:r855
-;       "norga" Err/Lex NN Sem/Dummytag Der/Dimin N Sg Gen Err/Orth Err/Spellrelax <W:0> SELECT:3475:r855
-;       "norga" Err/Lex NN Sem/Dummytag Der/Dimin N Sg Nom Err/Spellrelax <W:0> SELECT:3475:r855
-}}}
+* **"norga" Err/Lex N Sem/Dummytag Sg Acc PxSg3 <W:0> SELECT:3475**: r855
+* **"norga" Err/Lex N Sem/Dummytag Sg Gen PxSg3 <W:0> SELECT:3475**: r855
+* **"norga" Err/Lex N Sem/Dummytag Sg Loc <W:0> SELECT:3475**: r855
+* **"norga" Err/Lex NN Sem/Dummytag Der/Dimin N Sg Acc Err/Orth Err/Spellrelax <W:0> SELECT:3475**: r855
+* **"norga" Err/Lex NN Sem/Dummytag Der/Dimin N Sg Gen Err/Orth Err/Spellrelax <W:0> SELECT:3475**: r855
+* **"norga" Err/Lex NN Sem/Dummytag Der/Dimin N Sg Nom Err/Spellrelax <W:0> SELECT:3475**: r855
+```
 
-Dette blir no retta til: {{Davvi- Norggas}}, som blir feil (det skal ikkje vera mellomrom).
+Dette blir no retta til: `Davvi- Norggas`, som blir feil (det skal ikkje vera mellomrom).
 
 Ordet finst leksikalisert i analysatoren:
 
-{{{
+```
 Davvi-Norgga
 Davvi-Norgga    Davvi-Norga+N+Prop+Sem/Plc+Sg+Gen
 
@@ -74,10 +74,10 @@ Davvi-Norggas        davvi+N+Sem/Plc+Cmp/SgNom+Cmp-#Norga+N+Prop+Sem/Plc+Sg+Loc 
 Davvi-Norggas        davvi+N+Sem/Plc+Cmp/SgNom+Cmp-#Norga+N+Prop+Sem/Sur+Sg+Loc        0,000000
 Davvi-Norggas        davvi+N+Sem/Plc+Cmp/SgNom+Cmp-#Norga+N+Prop+Sem/Plc+Sg+Loc        0,000000
 Davvi-Norggas        davvi+N+Sem/Plc+Cmp/SgNom+Cmp-#Norga+N+Prop+Sem/Sur+Sg+Loc        0,000000
-}}}
+```
 
 Jf:
-{{{
+```
 illu boddui -> illuboddui
 
 "<illu boddui>"
@@ -85,13 +85,13 @@ illu boddui -> illuboddui
 msyn-compound
         "illuboddu" N Sem/Time Sg Ill <W:0> @ADVL> MAP:16752 &SUGGEST #2->2 COPY:8935:compound
 illuboddu+N+Sg+Ill      illuboddui
-;       "boddu" N Sem/Time Sg Ill <W:0> "<boddui>"
-;               "illu" N Sem/Perc-emo Sg Nom <W:0> "<illu>"
+* **"boddu" N Sem/Time Sg Ill <W**: 0> "<boddui>"
+* **"illu" N Sem/Perc-emo Sg Nom <W**: 0> "<illu>"
 : 
-}}}
+```
 
 Og her er analysen frå tokeniser'n:
-{{{
+```
 $ echo Davvi Norggas | hfst-tokenise --giella-cg tokeniser-gramcheck-gt-desc.pmhfst 
 "<Davvi>"
         "davvi" N Sem/Plc Sg Nom <W:0>
@@ -106,7 +106,7 @@ $ echo Davvi Norggas | hfst-tokenise --giella-cg tokeniser-gramcheck-gt-desc.pmh
         "norga" Err/Lex NN Sem/Dummytag Der/Dimin N Sg Gen Err/Orth Err/Spellrelax <W:0>
         "norga" Err/Lex NN Sem/Dummytag Der/Dimin N Sg Nom Err/Spellrelax <W:0>
 :\n
-}}}
+```
 
 Konklusjon: vi vil handtera leksikaliserte, samansette ord som krev bindestrek
 på same måten som dei som ikkje krev bindestrek, dvs at vi lar bindestrek gå til
@@ -114,7 +114,7 @@ mellomrom (med ein Error-tagg).
 
 Vi får fortsatt:
 
-{{{
+```
 "<dasa lassin>"
         "dasa lassin" Adv <W:0>
         "dasa lassin" Err/Orth Adv Err/SpaceCmp <W:0>
@@ -130,6 +130,7 @@ Vi får fortsatt:
                 "dassat" V TV Imprt Sg2 <W:0> "<dasa>"
         "lassi" N Sem/Amount Ess <W:0> "<lassin>"
                 "dassat" V TV Imprt ConNeg <W:0> "<dasa>"
+
                 
 dasalassin dasa lassin Err/Orth Adv
 dasalassin dasa lassin Err/UnspaceCmp Adv
@@ -138,21 +139,21 @@ dasa lassin
 dasa lassin    dasa lassin+Adv
 
 dasa lassin+Err/Orth:dasa# lassin
-# → " "+Err/SpaceCmp ! Burde kanskje ikkje fyra ved Unspacecmp i same sti (elles må CG fjerna)
+1. → " "+Err/SpaceCmp ! Burde kanskje ikkje fyra ved Unspacecmp i same sti (elles må CG fjerna)
 
 dasa% lassin:dasa% lassin adv ; ----> dasa lassin
 dasa% lassin+Err/UnspaceCmp:dasa#lassin adv; ! --> dasalassin
-}}}
+```
 
 Kvifor får vi ein Err/Orth-tagg i analysen over? Sjur sjekkar.
 
-!!! webdemo
+#  webdemo
 
 Kevin har ein ny variant på gang :-) Burde vera på lufta denne veka :-)
 
 Linda finn fram fleire eksempeltekstar.
 
-!!! kopling mellom innstillingar og feildetekteringsreglar
+#  kopling mellom innstillingar og feildetekteringsreglar
 
 Vi bruker CG-seksjonar: ein seksjon for kvar regeltype/feiltype. Seksjonane kan
 ein slå av og på ved oppstart, og dermed kontrollera kva slags reglar som skal
@@ -162,62 +163,63 @@ brukast av grammatikkontrollen, og dermed kva slags feil som han skal sjå etter
 Når brukarane endrar innstillingar, betyr det i praksis ein omstart av
 grammatikkontrollen med dei nye innstillingane.
 
-!!! arkivformat, kommandorør
+#  arkivformat, kommandorør
 
 Må kunne spesifisera kvart brukarval og kva verknad dei har på pipelinen:
 
-||brukarval     || $1  || $2                  || $3 
-| realword      | 2,3,7| cat                  | cat
-| teiknsetjing  | 1,3  | cat                  | B  
-| dialektx      | 1,5  | stat-munge ngram.bin | B  
+|  brukarval     | $1  | $2                  | $3 
+| --- | --- | --- | --- 
+|  realword      | 2,3,7| cat                  | cat
+|  teiknsetjing  | 1,3  | cat                  | B  
+|  dialektx      | 1,5  | stat-munge ngram.bin | B  
 
-{{{
+```
 combiner($1)=concat
 combiner($2)=union
 combiner($3)=union
-}}}
+```
 
 Til dømes:
-{{{
+```
 pipeline_template=hfst-tokenise foo.hfst | vislcg3 -g foo.cg3 --sections=$1 | $2 | $3 | cg-foo | hfst-optimised-lookup bar
-}}}
+```
 
 Me unngår
-{{pipeline_template=hfst-tokenise foo.hfst | vislcg3 -g foo.cg3 --sections=1,3,1,5 | $2 | BB | cg-foo | hfst-optimised-lookup bar}}
-sidan {{$3}} er union, så når både teiknsetjing og dialektx er valt, så vil me ha berre B.
+`pipeline_template=hfst-tokenise foo.hfst | vislcg3 -g foo.cg3 --sections=1,3,1,5 | $2 | BB | cg-foo | hfst-optimised-lookup bar`
+sidan `$3` er union, så når både teiknsetjing og dialektx er valt, så vil me ha berre B.
 
 * viss dialektx, så skru på sections 1 og 5 i cg, og legg til statistisk dings
 
 Fleire alternative pipelines:
 Anten:
-{{{
-pipeline_template=[ hfst-tokenise foo.hfst | vislcg3 -g foo.cg3 --sections=$1 | $2 | $3 | cg-foo | hfst-optimised-lookup bar || punct.m4 ]
-}}}
+```
+pipeline_template=[ hfst-tokenise foo.hfst | vislcg3 -g foo.cg3 --sections=$1 | $2 | $3 | cg-foo | hfst-optimised-lookup bar ]( punct.m4 )
+```
 
 Eller:
-{{{
+```
 pipeline_1=hfst-tokenise foo.hfst | vislcg3 -g foo.cg3 --sections=$1 | $2 | $3 | cg-foo | hfst-optimised-lookup bar
 pipeline_2=punct.m4
-}}}
+```
 
 Kevin og Sjur jobbar vidare med detaljane.
 
-!!! formathandtering
+#  formathandtering
 
-{{{
+```
      We could have rules in pmscript like
      : Define superblank %[ ?* %] EndTag(superblank);
-     : Define cohort [ morphoword | unknownwordEmpty | incondword ] EndTag(cohort);
+     : Define cohort [ morphoword | unknownwordEmpty ]( incondword ) EndTag(cohort);
      (which actually has to be more complicated since we have to
      handle escaped brackets), but then hfst-tokenise still needs some
      exception that says that a <superblank> is formatted one way, and
      a <cohort> is output like the unmatched input.
-}}}
+```
 
 Kevin undersøkjer meir om det er mogleg å gjera dette med rein pmatch-kode.
 Kevin og Sjur diskuterer dette med Krister og Sam.
 
-!!! tegnsettingsregler?
+#  tegnsettingsregler?
 
 * CG
 * non-CG

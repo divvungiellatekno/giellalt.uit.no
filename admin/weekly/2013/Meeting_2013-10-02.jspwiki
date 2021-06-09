@@ -1,4 +1,4 @@
-!!!T & S
+# T & S
 
 Saker:
 * TTS
@@ -6,38 +6,38 @@ Saker:
 * victorio-flyttinga - etterrakst
 * Bugzilla
 
-!!!TTS
+# TTS
 
-!!Strategi ved låneord
+## Strategi ved låneord
 
 Språkkodar i LexC (kan leggjast til med regulære uttrykk både mot lemma, stamme og fortsetjingsleksikon). Dette kan gjeva denne prosesseringa:
 
-# språkspesifikke leksikon-fst-ar
-# språkspesifikk ipa-konvertering
-# samla alle ipa-fst-ane, og skriv ut sluttanalysen
+1. språkspesifikke leksikon-fst-ar
+1. språkspesifikk ipa-konvertering
+1. samla alle ipa-fst-ane, og skriv ut sluttanalysen
 
-!!Ordgrense ved namn
+## Ordgrense ved namn
 
-{{{
+```
 ^ ved namn istf # - problematisk ved TTS, fordi # gjev sekundærtrykk, ^ gjev
   ikkje - vi hadde hatt bruk for # no :(
-}}}
+```
 
-Tilbake til ordgrense eller ei ny prosodigrense? Vi held på {{#}}, og tolkar han
+Tilbake til ordgrense eller ei ny prosodigrense? Vi held på `#`, og tolkar han
 som anten ordgrense (vanlegvis) eller prosodigrense (triggar ny fot,
 sekundærtrykk, osb.)
 
 Døme:
 
-{{{
+```
 Avias:Avi^as BERN-plc ;
 Engebregtsen:Enge^bregtsen LONDON-sur ;
 Friijacampen:Friija^campen LONDON-org ;
-}}}
+```
 
 Avstand frå ^ til slutten av stammen:
 
-{{{
+```
 tf-hsl-m0016:stems ttr000$ cat smi-propernouns.lexc|grep '\^. '|wc -l
      135
 tf-hsl-m0016:stems ttr000$ cat smi-propernouns.lexc|grep '\^.. '|wc -l
@@ -64,37 +64,36 @@ Kaipiainen:Kaipi^ai C-FI-NEN-plc ;
 Kakriainen:Kakri^ai C-FI-NEN-sur ;
 Kalliainen:Kalli^ai C-FI-NEN-sur ;
 Kallioinen:Kalli^oi C-FI-NEN-sur ;
-}}}
+```
 
-!!Språktaggar
+## Språktaggar
 
 Tagg for lånespråk ved proper (og andre ord):
 
 forslag: +OLang/LANG
 
 * NOR eller NOB+NNO?
-** NOB som standard, NNO berre der det ikkje kan vera NOB
+    - NOB som standard, NNO berre der det ikkje kan vera NOB
 * SWE der det trengst
 
 styrer uttale ved TTS (sidan uttalen ofte fylgjer långjevarspråket (meir
 eller mindre))
 
-!!!stallo/korp
+# stallo/korp
 
 vislcg3 kompilerer på stallo, på trond/bin
 
-!!!victorio-flyttinga - etterrakst
+# victorio-flyttinga - etterrakst
 
 metode for lenkjesjekking?
 
+# Bugzilla
 
-!!!Bugzilla
-
-!!1713	Forslag til en viss omorganisering av sme.fst-er - sem- og sub-tagger
+## 1713	Forslag til en viss omorganisering av sme.fst-er - sem- og sub-tagger
 
 sme-site.fst - utan sem-taggar
 
-!!1710	innspill til Makefile - newinfra kompilering av hfst og xfst
+## 1710	innspill til Makefile - newinfra kompilering av hfst og xfst
 
 * stoppar ikkje ved feil
 * configure --help er alt for omfattande

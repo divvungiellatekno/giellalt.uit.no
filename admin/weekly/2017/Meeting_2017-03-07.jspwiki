@@ -1,7 +1,6 @@
 T&S 7.3.2017
 
-
-!!!Saker til tysdagsmøtet
+# Saker til tysdagsmøtet
 
 * Orienteringssaker
 * Testbenken
@@ -15,29 +14,29 @@ T&S 7.3.2017
 * kortkurs i grønlandsk
 * ConNeg i mordvinske språk
 
-!!!Orienteringssaker
+# Orienteringssaker
 
 mt og skriftkultur - Trond orienterte om ei sak T og L har diskutert.
 
-!!!Testbenken
+# Testbenken
 
 Er det mogleg å ha typos med 
-{{{
+```
 rett	rett
-}}}
+```
 eller må det berre vere
-{{{
+```
 feil	rett
-}}}
+```
 
 Det skal vere slik:
 
-{{{
+```
 rett
 feil<tab>rett
-}}}
+```
 
-!!!Vekting
+# Vekting
 Kva er formatet?
 
  ... | c-conv -W | ...
@@ -51,31 +50,28 @@ ordform<tab>lemma+tag+tag<tab>4.00000
     "lemma" tag tag <W:4.0000>
 
 Kommando som gjev dette formatet:
-{{{
+```
 ccat -a -l sme $GTFREE/converted/sme \
-| hfst-tokenise --giella-cg tools/preprocess/tokeniser-disamb-gt-desc.pmhfst
-}}}
+|  hfst-tokenise --giella-cg tools/preprocess/tokeniser-disamb-gt-desc.pmhfst
+```
 
-Vi ber Kevin setje opp pmatch-oppsettet i {{courses/lexctwolc/weights}}
+Vi ber Kevin setje opp pmatch-oppsettet i `courses/lexctwolc/weights`
 
-Det fungerer i {{langs/}} men ikkje i {{courses}}.
+Det fungerer i `langs/` men ikkje i `courses`.
 
-Vi må sjå til at russisk cg fungerer i {{langs/}}.
+Vi må sjå til at russisk cg fungerer i `langs/`.
 
-
-!!!Korpus
+# Korpus
 
 Reetta - ny korpusarbeidar for Trond, treng opplæring av Børre.
 Arbeider V-17. Truleg sme-smn-fin m.m. - samisk i Finland.
 
-
 mhr: Framgang med svn-tilgang, neste steg er å evaluere status.
 
-
-!!!Mobiltelefontastatur og app-bygging
+# Mobiltelefontastatur og app-bygging
 
 App-systemet er komplekst. Sjur vil på råd frå Brendan
-gå over til  ''fastlane'', eit program
+gå over til  *fastlane*, eit program
 for å effektivisere app-bygging for mobiltelefonar.
 
 Det vil ta tid å få det til, lenger tid enn 14 dagar, men når
@@ -85,23 +81,23 @@ det er på plass vil det gje oss:
   hos Appstore og Google Play.
 * lettare portabilitet: våre appar med anna innpakking enn vår
 
-!!!gt-maskina
+# gt-maskina
 
 Trond og Børre ser på dette.
 
-!!!OmegaT & tokenisering / hfst, lucene, osb
+# OmegaT & tokenisering / hfst, lucene, osb
 
 Plan for integrering av fst. Vi held eit møte i morgon tidleg for å sjå nærmare
 på detaljane, i lag med Børre og Tomi.
 
-!!!personar i bugzilla, jf lusmelding 2018
+# personar i bugzilla, jf lusmelding 2018
 
 Sjur har nye metodar, vi ser på det.
 
-!!!Kortkurs i grønlandsk
+# Kortkurs i grønlandsk
 
 Trond: ja.
 
-!!!ConNeg i mordvinske språk
+# ConNeg i mordvinske språk
 
 Trond og Sjur ser på dette.

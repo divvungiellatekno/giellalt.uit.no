@@ -1,25 +1,25 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 27.06.2005
 * Time: 09.00 Norw. time
 * Place: Wherever we are :-)
 * Tools: Phone, iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from a week ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Linguistics
-# risten.no
-# Other issues
-## Vacation planning
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from a week ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Linguistics
+1. risten.no
+1. Other issues
+    1. Vacation planning
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09.30. Agenda accepted as is.
 
@@ -29,98 +29,98 @@ Absent: Børre
 
 Main secretary: Sjur
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-!! All:
+##  All:
 * The divvun.no release - until Wednesday:-)
 
-!!Børre
+## Børre
 * Coordinate the release and the tasks ahead of the release.
-** Done
+    - Done
 * Vacation thereafter.
-** "Doing"
+    - "Doing"
 
-!! Maaren:
+##  Maaren:
 * divvun.no
-** Done
+    - Done
 * in Tysfjord till Thursday, will work on the project Thursday and Friday
-** the press represented by 2, Sámeradio + Nordsalten Avis
-*** the presentation and opening went well
-*** Karen Monica Paulsen presented risten.no
-*** ... as well as Rolf Olsen
-*** Berit Karen Paulsen demonstrated the web site
-*** Lule Sámi people very happy to finally see Lule Sámi words included in the term db
-** other items covered later in the meeting
+    - the press represented by 2, Sámeradio + Nordsalten Avis
+        - the presentation and opening went well
+        - Karen Monica Paulsen presented risten.no
+        - ... as well as Rolf Olsen
+        - Berit Karen Paulsen demonstrated the web site
+        - Lule Sámi people very happy to finally see Lule Sámi words included in the term db
+    - other items covered later in the meeting
 
-!! Sjur:
+##  Sjur:
 * Author press release for divvun.no for the opening
-** Done
+    - Done
 * risten.no bugs and fixes
-** Done 17, 18 open
+    - Done 17, 18 open
 * Other things done:
-** updated cvs repo for risten.no to the released version
-** tagged cvs repos for risten.no and divvun.no with the release tag
+    - updated cvs repo for risten.no to the released version
+    - tagged cvs repos for risten.no and divvun.no with the release tag
    __DIVVUN-NO_1_0_RELEASE__
-** Wrote monthly report (see your local forrest after cvs up)
+    - Wrote monthly report (see your local forrest after cvs up)
 
-!! Thomas:
+##  Thomas:
 * translate the rest of sme version of sma document (partly translated)
-** done
+    - done
 * translate press release into Northern and Lule sami
-** done
+    - done
 * bug Kåre Tjihkkom with the last QA on smj translations
-** Kåre hasn´t yet sent timetable
+    - Kåre hasn´t yet sent timetable
 * Work with Lule Sami
-** worked
+    - worked
 * call Pål Hivand about when he's going to send out the press release(s)
-** done
+    - done
 
-!! Tomi:
+##  Tomi:
 * Common Makefile for all the languages
-** still problems
+    - still problems
 * catxml default language issue
-** haven't looked at it
+    - haven't looked at it
 * three-part compounding
-** haven't succeeded to get it working
+    - haven't succeeded to get it working
 * decapitalisation of proper nouns when (if?) compounded, and when derived 
   (the oslolaš issue)
-** haven't done 
+    - haven't done 
 * corrected word2xml script
 
-!!Trond
+## Trond
 * divvun.no release
-** Mostly worked on this release. Translated common documents and updated some of
+    - Mostly worked on this release. Translated common documents and updated some of
    the documentation.
 * sma-background completion
-** Done.
+    - Done.
 * Translate the Hki legal text into Norwegian
-** Done
+    - Done
 * Fix the reported Lule Sámi bugs before Tysfjord.
-** Only partly done. What still does not work is a certain rule that is meant
+    - Only partly done. What still does not work is a certain rule that is meant
    to take care of optional vowel lowering in the Px paradigm, the issue 
    at hand is the bahaviour of the twolc => operator.
-** Apart from that I have looked at the corpus interface, and at corpus translation
+    - Apart from that I have looked at the corpus interface, and at corpus translation
    routines.
-** Then I had Wednesday off to sit in an exam commision.   
+    - Then I had Wednesday off to sit in an exam commision.   
 
-!!!3. Documentation - divvun.no
+# 3. Documentation - divvun.no
 
-!!Opening - short evaluation
+## Opening - short evaluation
 
 Not mentioned much in Tysfjord, but the address was given: "go there and have a look".
 We delivered what we planned, with the exception of Forrest i18n (because of Forrest).
 
-!!What's next
+## What's next
 
 * cvs up in place, for nightly updates of the online documentation.
-** using a special, read-only account, for security reasons (the update script
+    - using a special, read-only account, for security reasons (the update script
    will probably have to have the password written in clear)
-** Tomi will have a look, using the cgi-update scripts for the Giellatekno site
+    - Tomi will have a look, using the cgi-update scripts for the Giellatekno site
    as a template, and talk to Thor Øivind on this issue.
 * i18n:
-** wait for Børre
+    - wait for Børre
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 Anders Kintel is now ready with the dictionary manuscripts, and handed it over to the
 Sámi Lanuage board and GIO by Harrieth Aira and Julie Eira (OAO) at the language board
@@ -144,21 +144,21 @@ names (Tyskland as well as Duiskka).
 
 Trond will get a new version of the NT.
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 Storing the corpus.dtd and similar files. Now in gt/dtd/
 
-{{{
+```
 gt$ls
 CVS  cwb  doc  dtd  script  sma  sme  smi  smj  smn  sms  tmp  www
-}}}
+```
 
 The structure of gt and the way to handle dtd must be discussed and decided upon. The
 discussion is moved to the newsgroup.
 
-!!!6. Linguistics
+# 6. Linguistics
 
-!!sme
+## sme
 
 Nothing done last week. The missing list contains a lot of compounds - compounding isn't
 working anymore (it worked earlier?). A lot of noise words are Lule and South Sámi words -
@@ -188,30 +188,30 @@ Bugzilla:
 The -heddjiid issue should be looked into after the giellalávdegoddi has had their meeting.
 The -eabbo vs. -eabbu issue could be looked into now, because -eabbo has to be implemented anyway.
 
-!!smj
+## smj
 
 * Thomas working with adjectives.
 * Trond working with bugs.
 
-!!!7. risten.no
+# 7. risten.no
 
-!!Opening - short evaluation
+## Opening - short evaluation
 
 Opening went well, with the exception of the "sticky" Lule Sámi text.
 
-!!What's next
+## What's next
 
 * more bug fixing
 * a couple of critical features still needs to be added
 
-!!!8. Other issues
+# 8. Other issues
 
-!!Language(s) of RSS Newsfeed
+## Language(s) of RSS Newsfeed
 
 It is working (needs a separate input module), so the question is only how it should be used
 Open for discussion (when Børre is back).
 
-!!Vacation planning
+## Vacation planning
 
 * Børre:  20.06-04.07
 * Maaren: 11.07-14.08
@@ -221,34 +221,34 @@ Open for discussion (when Børre is back).
          More or less vacation (In Finland, working whenever possible).
 * Sjur: probably 25.07-08.08.
 
-!!!9. Summary, task list
+# 9. Summary, task list
 
 This week's task list is a summary of all undone tasks from before the
 divvun.no/risten.no openings.
 
-!! All:
+##  All:
 * The divvun.no release - until Wednesday:-)
 
-!!Børre
+## Børre
 * Vacation
 * Continue http://giellatekno.uit.no conversion to forrest ...
 * Contact Svenska bibelsällskapet
 * Add issue to forrest issue tracker about utf-8 ihtml documents.
-** Check for existing bug reports, it might already be in there
+    - Check for existing bug reports, it might already be in there
 * Continue forrest i18n research
-** Sometimes abides the =locale=se/smj/fi in the url (the document gets
+    - Sometimes abides the =locale=se/smj/fi in the url (the document gets
    correctly selected). The menus and tabs are translated to the language
    that the browser asks for.
 * add RSS newsfeed support (check with Sjur/risten.no)
 * discuss with Anders Kintel about whether we could get the Sámi-Norwegian dictionary
   ahead of acceptance
 
-!! Maaren:
+##  Maaren:
 * The missing list, both the overall missing list from our xml corpus, and a file-for-file
   review, in order to get different terminology
 * Go through the missing list from risten.no
 
-!! Sjur:
+##  Sjur:
 * Ask Anne-Britt to update the contract with the University (we are getting 3, not 2,
   persons there from the fall)
 * risten.no bugs and fixes
@@ -261,12 +261,12 @@ divvun.no/risten.no openings.
 * add i18n bug to Forrest issue tracker
 * add i18n menu as feature request to Forrest issue tracker
 
-!! Thomas:
+##  Thomas:
 * wait for proofreading of the last QA on smj translations
 * write to Hans Ragnar Mahtisen about the parallel placenames
 * work with Lule Sami adjectives
 
-!! Tomi:
+##  Tomi:
 * Common Makefile for all the languages
 * catxml default language issue
 * three-part compounding
@@ -275,7 +275,7 @@ divvun.no/risten.no openings.
 * cvs update script for divvun documentation
 * corpus infrastructure: dtd location (both public and internal)
 
-!!Trond
+## Trond
 * Work on the bug list (Lule Sámi).
 * Work on compounds (both regular and three-part, with Tomi)
 * Work on the corpus interface (with Lars)
@@ -285,7 +285,7 @@ divvun.no/risten.no openings.
 * Check Hans-Ragnars names.
 * Give Thomas a telephone, and a crash-course in setting up phone meetings
 
-!!!10. Next meeting, closing
+# 10. Next meeting, closing
 
 04.07.2005 10:00
 

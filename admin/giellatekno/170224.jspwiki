@@ -1,37 +1,36 @@
-!!! Møte 23-24.2.2017
+#  Møte 23-24.2.2017
 
 Trond, Ciprian, Lene, over Hangouts, første del avholdt 23.2, andre del 24.2
 
-!! Saker
+##  Saker
 * Pågåande prosjekt:
-** Dei nye NDS-ordbøkene
-** Manglende autocomplete
-** MT og OmegaT (jf. /doc/mt/omegat/OmegaT.html )
-** sjdrus webdict
-** Informasjon om Vuosttaš digisánit på nettsidene
+    - Dei nye NDS-ordbøkene
+    - Manglende autocomplete
+    - MT og OmegaT (jf. /doc/mt/omegat/OmegaT.html )
+    - sjdrus webdict
+    - Informasjon om Vuosttaš digisánit på nettsidene
 * Forskingsgruppa Giellatekno, administrative ting
-** Økonomi
-** (Web)programmerarstillinga
-** Rapport frå smesmx*prosjektet (deadline 8.3.)
+    - Økonomi
+    - (Web)programmerarstillinga
+    - Rapport frå smesmx*prosjektet (deadline 8.3.)
 * Planar for våren
-** Forskingsarbeid (ulike tema)
-** Artiklar 
-** Folk
-** Reiser
-** Besøk
+    - Forskingsarbeid (ulike tema)
+    - Artiklar 
+    - Folk
+    - Reiser
+    - Besøk
 * Ymse
 
-!!!PÅGÅANDE PROSJEKT
+# PÅGÅANDE PROSJEKT
 
-!! Dei nye NDS-ordbøkene
+##  Dei nye NDS-ordbøkene
 
-__smesma, smesmn, smesmj etc.__
+**smesma, smesmn, smesmj etc.**
 
 Cip har arbeidd vidare også etter samisk veke, for alle 6 språkpara.
 
 * [https://gtsvn.uit.no/langtech/trunk/words/dicts/smesma/src/all_smesma.xml] xml
 * [https://gtsvn.uit.no/langtech/trunk/words/dicts/smanob/src/n_smanob.xml] html
-
 
 open -a Safari.app words/dicts/smesma/src/all_smesma.xml 
 
@@ -40,14 +39,13 @@ open -a Safari.app words/dicts/smesma/src/all_smesma.xml
 
 mime-type må vere text/html.
 
-!TILTAK:
-Teksten ''Nordsamisk'' (og ''Finsk'' frå smnfin) skal bort. 
-I staden skal det stå POS. Dette gjeld sannsynlegvis mange ordbøker. (__Ciprian__)
+### TILTAK:
+Teksten *Nordsamisk* (og *Finsk* frå smnfin) skal bort. 
+I staden skal det stå POS. Dette gjeld sannsynlegvis mange ordbøker. (**Ciprian**)
 
+**smnfin, finsmn**
 
-__smnfin, finsmn__
-
-{{{main/words/dicts/smnfin/semimanual_mg_merge/csv_to_check}}}
+```main/words/dicts/smnfin/semimanual_mg_merge/csv_to_check```
 
 Her er det 5119 ord, 3992 har vorte handsama, 1200 står att (er utan +).
 
@@ -55,16 +53,16 @@ Deretter må dette over i papirvennleg format, på den eine eller andre
 måten (css, InDesign, etc.) Vi har allereie ein del css-filer for 
 xml-formatet vårt, vi kan ta utgangspunkt i det.
 
+```A_12 áášánkullee: asiaankuuluva; asianomainen; kyseinen : 1 = 2 = 3 _ 2+3```
 
-{{{A_12 áášánkullee: asiaankuuluva; asianomainen; kyseinen : 1 = 2 = 3 _ 2+3}}}
-
-!! Manglende autocomplete
+##  Manglende autocomplete
 
 autocomplete er forsvunnet fra sme-nob/fin
 
 * sanit: Det fungerer for fin, for nob, men ikkje for sme.
 * baakoeh: Det fungerer for nob, men ikkje for sma
-* saanih: Det fungerer for smn __og__ for fin
+* saanih: Det fungerer for smn **og** for fin
+
  
 Endra til "autocomplete: true", men det var ikke nok
 
@@ -72,10 +70,10 @@ Funksjonen er knyttet til denne fila, kanskje stien til denne er fjernet?
 
 language_specific_rules/templates/sanit/sme/index_search_form.template
 
-!TILTAK:
-__Ciprian__ ser på dette
+### TILTAK:
+**Ciprian** ser på dette
 
-!! sjdrus webdict
+##  sjdrus webdict
 
 Vi slettar på nettet
 
@@ -83,25 +81,23 @@ Vi slettar på nettet
 
 Arbeidet går vidare i dei relevante katalogar.
 
-
-
-!! Informasjon om Vuosttaš digisánit på nettsidene
+##  Informasjon om Vuosttaš digisánit på nettsidene
 
 Vi har oppdatert en del informasjon, bl.a. at vi anbefaler GoldenDict istedenfor StarDict. Ciprian har testet dette.
 
 * Dokumentasjonen er oppdatert, her:
-** [http://dicts.uit.no/dicts/dict-stardict.sme.html]
+    - [http://dicts.uit.no/dicts/dict-stardict.sme.html]
 * Mapper til utsjekking:
-** [https://gtsvn.uit.no/biggies/trunk/mt/omegat/]
+    - [https://gtsvn.uit.no/biggies/trunk/mt/omegat/]
 
-
-!! MT og OmegaT (jf. [/mt/omegat/OmegaT.html] )
+##  MT og OmegaT (jf. [/mt/omegat/OmegaT.html] )
 
 smesmn => sme-smn osv., smesmn er kanskje litt for internt?
 
-!TILTAK:
-* __Ciprian__ ser på dette
-* __Trond__ førebur presentasjon til diskusjon i neste veke
+### TILTAK:
+* **Ciprian** ser på dette
+* **Trond** førebur presentasjon til diskusjon i neste veke
+
  
 Ciprian kan ikke kjøre smenob-Apertium plugin i OmegaT laget av Tino.
 
@@ -110,27 +106,26 @@ nob-smX, fin-smX
 
 Dette tar vi neste veke.
 
+#  FORSKINGSGRUPPA GIELLATEKNO, ADMINISTRATIVE TING
 
-!!! FORSKINGSGRUPPA GIELLATEKNO, ADMINISTRATIVE TING
-
-!! Økonomi
+##  Økonomi
 Diskusjon om hva vi bør prioritere å bruke penger på
 
-!! (Web)programmerarstillinga
+##  (Web)programmerarstillinga
 
 Går framover.
 
-!! Rapport frå smesmx-prosjektet (deadline 8.3.)
+##  Rapport frå smesmx-prosjektet (deadline 8.3.)
 
 Trond tar fram skjemaet frå NFR, legg inn overskriftene i
 priv/plan/project/...
 
 TILTAK:
-* __alle tre__ skriver i svn
+* **alle tre** skriver i svn
 
-!!!PLANAR FOR VÅREN
+# PLANAR FOR VÅREN
 
-!! Forskingsarbeid (ulike tema)
+##  Forskingsarbeid (ulike tema)
 
 MT-implementeringer:
 
@@ -138,8 +133,7 @@ MT-implementeringer:
 * smesmj -- avhengig av lingvist (diskuteres med Sjur)
 * smesmX-ordbøker
 
-
-!! Artiklar
+##  Artiklar
 
 * L, T: Review til to samiske artiklar
 * Alle: Review på MT-artikkelen
@@ -150,49 +144,31 @@ MT-implementeringer:
 * Cip, ML korrektur på kapittel
 * sme-nob, Vi bør skrive art
 
-!! Folk
+##  Folk
 
 * Bruke RJ til manuell parallellisering? Trond har tatt kontakt.
 * Ciprian tar kontakt med IT etter USA.
 * Andre? Vi kjem attende til det
 
-!! Reiser
+##  Reiser
 * Trond til Syktyvkar for å halde innleiing.
 * Trond til NoDaLiDa
 * Trond til Edmonton?
 * Ciprian til NoDaLiDa
 * Ciprian til AESLA
 
-
-!! Besøk
+##  Besøk
 
 * Ángel (es-se-es dict) (når? 13. mars)
 * Invitere folk som arbeider med mansisk, marisk ca. 4+
 * Integrere dette med folk her som arbeider med samisk
-** regex + unix 
-** nyinfra
-** automatar
+    - regex + unix 
+    - nyinfra
+    - automatar
 
-!!!YMSE
+# YMSE
 
 Kommunikasjon:
 
 * [/admin/calendar.html]
 * Tronds kalenderprogram: [http://www.busymac.com]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

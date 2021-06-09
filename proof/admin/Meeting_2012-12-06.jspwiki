@@ -1,21 +1,21 @@
-!!!Speller meeting
+# Speller meeting
 
 What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 Variablar for installeraren:
 
 * Variablar relevante for om ting funkar i det heile:
-** Office-versjon: 2003, 2007, 2010, 2013
-** Windows-versjon: XP, Vista, W7, W8
-** språkkode: ISO (se-NO) vs LCID (1083)
-** bit-versjon for Windows: 32b vs 64b
+    - Office-versjon: 2003, 2007, 2010, 2013
+    - Windows-versjon: XP, Vista, W7, W8
+    - språkkode: ISO (se-NO) vs LCID (1083)
+    - bit-versjon for Windows: 32b vs 64b
 * variablar uavhengig av grunnleggjande funksjonalitet:
-** Office-utgåve: home/student vs pro/full
-** installeringsmodus: admin/rot/nett vs lokal brukar vs terminalserver
+    - Office-utgåve: home/student vs pro/full
+    - installeringsmodus: admin/rot/nett vs lokal brukar vs terminalserver
 
 Verkty for debugging:
 * dependencywalker
@@ -35,45 +35,45 @@ For Office 2007, on 32-bit Windows 7. All tools except Greenlandic 3 worked for 
 On Office 2010, same Windows 7, the bokmål installer used the same registry entries as Divvun 2.2.
 
 Bokmål registry entries:
-{{{
+```
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\F612C02F7F111D94CA585B60E5FDBD13]
 "00004109F10041400000000000F01FEC"="C:\\Program Files\\Microsoft Office\\OFFICE14\\PROOF\\MSSP7NB.DLL
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\130DBDD4A0A1AB542B8DD901C7E78177]
 "00004109F10041400000000000F01FEC"="C:\\Program Files\\Microsoft Office\\OFFICE14\\PROOF\\MSSP7NB.LEX"
-}}}
+```
 
 Divvun 2.2 registry entries:
-{{{
+```
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\55EF2BF3CD33B874CBC22EAD2AA7CC00]
 "57CB6F3B98FBBB64A855473F371F97EB"="C:\\Program Files\\Common Files\\Microsoft Shared\\\\Proof\\mssp3samiNorthern-NO.dll"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\5CF385611BB33A64DB4A6A6517AF63C2]
 "57CB6F3B98FBBB64A855473F371F97EB"="C:\\Program Files\\Common Files\\Microsoft Shared\\\\Proof\\mssp3samiNorthern.lex"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Components\2DF27058FFEB22F48BA0D98DA860714D]
 "57CB6F3B98FBBB64A855473F371F97EB"="C:\\Program Files\\Common Files\\Microsoft Shared\\\\Proof\\mssp3samiLule.lex"
-}}}
+```
 
 The Greenlandic 3 xml installer script, on the other hand, follows a different pattern:
-{{{
+```
 <RegistryKey Id='KalSpellRegGlobal10' Root='HKLM'
 Key='SOFTWARE\Microsoft\Office\10.0\User Settings\Mso_CoreReg\Create\Software\Microsoft\Shared Tools\Proofing Tools\1.0\Override\kl-GL' Action='createAndRemoveOnUninstall'>
 <RegistryValue Type='string' Name='DLL' Value='[INSTALLDIR]kalspell.dll' />
-}}}
+```
 
 The bokmål installer registry diff contains also diffs like the following:
 
-{{{
+```
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Components\1CF85317B34E1D111AF7000A9CA05BF0]
 +"1044.x86"=hex(7):78,00,62,00,27,00,42,00,56,00,5a,00,70,00,4a,00,42,00,24,00,\
 +  21,00,21,00,21,00,21,00,21,00,4d,00,4b,00,4b,00,53,00,6b,00,4f,00,75,00,74,\
 +  00,6c,00,6f,00,6f,00,6b,00,53,00,65,00,61,00,72,00,63,00,68,00,53,00,68,00,\
 +  65,00,6c,00,6c,00,52,00,65,00,67,00,49,00,6e,00,74,00,6c,00,5f,00,31,00,30,\
 +  00,34,00,34,00,3c,00,00,00,00,00
-}}}
+```
 
 The hex-encoded character list (of big-endian UTF-16 characters) is actually the string:
-{{{
+```
 xb'BVZpJB$!!!!!MKKSkOutlookSearchShellRegIntl_1044<
-}}}
+```
 
 But similar entries are created by our NSIS installer.
 
@@ -82,102 +82,100 @@ Working scenarios for Divvun 2.2:
 * no report of problems with older Windows versions -> we assume that all installation scenarios are ok (but should be tested at least briefly to be sure)
 
 Next scenarios to test with all installers:
-# Office 2007, 64 bit Windows 7
-# Office 2010, 32 bit Windows 7
-# Office 2010, 64 bit Windows 7
+1. Office 2007, 64 bit Windows 7
+1. Office 2010, 32 bit Windows 7
+1. Office 2010, 64 bit Windows 7
 
 Get registry entry diffs, check whether the installed tools work for all users, not only the installing user.
 
-__DONE:__
-* __Børre__ har installert og diffa mykje, sjå over
+**DONE:**
+* **Børre** har installert og diffa mykje, sjå over
 
-__TODO:__
-* look at further combinations of Windows and Office (__Børre__)
-** working on it
-* get a proper MS certificate, to remove the warning users get when installing (__Børre__)
+**TODO:**
+* look at further combinations of Windows and Office (**Børre**)
+    - working on it
+* get a proper MS certificate, to remove the warning users get when installing (**Børre**)
 
-__POSTPONED:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
-* send a request to an NSIS developer e-mail list (__Sjur__)
-* try to find an NSIS script for building MSI packages (__Børre__)
+**POSTPONED:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (**Sjur**)
+* try to find an NSIS script for building MSI packages (**Børre**)
 * add Windows 8 support to our installer (if possible)
 
-!!!PLX conversion
+# PLX conversion
 
 Remaining PLX bugs:
 
-!!First PRI
+## First PRI
 
-!Words are accepted and suggested in their compounding-form
-| cmp-form-suggestions	  |	váigas                          | 581,912
+### Words are accepted and suggested in their compounding-form
+|  cmp-form-suggestions	  |	váigas                          | 581,912
 
-!REGRESSION - DOESN'T RECOGNIZE SOME ACRO/PROP+NOUN, seems random
-| PROP+NOUN	          | Koskivuori-plánenreaiddut   | 611,633 | FIXED
-| PROP+NOUN	          | Mihkalmas-beaivi            | 593
-| NOUN+ACRO           | muorra-NRK                  | 805     | WONTFIX
-| PREF+PROP NOUN+PROP | ovda-Lot  psykiatriija-Álaš | 595     | WONTFIX, BUT ovda-Lot is FIXED TODAY
+### REGRESSION - DOESN'T RECOGNIZE SOME ACRO/PROP+NOUN, seems random
+|  PROP+NOUN	          | Koskivuori-plánenreaiddut   | 611,633 | FIXED
+|  PROP+NOUN	          | Mihkalmas-beaivi            | 593
+|  NOUN+ACRO           | muorra-NRK                  | 805     | WONTFIX
+|  PREF+PROP NOUN+PROP | ovda-Lot  psykiatriija-Álaš | 595     | WONTFIX, BUT ovda-Lot is FIXED TODAY
 
-!!Second Last PRI
+## Second Last PRI
 
-!Section for Tags-not-working
-| doesn't follow cmp-tags | sámedikkepresideanta | 489
-| +CmpN/None in comp-sugg | 1883-as              | 508
+### Section for Tags-not-working
+|  doesn't follow cmp-tags | sámedikkepresideanta | 489
+|  +CmpN/None in comp-sugg | 1883-as              | 508
 
 as	as+N+ACR+Sg+Acc
 as	as+N+ACR+Sg+Gen
 as	as+N+ACR+Sg+Nom
 
-
 Bugs below this line can be left out of the next release if we are short on time.
 ----
 
-!SUGGESTIONS
-| STRANGE SUGGESTION-PRIORITIES | guollibusse > Vuolli-busse (and not the expected: guollebusse) | 397,917 | oaivebussiid, guollebussiid  not suggested   SEE ALSO 917  bargomáhtuid
+### SUGGESTIONS
+|  STRANGE SUGGESTION-PRIORITIES | guollibusse > Vuolli-busse (and not the expected: guollebusse) | 397,917 | oaivebussiid, guollebussiid  not suggested   SEE ALSO 917  bargomáhtuid
 
-!Compounds
-| imposs" cmps along w num.     | 0-geažideapmigárvu (geažideapmigárvu is impossible)            | 536,1145 |  NO SUGGESTIONS - GOOD - BUT:
-| imposs" cmps sákkasteapmifierbmi>	| (225) aseákkasteapmifierbmi		ase-						| 536 - REGRESSION
-| --"--                             | (225) asiákkasteapmifierbmi		asi-
-| --"--                             | (225) ásaákkasteapmifierbmi		ása-
-| --"--                             | (225) áseákkasteapmifierbmi		áse-
-| --"--                             | (225) ásoákkasteapmifierbmi		áso-
-| --"--                             | (225) ásuákkasteapmifierbmi		ásu-
-| --"--                             | (221) ášoákkasteapmifierbmi		ášo-
-| --"--                             | (221) ášuákkasteapmifierbmi		ášu-
-| num cmp:s on 0-               | 051-nummarat                                                   | 631
-| name/noun+adv cmps	        | Kuorak-ain                                                     | 642 - why is it accepted?
-| hyphened suggestions	        | deahtta-samus +A+Attr +Noun                                    | 940      | FIXED
-| non-ex. word accepted         | saame                                                          | 658
+### Compounds
+|  imposs" cmps along w num.     | 0-geažideapmigárvu (geažideapmigárvu is impossible)            | 536,1145 |  NO SUGGESTIONS - GOOD - BUT:
+|  imposs" cmps sákkasteapmifierbmi>	| (225) aseákkasteapmifierbmi		ase-						| 536 - REGRESSION
+|  --"--                             | (225) asiákkasteapmifierbmi		asi-
+|  --"--                             | (225) ásaákkasteapmifierbmi		ása-
+|  --"--                             | (225) áseákkasteapmifierbmi		áse-
+|  --"--                             | (225) ásoákkasteapmifierbmi		áso-
+|  --"--                             | (225) ásuákkasteapmifierbmi		ásu-
+|  --"--                             | (221) ášoákkasteapmifierbmi		ášo-
+|  --"--                             | (221) ášuákkasteapmifierbmi		ášu-
+|  num cmp:s on 0-               | 051-nummarat                                                   | 631
+|  name/noun+adv cmps	        | Kuorak-ain                                                     | 642 - why is it accepted?
+|  hyphened suggestions	        | deahtta-samus +A+Attr +Noun                                    | 940      | FIXED
+|  non-ex. word accepted         | saame                                                          | 658
 
-''ain'' is an adverb:
-{{{
+*ain* is an adverb:
+```
 ain
 ain	ain+Adv
-}}}
+```
 
 and should not be allowed to compound.
 
-!!Last PRI
-| doesn't understand caps   | 1700-LOHKU                    | 647
-| láibi-sánis not recognized | -                            | 380,452 WONTFIX
+## Last PRI
+|  doesn't understand caps   | 1700-LOHKU                    | 647
+|  láibi-sánis not recognized | -                            | 380,452 WONTFIX
 
-!REGRESSION
-| not recognized anymore recognized  | biilarievttijođiheaddjái | 819		
+### REGRESSION
+|  not recognized anymore recognized  | biilarievttijođiheaddjái | 819		
 
+**DONE:**
+* **Tomi** has solved even more PLX bugs
 
-__DONE:__
-* __Tomi__ has solved even more PLX bugs
+**TODO:**
+* investigate the inconsistent PLX conversion bug, cf *guollibusse* (**Tomi**)
+* solve the remaining PLX bugs one by one (**Tomi**)
 
-__TODO:__
-* investigate the inconsistent PLX conversion bug, cf ''guollibusse'' (__Tomi__)
-* solve the remaining PLX bugs one by one (__Tomi__)
-
-!!!Release plan
+# Release plan
 
 * December 1:
-** PLX bugs solved
-** Alpha installer (MSI package built using WIX)
+    - PLX bugs solved
+    - Alpha installer (MSI package built using WIX)
 * December 10: Beta release
 * December 20: Divvun 3 release

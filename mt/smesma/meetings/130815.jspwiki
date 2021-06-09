@@ -1,41 +1,30 @@
-
-
-
-
-
 sme-sma-mt meeting 15.8.2013
 
 Francis, Lene, Trond.
 
-!!!Agenda
-
-
+# Agenda
 
 * Documentation
 * Linguistics 
 * Technicalities
 
-!!!Documentation
+# Documentation
 
 Now also on [http://wiki.apertium.org]
 
+# Linguistics
 
-!!!Linguistics
-
-
-!!ieš:
+## ieš:
 
 [http://pastebin.com/raw.php?i=kZDbYK1z]
 
-
-!!Numerals
+## Numerals
 
 * Hashes are gone from above
 * Case paradigms have not been checked
-** Some numerals have case, others not.
+    - Some numerals have case, others not.
 
-
-{{{
+```
 1    ^vïjhte<num><sg><ill><attr>$   #vïjhte\<num\>\<sg\>\<ill\>\<attr\> ^vïjhte/vïjhte<num><sg><acc>/vïjhte<num><sg><nom>$^./.<clb>$
 1    ^göökte<num><sg><ill><attr>$   #göökte\<num\>\<sg\>\<ill\>\<attr\> ^göökte/göökte<num><sg><acc>/göökte<num><sg><nom>$^./.<clb>$
 1    ^gellie<num><sg><ill><attr>$   #gellie\<num\>\<sg\>\<ill\>\<attr\> ^gellie/gellie<num><sg><nom>/gellie<pron><indef><sg><nom>$^./.<clb>$
@@ -44,12 +33,11 @@ Now also on [http://wiki.apertium.org]
 1    ^akte<num><sg><gen><der_lágan><a><attr>$   #akte\<num\>\<sg\>\<gen\>\<der_lágan\>\<a\>\<attr\> ^akte/akte<num><sg><nom>$^./.<clb>$
 
 1    ^golme<num><sg><gen><cmp>$ #golme\<num\>\<sg\>\<gen\>\<cmp\>   ^golme/golme<num><sg><acc>/golme<num><sg><nom>$^./.<clb>$
-}}}
+```
 
-!!passl
+## passl
 
     <e><p><l>viiddidit<s n="v"/><s n="tv"/><s n="der_passl"/><s n="v"/><s n="iv"/></l><r>væjranidh<s n="v"/><s n="iv"/></r></p></e>
-
 
 Sámegiela dilli olggobealde hálddašanguovllu gal ii leat buorre, ja evalueren konkludere dainna ahte hálddašanguovlu ferte viiddiduvvot.
 
@@ -58,19 +46,17 @@ Sámegiela dilli olggobealde hálddašanguovllu gal ii leat buorre, ja evalueren
 * 2 Saemiengïelen tsiehkie bæjngolen reeremedajven hågkh ij leah buerie, jïh evalueereme *konkludere dejnie "ahte" reeremedajve tjuara væjranidh.
 * 3 Manne daajram, ahte saemiengïelen tsiehkie bæjngolen reeremedajven hågkh ij leah buerie, jïh evalueereme *konkludere dejnie ahte reeremedajve tjuara væjranidh.
 
-!!Lemma
+## Lemma
 
 Variants getting the same lemma. - looking for the lemma in the bidix.
 
-
 Fran: make analysis use desc fst.
 
-!!!Technicalities
+# Technicalities
 
 Declaring symbols
 
-
-!!Apertium svn messages as mail
+## Apertium svn messages as mail
 
 We get source forge mail, but not svn mail. Fran to have a look.
 
@@ -78,10 +64,9 @@ https://sourceforge.net/auth/subscriptions/
 
 "Apertium: machine translation toolbox   svn         direct  day     All artifacts "
 
+## Syntax
 
-!!Syntax
-
-{{{
+```
 echo "Mun oasttán láibbi buvddas." | preprocess | usme | lookup2cg | vislcg3 -g src/sme-dis.rle | vislcg3 -g src/smi-syn.rle
 
 "<Mun>"
@@ -94,10 +79,11 @@ echo "Mun oasttán láibbi buvddas." | preprocess | usme | lookup2cg | vislcg3 -
         "buvda" Org Build N Sg Loc @<ADVL 
 "<.>"
         "." CLB 
-}}}        
+```        
+
         
 
-{{{        
+```        
 "<Mus>"
         "mun" Pron Pers Sg1 Loc @HAB> <====== Gen
 "<lea>"
@@ -106,11 +92,11 @@ echo "Mun oasttán láibbi buvddas." | preprocess | usme | lookup2cg | vislcg3 -
         "láibi" Food N Sg Nom @<SPRED 
 "<.>"
         "." CLB 
-}}}
+```
 
 Results:
 
-{{{        
+```        
 echo "Mus lea láibi." | apertium -d . sme-sma
 Mannesne lea laejpie.        
 
@@ -119,16 +105,14 @@ Mov (lea) laejpie.
 
 echo "Mus leat guokte láibbi." | apertium -d . sme-sma
 Mov (leah) göökte laejpien. <=== laejpieh
-}}}
-
+```
 
 [http://wiki.apertium.org/wiki/North_S%C3%A1mi_and_South_S%C3%A1mi/Pending_tests]
 
 fran@eki:~/source/apertium/nursery/apertium-sme-sma$ bash pending-tests.sh 
 Running Pending-tests with mode "sme-sma" with updated tests......
 
-
-!!Syntactic functions
+## Syntactic functions
 
 We copy old gt/sme/src/smi-syn.rle to functions.cg3
 
@@ -136,16 +120,15 @@ it is here:
 
 langs/sme/src/syntax/functions.cg3
 
+## genration report
 
-!!genration report
-
-{{{
+```
 cat generation-report.sme-sma.txt | grep "#" 
-}}}
+```
 
 hash gives 
 
-{{{
+```
 freq     postchunk                    form generated                        lemma analysed
 -------------------------------------------------------------------------------------------
 9    ^jienebe<a><comp><sg><nom>$    #jienebe\<a\>\<comp\>\<sg\>\<nom\>  ^jienebe/jienebe<pron><indef><sg><nom>$^./.<clb>$
@@ -155,12 +138,12 @@ dh><n><sg><nom>/njoetseldh<a><sg><nom>$^./.<clb>$
 
     <e><p><l>eambbo<s n="a"/></l><r>jienebe<s n="a"/></r></p></e>
     <e><p><l>eanet<s n="a"/></l><r>jienebe<s n="a"/></r></p></e>
-}}}
+```
 
-{{{
+```
 find line with output:
 cat texts/samediggidiedadus_samegiela_birra_2012.sme.txt | apertium -d . sme-sma-postchunk | cat -n | grep "jïjtje<pron><refl><sg><gen><pxpl1>"
 
 find input:
 head -n 17 texts/samediggidiedadus_samegiela_birra_2012.sme.txt | tail -1 | apertium -d . sme-sma-tagger
-}}}
+```

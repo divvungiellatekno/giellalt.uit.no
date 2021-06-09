@@ -1,6 +1,6 @@
 Møte mellom Trond og Sjur 6. og 8.2. 2018
 
-!!!Saker
+# Saker
 * kal
 * oppdaterte stavekontrollar for sme, sma, smj?
 * pakkehandterar for macOS startar
@@ -10,10 +10,10 @@ Møte mellom Trond og Sjur 6. og 8.2. 2018
 * SMS-tastatur
 * plan for våren/året
 
-!!!KAL, kompileringstid og alfabetstorleik (sigma)
+# KAL, kompileringstid og alfabetstorleik (sigma)
 
-KAL har hatt multichars som {{+ABC=DEF+vv}}, som eigentleg er det same som
-{{+ABC+vv+DEF+vv}}. Tino har automatisk konvertert til det siste formatet, og
+KAL har hatt multichars som `+ABC=DEF+vv`, som eigentleg er det same som
+`+ABC+vv+DEF+vv`. Tino har automatisk konvertert til det siste formatet, og
 kompileringstida har gått dramatisk  ned,
 
 Lærdom: Eit stort alfabet gir lang kompileringstid.
@@ -28,12 +28,12 @@ måten som dei grønlandske, sjølv om vi enno ikkje har så mange taggar.
 
 Byggetid etter omlegginga:
 
-{{{
+```
 conf: ./configure --with-hfst --without-xfst --enable-hyperminimisation --enable-alignment --with-backend-format=foma
 
 Sjur  real         4m 9.347s
 bøtte real        10m10.679s
-}}}
+```
 
 Meir byggjestatistikk:
 * Med tokeniser: +2 min
@@ -46,11 +46,11 @@ knapt 400, og byggjetida er nede i minutt istf timar. Bør vi sjå ein gong til 
 SME og dei semantiske taggane? Kva med annan leksikalsk informasjon som er
 spreidd på ulike kjeldefiler i dag?
 
-!!! Oppdaterte stavekontrollar for sme, sma, smj?
+#  Oppdaterte stavekontrollar for sme, sma, smj?
 
 Denne veka, helst i morgon (pga Staare-opplegget).
 
-!!! Pakkehandterar for macOS
+#  Pakkehandterar for macOS
 
 Prosjekt for å byggha pakkehandterar for macOS har starta med Brendan, via
 firmaet han jobbar for i Göteborg. Pakkehandterar for Windows har han alt laga,
@@ -74,9 +74,9 @@ men retta mot grammatisk analyse og ikkje framlegg. Så kombinasjonen
 av grammatikkontrollinfrastrukturen og nedlastbare fst-ar frå nightly build
 vil faktisk gje oss det vi vil ha.
 
-__TODO__: Spesifisere, lyse ut og rulle ut opplegg for dette i løpet av våren
+**TODO**: Spesifisere, lyse ut og rulle ut opplegg for dette i løpet av våren
 
-!!! chat
+#  chat
 
 Pga diskhavariet på XServen har vi ingen fungerande chat for tida, særleg
 ettersom mange ikkje lenger har fungerande GTalk etter den siste
@@ -92,7 +92,7 @@ Kva er alternativa:
 Sjur har sendt ut e-post om at alle nyttar Skype for Business inntil vidare.
 Børre jobbar med å få på plass ny jabber-server.
 
-!!! divvunserveren
+#  divvunserveren
 
 Manglar pr i dag:
 * pålogging
@@ -100,11 +100,11 @@ Manglar pr i dag:
 * tilgang til analyserte data
 * see
 
-!!! virtuelle servarar
+#  virtuelle servarar
 
 Børre arbeider med saka, det har kome brev frå Steinar, saka går framover.
 
-!!!SMS-tastatur
+# SMS-tastatur
 
 Trond har hatt møte med sms-gjengen om tastaturutforming. Dei likte prinsippa
 for tastaturutforming som Trond presenterte. Dei kom fram til eit forslag, som
@@ -113,6 +113,6 @@ no ligg i svn.
 Nivå 3 og 4 er uferdig, men dei skoltesamiske bokstavane er ferdig plassert.
 Trond og Sjur gjer ferdig sms-tastaturet, og legg det ut på nett.
 
-!!! plan for våren/året
+#  plan for våren/året
 
 Sjå over, fleire detaljar seinare.

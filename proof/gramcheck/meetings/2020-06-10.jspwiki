@@ -20,16 +20,14 @@ todo:
 * lang-sme: run make
 * check if there is a new se.zcheck file: ls -l $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck
 * run again:
-{{{
+```
 rm -rf $GTFREE/correct-no-gs/converted # sihkku boares konverterejuvvon fiillaid
 svn up $GTFREE/orig/sme/ # viežžá ođasmahttojuvvon fiillaid
 convert2xml --goldstandard $GTFREE/orig/sme/grammar-realword # konvertere fiillaid
 cd $GTFREE
 $GTCORE/devtools/gramcheck_tester2.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck $GTFREE/correct-no-gs/converted/sme # vuodjá grammarcheckera, ráhkada .pickle-fiilla
 $GTCORE/devtools/gramcheck_comparator.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck correct-no-gs --filtererror errorlex errormorphsyn # lohká .pickle-fiilla, ráhkada raportta
-}}}
-
-
+```
 
 check:
 Son diđii ahte oktii ollii Johani Nousuniemi ealahat ahkkái, ja dalle lei sus vejolašvuohta beassat dan doibmii. --- ealahat
@@ -43,7 +41,6 @@ Son diđii ahte oktii ollii Johani Nousuniemi ealahat ahkkái, ja dalle lei sus 
 
 * Giellaplánen juohkku lingvistihkas árbevirolaččat golbma dássái: stáhtus-, korpus- ja Robert L. Coopera (1989) modeallas maiddái giellaoahpahusplánemii (acquisititon planning).  <- /Users/lwi001/freecorpus/correct-no-gs/converted/sme/grammar-realword/real-imprtdu1-derpassprssg3.correct.txt.xml (other language) --- done
 ~~~~~~
-
 
 Thank you:
 B.G.

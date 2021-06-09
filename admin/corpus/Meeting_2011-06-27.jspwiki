@@ -1,4 +1,4 @@
-!!!Trond
+# Trond
 
 * korpusstrukteren (kva er kor, generell info (Lene sitt utgangspunkt))
 * konverteringsrutinene ("korleis konverteringa skal fungere")
@@ -8,19 +8,19 @@
 * å legge til nye filer / bruke convert2xml.pl til konvertering av nye filer
 * gullstandardfilene, korleis dei går inn i heilskapen, korleis dei er merka, konvertert
 
-!!!Lene
+# Lene
 
 brukere av korpuset. dvs.
 * struktur,
 * varianter av ccat-kommandoen,
 * hva gjør vi hvis vi finner feil,
 * om:
-** xsl-filene,
-** gullkorpuset,
-** det analyserte korpuset på divvun-serveren,
+    - xsl-filene,
+    - gullkorpuset,
+    - det analyserte korpuset på divvun-serveren,
 * regler for bruk av bound...
 
-!!!Trond2
+# Trond2
 
 brukarperspektivet gjeld (bør gjelde) for oss alle:
 * korleis vi ser på korpuset (ccat)
@@ -28,48 +28,48 @@ brukarperspektivet gjeld (bør gjelde) for oss alle:
 
 Eit av problema med korpuset er jo at både brukarane og konverterarane i for liten grad har sett på resultatet.
 
-!!!Forslag
+# Forslag
 
-!!Brukarperspektiv:
+## Brukarperspektiv:
 * struktur (vic, lokalt, xserve + free, bound - alt er svn)
-** orig
-** converted
-** stable
-** goldstandard
+    - orig
+    - converted
+    - stable
+    - goldstandard
 * ccat og andre måtar å bruka korpuset på
 * om konverteringsprosessen
-** fyrste steg (til førebels xml (= xhtml, docbook, m.m.)
-** andre steg (til rå korpusxml - hovudkonverteringa)
-** tredje steg (til nesten ferdig korpusxml - xsl-fil)
-** fjerde steg (finpuss - språkattkjenning, feilmerkingskonvertering)
+    - fyrste steg (til førebels xml (= xhtml, docbook, m.m.)
+    - andre steg (til rå korpusxml - hovudkonverteringa)
+    - tredje steg (til nesten ferdig korpusxml - xsl-fil)
+    - fjerde steg (finpuss - språkattkjenning, feilmerkingskonvertering)
 * feilretting:
-** utanfor goldstandard
-** i goldstandard
-** etter feiltype:
-*** skrivefeil
-*** strukturfeil
-*** feil språk
-*** andre konverteringsfeil
+    - utanfor goldstandard
+    - i goldstandard
+    - etter feiltype:
+        - skrivefeil
+        - strukturfeil
+        - feil språk
+        - andre konverteringsfeil
 * xsl-filene:
-** kva, kor
-** korleis dei blir brukte
+    - kva, kor
+    - korleis dei blir brukte
 * bruksreglar for bound
 
-!!Konverteringsperspektiv:
+## Konverteringsperspektiv:
 * leggja til nye filer
 * konvertera filer
-* feilmeldingane in {{tmp/}}
+* feilmeldingane in `tmp/`
 * omkonvertera allereie konverterte dokument:
-** sjekka regresjonar + progresjonar
-** sjekka inn nykonverteringa
+    - sjekka regresjonar + progresjonar
+    - sjekka inn nykonverteringa
 * korleis testa konverteringa:
-** sjå på før- og eter-teksten
-** analysera alle ord
-** sjekka alle setningar - at dei er setningar (og blir avslutta med .?! osb.)
+    - sjå på før- og eter-teksten
+    - analysera alle ord
+    - sjekka alle setningar - at dei er setningar (og blir avslutta med .?! osb.)
 
-!!!Feilbehandling
+# Feilbehandling
 
-!!Automatisk generert feilskriving i news
+## Automatisk generert feilskriving i news
 
 bilde:Leif
 titt:Čiekčamat
@@ -98,4 +98,3 @@ Wordcount bør være med i metadata.
 metadata mangler i xml-filene:
 /apache_corpus/boundcorpus/orig/sme/news/Avvir_xml-filer/Avvir_2010_xml-filer
 (sjekka f.eks. year, ingen av filene inneholder ordet).
-

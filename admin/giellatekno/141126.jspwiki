@@ -1,7 +1,4 @@
-!!!Saksliste:
-
-
-
+# Saksliste:
 
 * Forrest (fleirspråklegheit + deling av sida)
 * smenob/nobsme
@@ -9,9 +6,7 @@
 * Clarino
 * Orienteringspunkt
 
-
-
-!! Forrest (fleirspråklegheit + deling av sida)
+##  Forrest (fleirspråklegheit + deling av sida)
 
 Børre har skrive dokumentasjon:
 
@@ -23,15 +18,14 @@ som skal vere i den fleirspråklege forrest og kva i techdoc.
 
 Kritiske ting (trepunktslista)
 
-# generere språkval av krysslinker. I dag har vi flagg på kvar side (manuelt), lenka til tvillingsida. 
-  Divvun har dette __generert__. Vi vil også ha dette systemet.
+1. generere språkval av krysslinker. I dag har vi flagg på kvar side (manuelt), lenka til tvillingsida. 
+  Divvun har dette **generert**. Vi vil også ha dette systemet.
   Cip's cups of tea 
-# Tabben skal ha ein opsjon der vi held på språket når vi trykker på tab:
+1. Tabben skal ha ein opsjon der vi held på språket når vi trykker på tab:
   Frå norsk hovudside via tabben "Samiske språk" til (i dag:) samisk.
   Vi vil ha lenkjing til norsk. (dette skal visstnok bare fungere for sider innafor samme forrest-tre)
-# Lokalisering av tab (tittelteksten i tabbane
+1. Lokalisering av tab (tittelteksten i tabbane
   (dette kjem som resultat av det nye systemet)
-
 
 Trond og Ciprian les og diskuterer, Ciprian implementerer.
 Tidsramme: Oppstart neste veke.
@@ -42,9 +36,7 @@ Flagg: Når folk skal lenkje på Facebook er det flagget som kjem opp.
 Vi vil ha eit anna bilete, t.d. logoen vår. Logo: som før, men 
 Sámi / giellatekno til Giella- / tekno
 
-
-
-!!Debugging
+## Debugging
 
 Unngå feil i dokumentasjon i koden:
 
@@ -52,7 +44,7 @@ Unngå feil i dokumentasjon i koden:
 
 Er det slik at forrest ikkje bygger den interne dokumentasjonen?
 
-{{{
+```
 tf-hsl-m0016:xdocs ttr000$ ll|sort|grep '^[dl]'
 drwxr-xr-x   tastatur
 drwxr-xr-x   installering
@@ -73,19 +65,19 @@ lrwxr-xr-x   words -> ../../../../../../words/doc  -->  går inn i dicts-forrest
 lrwxr-xr-x   bar -> ../../../../../../plan/barents/
 lrwxr-xr-x   appsdoc -> ../../../../../../oldkeyboardprojects/doc
 lrwxr-xr-x   key -> ../../../../../../oldkeyboardprojects/keyboards/
-}}}
+```
 
-!Dette vil vi ha i fleirspråkleg gtuit-forrest
+### Dette vil vi ha i fleirspråkleg gtuit-forrest
 * cgi-katalogen
 * background
 * keyboard (rydd opp)
 * barents (rydd opp)
 
-! Dette vil vi ha i techdoc-forrest
+###  Dette vil vi ha i techdoc-forrest
 * techdoc
 * ped/doc
 
-!Dette vil vi tja
+### Dette vil vi tja
 * plan
 
 Oppsett for ny side:
@@ -94,33 +86,29 @@ Flikar øverst på giellatekno.uit.no:
 
 Home - divvun - oahpa - dicts - samisk - andre språk
 
-
-
-
 Andre forrestversjoner:
-{{{
+```
 lrwxr-xr-x   uped -> ../../../../../../ped/userdoc/
 lrwxr-xr-x   dicts -> ../../../../../dicts/src/documentation/content/xdocs/
-}}}
+```
 
 Skal bli forrestversjon:
-{{{
+```
 lrwxr-xr-x   doc -> ../../../../../../techdoc
 lrwxr-xr-x   doc -> ../../../../../../techdoc/dicts (teknisk ordboksdoku)
-}}}
+```
 
 I bruk? Trond ser på det
-{{{
+```
 lrwxr-xr-x   ipkdoc -> ../../../../../../st/ipk/doc/
 lrwxr-xr-x   faodoc -> ../../../../../../langs/fao/doc/
 lrwxr-xr-x   kaldoc -> ../../../../../../langs/kal/doc/
 lrwxr-xr-x   komdoc -> ../../../../../../langs/kpv/doc/
-}}}
-
+```
 
 Innhaldet i dicts/.../xdocs:
 
-{{{
+```
 tf-hsl-m0016:xdocs ttr000$ ll|grep '^[ld]'
 drwxr-xr-x   admin
 drwxr-xr-x   archi
@@ -135,55 +123,51 @@ drwxr-xr-x   lists
 drwxr-xr-x   search
 drwxr-xr-x   terms
 drwxr-xr-x   test
-}}}
+```
 
-!geo
+### geo
 
 Manglande intro-tekst.
 
 Ciprian ser på det, og forklarer til Trond.
 
-
-! Politikk for ordboksfiler:
+###  Politikk for ordboksfiler:
 * Tekniske filer (for oss): i main/techdoc/dicts (som i dag)
 * Filer for publikum:
-** Vi skal tømme main/words/doc/dicts og legge dei i main/xdocs/dicts/..../xdocs/dicts
+    - Vi skal tømme main/words/doc/dicts og legge dei i main/xdocs/dicts/..../xdocs/dicts
    (dvs i dicts sin eigen forrestversjon)
-** I dicts-forrest skal overordna index-filer ligge i xdocs og meir ordbok-spesifikke
+    - I dicts-forrest skal overordna index-filer ligge i xdocs og meir ordbok-spesifikke
    filer ligge i xdocs/dicts.
 * om webdict: rå html
-** main/apps/dicts/apertium_dict/descript/
+    - main/apps/dicts/apertium_dict/descript/
 * om NDS: html-til-django 
-** apps/dicts/nds/src/neahtta/templates/
+    - apps/dicts/nds/src/neahtta/templates/
 
-! Typer informasjon om innholdet i ordbøkene:
+###  Typer informasjon om innholdet i ordbøkene:
 * kilder, evt forklaring av forkortinger
 * antall ord (evt delt på kilder)
 * er språkparene uavhengige av hverandre, eller er det bare speilvending
 * pedagogisk tilpassing (f.eks. i forhold til skolebøker etc.)
 
-!Arbeidsliste for ordboksinformasjon på nett
+### Arbeidsliste for ordboksinformasjon på nett
 
-* Alle ordbokssidene må krysslenke til __andre X-språklige ordbøker__
-** Other languages  More North Saami dictionaries  (__Cip__)
-* Ordbok-forrest: Fjerne dei lange menyane i russisk xdocs  (__Trond__)
-* Kompilere ny webdict for sme (__Trond__)
-* Lage index-filene for ordbøker i dicts/../xdocs/cgi som for gtuit (__Ciprian__)
-** skriv Bugzilla-melding (Ciprian)
+* Alle ordbokssidene må krysslenke til **andre X-språklige ordbøker**
+    - Other languages  More North Saami dictionaries  (**Cip**)
+* Ordbok-forrest: Fjerne dei lange menyane i russisk xdocs  (**Trond**)
+* Kompilere ny webdict for sme (**Trond**)
+* Lage index-filene for ordbøker i dicts/../xdocs/cgi som for gtuit (**Ciprian**)
+    - skriv Bugzilla-melding (Ciprian)
 * Bestemme ein sentral stad for ordboksdatabase, i tabellformat, som er på nett
-** Dei ulike ''om ordboka''-tekstane skal ha variablar til denne tabellen
+    - Dei ulike *om ordboka*-tekstane skal ha variablar til denne tabellen
 * Ciprian skal skrive et skript som skal validere lenkene på våre siden.
-** skriv Bugzilla-melding (Ciprian)
-* Sjå på og fjern lang russisk hale (__Trond__)
+    - skriv Bugzilla-melding (Ciprian)
+* Sjå på og fjern lang russisk hale (**Trond**)
 
-
-
-
-!! smenob/nobsme
+##  smenob/nobsme
 
 Ciprian ser på fil/tabell etter Lene sitt framlegg.
 
-!! Besøk frå dept
+##  Besøk frå dept
 
 Tema:
 
@@ -209,8 +193,7 @@ Divvun
 
 Rektorat- (2013) og dekanat-presentasjon (2014)
 
-
-!! Clarino
+##  Clarino
 
 Programmet: 14:00 Data, metadata and tools adaptation (Trond Trosterud, UiT)
 
@@ -218,8 +201,7 @@ Trond og Ciprian lagar presentasjon
 
 Metadata i nytt format. Samarbeid med Bergen
 
-
-!! Orienteringspunkt
+##  Orienteringspunkt
 
 Ciprian i Oslo: High performance computing.
 
@@ -229,6 +211,3 @@ Ciprian i Oslo: High performance computing.
 * OMorFi and HFST optimized lookup for morphological analysis
 * MarMoT for morphological disambiguation (tagging) (?)
 * mate-tools for dependency parsing (?, ssv. statistisk dep)
-
-
-

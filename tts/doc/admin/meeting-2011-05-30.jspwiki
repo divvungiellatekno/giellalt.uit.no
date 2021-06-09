@@ -1,6 +1,6 @@
-!!!Talesyntese
+# Talesyntese
 
-!!Norsk minitalesyntese
+## Norsk minitalesyntese
 
 Bør bli inkludert for å få rimeleg god opplesing av norske sitat og andre norske tekstfragment og norske namn inne i samiske tekstar.
 
@@ -8,9 +8,9 @@ Bør bli inkludert for å få rimeleg god opplesing av norske sitat og andre nor
 * integrera norsk ort2fon
 * vi treng eit passande korpus
 * finst det ferdige ressursar for alt bortsett frå opptak? -> språkbanken
-** kva då med integreringa med resten av systemet? den norske ort2ipa-delen burde kunna vera ein svart boks
+    - kva då med integreringa med resten av systemet? den norske ort2ipa-delen burde kunna vera ein svart boks
 
-!!Testverkty
+## Testverkty
 * få verkty for å produsera syntese frå H.fors? Ev. få dei til å generera stemmen for oss
 
 Dette treng vi for å sjekka at alle dei ulike delane av preprossesseringa blir rett.
@@ -18,18 +18,18 @@ Dette treng vi for å sjekka at alle dei ulike delane av preprossesseringa blir 
 * pause og ytringsfinale endringar framfor pause (t.d. t vs h av '-id')
 
 * talordskonvertering til tekst:
-** svært kontekstavhengig: 2-3 - 'to-til-tre', 'to minus tre' eller '(dei tapte) to tre'?
-** kan med fordel bruka disambiguering før tal-til-tekst-konvertering
+    - svært kontekstavhengig: 2-3 - 'to-til-tre', 'to minus tre' eller '(dei tapte) to tre'?
+    - kan med fordel bruka disambiguering før tal-til-tekst-konvertering
 
 Preprosessering, forslag til oppbygging med fst + cg:
-# morfologisk analyse
-# disambiguering (m.a. kasus på tal, rett grunnform (korte vs lange vokalar andre enn a), osb)
-## må gje berre ein analyse til slutt, slik at vi berre har éin analyse å generera ut i frå
-## må handtera ukjende ord "rimeleg", dvs slik at vi får ein sannsynleg analyse
-### heilt ukjende ord: berre sleppa dei gjennom, og lata ein generell tekst-til-IPA-konverterar gjera alt
-### ukjende ord med noko som liknar kasusending: regelbaset konvertering av endinga
-# (konvertera alle forkorta uttrykk til tekst med basis i analysert versjon)
-# generera IPA frå grunnform + analyse (her kan vi truleg gå rett frå forkorta uttrykk og sifferuttrykk til IPA)
+1. morfologisk analyse
+1. disambiguering (m.a. kasus på tal, rett grunnform (korte vs lange vokalar andre enn a), osb)
+    1. må gje berre ein analyse til slutt, slik at vi berre har éin analyse å generera ut i frå
+    1. må handtera ukjende ord "rimeleg", dvs slik at vi får ein sannsynleg analyse
+        1. heilt ukjende ord: berre sleppa dei gjennom, og lata ein generell tekst-til-IPA-konverterar gjera alt
+        1. ukjende ord med noko som liknar kasusending: regelbaset konvertering av endinga
+1. (konvertera alle forkorta uttrykk til tekst med basis i analysert versjon)
+1. generera IPA frå grunnform + analyse (her kan vi truleg gå rett frå forkorta uttrykk og sifferuttrykk til IPA)
 
 Tilgang til grunnform (via generering) vil rydda opp mykje når det gjeld vokal- og konsonantlengde.
 

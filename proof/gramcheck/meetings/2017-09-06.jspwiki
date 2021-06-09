@@ -7,10 +7,10 @@ Saker:
 * andre ting
 * arbeid framover
 
-!!!Sidan sist
+# Sidan sist
 
 Kevin og Sjur har hatt møte i Helsingfors. Referat frå Helsingforsmøtet
-[her|2017-08-23.html].
+[her](2017-08-23.html).
 
 * (X) gjera ferdig zip-lesinga (les no hfst-ar frå minnet òg
   [https://github.com/hfst/hfst/commit/355aaf9c], og Travis-testane fungerer)
@@ -18,32 +18,31 @@ Kevin og Sjur har hatt møte i Helsingfors. Referat frå Helsingforsmøtet
   program, og ventar på at vislcg3-endringar kjem upstream (så det er enklare
   for folk å bygga)
 * (X) kommandolineverkty for gramcheck-lib 
-** ( ) bør m.a. kunna korrigera tekst i batsj-modus, slik at ein kan evaluera
+    - ( ) bør m.a. kunna korrigera tekst i batsj-modus, slik at ein kan evaluera
    grammatikkontrollen automatisk i høve til eit gullstandardkorpus 
-** ( ) bør kunna ta ei liste med attr-verdi-par som argument for å spesifisera
+    - ( ) bør kunna ta ei liste med attr-verdi-par som argument for å spesifisera
    brukarval
-** (-) bør ha ein modus der ein får ei liste med alle moglege brukarval, og
+    - (-) bør ha ein modus der ein får ei liste med alle moglege brukarval, og
    tilgjengelege verdiar for kvar av dei – kan visa og velja pipeline, men ikkje
    brukarval innanfor pipeline
 * ( ) byta ut modes-fila med xml-fila som er ein del av zip-fila, og generer
   sh-skript frå den 
 * ( ) laga ein gramcheck-generator for å generera forslag (Sjur)
 * (X) endra hfst-tokenise til ikkje å konvertera taggar til CG-format 
-** (X) ... men gjer det i staden i fst-en med eit filter 
+    - (X) ... men gjer det i staden i fst-en med eit filter 
 endra tagg-parsinga til ikkje å vera avhengig av + som ein del av taggen 
 * ( ) skriva/dokumentera gramcheck-API 
 * ( ) lenka mot unicode-bibliotek og slå opp alle ord som har store bokstavar
   som om dei hadde små 
-** som ein enkel preprosessering av input (+ soft-hyphen)
-** ved runtime, så ingen eksplosjon i fst-en 
-** om dette fungerer, fjern A→a på førstebokstav av fst-en (dvs berre leksikalsk
+    - som ein enkel preprosessering av input (+ soft-hyphen)
+    - ved runtime, så ingen eksplosjon i fst-en 
+    - om dette fungerer, fjern A→a på førstebokstav av fst-en (dvs berre leksikalsk
    form av kvart ord i fst-en) 
 * ( ) laga gjettarar for alle opne ordklasser, inkl morfologi 
-** sjekk om det går ut over fst-storleik 
-** sjekk om det går ut over analysefart
+    - sjekk om det går ut over fst-storleik 
+    - sjekk om det går ut over analysefart
 
-
-!!Linda & Duommá
+## Linda & Duommá
 * jobbar med testkorpuset
 * legger til tagger i leksikonet 
 * samler falske positiver av kommaregler til Linda 
@@ -58,44 +57,44 @@ endra tagg-parsinga til ikkje å vera avhengig av + som ein del av taggen
 Nummer- og talprosesseringa må bli betre, med feiltaggar for feilaktige
 taluttrykk. Døme:
 
-{{{
+```
 "<163 - 250>"
         "163 - 250" Num Arab Sg Acc <== Err/NumRange
         "163 - 250" Num Arab Sg Gen
         "163 - 250" Num Arab Sg Ill Attr
         "163 - 250" Num Arab Sg Loc Attr
         "163 - 250" Num Arab Sg Nom
-}}}
+```
 
 Det skal vera:
 
-{{{
+```
 163–250 (n-dash)
-}}}
+```
 
 Men - kva med tvetydige lesingar:
 
-{{{
+```
 Ikte ledje dušše 163 - 250 olbmo leat boahtán odne.
 Igår var det bare 163 - 250 mennesker har kommet idag. =
 Igår var det bare 163 ; 250 mennesker har kommet idag.
-}}}
+```
 
 Det finst (iallfall) tre ulike moglege rettingar, avhengig av kontekst:
-* {{163-250}}  minus utan mellomrom, berre gi dette forslaget i mattekontekst
-* {{163; 250}}
-* {{163–250}} - kort tankestrek utan mellomrom
+* `163-250`  minus utan mellomrom, berre gi dette forslaget i mattekontekst
+* `163; 250`
+* `163–250` - kort tankestrek utan mellomrom
 
 Matematisk bruk:
-{{{
+```
 163 - 250 er -87
-}}}
+```
 
 (men der skal det vel ikkje vera mellomrom?)
 
-!!!Integrering med stavekontroll
+# Integrering med stavekontroll
 
-{{{
+```
 input:
 
 "<ukjendord>"
@@ -108,7 +107,6 @@ output:
 
 LIST ukjend = ?;
 
-
 input:
 
 "<kjent>"
@@ -118,10 +116,10 @@ output, viss me stavar kjende ord òg:
 "<kjent>"
         "kjent" A
         "forslag" A Stavekontroll
-}}}
+```
 
 Vi vil prøva ut å setja inn stavekontrollen etter hfst-tokenise. rett etter
-mwe-split, men før disambigueringa, ved å bruka {{hfst-ospell-cg}}.
+mwe-split, men før disambigueringa, ved å bruka `hfst-ospell-cg`.
 Stavekontrollen vil gje forslag med analyse, slik at vi kan disambiguera vekk
 irrelevante forslag, samtidig som vi har betre data for resten av
 dsiambigueringa (faktiske, moglege analyser istf spørsmålsteikn).
@@ -130,45 +128,43 @@ Vi vinn:
 * betre forslag (irrelevante er disambiguert vekk)
 * stavekontroll berre på ukjende ord (dersom det er det vi vel å gjera), dvs
   vi bruker ikkje stavekontrollen på feilskrivne ord som vi har ein analyse på
-  (kanskje - vi skal vurdera om vi vil køyra stavekontrollen på ''alle'' ord,
+  (kanskje - vi skal vurdera om vi vil køyra stavekontrollen på *alle* ord,
   slik at vi kanskje fangar opp ekteordsfeil som ikkje er dekt av reglane våre)
 
 Vi tapar:
 * fart - stavekontrollen kan vera sein når han skal generera forslag
 * kompleksitet - meir komplekse cg-reglar?
 
-!!!LT-integrering?
+# LT-integrering?
 
 LanguageTool er open kjeldekode for å integrera ein grammatikkontroll med LibreOffice, OpenOffice, Google Chrome og Firefox. Vi kan bruka integreringskoden deira for å få tilgang til vertsprogramma på ein enkel måte. Seinare kan vi kanskje bli ein alternativ backend til LT.
 
 Fungerer ikkje interaktivt.
 
-!!Testing og evaluering
+## Testing og evaluering
 
 Vi treng eit kommandolineverkty som kan nyttast til å testa og evalueringa
 grammatikkontrollen. Her er to døme på korleis evalueringsresultata blir vist
 i stavekontrolltestinga:
 
-* [Komi|https://gtsvn.uit.no/biggies/trunk/techdoc/proof/spelling/testing2/kpv/to/goldstandard/20170317-1224-corpus-gs-results.html]
-* [Nordsamisk|https://gtsvn.uit.no/langtech/trunk/langs/sme/devtools/speller_result_typos.to.html]
+* [Komi](https://gtsvn.uit.no/biggies/trunk/techdoc/proof/spelling/testing2/kpv/to/goldstandard/20170317-1224-corpus-gs-results.html)
+* [Nordsamisk](https://gtsvn.uit.no/langtech/trunk/langs/sme/devtools/speller_result_typos.to.html)
 
-!!!Andre ting
+# Andre ting
 * referere til grammatikkontroll i phden min "Giellaoahpa Divvun" (GoDivvun)
 
-!!!arbeid framover
+# arbeid framover
 
-!!Kevin
+## Kevin
 * stavekontroll i CG-pipelinen
 * testing av gramcheck-lib, finpuss, API-dokumentasjon
 * evalueringssystem mot gullkorpus
 * brukarval: hent liste over moglege feiltypar, skjul gitte typar
 
-
-!!Linda
+## Linda
 * teste subjekt-verbal kongruensfeil og fikse reglan
 * teste kommaregler
 
-!!!Neste møte
+# Neste møte
 
 Onsdag 27.9. kl 10.30
-

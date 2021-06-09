@@ -1,18 +1,18 @@
-!!!Agenda
+# Agenda
 
 * finalize the proper name xml structure
 * prepare integration of the kvensk project, if SD accepts
 
-Participants: __Børre, Linda, Sjur, Tomi, Trond__
+Participants: **Børre, Linda, Sjur, Tomi, Trond**
 
 Questions:
 
 * What (the content):
-** make an overview of all info we want to store
-** ... and how to organise it
+    - make an overview of all info we want to store
+    - ... and how to organise it
 * How (the xml structure):
-** one or two files? (two actually implies three)
-** what info to split into common parts and project / language specific parts
+    - one or two files? (two actually implies three)
+    - what info to split into common parts and project / language specific parts
 
 Views:
 
@@ -24,13 +24,13 @@ Views:
 Work process:
 
 * Timbuktu: Add iconic id  and semantics once, to common.
-** The machine MAKES the lg entries, based upon these assumpt:
-*** one form, inherited from iconic id
-*** one sem, inherited from common
-*** and we will decide a default declension class for each lg
-*** we may leave a tag in place saying "untouched by human hands"
+    - The machine MAKES the lg entries, based upon these assumpt:
+        - one form, inherited from iconic id
+        - one sem, inherited from common
+        - and we will decide a default declension class for each lg
+        - we may leave a tag in place saying "untouched by human hands"
 * Helsinki: - same case, but here we need heavy manual editing          
-** make a tag saying "now touched (by native speaker)" 
+    - make a tag saying "now touched (by native speaker)" 
 
 Conclusions:
 
@@ -43,7 +43,7 @@ Iconic id decided by the following principle:
 With the princ of inheritance (lemma inherited from common file):
 * inherit right away / at creation time (= larger files, more duplicate info)
 
-{{{
+```
 common        |     swe          |    fin           |    
 India_2       |     India        |    Intia         |    
 ->lg=a        |     ->India_2    |    ->India_2     |    
@@ -57,13 +57,13 @@ Timbuktu      |     Timbuktu     |    Timbuktu      |
 sem plc       |     <ab>Tmb.</ab>|
 ...
 
-              |  sme:            | ... | nor:   | fin | swe | eng
+|   sme:            | ... | nor:   | fin | swe | eng
 Tana          |   Deatnu         | ... | Tana   |     |     |
 ->lg=a id     |   ->Tana         | ... |->Tana  |     |     |
 ->lg=b id     |                  | ... |        |     |     |
 sem plc       |                    ... |              |     |
 ...                                ... |              |     |
-}}}
+```
 
 What do we store in the "common" file
  the iconic id
@@ -79,9 +79,9 @@ What is stored in the lang-specific ones? Linguistic info:
 * senses (pointers to concepts)
 * orthographical variants (incl. (common) misspellings)
 * acronym(s) and abbreviation(s):
-** as separate entries or as part of the name entry?
+    - as separate entries or as part of the name entry?
 
-{{{
+```
 NATO => OTAN
 NRL => NBR, Ap => Bb
 
@@ -102,25 +102,24 @@ NATO    NATO+N+Prop+Org+Sg+Nom
 
 "<NATO>" S:1732, 1732, 1732, 1732, 5423, 5849, 5849, 9980
         "NATO" N Prop Org Sg Nom <<< S:1285 @HNOUN
-}}}
-
+```
 
 Different aspects of abbreviations and acronyms:
 
 * expansion (requires linking/common entry):
-** abbr needs to be expanded for IR and  text-to-speech
-** translation systems want to transl. them to other lg abbrs (possibly requiring
+    - abbr needs to be expanded for IR and  text-to-speech
+    - translation systems want to transl. them to other lg abbrs (possibly requiring
    (intermediate) expansion)
 * linguistic analysis/properties:
-** the preprocessor is concerned about abbr's behaviour wrt. sentence delimitation (TRAB, ITRAB)
-** speller programs want to correct them whenever wrongly spelled (possibly 
+    - the preprocessor is concerned about abbr's behaviour wrt. sentence delimitation (TRAB, ITRAB)
+    - speller programs want to correct them whenever wrongly spelled (possibly 
    storing misspellings of abbrs)
-** disambiguators want their underlying POS analysis (in addition to their ABBR 
+    - disambiguators want their underlying POS analysis (in addition to their ABBR 
    tag)
-** they have inflections of their own
-*** St.dieđ. 10 / St. dieđáhus OR St. dieđáhusa... (implicit case)
-*** NRK:as (explicit case, except for Acc/Gen, who may be left unexpressed)
-** can take part in compunding, possibly derivation
+    - they have inflections of their own
+        - St.dieđ. 10 / St. dieđáhus OR St. dieđáhusa... (implicit case)
+        - NRK:as (explicit case, except for Acc/Gen, who may be left unexpressed)
+    - can take part in compunding, possibly derivation
 
 Lexicon conclusion:
 * store abbr. that are coming from names as separate entries?
@@ -136,12 +135,11 @@ Transducer conclusions:
 * Double acrs arelaready taken care of in the sme-dis.rle urle set (lexical acronyms
   are preferred over generated ones)
 
+# xml example format:
 
-!!!xml example format:
+## Concept center (common file):
 
-!!Concept center (common file):
-
-{{{
+```
 <entry id="India" type="full (default)/abr/acr/alt/err">
  <sem>
   <plc type="xxx" ssrcode="" > <!-- type=5., ssrcode=6. -->
@@ -173,11 +171,11 @@ Transducer conclusions:
 ...
  <langentry lang="fin" ref="India"/>
 </entry>
-}}}
+```
 
-!!Language file for, say, sme:
+## Language file for, say, sme:
 
-{{{
+```
 <entry id="India">
  <!-- Do we need the stem, or can it be inferred/inherited from the id?
       NO, only if different from the id. -->
@@ -191,13 +189,12 @@ Transducer conclusions:
   <sense ref="India"/>
  </senses>
 </entry>
-}}}
+```
 
-
-!!Language file for fin:
+## Language file for fin:
 (numbers refer to Irene's draft, see below)
 
-{{{
+```
 <entry id="Intia"> <!-- 1. -->
  <stem lexc="14">(only if different from id/headword)</stem> <!-- 2. and 3. -->
  <name-parts> <!-- 4. -->
@@ -221,13 +218,13 @@ Transducer conclusions:
   <sense ref="India_2"/>
  </senses>
 </entry>
-}}}
+```
 
-!!Language file for kvensk:
+## Language file for kvensk:
 (numbers refer to Irene's draft, see the [meeting memo from Nov. 28
-|https://giellalt.uit.no/admin/weekly/2005/Meeting_2005-11-28.html#7.+Name+lexicon+infrastructure])
+| https://giellalt.uit.no/admin/weekly/2005/Meeting_2005-11-28.html#7.+Name+lexicon+infrastructure])
 
-{{{
+```
 <entry id="Porsanki"> <!-- 1. -->
  <stem lexc="14">(only if different from id/headword)</stem> <!-- 2. and 3. -->
  <name-parts> <!-- 4. -->
@@ -264,11 +261,11 @@ Transducer conclusions:
 </entry>
 In the case that  stem = lemma, we have the entry:
  <stem lexc="14"/>
-}}}
+```
 
 These points from Irene's list are still open:
 
-{{{
+```
 Print info - do they belong to the common or language-specific sections?:
 12. kartprodukt
 13. kartblad
@@ -280,4 +277,4 @@ Unclassified:
 Multimedia - do they belong to the common or language-specific sections?:
 26. lydfil
 27. bilde(r), illustrasjone(r)
-}}}
+```

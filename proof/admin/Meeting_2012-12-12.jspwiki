@@ -1,85 +1,91 @@
-!!!Speller meeting
+# Speller meeting
 
 What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
-There's [a separate document|WindowsInstallationTest.html] containing the test results for different combinations of MS Office and Windows  versions.
+There's [a separate document](WindowsInstallationTest.html) containing the test results for different combinations of MS Office and Windows  versions.
 
-__DONE:__
-* write to Tino about the issues with his installer, link to installer test table (__Sjur__)
-* __Børre__ has analysed the diffs and the registry entries involved in the installer; more analysis required
+**DONE:**
+* write to Tino about the issues with his installer, link to installer test table (**Sjur**)
+* **Børre** has analysed the diffs and the registry entries involved in the installer; more analysis required
 
-__TODO:__
-* study the diffs, especially the NOB proofing tool diff (__Børre__)
-* look at combinations of Windows XP and Office (__Børre__)
-* get a proper MS certificate, to remove the warning users get when installing (__Børre__)
+**TODO:**
+* study the diffs, especially the NOB proofing tool diff (**Børre**)
+* look at combinations of Windows XP and Office (**Børre**)
+* get a proper MS certificate, to remove the warning users get when installing (**Børre**)
 
-__POSTPONED:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
-* send a request to an NSIS developer e-mail list (__Sjur__)
-* try to find an NSIS script for building MSI packages (__Børre__)
+**POSTPONED:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (**Sjur**)
+* try to find an NSIS script for building MSI packages (**Børre**)
 * add Windows 8 support to our installer (if possible)
 
-!!!PLX conversion
+# PLX conversion
 
 Remaining PLX bugs:
 
-!!Second PRI
- 
-||Section for Tags-not-working
-| +CmpN/None in comp-sugg | 1883-as              | 508		| FIXED
+## Second PRI
 
  
-||REGRESSIONS
-| doesn't follow cmp-tags | sámemiššuvdnasearvepresideanta | 489
-| left cmp-tags		      | beavddelokten                  | 535,604
+|  Section for Tags-not-working
+| --- 
+|  +CmpN/None in comp-sugg | 1883-as              | 508		| FIXED
 
  
-||SUGGESTIONS
-| STRANGE SUGGESTION-PRIORITIES | guollibusse > Vuolli-busse (and not the expected: guollebusse) | 397,917 | oaivebussiid, guollebussiid  not suggested   SEE ALSO 917  bargomáhtuid    ONLY GENERATED NOM/AG MARKED LEFT ARE SUGGESTED
-| no suggestions 1883:s when input 1883:as	| 508
+|  REGRESSIONS
+| --- 
+|  doesn't follow cmp-tags | sámemiššuvdnasearvepresideanta | 489
+|  left cmp-tags		      | beavddelokten                  | 535,604
 
-!!Second Last PRI
+ 
+|  SUGGESTIONS
+| --- 
+|  STRANGE SUGGESTION-PRIORITIES | guollibusse > Vuolli-busse (and not the expected: guollebusse) | 397,917 | oaivebussiid, guollebussiid  not suggested   SEE ALSO 917  bargomáhtuid    ONLY GENERATED NOM/AG MARKED LEFT ARE SUGGESTED
+|  no suggestions 1883:s when input 1883:as	| 508
+
+## Second Last PRI
 
 Bugs from here on can be left out of the next release if we are short on time.
 
+|  Compounds
+| --- 
+|  imposs" cmps along w num.         | 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145 | NO SUGGESTIONS - GOOD - BUT:
+|  imposs" cmps sákkasteapmifierbmi>	| (225) aseákkasteapmifierbmi		ase-              | 536      | NOW FIXED
+|  --"--                             | (225) asiákkasteapmifierbmi		asi-
+|  --"--                             | (225) ásaákkasteapmifierbmi		ása-
+|  --"--                             | (225) áseákkasteapmifierbmi		áse-
+|  --"--                             | (225) ásoákkasteapmifierbmi		áso-
+|  --"--                             | (225) ásuákkasteapmifierbmi		ásu-
+|  --"--                             | (221) ášoákkasteapmifierbmi		ášo-
+|  --"--                             | (221) ášuákkasteapmifierbmi		ášu-
+|  num cmp:s on 0-                   | 051-nummarat                                         | 631
+|  non-ex. word accepted             | saame                                                | 658
 
-||Compounds
-| imposs" cmps along w num.         | 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145 | NO SUGGESTIONS - GOOD - BUT:
-| imposs" cmps sákkasteapmifierbmi>	| (225) aseákkasteapmifierbmi		ase-              | 536      | NOW FIXED
-| --"--                             | (225) asiákkasteapmifierbmi		asi-
-| --"--                             | (225) ásaákkasteapmifierbmi		ása-
-| --"--                             | (225) áseákkasteapmifierbmi		áse-
-| --"--                             | (225) ásoákkasteapmifierbmi		áso-
-| --"--                             | (225) ásuákkasteapmifierbmi		ásu-
-| --"--                             | (221) ášoákkasteapmifierbmi		ášo-
-| --"--                             | (221) ášuákkasteapmifierbmi		ášu-
-| num cmp:s on 0-                   | 051-nummarat                                         | 631
-| non-ex. word accepted             | saame                                                | 658
-
-!!Last PRI
- 
-||Capitals
-| doesn't understand caps   | 1700-LOHKU                    | 647
+## Last PRI
 
  
-||REGRESSION
-| not recognized anymore recognized  | biilarievttijođiheaddjái | 819		
+|  Capitals
+| --- 
+|  doesn't understand caps   | 1700-LOHKU                    | 647
 
+ 
+|  REGRESSION
+| --- 
+|  not recognized anymore recognized  | biilarievttijođiheaddjái | 819		
 
-__DONE:__
-* __Tomi__ has solved even more PLX bugs
+**DONE:**
+* **Tomi** has solved even more PLX bugs
 
-__TODO:__
-* investigate the inconsistent PLX conversion bug, cf ''guollibusse'' (__Tomi__)
-* solve the remaining PLX bugs one by one (__Tomi__)
+**TODO:**
+* investigate the inconsistent PLX conversion bug, cf *guollibusse* (**Tomi**)
+* solve the remaining PLX bugs one by one (**Tomi**)
 
-!!!Release plan
+# Release plan
 
 The December 1 goal has passed, without meeting the targets. On the plus side is that the number of open PLX bugs have been greatly reduced, and Tomi are squashinhg PLX bugs all the time. It just takes more time than anticipated.
 
@@ -88,8 +94,8 @@ The installer was not easily solved by the WiX alternative - it turned out that 
 Re-scheduling the release plan:
 
 * New deadline December 20:
-** PLX bugs solved
-** if met, we'll release a 2.3 update using the NSIS installer, and mainly linguistic improvements for SME
+    - PLX bugs solved
+    - if met, we'll release a 2.3 update using the NSIS installer, and mainly linguistic improvements for SME
 * January 4: new Windows installer Alpha
 * January 10: Beta release, PLX fixes for SMA and SMJ
 * January 21: Divvun 3 release

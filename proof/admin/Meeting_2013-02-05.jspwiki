@@ -1,41 +1,42 @@
-!!!Speller meeting
+# Speller meeting
 
 What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 Tino has mailed us about his latest finding: his WiX installer works if the user has never opened MS Office before, but after the first invocation of any Office application, it doesn't work anymore using HKLM. Instead the tools must be registered for each user. He is working on a solution.
 
-__DONE:__
+**DONE:**
 
-__TODO:__
-* test Tino's analysis of the installer problem (__Børre__)
-* look at combinations of Windows XP and Office (__Børre__)
-* get a proper MS certificate, to remove the warning users get when installing (__Børre__)
+**TODO:**
+* test Tino's analysis of the installer problem (**Børre**)
+* look at combinations of Windows XP and Office (**Børre**)
+* get a proper MS certificate, to remove the warning users get when installing (**Børre**)
 
-__POSTPONED:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
-* send a request to an NSIS developer e-mail list (__Sjur__)
-* try to find an NSIS script for building MSI packages (__Børre__)
+**POSTPONED:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (**Sjur**)
+* try to find an NSIS script for building MSI packages (**Børre**)
 * add Windows 8 support to our installer (if possible)
 
 Remaining PLX bugs:
 
-!!Second PRI
+## Second PRI
 
-||REGRESSIONS
-| cmp-tags               | guovttis is marked CmpN/None      | 1586
-| revert!                | Sámi% radio                       | 1587
-| cmp!                   | samuRaja                          | 1588, see below
-| adverbs+MiddleNouns    | doppebeal accepted and suggested  | 1590
-| cmp-form from gen cmps | goahtesoahke-, davvioarje-  etc are not recognized, beacause the cmps are
+|  REGRESSIONS
+| --- 
+|  cmp-tags               | guovttis is marked CmpN/None      | 1586
+|  revert!                | Sámi% radio                       | 1587
+|  cmp!                   | samuRaja                          | 1588, see below
+|  adverbs+MiddleNouns    | doppebeal accepted and suggested  | 1590
+|  cmp-form from gen cmps | goahtesoahke-, davvioarje-  etc are not recognized, beacause the cmps are
 generated   | 1599
 
-{{{
+```
 samu
 samu	sapmu+Wthr+N+Sg+Acc
 samu	sapmu+Wthr+N+Sg+Gen
@@ -44,38 +45,37 @@ Raja
 Raja	Raja+N+Prop+Plc+Sg+Acc
 Raja	Raja+N+Prop+Plc+Sg+Gen
 Raja	Raja+N+Prop+Plc+Sg+Nom
-}}}
+```
 
-The ''Sámi radio'' case: convert all elements to independent {{WIX}} (for acceptance), keep the whole - including the space - as an {{WI}} (for suggestions).
+The *Sámi radio* case: convert all elements to independent `WIX` (for acceptance), keep the whole - including the space - as an `WI` (for suggestions).
 
-!!!Release status
+# Release status
 
-__DONE:__
-# release RC2 January 30 (__Sjur__)
-# update list of known bugs (__Thomas__)
-## soames hárvenaš surggiiduvvon sánit eai dohkkehuvvo - some rare derived words are not accepted
-## soames hárvenaš goallossátneminstarat eai dohkkehuvvo - some rare compounds are blocked
-## romalaš nummarat eai dohkkehuvvo - roman numbers are not accepted
-## the suggestions for all-cap words can be way off
-## there are still installations issues on some Windows 7 configurations (we are working on it)
+**DONE:**
+1. release RC2 January 30 (**Sjur**)
+1. update list of known bugs (**Thomas**)
+    1. soames hárvenaš surggiiduvvon sánit eai dohkkehuvvo - some rare derived words are not accepted
+    1. soames hárvenaš goallossátneminstarat eai dohkkehuvvo - some rare compounds are blocked
+    1. romalaš nummarat eai dohkkehuvvo - roman numbers are not accepted
+    1. the suggestions for all-cap words can be way off
+    1. there are still installations issues on some Windows 7 configurations (we are working on it)
 
-__TODO:__
-# write a short press release emphasising the linguistic updates for North Sámi,
-   and noting that we still have certain problems with Win7/Office2010 (__Thomas, BM__)
-## many new words (how many? should be estimated and the number included)
-## integrated the latest normativity changes
-# check and update all user docuentation (__all__)
-## for nyaste Windows og MacOSX + nyaste Office: komplett og oppdatert info
-## for eldre versjonar av OS og Off: samle-info, ev. gamal info som må sjekkast
-## sjekk Windows 8 + Office 2013
-# if no new serious bugs are found, release as Divvun 2.3 next week (__all__)
+**TODO:**
+1. write a short press release emphasising the linguistic updates for North Sámi,
+   and noting that we still have certain problems with Win7/Office2010 (**Thomas, BM**)
+    1. many new words (how many? should be estimated and the number included)
+    1. integrated the latest normativity changes
+1. check and update all user docuentation (**all**)
+    1. for nyaste Windows og MacOSX + nyaste Office: komplett og oppdatert info
+    1. for eldre versjonar av OS og Off: samle-info, ev. gamal info som må sjekkast
+    1. sjekk Windows 8 + Office 2013
+1. if no new serious bugs are found, release as Divvun 2.3 next week (**all**)
 
-!!!Updated release plan
+# Updated release plan
 
 * New deadline January 29:
-** PLX bugs solved
+    - PLX bugs solved
 * January 30: RC2, NSIS installer
 * February 6: Divvun 2.3 release, SME linguistic updates, NSIS installer, updated user documents
 
-!!!Next meeting
-
+# Next meeting

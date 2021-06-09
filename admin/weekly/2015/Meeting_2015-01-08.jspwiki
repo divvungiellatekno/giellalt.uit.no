@@ -11,27 +11,27 @@ Saker:
 * Vårplanar
 * Bugzilla
 
-!!!MacVoikko
+# MacVoikko
 
 Fungerer for alle gtd-språka, etter Sjur sine siste bugfiksar. Neste steg:
 
-# For oss i miljøet
-## Lag dokumentasjon (epost til jspwiki)
-# For resten av verda, litt lenger fram: 
-## Legg til språknamn i staden for språkkode
-## lag installasjonsprogram
-## legg ut til nedlasting
-## vurder om vi kan leggja han ut i Mac App Store (ei pakke pr språk)
+1. For oss i miljøet
+    1. Lag dokumentasjon (epost til jspwiki)
+1. For resten av verda, litt lenger fram: 
+    1. Legg til språknamn i staden for språkkode
+    1. lag installasjonsprogram
+    1. legg ut til nedlasting
+    1. vurder om vi kan leggja han ut i Mac App Store (ei pakke pr språk)
 
-!!!Tastaturstatus + neste steg
+# Tastaturstatus + neste steg
 
-!!Nye mobiltastatur
+## Nye mobiltastatur
 
-* Trond har teikna cyr-tastatur for ''dei fleste'' cyr-språka
+* Trond har teikna cyr-tastatur for *dei fleste* cyr-språka
 * Dei er av tre typar (fordelinga mellom dei to fyrste gruppene er diskutabel)
-** Modifisert Nivå 1 (Komi)
-** Språkspesifikke bokstavar på langtrykk 
-** Reint russisk tastatur utan tillegg (mordvinske språk)
+    - Modifisert Nivå 1 (Komi)
+    - Språkspesifikke bokstavar på langtrykk 
+    - Reint russisk tastatur utan tillegg (mordvinske språk)
    (vil ha nytte av stavekontroll)
 * Antti vil venta med Cree etc.
 
@@ -39,7 +39,7 @@ Testing av bokstavfrekvens: Denne kommandoen har alltid fungert,
 men gjer det ikkje no. Kommentar?
 
 Trond:
-{{{
+```
 LANG=no_NO.UTF-8 echo bø |  sed 's/\(.\)/\1 /g;' 
  b ? ?
 
@@ -52,10 +52,10 @@ LC_MONETARY="C"
 LC_NUMERIC="C"
 LC_TIME="C"
 LC_ALL=
-}}}
+```
 
 Sjur:
-{{{
+```
 $ echo bø | gsed 's/\(.\)/\1 /g;' 
 b ø 
 
@@ -70,71 +70,69 @@ LC_MONETARY="no_NO.UTF-8"
 LC_NUMERIC="no_NO.UTF-8"
 LC_TIME="no_NO.UTF-8"
 LC_ALL="no_NO.UTF-8"
-}}}
+```
 
-!!Ny funksjonalitet på mobiltastatura
+## Ny funksjonalitet på mobiltastatura
 
-! Ny funksjonalitet
+###  Ny funksjonalitet
 
 * stavekontroll
-** iOS: ordfullføring
-** Android: ordfullføringsforslag (fleire)
+    - iOS: ordfullføring
+    - Android: ordfullføringsforslag (fleire)
 * læring? (læra seg nye ord, vanlege ord for brukaren/frekvensbaserte forslag)
-** fst eller listebasert? Moglege problem:
-*** fst-overgenerering gjev elendige forslag -> krev vekta fst-ar
-*** tekniske problem med fst-implementering -> tek (for lang) tid
+    - fst eller listebasert? Moglege problem:
+        - fst-overgenerering gjev elendige forslag -> krev vekta fst-ar
+        - tekniske problem med fst-implementering -> tek (for lang) tid
 
-
-! Skoltesamisk letter prime vs acute accent
+###  Skoltesamisk letter prime vs acute accent
 
 Vi ventar på svar frå skoltesamane - kva vil dei eigentleg ha?
 
-! Nye plattformar
+###  Nye plattformar
 
 * Windows Phone ?
 * Skrivebordssystem? Dvs generera tastatur for Windows, MacOSX og Linux
   ut frå yaml-filer, slik vi gjer for mobiltastatura
-** skal laga ferdige installasjonspakkar
-* xml det første halvåret , fil i {{(~)/Bibliotek/keyboard layouts/}} (Trond)
+    - skal laga ferdige installasjonspakkar
+* xml det første halvåret , fil i `(~)/Bibliotek/keyboard layouts/` (Trond)
 * yaml på lang sikt
 
-!!!ENG
+# ENG
 
 Skulle ha sendt svar i går.
 
-# Trond har skrive eit utkast
-# Sjur les og reviderer
-# Deretter diskuterer vi og sender.
+1. Trond har skrive eit utkast
+1. Sjur les og reviderer
+1. Deretter diskuterer vi og sender.
 
-!!!SamEst-møtet i går
+# SamEst-møtet i går
 
 Vi heldt møte utan Fran og Trond, Heli har sjekka inn referat.
 
-!!!Ordbøker og analysatorar - felles kjeldekode og infrastruktur
+# Ordbøker og analysatorar - felles kjeldekode og infrastruktur
 
-!!Dei separate ordbøkene
+## Dei separate ordbøkene
 
 Her er standardisering viktig og velkome. 
 
-!!Lemmasynkronisering av ordbøker og analysator
+## Lemmasynkronisering av ordbøker og analysator
 
-# Som i dag (jf. Kone-språka)
-# Med fjernintegrering words/dicts -- langs/LANG (dvs. separate ordbøker)
+1. Som i dag (jf. Kone-språka)
+1. Med fjernintegrering words/dicts -- langs/LANG (dvs. separate ordbøker)
 
 Det er ikkje opplagt kva som er den beste løysinga
 
-__Tiltak:__ Ha eit møte om dette. Når? Kor? Kven? 
+**Tiltak:** Ha eit møte om dette. Når? Kor? Kven? 
 Neste veke, medan Jaska og Sjur er i Tromsø.
 
-
-!!!KMD-prosjektet
+# KMD-prosjektet
 
 Lulesamisk, korpus + ordbok
 
 Deltakarar: Unhammer, Sandra, Sjur, Trond.
 Tid: i morgon kl 11.
 
-!!!Vårplanar
+# Vårplanar
 
 Dette er ein start for vidare diskusjon:
 
@@ -153,5 +151,5 @@ Infra:
 
 Giellatekno:
 * Sjå forskingsgruppe-plan
-{{$GTPRIV/plan/admin/grantapplications/hsl_forskningsgrupper/2014/giellatekno_fg14.pdf}}
+`$GTPRIV/plan/admin/grantapplications/hsl_forskningsgrupper/2014/giellatekno_fg14.pdf`
 * Planarbeid: neste veke

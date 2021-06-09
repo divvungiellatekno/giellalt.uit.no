@@ -1,17 +1,17 @@
-!!!Corpus meeting 7.11.2011
+# Corpus meeting 7.11.2011
 
 * Conversion status
-** what is (not) included in prestable
-** what does it look like
+    - what is (not) included in prestable
+    - what does it look like
 * Next tasks:
-** sentence alignment
+    - sentence alignment
 * targets:
-** forvaltningsordbok
-** Autshumato/translation memory
+    - forvaltningsordbok
+    - Autshumato/translation memory
 
-!!!Conversion status
+# Conversion status
 
-!!What is (not) included
+## What is (not) included
 
 In prestable:
 
@@ -26,25 +26,26 @@ Here we count sme words.
 
 Prestable total is 1 612 856.
 
-|| Catalogue                            || prestable ||conv. locally@Trond || conv. apache@vic
-| admin/sd/samediggi.no/                     |   197 676 |  xxx      |   233 667
-| admin/sd/other_files/                      |   335 543 | 1 925 954 | 1 935 348
-| admin/depts/other_files                    |   571 250 | 1 573 658 | 1 311 716
-| admin/depts/regjeringen.no                 |   218 730 | 1 592 557 | 1 613 487
-| prestable/converted/sme/admin/others/laws  |    13 521 |   631 361 |   649 426
-| Total                                      | 1 336 720 |      xxx  | 5 743 644
+|   Catalogue                            | prestable |conv. locally@Trond | conv. apache@vic
+| --- | --- | --- | --- 
+|  admin/sd/samediggi.no/                     |   197 676 |  xxx      |   233 667
+|  admin/sd/other_files/                      |   335 543 | 1 925 954 | 1 935 348
+|  admin/depts/other_files                    |   571 250 | 1 573 658 | 1 311 716
+|  admin/depts/regjeringen.no                 |   218 730 | 1 592 557 | 1 613 487
+|  prestable/converted/sme/admin/others/laws  |    13 521 |   631 361 |   649 426
+|  Total                                      | 1 336 720 |      xxx  | 5 743 644
 
 This is enough to start doing sentence alignment, but it also shows that there
 is quite a lot that is NOT yet good enough for (automatic) inclusion in
 prestable.
 
-!!What does it look like
+## What does it look like
 
-!Document structure
+### Document structure
 
 Law bug still open.
 
-!Text 
+### Text 
 
 For sme, ligatures represent 400 errors. Others?
 
@@ -54,12 +55,12 @@ All words divided in pdf are still lost.
 
 Sjur and Trond to look at all-caps xfst script.
 
-Do not forget this conversion error (missing __đ__):
-''Vuo oskuvlla ja joatkkaoahpahusa oktasaš''
+Do not forget this conversion error (missing **đ**):
+*Vuo oskuvlla ja joatkkaoahpahusa oktasaš*
 
-{{{
+```
 ~/freecorpus$ccat prestable/converted/sme/laws/other_files/finnmarkkulahka_lov_web.pdf.xml \
-|preprocess|usme|grep '?'|l
+| preprocess|usme|grep '?'|l
 
 Bántideapmi     Bántideapmi     +?
 aktivan aktivan +?
@@ -68,60 +69,57 @@ váﬁstit váﬁstit +?
 mear    mear    +?    <=================================== hyph error
 rida    rida    +?
 ﬁdnet   ﬁdnet   +?
-}}}
+```
 
+# Next tasks
 
-!!!Next tasks
-
-!!Sentence alignment
+## Sentence alignment
 
 Børre has initiated the parallelisation of the entire prestable parallelised corpus.
 TCA2 was run with default sentences, and the anchor file in GTHOME/common/.
 
-!!!Targets
+# Targets
 
 * forvaltningsordbok
 * Autshumato/translation memory
 
-{{{
+```
 cd GTLANG/st/nob/src
 make abbr
 and that's it.
 cat nobtext | preprocess --abbr=st/nob/bin/abbr.txt
-}}}
+```
 
+# Todo
 
-!!!Todo
-
-* sentence alignment (already started) (__Børre__)
-** The files are in {{/home/boerre/freecorpus/tmp}}
-* testing the alignment output (__Berit Merete, Børre__)
-* nob morphological analysis, look at ob.fst vs. nob.fst (__Trond, Sjur__)
-* Look through [list of TCA2 improvements|/tools/tca2.html]
+* sentence alignment (already started) (**Børre**)
+    - The files are in `/home/boerre/freecorpus/tmp`
+* testing the alignment output (**Berit Merete, Børre**)
+* nob morphological analysis, look at ob.fst vs. nob.fst (**Trond, Sjur**)
+* Look through [list of TCA2 improvements](/tools/tca2.html)
 * Improve anchor file.
-* Parallellised corpus to tmx (__Ciprian, Børre__)
-* giza / word aligment incl. documentation of the process (__Trond, Francis__)
-* pdf conversion improvements, incl. hyphenation (__Børre__)
-* improving conversion of dirty documents (__Børre__)
+* Parallellised corpus to tmx (**Ciprian, Børre**)
+* giza / word aligment incl. documentation of the process (**Trond, Francis**)
+* pdf conversion improvements, incl. hyphenation (**Børre**)
+* improving conversion of dirty documents (**Børre**)
 
-!!!Milestones
+# Milestones
 
-* __8.11.__ First sentence parallellisation done
-* __11.11.__ Testing first sentence parallellisation
-* __11.11.__ Improve document conversion (?) and sentence parallellisation
-** Issues: Ligature, Hyphens, others… 
+* **8.11.** First sentence parallellisation done
+* **11.11.** Testing first sentence parallellisation
+* **11.11.** Improve document conversion (?) and sentence parallellisation
+    - Issues: Ligature, Hyphens, others… 
 * Improve nob fst
-** __11.11.__ Status quo and some attempts to improvements
-*** Choose between ob.fst and nob.fst
-*** Look at missing, add words
-*** Look at compounding
-** __Before Giza:__ Deliver a for-now optimal fst for nob.
-* __Before Giza:__ Convert xml parallel to tmx.
+    - **11.11.** Status quo and some attempts to improvements
+        - Choose between ob.fst and nob.fst
+        - Look at missing, add words
+        - Look at compounding
+    - **Before Giza:** Deliver a for-now optimal fst for nob.
+* **Before Giza:** Convert xml parallel to tmx.
 * Set up giza
 * First word parallellisation
 * Testing
 
-
-!!!Next meeting
+# Next meeting
 
 Friday at 10.

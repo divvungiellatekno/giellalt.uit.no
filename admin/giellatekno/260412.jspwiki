@@ -1,8 +1,8 @@
-!!!Giellatekno-møte 26.04.2018
+# Giellatekno-møte 26.04.2018
 
 Tilstede: Trond, Ciprian, Chiara, Lene
 
-!!Saksliste
+## Saksliste
 * Ciprians reise
 * Søknad til NFR
 * Konteaksta
@@ -11,21 +11,19 @@ Tilstede: Trond, Ciprian, Chiara, Lene
 * Folk på timelønn
 * Ferie
 
-
-
-!! Ciprians reise
+##  Ciprians reise
 
 Ciprian presenterte artikkel som blir fagfellevurdert og publisert.
 
 Bonus: Muligens får vi et verktøy til visualisering av flerspråklige ordbøker.
 
-!! Søknad til NFR
+##  Søknad til NFR
 Søknaden blei sendt i går innen tidsfristen. Samarbeid mellom SA og UiT, søknadssum 6 mill.
 Tittelen: The role of MT in Saami literacy.
 
-{{private/trunk/plan/admin/applications/nfr_2018/}}
+`private/trunk/plan/admin/applications/nfr_2018/`
 
-!! Konteaksta
+##  Konteaksta
 
 Alt er implementert lokalt, men last opp fil er enda ikke implementert på nettet.
 google-konto for Konteaksta er oppretta.
@@ -42,81 +40,74 @@ Trond skal forbedre abbr-preprosesseringa for hfst, dvs. klassifisering av abbr 
 
 Møte med lærere på NTVGS tirsdag 22. mai kl. 12-15.30 (Chiara og Lene)
 
-!! FST + CG pipeline (sent-proc.sh, men også ellers)
+##  FST + CG pipeline (sent-proc.sh, men også ellers)
 
 Input til CG skjer i dag i prinsippet på tre måtar:
 
-# perl xfst perl
-# perl hfst perl
-# hfst hfst hfst
+1. perl xfst perl
+1. perl hfst perl
+1. hfst hfst hfst
 
 Det vi vil ha over heile linja er (3), dvs:
 
-{{./configure --with-hfst --enable-tokenisers}}
+`./configure --with-hfst --enable-tokenisers`
 
-{{hfst-tokenize --giella-cg --weight-classes=1 tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst|vislcg3 -g src/syntax/disambiguator.cg3}}
+`hfst-tokenize --giella-cg --weight-classes=1 tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst|vislcg3 -g src/syntax/disambiguator.cg3`
 
-Sjå {{hfst-tokenize --help}} for eit oversyn over alternativ.
+Sjå `hfst-tokenize --help` for eit oversyn over alternativ.
 
-
-!! Planer framover (kort sikt)
+##  Planer framover (kort sikt)
 
 ML er i Tromsø neste uke, vi skal gjøre ferdig en artikkel om smn speller.
 
 Arbeide med tokenisering i hfst-pipeline.
 
-!Små driftsmidler
+### Små driftsmidler
 Lene Og Trond lager søknader.
 2 søknader  (lønnstrinn 35 koster ca. 41 000 per månedsverk på budsjettet)
-# sørsamisk syntaktisk analyse
-# evt. korpusarbeid:
-## parallellisering av tekster
-## flere tekster, visse domene (f.eks. nob-sme samiske tall forteller)
+1. sørsamisk syntaktisk analyse
+1. evt. korpusarbeid:
+    1. parallellisering av tekster
+    1. flere tekster, visse domene (f.eks. nob-sme samiske tall forteller)
 
-!Oppdatering av korp
+### Oppdatering av korp
 
 Fire kriteria å vurdere
 
-# enspråklige tekster
-# flere parallelltekster, særlig for nye språkpar (i dag: nob-sme, nob-sma, fin-smn). 
-## Kandidat: fin-sme skal vere med på neste 
-# forbedre metadata
-# forbedre preprosessering
+1. enspråklige tekster
+1. flere parallelltekster, særlig for nye språkpar (i dag: nob-sme, nob-sma, fin-smn). 
+    1. Kandidat: fin-sme skal vere med på neste 
+1. forbedre metadata
+1. forbedre preprosessering
 
 Konvertering pdf til xml: Problemet er bindestrekar på slutten av linja i pdf-dokumentet.
 
 (note: ordformsøk fin-smn går bra, men ikkje lemmasøk)
 
-!Statens kartverk
+### Statens kartverk
 Vi har fått inn lister fra SK, vi må diskutere hvilken database vi ønsker.
 
 Ciprian tar kontakt med SK for å avklare en del informasjon i listene.
 
 Deretter ser vi på det, og inviterer evt nokon frå SK til diskusjon.
 
-!LIA - prioriteres
+### LIA - prioriteres
 Ciprian og Lene arbeider med dette.
 
-!Reisepenger
+### Reisepenger
 
 * Vi lagar budsjett for desse pengane. Alle: Mail til Trond
 * Vi bør ha gode rutiner for oppfølging i løpet av året (Trond)
 * Omposteringer for 2018: Torsby, Kautokeino
 
-
-!! Folk på timelønn
+##  Folk på timelønn
 Juni:
 * korpusarbeid
 * sma syntaktisk analyse (delvis mai, pluss juni)
 
-
-
-!!Ferie
+## Ferie
 
 * Trond: I starten av juli (9?) - 5.8.
 * Lene:  2.7-5.8
 * Ciprian: Ca. fra starten av juli, kanskje også litt før (slutten av juni)
 * Chiara: kanskje 2 uker fra 16.07
-
-
-

@@ -1,4 +1,4 @@
-!!!TTS-møte
+# TTS-møte
 
 Saker:
 * Frå førre møte
@@ -7,28 +7,28 @@ Saker:
 * andre saker
 * Neste møte
 
-!!! Frå førre møte
+#  Frå førre møte
 
 * (over)lange vokalar (og konsonantar) - fiksa
 * bindestrek i utdata - fiksa
 
-!!!Låneord og namn (spørsmål til Acapela)
+# Låneord og namn (spørsmål til Acapela)
 
-!!Bøying
+## Bøying
 
 Låneord blir delt inn i tre:
 * vokalfinale - inga ending i acc/gen, -a- før konsonantinitiale kasus
-** ''Nystø'', ''Nystø-as''
+    - *Nystø*, *Nystø-as*
 * konsonantfinal, trykktung sistestaving: -a- i acc/gen, -a- før kons.init.
-** ''Iphone-a'' ''Iphone-as''
+    - *Iphone-a* *Iphone-as*
 * konsonantfinal, trykklett sistestaving: -a- i acc/gen, -i- før kons.init.
-** ''Sommer-a'' ''Sommer-is'' ''Sommer-at''
+    - *Sommer-a* *Sommer-is* *Sommer-at*
 
 Er det nok med å generera nom, acc/gen, og bøyingsstamme for resten? Eller heile paradigmet?
 
-!!kor går skiljet mellom samisk og ikkje-samisk?
+## kor går skiljet mellom samisk og ikkje-samisk?
 
-Sihkkel (''sykkel'') - går rett inn i samisk fonotaks og oppfører seg heilt som
+Sihkkel (*sykkel*) - går rett inn i samisk fonotaks og oppfører seg heilt som
 samiske ord.
 
 Det største problemet er ord som har samiske teikn med ikkje-samisk uttale: pizza, cup, osb. Desse må vi handtera med IPA-stammar i lexc-leksikonet.
@@ -36,16 +36,16 @@ Det største problemet er ord som har samiske teikn med ikkje-samisk uttale: piz
 Vi får tre grupper:
 
 * samisk fonotaks
-* ikkje-samisk fonotaks med ikkje-samiske teikn (''sykkel'')
-** kan identifiserast automatisk? Sjå etter ikkje-samiske teikn
-*** ''Sommer'' - oppfører seg heilt samisk, går i den fyrste gruppa
-*** ''Vietnam'' - -tn- skal ikkje uttalast samisk - må ha IPA-stamme => siste gr
-* ikkje-samisk fonotaks med samiske teikn (''pizza, cup'')
-** IPA-stamme i lexc
-*** alle / dei fleste engelske ord og namn - har Acapela ei liste over slike
+* ikkje-samisk fonotaks med ikkje-samiske teikn (*sykkel*)
+    - kan identifiserast automatisk? Sjå etter ikkje-samiske teikn
+        - *Sommer* - oppfører seg heilt samisk, går i den fyrste gruppa
+        - *Vietnam* - -tn- skal ikkje uttalast samisk - må ha IPA-stamme => siste gr
+* ikkje-samisk fonotaks med samiske teikn (*pizza, cup*)
+    - IPA-stamme i lexc
+        - alle / dei fleste engelske ord og namn - har Acapela ei liste over slike
     ord? Kan vi bruka dei? Dersom dei har trykkplassering, kan vi laga rett
     bøyingsstamme.
-*** tilsvarande for norske, svenske og finske ord og namn
+        - tilsvarande for norske, svenske og finske ord og namn
 
 Spørsmål til Acapela:
 * kan vi bruka dei listene dei alt har over norske, svenske, finske og engelske
@@ -57,28 +57,28 @@ Vi har ca 30 500 namn i smi-leksikonet, der ein stor del må få lagt til IPA-st
 Spørsmål til Acapela:
 * må desse listene leverast 1. oktober eller kan unnataka leverast seinare?
 
-!!!Final t og d
+# Final t og d
 
-{{{
-define FinalLightT1 t -> h ||       _   .#.       ;
-define FinalLightT2 t -> h ||       _ [ %# | %- ] ;
-define FinalLightT3 t -> h ||       _ [ %» | %- ] ;
-define FinalLightD1 d -> h || Vow j _   .#.       ;
-define FinalLightD2 d -> h || Vow j _ [ %# | %- ] ;
-}}}
+```
+define FinalLightT1 t -> h |       _   .#.       ;
+define FinalLightT2 t -> h |       _ [ %# ]( %- ) ;
+define FinalLightT3 t -> h |       _ [ %» ]( %- ) ;
+define FinalLightD1 d -> h | Vow j _   .#.       ;
+define FinalLightD2 d -> h | Vow j _ [ %# ]( %- ) ;
+```
 
 Kan skrivast om til:
 
-{{{
-define FinalLightT t -> h ||       _ [ .#. | %# | %- | %» ] ;
-define FinalLightD d -> h || Vow j _ [ .#. | %# | %- ] ;
-}}}
+```
+define FinalLightT t -> h |       _ [ .#. | %# | %- ]( %» ) ;
+define FinalLightD d -> h | Vow j _ [ .#. | %# ]( %- ) ;
+```
 
-!!!Trykkplassering
+# Trykkplassering
 
 Testdata no:
 
-{{{
+```
 neu^ro#fy^sio^lo^ga^lač^ča>
 psy^ko#so^si^á^la^laž^ža>n
 gra^nih^ta»la^mos>iid
@@ -87,9 +87,9 @@ giel^la#gu^la^hal^la^ma
 rái^da^ra^sa^žiid^dis^guin
 giel^la#gu^la^hal^la^mea^set
 giel^la#rái^da^ra^sa^žiid^dis^guin
-}}}
+```
 
-{{{
+```
 neu^ro#fy^sio^lo^ga^lač^ča>	neu^ro#fy^sio^lo^ga^lač^ča>+?	inf
 
 psy^ko#so^si^á^la^laž^ža>n	psy^ko#so^si^á^la^laž^ža>n+?	inf
@@ -111,27 +111,27 @@ giel^la#gu^la^hal^la^ma	kˈiel.lɑ#kˌu.lɑ.hˌɑl.lɑ.mɑ	0,000000
 giel^la#gu^la^hal^la^mea^set	kˈiel.lɑ#kˌu.lɑ.hˌɑl.lɑ.mĕæ.seh	0,000000
 
 giel^la#rái^da^ra^sa»žiid^dis^guin	kˈiel.lɑ#rˌɑːjː.tɑ.rɑ.sɑ»dʃˌijtː.tis.gujn	0,000000
-}}}
+```
 
 Fasit for dei to fyrste:
-{{{
+```
 neu^ro#fy^sio^lo^ga^lač^ča>	nˈeu.ro#fˌy.si.o.lˌo.gɑ.lˌɑt.tʃɑ	0,000000
 
 psy^ko#so^si^á^la^laž^ža>n	psˈy.ko#sˌo.si.ˌɑː.lɑ.lˌɑdː.tʃɑn	0,000000
-}}}
+```
 
-!!!Forkortingar
-
-utsett
-
-!!!Andre problemsekvensar
+# Forkortingar
 
 utsett
 
-!!!andre saker
+# Andre problemsekvensar
 
 utsett
 
-!!!Neste møte
+# andre saker
+
+utsett
+
+# Neste møte
 
 Torsdag kl. 9.30

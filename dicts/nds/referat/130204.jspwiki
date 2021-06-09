@@ -1,45 +1,44 @@
-!!!Møte for samordning av ordboksarbeid fram mot 9.2. 2013
+# Møte for samordning av ordboksarbeid fram mot 9.2. 2013
 
-!!Tilstede:
+## Tilstede:
 
 Berit Merete, Ciprian, Lene, Marja, Trond.
 
-!!Saksliste:
+## Saksliste:
 
 * Rydding i nobsme
 * mg-rekkefølge i nobsme
 * Pos og type osv
 * Deadline
 
+## Rydding i nobsme
 
-!!Rydding i nobsme
+1. Fjerne alle ikke-vd fra nobsme, som kommer fra smenob. Dette er gjort: src_non-vd
+1. Sortere innen hver pos etter nob-frekvensliste 
+  `big/langs/nob/nowac/nowac-1-1.1.lemmas.freq` : 
+   a, adv, n, v, prop, num, phrase, cs. (**Cip**)
+1. Gå gjennom frå toppen og merke med merke (**Márjá, Biret-M**)
 
-# Fjerne alle ikke-vd fra nobsme, som kommer fra smenob. Dette er gjort: src_non-vd
-# Sortere innen hver pos etter nob-frekvensliste 
-  {{big/langs/nob/nowac/nowac-1-1.1.lemmas.freq}} : 
-   a, adv, n, v, prop, num, phrase, cs. (__Cip__)
-# Gå gjennom frå toppen og merke med merke (__Márjá, Biret-M__)
-
-{{{
+```
 nobsme$ grep '<l ' src_non-vd/* | wc -l  12391
-}}}
+```
 
 Tagen blir: usage="vd", og blir lagt til t-noden.
 
-!!mg-rekkefølge i nobsme
+## mg-rekkefølge i nobsme
 
-* Sortere intern rekkjefølgje av mg innafor kvar e. (__Cip__)
-* Frekvensinformasjonen skal med. (__Cip__)
+* Sortere intern rekkjefølgje av mg innafor kvar e. (**Cip**)
+* Frekvensinformasjonen skal med. (**Cip**)
 * Hvis noe skal flyttes lenger opp manuelt, endrer man på frekvenstallet.
 
 2 nivå i ordboka; mg og t, kan ha flere t i en tg. 
 Flere tg i mg er forskjellige språk
 
-!!Pos og type osv
+## Pos og type osv
 
 Eksempler:
 
-{{{
+```
  <e usage="vd">
       <lg>
          <l pos="N" nr="Pl">ruossalassánit</l>
@@ -93,13 +92,12 @@ Eksempler:
          </tg>
       </mg>
    </e>
-}}}
+```
 
 * Lene har endra i smenob.
 * Trond skal endre i finsme, smefin
 
-
-!! skje og skei
+##  skje og skei
 
 * smenob: den vanlege forma
 * nobsme: alternative lemma i same ordboksartikkel
@@ -108,43 +106,39 @@ Søskenbarn...
 
 Alt dette kjem vi attende til seinare.
 
-!! sma
+##  sma
 
 Lene og Trond ser på den.
 
-!! fin
+##  fin
 
 Trond ser på den.
 
-
-!! Framover
+##  Framover
 
 * Eksempelsetningar
 * Reksjon
 
-!!Testing
+## Testing
 
 * Generell funksjonalitet
 * Som oppslagsordbok:
-** Alle ordklasser
-** ulike paradigmetyper
+    - Alle ordklasser
+    - ulike paradigmetyper
 * Som tekstlesar
-** tekst
+    - tekst
 
 Alle testar frå og med onsdag
 
-* [Lista frå sist|/dicts/checklist.html]
-
-
+* [Lista frå sist](/dicts/checklist.html)
 
 Bruk bugzilla
 
-!!Deadline
+## Deadline
 
 * Cip teknisk til tysdags morgon
 * Innhald til onsdag
 * Presentasjon på torsdag
-
 
 cat smefin/src/n_smefin.xml|grep '<l '|grep 't<'|tr '<' '>'|cut -d">" -f3|usme|grep '+N+Pl+Nom'|grep -v "#"|cut -f1|uniq|wc -l
 80
@@ -236,10 +230,7 @@ doalut
 Ođđasat
 bellodatustit
 
-
-
 cat finsme/src/finsme.xml|grep '<l pos="N"'|grep 't<'|tr '<' '>'|cut -d">" -f3|ufin|grep '+N+Pl+Nom'|grep -v "#"|cut -f1|uniq|l
-
 
 Uutiset
 aakkoset
@@ -291,13 +282,3 @@ vehnäjauhot
 verhot
 viranomaiset
 vuodevaatteet
-
-
-
-
-
-
-
-
-
-

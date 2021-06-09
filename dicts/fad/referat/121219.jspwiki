@@ -1,24 +1,22 @@
-
-!!!FAD- og korpusmøte 19.12.2012
+# FAD- og korpusmøte 19.12.2012
 
 Til stades: Berit Merete, Marja, Ciprian, Trond
 
-!!!Saker:
+# Saker:
 
 * Status
 * Arbeid framover
 * Autshomato
 * Neste møte
 
+# Status
 
-!!!Status
-
-!!Oppsummere Apertium-gull-arbeid (M og BM ferdig)
+## Oppsummere Apertium-gull-arbeid (M og BM ferdig)
 
 BM og M har funne mykje spennande. Gt-pipeline har lemma,
 det har ikkje Apertium.
 
-{{{
+```
 $67 0 -5.798 0.0 0.2087912 språk+regle<n><f> giella+njuolggadus<n>
 11 0 -7.605 0.0 0.1212121 sovemedisin<n><m> oađđit+dálkkas<n>
 7 0 -8.057 0.0 0.25 handel+avtale<n><m> efta+gávpi+šiehtadus<n>
@@ -27,16 +25,16 @@ second_run>grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | wc -l
    17308
 second_run>grep -h '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | sort | uniq | wc -l
    17238
+
 	
 $10 0 -7.7 0.0 0.25 høyskole+utdanning<n><m> allaskuvla+oahpahus<n>
-}}}
+```
 
-
-!! Oppsummere gt-pipeline-alignment 
+##  Oppsummere gt-pipeline-alignment 
 
 Cip har laga alignment.
 
-{{{
+```
 22 0 -6.91 0.0 0.25 høgskoleutdanning<subst> allaskuvlaoahpahus<N>
 22 0 -6.91 0.0 0.25 hurtigrute<subst> riddorukto<N>
 
@@ -49,48 +47,43 @@ $16 0 -7.23 0.0 0.1612903 yrkeserfaring<n><m> bargoduogáš<n>
 $16 0 -7.23 0.0 1.0 yrkeserfaring<n><m> bargovásihus<n>
 $17 0 -7.169 0.0 0.2 yrkesopplæring<n><m> fitnooahpahus<n>
 $10 0 -7.7 0.0 0.4 yrkesutøver<n><m> fidnobargi<n><actor>
-}}}
+```
 
-!!! Arbeid framover
-
+#  Arbeid framover
 
 * Planlegge gt-gull-arbeid
 * bestemme nedre grense for sannsynsverdi
 
-!! Hovudtrekk
+##  Hovudtrekk
 
-# Fase 1
-## Ciprian leksikalisfiserer apertium-pipeline (sjå nedanfor)
-## BM og Marja arbeider med andre ting
-# Fase 2
-## Cip fjernar leksikalifiserte apertium-par frå gt-pipeline
-## BM og Marja ser på output av leksikaliserte + unifiserte ordpar
-## BM og Marja arbeider med andre ting
-# Fase 3
-## BM og M arbeider med rest-gt-pipeline
+1. Fase 1
+    1. Ciprian leksikalisfiserer apertium-pipeline (sjå nedanfor)
+    1. BM og Marja arbeider med andre ting
+1. Fase 2
+    1. Cip fjernar leksikalifiserte apertium-par frå gt-pipeline
+    1. BM og Marja ser på output av leksikaliserte + unifiserte ordpar
+    1. BM og Marja arbeider med andre ting
+1. Fase 3
+    1. BM og M arbeider med rest-gt-pipeline
 
-
-
-!! Prosedyre for å arbeide med apertium
+##  Prosedyre for å arbeide med apertium
 
 Lemmatisere apertium-$-output:
 
-# Lage grunnformer av avleidde ord (sjå nedanfor for prosedyre for der_X)
-# Ingen pluss i nob eller sme => ok
-# Pluss i nob men ikkje sme => prøv i nob å erstatte "+" med "s", null, "e"
-# Pluss i sme men ikkje i nob => prøv i sme: 
-## fjern +, 
-## Gjer /søk/erstatt/: /hallat/hallan/, /eapmi/an/, /stit/stin/, /hit/han/, /dit/dan/ /i+/e/, /u+/o/ /t+/n/, /t+//
-# Pluss i nob og sme => prøv nob først og deretter sme 
-# Hugs <actor> i sme
-## <n>...<actor> => stryk <<actor>
-## <v>...<actor> => manuelt
+1. Lage grunnformer av avleidde ord (sjå nedanfor for prosedyre for der_X)
+1. Ingen pluss i nob eller sme => ok
+1. Pluss i nob men ikkje sme => prøv i nob å erstatte "+" med "s", null, "e"
+1. Pluss i sme men ikkje i nob => prøv i sme: 
+    1. fjern +, 
+    1. Gjer /søk/erstatt/: /hallat/hallan/, /eapmi/an/, /stit/stin/, /hit/han/, /dit/dan/ /i+/e/, /u+/o/ /t+/n/, /t+//
+1. Pluss i nob og sme => prøv nob først og deretter sme 
+1. Hugs <actor> i sme
+    1. <n>...<actor> => stryk <<actor>
+    1. <v>...<actor> => manuelt
 
+Her er oversikt over `der`:
 
-
-Her er oversikt over {{der}}:
-
-{{{ 
+``` 
 1018 passl => stryk der_passl-taggen
  719 n => erstatt final t med n
  368 eapmi => erstatt -it med eapmi
@@ -105,23 +98,18 @@ Her er oversikt over {{der}}:
   11 alla => ignorer
    8 h => ignorer
    5 d => stryk der_d-taggen
-}}}
-
-
-
-
-
+```
 
 Kommandoar:
 
-{{{
+```
 grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | grep der_|rev|cut -d"_" -f1|rev|cut -d">" -f1|sort|uniq -c|sort -nr
 grep '^\$' fad_nobsme_candidates_ap-pl.20121130_0* | grep 'eapmi+'|rev|cut -d"+" -f2-|sort|rev|l
-}}}
+```
 
 Taggen <vabess> må vi sjå manuelt på:
 
-{{{
+```
 bruke<vblex> geavahit<v><tv><vabess>
 bruke<vblex> geavvat<v><iv><vabess><a>
 vurdere<vblex> árvvoštallat<v><tv><vabess>
@@ -144,15 +132,13 @@ utføre<vblex> doaibmat<v><iv><vabess><a>
 utøve<vblex> doaibmat<v><iv><vabess><a>
 uventet<adj> vuordit<v><tv><vabess><a>
 uønsket<adj> sávvat<v><tv><vabess><a>
-}}}
+```
 
-!!! Autshomato
+#  Autshomato
 
-# Skal vi pushe CAT (Authomato eller andre ting) på omsetjarar må vi arrangere __kurs__.
-# Verkeleg nyttig blir CAT først når TM inneheld tekstar som __verkeleg__ inneheld same emne
+1. Skal vi pushe CAT (Authomato eller andre ting) på omsetjarar må vi arrangere **kurs**.
+1. Verkeleg nyttig blir CAT først når TM inneheld tekstar som **verkeleg** inneheld same emne
 
-!!! Neste møte
+#  Neste møte
 
 Kort prat når Ciprian  er ferdig med fase 1/2.
-
-

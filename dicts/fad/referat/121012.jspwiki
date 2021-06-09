@@ -1,9 +1,8 @@
-
 FAD-Møte 12.10.2012
 
 Til stades: Børre, Ciprian, Marja, Trond, Berit Merete
 
-!!! Saker:
+#  Saker:
 
 * Setningsparallellisering
 * Ordparallellisering
@@ -12,17 +11,15 @@ Til stades: Børre, Ciprian, Marja, Trond, Berit Merete
 * Arbeid framover
 * Neste møte
 
-
-!!! Setningsparallellisering
+#  Setningsparallellisering
 
 Alt er setningsparallellisert.
 
-!!! Ordparallellisering
+#  Ordparallellisering
 
+##  Pipeline
 
-!! Pipeline
-
-{{{
+```
 ccat -l nob freecorpus/prestable/converted/nob/admin/depts/regjeringen.no/10.html_id=325913.xml | \
 preprocess --abbr=main/st/nob/bin/abbr.txt | \
 main/st/nob/obt/bin/mtag-osx64 | \
@@ -35,37 +32,26 @@ lookup main/gt/sme/bin/sme.fst | \
 lookup2cg | \
 vislcg3 -g main/gt/sme/src/sme-dis.rle | \
 less
-}}}
+```
 
 Ordparallellisert med apertium-pipeline er gjort.
 
 Ordparallellisert med gt-pipeline til måndag.
 
-!!! Korpus
+#  Korpus
 
-!!! Bugzilla
+#  Bugzilla
 
-!! Bug 1391 - Files declared in xsl meta file but missing in the converted corpus
+##  Bug 1391 - Files declared in xsl meta file but missing in the converted corpus
 
 Spørsmål er om det er dei korrekte 3 / 6 filene som er ordna. Børre og Ciprian ser 
 på det., og deretter går det til BM og Marja.
 
-!!! Arbeid framover
+#  Arbeid framover
 
-# Ordparallellisering med gt-pipeline til måndag (__Ciprian__)
-# Rette opp i 6+3 (the missing files).
+1. Ordparallellisering med gt-pipeline til måndag (**Ciprian**)
+1. Rette opp i 6+3 (the missing files).
 
-!!! Neste møte
+#  Neste møte
 
-__Måndag 15.10. klokka 10:30.__
-
-
-
-
-
-
-
-
-
-
-
+**Måndag 15.10. klokka 10:30.**

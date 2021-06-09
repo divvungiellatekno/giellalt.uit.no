@@ -1,7 +1,6 @@
 neural network for compound grammarchecking
 02.12.2020 15:00-16:
 
-
 ToDo:
 * what kind of corpus do we want to use for training and what for testing
 * figure out the size of our corpus - Tommi/Linda
@@ -16,7 +15,6 @@ ToDo:
 
 transfer learning - data in another language (maybe in Finnish), use that as the base-model
 
-
 * compounds
 * detection and correction
 * corpora
@@ -29,7 +27,6 @@ https://www.aclweb.org/anthology/L18-1113/ --- English
 word-level model -- less data, but cannot work with words it hasn't seen before
 character-level model -- lots of data
 
-
 what do you need?
 *
 * corpus in form of incorrect line \n correct  line or so
@@ -39,7 +36,6 @@ what do you need?
     ** no errors in the data
     ** very representative to the problem - the errors we are trying to correct need to be frequent in the corpus
     ** preparing the data is not fast, trying the neural network is fast
-
 
 marked-up:
 
@@ -63,18 +59,12 @@ I haveacat - I have a cat sentence
 I _ h a v e _ a _ c a t character-level
 I _ h a v e  bigram-chunk
 
-
 are they time-consuming/fragile?
 * faster on the GPU than the CPU
 * run over the weekend
 * use open NMT
 
-
-
-
-
 * do you know other examples?
-
 
 suggestion:
 * based on our corpus

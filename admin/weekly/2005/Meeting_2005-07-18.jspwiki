@@ -1,26 +1,26 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 18.07.2005
 * Time: 10.00 Norw. time
 * Place: Wherever we are :-)
 * Tools: Skype, iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from a week ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Speller infrastructure
-# risten.no
-# Other issues
-## CVS Mailing
-## Helsinki gathering
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from a week ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Speller infrastructure
+1. risten.no
+1. Other issues
+    1. CVS Mailing
+    1. Helsinki gathering
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 12.10 after some technical hurdles (tried to run the whole meeting online,
 that is, without a phone). Agenda accepted as is.
@@ -31,112 +31,112 @@ Absent: Maaren, Thomas, Trond
 
 Main secretary: Børre
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-!! Sjur
+##  Sjur
 * Ask Anne-Britt to update the contract with the University (we are getting 3, not 2,
   persons there from the fall)
-** Done.
+    - Done.
 * risten.no bugs and fixes
-** Fixed some more bugs.
+    - Fixed some more bugs.
 * complete the action summary after our half-year evaluation
-** STILL not done :-/
+    - STILL not done :-/
 * contact Kimmo Koskenniemi about kwic-snt and UTF-8 bug
-** not done - suggestion: postponed to the Helsinki meeting in Aug/Sep
+    - not done - suggestion: postponed to the Helsinki meeting in Aug/Sep
 * follow up on:
-** voice group-chat not working to Sámediggi
-** Maaren has problems with SubEthaEdit (can't connect)
-*** nothing done during last week - still waiting for a reply to my e-mail
+    - voice group-chat not working to Sámediggi
+    - Maaren has problems with SubEthaEdit (can't connect)
+        - nothing done during last week - still waiting for a reply to my e-mail
 * add i18n bug to Forrest issue tracker
-** not done, was waiting for Børre
+    - not done, was waiting for Børre
 * add i18n menu as feature request to Forrest issue tracker
-** still open
+    - still open
 * To the board:
-** write proposal for permanent maintenance organisation
-** write draft specification for the outsourced tasks
-** write agenda, question: should the memos be public?
-** Deadline for the board tasks: 3 weeks ahead of meeting (date not decided, but
+    - write proposal for permanent maintenance organisation
+    - write draft specification for the outsourced tasks
+    - write agenda, question: should the memos be public?
+    - Deadline for the board tasks: 3 weeks ahead of meeting (date not decided, but
   in September)
-*** document stubs and menu entries created within the document tree
+        - document stubs and menu entries created within the document tree
 * Follow up on CVS mailing with Steinar T-H (IT/UiT)
-** Several e-mails back and forth
+    - Several e-mails back and forth
 * add Divvun to the UNESCO Hall-of-Fame list
-** not done
+    - not done
 * Get back to Xerox on the commercial license.
-** We will hopefully get the tools this week.
+    - We will hopefully get the tools this week.
 * Check with Maaren whether she has checked in her additions - if not, she should
   (or send them via e-mail to somebody that can do it for her now)
-** Checked, she had not, but was going to check them in on Wednesday
+    - Checked, she had not, but was going to check them in on Wednesday
 
-!! Tomi
+##  Tomi
 * Common Makefile for all the languages
-** still open
+    - still open
 * catxml default language issue
-** Done.
+    - Done.
 * three-part compounding
-** Waiting for Trond, to have a look at it together
+    - Waiting for Trond, to have a look at it together
 * decapitalisation of proper nouns when (if?) compounded, and when derived 
   (the oslolaš issue)
-** Waiting for Trond
+    - Waiting for Trond
 * corpus infrastructure: dtd location (both public and internal)
-** Not Done
+    - Not Done
 * corpus infrastructure: file and dir organisation
-** Not done (that is, no articles on how others have done it found)
+    - Not done (that is, no articles on how others have done it found)
 * write the LIST option to our test tools, as requested in the discussion group
-** Done, in sme/testing a file wordlist.pl
+    - Done, in sme/testing a file wordlist.pl
 
-!!Trond
+## Trond
 * Work on the bug list (Lule Sámi).
-** Continued
+    - Continued
 * Work on compounds (three-part + oslolaš, with Tomi)
-** nothing done
+    - nothing done
 * Work on the corpus interface (with Lars)
-** nothing done
+    - nothing done
 * Corpus infrastructure: dtd location
-** nothing done
+    - nothing done
 * Get the new version of the New Testament
-** nothing done?
+    - nothing done?
 * Check Hans-Ragnars names.
-** nothing done?
+    - nothing done?
 * add Giellatekno to the UNESCO Hall-of-Fame list
-** We don't know :-)
+    - We don't know :-)
 
-!! On vacation last week
+##  On vacation last week
 
-!Børre
+### Børre
 * On vacation, issues from last week repeated at the end of the memo
 
-! Maaren
+###  Maaren
 * On vacation, issues from last week repeated at the end of the memo
 
-! Thomas
+###  Thomas
 * On vacation, issues from last week repeated at the end of the memo
 
-!!!3. Documentation - divvun.no
+# 3. Documentation - divvun.no
 
-!! crontab
+##  crontab
 
 Tomi has made a CVS update script, but it is not automatized yet => crontab
 is missing. Børre will take over this task.
 
-!! wiki + UTF-8
+##  wiki + UTF-8
 
 There's no wiki support in the official site => noone can read our weekly
 meeting memos.
 
 This works using linux:
 
-{{{
+```
 export LC_ALL=no_NO.UTF-8
 forrest run
-}}}
+```
 
 It is unclear if we are able to do the same using Mac OS X.
 
-It ''should'' work irrespective of the locale of the host OS, and the above is
+It *should* work irrespective of the locale of the host OS, and the above is
 really a hack to work around a bug in Forrest/Cocoon or the JSPWiki reader (Chaperon).
 
-!! status.xml & RSS feed
+##  status.xml & RSS feed
 
 Sjur has added support for status.xml, which implies RSS news feeds of the changes
 we document.
@@ -149,31 +149,31 @@ and meeting memos.
 Regarding the changes section, have a look, and start using it. The RSS newsfeed is
 an excellent tool for keeping interested persons and parties up-to-date with little
 or no effort on their part. Documentation can be found
-at [Status.xml how-to|/tools/forrest-status.html]
+at [Status.xml how-to](/tools/forrest-status.html)
 
-!! Forrest
+##  Forrest
 
 Forrest 0.7 is officially released. The HEAD of the trunk seems to be unstable wrt
 creating war files. Be careful!
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 Add the Oslo license model to xdocs/adm/legal/. Then we will start to compare, and
 work out our own license text.
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
-!! Directory structure
+##  Directory structure
 
 Not optimal. Tomi will continue looking for good examples of internal dir structure.
 
-!!catxml
+## catxml
 
 Updated to use the language of the pwd as default when extracting corpus texts.
 
-!!!6. Speller infrastructure
+# 6. Speller infrastructure
 
-!!Common Makefile
+## Common Makefile
 
 We should finalize a common and language-independent Makefile as a prerequisite
 for the speller infrastructure, such that what we do for building spellers for
@@ -182,7 +182,7 @@ North Sámi will automatically be available to other languages.
 Saara Huhmarniemi is a makefile expert, but she isn't back at work yet. Maybe we postpone
 the makefile makeover till she is back.
 
-!!Aspell
+## Aspell
 
 We will soon have the unrestricted Xerox tools, and we'll then be able to generate
 the word list for Aspell. What we need then is the infrastructure to go from a word
@@ -193,16 +193,16 @@ First version: simple word list based speller, word list generated by the Xerox 
 Makefile target should be something like "make aspell", with the final, ready to use
 files in a build directory.
 
-!!!7. risten.no
+# 7. risten.no
 
 Sjur will continue to use some time on the following issues:
 
 * more bug fixing
 * a couple of critical features still needs to be added
 
-!!!8. Other issues
+# 8. Other issues
 
-!! CVS Mailing
+##  CVS Mailing
 
 CVS mailing works to the local accounts on cochise, but forwarding isn't working
 for all of us. Tomi just received a mail daemon message, saying "no route to host",
@@ -211,9 +211,9 @@ sjurnm@mac.com.
 
 Sjur will follow up on this one.
 
-!! Helsinki gathering
+##  Helsinki gathering
 
-! Dates
+###  Dates
 
 Thomas did not want to go earlier. We extend the meeting with a technical day
 on Monday, and all of us on Tuesday. Thomas can then travel on Monday, as originally
@@ -225,23 +225,23 @@ Dates now also confirmed with Børre. Thus decided:
 * general meeting day: Tuesday Aug. 30
 * all travel back on Saturday Sep. 3
 
-! Demo
+###  Demo
 
 We will get the Xerox tools. See above under Speller Infrastructure for more
 details.
 
-!!!9. Summary, task list
+# 9. Summary, task list
 
-!! Børre
+##  Børre
 * Add crontab specification for the cvs update/export script Tomi made
 * Correct the war file/jspwiki issue
 * reopen the jspwiki + UTF-8 issue
 * Continue http://giellatekno.uit.no conversion to forrest ...
 * Contact Svenska bibelsällskapet
 * Add issue to forrest issue tracker about utf-8 ihtml documents.
-** Check for existing bug reports, it might already be in there
+    - Check for existing bug reports, it might already be in there
 * Continue forrest i18n research
-** Sometimes abides the =locale=se/smj/fi in the url (the document gets
+    - Sometimes abides the =locale=se/smj/fi in the url (the document gets
    correctly selected). The menus and tabs are translated to the language
    that the browser asks for.
 * add RSS newsfeed support (done by Sjur, but requires new war file)
@@ -249,30 +249,30 @@ details.
   ahead of acceptance
 * add the Oslo contract to cvs, and begin writing a contract draft
 
-!! Sjur
+##  Sjur
 * risten.no bugs and fixes
 * complete the action summary after our half-year evaluation
 * contact Kimmo Koskenniemi about kwic-snt and UTF-8 bug
-** postponed till the Helsinki meeting
+    - postponed till the Helsinki meeting
 * follow up on:
-** voice group-chat not working to Sámediggi
-** Maaren has problems with SubEthaEdit (can't connect)
+    - voice group-chat not working to Sámediggi
+    - Maaren has problems with SubEthaEdit (can't connect)
 * add i18n bug to Forrest issue tracker
 * add i18n menu as feature request to Forrest issue tracker
 * To the board:
-** write proposal for permanent maintenance organisation
-** write draft specification for the outsourced tasks
-** write half-yearly project report with progress and bugdet status
-** write agenda, question: should the memos be public?
-** Deadline for the board tasks: 3 weeks ahead of meeting (date not decided, but
+    - write proposal for permanent maintenance organisation
+    - write draft specification for the outsourced tasks
+    - write half-yearly project report with progress and bugdet status
+    - write agenda, question: should the memos be public?
+    - Deadline for the board tasks: 3 weeks ahead of meeting (date not decided, but
   in September)
 * Follow up on CVS mailing with IT/UiT
 * add Divvun to the UNESCO Hall-of-Fame list
 * Get the tools from Xerox
 
-!! Tomi
+##  Tomi
 * Common Makefile for all the languages
-** And for speller infrastructure
+    - And for speller infrastructure
 * three-part compounding
 * decapitalisation of proper nouns when (if?) compounded, and when derived 
   (the oslolaš issue)
@@ -280,22 +280,22 @@ details.
 * corpus infrastructure: file and dir organisation
 * Aspell: A simple wordlist based speller
 
-!! On vacation
+##  On vacation
 
 Tasks are transferred to the following weeks until they return from vacation, to
 keep the tasks alive and updated. New tasks may be added:-)
 
-! Maaren
+###  Maaren
 * The missing list, both the overall missing list from our xml corpus, and a file-for-file
   review, in order to get different terminology
 * Go through the missing list from risten.no
 * send new letter to SGL about Lule Sámi possessives
 
-! Thomas
+###  Thomas
 * write new letter to SGL about Lule Sámi possessives
 * work with Lule Sami substantives
 
-! Trond
+###  Trond
 * Work on the bug list (Lule Sámi).
 * Work on compounds (three-part + oslolaš, with Tomi)
 * Work on the corpus interface (with Lars)
@@ -304,7 +304,7 @@ keep the tasks alive and updated. New tasks may be added:-)
 * Check Hans-Ragnars names.
 * add Divvun to the UNESCO Hall-of-Fame list
 
-!!!10. Next meeting, closing
+# 10. Next meeting, closing
 
 25.07.2005 10:00
 

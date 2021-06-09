@@ -1,26 +1,25 @@
-!!!Møte 24.3.2017
+# Møte 24.3.2017
 Kevin, Trond, Lene på Hangout
 
-!!Saker
-# Adverbialer som innleder bisetninger og spørsmål
-# Ny url
-# Debugging med overskriftsmarkering
-# Akronym
-# Ubestemt artikkel
-# genitiv-s
+## Saker
+1. Adverbialer som innleder bisetninger og spørsmål
+1. Ny url
+1. Debugging med overskriftsmarkering
+1. Akronym
+1. Ubestemt artikkel
+1. genitiv-s
 
-
-!! Adverbialer som innleder bisetninger og spørsmål
+##  Adverbialer som innleder bisetninger og spørsmål
 f.eks. manne mo movt goas gos
 
-!Første steg i lexc:
+### Første steg i lexc:
 +Adv+Qst
 
-!Andre steg functions.cg3:
+### Andre steg functions.cg3:
 *  Adv Qst <cs> @ADVL>    (→alisteinen konjunktio = cs)  (innleder bisetning)
  * Adv Qst  @ADVL> (innleder hovedsetning)
 
-!Tredje steg i functions.cg3:
+### Tredje steg i functions.cg3:
 
 Substitute regler for apertium, også for ext og hab:
 * Adv Qst <cs> @ADVL>  => Adv @ADVLcs→
@@ -30,40 +29,40 @@ Substitute regler for apertium, også for ext og hab:
 
 SUBSTITUTE (a) (b) IF (0 (adv)); # "adv" finst ikkje på gt, berre i apertium, derfor køyrer denne berre for apertium
 
-!Diskusjon om andre adverbtyper, men ingen konklusjon foreløpig
+### Diskusjon om andre adverbtyper, men ingen konklusjon foreløpig
 Nok med semtagging for andre adverbialer?
 * Adv Sem/Time <==
 * Adv Sem/Plc  <===
 * Adv Sem/Manner
 * (Sem/Degree? "totally" etc.)
 
-
 Nyttig liste [http://grammatikk.com/pdf/Setningsadverb.pdf]
 
-{{{
+```
 vi går A til byen
 vi går    til byen B
 
 A = ofte, ikke, 
 B = i dag, igjen, 
 A+B = snart
+
  
 A = setningsadverbial
-}}}
+```
 
-!! Ny url  
+##  Ny url  
 Vi er enige om:
 
 https://jorgal.uit.no
 
 TILTAK:
-* __Trond__ gir beskjed til riktig person
+* **Trond** gir beskjed til riktig person
 
-!! Debugging med overskriftsmarkering
+##  Debugging med overskriftsmarkering
 
 Overskriftsmarkering er ikkje inn i «driver»-skriptet, så du må legga på re-/deformatering sjølv:
 
-{{{
+```
 $ echo '<h1>Gáhkku</h1> lea buorre'|apertium-deshtml -o
 .[][<h1>]Gáhkku[]❡.[][<\/h1> ]lea buorre.[][
 ]
@@ -73,13 +72,12 @@ $ echo '<h1>Gáhkku</h1> lea buorre'|apertium-deshtml -o|apertium -f none -d . s
 $ echo '<h1>Gáhkku</h1> lea buorre'|apertium-deshtml -o|apertium -f none -d . sme-nob-syntax 
 ^.<sent>$[][<h1>]^Gáhkku<n><sem_food><sg><nom><@HNOUN><MAP:2271:hnounNom><SELECT:2342>/¬Gáhkku<n><sg><nom><@HNOUN><MAP:2271:hnounNom><SELECT:2342>$[]^❡<clb>$^.<sent>$[][<\/h1> ]^leat<vblex><iv><indic><pres><p3><sg><@+FMAINV>$ ^buorre<adj><sg><nom><@←SPRED><MAP:1640:leftCop<spred>$^.<sent>$[][
 ]
-# ❡ har tom omsetjing i bidix, blir fjerna i biltrans+t1x
+1. ❡ har tom omsetjing i bidix, blir fjerna i biltrans+t1x
 $ echo '<h1>Gáhkku</h1> lea buorre'|apertium-deshtml -o|apertium -f none -d . sme-nob | apertium-rehtml-noent 
 <h1>Kake</h1> det er bra
-}}}
+```
 
-
-!! Akronym  
+##  Akronym  
 
 Vi skal leksikalisere alle akronym som fungerer som substantiv, fellesnamn.
 
@@ -92,7 +90,7 @@ Slik vil vi ha det i bidix:
 * <e><p><l>ATV <s n="n"/></l><r> ATV <s n="n"/></r></p></e>
 
 Dagens output fra FST:
-{{{
+```
 sme$ usmedis
 ATV
 ATV        ATV+N+Sem/Veh+ACR+Sg+Nom  <==== ATV "n"
@@ -109,14 +107,13 @@ NTB        NTB+N+Prop+ACR+Sem/Org+Dyn+Sg+Acc
 NTB        NTB+N+ACR+Sg+Nom
 NTB        NTB+N+ACR+Sg+Gen
 NTB        NTB+N+ACR+Sg+Acc
-}}}
-!Tiltaksliste: __Trond__
+```
+### Tiltaksliste: **Trond**
 * ☐  fjern <acr> frå nob.dix
 * ☐  fjern +ACR frå langs/sme/...
 * ☐  fjern <acr> frå bidix
 
-
-!!Ubestemt artikkel
+## Ubestemt artikkel
 
 For mykje ubestemt artikkel er verre enn manglande ubestemt artikkel.
 
@@ -126,10 +123,10 @@ Chunk-splitting
 
 (ingen chunk som matcha heile substfrasen, kanskje eitt av orda var ukjend)
 
-!mogleg workaround: 
-* ☐ nytt krav om at det siste ordet me såg før me skriv ut artikkel ikkje var n/np/ukjend, t4x __Kevin__
+### mogleg workaround: 
+* ☐ nytt krav om at det siste ordet me såg før me skriv ut artikkel ikkje var n/np/ukjend, t4x **Kevin**
 
-!unc-taggen (uncountable)
+### unc-taggen (uncountable)
 idiomatiske ting
 
 * han har _en_ hensikt å starte (eller «hensikt» skal kanskje i neste kategori, default aldri)
@@ -141,29 +138,24 @@ Eksempler:
 * de har _et_ ordforråd
 * I vindmølleparken, hvor de er kalt «_En_ nord» og «Borealis»
 
-!mogleg løysing: 
-* ☐ finn liste med subst som skal ha vs ikkje skal ha ubestemt artikkel frå korpus, legg inn bidix-tagg <neverdetind> __Kevin__
-
+### mogleg løysing: 
+* ☐ finn liste med subst som skal ha vs ikkje skal ha ubestemt artikkel frå korpus, legg inn bidix-tagg <neverdetind> **Kevin**
 
 t4x sjekkar
 
-{{{
+```
          <not><equal><clip pos="1" part="a_count"/><lit-tag v="unc"/></equal></not> 
-}}}
+```
 
 bidix har
 
-{{{
+```
         <pardef n="unc__n" c="Add unc tag iff going from sme to nob (currently just used for ensuring indefiniteness in transfer)."> 
-}}}
+```
 
-
-
-!!genitiv-s 
+## genitiv-s 
 Vi har slike: boplasss huss
 (hus's)
 
-!TILTAK
-* Dei skal i rett paradigme __Trond__
-
-
+### TILTAK
+* Dei skal i rett paradigme **Trond**

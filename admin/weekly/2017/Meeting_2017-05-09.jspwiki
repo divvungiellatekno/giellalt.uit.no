@@ -5,26 +5,22 @@ Saker:
 * Russisk og hfst-tokenise
 * smn-prosjekt (Finland)
 
-
-!!!Tastaturarbeid
+# Tastaturarbeid
 
 * mange framsteg når det gjeld infrastrukturen, bygginga av datamaskintastatur
   fungerer som ho skal no
 
-!!Datamaskin-tastatur
+## Datamaskin-tastatur
 
+### Testspråk: Võro-tastatur
 
-
-!Testspråk: Võro-tastatur
-
-__Mac__
+**Mac**
 
 Fungerer ut av boksen, dobbeltklikk og installer
 
+**Windows**
 
-__Windows__
-
-{{{
+```
 [W win:292] ´b -> b́ is invalid for Windows deadkeys; skipping.
 [W win:292] ´B -> B́ is invalid for Windows deadkeys; skipping.
 [W win:292] ´d -> d́ is invalid for Windows deadkeys; skipping.
@@ -37,16 +33,16 @@ __Windows__
 [W win:292] ´T -> T́ is invalid for Windows deadkeys; skipping.
 [W win:292] ´v -> v́ is invalid for Windows deadkeys; skipping.
 [W win:292] ´V -> V́ is invalid for Windows deadkeys; skipping.
-}}}
+```
 
-!Andre språk
+### Andre språk
 
 Tilsvarande for alle språk. Problemet er at Windows ikkje godtek
 daudtastar der resultatet ikkje er prekomponerte bokstavar.
 
-''Dette bør vi teste ut for'' {{sjd}}''!''
+*Dette bør vi teste ut for* `sjd`*!*
 
-!!Mobiltastatur:
+## Mobiltastatur:
 
 * X vil ikkje ha samisk tastatur så lenge vi ikkje har prediktiv skriving
 
@@ -54,7 +50,7 @@ Betyr:
 * vi treng eit prediktivt tastatur (eller i det minste med stavekontroll)
 * vi må ha ei fungerande brukarordliste
 
-!!!Russisk og hfst-tokenise
+# Russisk og hfst-tokenise
 
 Uliana skreiv script for vekter, la inn, såg at output ikkje stemte med
 dei vektene ho la inn.
@@ -62,9 +58,9 @@ Gjekk attende til irc, laga feilmelding i Hfst-feilmeldingsdatabasen.
 Dette har ført til oppdaging av fleire ting som ikje stemmer.
 Dette har ført til to ting:
 
-# Ho har ein vekta fst som ikkje fungerer (det er ikkje systematisk output).
+1. Ho har ein vekta fst som ikkje fungerer (det er ikkje systematisk output).
   Dette kan forseinke arbeidet.
-# Hfst-gjengen veit no om feilen, som er på fleire stader, og dei arbeider 
+1. Hfst-gjengen veit no om feilen, som er på fleire stader, og dei arbeider 
   no med å få retta den, til glede for både henne og alle andre.
 
 Vektene bør i hfst-tokenize blir ganga med 1000 og runda av, i og med
@@ -73,9 +69,9 @@ dette punktet.
 
 Feilane skjer i compose-intersect og fleire andre stader.
 
-Feilane er rapporterte [her|https://github.com/hfst/hfst/issues/353].
+Feilane er rapporterte [her](https://github.com/hfst/hfst/issues/353).
 
-!!!smn-prosjekt (Finland)
+# smn-prosjekt (Finland)
 
 FST i direkte bruk i 4 program:
 * stavekontroll
@@ -84,5 +80,5 @@ FST i direkte bruk i 4 program:
 * korp
 
 Dei fire kan
-# teste modellen
-# vere grunnen til å lage den
+1. teste modellen
+1. vere grunnen til å lage den

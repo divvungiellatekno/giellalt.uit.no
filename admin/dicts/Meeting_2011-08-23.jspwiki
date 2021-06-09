@@ -1,9 +1,8 @@
-!!!Møte om sme-dict 23.8.2011
+# Møte om sme-dict 23.8.2011
 
 Til stades: Ciprian, Berit, Biret, Lene, Trond.
 
-
-!!!Saker
+# Saker
 * Hvordan gjøre vi det med hermetegnord?
 * Hvordan legge til ord som bare er ord nr 2 i faste uttrykk (f.eks. binná banná) - lage et felt for link til ord nr 1?
 * "jfr"-felt, med link for synonymer? moteksempler osv.
@@ -13,49 +12,45 @@ Til stades: Ciprian, Berit, Biret, Lene, Trond.
 * inc-listtut
 * enkeltord
 
-!!!Bakgrunn
+# Bakgrunn
 
 Alle ord frå visse bøker inn i ordbøkene.
 
-
-!!!Hvordan gjør vi det med hermetegnord?
+# Hvordan gjør vi det med hermetegnord?
 
 Sára beaivvegirji = For å la språket vise til 11 år gamal jente bruker forfattaren ordet "ambulansemann".
 
-# Skal dei med?
-# Viss ja, korleis?
+1. Skal dei med?
+1. Viss ja, korleis?
 
-{{{
+```
 <re>om kvinner</re>
 <style>litterær</style>
-}}}
+```
 
 Kjeldetilvisng som attributt for x og xt:
 
-{{{
+```
 <x src="S.B. Johansen 2010: Sárá beaivegirji s. 21">... dakkár ilgadis olmmošlágan filbmasivdnádus, mii lea eambbo robohtalágan go olbmolágan.</x>
-}}}
+```
 
 Dette må inn i DTD-en!
 
-
-!!!Grammatisk informasjon om rørsleadverbial
+# Grammatisk informasjon om rørsleadverbial
 
 bajimussii
 
-
-{{{
+```
          <tg>
 			<re>bevegelse til</re>
             <t pos="adv">øverst</t> 
-}}}
+```
 
-{{{
+```
 +            <t pos="adv">til øverst</t>   <==== ny
             <xg>
                <x>Dál leige mu vuorru fas goargŋut bajimussii.</x>
                <xt>Nå var det igjen min tur å klatre helt øverst.</xt>
-
 
   <e src="nj" usage="vd">
       <lg>
@@ -78,37 +73,34 @@ bajimussii
          </tg>
       </mg>
    </e>
-}}}
+```
 
-!!!Hvordan legge til ord som bare er ord nr 2 i faste uttrykk (f.eks. binná banná) - lage et felt for link til ord nr 1?
+# Hvordan legge til ord som bare er ord nr 2 i faste uttrykk (f.eks. binná banná) - lage et felt for link til ord nr 1?
 
 háluid - link til hiluid med eksempel med hiluid háluid - 
 binná bánná
 
-{{{
+```
 mwe_smenob.xml:
 
   <e usage="vd">
       <lg>
          <l attr="no" context="none" pos="adv">hiluid háluid</l>
       </lg>
-}}}
+```
 
+# jfr-felt, med link for synonymer?
 
-
-!!!jfr-felt, med link for synonymer?
-
-{{{
+```
 Initialt i <mg>:
 <syn lemmaID="buohccebiila" /> → vise til eit synonym
 <ant lemmaID=""> ↛ vise til eit antonym
 <hyponym> ↓ vise til eit meir spesifikt ord
 <hypernym> ↑ vise til eit meir overordna ord
 <obs> vær obs på dette (bajimussii -> bajimusas) !
-}}}
+```
 
-
-{{{
+```
    <e usage="vd">
       <lg>
          <l pos="n">balloŋŋa</l>
@@ -126,49 +118,43 @@ Initialt i <mg>:
          <l pos="n">kantuvra</l>
          <lsub extrapage="no" pos="n">kántuvra</lsub>
       </lg>
-}}}
+```
 
-
-
-!!!te vs. re
+# te vs. re
 
 ieža = sjøl (om flere)
 
-
-!!!inc-listtut
+# inc-listtut
 
 Til saman 604 nye ord.
 
-{{{
+```
 inc-today.csv:
 
-njenecagiella ___ n ___ nenetsisk språk ___ a2
-itáliagiella ___ n ___ italiensk språk ___ a2
+njenecagiella _**n**_ nenetsisk språk ___ a2
+itáliagiella _**n**_ italiensk språk ___ a2
 
 news.1056.missing_nouns.csv:
 
-áviisa ___ n ___ avis
-bálkkašupmi ___ n ___ pris| belønning| premie ___ Munnje lea stuora gudni oažžut dán bálkkašumi. ___ For meg er det en stor ære å få denne prisen.
-ávvudeapmi ___ n ___ feiring| fest ___ Saami álbmotbeaivvi almmolaš ávvudeapmi lea kulturviesus. ___ Den offisielle markeringen av samefolkets dag er på kulturhuset.
-proseassa ___ n ___ prosess
-indiána ___ n ___ indianer
-}}}
-
-
+áviisa _**n**_ avis
+bálkkašupmi _**n**_ pris| belønning| premie _**Munnje lea stuora gudni oažžut dán bálkkašumi.**_ For meg er det en stor ære å få denne prisen.
+ávvudeapmi _**n**_ feiring| fest _**Saami álbmotbeaivvi almmolaš ávvudeapmi lea kulturviesus.**_ Den offisielle markeringen av samefolkets dag er på kulturhuset.
+proseassa _**n**_ prosess
+indiána _**n**_ indianer
+```
 
 Format som i xxx_smafin.txt
-{{{
-amma ___ pcle ___ toki $ pas | päs
-}}}
+```
+amma _**pcle**_ toki $ pas | päs
+```
 
-__TODO__:
-# Trond rydder listene og  evt. sletter det som ikke er oversatt. 
-# Ciprian lager om til xml-format i en egen fil. 
-# BM redigerer i xmlMind. 
-# Deretter legger Ciprian dem inn i de eksisterende filene.
+**TODO**:
+1. Trond rydder listene og  evt. sletter det som ikke er oversatt. 
+1. Ciprian lager om til xml-format i en egen fil. 
+1. BM redigerer i xmlMind. 
+1. Deretter legger Ciprian dem inn i de eksisterende filene.
 
-
-!!!kompileren (smenob)
+# kompileren (smenob)
 
 Etter at man har lagt til/sjekka ca 604 oversatte ord fra inc-lister pluss incliste fra "Čábbámus iđitguovssu" 
 
@@ -181,32 +167,22 @@ Når? 15. september skal det være klart for kompilering:
 * bruke (i)sme.fst for sub-lemmaer
 * at Actor er i actor-fila, G3 er i g3-fila osv.
 
-!!!Neahtta vs VD 
+# Neahtta vs VD 
 
 Cip oppdaterer nettordboka annakvar veke. 
 
-!!!nob-x
+# nob-x
 * sjekke mot nob-frekvensordliste eller ordbok
 * se kritisk på artiklene
 * bli enige om et link-system - f.eks. få "áhkku" og "áddjá" inn under "besteforelder" uten å skrive nye artikler (?)
 
 Mål for snuing: 1. oktober.
 
-
-!!!Hva er målet med ordboksarbeidet?
+# Hva er målet med ordboksarbeidet?
 * ordbøkene er nyttige for folk flest
 * vise kombinasjonen leksikografi/morfologi
 * vi kan samarbeide med de leksikografiske miljøene
 * vi trenger transferleksikon for MT
 
-
-!!!Enkeltord
+# Enkeltord
 Vi gikk gjennom lista fra Sárá beaivegirji, se words/dicts/smenob/inc/inc_sara_beaivegirji_sorted.txt
-
-
-
-
-
-
-
-

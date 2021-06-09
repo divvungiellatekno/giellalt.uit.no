@@ -1,23 +1,23 @@
 Møte 23.08.2016
 
-!!!Testing
+# Testing
 
-{{grammarcheckers-developertest.sh}} should be indifferent of:
+`grammarcheckers-developertest.sh` should be indifferent of:
 
-{{{
+```
 < "<eanemus>"     "eanet" &syn-super-part1      "eanemus" &syn-super-part1  
 ---
 > "<eanemus>"     "eanemus" &syn-super-part1      "eanet" &syn-super-part1
-}}}
+```
 
 Linda needs help to script this in the test.
 
-!!!vuosttaš vs. vuosttáš
+# vuosttaš vs. vuosttáš
 
 vuosttaš vs. vuosttáš need to be distinguished:
 e.g. Err/Orth-lemma vs. Err/Orth-real
 
-{{{
+```
 vuosttáš
 vuosttáš        vuosti+N+Der/Dimin+N+Sg+Nom
 vuosttáš        vuosti+N+Der/Dimin+N+Sg+Gen+Err/Orth
@@ -35,54 +35,51 @@ vuosttaš        vuosttaš+A+Ord+Sg+Nom
 vuosttaš        vuosttaš+A+Ord+Sg+Gen+Err/Orth
 vuosttaš        vuosttaš+A+Ord+Sg+Acc+Err/Orth
 vuosttaš        vuosttaš+A+Ord+Attr
-}}}
+```
 
-* __+Err/Orth__ substandard, not in normative fst
-* __+Err/Lex__ substandard, not in normative fst, no normative lemma
-* __+Err/DerSub__ substandard for derivation, not in normative fst, no normative lemma
-* __+Err/CmpSub__ substandard for compounding, not in normative fst (wrong form or POS in first part)
-* __+Err/HyphSub__ substandard for compounding, not in normative fst (needs hyph)
-* __+Err/SpaceCmp__ used for compounds written apart - only retained in the HFST Grammar Checker disambiguation analyser
-* __+Err/Spellrelax__ used to tag spellrelaxed typos (tag is inserted via flag diacritics)
+* **+Err/Orth** substandard, not in normative fst
+* **+Err/Lex** substandard, not in normative fst, no normative lemma
+* **+Err/DerSub** substandard for derivation, not in normative fst, no normative lemma
+* **+Err/CmpSub** substandard for compounding, not in normative fst (wrong form or POS in first part)
+* **+Err/HyphSub** substandard for compounding, not in normative fst (needs hyph)
+* **+Err/SpaceCmp** used for compounds written apart - only retained in the HFST Grammar Checker disambiguation analyser
+* **+Err/Spellrelax** used to tag spellrelaxed typos (tag is inserted via flag diacritics)
 
 suggestion:
 * Err/Orth-á i.e. á is how it is (i.e. vuosttáš should be vuosttáš)
 * Err/Orth-nom i.e. vuosttáš+Nom should be vuosttáža+Gen/Acc
 
-
 eanemus:
 hauptsächlich vs. am meisten:
 
-{{{
+```
 Duohtavuođas lea gávpi stuorát eará Eurohpa riikkain, ja danin vásihedje
 mutursykkelgávppit ahte eanemus beakkán sykkelat ledje juo vuvdon miehtá
 Eurohpa ovdal go gálvu ollii Norgii. 
 
 De soaitá olmmoš veaháš balus dahje speantta, muhto dieđusge eanemus movttet.
-}}}
+```
 
 How should we resolve the problem, i.e. give suggestions:
 
-{{{
+```
 Eanemus jáhkehahtti lea ahte sihke nuoskkideapmi ja lunddolaš rievdan lea sivvan ahte dálkkádat rievdá.  ¶ --- error
-}}}
+```
 
 Possible corrections:
-# Adj: Lea earenoamáš jáhkehahtti ahte.. BØRRE
-# Adv: Earenoamážit jáhkehahtti lea ahte... RITVA
+1. Adj: Lea earenoamáš jáhkehahtti ahte.. BØRRE
+1. Adv: Earenoamážit jáhkehahtti lea ahte... RITVA
 
 Another case:
-{{{
+```
 Telefuvdna ságastallan maid lohká eanemus earenoamážin, lea ovttain vuoras sámiáhkuin.  ¶
-}}}
+```
 
 Possible corrections:
-# ? ... lohká earenoamáš earenoamážin ...
-# RITVA: Erenomážit ovtta ságastállama logai miellagiddevažžan/erenomážin, ja dat lei ovttain vuoras sámiáhkkuin.
+1. ? ... lohká earenoamáš earenoamážin ...
+1. RITVA: Erenomážit ovtta ságastállama logai miellagiddevažžan/erenomážin, ja dat lei ovttain vuoras sámiáhkkuin.
 
-
-!!!GRAD-ADV: hui, issoras, earenoamáš, ...
-
+# GRAD-ADV: hui, issoras, earenoamáš, ...
 
 Hvilke adjektiv:
 * guovddaš
@@ -91,24 +88,24 @@ Hvilke adjektiv:
 * essive
 
 SCOPE: earenoamáš + A + N
-{{{
+```
   earenoamáš + [A  + N] --- 
  [earenoamáš +  A] + N  --- FEIL
-}}}
+```
 
 CLUES: finite verb: sg/pl, N (count, mass, non-count)
 
-{{{
+```
 CORR     Sálliris lea eanemus [vilges guolli]. GUOLLI.mass
 *        Sálliris lea [eanemus vilges] beana. BEANA.count
 CORR    Sálliris leat eanemus [vilges beatnagat].
 *        Sálliris lea [eanemus vilges] guovlu. GUOVLU.non-count
 CORR        Sálliris leat eanemus vilges guovllut. 
-}}}
+```
 
 earenoamáš + A + N.loc (place, time, ...)
 
-{{{
+```
 CORR Ná sámegiel čovdosat iskkaduvvojit eanemus vejolaš bargooktavuođain ja prográmmain.
 
 = såhär samiska lösningar prövas i dom [flesta (muliga) arbetssammanhangen] och programmen
@@ -116,15 +113,15 @@ CORR Ná sámegiel čovdosat iskkaduvvojit eanemus vejolaš bargooktavuođain ja
 * Muhto soaitá eretfárren Máhkarávjolaš leat [eanemus dovddus] [revybargguin], nugo fylkkarevyafestiválain ja BLØGGas.
 
 = Men kanskje bortflyttingen fra Máhkarávjo er [mest berömd] i revyarbetet
-}}}
+```
 
-!!!A/N homonymy:
+# A/N homonymy:
 
 * liekkas
 * bargguheamit - Sem/Hum
 
-''Ásodagain ja ráidoviesuin jávká eanemus liekkas robi ja lovtta bokte.''
+*Ásodagain ja ráidoviesuin jávká eanemus liekkas robi ja lovtta bokte.*
 = mest værme førsvinner genom taket o loftet
 
-''Eanemus bargguheamit leat Láhpis ja Guovdageainnus.'' (A Sem/Hum Pl Nom)
+*Eanemus bargguheamit leat Láhpis ja Guovdageainnus.* (A Sem/Hum Pl Nom)
 = Dom flesta arbestskygga är i Láhppi o Kauto

@@ -1,329 +1,304 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 18.09.2006
 * Time: 09.30 Norw. time
 * Place: Where we are
 * Tools: SubEthaEdit, iChat
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:58.
 
-Present: __Børre, Saara, Sjur, Thomas, Tomi, Trond__
+Present: **Børre, Saara, Sjur, Thomas, Tomi, Trond**
 
-Absent: __Maaren__
+Absent: **Maaren**
 
 Agenda accepted as is.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!! Børre
+##  Børre
 * corpus collection:
-** send out contracts with accompanying letter
-*** Contracts to Rauni Lukkari and Saimi Kaarina Lukkari
-** Gather public texts, preferrably also parallel ones
-*** Not done
-** Send out letters to the rest of the Iđut authors
-*** Not done
-** contact __Ája__ (Kåfjord), talk to __Lene__
-*** Not contacted Ája. No texts from Lene so far.
-** send contracts to __Čálliid Lágádus__
-*** Not done
-** contact __Richard Valkepää__ at NSI about older Min Áigi and Áššu files
-*** Not done
-** discuss with __Bård Eriksen__ about collecting {{smj}} texts (with __Sjur__)
-*** Haven't heard from him last week.
+    - send out contracts with accompanying letter
+        - Contracts to Rauni Lukkari and Saimi Kaarina Lukkari
+    - Gather public texts, preferrably also parallel ones
+        - Not done
+    - Send out letters to the rest of the Iđut authors
+        - Not done
+    - contact **Ája** (Kåfjord), talk to **Lene**
+        - Not contacted Ája. No texts from Lene so far.
+    - send contracts to **Čálliid Lágádus**
+        - Not done
+    - contact **Richard Valkepää** at NSI about older Min Áigi and Áššu files
+        - Not done
+    - discuss with **Bård Eriksen** about collecting `smj` texts (with **Sjur**)
+        - Haven't heard from him last week.
 * corpus conversion:
-** convert nob and nno bible texts to be used as part of a parallel corpus
-** convert fin, swe to paratext or directly to our XML
-*** Not done
-** review the paratext2xml converter
-*** Not done
-** Move norwegian documents in Min Áigi from sme to nob
-*** Most of 2003 is done
+    - convert nob and nno bible texts to be used as part of a parallel corpus
+    - convert fin, swe to paratext or directly to our XML
+        - Not done
+    - review the paratext2xml converter
+        - Not done
+    - Move norwegian documents in Min Áigi from sme to nob
+        - Most of 2003 is done
 * corpus access:
-** possibly deploy the user account form as an HTML form
-** Write both user and admin documentation (__Børre__, review: __Sjur, Thomas__)
-*** User documentation probably in several languages. This covers how to apply
+    - possibly deploy the user account form as an HTML form
+    - Write both user and admin documentation (**Børre**, review: **Sjur, Thomas**)
+        - User documentation probably in several languages. This covers how to apply
     for an account, on what grounds one can apply, and pointers to documentation
     telling how to use the corpus.
-*** Admin documentation, telling how we set the permissions to the corpus files,
+        - Admin documentation, telling how we set the permissions to the corpus files,
    and whatever other processes and tasks needed to set up a corpus account.
-*** Nothing this week
+        - Nothing this week
 * set up Bugzilla automatic reminders for open issues
 * create document & document entry for semantic double-tagging of names (for
-  __Trond__)
+  **Trond**)
 * finish Forrest i18n and Sámi in PDF work
-** Still working.
-* Get more {{sma, smj}} texts to improve language recognition
-** Will talk to Stig Gælok later today, he said he has lots of text
+    - Still working.
+* Get more `sma, smj` texts to improve language recognition
+    - Will talk to Stig Gælok later today, he said he has lots of text
 * set up Tomcat for use with eXist and the propnouns db on the G5
-** Not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - Not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Maaren
+##  Maaren
 * On sick leave
 * download and install latest Marratech
 
-
-
-!! Saara
+##  Saara
 * Create a parallel corpora of the new testaments
 * add more texts to the graphical corpus interface
 * Implement parallel corpus upload in web upload script
 * remove headers and footers from pdf documents
-** in progress
+    - in progress
 * Implement server of the analysis tools.
-** A prototype is ready.
+    - A prototype is ready.
 * add an option for including derivational tags to lookup2cg output
-** not done, I forgot it completely. I'll do it straight away.. There 
+    - not done, I forgot it completely. I'll do it straight away.. There 
    seems to be no dropping of derivational tags in lookup2cg.
 * examine text_cat for character limit 20 char
-** not done
-* generate parallel corpus files manually (with __Trond__)
-** some planning done.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - not done
+* generate parallel corpus files manually (with **Trond**)
+    - some planning done.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!! Sjur
+##  Sjur
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
-** done, but needs more work - it overgenerates
+    - done, but needs more work - it overgenerates
 * name lexicon:
-** implement editing functions
-** finalise refactoring for multiple collections
-** implement improvements decided upon in Tromsø
-*** some work done
+    - implement editing functions
+    - finalise refactoring for multiple collections
+    - implement improvements decided upon in Tromsø
+        - some work done
 * review user and admin documentation for corpus access
-** nothing
+    - nothing
 * write user account form, probably ask for copy of existing ones from the IT
-  centre (with __Trond__)
-** nothing
+  centre (with **Trond**)
+    - nothing
 * start hiring process of linguist and programmer
-** continued, got a list of possible
-* help __Børre__ finish i18n work of Forrest with a language override menu
-** progressing, but not finished
+    - continued, got a list of possible
+* help **Børre** finish i18n work of Forrest with a language override menu
+    - progressing, but not finished
 * consider the problems of lexicalised derivations schewing analyses of
   derivation patterns
-** nothing
+    - nothing
 * install eXist and our local copy of risten.no and propnouns on the G5
-** nothing
+    - nothing
 * speller follow-up from the Tromsø meeting
-** nothing
-* discuss with __Bård Eriksen__ about collecting {{smj}} texts (with __Børre__)
-** nothing
+    - nothing
+* discuss with **Bård Eriksen** about collecting `smj` texts (with **Børre**)
+    - nothing
 * get instructions on how to use Marratech, and test it
-** nothing received
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - nothing received
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!! Thomas
+##  Thomas
 * sme G3 issue
-** somekind of solved it, not in the way that was intended though!
+    - somekind of solved it, not in the way that was intended though!
 * bug-fixing!
-** worked
+    - worked
 * refine smj proper noun lexica, cf. the propernoun-smj-lex.txt 
-** no
+    - no
 * review user documentation for corpus access
-** no
-* find and study all derived verbs in our corpus (depends on __Trond__)
-** no
-* suggest which derivations could be generated (depends on __Trond__)
-** no
+    - no
+* find and study all derived verbs in our corpus (depends on **Trond**)
+    - no
+* suggest which derivations could be generated (depends on **Trond**)
+    - no
 * check all XXX cases in verb-file, consider marking them sub
-** done
+    - done
 * consider checking all verbs for non-verbs
-** talked with Lene, this is not necessary! They are recently checked.
+    - talked with Lene, this is not necessary! They are recently checked.
 
-
-
-!! Tomi
+##  Tomi
 * new proper name lexicon
-** data synchronisation of proper nouns between risten.no and CVS
-** XQuery refactoring and code development for our proper noun editor
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - data synchronisation of proper nouns between risten.no and CVS
+    - XQuery refactoring and code development for our proper noun editor
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
-** implement improvements decided upon in Tromsø
+    - implement improvements decided upon in Tromsø
 * read aligner docu, install, provide feedback
 * Set up the mechanism for the hash-mark transducer package
 * test the new xml output of the xml-tagged analyses
-* export corpus tools to {{/opt}} (with cron)
+* export corpus tools to `/opt` (with cron)
 * make speller and hyphenator make targets using M4
 * help Saara with JPedal
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Trond
+##  Trond
 * better smj NT text
-* get fin, swe, nob and nno NT and OT in __paratext__ format
+* get fin, swe, nob and nno NT and OT in **paratext** format
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
 * make shell script wrappers for the most common commands for user friendliness
-** The missing one is teaksta.sh
+    - The missing one is teaksta.sh
 * write user account form, probably ask for copy of existing ones from the IT
-  centre (with __Sjur__)
-* write documentation for our {{bound}} users, with pointers to the ordinary
+  centre (with **Sjur**)
+* write documentation for our `bound` users, with pointers to the ordinary
   documentation  
 * refine smj proper noun lexica, cf. the propernoun-smj-lex.txt
 * discuss web-only user access management with Oslo
-** Discussed, they will administer it when we add closed text. Discussion of
+    - Discussed, they will administer it when we add closed text. Discussion of
    details were postponed.
 * write short user guide for the corpus web interface
-** The user interface will be instable this month, and a new version will be
+    - The user interface will be instable this month, and a new version will be
    released next month, with new functions, and possibly with documentation.
    Further action is thus postponed until then.
-* Get more {{sma, smj}} texts to improve language recognition
+* Get more `sma, smj` texts to improve language recognition
 * study corpus for language recognition errors, as well as paragraphs with mixed
   content
-** Errors are spotted on a regular basis, the mixed paragraph issue still awaits 
+    - Errors are spotted on a regular basis, the mixed paragraph issue still awaits 
    a treatment, and is postponed.
-* generate parallel corpus files manually (with __Saara__)
-** We need a catalogue of parallel texts
+* generate parallel corpus files manually (with **Saara**)
+    - We need a catalogue of parallel texts
 * block out the CG rule(s) that remove(s) the Der readings using M4
-** Pseudocode written, now awaiting the m4 literates.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+    - Pseudocode written, now awaiting the m4 literates.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-
-!!!3. Documentation
+# 3. Documentation
 
 TODO:
 * finish i18n work by adding a list of available language versions to each
-  document (__Børre__ with help from __Sjur__)
-** Sjur has done quite a lot, but is not finished
-* make pdf set-up work on victorio (__Børre__)
-** working on victorio (and thus on the external site), but it does not work
+  document (**Børre** with help from **Sjur**)
+    - Sjur has done quite a lot, but is not finished
+* make pdf set-up work on victorio (**Børre**)
+    - working on victorio (and thus on the external site), but it does not work
    together with our present i18n efforts:-( To be continued...
-* Write both user and admin documentation (__Børre__, review: __Sjur, Thomas__)
-** User documentation probably in several languages. This covers how to apply
+* Write both user and admin documentation (**Børre**, review: **Sjur, Thomas**)
+    - User documentation probably in several languages. This covers how to apply
    for an account, on what grounds one can apply, and pointers to documentation
    telling how to use the corpus.
-** Admin documentation, telling how we set the permissions to the corpus files,
+    - Admin documentation, telling how we set the permissions to the corpus files,
    and whatever other processes and tasks needed to set up a corpus account.
 
+# 4. Corpus gathering
 
-!!!4. Corpus gathering
+**Børre** will focus on the gathering this week, we need more material...
 
-__Børre__ will focus on the gathering this week, we need more material...
+**TODO:**
+* contact NSI (**Børre**)
+* contact authors (**Børre**, eventually **Lene**)
+* evalutate an agreement with **Bård Eriksen** helping us collecting `smj`
+  texts (**Børre** and **Sjur**)
 
-__TODO:__
-* contact NSI (__Børre__)
-* contact authors (__Børre__, eventually __Lene__)
-* evalutate an agreement with __Bård Eriksen__ helping us collecting {{smj}}
-  texts (__Børre__ and __Sjur__)
+# 5. Corpus infrastructure
 
-
-
-!!!5. Corpus infrastructure
-
-!!General
+## General
 
 Our way of dealing with the conversion of input documents has now reached an
 advanced level. At some point we might consider publish our results, to the
 benefit of the rest of the research community.
 
-__TODO:__
-* remove headers and footers in the PDF conversion (__Saara__)
-** done something, see JPedal below
-* fix Min Áigi filenames (__Saara__)
-** done
-* Go through the java issues of JPedal (__Saara, Tomi__)
-** soon ready?
+**TODO:**
+* remove headers and footers in the PDF conversion (**Saara**)
+    - done something, see JPedal below
+* fix Min Áigi filenames (**Saara**)
+    - done
+* Go through the java issues of JPedal (**Saara, Tomi**)
+    - soon ready?
 
+## User accounts and access
 
-!!User accounts and access
-
-For details, see a [previous meeting memo|Meeting_2006-06-19], as well as the
+For details, see a [previous meeting memo](Meeting_2006-06-19), as well as the
 memo from a [dedicated
 meeting|/infra/corpus_policy.html].
 
-!Shell access
+### Shell access
 
 TODO:
-* export to {{/opt}} (with cron) tools that the project team members find in 
+* export to `/opt` (with cron) tools that the project team members find in 
   their cvs tree (the bound users do not have a cvs tree, and therefore need 
-  these tools in {{/opt}} in order to conduct linguistic analyses) (__Tomi__)
-** Decision:
-*** compiled transducers to {{/opt}} also in the future
-*** scripts etc to {{/usr/local/share/bin/}}
+  these tools in `/opt` in order to conduct linguistic analyses) (**Tomi**)
+    - Decision:
+        - compiled transducers to `/opt` also in the future
+        - scripts etc to `/usr/local/share/bin/`
 * make shell script wrappers for the most common commands for user friendliness
-  (we must think of what commands they are) (__Trond__)
-** (first version of first script, teaksta.sh, was checked in, but it is still
+  (we must think of what commands they are) (**Trond**)
+    - (first version of first script, teaksta.sh, was checked in, but it is still
    not working (the problem is a simple handling of input-output, some shell
    script literates should have a look at it)
 * write user account form, probably ask for copy of existing ones from the IT
-  centre (__Trond__ and __Sjur__)
-* possibly deploy the user account form as an HTML form (__Børre__)
-* write documentation for our {{bound}} users, with pointers to the ordinary 
-  documentation (__Børre, Trond__)
+  centre (**Trond** and **Sjur**)
+* possibly deploy the user account form as an HTML form (**Børre**)
+* write documentation for our `bound` users, with pointers to the ordinary 
+  documentation (**Børre, Trond**)
 * write documentation for how to apply for a user account (where's the form, to
-  whom do I send the form, who needs it, etc.) (__Børre__)
-* make our own guidelines for the user application processing (__Børre__)
-* make a test user (__Børre__)
-* test corpus access as test user (__Trond__)
+  whom do I send the form, who needs it, etc.) (**Børre**)
+* make our own guidelines for the user application processing (**Børre**)
+* make a test user (**Børre**)
+* test corpus access as test user (**Trond**)
 
-
-
-!Web browser access
+### Web browser access
 
 TODO:
-* discuss with Oslo (__Trond__)
+* discuss with Oslo (**Trond**)
 * delay other tasks until we are ready to go public?
 * user management for access to bound texts
 * short user guide needed before going public (either write one or take whatever
-  has been made in Oslo (__Trond__)
+  has been made in Oslo (**Trond**)
 
-
-
-!!More texts to the graphical corpus interface:
+## More texts to the graphical corpus interface:
 
 TODO:
-* add text to the server (__Lars__)
+* add text to the server (**Lars**)
 
-
-
-!!Aligner
+## Aligner
 
 TODO:
 * use the present aligner to generate some initial input for Oslo to test
-  (__Trond__ and __Saara__)
+  (**Trond** and **Saara**)
 
-
-
-!!Language recognition
+## Language recognition
 
 TODO:
-* Get more text of the poorly covered languages: {{sma, smj}} (__Trond, Børre__)
-** {{sma:}} get the Bible texts (__Trond__)
+* Get more text of the poorly covered languages: `sma, smj` (**Trond, Børre**)
+    - `sma:` get the Bible texts (**Trond**)
 * study the paragraphs of 20 or less characters, where the errors will be
-  (__Trond__)
-* study the mistakes our recogniser makes today (__Trond__)
+  (**Trond**)
+* study the mistakes our recogniser makes today (**Trond**)
 * what about paragraphs with mixed content? Build a corpus of such paragraphs
-  (__Trond__)
+  (**Trond**)
 
+# 6. Infrastructure
 
-
-!!!6. Infrastructure
-
-!!Xerox tools wrapped as servers
+## Xerox tools wrapped as servers
 
 Saara has made a prototype, available as server_anl.pl (the server) and
 client_anl.pl (for a client session). It still needs more development, but can
@@ -334,115 +309,100 @@ client can talk to it.
 
 Very brief user instructions:
 
-In one window: {{server_anl.pl}}. In another window: {{client_anl.pl -p}}.
+In one window: `server_anl.pl`. In another window: `client_anl.pl -p`.
 Type "quit" to exit the client and server.
 
-__TODO:__
-* improve and finish the present prototype (__Saara__)
+**TODO:**
+* improve and finish the present prototype (**Saara**)
 * feature request: option for XML output from server
 
-
-!!Hyphenator
+## Hyphenator
 
 First hyphenating transducer was made last week, but it produces wrong output
 because of overgeneration on the generator side.
 
-''gahpira'' => gah-pi-ra __and__ ga-hpir, should be only the first one.
+*gahpira* => gah-pi-ra **and** ga-hpir, should be only the first one.
 
-{{{
+```
                          ´  hyphentated output
-                         |    |
-                         |  hyphenation rules
+|     |
+|   hyphenation rules
                         /     |
 filter.fst & hyph.fst <-    generator <-------- overgeneration:
                         \     | ----------baseform/analysis
-                         |  analyser
-                         |    |
+|   analyser
+|     |
                          `  input
-}}}
+```
 
-We need a "filter" fst: {{a-z... -:0 -:- ^:0 #:0}}
+We need a "filter" fst: `a-z... -:0 -:- ^:0 #:0`
 
 Sketch:
-{{{
+```
 [%-, ^, %# ] (<-) 0 ;
-}}}
+```
 and the rest by default: a = a:a.
-
 
 TODO:
 * correct the treatment of hyphenation of word boundaries and exceptions (fst
-  gymnastics) (__Sjur, Trond__)
-** done (by __Tomi__ and __Sjur__), needs improvement because of overgeneration
+  gymnastics) (**Sjur, Trond**)
+    - done (by **Tomi** and **Sjur**), needs improvement because of overgeneration
    problem
-* implement the 'filter.fst' above (__Sjur, Tomi, Trond__)
+* implement the 'filter.fst' above (**Sjur, Tomi, Trond**)
 * Update the sma hyphenator rule set with the insights gained from smj updates
-  (__Trond__ during weekends)
+  (**Trond** during weekends)
 
-
-
-!!Automatic Bugzilla reminder for untouched bugs
+## Automatic Bugzilla reminder for untouched bugs
 
 TODO:
 * give mail reminders a second try; ask Thor-Øivind for help if needed
-  (__Børre__)
+  (**Børre**)
 
+## M4
 
-
-!!M4
-
-__TODO:__
+**TODO:**
 * make speller and hyphenator make targets that utilise M4 to produce normative
-  and hyphenation transducers; also disamb variants (see next) (__Tomi__)
-** done for hyphenation (Sjur and Tomi)
+  and hyphenation transducers; also disamb variants (see next) (**Tomi**)
+    - done for hyphenation (Sjur and Tomi)
 
+# 7. Linguistics
 
+## Derivation and spellers like Aspell
 
-!!!7. Linguistics
-
-!!Derivation and spellers like Aspell
-
-* add an option to {{lookup2cg}} to keep {{+Der/}} tags (__Saara__)
-** doesn't seem to remove any tags at all (or very few if at all)
+* add an option to `lookup2cg` to keep `+Der/` tags (**Saara**)
+    - doesn't seem to remove any tags at all (or very few if at all)
 * revert the CG rule that preferres lexicalised forms over derivations with M4
-  (__Trond__ to write M4 pseudocode, __M4-literates__ to translate).
+  (**Trond** to write M4 pseudocode, **M4-literates** to translate).
   In the beginning of sme-dis.rle there is an explanation of the pseudocode.
   Just search for the rules as explained there.
-* find and study all derived verbs in our corpus (__Thomas__)
-* suggest which derivations could be generated (__Thomas__)
-* lexicalise the rest (__Thomas__)
+* find and study all derived verbs in our corpus (**Thomas**)
+* suggest which derivations could be generated (**Thomas**)
+* lexicalise the rest (**Thomas**)
 
-
-
-!!Semantic double-tagging of names
+## Semantic double-tagging of names
 
 TODO:
-* move the existing guidelines to a separate document (__Børre__)
-** done (by __Sjur__)
-* make sure all linguists are aware of the guidelines (__Trond, Sjur__)
-* write disamb rules to implement the system above (__Trond, Linda__)
+* move the existing guidelines to a separate document (**Børre**)
+    - done (by **Sjur**)
+* make sure all linguists are aware of the guidelines (**Trond, Sjur**)
+* write disamb rules to implement the system above (**Trond, Linda**)
 
+## North Sámi
 
-
-!!North Sámi
-
-__TODO:__
-* check all XXX cases (__Thomas, Lene__)
-** done
-* consider checking all verbs for non-verbs (__Thomas, Lene__)
-** Thomas talked with Lene, this is not necessary, Lenes "non-words" were all
+**TODO:**
+* check all XXX cases (**Thomas, Lene**)
+    - done
+* consider checking all verbs for non-verbs (**Thomas, Lene**)
+    - Thomas talked with Lene, this is not necessary, Lenes "non-words" were all
    marked !SUB. Thomas has recently checked all verbs.
 
-
-
-!!Lule Sámi
+## Lule Sámi
 
 TODO:
 * refine smj proper noun lexica, cf. the propernoun-smj-lex.txt
-  (__Thomas, Trond__)
+  (**Thomas, Trond**)
 
-
-!!!8. Name lexicon infrastructure
+# 8. Name lexicon infrastructure
 
 Decided in Tromsø:
 * add logging facilities to the interface
@@ -454,104 +414,92 @@ Decided in Tromsø:
 * display existing language entries when adding a new language to a record
 * add editor to change single, existing entries
 
-
 Details can be found in [the meeting
 memo.|/admin/physical_meetings/tromso-2006-08-propnoun.html]
 
 TODO:
 * finish refactoring for multiple collections in the search interfarce
-  (__Sjur__)
-* develop the needed XQueries and UI (__Sjur, Tomi__)
-* data synchronisation between risten.no and the cvs repo (__Tomi__)
-** discussion started on eXist-list, nothing useful came up. We need to
+  (**Sjur**)
+* develop the needed XQueries and UI (**Sjur, Tomi**)
+* data synchronisation between risten.no and the cvs repo (**Tomi**)
+    - discussion started on eXist-list, nothing useful came up. We need to
    reformulate the question from our perspective, and bring it up again
-   (__Sjur__)
+   (**Sjur**)
 * add eXist and the proper noun interface to the G5 using Tomcat
-  (__Sjur and Børre__)
+  (**Sjur and Børre**)
 
-
-!!!9. Tromsø meeting follow-up
+# 9. Tromsø meeting follow-up
 
 TODO:
 * speller development - see the [meeting
   memo|/admin/physical_meetings/tromso-2006-08-lexc2xspell.html]. Separate
   follow-up next week.
-* Lule Sámi linguist (__Sjur__)
+* Lule Sámi linguist (**Sjur**)
 
+# 10. Other
 
+## Bug fixing
 
-!!!10. Other
-
-!!Bug fixing
-
-__64__ open Divvun/Disamb bugs (two down!), and __25__ risten.no bugs
+**64** open Divvun/Disamb bugs (two down!), and **25** risten.no bugs
 
 Guess: 1/3 of the bugs are fixed already (?)
 
+## Meetings and Marratech
 
-!!Meetings and Marratech
-
-__TODO:__
+**TODO:**
 * download and install newest Marratech
-  (__Maaren__)
-* we need instructions on how to use it, and test it (__Sjur__)
+  (**Maaren**)
+* we need instructions on how to use it, and test it (**Sjur**)
 
-
-
-!!Task lists as iCal entries
+## Task lists as iCal entries
 
 TODO:
-* update Maaren's and Saara's installations to r430284 (__Børre__)
+* update Maaren's and Saara's installations to r430284 (**Børre**)
 
-
-!!!11. Next meeting, closing
+# 11. Next meeting, closing
 
 Next meeting 25.9.2006 at 9:30.
 
 Closed at 11:03.
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!! Børre
+##  Børre
 
 * corpus collection:
-** send out contracts with accompanying letter
-** Gather public texts, preferrably also parallel ones
-** Send out letters to the rest of the Iđut authors
-** contact __Ája__ (Kåfjord), talk to __Lene__
-** send contracts to __Čálliid Lágádus__
-** contact __Richard Valkepää__ at NSI about older Min Áigi and Áššu files
-** discuss with __Bård Eriksen__ about collecting {{smj}} texts (with __Sjur__)
+    - send out contracts with accompanying letter
+    - Gather public texts, preferrably also parallel ones
+    - Send out letters to the rest of the Iđut authors
+    - contact **Ája** (Kåfjord), talk to **Lene**
+    - send contracts to **Čálliid Lágádus**
+    - contact **Richard Valkepää** at NSI about older Min Áigi and Áššu files
+    - discuss with **Bård Eriksen** about collecting `smj` texts (with **Sjur**)
 * corpus conversion:
-** convert nob and nno bible texts to be used as part of a parallel corpus
-** convert fin, swe to paratext or directly to our XML
-** review the paratext2xml converter
-** Move norwegian documents in Min Áigi from sme to nob
+    - convert nob and nno bible texts to be used as part of a parallel corpus
+    - convert fin, swe to paratext or directly to our XML
+    - review the paratext2xml converter
+    - Move norwegian documents in Min Áigi from sme to nob
 * corpus access:
-** possibly deploy the user account form as an HTML form
-** Write both user and admin documentation (__Børre__, review: __Sjur, Thomas__)
-*** User documentation probably in several languages. This covers how to apply
+    - possibly deploy the user account form as an HTML form
+    - Write both user and admin documentation (**Børre**, review: **Sjur, Thomas**)
+        - User documentation probably in several languages. This covers how to apply
     for an account, on what grounds one can apply, and pointers to documentation
     telling how to use the corpus.
-*** Admin documentation, telling how we set the permissions to the corpus files,
+        - Admin documentation, telling how we set the permissions to the corpus files,
    and whatever other processes and tasks needed to set up a corpus account.
 * set up Bugzilla automatic reminders for open issues
 * create document & document entry for semantic double-tagging of names (for
-  __Trond__)
+  **Trond**)
 * finish Forrest i18n and Sámi in PDF work
-* Get more {{sma, smj}} texts to improve language recognition
+* Get more `sma, smj` texts to improve language recognition
 * set up Tomcat for use with eXist and the propnouns db on the G5
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Maaren
+##  Maaren
 * On sick leave
 * download and install latest Marratech
 
-
-
-!! Saara
+##  Saara
 
 * Create a parallel corpora of the new testaments
 * add more texts to the graphical corpus interface
@@ -559,79 +507,71 @@ Closed at 11:03.
 * remove headers and footers from pdf documents
 * Implement server of the analysis tools.
 * examine text_cat for character limit 20 char
-* generate parallel corpus files manually (with __Trond__)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* generate parallel corpus files manually (with **Trond**)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Sjur
+##  Sjur
 
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
 * name lexicon:
-** implement editing functions
-** finalise refactoring for multiple collections
-** implement improvements decided upon in Tromsø
+    - implement editing functions
+    - finalise refactoring for multiple collections
+    - implement improvements decided upon in Tromsø
 * review user and admin documentation for corpus access
 * write user account form, probably ask for copy of existing ones from the IT
   centre (with Trond)
 * start hiring process of linguist and programmer
-* help __Børre__ finish i18n work of Forrest with a language override menu
+* help **Børre** finish i18n work of Forrest with a language override menu
 * consider the problems of lexicalised derivations schewing analyses of
   derivation patterns
 * install eXist and our local copy of risten.no and propnouns on the G5
 * speller follo-up from the Tromsø meeting
-* discuss with __Bård Eriksen__ about collecting {{smj}} texts (with __Børre__)
+* discuss with **Bård Eriksen** about collecting `smj` texts (with **Børre**)
 * get instructions on how to use Marratech, and test it
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Thomas
+##  Thomas
 
 * sme G3 issue
 * bug-fixing!
 * refine smj proper noun lexica, cf. the propernoun-smj-lex.txt 
 * review user documentation for corpus access
-* find and study all derived verbs in our corpus (depends on __Trond__)
-* suggest which derivations could be generated (depends on __Trond__)
+* find and study all derived verbs in our corpus (depends on **Trond**)
+* suggest which derivations could be generated (depends on **Trond**)
 
-
-
-!! Tomi
+##  Tomi
 
 * new proper name lexicon
-** data synchronisation of proper nouns between risten.no and CVS
-** XQuery refactoring and code development for our proper noun editor
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - data synchronisation of proper nouns between risten.no and CVS
+    - XQuery refactoring and code development for our proper noun editor
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
-** implement improvements decided upon in Tromsø
+    - implement improvements decided upon in Tromsø
 * read aligner docu, install, provide feedback
 * Set up the mechanism for the hash-mark transducer package
 * test the new xml output of the xml-tagged analyses
-* export corpus tools to {{/opt}} (with cron)
+* export corpus tools to `/opt` (with cron)
 * make speller and hyphenator make targets using M4
 * help Saara with JPedal
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Trond
+##  Trond
 
 * better smj NT text
-* get fin, swe, nob and nno NT and OT in __paratext__ format
+* get fin, swe, nob and nno NT and OT in **paratext** format
 * fst gymnastics to add hyphenation and word boundary marks to hyphenation
   transducer
 * make shell script wrappers for the most common commands for user friendlyness
 * write user account form, probably ask for copy of existing ones from the IT
   centre (with Sjur)
-* write documentation for our {{bound}} users, with pointers to the ordinary 
+* write documentation for our `bound` users, with pointers to the ordinary 
   documentation  
 * refine smj proper noun lexica, cf. the propernoun-smj-lex.txt
-* Get more {{sma, smj}} texts to improve language recognition
+* Get more `sma, smj` texts to improve language recognition
 * study corpus for language recognition errors, as well as paragraphs with mixed
   content
-* generate parallel corpus files manually (with __Saara__)
+* generate parallel corpus files manually (with **Saara**)
 * block out the CG rule(s) that remove(s) the Der readings using M4
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).

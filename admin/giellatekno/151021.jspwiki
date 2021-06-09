@@ -2,7 +2,7 @@ Onsdagsmøte 21. oktober 2015
 
 Tilstede: Trond, Ciprian, Marja-Liisa, Lene
 
-!!!Saksliste:
+# Saksliste:
 
 * MT-phd-stillinga
 * Programmerarstillinga
@@ -11,54 +11,53 @@ Tilstede: Trond, Ciprian, Marja-Liisa, Lene
 * Korpus
 * Korp og korpusdataene 
 
-
-!!MT-phd-stillinga
+## MT-phd-stillinga
 
 Vi har ikke aktuell søker, så det blir ny utlysing så snart som mulig. 
 Trond vil ta kontakt med aktuelle folk så snart utlysinga er på nett.
 
 Siden det tar tid for å få en person i denne stillinga, så får Lene hovudansvar for implementering av transferreglar.
 
-
-!!Programmerarstillinga
+## Programmerarstillinga
 
 Vi rangerer lista denne veka. Vi får ekstern hjelp om et par dager (når?) 
 til å organisere intervjuene.
 
-!!Bidix
+## Bidix
 
 Ulike måtar å få ned homonymien:
 
-!Ta sme-smn og:
-# tilpass data (erstatt initial nordsamisk bdg med ptk, osb)
-# Ta Levenshtein (redigeringsavstand) og gå for det beste resultatet
+### Ta sme-smn og:
+1. tilpass data (erstatt initial nordsamisk bdg med ptk, osb)
+1. Ta Levenshtein (redigeringsavstand) og gå for det beste resultatet
 
 Er det mange falske vener (som fi. piimä est. piim)?
 
-{{{
+```
 smn puddo sme "buddu" fin "rippa"
 - boddu    puddâ
   sárnuđ - sárdnut - denne er ok, samme betydning smn og sme
   sárdnut - báhppa sárdnu (goit Suoma bealde ná)
   särniđiđ - sárdnidit
   sárnuđ - hupmat
+
  
   ohjelm - prográmma
   täsni - násti
   puško - havga
-}}}
+```
 
 dette er eit problem viss
 
-# prográmma - progámm <== Levenshtein-kandidat
-# prográmma - ohjelm <== korrekt? 
+1. prográmma - progámm <== Levenshtein-kandidat
+1. prográmma - ohjelm <== korrekt? 
 
 Men dette moteksemplet gjeld ikkje.
 
 Realiteten:
 prográmma	N	ohjelm	N   
 
-{{{
+```
 sárdnut	V	sárnuđ	V   <==== 
 sárdnut	V	šumpârdiđ	V
 sárdnut	V	mullârdiđ	V
@@ -88,35 +87,32 @@ hupmat	V	suomâstiđ	V
 hállat	V	suomâstiđ	V
 sárdnut	V	suomâstiđ	V
 hoallat	V	suomâstiđ	V
-}}}
+```
 
 Sjekke verb mot verb med Levenshtein. Vi lagar ein enaresamisk
 "stavekontroll" som består av berre infinitivar, vi 
 enaresamifiserer nordsamisk, og vi plukkar ut kognatar.
-
 
 Enaresamifisering:
 
 * bdg til ptk 
 * oa til uá
 
+### TILTAK:
 
-!TILTAK:
-
-# plukke ut kandidater fra synonymlista med Levenstein
-# check MWE fra smn-parantes i fin2sme-dataene
-# sme-fin verb som ikke blir med i bidix: bruke stavekontroll med 
+1. plukke ut kandidater fra synonymlista med Levenstein
+1. check MWE fra smn-parantes i fin2sme-dataene
+1. sme-fin verb som ikke blir med i bidix: bruke stavekontroll med 
   kun verb i infinitiv, for kandidater
-## kandidater skal sjekkes manuelt
-# andre ord som ikke blir med i bidix: bruke stavekontroll for å lage kandidater
-## kandidater skal sjekkes manuelt
+    1. kandidater skal sjekkes manuelt
+1. andre ord som ikke blir med i bidix: bruke stavekontroll for å lage kandidater
+    1. kandidater skal sjekkes manuelt
 
-
-!!MT-veka
+## MT-veka
 
 En ny bidix er klar til MT-uka
 
-!Reise
+### Reise
 
 * søndag Tromsø-Oulu: 16:30 Tromso	19:50 Uleåborg
 * fredag Oulu-Tromsø: 11:40 Uleåborg	13:00 Tromso
@@ -124,8 +120,7 @@ En ny bidix er klar til MT-uka
 Kevin til lunsj onsdag
 evt. fredagsprogram ML, Kevin, Erika
 
-
-{{{
+```
 a  Bil Uleåborg: Ciprian, Lene, Trond, ML
    Bil Rovaniemi: Kevin
 
@@ -136,24 +131,24 @@ b  Bil Uleåborg: Ciprian, Lene, Trond
 c  Bil Uleåborg: Ciprian, Lene, Trond
    Bil Rovaniemi: Kevin
    Bil Rovaniemi: ML
-}}}
+```
 
-__Tidspunkt: 2-6. november__
+**Tidspunkt: 2-6. november**
 
-__Sted: Salla__ 
+**Sted: Salla** 
 
-!Innhald:
+### Innhald:
 * Kva er MT, om prosjektet
 * Teknisk: Maskiner skal fungere
 * Metodisk: Arbeidsrutiner
 * Lingvistisk: 
-** Arbeide med MT-transfer (syntaks)
-** Arbeide med bidix (andre aspekt)
-** Arbeide med bidix (ordbøkene)
+    - Arbeide med MT-transfer (syntaks)
+    - Arbeide med bidix (andre aspekt)
+    - Arbeide med bidix (ordbøkene)
 
 (jf. lista på tavla)
 
-!Forarbeid
+### Forarbeid
 
 * Installere Apertium og finne parallelltekstar 
 * Setje opp pending tests - på Apertium-wiki
@@ -162,20 +157,20 @@ __Sted: Salla__
 * Sikre oss at vi har eit fungerande system
 * Arbeide med sme-smn kontrastiv grammatikk (Google-dokumentet) (*)
 
-!Forslag til innhold i MT workshop:
+### Forslag til innhold i MT workshop:
 * Dag 1
-** Lære om Apertiums moduler - 2 t
-** Teste med parallelle finsme og finsmn tekster - begynne å se på problemer - 2 t
-** Hva er arbeidet som skal gjøres og hvordan - 2 t
+    - Lære om Apertiums moduler - 2 t
+    - Teste med parallelle finsme og finsmn tekster - begynne å se på problemer - 2 t
+    - Hva er arbeidet som skal gjøres og hvordan - 2 t
 * Dag 2
-** Bli enig om hvem som skal gjøre hva, og sette igang med arbeidet
-** Pending tests og regresjonstester - wiki
+    - Bli enig om hvem som skal gjøre hva, og sette igang med arbeidet
+    - Pending tests og regresjonstester - wiki
 * Dag 3
-** Sammenlikne sme og smn lingvistisk, morfologiske tagger og derivasjoner - dag 3
+    - Sammenlikne sme og smn lingvistisk, morfologiske tagger og derivasjoner - dag 3
 * Dag 4
-** Arbeid
+    - Arbeid
 
-!Suggestion for who will do what in MT work (but details we'll discuss at the workshop)
+### Suggestion for who will do what in MT work (but details we'll discuss at the workshop)
 * Collect parallel texts, finsme - finsmn (Neetä)
 * Collect missing word pairs in parallel texts, finsme - finsmn (Erika)
 * Check word pairs in bidix, perhaps 6.000 ? (Miina, ML, Neetä)
@@ -188,15 +183,11 @@ __Sted: Salla__
 * Implement lexicon selection rules (ML, Lene, Trond)
 * Implement transfer rules (Lene, Trond)
 
-
-!!!Korpus
+# Korpus
 Denne rakk vi ikke å diskutere.
 
-!!!Korp og korpusdataene 
+# Korp og korpusdataene 
 
 Diskusjon.
 
 Prinsipp for taggdokumentasjon for brukere: På de sidene hvor det er relevant for brukeren. Lene ser på innholdet..
-
-
-

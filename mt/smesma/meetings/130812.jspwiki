@@ -1,9 +1,8 @@
-
 sme-sma-mt meeting 12.8.2013
 
 Francis, Lene, Trond.
 
-!!!Agenda
+# Agenda
 
 * Evaluation
 * Plan, overall principles
@@ -17,8 +16,7 @@ Francis, Lene, Trond.
 **...
 * Generation
 
-
-!!!Evaluation
+# Evaluation
 
 The abstract and hence the plan:
 
@@ -27,17 +25,16 @@ The abstract and hence the plan:
 
 Evaluation procedure
 
-# Send text pairs to sma translators: sme2sma and nob.
+1. Send text pairs to sma translators: sme2sma and nob.
   (the sme2sma text perhaps enriched with missing words)
-## Which is quicker: editing sma MT vs translating from scratch
-## Method: giving two texts: one to translate and one to edit
+    1. Which is quicker: editing sma MT vs translating from scratch
+    1. Method: giving two texts: one to translate and one to edit
    Two texts to three translators: one nob-only, one nob + smaMT
-# Questions:
-## Time the task
-## Answer question: How did you like the smaMT text?
-## hypothesis: smaMT has a less Norwegian syntax, and this can
+1. Questions:
+    1. Time the task
+    1. Answer question: How did you like the smaMT text?
+    1. hypothesis: smaMT has a less Norwegian syntax, and this can
    be seen as an asset (?)
-
 
 There is a similar study evaluating es2pt, giving pt translators 
 an en original and a es2pt MT text. Here is the 
@@ -47,46 +44,41 @@ paper:
 François Masselot, Petra Ribiczey (both Autodesk) and Gema Ramírez-Sánchez (Prompsit) 
 Annual Conference of the European Association for Machine Translation in 2010.   
 
-
 Content: 
 * 2 articles, each one or two pages
 * 3 translators
 
-
-!!!Plan, overall principles
+# Plan, overall principles
 
 Content:
 
-# sme: Improve the analysis (syntactic functions...)
-# sme-sma texts: pick words, add words
-# sme-sma mt-tests: improve the syntax, morphosyntax
-# sma: Improve the generation (double forms, ...)
-## Worst-case-fix: word1/word2 => word1
-# sma and sme: add missing words to fst
-# CG-rules for lexical selection
-# Improve/finish sme/src/smi-syn.rle (the file is temporarily in sme/src/)
+1. sme: Improve the analysis (syntactic functions...)
+1. sme-sma texts: pick words, add words
+1. sme-sma mt-tests: improve the syntax, morphosyntax
+1. sma: Improve the generation (double forms, ...)
+    1. Worst-case-fix: word1/word2 => word1
+1. sma and sme: add missing words to fst
+1. CG-rules for lexical selection
+1. Improve/finish sme/src/smi-syn.rle (the file is temporarily in sme/src/)
 
 Online:
 
 * [https://gtweb.uit.no/mt/]
 * Update:
-** gtweb: {{/opt/mt/README}}
+    - gtweb: `/opt/mt/README`
 
 Apertium Wiki:
 
 * [http://wiki.apertium.org/wiki/Talk:North_S%C3%A1mi_and_South_S%C3%A1mi]
 
-__Deadlines:__
+**Deadlines:**
 * Find texts
 * Find translators
 * 30.8. Send texts to the translators
 * 15.9. Receive evaluation from the translators
 * 26.9. Conference
 
-
-
-
-!!!Analysis
+# Analysis
 
 sme-dis.rle vs. Old-sme-dis.rle
 
@@ -104,14 +96,14 @@ apertium tags.
 
 Francis to look into that and report differences.
 
-!!!Linguistic issues
+# Linguistic issues
 
-!!Inflected forms
+## Inflected forms
 
 Two ways of translating positive adjectives in the attributive:
 
-# to adjective (attr -> attr)
-# to a noun in the genitive
+1. to adjective (attr -> attr)
+1. to a noun in the genitive
 
 Here are the cases: 
 
@@ -124,12 +116,9 @@ fágalaš vs. faagen
 3) <e><p><l>advsme<s n="adv"/></l><r>nsma<s n="n"/><s n="pl"/><s n="ine"/></r></p></e>
 - báikkálaččat vs. byjreskisnie => fst? MT
 
+## Numerals
 
-
-
-!!Numerals
-
-{{{
+```
 guoktečuođigolbmalogi
 guokte#čuođi#golbma#logi+Num+Sg+Nom <= change the "#" to "+"?
 
@@ -146,31 +135,31 @@ göökte#tjuetie#golme#luhkie+Num+Sg+Nom
 
 ^göökte+tjuetie+golme+luhkie<num><sg><nom>$
 ^göökte$ ^tjuetie$ ^golme$ ^luhkie<num><sg><nom>$
-}}}
+```
 
-!!Lexical selection
+## Lexical selection
 
 .dix:
-{{{
+```
     <e><p><l>lávet<s n="n"/></l><r>tsietsehthmuerjie<s n="n"/></r></p></e>
     <e><p><l>lávet<s n="v"/><s n="tv"/></l><r>provhkedh<s n="v"/><s n="iv"/></r></p></e>
-}}}
+```
 
 The default pair is listed in the file:
 
 apertium-sme-sma.sme-sma.lrx:
 
-!transfer/bidix
+### transfer/bidix
 
-{{{
+```
 <pron><indef><
 <pron><indef><attr>
-}}}
+```
 
 * Tag differences for the whole paradigm: bidix
 * Tag differences for parts of the paradigm: t1x-files
 
-{{{
+```
 input:
 
 ^lávet<n>$ -> ^lávet<n>/aaa<n>/bbb<n>$
@@ -188,25 +177,31 @@ rules:
 
   1. select aaa for lávet ;
   2. select yyy for lávet ;
+
   
   l: á: v: e: t: :select(aaa)
   l: á: v: e: t: :select(yyy)
+
   
   vs. 
+
   
   l: á: v: e: t: <n>: :select(aaa)
   l: á: v: e: t: <v>: :select(yyy)
+
   
 result:
 
  input: ^lávet<v>/xxx<v>/yyy<v>$ ; rules-matched: 1, 2
  input: ^lávet<n>/aaa<n>/bbb<n>$ ; rules-matched: 1, 2
+
  
  which rule is chosen ? 1 or 2 ? 
-}}}
+```
+
  
 
-{{{
+```
   <rule comment="...">
     <match lemma="lávet" tags="n.*"><select lemma="tsietsehthmuerjie" tags="n.*"/></match>
   </rule>
@@ -219,23 +214,22 @@ result:
     <match lemma="sáhttit" tags="v.*"><select lemma="maehtedh" tags="v.*"/></match>
     <match lemma="leat" tags="v.*"/>
   </rule>
-}}}
+```
 
-
-!!Compounds
+## Compounds
 
 The compound symbol is not the correct one.
 
-{{{
+```
 Ovttasbargu<n><sgnomcmp><cmp>#šiehtadus<n><sg><nom> 
 @Ovttasbargu#šiehtadus\<n\>\<sg\>\<nom\><n><sgnomcmp><cmp><n><sg><nom> 
-}}}
+```
 
 We thus want # -> +
 
 Ovttasbargu<n><sgnomcmp><cmp>+šiehtadus<n><sg><nom> 
 
-{{{
+```
 fran@eki:~/source/giellatekno-sma/src$ cat tagsets/Makefile.am | grep echo
     echo -e "#\t+" >> $@
 
@@ -252,33 +246,31 @@ usma:
 ektiebarkoe ektiebarkoe+N+Sg+Nom
 ektiebarkoelatjkoe  ektiebarkoe+N+SgNomCmp+Cmp#latjkoe+N+Sg+Nom
 
-
 $ hfst-lookup sme-sma.autogen.hfst 
 Ektiebarkoe<n><sgnomcmp><cmp>+latjkoe<n><sg><nom>
 Ektiebarkoe<n><sgnomcmp><cmp>+latjkoe<n><sg><nom>   Ektiebarkoe<n><sgnomcmp><cmp>+latjkoe<n><sg><nom>+? inf
-}}}
+```
 
-
-!!Px
+## Px
 
 px on gen/ill
 
-{{{
+```
  #gyhtjelasse<n><sg><ill><pxsg3>
  #tjidtjie<n><sg><gen><pxsg3>
-}}}
+```
 
-!px on relatives/reflexive
+### px on relatives/reflexive
 
 This we want.
 
-!px on nouns -> poss. pron?
+### px on nouns -> poss. pron?
 
 Trond, Lene
 
-!!!Generation
+# Generation
 
-{{{
+```
  #sïebredahke<n><sg><ela> TYPO  => siebriedahke
  #ealjoeh<a><der_lakaan><adv>
  #Seamma tïjjen<a>
@@ -290,22 +282,19 @@ Trond, Lene
  #eejtegh<n><sg><nom>
  #jïjtje<pron><refl><gen><pxsg3>
  #learohke<n><nomag><pl><ela>
-}}}
+```
 
 See also #akte<num><sg><gen><der_lágan><a><attr>
 
 A systematic test:
 
-
 Extract all lemma from bidix and check whether they generate.
 Make frequencylist of words not generating
 
-!!MWE
+## MWE
 
 iešguđet ládje  Adv   Adv joekehtslaakan
 
 <l>iešguđet<b/>ládje</l>...<r>joekehtslaakan</r>
 
 <l>New<b/>York</l> ... corresponds to space in the sme analyser.
-
-

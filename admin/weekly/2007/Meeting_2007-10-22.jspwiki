@@ -1,310 +1,294 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 22.10.2007
 * Time: 09.30 Norw. time
 * Place: Internet
 * Tools: SubEthaEdit, iChat/Skype
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from last week
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from last week
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:59.
 
-Present: __Børre, Ilona, Per-Eric, Risten, Sjur, Thomas, Tomi__
+Present: **Børre, Ilona, Per-Eric, Risten, Sjur, Thomas, Tomi**
 
-Absent: __Trond__
+Absent: **Trond**
 
 Agenda accepted as is.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!!Børre
-* move __Steinar's__ error markup in  the xml files to (a copy of) the original
-** Not done
+## Børre
+* move **Steinar's** error markup in  the xml files to (a copy of) the original
+    - Not done
 * begin adding support for the sami languages in OpenOffice.org
-** Not done
+    - Not done
 * set up Tomcat and risten.no on the G5 again
-** Not done
+    - Not done
 * fix Unicode bug in Hunspell conversion java code
-** It works on Tomis machine, and not on mine. We tried to do some investigation
+    - It works on Tomis machine, and not on mine. We tried to do some investigation
    on the problem last Wednesday, but found no solution.
 * add closed POSes to Hunspell speller
-** Not done
+    - Not done
 * add build and compilation instructions for Hunspell
-** [Done|/infra/hunspell.html]
+    - [Done](/infra/hunspell.html)
 * release an internal Hunspell alpha for testing
-** Made test dictionaries, they are in
+    - Made test dictionaries, they are in
    [http://divvun.no/static_files/hunspell-sme-20071017.tar.gz]. This is a
-   __very__ alpha-release.
+   **very** alpha-release.
 * buy InDesign CS3: one Mac upgrade, one Mac full, one Windows
-** Not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - Not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!!Ilona
+## Ilona
 * lexicalise missing words
-** Adding {{smj}} missing words from Korhonen's Báhkogirje
-* add {{smj}} proper nouns
-** Don't have a list of them
-* other {{smj}} tasks
+    - Adding `smj` missing words from Korhonen's Báhkogirje
+* add `smj` proper nouns
+    - Don't have a list of them
+* other `smj` tasks
 
-
-!!Maaren
+## Maaren
 * lexicalise actio compounds
 
-
-!!Per-Eric
+## Per-Eric
 * lexicalise words from the Olavi missing list
-** Worked and still working
+    - Worked and still working
 * collect list of problematic words for the hyphenator
-** Not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** Fixed some
+    - Not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - Fixed some
 
-!!Risten
+## Risten
 * write text to go on the CD cover
-** written
+    - written
 * set up CD-printing printer
-** not done
+    - not done
 
-
-!!Saara
+## Saara
 * add new XSL/XML headers for proofing test docs
 * Set up ways of adding meta-information for proofing correct corpus docs
   (source info, used in testing or not, added to lexicon or not)
 * add nested error markup to xml conversion
 
-
-!!Sjur
+## Sjur
 * document the AppleScript testing tool
-** usage documented, the output format is still undocumented
+    - usage documented, the output format is still undocumented
 * work on the XML name editor/risten.no integration
-** still nothing new (but installed Tomcat on G5)
+    - still nothing new (but installed Tomcat on G5)
 * set up Tomcat and risten.no on the G5 again
-** Tomcat done
+    - Tomcat done
 * test new and nested error markup
-** waiting for __Saara's__ code to be finished
+    - waiting for **Saara's** code to be finished
 * get command line hyphenator for automated testing of the hyph-lexicons
-** waiting for the code - should have arrived
+    - waiting for the code - should have arrived
 * document the InDesign tools
-** done
+    - done
 * add hyphenation testing
-** waiting for testing tool
+    - waiting for testing tool
 * add hunspell testing
-** not done
+    - not done
 * translate beta 2 download note on front page
-** done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 * other things done:
-** made SEE fxst mode
-** made SEE lexc mode
-** hyphenation testing
-** added cd image creation as part of the distribution make target
+    - made SEE fxst mode
+    - made SEE lexc mode
+    - hyphenation testing
+    - added cd image creation as part of the distribution make target
 
-
-!!Thomas
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
-** not anything done this week
-* add {{smj}} proper nouns
-** some added
+## Thomas
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
+    - not anything done this week
+* add `smj` proper nouns
+    - some added
 * look at missing baseforms, smj
-** done
+    - done
 * check for bad hyphenation
-** worked
+    - worked
 * collect list of problematic words for the hyphenator
-** done
+    - done
 * translate beta 2 download note on front page
-** done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** worked
+    - done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - worked
 
-!!Tomi
+## Tomi
 * Hunspell lexicon conversion
-** helped __Børre__ with this
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
-** not done
+    - helped **Børre** with this
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
+    - not done
 * add note and download link to front page
-** done
+    - done
 * fix Unicode bug in Hunspell conversion java code
-** __Børre__ has something wrong with his UTF-8 environment
+    - **Børre** has something wrong with his UTF-8 environment
 * add closed POSes to Hunspell speller
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** fixed compound tagging
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - fixed compound tagging
 
+## Trond
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-!!Trond
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+# 3. Documentation
 
+[Bug 550](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550)
 
-!!!3. Documentation
+**TODO:**
+* fix bug 550 (**Børre, Sjur**)
 
-[Bug 550|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550]
-
-__TODO:__
-* fix bug 550 (__Børre, Sjur__)
-
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 We don't have time to gather more corpus material now, so we will remove this
 topic from our meetings for the time being (until Divvun2 starts).
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 Nothing.
 
-!!!6. Infrastructure
+# 6. Infrastructure
 
 Nothing except bug 550 (see above).
 
-!!!7. Linguistics
+# 7. Linguistics
 
-!!North Sámi
+## North Sámi
 
 No real issues at the moment.
 
-!!Lule Sámi
+## Lule Sámi
 
 TODO:
 * lexicalise words from the Olavi missing list, but check against the pdf
-  original where in doubt (__Per-Eric__)
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources, and
-  increase {{smj}} coverage (__Trond, Thomas, Svenne__)
-* add proper nouns (__Thomas, Ilona__)
-* look at missing baseforms (__Thomas__)
+  original where in doubt (**Per-Eric**)
+* `sme->smj` lexicon conversion to build bilingual lexicon resources, and
+  increase `smj` coverage (**Trond, Thomas, Svenne**)
+* add proper nouns (**Thomas, Ilona**)
+* look at missing baseforms (**Thomas**)
 
+# 8. Name lexicon infrastructure
 
-!!!8. Name lexicon infrastructure
-
-This sub-project needs to get up and running soon. Mainly __Sjur's__ task.
+This sub-project needs to get up and running soon. Mainly **Sjur's** task.
 
 Decisions made in Tromsø can be found in [this meeting
 memo.|/admin/physical_meetings/tromso-2006-08-propnoun.html]
 
-__TODO:__
-# set up Tomcat and risten.no on the G5 again (__Sjur, Børre__)
-## install Tomcat
-### done
-## install risten.no
-# fix bugs in lexc2xml; add comments to the log element (__Saara__)
-# finish first version of the editing (__Sjur__)
-# test editing of the xml files. If ok, then: (__Sjur, Thomas, Trond__)
-# make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
+**TODO:**
+1. set up Tomcat and risten.no on the G5 again (**Sjur, Børre**)
+    1. install Tomcat
+        1. done
+    1. install risten.no
+1. fix bugs in lexc2xml; add comments to the log element (**Saara**)
+1. finish first version of the editing (**Sjur**)
+1. test editing of the xml files. If ok, then: (**Sjur, Thomas, Trond**)
+1. make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
   well) (the morphological section should be kept intact, in e.g.
-  propernoun-sme-morph.txt) (__Sjur, Saara__)
-# convert propernoun-($lang)-lex.txt to a derived file from common xml files
-  (__Sjur, Tomi, Saara__)
-# implement data synchronisation between [risten.no|http://www.risten.no] and
+  propernoun-sme-morph.txt) (**Sjur, Saara**)
+1. convert propernoun-($lang)-lex.txt to a derived file from common xml files
+  (**Sjur, Tomi, Saara**)
+1. implement data synchronisation between [risten.no](http://www.risten.no) and
    the cvs repo, and possibly other servers (ie the G5 as an alternative server
    to the public risten.no - it might be faster and better suited than the
    official one; also local installations could be treated the same way)
-# start to use the xml file as source file
-# clean terms-sme.xml such that all names have the correct tag for their use
-  (e.g. @type=secondary) (__Thomas, Maaren, linguists__)
-# merge placenames which are errouneously in different entries: e.g. Helsinki,
-  Helsingfors, Helsset (__linguists__)
-# publish the name lexicon on risten.no (__Sjur__)
-# add missing parallel names for placenames (__linguists__)
-# add informative links between first names like Niillas and Nils
-  (__linguists__)
+1. start to use the xml file as source file
+1. clean terms-sme.xml such that all names have the correct tag for their use
+  (e.g. @type=secondary) (**Thomas, Maaren, linguists**)
+1. merge placenames which are errouneously in different entries: e.g. Helsinki,
+  Helsingfors, Helsset (**linguists**)
+1. publish the name lexicon on risten.no (**Sjur**)
+1. add missing parallel names for placenames (**linguists**)
+1. add informative links between first names like Niillas and Nils
+  (**linguists**)
 
+# 9. Proofing tools
 
-
-!!!9. Proofing tools
-
-!!Hunspell
+## Hunspell
 
 TODO:
-# Begin adding support for the sami languages in OpenOffice.org (__Børre__)
-# Hunspell lexicon conversion (__Tomi, Børre__)
-## fix Unicode bug in Hunspell conversion java code (__Tomi, Børre__)
-### looked at it, not solved
-## add closed POSes by adding a new output format to the present PLX conversion
-   code  (__Tomi, Børre__)
-### done but not tested
-## add build and compilation instructions (__Børre__)
-### done
-## release an internal alpha for testing (__Børre__)
-### done
-## add hunspell testing to the make file (__Sjur__)
-### not done
-## debug and fix remaining conversion issues (__Børre, Tomi__)
+1. Begin adding support for the sami languages in OpenOffice.org (**Børre**)
+1. Hunspell lexicon conversion (**Tomi, Børre**)
+    1. fix Unicode bug in Hunspell conversion java code (**Tomi, Børre**)
+        1. looked at it, not solved
+    1. add closed POSes by adding a new output format to the present PLX conversion
+   code  (**Tomi, Børre**)
+        1. done but not tested
+    1. add build and compilation instructions (**Børre**)
+        1. done
+    1. release an internal alpha for testing (**Børre**)
+        1. done
+    1. add hunspell testing to the make file (**Sjur**)
+        1. not done
+    1. debug and fix remaining conversion issues (**Børre, Tomi**)
 
+## Testing
 
-!!Testing
+### Spelling Error Markup
 
-!Spelling Error Markup
-
-__TODO:__
+**TODO:**
 * Set up ways of adding meta-information (source info, used in testing or not,
-  added to lexicon or not) (__Saara__)
-* move __Steinar's__ error markup in the xml files to (a copy of) the original
-  (__Børre, Kimme__)
-** not done
-* add nested error markup to xml conversion (__Saara__)
-** not done
-* test new and nested error markup (__Sjur__)
-** waiting for __Saara__
+  added to lexicon or not) (**Saara**)
+* move **Steinar's** error markup in the xml files to (a copy of) the original
+  (**Børre, Kimme**)
+    - not done
+* add nested error markup to xml conversion (**Saara**)
+    - not done
+* test new and nested error markup (**Sjur**)
+    - waiting for **Saara**
 
+### Automated testing
 
-
-!Automated testing
-
-__TODO:__
-* document the AppleScript testing tool (__Sjur__)
-** partially done
+**TODO:**
+* document the AppleScript testing tool (**Sjur**)
+    - partially done
 * add hyphenation testing
-** not done, waiting for command-line hyphenator
+    - not done, waiting for command-line hyphenator
 
-
-!!Lexicon conversion to the PLX format
+## Lexicon conversion to the PLX format
 
 Open issues based on test results:
 
-!smj
+### smj
 482, 489 - fixed, 506 - hard-coded in lexc, needs SUB-tag or corrected test
-pair, ''vissa'' - fixed, 518, 536 - fixed, 552 (new)
+pair, *vissa* - fixed, 518, 536 - fixed, 552 (new)
 
-!sme
+### sme
 380 - fixed, defined +V+Inf+hyph as noun, 397 - fixed, 408 - not
-really a prefix, but PLX-encoded as such, 419, 425 - roman number, 426 - ''ii–''
-requires a hyphen, ''julev–'' not, 431, 449 - fixed (almost), 452 - ''miel'' is
+really a prefix, but PLX-encoded as such, 419, 425 - roman number, 426 - *ii–*
+requires a hyphen, *julev–* not, 431, 449 - fixed (almost), 452 - *miel* is
 a prefix, 461 - almost 50 % (14) gets correct suggestion, 489, 518 - regression,
 522, 524, 525 - fixed, 529 - fixed, 535 - fixed, 536 - fixed, 542 - fixed.
 
-__TODO:__
-* look at test cases still not behaving properly (__Thomas, Tomi__)
+**TODO:**
+* look at test cases still not behaving properly (**Thomas, Tomi**)
 
-!!Compounds in PLX
+## Compounds in PLX
 
 3-part compounds and more are not accepted unless the middle part(s) are coded as both L and R => 'viesso' X-viesso-Y, X-viesso. We have to block words like viesso-.
 
-!!InDesign tools
+## InDesign tools
 
-__TODO:__
-* document the InDesign tools (__Sjur__)
-** done
-* add hyphenation testing (__Sjur__)
-** waiting for command line hyphenator
-* buy InDesign CS3: one Mac upgrade, one Mac full, one Windows (__Børre__)
+**TODO:**
+* document the InDesign tools (**Sjur**)
+    - done
+* add hyphenation testing (**Sjur**)
+    - waiting for command line hyphenator
+* buy InDesign CS3: one Mac upgrade, one Mac full, one Windows (**Børre**)
 
-
-!!Hyphenators
+## Hyphenators
 
 There are some hyphenation errors we need to debug.
 
@@ -312,117 +296,106 @@ We should look into the possibility of generating pattern-based hyphenation for
 OOo. It shouldn't be too hard, or require too much work, but needs
 investigation.
 
-__TODO:__
-* get command line hyphenator (__Sjur__)
-** waiting for it
-* collect list of problematic words for the hyphenator (__Thomas, Per-Eric__)
-** done
+**TODO:**
+* get command line hyphenator (**Sjur**)
+    - waiting for it
+* collect list of problematic words for the hyphenator (**Thomas, Per-Eric**)
+    - done
 
+## Beta release
 
-!!Beta release
+**TODO:**
+* add note and download link to front page (**Tomi**)
+    - done
+* translate beta 2 download note on front page (**Thomas, Sjur**)
+    - done
 
-__TODO:__
-* add note and download link to front page (__Tomi__)
-** done
-* translate beta 2 download note on front page (__Thomas, Sjur__)
-** done
+## Release version
 
-!!Release version
-
-The CD cover etc. will be worked on by __John-Marcus Kuhmunen__, and will follow
+The CD cover etc. will be worked on by **John-Marcus Kuhmunen**, and will follow
 the SD design rules. He is now waiting for the text to be put on the CD cover
 and other places.
 
-__TODO:__
-* write text to go on the CD cover (__Risten__)
-* set up CD-printing printer (__Risten__)
+**TODO:**
+* write text to go on the CD cover (**Risten**)
+* set up CD-printing printer (**Risten**)
 
+# 10. Other
 
-
-!!!10. Other
-
-!!"Reiserekning"
+## "Reiserekning"
 
 URL to web-based form? [http://ess-qoa.sfso.no/]
 
 Contact:
-{{{
+```
 Navn:	Aslaksen, John Helge
 Telefonnr.:	+47 78 47 40 77
 E-post:	john.helge.aslaksen@samediggi.no
-}}}
+```
 to get password and username for that page.
 
-!!Corpus contracts
+## Corpus contracts
 
 Delayed till after final release.
 
 TODO:
 * publish corpus contracts and project infra as open-source on NoDaLi-sta
-  (__Sjur__)
+  (**Sjur**)
 
-
-!!Bug fixing
+## Bug fixing
 
 When fixing bugs, record the version number containing the fix in the Bugzilla
 bug report, such that for each bug, we know exactly when it should have been
 fixed, in what file(s) and what version.
 
-__69__ open Divvun/Disamb bugs (__35__ of these 56 are speller-related bugs,
-__34__ are other bugs), and __23__ risten.no bugs
+**69** open Divvun/Disamb bugs (**35** of these 56 are speller-related bugs,
+**34** are other bugs), and **23** risten.no bugs
 
-
-!!!11. Next meeting, closing
+# 11. Next meeting, closing
 
 The next meeting is 29.10.2007, 09:30 Norwegian time.
 
 The meeting was closed at 10:49.
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!!Boerre
+## Boerre
 
-* move __Steinar's__ error markup in  the xml files to (a copy of) the original
+* move **Steinar's** error markup in  the xml files to (a copy of) the original
 * begin adding support for the sami languages in OpenOffice.org
 * fix Unicode bug in Hunspell conversion java code
 * test closed POSes in Hunspell speller
 * buy InDesign CS3: one Mac upgrade, one Mac full, one Windows
-* fix [bug 550|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550]
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* fix [bug 550](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+## Ilona
 
-!!Ilona
+* lexicalise `smj` missing words
+* add `smj` proper nouns
+* other `smj` tasks
 
-* lexicalise {{smj}} missing words
-* add {{smj}} proper nouns
-* other {{smj}} tasks
-
-
-!!Maaren
+## Maaren
 * lexicalise actio compounds
 
-
-!!Per-Eric
+## Per-Eric
 
 * lexicalise words from the Olavi missing list
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!!Risten
+## Risten
 
 * finish the design/text for the CD and the cover
 * set up CD-printing printer
 
-
-!!Saara
+## Saara
 
 * add new XSL/XML headers for proofing test docs
 * Set up ways of adding meta-information for proofing correct corpus docs
   (source info, used in testing or not, added to lexicon or not)
 * add nested error markup to xml conversion
 
-
-!!Sjur
+## Sjur
 
 * document the AppleScript speller test output
 * work on the XML name editor/risten.no integration
@@ -431,28 +404,26 @@ The meeting was closed at 10:49.
 * get command line hyphenator for automated testing of the hyph-lexicons
 * add hyphenation testing
 * add hunspell testing
-* fix [bug 550|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550]
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* fix [bug 550](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=550)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+## Thomas
 
-!!Thomas
-
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
-* add {{smj}} proper nouns
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
+* add `smj` proper nouns
 * check for bad hyphenation
 * look at test cases still not behaving properly 
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!!Tomi
+## Tomi
 
 * Hunspell lexicon conversion
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
 * fix Unicode bug in Hunspell conversion java code
 * test closed POSes in Hunspell speller
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+## Trond
 
-!!Trond
-
-* {{sme->smj}} lexicon conversion to build bilingual lexicon resources
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* `sme->smj` lexicon conversion to build bilingual lexicon resources
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).

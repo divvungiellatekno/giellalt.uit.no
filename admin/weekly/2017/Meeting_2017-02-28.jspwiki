@@ -1,6 +1,6 @@
 S&T-møte 28.2.2017
 
-!!!Saksliste
+# Saksliste
 * gt/sme/
 * OmegaT
 * FinUgReViTa
@@ -8,10 +8,9 @@ S&T-møte 28.2.2017
 * Grønland
 * MacDivvun
 
+# gt/sme/
 
-!!!gt/sme/
-
-{{{
+```
 $ tree
 .
 ├── script
@@ -91,58 +90,56 @@ $ tree
     └── non-hapax_lemma_NVD.txt
 
 8 directories, 67 files
-}}}
+```
 
-!!!OmegaT
+# OmegaT
 
-Trond har laga: {{$GTBIG/mt/omegat/}}, som inneheld 10 underkatalogar 
+Trond har laga: `$GTBIG/mt/omegat/`, som inneheld 10 underkatalogar 
 (fin-sme ... sme-smn), dvs alle sme-smX-par, sme-nob, nob-sme, fin-smX.
 
 Tanken er: Omsetjarar skal kunne sjekke ut desse katalogane (anonym svn) og 
 få alle ressursar, dokumentasjon på 
 [/mt/omegat/OmegaT.html]
 
-{{$GTHOME/words/dicts/*/bin/all-*.lexc}} (evt. fjerna entryar med mellomrom)
+`$GTHOME/words/dicts/*/bin/all-*.lexc` (evt. fjerna entryar med mellomrom)
 
 Forbetringspotensiale i OmegaT
 
-# lemmatisere L1
-# generere L2 i same bøyingsform (evt. korresponderande form) som L1
+1. lemmatisere L1
+1. generere L2 i same bøyingsform (evt. korresponderande form) som L1
 
-__Tiltak__
+**Tiltak**
 * Trond legg til dict-lister i glossary, utan lukka ordklasser, og fjerner visse ordtypar
 * Ciprian legg til parallelltekst (som avtalt i tidlegare møte)
 * Sjur ser på sátni.org, og legg dei til som separate lister (vi ser på integrering etterpå)
 * Trond slettar irrelevante språk i segmenteringsfila
 
-!!Tokenizer i OmegaT
+## Tokenizer i OmegaT
 
 Vi kan bruke fst-ane våre som input til å lage LuceneNortSaamiTokenizer, etc.
 Finn vi då lemma, eller stamme?
 
-__Tiltak__
+**Tiltak**
 * Sjur ser på lemmatisering (sjekk med Tino og Tomi når det gjeld Lucene-basert lemmatisering og hfst)
 
-!!!FinUgReViTa
+# FinUgReViTa
 
 Divvun bør invitera dei til Tromsø. Bør koordinerast med andre ting og arr.
 
-!!!FAO og Grønland
+# FAO og Grønland
 
 Trond sin tur til Færøyane gjekk fint, takk til hjelp frå Sjur og Kevin.
 
 Framlegg: Samkøyre opplæring for kal, fao, Sjur er invitert til Nuuk.
 Sjur ser på det.
 
-!!!MacDivvun
+# MacDivvun
 
 Nyskriving av MacVoikko. Inneheld bibliotek for automatisk installering og
 oppdatering av stavekontrollane.
 
-# Programmeringa er gjort. 
-# Sjur kompilerer og sjekkar (sme, smj, sma, smn, sms)
-# Vi legg det ut som beta og får fleire til å teste
+1. Programmeringa er gjort. 
+1. Sjur kompilerer og sjekkar (sme, smj, sma, smn, sms)
+1. Vi legg det ut som beta og får fleire til å teste
 
 Tidsplan: Vi prøver å få ein beta til neste veke.
-
-

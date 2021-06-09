@@ -1,51 +1,46 @@
-!!!Meeting, Inari Saami project 20.05.2015
+# Meeting, Inari Saami project 20.05.2015
 
 Hangouts
 
 People: Marja-Liisa, Erika,Trond, Lene
 
-!!Agenda
+## Agenda
 * triggers
 * consonant gradation
 * twolc
 * Oulu workshop
 
-!! Triggers and vowels
+##  Triggers and vowels
 Marja-Liisa had sent an email with triggers. We looked at the document and talked about the triggers,
 
-
-!Some notes on vowels:
+### Some notes on vowels:
 * Oanehaš vokála
-** avdo : a´vdostân
-** kirje: ki´rje
+    - avdo : a´vdostân
+    - kirje: ki´rje
 * Dift.
-** suái´ttu /jtt/ - i4
-** suá´ituttáá - DSH
-** suáitu
+    - suái´ttu /jtt/ - i4
+    - suá´ituttáá - DSH
+    - suáitu
 * paarâ: pa´râttáá
 
-
-!These are hand in hand:
+### These are hand in hand:
 * tááḷu   tá'ḷu VVC  VC
 * puáđu puá'đu  VYC  VY´C
 
 Adding RV
 
-{{{
+```
 suá%^RV
 pa%^RV :  paa or pa'
-}}}
+```
 
-
-!Adding RV and RD
+### Adding RV and RD
 * RV:Vx jos galgá leat guhkes V
 * RD:0  jos galgá leat guhkes V
 * RV:0 jos galgá leat oanehis V
 * RD:´  jos galgá leat oanehis V
 
-
-
-!Examples
+### Examples
 * alge+N+Sg+Nom:  alge a%^RVlge
 * alge+N+Sg+Gen:  aˊlge a%^RVlge%^WG
 * alge+N+Sg+Ill:  aalgan  a%^RVlge%^RLEN%^CSH%^EA%>n
@@ -56,43 +51,48 @@ pa%^RV :  paa or pa'
 * kyel7i - kye´le - kyellin
 * (WG haga: KAASTA, APINA, TAHHEE)
 
-!RVSH
+### RVSH
 RVSH: Täsni: ta´snijgijn. In these cases, the short vowel still shortens to extra-short. Could this be programmed together with DSH? RVSH is not enough for these cases:  \\
 saahâ, sa´vâiguin, savváin, thus aa – a´- a. We need an extra trigger.
+
  
-!! Triggers: SLEN and CLEN
+##  Triggers: SLEN and CLEN
 * hypotesa: SLEN mielddisbuktá CLEN ==> geavahit dušše SLEN jos SLEN, ja čállit \\
 a:b <=> ... SLEN or CLEN  
 CLEN-njuolggadusainain
 
-{{{
+```
 tf-hsl-m0016:smn ttr000$ grep 'CLEN.*SLEN' src/morphology/affixes/nouns.lexc |wc -l
       17
 tf-hsl-m0016:smn ttr000$ grep 'CLEN' src/morphology/affixes/nouns.lexc |wc -l
      115
 tf-hsl-m0016:smn ttr000$ grep 'SLEN' src/morphology/affixes/nouns.lexc |wc -l
       37
-}}}      
-   
-!! Triggers: SV and SLEN      
-taŋkkam:taŋkka%^SVm   %^SLEN
- 
- 
-!2 molssaeavttu:
+```      
 
-{{{
+   
+##  Triggers: SV and SLEN      
+taŋkkam:taŋkka%^SVm   %^SLEN
+
+ 
+
+ 
+### 2 molssaeavttu:
+
+```
  stems:                     affix:
+
  
  1) a%^RVlge%^SV            +N+Sg+Loc:%^WG%^CLEN%^SLEN
  2) a%^RVlge                +N+Sg+Loc:%^SV%^WG%^CLEN%^SLEN
 
  a%^RVlge%^SV         ALGE1 ;
  a%^RVlge             ALGE2 ;
-}}} 
+``` 
 
-
-!! Consonantgradation
+##  Consonantgradation
 We looked at doc/consonantgradation.txt    
+
  
 Examples: 
 * juhle:ju%^RVhle ALGE "juhla" ;
@@ -119,19 +119,17 @@ Examples:
 * vsk  <===   rávsku+N+Sg+Gen: rávsku ráávsku
 * test/src/dict-gt-yamls/N-lex_kissa_dict-gt-norm.gen.yaml:    čiähá+N+Ess:  čiähhán
 
-!! twolc
+##  twolc
 We start working with a new, better twolc together tomorrow 8.30 at hangouts. It should be finish next week.
 
-
-!! Oulu workshop August 16
+##  Oulu workshop August 16
 Our topic is dictionary, which means that we have to prioritate dict work already now. We have to make a plan for writing the presentation, it will probably be an article afterwards.
 
 Work from next week:
-* __ML__ will ask for the fin-smn word list already now, even if dict-work is not finished
-* __Trond__ will compare sme-fin and fin-smn dictionaries, and make a report with what to do
-* __ML, Erika__ will correct finnish words in the sme-fin
-* __ Francis or Cip__ will script sme-fin + fin-smn to sme-smn
-
+* **ML** will ask for the fin-smn word list already now, even if dict-work is not finished
+* **Trond** will compare sme-fin and fin-smn dictionaries, and make a report with what to do
+* **ML, Erika** will correct finnish words in the sme-fin
+* **Francis or Cip** will script sme-fin + fin-smn to sme-smn
 
 Abstract:  Our paper presents a set of electronic dictionaries and word lists for Aanaar Saami, a language with a lexicographic tradition rich for a language its size (approximately 450 speakers), but so far without any e-dictionaries. Aanaar Saami is in a revitalisation phase, and in need of L2 dictionaries, especially in need of dictionary where the words can be seen in their authentic contexts. Already two generations have lost the language, and tracing the original contexts will get more and more difficult in the future without proper electronic dictionaries.
 

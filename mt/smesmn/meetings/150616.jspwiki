@@ -5,7 +5,7 @@ Edmonton, Rotterdam 16.6.
 Present: Lene, Marja-Liisa, Trond
 
 * Status
-** What did we promise
+    - What did we promise
 * Our plan
 * What to do 
 * Division of labour
@@ -13,9 +13,9 @@ Present: Lene, Marja-Liisa, Trond
 * Who are going
 * Next meeting
 
-!! Status
+##  Status
 
-!The new dictionary
+### The new dictionary
 
 The new dictionary has arrived, in two files.
 It is added (in .xlsx and .csv format) in the folders
@@ -29,27 +29,26 @@ It was made according to the following principles
 
 Lacunas, e.g. myettiđ: muáttá (to snow)
 
-! What did we promise
+###  What did we promise
 
 We will 
-# present a preliminary finite-state transducer for Aanaar Saami, and 
-# combine it with different Aanaar Saami dictionaries and word lists:
-## A large Aanaar Saami - Finnish dictionary
-## A North Saami - Aanaar Saami transfer lexicon
+1. present a preliminary finite-state transducer for Aanaar Saami, and 
+1. combine it with different Aanaar Saami dictionaries and word lists:
+    1. A large Aanaar Saami - Finnish dictionary
+    1. A North Saami - Aanaar Saami transfer lexicon
 
 For each of the dictionaries / word lists, we will show 
 
-# what degree of coverage the combination of dictionary and transducer will give on relevant text types, including 
-## school textbooks, 
-## children's fiction, 
-## biblical and other religious texts, 
-## writings on language and 
-## blog/Facebook-type prose.
-# We will run the coverage tests both on analysers representing the standard language, and on analysers including a component tolerating a certain amount of orthographic variation. 
+1. what degree of coverage the combination of dictionary and transducer will give on relevant text types, including 
+    1. school textbooks, 
+    1. children's fiction, 
+    1. biblical and other religious texts, 
+    1. writings on language and 
+    1. blog/Facebook-type prose.
+1. We will run the coverage tests both on analysers representing the standard language, and on analysers including a component tolerating a certain amount of orthographic variation. 
 
-
-!! Our plan
-!! What to do 
+##  Our plan
+##  What to do 
 
 Where to publish this?
 
@@ -62,29 +61,29 @@ A possible further article
 
 School dictionary adjusted to school children, on the basis of similar dictionary for sme.
 
-This will be more grounded in Saami linguistics, less in language technology, and has thus higher relevance for SDÁ. Example of problem: ''What is a student dictionary and what that means for Saami lexicography.''
+This will be more grounded in Saami linguistics, less in language technology, and has thus higher relevance for SDÁ. Example of problem: *What is a student dictionary and what that means for Saami lexicography.*
 
 The next step would then be to link this dictionary to the corpus. How can we selet the best sentences from the corpus? Cf. the literature on SketchEngine, and in Gothenburg.
 
-[Documentation about dictionary work|/dicts/dictionarywork.html]
+[Documentation about dictionary work](/dicts/dictionarywork.html)
 
-!! Division of labour
+##  Division of labour
 
 * Francis MT, 
 * Ciprian sme-fin/fin-smn
 * Ryan: NDS implementation
 * ML/E: 
-** translate smesmn missing list
-** translate and adjust NDA tags and configure-files
-** make lists: what smn-texts to use for the evaluation of the dictionary 
-** Improve on the smefin dictionary
-** Evaluate the result of the smesmn parallellisation
-*** Add translations to words/dicts/smefin/inc 
-*** Read and correct translations in words/dicts/smefin/src
+    - translate smesmn missing list
+    - translate and adjust NDA tags and configure-files
+    - make lists: what smn-texts to use for the evaluation of the dictionary 
+    - Improve on the smefin dictionary
+    - Evaluate the result of the smesmn parallellisation
+        - Add translations to words/dicts/smefin/inc 
+        - Read and correct translations in words/dicts/smefin/src
 * LA: Analyse and write
 * TT: Analyse and write
 
-{{{
+```
 cd 
 cd main/words/dicts/
 ls
@@ -93,42 +92,40 @@ All smefin etc catalogues contain folders
 inc = incoming
 bin = gbinary files from doing sh smefin.sh etc
 src = 
-}}}
+```
 
-
-
-!! time plan
+##  time plan
 
 *  Parallel first phase
-** Ciprian to build first sme-smn candidate bidix, as soon as possible
-** Ryan to implement ferst version of NDS, have something done before thursday
+    - Ciprian to build first sme-smn candidate bidix, as soon as possible
+    - Ryan to implement ferst version of NDS, have something done before thursday
 * Parallel second phase
-** ML, ES to evaluate and correct Cip's smesmn
-** When phase 1 is done, there will remain residues
-*** sme from smefin not found in sme-smn
-*** fin from smefin not found in fin-smn
-*** smn from new finsmn not found in sme-smn
-** ES, LA to translate residue lists
-** LA, TT, ML to analyse smnfin / finsmn
+    - ML, ES to evaluate and correct Cip's smesmn
+    - When phase 1 is done, there will remain residues
+        - sme from smefin not found in sme-smn
+        - fin from smefin not found in fin-smn
+        - smn from new finsmn not found in sme-smn
+    - ES, LA to translate residue lists
+    - LA, TT, ML to analyse smnfin / finsmn
 * Parallel second phase
-** Evaluate result of Ciprians first run
-** Evaluate Ryan's NDS
+    - Evaluate result of Ciprians first run
+    - Evaluate Ryan's NDS
 * Third phase
-** Start working on the issues mentioned in the promise list above
+    - Start working on the issues mentioned in the promise list above
 
 Meeting in Tromsø late next week (thursday after lunch?) where we plan the summer.
 
-!! Who are going
+##  Who are going
 
 At least ML and Trond, Ryan?
 
-!! Next meeting
+##  Next meeting
 
 Thursday 18.6. Topic: NDS implementation issues
 
-!! Notes
+##  Notes
 
-{{{
+```
 f4       f8   
 aakkos  järjestys  => aakkosjärjestys
 aallon  murtaja    => aallonmurtaja
@@ -163,39 +160,37 @@ cat finsmn/inc/2015/Suoma_saami_16062015.csv |grep 'aarto'
 18 commas, 13 parentheses, 3 tilde in column f8
 
 cat finsmn/inc/2015/Suoma_saami_16062015.csv |cut -f4|grep '-'
-}}}
+```
 
-!!Algorithm
+## Algorithm
 
 Algorithm for building lemmas (resolving formatting) in the columns 4, 8 in finsmn:
 
-__TODO__ list for dictionary processing, how to handle smn-fin:
+**TODO** list for dictionary processing, how to handle smn-fin:
 
 * comma: duplicate line 
-** eteläisempi, etelämpi => eteläisempi AND etelämpi 
+    - eteläisempi, etelämpi => eteläisempi AND etelämpi 
 * parentheses written as one word: Expand:
-** aapa(suo) = aapa AND aapasuo  
-** joko     - ta(h)i    => joko - tahi, joko - tai
+    - aapa(suo) = aapa AND aapasuo  
+    - joko     - ta(h)i    => joko - tahi, joko - tai
 * space parenthesis, hence written as two words: Duplicate
-** aarto (arttukatos) => aarto AND arttukatos
+    - aarto (arttukatos) => aarto AND arttukatos
 * TODO with tilde: Expand:
-** armelias ~ armias ~ armollinen => armelias AND armias AND armollinen
+    - armelias ~ armias ~ armollinen => armelias AND armias AND armollinen
 * komma space hyphen (sometimes multiple cases, sometimes compounds): 
 * Expand for cases: Remove as many letters as you add (3 letters away and add the same 3):
-** tasalla, -lta => tasalla AND tasalta
+    - tasalla, -lta => tasalla AND tasalta
 * Expand for compounds: Here, the first part is in f4 and the rest in f8
-** aluslakki, -huppu => aluslakki AND alushuppu (aluslakki + aluhuppu
+    - aluslakki, -huppu => aluslakki AND alushuppu (aluslakki + aluhuppu
 * hyphen initially in f8: It belongs to the lemma
-** aho	-orvokki => aho-orvokki
+    - aho	-orvokki => aho-orvokki
 * The string '(mon.)' occurs 3 times in f8 and ome in f4, it means (Plural) and should be deleted (we recover it for fin later)
-** sulut (mon.)
-** perkeet (mon.)
-** liinat (mon.)
-** jämät (mon.)
+    - sulut (mon.)
+    - perkeet (mon.)
+    - liinat (mon.)
+    - jämät (mon.)
 * (jne.) means "et cetera" and should be ignored
-
 
 The relevant columns are 4, 8. Ff. readme documentation, cf. also:
 
 A11=CONCATENATE(D11,H11," ",J11," ",K11,)
-

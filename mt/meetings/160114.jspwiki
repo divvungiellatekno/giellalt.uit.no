@@ -1,9 +1,8 @@
-!!!Møte om transfer regler
+# Møte om transfer regler
 
 Tilstede (over hangout): Francis, Trond, Lene
 
-
-!!Agenda:
+## Agenda:
 
 * Pattern
 * Chunk navn og endring av ordrekkefølge
@@ -12,11 +11,10 @@ Tilstede (over hangout): Francis, Trond, Lene
 * Bidix sanity
 * MT-kurs
 
-
-!! Pattern
+##  Pattern
 Vi kan ikke bruke "not" i pattern, så vi må vi liste opp, slik som vi nå har gjort i <def-cat n="nom"> .
 
-!! Chunk navn og endring av ordrekkefølge
+##  Chunk navn og endring av ordrekkefølge
 
 Dagens chunk navn er nokså ad-hoc:
 *  8 agreement-np
@@ -43,15 +41,13 @@ Dagens chunk navn er nokså ad-hoc:
 SN = sintagma nominal... NP/navngruppe
 
 Vi kunne bruke funksjonstagg som navn, som vi igjen kunne vise til i t2x, når vi har behov for å endre ordrekkefølgen:
-{{{ noun -- <chunk name="n"> ^n<SN><@SUBJ→>{^... 
+``` noun -- <chunk name="n"> ^n<SN><@SUBJ→>{^... 
 noun noun -- <chunk name="n-n"> ^n-n<SN><@SUBJ→>{^...
-adj noun --  <chunk name="j-n"> j-n<SN><@SUBJ→>{^...}}}
-
+adj noun --  <chunk name="j-n"> j-n<SN><@SUBJ→>{^...```
 
 Vi tar syntag frå sl og legger dem i chunk tags slik:
 
-{{{<def-var n="chunkname"/>
-
+```<def-var n="chunkname"/>
 
 <def-macro n="f_chunkname1" npos="1">
 <choose>
@@ -73,6 +69,7 @@ Vi tar syntag frå sl og legger dem i chunk tags slik:
 <out>
 <chunk namefrom="chunkname">
 <tags>
+
   
   <tag><lit-tag v="SN"/></tag>
   <tag><clip pos="1" side="sl" part="a_syntag"/></tag>
@@ -87,27 +84,27 @@ i t2x-fila:
     <def-cat n="OBJL">
        <cat-item tags="SN.@OBJ→"/>
     </def-cat>
-}}}
+```
 
 TILTAK:
 * Vi omarbeider dagens system til dette.
 
     
-!! Clitics
+##  Clitics
 
 Dagens løsning:
 * bidix for tl: pcle som ikke finnes, men for lexical selection
 * disse blir endret fra pcle i position 2 til foc_tag i position 1
 
-!Eksempel fra dagens løsning:
-# "ge" enten som eget ord eller som clitic - inputten som pcle
-# i lexical selection velges en av disse:
-## -uv
-## -gin
-## -ge
-# i t1x: endres til tagg: foc_uv foc_ge foc_gin
+### Eksempel fra dagens løsning:
+1. "ge" enten som eget ord eller som clitic - inputten som pcle
+1. i lexical selection velges en av disse:
+    1. -uv
+    1. -gin
+    1. -ge
+1. i t1x: endres til tagg: foc_uv foc_ge foc_gin
 
-!Det samme, med forklart med andre ord:
+### Det samme, med forklart med andre ord:
 
 Analyser:
 * sme = smn
@@ -120,14 +117,14 @@ Bidix:
 * lea  ge -> lii  gin  -uv  ge 
 
 Og i t1x: 
-{{{
+```
 <mlu>
    <lu><!-- leat:leđe --></lu>
    <lu><!-- go:-uv --></lu>
 </mlu>
-}}}
+```
 
-{{{
+```
 ^chunk<TAG>{^Lii+-uv$}$
 ^chunk<TAG>{^Lii+-gin$}$
 
@@ -140,29 +137,28 @@ Out:
 
 L??-uv
 L??gin
+
     
 pevdi-uv        pevdi+N+Sg+Nom+Foc/uv
 pevdi-uv        pevdi+N+Sg+Nom+Qst
 pevdigin        pevdi+N+Sg+Nom+Foc/gin
-}}}
+```
 
-!Francis foreslår en bedre løsning:
-# tag or word is only in the relabel script. 
-# they should work the same in both languages (unless there is a really pressing _linguistic_ reason why not)
-
+### Francis foreslår en bedre løsning:
+1. tag or word is only in the relabel script. 
+1. they should work the same in both languages (unless there is a really pressing _linguistic_ reason why not)
 
 If you get a tag wrong, you don´t get a word generated, so if all focus words are tags, and there is some inconsistency, then if it is a separate word you are ok, but if it is a tag, you donæt get anything generated.
 
 So: 
-{{{
+```
 foo<n><pl><foc_bar> ---> #foo<n><foc_bar>     foo
-foo<n><pl> bar<foc>     ---> fooer #bar<foc>      fooer bar }}}
+foo<n><pl> bar<foc>     ---> fooer #bar<foc>      fooer bar ```
 
 TILTAK:
 * Vi omarbeider dagens system til dette.
 
-
-!!Macronavn
+## Macronavn
 Vi hadde navn ala "inherenttag-px2", men dette er forvirrende. 2 betyr her at macroen involverer 2 posisjoner. 
 
 Alternative navn:
@@ -172,14 +168,13 @@ Alternative navn:
 * "inherenttag-px[[npos2]"
 * "inherenttag-px-npos2"
 
-!!Bidix sanity
+## Bidix sanity
 Vi ønsker bidix sanity for både sl og tl (bidix-sl-sanity / bidix-tl-sanity) 
 
 TILTAK:
-* __Francis__ lager dette
+* **Francis** lager dette
 
-!! MT-kurs 
+##  MT-kurs 
 Siste uka i februar. Francis kan delta på diskusjoner om planer osv via hangouts.
 
-[Om kurset, under framover|160112.html]
-
+[Om kurset, under framover](160112.html)

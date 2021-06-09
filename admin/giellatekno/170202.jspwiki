@@ -1,49 +1,44 @@
-!!!Møte 2.2.2017
+# Møte 2.2.2017
 Tilstede Trond, Lene, Ciprian
 
-!!Saker
+## Saker
 * NDS lokalisering for sme-nob
 * Status for MT arbeid 
 * Fra bidix til NDS
 * smX-smX med sme som nav
 * Translation Memory
 
-!! NDS lokalisering sme-nob
+##  NDS lokalisering sme-nob
 
 Det store problemet med lokaliseringa er løst, men vi arbeidet med å få 
 en bra forklaring på standard vs. tolerant versjon. 
 
-!Tiltak:
-* __Trond og Ciprian__ arbeider videre med dette
+### Tiltak:
+* **Trond og Ciprian** arbeider videre med dette
 
-!! Status for MT arbeid 
+##  Status for MT arbeid 
 
 Vi lanserte smenob i går, men arbeidet fortsetter med nattlige oppdateringer 
 (Lene, Kevin, Trond). Vi har for øyeblikket problemer med oppdatering fra sme 
 på GT-sida, pga av at nightly-skriptet stopper ved endringer i giella-shared 
 som krever oppdatering og kompiliering der. Sjur kommuniserer med Tino om dette.
 
-
-
-!! Fra bidix til NDS
+##  Fra bidix til NDS
 Vi vil lage sme-sma/sma-sme og sme-smj/smj-sme
 
-__Lene__ skriver epost til Sandra om dette. 
-
+**Lene** skriver epost til Sandra om dette. 
 
 * apertium/nursery/apertium-sme-smj/apertium-sme-smj.sme-smj.dix
 * apertium/nursery/apertium-sme-sma/apertium-sme-sma.sme-sma.dix
 
 Automatisk dict-generering:
 
-# Fleire enn ei omsetjing: kvar skal ha si mg, og <e mg="multi">
-# Tom omsetjing: Konverter samtidig med dei andre, men til ei eiga fil.
-# Ikkje ta med regex, ikkje ta med ABBR eller ACR
-# LR: berre i sme-sma og RL: berre i sma-sme
-# np (proper nouns): Berre viss sme =/= sma
-# legg inn i dict/smesma/src/x_smesma.xml, osb. for smasme, smjsma, smjsma
-
-
+1. Fleire enn ei omsetjing: kvar skal ha si mg, og <e mg="multi">
+1. Tom omsetjing: Konverter samtidig med dei andre, men til ei eiga fil.
+1. Ikkje ta med regex, ikkje ta med ABBR eller ACR
+1. LR: berre i sme-sma og RL: berre i sma-sme
+1. np (proper nouns): Berre viss sme =/= sma
+1. legg inn i dict/smesma/src/x_smesma.xml, osb. for smasme, smjsma, smjsma
 
 Tilsvarande for smj.
 
@@ -53,17 +48,16 @@ Arbeid med NDS:
 
 Legge til i conf.py osb, ordne spellrelax.
 
-!Framdriftsplan
+### Framdriftsplan
 * xml-filene klar fredag 3. februar
 * Vi (ihvertfall Lene) går gjennom de genererte xml-filene
 * Sandra og Maja må godkjenne resultatet før evt lansering.
 * Evt. lansering onsdag 8. februar, både i presse og i Tråante.
 
-!! smX-smX med sme som nav
+##  smX-smX med sme som nav
 Dette blir neste steg. Vi ser på dette om et par uker.
 
-
-!!TM (Translation memory)
+## TM (Translation memory)
 
 På denne sida [/tools/Paratekst.sme.html]
 ta alle parallelle sme-smn-filer (i apertium/nursery/apertium-sme-smn/tmx_data 
@@ -72,11 +66,5 @@ og legg dei her:
 
 [http://divvun.no/static_files/nob2sme-tmx.zip]
 
-!Tiltak:
-* __Ciprian__ arbeider med dette til neste uke
-
-
-
-
-
-
+### Tiltak:
+* **Ciprian** arbeider med dette til neste uke

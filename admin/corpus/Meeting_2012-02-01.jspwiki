@@ -1,24 +1,24 @@
-!!!Parallelliseringsmøte 1.2.2012
+# Parallelliseringsmøte 1.2.2012
 
 Berit Merete, Børre, Sjur, Ciprian, Trond
 
-!!!Saksliste
+# Saksliste
 
 * status for gullkorpus
 * status for parallellføringa
 * status for fase 1
 * arbeid framover
 
-!!!status for gullkorpus
+# status for gullkorpus
 
-__TILTAK:__
-* finna kjelda til eaddjii-feilen, og retta han (__Børre__)
-* retta andre feil i konverteringa og parallellføringa (__Børre__)
-* retta opp feil i gullstandardkorpuset (__Berit Merete__)
+**TILTAK:**
+* finna kjelda til eaddjii-feilen, og retta han (**Børre**)
+* retta andre feil i konverteringa og parallellføringa (**Børre**)
+* retta opp feil i gullstandardkorpuset (**Berit Merete**)
 
-__Mål:__ parallellføringa må tilbake til eller bli betre enn ho var før siste regresjon.
+**Mål:** parallellføringa må tilbake til eller bli betre enn ho var før siste regresjon.
 
-!!!status for parallellføringa
+# status for parallellføringa
 
 førre veka: 976 feil
 denne veka: 763 feil - halvvegs til målet om å nå ned til der vi var før regresjonen
@@ -27,18 +27,18 @@ BM jobbar med å retta feil (manglar) i Abbr, rettar skrivefeil i xsl. Børre jo
 
 Mykje tid har gått med til å setja opp fyrst gamal og så ny (låne)maskin for BM.
 
-!!!status for fase 1 & 2
+# status for fase 1 & 2
 
 * parallellføring
-** betre, men ikkje bra enno
+    - betre, men ikkje bra enno
 * nye tekstar
-** Børre la til nye tekstar sist veke.
+    - Børre la til nye tekstar sist veke.
 * Sjur har testa autshumato:
-** installert tmx som omsetjingsminne og ''brukt'' desse tmx-tekstane som omsetjingsminne
-*** Resultat: Treff i ca. 20% av setningarne. Det hendar at Autsh (OmegaT) 
+    - installert tmx som omsetjingsminne og *brukt* desse tmx-tekstane som omsetjingsminne
+        - Resultat: Treff i ca. 20% av setningarne. Det hendar at Autsh (OmegaT) 
     segmenterer ulikt oss. 2-3 funksjonsord på norsk i same setning er 
     godt nok til å generere ein kandidat.
-** prøveomsett tekst
+    - prøveomsett tekst
 
 Dokumentasjon og opplæring er den verkelege utfordringa ved Autsh.
 
@@ -50,12 +50,12 @@ må vi rekonstruere teksten til ein versjon utan ekstra mellomrom.
 Konklusjon: vi har noko som er brukbart som det er med tilgjengeleg omsetjingsminne.
 No er det berre å finjustera tmx-filene (fjerna ekstra blankteikn osb.) og laga dokumentasjon og nedlastingspakker.
 
-__OPPGÅVER:__
+**OPPGÅVER:**
 * prøva Autsh. på Windowsar
 * skriva dokumentasjon (den eksisterande dokumentasjonen er for proffe IT-folk)
 * laga ferdige nedlastingspakker
 
-!!!arbeid framover
+# arbeid framover
 
 * abbr-arbeid
 * Setningsdeling ut over forkortingar (sitat, parantes, grenseteikn generelt)
@@ -63,14 +63,14 @@ __OPPGÅVER:__
 * Autshumato-dok og -pakke
 
 Regulære uttrykk for å finna problematiske korkortingar:
-{{{
+```
 ccat -l sme -r converted/sme/ | kwic-snt '[0-9]\. b\. [A-Z]'
 ccat -l sme -r converted/sme/ | kwic-snt ' kom\. [A-Z]'
-}}}
+```
 
 Diskusjon kring segmenting og hermeteikn, både rundt og i setningar:
 
-{{{
+```
 Han refererte til "Rapport om it.
  2004.
  " og sa videre  =>
@@ -96,12 +96,12 @@ Mannen sa: // «Så spør de meg hva det er i sekken. // Jeg nekter å svare.» 
 
 Mannen sa: // «Så spør de meg hva det er i sekken. // Jeg nekter å svare.» og satte seg tungt på stolen.     Trond 
 Mannen sa:    «Så spør de meg hva det er i sekken. Jeg nekter å svare.» og satte seg tungt på stolen. //  Børre
-}}}
+```
 
 Resultatet av diskusjonen var denne regelen:
 
-__Ignorer hermeteikn__
+**Ignorer hermeteikn**
 
-!!!Neste møte
+# Neste møte
 
 7.2.2012 kl. 10.00 (norsk tid).

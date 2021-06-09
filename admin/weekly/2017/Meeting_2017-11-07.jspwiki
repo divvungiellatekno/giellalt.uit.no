@@ -10,8 +10,7 @@ T&S-møte 7.11.2017
 * Presentasjonane i morgon
 * Tastaturmøtet i morgon
 
-
-!!!dict-make
+# dict-make
 
 De endringene som Trond sjekket inn på møtet hvor vi 
 diskuterte dict-FSTer, har ikke løst problemet med at
@@ -20,80 +19,76 @@ Er det sikkert at den ikke må ’slås på’ i giella-core?
 
 Gangen er dette:
 
-# Ingen lokale endringar i am-shared-fila, 
-## Endringane der skal først vere i src/Makefile.am
-# Test at det fungerer for sme
-# flytt endringane til am-shared lokalt (for sme) og sjekk på nytt at det fungerer
+1. Ingen lokale endringar i am-shared-fila, 
+    1. Endringane der skal først vere i src/Makefile.am
+1. Test at det fungerer for sme
+1. flytt endringane til am-shared lokalt (for sme) og sjekk på nytt at det fungerer
   i giella-templates og rull ut for alle 
 
-__TODO__
+**TODO**
 * Trond ser på dette, og diskuterer med Sjur. 
 * Sjur, Trond og Chiara tar eit møte og ser på korleis dette fungerer.
 
-
-!!!Korpusinnsamling
+# Korpusinnsamling
 
 Vi tar eit oppfølgjingsmøte av førre store korpusmøte i løpet av november.
 
-!!! Termwiki
+#  Termwiki
 
 Måten å ta språkpar frå termwiki er å ta dei frå termwiki 
 (dei blir generert kvar natt og sjekka inn i svn: main/words/terms/termwiki/)
 
 Børre har eit script (i gt/scripts) for å ekstrahere termpar:
 
-{{{
+```
 termwiki-expressions.py nb se
 termwiki-expressions.py fi smn
 etc.
 
 jf. 
 termwiki-expressions.py -h
-}}}
+```
 
-!!!Ordbøker og satni-org
+# Ordbøker og satni-org
 
 Sátni-org er ein visings- og søkjeservar for termwiki, NDS, andre ordbøker,
 som blir oppdatert kvar kveld.
 
 På ordbokslista står berre ordbøker mellom norsk/svensk og nord- og sørsamisk. 
 
-__TODO__ 
+**TODO** 
 * Oppdatere liste over ordbøker
 * Få med oppslagsordet inn i direktelinkinga til Korp (jf. NDS)
 
-!!!NAV-prosjektet
+# NAV-prosjektet
 
 Det viktige er at Giellagáldu er involvert. Skal det så vere Giellatekno 
 eller Divvun som er involvert frå UiT-sida? I den grad arbeidet
 inneber handsaming av termlister er det naturleg at det er Divvun
 som gjer det.
 
-__TODO__: Vi diskuterer med Giellagáldu om dette denne veka.
+**TODO**: Vi diskuterer med Giellagáldu om dette denne veka.
 
-!!!NRK- og Ávvir-stavekontrollar
+# NRK- og Ávvir-stavekontrollar
 
 Ev. òg Sámi allaskuvla-stavekontroll??
 
 Møte på Marienlyst i desember. Det hellar mot ei listebasert løysing.
 
-!!!Standardisera REST-grensesnitta
+# Standardisera REST-grensesnitta
 
 Alle generert output frå sidene vår (tekstanalys, ordform, ...)
 
 Dette bør bli standardisert.
 
-__TODO__: Vi tar møte om dette, involverer relevante programmerarar.
+**TODO**: Vi tar møte om dette, involverer relevante programmerarar.
 
-
-!!!Presentasjonane i morgon
+# Presentasjonane i morgon
 
 Må sendast til tolkane i dag (i det minste ein førebels versjon)
 
-!!!Tastaturmøtet i morgon
+# Tastaturmøtet i morgon
 
 * smn: Vi har to versjonar til installering og testing
 * sms: Vi har kjeldekode til den tsjekkiske løysinga, men 
   den er ikkje implementert
-
-

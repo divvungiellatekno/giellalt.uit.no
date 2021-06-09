@@ -1,131 +1,131 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 18.04.2006
 * Time: 09.30 Norw. time
 * Place: Room 4453, University of Tromsø
 * Tools: SubEthaEdit, eye-to-eye contact, sound-to-ear
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:43.
 
-Present: __Børre, Thomas, Tomi, Trond__
+Present: **Børre, Thomas, Tomi, Trond**
 
-Absent: __Maaren__ (sick leave), __Sjur__ (paternal leave), __Saara__ (not
+Absent: **Maaren** (sick leave), **Sjur** (paternal leave), **Saara** (not
 available on iChat)
 
-Main secretary: __Børre__
+Main secretary: **Børre**
 
 Agenda accepted with additions under "Other".
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-!! Børre
+##  Børre
 * send out contracts with accompanying letter
-**  Not done
+    -  Not done
 * Gather public texts, preferrably also parallel ones
-**  Not done
+    -  Not done
 * Continue converting text from input format to our xml
-**  Done
+    -  Done
 * convert nob and nno bible texts to be used as part of a parallel corpus
-**  Not done
+    -  Not done
 * review the paratext2xml converter
-**  Didn't work one and a half week ago
+    -  Didn't work one and a half week ago
 * convert smj NT to paratext
-**  Not done
+    -  Not done
 * Send out letters to the Iđut authors
-**  Not fonr
+    -  Not fonr
 * Add corpus security re G5 syncing as an issue to Bugzilla
-**  Done
+    -  Done
 * write  docu for how to apply for a corpus user account (forms, recipients,
   etc)
-**  Not done
-* remove old corpus files from gt/sme/corp/ after __Trond__ has cleaned it
-**  Not done
+    -  Not done
+* remove old corpus files from gt/sme/corp/ after **Trond** has cleaned it
+    -  Not done
 * integrate generated corpus repository summaries in the Forrest site
-**  Not done
+    -  Not done
 * install and test Gobby, install new version of SEE
-**  Not done
+    -  Not done
 * make free texts available
-** add license info  DEADLINE: Tuesday 4.4.)
-** zip up the xml files in gtfree/ and put it up on the Divvun download area
+    - add license info  DEADLINE: Tuesday 4.4.)
+    - zip up the xml files in gtfree/ and put it up on the Divvun download area
    [http://www.divvun.no/downloads/](DEADLINE: Thursday 6.4.)
-** also provide an xml-free version? 
-** possibly e-mail Finnut about the resource (if __Sjur__ goes on paternal
+    - also provide an xml-free version? 
+    - possibly e-mail Finnut about the resource (if **Sjur** goes on paternal
    leave)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * on sick leave throughout April
 
-!! Saara
+##  Saara
 * Create a parallel corpora of the new testaments.
 * add more texts to the graphical corpus interface
 * grammatical searchability in the graphical corpus interface
 * file a bug report of utf-8 check in xml-validation of the corpus files.
 * make free texts available
-** rerun conversion (DEADLINE: Wednesday 5.4.)
-*** done, started fixing errors.
-** zip up the xml files in gtfree/ and put it up on the Divvun download area
+    - rerun conversion (DEADLINE: Wednesday 5.4.)
+        - done, started fixing errors.
+    - zip up the xml files in gtfree/ and put it up on the Divvun download area
    [http://www.divvun.no/downloads/] (DEADLINE: Thursday 6.4.)
-*** done
-** also provide an xml-free version?
-** set up a weekly cron script (but only if there are new files)
-*** not done.
+        - done
+    - also provide an xml-free version?
+    - set up a weekly cron script (but only if there are new files)
+        - not done.
 * Discuss: allow for more than one file at a time when uploading a file.
 * Implement links to parallel files in corpus header.
 * Turn on language recognition, skipping Finnish.
-** done
+    - done
 * add a possibility to upload whole documents for hyphenation (and also
   analysis, generation, etc)
 * add a log of every word/text uploaded/hyphenated/analyzed etc.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 * Follow up the lawyer treatment of the contracts
 * Follow up on place names from Norge Digitalt
 * Evaluate SFST as speller (and analyzer) lexicon
 * write a background document on the corpus contracts
 * public tender:
-** answer requests/questions
-** corpus repo access to free texts (with __Børre__)
-*** __Saara__ did it
+    - answer requests/questions
+    - corpus repo access to free texts (with **Børre**)
+        - **Saara** did it
 * e-mail Finnut about the availability of the free corpus and the download link
-** done
+    - done
 * conversion of corpus repo summary xml to Forrest xml
-** done
-* call EDD/__Christian Emil Ore__ about national place name lexicon
+    - done
+* call EDD/**Christian Emil Ore** about national place name lexicon
 * risten.no/proper noun lexicon development:
-** refactor code
-*** done some
-** code design for XQueries needed for dict/term editing
-*** not really done yet
-** other eXist/risten.no/proper noun related:
-*** implemented a simple classification scheme editor as a test case for XQuery
+    - refactor code
+        - done some
+    - code design for XQueries needed for dict/term editing
+        - not really done yet
+    - other eXist/risten.no/proper noun related:
+        - implemented a simple classification scheme editor as a test case for XQuery
     update extensions
-*** added browsing of terms based on the classification scheme (to help develop
+        - added browsing of terms based on the classification scheme (to help develop
     the classification schemes)
 * correct hyphenation of word boundaries and exceptions
-** the same as the next task
+    - the same as the next task
 * Set up the mechanism for the hash-mark transducer package
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Thomas
+##  Thomas
 * add incoming Lule Sámi word
 **everything added that is possible now, about 50 unknown words left+2 abbr.
     +moaddi etc (numerals)
@@ -142,169 +142,169 @@ Agenda accepted with additions under "Other".
 * SubEthaEdit update
 **done
 
-!! Tomi
+##  Tomi
 * move aspell UTF-8 suffix bug to Bugzilla
-** not done
+    - not done
 * Document aspell infrastructure: finish doc/proof/spelling/X-spell/aspell.xml
   (it's almost done, but there are a couple of loose ends)
-** not done
+    - not done
 * new proper name lexicon
-** implement data synchronisation of proper nouns between risten.no and CVS
-*** not done
-** XQuery refactoring and code development for our proper noun editor
-*** doing
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - implement data synchronisation of proper nouns between risten.no and CVS
+        - not done
+    - XQuery refactoring and code development for our proper noun editor
+        - doing
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
-*** not done
+        - not done
 * read aligner docu, install, provide feedback
-** not done
+    - not done
 * install and test Gobby, install new version of SEE
-** not done
+    - not done
 * Set up the mechanism for the hash-mark transducer package
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - not
 
-!! Trond
+##  Trond
 * Unify anchor lists, and conflate nno and nob into nor
-** Forgotten.
+    - Forgotten.
 * remove deleted files from the CVS repository (in the Attic)
-** Not done.
+    - Not done.
 * grammatical searchability in the graphical corpus interface: revise taglist
-** Done.
+    - Done.
 * better smj NT text, get fin and swe NT texts
-** Swe ok, fin promised but still not arrived. Nothing done to smj.
+    - Swe ok, fin promised but still not arrived. Nothing done to smj.
 * Prepare a list of good candicates for first inclusion into the corpus.
-** Not done.
+    - Not done.
 * start and lead discussion and work on semantic features for disamb
-** Not done.
+    - Not done.
 * Install Gobby
-** Not done.
-* get a key for __Maaren__ in May
-** Not done.
+    - Not done.
+* get a key for **Maaren** in May
+    - Not done.
 * install aligner, test it and give feedback
-** Not done.
+    - Not done.
 * correct hyphenation of word boundaries and exceptions
-** Not done.
+    - Not done.
 * Set up the mechanism for the hash-mark transducer package
-** Discussed with Sjur and set up some
-* get/upgrade keys for __Børre's__ room for __Tomi__ and __Thomas__
-** Also not done.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
-** Read through the list...
+    - Discussed with Sjur and set up some
+* get/upgrade keys for **Børre's** room for **Tomi** and **Thomas**
+    - Also not done.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
+    - Read through the list...
 
-!!!3. Documentation
+# 3. Documentation
 
 TODO:
 * documentation on how to apply for a user account for the corpus repo
-  (__Børre__)
-**  Not done
+  (**Børre**)
+    -  Not done
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
-!!Collecting
+## Collecting
 
-See a [previous meeting memo|Meeting_2006-01-16] for what's to be done.
+See a [previous meeting memo](Meeting_2006-01-16) for what's to be done.
 
-TODO: Send out the rest of the letters (__Børre__)
+TODO: Send out the rest of the letters (**Børre**)
 
-!!Odin
+## Odin
 
-__Sæth__ replied by e-mail, hasn't had time to follow-up, but will try to
+**Sæth** replied by e-mail, hasn't had time to follow-up, but will try to
 include us in their plans.
 
-* __Børre__ will weekly mirror the URL mentioned in Sæths e-mail, 
+* **Børre** will weekly mirror the URL mentioned in Sæths e-mail, 
   and add missing files to the corpus.
-!!Olavi Korhonen's Lule Sámi dictionary.
+## Olavi Korhonen's Lule Sámi dictionary.
 
 * No news this week
 
-!! KIO Grafisk and the Iđut books
+##  KIO Grafisk and the Iđut books
 
-__TODO__:
-* send letters to the authors (__Børre__)
+**TODO**:
+* send letters to the authors (**Børre**)
 * wait for the discussions with Davvi Girji
-**  A talk with Brita Kåven, revealed that they would have a look at
-    the contracts __after__ easter.
+    -  A talk with Brita Kåven, revealed that they would have a look at
+    the contracts **after** easter.
 
-!!Bible texts
+## Bible texts
 
 We will get text from Finland, but still haven't received any. We have got the
-Swedish text from Sweden. As for the last html versions from Norway, __Trond__
+Swedish text from Sweden. As for the last html versions from Norway, **Trond**
 has not contacted them last week. 
 
 Swedish html has arrived, no paratext. Norsk bibelselskap has not sent 
 corrected New Testament versions for sme, and not paratext for nno/nob.
 
 TODO:
-* convert smj NT to paratext (__Børre__)
-* get fin, swe, nob and nno NT and OT in __paratext__ format. (__Trond__)
+* convert smj NT to paratext (**Børre**)
+* get fin, swe, nob and nno NT and OT in **paratext** format. (**Trond**)
 
-!!Min Áigi
+## Min Áigi
 
 Everything ok here.
 
-__TODO__:
-* __Børre__ to contact __Per Christian Biti__ on technical issues.
+**TODO**:
+* **Børre** to contact **Per Christian Biti** on technical issues.
 
-!!Kåfjord
+## Kåfjord
 
 Promised to send us texts, but nothing has arrived yet.
 
-!!Sámi Instituhtta
+## Sámi Instituhtta
 
 Audhild Schanche promised to sign the contract and send us texts they 
 have available.
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 TODO:
-* remove deleted files from the CVS repository (__Trond__, still not done!!)
-* add UTF-8 check as part of the validation (__Saara__, not finished yet)
-** Will file a bug report to Bz and continue the work.
+* remove deleted files from the CVS repository (**Trond**, still not done!!)
+* add UTF-8 check as part of the validation (**Saara**, not finished yet)
+    - Will file a bug report to Bz and continue the work.
 
-!!Changes and updates because of the Divvun public tender
+## Changes and updates because of the Divvun public tender
 
 User account admin and infra: see [previous
   memo|/admin/weekly/2006/Meeting_2006-03-06.html].
 
-TODO: see above under ''Documentation.''
+TODO: see above under *Documentation.*
 
 Automatic build of the content of our corpus repo: also see [previous
   memo|/admin/weekly/2006/Meeting_2006-03-06.html].
 
 TODO:
-* convert from that xml to Forrest document format (__Sjur__)
-** nothing last week
+* convert from that xml to Forrest document format (**Sjur**)
+    - nothing last week
 * integrate the final Forrest documents into Forrest, and make sure it gets
-  published (__Børre__)
-** waiting for the above
+  published (**Børre**)
+    - waiting for the above
 * make free texts available
-** zip up the xml files in gtfree/ and put it up on the Divvun download area
-   [http://www.divvun.no/downloads/] (__Saara__, __Børre__,
+    - zip up the xml files in gtfree/ and put it up on the Divvun download area
+   [http://www.divvun.no/downloads/] (**Saara**, **Børre**,
    DEADLINE: Thursday 6.4.)
-*** Done
-** also provide an xml-free version? I.e. only paragraphs, whatever, as given by
+        - Done
+    - also provide an xml-free version? I.e. only paragraphs, whatever, as given by
    ccat
-** done weekly by a cron script (but only if there are new files) (__Saara__)
-** e-mail Finnut about the availability of the free corpus, and the download
-   link (__Sjur__, __Børre__ if Sjur goes on paternal leave)
-*** __Børre__ to check if this is done.
+    - done weekly by a cron script (but only if there are new files) (**Saara**)
+    - e-mail Finnut about the availability of the free corpus, and the download
+   link (**Sjur**, **Børre** if Sjur goes on paternal leave)
+        - **Børre** to check if this is done.
 
-!!Free and non-free texts
+## Free and non-free texts
 
 More info in a [previous meeting
 memo.|/admin/weekly/2006/Meeting_2006-03-13.html]
 
 TODO:
 * we need to rerun the conversion, and add/check copyright/license status
-** add license info (__Børre__, DEADLINE: Tuesday 4.4.)
-*** Done
-** rerun conversion (__Saara__, DEADLINE: Wednesday 5.4.)
-*** __Børre__ to check if this is done.
+    - add license info (**Børre**, DEADLINE: Tuesday 4.4.)
+        - Done
+    - rerun conversion (**Saara**, DEADLINE: Wednesday 5.4.)
+        - **Børre** to check if this is done.
 
-!!Linking parallel files
+## Linking parallel files
 
 DECISION:
 We'll keep the original filename, and store linking info in the header (has to
@@ -312,136 +312,135 @@ be added manually).
 
 TODO:
 * develop the web interface for uploading to make it easier to add several
-  documents in one go (as a serial process) (__Saara__)
+  documents in one go (as a serial process) (**Saara**)
 
-!!More texts to the graphical corpus interface:
+## More texts to the graphical corpus interface:
 
 TODO:
-* We would like to have more than the NT in the graphical interface http://omilia.uio.no/CE/sami/ (__Saara__)
-* We would like to have grammatical searchability, not only POS. (__Saara__,
-  __Trond__
-**  The tag list is revised, and Lars has implemented a graphical demo version of it. He will install the revised list to the demo corpus.  
-* This presupposes a discussion with Oslo. (__Trond__ to start discussion 
-  and __Trond__ and __Saara__ to continue
-** The discussion is ongoing, now we will only have to choose and install texts.  
+* We would like to have more than the NT in the graphical interface http://omilia.uio.no/CE/sami/ (**Saara**)
+* We would like to have grammatical searchability, not only POS. (**Saara**,
+  **Trond**
+    -  The tag list is revised, and Lars has implemented a graphical demo version of it. He will install the revised list to the demo corpus.  
+* This presupposes a discussion with Oslo. (**Trond** to start discussion 
+  and **Trond** and **Saara** to continue
+    - The discussion is ongoing, now we will only have to choose and install texts.  
 * For Lule Sámi: We would like to have a parallel corpus interface with NT
-  (text only). This presupposes better quality texts (__Trond, Børre__)
-** Better Lule NT text still not made.
+  (text only). This presupposes better quality texts (**Trond, Børre**)
+    - Better Lule NT text still not made.
 * preparations: gather more texts (we are doing this)
 * Review the tag list and have it ready for inclusion (gt/cwb/korpustags.txt)
-  (__Trond, Linda__)
-** Done.  
+  (**Trond, Linda**)
+    - Done.  
 * Prepare a list of good candicates for first inclusion into the corpus.
-  (__Trond, Linda__)
-** Not done.
+  (**Trond, Linda**)
+    - Not done.
 
 Top-two priorities:
-#  Linda and Trond to find text to add.
-#  Lars to add them.
+1.  Linda and Trond to find text to add.
+1.  Lars to add them.
 
-!!Language recognition
+## Language recognition
 
 TODO:
-* turn on language recognition, skipping Finnish (__Saara__)
-** Done, it seems.
+* turn on language recognition, skipping Finnish (**Saara**)
+    - Done, it seems.
 
 Now, there are gross errors in the material, the texts must be reconverted, it seems.
 
-!!!6. Infrastructure
+# 6. Infrastructure
 
-!!Aligner
+## Aligner
 
 Today, we have two anchor files in addition to the original one. 
 
 TODO:
-* Read documentation and try out, give feedback to Bergen. (__Trond__,
-  __Saara__, __Tomi__)
-* conflate nno with nob into 'nor' (__Trond__)
-**  Partly done, must go through and see.
-* __Saara__ to install the aligner, everyone to read the documentation
+* Read documentation and try out, give feedback to Bergen. (**Trond**,
+  **Saara**, **Tomi**)
+* conflate nno with nob into 'nor' (**Trond**)
+    -  Partly done, must go through and see.
+* **Saara** to install the aligner, everyone to read the documentation
 * Move smj to the anchor.txt file, so that we get eng/nor/sme/smj/fin. 
-**  __Thomas__ has finished smj, __Trond__ to add the smj column to the rest.
+    -  **Thomas** has finished smj, **Trond** to add the smj column to the rest.
 
 Not much has happened, we must work more on this issue.
 
-!!Hyphenator
+## Hyphenator
 
 TODO:
-* correct hyphenation of word boundaries and exceptions (__Sjur, Trond__)
+* correct hyphenation of word boundaries and exceptions (**Sjur, Trond**)
 * add a possibility to upload whole documents for hyphenation (and also
-  analysis, generation, etc) (__Saara__)
+  analysis, generation, etc) (**Saara**)
 * we should log all and every word/text uploaded/hyphenated/analyzed etc
-** we'll do it, but it does not have first priority (__Saara__)
+    - we'll do it, but it does not have first priority (**Saara**)
 
 Trond and Sjur have had a look at the issue. We postpone it until Sjur is back.
 
-!!!7. Linguistics
+# 7. Linguistics
 
-!!General - hyphenation
+## General - hyphenation
 
 See discussion, open questions and decission in the [previous meeting
 memo.|/admin/weekly/2006/Meeting_2006-04-03.html]
 
 TODO:
-* add all word boundaries (__Thomas__)
-**  Done: All sme except propernoun-file. Trond has gone through the propernoun
+* add all word boundaries (**Thomas**)
+    -  Done: All sme except propernoun-file. Trond has gone through the propernoun
     file and added ^ marks for the most common name elements, such as fjell, 
     fjord, but there is still more to be done.
-* Set up the mechanism for the hash transducer package. (__Sjur, Tomi, Trond__)
-** Not done, let us wait until Sjur is back.
+* Set up the mechanism for the hash transducer package. (**Sjur, Tomi, Trond**)
+    - Not done, let us wait until Sjur is back.
 
 TODO:
 
-Fix the rest of the propernoun file (__Trond__, __Thomas__)
+Fix the rest of the propernoun file (**Trond**, **Thomas**)
 
-!!North Sámi
+## North Sámi
 
-!Semantic feature system
+### Semantic feature system
 
 Further discussion and details in
-[this|/admin/weekly/2006/Meeting_2006-03-20.html] and
-[this|/admin/weekly/2006/Meeting_2006-03-27.html]
+[this](/admin/weekly/2006/Meeting_2006-03-20.html) and
+[this](/admin/weekly/2006/Meeting_2006-03-27.html)
 meeting memo.
 
-!!Lule Sámi
+## Lule Sámi
 
 TODO:
-* add the rest of the inc- words (__Thomas__)
-**  everything added that is possible now, about 50 unknown words left+2 abbr.
+* add the rest of the inc- words (**Thomas**)
+    -  everything added that is possible now, about 50 unknown words left+2 abbr.
     +moaddi etc (numerals)
 * translate Northern Sámi lists and sets to Lule Sámi
-**  Hmm, this is done, isn't it? We have a working smj-dis.rle file.
+    -  Hmm, this is done, isn't it? We have a working smj-dis.rle file.
 
-!!!8. Name lexicon infrastructure
+# 8. Name lexicon infrastructure
 
 TODO:
-# refactor and prepare risten.no for multiple collections:
-##  refactor the code into more and more specific components according to our
-    folder hierarchy (__Tomi, Sjur__)
-### things are moving forward
-# develop the needed XQueries and interface (__Sjur, Tomi__)
-##  developing
-# data synchronisation between risten.no and the cvs repo (__Tomi__)
-##  nothing this week
-# test and review when ready
+1. refactor and prepare risten.no for multiple collections:
+    1.  refactor the code into more and more specific components according to our
+    folder hierarchy (**Tomi, Sjur**)
+        1. things are moving forward
+1. develop the needed XQueries and interface (**Sjur, Tomi**)
+    1.  developing
+1. data synchronisation between risten.no and the cvs repo (**Tomi**)
+    1.  nothing this week
+1. test and review when ready
 
-!!!9. Spellers
+# 9. Spellers
 
 Nothing until the new proper noun lexicon is in place. We don't have enough
 people to do both.
 
-!!!10. Other
+# 10. Other
 
+## Bug fixing
 
-!!Bug fixing
-
-__47__ open Divvun/Disamb bugs, and __25__ risten.no bugs
+**47** open Divvun/Disamb bugs, and **25** risten.no bugs
 
 After the corpus issues have been somewhat settled, we should do a bug barnraising. ... and then a new one after the name lexicon is fixed.
 
-!!!11. Summary, task list
+# 11. Summary, task list
 
-!! Børre
+##  Børre
 * send out contracts with accompanying letter
 * Gather public texts, preferrably also parallel ones
 * Continue converting text from input format to our xml
@@ -451,77 +450,77 @@ After the corpus issues have been somewhat settled, we should do a bug barnraisi
 * Send out letters to the Iđut authors
 * write  docu for how to apply for a corpus user account (forms, recipients,
   etc)
-* remove old corpus files from gt/sme/corp/ after __Trond__ has cleaned it
+* remove old corpus files from gt/sme/corp/ after **Trond** has cleaned it
 * integrate generated corpus repository summaries in the Forrest site
 * make free texts available
-** possibly e-mail Finnut about the resource (if __Sjur__ goes on paternal
+    - possibly e-mail Finnut about the resource (if **Sjur** goes on paternal
    leave)
-*** check if this has been done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+        - check if this has been done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * on sick leave throughout April
 
-!! Saara
+##  Saara
 * Create a parallel corpora of the new testaments.
 * add more texts to the graphical corpus interface
 * grammatical searchability in the graphical corpus interface
 * file a bug report of utf-8 check in xml-validation of the corpus files.
 * make free texts available
-** rerun conversion (DEADLINE: Wednesday 5.4.)
-** zip up the xml files in gtfree/ and put it up on the Divvun download area
+    - rerun conversion (DEADLINE: Wednesday 5.4.)
+    - zip up the xml files in gtfree/ and put it up on the Divvun download area
    [http://www.divvun.no/downloads/] (DEADLINE: Thursday 6.4.)
-** also provide an xml-free version? 
-** set up a weekly cron script (but only if there are new files)
+    - also provide an xml-free version? 
+    - set up a weekly cron script (but only if there are new files)
 * Discuss: allow for more than one file at a time when uploading a file.
 * Implement links to parallel files in corpus header.
 * Turn on language recognition, skipping Finnish
 * add a possibility to upload whole documents for hyphenation (and also
   analysis, generation, etc)
 * add a log of every word/text uploaded/hyphenated/analyzed etc.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 * on paternal leave
 
-!! Thomas
+##  Thomas
 * add all word boundaries
 * work on compounding and derivation
 * smj G3 issue
 * sme G3 issue
 
-!! Tomi
+##  Tomi
 * move aspell UTF-8 suffix bug to Bugzilla
 * Document aspell infrastructure: finish doc/proof/spelling/X-spell/aspell.xml
   (it's almost done, but there are a couple of loose ends)
 * new proper name lexicon
-** implement data synchronisation of proper nouns between risten.no and CVS
-** XQuery refactoring and code development for our proper noun editor
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - implement data synchronisation of proper nouns between risten.no and CVS
+    - XQuery refactoring and code development for our proper noun editor
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
 * read aligner docu, install, provide feedback
 * install and test Gobby, install new version of SEE
 * Set up the mechanism for the hash-mark transducer package
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Trond
+##  Trond
 * Unify anchor lists, and conflate nno and nob into nor
 * remove deleted files from the CVS repository (in the Attic)
 * better smj NT text, get fin NT texts
 * Prepare a list of good candicates for first inclusion into the corpus.
 * start and lead discussion and work on semantic features for disamb
 * Install Gobby
-* get a key for __Maaren__ in May
+* get a key for **Maaren** in May
 * install aligner, test it and give feedback
 * correct hyphenation of word boundaries and exceptions
-* get/upgrade keys for __Børre's__ room for __Tomi__ and __Thomas__
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* get/upgrade keys for **Børre's** room for **Tomi** and **Thomas**
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-!!!12. Next meeting, closing
+# 12. Next meeting, closing
 
 24.04.2006 09:30
 
-__Sjur__ is on paternal leave.
+**Sjur** is on paternal leave.
 
 Closed at 11:47

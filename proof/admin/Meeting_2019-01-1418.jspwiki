@@ -4,54 +4,54 @@ Saker:
 * erfaringar
 * korleis kan vi gjera forslaga betre
 
-!!!Maja
+# Maja
 
 * la ut lenke på sma-FB
-** mange syntest det var bra
-** kjempebra med stavekontroll!!!
+    - mange syntest det var bra
+    - kjempebra med stavekontroll!!!
 * må prøva ut meir
 * forslagsmekanismen: same problem som i Word/LO
 * veldig positivt å få stavekontrollen rett i fjeset - ser problema tydelegare
 * nokre har problem med å få stavekontrollen til å fungera / få oppdateringa på plass
-** manglar info om telefon(modell), OS-versjon, m.m.
+    - manglar info om telefon(modell), OS-versjon, m.m.
 
-!!!Duommá
+# Duommá
 
 * den er bra men ubegripeleg (forslagsmekanismen)
 * han er ikkje konsekvent (sjå Zulip) - kva er det som står i hermeteikn?
   Truleg det ein sjølv har skrive når det ikkje finst retteforslag
 
-!!!Elena
+# Elena
 
 * får mange heilt ville forslag
 * treng ikkje vera samiske ord
 * skriv: 'Viellka' (ønsker Viellja) - Miella Giella Niellja
-** stor fyrstebokstav triggar forslag som er namn -> straff namn høgare
+    - stor fyrstebokstav triggar forslag som er namn -> straff namn høgare
 
-!!!Børre
+# Børre
 
 * problemet er at han gjer rettingar for tidleg - treng (statistisk basert) ordfullføring
 * forslaga når ein kjem halvvegs i ordet er berre tull
 
-!!!Sjur
+# Sjur
 
 * Siden lansering: over 2000 personer har oppdatert tastaturet i iOS
 * Kræsjlogg indikerer at det blir brukt mye
 
-!!!Feilmodell
+# Feilmodell
 
-Er dokumentert [her|http://giellalt.uit.no/proof/TheSpellerErrorModel.html].
+Er dokumentert [her](http://giellalt.uit.no/proof/TheSpellerErrorModel.html).
 
-!!Filene som bestemmer vekta til forslaga
+## Filene som bestemmer vekta til forslaga
 
 Analysatorvektene blir spesifiserte i denne katalogen
-{{tools/spellcheckers/fstbased/desktop/weighting/}} av desse to filene:
+`tools/spellcheckers/fstbased/desktop/weighting/` av desse to filene:
 
 * spellercorpus.raw.txt
 * tags.reweight
 
 Og vektene i feilmodellen ligg her:
-{{tools/spellcheckers/fstbased/desktop/hfst/}}, og er desse fem filene:
+`tools/spellcheckers/fstbased/desktop/hfst/`, og er desse fem filene:
 
 * editdist.default.txt
 * final_strings.default.txt
@@ -61,13 +61,13 @@ Og vektene i feilmodellen ligg her:
 
 Endeleg vekt på forslag = analysatorvekt + vekt frå feilmodell
 
-Byt ut {{desktop}} med {{mobile}} for vektinga for mobilkstavekontrollen!
+Byt ut `desktop` med `mobile` for vektinga for mobilkstavekontrollen!
 
-!!! Resultat etter fleire rettingar
+#  Resultat etter fleire rettingar
 
-!! smj
+##  smj
 
-{{{
+```
 $ echo Viellka | divvunspell -S -z smj-mobile.zhfst | head -n 15
 Reading from stdin...
 Input: Viellka                [INCORRECT]
@@ -85,11 +85,11 @@ Viehka                27.546875
 Miella                29.163086
 Vieleda                31.302734
 Jiella                32.590923
-}}}
+```
 
-!! sma
+##  sma
 
-{{{
+```
 vïelle - 
 vielle - 
 
@@ -119,11 +119,11 @@ Gielie                14.714215
 Velle                15.181967
 Vellie                15.181967
 Vislie                16.010395
-}}}
+```
 
-!! sme
+##  sme
 
-{{{
+```
 $ time echo dáhtttu | divvunspell -s -z tools/spellcheckers/fstbased/mobile/hfst/se-mobile.zhfst | head
 Reading from stdin...
 Input: dáhtttu                [INCORRECT]
@@ -163,40 +163,35 @@ mihton                8.301799
 mohtin                8.301799
 lohtun                8.419841
 
-
 muhtin
 muhtin muhtin+Pron+Indef+Attr 0,000000
 muhtin muhtin+Pron+Indef+Sg+Nom 0,000000
 muhtun
 muhtun muhtun+Pron+Indef+Attr 0,000000
 muhtun muhtun+Pron+Indef+Sg+Nom 0,000000
-}}}
-
+```
 
 jag skriver "muhtin" venstre: "muhtin" mitten: "johtin" høgre: "mohtin"
 
-
 jag skriver "muhtun" venstre: "mohttun" mitten: "mohton" høgre: muhtton
-
 
 aha: jag skriver "dáhtttu" venstre: "sáhttu" mitten: "dáhtto" høgre: "dáhttu"
 
-
 jag skriver "positiiválaččat" venstre: ""positiiválaččat"" (inom citationstecken) mitten: "positiivvalaččat"
 
-{{{
+```
 echo positiiválaččat | divvunspell -S -z tools/spellcheckers/fstbased/mobile/hfst/se-mobile.zhfst | head
 Reading from stdin...
 Input: positiiválaččat                [INCORRECT]
 positiivvalaččat                4.286133
-}}}
+```
 
 Det betyr: det til venstre (i hermeteikn) er det du skriv, og det i midten er det som stavekontrollen føreslår, dvs berre eitt forslag.
 
 For å arbeida med forslaga:
 
-# justér vekt (feilmodell, tagger)
-# kompiler
-# test:
-## manuelt
-## automatisk: {{devtools/test_ospell-office_suggestions.sh}}
+1. justér vekt (feilmodell, tagger)
+1. kompiler
+1. test:
+    1. manuelt
+    1. automatisk: `devtools/test_ospell-office_suggestions.sh`

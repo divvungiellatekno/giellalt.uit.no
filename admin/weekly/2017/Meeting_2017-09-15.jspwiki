@@ -1,7 +1,6 @@
 Sjur og Trond-møte 15.9. 2017
 
-
-!!!Saksliste
+# Saksliste
 
 * Grammatikkontroll-dokumentasjon
 * TTS
@@ -10,56 +9,55 @@ Sjur og Trond-møte 15.9. 2017
 * Neste divvunveke
 * Bz
 
-
-!!!Grammatikkontroll-dokumentasjon
+# Grammatikkontroll-dokumentasjon
 
 * installer divvun-gramcheck via github  (problem, berre delvis løyst i lag
-  med Kevin): {{git pull && scripts/get-pugixml-and-build && sudo make instal}}
+  med Kevin): `git pull && scripts/get-pugixml-and-build && sudo make instal`
 * konfigurer med linja i grammarchecker.cg3
 * kompiler
 * korleis installere cg-mode i emacs og teste den
 
-Prosjektdokumentasjon i {{techdoc/proof/gramcheck/}}, jf nettsida:
+Prosjektdokumentasjon i `techdoc/proof/gramcheck/`, jf nettsida:
 [https://giellalt.uit.no/proof/gramcheck/GrammarCheckerDocumentation.html].
 
-__Trond__ legg inn notatar her langs vegen, __Sjur__ dokumenterer når støvet har lagt seg.
+**Trond** legg inn notatar her langs vegen, **Sjur** dokumenterer når støvet har lagt seg.
 
 Vi vil generalisere det grafiske testgrensesnittet til fleire språk.
 
-!!!TTS
+# TTS
 
-!!TTS på sidene våre
+## TTS på sidene våre
 
 * vi vil ha TTS på sidene våre (jf. MT på giellatekno.uit.no) 
 * TTS-lim-inn-tekst (BÁ har skrivekurs) - finst på Acapella sine sider, men:
-** berre den eine røysta tilgjengeleg
-** kan ikkje regulera lesefart
-** vi må sjølv kunna demonstrera vårt eige produkt
+    - berre den eine røysta tilgjengeleg
+    - kan ikkje regulera lesefart
+    - vi må sjølv kunna demonstrera vårt eige produkt
 * Framover: TTS i NDS og TTS i icall (vi er ikkje der enno)
 
-!!Installering
+## Installering
 
 * det var problematisk med installering på studentmaskiner 
   (lyktest ikkje sjølv med Thomas og Børre)
 
-__Trond__ skriv e-post til BÁ og Sjur.
+**Trond** skriv e-post til BÁ og Sjur.
 
-!!Android og iPhone
+## Android og iPhone
 
 Kan inkludera stemmene våre i appar, kan ikkje brukast i Siri osb. Det er
 mogleg at Android er meir open enn iOS, og at det er mogleg å få stemmane inn i heile systemet. 
 Det må undersøkjast. Jf. ordboksapp frå oss.
 
-!!!Møterommet
+# Møterommet
 
 Korleis kan vi få saka vidare?
 
-# __Sjur__ reinteiknar notatane våre + forklaringar
-# __Trond__ tar det vidare på universitetet
+1. **Sjur** reinteiknar notatane våre + forklaringar
+1. **Trond** tar det vidare på universitetet
 
 Sjur har eit utkast om 14 dagar.
 
-!!!Korpusinnsamling og -møte
+# Korpusinnsamling og -møte
 
 Liste over ting å følgje opp:
 
@@ -69,55 +67,53 @@ Liste over ting å følgje opp:
 * konvertering (oppfølgjingsmøte om aktuelle problem)
 * parallellisering
 * språkattkjenning
-** Vi treng å evaluere (ny) programvare, 
-** Alternativ til text_cat: jf. lysark frå Dublin + Jauhiainen x2
-** Trond diskuterer dette med Ciprian
+    - Vi treng å evaluere (ny) programvare, 
+    - Alternativ til text_cat: jf. lysark frå Dublin + Jauhiainen x2
+    - Trond diskuterer dette med Ciprian
 
-__Trond__ diskuterer med Gt, __Sjur__ med Divvun, vi tar møte over nettet
+**Trond** diskuterer med Gt, **Sjur** med Divvun, vi tar møte over nettet
 med relevante personar for dei problemstillingane der vi må 
 snakke saman (konvertering (.xsl), innsamling av .doc)
 
-
-!!!Neste divvunveke
+# Neste divvunveke
 
 * Første veka i oktober (2.10.-6.10)
 * Neste divvunveke ssv. 44 eller 45.
-** __Trond__ diskuterer med ungararane om Divvun-evaluering, om FinUgReVita-folket kan kome hit.
+    - **Trond** diskuterer med ungararane om Divvun-evaluering, om FinUgReVita-folket kan kome hit.
 
-!!!Bz
+# Bz
 
 Vi følgjer opp dei opne Bz-ane. 
-Sjur har ofte skrive ''test og sei i frå''. Det bør vi.
+Sjur har ofte skrive *test og sei i frå*. Det bør vi.
 
+# Andre saker
 
-!!!Andre saker
-
-!!Eenaresamisk stavekontrolltesting
+## Eenaresamisk stavekontrolltesting
 
 Det er tre alternativ for modularisert testing av stavekontrollen
 med det grafiske testoppsettet i devtools. Her kjem ei drøfting:
 
-!multiple byggekatalogar
+### multiple byggekatalogar
 
-{{{
+```
 smn/src
 smn/src/devtools/
 smn/bygg/stavekontroll/  (a) <--- den vanlege
 smn/bygg/stavekontroll-modifisert/ (b) <-- ein variant ... ad lib
 smn/bygg/stavekontroll-modifisert_med_dato/ (c) <-- ein variant ... ad lib
 smn/bygg/mt (ikkje poeng her) lik kjelde, ulik config
-}}}
+```
 
 Skilnaden ligg ikkje i konfigureringa, men i kjeldefilene.
 
 I dette tilfellet: 
 * tools/speller/fstbased/desktop/hfst(a)
-* tools/speller/fstbased/desktop/hfst(b) (t.d. __utan__ framleggstilpasnin)
+* tools/speller/fstbased/desktop/hfst(b) (t.d. **utan** framleggstilpasnin)
 
 Denne passar best der skilnaden er i  config-oppsettet, og ikkje der
 skilnaden er i kjeldefilene.
 
-!Multiple smn-katalogar
+### Multiple smn-katalogar
 
 Sjekke ut fleire smn-katalogar:
 * smn_a
@@ -126,45 +122,39 @@ Sjekke ut fleire smn-katalogar:
 Dette kan ikkje sjekke inn ulike kjeldefiler (dei vil overstyre kvarandre), men
 er enklare enn neste variant.
 
-!Ulike greiner
+### Ulike greiner
 
 i $HOME:
 
-{{svn co http://gtsvn.uit.no/langtech/branches/langs/smn branches/langs/smn_a}}
+`svn co http://gtsvn.uit.no/langtech/branches/langs/smn branches/langs/smn_a`
 
 Denne er best der skilnaden er i kjeldefilene, her kan eg ha fleire parallelle kjeldefiler, 
 og vil sjekka inn dei endringane ein gjer.
 
+**Trond** prøver seg fram.
 
-__Trond__ prøver seg fram.
-
-
-
-!!Munchs skrik
+## Munchs skrik
 
 Jf. [http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2401]
 
 Denne har vorte liggande.
 
-Trond har 3 framlegg (jf. buggen), __Sjur__ kjem med eit fjerde, og skriv i Bz.
+Trond har 3 framlegg (jf. buggen), **Sjur** kjem med eit fjerde, og skriv i Bz.
 
-
-!!Kompilering av sme
-
+## Kompilering av sme
 
 Dette er ei feilmelding, som har vore der ein del dagar
 
 Resten av møtereferatet er debugging 
 av ein feil, som vi fann, så det er eigentleg berre å slutte å lese her.
 
-
-{{{
+```
   HINTRSCT generator-raw-gt-desc.tmp1.hfst
 /usr/local/bin/hfst-compose-intersect: warning:
 Found output multi-char symbols ("any") in 
 transducer in file <stdin> which are not found on the
 input tapes of transducers in file phonology/sme-phon.rev.hfst.
-}}}
+```
 
 Den liknar på tilsvarande feil i Apertium.
 
@@ -179,57 +169,54 @@ Spörmsål:
 * Korleis ser symbolet "any" ut?
 * Kva gjev kommandoen "print symbols"
 
-
 hfst:
 
-{{{
+```
 arc symbols actually seen in transducer:
 ...
 £, §, ©, «, «7, ­, ®, °, ±, ², ³, ´, ¶, ·, ¹, », »7, ¼, ½, ¾, ¿, Á, Ä, Å, Æ, Ç, É, Í, Ò, Ó, Ö, Ø, Ü, Þ, à, á, â, ã, ä, å, æ, ç, è, é, ê, ë, í, î, ï, ð, ñ, ò, ó, ô, õ, ö, ø, ù, ú, û, ü, ý, Č, č, Đ, đ, ł, Ŋ, ŋ, ō, Š, š, Ŧ, ŧ, Ž, ž, ́, ̈, ̌, ·, ‐, ‒, –, —, ―, ‘, ’, “, ”, „, •, …, ‹, ›, €, √, ≈, ◊, ●, ❡, 😱
-}}}
-
+```
 
 root.lexc 14.9.:
 
-{{{
+```
 tf-hsl-m0016:sme ttr000$ grep any src/morphology/root.lexc 
-! (at your option) any later version. The GNU General Public License
-                 !!                     be used alone, but can appear in any position
-!! If unmarked, any position goes.
-!! # any untagged word is pronounced with SME orthographic conventions
-}}}
+###  (at your option) any later version. The GNU General Public License
+##                      be used alone, but can appear in any position
+##  If unmarked, any position goes.
+##  # any untagged word is pronounced with SME orthographic conventions
+```
 
 xfst 14.9. og 15.9.:
 
 * -rw-r--r--  1 ttr000  1907360568  4147443 14 sep 13:09 src/analyser-gt-desc.xfst (ingen any i sigma)
 * -rw-r--r--  1 ttr000  1907360568  4209186 15 sep 12:20 src/analyser-gt-desc.xfst (any i sigm)
 
-
 14.9.
-{{{
+```
 Sigma: A Á B C Č D Ď E F G H I J K L M N O P Q R S Š T U V W X Y Z Ž a 
        á b c č d e f g h i j k l m n ń ñ o p q r s š t u v w x y z ž 
        " " ! %" # $ "%" & ' ( ) * + +A +ABBR +ACR +Acc +Actio +Adv
-}}}
+```
 
 15.9.
-{{{
+```
 xfst[1]: print sigma
 Sigma: A Á B C Č D Ď E F G H I J K L M N O P Q R S Š T U V W X Y Z Ž a 
        any á b c č d e f g h i j k l m n ń ñ o p q r s š t u v w x y z 
-}}}
+```
 
 Med tidsvindauget på plass (23 timar) fann Sjur feilen, og den skuldige (seg sjølv :-) ):
 
-{{{
+```
 Modified: trunk/langs/sme/src/morphology/root.lexc
 ===================================================================
 --- trunk/langs/sme/src/morphology/root.lexc	2017-09-14 14:57:10 UTC (rev 157050)
 +++ trunk/langs/sme/src/morphology/root.lexc	2017-09-14 16:59:44 UTC (rev 157051)
 @@ -326,6 +326,8 @@
- +Cmp/Hyph     !!≈ * __@CODE@__ - on dynamic compounds that have a hyphen
- +Cmp/NoHyph   !!≈ * __@CODE@__ - On compounds that COULD have had a hyphen (and usually have), but doesn't
- +Cmp/SoftHyph !!≈ * __@CODE@__ - Tags compounds containing SOFT HYPHENS (U+00AD)
-+ +Cmp/Cit      !!≈ * __@CODE@__ - Tags citation compounds, which can in principle
+ +Cmp/Hyph     !!≈ * **@CODE@** - on dynamic compounds that have a hyphen
+ +Cmp/NoHyph   !!≈ * **@CODE@** - On compounds that COULD have had a hyphen (and usually have), but doesn't
+ +Cmp/SoftHyph !!≈ * **@CODE@** - Tags compounds containing SOFT HYPHENS (U+00AD)
++ +Cmp/Cit      !!≈ * **@CODE@** - Tags citation compounds, which can in principle
 +                                  cover any word. Requires a hyphen.
-}}}
+```

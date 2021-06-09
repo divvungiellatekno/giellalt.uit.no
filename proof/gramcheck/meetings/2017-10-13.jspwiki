@@ -9,46 +9,46 @@ Saker:
 * arbeid framover
 * neste møte
 
-!!!Sidan sist
+# Sidan sist
 
-!!Duommá
+## Duommá
 * han samler falske positiver från stort korpus
 
 Det er ein del falske alarmar, vi må vurdera å slå av dei mest problematiske reglane i fyrste versjon, og heller byggja ut grammatikkontrollen over tid.
 
-!!Kevin
+## Kevin
 * cgspell
-** les både arkiv og enkeltfiler (akseptor/analysator+feilmodell)
-** stav berre ukjende som standard, valfritt òg kjende
-** rett output av subreadings
-** testar, travis
-** endring i hfst-ospell-api for korrekt gjenkjenning av tagg vs lemma
+    - les både arkiv og enkeltfiler (akseptor/analysator+feilmodell)
+    - stav berre ukjende som standard, valfritt òg kjende
+    - rett output av subreadings
+    - testar, travis
+    - endring i hfst-ospell-api for korrekt gjenkjenning av tagg vs lemma
 * composed-chars-debugging
 * autooppdatering av webdemo (inn i same system som jorgal: https://github.com/unhammer/gtweb-apy-conf )
-** svn up skjer OnCalendar=02,08,12,14,16,18:42
+    - svn up skjer OnCalendar=02,08,12,14,16,18:42
 
 Webtenesta blir starta om att midt på natta og kl 14. Endringar i koden blir ikkje synleg før slike omstartar.
 
 Manuell omstart av tenesta på gtweb med:
-{{{sudo systemctl restart apy}}}
+```sudo systemctl restart apy```
 
-!!Linda
+## Linda
 * fiksa kasusfeilfinning i adposisjonsfraser
-** feilfinningsregler
-** semantiske tagger i disambigueringsregler
-** flere disambigueringsregler for adposisjoner
+    - feilfinningsregler
+    - semantiske tagger i disambigueringsregler
+    - flere disambigueringsregler for adposisjoner
 * fiksa en del kommaregler
 * litt feedback optimering i errors.xml
 * flere feiltyper på instagram
 
 Instagram: vi bør fylgja fleire, og på den måten kanskje få fleire til å fylgja oss.
 
-!!Sjur
+## Sjur
 * har lagt til støtte for stavekontroll i bygginga
-** manglar zip med stavekontroll
+    - manglar zip med stavekontroll
 * har no lagt til rette for grammatikkontroll for alle språk
 
-!!!Variantar av GC
+# Variantar av GC
 
 * ulike land (ulik ortograpfi, jf smj)
 * ulike ortografiar
@@ -62,31 +62,31 @@ Lemma og analyse er konstant, overflateform varierer. Dvs at variantane må hand
 
 For geografi og skriftsystem: vi lagar ulike fst-ar og ulike zip-filer, cg-reglane er konstante. Når det gjeld ortografi så må vi venta og sjå kva det reelle behovet er.
 
-!!!Integrering mot klientar / vertsprogram
+# Integrering mot klientar / vertsprogram
 
 Vi ventar til vi har full støtte for stavekontroll i alle komponentar.
 
-!!! Framover
+#  Framover
 
-!!Duommá
+## Duommá
 * han fortsätter å samle falske positiver från stort korpus
 
-!!Kevin
+## Kevin
 * cgspell
-** støtte i divvun-checker/bibliotek, pipespec.xml og zip-format
-** fiks bug med timeout (men hfst-ospell har same bug?)
+    - støtte i divvun-checker/bibliotek, pipespec.xml og zip-format
+    - fiks bug med timeout (men hfst-ospell har same bug?)
 * kommandolinjeval for å skru på preferansar (gøyma reglar) i divvun-checker
 * evalueringssystem mot gullkorpus
 * lag «debug modes» i divvun-gen-sh, så me slepp apertium-gen-modes
 
-!!Linda
+## Linda
 * testing og evaluering av adposisjonsregler
 
-!!Sjur
+## Sjur
 * søknad til KMD om fast lingviststilling
 * leggja til semantiske (og andre?) taggar i stavekontrollanalysatoren
 * støtte for variantar slik det er diskutert over
 
-!!!Neste møte
+# Neste møte
 
 Om ca 14 dagar. Sjur kallar inn.

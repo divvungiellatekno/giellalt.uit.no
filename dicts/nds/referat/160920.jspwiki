@@ -6,10 +6,10 @@ Issues
 * fab fine -- far too much?
 * What to update in the source code
 * There are modules with plans, TODOs
-* We need a technical documentation, __top-down style__
-** We need a float scheme, a box diagram:
-** Here are the components, here is how they work together
-** Here are their raison d'être
+* We need a technical documentation, **top-down style**
+    - We need a float scheme, a box diagram:
+    - Here are the components, here is how they work together
+    - Here are their raison d'être
 
 Cases in point, examples:
 * docker ([https://www.docker.com]) Why is it there?
@@ -25,46 +25,46 @@ Scenarios:
 Debugging
 * How do you develop the code?
 * How do you debug?
-** Is there a developer mode for debugging?
-** IDE?
+    - Is there a developer mode for debugging?
+    - IDE?
 * logging 
 * svn root checkout results in permissions problems
 
 The FAB documentation: 
 * To compile whatever remotely... ("this works only with hfst")
-** so, why?
+    - so, why?
 
 Functions:
 * There are many functions, most are not in use?
 * Speed:
-** Ms time logging from pressing ENTER to getting the answer 
+    - Ms time logging from pressing ENTER to getting the answer 
    (with intermediate timepoints, in order to see the time leak)
 
-!!!Top-down
+# Top-down
 
 We actually need two top-down
 
-# static
-## this is the system, top-down
-# dynamic   
-## this is the (process, lookup) as the lemma lookup goes along
-## Conceptually, the dynamics is clear, but it must be __linked__ to
+1. static
+    1. this is the system, top-down
+1. dynamic   
+    1. this is the (process, lookup) as the lemma lookup goes along
+    1. Conceptually, the dynamics is clear, but it must be **linked** to
    the concrete files
 
-!!!Comments
+# Comments
 
-The ''docker'' was there because Ryan needed it for experimenting on another 
+The *docker* was there because Ryan needed it for experimenting on another 
 place than the production environment. It is not needed for production.
 
-__TODO:__ Put explanation in 
-[the readme file|https://gtsvn.uit.no/langtech/trunk/apps/dicts/nds/src/README.md] .
+**TODO:** Put explanation in 
+[the readme file](https://gtsvn.uit.no/langtech/trunk/apps/dicts/nds/src/README.md) .
 
-!!!Flask
+# Flask
 
-Flask is the django of NDS. The xml database = __the dictionary__.
+Flask is the django of NDS. The xml database = **the dictionary**.
 Oahpa uses a relational database, but flask uses xml for the dictionary.
 
-!!!Adding dictionaries
+# Adding dictionaries
 
 It was not clear what was required and what was not.
 
@@ -73,41 +73,41 @@ We need a separate documentation for NDS without morphology
 
 Feature: Export to paper-readable format
 
-!!!User behaviour
+# User behaviour
 
 * sudo su neahtta \\ 
   (there might a problem with several neahtta users at the same time,
   the answer message being "profile closed" or something)
 * ssh neahtta@gtweb.uit.no
 
-!!!Advanced features
+# Advanced features
 
-!! nobsme hverandre
+##  nobsme hverandre
 
 What it does is great, how it is done is hmm not. needs documentation
 
-!! Reference to (sic.) references
+##  Reference to (sic.) references
 
 Adding new lexicon attributes to the xml template:
 
-# add to xml and dtd ok (but NDS does not read the dtd, only the xml)
-# What matters is the jinja xml template,  cf. (jinja use is documented for paradigms, but not for HTML templates for entries)
+1. add to xml and dtd ok (but NDS does not read the dtd, only the xml)
+1. What matters is the jinja xml template,  cf. (jinja use is documented for paradigms, but not for HTML templates for entries)
   [/dicts/nds/NDSLinguisticSettings.html]
 
-!!!Development
+# Development
 
 [/dicts/nds/NDSDeveloping.html]
 
-Using __virtualenv__ for building a development session
+Using **virtualenv** for building a development session
 
 "you may start work on NDS"
 
 means:
 
 Now we set up an environment so that you may run python here, and
-__run NDS__ here.
+**run NDS** here.
 
-{{{
+```
 (env) tf-hsl-m0016:neahtta ttr000$     fab itwewina runserver
 [localhost] Executing task 'itwewina'
 
@@ -117,8 +117,8 @@ Warning: Unable to load SSH config file '/Users/ttr000/.ssh/config'
 
 Warning: Unable to load SSH config file '/Users/ttr000/.ssh/config'
 
-** Production config not found, using development (*.in)
-** Go.
+    - Production config not found, using development (*.in)
+    - Go.
 [localhost] local: NDS_CONFIG=configs/itwewina.config.yaml.in python neahtta.py dev
 * Missing dependency in $PATH: uglifyjs
   Install the executable, check that it is available in $PATH, 
@@ -128,12 +128,12 @@ Done.
 (env) tf-hsl-m0016:neahtta ttr000$ pwd
 /Users/ttr000/main/apps/dicts/nds/src/neahtta
 (env) tf-hsl-m0016:neahtta ttr000$
-}}}
+```
 
-{{{ izh: mees
+``` izh: mees
 
 Traceback (most recent call last):
-  File "/Users/pyry/gtsvn/apps/dicts/nds/src/env/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+  File "/Users/pyry/gtsvn/apps/dicts/nds/src/env/lib/python2.7/site-packages/flask/app.py", line 1836, in **call**
     return self.wsgi_app(environ, start_response)
   File "/Users/pyry/gtsvn/apps/dicts/nds/src/env/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
     response = self.make_response(self.handle_exception(e))
@@ -158,16 +158,16 @@ Traceback (most recent call last):
   File "/Users/pyry/gtsvn/apps/dicts/nds/src/neahtta/views/search.py", line 704, in search_to_context
     current_app.lexicon_templates.render_template(g._from, template, **tplkwargs)
   File "/Users/pyry/gtsvn/apps/dicts/nds/src/neahtta/entry_templates.py", line 287, in render_template
-    'message': e.__class__(msg),
-TypeError: __init__() takes exactly 4 arguments (2 given)
+    'message': e.**class**(msg),
+TypeError: **init**() takes exactly 4 arguments (2 given)
 
-}}}
+```
 
-!!!Reshaping the layout
+# Reshaping the layout
 
-!!!One layout for all, or different layaouts?
+# One layout for all, or different layaouts?
 
-!!! bookmarklet plugin debugging 
+#  bookmarklet plugin debugging 
 
-# {{file://}} vs. {{http://}} & {{https://}} issues
-# double popup on ruijan kaiku 
+1. `file://` vs. `http://` & `https://` issues
+1. double popup on ruijan kaiku 

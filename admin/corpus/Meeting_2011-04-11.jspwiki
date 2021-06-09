@@ -1,32 +1,28 @@
-
-!!!Corpus meeting 11.4.2011
+# Corpus meeting 11.4.2011
 
 Present: Berit Merete, Børre, Ciprian, Tomi, Trond
 
-!!!Agenda
+# Agenda
 
 * Algorithm for dealing with scanning errors
 * Setningsparallellisering
 * Analyserte korpora på xserve
 
-__Goal: Functioning corpus__
+**Goal: Functioning corpus**
 
-
-!!!Algorithm for dealing with scanning errors
+# Algorithm for dealing with scanning errors
 
 The process has not ben run, and we thus do not have 
 new results.
 
 Run the same routine for nob.
 
-
 Missing in nob:
 
-* vŽre, and all æøå: {{converted/nob/admin/guovda/1.doc.xml}}
+* vŽre, and all æøå: `converted/nob/admin/guovda/1.doc.xml`
 * Note: The document is marked xml:lang="kal"
 
-
-{{{
+```
 /home/apache_corpus/freecorpus/converted/sme/admin/depts/other_files
 8.9000 26196 2334 STM200420050011000SE_PDFS.pdf.xml
 Rá      Rá      +?
@@ -120,33 +116,31 @@ laulukirjale    laulukirjale    +?
 17.0800 158 27 samediggi-article-2738.html.xml
 16.3900 61 10 samediggi-article-505.html.xml
 16.0000 25 4 samediggi-article-2485.html.xml
-}}}
-
+```
 
 Tomi to look into this, and discuss with Børre on unclear points.
 
-__TODO__
-* Fix __large parts__ of this problem. (__Tomi__)
-** Challenge: How to fix.
-* Write a report late this week (__Tomi__)
+**TODO**
+* Fix **large parts** of this problem. (**Tomi**)
+    - Challenge: How to fix.
+* Write a report late this week (**Tomi**)
 
-
-__Ultimate goal:__ 
+**Ultimate goal:** 
 * fix the file conversion, or
 * move the file to e.g. the gold corpus for scanning errors or whatever, or
 * remove the file altogether
 
-{{{
+```
 [dstroke]
 [dstr juoga
 oke]
-}}}
+```
 
-!!Error reports
+## Error reports
 
-!Scanning errors
+### Scanning errors
 
-{{{
+```
 I found this error yesterday:
 <tuv lang="sme-NO">
             <seg>Sámediggi gávnnaha 1unddo1ažžan ahte fy1kagielda váldá oasi giellanjuolggadusaid ovttastahttimii ja di1álašvuodaid 1 áhčimiidda gielddain mat gu11et doaibmaguv1ui Finnmárkku fylkkas .</seg>
@@ -155,6 +149,7 @@ And this:
  <tuv lang="sme-NO">
             <seg>Dan lassin lea bálkkašumi vuoiti vuođđudan alccesis duodjefitnodaga , ja lea máhtolašvuođainis ja hutkái ¬vuođainis ožžon alla árvvu duodjeealáhusas .</seg>
          </tuv>
+
            
 And this - đ is missing:
 <tuv lang="sme-NO">
@@ -164,64 +159,60 @@ And this - đ is missing:
 Same error - đ is missing: 
 <tuv lang="sme-NO">
             <seg>Orru ahte dán gealdagasas dat lea sámi kultuvra vuoittahallan ja ahte eiseválddiid dáiddaáŋgiruššamat vuo uduvvojit minoritehtakultuvrra siskilkeahtesvuhtii .</seg>
-}}}
+```
 
 Son !! boahtán (!! pro ii)
 
-
-!!!Corpus conversion
+# Corpus conversion
 
 Status quo:
 * Works on Linux
 * Mac:
-** Has problems with perl version xyz
+    - Has problems with perl version xyz
 
-
-!!WARNING - NO MATCH
+## WARNING - NO MATCH
 
 This message shows up when converting orig, and the issue is still open.
 
-!!!Sentence alignment
+# Sentence alignment
 
-!!New program
+## New program
 
 Trond has talked to Knut Hofland. We will get a new TCA2 version.
 
-__TODO__
+**TODO**
 
 * Put the new version of TCA2 in svn (?, make it accessible) 
-  and document the installation (__Børre + friends__)
-* Update our general TCA2 documentation if the old is obsolete (__all__)
+  and document the installation (**Børre + friends**)
+* Update our general TCA2 documentation if the old is obsolete (**all**)
 
-
-!!Anchor list
+## Anchor list
 
 Trond had made an anchor.fst, which unfortunately was flawed. A new one
 is finished and ok, but not tested or checked in. The question now is
 whether to take nob or sme as a starting point.
 
-__TODO__
+**TODO**
 
-* Make a nob-based new anchor list. (__Trond__)
-* Thereafter, translate to sme (__Biret Merete__)
-* Divide the anchor list in two: a. general, b. topic-specific. (__Trond, Berit Merete__)
+* Make a nob-based new anchor list. (**Trond**)
+* Thereafter, translate to sme (**Biret Merete**)
+* Divide the anchor list in two: a. general, b. topic-specific. (**Trond, Berit Merete**)
 
-
-
-!!!Analysed corpara on xserve
+# Analysed corpara on xserve
 
 Has anyone checked the output? No.
 
 The cronjob did this
 
-__TODO__
+**TODO**
 
-Make sure we have a fresh version on thursday. (__Børre__)
+Make sure we have a fresh version on thursday. (**Børre**)
+
  
 
 Error report, have a look:
 
-{{{
+```
 tmp/STM200720080028000DDDPDFS.pdf.log:Conversion failed: Couldn't convert /Users/cipriangerstenberger/extra_gtsvn/new_fad/orig/nob/admin/depts/other_files/STM200720080028000DDDPDFS.pdf to intermediate xml format
 tmp/STM200820090039000DDDPDFS.pdf.log:Conversion failed: Couldn't convert /Users/cipriangerstenberger/extra_gtsvn/new_fad/orig/nob/admin/depts/other_files/STM200820090039000DDDPDFS.pdf to intermediate xml format
 tmp/STM200820090043000DDDPDFS.pdf.log:Conversion failed: Wasn't able to categorize the language(s) inside the text /Users/cipriangerstenberger/extra_gtsvn/new_fad/orig/nob/admin/depts/other_files/STM200820090043000DDDPDFS.pdf
@@ -229,7 +220,6 @@ tmp/Samiske_tall_forteller_3_NO.pdf.log:Conversion failed: Wasn't able to catego
 tmp/Samiske_tall_forteller_II_Norsk.pdf.log:Conversion failed: Wasn't able to categorize the language(s) inside the text /Users/cipriangerstenberger/extra_gtsvn/new_fad/orig/nob/admin/depts/other_files/Samiske_tall_forteller_II_Norsk.pdf
 tmp/retningslinjerforverneplanarbeid_sametinget.pdf.log:Conversion failed: Wasn't able to categorize the language(s) inside the text /Users/cipriangerstenberger/extra_gtsvn/new_fad/orig/nob/admin/depts/other_files/retningslinjerforverneplanarbeid_sametinget.pdf
 
-
 drwxr-xr-x    4 cipriangerstenberger  staff   136  7 apr 22:54 orig
 drwxr-xr-x  201 cipriangerstenberger  staff  6834 11 apr 13:29 tmp
-}}}
+```

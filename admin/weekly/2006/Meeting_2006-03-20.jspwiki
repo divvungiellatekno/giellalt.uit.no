@@ -1,143 +1,143 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 13.03.2006
 * Time: 09.30 Norw. time
 * Place: Wherever we are :-)
 * Tools: iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 09:40.
 
-Present: __Børre, Linda (from topic 7 onwards), Maaren, Saara, Sjur, Thomas,__
-         __Tomi, Trond__
+Present: **Børre, Linda (from topic 7 onwards), Maaren, Saara, Sjur, Thomas,**
+         **Tomi, Trond**
 
-Absent: __none__
+Absent: **none**
 
-Main secretary: __Tomi__
+Main secretary: **Tomi**
 
 Agenda accepted as is.
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-!! Børre
+##  Børre
 * send out contracts with accompanying letter
 * Gather public texts, preferrably also parallel ones
-**  http://girji.info/skolehist done …
+    -  http://girji.info/skolehist done …
 * Continue converting text from input format to our xml
-**  Done
+    -  Done
 * convert nob and nno bible texts to be used as part of a parallel corpus
-**  Waiting for paratext versions
+    -  Waiting for paratext versions
 * review the paratext2xml converter
-**  Waiting for paratext versions of nob and nny
+    -  Waiting for paratext versions of nob and nny
 * convert smj NT to paratext
-**  Waiting for paratext versions of nob and nny
+    -  Waiting for paratext versions of nob and nny
 * Call Ove Sæth
-**  Not done
+    -  Not done
 * Move complex name lexicon issue to bugzilla
-**  Not done
+    -  Not done
 * Ask KIO Grafisk to make a test Quark document based on a Word document from us
-**  Iđut and KIO Grafisk won't give access to their Quark files, so they don't 
+    -  Iđut and KIO Grafisk won't give access to their Quark files, so they don't 
     see the need to send it.
 * Send out letters to the Iđut authors
-**  Åge Persen will collect an address list.
+    -  Åge Persen will collect an address list.
 * Add corpus security re G5 syncing as an issue to Bugzilla
-**  Not done
-* set up anon. read-only cvs with __Sjur__
-** done
+    -  Not done
+* set up anon. read-only cvs with **Sjur**
+    - done
 * write  docu for how to apply for a corpus user account (forms, recipients,
   etc)
-**  Not done
-* remove old corpus files from gt/sme/corp/ after __Trond__ has cleaned it
-**  Not done
+    -  Not done
+* remove old corpus files from gt/sme/corp/ after **Trond** has cleaned it
+    -  Not done
 * integrate generated corpus repository documents in the Forrest site
-**  Not daon
-* give __Saara__ the needed details regarding corpus dtd location on our public
+    -  Not daon
+* give **Saara** the needed details regarding corpus dtd location on our public
   server
-**  Not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    -  Not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * work with the top-ten list
 **done
 * translate stopword list from Norw. to smj, fin (aligner, stopword list from
-  __Trond__)
+  **Trond**)
 **?????? (ask Trond)
 
-!! Saara
+##  Saara
 * Extract corpus meta info into a standard xml format; set up cron task for the
   extraction
-** Done.
+    - Done.
 * Create a parallel corpora of the new testaments.
 * Implement validation of xml corpus against the dtd.
-** Done, not installed.
+    - Done, not installed.
 * Create a group for corpus users.
-** learned how to create groups and added one: corpus.
+    - learned how to create groups and added one: corpus.
 * Finish corpus dtd documentation, dtd location and permlink reference
-** The dtd-location still open.
+    - The dtd-location still open.
 * Update convert2xml.pl to handle two gt-trees (gtfree and gtbound)
-** Implemented, some questions left before installation.
+    - Implemented, some questions left before installation.
 * add more texts to the graphical corpus interface.
-** Not done. emailed Lars some questions.
+    - Not done. emailed Lars some questions.
 * grammatical searchability in the graphical corpus interface
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 * Follow up the lawyer treatment of the contracts
-** not done
-* Lule Sámi twol problems, with __Thomas__ and __Trond__
-** not done
-* project planning with __Trond__, continued
-** not done
+    - not done
+* Lule Sámi twol problems, with **Thomas** and **Trond**
+    - not done
+* project planning with **Trond**, continued
+    - not done
 * Follow up on place names from Norge Digitalt
-** not done
+    - not done
 * Evaluate SFST as speller (and analyzer) lexicon
-** not done
+    - not done
 * write a background document on the corpus contracts
-** not done
+    - not done
 * public tender:
-** answer requests/questions
-*** no questions this week
-** set up anon. read-only cvs with __Børre__
-*** done (well, I really did nothing)
-** corpus repo access
-*** still open, but we'll let them have only the free part for now; further
+    - answer requests/questions
+        - no questions this week
+    - set up anon. read-only cvs with **Børre**
+        - done (well, I really did nothing)
+    - corpus repo access
+        - still open, but we'll let them have only the free part for now; further
     discussions later
 * conversion of corpus repo summary xml to Forrest xml
-** not done
-* smj G3 issue with __Thomas__ and __Trond__
-** not done
-* sme G3 issue with __Thomas__ and __Trond__
-** not done
-* call EDD/__Christian Emil Ore__ about national place name lexicon
-** not done
+    - not done
+* smj G3 issue with **Thomas** and **Trond**
+    - not done
+* sme G3 issue with **Thomas** and **Trond**
+    - not done
+* call EDD/**Christian Emil Ore** about national place name lexicon
+    - not done
 * risten.no/proper noun lexicon development:
-** refactor code
-*** did some small adjustments - most of the work waiting for the task below
-** implement inheritance/collection overriding for xsl/css/xquery using sitemaps
-*** first version of this system implemented and working for the initial query
+    - refactor code
+        - did some small adjustments - most of the work waiting for the task below
+    - implement inheritance/collection overriding for xsl/css/xquery using sitemaps
+        - first version of this system implemented and working for the initial query
     page for editors (select a collection - the query page that follows will now
     be generated from the most specific version found for the requested
     collection
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** no bugs fixed last week:-(
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - no bugs fixed last week:-(
 
-!! Thomas
+##  Thomas
 * add incoming Lule sámi words
 **added and still adding
 * include the SGL decisions in our normativity document
@@ -147,103 +147,103 @@ Agenda accepted as is.
 **done
 * work on North Sámi compounding and derivation
 **nothing
-* smj G3 issue with __Sjur__ and __Trond__
+* smj G3 issue with **Sjur** and **Trond**
 **nothing
-* sme G3 issue with __Sjur__ and __Trond__
+* sme G3 issue with **Sjur** and **Trond**
 **nothing
-* translate stopword list into smj (aligner; list from __Trond__)
+* translate stopword list into smj (aligner; list from **Trond**)
 **not done
 
-!! Tomi
+##  Tomi
 * move aspell UTF-8 suffix bug to Bugzilla
-** not done
+    - not done
 * corpus infrastructure:
-** dtd location (both public and internal)
-*** not done
+    - dtd location (both public and internal)
+        - not done
 * Document aspell infrastructure: finish doc/proof/spelling/X-spell/aspell.xml
   (it's almost done, but there are a couple of loose ends)
-** not done
+    - not done
 * new proper name lexicon
-** discuss the new lexicon format and other issues in the newsgroup
-** implement data synchronisation of proper nouns between risten.no and CVS
-*** looked briefly
-** XQuery refactoring and code development for our proper noun editor
-*** helped Sjur with this one
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - discuss the new lexicon format and other issues in the newsgroup
+    - implement data synchronisation of proper nouns between risten.no and CVS
+        - looked briefly
+    - XQuery refactoring and code development for our proper noun editor
+        - helped Sjur with this one
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
-*** not done
+        - not done
 * read aligner docu, install, provide feedback
-** not done
+    - not done
 * implement oslolaš issue for smj
-** done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not done
+    - done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - not done
 
-!! Trond
+##  Trond
 * Clean up the old corp/ directory.
-** Done
+    - Done
 * Work on corpus texts with Børre for parallel NT texts
-** Not much, still awaiting response from Bible societies.
+    - Not much, still awaiting response from Bible societies.
 * Contact the Finnish and Swedish Bible societies to get Bible texts.
-** Asked my contacts in Norway to get addresses, still no response.
+    - Asked my contacts in Norway to get addresses, still no response.
 * read aligner docu, install, provide feedback
-** Not done.
+    - Not done.
 * Ask for a Quark test file from his sister
-** Done, received, also got some from Michael Everson.
+    - Done, received, also got some from Michael Everson.
 * translate stopword list into nno?
-** Not done anything with the aligner issue.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
-** Not done.
+    - Not done anything with the aligner issue.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
+    - Not done.
 
-!!!3. Documentation
+# 3. Documentation
 
-!!Changes and updates because of the Divvun public tender
+## Changes and updates because of the Divvun public tender
 
 TODO:
-* document anonymous, read-only access to our cvs repo (__Børre__)
-** done
+* document anonymous, read-only access to our cvs repo (**Børre**)
+    - done
 * review: Sjur, Saara, by Wednesday morning
 * probably a new main section (sub-tab?) on external access to all our resources
 * documentation on how to apply for a user account for the corpus repo
-  (__Børre__)
-**  Not done
-* we need to finish the corpus dtd documentation (__Saara__)
+  (**Børre**)
+    -  Not done
+* we need to finish the corpus dtd documentation (**Saara**)
 
 Permlink location for all our dtd's (filename will vary, of course):
-{{{
+```
 http://giellatekno.uit.no/dtd/corpus.dtd
-}}}
-This corresponds to the dir {{~/gt/public_html/dtd/}} on our public web server.
+```
+This corresponds to the dir `~/gt/public_html/dtd/` on our public web server.
 The DTD's has to be manually copied to this location, but since they don't
 change that often, that shouldn't be a big problem.
 
 TODO:
-* copy updated DTD's to the permlink location (__Børre__ or __Saara__)
+* copy updated DTD's to the permlink location (**Børre** or **Saara**)
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
-!!Collecting
+## Collecting
 
-See a [previous meeting memo|Meeting_2006-01-16] for what's to be done.
+See a [previous meeting memo](Meeting_2006-01-16) for what's to be done.
 
-TODO: Send out the rest of the letters (__Børre__)
+TODO: Send out the rest of the letters (**Børre**)
 
-!!Odin
+## Odin
 
-Waiting for __Sæth__ to discuss with colleagues about how to implement the
+Waiting for **Sæth** to discuss with colleagues about how to implement the
 cooperation, and return to us.
 
 TODO:
-* call Sæth (__Børre__)
-** Not done.
+* call Sæth (**Børre**)
+    - Not done.
 
-!!Olavi Korhonen's Lule Sámi dictionary.
+## Olavi Korhonen's Lule Sámi dictionary.
 
 Korhonen and Oahpadusguovdásj have a shared copyright to the dictionary.
 They are both very positive.
 
-!! KIO Grafisk and the Iđut books
+##  KIO Grafisk and the Iđut books
 
 Iđut and KIO Grafisk won't give access to their Quark files, due to copyright
 issues with fonts and pictures. It is a principle for them.
@@ -260,95 +260,94 @@ will display with other fonts and will look bad. A low-quality image of a
 picture will appear when you import one into Quark, but the main picture that
 the printer uses is in a separate file.
 
-__TODO__:
-* __Børre__ will send letters to the authors.
+**TODO**:
+* **Børre** will send letters to the authors.
 * send an e-mail explaining the issues as we see them, to Iđut and KIO Grafisk,
   and with a copy to the head of the project board (Anne Britt). This e-mail
   will be our last effort to try to get the Iđut material in its corrected form.
-  (__Sjur__ and __Børre__)
+  (**Sjur** and **Børre**)
 
-!!Bible texts
+## Bible texts
 
 TODO:
-* review paratext2xml converter (__Saara__)
-* convert smj NT to paratext (__Børre__)
-* ask to get fin and swe NT and OT in __paratext__ format. (__Trond__)
-**  Still not done. __Trond__ has contacted Bibelselskapet for a new sme
+* review paratext2xml converter (**Saara**)
+* convert smj NT to paratext (**Børre**)
+* ask to get fin and swe NT and OT in **paratext** format. (**Trond**)
+    -  Still not done. **Trond** has contacted Bibelselskapet for a new sme
     version, and the issue is under discussion.
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 TODO in transferring the old gt/sme/corp files to the new corpus repo:
 * for the biggest top ten (or so) the orig. should be located and copied to the
-  new corpus repo (__Trond__)
-** done
-* then these files should be removed from gt/sme/corp/ (__Trond/Børre__)
-** done
+  new corpus repo (**Trond**)
+    - done
+* then these files should be removed from gt/sme/corp/ (**Trond/Børre**)
+    - done
 * all small files could just be forgotten/ignored
-* make sure there's nothing left with a copyright attached to it (__Trond__)
-** Trond will go a second round
+* make sure there's nothing left with a copyright attached to it (**Trond**)
+    - Trond will go a second round
 
 TODO for access control:
 * Access control to corpus repo resolved through Unix groups: one group for
   corpus maintainers with write access, and another for corpus users, with
   read-only access. Still not done.
-** __Saara__ has asked for a *nix group - use it when created
-*** done
-
+    - **Saara** has asked for a *nix group - use it when created
+        - done
 
 Further discussion about corpus analysis and computer use:
 
 * we need to develop strong enough security routines for the G5 to fulfill our
   obligations towards the text licensers
-**  TODO: __Børre__ to move this to bugzilla
+    -  TODO: **Børre** to move this to bugzilla
 
 TODO dtd usage and documentation:
 * corpus dtd documentation:
-** structure, content/model and location of the dtd (location =
+    - structure, content/model and location of the dtd (location =
    permlink) http://giellatekno.uit.no/dtd/corpus.dtd
-   TODO: __Saara__ to write and finish the docu, also check the dtd link
-*** see above under documentation for details.
+   TODO: **Saara** to write and finish the docu, also check the dtd link
+        - see above under documentation for details.
 * add xml validation against our dtd to the corpus conversion process
-  (__Saara__)
+  (**Saara**)
 
-!!HTML conversion problem
+## HTML conversion problem
 
 We need to extract only the table from input like below, since our DTD does not
 allow tables to be nested inside paragraphs. Cf newsgroup message from
-__Saara__.
+**Saara**.
 
-{{{
+```
 <p>
   <table>
   ...
   </table>
 </p>
-}}}
+```
 
 The solution is a simple XSL template that will only match the relevant
 structures, and then "eat" the paragraphs before continue processing of the
 table:
-{{{
+```
   <xsl:template match="p[table]">
     <xsl:apply-templates select="./table">
   </xsl:template>
-}}}
+```
 
-!!Correction tags?
+## Correction tags?
 
 There are many scenarios where information about spelling and other errors is
 useful, especially if combined with the correct string. As a simple way of
-marking up such info, __Sjur__ proposed the following in the newsgroup:
-{{{
+marking up such info, **Sjur** proposed the following in the newsgroup:
+```
 ... this is <error correct="text">tekst</error> with an error...
-}}}
+```
 No problem in adding it to the DTD, together with corresponding info in the
 header/meta part. That info should be a single element stating that/whether it
 was manually edited for corrections. Absence of this element is the same as the
-document __NOT__ being edited.
+document **NOT** being edited.
 
 TODO:
-* update the DTD (__Saara__)
+* update the DTD (**Saara**)
 
 OPEN ISSUES:
 * since this is manual editing, we break the automatic regeneration/reconversion
@@ -356,103 +355,104 @@ OPEN ISSUES:
   existing version before re-conversion, and apply them again after the
   re-conversion, or we have to find another way of preserving them across
   conversion generations. Anyway, this is now left as an open issue, and added
-  to Bugzilla (__Sjur__)
+  to Bugzilla (**Sjur**)
 * the proposed markup is too simplistic for describing more complex error
   patterns, e.g. when two different errors overlap or intertwine. One could
   allow nested error markup to cover cases with a syntactic error surrounding a
   spelling error (one error tag for the syntax error, another inside for the
   spelling error. To be further discussed in the newsgroup.
 
-!!Changes and updates because of the Divvun public tender
+## Changes and updates because of the Divvun public tender
 
 User account admin and infra: see [previous
   memo|/admin/weekly/2006/Meeting_2006-03-06.html].
 
-TODO: see above under ''Documentation.''
+TODO: see above under *Documentation.*
 
 Automatic build of the content of our corpus repo: also see [previous
   memo|/admin/weekly/2006/Meeting_2006-03-06.html].
 
 TODO:
 * extract meta info into a compact xml document, the xml should be stored in the
-  Forrest docu tree; set up cron task for the extraction (__Saara__)
-** done
+  Forrest docu tree; set up cron task for the extraction (**Saara**)
+    - done
 * discuss and decide upon the structure of the generated xml above (Sjur and
   Saara, news)
-** done
-* convert from that xml to Forrest document format (__Sjur__)
-** looked at the generated file, nothing more yet
+    - done
+* convert from that xml to Forrest document format (**Sjur**)
+    - looked at the generated file, nothing more yet
 * integrate the final Forrest documents into Forrest, and make sure it gets
-  published (__Børre__)
-** waiting for the above
+  published (**Børre**)
+    - waiting for the above
 
-!!Free and non-free texts
+## Free and non-free texts
 
 More info in the [previous meeting
 memo.|/admin/weekly/2006/Meeting_2006-03-13.html]
 
 TODO:
-* update scripts to handle this dichotomy. (__Saara__)
-** almost finished
+* update scripts to handle this dichotomy. (**Saara**)
+    - almost finished
 
-!! More texts to the graphical corpus interface:
+##  More texts to the graphical corpus interface:
 
-* We would like to have more than the NT in the graphical interface (__Saara__)
-* We would like to have grammatical searchability, not only POS. (__Saara__,
-  __Trond__)
-* This presupposes a discussion with Oslo. (__Trond__ to start discussion 
-  and __Trond__ and __Saara__  to continue
+* We would like to have more than the NT in the graphical interface (**Saara**)
+* We would like to have grammatical searchability, not only POS. (**Saara**,
+  **Trond**)
+* This presupposes a discussion with Oslo. (**Trond** to start discussion 
+  and **Trond** and **Saara**  to continue
 
 * For Lule Sámi: We would like to have a parallel corpus interface with NT
-  (text only). This presupposes better quality texts (__Trond, Børre__)
-** Better Lule NT text still not made.
+  (text only). This presupposes better quality texts (**Trond, Børre**)
+    - Better Lule NT text still not made.
 
-!!!6. Infrastructure
+# 6. Infrastructure
 
 We need to set up anonymous, read-only access to our cvs repo as outlined by our
 friend in Skolelinux.
 
 Howto/who:
 * what do we need?
-** web interface? maybe, not required
-** command line check-out? yes (__Roy Dragseth__/__Børre__)
-** need to be able to restrict anonymous cvs to only specific modules
-   (__Roy Dragseth__/__Børre__)
-*** done
-* testing needed: (__Saara, Sjur__)
+    - web interface? maybe, not required
+    - command line check-out? yes (**Roy Dragseth**/**Børre**)
+    - need to be able to restrict anonymous cvs to only specific modules
+   (**Roy Dragseth**/**Børre**)
+        - done
+* testing needed: (**Saara, Sjur**)
 
-!!Aligner
+## Aligner
 
 TODO:
-* Read documentation and try out, give feedback to Bergen. (__Trond__,
-  __Saara__, __Tomi__)
-** __Trond__ to send relevant documents to __Tomi__.
-* Translate the stopword list __anchor-eng-nor.txt__ into sme (and fin?) 
-(__Tomi__), and into smj (__Thomas__ or __Anders Urheim__) (and nno? __Trond__).
+* Read documentation and try out, give feedback to Bergen. (**Trond**,
+  **Saara**, **Tomi**)
+    - **Trond** to send relevant documents to **Tomi**.
+* Translate the stopword list **anchor-eng-nor.txt** into sme (and fin?) 
+(**Tomi**), and into smj (**Thomas** or **Anders Urheim**) (and nno? **Trond**).
 Note that the format is "lang1 / lang2", and that the number of lines should be
 kept in order to make it possible to move from one language to the next.
-** __Saara__ to install the aligner, everyone to read the documentation on
+    - **Saara** to install the aligner, everyone to read the documentation on
    Tuesday and Wednesday, and then we have a meeting on it later this week.
 
-!!Language recogniser
+## Language recogniser
 
 We don't have enough Finnish text. We will look at the Helsinki corpus
-(__Saara__).
+(**Saara**).
 * This is documented in bug database.
- 
-!!!7. Linguistics
 
-!!North Sámi
+ 
+# 7. Linguistics
+
+## North Sámi
 
 TODO:
-* document all past decisions in our normativity document (__Thomas__)
+* document all past decisions in our normativity document (**Thomas**)
 **done
-* decide on a semantic feature system for nouns (__Linda__).
+* decide on a semantic feature system for nouns (**Linda**).
   This is needed for the sme locative/comitative issue. We looked at the feature
   system made by Eckhard Bick - Eckhard Bick: "The parsing system "palavras"",
   p.372ff. The top of the feature tree looks like the following:
 
-{{{
+```
                                  Concrete
                    +/                             \-
             Animate                                 Verbal Content
@@ -461,11 +461,11 @@ TODO:
      +/    \-      +/      \-               +/     \-            +/    \-
 #humans# Moving #vehicles# Movable    Perfective Perfective #features# Count 
 .......
-}}}
+```
 
 TODO:
-* Work with semantically based sets (__Trond, Linda__)
-* Return to the infrastructure issue (__Trond__)
+* Work with semantically based sets (**Trond, Linda**)
+* Return to the infrastructure issue (**Trond**)
 * A full semantic encoding of the lexicon is a future project, outside the
   scope of both divvun and disamb, but the ground work for such a project will
   be laid now.
@@ -484,67 +484,67 @@ Problem:
 10500 Sur 
 
 * Solution A:
-** Heavily retag the lexicon: London also as Sur (Jack)
+    - Heavily retag the lexicon: London also as Sur (Jack)
 
 * Solution B: Do not use (new..) double tags.
-** Plc being the default tag for Plc/Sur ("if it can be Plc, it is Plc)
-** Sur being the tag of things that cannot be places (Andersen)
-** Then cg rules turning Plc into &Plc and &Sur, and Sur into &Sur.
-** Then rules for interpreting London, Trosterud, etc. as &Sur.
-** Then a final rule for removing ambiguous ones (remove Plc &Sur strings).
+    - Plc being the default tag for Plc/Sur ("if it can be Plc, it is Plc)
+    - Sur being the tag of things that cannot be places (Andersen)
+    - Then cg rules turning Plc into &Plc and &Sur, and Sur into &Sur.
+    - Then rules for interpreting London, Trosterud, etc. as &Sur.
+    - Then a final rule for removing ambiguous ones (remove Plc &Sur strings).
 
 * Solution C compromise:
-** Real placenames Menešjávri
-** Convertible placenames (today's double) England, Bonn, (default)
-** Real surnames Andersen, Johansson
+    - Real placenames Menešjávri
+    - Convertible placenames (today's double) England, Bonn, (default)
+    - Real surnames Andersen, Johansson
 
-TODO (__Trond__):
-# Discussion testing
-# infrastructure
-# semiatomatic retagging
+TODO (**Trond**):
+1. Discussion testing
+1. infrastructure
+1. semiatomatic retagging
 
-!!Lule Sámi
+## Lule Sámi
 
 TODO:
-* add the rest of the inc- words (__Thomas__)
+* add the rest of the inc- words (**Thomas**)
 **still working on it, should finish this week
-* name morphology (__Thomas__)
+* name morphology (**Thomas**)
 **handed Tomi list
-* oslolaš for smj (__Tomi__)
-** done
+* oslolaš for smj (**Tomi**)
+    - done
 * translate Northern Sámi lists and sets to Lule Sámi
-** __Linda, Trond__, with help from mother tongue speakers (__Thomas__, others).
+    - **Linda, Trond**, with help from mother tongue speakers (**Thomas**, others).
    Work in progress.
 
 Trond will go to Drag tomorrow. Issues for the trip? No unobvious ones.
 
-!!!8. Name lexicon infrastructure
+# 8. Name lexicon infrastructure
 
-!!Complex names
+## Complex names
 
 * make sure xml2lexc can handle complex names in ways compatible with our
-  present tool chain (=reconstruct the lexc format we have now) (__Tomi__)
-** the resulting file format should be identical to our present prop-name
+  present tool chain (=reconstruct the lexc format we have now) (**Tomi**)
+    - the resulting file format should be identical to our present prop-name
    file (=lexc), that can then be converted to our new xml format using the same
-   script as for the regular names (__Tomi__ or __Saara__, but only when the
+   script as for the regular names (**Tomi** or **Saara**, but only when the
    technical details are settled)
 
 TODO:
-* Move this issue to bugzilla (__Børre__)
+* Move this issue to bugzilla (**Børre**)
 
-!!XML format
+## XML format
 
 TODO on eXist as editor:
-# refactor and prepare risten.no for multiple collections:
-## develop the Cocoon sitemap to delegate requests to the proper folder level,
-   such that the most specific code is always used (__Sjur__)
-### Progressing well
-## refactor the code into more and more specific components according to our
-   folder hierarchy (__Tomi__)
-# develop the needed XQueries and interface (__Sjur, Tomi__)
-# data synchronisation between risten.no and the cvs repo (__Tomi__)
-## done some, but it didn't work out, will need to start on a different trail
-# test whether eXist as editor is actually working well (__linguists__)
+1. refactor and prepare risten.no for multiple collections:
+    1. develop the Cocoon sitemap to delegate requests to the proper folder level,
+   such that the most specific code is always used (**Sjur**)
+        1. Progressing well
+    1. refactor the code into more and more specific components according to our
+   folder hierarchy (**Tomi**)
+1. develop the needed XQueries and interface (**Sjur, Tomi**)
+1. data synchronisation between risten.no and the cvs repo (**Tomi**)
+    1. done some, but it didn't work out, will need to start on a different trail
+1. test whether eXist as editor is actually working well (**linguists**)
 
 Data synchronisation task list/specification:
 
@@ -552,27 +552,25 @@ Data synchronisation task list/specification:
 * there should be no diffs on whitespace and sorting order (to ensure we get
   only substantial diffs, and no noise)
 * the prop name update cycle should something like:
-** dump the xml from eXist (in proper sorting order)
-** check whether there are diffs against cvs; continue only if there are
-** update from cvs
-** error check: are there conflicts? if yes, send report to <somebody>
-** are there still diffs? if yes, continue:
-** check in/commit w. generated comment
-** error check: is the document valid and conformant xml? if no, stop and send a
+    - dump the xml from eXist (in proper sorting order)
+    - check whether there are diffs against cvs; continue only if there are
+    - update from cvs
+    - error check: are there conflicts? if yes, send report to <somebody>
+    - are there still diffs? if yes, continue:
+    - check in/commit w. generated comment
+    - error check: is the document valid and conformant xml? if no, stop and send a
    report to <somebody>
-** reimport the xml file into eXist
+    - reimport the xml file into eXist
 * question: do we need to lock the file in eXist through this update cycle?
 * the update cycle should be a nightly cron job
 
-
-
-!!!9. Spellers
+# 9. Spellers
 
 Nothing until the new proper noun lexicon is in place.
 
-!!!10. Other
+# 10. Other
 
-!!Gobby
+## Gobby
 
 A cross-platform alternative to SubEthaEdit, Gobby, is now available for OS X
 through DarwinPorts. I haven't tested it in collaborative use, but it is worth
@@ -589,11 +587,11 @@ download, compile and install all dependencies, but there was no problems,
 hicups or other complications. When finished, open X11, and just type 'gobby' in
 any terminal window.
 
-!!Bug fixing
+## Bug fixing
 
-__35__ open Divvun/Disamb bugs, and __25__ risten.no bugs
+**35** open Divvun/Disamb bugs, and **25** risten.no bugs
 
-!!SPR language policy decision
+## SPR language policy decision
 
 Last week's SPR meeting decided upon a language policy. Their decision was the
 following (cf. their meeting minutes for the final version):
@@ -609,9 +607,9 @@ representative tekstsamlinger, helst på flere hundre millioner ord, både
 enspråklige og parallellspråklige, det trengs grammatisk og språkteknologisk
 forsking. SPR sin rolle er å legge til rette for dette arbeidet.»
 
-!!!11. Summary, task list
+# 11. Summary, task list
 
-!! Børre
+##  Børre
 * send out contracts with accompanying letter
 * Gather public texts, preferrably also parallel ones
 * Continue converting text from input format to our xml
@@ -624,16 +622,16 @@ forsking. SPR sin rolle er å legge til rette for dette arbeidet.»
 * Add corpus security re G5 syncing as an issue to Bugzilla
 * write  docu for how to apply for a corpus user account (forms, recipients,
   etc)
-* remove old corpus files from gt/sme/corp/ after __Trond__ has cleaned it
+* remove old corpus files from gt/sme/corp/ after **Trond** has cleaned it
 * integrate generated corpus repository summaries in the Forrest site
-* copy updated DTD's to the permlink location, or help __Saara__ do it
+* copy updated DTD's to the permlink location, or help **Saara** do it
 * send a final e-mail to Iđut and KIO Grafisk about copyright issues and texts
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Maaren
+##  Maaren
 * work with new missing lists
 
-!! Saara
+##  Saara
 * Extract corpus meta info into a standard xml format; set up cron task for the
   extraction
 * Create a parallel corpora of the new testaments.
@@ -648,52 +646,52 @@ forsking. SPR sin rolle er å legge til rette for dette arbeidet.»
 * review paratext2xml converter.
 * install sentence aligner.
 * test anonymous cvs access and review documentation.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Sjur
+##  Sjur
 * Follow up the lawyer treatment of the contracts
 * Follow up on place names from Norge Digitalt
 * Evaluate SFST as speller (and analyzer) lexicon
 * write a background document on the corpus contracts
 * public tender:
-** answer requests/questions
-** test anon. read-only cvs, review docu, and send link to __Finnut__
-** corpus repo access to free texts (with __Børre__)
+    - answer requests/questions
+    - test anon. read-only cvs, review docu, and send link to **Finnut**
+    - corpus repo access to free texts (with **Børre**)
 * conversion of corpus repo summary xml to Forrest xml
-* call EDD/__Christian Emil Ore__ about national place name lexicon
+* call EDD/**Christian Emil Ore** about national place name lexicon
 * risten.no/proper noun lexicon development:
-** refactor code
-** implement inheritance/collection overriding for xsl/css/xquery using sitemaps
-** code design for XQueries needed for dict/term editing
+    - refactor code
+    - implement inheritance/collection overriding for xsl/css/xquery using sitemaps
+    - code design for XQueries needed for dict/term editing
 * send a final e-mail to Iđut and KIO Grafisk about copyright issues and texts
 * add manual editing of corpus files as an issue to Bugzilla (error tags)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Thomas
+##  Thomas
 * add incoming Lule sámi words
 * work on North Sámi compounding and derivation
 * smj G3 issue
 * sme G3 issue
-* translate stopword list into smj (aligner; list from __Trond__)
-* assist __Trond__ and __Linda__ with the smj disamb work
+* translate stopword list into smj (aligner; list from **Trond**)
+* assist **Trond** and **Linda** with the smj disamb work
 
-!! Tomi
+##  Tomi
 * move aspell UTF-8 suffix bug to Bugzilla
 * corpus infrastructure:
-** dtd location (both public and internal)
+    - dtd location (both public and internal)
 * Document aspell infrastructure: finish doc/proof/spelling/X-spell/aspell.xml
   (it's almost done, but there are a couple of loose ends)
 * new proper name lexicon
-** implement data synchronisation of proper nouns between risten.no and CVS
-** XQuery refactoring and code development for our proper noun editor
-** new version of xml2lexc (based on ccat), should handle complex names correct:
+    - implement data synchronisation of proper nouns between risten.no and CVS
+    - XQuery refactoring and code development for our proper noun editor
+    - new version of xml2lexc (based on ccat), should handle complex names correct:
    construct entries like we have now from the different parts of a complex name
    entry
 * read aligner docu, install, provide feedback
-* translate stopword list into sme (aligner; list from __Trond__)
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* translate stopword list into sme (aligner; list from **Trond**)
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-!! Trond
+##  Trond
 * Contact the Finnish and Swedish Bible societies to get Bible texts.
 * translate stopword list into nno?
 * double check all remaining docs in gt/sme/corp/ for copyright issues
@@ -701,14 +699,14 @@ forsking. SPR sin rolle er å legge til rette for dette arbeidet.»
 * better smj NT text
 * work on semantically based sets (sme, smj)
 * start and lead discussion and work on semantic features for disamb
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-!!!12. Next meeting, closing
+# 12. Next meeting, closing
 
 27.03.2006 09:30
 
 Maaren will be away the next four weeks, starting next week. After that she will
 work in Tromsø all May, and will share office with one of the Tromsø gang then.
-She will need her own key for that period (__Trond__).
+She will need her own key for that period (**Trond**).
 
 Closed at 11:48

@@ -1,16 +1,16 @@
-!!! TermDB meeting memo
+#  TermDB meeting memo
 
 Reorganizing application code
 
-!!Query
+## Query
 
 We skipped the Query module this time, and focused on the editors.
 
-!!Editors
+## Editors
 
 Code organisation after refactoring:
 
-{{{
+```
 risten/termedit/          - terminology editors
                 xxx.xq    - common files
                 xslt/     - common xslt files
@@ -35,20 +35,20 @@ risten/termedit/          - terminology editors
                           the dictionary eXist collections, and the
                           principles for the term editors above)
                 xxx.xq  - common files
-}}}
+```
 
 Tasks:
-* refactor xquery code (__Tomi__)
-* refactor XSLT code (__Saara__)
-* try to solve the parallel editing bug (__Sjur__)
-* CSS refactoring (__Børre__)
+* refactor xquery code (**Tomi**)
+* refactor XSLT code (**Saara**)
+* try to solve the parallel editing bug (**Sjur**)
+* CSS refactoring (**Børre**)
 * rewrite the editor front page, such that it only contains a collection selector (listing
   only collections writable for the user), and moves to the real search interface when
   the collection has been selected
 
 NB!!! Please ASK if you don't understand the code!!!
 
-!!Code cleanup
+## Code cleanup
 
 Tasks:
 * agree on a standard HTML (final form - variations in presentation moved to CSS,

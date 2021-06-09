@@ -1,6 +1,5 @@
 Sjur og Trond 18.10. 2016
 
-
 Saker:
 * preprocess / hfst-tokenise
 * normative fst-ar
@@ -8,26 +7,26 @@ Saker:
 * korpus
 * stavekontrollar på nett
 
-!!!preprocess / hfst-tokenise
+# preprocess / hfst-tokenise
 
 Alle språk har no mwe-dis.cg3 (må tilpassast for kvart språk).
 
 Vi vil analysera heile korpuset med hfst-disamb/hfst-tokenise.
 Sjur ber Børre om å laga 2 alternative analyser med Hfst:
 
-# éin med normativ hfst-analysator (=stavekontroll)
-# éin med deskriptiv hfst-analysator (≈ Hfst vs Xerox for korpusanalyse)
+1. éin med normativ hfst-analysator (=stavekontroll)
+1. éin med deskriptiv hfst-analysator (≈ Hfst vs Xerox for korpusanalyse)
 
-!!!Normative fst-ar
+# Normative fst-ar
 
 Jf:
-{{{
+```
 giella+Sem/Lang_Tool:giella GOAHTI-A ; 
-}}}
+```
 
 (dvs default, som betyr CmpN/SgN for nordsamisk)
 
-{{{
+```
 $ echo giellagiella | hfst-lookup -q -p src/analyser-gt-norm.hfstol 
 giellagiella	giella+N+Cmp#giella+N+Sg+Nom	10,000000
 
@@ -36,11 +35,11 @@ gielagiella	gielagiella+?	inf
 
 $ echo gielaidgiella | hfst-lookup -q -p src/analyser-gt-norm.hfstol 
 gielaidgiella	gielaidgiella+?	inf
-}}}
+```
 
 Jf med deskriptiv analysator:
 
-{{{
+```
 $ echo giellagiella | hfst-lookup -q -p src/analyser-gt-desc.hfstol 
 giellagiella	giella+N+Cmp/SgNom+Cmp#giella+N+Sg+Nom	10,000000
 
@@ -50,25 +49,25 @@ gielagiella	giella+N+Cmp/SgGen+Cmp#giella+N+Sg+Nom	10,000000
 $ echo gielaidgiella | hfst-lookup -q -p src/analyser-gt-desc.hfstol 
 gielaidgiella	giella+N+Cmp/PlGen+Cmp#giella+N+Sg+Nom	10,000000
 gielaidgiella	giella+N+Err/Orth+Cmp/PlGen+Cmp#giella+N+Sg+Nom	10,000000
-}}}
+```
 
 Sjur har ikkje gjort noko med sma og smj enno, men prøver å få på plass
 norm-fst for sma og smj i dag.
 
-!!!dialektparametrisering av fkv
+# dialektparametrisering av fkv
 
 Fkv-folka jobbar med yaml-filer, men med filnamn som gjer at dei ikkje blir
 testa enno. Sjur har informert om korleis ein kan testa ulike fst-ar med ulike
 yaml-filer.
 
-!!!korpus
+# korpus
 
 * vi treng meir skjønlitteratur - minna Davvi Girji på manglande filer
 * Ailu jobbar ut januar - kva kan han gjera før han sluttar?
 * korpusmøte D+GT
 * Arbeid med parallelltekst
 
-!!!stavekontrollar på nett
+# stavekontrollar på nett
 
 Børre omorganiserer koden litt, deretter dokumenterer han. Etter det burde det
 vera enkelt.

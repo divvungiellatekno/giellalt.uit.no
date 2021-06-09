@@ -1,6 +1,6 @@
 Sjur og Trond, 134.10.14
 
-!!!Saksliste
+# Saksliste
 
 * sme-flytting
 * møterommet
@@ -12,10 +12,9 @@ Sjur og Trond, 134.10.14
 * ENG
 * neste CLARINO-møte
 
+# sme-flytting
 
-!!!sme-flytting
-
-!!Yaml-testing
+## Yaml-testing
 
 Ciprian har gamle paradigme frå VD, dei kan vi bruke som (utgangspunkt for)
 yaml-testar.
@@ -32,35 +31,35 @@ Dokumentasjon for yaml-testane finst på:
 [/infra/infraremake/AddingMorphologicalTestData.html]
 
 TILTAK: Ciprian  tar eit utval frå VD-paradigmet og sett inn i 
-{{ main/langs/sme/test/src/gt-desc-yamls/}} (der det ligg ei modellfil), evt.
-{{ main/langs/sme/test/src/gt-norm-yamls/}}. Dette skjer etter Göteborg.
+` main/langs/sme/test/src/gt-desc-yamls/` (der det ligg ei modellfil), evt.
+` main/langs/sme/test/src/gt-norm-yamls/`. Dette skjer etter Göteborg.
 
-!!Korpustesting
+## Korpustesting
 
 Analyser eit rimeleg stort korpus med analysatorane frå både ny og gamal infra,
 sjekk at resultata er like eller kompatible.
 
 * Lene analyserer korpus med fst frå ny og gamal infra
-** diffen og output skal liggja i {{$GTHOME/langs/sme/test/data/move/}}
+    - diffen og output skal liggja i `$GTHOME/langs/sme/test/data/move/`
 
-!!Oahpa-testing
+## Oahpa-testing
 
 Heli har genrerert og laga diffar, Lene har kommentert, vi fann ei lus i ny
 infra som no er retta. Vi treng ein ny diff -> Heli.
 
 TILTAK:
 * Heli må laga ein ny diff => Trond sender e-post
-** diffen skal liggja i {{$GTHOME/langs/sme/test/data/move/}}
+    - diffen skal liggja i `$GTHOME/langs/sme/test/data/move/`
 
-!!!Møterommet
+# Møterommet
 
 Vi har fått e-post frå Kyrre Soleng. Møte om ca 2 veker (i november).
 
-!!!Sør-Afrika
+# Sør-Afrika
 
 Trond har skrive e-post, vi ventar på svar.
 
-!!!TTS
+# TTS
 
 Vi har ein betaversjon! Våre testarar bør få litt meir eksplisitt 
 dokumentasjon.
@@ -72,35 +71,35 @@ Fleire betatestarar:
 
 Børre lagar nettskjema med lydfilene, og deretter ber vi folk på FB om å testa.
 
-!!!Direkte nedlasting av fst-ar
+# Direkte nedlasting av fst-ar
 
 Folk vil analysera sjølve, men vil ikkje ha heile pakka, og vil ikkje byggja frå
 kjeldekoden.
 
 Språk? I prinsippet alle, men sme.
 
-Kompiler på xserve, legg ut på {{static_files}}
+Kompiler på xserve, legg ut på `static_files`
 
 Vi kan ha eit shellscript
 
 Dei treng tre typar filer:
 * Eksterne program:
-** (hfst-)lookup
-** vislcg3
-** perl ~ hfst-tokenisering
+    - (hfst-)lookup
+    - vislcg3
+    - perl ~ hfst-tokenisering
 * binære analysefiler
-** analyser-gt-desc.hfst
-** disambiguate.bin
+    - analyser-gt-desc.hfst
+    - disambiguate.bin
 * giella-skript:
-** preprocess
-** lookup2cg
+    - preprocess
+    - lookup2cg
 
 Mål: vi lagar ei pakke som kan distribuerast og som inneheld alt bortsett frå
 eksterne verkty.
 
 Timeplan? Vi må koma attende til saka.
 
-!!!Teksting-korpus
+# Teksting-korpus
 
 Vi får tilgang til eit korpus av samisk teksta TV-sendingar, frå univ i Joensuu.
 Men kravet er at det er lukka, og til forskingsformål.
@@ -111,15 +110,15 @@ produkt er gratis og open kjeldekode.
 
 TILTAK: Trond følgjer opp.
 
-!!!Mobiltastatur
+# Mobiltastatur
 
 For seg sjølv eller i langs? Trond: for seg sjølv.
 
-!!!ENG
+# ENG
 
 Møte: kl 8. torsdag
 
-!!!Neste CLARINO-møte
+# Neste CLARINO-møte
 
 Når? 1-2.12.2014 (UB er arrangør). Skal vi prata om Akan? Utveksla data?
 

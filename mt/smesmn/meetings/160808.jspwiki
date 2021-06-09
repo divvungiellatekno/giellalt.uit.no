@@ -1,10 +1,6 @@
-
-
-
-
 Enaresamisk
 
-!!!Saksliste
+# Saksliste
 
 * Ordbok
 * MT
@@ -12,12 +8,12 @@ Enaresamisk
 
 Relevante dokument:
 
-* [MT-møte, også om ordbok, 2. juni|/mt/smesmn/meetings/160602.html]
-* [smn ordboksside|/dicts/InarinsaamenSanakirjat.html]
+* [MT-møte, også om ordbok, 2. juni](/mt/smesmn/meetings/160602.html)
+* [smn ordboksside](/dicts/InarinsaamenSanakirjat.html)
 
-!!!Ordbok
+# Ordbok
 
-!!Sommaren
+## Sommaren
 
 * smn-fin: Unifisert ok
 * fin-smn: Unifisert ok
@@ -28,18 +24,18 @@ Ord frå ordboka er lagt til FST-en
 
 Trond arbeider med å korrigere PoS i ordboka.
 
-!!Arbeid å gjere
+## Arbeid å gjere
 
 * FST: Rette verb som ikkje er verb (i underkant av 400)
 * Sjekke via script for bøyningsforsinfo om FST-en er korrekt (i forhold til lemmaet).
 * FST: Sjekke om ordbok og FST har same POS
-** Ciprian: lage liste over mismatch
-** Enare: gå gjennom og vurdere kva som er korrekt
-** Enare: rydde i automatisk unifisering i ordboka
+    - Ciprian: lage liste over mismatch
+    - Enare: gå gjennom og vurdere kva som er korrekt
+    - Enare: rydde i automatisk unifisering i ordboka
 * rest-elementet
-** Gå gjennom med Ciprian og vurdere automatisk retting
-** Gjennomføre automatisk retting
-** Rette manuelt
+    - Gå gjennom med Ciprian og vurdere automatisk retting
+    - Gjennomføre automatisk retting
+    - Rette manuelt
 
 Samanlikne FST-generert Gen, Attr, Sg1/Sg3 med ordboka:
 
@@ -51,18 +47,16 @@ Ordboka er no unifisert på t-nivå, ikkje på mg-nivå.
 * Rydd opp i det
 * ... og ta vare på 399 POS-endringar i V_smnfin.xml-fila
 
-
 Arbeidsmåte:
 
 * Ciprian kan lage tabseparerte lister for alle entryer med meir enn ein mg. 
 * Merk  kor det skal bli slått saman eller splitta
-** Lene ser på relevante møtereferat frå smenob
+    - Lene ser på relevante møtereferat frå smenob
 * FST-feil, ordboksfeil, parallelle
-** format: lemma, ordboksform, fst-form
-** oppgåve: v (venstre) = ordboksform er rett, o (høyre) = fst-form= rett, m (begge) = begge er rett
+    - format: lemma, ordboksform, fst-form
+    - oppgåve: v (venstre) = ordboksform er rett, o (høyre) = fst-form= rett, m (begge) = begge er rett
 * rest-felta
 * parantesene i t-feltet
-
 
 Innhald i fad2merge:
 
@@ -76,47 +70,42 @@ full match, men mer informasjon, lagt fad2merge/check_fad-vs-src/xmldata, og er 
 
 Ciprian finn fram 00_readme.txt
 
+## Arbeidsplan
 
-!!Arbeidsplan
+### Unifisering:
+1. Rette t/mg-unifisering (**Cip**)
+1. Lage oppsett for manuell evaluering
+    1. Evt. starte med Adv, Po, Pr
+1. Evaluere (**Enare**, Neeta?)
+    1. Eksempler på sánit.oahpa.no: áigut, beaivi, oahppat, mielde, diibmu
 
-!Unifisering:
-# Rette t/mg-unifisering (__Cip__)
-# Lage oppsett for manuell evaluering
-## Evt. starte med Adv, Po, Pr
-# Evaluere (__Enare__, Neeta?)
-## Eksempler på sánit.oahpa.no: áigut, beaivi, oahppat, mielde, diibmu
+### POS-retting i verb
+1. Vente på t/mg-retting
+1. Halde fram med arbeidet i V_smnfin.xml  (**Enare**)
 
-!POS-retting i verb
-# Vente på t/mg-retting
-# Halde fram med arbeidet i V_smnfin.xml  (__Enare__)
+### FST/ordbok-retting av Attr/Gen/Sg17Sg3
+1. Lage tabell for manuell gjennomgang
+1. Gå gjennom manuelt
 
-!FST/ordbok-retting av Attr/Gen/Sg17Sg3
-# Lage tabell for manuell gjennomgang
-# Gå gjennom manuelt
+### Oppdatere fst på nett
+1. Dagens er frå 7.7. Trond oppdaterer
 
-!Oppdatere fst på nett
-# Dagens er frå 7.7. Trond oppdaterer
+# MT
 
-
-
-!!!MT
-
-
-!!Transfer og leksikalsk seleksjon
+## Transfer og leksikalsk seleksjon
 
 Nordsamiske tekstar skrive i Finland er gode. Bør vi kanskje også teste (generelle) tekstar 
 skrive i Noreg (evt. Sverige)?
 
-!!Bidix
+## Bidix
 
 Neeta lese gjennom bidix?
 
-!!Omega-T
+## Omega-T
 
 Trond tar opp tråden. <== prioriteres, etter at arbeidet i Inari er satt igang
 
-
-!! Evaluering
+##  Evaluering
 
 Intern deadline 1.9.
 
@@ -126,36 +115,36 @@ Ilmari, Petter, Miina, Sammol
 * Sende finsk tekst + evaluere sme-smn MT
 * Sende begge tekstane + evaluere sme-smn MT
 
-!!Arbeidsplan
+## Arbeidsplan
 
-! Evaluering av pan-samiske tekstar
-# Finne tekst, korrekturlese, MT-omsetje
-# Lage instruksjonar og gje til Enare
-# Manuell evaluering
-# Arbeid med MT
+###  Evaluering av pan-samiske tekstar
+1. Finne tekst, korrekturlese, MT-omsetje
+1. Lage instruksjonar og gje til Enare
+1. Manuell evaluering
+1. Arbeid med MT
 
-! Omega-T
-# Ta opp tråden med Kevin
-# Gå vidare på Apertium-lista eller til andre 
+###  Omega-T
+1. Ta opp tråden med Kevin
+1. Gå vidare på Apertium-lista eller til andre 
 
-! Selve evalueriga
+###  Selve evalueriga
 
-# finne evaluerere til eval 1 og 2:
-# evaluering 1
-## fra nordsamisk til enaresamisk (mål: sammenlikne med forrige evaluering)
-# evaluering 2
-## fra finsk til enaresamisk (mål: evaluere fin-sme-smn-MT med sme som rele-språk)
+1. finne evaluerere til eval 1 og 2:
+1. evaluering 1
+    1. fra nordsamisk til enaresamisk (mål: sammenlikne med forrige evaluering)
+1. evaluering 2
+    1. fra finsk til enaresamisk (mål: evaluere fin-sme-smn-MT med sme som rele-språk)
 
-!Evaluering 1
+### Evaluering 1
 
-# Finne tekstar (__Lene, Trond__)
-## to tekstar, til saman 600 ord
-# Finne evaluerarar (__Ilmari, Miina, Petter, Matti M__)
-# sjekke tekstane frå siste gang (__ML__)
-## Deadline 1 veke frå tysdag
-# Følgje opp
+1. Finne tekstar (**Lene, Trond**)
+    1. to tekstar, til saman 600 ord
+1. Finne evaluerarar (**Ilmari, Miina, Petter, Matti M**)
+1. sjekke tekstane frå siste gang (**ML**)
+    1. Deadline 1 veke frå tysdag
+1. Følgje opp
 
-{{{
+```
 Mappe:
 main/techdoc/mt/smesmn/evalueren/1-2015/
 
@@ -163,20 +152,19 @@ Filer:
 evalreive2.docx (brev sendt til evaluerere med spørreskjema og tekst)
 evalreive2_smn.docx
 evalreive1.docx (kladd til forhåndsinfo)
-}}}
+```
 
-!!!FST
+# FST
 
 * Px
 * Diminutiivvat
 * Passiiva
 * Eará derivašuvnnas
 * Leksikona
-** Dábálaš čállinfeaillat
-** Adjektiivvaid advearbbahámit
+    - Dábálaš čállinfeaillat
+    - Adjektiivvaid advearbbahámit
 
-
-!!!Oppsummering, förste steg
+# Oppsummering, förste steg
 
 * Ciprian: teknisk til ordboka
 * Trond: Enare-ordbok

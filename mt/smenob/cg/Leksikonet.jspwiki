@@ -1,26 +1,21 @@
+Denne fila dokumenterer leksikonformatet i fila [sme.nob.dict](http://gtsvn.uit.no/langtech/trunk/langs/sme/tools/mt/cgbased/lex/sme.nob.dict)
 
-Denne fila dokumenterer leksikonformatet i fila [sme.nob.dict|http://gtsvn.uit.no/langtech/trunk/langs/sme/tools/mt/cgbased/lex/sme.nob.dict]
-
-
-
-!!!Mekanisme:
+# Mekanisme:
 
 Elsewhere for 4 alternativ: lemma 4 1 2 3
 Altså: Default er 4, frå og med andre posisjon og mot høgre.
 
-!!!Ting å hugse på:
+# Ting å hugse på:
 
 * formalismen er lavet til dependens-træer (D=daughter GD=granddaughter, H=head, GM=grandmother),
 og de er ikke brugt i cglex. I stedet er der *-kontekster og BARRIER i cglex.
-** Jeg kan muligvis tilføje * i formalismen, men hvis det kombinere
+    - Jeg kan muligvis tilføje * i formalismen, men hvis det kombinere
 med LINK og BARRIER bliver det svært.
-** Løsningen må, for mig at se, snarere være at omskrive disse relativ få steder til dependens,
+    - Løsningen må, for mig at se, snarere være at omskrive disse relativ få steder til dependens,
 fx D=(<H> @OBJ) for et humant objekt i et verbumsopslag, i stedet for *1 (<H> @OBJ BARRIER CLB OR V).
-** Kan I prøve at se, om ogi hvilken grad det er muligt, i sme.nob.dict filen?
+    - Kan I prøve at se, om ogi hvilken grad det er muligt, i sme.nob.dict filen?
 
 Ja, det ser ut til å være en rimelig konklusjon. Poenget er jo å utnytte dependensen, og vi skal se på muligheter for omskriving. Trond ser på det.
-
-
 
 Vedlagt er en liste af de pardefs der forekom i cgdix i forbindelse med
 oversættelsesopslag (replace_patternsE). Min idé er at erstatte disse
@@ -32,7 +27,6 @@ lemmata, hvor i har mellemrum inde i ordet.
 Kan I færdiggøre og/eller kommentere omskrivningerne i pardef-filen?
 Ja, Lene skal gjøre dette.
 
-
 Der er nogle enkelte uregelmæssigheder, jeg har udskrevet i toppen af
 .dict filen, hvor en cglex-regel syntes at gå efter en oversættelse, der
 slet ikke var i  cgdix. Muligvis pga af et matching-problem i mit
@@ -40,7 +34,6 @@ script. Men der er tale om ret få tilfælde, som i måske kan klare ved
 inspektion i filen.
 Ja, det er feil (uoverenstemmelse mellom .lex og .dix. fordi det har vært gjort endringer i dix som ikke er fulgt opp i lex.
 Disse tilfellene kan vi bare stryke.
-
 
 MANGLENDE POS:
 En sidste ting: Normalt har jeg altid en POS for et .dict opslag (som
@@ -63,9 +56,6 @@ til ordpar i dix før ny dict-fil lages.
 
 Lene tar seg av dette.
 
-
-
-
 Til brev fredag 14.08
 
 Lige for at sige, at det jo ikke kan "testes" i egentlig forstand, fordi der ikke er en sme2nor kerne endnu, der skal læse og bruge .dict filen.
@@ -78,8 +68,6 @@ Spørsmålet er så om vi trenger formalismen fra .lex (altså ordinær CG) i ti
 (nedenfor).
 Med mapping av semantiske motiverte tagger, slik som du har skissert, burde fungere for de fleste reglene.
 I alle fall er vel mekanismen modulær nok til bare å legge til en .lexc etter .dict i pipeline?
-
-
 
 *1 og *-1 har jeg forresten også fået til at virke nu (dog uden BARRIER).
 Fint.
@@ -98,8 +86,5 @@ Vi ser på .dict og finner disse:
 * P1 = en posisjon til høyre
 * S = self
 
-
 Er det noen dependensrelasjoner vi mangler?
 Finnes det en urmoder (oldemor)?
-
-

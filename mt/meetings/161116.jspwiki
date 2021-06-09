@@ -1,55 +1,53 @@
-!!!MT-Apertium 
+# MT-Apertium 
 
 Lene, Fran, Trond
 
-!!Saker
+## Saker
 * Lage motsatt versjoner av språkparene
 * Bug 2201
 * Harmonisering av kategoriar i t1x-filene
 
-
-!!Motsatt versjoner
+## Motsatt versjoner
 * sma->sme, smj->sme, smn->sme fungerer
 
-{{{
+```
 $ echo "Månnoeh aehtjieh gåetide båetiejimen." | apertium -d . sma-sme
 Moai áhčit dáluide bođiime.
 
 $ echo "Sámij årromguovllo gåhtjuduvvá Sábmen." | apertium -d . smj-sme
 Sámiiguin ássanguovlu #gohčodit Sápmin.
-}}}
+```
 
-!!Bug 2201
+## Bug 2201
 Vi diskuterte løsninger:
 
 Francis legger inn i dix-filene definisjon av numeral som adjektiv som dekker tallene 1-39
-{{{
-    <e><re>([0-9]|[0-3][0-9]+)</re><p><l><s n="adj"/><s n="ord"/></l><r><s n="adj"/><s n="ord"/></r></p></e>
-}}}
+```
+    <e><re>([0-9]]([0-3][0-9)+)</re><p><l><s n="adj"/><s n="ord"/></l><r><s n="adj"/><s n="ord"/></r></p></e>
+```
 
 Vi ser på muligheta av å disambiguere sentence delimiter i before-section, evt. ta opp med Tino hvis behov.
 
-!!Harmonisering av kategoriar .t1x-filene
+## Harmonisering av kategoriar .t1x-filene
 
 Oversyn over arbeid:
 
-# Harmonisere navn på dem som har likt innhold - OK (i -sma, -smj, -smn)
-# Legge til språkpar 3 de som er i språkpar 1 og 2 - OK
-# De som er i bare ett språkpar, legges i en egen blokk 
-# Fjern dei som ikkje er i bruk 
-# Harmonisere: bruk av understrek istedenfor bindestrek i navn
-# Endre navnene slik at de dekker innholdet 
-# Vi vil ha nordsamisk som metaspråk
-# Navn for kategorier for funskjoner med pil, H = head og D = dependent: obj_H, H_obj, D_po
+1. Harmonisere navn på dem som har likt innhold - OK (i -sma, -smj, -smn)
+1. Legge til språkpar 3 de som er i språkpar 1 og 2 - OK
+1. De som er i bare ett språkpar, legges i en egen blokk 
+1. Fjern dei som ikkje er i bruk 
+1. Harmonisere: bruk av understrek istedenfor bindestrek i navn
+1. Endre navnene slik at de dekker innholdet 
+1. Vi vil ha nordsamisk som metaspråk
+1. Navn for kategorier for funskjoner med pil, H = head og D = dependent: obj_H, H_obj, D_po
 
-
-__Tiltak__
+**Tiltak**
 
 * Lene ser på namna i gruppene og sender forslag via epost
 
-!Desse er i alle tre filer, med same innhald:
+### Desse er i alle tre filer, med same innhald:
 
-{{{
+```
 x      3 <def-cat n="váikkuhitverb"> váikkuhit_vblex
 x      3 <def-cat n="sent">
 x      3 <def-cat n="semyear">
@@ -121,11 +119,11 @@ x      3 <def-cat n="mielde-post">
 x      3 <def-cat n="bokte">   bokte_post
 x      3 <def-cat n="beallai">  beallai_post
 x      3 <def-cat n="hupmatverb">  hupmat_verbs
-}}}
+```
 
-!Desse er i alle tre filene, men med ulikt innhald
+### Desse er i alle tre filene, men med ulikt innhald
 
-{{{
+```
       3 <def-cat n="adv">               | different tags - harmoniser
       3 <def-cat n="ja">                | different lemmas - max
       3 <def-cat n="noun">              | extra tag - max
@@ -147,30 +145,38 @@ x      3 <def-cat n="hupmatverb">  hupmat_verbs
     </def-cat>
 
     smn:
+
     
         <def-cat n="numeral">
       <cat-item tags="num.*"/>
     </def-cat>
+
     
     smj:
+
     
         <def-cat n="numeral">
       <cat-item tags="num.*"/>
     </def-cat>
+
     
+
       
       3 <def-cat n="verb-fin">          | different tags 
       => "verb-fin-not-imp" alle tre språk, for smj: "verb-cond" 
       inkluderes inn i verb-fin-regelen, med egen chunking
+
       
 
       
       3 <def-cat n="negverb">           | wildly different tags
      sma = smn mønsteret kopieres til smj, men med nytt navn:     negverb  
-}}}
+```
+
      
-!Vi arbeider videre med disse over mail     
-{{{
+### Vi arbeider videre med disse over mail     
+```
+
       
       3 <def-cat n="prop-cmp">          | different tags
       3 <def-cat n="n-cmp">             | different tags
@@ -181,13 +187,13 @@ x      3 <def-cat n="hupmatverb">  hupmat_verbs
       3 <def-cat n="n-sg-nom">          | different tags
       3 <def-cat n="n-not-cmp">         | different tags
       3 <def-cat n="verb-inf">          | different tags
-}}}
+```
 
-!Desse er i berre ei fil:
+### Desse er i berre ei fil:
 
 Leksikaliserte - Lene foreslår andre navn - epost
 
-{{{
+```
       1 <def-cat n="Laarain">    pron_D_com
       1 <def-cat n="aahka">      ahkku_addja
       1 <def-cat n="aehtjie">    áhčči_eadni
@@ -247,11 +253,11 @@ Leksikaliserte - Lene foreslår andre navn - epost
       1 <def-cat n="älkkeebin-verb">  álkidahttit_vblex
       1 <def-cat n="čájehit">        čájehit_vblex
       1 <def-cat n="shoes">          shoe_n
-}}}
+```
 
-!Grammatiske
+### Grammatiske
 
-{{{
+```
       1 <def-cat n="a-adv-comp">
       1 <def-cat n="actio-sem_act">
       1 <def-cat n="adj-rdep">
@@ -357,6 +363,4 @@ Leksikaliserte - Lene foreslår andre navn - epost
       1 <def-cat n="verb_to_adv">
       1 <def-cat n="word-not-verb">
       1 <def-cat n="word_qst-not-verb">
-}}}
-
-
+```

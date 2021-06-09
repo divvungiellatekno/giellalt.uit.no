@@ -7,13 +7,11 @@ Saker:
 * njuolggadusat: julevsámi ... (sihke copy ja add):
 Aux geavahuvvo advearban (Prs Sg3)
 
-
 boasttut>riekta:
 soajttá>soajttin/soajtáv
 
 1. kongrueansa
 2. infinitiiva váilu
-
 
 Iehtjádijn soajttá	gássjelisvuoda bårråt jali oadet .
 Boasttut:    Sg3       Pl Nom
@@ -22,7 +20,6 @@ Eavttut:                Subj (Nom)
 
 Sis lea girji.
 Pl - Sg - Sg
-
 
 Iehkedis galggin rádna lusi ja soajttá fæsstaj
 Iehkedis galggin rádna lusi ja soajttin fæsstaj vuolgget
@@ -58,11 +55,9 @@ soajtti gássjelisvuodav adnet gielajn
 Eavttut: SUBJ ( + relatiivacealkka) VFIN + VFIN
 Maid bargat: rievdat soaitit (Sg3>Pl3), VFIN>Inf
 
-
 Danen ij 	soajttá	ienep libjjá vatteduvvi åvddålijguovlluj ma li snjilttjamáno 22. bæjvváj tjanádum , javllá Giske .
 Eavttut: (diehtit <FS-..> ) VFIN+ VFIN (Nom Pl)
 Maid bargat:
-
 
 FS-VERBS = "diehtit" "jearrat" ; #dan maŋŋel sáhttá boahtit finihtta vearba  ja ođđa cealkka
 
@@ -74,10 +69,11 @@ Muhtema	soajttá	vájbbi ja nagerduvvi , ållessjattugijda girmmodi jali ienebut
 
 Åhttse oajvvebessamij sjaddi vuodon jus	soajttá	dárbbo liehket ienep sajijda .
 
-
 ADD:msyn-soajttá-AUX (&msyn-soajttá-AUX) TARGET VFIN IF (*-1 ("soajttit" Prs Sg3) BARRIER S-BOUNDARY OR CS OR CC) ;
     ## valla soajttá tjálláv nágin bágojt gå ierijt lav.
+
     
+
     
 LIST Numerus = Sg Pl Du1 Du2 ;
 SET NUMERUS-Du2 = Numerus - Du2 ;   
@@ -92,8 +88,6 @@ COPY:msyn-soajttá-AUX (Inf &SUGGEST) EXCEPT (Ind Prs Sg1 &msyn-soajttá-AUX) OR
 lang-smj/tools/grammarcheckers
 
 make dev
-
-
 
 lang-sme/tools/grammarcheckers/grc-disambiguator.cg3
 lang-smj/src/cg3/disambiguation.cg3
@@ -115,11 +109,7 @@ SET SV-BOUNDARY = S-BOUNDARY OR Inf OR Sup OR FMAINV ;
 SET CCCOMMA = CC OR COMMA ;
 	# remember that those are potential sentence boundaries, too
 
-
     ## Iehtjádijn soajttá	gássjelisvuoda bårråt jali oadet .
     Boasttut:    Sg3       Pl Nom
     Riekta:  soajtti Pl3   Pl Nom
     Eavttut:                Subj (Nom)
-
-
-

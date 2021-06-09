@@ -1,9 +1,8 @@
-
 FAD-Møte 6.11.2012
 
 Til stades: Ciprian, Marja, Trond, Berit Merete, Sjur, Børre
 
-!!! Saker:
+#  Saker:
 
 * Status quo
 * Oslo-Bergen-tagger
@@ -13,39 +12,36 @@ Til stades: Ciprian, Marja, Trond, Berit Merete, Sjur, Børre
 * Akilles og skilpadda
 * Neste møte
 
+#  Status quo
 
-
-!!! Status quo
-
-!! Parallellfiler og analyse
+##  Parallellfiler og analyse
 
 * Analyse: second_run/00_readme.txt.
-** Talet på filpar som er forkasta pga. ubalanse har gått ned frå 418 til 241.
+    - Talet på filpar som er forkasta pga. ubalanse har gått ned frå 418 til 241.
 * Ordparallellisering: second_run/work_in_progress/00_readme.txt, ukjente:
 * sme N=1987867
-** sme tokens: 39 212 (2012.10.28), 38 481 (2012.11.02)
-** sme types:  20 701 (2012.10.28), 20 535 (2012.11.02)
+    - sme tokens: 39 212 (2012.10.28), 38 481 (2012.11.02)
+    - sme types:  20 701 (2012.10.28), 20 535 (2012.11.02)
 * nob: N=2348630
-** nob tokens: 11 060 (2012.10.28), 10 952 (2012.11.02)
-** nob types:   3 426 (2012.10.28),  3 431 (2012.11.02)
+    - nob tokens: 11 060 (2012.10.28), 10 952 (2012.11.02)
+    - nob types:   3 426 (2012.10.28),  3 431 (2012.11.02)
 
-!! Godkjenning av filpar
+##  Godkjenning av filpar
 
 Márjá, Berit Merete og Børre har sett på dette. Jf. punkt lenger ned.
 
-
-!!! Oslo-Bergen-tagger
+#  Oslo-Bergen-tagger
 
 Testfiler generert som vist på 
-[Wikipedia-sida|/ling/WikipediaAsCorpus.html]
+[Wikipedia-sida](/ling/WikipediaAsCorpus.html)
 
 * cat $GTBIG/st/nob/corp/nowiki_aa.txt | obt/bin/mtag-osx64 |vislcg3 -g obt/src/nob_morf-prestat.cg3 > aa
 * cat aa | sum-cg.pl --words > aa-words
 * cat aa | sum-cg.pl --grammar > aa-grammar
 
-{{sum-cg.pl}} gjev talet på homonymi etter disambiguering.
+`sum-cg.pl` gjev talet på homonymi etter disambiguering.
 
-{{{
+```
 aa-words:
 
 19865
@@ -89,35 +85,32 @@ aa-grammar:
 3929: 
  pron fl pers 3 nom 
  det dem fl 
-}}}
+```
 
-__TILTAK__
+**TILTAK**
 
 * Trond følgjer opp obt.
 
+#  Wikipedia
 
-!!! Wikipedia
-
-* Ciprian har brukt __WP2TXT__
-* Trond har brukt __WikiExtractor.py__
+* Ciprian har brukt **WP2TXT**
+* Trond har brukt **WikiExtractor.py**
 
 Skilnaden dei i mellom er xml-syntaks vs. wikisyntaks:
 
-{{{
+```
 xml: <title>blabla</title>
 wiki: ==blabla==
-}}}
+```
 
-
-__TILTAK__
+**TILTAK**
 * Trond og Ciprian diskuterer Wikipedia-formatet :-)
 
+#  Ukjente ord
 
-!!! Ukjente ord
+## NOB
 
-!!NOB
-
-{{{
+```
 Ciprian:
 cat ukjent_nob_20121028.txt |wc -l
     3426
@@ -127,19 +120,18 @@ cat $GTBIG/gt/sme/corp/forvaltningsordbok/second_run/work_in_progress/ukjent_nob
 	| cut -c6- | cut -d"<" -f1 | $GTHOME/st/nob/obt/bin/mtag-osx64 |grep '^   '\
 	| grep -v ukjent | wc -l
      265
-}}}
+```
 
 Det betyr framleis at det er over 3100 ukjende NOB-ord i korpuset (ukjende for
 OBT). OBT-taggaren er lukka, så kva gjer vi? Eitt alternativ er:
 
-{{{
+```
 mtag-osx64 < text | vår-tilleggs-fst | vislcg3 -g nob_morf-prestat.cg3
-}}}
-
+```
 
 Her er topp-ti for ord ingen kjenner att:
 
-{{{
+```
         "kap" ukjent
         "11-Rev" ukjent
         "lule" ukjent
@@ -149,26 +141,20 @@ Her er topp-ti for ord ingen kjenner att:
         "dei" ukjent
         "forr." ukjent
         "barne" ukjent
-}}}
+```
 
-
-__TILTAK__
-* __Trond__ og __Ciprian__ synkroniserer og analyserer data ang nob ukjente ord
-* __Trond__ ser på outputten av OBT analysen dvs. i kontekst
+**TILTAK**
+* **Trond** og **Ciprian** synkroniserer og analyserer data ang nob ukjente ord
+* **Trond** ser på outputten av OBT analysen dvs. i kontekst
   (mål: få Oslo til å forbetre)
 
+## SME
 
-
-!!SME
-
-
-
-
-! Missing
+###  Missing
 
 Top missing (N=1987867 og deromkring)
 
-{{{
+```
  841 og
  546 for
  395 av
@@ -189,14 +175,11 @@ Top missing (N=1987867 og deromkring)
   47 Liigejuollud
   26 ­dikki
   25 álgoál
-}}}
+```
 
+Svar: Fortsette med leksikalisering (**BM, Marja**).
 
-Svar: Fortsette med leksikalisering (__BM, Marja__).
-
-
-
-!!! Parallellkorpus og prosessering
+#  Parallellkorpus og prosessering
 
 Missing list er dominert av norsk. Problemet er at ikkje 
 alle kapitla er omsett til samisk. 
@@ -217,10 +200,10 @@ Pagerange fungerer for pdf, men dessverre ikkje for andre format.
 
 Vi har altså to alternativ:
 
-# Slette asymmetriske filer (eller asymmetrisk innhald)
-# Symmetrisere asymmetriske sider
+1. Slette asymmetriske filer (eller asymmetrisk innhald)
+1. Symmetrisere asymmetriske sider
 
-Sjur: Vi bør ta utgangspunkt i __tekst__, ikkje i __side__.
+Sjur: Vi bør ta utgangspunkt i **tekst**, ikkje i **side**.
 
 BM: Vi kan kombinere desse to innfallsvinklane: Der side er
 relevant bruker vi det, og i andre samanhengar brukar vi andre 
@@ -232,21 +215,17 @@ Programma pdf2text etc. har val der du kan dra ut side eller
 tekststraum. I dag dreg vi ut tekststraum. Det er også mogleg
 å dra ut side for side.
 
-
-
 Prosessere data ulikt alt ettersom hvordan dokumentet er 
 strukturert. Dette gjeld spesielt pdf-dokument: språkblanda 
 på annakvar side, annakvar spalte, eller ulike seksjonar.
 
 Informasjon om skip og later inn i metadata
 
-__TILTAK__
-* __Børre__ og __Sjur__ implementerer skip og later i metadata 
+**TILTAK**
+* **Børre** og **Sjur** implementerer skip og later i metadata 
   og dokumenterer hvordan dette skal gjøres
-* __Márjá__ og __BM__ legger inn info om dette når slike 
+* **Márjá** og **BM** legger inn info om dette når slike 
   dokument blir oppdaget
-
-
 
 Berit Merete sitt brev 5.11. 23:32 :
 
@@ -263,7 +242,7 @@ filene som parallelle filer siden disse filparene er ubalanserte,
 dvs at kun deler av den norske teksten er oversatt til samisk. 
 Det gjelder blant annet disse filparene:
 
-{{{
+```
 1. 
 freecorpus/orig/sme/admin/depts/other_files/Klimamelding_St_meld_39_samisk.pdf
 freecorpus/orig/nob/admin/depts/other_files/STM200820090039000DDDPDFS.pdf
@@ -274,18 +253,18 @@ Dette fordi kun kapittel 1 er oversatt til samisk
 freecorpus/orig/sme/admin/depts/other_files/NAC_2001_35.pdf
 freecorpus/orig/nob/admin/depts/other_files/NOU200120010035000DDDPDFA.pdf
 -- nob har 325 sider, sme har 74 sider. Kun kapittel 1 og 11 er oversatt til samisk.
-}}}
+```
 
 En annen utfordring for antallet filer i det setningparalleliserte 
 korpuset er samiske filer som inneholder noen sider på norsk, 
 for eksempel denne filen:
 
-{{{
+```
 3.
 freecorpus/orig/sme/admin/ffk/sp2011-2014-1.pdf 
 -- dokumentet inneholder 15 sider, hvorav de to siste sidene er på norsk (sameloven).
 Denne filen blir ikke konvertert til xml pga av error-meldingen "too_low_mainlang".
-}}}
+```
 
 Så har vi filer med løpende tekst som blir brutt av 
 tekstvinduer med informasjon. Problemet er at disse 
@@ -293,12 +272,12 @@ tekstvinduene bryter den løpende teksten på forskjellige
 steder i den norske og den samiske filen. 
 Et eksempel på dette filparet:
 
-{{{
+```
 4.
 freecorpus/orig/sme/admin/depts/other_files/HP_2009_samisk_sprak_nordsam.pdf
 freecorpus/orig/nob/admin/depts/other_files/HP_2009_samisk_sprak_norsk.pdf
 -- paralleliseringen av filene går for så vidt greit, med noen feilparalleliseringer
-}}}
+```
 
 Jeg har diskutert disse filene med Børre og han har kommet
 med noen forslag til løsninger. 
@@ -325,11 +304,11 @@ Hilsen Berit
 
 ----
 
-!!! Akilles og skilpadda
+#  Akilles og skilpadda
 
 Tema for neste møte.
 
-!!! Neste møte
+#  Neste møte
 
 Fysisk i Tromsø.
 
@@ -338,4 +317,4 @@ torsdag morgon, ikkje fredag.
 
 Moglege tidspunkt: Tysdag og torsdag f.o.m. ca. 10.
 
-Tentativ tid: __Tysdag 13.11. 10.30__
+Tentativ tid: **Tysdag 13.11. 10.30**

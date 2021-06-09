@@ -1,30 +1,30 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 6.6.2011
 * Time: 10.45 Norw. time
 * Place: Internet 
 * Tools: SubEthaEdit, iChat
 
-!!!Saksliste
+# Saksliste
 
 * Divvun 2.2 & Polderland
 * Korpus
 * sma-normering + fst
 
-!!!Opening, agenda review, participants
+# Opening, agenda review, participants
 
 * Opened at 11.00.
-* Present: __Børre, Sjur, Tomi, Thomas__ (Divvun only)
-* Absent: __none__
-* Secretary: __Sjur; Børre__
+* Present: **Børre, Sjur, Tomi, Thomas** (Divvun only)
+* Absent: **none**
+* Secretary: **Sjur; Børre**
 
-!!!Divvun 2.2 & Polderland
+# Divvun 2.2 & Polderland
 
 Numerals taking a long  time to compile, break the compilation. The solution
 would be to compile them once and add the result to svn.
 
 sme - the following do not work:
-{{{
+```
 iige		#382 - verb + clitic
 Máretgo		#415 - nominals with clitic not accepted
 gulloban		#622 - Words with clitic -ban not accepted
@@ -54,7 +54,7 @@ where:
 ENØK is a name
 finnmárkok is a noun
 finnmárkok	Finnmárkko+N+Prop+Plc+Sg+Gen+Der1+Der/k+N+Sg+Nom
-}}}
+```
 
 SMJ is looking very good, only problem is name and acro compounding (see above). name+acro is fine
 
@@ -62,16 +62,16 @@ Polderland:
 * drop that fixes Windows+Office issues
 * ask about hyphenated suggestions
 
-__TODO:__
-# change build process to exclude closed POS's and closed sets
-# look into ACRO compounding bug
-# compile new spellers
-# test
+**TODO:**
+1. change build process to exclude closed POS's and closed sets
+1. look into ACRO compounding bug
+1. compile new spellers
+1. test
 
-!!!Korpus
+# Korpus
 
-__Børre__ has:
-{{{
+**Børre** has:
+```
 Freecorpus:
 9428 files processed, 81 errors among them
 The errors were distributed like this:
@@ -103,10 +103,10 @@ checkxml_after_checklang 2 0% of errors
 checklang 0 0% of errors
 To find which files caused the errors, do the command
 grep "Conversion failed" tmp/*.log
-}}}
+```
 
-__Sjur__ has:
-{{{
+**Sjur** has:
+```
 Freecorpus:
 Processing finished
 9430 files processed, 442 errors among them
@@ -123,11 +123,11 @@ checkxml_after_checklang 12 3% of errors
 checklang 0 0% of errors
 To find which files caused the errors, do the command
 grep "Conversion failed" tmp/*.log
-}}}
+```
 
 The main problem here is not so much the quality of the conversions as such, but that the conversion results varies so much between runs and computers This is also what we have seen earlier with Trond. This problem will be less intruding with the stable corpus repository (see below), but needs to be followed up.
 
-!!Stable corpus conversion
+## Stable corpus conversion
 
 * goal: a repository of converted files that are guaranteed to meet certain quality measures
 * each file is added manually after testing the conversion result
@@ -140,18 +140,18 @@ Conversion & test procedure:
 
 Most important: the stable repository must not contain useless data!
 
-__TODO:__
-* create {{stable/converted/}} & {{stable/goldstandard/converted}} branch of the corpus repositories (__Børre__)
-* add ''tested'' and verified converted files to the stable branch (__Tomi__)
-** one sme-nob pair from {{$GTFREE/orig/sme/admin/}} today
+**TODO:**
+* create `stable/converted/` & `stable/goldstandard/converted` branch of the corpus repositories (**Børre**)
+* add *tested* and verified converted files to the stable branch (**Tomi**)
+    - one sme-nob pair from `$GTFREE/orig/sme/admin/` today
 * fill up the stable branch of GTFREE with as much parallel data as required by
-  __Francis__ for the Forv.ordbok project (__Tomi; Børre__)
+  **Francis** for the Forv.ordbok project (**Tomi; Børre**)
 
-!!!Sma-normering + fst
+# Sma-normering + fst
 
 Noun file updated with the SGM decisions that are clear to us, verbs and adjectives left. Not too much work.
 
-__TODO:__
+**TODO:**
 * missing: 1-2 days
 * sma-normering: 1-2 days
 * work for sma-oahpa fst's

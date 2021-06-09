@@ -1,64 +1,58 @@
+# Giellateknomøte 18.3.2015
 
-!!!Giellateknomøte 18.3.2015
-
-!!Saksliste
+## Saksliste
 
 * smenob FAD unifisering
 * Frekvenssortere tekstar på internett
 * Nye stillingar
-** PhD-stipend
-** Programmerar
-** Norsk språkteknologi
-** nobsme-leksikografi
+    - PhD-stipend
+    - Programmerar
+    - Norsk språkteknologi
+    - nobsme-leksikografi
 
-
-!! smenob FAD unifisering
+##  smenob FAD unifisering
 
 Det er mange gamle filer i smenob/inc-mappa. Her bør alle gå gjennom og oppdatere kvar sin fil.
 
-!Tiltak:
-# Vi lager to katalogar i inc: 
-## future_work (med readme-fil som fortel kva som er status)
-## ready_to_go
-# Den som eier fila, går gjennom den og enten fjerner eller oppdaterer og flytter til riktig mappe, med en god logmelding om hva dette er.
+### Tiltak:
+1. Vi lager to katalogar i inc: 
+    1. future_work (med readme-fil som fortel kva som er status)
+    1. ready_to_go
+1. Den som eier fila, går gjennom den og enten fjerner eller oppdaterer og flytter til riktig mappe, med en god logmelding om hva dette er.
 
-
-!! Web-side for frekvenssortering av lemma og ordformer i tekstar
+##  Web-side for frekvenssortering av lemma og ordformer i tekstar
 
 Nettside: Laste opp fil i .doc-format, få attende frekvenssortert lemma og ordform
 
 Her er foreløpig pipeline (som må forbedres litt for å ta hensyn til ikke disambiguert homonymier):
-{{{
+```
 Første steg er identisk med smesyn (sent-proc.sh -s syn) > analysert_fil
 cat analysert_fil | grep '"<' | downcase | sort | uniq -d | sort -nr > wordfrekv.file
 cat analysert_fil | grep '"' | grep -v '"<' |  sort | uniq -d | sort -nr > lemmafrekv.file
 cat analysert_fil | grep '"' | grep -v '"<' | cut -d '"' -f3 | cut -d ' ' -f2 | sort | uniq -d | sort -nr > wordclassfrekv.file
-}}}
+```
 
-
-!Tiltak:
+### Tiltak:
 * Ciprian ser nærmere på dette og vi bestemmer tidsramme osv på neste møte
 
-!! Nye stillingar
-! Programmerar
+##  Nye stillingar
+###  Programmerar
 Utlysningstekst har vært jobba med og er sendt inn til IS
 
-! PhD-stipend
+###  PhD-stipend
 Forskingsgruppa Giellatekno gjer framlegg om ei PhD-stilling i samisk språkteknologi. Avhandlinga skal omhandle datamaskinell modellering av samisk grammatikk. Det har vært ansatt flere stipendiater og utlyst flere stipendiatstillinger i samisk de siste månedene, så det vil sannsynligvis være vanskelig å få en søker med master i samisk språk. Vi kunne lage utlysninga for to søkergrupper:
 
 * samisk master (for jobbe med korpuslingvistikk, leksikografi osv)
 * master språkteknologi/datalingvistikk med kunnskaper/erfaring fra uralske språk (helst samisk)
 
-__Tiltak:__
+**Tiltak:**
 * Trond skriver et notat til ledelsen på IS om dette.
 
-
-! Norsk språkteknologi
+###  Norsk språkteknologi
 Trond orienterte.
 
-! nobsme-leksikografi
+###  nobsme-leksikografi
 Vi har en som skal arbeide cirka to månedsverk med å strukturere og forbedre nobsme-ordboka. Vi arbeider med en dokumentasjon, som også kan være nyttig for andre språkpar: [/dicts/PrinsippForOrdbokssnuing.html]
 
-__Tiltak:__
+**Tiltak:**
 * Trond skriver epost til vedkommende 
-

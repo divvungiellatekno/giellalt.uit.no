@@ -1,10 +1,8 @@
-!!!Parallelliseringsmøte 20.12.2011
-
+# Parallelliseringsmøte 20.12.2011
 
 Berit Merete, Børre, Sjur, Trond
 
-
-!!!Saksliste
+# Saksliste
 
 hmm:
 
@@ -12,97 +10,89 @@ hmm:
 * status quo for gullkorpus
 * arbeid framover
 
-
-!! Status quo for testbed for gullkorpus
+##  Status quo for testbed for gullkorpus
 
 Vi har no 4 testar.
 
-Vi får diff-filer generert, jf. [nettside|/ling/testruns.paragstesting.html].
-Sjølve filene ligg no i {{techdoc/ling}}, dei skal flyttast til eigen katalog {{techdoc/ling/tca2testing/}}
+Vi får diff-filer generert, jf. [nettside](/ling/testruns.paragstesting.html).
+Sjølve filene ligg no i `techdoc/ling`, dei skal flyttast til eigen katalog `techdoc/ling/tca2testing/`
 
 Lenkje frå tabell er ikkje laga.
 
 Prinispp for unit-testing: 
-# Ikkjetrivielle tilfelle skal inn i unit-testing for å teste, feks __b.__
-# Trivielle ting skal vi berre rette med det same. (jf. "ein fork. Test")
+1. Ikkjetrivielle tilfelle skal inn i unit-testing for å teste, feks **b.**
+1. Trivielle ting skal vi berre rette med det same. (jf. "ein fork. Test")
 
+### b.
 
-!b.
-
-Diskusjonen held fram i [Bugzilla|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=1226]. Problemet 
+Diskusjonen held fram i [Bugzilla](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=1226). Problemet 
 ligg i preprocess linje 480ff.
 
+**TILTAK**
 
-__TILTAK__
-
-* ny katalog for testresultat (__Børre__)
-* Lenkje frå testtabell (__Sjur__) - gjort
+* ny katalog for testresultat (**Børre**)
+* Lenkje frå testtabell (**Sjur**) - gjort
 * b. som i Bugzilla.
 * Korpus av forkortingar
-** Dra ut par {{asdf.}} vs. {{asdf.}} frå gull/konvertert-fil-para (__Børre__)
-** Evaluere, og lagre som unit-test-dokument (__Berit Merete, Trond__)
-** Ikkjetrivielle: abbr-test.py
-** Trivielle: echo "ein fork. Test" | preprocess --abbr=sme/bin/abbr.txt eller legg til
+    - Dra ut par `asdf.` vs. `asdf.` frå gull/konvertert-fil-para (**Børre**)
+    - Evaluere, og lagre som unit-test-dokument (**Berit Merete, Trond**)
+    - Ikkjetrivielle: abbr-test.py
+    - Trivielle: echo "ein fork. Test" | preprocess --abbr=sme/bin/abbr.txt eller legg til
 
-
-!! status quo for gullkorpus
+##  status quo for gullkorpus
 
 Fleire filer? Vi ventar til vi har evaluert det vi har.
 
-__TILTAK__
-* Penare tabell (__Sjur__) - halvgjort
+**TILTAK**
+* Penare tabell (**Sjur**) - halvgjort
 
+##  arbeid framover
 
-!! arbeid framover
+### tca2 sine parameter
 
-!tca2 sine parameter
+Status quo: [Nettside](https://giellalt.uit.no/tools/tca2_tests/tca2_testruns.paragstesting.html)
 
-Status quo: [Nettside|https://giellalt.uit.no/tools/tca2_tests/tca2_testruns.paragstesting.html]
+**TILTAK**
 
+1. Rekne ut tabellen på nytt utan samiske tall forteller
+1. For kvart parameter: kåre ein vinnar (max/min)
+1. Lage eit parameteroppsett med berre vinnarverdiar, og køyr det 
 
-__TILTAK__
-
-# Rekne ut tabellen på nytt utan samiske tall forteller
-# For kvart parameter: kåre ein vinnar (max/min)
-# Lage eit parameteroppsett med berre vinnarverdiar, og køyr det 
-
-
-!Ankerfil
+### Ankerfil
 
 tca2 forstår initial stor bokstav sjølv om ankerfila berre har liten bokstav
 Det gjer derimot ikkje vår notinanchor.fst
-Den må også gjere det: ''inituppercase.fst .o. notinanchor.fst'' 
+Den må også gjere det: *inituppercase.fst .o. notinanchor.fst* 
 
-I dag ligg ankerfila ''anchor.txt'' i $GTHOME/gt/common/src/
+I dag ligg ankerfila *anchor.txt* i $GTHOME/gt/common/src/
 
 Anchor-missing:
-{{$GTHOME/tools/alignment-tools/tca2/missing/}}
+`$GTHOME/tools/alignment-tools/tca2/missing/`
 
-Testresultat (diffene) i {{$GTHOME/techdoc/ling/tca2testing/}}
+Testresultat (diffene) i `$GTHOME/techdoc/ling/tca2testing/`
 
-__TILTAK__
+**TILTAK**
 
 * Top-down: Køyr korpuset gjennom anker-fst-en, og legg til nye anker frå toppen, 
-  sjå på mest frekvente missing, (__Sjur__)
-** prestable/tmx/.../sme/... og gjennom ein anchor.fst for sme
-** prestable/tmx/.../nob/... og gjennom ein anchor.fst for nob
-* Legge til i anchor (__Børre, Trond, Berit Merete__)
+  sjå på mest frekvente missing, (**Sjur**)
+    - prestable/tmx/.../sme/... og gjennom ein anchor.fst for sme
+    - prestable/tmx/.../nob/... og gjennom ein anchor.fst for nob
+* Legge til i anchor (**Børre, Trond, Berit Merete**)
 * Korpusdrive: Gå gjennom gullkorpuset, og legg til ord frå dei setningane som er feilparallellisert
 
-
-!abbr-jobbing
+### abbr-jobbing
 
 Det føreset å berre lese gjennom resultat.
 
-__TILTAK__
+**TILTAK**
 Berit Merete og Trond held fram.
 
-!Forbetre konverteringa
+### Forbetre konverteringa
 
-__TILTAK__
-pdf: Fjerne topp- og bunntekst. (__Børre__)
+**TILTAK**
+pdf: Fjerne topp- og bunntekst. (**Børre**)
 
-!!Terskelnivå
+## Terskelnivå
 
 Når har vi eit bra nok resultat til å bedrive ordparallellisering?
 
@@ -111,7 +101,7 @@ Når har vi eit bra nok resultat til å bedrive ordparallellisering?
 ~/freecorpus/prestable$ccat -r converted/nob/ | wc -w
  2097929
 
-{{{
+```
 spectie: here is my intuition:
 spectie: the difference in quality of alignments between 2million words and 4
 		 million words will probably be noticeable
@@ -120,10 +110,9 @@ spectie: because probably they want 50% of good alignments
 spectie: whereas we are talking in the range of 10-20%
 spectie: but the best thing to do is find out what they are expecting
 spectie: and what they are willing to work with
-}}}
+```
 
-
-!!!Neste møte
+# Neste møte
 
 Vi tar ein prat tre av oss før jul (torsdag).
 
@@ -131,5 +120,3 @@ Vi tar ein prat tre av oss før jul (torsdag).
 * BM borte?
 * Trond på jobb i mellomjula.
 * Sjur i Trondheim
-
-

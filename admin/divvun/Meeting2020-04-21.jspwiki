@@ -9,33 +9,33 @@ Saker:
 * ymse
 * neste møte
 
-!!! Sidan sist
+#  Sidan sist
 
-!! Børre
+##  Børre
 * Sammallahtis ordbok: tror jeg har dekket hovedtrekkene i konverteringen
 * TermWiki(sh): 
-** Missinglister er revsorted, henter ord fra både termwiki og dicts
-** Få orden på generering av expressionsider
+    - Missinglister er revsorted, henter ord fra både termwiki og dicts
+    - Få orden på generering av expressionsider
 * Overgang fra () til {} for å merke opp errormarkup
-** Korpus er konvertert, ligger på harddisken min (i git)
-** Går løs på CorpusTools i dag
+    - Korpus er konvertert, ligger på harddisken min (i git)
+    - Går løs på CorpusTools i dag
 
 Eige møte for ordbokskonverteringa: Børre, Duommá, Trond, Sjur.
 
-!! Duommá
+##  Duommá
 * generelle real word error work:
-** lingvistisk grunnlag før reglerna, dvs. finne morfo—fonnetisk system for å generalisere utifrån centrumskonsonanter
-** samla testkorpus
-** testa
+    - lingvistisk grunnlag før reglerna, dvs. finne morfo—fonnetisk system for å generalisere utifrån centrumskonsonanter
+    - samla testkorpus
+    - testa
 
-!! Inga
+##  Inga
 * Klar med missinglister, 1500
-** støy: norske og svenske ord, litt nord- og sør-samisk, mange ordfragment
+    - støy: norske og svenske ord, litt nord- og sør-samisk, mange ordfragment
 * Sett litt på gåvvit og mánná
-** bør ha eige lingvistmøte der vi ser på avgrensingar av derivasjonane
+    - bør ha eige lingvistmøte der vi ser på avgrensingar av derivasjonane
 
 Døme på støy:
-{{{
+```
    7 guovddáš
 válgabiire
   33 ánna
@@ -64,18 +64,18 @@ válgabiire
    8 éa
 2453 b
   17 ab
-}}}
+```
 
 Sein kompilering. Raskaste hfst-oppsettet er:
-{{{
+```
 ./configure --without-xfst --with-hfst --enable-reversed-intersect --with-backend-format=foma --enable-alignment
 time make -j
 make check
-}}}
+```
 
 Inga og Sjur ser på yaml-testane i lag. Sjur sjekkar at Inga får fail-mail.
 
-!! Linda
+##  Linda
 * skrive regler for generelle realword errors
 * jobba med oppdateringa av GramDivvun
 * gikk gjennom bugzilla og kommenterte/fiksa (ikkje ferdig ennå)
@@ -83,26 +83,26 @@ Inga og Sjur ser på yaml-testane i lag. Sjur sjekkar at Inga får fail-mail.
 * fiksa noen regler som valgte sammensettinglesinger istedenfor særskriving
 * testa Duommá sine eksempler
 
-!! Ritva
+##  Ritva
 * les sme-setningar, og rettar dei, frå Duommá og Linda
 
-!! Sara
+##  Sara
 
 Ikkje til stades pga nettverksproblem.
 
-!! Siri
+##  Siri
 
 Ikkje til stades pga undervising
 
-!! Sjur
+##  Sjur
 
 * testa ny versjon av kbdgen
-** prøvde å konvertera frå gamal til ny struktur
+    - prøvde å konvertera frå gamal til ny struktur
 * testa dadmin-verktyet
 * informerte alle brukarane om GitHub-flyttinga
 * har slått i hop src/phonology/ med src/morphology/
 
-!!! Sommarferie
+#  Sommarferie
 
 Beathe har sendt oss e-post, frist er 1. mai.
 
@@ -112,36 +112,35 @@ Beathe har sendt oss e-post, frist er 1. mai.
 * Inga: usikkert da Gunnar har fått beskjed om at han kanskje ikke får ferie på sommeren.
 * Børre: ingen ferdige planar, men gjerne seint på sommaren, evt 2 veker tidleg + 2 veker seint
 
-!!! Framover
+#  Framover
 
 Møte:
 * Sammallahti-ordbokskonverteringa: Børre, Duommá, Trond, Sjur
 * lingvistmøte: avgrensingar i derivasjonane i smj, sme: Inga, Duommá, Lene, Trond, Sjur
 * smj-yaml-testing: Inga og Sjur
 
-!! Duommá
+##  Duommá
 * generelle real word error work:
-** lingvistisk grunnlag før reglerna, dvs. finne morfo—fonnetisk system for å generalisere utifrån centrumskonsonanter
-** samla testkorpus
-** testa
+    - lingvistisk grunnlag før reglerna, dvs. finne morfo—fonnetisk system for å generalisere utifrån centrumskonsonanter
+    - samla testkorpus
+    - testa
 
-!! Linda
+##  Linda
 * fortsette med å teste de 11 generelle real word error regler som vi har correct filer for
 
-!! Børre
+##  Børre
 * Sammallahti: konvertering og slikt
 * CorpusTools: ny errormarkup
 
-!! Inga
+##  Inga
 * Yaml
 * Gullkorpuset
 * gåvvit og mánná
 
-!!! Ymse
+#  Ymse
 
 Linda vil gjerne introdusera nye taggar.
 
-!!! Neste møte
+#  Neste møte
 
 Tysdag 28.4. kl 09.30 norsk/svensk tid.
-

@@ -1,7 +1,6 @@
-!!!Giellateknomøte 5.11.14
+# Giellateknomøte 5.11.14
 
-
-!!Saker:
+## Saker:
 
 * smenob/nobsme
 * Paradigmegeneratoren i cgi-bin
@@ -11,9 +10,7 @@
 * forrest og hjemmesida
 * orienteringssaker: sjur/trond-møte
 
-
-
-!!smenob/nobsme
+## smenob/nobsme
 
 På nett: Frå juni: 
 * nds: Gamle NSS, 
@@ -23,7 +20,7 @@ smenob: state-of-art:
 * src/
 * src_fad2merge/ (6202 ord)
 
-{{{
+```
 tf-hsl-m0016:src ttr000$ cat *.xml|grep '<e '|cut -d"<" -f2-|sort|uniq -c|sort -nr
 13112 fad
 6373 vd
@@ -40,94 +37,91 @@ tf-hsl-m0016:src ttr000$ cat *.xml|grep '<e '|cut -d"<" -f2-|sort|uniq -c|sort -
    1 other
 Umerka:
 <e> 11431
-}}}
+```
 
+### Tiltak
 
-!Tiltak
-
-* Normalisering av filnamn (__cipian__)
-* Slå saman filene i src/ (__ciprian__)
-* Fjern <e> frå src/ og legg dei i ein separat katalog not_in_dict (__ciprian__)
-** README i katalogen
+* Normalisering av filnamn (**cipian**)
+* Slå saman filene i src/ (**ciprian**)
+* Fjern <e> frå src/ og legg dei i ein separat katalog not_in_dict (**ciprian**)
+    - README i katalogen
 * Unifisering av fad2merge, algoritme
-** Lage 3 kolonner: Lemma - VD - MERGE
-** Legge til OK/NEI/RED i kolonne 4 (__Lene__, ekstern)
-** Maskinelt unifisere alle med OK, osv.
+    - Lage 3 kolonner: Lemma - VD - MERGE
+    - Legge til OK/NEI/RED i kolonne 4 (**Lene**, ekstern)
+    - Maskinelt unifisere alle med OK, osv.
 
-!Namna i xml-katalogen i Geo
+### Namna i xml-katalogen i Geo
 
-{{{
+```
 cat geo_smi.xml|grep '"sme"'|wc -l
     5922
 cat nounProp_smenob.xml |grep '<l '|wc -l
      502
-}}}
+```
 
 Mogleg måtar å hindre at namna blokkerer for andre ord:
 
-# skilnad store/små bokstavar, og, viss vi ikkje liker det:
-# kryss "også med eigennamn"
+1. skilnad store/små bokstavar, og, viss vi ikkje liker det:
+1. kryss "også med eigennamn"
 
-!Metadata
+### Metadata
 
 Vi må oppdatere metadata, både for NDS og for webdict (?)
 
 Vi må lenkje ordbøkene i mellom for same språk.
-* Lenkje: ''Fleire ordbøker for nordsamisk'' i kvar ordbok, lenka til ei fellesside
-* Denne fellessida må vere ein ny versjon av [dicts.uit.no|http://dicts.uit.no]
+* Lenkje: *Fleire ordbøker for nordsamisk* i kvar ordbok, lenka til ei fellesside
+* Denne fellessida må vere ein ny versjon av [dicts.uit.no](http://dicts.uit.no)
 
-!Tiltak
-* __Lene__ ser på dette.
+### Tiltak
+* **Lene** ser på dette.
 
-!Paradigmepresentasjon i NDS
+### Paradigmepresentasjon i NDS
 
 I paradigmegeneratoren eller i NDS?
 Vi prøver å få elevane til å bruke NDS i staden for paradigmegeneratoren.
 
-!!Paradigmegeneratoren i cgi-bin
+## Paradigmegeneratoren i cgi-bin
 
 Vi legg arbeidet inn i NDS, og gjer relativt små endringar i cgi-bin-scriptet.
 
-!Tiltak for å gjere den betre:
+### Tiltak for å gjere den betre:
 
 * Legge til "med varianter" i tittelfeltet over paradigmene ("šuhkoláda")
 * Forbetre presentasjon
-** Endre pluss til mellomrom
-** fst-ar med ulike taggar (regex for norsk og samisk ==> basis for en db for taggar)
-** cgi-bin-skriptet endre taggar
-** Match lokaliserte taggar med lokaliseringsspråk
+    - Endre pluss til mellomrom
+    - fst-ar med ulike taggar (regex for norsk og samisk ==> basis for en db for taggar)
+    - cgi-bin-skriptet endre taggar
+    - Match lokaliserte taggar med lokaliseringsspråk
 * Liste som før, ikkje to tabeller
 * Fjerne lemma heilt til venstre i tabellen
 * Lenkje til paradigmegeneratoren frå ordboka
 * Endre Send skjema / Sádde skovi ==> Send / Sádde
 
-!Tiltak
-* __Trond og Ciprian__ gjer dette.
+### Tiltak
+* **Trond og Ciprian** gjer dette.
 
 Paradigmegeneratoren: Fjerde kulepunkt. Trond: Lag bug.
 
-!!Samarbeid om Sameting og Giellagáldu om e-ordbøker
+## Samarbeid om Sameting og Giellagáldu om e-ordbøker
 Sametinget skal satse på e-ordbøker, Giellagáldu normerer
 
-!Tiltak
-* __Lene og Trond__ ser på dette.
+### Tiltak
+* **Lene og Trond** ser på dette.
 
-!Tidsplan
+### Tidsplan
 
 * Små endringar til neste møte
 * Oppsummering og vidare plan på det møtet
 
-
-!!Common Crawl Foundation-workshop i Oslo
+## Common Crawl Foundation-workshop i Oslo
 
 Börre dit? Trond tar det vidare.
 
-[CCF workshop in Oslo|http://www.mn.uio.no/ifi/om/aktuelt/arrangementer/andre/nlpg.html]
+[CCF workshop in Oslo](http://www.mn.uio.no/ifi/om/aktuelt/arrangementer/andre/nlpg.html)
 
-!!sme til nyinfra ~ fst-testing via VD-pipeline
+## sme til nyinfra ~ fst-testing via VD-pipeline
 
-
-!Paradigmetesting
+### Paradigmetesting
 Ciprian har skrive i e-post.
 
 Plukk ut 20 ord med ulike taggar (Allegro, miniparadigme, v1, v2)
@@ -137,22 +131,19 @@ Vi har testa Oahpa og analysen.
 
 Lage yaml av gamle VD-oppsett, eitt ord frå kvart kontleksikon.
 
-
-!abbr.txt
+### abbr.txt
 
 * Trond: 1100 i gammal, 813 i ny
 * Lene: 1100 i gammal, 1100 i ny
 
-
-!Use/MT
+### Use/MT
 
 Use/MT -- skal fjernast overalt, men vere med i apertium-generator-fst-ar
 Ei anna sak er at den må bli merka for målspråk
 
+### Use/LexSub
 
-!Use/LexSub
-
-* [Use/LexSub|http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=1904]
+* [Use/LexSub](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=1904)
 
   Dette er ei sak for Divvun: Desse strengane skal ikkje med i Divvun-kontrollar.
   og ikkje med i den normative analysatoren.
@@ -160,7 +151,7 @@ Ei anna sak er at den må bli merka for målspråk
 5100 Err/Sub, 700 Use/LexSub
 
 Vi ville endre denne til Err/LexSub i vår, jf 
-[møtereferat|/admin/weekly/2014/Meeting_2014-03-28.html]
+[møtereferat](/admin/weekly/2014/Meeting_2014-03-28.html)
 
 Strengen Use/LexSub må bli fjerna for den normative analysatoren (Divvun).
 Det er altså ei Divvun-sak.
@@ -168,49 +159,50 @@ Det er altså ei Divvun-sak.
 Konklusjon: For Gt sin del kan vi gå over til ny infra.
 Vi må flytte kildefilene for å ta vare på svn-historikken.
 
-# Lag ein kopi av gammal infra, for referanse. Frys den.
-# Flytt gammal til ny, med svn-historikk
+1. Lag ein kopi av gammal infra, for referanse. Frys den.
+1. Flytt gammal til ny, med svn-historikk
 
 Trond tar det opp med sjur.
 
-!!Korp
+## Korp
 
 Ciprian kan trykke på knappen. Vi ser om det er nye ting i dag.
 
 Oppdatere korpus, og deretter Korp.
 
-!!forrest - hjemmeside
+## forrest - hjemmeside
 
-!Fra møte 8.10.14:
+### Fra møte 8.10.14:
 
 * forbedre innholdet i ramma som er (Trond, Ciprian 15.10)
 * forbedre oversettelser (Jussi, Ivan, Laura/Detmar), deretter
 * forbedring layout pluss tekniske ting i Forrest (Trond tar opp med Sjur 14.10)
 * endre layout innafor forrest (også lage ny forside, bilde etc.), ekstern person, januar 2015
 
-!tabs
+### tabs
 
 I dag:
 
-|| Tab             || Går til        
-|  Hjem Home		   | Heimesida         
-|  Språklæring		   | oahpa.no          
-|  Divvun korrektur   | divvun.no         
-|  Ordbøker		   | dicts.uit.no      
-|  Oversetting		   | gtweb.uit.no/mt   
-|  Tekstkorpus        | gtweb.uit.no/korp 
-|  TechDoc            | Techdoc-sidene    
+|   Tab             | Går til        
+| --- | --- 
+|   Hjem Home		   | Heimesida         
+|   Språklæring		   | oahpa.no          
+|   Divvun korrektur   | divvun.no         
+|   Ordbøker		   | dicts.uit.no      
+|   Oversetting		   | gtweb.uit.no/mt   
+|   Tekstkorpus        | gtweb.uit.no/korp 
+|   TechDoc            | Techdoc-sidene    
 
 Alternativ:
 
-Ha __Verkty for samiske språk__ (osb.) i tabbane der oppe
+Ha **Verkty for samiske språk** (osb.) i tabbane der oppe
 
 Nye tabbar:
 * Desse vil vi ha
-** Hjem Home
-** Divvun
-** Verktøy for samiske språk
-** Verktøy for andre språk
+    - Hjem Home
+    - Divvun
+    - Verktøy for samiske språk
+    - Verktøy for andre språk
 
 Desse går då ut (dei er dekt av andre lenkjer)
 
@@ -218,13 +210,11 @@ Desse går då ut (dei er dekt av andre lenkjer)
 * Ordböker
 * MT
 
-!Tiltak
+### Tiltak
 
-* __Lene__ implementerer det.
+* **Lene** implementerer det.
 
-
-
-!Dei fire framsidene
+### Dei fire framsidene
 
 Status for dei fire sidene:
 
@@ -233,69 +223,63 @@ Status for dei fire sidene:
 * On oss er parallell
 * samarbeidspartnarar: nno, eng er parallel, og er utgangspunkt
 
-!Tiltak
+### Tiltak
 * Lene synkroniserer samisk og norsk
 * Trond ser på resten
 * Trond gjer om til bokmål
 
-!Sjur/Trond-referat (4.11):
+### Sjur/Trond-referat (4.11):
 
-# kløyv gtuit-forrest i to likt Divvun
-# bygg ut gtuit til å vera fleirspråkleg slik Divvun er det
-# lag felles techdoc
+1. kløyv gtuit-forrest i to likt Divvun
+1. bygg ut gtuit til å vera fleirspråkleg slik Divvun er det
+1. lag felles techdoc
 
 Tidsplan: Denne/neste veke.
 
-
-!!Bugzilla
+## Bugzilla
 
 Betre politikk for prioritering:
 
 * Den som meldar inn buggen set alvorlegheitsgrad
-**  (feature request ... blocker). 
-** Så kan sjølvsagt 
+    -  (feature request ... blocker). 
+    - Så kan sjølvsagt 
    alle involverte revidere alvorlegheitsgraden viss det
    viser seg at buggen er meir/mindre alvorleg enn vi
    først trudde.
 * Trond/Sjur/eigaren set prioritet 
-** (P1 ... P5)
+    - (P1 ... P5)
 * Vi tar prioriteringane alvorleg, og lar det
   vere samsvar med P og realitet.
-
 
 Flytte bz-diskusjon over til dokumentasjonen?
 I visse tilfelle bør vi gjere det.
 
-!Tiltak
+### Tiltak
 * Trond diskuterer [/lang/sme/j-sme.html]
 med Sjur. Desse sidene må i bruk.
 
-!!Orienteringssaker
+## Orienteringssaker
 
 Sjur/trond-møte
 Enare
 
-
-
-
-!Møtereferata
+### Møtereferata
 
 main/techdoc/admin/giellatekno/
 [/admin/meetings.html]
 
-!!Terminologi
+## Terminologi
 
-!Utlysing
+### Utlysing
 1.12. språkrådet
 
-!SDÁ
+### SDÁ
 
 SDÁ-terminologi: Vaske ut akademisk tekst
 Vi vil ha SDÁ i Korp.
 
-__Lene__ kontaktar redaksjonskomitéen.
+**Lene** kontaktar redaksjonskomitéen.
 
-!!Neste möte
+## Neste möte
 
 Om ei veke: Planar.
-

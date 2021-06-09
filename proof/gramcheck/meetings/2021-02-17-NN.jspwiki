@@ -5,21 +5,20 @@ NN-meeting:
 
 Tommi, Chiara, Linda
 
-
 target: original sentences
 source: 
 pred: output of NN
 
 * it does find errors - 
-** f.eks. eana čujuheapmi cealkimuša > eanačujuhancealkámuša
-** joatkka skuvlla > joatkkaskuvlla
+    - f.eks. eana čujuheapmi cealkimuša > eanačujuhancealkámuša
+    - joatkka skuvlla > joatkkaskuvlla
 * it capitalizes things that shouldnt be captialized: čáhcerávggat > Čáhcerávggat
 * why are there so many double exclamation marks? (also in the middle of words, which are not compounds, after other punctuation, at the beginning of lines, etc.) 
 * suspicious characters?  §§§ are in source texts because legalese
 * splitting is problematic:
-** III Árbbolaččat-trilogiija guorahallan!! > III árbbolaš trilogiija ija guorahallan!!
+    - III Árbbolaččat-trilogiija guorahallan!! > III árbbolaš trilogiija ija guorahallan!!
 * the problem with fixing this back to Árbbolaččat is that árbbolaš is a correct form as well and we would probably wanna fix it to árbbolaš-triologiija without interfering too much with the writer's authority. If we fix it to Árbbolaččat-trilogiija, we do a lexical fix in addition to the grammatical one, assuming that the writer is speaking about a known book.
-** fix splitter to ignore hyphenated words except for - -> " "
+    - fix splitter to ignore hyphenated words except for - -> " "
 * this is a successful correction: miessi mánu>miessemánu
 * successful, but it should be capitalized (first letter), the splitting went wrong: journála ovddas vástideaddjái>journálaovddasvástideaddjái
 * capitalization problem: Eaiggátguovttos> eaiggátguovttos, this is a splitting problem: eaiggát guovttos
@@ -27,15 +26,13 @@ pred: output of NN
 * molssa evttolaš oahpahus vugiide>molssaevttolaš oahpahusvugiide went well (two compounds in a row)
 * Nuoramus ahki joavkku nisu olbmot>!Nuoramus ahkejoavkku nissonolbmot (successfull and two compounds in a row)
 
-
-
 TODO:
 * technical things:
-** Chiara fixed the PoS things and is running the scripts, but it takes time
+    - Chiara fixed the PoS things and is running the scripts, but it takes time
 * article structure:
-** NN is possible, but of course we just check for one error type
-** NN is time-consuming if we wanna do it 100% right, and be sure that everything is reliable
-** describe the effort to make it work:
+    - NN is possible, but of course we just check for one error type
+    - NN is time-consuming if we wanna do it 100% right, and be sure that everything is reliable
+    - describe the effort to make it work:
 splitter and actually we used our rule-based things for making it (fst, morphological disambiguator)
 alternatively, we could ask someone to use 5 years to mark-up the corpus -- can we find out how time that usually takes??
 * our rule based system (yaml tests for compound errors):
@@ -54,12 +51,11 @@ F₁ score: 90.9%
 * maybe we should run the neural network on this one, after we have sufficiently trained it
 * the output is not quite presentable, we don't get any error message
 * maybe we could compare the time effort for both
-** for the rule-based system we should look at when we started mwe-dis.cg3 (and look at the log)
+    - for the rule-based system we should look at when we started mwe-dis.cg3 (and look at the log)
 
 Application:
 * Neural Networks for Sámi NLP
 * Computing Resource
-
 
 eanačujuhancealkámuša rájes." ¶!!Sámi árbevierus gávdnojit earret!!eará gufihttarat, Čáhcerávggat ja!!háldit mat gullet sámi áddejupmái!!
 ja máilmmálaš govvádussii .!!guovlu man siskkobealde juolludit doarjagiid)!!čájeha ahte leat eanet geat!!eai leat čađahan joatkkaskuvlla!!

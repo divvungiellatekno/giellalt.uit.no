@@ -20,9 +20,6 @@ done:
 * "_not_markedup" meattáhusat maid grammarchecker raportere muhto eai leat merkejuvvon
 * label -- meattáhusnamma
 
-
-
-
 error correction
 
 Correction evaluation numbers could be calculated using these definitions:
@@ -35,21 +32,16 @@ GramDivvun did not find or found but did not correct -- false negative
 GramDivvun found and corrected as in markup --- true positive
    * correct detection, correct correction
 
-
-
 todo:
 * keep fixing other mistakes than real- in the source files
 * lang-sme: run make
 * check if there is a new se.zcheck file: ls -l $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck
 * run again:
-{{{
+```
 rm -rf $GTFREE/correct-no-gs/converted # sihkku boares konverterejuvvon fiillaid
 svn up $GTFREE/orig/sme/ # viežžá ođasmahttojuvvon fiillaid
 convert2xml --goldstandard $GTFREE/orig/sme/grammar-realword # konvertere fiillaid
 cd $GTFREE
 $GTCORE/devtools/gramcheck_tester2.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck $GTFREE/correct-no-gs/converted/sme # vuodjá grammarcheckera, ráhkada .pickle-fiilla
 $GTCORE/devtools/gramcheck_comparator.py $GTLANGS/lang-sme/tools/grammarcheckers/se.zcheck correct-no-gs --filtererror errorlex errormorphsyn # lohká .pickle-fiilla, ráhkada raportta
-}}}
-
-
-
+```

@@ -1,6 +1,6 @@
-!!!Meeting 9.7.2010
+# Meeting 9.7.2010
 
-!!!Prerequisites for the test bench
+# Prerequisites for the test bench
 
 * check out biggies - another GB of disk space :/
 * make a symbolic link from $GTHOME/techdoc named proof to $GTBIG/techdoc/proof/
@@ -16,15 +16,15 @@ In addition:
   nb.aff
 * touch the *correct.txt.xml file to rerun the test
 
-!!!Running the test bench:
+# Running the test bench:
 
-{{{
+```
 cd $GTHOME/gt
 make correct-test TARGET=nob TESTTOOL=hu DOC=../../freecorpus/goldstandard/converted/nob/ficti/nob-001_norge-mellomkrigstid.correct.txt.xml
-}}}
+```
 
 After starting Forrest, the test reports should be available at:
 
-{{{
+```
 http://localhost:8888/doc/proof/spelling/testing/nob/hu/XXX.html
-}}}
+```

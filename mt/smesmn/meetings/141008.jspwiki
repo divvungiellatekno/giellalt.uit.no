@@ -1,34 +1,31 @@
-
 Prosjektmøte sme2smn 8.10, 10.10.
 
 Til stades: Fran, Lene, Marja-Liisa, Trond.
 
-
-!!Saksliste
+## Saksliste
 
 * Administrativt
 * Arbeid framover
 
-!!Administrativt
+## Administrativt
 
 * Trond skrive rapport (gjort)
 * Lyse ut på nytt --> viss smn så datalingvist i neste omgang
-** Trond snakkar med Jorun
+    - Trond snakkar med Jorun
 
-!!Arbeid framover
+## Arbeid framover
 
-!Teknisk oppsett
+### Teknisk oppsett
 * Få maskineriet til å fungere
 * Integrere Giellatekno + Apertium
 
-{{{
+```
 $ echo "sámit" | apertium -d . sme-smn-debug
 säämih
 
-
 $ echo "Sámiin álgoálbmogin lea vuoigatvuohta" | apertium -d . sme-smn-debug
 Saamijn #algâaalmug<n><ess> lii vuoigâdvuotâ.
-}}}
+```
 
 Correct: Sämmilijn algâalmugin lii vuoigâdvuotâ.
 
@@ -36,34 +33,31 @@ TILTAK:  Francis skal skrive dokumentasjon for teknisk installering.
 
 [/mt/smesmn/NorthSaamiInariSaamiMachineTranslation.html]
 
-!Analysator
+### Analysator
 
 Nordsamisk analyse i orden
 
-!Bidix
+### Bidix
 sme-smn
 
 * sme-smn generelt i words/dicts/smesmn/src
 * sme-smn bidix i apertium/nursery/apertium-sme-smn
 
 TILTAK: 
-* Trond skal sjekke inn i apertium __og__ i words/dicts
-
+* Trond skal sjekke inn i apertium **og** i words/dicts
 
 Neste steg:
 
 * Introduksjon: gå gjennom sme2sma-presentasjonen
 * Nordsamisk frekvensordbok: Omsetje til enaresamisk
 
-
-
-!Tag-harmonisering
+### Tag-harmonisering
 Sjå til at språka har like taggar / at vi gjer greie for ulikheiter
 
-!Generator
+### Generator
 Generere smn
 
-!Transfer
+### Transfer
 Grammatiske skilnader:
 
 * Morfologi: Skilnader sme-smn
@@ -73,28 +67,28 @@ Metoden: Omsetje til enaresamisk, sjå på resultatet.
 
 Vi starar med andre ord ut utan ein transfer-komponent.
 
-!Maskinomsetjing smn2sme?
+### Maskinomsetjing smn2sme?
 
 Vi manglar disambiguering for smn, og må vente med det.
 
-!Andre ting
+### Andre ting
 Etiske problem: Vil dette programmet endre enaresamisk?
 
 Det må vere ein sosial kontroll for å hindre folk i å publisere dårleg enaresamisk på nett. i
 
-!Plan
+### Plan
 
 Fordele arbeidsoppgåver på personar
 
 * Miina (MA1): fst, bidix
 * Marja-Liisa (postdoc): fst, bidix, grammatiske skilnader
-** . Følgje opp Miina
+    - . Følgje opp Miina
 * Ilmari: Korpus, evaluere output
 * Mervi:  
 * Francis: Teknisk oppsett, alt MT
 * Lene: fst, 
 * Trond: fst. 
-** Følgje opp Miina
+    - Følgje opp Miina
 * Ciprian: Pan-samisk ordnett, relevant for bidix
 * Jussi: Grammatiske skilnader
 * Phd: datalingvistikk
@@ -108,7 +102,6 @@ Meir pengar -- kva skal vi prioritere?
 * Transfer: Kjem etterpå
 * Skilnader: Marginale skilnader er ikkje så interessante, vi har nok med dei vanlege
 
-!Publikasjonar
+### Publikasjonar
 
 Litt tidleg
-

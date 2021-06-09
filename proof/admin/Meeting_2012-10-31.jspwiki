@@ -1,4 +1,4 @@
-!!!Speller meeting
+# Speller meeting
 
 Release planning
 
@@ -6,31 +6,31 @@ What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 Børre has called the company he had in mind, and discussed the installer issue with them.
 
 We'll get an answer for whether they can fix it, and to what price, tomorrow.
 
-__TODO:__
+**TODO:**
 * get a proper quote from the Tromsø company regarding a fixed installer/fixed
-  registry entries (__Børre__)
+  registry entries (**Børre**)
 
-!!!PLX conversion
+# PLX conversion
 
 The PLX conversion now seems stable. The full speller behaves the same as the test speller in the tests we have.
 
 Tomi did the regression test. The words contained in the test bench are accepted by both spellers.
 
-I ran regression test with test speller. {{sme/polderland/regression.txt}} in general speller testing.
+I ran regression test with test speller. `sme/polderland/regression.txt` in general speller testing.
 
 The PLX conversion test bench uses the following files:
-* {{sme/polderland/testing/words-accept.txt}}
-* {{sme/polderland/testing/words-reject.txt}}
+* `sme/polderland/testing/words-accept.txt`
+* `sme/polderland/testing/words-reject.txt`
 
-__Tomi__ is adding these tests to the proofingtools testing makefile.
+**Tomi** is adding these tests to the proofingtools testing makefile.
 
-Test results for running the {{words-*.txt}} files through the spellers:
+Test results for running the `words-*.txt` files through the spellers:
 * words-reject.txt + test speller: Rejects the same set as the full speller
 * words-reject.txt + full speller: Rejects the same set as the test speller
 
@@ -39,11 +39,11 @@ Test results for running the {{words-*.txt}} files through the spellers:
 
 Conclusion: the PLX conversion IS predictable and stable for the data we have.
 
-__TODO:__
-* fix the PLX codes for the two reject strings presently accepted (__Tomi__)
-* fix the as problem in the regular expression for test data (__Tomi__)
-* work on test bench improvements (__Tomi__)
+**TODO:**
+* fix the PLX codes for the two reject strings presently accepted (**Tomi**)
+* fix the as problem in the regular expression for test data (**Tomi**)
+* work on test bench improvements (**Tomi**)
 
-!!!Release plan
+# Release plan
 
 Meeting every afternoon, solving one issue at a time until we have a release candidate.

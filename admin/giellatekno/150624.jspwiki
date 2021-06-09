@@ -1,7 +1,6 @@
-
 Giellatekno-møte 24.6.
 
-!!!Saksliste
+# Saksliste
 
 fst:
 
@@ -10,31 +9,30 @@ fst:
 * samansette ord: 
 * teikne automatar
 
-
-!!!Bakgrunn 
+# Bakgrunn 
 
 Vi hadde hatt diskusjon i Canada, m.a. med Måns Huldén, om dette.
 
-
-
 I staden for referat legg vi her ut skisse frå diskusjonen:
 
-{{{
+```
 --------------
 samis	sápmi+Hum+N+Sg+Loc+AErr
 
 L   sápmi+N+Sg+Loc +AErr !!
     sápmi^WGs
+
     
 T   sápmi^WGs
     sámis
+
     
 S   sámis    á (->) a ; 
     samis
 --------------
 define Lex {ääliö} ("+MIS":"^") ;  <--- lexc +AErr:+AErr
 
-def Rule1 ä (->) a X , ö (->) o X || _ ?* "^" ;
+def Rule1 ä (->) a X , ö (->) o X | _ ?* "^" ;
 def Rule2 "^" =>  X ?* _ ;
 def Rule3 X -> 0 .o. "^" -> 0;
 
@@ -48,7 +46,7 @@ Rule 123
 ------------------------
 heile sme-lexc med nytt ENDLEX:
 LEXICON ENDLEX +MIS:%^ # ; # ;
-def Rule1 ä (->) a X , ö (->) o X || _ ?* "^" ;
+def Rule1 ä (->) a X , ö (->) o X | _ ?* "^" ;
 def Rule2 "^" =>  X ?* _ ;
 def Rule3 X -> 0 .o. "^" -> 0;
 regex lexicon.xfst .o. Rule1 .o. Rule2 .o. Rule3;
@@ -64,10 +62,6 @@ up ääliö
 re operator: => context restriction, e.g. 
 A => B _ C, D _ E
 
-
-
-
-
 "LangA"
 á:a =>   _ :*  ( %>: ) ( »: ) ( »: »: »: ) %+AErr:0 ;
  Cns:+ _ ( %>: ) ( »: ) ( »: »: »: ) (¤:) (StemCns:*) ( %>: ) ( »: ) ( »: »: »: ) X7: ;
@@ -79,22 +73,21 @@ A => B _ C, D _ E
 
 guesser
 
-
 foma
 source guesstest.foma
 
 ---------------------------------
 guesstest.foma
 ------------
-def C [b|c|d|f|g|h|k|l|m|n|p|q|r|s|t|v|w|x|z|%@];
-def V [a|e|i|o|u];
+def C [b|c|d|f|g|h|k|l|m|n|p|q|r|s|t|v|w|x|z](%@);
+def V [a|e|i|o](u);
 def PhonWord [C* V (V) C*]+;
 
 read lexc guesstest.lexc
 substitute defined PhonWord for "^GUESSNOUNSTEM"
 
 def Grammar;
-def Phonology [..] -> e || [s h | c h | s | x | z] _ s .#. ;
+def Phonology [..] -> e | [s h | c h | s | x ]( z) _ s .#. ;
 def Grammar Grammar .o. Phonology ;
 
 def GuessGrammar  $[ "+GUESS" ] .o. Grammar ;
@@ -143,7 +136,6 @@ blablass+GUESS+N+Sg
 apply up> 
 ---------------------
 
-
 giellabeassi
 giellabeassi	girji+N+SgNomCmp+Cmp#busse+N+G3+Sg+Nom  = 1
 giellabeassi	girjebusse+N+G3+Sg+Nom  = 0
@@ -165,9 +157,4 @@ giella#beassi
 g#iella#beassi
 ...
 
-}}}
-
-
-
-
-
+```

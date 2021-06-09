@@ -1,55 +1,54 @@
-!!!Karp/Korp-møte 9.4. 2013
+# Karp/Korp-møte 9.4. 2013
 
 Til stades: Børre, Ciprian, Sjur, Trond
 
-!!!Saksliste
+# Saksliste
 
 * Status quo
 * Plan
-** GT
-** DV
+    - GT
+    - DV
 
-
-!!! Status quo
+#  Status quo
 Prof. II på veg.
 
-!!karp
+## karp
 Karp kan vere for avansert for oss. -- det ser ut til
 at vi ikkje har leksikalske ressursar til det. 
 Vi ser på korp først, seinare på karp.
 
-!!korp
+## korp
 
 http://www.lrec-conf.org/proceedings/lrec2012/pdf/248_Paper.pdf
 
 Korp er eit mogleg alternativ til DeepDict.
 
 The interface has been inspired by corpus search interfaces such as SketchEngine, Glossa, and DeepDict, and it uses State Chart XML (SCXML) in order to enable users to bookmark interaction states. 
+
  
 * [/infra/korp/KorpKarpInstallation.html]
 * [http://spraakbanken.gu.se]
 * [http://spraakbanken.gu.se/swe/forskning/infrastruktur/korp/distribution]
 
+## Korp-plan
 
-!!Korp-plan
+Korp først til **Cip** si maskin, deretter til gtweb.
 
-Korp først til __Cip__ si maskin, deretter til gtweb.
-
-!!!Victorio-flyttinga
+# Victorio-flyttinga
 
 Svn-repositoria er flytta (bortsett frå $GTBOUND), og er tilgjengelege (ein litt eldre versjon, ikkje sjekk inn anna enn testinnsjekkingar):
-{{{
+```
 svn co https://gtsvn.uit.no/langtech/trunk/gt/script/corpus
-}}}
+```
 
 Ting som skal gjerast for å fullføra flyttinga:
 * synkronisert med IT:
-** synkronisera repositoria (__Børre__)
-** slå av svn/httpd på victorio-maskina (__Børre__)
-** gtsvn.uit.no/* som alias til gtsvn.uit.no/* (__IT__)
-* uavhengig: installera gyldig sertifikat for svn på gtsvn (__Sjur, IT__)
+    - synkronisera repositoria (**Børre**)
+    - slå av svn/httpd på victorio-maskina (**Børre**)
+    - gtsvn.uit.no/* som alias til gtsvn.uit.no/* (**IT**)
+* uavhengig: installera gyldig sertifikat for svn på gtsvn (**Sjur, IT**)
 
-{{{
+```
 svn
 cgi
 	/www - filene er manuelt kopiert hit
@@ -57,6 +56,7 @@ cgi
 bound
 webdict
 	mt
+
 	
 eksperimentell oahpa
 
@@ -65,4 +65,4 @@ eksperimentell oahpa
 /
 /home/generelle_underkatalogar
 /home/personlege_underkatalogar == personleg ansvar
-}}}
+```

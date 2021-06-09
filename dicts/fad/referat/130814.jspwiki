@@ -1,4 +1,3 @@
-
 FAD-møte 14.8.2013
 
 Til stades:
@@ -11,7 +10,7 @@ Saksliste
 * arbeidet
 * neste møte
 
-!!!presentasjonen i Enare
+# presentasjonen i Enare
 
 Punkt frå abstractet:
 
@@ -28,24 +27,21 @@ poeng for oss:
 * er vi i stand til å finne den
 * er dette nyttig
 
+# arbeidet
 
+## disambiguere
 
-
-!!!arbeidet
-
-!!disambiguere
-
-{{{
+```
 src_gt-fad_merged>grep 'src="fad"' _out_/* | cut -d ':' -f1 | sort | uniq -c | sort -nr 
 1974 _out_/N_nobsme.xml
  682 _out_/V_nobsme.xml
  319 _out_/A_nobsme.xml
  ==> omkring 3000 rene fad-t-elementer
-}}}
+```
 
 status
 
-{{{
+```
 src_fad-only>grep '<e' * | grep 'mg_c' | sort | uniq -c | sort -nr  
  151 N_nobsme.xml:   <e src="fad" mg_c="2">
  120 N_nobsme.xml:   <e src="fad" mg_c="3">
@@ -56,17 +52,20 @@ src_fad-only>grep '<e' * | grep 'mg_c' | sort | uniq -c | sort -nr
    4 N_nobsme.xml:   <e src="fad" mg_c="8">
    1 N_nobsme.xml:   <e src="fad" mg_c="9">
    1 N_nobsme.xml:   <e src="fad" mg_c="10">
+
    
    src_fad-only>grep '<e' * | grep 'mg_c' | wc -l 
      443
-}}}
+```
+
    
 For lemma og translation:
+
    
-# abs frekv for ordet i heile domenet = 
-# rel frekv for ordet i heile domenet = gfL, gfT
-# abs frekv for ordet i fagdomenet
-# rel frekv for ordet i fagdomenet = ffL, ffT
+1. abs frekv for ordet i heile domenet = 
+1. rel frekv for ordet i heile domenet = gfL, gfT
+1. abs frekv for ordet i fagdomenet
+1. rel frekv for ordet i fagdomenet = ffL, ffT
 
 Kva kan vi gjere med desse tala?
 
@@ -77,10 +76,9 @@ Scenarier:
 * Finn vi fagord i det heile?
 * Finn vi domener?
 
-
 Filene:
 
-{{{
+```
    <e>
       <lg>
          <l pos="N" gf="0.0000000623088" ff="0">topptekst</l>
@@ -102,7 +100,7 @@ Filene:
          </tg>
       </mg>
    </e>
-}}}
+```
 
 for <l> og <t>:
 * gf = global relativ frekvens (nowac)
@@ -118,11 +116,9 @@ Vi må vurdere kva slike tal betyr (t = belegg, 0 = ingen belegg):
 
 er L vanlegare i fad enn i generell
 
-
 * ffL - gfL = positiv ==> fagord (meir vanleg i domene)
 * ffL - gfL = 0 ==> generelt ord (like vanleg) der 0 er det same som ± 0.05
 * ffL - gfL = negativ ==> ikkje fagord (mindre vanleg i domene)
-
 
 output av differanse:
 
@@ -133,22 +129,21 @@ Eitt svar: med grense X får vi Y% fagord i det som ligg over grensa
 
 kan vi finne:
 
-{{{
+```
 viss vi for lemma L finn at:
 d(ffL,gfL) ≠ d(ffT1,gfT1) er positiv
 d(ffL,gfL) ≠ d(ffT2,gfT2) er er null eller negativ
 
 så har vi L => T1 = fagordomsetjing, L => T2 = generell omsetjing.
-}}}
+```
 
 Arbeid framover:
 
-# grunndata for fad ferdig (unifisering) (bm, trond, marja)
-# frekvensar for ordpar frå fad-merge (cip)
-# differansar som ovafor (cip)
-# nytt møte, evaluering, presentasjon (alle) <--
+1. grunndata for fad ferdig (unifisering) (bm, trond, marja)
+1. frekvensar for ordpar frå fad-merge (cip)
+1. differansar som ovafor (cip)
+1. nytt møte, evaluering, presentasjon (alle) <--
 
+# Neste møte
 
-!!!Neste møte
-
-__Tysdag 20.8. kl. 10.00__
+**Tysdag 20.8. kl. 10.00**

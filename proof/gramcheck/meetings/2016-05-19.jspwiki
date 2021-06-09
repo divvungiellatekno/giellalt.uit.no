@@ -1,10 +1,10 @@
 Gramcheck-møte 19.5.2016
 
-!!! spellrelax og taggar
+#  spellrelax og taggar
 
 Kandidatar til spellrelax med errortagg (ekteordsfeil):
 
-{{{
+```
 á (->) a ,
 a (->) á ,
 č (->) c ,
@@ -12,40 +12,40 @@ c (->) č ,
 š (->) s ,
 z (->) ž ,
 ž (->) z ;
-}}}
+```
 
-Tagg: {{+Err/Spellrelax}}
+Tagg: `+Err/Spellrelax`
 
-!!! særskrivne, leksikaliserte samansetjingar
+#  særskrivne, leksikaliserte samansetjingar
 
-For å få sjå forskjellen på ''«skuvla busse»'' (leksikalisert som eitt ord) og ''«mánná busse»'' (ville vore dynamisk ss som eitt ord)
+For å få sjå forskjellen på *«skuvla busse»* (leksikalisert som eitt ord) og *«mánná busse»* (ville vore dynamisk ss som eitt ord)
 
-Mogleg løysing: la alle {{#}}-merker i lexc gå til {{#}} eller {{#:" "}} før dei blir fjerna, slik at den leksikaliserte dukkar opp i readings av ''«skuvla busse»''.
+Mogleg løysing: la alle `#`-merker i lexc gå til `#` eller `#:" "` før dei blir fjerna, slik at den leksikaliserte dukkar opp i readings av *«skuvla busse»*.
 
 LexC-kode for eksempelordet:
-{{{
+```
 skuvlabusse+G3+Sem/Veh:skuvla#bus'se GOAHTI ;
-}}}
+```
 
 Dette er det vi vil oppnå:
 
-{{{
+```
 skuvla0bus0se+G3+Sem/Veh
 skuvla#bus'se
   ⇓
 skuvla0bus0se+G3+Sem/Veh+N+Err/SpaceCmp
 skuvla bus0se
-}}}
+```
 
 Strategi for å gå frå særskrive samansett ord til tagg:
-{{{
+```
 På overflata:
  # (->) @P.FLAG.ON@ " "
  twosided flag-diacritics
 
 På analysesida:
- [..] (->) @R.FLAG.ON@ "+Err/SpaceCmp" || @P.FLAG@ ?* +N _ ;
+ [..] (->) @R.FLAG.ON@ "+Err/SpaceCmp" | @P.FLAG@ ?* +N _ ;
  twosided flag-diacritics
-}}}
+```
 
-Tagg: {{+Err/SpaceCmp}}
+Tagg: `+Err/SpaceCmp`

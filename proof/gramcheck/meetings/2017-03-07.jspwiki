@@ -8,7 +8,7 @@ Saker:
 * NoDaLiDa
 * anna?
 
-!!!status
+# status
 
 Duommá:
 * har halde fram med å byggja korpus over feil og rett
@@ -16,8 +16,8 @@ Duommá:
 
 Bortkasta reglar: partitiv lokativ - två tolkningar:
 
-# ...2003 čavčča juolludan oasi {{ruđaid}}... = høsten 2003 tilldelat en del pengar....
-#  ...2003 čavčča juolludan oasi {{ruđain}}... = høsten 2003 tilldelat en del av pengarna....
+1. ...2003 čavčča juolludan oasi `ruđaid`... = høsten 2003 tilldelat en del pengar....
+1.  ...2003 čavčča juolludan oasi `ruđain`... = høsten 2003 tilldelat en del av pengarna....
 
 Linda:
 * tegnsettingsregler, dvs. kommaregler
@@ -27,9 +27,8 @@ Linda:
 * flere kasusregler subjekt vs. akk/gen
 * feil i sammenheng med derivasjoner -- Giellagáldu
 * feil i ellipser (koordinering) -- Giellagáldu
-** jf «eg sikter til og snakkar om X» vs *«eg sikter og snakkar om X»
+    - jf «eg sikter til og snakkar om X» vs *«eg sikter og snakkar om X»
 * maintenance: tilpassing til nye tagger, forandringer i disambigueringa etc.
-
 
 Kevin:
 * webdemo meir språkgenerell (jf. fao-demo), ein del bugfix, escaping
@@ -42,41 +41,41 @@ Sjur:
 * litt perifert: jobba med ein ny versjon av MacVoikko -> MacDivvun - framtidig ramme for os-vid grammatikkontroll
 * rydda og samla GC-dokumentasjonen - alt er no samla under techdoc/proof/gramcheck/
 
-!!!arbeid framover
+# arbeid framover
 
 * alternativ pipeline for enkle formatteringsfeil; inn i webdemo --- Kevin
-** anførselsteikn
-*** "kake" → «kake» -- kanskje CG
-*** og « kake» → og «kake»  --- ikkje CG --- Kevin
-** parentesar:
-*** ubalanserte parentesar:
-{{{
+    - anførselsteikn
+        - "kake" → «kake» -- kanskje CG
+        - og « kake» → og «kake»  --- ikkje CG --- Kevin
+    - parentesar:
+        - ubalanserte parentesar:
+```
 {kake] -> {kake}
-}}}
+```
 * altern. pipeline, framhald:
-** parentesar, framhald:
-*** 1.) :-)
-*** 2.) :-(((
-** telefonnummer
-** dato
-** ... og andre taluttrykk
-** doble mellomrom, mellomromsfeil:
-*** kake ; ost → kake; ost
-*** og )eller → og) eller --- ikkje CG --- Kevin
-** store vs. småbokstaver? --- korpusgransking?
+    - parentesar, framhald:
+        - 1.) :-)
+        - 2.) :-(((
+    - telefonnummer
+    - dato
+    - ... og andre taluttrykk
+    - doble mellomrom, mellomromsfeil:
+        - kake ; ost → kake; ost
+        - og )eller → og) eller --- ikkje CG --- Kevin
+    - store vs. småbokstaver? --- korpusgransking?
 * meldingar til brukaren --- Duommá
-** bruk nettdemoen for å sjekka resultata
+    - bruk nettdemoen for å sjekka resultata
 * åtvaring ved forslag som er like input (divvun-suggest) --- Kevin
 * gjera det lettare å leggja til nye dømesetningar --- Kevin
 * leggja til fleire dømesetningar --- Linda og Duommá
 * alternativ pipeline med hfst-ospell-cg; inn i webdemo --- Kevin
 * xml-format for pipeline-spesifisering --- Kevin
-** vi har eit gamalt utkast, men det finst ikkje i svn; inn i svn --- Kevin
+    - vi har eit gamalt utkast, men det finst ikkje i svn; inn i svn --- Kevin
 * url-parsar: legg inn i gramcheck --- Sjur
 * errors.xml: liste med taggar/tagg-regex som skal ha same (korte) standardfeilmelding
 
 For å få meir fleksibilitet, og mindre redundans utvider vi formatet for feilmeldingane til ~dette:
-{{{
+```
    <defaults>
     <default>
      <errors>
@@ -121,24 +120,24 @@ For å få meir fleksibilitet, og mindre redundans utvider vi formatet for feilm
     </examples>
     </body>
   </error>
-}}}
+```
 
 $-variablar:
 
 * cg-analysen identifiserer alltid relevante ord med ein nummerert tagg
 * dette ordet kan ein setja inn i feilmeldinga med ein dollartagg med same nummer
 
-{{{
+```
     "<relevantkontekstord>"
           "relevantkontekstord" ADV @F-SUBJ ID:1056
     […kanskjeandreord…]
     "<eitordsomerfeil>"
           "eitordsomerfeil" N &real-detretteordet R:$2:1056
-}}}
+```
 
 Tilhøyrande feilmelding:
 
-{{{
+```
   <error id="real-detretteordet">
     <body>
       <description xml:lang="en"></description>
@@ -149,19 +148,19 @@ Tilhøyrande feilmelding:
     </examples>
     </body>
   </error>
-}}}
+```
 
 $1 er alltid det ordet som har feiltaggen på seg, alle andre $n svarar til CG-relasjonen $n:
 
-{{{ADDRELATION ($2) (CC)  (-1 (*)) TO (-1 (*));}}}
+```ADDRELATION ($2) (CC)  (-1 (*)) TO (-1 (*));```
 
 Dette fungerer! Jf
 [http://beta.visl.sdu.dk/cg3/single/#rel-addrelation]
 
-!!!NoDaLiDa
+# NoDaLiDa
 
 Vi takkar nei, vi har ikkje høve.
 
-!!!anna?
+# anna?
 
 Nei.

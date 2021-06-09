@@ -4,41 +4,41 @@ Tid: 23.4.2020
 
 Til stades: Duommá, Inga, Lene, Sjur, Trond
 
-!!!Konklusjon
+# Konklusjon
 
-!!Konklusjon frå møtet
+## Konklusjon frå møtet
 * Vi skal endre +Comp og +Superl til +DerN+Der/Comp+A (nummeret på DerN må vi sjå på)
 * Vi bør observere og deretter forbetre 12345-grammatikken, og evt andre begrensninger
 * måtar å avgrensa derivasjonane på:
-** Bare for normativ HFST: ved hjelp av Der12345-grammatikken
-** For all analyse/generering: ved hjelp av fortsettingsleksikoner
-** For all analyse/generering: ved hjelp av diakritiske flagg som også fungerer på desc (Px er løst slik)
-** Leksikalisere selve derivasjonen, feks. buoremusvuohta
-** Leksikalisere derivasjoner som er utgangspunkt for nye derivasjoner
+    - Bare for normativ HFST: ved hjelp av Der12345-grammatikken
+    - For all analyse/generering: ved hjelp av fortsettingsleksikoner
+    - For all analyse/generering: ved hjelp av diakritiske flagg som også fungerer på desc (Px er løst slik)
+    - Leksikalisere selve derivasjonen, feks. buoremusvuohta
+    - Leksikalisere derivasjoner som er utgangspunkt for nye derivasjoner
 * I smj endrer vi slik at på -dibme og -ahtes ikke får Comp og Superl (ahtes skal få nummer likt eller etter Comp/Superl)
 
-!!Steg framover
+## Steg framover
 
-# Legge Der/ til Comp/Superl
-# Deretter dei andre stega ovafor
+1. Legge Der/ til Comp/Superl
+1. Deretter dei andre stega ovafor
 
-Det finst [eit eige dokument for arbeidet framover|../../lang/smi/AvgrenseAvleiing.html]
+Det finst [eit eige dokument for arbeidet framover](../../lang/smi/AvgrenseAvleiing.html)
 
-!!!Testing av (over)generering
+# Testing av (over)generering
 
 Sjur har laget et verktøy som følger alle stier for lemmaer, slik at vi får lister med alle ordformer våre system produserer. 
 
 Kommando for "miehttse" og "bårråt" som kan kjøres i smj.
 
-{{{
-echo " ~\$[ M ] .o. @\"src/analyser-gt-norm.hfst\" .o. \$[ {miehttse} ] .o. ~\$[ \"+Cmp\" | \"#\" ] " | hfst-regexp2fst -E -F -f foma | hfst-fst2strings | tr ':' '\t' | grep "\tmiehttse\+" | grep "miehttse+" | sort -u | see
+```
+echo " ~\$[ M ] .o. @\"src/analyser-gt-norm.hfst\" .o. \$[ {miehttse} ] .o. ~\$[ \"+Cmp\" ]( \"#\" ) " | hfst-regexp2fst -E -F -f foma | hfst-fst2strings | tr ':' '\t' | grep "\tmiehttse\+" | grep "miehttse+" | sort -u | see
 
-echo " ~\$[ B ] .o. @\"src/analyser-gt-norm.hfst\" .o. \$[ {bårråt} ] .o. ~\$[ \"+Cmp\" | \"#\" ] " | hfst-regexp2fst -E -F -f foma | hfst-fst2strings | tr ':' '\t' | sort -u | see
-}}}
+echo " ~\$[ B ] .o. @\"src/analyser-gt-norm.hfst\" .o. \$[ {bårråt} ] .o. ~\$[ \"+Cmp\" ]( \"#\" ) " | hfst-regexp2fst -E -F -f foma | hfst-fst2strings | tr ':' '\t' | sort -u | see
+```
 
 Dette scriptet  slepp gjennom former som ikkje blir akseptert av husmjNorm:
 
-{{{
+```
 (base) tf-hsl-m0016:smj ttr000$ usmj
 bårrådahttásappusjvuodada
 bårrådahttásappusjvuodada	bårråt+Hom2+V+TV+Der/d+V+Der/NomAct+N+Der/ahtes+A+Comp+Der/Dimin+A+Sg+Attr+Der/vuota+N+Pl+Nom+PxDu2
@@ -54,14 +54,11 @@ bårrådahttásappusjvuodada	bårråt+Hom2+V+TV+Der/d+V+Der/NomAct+N+Der/ahtes+A
 (base) tf-hsl-m0016:smj ttr000$ husmjNorm
 bårrådahttásappusjvuodada
 bårrådahttásappusjvuodada	bårrådahttásappusjvuodada+?	inf
-}}}
+```
 
 Sjur har no ein betre versjon som tar omsyn til det, og ikkje inneheld desse formene (nedanfor)
 
-
-
-
-!!! Hvordan skal våre verktøy fungere? 
+#  Hvordan skal våre verktøy fungere? 
 
 Lage flest mulig ordformer, eller innskrenke etter bruk?
 
@@ -71,29 +68,27 @@ Sammensetninger: heller leksikalisere
 
 Komparinger som derivasjon?
 
-!! Vi bør uansett gjøre litt vårrenskning. smj:
-
+##  Vi bør uansett gjøre litt vårrenskning. smj:
 
 * Substantivene ser ganske greie ut. 
-** Litt vel mye Px
-** Der/Car (-dibme) kompareres, dette syns jeg er rart:  fra nickel, lihkuheabbo	lihkku+N+Der/Car+A+Comp+v1+Sg+Nom
-*** mánádabbo	mánná+N+Der/Car+A+Comp+Sg+Nom
-*** mánádamos	mánná+N+Der/Car+A+Superl+Sg+Nom
-** Ingen +Der/lasj+Der/Vuohta,  men "mánálapvuohta"	mánná+N+Der/lasj+A+Comp+Attr+Der/vuota+N+Sg+Nom
+    - Litt vel mye Px
+    - Der/Car (-dibme) kompareres, dette syns jeg er rart:  fra nickel, lihkuheabbo	lihkku+N+Der/Car+A+Comp+v1+Sg+Nom
+        - mánádabbo	mánná+N+Der/Car+A+Comp+Sg+Nom
+        - mánádamos	mánná+N+Der/Car+A+Superl+Sg+Nom
+    - Ingen +Der/lasj+Der/Vuohta,  men "mánálapvuohta"	mánná+N+Der/lasj+A+Comp+Attr+Der/vuota+N+Sg+Nom
 
 *Adjektiv
 **Komparering+vuohta er rart: Nuorapvuohta  fra nickel, nuoratvuohta	nuoratvuohta+?	inf
 
 lexikalisert:
 
-{{{
+```
 buoretvuohta
 buoretvuohta	buoretvuohta+N+Sg+Nom	0,000000
 
 buoremusvuohta
 buoremusvuohta	buoremusvuohta+N+Sg+Nom	0,000000
-}}}
-
+```
 
 * samme som nouns: nuoralapvuoda	nuorra+N+Der/lasj+A+Comp+Attr+Der/vuota+N+Pl+Nom nuoraletvuohta+?	inf
 * samme som nouns dibme kompareres   nuorahetvuohta+?	inf
@@ -102,48 +97,44 @@ alla Marg ser ut til å väre utkommentert
 
 -Spell har vi, exempel:
 
-{{{
-LEXICON LAS !!= * __@CODE@__ from verbs: čirrolas, bealkálas etc
+```
+LEXICON LAS !!= * **@CODE@** from verbs: čirrolas, bealkálas etc
  :%> ATTR ;  ! To capture the attributive forms before going to N lexica.
 +Use/-Spell: VUOHTA ;
-}}}
+```
 
 eller ser Comp/Superlativ + Der/vuota til å väre utkommentert/ikke existerende:
 
-{{{
-LEXICON BUOREMUS !!= * __@CODE@__
+```
+LEXICON BUOREMUS !!= * **@CODE@**
  +Attr: K ; ! Attributive superlatives
  +Sg+Nom: K ;
-! JOHTOLAT0 ; !replaced to avoid compound
-! VUOHTA ;
+###  JOHTOLAT0 ; !replaced to avoid compound
+###  VUOHTA ;
  :a%> BUOREMUSSA- ;
 
-
-LEXICON BUStem !!= * __@CODE@__
+LEXICON BUStem !!= * **@CODE@**
  ATTRCONT ;
 
-LEXICON ATTRCONT  !!= * __@CODE@__  This lexicon is for forms with non-sub Attr, where we sub the rest.
+LEXICON ATTRCONT  !!= * **@CODE@**  This lexicon is for forms with non-sub Attr, where we sub the rest.
                 +Attr:  K                   ; ! Comp are also Attr.
    +Err/Orth+Cmp/Attr:  Rreal               ;
             +Err/Orth:  NAMAT               ; ! comp-only adj, not compound
        +Attr+Err/Orth:# NAMATLAGANLAGASCont ;
-!          #+Err/Orth: NAMAT               ; ! comp-only adj
+###           #+Err/Orth: NAMAT               ; ! comp-only adj
   +Use/Circ+Cmp/Attr+Cmp#:#   ALIT                ; ! both comp and independent adj !
-}}}
-
-
+```
 
 * Verbene
-** får veldig mange rare ordformer
-** mye Px
-** For lulesamisk vil jeg legge til avledningen "bårån"
+    - får veldig mange rare ordformer
+    - mye Px
+    - For lulesamisk vil jeg legge til avledningen "bårån"
 
-!!! Bruk av verktøyet:
+#  Bruk av verktøyet:
 
 * Utvide yamltester slik at vi i større grad kan oppdage endringer vi gjør i fortsettelsesleksikoner
 * GG?
 * Andre bruksområder?
-
 
 I smj har Inga sjekket inn tre kortere lister:
 
@@ -160,7 +151,7 @@ NB! Sjølv om dein tagg står under Der1 her (+Der1+Der/st) kan han vere tagga s
 
 Sitat frå smj/src/fst/root.lexc (her ommøblert litt under diskusjonen):
 
-{{{ 
+``` 
 +Der1           +Der2           +Der3            +Der4       +Der5       - positional tags
 
 +Der/PassL                                                            VV - long passive láhpeduvvat
@@ -201,14 +192,13 @@ Sitat frå smj/src/fst/root.lexc (her ommøblert litt under diskusjonen):
 +Der/sasj                                                             NA
 +Der/segak                                                            NA
 
-
-!! !Der#2 tags - tags in second position
+##  !Der#2 tags - tags in second position
               +Der/dahtte                                             VV
               +Der/duhtte                                             VV
               +Der/NomAct                                             VN
 			  +Der/Dimin                                              NN
               +Der/ahkes                                              VA
-!! !Der#3 tags - tags in third position
+##  !Der#3 tags - tags in third position
                                 +Der/duvva                            VV
                                 +Der/InchL                            VV (previosuly Der/goahte)
                                 +Der/mus                              VN
@@ -220,16 +210,16 @@ Sitat frå smj/src/fst/root.lexc (her ommøblert litt under diskusjonen):
                                                                            here for documentation purposes.
                                 +Der/lis                              VA
 
-!! !Der#4 tags - tags in fourth position
+##  !Der#4 tags - tags in fourth position
                                                 +Der/ahtes            NA ! only odd
-!! !Der#5 tags - tags in fifth position
+##  !Der#5 tags - tags in fifth position
                                                              Der/AAdv NA AAdv, previously +Der/at
                                                              Der/vuotaNA AN 
-}}}
+```
 
 Oversy over Der-taggane i bårråt (etter Sjurs script nr. 2):
 
-{{{
+```
 sme_test.txt |cut -f2|tr '+' '\n'|grep 'Der/'|sort|uniq -c|sort -nr
 Tagg                Der-nummer
 11857 Der/ahtes     4
@@ -262,4 +252,4 @@ Tagg                Der-nummer
  348 Der/u/a/åd     
  296 Der/PassD      
   93 Der/Dimin      
-}}}
+```

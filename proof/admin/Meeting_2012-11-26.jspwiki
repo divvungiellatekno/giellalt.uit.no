@@ -1,92 +1,91 @@
-!!!Speller meeting
+# Speller meeting
 
 What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
-__Børre__ has sent the new installer to a couple of more places. One feedback received: the speller doesn't work when installed on a terminal server. Same setup as before except running off a terminal server, no error message, seems to install, but doesn't work.
+**Børre** has sent the new installer to a couple of more places. One feedback received: the speller doesn't work when installed on a terminal server. Same setup as before except running off a terminal server, no error message, seems to install, but doesn't work.
 
 With the old Divvun version on the terminal server, they get a message that the Office version is too old or too new. This did not happen before, when running directly on the PC's.
 
-__DONE:__
+**DONE:**
 
-__TODO:__
+**TODO:**
 * test MSI package, esp. with admin install and different Win/Office combos
-  (__UiT/IT, Sjur__)
+  (**UiT/IT, Sjur**)
 * compare different sets of registry entries, to try to find differences tbat
-  can explain the terminal server bug (__Børre__)
+  can explain the terminal server bug (**Børre**)
 
-__POSTPONED:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
-* send a request to an NSIS developer e-mail list (__Sjur__)
-* try to find an NSIS script for building MSI packages (__Børre__)
+**POSTPONED:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (**Sjur**)
+* try to find an NSIS script for building MSI packages (**Børre**)
 * add Windows 8 support to our installer (if possible)
 
-!!!PLX conversion
+# PLX conversion
 
 The latest PLX file is substantially smaller than earlier, only 6,5 Gb vs 25+ Gb earlier.
 The change has happened during last week.
 
-One ommission - that can't explain the reduced size - is that particles like ''almma, bat, ges, han'' have been lost in the latest spellers. — FIXED in the latest svn, but no speller yet, and thus no speller test results.
+One ommission - that can't explain the reduced size - is that particles like *almma, bat, ges, han* have been lost in the latest spellers. — FIXED in the latest svn, but no speller yet, and thus no speller test results.
 
 Remaining PLX bugs:
 
-!!First PRI
+## First PRI
 
-!Words are accepted and suggested in their compounding-form
-| cmp-form-suggestions	  |	váigas, suolo                           | 581,909,803,912
+### Words are accepted and suggested in their compounding-form
+|  cmp-form-suggestions	  |	váigas, suolo                           | 581,909,803,912
 
-!Discovered one case of compounds without hyphen:
-| non-hyph noun+acro cmps | muoreNRK | 805
+### Discovered one case of compounds without hyphen:
+|  non-hyph noun+acro cmps | muoreNRK | 805
 
-!Doesn't recognize word
-| hotealla not rec        | hotealla                                | 1358 | FIXED
+### Doesn't recognize word
+|  hotealla not rec        | hotealla                                | 1358 | FIXED
 
-This took some time to fix and __Tomi__ was afraid that the change (removing +G3 and +G7 tags) would affect the speller a lot, so no other changes were made to see the effect of it. But the speller is still small :) - How small? - 6,7G 26 nov 13:34 all-plx-sme.revsorted
+This took some time to fix and **Tomi** was afraid that the change (removing +G3 and +G7 tags) would affect the speller a lot, so no other changes were made to see the effect of it. But the speller is still small :) - How small? - 6,7G 26 nov 13:34 all-plx-sme.revsorted
 
-!!First and a half PRI
+## First and a half PRI
 
-!compounds
-| noun+clit not rec.      | vástidanproseantage                     | 451
-| Left cmp-tags don't work| biilarievttijođiheaddjái                | 819
+### compounds
+|  noun+clit not rec.      | vástidanproseantage                     | 451
+|  Left cmp-tags don't work| biilarievttijođiheaddjái                | 819
 
-!!Second Last PRI
+## Second Last PRI
 
-!Section for Tags-not-working
-| doesn't follow cmp-tags | sámedikkepresideanta  			                   | 489
-| +CmpN/None in comp-sugg | 1883-as, Juovla-CD-as                              | 508,717
-| +Use/SpellNoSugg        | alhpabet gets suggested: a,đ etc                   | 461
+### Section for Tags-not-working
+|  doesn't follow cmp-tags | sámedikkepresideanta  			                   | 489
+|  +CmpN/None in comp-sugg | 1883-as, Juovla-CD-as                              | 508,717
+|  +Use/SpellNoSugg        | alhpabet gets suggested: a,đ etc                   | 461
 
 Bugs below this line can be left out of the next release if we are short on time.
 ----
 
-!Compounds
-| imposs" cmps along w num.| 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145
-| num cmp:s on 0-          | 051-nummarat										 | 631
-| name/noun+adv cmps	   | Kuorak-ain, NRK-an									 | 642,913
-| hyphened suggestions	   | deahtta-samus +A+Attr +Noun						 | 940
-| non-ex. word accepted    | saame    											 | 658
+### Compounds
+|  imposs" cmps along w num.| 0-geažideapmigárvu (geažideapmigárvu is impossible) | 536,1145
+|  num cmp:s on 0-          | 051-nummarat										 | 631
+|  name/noun+adv cmps	   | Kuorak-ain, NRK-an									 | 642,913
+|  hyphened suggestions	   | deahtta-samus +A+Attr +Noun						 | 940
+|  non-ex. word accepted    | saame    											 | 658
 
-!!Last PRI
-| doesn't understand caps   | 1700-LOHKU                                         | 647
+## Last PRI
+|  doesn't understand caps   | 1700-LOHKU                                         | 647
 
+**DONE:**
+* **Tomi** has solved one more PLX bug (hotealla bug)
+* fix Pcle bug (**Tomi**)
 
-__DONE:__
-* __Tomi__ has solved one more PLX bug (hotealla bug)
-* fix Pcle bug (__Tomi__)
+**TODO:**
+* investigate the reduced PLX file size (**Tomi**)
+* solve the remaining PLX bugs one by one (**Tomi**)
 
-__TODO:__
-* investigate the reduced PLX file size (__Tomi__)
-* solve the remaining PLX bugs one by one (__Tomi__)
-
-!!!Release plan
+# Release plan
 
 * December 1:
-** PLX bugs solved
-** Alpha installer (MSI package built using NSIS)
+    - PLX bugs solved
+    - Alpha installer (MSI package built using NSIS)
 * December 10: Beta release
 * December 20: Divvun 3 release

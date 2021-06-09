@@ -1,10 +1,8 @@
-
-
 Giellateknomøte 14.9. 2016
 
 Til stades: Ciprian, Lene, Marja-Liisa (på dei tre siste sakene), Tiina, Trond
 
-!!!Saker
+# Saker
 
 * Møterommet
 * Oahpa-veka
@@ -16,17 +14,16 @@ Til stades: Ciprian, Lene, Marja-Liisa (på dei tre siste sakene), Tiina, Trond
 * Ressursar til MT-prosjektet
 * Andre saker
 
-
-!!Møterommet
+## Møterommet
 
 * Førebels liste nesten i orden. 
-* Manglar: Skøyteledning til prosjektør (__Trond__ spør FL)
-* Kyrre og besøk til Handelshøgskolen el.l. (__Trond__)
+* Manglar: Skøyteledning til prosjektør (**Trond** spør FL)
+* Kyrre og besøk til Handelshøgskolen el.l. (**Trond**)
 * Tidspunkt: Ikkje under ume-førelesinga, ikkje neste veke.
 
-!!Oahpa-veka
+## Oahpa-veka
 
-__Lene__ tar kontakt med Reidun for å ordne overnatting for Ryan og Heli
+**Lene** tar kontakt med Reidun for å ordne overnatting for Ryan og Heli
 
 Vi alle setter av tid for å forberede workshopen 
 (Heimelekse: sjå på sida til workshopen)
@@ -35,11 +32,11 @@ Vi alle setter av tid for å forberede workshopen
 
 Ciprian er på seminar onsdag-fredag. Det bør settes av tid en kveld for 
 å diskutere dokumentasjon av NDS: Trond, Ciprian og Ryan. Dokumentasjonen 
-som finnes, må leses på forhånd. Ansvar: __Trond__ (brev til Ryan)
+som finnes, må leses på forhånd. Ansvar: **Trond** (brev til Ryan)
 
-Order rom til Oahpa-veka. TODO: __Trond__
+Order rom til Oahpa-veka. TODO: **Trond**
 
-!!Korpusarbeid og Korp
+## Korpusarbeid og Korp
 
 Saker som ikke er løst i Korp-grensesnittet vårt:
 * lemmasøk (for extended search) 
@@ -51,47 +48,42 @@ Saker som ikke er løst i Korp-grensesnittet vårt:
 Testing av den nye preprocesseren og den gamle og deretter diffe:  
 biggies/gt/sme/corp/sme-goldcorpus.txt
 
-
 New preprocessor (standing in sme):
 
-{{{
+```
 ... | hfst-tokenize tools/preprocess/tokeniser-disamb-gt-desc.pmhfst | ...
 ... | preprocess --abbr=tools/preprocess/abbr.txt
-}}}
+```
 
 Postprocessing
 
-{{{
+```
 hfst-lookup --with-some-cg-output-flag sme.hfst | ...
-}}}
+```
 
-__Trond__ discusses this with Sjur:
+**Trond** discusses this with Sjur:
 
-# check gold corpus
-# check analysis on
-# Missing lists for sme, sma, smj
+1. check gold corpus
+1. check analysis on
+1. Missing lists for sme, sma, smj
 
-!!Nye tekstar
+## Nye tekstar
 
 [http://www.riista.fi]
 
+## Clarino
 
-!!Clarino
+Vi diskuterte dette. **Trond** og **Ciprian** følgjer opp.
 
-Vi diskuterte dette. __Trond__ og __Ciprian__ følgjer opp.
-
-
-!!Brasil
+## Brasil
 
 Trond skriv ein kort presentasjon av Giellatekno og Divvun
 
-
-!!Rutine for janmleg køyring av MT-oversettinger
-
+## Rutine for janmleg køyring av MT-oversettinger
 
 Compiling: Compile sme, smX, apertium-sme-smX.
 
-{{{
+```
 giella-core/scripts
 sh make-sme-smn.sh
 sh make-sme-smj.sh
@@ -101,14 +93,14 @@ wercheck_mt-otpt.py (wer FALSE)
 
 python wercheck_mt-otpt.py -d tmx_data/
 python check_mt-otpt.py -d pseudo_tmx_data/
-}}}
+```
 
 Run them every night, put them in an apertium directory, with link from the MT pages
 
 * Put them in the svn - where?
 * which svn: apertium or gt?
 
-{{{
+```
 apertium-sme-smj$ cat tmx_data/* | wc -l
    10564
 apertium-sme-sma$ cat tmx_data/* | wc -l
@@ -117,7 +109,7 @@ apertium-sme-smn$ cat tmx_data/* | wc -l
     7630
 apertium-sme-smn$ cat fi.samediggi/* | wc -l
   113841
-}}}
+```
 
 We will have to do that in a way that
 * makes the text accessible to the linguists
@@ -127,17 +119,16 @@ Finding unused texts and parallel texts
 
 * [http://www.riista.fi] (Finnish - North Saami - Swedish)
 * Programs for political parties (offer the tool to the parties)
-** Also consider a party programs' corpus
+    - Also consider a party programs' corpus
 * Textbooks for schools
 
-__Trond and Ciprian__ to look at the technical issue with storage,
-and __Ciprian__ implement afterwards
+**Trond and Ciprian** to look at the technical issue with storage,
+and **Ciprian** implement afterwards
 
-!!MT-møtet i Helsingfors
+## MT-møtet i Helsingfors
 Trond orienterte om .... i Helsinki 12. sept.
 
-
-!!Ressursar til MT-prosjektet
+## Ressursar til MT-prosjektet
 
 * Diskutere med Laura om tidsdisponering
 * Korpusarbeid
@@ -145,8 +136,7 @@ Trond orienterte om .... i Helsinki 12. sept.
 * Lingvistar, Petter*
 * Francis, Kevin
 
-__Trond__ tar med innspel til møte med instituttet.
+**Trond** tar med innspel til møte med instituttet.
 
-
-!!Neste møte
+## Neste møte
 onsdag 28. sept. 2016 (Lene vil sannsynligvis være bortreist 29-30.9)

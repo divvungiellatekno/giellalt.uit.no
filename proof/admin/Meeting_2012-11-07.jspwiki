@@ -1,4 +1,4 @@
-!!!Speller meeting
+# Speller meeting
 
 Release planning
 
@@ -6,20 +6,20 @@ What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 We received answer from Tino. Main points:
 * he hasn't got the hyphenation working (either)
 * no news on Home and Student editions
 * he uses another installer, which produces MSI files, not exe files
-** this can also be done with NSIS
+    - this can also be done with NSIS
 * valuable comments on registry entries & catalogues
 * he has no time this year
 
 Questions:
 * can Tino make an installer with the PLX DLL's?
 * we need a registry entry for every Office version (for admin install/HKLM entries)
-** we need to identify the registry key/dir//location for every supported Office version
+    - we need to identify the registry key/dir//location for every supported Office version
 * do we need some sort of MS certificate?
 
 Decisions:
@@ -27,26 +27,26 @@ Decisions:
 * build MSI packages
 * look for outsourcing possibilities (see NSIS home page)
 
-__DONE:__
-* follow up on Tino (__Sjur__)
+**DONE:**
+* follow up on Tino (**Sjur**)
 
-__TODO:__
-* find an outsourcing option (__Børre, Sjur__)
+**TODO:**
+* find an outsourcing option (**Børre, Sjur**)
 
-!!!PLX conversion
+# PLX conversion
 
 Hyphen issue in PLX conversion.
 
-{{{
-%- -> 0 || _ .#. ;
-}}}
+```
+%- -> 0 | _ .#. ;
+```
 
-__DONE:__
+**DONE:**
 * hopefully solved the double hyphen constructions & suggestions
 
-__TODO:__
-* add a rewrite rule to remove string-final hyphens for RCmpnd words (__Tomi__)
+**TODO:**
+* add a rewrite rule to remove string-final hyphens for RCmpnd words (**Tomi**)
 
-!!!Release plan
+# Release plan
 
 Meeting every afternoon, solving one issue at a time until we have a release candidate.

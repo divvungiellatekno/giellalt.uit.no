@@ -1,24 +1,24 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 02.05.2005
 * Time: 10.00 Norw. time
 * Place: Wherever we are :-)
 * Tools: Phone, iChat, SubEthaEdit
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from a week ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Linguistics
-# Term db
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from a week ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Linguistics
+1. Term db
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 10.10. Agenda accepted as is.
 
@@ -26,52 +26,52 @@ Present: Maaren, Sjur, Thomas, Tomi, Trond, Børre
 
 Main secretary: Trond (Sjur)
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-* __All__: report vacation plans
-* __Trond, Børre, Sjur and Tomi__
-**  A session on the corpus format.
-*** We had several sessions on the corpus format, and actually came up with
+* **All**: report vacation plans
+* **Trond, Børre, Sjur and Tomi**
+    -  A session on the corpus format.
+        - We had several sessions on the corpus format, and actually came up with
     a working model, at /usr/local/share/corp/. We made a dtd proposal, a directory
     structure, in essence a home for our corpora.
-* __Børre__
-**  Contact Kimmo Koskenniemi and Ruth Vatvedt Fjeld about contracts
-*** Sent an e-mail, no respons so far
-*** Trond: will call around
-**  Fix the link problems in the documentation.
-*** Only a handful of link problems left
-**  Further discussion with web server administrator about the divvun.no site.
-*** Monday/Tuesday next week he will do the nexcessary work
-**  Some minor things with termdb.
-*** Done some of it, some left
-**  Review giellatekno.no site suggestion with Trond.
-*** Did some, found problems with utf-8 .ihtml files.
-* __Tomi__
-**  continue corpus discussion
-*** Did so, and updated the conversion script from docbook to our internal format
-*** corpus location and corpus processing
-* __Maaren__: tries to work with the missing list. Else?
-**  Maaren has had courses and seminars at the Sámi parliament the whole week.
-* __Thomas__: work with verb transitivity
-**  Has been working as usual, with verb transitivity (which is much work).
-* __Sjur__:
-**  ... has been working with corpus format and processing.
-**  The editing tool of the terminology db is almost completed. The technical
+* **Børre**
+    -  Contact Kimmo Koskenniemi and Ruth Vatvedt Fjeld about contracts
+        - Sent an e-mail, no respons so far
+        - Trond: will call around
+    -  Fix the link problems in the documentation.
+        - Only a handful of link problems left
+    -  Further discussion with web server administrator about the divvun.no site.
+        - Monday/Tuesday next week he will do the nexcessary work
+    -  Some minor things with termdb.
+        - Done some of it, some left
+    -  Review giellatekno.no site suggestion with Trond.
+        - Did some, found problems with utf-8 .ihtml files.
+* **Tomi**
+    -  continue corpus discussion
+        - Did so, and updated the conversion script from docbook to our internal format
+        - corpus location and corpus processing
+* **Maaren**: tries to work with the missing list. Else?
+    -  Maaren has had courses and seminars at the Sámi parliament the whole week.
+* **Thomas**: work with verb transitivity
+    -  Has been working as usual, with verb transitivity (which is much work).
+* **Sjur**:
+    -  ... has been working with corpus format and processing.
+    -  The editing tool of the terminology db is almost completed. The technical
     problems are solved as well.
-**  No work on the text license contract or on divvun.no, awaiting further progress
+    -  No work on the text license contract or on divvun.no, awaiting further progress
     here.
 
-!!!3. Documentation - divvun.no
+# 3. Documentation - divvun.no
 
 The humfak server will be set up for divvun.no this week, so that the pentalingual
 welcome pages should be ready by next week.
 
-__Todo:__ Translate the current welcome page into 5 lgs, and add some text as well.
+**Todo:** Translate the current welcome page into 5 lgs, and add some text as well.
 
 We will add more information on the plans and the progress of the project.
 The setup incl. sync with CVS
 
-Official opening by Språkstyret medio June. __Todo:__ Ask Anne Britt to put it on the 
+Official opening by Språkstyret medio June. **Todo:** Ask Anne Britt to put it on the 
 agenda (21.-22.6. in Tysfjord).
 
 North Sámi as default language. There should be a note explaining that English is 
@@ -81,7 +81,7 @@ not existing in other lgs.
 Giellatekno pages will be changed from parallel bilingual text on the same pages
 into two parallel sets of pages.
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 There is a problem that we have got no answer from Oslo and Helsinki. We need
 the documents soon, Sjur and Trond to talk to relevant people.
@@ -105,17 +105,17 @@ We need a web crawler for Sámi text. TODO: Contact Knut Hofland in Bergen on th
 issue. The Skolelinux project has set up a web-crawler for bokmål and nynorsk, we
 could probably also use the same one. The two crawlers should be compared.
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 We have arrived, or rather are arriving, at the following:
-{{{
+```
 sme/
-   /orig/<donor>/<year>/file.doc         <- dump, __must__ be write protected
+   /orig/<donor>/<year>/file.doc         <- dump, **must** be write protected
    /int/as-in-orig/file.db.xml           <- docbook format       
    /int/as-in-orig/file.xsl              <- file-specific scripts, under version control
    /gt/publisher OR author/year/file.xml <- xmlpreprocess
     ... | lookup ...
-}}}
+```
 We should put some effort into the donor directory. Donor could be ordered according 
 to person, or according to institution.   
 
@@ -125,7 +125,7 @@ eventually modifying preprocess as well (but still making preprocess able
 to take raw text as input, or we may make an xmlpreprocess along with the 
 	(txt)preprocess).
 
-!!!6. Linguistics
+# 6. Linguistics
 
 Gone through 5200+1500 verbs, more than 13 000 all in all.
 
@@ -136,18 +136,18 @@ Issues:
 * General issue: How should we prioritise between work on names, n-v-a cluster,
   closed classes
 * Detailed view:
-**  Lexical coverage
-**  Sámi place names (later, when Hønefoss have been transposing more names)
-**  Names:
-*** The LONDON/BERN (-is/-as) issue.
-*** Distinguishing different name types? (Person, place, ...).
-*** Group parallel names (Guovdageaidnu / Kautokeino(s) / Koutokeino = Koutokeinossa,
+    -  Lexical coverage
+    -  Sámi place names (later, when Hønefoss have been transposing more names)
+    -  Names:
+        - The LONDON/BERN (-is/-as) issue.
+        - Distinguishing different name types? (Person, place, ...).
+        - Group parallel names (Guovdageaidnu / Kautokeino(s) / Koutokeino = Koutokeinossa,
     Maaren / Maren, Máret / Marit)
-**  3-part compounds: sáme__giel__oahpahus. Needed: Linguistic description + lexc
+    -  3-part compounds: sáme**giel**oahpahus. Needed: Linguistic description + lexc
     programming skills.
-**  east-west differences
-**  indefinite pronouns (closed-sme-lex.txt file)
-**  Compounding
+    -  east-west differences
+    -  indefinite pronouns (closed-sme-lex.txt file)
+    -  Compounding
 
 A priority policy is to first look at the closed classes.
 For the other classes
@@ -155,14 +155,14 @@ So far, we have done: inflectional morphology of the n-v-a cluster.
 Derivational morphology and compounding not been systematically checked.
 
 Linguistic priority list:
-# finish the verb transitivity
-# closed POS
-# compounds
-# derivation
-# completing the lexicon
-# names
+1. finish the verb transitivity
+1. closed POS
+1. compounds
+1. derivation
+1. completing the lexicon
+1. names
 
-!!!7. Term db
+# 7. Term db
 
 Issues left:
 * i18n
@@ -176,49 +176,49 @@ New deadline for internal opening: May 13th
 New server: June 1st
 Official opening: June 17th
 
-!!!8. Other issues
+# 8. Other issues
 
-!!University project:
+## University project:
 
 Will need 1-2 new linguists, for at least one and a half year.
 
-!!Friday May 6:
+## Friday May 6:
 * Sjur: taking day off
 * Maren: me too
 
-!!!9. Summary, task list
+# 9. Summary, task list
 
-__TODO:__
+**TODO:**
 
-* __Thomas, Maaren, Børre__: Translate divvun front page
-* __Trond, Tomi, Børre, Sjur__: Continue with corpus infrastructure
-* __Trond__:
-**  Will find out who can help us with corpus agreement contracts
+* **Thomas, Maaren, Børre**: Translate divvun front page
+* **Trond, Tomi, Børre, Sjur**: Continue with corpus infrastructure
+* **Trond**:
+    -  Will find out who can help us with corpus agreement contracts
     in Oslo when Ruth Vadtvedt Fjeld is away.
-**  Work with Børre on the giellatekno
-* __Sjur__:
-**  Call Kimmo about license text & e-mail from Børre
-**  More termdb work
-**  Contact Anne Britt about divvun.no and the Språkstyremøte.
-* __Børre__:
-**  Ask Kåre Tjikkom, Harriet Aira, Karin Tuolja, Susanna Kuoljok-Angeus and
+    -  Work with Børre on the giellatekno
+* **Sjur**:
+    -  Call Kimmo about license text & e-mail from Børre
+    -  More termdb work
+    -  Contact Anne Britt about divvun.no and the Språkstyremøte.
+* **Børre**:
+    -  Ask Kåre Tjikkom, Harriet Aira, Karin Tuolja, Susanna Kuoljok-Angeus and
     Samuel Gælok about Lule Sámi text.
-**  Contact Leif Åge adding Trond to divvun e-mail alias.
-**  Prepare the war file for Tomcat deployment next week
-**  Work with Trond on the giellatekno pages
-**  Finish the work on the Termdb
-**  Contact Skolelinux about their webcrawler, also Knut Hofland (ask Trond/Sjur)
-* __Tomi__:
-**  Decide the directory structure for corpus originals
-**  Script for antiword and UTF-8 fix -processing
-**  Template for xsl manual conversion script
-**  Script for processing the corpus for preprocessor
-* __Thomas__: continue with verbs and ask Teemu Leskinen for finnish parallel names.
-* __Maren__:
-**  Have a look at the closed classes, especially the indefinite pronouns.
-**  Work more on lexical issues.
+    -  Contact Leif Åge adding Trond to divvun e-mail alias.
+    -  Prepare the war file for Tomcat deployment next week
+    -  Work with Trond on the giellatekno pages
+    -  Finish the work on the Termdb
+    -  Contact Skolelinux about their webcrawler, also Knut Hofland (ask Trond/Sjur)
+* **Tomi**:
+    -  Decide the directory structure for corpus originals
+    -  Script for antiword and UTF-8 fix -processing
+    -  Template for xsl manual conversion script
+    -  Script for processing the corpus for preprocessor
+* **Thomas**: continue with verbs and ask Teemu Leskinen for finnish parallel names.
+* **Maren**:
+    -  Have a look at the closed classes, especially the indefinite pronouns.
+    -  Work more on lexical issues.
 
-!!!10. Next meeting, closing
+# 10. Next meeting, closing
 
 09.05.2005 10.00
 

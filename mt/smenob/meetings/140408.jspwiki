@@ -1,12 +1,10 @@
-
 Meeting on smenob transition
 
 April 8th, 2014
 
 Fran, Lene, Sjur, Trond
 
-
-!!!LEXICAL SELECTION
+# LEXICAL SELECTION
 
 ny fil:
 
@@ -20,7 +18,7 @@ Now we use SELECT/REMOVE rules instead of SUBSTITUTE rules.
 
 The input looks like:
 
-{{{
+```
 $ echo "biebmu" | apertium -d . sme-nob-biltrans
 ^biebmu<n><sg><nom><@HNOUN>/føde<n><m><unc><sg><nom><@HNOUN>/mat<n><m><unc><sg><nom><@HNOUN>$^.<clb>/.<sent><clb>$
 
@@ -28,11 +26,11 @@ And the output:
 
 $ echo "biebmu" | apertium -d . sme-nob-lex
 ^biebmu<n><sg><nom><@HNOUN>/mat<n><m><unc><sg><nom><@HNOUN>$^.<clb>/.<sent><clb>$
-}}}
+```
 
 It is much easier to debug this way. Although it means rewriting the old rules, and specifically writing default rules.
 
-{{SELECT ("mat"i) IF (0 ("<biebmu>"i)) ; }}
+`SELECT ("mat"i) IF (0 ("<biebmu>"i)) ; `
 
 the source language lemma ( "biebmu") is the WORDFORM of the biltrans output.
 
@@ -40,11 +38,10 @@ word form = biebmu<n><sg><nom><@HNOUN> (tags are invisible)
 
 readings:
 
-# "føde" n m unc sg nom @HNOUN
-# "mat" n m unc sg nom @HNOUN
+1. "føde" n m unc sg nom @HNOUN
+1. "mat" n m unc sg nom @HNOUN
 
-
-{{{
+```
 $ echo "biebmu" | apertium -d . sme-nob-biltrans
 ^biebmu<n><sg><nom><@HNOUN>/føde<n><m><unc><sg><nom><@HNOUN>/mat<n><m><unc><sg><nom><@HNOUN>$^.<clb>/.<sent><clb>$
 
@@ -55,15 +52,13 @@ Output of biltrans in CG-style output:
     "mat" n m unc sg nom @HNOUN
 "<.>" clb
     "." sent clb
-}}}
-
+```
 
 Lene vil oppdatere lex-fila frå dev/archive til gjeldande fil.
 
+# REGRESSIONS
 
-!!!REGRESSIONS
-
-{{{
+```
 sme-nob   boradišgohten.
     - jeg begynte å spise.
     + #spise.
@@ -74,11 +69,11 @@ $ echo "boradišgohten" | apertium -d . sme-nob-biltrans
 Original:
 
 ^boradit<v><tv>+goahti<v><ind><prt><sg1><@+FMAINV>$
-}}}
+```
 
 So, how do we change der_goahti to +goahti ?
 
-{{{
+```
 boradišgohten
 boradišgohten   boradit+V+TV+Der/goahti+V+Ind+Prt+Sg1
 
@@ -88,7 +83,6 @@ borakeahttá borrat+V+TV+VAbess
 $ echo "boradišgohten" | apertium -d . sme-nob-morph
 ^boradišgohten/boradit<v><tv><der_goahti><v><ind><prt><sg1>/borrat<v><tv><der_d><v><der_goahti><v><ind><prt><sg1>$^./.<clb>$
 
-
 $ echo "^boradit<v><tv>+goahti<v><ind><prt><sg1><@+FMAINV>$" | apertium-pretransfer | lt-proc -b sme-nob.autobil.bin  
 ^boradit<v><tv>/spise<vblex><pers>$ ^goahti<v><ind><prt><sg1><@+FMAINV>/begynne<vblex><pret><sg><p1><@+FMAINV>$
 
@@ -96,12 +90,11 @@ $ echo "^boradit<v><tv>+goahti<v><ind><prt><sg1><@+FMAINV>$" | apertium-pretrans
 ^verb<SV><@+FMAINV><ind><pret><p1><sg><pers>{^begynne<vblex><pret>$}$ ^part<part>{^å<part>$}$ ^verb<SV><inf><pers><NC>{^spise<vblex><inf>$}$
 
 -> begynte å spise
-}}}
+```
 
+# Focus words
 
-!!!Focus words
-
-{{{
+```
 +Foc/ge +ge<pcle>
 +Foc/gen    +gen<pcle> 
 +Foc/ges    +ges<pcle>
@@ -115,17 +108,16 @@ $ echo "^boradit<v><tv>+goahti<v><ind><prt><sg1><@+FMAINV>$" | apertium-pretrans
 +Foc/son    +son<pcle>
 +Foc/naj+Qst    <qst>+naj<pcle>
 +Qst+Foc/son    <qst>+son<pcle>
-}}}
+```
 
 The + makes them into separate words (for the lexical transfer?)
 
-# translate tags to plus notation
-# disambiguate
-# split words
-# send to biltrans and get nob words for the + "words"
+1. translate tags to plus notation
+1. disambiguate
+1. split words
+1. send to biltrans and get nob words for the + "words"
 
-
-{{{
+```
 $ echo "^boađátge/boahtit<v><iv><ind><prs><sg2>+ge<pcle>$" | cg-conv -a -l
 "<boađátge>"
     "boahtit" v iv ind prs sg2
@@ -133,37 +125,33 @@ $ echo "^boađátge/boahtit<v><iv><ind><prs><sg2>+ge<pcle>$" | cg-conv -a -l
 
 <spectre> Unhammer, did you make any changes to the CG in sme-nob in order to deal with subreadings ?
 <Unhammer> can't remember …
-}}}
-
+```
 
 From SMA:
 
-{{{
+```
 LEXICON FINAL1
  ENDLEX ;
  +Foc/ge+Use/Circ:#ge ENDLEX ; !
  +Foc/gan+Use/Circ:#gan ENDLEX ; !
  +Foc/gih+Use/Circ:#gih ENDLEX ; !
  +Foc/gænnah+Use/Circ:#gænnah ENDLEX ; !
-}}}
+```
 
-
-!!!Todo
+# Todo
 
 Sjur@Apertium:
 * fjern derivasjons-strengar m. språkparspesifikke tilpassingar
 * endra visse taggar for visse språkpar
 * pkgconfig-skript for GTD-språka
 
-
 Legge til ord frå nobsme/inc/False* til smenob
-# Dele smenob-katalogen i <e src vs. <e>
-# Ha <e> i separat katalog loansrc
-# Legge til alle smenob/src til bidix
-# Legge atil alle smenob/loansrc til bidix, men merka r="LR" i sme-nob.dix
+1. Dele smenob-katalogen i <e src vs. <e>
+1. Ha <e> i separat katalog loansrc
+1. Legge til alle smenob/src til bidix
+1. Legge atil alle smenob/loansrc til bidix, men merka r="LR" i sme-nob.dix
 
 Propernouns
-# Legge til sme-nob (og sme-fin og sme-swe) frå geo/xml_src
-# smi-propernouns.lexc
-# commons smi
-
+1. Legge til sme-nob (og sme-fin og sme-swe) frå geo/xml_src
+1. smi-propernouns.lexc
+1. commons smi

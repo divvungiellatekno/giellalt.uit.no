@@ -1,4 +1,4 @@
-!!!Formalities
+# Formalities
 
 Participants:
 * Martti
@@ -12,11 +12,11 @@ Tentative agenda:
 * how much time you can spend on this, and the payment for the time
 * overall project schedule, and how it fits with your plans
 
-!!!Project overview
+# Project overview
 
 Financed by unused money from the first Divvun project. Financed by the Sámi Parliament. The work is done in cooperation with UiT and HU. Targeted release date is sometime next year.
 
-!!!Recording
+# Recording
 
 Voices: Do both a male and female voice - at least the recordings. Using the same text will simplify some of the perparations / postrprocessing, but not that much
 
@@ -32,14 +32,13 @@ The text needs to as much as possible reflect the text types we are expecting in
 
 The microphone should be a high quality, phase linear condenser microphone. Sampling frequency = basic CD quality is good enough. At least 16 bit resolution. As noise free as possible.
 
-!!!Software / tools needed
+# Software / tools needed
 
 easier to generate
 
 start to plan a larger project with more independence for the UiT group, including a new software engineer position.
 
-
-!!Output products
+## Output products
 
 Three areas come up as most relevant:
 
@@ -50,35 +49,32 @@ Three areas come up as most relevant:
 
 There are other future usages that is hard to envisage now, the synthetic voice has to be as general as possible, to be able to cope with as many different text types and usage scenarios as possible.
 
-!!Tools for testing ling input
+## Tools for testing ling input
 
 Tools for testing prosody prediction
 
 * Data tagged for prosody
 * A sharp ear
 
-
-!!Testing procedure:
+## Testing procedure:
 
 Until now:
 
-# Ling analysis
-# Feed to B-Á
-# Look at output
-# Rewrite ling analysis
-# Etc.
+1. Ling analysis
+1. Feed to B-Á
+1. Look at output
+1. Rewrite ling analysis
+1. Etc.
 
 Soon:
 
-# Ling analysis
-# Feed to syntesizer
-# Listen to output <==== (use the prototype for this? No)
-# Rewrite ling analysis
-# Etc.
+1. Ling analysis
+1. Feed to syntesizer
+1. Listen to output <==== (use the prototype for this? No)
+1. Rewrite ling analysis
+1. Etc.
 
-
-
-!!!Work capacity at the HU
+# Work capacity at the HU
 
 synthesizer made in Hki :-)
 
@@ -89,32 +85,30 @@ Intermediate solution:
 A person working both for Hki and for Tromsø. This person would be
 in Hki for training, but could later move to Tromsø.
 
-
-!!!Work plan
+# Work plan
 
 UiT - speech corpus:
-# Collect text
-# make recordings
-# cut recordings into sentenes (like for the prototype)
-# transcribe recordings
+1. Collect text
+1. make recordings
+1. cut recordings into sentenes (like for the prototype)
+1. transcribe recordings
 
 UiT - Building the textual input for training the synthesizer:
 * letter to sound (automatic)
 * annotation of:
-** phrase breaks (3-4 levels, manual work)
-** word prominences (3-4 levels, manual work)
+    - phrase breaks (3-4 levels, manual work)
+    - word prominences (3-4 levels, manual work)
 
-{{{
+```
 ortography 
 Mon lean okta sápmelaš, guhte lean bargan visot sámi bargguid  ->
  -> lts rules (automatic)
   mun leæn okː.htɑ sɑːp.me.lɑʃ ,  kuh.te leæn pɑrə.kɑn vi.soh sɑː.miː pɑrk.kujht
 -> manual labeling of prominence and breaks (for training the model)
-"mun leæn 'okː.htɑ "sɑːp.me.lɑʃ , || kuh.te leæn 'pɑrə.kɑn "vi.soh 'sɑː.miː 'pɑrk.kujht
-}}}
+"mun leæn 'okː.htɑ "sɑːp.me.lɑʃ , | kuh.te leæn 'pɑrə.kɑn "vi.soh 'sɑː.miː 'pɑrk.kujht
+```
 
 UiT: enhance the lts system to automatically add full prosody labeling as input to the synthesis. Match as close as possible the trained data, but a perfect match is not required to get a good synthesis.
-
 
 Needed: A theory of Sámi prosody
 * a. a perfect theory of Sámi prosody (from ToBi and onwards)
@@ -140,17 +134,15 @@ Build a spec based upon what has been done for Finnish
 * Look at actual Finnish input
 * Get a copy of the Finnish orthography-to-syntinput machine
 
-!!!Todolist
+# Todolist
 
 * work on the recordings:
-** building a suitable text corpus
-** prepare recordings (contact voice owners, studio, etc)
-** record, split, annotate
+    - building a suitable text corpus
+    - prepare recordings (contact voice owners, studio, etc)
+    - record, split, annotate
 * Antti wants ot be informed about the annotation and the other work.
 * Tromsø wants to get the proof of concept ruleset and some Finnish annotated
   text data (input text to synthesizer)
 * Speech sample forthcoming from Tromsø
 
 Then work proceeds as agreed.
-
-

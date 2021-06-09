@@ -6,27 +6,26 @@ Saker:
 * Baltimore
 * testing
 
+# sma
 
-!!!sma
-
-!!Sjekka ut og byggja eldre versjonar
+## Sjekka ut og byggja eldre versjonar
 
 Det er mogleg å gjera dette:
 
-{{{
+```
 cd src/morphology/
 svn up -r1234 affixes/ stems/
 cd ..
 make
-}}}
+```
 
 Pga smi-propernouns.lexc er dette det einaste som funkar.
 
-!!Missing
+## Missing
 
 Må arbeidast med.
 
-!!!FAD 2
+# FAD 2
 
 Arbeidet med sma- og smj-termar. Korleis kan vi få eit betre sma-korpus fram
 til rapporten skal sendast i slutten av mars?
@@ -34,25 +33,24 @@ til rapporten skal sendast i slutten av mars?
 * Børre: sjå (meir) på automatisk innhenting av sma-korpus
 * manuell sanking av sma-tekstar: NN? Student? sme-student?
 * tekstane til Ella Holm Bull - gjeve ut av senteret i Hattfjelldalen
-** Maja be om korpuslisens?
+    - Maja be om korpuslisens?
 
-!!!Baltimore
+# Baltimore
 
 Trond skriv til Antti og Jordan og høyrer kva dei tenkjer kring artikkelen.
 
-!!!testing
+# testing
 
-{{{
-!€
-!€# katto^WG>n
-!€0 ka0to00n
+```
+### €
+### €# katto^WG>n
+### €0 ka0to00n
 
-!€
-!€# katt2o^WG>n
-!€0 katto00n
+### €
+### €# katt2o^WG>n
+### €0 katto00n
 
 grep € | cut -c5-
-
 
 katto^WG>n
 ka0to00n
@@ -60,10 +58,8 @@ ka0to00n
 katt2o^WG>n
 katto00n
 
-
 katto^WG>n
 katt2o^WG>n
-}}}
+```
 
-Treng vi både partest og enkelttest? Jf. {{katto^WG>n}} utan korrektpar.
-
+Treng vi både partest og enkelttest? Jf. `katto^WG>n` utan korrektpar.

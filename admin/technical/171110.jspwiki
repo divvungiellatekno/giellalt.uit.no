@@ -1,17 +1,16 @@
-!!!Møte om harmonisering av interaktive tenester (REST)
+# Møte om harmonisering av interaktive tenester (REST)
 
 Til stades: Sjur, Ciprian, Børre, Trond, Chiara, (Lene i starten av møtet)
 
-!!Tema
+## Tema
 
 Førebuande møte for å diskutere harmonisering av interaktive tenester.
 
-
-!!Inventar
+## Inventar
 
 Oversyn over tenester og url (tentativ)
 
-{{{
+```
 paradigmegenerering
 http://gtweb.uit.no/cgi-bin/smi/smi.cgi?text=viessu&pos=Any&mode=minimal&action=paradigm&lang=sme&plang=sme
 
@@ -29,7 +28,6 @@ http://gtweb.uit.no/cgi-bin/smi/sme-num.cgi?text=33
 NDS:
 http://sanit.oahpa.no/detail/sme/nob/viessu.html?no_compounds=true&lemma_match=true&e_node=-2405444611202267504
 
-
 Ordformsgenerering:
 http://gtweb.uit.no/cgi-bin/smi/smi.cgi?text=viessu%2BN%2BSg%2BGen&action=generate&lang=sme&plang=sme
 
@@ -38,14 +36,12 @@ https://giellalt.uit.no/apps/satni/RESTEndPoints.html
 
 http://satni.uit.no:8080/exist/restxq/satni/dictionaries
 http://gtweb.uit.no:8080/exist/restxq/satni/dictionaries
-}}}
-
-
+```
 
 Outputformatet som blir generert: I dag har vi fleire ulike. 
-Her: Døme frå html. Vi vil ha: __json__.
+Her: Døme frå html. Vi vil ha: **json**.
 
-{{{
+```
 smi.cgi:
     if (%candits) {
       my $other_forms = $page->first_child_text("otherforms[\@tool='paradigm']");
@@ -55,9 +51,9 @@ smi.cgi:
       push(@content, $b);
       my $br=XML::Twig::Elt->new('br');
       push(@content, $br);
-}}}
+```
 
-!Infos:
+### Infos:
 
 [https://labs.getninjas.com.br/sharing-data-in-a-microservices-architecture-using-graphql-97db59357602]
 
@@ -67,32 +63,31 @@ smi.cgi:
 
 [https://spraakbanken.gu.se/eng/research/infrastructure/korp/ws]
 
+## Drøfting
 
-!!Drøfting
-
-!Fire delar:
+### Fire delar:
 * server
 * funksjon/teneste
 * parameter
 * utdata
 
-!Vedtak:
+### Vedtak:
 * server = api.giella.uit.no
 * utdata = json
 
-!Reimplementeringsprosess:
+### Reimplementeringsprosess:
 
-# teneste -> test
-# endra output -> ny test
-# endra implementering -> skal passera test frå 2
+1. teneste -> test
+1. endra output -> ny test
+1. endra implementering -> skal passera test frå 2
 
-!Standardiseringsprosess:
+### Standardiseringsprosess:
 * inventera alle tenestene
 * inventera alle parameter
 * laga forslag til meir einheitlege funksjons-/tenestenamn
 * laga forslag til standardiserte parameternamn (der det gjev meining)
 
-!Tenester vi har i dag:
+### Tenester vi har i dag:
 * paradigmegenerering x N
 * ordformsgenerering
 * analyse x N
@@ -106,23 +101,21 @@ smi.cgi:
 * orddeling
 * transkribering
 
-!Vi vil ha:
+### Vi vil ha:
 * TTS
 * ASR
 
-!Fyrste eksperiment:
+### Fyrste eksperiment:
 * dato-til-tekst (og omvendt)
 
-!Arbeid framover:
-* byrja eksperiment med datokonvertering __Ciprian, Chiara, Trond__ 
-* inventera tenester/funksjonar __alle__
-* laga utkast til standardiserte funksjonsnamn + parameter __alle__
-** lag prinsipp for å namngje funksjonar
-* be om server (VM) (giella.uit.no) __Børre__ (snart)
-* be om servernamn (api.giella.uit.no) __Børre__
+### Arbeid framover:
+* byrja eksperiment med datokonvertering **Ciprian, Chiara, Trond** 
+* inventera tenester/funksjonar **alle**
+* laga utkast til standardiserte funksjonsnamn + parameter **alle**
+    - lag prinsipp for å namngje funksjonar
+* be om server (VM) (giella.uit.no) **Børre** (snart)
+* be om servernamn (api.giella.uit.no) **Børre**
 
-!!Neste møte om dette:
+## Neste møte om dette:
 
-Viss vi har komme vidare: __Under neste Divvun-samling.__
-
-
+Viss vi har komme vidare: **Under neste Divvun-samling.**

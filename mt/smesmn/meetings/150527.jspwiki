@@ -1,5 +1,3 @@
-
-
 smn-čoahkkin 27.5.2015
 
 Lene, Marja-Liisa, Trond
@@ -12,26 +10,23 @@ Lene, Marja-Liisa, Trond
 * Vearbbat
 * Artihkkal čállinkultuvrra birra
 
-!!Twolc
+## Twolc
 
-!Status:
+### Status:
 * párrastávval subst.: SUMMARY for the generating dict-gt-norm fst(s): PASSES: 5818 / FAILS: 1217 / TOTAL: 7035
 
-
-
-!Konflikta
+### Konflikta
 Trond geahččá dán:
-{{{
+```
 "RV:ˊ in x:y gradation and root vowel shortening"
 
-%^RV:ˊ <=> Vow: _ Cns: (%^RC:) [e: | o: | a: | á: ] (%^WG:|%^EA:)    %> ; !removed EA because of conflict
-           Vow: _ Cns: (Cns:) (%^RC:) Vow:  (%^WG:) (%^RVSH:) (%^SFV:) (%^SC:) (%^ÁI:) (%^ÁE:) %^RVSH: (%^SVLOW:) [%>|.#.] ;
-}}}
+%^RV:ˊ <=> Vow: _ Cns: (%^RC:) [e: | o: | a: ]( á: ) (%^WG:|%^EA:)    %> ; !removed EA because of conflict
+           Vow: _ Cns: (Cns:) (%^RC:) Vow:  (%^WG:) (%^RVSH:) (%^SFV:) (%^SC:) (%^ÁI:) (%^ÁE:) %^RVSH: (%^SVLOW:) [%>](.#.) ;
+```
 
 Váttisvuohta: konflikta (EA)
 
-
-!Vuosttaš stávvala umlaut
+### Vuosttaš stávvala umlaut
 
 Odne sierra njuolggadusat, berrešii leat obbalaš njuolggadusat
 
@@ -44,34 +39,30 @@ ML ráhkada kártta, gč. omd. aigi-fiila:
 
 kiäčˊču vs. luččâ
 
-!TODO:
-* __Lene__ joatká konsonánttaiguin
-* __Trond__ bargá vokálaiguin
-* __ML__ ráhkada umlaut-vuogádaga
+### TODO:
+* **Lene** joatká konsonánttaiguin
+* **Trond** bargá vokálaiguin
+* **ML** ráhkada umlaut-vuogádaga
 
+## Yaml
 
-!!Yaml
-
-!lex-fiillaid sisdoallu
+### lex-fiillaid sisdoallu
 
 Juohke lex-fiillas fertet leat seammá contlexa sánit.
 
-{{{
+```
 cat test/src/dict-gt-yamls/N-lex_aigi_dict-gt-norm.gen.yaml |grep Ess|cut -d"+" -f1|tr -d ' '|sed 's/^/^/'|sed 's/$/:/' > yamlfil
 grep -f yamlfil src/morphology/stems/nouns.lexc|cut -d" " -f1-2
-}}}
-
+```
 
 Boađus lea omd:
 
-{{{
+```
 äigi:ä%^RVi4gi AIGI
 välli:vä%^RVll7i AIGI
 säppi:sä%^RVppi AIGI
 ...
-}}}
-
-
+```
 
 Nammakonvenšuvdna:
 
@@ -79,25 +70,21 @@ Nammakonvenšuvdna:
 * N-3lex - 3st. subst
 * N-clex - kontrákta subst.
 
-
-
-!!Lexc
+## Lexc
 
 Párrastávvalsániid máŋŋel bohtet bárrahissánit
 
-!!Vearbbat
+## Vearbbat
 
 Systema
 
-!!Artihkkal čállinkultuvrra birra
+## Artihkkal čállinkultuvrra birra
 
 Gč. maid [http://www.euralex.org/elx_proceedings/Euralex2012/pp250-256%20Trosterud%20and%20Eskonsipo.pdf]
 ja [http://giellatekno.uit.no/background/euralex_pres.pdf].
 
 * Skuvla: Makkár lea dilli dál (studeanttaid/ohppii čállosat)
 * Facebook: Galle čálli, ... (čálliid ságastallan)
-** Dehálaš vurket fb-ságastallama
-** Vejolašvuohta: ságastallat / jearrat čállindili/váttisvuođaid birra
+    - Dehálaš vurket fb-ságastallama
+    - Vejolašvuohta: ságastallat / jearrat čállindili/váttisvuođaid birra
 * Jorgaleddjit, jna.
-
-

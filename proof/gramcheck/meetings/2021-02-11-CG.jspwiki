@@ -1,13 +1,12 @@
-
 CG-workshop 11.02.2021
 
 dii. 10:10-
 
 Linda, Inga
 
-
 * writing MOVE Rules
 * corpus search
+
  
 #DELETE  doesn't seem wrong
 #DELETE?ADD:wrong-valency-aktioloc-inf (&msyn-valency-aktioloc-inf) TARGET Inf IF (-1 CC LINK *-1 (Inf &msyn-valency-aktioloc-inf) BARRIER NOT-ADV-PCLE - OBJ) (1 EOS)(NEGATE 0 &real OR &msyn-valency-aktioloc-inf) ;
@@ -19,11 +18,7 @@ COPY:wrong-valency-aktioloc-inf (Actio Loc &SUGGEST) EXCEPT (Inf &msyn-valency-a
 #MOVE &msyn-valency-aktioloc-inf-part2 BEFORE (-1 &msyn-valency-aktioloc-inf) ; 
 #This rule messes up things
 
-
 ADD:syn-subj-before-neg (&syn-subj-before-neg) TARGET Neg + $$V-PERS IF (1 (Pron Nom) + $$V-PERS LINK NOT 0 NEG-PRON OR ("ietja")) (NEGATE *1 ("?") LINK 1 EOS)  ; 
-
-
-
 
 ADD:syn-subj-before-neg (&syn-subj-before-neg) TARGET Neg + Sg3 IF (1 (N Sg Nom)) (NEGATE *1 ("?") LINK 1 EOS) ; 
 
@@ -32,7 +27,9 @@ ADD:syn-subj-before-neg (&syn-subj-before-neg) TARGET Neg + Pl3 IF (1 (N Pl Nom)
 MOVE:syn-subj-before-neg &syn-subj-before-neg AFTER (1 (N Nom) OR (Pron Nom));
 
     ## gæhttjat vaj ittjij sámegiella tijmaj ålggolin gullu.
+
     
+
     
 LIST NEG-PRON = Foc/Neg-k ("nágin") ;
 mige, majdik, aktak, gudik, - Foc/Neg-k
@@ -44,13 +41,6 @@ Oahppe e ietja diede
 
 [lemma = ij]
 
-
     #$ Dile li sierraláhkáj , ja 	ij aktak 	åtsådallamijs máhte sirdeduvvat mekánalattjat sáme guovlojda . 
 
-
-
 NSRa ájggu joarkket bargojnis åvddånahttet luonnduj gulluvasj æládusájt ma nanniji sáme kultuvrav ja bisodi årromav smávsajijn , valla sæmmi båttå de	ij luonndo	galga gierddat .
-
-
-
-

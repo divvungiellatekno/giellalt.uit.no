@@ -1,7 +1,7 @@
-!!!No lexical minimisation (no hyperminimisation):
+# No lexical minimisation (no hyperminimisation):
 
-!!Finnish
-{{{
+## Finnish
+```
 $ ls -l fin/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 xxx123  12345    46M 21 aug 22:14 acceptor.default.hfst
@@ -13,10 +13,10 @@ $ ls -l fin/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 xxx123  12345   8,9M 21 aug 22:15 fi_LO-voikko-4.1-32b-mac.oxt
 -rw-r--r--+ 1 xxx123  12345    17M 21 aug 22:13 generator-fstspeller-gt-norm.hfst
 [...]
-}}}
+```
 
-!!Greenlandic
-{{{
+## Greenlandic
+```
 $ ls -l kal/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 smo036  1907360568   284M 12 aug 08:08 acceptor.default.hfst
@@ -27,10 +27,10 @@ $ ls -l kal/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 smo036  1907360568    41M 14 aug 09:22 kl_LO-voikko-3.6-32b-mac.oxt
 -rw-r--r--+ 1 smo036  1907360568    44M 14 aug 09:22 kl_LO-voikko-3.6-32b-win.oxt
 -rw-r--r--+ 1 smo036  1907360568    41M 14 aug 09:22 kl_LO-voikko-4.1-32b-mac.oxt
-}}}
+```
 
-!!North Sámi
-{{{
+## North Sámi
+```
 $ ls -ll sme/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 smo036  1907360568    25M 12 aug 08:29 acceptor.default.hfst
@@ -41,12 +41,12 @@ $ ls -ll sme/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 smo036  1907360568   6,2M 14 aug 09:23 se_LO-voikko-3.6-32b-mac.oxt
 -rw-r--r--+ 1 smo036  1907360568   9,4M 14 aug 09:23 se_LO-voikko-3.6-32b-win.oxt
 -rw-r--r--+ 1 smo036  1907360568   6,2M 14 aug 09:23 se_LO-voikko-4.1-32b-mac.oxt
-}}}
+```
 
-!!!Using only hfst-lexc hyperminimisation:
+# Using only hfst-lexc hyperminimisation:
 
-!!Finnish
-{{{
+## Finnish
+```
 $ ls -l fin/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 smo036  1907360568    21M 22 aug 09:57 acceptor.default.hfst
@@ -58,10 +58,10 @@ $ ls -l fin/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 smo036  1907360568   6,4M 22 aug 09:57 fi_LO-voikko-4.1-32b-mac.oxt
 -rw-r--r--+ 1 smo036  1907360568    17M 22 aug 09:54 generator-fstspeller-gt-norm.hfst
 [...]
-}}}
+```
 
-!!Greenlandic
-{{{
+## Greenlandic
+```
 $ ls -l kal/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 smo036  1907360568    14M 22 aug 10:10 acceptor.default.hfst
@@ -72,10 +72,10 @@ $ ls -l kal/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 smo036  1907360568   3,7M 22 aug 10:11 kl_LO-voikko-3.6-32b-mac.oxt
 -rw-r--r--+ 1 smo036  1907360568   6,9M 22 aug 10:11 kl_LO-voikko-3.6-32b-win.oxt
 -rw-r--r--+ 1 smo036  1907360568   3,7M 22 aug 10:11 kl_LO-voikko-4.1-32b-mac.oxt
-}}}
+```
 
-!!North Sámi
-{{{
+## North Sámi
+```
 $ ls -l sme/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 smo036  1907360568    15M 22 aug 10:28 acceptor.default.hfst
@@ -86,12 +86,12 @@ $ ls -l sme/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 smo036  1907360568   4,4M 22 aug 10:28 se_LO-voikko-3.6-32b-mac.oxt
 -rw-r--r--+ 1 smo036  1907360568   7,7M 22 aug 10:28 se_LO-voikko-3.6-32b-win.oxt
 -rw-r--r--+ 1 smo036  1907360568   4,4M 22 aug 10:28 se_LO-voikko-4.1-32b-mac.oxt
-}}}
+```
 
-!!!Hyperminimisation + fst minimisation:
+# Hyperminimisation + fst minimisation:
 
-!!Finnish
-{{{
+## Finnish
+```
 $ ls -l fin/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 smo036  1907360568    21M 25 aug 16:46 acceptor.default.hfst
@@ -103,10 +103,10 @@ $ ls -l fin/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 smo036  1907360568   6,4M 25 aug 16:47 fi_LO-voikko-4.1-32b-mac.oxt
 -rw-r--r--+ 1 smo036  1907360568    17M 25 aug 16:39 generator-fstspeller-gt-norm.hfst
 [...]
-}}}
+```
 
-!!Greenlandic
-{{{
+## Greenlandic
+```
 $ ls -l kal/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 smo036  1907360568   6,3M 22 aug 18:12 acceptor.default.hfst
@@ -117,10 +117,10 @@ $ ls -l kal/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 smo036  1907360568   2,7M 22 aug 18:12 kl_LO-voikko-3.6-32b-mac.oxt
 -rw-r--r--+ 1 smo036  1907360568   6,0M 22 aug 18:12 kl_LO-voikko-3.6-32b-win.oxt
 -rw-r--r--+ 1 smo036  1907360568   2,7M 22 aug 18:12 kl_LO-voikko-4.1-32b-mac.oxt
-}}}
+```
 
-!!North Sámi
-{{{
+## North Sámi
+```
 $ ls -l sme/tools/spellcheckers/fstbased/hfst/
 [...]
 -rw-r--r--+ 1 smo036  1907360568    13M 22 aug 22:46 acceptor.default.hfst
@@ -131,4 +131,4 @@ $ ls -l sme/tools/spellcheckers/fstbased/hfst/
 -rw-r--r--+ 1 smo036  1907360568   4,2M 22 aug 22:46 se_LO-voikko-3.6-32b-mac.oxt
 -rw-r--r--+ 1 smo036  1907360568   7,5M 22 aug 22:46 se_LO-voikko-3.6-32b-win.oxt
 -rw-r--r--+ 1 smo036  1907360568   4,2M 22 aug 22:46 se_LO-voikko-4.1-32b-mac.oxt
-}}}
+```

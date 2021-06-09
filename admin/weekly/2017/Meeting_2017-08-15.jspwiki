@@ -9,8 +9,7 @@ Saker:
 * Ordboksinfrastruktur
 * Orienteringssaker
 
-
-!!!m4/multippel twolc for kvensk
+# m4/multippel twolc for kvensk
 
 * Var pimeä, kiveä (Pykeijä, Annijoki)
 * Por pimmee, kivvee (Pyssyjoki)
@@ -26,31 +25,28 @@ Den grunnleggjande redigeringsskilnaden er mellom kvar regel ein gong (1)= eller
 Den grunnleggjande tekniske (og kanskje også lingvistiske?) 
 skilnaden er mellom å kompilere i eitt (1B) eller to (1A) steg 
 
-
-!!Parametrisert lexc og twolc:
+## Parametrisert lexc og twolc:
 
 Ha eit system der kvar regel blir skrive ein gong:
 
 * 1A Ha fonologireglar i to steg (= mogleg å sjekke, men regelordning i twolc)
-** a. felles twolc
-** b. 3 separate twolc
+    - a. felles twolc
+    - b. 3 separate twolc
 * 1B a fonologireglar i eitt steg
-**  Ha to kjeldefiler (a. felles, b1 Por, b2 Var, ...)
+    -  Ha to kjeldefiler (a. felles, b1 Por, b2 Var, ...)
    og slå dei saman til tre separate twolc-filer i kompileringa.
-
 
 Ha tre ulike twolc-filer, med overlappande innhald, delar av innhaldet blir skrive 3 gonger:
 
 * 2 Ha to sett fonologi i kvar fil (merk reglar for FELLES eller SEPARAT)
-** fordel: ei twolc-fil for kvar dialekt
-** __stor__ ulemple: F-reglane blir skrive 3 gonger, i ulike filer
+    - fordel: ei twolc-fil for kvar dialekt
+    - **stor** ulemple: F-reglane blir skrive 3 gonger, i ulike filer
 
-Vi vil eigentleg også ha ein __fjerde__ fst, som godtar alle tre variantar.
+Vi vil eigentleg også ha ein **fjerde** fst, som godtar alle tre variantar.
 
 Denne kan lagast
-* som unionen av alle (lite arbeid, men __svært stor fst__
+* som unionen av alle (lite arbeid, men **svært stor fst**
 * som eit nytt regelsett for unionen av alle 3
-
 
 Fellesreglar:
 * Stadieveksling, 
@@ -60,45 +56,44 @@ Fellesreglar:
 
 Dialektspesifikke reglar
 * Geminering
-** men: 
-*** alle (?): tekkee
-*** Por: pimmee, Var: pimeä
-*** slik at skilnaden ligg i lexc (+Sg+Nom:%>^V K ; vs. +Sg+Nom:%>^A K ;)
-** kva med:
-*** +Sg+Nom+Dial/Por:%>^V K ;
-*** +Sg+Nom+Dial/Var:%>^A K ;
+    - men: 
+        - alle (?): tekkee
+        - Por: pimmee, Var: pimeä
+        - slik at skilnaden ligg i lexc (+Sg+Nom:%>^V K ; vs. +Sg+Nom:%>^A K ;)
+    - kva med:
+        - +Sg+Nom+Dial/Por:%>^V K ;
+        - +Sg+Nom+Dial/Var:%>^A K ;
 * monoftongering i suffiks
 
-
-!!Parametrisert lexc men ikkje twolc
+## Parametrisert lexc men ikkje twolc
 
 I denne løysinga er alle dialektskilnader eksplisitt tagga i lexc, og
 alle lexc-strengane går gjennom same sett av twolc-reglar. Evt. strengar
 som ikkje skal gå gjennom twolc-reglar vil då ha symbol som blokkerer
 dei relevante twolc-reglane.
 
-__Vi bør diskutere dette med fkv-gruppa.__
+**Vi bør diskutere dette med fkv-gruppa.**
 
-TODO: __Trond__ skriv brev og gjer framlegg om møte fkv-gruppe, Sjur, Trond.
+TODO: **Trond** skriv brev og gjer framlegg om møte fkv-gruppe, Sjur, Trond.
 
-!!!Munchs skrik
+# Munchs skrik
 
 Sjå Bz.
 
-!!!Taggflytting
+# Taggflytting
 
 Krev meir arbeid enn fyrst tenkt. Sjur ser på det.
 
-!!!Setje opp test med multippel kompilering
+# Setje opp test med multippel kompilering
 
 Dette er alternativet med separat build/ eller bygg/-katalog. Vi såg på 
 det i går. Det er framleis opne ting, men uproblematisk å setje opp.
 
 Trond testar ut og kjem attende til saka.
 
-!!!Ordboksinfrastruktur
+# Ordboksinfrastruktur
 
 Vi treng eit fellesmøte for å diskutere gode sider ved dei ulike løysingane vi har, lære og evt. synkronisere der det er naturleg.
 
-!!!Orienteringssaker
+# Orienteringssaker
 * Ny programmerar for GT (Chiara) startar i morgon

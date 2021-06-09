@@ -1,36 +1,36 @@
-!!!Lingvistmøte
+# Lingvistmøte
 
 Til stades: Inga, Maja, Sjur, Thomas
 
 Saker:
 * Derivasjon eller leksikalisering?
 * fixa feil i testresultata for lemmatesting
-** ''ishockeyhistovrije'' - R vs standard
-** ''orre''
-** ''stoere''
+    - *ishockeyhistovrije* - R vs standard
+    - *orre*
+    - *stoere*
 
-!!!Derivasjon eller leksikalisering?
+# Derivasjon eller leksikalisering?
 
 Ja takk!
 
 Men: for stavekontrollen kan det vera bra å slå av visse derivasjonar, og heller leksikalisera, for å få ein mindre stavekontroll.
 
-!!!Fixa feil i testresultata for lemmatesting
+# Fixa feil i testresultata for lemmatesting
 
-!!historie-
+## historie-
 
 ishockeyhistovrije - isolert form
 ishockeyhistorije/-a - i samansetjingar?
 
-{{{
+```
 ishockeyhistovrije + gærja = ??? ishockeyhistovrijegærja
 
 ishockeyhistoriagærja - sub
 ishockeyhistoriegærja - standard
 ishockeyhistovrijegærja - standard + lemma
-}}}
+```
 
-!!orre + stoere (bug 1463)
+## orre + stoere (bug 1463)
 
 [http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=1463]
 
@@ -38,12 +38,12 @@ orre
 stoere
 
 stems-adj:
-{{{
+```
 stoere: STOERE ; !LA
-}}}
+```
 
 affiks-adj:
-{{{
+```
 LEXICON STOERE  ! This is hopeless, stoerebe-stoeremes bør subbes, men hvorfpor går det ikke?
         :stoerr e_E_EVENNOCOMP ;
 +Err/Sub:stoer  e_E_EVEN ;
@@ -56,20 +56,20 @@ LEXICON STOERE_COMP
  +Err/Sub:stuerie EVENSUPONLY ;
          :stööre  MES ;
          :stuerie DIMCOMP ;  
-}}}
+```
 
-__GJERELISTE:__
-* rett opp alle hist tilsvarande (__MLK__)
-* skriv om og slå saman leksikona STOERE, NOERE, ORRE til eitt (__alle__)
-** på neste møte :)
-** bygg ut yaml-tester for noere og stoere, attr.pred+comp+kasus
+**GJERELISTE:**
+* rett opp alle hist tilsvarande (**MLK**)
+* skriv om og slå saman leksikona STOERE, NOERE, ORRE til eitt (**alle**)
+    - på neste møte :)
+    - bygg ut yaml-tester for noere og stoere, attr.pred+comp+kasus
 
-!!!Andre feil
+# Andre feil
 
-!!SMA
+## SMA
 
-{{{
-*** ERROR: Sublexicon is mentioned but not defined. (ah_AH_AN_ODD) ***
-*** Warning:  Sublexicons defined but not used:
+```
+        - ERROR: Sublexicon is mentioned but not defined. (ah_AH_AN_ODD) ***
+        - Warning:  Sublexicons defined but not used:
       ATTR_ODD
-}}}
+```

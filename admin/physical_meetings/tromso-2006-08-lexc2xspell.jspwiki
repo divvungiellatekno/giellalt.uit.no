@@ -1,4 +1,4 @@
-!!!Plan for common conversion from LexC to speller engines of Aspell type
+# Plan for common conversion from LexC to speller engines of Aspell type
 
 Three different speller engines
 
@@ -18,31 +18,30 @@ Because of the similarities:
 * one conversion "engine"/script
 * several output formats
 
-!!Output format
+## Output format
 
 varies according to engine, but is basically a full-form word list that can be
-processed for compresssion. In Aspell, this processing is called {{munch}}-ing.
+processed for compresssion. In Aspell, this processing is called `munch`-ing.
 For Polderland, we have no name yet, but they have a similar processing with the
 same goal.
 
-!!Information to be added:
+## Information to be added:
 
 * "inflection" tags: munching of fullform lists
 * wordform frequency: extracted and added during compilation, can use full-form lists
 * compounding: tags as comments in the LexC format
 * style: tags as comments in the LexC format
 
-
 Pseudocode:
 
-# closed POS: create a transducer containing all and only the rest, and xfst:print;
+1. closed POS: create a transducer containing all and only the rest, and xfst:print;
   convert to desired format
-# NAVAdv: For each word:
-## read one line from the lexicon files, including Comp and Style comments
-## generate full paradigm, and all compounding forms
-## filter the resulting word form list against any Comp and Style restrictions
-## add the Comp and Style restrictions to the relative wordforms (all for Style, 5 for Comp)
-## output in the desired format
+1. NAVAdv: For each word:
+    1. read one line from the lexicon files, including Comp and Style comments
+    1. generate full paradigm, and all compounding forms
+    1. filter the resulting word form list against any Comp and Style restrictions
+    1. add the Comp and Style restrictions to the relative wordforms (all for Style, 5 for Comp)
+    1. output in the desired format
 
 Implementation points to consider:
 * It should be easy to add new output formats
@@ -54,7 +53,7 @@ WHO??? Candidates: Saara, Tomi
 The following output was generated to try out different strategies for
 generating the compounding stem.
 
-{{{
+```
 hum-tf4-ans157:~ trond$ lookup -flags mbTT -utf8 gt/sme/bin/isme.fst 
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 eadni+N+SgNomCmp#giella+N+Sg+Nom
@@ -66,7 +65,6 @@ eadni+N+SgNomCmp#giella+N+Sg+Nom        eadnegiella
 eadni+N+SgNomCmp#giella+N+Sg+Nom        eadnegiella
 eadni+N+SgNomCmp#giella+N+Sg+Nom        eadne-giella
 eadni+N+SgNomCmp#giella+N+Sg+Nom        eadne-giella
-
 
 eadni+N+SgNomCmp
 eadni+N+SgNomCmp        eadni+N+SgNomCmp        +?
@@ -97,9 +95,8 @@ sealgi+N+PlGenCmp#eadni+N+Sg+Nom
 sealgi+N+PlGenCmp#eadni+N+Sg+Nom        selggiideadni
 sealgi+N+PlGenCmp#eadni+N+Sg+Nom        selggiid-eadni
 
-
 dušši+N+SgNomCmp#eadni+N+Sg+Nom
 dušši+N+SgNomCmp#eadni+N+Sg+Nom duššeadni
 dušši+N+SgNomCmp#eadni+N+Sg+Nom dušši-eadni
 dušši+N+SgNomCmp#eadni+N+Sg+Nom duššieadni
-}}}
+```

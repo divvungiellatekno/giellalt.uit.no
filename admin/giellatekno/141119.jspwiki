@@ -1,23 +1,22 @@
-!!!Giellateknomøte, 19. 11. 2014
+# Giellateknomøte, 19. 11. 2014
 
-!!Saker
+## Saker
 
 * Forbetring av paradigmegenerering
 * Nettsidene våre
 * Smenob/nobsme
 * Oppfølgjingssaker
-** Sametinget / Giellagáldu e-ordbøker
-** CCF i Oslo 24.11.: http://www.mn.uio.no/ifi/om/aktuelt/arrangementer/andre/nlpg.html (Ciprian?)
-** Korp
+    - Sametinget / Giellagáldu e-ordbøker
+    - CCF i Oslo 24.11.: http://www.mn.uio.no/ifi/om/aktuelt/arrangementer/andre/nlpg.html (Ciprian?)
+    - Korp
 
+##  Forbetring av paradigmegenerering
 
-!! Forbetring av paradigmegenerering
-
-! cgi-bin
+###  cgi-bin
 Trond har sett på bug for ekstratekst. Sannsynlegvis er det ein fallback-mekanisme:
 Når den ikkje veit kva den skal gje gjer den alt.
 
-! Tagger på flere språk, med mellomrom mellom 
+###  Tagger på flere språk, med mellomrom mellom 
 
 Eksempel på presentasjon for paradigmegeneratoren: 
 
@@ -25,36 +24,36 @@ vuovdi+N+NomAg+Sg+Nom => subst. handlernomen entall nominativ
 
 Starte med database for tagger med oversettinger til forskjellig bruk og språk
 
-!Stader der vi finn taggar i dag:
+### Stader der vi finn taggar i dag:
 
 * i n-sme.fst, s-sme.fst -skripta 
-** gt/common/src/tag-no.regex, norsk
-** gt/common/src/tag-sme.regex nordsamisk
-** gt/common/src/tag-sjd.regex russisk (sic)
+    - gt/common/src/tag-no.regex, norsk
+    - gt/common/src/tag-sme.regex nordsamisk
+    - gt/common/src/tag-sjd.regex russisk (sic)
 * i lista over hjelpefunksjonar for Korp
 * NDS i configure
 * i dokumentasjonen for dei morfologiske analysatorane våre
 
-!Innhald:
+### Innhald:
 * Dei grammatiske termane som folk har lært på skolen
 * For språka vi lokaliserer til: sme, nob, eng, fin, rus
 * Referanse: Lingvist-taggar (dei som er i analysatoren)
 
 TODO: Ciprian ser på dette i år.
 
-! Bug, 
+###  Bug, 
 
 den viser baser bare for en av flere muligheter når PoS ikke er valg => skrive bz
 vuovdi (skal gi både A, N, N NomAg, V)
 
-!Hva vi kan gjøre nå, før databasen er ferdig:
+### Hva vi kan gjøre nå, før databasen er ferdig:
 
 * Fjerne pluss
-** Første steg: Taggar som no, men mellomrom og ikkje pluss mellom dei. 
+    - Første steg: Taggar som no, men mellomrom og ikkje pluss mellom dei. 
 * Repetisjon av lemma
-** Repetisjon av lemma skal bort. Dette blir styrt i  conf.pl, og sannsynlegvis i smi.cgi.
+    - Repetisjon av lemma skal bort. Dette blir styrt i  conf.pl, og sannsynlegvis i smi.cgi.
 
-!Paradigme utan ordklasse
+### Paradigme utan ordklasse
 
 Bug, 
 
@@ -66,7 +65,7 @@ vi tar med det i arbeidet vidare
 
 [/infra/web/ParadigmPresentation.html]
 
-!! Nettsidene våre
+##  Nettsidene våre
 
 Fra møtet 14.10:
 
@@ -75,29 +74,28 @@ Fra møtet 14.10:
 * forbedring layout pluss tekniske ting i Forrest (Diskusjon med Børre)
 * endre layout innafor forrest (også lage ny forside, bilde etc.), ekstern person, januar 2015
 
-!Ting som skal gjøres med strukturen for hjemmesida:
+### Ting som skal gjøres med strukturen for hjemmesida:
 
 * Dele gtuit i to: rein techdoc og gt-ekstern.
 * gt-ekstern sett opp som Divvun, med fleirspråklege tabbar på toppen av sida (men disse kan ikke linkes flerspråklig)
 * Slå saman gt-techdoc og divvun-techdoc (Sjur: Etter jul)
 * Generere språkvalg inn på sidene: Frå side x på samisk til same side x på norsk
 
-!!Arbeid i nyinfra, neste veke
+## Arbeid i nyinfra, neste veke
 
 * Dokumentasjon for feilmeldinger ved kompilering
 * Bedre feilmeldinger i make
 * Opplæring i nyinfra, også for yaml- og testskriptskriving
 
-!! Smenob/nobsme
+##  Smenob/nobsme
 
-!Paradigmegenerering i NDS for smenob
+### Paradigmegenerering i NDS for smenob
 
 Eit neste steg for paradigmegenereringa i NDS vil vere å la dei andre språka få glede av sme-forbetringane
 
 Lene og Ryan har arbeidd mykje, og det er oppretta ein bugzilla for å fikse de siste detaljene
 
-
-!Generering av fad-gt-mergeliste
+### Generering av fad-gt-mergeliste
 
 Lene: Jeg har sett litt på filene. Mange av ordene er ikke i vanlig smenob, men i src_non-accepted, så jeg vil foreslå å samkjøre med ord derfra også. Det er en fordel å ha med infoen src= for alle oversettinger.
 
@@ -105,35 +103,29 @@ Da får vi N antall oversettelser fra gamle filer og N antall oversetteler fra m
 Vi bør:
 
 * Merke oversettelsene som ikke skal være med (både fra gamle og nye filer) 
-** i hver sin mg 
-** i samme mg => ikke merka, blir ikke med (dette gjelder også fra de "gamle" filene
+    - i hver sin mg 
+    - i samme mg => ikke merka, blir ikke med (dette gjelder også fra de "gamle" filene
 * Merke med "trenger manuell redigering" 
 
 Viss fad-merge har samanfall i non-accepted blir non-accepted tatt med. Andre non-accepted forblir separat.
 
-!TODO:
+### TODO:
 
 * Lene lagar eksempel til Cip i csv
 * Cip genererer ei kommaseparert liste av dei to katalogane (fad-merge + non-accepted)
 
-
-!Metadata
+### Metadata
 
 Metadata for de forskjellige ordbøkene skal oppdateres.
 
 * NDS:
 * Webdict: Dokumentasjonen er oppdatert.
 * I filene: CC-informasjon skal være i alle filene, slik at de som henter filer til egne dicts osv er klar over CC-betingelsene (også gtweb osv) 
-** TODO: CC-informasjon i alle filer. Script: Sjekke om det står CC, viss ikkje, legg til CC (Ciprian, Trond)
+    - TODO: CC-informasjon i alle filer. Script: Sjekke om det står CC, viss ikkje, legg til CC (Ciprian, Trond)
 *Problem: ord vi sjekkar sjekkar vi mot smenob.fst. Vi må ha tre smenob.fst, ein med src, ein med fad-merge og ein med non-accepted
-** Todo: Trond lagar fleire fst-ar.
+    - Todo: Trond lagar fleire fst-ar.
 
-
-!! Oppfølgjingssaker
+##  Oppfølgjingssaker
 
 * Sametinget / Giellagáldu e-ordbøker
 * CCF i Oslo 24.11.: http://www.mn.uio.no/ifi/om/aktuelt/arrangementer/andre/nlpg.html (Ciprian?)
-
-
-
-

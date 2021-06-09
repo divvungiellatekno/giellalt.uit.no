@@ -2,7 +2,6 @@ Sjur og Trond 2.9. 2013
 
 Saker
 
-
 * filter
 * victorio
 * Island
@@ -11,73 +10,71 @@ Saker
 * Termseminar
 * Orddeling
 
-!!!filter
+# filter
 
-!!Korleis fungerer gtshared
+## Korleis fungerer gtshared
 
 Diskusjon om dette.
 
-Prinsipp: gtshared berre dei som __er__ delt.
+Prinsipp: gtshared berre dei som **er** delt.
 
 Ergo språk-spesifikke ting bort derfrå.
 
-!!Sletting av sem-taggar overalt
+## Sletting av sem-taggar overalt
 
 Sjur vil diskutere dette meir, vi tar det opp seinare.
 
-!!!victorio
+# victorio
 
 Trond orienterte om status quo. Børre må sjå på dette.
 
-!!!Island
+# Island
 
 Sjur orienterte kort, meir seinare.
 
 Ein del av resultatet med å vise fram 
 
-
-!!fao
+## fao
 
 Zakaris skal sjå på lisensspørsmålet.
 
-!!isl
+## isl
 
 Fullformliste med restriksjonar i lisensen, som vi evt kan leve med.
 
 S&T ser på om vi kan få til noko til NoDaLiDa på Island med dette.
 
-!fst
+### fst
 
 Sjur har sjekka inn ei fullformsliste x 3
 
-# opne
-# lukka med bøying
-# lukka utan bøying
+1. opne
+1. lukka med bøying
+1. lukka utan bøying
 
 og gjort det om til ein fst.
 
-!Stunt:
+### Stunt:
 
 Ta isl-taggane, konverter til våre taggar, opne for samansetjing
 frå nom og gen, og køyr fao-dis på toppen, for å sjå kva vi får ut av det.
 
-
-!!dan
+## dan
 
 Berre ein katalog, men vil bli tilgjengeleg som liste av 
 fullform + grammatisk ord.
 
 Det er også eit lisensspørsmål.
 
-!!swe
+## swe
 
 Her er det opne ressursar.
 
-!!!Kintel
+# Kintel
 
 Ny medarbeidar, Sandra, i halv stilling, skal arbeide med Kintel.
 
-!!!TTS
+# TTS
 
 Tre veker til å få orden på det såkalla fonetiske leksikonet, dvs. 
 ipa-konverteringa vår brukt på leksikonet.
@@ -100,60 +97,55 @@ Unntak
 lemma+Ort/ort:ortstamme CONTLEX;
 lemma+Ort/fon:fonstamme{#IPA#} CONTLEX;
 
-
 Akronym:
 
-* __store bokst__ ja/nei
-** nei: business as usual
-** ja: acro
-* __acro__: * er det på lista av akro-ord? j/n
-** ja: NATO / n a: t u /
-** nei: FBI / e f: b e: i: /
-* __bindestrek__ ja/nei
-** nei: business as usual
-** ja: konsonantord
-* __konsonantord__ ja/nei
-** ord til venstre utan vokal: acro: cd-spelar / s e: d e: s p ... /
-** ord til venstre med vokal: business as usual
+* **store bokst** ja/nei
+    - nei: business as usual
+    - ja: acro
+* **acro**: * er det på lista av akro-ord? j/n
+    - ja: NATO / n a: t u /
+    - nei: FBI / e f: b e: i: /
+* **bindestrek** ja/nei
+    - nei: business as usual
+    - ja: konsonantord
+* **konsonantord** ja/nei
+    - ord til venstre utan vokal: acro: cd-spelar / s e: d e: s p ... /
+    - ord til venstre med vokal: business as usual
 
-
-
-!!!Termseminar
+# Termseminar
 
 Om to veker
 
-!!!Orddeling
+# Orddeling
 
 perlscriptet fungerer ikkje
 
 spell-out av variabel
 $hyphenate = "$preprocess | $utilitydir/lookup $fstflags $hyph_fst | $commondir/hyph-filter.pl";
 
-
 Problemet er:
- {{$commondir/hyph-filter.pl" }}
+ `$commondir/hyph-filter.pl" `
  som gjev ingenting ut.
 
 Docu in the perlscript:
 
-{{{
-# hyph-filter.pl 
-# Perls script for cleaning the hyphenator output.
-# - reads one cohort at the time
-# - compares the hyphenated word to the orignal, disregarding ^ and #:
-# -- deletes forms that do not correspond to the input string
-# - uniques the final set
-# - removes all but the readings with the least word boundaries
-# and prints what is left (it should normally be only one form)
+```
+1. hyph-filter.pl 
+1. Perls script for cleaning the hyphenator output.
+1. - reads one cohort at the time
+1. - compares the hyphenated word to the orignal, disregarding ^ and #:
+1. -- deletes forms that do not correspond to the input string
+1. - uniques the final set
+1. - removes all but the readings with the least word boundaries
+1. and prints what is left (it should normally be only one form)
 #
-# $Id: hyph-filter.pl 25426 2009-04-21 09:48:21Z boerre $
-}}}
+1. $Id: hyph-filter.pl 25426 2009-04-21 09:48:21Z boerre $
+```
 
 ~$ll /opt/smi/common/bin/hyph-filter.pl
 -rwxr-xr-x 1 root root 1830 sep 22  2012 /opt/smi/common/bin/hyph-filter.pl
 
-
-{{{
+```
 ------------------------------------------------------------------------
 r8377 | saara | 2006-10-02 14:26:57 +0300 (Mon, 02 Oct 2006) | 3 lines
 
@@ -167,10 +159,9 @@ Added checking of split results.
 
 ------------------------------------------------------------------------
 r8259 | sjur | 2006-09-26 09:37:45 +0300 (Tue, 26 Sep 2006) | 2 lines
-}}}
+```
 
 Added hyphenation filter script.
-
 
 For Børre
 
@@ -179,4 +170,3 @@ For Børre
 * hyph - fredag - børre ser på det i 2 timar, rapporterer
 * vic til gtweb - tja
 * forrest
-

@@ -2,14 +2,11 @@ kmd-møte 10.3.15.
 
 Kevin, Sandra, Trond.
 
-!!!Saker
+# Saker
 * Status
 * Framover
 
-
-!!!Status
-
-
+# Status
 
 sme2smj-lemmaX.fst er ferdig og produserer kandidatlister i nobsmjsme
 Vi har kandidatlister nob-smj-sme
@@ -22,18 +19,18 @@ Vi har kandidatlister nob-smj-sme
 Der:
 
 * decomp = match der du finn alle delane
-** sykkelstyre -> sykkel ok, styre ok -> sykkelstyre
+    - sykkelstyre -> sykkel ok, styre ok -> sykkelstyre
 * precomp = match der du finn delane som delar av andre samansetjingar
-** ordboka har barnespråk→mánágiella og bruksrett→adnemriektá/ávkkimriektá, så får me forslag bruksspråk→ávkkitgiella/adnemgiella
+    - ordboka har barnespråk→mánágiella og bruksrett→adnemriektá/ávkkimriektá, så får me forslag bruksspråk→ávkkitgiella/adnemgiella
 
 No er det slik:
 
-{{{
+```
 videreføre      joarkket        fievrridit      241     0       160     14
 +videreføre      joarkket        joatkašuvvat    241     0       31      14
 videreføre      joarkket        joatkit 241     0       448     14
 =videreføre      joarkket
-}}}
+```
 
 Det vil vere lettare med:
 
@@ -41,17 +38,17 @@ videreføre      joarkket        joatkit/fievrridit/joatkašuvvat 241     0     
 
 Men likevel:
 
-{{{
+```
 innskrenkning   gártjedibme     gáržžádus       11      0       3       0
 innskrenkning   gártjodus       gáržžádus       11      0       3       0
-}}}
+```
 
 Her skal vi framleis ha:
 
-{{{
+```
 bindeledd       Aktisasjvuohtaladás     oktavuođalađas  6       0       0       0
 kontaktledd     Aktisasjvuohtaladás     oktavuođalađas  0       0       0       0
-}}}
+```
 
 og ikkje slå saman til:
 
@@ -59,10 +56,10 @@ kontaktledd/bindeledd     Aktisasjvuohtaladás     oktavuođalađas  0       0  
 
 Dei som er noana er av to typar, den eine er der pga fleirordsuttrykk:
 
-{{{
+```
 Euruhpárádde    Euruhpárádde    +? = ekte
 Finnmárkku báhppa       Finnmárkku báhppa       +? = toords-uttrykk
-}}}
+```
 
 Den siste typen kan vi fjerne, og analysere som separate ord. Ei anna sak er at desse fleirordsuttrykka sannsynlegvis  ikkje er oppslagsord i seg sjølv ==> vi kan vente med dei.
 
@@ -77,7 +74,6 @@ Filforklaring:
  *  anymalign :: from parallel word alignment (see para/anymalign)
  *  xfst :: using =$GTHOME/words/dicts/smesmj/scripts/sme2smj-$PoS.fst=
  *  lexc :: using =$GTHOME/words/dicts/smesmj/bin/smesmj.fst=
-
 
 Markeringsmetode:
 
@@ -95,7 +91,7 @@ Resultat etter manuell gjennomgang: enten a eller b:
 viss a, fjern første kirkeliv-instans, viss b, fjern alle kirkeliv-instansar, i resten av filene:
 - (viss ei linje er markert som dårleg, fjern *paret*; viss markert som bra, fjern alle forslag med det nob-ordet)
 
-{{{
+```
 ~$cat ../unhammer/freecorpus/evttohus/out/nobsmjsme/*_ana|grep kirkeliv
 kirkeliv        girkkoielle        girkoeallin        33        0        17        5
 kirkeliv        girkkoiellem        girkoeallin        33        0        17        13 
@@ -110,20 +106,20 @@ kirkeliv        girkkovájmmo        girkoeallin        33        0        17   
 kirkeliv        girkkoæládus        girkoeallin        33        0        17        0
 kirkeliv        girkkoiellet        girkoeallin        33        0        17        13
 kirkeliv        girkkoielle        girkoeallin        33        0        17        5
-}}}
+```
 
+# Framover
 
-!!!Framover
+**Kva:**
 
-__Kva:__
  
-{{{
+```
 @ foran former som ikkje er ok (måte: merk unntaka)
 * foran former du skal sjå på seinare
 + for ok (viss det er ei fil kor det meste er ikke-ok)
-}}}
+```
 
-__Lage filer for manuell gjennomgang__
+**Lage filer for manuell gjennomgang**
 
 Gå gjennom filene i denne rekkjefølgja:
 
@@ -131,23 +127,18 @@ Gå gjennom filene i denne rekkjefølgja:
 * eventuelt først ei fil med kandidatar som kom frå fleire metodar
 * bolkar på 1000 etter frekvens, baklengssortert inni kvar bolk?
 
-
-__Lagring, svn__
+**Lagring, svn**
 
 Lagre filene her:  main/words/dicts/nobsmj/inc
 
 Skriv ei readme-fil der rekkjefølgja går fram
 
-
-
-
-!!!Anna mens eg har det i hovudet
+# Anna mens eg har det i hovudet
 
 Rettskrivingsendring  ijja→iddja:
 
 Skript dette (Sandra sender Kevin ei liste).
 
-
-!!!sma
+# sma
 
 Som for smj, men filtrere mot eksisterande.

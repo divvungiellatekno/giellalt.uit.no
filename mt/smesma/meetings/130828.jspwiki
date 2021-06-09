@@ -2,50 +2,46 @@ Apertium sme-sma 28.8.
 
 Present: Francis, Lene, Trond.
 
-
-!!!Agenda:
+# Agenda:
 
 * Tag reording 
 * Other issues
 
+# Tag reordering
 
-!!!Tag reordering
-
-
-{{{
+```
 bidix                 fst                           result
 ---------------------------------------------------------------
 skuvla<n> .INTERSECT. skuvla<sem_org><sem_plc><n> = ()
 skuvla<n> .INTERSECT. skuvla<n><sem_org><sem_plc> = (skuvla<n>)
 skuvla<n> .INTERSECT. skuvla<n>                   = (skuvla<n>)
 ---------------------------------------------------------------
-}}}
+```
 
 But:
 
 <e><p><l>Stockholm<s n="n"/><s n="prop"/><s n="plc"/></l><r>Stuehkie<s n="n"/><s n="prop"/></r></p></e>
 
-
 solutions:
 
-# move tags
-# delete tags
+1. move tags
+1. delete tags
 
 So:
 
 We do the following
 
-# Reshuffle tags in fst:
-## prop tags are as they are from fst
-## noun are reordered by a script in sme/src/filters
-## adverbs are as they are from fst
-# the tags are then matched for the pruning of the fst in apertium
-# The bidix does not contain semtags
-# The cg in Apertium removes the tags
+1. Reshuffle tags in fst:
+    1. prop tags are as they are from fst
+    1. noun are reordered by a script in sme/src/filters
+    1. adverbs are as they are from fst
+1. the tags are then matched for the pruning of the fst in apertium
+1. The bidix does not contain semtags
+1. The cg in Apertium removes the tags
 
 here is the explicit description of what we want:
 
-{{{
+```
 ---------------------------------------------------------------
 fst:
 <n><sem_org><sem_plc><sg>...     after reshuffle
@@ -56,18 +52,13 @@ cg: semtags in, nosemtags out
 
 bidix: no sem-tags
 ---------------------------------------------------------------
-}}}
+```
 
+# Other issues
 
+## jagi 1974
 
-
-
-
-!!!Other issues
-
-!!jagi 1974
-
-{{{
+```
 Son lea riegádan "jagi 1974" ja bajásšaddan "Romssas".
 Dihte "jaepien 1974" reakedi jih "Tromsene" byjjesovvi.
 
@@ -77,10 +68,9 @@ $ echo "Son lea riegádan jagi 1974 ja bajásšaddan Romssas." | apertium -d . s
 Dïhte jaepien 1974 reakadamme jïh Tromsøesne byjjenamme.
 
 ^pron-pers<SN><@SUBJ→><PX>{^Dïhte<pron><pers><sg3><nom>$}$ ^v<SV><@+FMAINV>{^reakadidh<v><iv><prfprc>$}$ ^n-num<SN><@←ADVL><PX>{^jaepie<n><sg><gen>$ ^1974<num><sg><nom>$}$ ^cc<CC><@CNP>{^jïh<cc>$}$ ^prfprc<SV><@-FMAINV>{^byjjenidh<v><iv><prfprc>$}$ ^n<SN><@←ADVL><PX>{^Tromsø<n><prop><sg><ine>$}$^sent<SENT><@X>{^..<clb>$}$
-}}}
+```
 
-
-{{{
+```
 "<Son>"
     "son" Pron Pers Sg3 Nom @SUBJ> 
 "<lea>"
@@ -99,16 +89,17 @@ Dïhte jaepien 1974 reakadamme jïh Tromsøesne byjjenamme.
     "Romsa" N Prop Sg Loc @<ADVL 
 "<.>"
     "." CLB 
-}}}
+```
 
    
 Links:
+
     
 * [http://wiki.apertium.org/wiki/North_Saami_-_South_Saami_syntactic_issues]
 * [http://wiki.apertium.org/wiki/North_Saami_-_South_Saami_morphological_issues]
 * [http://wiki.apertium.org/wiki/North_Saami_-_South_Saami_bilingual_lexicon]
 
-{{{
+```
 Before:
 $ echo "Nieiddat leat čeahpit. " | apertium -d . sme-sma
 Nïejth leah væjkelh. 
@@ -116,49 +107,50 @@ Nïejth leah væjkelh.
 After:
 $ echo "Nieiddat leat čeahpit. " | apertium -d . sme-sma
 Nïejth leah væjkele. 
-}}}
+```
 
-{{{
+```
      ^buot/buot<pron><indef><attr><@→N>$ ^gielaid/giella<n><pl><acc><@←OBJ>$
      ^attr-n<SN><@←OBJ><PX>{^gaajhke<pron><indef><pl><acc>$ ^gïele<n><pl><acc>$}$
      gaajhkide gïelide
-}}}     
+```     
 
-
-{{{
+```
 echo "Mun boađán boahtte jagi." | apertium -d . sme-sma
 Manne båetije jaepien båatam.
 
 båetije båetedh+V+IV+PrsPrc
 båetije båetedh+V+IV+Der/NomAg+N+Sg+Nom
-}}}
+```
 
 Here is a solution
 
     <e><p><l>boahtte<s n="a"/></l><r>båetije<s n="a"/></r></p></e>
+
     
 *    ND = number to be determined (take it from the noun)
 *    CD = case to be determined (take it from the noun)
+
  
 Lexicon entry form:
 
-{{{    
+```    
     <e r="LR"><p><l>boahtte<s n="a"/><s n="attr"/></l><r>båetije<s n="a"/><s n="ND"/><s n="CD"/></r></p></e>
     <e r="RL"><p><l>boahtte<s n="a"/><s n="attr"/></l><r>båetije<s n="a"/></r></p></e>
-}}}
+```
 
 Now:
 
-{{{
+```
 ^pron-pers<SN><@SUBJ→><PX>{^Manne<pron><pers><sg1><nom>$}$ ^v<SV><@+FMAINV>{^båetedh<v><iv><ind><prs><sg1>$}$ ^a-n<SN><@←ADVL><PX>{^båetije<a><sg><gen>$ ^jaepie<n><sg><gen>$}$^sent<SENT><@X>{^..<clb>$}$
 
 $ echo "Mun boađán boahtte jagi." | apertium -d . sme-sma
 Manne #båetije jaepien båatam.
-}}}
+```
 
-So, what is the role of ''båetijen''?
+So, what is the role of *båetijen*?
 
-{{{
+```
 boahtte jagis -> båetijen jaepesne
 attr     loc     gen.attr      ine
 
@@ -172,7 +164,6 @@ båetijen båetije+A+Sg+Ine
 båetijen båetije+A+Sg+Ela 
 båetijen båetije+A+Sg+... 
 
-
 sme:
 buori   buorre+A+Sg+Gen
 buori   buorre+A+Sg+Acc
@@ -184,59 +175,58 @@ boahtte boahtte+A+Attr => båetije/båetijen
 
 Pron+Dem       @→N = +Det+Dem (?)
 Pron+Dem +Attr @→N = +Det+Dem (?)
-}}}
+```
 
 We then have four types:
 
-!indecl sme -> decl sma
+### indecl sme -> decl sma
 
-{{{
+```
     <e r="LR"><p><l>boahtte<s n="a"/><s n="attr"/></l><r>båetije<s n="a"/><s n="ND"/><s n="CD"/></r></p></e>
     <e r="RL"><p><l>boahtte<s n="a"/><s n="attr"/></l><r>båetije<s n="a"/></r></p></e>
-}}}
+```
 
-!indecl sme -> indecl sma
-
--
-
-!decl sme -> decl sma
+### indecl sme -> indecl sma
 
 -
 
-!decl sme -> indecl sma
+### decl sme -> decl sma
 
-{{{
+-
+
+### decl sme -> indecl sma
+
+```
     <e r="LR"><p><l>dehálaš<s n="a"/></l><r>vihkeles<s n="a"/><s n="indecl"/></r></p></e>
     <e r="RL"><p><l>dehálaš<s n="a"/></l><r>vihkeles<s n="a"/></r></p></e>
-}}}
+```
 
 * vihkeles+A+Superl+Sg+Nom    vihkelommes
 * vihkeles+A+Sg+Acc   vihkelem
 
 He sees the X cat.
 
-{{{
+```
 in langs/sma:
 ./configure --with-hfst --enable-apertium --enable-oahpa
 the file is 
 sma/src/morphology/*/adjectives-oahpa.lexc
-}}}
+```
 
+## Lexical selection
 
-!!Lexical selection
-
-''boahtit oidnosii -> våajnoes sjïdtedh''
+*boahtit oidnosii -> våajnoes sjïdtedh*
 
 Default translation for boahtit is båetedh, alternative translation is sjïdtedh 
 
-{{{
+```
     <e slr="1"><p><l>boahtit<s n="v"/><s n="iv"/></l><r>båetedh<s n="v"/><s n="iv"/></r></p></e>
     <e slr="2"><p><l>boahtit<s n="v"/><s n="iv"/></l><r>sjïdtedh<s n="v"/><s n="iv"/></r></p></e>
-}}}
+```
 
     apertium-sme-sma.sme-sma.lrx
 
-{{{
+```
   <rule>
     <match lemma="boahtit" tags="v.*"><select lemma="båetedh" tags="v.*"/></match>
   </rule>
@@ -245,14 +235,12 @@ Default translation for boahtit is båetedh, alternative translation is sjïdted
     <match lemma="boahtit" tags="v.*"><select lemma="sjïdtedh" tags="v.*"/></match>
     <match lemma="oidnosii"/>
   </rule>
-}}}  
-
+```  
 
   
    ^boahtit<v><iv><ind><prs><pl3><@+FMAINV>/båetedh<v><iv><ind><prs><pl3><@+FMAINV>/sjïdtedh<v><iv><ind><prs><pl3><@+FMAINV>$ ^oidnosii<adv><@←ADVL>/våajnoes<adv><@←ADVL>$
 
 ^Dat/dat<pron><dem><pl><nom>/dat<pron><dem><sg><nom>$ ^boahtá/boahtit<v><iv><ind><prs><sg3>$ ^oidnosii/oidnosii<adv>$^./.<clb>$
-
 
 #Artihkele 7:m *geatnegahttá nasjonaalestaatide tjïrrehtidh konkreetide råajvarimmide vaarjeleminie åvteste unnebelåhkoengïeli nimhtie ahte dah våajnoes sjidtieh dovne politihkesne, laakine jïh åtnosne. 
 
@@ -260,12 +248,11 @@ Default translation for boahtit is båetedh, alternative translation is sjïdted
 
 <ADV><@←ADVL>
 
-
 $ bash dev/test-prefix.sh "juoga<pron><indef>"
 
-!!error test report
+## error test report
 
-{{{
+```
 sh generation-errors.sh | grep '#' | grep '<pron'
 10   ^jïjnje<pron><indef><pl><pl><nom>$ #jïjnje\<pron\>\<indef\>\<pl\>\<pl\>\<nom\> ^jïjnje/jïjnje<a><attr>/jïjnje<a><sg><nom>/jïjnje<adv>/jïjnje<pron><indef><sg><nom>$^./.<clb>$
 2    ^måedtie<pron><indef><sg><ine>$    #måedtie\<pron\>\<indef\>\<sg\>\<ine\>  ^måedtie/måedtie<pron><indef><sg><nom>$^./.<clb>$
@@ -273,23 +260,23 @@ sh generation-errors.sh | grep '#' | grep '<pron'
 1    ^naan<pron><indef><sg><nom>$   #naan\<pron\>\<indef\>\<sg\>\<nom\> ^naan/naan<pron><indef>$^./.<clb>$
 1    ^naan<pron><indef><pl><acc>$   #naan\<pron\>\<indef\>\<pl\>\<acc\> ^naan/naan<pron><indef>$^./.<clb>$
 1    ^dagkeres<pron><dem><pl><com><attr>$   #dagkeres\<pron\>\<dem\>\<pl\>\<com\>\<attr\>   ^dagkeres/dagkeres<a><attr>/dagkeres<pron><dem><attr>$^./.<clb>$
-}}}
+```
 
+##  SVO - SOV with adjectives
 
-!! SVO - SOV with adjectives
    
 SVO to SOV, but also S V AN to S AN V 
+
      
 * Son oaidná skuvlla. Son oaidná ođđa skuvlla.
-** Before the fix: Satne skuvlem vuajna. Satne vuajna orre skuvlem. 
-** After the fix: Son oaidná ođđa skuvlla. Dïhte orre skuvlem vuajna.
+    - Before the fix: Satne skuvlem vuajna. Satne vuajna orre skuvlem. 
+    - After the fix: Son oaidná ođđa skuvlla. Dïhte orre skuvlem vuajna.
 
-{{{
+```
 ^pron-pers<SN><@SUBJ→><PX>{^Dïhte<pron><pers><sg3><nom>$}$     <rule comment="REGLA: pron-pers">
 ^v<SV><@+FMAINV>{^vuejnedh<v><tv><ind><prs><sg3>$}$            <rule comment="REGLA: verb-fin"> 
 ^a-n<SN><@←OBJ><PX>{^orre<a><attr>$ ^skuvle<n><sg><acc>$}$     <rule comment="REGLA: adj-rdep n">
 ^sent<SENT><@X>{^..<clb>$}$
-}}}
+```
 
-The trick was to define a ''phrase'' (SN) in the t1x file, and then refer to that phrase later.
-
+The trick was to define a *phrase* (SN) in the t1x file, and then refer to that phrase later.

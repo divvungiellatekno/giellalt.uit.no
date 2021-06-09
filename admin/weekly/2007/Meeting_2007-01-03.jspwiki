@@ -1,174 +1,154 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 03.01.2007
 * Time: 09.30 Norw. time
 * Place: Where we are
 * Tools: SubEthaEdit, iChat
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from last week
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from last week
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 10:42.
 
-Present: __Børre, Saara, Sjur, Steinar, Thomas, Trond__
+Present: **Børre, Saara, Sjur, Steinar, Thomas, Trond**
 
-Absent: __Maaren, Tomi__
+Absent: **Maaren, Tomi**
 
 Agenda accepted as is.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!! Børre
+##  Børre
 * contact authors who have already received the corpus licensing contract
-** not done
+    - not done
 * continue work on script for automatic testing of the spell checker in Word
-** not done
+    - not done
 * update setup and installation instructions for new users/computers
-** not done
+    - not done
 * create new forrest tarball
-** not done
-* cvs up of the public server should be done for {{xtdoc/sd/documentation/}}
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not done
+    - not done
+* cvs up of the public server should be done for `xtdoc/sd/documentation/`
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - not done
 * other:
-** fixed link errors in gtuit/doc
+    - fixed link errors in gtuit/doc
 
-
-
-!! Maaren
+##  Maaren
 * investigate the generated word form list sent to Polderland - use the command
-  {{make wordlist TARGET=sme}} in ''victorio''
+  `make wordlist TARGET=sme` in *victorio*
 
-
-
-!! Saara
+##  Saara
 * help Trond with some shell commands
 * re-analyze parallel files
-** done, aligner now works.
+    - done, aligner now works.
 * Move to Bugzilla: vislcg server-friendly as feature request to the vislcg devs
-** done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** done some
+    - done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - done some
 
-
-
-!! Sjur
+##  Sjur
 * name lexicon:
-** refactor SD-terms editor code
-** implement missing propnouns editing functions
-** implement improvements decided upon in Tromsø
-*** started work on a refactor of some basic code, to allow greater flexibility,
+    - refactor SD-terms editor code
+    - implement missing propnouns editing functions
+    - implement improvements decided upon in Tromsø
+        - started work on a refactor of some basic code, to allow greater flexibility,
     easier coding, and hopefully a better interface
 * hire linguist and programmer
 * decide how to specify compounding behaviour info in the lexicon
-** combinatorial behaviour decided; specification of form still not done
+    - combinatorial behaviour decided; specification of form still not done
 * get an Intel Mac for testing Windows spellers
 * publish corpus contracts and project infra on NoDaLi-sta
 * fix forrest installations for Maaren, Disamb
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Thomas
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-** we've begun
+##  Thomas
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+    - we've begun
 * decide how to specify compounding behaviour info in the lexicon
-** on our way
+    - on our way
 * go through the class of GAHPIR words, and try to generalise the compounding
   behaviour
-** done
+    - done
 * change whatever is needed based on the above generalisation
-** done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** worked with bugs
+    - done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - worked with bugs
 
-
-
-!! Tomi
+##  Tomi
 * add closed POS and clitics to PLX generation
 * add derivations to the PLX generation
 * add compound stems to the PLX generation
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Trond
-* update the {{smj}} proper noun lexicon, and refine the morphological analysis,
+##  Trond
+* update the `smj` proper noun lexicon, and refine the morphological analysis,
   cf. the propernoun-smj-lex.txt
-** We have done some work on this.
+    - We have done some work on this.
 * Go through the GAHPIR lexicon (with Thomas)
-** Done
-* get more {{sma}} texts
-** No news.
+    - Done
+* get more `sma` texts
+    - No news.
 * decide how to specify compounding behaviour info in the lexicon
-** At least we worked on this, what was the final outcome again?
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
-** Done some work on bugs, closed a couple.
+    - At least we worked on this, what was the final outcome again?
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
+    - Done some work on bugs, closed a couple.
 
-
-
-!!!3. Documentation
+# 3. Documentation
 
 TODO:
-* either fix forrest installations (__Sjur__), or create a new tarball
-  (__Børre__)
-* cvs up of the public server should be done for {{xtdoc/sd/documentation/}}
-  - notice the directory! (__Børre__)
-* update setup and installation instructions (__Børre__)
+* either fix forrest installations (**Sjur**), or create a new tarball
+  (**Børre**)
+* cvs up of the public server should be done for `xtdoc/sd/documentation/`
+  - notice the directory! (**Børre**)
+* update setup and installation instructions (**Børre**)
 
-
-
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 We should probably concentrate upon mending what we have, up to Febrary 8th.
 
-__Børre__ has been fixing the meta information for many files, adding info on parallel language versions.
+**Børre** has been fixing the meta information for many files, adding info on parallel language versions.
 
 TODO:
-* {{sme}} texts: Fix what we have for this month (__Børre, Trond, Saara__)
-* missing {{nob}} parallel texts could be an issue (__Børre, Trond__)
+* `sme` texts: Fix what we have for this month (**Børre, Trond, Saara**)
+* missing `nob` parallel texts could be an issue (**Børre, Trond**)
 
+# 5. Corpus infrastructure
 
-
-!!!5. Corpus infrastructure
-
-!!Aligner
+## Aligner
 
 The command line aligner is in place, and most(?)/all(?) potential texts are 
 aligned.
 
-__TODO:__
-* make an overview of status quo (__Trond, Børre, Saara__). __Børre__ has added
-  parallellity status to all {{admin/sd/}} texts
-* gather more parallel texts (__Trond, Børre__)
-** not any more? (depends on what we are missing and how hard they are to get,
+**TODO:**
+* make an overview of status quo (**Trond, Børre, Saara**). **Børre** has added
+  parallellity status to all `admin/sd/` texts
+* gather more parallel texts (**Trond, Børre**)
+    - not any more? (depends on what we are missing and how hard they are to get,
    but we will not put much time into it)
-* re-analyze parallel files using the command-line version (__Saara__)
-** progressing
-* when aligned, send aligned, xml {{nob}} texts to __Lars__ (__Saara__)
+* re-analyze parallel files using the command-line version (**Saara**)
+    - progressing
+* when aligned, send aligned, xml `nob` texts to **Lars** (**Saara**)
 
-
-
-!!Conversion issues
+## Conversion issues
 
 Analysis statistics:
 
-{{{
+```
 	words	missing	% recognised
 adm	1493746	28967	98,06
 bib	241233	2651	98,90
@@ -176,33 +156,33 @@ fac	382353	11371	97,03
 fic	70601	7847	88,89
 law	284700	6269	97,80
 new	4032848	17134	99,58
-}}}
+```
 
 There are still a lot of conversion errors, and fixing them should be a priority
 this month. Error types:
 
 * pdf files (there will always be some errors here)
 * string-string replacement during the xsl conversion
-** Conversion errors (but we want to fix the conversion)
-** typos (should be marked up using our error markup tags) 
-** grammatical errors (as above)
+    - Conversion errors (but we want to fix the conversion)
+    - typos (should be marked up using our error markup tags) 
+    - grammatical errors (as above)
 
 So far, we only have had character replacement (even context-less character
 replacement). We can use XSL string replacement to correct spelling errors to
-constructs like, cf the {{corpus.dtd}} and [a previous meeting memo
-|https://giellalt.uit.no/admin/weekly/2006/Meeting_2006-03-20.html#Correction+tags%3F]:
+constructs like, cf the `corpus.dtd` and [a previous meeting memo
+| https://giellalt.uit.no/admin/weekly/2006/Meeting_2006-03-20.html#Correction+tags%3F]:
 
-{{{
+```
 <error correct="corrected text">erroneous text</error>
-}}}
+```
 
-Either we use the function __Trond__ found, or we install and use Saxon 8 and
+Either we use the function **Trond** found, or we install and use Saxon 8 and
 XSL 2, which have good string manipulation tools.
 
 Flow:
 * orig
 * xsl
-** corr-of-textstring (not implemented yet) (we is > we are) (we keep the
+    - corr-of-textstring (not implemented yet) (we is > we are) (we keep the
    orig text, and the correction is added as additional info in an attribute,
    see above)
 * xml
@@ -212,74 +192,66 @@ Flow:
 
 Do we have good tools for localising conversion errors? Problem: I spot an error 
 in the analysis. Which file is it in? 
-{{ccat}} removes file source info, and we are thus in the blind. Conclusion: we
+`ccat` removes file source info, and we are thus in the blind. Conclusion: we
 don't have a good tool for this, only grep.
 
-
-__TODO:__
+**TODO:**
 * add correction markup to the xml files (string-to-correction markup)
-  (__Saara__)
-* report conversion errors to __Saara__ (__Trond, Steinar__)
+  (**Saara**)
+* report conversion errors to **Saara** (**Trond, Steinar**)
 
+# 6. Infrastructure
 
-!!!6. Infrastructure
+## Xerox tools wrapped as servers
 
-!!Xerox tools wrapped as servers
+**TODO:**
+* find a way of integrating `vislcg` as a server, or send a feature request
+  to the `vislcg` developers (**Saara**)
+    - move this to Bugzilla
+        - done
 
-__TODO:__
-* find a way of integrating {{vislcg}} as a server, or send a feature request
-  to the {{vislcg}} developers (__Saara__)
-** move this to Bugzilla
-*** done
+# 7. Linguistics
 
-
-
-!!!7. Linguistics
-
-!!Names and multilinguality
+## Names and multilinguality
 
 TODO:
-# finish first version of the editing (__Sjur__)
-# test editing of the xml files. If ok, then: (__Sjur, Thomas, Trond__)
-# make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
+1. finish first version of the editing (**Sjur**)
+1. test editing of the xml files. If ok, then: (**Sjur, Thomas, Trond**)
+1. make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
   well) (the morphological section should be kept intact, in e.g.
-  propernoun-sme-morph.txt) (__Sjur, Saara__)
-# convert propernoun-($lang)-lex.txt to a derived file from common xml files
-  (__Sjur, Tomi, Saara__)
-# start to use the xml file as source file
-# clean terms-sme.xml such that all names have the correct tag for their use
-  (e.g. @type=secondary) (__Thomas, Maaren, linguists__)
-# merge placenames which are errouneously in different entries: e.g. Helsinki,
-  Helsingfors, Helsset (__linguists__)
-# publish the name lexicon on risten.no (__Sjur__)
-# add missing parallel names for placenames (__linguists__)
-# add informative links between first names like Niillas and Nils
-  (__linguists__)
+  propernoun-sme-morph.txt) (**Sjur, Saara**)
+1. convert propernoun-($lang)-lex.txt to a derived file from common xml files
+  (**Sjur, Tomi, Saara**)
+1. start to use the xml file as source file
+1. clean terms-sme.xml such that all names have the correct tag for their use
+  (e.g. @type=secondary) (**Thomas, Maaren, linguists**)
+1. merge placenames which are errouneously in different entries: e.g. Helsinki,
+  Helsingfors, Helsset (**linguists**)
+1. publish the name lexicon on risten.no (**Sjur**)
+1. add missing parallel names for placenames (**linguists**)
+1. add informative links between first names like Niillas and Nils
+  (**linguists**)
 
-
-!!North Sámi
+## North Sámi
 
 TODO:
 * go through the class of GAHPIR words, and try to generalise the compounding
-  behaviour (__Thomas__)
-** done
+  behaviour (**Thomas**)
+    - done
 * change whatever is needed based on the above generalisation
-  (__Thomas, Trond__)
-** done
+  (**Thomas, Trond**)
+    - done
 
-
-!!Lule Sámi
+## Lule Sámi
 
 TODO:
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-  (__Thomas, Trond__)
-** progressing - good!
-* update proper noun lexicon with copy of {{sme}} lexicon  (__Trond__)
-** done
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+  (**Thomas, Trond**)
+    - progressing - good!
+* update proper noun lexicon with copy of `sme` lexicon  (**Trond**)
+    - done
 
-
-
-!!!8. Name lexicon infrastructure
+# 8. Name lexicon infrastructure
 
 Decided in Tromsø:
 * add logging facilities to the interface
@@ -291,174 +263,152 @@ Decided in Tromsø:
 * display existing language entries when adding a new language to a record
 * add editor to change single, existing entries
 
-
 Details can be found in [the meeting
 memo.|/admin/physical_meetings/tromso-2006-08-propnoun.html]
 
 TODO:
-* develop the needed XQueries and UI (__Sjur, Tomi__)
+* develop the needed XQueries and UI (**Sjur, Tomi**)
 * try to make a first version of xml2lexc in Perl for testing and preparation
-  for the big jump (__Saara__)
+  for the big jump (**Saara**)
 
 Postponed:
-* data synchronisation between [risten.no|http://www.risten.no] and the cvs repo
+* data synchronisation between [risten.no](http://www.risten.no) and the cvs repo
 * new version of xml2lexc (based on ccat), should handle complex names correct:
   construct entries like we have now from the different parts of a complex name
   entry
 
+# 9. Spellers
 
-!!!9. Spellers
+## Polderland data generation
 
-!!Polderland data generation
-
-__TODO:__
+**TODO:**
 * decide how to specify compounding behaviour info for the lexicon
-  (__Thomas, Trond, Sjur__)
-** partially done - compound stem specification still open
-* add closed POS and clitics to PLX generation (__Tomi__)
-* add derivations to the PLX generation (__Tomi__)
-* add compound stems to the PLX generation (__Tomi__)
+  (**Thomas, Trond, Sjur**)
+    - partially done - compound stem specification still open
+* add closed POS and clitics to PLX generation (**Tomi**)
+* add derivations to the PLX generation (**Tomi**)
+* add compound stems to the PLX generation (**Tomi**)
 
-
-!!Aspell
+## Aspell
 
 TODO when the major part of the PLX conversion is done:
-* add Aspell/Hunspell data generation to the lexc2xspell (__Tomi__ - after the
+* add Aspell/Hunspell data generation to the lexc2xspell (**Tomi** - after the
   PLX data generation is finished)
-* study Hunspell, perhaps also Soikko (__Børre, Sjur, Tomi__)
+* study Hunspell, perhaps also Soikko (**Børre, Sjur, Tomi**)
 
+## Testing
 
+**TODO:**
+* get an Intel Mac for testing Windows spellers (**Børre, Sjur**)
 
-!!Testing
-
-__TODO:__
-* get an Intel Mac for testing Windows spellers (__Børre, Sjur__)
-
-!!Localisation
+## Localisation
 
 The Windows installer should be localised. We have received the string file from
 Polderland, now they should be translated.
 
-The Mac installer they use is the standard MacOS X installer, and as {{sme}}
+The Mac installer they use is the standard MacOS X installer, and as `sme`
 isn't generally turned on as a UI language in MacOS X, there is no big point in
 translating it. It could be done, though:-)
 
 TODO:
-* send translation text to __Børre__ and __Thomas__ (__Sjur__)
-* translate Windows installer to {{sme}} and {{smj}} (__Børre, Thomas__)
+* send translation text to **Børre** and **Thomas** (**Sjur**)
+* translate Windows installer to `sme` and `smj` (**Børre, Thomas**)
 
+# 10. Other
 
-!!!10. Other
-
-!!Corpus contracts
+## Corpus contracts
 
 TODO:
-* publish corpus contracts and project infra on NoDaLi-sta (__Sjur__)
-** still not done
+* publish corpus contracts and project infra on NoDaLi-sta (**Sjur**)
+    - still not done
 
+## Bug fixing
 
-!!Bug fixing
-
-__55__ open Divvun/Disamb bugs, and __23__ risten.no bugs
+**55** open Divvun/Disamb bugs, and **23** risten.no bugs
 
 Guess: 1/3 of the bugs are fixed already (?)
 
-
-!!!11. Next meeting, closing
+# 11. Next meeting, closing
 
 The next meeting is 8.1.2007, 09:00 Norwegian time.
 
 The meeting was closed at 12:12.
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!! Boerre
+##  Boerre
 
 * contact authors who have already received the corpus licensing contract
 * continue work on script for automatic testing of the spell checker in Word
 * recreate our forrest tarball
 * update setup and installation instructions for new users/computers
 * create new forrest tarball
-* cvs up of the public server should be done for {{xtdoc/sd/documentation/}}
-* fix {{sme}} texts in corpus this month
-* find missing {{nob}} parallel texts in corpus
+* cvs up of the public server should be done for `xtdoc/sd/documentation/`
+* fix `sme` texts in corpus this month
+* find missing `nob` parallel texts in corpus
 * aligner status quo
-* translate Windows installer to {{sme}} and {{smj}}
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* translate Windows installer to `sme` and `smj`
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Maaren
+##  Maaren
 
 * investigate the generated word form list sent to Polderland - use the command
-  {{make wordlist TARGET=sme}} in ''victorio''
+  `make wordlist TARGET=sme` in *victorio*
 
-
-
-!! Saara
+##  Saara
 
 * help Trond with some shell commands
-* fix {{sme}} texts in corpus this month
+* fix `sme` texts in corpus this month
 * aligner status quo
-* send aligned, xml {{nob}} texts to __Lars__
+* send aligned, xml `nob` texts to **Lars**
 * add correction markup to the xml files (string-to-correction markup)
 * first new version of xml2lexc in Perl
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Sjur
+##  Sjur
 
 * name lexicon:
-** refactor SD-terms editor code
-** implement missing propnouns editing functions
-** implement improvements decided upon in Tromsø
+    - refactor SD-terms editor code
+    - implement missing propnouns editing functions
+    - implement improvements decided upon in Tromsø
 * hire linguist and programmer
 * decide how to specify compounding behaviour info in the lexicon
 * get an Intel Mac for testing Windows spellers
 * publish corpus contracts and project infra on NoDaLi-sta
 * fix forrest installations for Maaren, Disamb
-* send Windows installer translation text to __Børre__ and __Thomas__
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* send Windows installer translation text to **Børre** and **Thomas**
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Steinar
+##  Steinar
 
 * conversion error screening 
 * missing lists
-* report conversion errors to __Saara__
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* report conversion errors to **Saara**
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+##  Thomas
 
-
-!! Thomas
-
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt 
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt 
 * decide how to specify compounding behaviour info in the lexicon
-* translate Windows installer to {{sme}} and {{smj}}
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* translate Windows installer to `sme` and `smj`
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-
-!! Tomi
+##  Tomi
 
 * add closed POS and clitics to PLX generation
 * add derivations to the PLX generation
 * add compound stems to the PLX generation
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+##  Trond
 
-
-!! Trond
-
-* update the {{smj}} proper noun lexicon, and refine the morphological analysis,
+* update the `smj` proper noun lexicon, and refine the morphological analysis,
   cf. the propernoun-smj-lex.txt
-* get more {{sma}} texts
+* get more `sma` texts
 * aligner status quo
 * decide how to specify compounding behaviour info in the lexicon
 * Set up work on missing and converision screening with Steinar.
-* fix {{sme}} texts in corpus this month
-* find missing {{nob}} parallel texts in corpus
-* report conversion errors to __Saara__
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* fix `sme` texts in corpus this month
+* find missing `nob` parallel texts in corpus
+* report conversion errors to **Saara**
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).

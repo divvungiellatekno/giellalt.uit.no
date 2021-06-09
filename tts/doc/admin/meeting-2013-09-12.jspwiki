@@ -1,32 +1,32 @@
-!!!Meir arbeid med trykkplassering og fotstruktur
+# Meir arbeid med trykkplassering og fotstruktur
 
 Biret Ánne har skrive om konteksten for sekundærtrykk til å tilsvara
-kontekstdefinisjonen for stavingar ({{Syll}} i regelfila):
+kontekstdefinisjonen for stavingar (`Syll` i regelfila):
 
-{{{
-define FootStructSecStress1  [..] -> ˌ || 
+```
+define FootStructSecStress1  [..] -> ˌ | 
                             ˈ Vow+ Cons* (Dummy) Cns* (ə) %^ Syll Cns* _ Vow Cns* %^ Cns* \StressBorder ;
-}}}
+```
 
-{{Syll}} er definert slik:
+`Syll` er definert slik:
 
-{{{
+```
 define Syll Cns* Vow+ Cns* (Dummy) Cns* (ə) %^ ;
-}}}
+```
 
 Vi arbeidde vidare med reglane, og abstraherte og forenkla ulike
 stavingsdefinisjonar slik at dei alltid er like over alt. Til slutt kom vi fram
-til ein kontekst for {{FootStructSecStress1}} som ser ut til å gje oss det vi
+til ein kontekst for `FootStructSecStress1` som ser ut til å gje oss det vi
 vil ha for alle ord. Den endelege regelen ser slik ut:
 
-{{{
-define FootStructSecStress1  [..] -> ˌ ||
+```
+define FootStructSecStress1  [..] -> ˌ |
                     ˈ SyllWithoutOnset Syll Cns* _ Vow+ ( \Vow+ ) \StressBorder ;
-}}}
+```
 
-Deretter endra vi {{Stress2}}-regelen, og ting stoppa.
+Deretter endra vi `Stress2`-regelen, og ting stoppa.
 
-!!!Neste veke
+# Neste veke
 
 Onsdag + torsdag BÁ i Målselv
 Månd, tys, fre ok

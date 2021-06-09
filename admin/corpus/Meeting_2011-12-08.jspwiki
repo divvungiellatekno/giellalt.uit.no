@@ -1,16 +1,14 @@
 Parallelliseringsmøte 8.12.2011
 
-
 Berit Merete, Børre, Ciprian, Sjur, Trond
 
-
-!!!Saksliste
+# Saksliste
 
 * status quo for testbed for gullkorpus
 * status quo for gullkorpus
 * arbeid framover
 
-!!!Status quo for gullkorpus
+# Status quo for gullkorpus
 
 * Ti tekstar i freecorpus/prestable/tmx/goldstandard/nob2sme/
 * 4 1/2 av dei er korrigert (jf. 00_readme.txt)
@@ -21,7 +19,7 @@ Utfordringar med å avgjera om noko er parallelt:
 
 Aksiom: den lineære strukturen er ukrenkeleg. Viss vi har inndata, er denne parallelliseringa god:
 
-{{{
+```
   <tu>
     <tuv xml:lang="sme">
       <seg>~ 
@@ -52,13 +50,12 @@ Aksiom: den lineære strukturen er ukrenkeleg. Viss vi har inndata, er denne par
 </seg>
     </tuv>
   </tu>
-}}}
-
+```
 
 Gáldu: Mediabearráigeahčču 2009 
 2.4 Áviisafáladat 
 
-{{{
+```
   <tu>
     <tuv xml:lang="sme">
       <seg>2.4.1 Ságat áviissas lassánan deaddilanlohku– sámegielat áviissain njiedjan</seg>
@@ -75,9 +72,9 @@ Gáldu: Mediabearráigeahčču 2009
       <seg>Landslaget for lokalaviser og Mediebedriftenes Landsforening publiserer årlig opplagstall som omfatter både Ságat og Ávvir.</seg>
     </tuv>
   </tu>
-}}}
+```
 
-{{{
+```
 ~/main$echo "2.4.1 Landslaget" | preprocess --abbr=gt/sme/bin/abbr.txt 
 2.4.1
 Landslaget
@@ -88,7 +85,7 @@ Landslaget
 2.4.1
 .
 Landslaget
-}}}
+```
 
 Vi vil ha det slik, jf:
 
@@ -97,7 +94,7 @@ Vi vil ha det slik, jf:
 
 Jf. pdf:
 
-{{{
+```
 </p>
     <p>2.4.1
 </p>
@@ -111,11 +108,9 @@ aviser
 Landslaget for lokalaviser og Mediebedriftenes Landsforening publiserer
 
 sme1 sme2 sme3 = nob1
-}}}
+```
 
-
-
-!!!Status quo for testbed for gullkorpus
+# Status quo for testbed for gullkorpus
 
 Parallellføringa tar omtrent 12 timar. Det er mogleg med ein arbeidssyklus med
 arbeid kvar dag og ny parallellføring kvar natt.
@@ -124,23 +119,23 @@ Børre: Det beste er å gjere tmx om til rein tekst, og så diffe tekstane
 
 Eit dokument med 1000 <tu>-element vil resultere i ei tekstfil på 1000 linjer, der kvar line er:
 
-{{{
+```
 origspråksetning<TAB>omsetjingsspråksetning
-}}}
+```
 
 Testbenken bør gje som resultat / rapport:
 
-{{{
+```
 Resultat finnmarkulahka_web_letters.pdf.tmx: 1 - 84/632 = 86.7 %
 Resultat Fil2:                               1 - 84/632 = 86.7 %
 Resultat Fil3:                               1 - 84/632 = 86.7 %
 Resultat Fil4:                               1 - 84/632 = 86.7 %
 ...
-}}}
+```
 
 pakka inn i eit passande xml-format. Forslag til xml-format:
 
-{{{
+```
 <paragstesting>
   <testrun><!-- Add one for each test run at the top --></testrun>
   <testrun datetime="20111208-1234">
@@ -148,41 +143,39 @@ pakka inn i eit passande xml-format. Forslag til xml-format:
     <file name="xyz" gspairs="634" diffpairs="84"/>
   </testrun>
 </paragstesting>
-}}}
+```
 
 Filnamn: testruns.paragsxml
 
-__TILTAK__
-* Filformat for testing (__Sjur__)
-* Script for testing … (__Børre__)
-* og for å putte dei i xml-fil (__Børre__)
-* Side for presentasjon av data (__Sjur__)
+**TILTAK**
+* Filformat for testing (**Sjur**)
+* Script for testing … (**Børre**)
+* og for å putte dei i xml-fil (**Børre**)
+* Side for presentasjon av data (**Sjur**)
 * Lenkje til presentasjon frå techdoc&tools/tca2.jspwiki
 
+#  Arbeid framover
 
-!!! Arbeid framover
-
-# Runde 1 - fredag
-## Gjere ferdig dei 9 filene i gullkorpus (__Berit Merete, Trond__)
-## Setje opp testbed for gullkorpus (__Børre, Sjur__)
-# Runde 2 - fredag em
-## Skaffe første runde av testresultat (__Børre__)
-# Runde 3
-## Forbetre preprosesseringa
-### abbr.txt (__Berit Merete, Trond__)
-### anchor.txt, (__Berit Merete, Trond__)
-### parametrisering av tca2  (__Børre__)
-# Runde 3x - måndag em
-## Skaffe andre runde av testresultat (__Børre__)
-# Runde 4
-## Ord-parallellisering
+1. Runde 1 - fredag
+    1. Gjere ferdig dei 9 filene i gullkorpus (**Berit Merete, Trond**)
+    1. Setje opp testbed for gullkorpus (**Børre, Sjur**)
+1. Runde 2 - fredag em
+    1. Skaffe første runde av testresultat (**Børre**)
+1. Runde 3
+    1. Forbetre preprosesseringa
+        1. abbr.txt (**Berit Merete, Trond**)
+        1. anchor.txt, (**Berit Merete, Trond**)
+        1. parametrisering av tca2  (**Børre**)
+1. Runde 3x - måndag em
+    1. Skaffe andre runde av testresultat (**Børre**)
+1. Runde 4
+    1. Ord-parallellisering
 
 Mål før møtet tysdag 13.12:
 * Testresultat
 * Ein forbetra versjon av preprossesseringsverktya (abbr.txt, anchor.txt, parametrisering av tca2)
 * Resuktat frå to runder med testing
 
-!!! Neste møte
+#  Neste møte
 
 Tirsdag formiddag 13.12. kl 10
-

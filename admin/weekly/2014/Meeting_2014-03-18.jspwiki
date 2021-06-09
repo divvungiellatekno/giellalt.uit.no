@@ -11,58 +11,58 @@ Saker
 * hfst vs. xfst
 * Bugzilla
 
-!!!twolc-testing
+# twolc-testing
  - klar for å bli rulla ut (berre xerox, vil kreva at dei fleste par blir retta)
 
 Pair-test i twolc-fila
 
-{{{
-! Positive testar:
-!€# aerpie#eeke
-!€0 aerpie-eeke
+```
+###  Positive testar:
+### €# aerpie#eeke
+### €0 aerpie-eeke
 
-! Negative testar:
-!$# aerpie#eeke
-!$0 aerpie0eeke
-}}}
+###  Negative testar:
+### $# aerpie#eeke
+### $0 aerpie0eeke
+```
 
 Testing fungerer på ein annan måte i hfst, og krev testdata på eit anna format.
 Omskriving er ikkje trivielt. Hfst-formatet ser slik ut:
 
-{{{g:g æ:æ h:h t:t j:j a:e %>:%> %^COMPDISIMP:0 b:b e:e}}}
+```g:g æ:æ h:h t:t j:j a:e %>:%> %^COMPDISIMP:0 b:b e:e```
 
-Sjur ber hfst-gjengen om å leggja til støtte for Xerox-par i {{hfst-pair-test}},
+Sjur ber hfst-gjengen om å leggja til støtte for Xerox-par i `hfst-pair-test`,
 og køyrer ut twolc-testinga for Xerox.
 
-!!!korpus
+# korpus
 
 * Børre har kontakta Avvir, nye xml-data kjem
 * stort sett ferdig med å retta feil i konverteringa
-** språkgjenkjenning? Enno ikkje bra nok, jf dev-korp - søk på ''lij, jih'' i sme
+    - språkgjenkjenning? Enno ikkje bra nok, jf dev-korp - søk på *lij, jih* i sme
 
-!!!KMD
+# KMD
 
 Ingen tildelingsbrev enno - Sjur har skrive til dei og spurt.
 
-!!!smenob
+# smenob
 
 Jf. e-post frå fran.
 Dette må det arbeidast med.
 
-!!!numra m.fl.
+# numra m.fl.
 
 Jf. e-post frå trond.
 Nokre språk er skrivne mai:5, andre 5:mai. Alle språk må fylgja same logikk,
 og dei avvikande språka må skrivast om.
 
-{{{
+```
 $ hfst-lookup -q sma/src/transcriptor-date2text-desc.hfst 
 > 2.2.
 2.2.	goevten_mubpie_biejjie	0.000000
 
 > 2.3.
 2.3.	njoktjen_mubpie_biejjie	0.000000
-}}}
+```
 
 Å gjera:
 * sjekka/ endra Makefile.am med invert net for alle pråk for xfst
@@ -72,20 +72,20 @@ $ hfst-lookup -q sma/src/transcriptor-date2text-desc.hfst
 Vi bør også fikse [http://giellatekno.uit.no/num.nno.html] etc.	
 Den bør bli integrert og få eitt språk.
 
-!!!sme i ny infra
+# sme i ny infra
 
 I prioritert rekkjefylgje:
-# {{+Err/Sub}} synleg i analysane
-# dialektar
+1. `+Err/Sub` synleg i analysane
+1. dialektar
 
 Jf. [/lang/sme/KompilereFST.html] -
 fst-spesifiseringane skal stemme med røyndomen (røyndomen må rettast).
 
-!!!SamEst
+# SamEst
 
 Trond kallar inn til møte.
 
-!!!hfst vs. xfst
+# hfst vs. xfst
 
 Xfst/Xerox er eit problem, fordi dei ulike versjonane oppfører seg ulikt, og det
 gjer at ulike folk får ulike resultat med den same koden, og for nokre språk
@@ -95,15 +95,15 @@ Xfst-fordelar:
 * lett å installera - hent binærfiler
 * lett å testa twolc, xfst pga interne kommandoliner som kan brukast til
   utvikling og testing
-* Xerox er framleis/som oftast ''mykje'' raskare til å kompilera fst-ar
+* Xerox er framleis/som oftast *mykje* raskare til å kompilera fst-ar
 
 Svar:
 * be Krister og gjengen om å laga nedlastbare binærfiler for brukarane?
-** finst for Windows? Kan de laga for Mac?
-** er MacPorts eit mogleg alternativt svar? Ja
+    - finst for Windows? Kan de laga for Mac?
+    - er MacPorts eit mogleg alternativt svar? Ja
 * hfst-xfst har no ei kommandoline - svar 2.b
-* hfst-twolc har __ikkje__ kommandoline for aka^WG osb.
-** echo test | hfst-lookup lang-hfst-twolc.bin
+* hfst-twolc har **ikkje** kommandoline for aka^WG osb.
+    - echo test | hfst-lookup lang-hfst-twolc.bin
 
 xerox er eit bra verkty der det fungerer godt. hfst kan bli brukt
 i produksjon etterpå. For hfst i utviklingsarbeidet må vi evt.
@@ -111,28 +111,29 @@ klare oss utan eit program hfst-twolc.
 
 Sjur diskuterer dette eksplisitt med Hfors på eit tidspunkt.
 
-!!!BZ
+# BZ
 
 BZ Open bugs: 170 bugs found.
 
 blo-cri and P1-P2.
 
-|| ID || Sev|| Pri|| Assignee                    || Reporter              || Comp    || Summary
-| 1756 | blo | P2  | heli1401@gmail.com           | lene.antonsen@uit.no   | Konteaks | Konteaksta er hacket
-| 1670 | blo | P4  | borre.gaup@uit.no            | thomas.omma@uit.no     | Suggesti | illegal compounds
-| 906  | cri | P2  | tomi.k.pieski@uit.no         | trond.trosterud@uit.no | Systemat | eee strings
-| 1344 | cri | P2  | sjur.n.moshagen@uit.no       | lene.antonsen@uit.no   | Compilat | regex-filer for kompilering av ifst til dict og oahpa
-| 1566 | cri | P2  | lene.antonsen@uit.no         | lene.antonsen@uit.no   | sme-oahp | Sahka: eksempelsvar fungerer ikke
-| 1754 | cri | P2  | sjur.n.moshagen@uit.no       | lene.antonsen@uit.no   | Compilat | Filtrering av Use/NG bare for MT og Oahpa
-| 1780 | cri | P2  | borre.gaup@uit.no            | lene.antonsen@uit.no   | xml conv | smj og sma er definert som sme
-| 1430 | maj | P1  | borre.gaup@uit.no            | linda.wiechetek@uit.no | Corpus a | metainformation gets mixed up with actual text
-| 915  | maj | P2  | tomi.k.pieski@uit.no         | thomas.omma@uit.no     | Systemat | PlGen as first part and hyphenation:
-| 1024 | maj | P2  | tomi.k.pieski@uit.no         | lene.antonsen@uit.no   | Text cor | ocr-feil og språkmerkingsfeil i sma
-| 1296 | maj | P2  | borre.gaup@uit.no            | trond.trosterud@uit.no | Stem lex | uløste problemer med abbr
-| 1538 | maj | P2  | trond.trosterud@uit.no       | sjur.n.moshagen@uit.no | sme-oahp | Number, clock and date fst's are not properly documentet, no new infra version
-| 1687 | maj | P2  | maja.l.kappfjell@uit.no      | lene.antonsen@uit.no   | Continua | Navn fra smi-propernouns.lexc lar seg ikke analysere/generere
-| 1709 | maj | P2  | trond.trosterud@uit.no       | lene.antonsen@uit.no   | sma morp | Hætta blir til Hæ9tta
-| 1712 | maj | P2  | ciprian.gerstenberger@uit.no | lene.antonsen@uit.no   | CGI (Int | endring av pipe-line for sme (cgi)
-| 1755 | maj | P2  | maja.l.kappfjell@uit.no      | lene.antonsen@uit.no   | Stem lex | Lemmaer forsvunnet fra sma-leksikon
-| 1794 | maj | P2  | trond.trosterud@uit.no       | lene.antonsen@uit.no   | NDS      | sme: Miniparadigme for substantiver mangler
-| 1831 | maj | P2  | ryan.txanson@gmail.com       | lene.antonsen@uit.no   | NDS      | sánit: Problemer med lokaliseringa: det dukker engelsk opp
+|   ID | Sev| Pri| Assignee                    | Reporter              | Comp    | Summary
+| --- | --- | --- | --- | --- | --- | --- 
+|  1756 | blo | P2  | heli1401@gmail.com           | lene.antonsen@uit.no   | Konteaks | Konteaksta er hacket
+|  1670 | blo | P4  | borre.gaup@uit.no            | thomas.omma@uit.no     | Suggesti | illegal compounds
+|  906  | cri | P2  | tomi.k.pieski@uit.no         | trond.trosterud@uit.no | Systemat | eee strings
+|  1344 | cri | P2  | sjur.n.moshagen@uit.no       | lene.antonsen@uit.no   | Compilat | regex-filer for kompilering av ifst til dict og oahpa
+|  1566 | cri | P2  | lene.antonsen@uit.no         | lene.antonsen@uit.no   | sme-oahp | Sahka: eksempelsvar fungerer ikke
+|  1754 | cri | P2  | sjur.n.moshagen@uit.no       | lene.antonsen@uit.no   | Compilat | Filtrering av Use/NG bare for MT og Oahpa
+|  1780 | cri | P2  | borre.gaup@uit.no            | lene.antonsen@uit.no   | xml conv | smj og sma er definert som sme
+|  1430 | maj | P1  | borre.gaup@uit.no            | linda.wiechetek@uit.no | Corpus a | metainformation gets mixed up with actual text
+|  915  | maj | P2  | tomi.k.pieski@uit.no         | thomas.omma@uit.no     | Systemat | PlGen as first part and hyphenation:
+|  1024 | maj | P2  | tomi.k.pieski@uit.no         | lene.antonsen@uit.no   | Text cor | ocr-feil og språkmerkingsfeil i sma
+|  1296 | maj | P2  | borre.gaup@uit.no            | trond.trosterud@uit.no | Stem lex | uløste problemer med abbr
+|  1538 | maj | P2  | trond.trosterud@uit.no       | sjur.n.moshagen@uit.no | sme-oahp | Number, clock and date fst's are not properly documentet, no new infra version
+|  1687 | maj | P2  | maja.l.kappfjell@uit.no      | lene.antonsen@uit.no   | Continua | Navn fra smi-propernouns.lexc lar seg ikke analysere/generere
+|  1709 | maj | P2  | trond.trosterud@uit.no       | lene.antonsen@uit.no   | sma morp | Hætta blir til Hæ9tta
+|  1712 | maj | P2  | ciprian.gerstenberger@uit.no | lene.antonsen@uit.no   | CGI (Int | endring av pipe-line for sme (cgi)
+|  1755 | maj | P2  | maja.l.kappfjell@uit.no      | lene.antonsen@uit.no   | Stem lex | Lemmaer forsvunnet fra sma-leksikon
+|  1794 | maj | P2  | trond.trosterud@uit.no       | lene.antonsen@uit.no   | NDS      | sme: Miniparadigme for substantiver mangler
+|  1831 | maj | P2  | ryan.txanson@gmail.com       | lene.antonsen@uit.no   | NDS      | sánit: Problemer med lokaliseringa: det dukker engelsk opp

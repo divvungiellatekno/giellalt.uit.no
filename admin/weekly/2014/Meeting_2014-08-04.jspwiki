@@ -1,4 +1,4 @@
-!!!Møte Sjur og Trond 4.8.2014
+# Møte Sjur og Trond 4.8.2014
 
 Saker
 
@@ -17,13 +17,12 @@ Saker
 * Antti-møtet
 * Hausten
 
+# Fst-basert preprocessor
 
-!!!Fst-basert preprocessor
-
-!! ... med hfst-pmatch.
+##  ... med hfst-pmatch.
 
 Frå Mike:
-{{{
+```
 > Jeg jobber fremdeles med å få frem en fin output fra hfst-pmatch verktøyet.
 > Det har enda vært litt mer problemer med selve hfst-pmatch2fst verktøyet slik
 > at det ikke fungerte som det skal. Sam hadde endret noe slik at jeg ikke fikk
@@ -31,7 +30,7 @@ Frå Mike:
 > 
 > Define UnknownWord Alpha+ EndTag(UnknownWord) ;
 > Define SamiWord @bin"analyser-gt-desc.hfst" EndTag(SamiWord) ;
-> Define Word LC(Deliminator) [SamiWord | UnknownWord] RC(Deliminator) ;
+> Define Word LC(Deliminator) [SamiWord ]( UnknownWord) RC(Deliminator) ;
 > 
 > Dessuten har jeg bedt Sam en gang til og ba ham om å dokumentere mulighetene
 > med pmatch regler. Nå er hfst-pmatch2fst fremdeles ikke dokumentert og jeg
@@ -43,32 +42,32 @@ Frå Mike:
 > men jeg sliter enda mye med hvordan det skal gjøres på en hfst-aktig måte.
 > Ting som hfst-alfabet og hvordan en transducer traverseres til å finne
 > matches forstår jeg ikke enda. Jeg har bedt Sam til å forklare.
-}}}
+```
 
-Sjur pratar med Krister og Sam om i kor stor grad {{hfst-pmatch}} kan nyttast
+Sjur pratar med Krister og Sam om i kor stor grad `hfst-pmatch` kan nyttast
 som tokeniser.
 
-!!Den gamle preprosessoren
+## Den gamle preprosessoren
 
-{{{
-# my $quotations = quotemeta("«»‹›“”„‘’‚´`'\""); # original
+```
+1. my $quotations = quotemeta("«»‹›“”„‘’‚´`'\""); # original
 my   $quotations = quotemeta("«»‹›“”„‘’‚`'\"");  # Skolt Sami fix without ...
                                                  # ... ACUTE ACCENT as delimiter
-}}}
+```
 
 Men allikevel får vi nytt ord foran ACUTE ACCENT:
 
-{{{
+```
 echo "a´a" | preprocess
 a
 ´a
-}}}
+```
 
 Trond og Ciprian ser på dette.
 
-!!!Liten fyrstebokstav ved namn i smj
+# Liten fyrstebokstav ved namn i smj
 
-{{{
+```
 $ usmj
 oslo
 oslo	Oslo+N+Prop+Plc+Pl+Nom
@@ -84,7 +83,7 @@ oslo	oslo+?	inf
 $ husme
 oslo
 oslo	oslo+?	inf
-}}}
+```
 
 Dette er med andre ord xfst vs. hfst-xfst, dessverre.
 
@@ -93,12 +92,12 @@ Ein framgangsmåte kan vere å kopiere mest mogleg av sma/sme-oppsettet til smj.
 
 Sjur pratar med Tomi, Trond fylgjer opp.
 
-!!!inituppercase-testing
+# inituppercase-testing
 
 Trond har laga kyrillisk dummy-fil for inituppercase.regex for alle kyrilliske
-språk. Dermed går testinga ({{make check}}) gjennom også for morfologi.
+språk. Dermed går testinga (`make check`) gjennom også for morfologi.
 
-!!!est-nob-est
+# est-nob-est
 
 Teiknsettsproblema er no ordna. Ingen har gjort noko med xml-formatteringa
 i sumarferien.
@@ -108,48 +107,47 @@ Arbeid framover:
 * Trond lagar abstrakt (pseudokode-)utkast til konverteringa.
 * Sjur eller andre lagar perlfil.
 
-!!!Smi-propernouns
+# Smi-propernouns
 
 Vi vil endra strukturen slik at alle genererte filer blir lagt i ein separat
-katalog {{src/morphology/generated/}} slik at vi ikkje blandar kjeldefiler
+katalog `src/morphology/generated/` slik at vi ikkje blandar kjeldefiler
 med genererte filer.
 
 Sjur gjer dette.
 
-!!!sme-L2
+# sme-L2
 
 Gamalt referat:
-Vi lagar parallelle filer tilsvarande {{oahpa}} i {{sma}}. Det er:
-# Nye makefiler
-# Nye kjeldefiler, merka -L2. Trond sjekkar inn kopiar av eksisterande filer,
+Vi lagar parallelle filer tilsvarande `oahpa` i `sma`. Det er:
+1. Nye makefiler
+1. Nye kjeldefiler, merka -L2. Trond sjekkar inn kopiar av eksisterande filer,
   Lene får så sjekke inn ekte L2-filer etterpå
-# Merk at sme-phon.twolc får nytt namn: sme-phon-L1.twolc, og at L2-fila
+1. Merk at sme-phon.twolc får nytt namn: sme-phon-L1.twolc, og at L2-fila
   blir heitande sme-phon-L2.twolc. Den eine av dei blir kopiert over i
-  sme-phon.twolc, som __ikkje__ er ei kjeldefil lenger.
-# ny verdi for overføringsscriptet gammal-til-ny, til sme-phon-L1.twolc
+  sme-phon.twolc, som **ikkje** er ei kjeldefil lenger.
+1. ny verdi for overføringsscriptet gammal-til-ny, til sme-phon-L1.twolc
 
 Trond sjekkar inn og Sjur sjekkar. Vi skriv dokumentasjon.
 
 Dette er delvis feil, det vi vil ha er:
 
 * Parallel L2-bygging
-* ingen L1-filer har ''L1'' i namnet
-* alle og berre L2-filene har ''L2'' i namnet
+* ingen L1-filer har *L1* i namnet
+* alle og berre L2-filene har *L2* i namnet
 * L2-bygginga byggjer berre analyser-oahpa-gt-desc
 
 Implementering:
 * svn-kopi frå branches/error-fst til langs/sme/.../...L2.lexc (Trond)
 * L2-bygging (Sjur)
 
-!!!Bugzilla
+# Bugzilla
 
 141 buggar er opne. Vi bør ha ein ny dugnad, etter at Sandra er inne i rutinane.
-
 
 Ein Bugzilla-dugnadsdag over to dagar: 20.-21.8.
 På desse to dagane sett vi av omtrent eit dagsverk til å sjå på Bugzilla.
 
-!!!Zulu
+# Zulu
 
 Trond har vorte invitert til Pretoria. Før siste halve november eller etter
 nyttår?
@@ -157,56 +155,56 @@ nyttår?
 Trond skriv til Pretoria og høyrer meir om innhaldet ved besøket, kva dei vil
 ha osb.
 
-!!!FAD-sma/smj
+# FAD-sma/smj
 
 Trond: Sjå etter folk og parallelltekst. Morsmål ikkje eit krav.
 
-!!!Clarino-registrering
+# Clarino-registrering
 
 Vi skal/bør registrera ressursane våre. Bergen har spurt om (meta)data.
 
-!!!Kamera på møterommet
+# Kamera på møterommet
 
 Vi tar eit møte med Kyrre Soleng via Lync el. tilsvarande. 
 Forslag til tidspunkt: tysdag 19.8. eller fredag 22.8 kl 10. Sjur kontaktar
 Kyrre.
 
-!!!Stavekontroll
+# Stavekontroll
 
 Lansering/oppdatering i haust:
 
-!!PLX
+## PLX
 
 Oppdateringar for smj og sma. Krev at PLX-konverteringa er flytta over i ny
 infra, flyttinga er undervegs.
 
-!!HFST
+## HFST
 
 Fleire ting må gjerast/på plass:
-# debugga hfst-ospell
-# Sjur må laga LO 3.6.-utgåve med hfst-støtte for Mac (krav frå Voikko-utvikl.)
-# Voikko må få LO 4.1.-utgåve med hfst-støtte for Windows
-# alle OS må få LO 4.2+ med hfst-støtte
-# identifisera kva for LO-versjon som fekk støtte for kvart språk, legg til i
+1. debugga hfst-ospell
+1. Sjur må laga LO 3.6.-utgåve med hfst-støtte for Mac (krav frå Voikko-utvikl.)
+1. Voikko må få LO 4.1.-utgåve med hfst-støtte for Windows
+1. alle OS må få LO 4.2+ med hfst-støtte
+1. identifisera kva for LO-versjon som fekk støtte for kvart språk, legg til i
   configure.ac
 
-!Funksjonalitet/portabilitet for alle språk
+### Funksjonalitet/portabilitet for alle språk
 
-$LANG.oxt er ein realitet for LibreOffice 4.1, men ''ikkje'' eldre ''og'' nyare
+$LANG.oxt er ein realitet for LibreOffice 4.1, men *ikkje* eldre *og* nyare
 versjonar.
 
 * Kor er oxt-fila? 
-** I {{$GTLANG/tools/spellcheckers/fstbased/hfst/}}
+    - I `$GTLANG/tools/spellcheckers/fstbased/hfst/`
 * og kor legg vi henne ut?
-** i {{divvun.no/static_files/oxts/}}
+    - i `divvun.no/static_files/oxts/`
 * kva er namneskjemaet?
-** {{fi_LO-voikko-3.6-32b-win.oxt}} = språk_oxtnamn-LOminversjon-bittheit_OS
-** filnamnet blir generert automatisk
+    - `fi_LO-voikko-3.6-32b-win.oxt` = språk_oxtnamn-LOminversjon-bittheit_OS
+    - filnamnet blir generert automatisk
 * og kva skriv vi til folk for å forklare korleis dei skal teste henne?
-** last ned LO 4.1 (for tilfellet)
-** last ned oxt-fil
-** dobbeltklikk oxt-fil, følg instruksjonane
-** skriv tekst, marker teksten som rett språk og test stavekontrollen
+    - last ned LO 4.1 (for tilfellet)
+    - last ned oxt-fil
+    - dobbeltklikk oxt-fil, følg instruksjonane
+    - skriv tekst, marker teksten som rett språk og test stavekontrollen
 
 Språk som fungerer med LO 4.1 (ABC i språkmenyen):
 
@@ -244,12 +242,12 @@ Fungerer ikkje:
 * smn (lexc)
 * tat (lexc)
 
-!!!Antti-møta
+# Antti-møta
 
-!!Trond
+## Trond
 
 Oppsummering:
-{{{
+```
 cree-pr først når LO-speller fungerer
 
 suuri kuva
@@ -257,24 +255,22 @@ suuri kuva
 	cc
 junker
 
-
 lippulaiva
 	10 demoa
 	niille, jotka nappaavat
 
-
 canada first
 total: 50 + 50 + 50 mill, niin, että Canada on maailman ykkønen?
 	Meidän hakemus: 5+5+5 millioona per projekti
-}}}
+```
 
-!!Sjur
+## Sjur
 
 * vi lanserer ikkje cree i LO før alt fungerer og vi har ein betaverson
 * Sjur jobbar vidare med LO-voikko slik at det funkar på Antti si maskin
 * vi fann ein Unicode-bug på servaren i Edmonton
 
-!!!Hausten
+# Hausten
 
 * Prof2: L Borin - v37, D Meurer - v38+39
 * nye stavekontrollar

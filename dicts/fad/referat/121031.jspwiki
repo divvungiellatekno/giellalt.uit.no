@@ -4,17 +4,16 @@ Til stades: Ciprian, Marja, Trond, Berit Merete
 
 Dette var eit internt gt-møte for å klargjere status quo på korridoren.
 
-!!! Saker:
+#  Saker:
 
 * Status quo
 * Forslag til bedring av pick-parallel:
 * Oslo-Bergen-tagger
 * Ukjente ord
 
+#  Status quo
 
-!!! Status quo
-
-!!! Forslag til bedring av pick-parallel:
+#  Forslag til bedring av pick-parallel:
 
 * overføringsratio 73-110, skal dette økes? Nei, men den bør forbedres, se nedenfor 
 * legge inn i metafilen: info om antall ord (word count) også i wrong ratio 
@@ -23,28 +22,28 @@ Dette var eit internt gt-møte for å klargjere status quo på korridoren.
 
 Dette er gjort:
 
-{{{
+```
 New Revision: 64705
 
 Modified:
    trunk/gt/script/langTools/Converter.pm
 Log:
 Insert wordcount
-}}}
+```
 
-!!! Oslo-Bergen-tagger
+#  Oslo-Bergen-tagger
 
 - må forbedredes: bindestrekene har Ciprian tatt bort, må meldes til Oslo-Bergen
 
-__Tiltak__
+**Tiltak**
 
-* Sjekke skilnaden mellom nob_morf-prestat.cg3 og  nob_morf.cg3 (__Cip__)
-* Køyre sum-cg.pl på output, evt. samanlikne med onlineversjon (__Trond__)
-* Melde frå til Oslo + diskutere (__Trond__)
+* Sjekke skilnaden mellom nob_morf-prestat.cg3 og  nob_morf.cg3 (**Cip**)
+* Køyre sum-cg.pl på output, evt. samanlikne med onlineversjon (**Trond**)
+* Melde frå til Oslo + diskutere (**Trond**)
 
-Vi har brukt {{nob_morf-prestat.cg3}}. Bør vi bruke {{nob_morf.cg3}}?
+Vi har brukt `nob_morf-prestat.cg3`. Bør vi bruke `nob_morf.cg3`?
 
-{{{
+```
 cat data.nob | tr '\n' '£' | sed 's/£/ £ ™/g' | tr '™' '\n' | \
     ~/main/st/nob/obt/bin/mtag-osx64 | \
     vislcg3 -g ~/main/st/nob/obt/src/nob_morf-prestat.cg3 > data.tagged.shitty.nob
@@ -52,7 +51,7 @@ cat data.nob | tr '\n' '£' | sed 's/£/ £ ™/g' | tr '™' '\n' | \
 cat data.nob | tr '\n' '£' | sed 's/£/ £ ™/g' | tr '™' '\n' | \
     ~/main/st/nob/obt/bin/mtag-osx64 | \
     vislcg3 -g ~/main/st/nob/obt/src/nob_morf.cg3 > data.tagged.shitty.nob    
-}}}
+```
 
 Hva skal gjøres med store filer med minimale feil i setningsparallelliseringen? 
 feks HP_2009_samisk_sprak_norsk.pdf og HP_2009_samisk_sprak_nordsam.pdf 
@@ -75,35 +74,33 @@ Dette kan rette på følgende måter:
 Det vi kan lage her er skygge-originalar: Delar av dokumentet som i dag er
 i ulik rekkjefølgje vil vi manuelt omarrangere, og lagre som nye originalar.
 
-
 Alle aktuelt++ og aigeguovdil++ fra regjeringen.no er ikke parallelle 
 fordi dette er oversikt over pressemeldinger og ikke alle pressemeldinger 
 blir oversatt til samisk
 
+#  Ukjente ord
 
-!!! Ukjente ord
+**Spørsmål**: Er det ingen spelrelax for allcapitalized strings?
 
-__Spørsmål__: Er det ingen spelrelax for allcapitalized strings?
-
-{{{
+```
 original input string: BEARRÁIGEAHČČANLÁVDEGOTTI       BEARRÁIGEAHČČANLÁVDEGOTTI       +?
 
 echo "bearráigeahččanlávdegotti" | lookup -q -flags mbTT $GTHOME/gt/sme/bin/sme.fst
 bearráigeahččanlávdegotti	bearráigeahččanlávdegoddi+Org+N+Sg+Gen
 bearráigeahččanlávdegotti	bearráigeahččanlávdegoddi+Org+N+Sg+Acc
-}}}
+```
 
-__Svar__: Jo det finst, men:
+**Svar**: Jo det finst, men:
 
 Svaret på det ligg i allcaps.regex. Dette scriptet er ikkje i bruk, fordi
-resultatet er ein __svært__ langsom automat (jf. B&K for dokumentasjon).
+resultatet er ein **svært** langsom automat (jf. B&K for dokumentasjon).
 
 Mange symboler i unknown lista skal filteres bort, det samme skal 
 gjøres med Wikipedia info
 
 Word count skal bare være nummer og ord, ikke slash og slike ting.
 
-{{{
+```
 ~ $ usme
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 márjá
@@ -133,14 +130,14 @@ Deatnu	deatnut+V+TV+Ind+Prs+Sg3
 Mánná
 Mánná	mánná+Hum+N+Sg+Nom
 Mánná	mannat+V+TV+Ind+Prs+Sg3
-}}}
+```
 
 Kandidat til kommando for å finne ekte ukjente samiske ord:
-{{{
+```
 cat unknown_sme_20121028.txt |sed 's/^ *//g;'|cut -d"bt/bin/mtag-osx64 |grep '" ukjent'|cut -d"\"" -f2|ueng|grep -v '[.+@]'|grep -v '^$' > tull
-}}}
+```
 
-__TODO__
+**TODO**
 
 Ciprian:
 * Sjekke ny wordcount pipeline
@@ -158,14 +155,9 @@ BM & Marja:
   setningsparallelliseringen, feks er det mulig å legge inn info i 
   xsl-fil om hvilke sider skal fjernes automatisk fra originalfila, er det mulig å redigere xml-fil manuelt slik at filene blir identiske. 
 
-
-
 cat unknown_sme_without_nob_20121028.txt |~/main/st/nob/obt/bin/mtag-osx64 |grep '" ukjent'|cut -d"\"" -f2|ueng|grep '+?' |cut -f1 | rev | sort | rev > ukj
 cat ukj|grep -v '[0-9-]'|usme|grep '?'|cut -f1|rev|sort|rev|see
 
-
-
-!!! Neste møte
+#  Neste møte
 
 Tysdag 6.11. kl. 10.00, også med Sjur og Børre (sjekke om tidspunkt passar)
-

@@ -1,34 +1,33 @@
-!!!Dictionary tech meeting
+# Dictionary tech meeting
 
 Agenda:
 * homonymy entries
-** how to generate the correct paradigm
+    - how to generate the correct paradigm
 * How to parametrise (what? make?) on the lg/dic level
 * make a transducer containing all the dictionary entries
 * improvement timetable
 
-
-!!!Homonymy entries
+# Homonymy entries
 
 It has been solved in sme. How?
 
 Now: adding special tags (xml node attribute) after the lemma. This attribute is added to the lexc entry, which ties the transducer to the specific lemma in the dictionary.
 
-!!Systematic homonomy
+## Systematic homonomy
 
 Example:
 
-Textword ''lohkki'' is ambiguous:
+Textword *lohkki* is ambiguous:
 
-|    |  Nom   |  Gen   | Norwegian
-| 1. | lohkki | lohki  | lokk
-| 2. | lohkki | lohkki | lesar
+|     |  Nom   |  Gen   | Norwegian
+|  1. | lohkki | lohki  | lokk
+|  2. | lohkki | lohkki | lesar
 
 We want to generate both paradigms, and bind each to the correct lexical entry.
 
 xml:
 
-{{{
+```
 1.
 <e>
   <lemma pos="n"> 
@@ -36,7 +35,7 @@ xml:
 2.
 <e>
   <lemma pos="actor"> 
-}}}
+```
 
 All actors follow the same pattern. To generate the corresponding paradigms:
 
@@ -45,7 +44,7 @@ All actors follow the same pattern. To generate the corresponding paradigms:
 
 The corresponding xml entries looks like:
 
-{{{
+```
 1.
    <e usage="ped" src="nj">
       <lg>
@@ -64,18 +63,18 @@ The corresponding xml entries looks like:
       <mg>
          <tg>
             <t pos="m">leser</t> 
-}}}
+```
 
 We introduce the @subclass to denote inflectional subclasses, like proper nouns, actor inflection like the above
 
-!!Random homonymy
+## Random homonymy
 
 In 
 
 * rett, rettar %[[domstol%] (germ. a-stem )
 * rett, retter %[[matrett%] (germ. i-stem)
 
-{{{
+```
    <e usage="ped" src="nj">
       <lg>
          <l pos="n" subclass="m1">rett</l>
@@ -93,14 +92,14 @@ In
       <mg>
          <tg>
             <t pos="m">matrett</t> 
-}}}
+```
 
 Here we use the inflection class as subclacc. That should uniquely identify the correct paradigm.
 
-!!!Improvement timetable
+# Improvement timetable
 
 Friday 20.3. Then subversion.
 
-!!!How to parametrise (what? make?) on the lg/dic level
+# How to parametrise (what? make?) on the lg/dic level
 
-!!!Make a transducer containing all the dictionary entries
+# Make a transducer containing all the dictionary entries

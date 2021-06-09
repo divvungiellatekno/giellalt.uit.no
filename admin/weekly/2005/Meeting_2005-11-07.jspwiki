@@ -1,242 +1,241 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 07.11.2005
 * Time: 10.00 Norw. time
 * Place: Wherever we are :-)
 * Tools: iChat, SubEthaEdit, phone
 
-!!! Agenda
+#  Agenda
 
-# Opening, agenda review
-# Reviewing the task list from two weeks ago
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Linguistics
-# Speller infrastructure
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from two weeks ago
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Linguistics
+1. Speller infrastructure
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 10:07.
 
-Present: __Børre, Maaren, Saara (online), Sjur, Thomas, Tomi, Trond__
+Present: **Børre, Maaren, Saara (online), Sjur, Thomas, Tomi, Trond**
 
-Absent: __none__
+Absent: **none**
 
-Main secretary: __Trond__
+Main secretary: **Trond**
 
 Agenda accepted as is.
 
-!!!2. Reviewing the task list from the last meeting
+# 2. Reviewing the task list from the last meeting
 
-!! Børre
+##  Børre
 * Contact oahpahusossodat about texts
-**  Not done
+    -  Not done
 * Gather public texts
-**  Lot of texts from the Sámediggi
+    -  Lot of texts from the Sámediggi
 * Continue converting text from input format to our xml
-**  Texts haven´t been added to the corpus
-* Ask __Thor-Øivind__ to move bugzilla to our new webserver
-** ... and update Bugzilla at the same time
+    -  Texts haven´t been added to the corpus
+* Ask **Thor-Øivind** to move bugzilla to our new webserver
+    - ... and update Bugzilla at the same time
 * install Marratech client to Maaren's computer
-**  Done
+    -  Done
 * install new XXE and the new XXE Forrest config for all (or check that it is
   installed and working)
-**  Maaren has the new XXE
+    -  Maaren has the new XXE
 * mark-up names
-**  Some done
+    -  Some done
 * move existing corpus docs from gt/ to new corpus repository
-**  Not done
+    -  Not done
 * Other
-**  Have been programming a gui-program for maintaining the corpus, 
+    -  Have been programming a gui-program for maintaining the corpus, 
     using Python and Qt.
-**  Sorted out Maaren's problems with emacs (edited the .emacs file).
+    -  Sorted out Maaren's problems with emacs (edited the .emacs file).
 
-
-!! Maaren
+##  Maaren
 * continue working with the missing list from risten.no
-** not done
+    - not done
 * Start working on Sámi place names
 **worked a little bit
-* Start working at normativity issues (numeral issues with __Trond__?)
+* Start working at normativity issues (numeral issues with **Trond**?)
 **not done
 
-!! Saara
+##  Saara
 * Look at the corpus infrastructure issue
-** set up a mysql database for corpus metainformation (for testing). started
+    - set up a mysql database for corpus metainformation (for testing). started
 with the scripts that move the information from corpus headers to the
 database.
 * Look at the corpus interface issue with Lars
 * make an emacs mode for the name project (cf. specs in the memo above)
-** done
+    - done
 * look into efficient editing of the xml proper name lexicon (tools, modes, etc)
-** started working with this
+    - started working with this
 * start looking at conversion of the name lexicon from present format to xml
-** script namelex2xml.pl can be used for testing.
+    - script namelex2xml.pl can be used for testing.
 
-!! Sjur
-* Lule Sámi twol problems, look again at the sets definition with __Thomas__ and
-  __Trond__, Wednesday
-** Done, major progress
+##  Sjur
+* Lule Sámi twol problems, look again at the sets definition with **Thomas** and
+  **Trond**, Wednesday
+    - Done, major progress
 * risten.no bugs and fixes
-** helped Pia get her editor back up and running. She can now finally edit the
+    - helped Pia get her editor back up and running. She can now finally edit the
    risten.no documents herself
-** xml-cleaned several of the sma grammar files
-** updated risten.no with the corrected sma grammar files (and an updated
+    - xml-cleaned several of the sma grammar files
+    - updated risten.no with the corrected sma grammar files (and an updated
    stylesheet)
-* discuss risten.no work with __Tomi__
-** not done
+* discuss risten.no work with **Tomi**
+    - not done
 * follow up on voice group-chat not working to Sámediggi
-** Test Marratech
-*** install Marratech client to Maaren's computer
-*** called __Pål Hivand__, he has been trying it
-*** now also e-mailed him, still no meeting room URL
-* project planning with __Trond__, continued
-** also look at the development processes - specification and  testing
-** settled for Merlin as the planning tool
+    - Test Marratech
+        - install Marratech client to Maaren's computer
+        - called **Pål Hivand**, he has been trying it
+        - now also e-mailed him, still no meeting room URL
+* project planning with **Trond**, continued
+    - also look at the development processes - specification and  testing
+    - settled for Merlin as the planning tool
 * Follow up on place names from Norge Digitalt
-** write an e-mail to or call __Bjørn Olav Megard__
-*** not done
+    - write an e-mail to or call **Bjørn Olav Megard**
+        - not done
 * Evaluate SFST as speller (and analyzer) lexicon
-** more thorough analysis than was possible in Guovdageaidnu
+    - more thorough analysis than was possible in Guovdageaidnu
 * write a background document on the corpus contracts
-** not done
+    - not done
 * Discuss the contract issue with Trond, return the new version to the lawyer
-** Call __Kimmo Koskenniemi__ for comments, perhaps arrange a meeting with him
-*** finally got hold of him, meeting next Tuesday
-* Follow up on meeting with __Anders Kintel__
-** __Berit Karen__ will talk to Bitte, who will call him (or I will)
-* discuss kvensk project support with __Trond__
-** they called us before we got to discuss it. Anyway, it fits pretty well with
+    - Call **Kimmo Koskenniemi** for comments, perhaps arrange a meeting with him
+        - finally got hold of him, meeting next Tuesday
+* Follow up on meeting with **Anders Kintel**
+    - **Berit Karen** will talk to Bitte, who will call him (or I will)
+* discuss kvensk project support with **Trond**
+    - they called us before we got to discuss it. Anyway, it fits pretty well with
    our risten.no plans, so they will approach SD officially with a call for
    cooperation
 * write public tender documents
-** nothing more this week
+    - nothing more this week
 * buy:
-** new computer (project server)?
-** project management software
-*** bought (Merlin)
-** OmniOutline (upgrade)
-*** upgraded for the whole Divvun team
-** OmniGraffle (upgrade)
-*** upgraded for the whole Divvun team
+    - new computer (project server)?
+    - project management software
+        - bought (Merlin)
+    - OmniOutline (upgrade)
+        - upgraded for the whole Divvun team
+    - OmniGraffle (upgrade)
+        - upgraded for the whole Divvun team
 
-!! Thomas
+##  Thomas
 * do main markup in the present propernoun file
 **done what I can do
 * work on North sámi compounding and derivation
 **started to look at three-part compounds
-* Look at Linguistic bugs with __Trond__
+* Look at Linguistic bugs with **Trond**
 * Meet with Sjur and Trond about the definition of G1, G2, G3
 **Met and managed to define some consonant cluster-series
 
-!! Tomi
+##  Tomi
 * Aspell: Continue working on the affix file & aspell
-** Contact aspell author (UTF-8 thing)
+    - Contact aspell author (UTF-8 thing)
 * three-part compounding
 * corpus infrastructure: dtd location (both public and internal)
-** Not done
+    - Not done
 * Document aspell and corpus infrastructure
-** Partially done
+    - Partially done
 * Specification for new catxml in C++
-** Did some modifications and testing with new and old catxml
-** this includes also placing the source and binary
-*** Not done
-* clean the script/ catalogue with __Trond__
-** Discussed about in newsgroup
+    - Did some modifications and testing with new and old catxml
+    - this includes also placing the source and binary
+        - Not done
+* clean the script/ catalogue with **Trond**
+    - Discussed about in newsgroup
 * Common makefile issues
-** Discussed about in newsgroup
-* discuss risten.no work with __Sjur__
-** Scheduled to be done on Tuesday 8.11
-* discuss about xml-processing with __Saara__
-** Not done
+    - Discussed about in newsgroup
+* discuss risten.no work with **Sjur**
+    - Scheduled to be done on Tuesday 8.11
+* discuss about xml-processing with **Saara**
+    - Not done
 * look into efficient editing of the xml proper name lexicon (tools, modes, etc)
-** Emacs seems to be most efficient :)
-** XML tool should be able to open files in small bits, I know only one that is
+    - Emacs seems to be most efficient :)
+    - XML tool should be able to open files in small bits, I know only one that is
    able to do so, and that tool is only for windows
 * start looking at conversion of the name lexicon from present format to xml
-** Not done
+    - Not done
 * Look into synchronisation of proper names with risten.no
-** Not done
+    - Not done
 * Other:
-** Added multiple authors to corpus interface
+    - Added multiple authors to corpus interface
 
-!! Trond
+##  Trond
 * Work on the CG-related bugs on the bug list (7 open) (numeral related ones
   postponed.
-** I have not been in a postion to do that, have done more basic work, with 
+    - I have not been in a postion to do that, have done more basic work, with 
    Linda, and documentation
-* project planning with __Sjur__, continued
-** Had some discussion, schedules still open.
-** also look at the development processes - specification and  testing
-*** Not done.
+* project planning with **Sjur**, continued
+    - Had some discussion, schedules still open.
+    - also look at the development processes - specification and  testing
+        - Not done.
 * Work on the name project:
-** Discuss the conversion with __Maaren__ and __Børre__
-*** Done. 
-** mark up names
-** Much work done last week, now down to 4100 unassigned entries (they get harder)
-* discuss kvensk project support with __Sjur__
-* Work on the G3 bug issue with __Sjur__ and __Thomas__
-** Done substantial progress on this front, cf. cvs log. Next issue is get the rest of
+    - Discuss the conversion with **Maaren** and **Børre**
+        - Done. 
+    - mark up names
+    - Much work done last week, now down to 4100 unassigned entries (they get harder)
+* discuss kvensk project support with **Sjur**
+* Work on the G3 bug issue with **Sjur** and **Thomas**
+    - Done substantial progress on this front, cf. cvs log. Next issue is get the rest of
    smj done, and carry it over to sme.
-** Otherwise, I have been working on disambiguation.
+    - Otherwise, I have been working on disambiguation.
 
-!!!3. Documentation
+# 3. Documentation
 
 Documentation tasks:
 
 Add documentation on our corpus infrastructure and our corpus work in general
-(__Børre__, __Tomi__, __Trond__, __Saara__):
+(**Børre**, **Tomi**, **Trond**, **Saara**):
 * The directory structure is now settled (as of last meeting), and should be 
   documented.
 
 For the basic corpora, we need 2 additional types of documentation, or doc for 2 target
 groups:
 
-# For the __users/linguists:__ What corpus are found, how do I use them (this
+1. For the **users/linguists:** What corpus are found, how do I use them (this
   info is now scattered) 
   (Part of the HOTWO USE is documented in the catxml docu
   The what documents are found where etc + an overall documentation is not
   written, since the corpus is so sparsely populated)
-# For the __collectors:__ How do I add texts, where do I add them, how do I
+1. For the **collectors:** How do I add texts, where do I add them, how do I
   convert them (this is (partly?) done in the Corpus Conversion document)
 
-* add/update Aspell documentation (__Tomi__)
-** Some documentation has been written, but there still is work to be done.
-* as always: document what you're doing:-) (__all__)
+* add/update Aspell documentation (**Tomi**)
+    - Some documentation has been written, but there still is work to be done.
+* as always: document what you're doing:-) (**all**)
 
-!!Divvun.no down again
+## Divvun.no down again
 
-Tomcat is running out of memory in between. __Børre__ will look into changing
+Tomcat is running out of memory in between. **Børre** will look into changing
 to Forrest generating static html pages (forrest site), and serve those off of
 the standard Apache server. He will also look at utilizing Forrestbot as the
 tool to update the site, instead of our homegrown script.
 
-!!!4. Corpus gathering
+# 4. Corpus gathering
 
 Governmental documents (earlier in pdf, now in html)
 
 Tasks:
-* move existing gov. documents (pdf) from gt/ to our corpus repository (__Børre__)
-** There are appr. 10 non-broken pdf documents in gt/sme/corp/original/ 
+* move existing gov. documents (pdf) from gt/ to our corpus repository (**Børre**)
+    - There are appr. 10 non-broken pdf documents in gt/sme/corp/original/ 
    (the 31 files named stmelXXX.pdf in the corp/original catalogue contain a couple
     of pages each, together they constitute two distinct governmental papers, 
     numbered 33 and 34.)
-* Collect public (pdf and html) files (__Børre__)
-**  Done some test downloading, will have to look at tools to do this 
+* Collect public (pdf and html) files (**Børre**)
+    -  Done some test downloading, will have to look at tools to do this 
     automatically.
 
-!!Contracts
+## Contracts
 
 Tasks:
-* Follow-up on the lawyers' comments (__Trond__ has started with the university)
-** __Trond__ and __Sjur__ finished the next revision of the contracts, and are
-   waiting for comments from __Kimmo Koskenniemi__
-*** Update: __Sjur__ will meet with __Kimmo__ on Tuesday this week (tomorrow)
-* add a background document explaining the model (__Sjur__)
+* Follow-up on the lawyers' comments (**Trond** has started with the university)
+    - **Trond** and **Sjur** finished the next revision of the contracts, and are
+   waiting for comments from **Kimmo Koskenniemi**
+        - Update: **Sjur** will meet with **Kimmo** on Tuesday this week (tomorrow)
+* add a background document explaining the model (**Sjur**)
 
 The most problematic issue:
 
@@ -245,27 +244,27 @@ words, syntactic structure (potentially with some words filled in)? We need
 this to be controlled by us, not by the authors. The exact borderline is hard
 to define.
 
-!!!5. Corpus infrastructure
+# 5. Corpus infrastructure
 
 Updated task list:
-# Make a system for file and directory permission (today: we all belong to the 
+1. Make a system for file and directory permission (today: we all belong to the 
   cvs group), to only allow people with root user privileges write access to the
   corpus repository, at least regarding original files
-# Include the xsl files under version control (cvs? rcs?)  
-# Incorporate language detection as part of the corpus processing.
-# we need a way to deal with hyphenated documents in catxml/preprocess:
-## in normal cases hyphenation points should be removed
-## when testing the robustness of our parsers, as well as when testing the
+1. Include the xsl files under version control (cvs? rcs?)  
+1. Incorporate language detection as part of the corpus processing.
+1. we need a way to deal with hyphenated documents in catxml/preprocess:
+    1. in normal cases hyphenation points should be removed
+    1. when testing the robustness of our parsers, as well as when testing the
    hyphenator, the hyphenation points should be retained
 
-!! Catxml performance testing
+##  Catxml performance testing
 
 Testing done with xml files we have now in corpus base, there are seven (7)
 documents (9495 words). Results are below, the difference is about x30 for real
 time and x100 for user (processor) time:
 
-__Perl catxml:__
-{{{
+**Perl catxml:**
+```
 sme$time catxml --all --lang=no -i=.
 real    0m18.509s
 user    0m17.753s
@@ -275,10 +274,10 @@ sme$time catxml --all --lang=no -i=. > /dev/null
 real    0m17.033s
 user    0m16.934s
 sys     0m0.095s
-}}}
+```
 
-__C++ catxml:__
-{{{
+**C++ catxml:**
+```
 sme$time /home/tomi/tagparser2/catxml -r *
 real    0m0.827s
 user    0m0.176s
@@ -288,20 +287,20 @@ sme$time /home/tomi/tagparser2/catxml -r * > /dev/null
 real    0m0.183s
 user    0m0.174s
 sys     0m0.009s
-}}}
+```
 
-__Decision:__ C++ it is!
+**Decision:** C++ it is!
 
-!!!6. Linguistics
+# 6. Linguistics
 
-!!Name lexicon
+## Name lexicon
 
-Summary: see the [newsgroup|news:di5mbi$26ad$1@news.uit.no]
+Summary: see the [newsgroup](news:di5mbi$26ad$1@news.uit.no)
 
 The plan for this project was as follows: Two lines of work run in parallel:
 
-# mane markup
-# testing of conversion
+1. mane markup
+1. testing of conversion
 
 When these two tasks are done (at some point in the future), the conversion will
 be done.
@@ -309,10 +308,10 @@ be done.
 Status quo on the two lines of work:
 
 The mark up of the remaining 3900 entries until conversion starts (People
-allocated look at the rest: __Maaren, Ilona, Trond, Børre__). This week's status
+allocated look at the rest: **Maaren, Ilona, Trond, Børre**). This week's status
 quo is as follows (some 3900 names not assigned):
 
-{{{
+```
 2170 LONDON
 1275 BERN
  314 NYSTØ
@@ -324,107 +323,107 @@ quo is as follows (some 3900 names not assigned):
    3 VARGGAT
    3 ANAR
    2 GIEDDI
-}}}
+```
 
 The technical issues (specified in earlier memos: Conducted by:
-__Tomi, Saara, Sjur__. Sjur and Tomi will tomorrow Tuesday report back on a plan
+**Tomi, Saara, Sjur**. Sjur and Tomi will tomorrow Tuesday report back on a plan
 for using risten.no as editor for our name lexicon
 
-!!North Sámi
+## North Sámi
 
 * three-part compounds issue still open
 * number project still open
 * normativity issues:
-** the Giellalávdegoddi meeting was last Friday, they will have a new meeting in
+    - the Giellalávdegoddi meeting was last Friday, they will have a new meeting in
    December. They were not able to make any decisions, and there will be a new
    Giellalávdegoddi beginning next year who won't make decisions until late
    spring. This is a serious problem for the Divvun problem.
-*** __Sjur__, with the help of __Maaren__ has written to the Divvun board and to
+        - **Sjur**, with the help of **Maaren** has written to the Divvun board and to
     the Giellalávdegoddi. Now we are waiting for an answer.
-** The [document with the list of open
-   issues|/lang/sme/normativity-issues.html] has been updated by __Thomas__.
-   __Maaren__ will update the last issue.
+    - The [document with the list of open
+   issues|/lang/sme/normativity-issues.html] has been updated by **Thomas**.
+   **Maaren** will update the last issue.
 
-!!Lule Sámi
+## Lule Sámi
 
- __Sjur, Thomas__ and __Trond__ will cont. Lule Sámi issues.
+ **Sjur, Thomas** and **Trond** will cont. Lule Sámi issues.
 
 Tasks:
 * update the normativity issues document:
-** Px issue
+    - Px issue
 * G3 open issues (S2, some S3, S5, S6 and S7; Sx = Spiik, consonant series)
 
-!!Numerals
+## Numerals
 
 The issue is postponed to next week.
 
-# An empirical overview
-## Numeral generation
-## Numeral inflection
-## Numerals as parts of compounds
-# A clear concept of how we want to treat them
-## Tagging
-# A treatment
+1. An empirical overview
+    1. Numeral generation
+    1. Numeral inflection
+    1. Numerals as parts of compounds
+1. A clear concept of how we want to treat them
+    1. Tagging
+1. A treatment
 
-{{{
+```
 8
 8       8+Num
 8       8+Num+Acc
 8       8+Num+Gen
 8       8+Num+Nom
-}}}
+```
 
 We will return to this issue after the name conversion.
 
-!!!7. Speller infrastructure
+# 7. Speller infrastructure
 
 Nothing this week either.
 
-!!!8. Other
+# 8. Other
 
-!!Technical issues
+## Technical issues
 
-* The mac os / perl bug (at least __Trond__ and __Sjur__ has it):
-** utf8 "\xC4" does not map to Unicode at /Users/trond/gt/script/preprocess line
+* The mac os / perl bug (at least **Trond** and **Sjur** has it):
+    - utf8 "\xC4" does not map to Unicode at /Users/trond/gt/script/preprocess line
    82. This msg did not show up in 10.3 (perl 5.8.1), but does so in 10.4 (perl
-   5.8.6). It is probably a perl - OS mismatch. (__Trond__, __Thor Øivind__,
-   __Tomi__)
-*** Another __example__ of the same bug:
-*** :"\x{00c3}" does not map to utf8 at ../script/preprocess line 113, <> chunk
+   5.8.6). It is probably a perl - OS mismatch. (**Trond**, **Thor Øivind**,
+   **Tomi**)
+        - Another **example** of the same bug:
+        - :"\x{00c3}" does not map to utf8 at ../script/preprocess line 113, <> chunk
     33.
-*** One way to "resolve" this is to redirect the error messages to /dev/null:
-{{{
+        - One way to "resolve" this is to redirect the error messages to /dev/null:
+```
 ... | preprocess 2> /dev/null | lookup ...
-}}}
+```
 
-!!Video conferencing across firewalls
+## Video conferencing across firewalls
 
 The problem we've had with the SD firewall persists, and there doesn't seem to
-be any resources available to help us. __Geir Kaaby__ instead suggested we look
-at the [Marratech|http://www.marratech.com/] package, and try it out. So please
+be any resources available to help us. **Geir Kaaby** instead suggested we look
+at the [Marratech](http://www.marratech.com/) package, and try it out. So please
 download the MacOS X client (or get it from me), and I'll send you the URL to
 the meeting room as soon as I get it.
 
-!!Bug fixing
+## Bug fixing
 
-__24__ open bugs (and 23 risten.no bugs)
+**24** open bugs (and 23 risten.no bugs)
 
-!Bugzilla update
+### Bugzilla update
 When Bugzilla is being moved, it should also be updated to the newest version,
 and the UTF-8 bug should be resolved.
 
-!!risten.no
+## risten.no
 
-* Organisation: could __Tomi__ be used, in exchange for more linguistic work by
+* Organisation: could **Tomi** be used, in exchange for more linguistic work by
   (old) GIO members? Yes, it is ok, but how much still needs to be evaluated
 * it is ok to integrate "kvensk" placenames with risten.no
-** this should be integrated with the general proper name work - we want all
+    - this should be integrated with the general proper name work - we want all
    proper names integrated with risten.no, df above
-** needs further development of risten.no to allow for multiple XML bases to
+    - needs further development of risten.no to allow for multiple XML bases to
    be presented and maintained in parallel. This is to be further worked on by
-   __Tomi__ and __Sjur__
+   **Tomi** and **Sjur**
 
-!!Binary files for downloading
+## Binary files for downloading
 
 As we move forward in the Divvun project, we need a place to store downloadable
 binaries, such as installation packages, speller updates, etc. This is also true
@@ -441,12 +440,12 @@ downloadable directly from our browsers. And as I mentioned initially, the
 framework for this download area should be the same as for the public proofing
 tools later on.
 
-__Børre__: have a look.
+**Børre**: have a look.
 
-!! Meeting memo improvements?
+##  Meeting memo improvements?
 
 Look at [this:
-|http://www.43folders.com/2004/10/05/subethaedit-for-meeting-notes-and-light-project-management/]
+| http://www.43folders.com/2004/10/05/subethaedit-for-meeting-notes-and-light-project-management/]
 , especially the section "Simple Codes & the 30-Second Deliverable".
 
 It gave me the idea that we could skip the task lists in the end altogether, and
@@ -461,93 +460,93 @@ are we satisfied with the present system?
 Decision: nothing now, we can go back later if updating the task lists get too
 complicated or time-consuming.
 
-!!Reimbursement of expenses
+## Reimbursement of expenses
 
 Should be filed before mid November. Whatever needs to be bought, should be
 bought before the end of November.
 
-!!!9. Summary, task list
+# 9. Summary, task list
 
-!! Børre
+##  Børre
 * Contact oahpahusossodat about texts
 * Gather public texts
 * Continue converting text from input format to our xml
 * Document the corpus directory structure
-* Ask __Thor-Øivind__ to move bugzilla to our new webserver
-** ... and update Bugzilla at the same time
+* Ask **Thor-Øivind** to move bugzilla to our new webserver
+    - ... and update Bugzilla at the same time
 * install new XXE and the new XXE Forrest config for all (or check that it is
   installed and working)
 * mark-up names
 * move existing corpus docs from gt/ to new corpus repository
 * divvun.no and giellatekno.uit.no
-**  Binary files download area
-**  Moving to static site, using forrestbot or something else.
+    -  Binary files download area
+    -  Moving to static site, using forrestbot or something else.
 
-!! Maaren
+##  Maaren
 * shall work with Sámi place names only
 * update the last issue in the North Sámi normativity issues document
 
-!! Saara
+##  Saara
 * Look at the corpus infrastructure issue
 * Look at the corpus interface issue with Lars
 * look into efficient editing of the xml proper name lexicon (tools, modes, etc)
 * start looking at conversion of the name lexicon from present format to xml
 * document corpus infrastructure, your own parts
 
-!! Sjur
-* Lule Sámi twol problems, look again at the sets definition with __Thomas__ and
-  __Trond__, Wednesday
+##  Sjur
+* Lule Sámi twol problems, look again at the sets definition with **Thomas** and
+  **Trond**, Wednesday
 * risten.no bugs and fixes
-* discuss risten.no work with __Tomi__
+* discuss risten.no work with **Tomi**
 * follow up on voice group-chat not working to Sámediggi
-** Test Marratech
-* project planning with __Trond__, continued
-** also look at the development processes - specification and  testing
+    - Test Marratech
+* project planning with **Trond**, continued
+    - also look at the development processes - specification and  testing
 * Follow up on place names from Norge Digitalt
-** write an e-mail to or call __Bjørn Olav Megard__
+    - write an e-mail to or call **Bjørn Olav Megard**
 * Evaluate SFST as speller (and analyzer) lexicon
-** more thorough analysis than was possible in Guovdageaidnu
+    - more thorough analysis than was possible in Guovdageaidnu
 * write a background document on the corpus contracts
-* Discuss the contract issue with __Kimmo__, return the new version to the lawyer
-* Follow up on meeting with __Anders Kintel__
-* discuss kvensk project support with __Trond__
+* Discuss the contract issue with **Kimmo**, return the new version to the lawyer
+* Follow up on meeting with **Anders Kintel**
+* discuss kvensk project support with **Trond**
 * write public tender documents
 * buy:
-** new computer (project server)?
-** project management software
-** OmniOutline (upgrade)
-** OmniGraffle (upgrade)
+    - new computer (project server)?
+    - project management software
+    - OmniOutline (upgrade)
+    - OmniGraffle (upgrade)
 
-!! Thomas
+##  Thomas
 * work on North sámi compounding and derivation
-* Look at Linguistic bugs with __Trond__
+* Look at Linguistic bugs with **Trond**
 * Continue to meet with Sjur and Trond about and work with the definition of G1, G2, G3
 * update the lule sámi normativity issues document
 
-!! Tomi
+##  Tomi
 * Aspell: Continue working on the affix file & aspell
-** Contact aspell author (UTF-8 thing)
+    - Contact aspell author (UTF-8 thing)
 * three-part compounding
 * corpus infrastructure: dtd location (both public and internal)
 * Document aspell and corpus infrastructure
 * Specification for new catxml in C++
-** this includes also placing the source and binary
-* discuss risten.no work with __Sjur__
-* discuss about xml-processing with __Saara__
+    - this includes also placing the source and binary
+* discuss risten.no work with **Sjur**
+* discuss about xml-processing with **Saara**
 * look into efficient editing of the xml proper name lexicon (tools, modes, etc)
 * start looking at conversion of the name lexicon from present format to xml
 * Look into synchronisation of proper names with risten.no
 
-!! Trond
+##  Trond
 * Work on the CG-related bugs on the bug list (7 open) (numeral related ones
   postponed.
-* project planning with __Sjur__, continued
-** also look at the development processes - specification and  testing
+* project planning with **Sjur**, continued
+    - also look at the development processes - specification and  testing
 * Work on the name project, mark up names
-* discuss kvensk project support with __Sjur__
-* Work on the G3 bug issue with __Sjur__ and __Thomas__
+* discuss kvensk project support with **Sjur**
+* Work on the G3 bug issue with **Sjur** and **Thomas**
 
-!!!10. Next meeting, closing
+# 10. Next meeting, closing
 
 14.11.2005 10:00
 

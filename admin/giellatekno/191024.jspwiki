@@ -1,10 +1,8 @@
-
-
-!!!Giellateknomøte 24.10.2019
+# Giellateknomøte 24.10.2019
 
 Tilstede: Trond, Chiara, Lene, Risten
 
-!!!Saksliste
+# Saksliste
 * Orienteringssaker
 * Korpus og Korp
 * Preprosessering
@@ -14,134 +12,122 @@ Tilstede: Trond, Chiara, Lene, Risten
 * Paris, UNESCO
 * Andre saker
 
+## Orienteringssaker
 
-
-
-!!Orienteringssaker
-
-! Servarar (oppsummering)
+###  Servarar (oppsummering)
 
 Spørjeundersöking, 60 spørsmål, businessorientert.
 gtoahpa-01, gtweb-01. Dette er servarar, men spørsmål er om applikasjonar.
 
-__Trond og Chiara__ ser på dette.
+**Trond og Chiara** ser på dette.
 
-! Wordpress
+###  Wordpress
 
 Chiara klarer no å logge seg inn. Alt ser ut til å fungere.
 
 Vi betaler for den nye og ser etterkvart på kva som skjer.
 
-! MT apertium
+###  MT apertium
 
 Ikke arbeidd aktivt med sme-nob på lenge. Lene har arbeidd med sme-smx.
 
-Vi bør også hugse sme-smn (__Lene__ ser på samansetjingsstiar også for smn).
+Vi bør også hugse sme-smn (**Lene** ser på samansetjingsstiar også for smn).
 
-!Annex
+### Annex
 
-__Trond og Chiara__ ser på dette neste veke.
+**Trond og Chiara** ser på dette neste veke.
 
-!SMARTool
+### SMARTool
 
 Vi har hatt møte og møtereferat.
 
-!Konteaksta
+### Konteaksta
 
 Isak Saba-senteret har testa ut Konteksta og liker det.
 
+### NDS
 
-
-!NDS
-
-''Derivasjon:''
+*Derivasjon:*
 Vi har fått brev fra bruker om substantiv ikke dukker opp. Dette er et substantiv som også har NomAg-analyse.  
 
-Når vi går frå eit ''lemma'' vi klikkar på i translation bør det gå direkte til lemmaet i smenob-fila, og ikkje via analysatoren. Det er berre forvirrande. __Chiara__ skal endre slik at det går direkte til lemma. __Lene__ skriv Bz på dette.
+Når vi går frå eit *lemma* vi klikkar på i translation bør det gå direkte til lemmaet i smenob-fila, og ikkje via analysatoren. Det er berre forvirrande. **Chiara** skal endre slik at det går direkte til lemma. **Lene** skriv Bz på dette.
 
 Dette skal gjelde for alle språkpar (ta hensyn også til Hom-taggene)
 
-
-''Klikk-i-tekst''
+*Klikk-i-tekst*
 
 Det hendar det dukkar opp Der-taggar i klikk-i-tekst-vindauget. Vi må se på hva som skal være med i vinduet, og evt. flere brukervennlige tagger
 
+## Korpus og Korp
 
+###  Status 
+**Chiara** kan sjå på HFST vs. XFST.
 
-!!Korpus og Korp
-
-! Status 
-__Chiara__ kan sjå på HFST vs. XFST.
-
-
-! nob-sme 
+###  nob-sme 
 Risten har parallellisert lovtekstar. Tre står att. Lene har fjerner etterhvert i 2012-korpuset. Spørsmål: Vi analyserer 2012-data ein gong til, for å unngå dobbelt sett tekstar.
 
-Sametinget har lovd å sende over protokoller i docx-format, men ingenting har kommet. __Lene__ tar kontakt om dette.
+Sametinget har lovd å sende over protokoller i docx-format, men ingenting har kommet. **Lene** tar kontakt om dette.
 
-
-! fin-smn
+###  fin-smn
 
 Reetta laga ei liste over problem i fin-smn. Denne venter til vi har noen til å arbeide med dette språkparet.
 
-! nob-fkv
+###  nob-fkv
 
 * Tekstane i freecorpus treng parallellisering.
 * KI og KMD har tekstar som må i freecorpus
 
-__Trond__ diskuterer med Kvensk Institutt.
+**Trond** diskuterer med Kvensk Institutt.
 
-! mhr og mrj
+###  mhr og mrj
 
 Desse vil vi har analysert og publisert på gtweb.uit.no/u_korp
 
 [http://victorio.uit.no/rusbound/]
 
-Chiara skal få tilgang til rusbound (__Trond__)
+Chiara skal få tilgang til rusbound (**Trond**)
 
 Arbeidsgang framover:
 
-# fornye korpusinnholdet (Køyre pipeline __Chiara og Trond__)
-# prøve pipeline, viss det går bra: Publisere på u_korp (__Chiara__)
-# Oppdatere Korp-programmet for u_korp og f_korp (__Chiara__)
-# Oppdatere FST og CG (__mhr-gruppa__)
-# Forbetre OCR-prosessering  (__mhr-gruppa__)
+1. fornye korpusinnholdet (Køyre pipeline **Chiara og Trond**)
+1. prøve pipeline, viss det går bra: Publisere på u_korp (**Chiara**)
+1. Oppdatere Korp-programmet for u_korp og f_korp (**Chiara**)
+1. Oppdatere FST og CG (**mhr-gruppa**)
+1. Forbetre OCR-prosessering  (**mhr-gruppa**)
 
+###  Ekstra person til å arbeide?
 
-! Ekstra person til å arbeide?
+Vi vurderer måtar å få tak i nokon. Utlysing. **Trond** diskuterer.
 
-Vi vurderer måtar å få tak i nokon. Utlysing. __Trond__ diskuterer.
-
-!!Preprosessering
+## Preprosessering
 
 hfst-tokenise og setningsinndeling.
 
-! abbr-filene
+###  abbr-filene
 
 * hfst-tokenise inkluderer alle punktum i forkortingane
 * hfst-tokenise -cg tok.hfstol og deretter cg3 mwe.hfstol
 
-{{{
-|hfst-tokenize --giella-cg --weight-classes=1 ~/main/langs/sme/tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst |vislcg3 -g tools/tokenisers/mwe-dis.cg3 
-}}}
+```
+| hfst-tokenize --giella-cg --weight-classes=1 ~/main/langs/sme/tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst |vislcg3 -g tools/tokenisers/mwe-dis.cg3 
+```
 
-# Sjekk om forkortinga ligg inne i sme og i nob
-# Parallellize bruker hfst-tokenize, uten mwe, men den er mulig å legge til
-# Køyre setning med den relevante kommandoen
+1. Sjekk om forkortinga ligg inne i sme og i nob
+1. Parallellize bruker hfst-tokenize, uten mwe, men den er mulig å legge til
+1. Køyre setning med den relevante kommandoen
 
-! Testing og testrutiner
+###  Testing og testrutiner
 
-__Risten__ leiter etter setningar med forkortingar (med punktum) inni og til slutt i setningar (transitive og intransitive). 
+**Risten** leiter etter setningar med forkortingar (med punktum) inni og til slutt i setningar (transitive og intransitive). 
 
-__Risten og Trond__ ser på dette (diskuterer med Børre og Sjur).
+**Risten og Trond** ser på dette (diskuterer med Børre og Sjur).
 
-Den nye organiseringa av abbr må implementeres også for dei andre samiske språka også (__Trond__).
+Den nye organiseringa av abbr må implementeres også for dei andre samiske språka også (**Trond**).
 
+## CG-MT
 
-!!CG-MT
-
-! Status
-Pipelinen for CG-MT fungerer. Halve pipelinen er i et skript  {{tools/mt/cgbased/bin/smegram}}. Dokumentasjon ligg i  {{tools/mt/cgbased/README}}
+###  Status
+Pipelinen for CG-MT fungerer. Halve pipelinen er i et skript  `tools/mt/cgbased/bin/smegram`. Dokumentasjon ligg i  `tools/mt/cgbased/README`
 
 Pipeline fra sme-txt til dep-analyse må legges til manuelt.
 
@@ -149,38 +135,27 @@ Det er enda noen problemer med pipeline, ikke alt fungerer som det skal. Vi skal
 
 Burde koden etterhvert omskrives fra perl til python?
 
-! Veke med Eckhard
+###  Veke med Eckhard
 
-Vi inviterer, tidligst veka 9.-13.12. (__Trond__)
+Vi inviterer, tidligst veka 9.-13.12. (**Trond**)
 
-!!Nasjonalbiblioteket og jupyter
+## Nasjonalbiblioteket og jupyter
 
-! Situasjon
-Lars har svart på spørsmål, __Trond og Chiara__ skriv dokumentasjon.
+###  Situasjon
+Lars har svart på spørsmål, **Trond og Chiara** skriv dokumentasjon.
 
 Det kjem ei lenke på korpussida på giellalt.
 
-!!Kommande presentasjonar og prioriteringar
-! Trond: smn, fkv, SAALS Uppsala 21-22.11, stadnamn
-! Lene: 24.10 SESAM, SAALS Uppsala 21-22.11, LIA Trondheim 25-x'27.11, Paris??
+## Kommande presentasjonar og prioriteringar
+###  Trond: smn, fkv, SAALS Uppsala 21-22.11, stadnamn
+###  Lene: 24.10 SESAM, SAALS Uppsala 21-22.11, LIA Trondheim 25-x'27.11, Paris??
 
-!!Paris, UNESCO
+## Paris, UNESCO
 
 Vi vil sannsynlegvis bli invitert til å lage ein poster.
 
-!!Andre saker
+## Andre saker
 
-!Kurs i regi av Forskarforbundet
+### Kurs i regi av Forskarforbundet
 
 Chiara drar.
-
-
-
-
-
-
-
-
-
-
-

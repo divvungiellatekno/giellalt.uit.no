@@ -1,6 +1,6 @@
-!!!Møte mellom Sjur og Trond, 11.12.
+# Møte mellom Sjur og Trond, 11.12.
 
-!!!Saksliste
+# Saksliste
 
 * Korp
 * FAD
@@ -9,7 +9,7 @@
 * Buggar
 * Kone Foundation languages
 
-!!! Korp
+#  Korp
 
 Korp og Karp, frå Göteborg.
 
@@ -21,44 +21,44 @@ Stikkordet her er eXist/XQuery (Karp) + CWB (Korp)
 
 DeepDict er ein del av Oahpa-planane, fst+ordbok (Ryan) blir ei resepsjonsordboka.
 
-__TILTAK__
+**TILTAK**
 
-* Divvun installerer Karp og Korp på ein passande server (__Børre, Sjur eller Tomi__)
-** Før Divvun-lansering: __Sjur__ skriv e-post til Gbg og får kjeldekode + dokumentasjon
-** Etter Divvun-lansering: __BST__ sett opp Karp/Korp på servar
+* Divvun installerer Karp og Korp på ein passande server (**Børre, Sjur eller Tomi**)
+    - Før Divvun-lansering: **Sjur** skriv e-post til Gbg og får kjeldekode + dokumentasjon
+    - Etter Divvun-lansering: **BST** sett opp Karp/Korp på servar
 * Innhald: Lingvistane gjer seg kjent med Gbg-ressursane slik at vi veit kva vi vil ha.
 
-!!!Aejege-app
+# Aejege-app
 
 Sjur vil bruke Ryan til det, av lett forståelege grunnar.
 Det er heilt greitt for Gt så lenge det ikkje går ut over Oahpa-arbeidet.
 
 Sjur diskuterer med Ryan.
 
-!!! FAD
+#  FAD
 
 Møte torsdag 13.12. klokka 9.30. Møtet vart halde.
 
-!!! Barents
+#  Barents
 
-!! Status quo
+##  Status quo
 No står saka utan avklaring: Vi har ikkje fått finansiering.
 
-* Samtalar sørpå, __Trond__ skal følgje opp.
-* Diskusjon med UiT sentralt, __Trond__ skal følgje opp.
+* Samtalar sørpå, **Trond** skal følgje opp.
+* Diskusjon med UiT sentralt, **Trond** skal følgje opp.
 
-!! Tastatur
+##  Tastatur
 
-Diskutere med Michael. __Trond__ fölgjer opp.
+Diskutere med Michael. **Trond** fölgjer opp.
 
-!!! putty
+#  putty
 
 Det er framleis problem med UTF-8 på divvun.no for sluttbrukane når ein bruker putty.
 
 * Tastaturproblemet: Det må vi ta opp med PuTTY-utviklarane.
-* Sluttbrukarproblem hos oss. __Trond__ ser på det.
+* Sluttbrukarproblem hos oss. **Trond** ser på det.
 
-!!!Bugliste
+# Bugliste
 
 45 av dei 71 fellesbuggane er ikkje kommentert siste månad. Av dei er 19 P4 eller høgare.
 
@@ -67,159 +67,152 @@ Generelt om prioritering:
 Den som meldar bugar bör setje både P og viktigheit. Deretter kan Trond/Sjur 
 eller ansvarleg endre, evt. etter diskusjon.
 
-!! Buggane ein for ein
+##  Buggane ein for ein
 
-!1296	enh	P4	sme lexi	Thomas Omma	abbr.txt har snart 100000 liner og bør bli delt
+### 1296	enh	P4	sme lexi	Thomas Omma	abbr.txt har snart 100000 liner og bør bli delt
 Høgare prioritet. Vi treng eigentleg berre å avgjere noko.
 Det kan vere feil ansvarleg, kanskje heller Børre.
 
 Bugen er viktig: kompileringa av sme tar svært lang tid.
 
-__TILTAK__
+**TILTAK**
 * split abbr.txt i (eigentleg) abbr.txt (forkortingar) og mwe.txt (fleirordsuttrykk)
-  (__Børre__)
-# Ansvarlig: Børre
-# Prioritet: P3
+  (**Børre**)
+1. Ansvarlig: Børre
+1. Prioritet: P3
 
-!1430	maj	P2	Corpus	Børre Gaup	metainformation gets mixed up with actual text
+### 1430	maj	P2	Corpus	Børre Gaup	metainformation gets mixed up with actual text
 Viktig.
 
-__TILTAK__
-* __Børre__ ser på dette, og enten fiksar eller dokumenterer ein fiks.
+**TILTAK**
+* **Børre** ser på dette, og enten fiksar eller dokumenterer ein fiks.
 
-!1517	cri	P5	Infrastr	Trond Trosterud	Orddeling fungerer ikke på web-tjenesten
+### 1517	cri	P5	Infrastr	Trond Trosterud	Orddeling fungerer ikke på web-tjenesten
 Mystisk.
 
-__TILTAK__
+**TILTAK**
 Sjur og trond ser på dette.
 
-!988	nor	P3	sme morp	Thomas Omma	No hyphening in industriija
+### 988	nor	P3	sme morp	Thomas Omma	No hyphening in industriija
 Duplikat av 1517?
 
-__TILTAK__
+**TILTAK**
 Sjur og trond ser på dette.
 
-!1444	enh	P5	Corpus	Børre Gaup	ö instead of ? in analyzed text on xserve
+### 1444	enh	P5	Corpus	Børre Gaup	ö instead of ? in analyzed text on xserve
 Viktig. Vi såg på buggen (sjå bz). Den finst berre på Divvun-serveren, og er ikkje relevant for FAD,
 men ille nok for korpusprosessering.
 
-__TILTAK__
-* Finn feilen (__Børre__)
+**TILTAK**
+* Finn feilen (**Børre**)
 
-!1461	nor	P4	Pre- and	Sjur Nørstebø Mos...	sort-cg-cohort.pl fjerner tomme linjer
+### 1461	nor	P4	Pre- and	Sjur Nørstebø Mos...	sort-cg-cohort.pl fjerner tomme linjer
 
 Sjur må skrive om denne for å ha ein annan separator.
 
-__TILTAK__
+**TILTAK**
 * Sjur ser på denne, evt. delegerer.
 
-!1346	enh	P4	sme lexi	Thomas Omma	Hvordan håndtere presens partisipp?
+### 1346	enh	P4	sme lexi	Thomas Omma	Hvordan håndtere presens partisipp?
 Konklusjon: Vi treng eit möte.
 
 Partisippmöte torsdag 13.12. klokka 11. Møtet halde, sjå referat og bugmelding.
 
-!1529	enh	P5	Infrastr	Ciprian Gerstenbe...	newinfra languages claimed to be Cornish
+### 1529	enh	P5	Infrastr	Ciprian Gerstenbe...	newinfra languages claimed to be Cornish
 Denne er irriterande.
 
-__TILTAK__
-* __Sjur__ ser på denne, og så går det evt. til Cip etterpå
+**TILTAK**
+* **Sjur** ser på denne, og så går det evt. til Cip etterpå
 
+### 757	enh	P5	Infrastr	Børre Gaup	uploading files on homepage not working as it should
 
-!757	enh	P5	Infrastr	Børre Gaup	uploading files on homepage not working as it should
+**TILTAK**
+* Fjern skjemaet, og lukk bugen (**Børre**).
 
-__TILTAK__
-* Fjern skjemaet, og lukk bugen (__Børre__).
-
-
-!1434	nor	P5	Pre- and	Tomi Pieski	halve ord i ficti pga metainformasjon
+### 1434	nor	P5	Pre- and	Tomi Pieski	halve ord i ficti pga metainformasjon
 Tomi: ccat. Denne vil vi fikse.
 
-__TILTAK__
-* __Tomi__ ser på det så snart det verste PLX er i boks.
+**TILTAK**
+* **Tomi** ser på det så snart det verste PLX er i boks.
 
-!1308	enh	P5	sme lexi	Thomas Omma	Noen deriverte verb viser ikke derivasjon i fst
+### 1308	enh	P5	sme lexi	Thomas Omma	Noen deriverte verb viser ikke derivasjon i fst
 Denne har Thomas ikkje kommentert.
 
-!1468	nor	P5	sme lexi	Thomas Omma	Når går vi rra isme.fst til isme-norm.fst i testskriptene?
+### 1468	nor	P5	sme lexi	Thomas Omma	Når går vi rra isme.fst til isme-norm.fst i testskriptene?
 Status?
 
-!1469	nor	P5	sme lexi	Thomas Omma	Hvordan gjør vi med adjektiver som har bare komparasjonsformer?
+### 1469	nor	P5	sme lexi	Thomas Omma	Hvordan gjør vi med adjektiver som har bare komparasjonsformer?
 
 P5 er for lågt her. 
 
-__TILTAK__
-* Sjå på handsaminga av denne. (__Thomas, Sjur__)
+**TILTAK**
+* Sjå på handsaminga av denne. (**Thomas, Sjur**)
 
-!1363	nor	P4	sme lexi	Thomas Omma	Om Der/lága? og Der/lágan og #
+### 1363	nor	P4	sme lexi	Thomas Omma	Om Der/lága? og Der/lágan og #
 Denne må vi sjå på. Det går ikkje eksplisitt fram av buggen korfor vi treng # der.
 
-__TILTAK__
-* Avklare # (__Thomas__)
+**TILTAK**
+* Avklare # (**Thomas**)
 
-!1344	nor	P4	Infrastr	Sjur Nørstebø Mos...	Allegro-taggen skal være obligatorisk for dict-isme-norm.fst
+### 1344	nor	P4	Infrastr	Sjur Nørstebø Mos...	Allegro-taggen skal være obligatorisk for dict-isme-norm.fst
 Dette er "för neste ordbok" -- Makefil til Sjur.
 
 Framlegg frå Sjur: Vente med denne til etter ny infra. Sjur har skrive i bz.
 
-!1022	nor	P4	Pre- and	Børre Gaup	"Hardt" dobbelt mellomrom og konvertering av korpus
+### 1022	nor	P4	Pre- and	Børre Gaup	"Hardt" dobbelt mellomrom og konvertering av korpus
 Denne er framleis open. 
 
-__TILTAK__
+**TILTAK**
 
 Sjur har ein plan, og ser på den. Soft Hyphen skal bli eit tomt xml-element, dette er 
 korpuskonvertering, og ikkje lexc-sak.
 
-!1530	enh	P5	Document	Børre Gaup	Translate and improve Windows 7 instructions
+### 1530	enh	P5	Document	Børre Gaup	Translate and improve Windows 7 instructions
 * Trond: Dette er for så vidt ikkje ei gt-sak, men vi får den i fanget av folk rundt oss.
 * Sjur: Takk for den :-)
 
-__TILTAK__
-* Forbetre doku (__Børre__)
+**TILTAK**
+* Forbetre doku (**Børre**)
 * Pri opp til P4 eller P3.
 
-!1300	cri	P5	Infrastr	Sjur Nørstebø Mos...	paradigm generation for some words dont work
+### 1300	cri	P5	Infrastr	Sjur Nørstebø Mos...	paradigm generation for some words dont work
 Dette er ein kasteball mellom Sjur og Trond. Status?
 
 Vi gjekk gjennom denne på møtet.
 
 Kommentar på bz, test og kommenter. Så er det andre språk.
 
-!348	nor	P4	Document	Børre Gaup	Corpus usage and account application needs to be documented
+### 348	nor	P4	Document	Børre Gaup	Corpus usage and account application needs to be documented
 
 Denne er open. Men vi ventar til etter speller / FAD / etc. ==> over nyttår.
 
+##  Ikkje like viktig / på vent
 
-
-
-!! Ikkje like viktig / på vent
-
-!1524	blo	P2	Infrastr	Tommi A Pirinen	Half the newinfra languages do not compile (java problem)
+### 1524	blo	P2	Infrastr	Tommi A Pirinen	Half the newinfra languages do not compile (java problem)
 Awaiting Tommi, working on his PhD.
 
-!1063	nor	P3	sme morp	Tomi Pieski	downcase-derived-proper.xfst doesnt allow initial upper case letter
+### 1063	nor	P3	sme morp	Tomi Pieski	downcase-derived-proper.xfst doesnt allow initial upper case letter
 Lauri --> Trond.
 
-!519	nor	P5	Infrastr	Tomi Pieski	sme-norm.fst and nonrec-sme.fst differs in what baseforms they recognise
+### 519	nor	P5	Infrastr	Tomi Pieski	sme-norm.fst and nonrec-sme.fst differs in what baseforms they recognise
 Denne er for Sjur og Tomi.
 
-!1450	enh	P5	Infrastr	Sjur Nørstebø Mos...	paragstest2document.xsl produces 3500 broken links
-... og testkommandoen er {{forrest site}}. 
-__Trond__ køyrer den for gt, og Sjur (og Børre) ser på forrest etterpå.
+### 1450	enh	P5	Infrastr	Sjur Nørstebø Mos...	paragstest2document.xsl produces 3500 broken links
+... og testkommandoen er `forrest site`. 
+**Trond** køyrer den for gt, og Sjur (og Børre) ser på forrest etterpå.
 
-!1267	nor	P5	Komi	Sjur Nørstebø Mos...	OOo Latin vs. ukom, why dont they recognize the same things?
+### 1267	nor	P5	Komi	Sjur Nørstebø Mos...	OOo Latin vs. ukom, why dont they recognize the same things?
 Query sent to Jaska. -- and closed.
 
-
-!!! Kone Foundation languages
+#  Kone Foundation languages
 
 We looked at different issues related to the languages in the Kone Foundation project
 
-__TODO__
+**TODO**
 
-* Discuss common issues, have closer cooperation (__Jaska, Sjur, Trond__)
+* Discuss common issues, have closer cooperation (**Jaska, Sjur, Trond**)
 
-
-!! Stress marking in mrj (Moksha Mordvin)
+##  Stress marking in mrj (Moksha Mordvin)
 
 Ref. revision 66586
 
@@ -228,7 +221,7 @@ Stress mark should be part of the stem, and then removed when not needed
 It is needed for generation, e.g. for speech synthesis.
 
 Rather than this
-{{{
+```
       <lg>
          <l>кашар</l>
          <stg>
@@ -236,28 +229,24 @@ Rather than this
          </stg>
          <stress>каша•р</stress>
       </lg>
-}}}
+```
 
 we would suggest this:
 
-{{{
+```
       <lg>
          <l>кашар</l>
          <stg>
             <st Contlex="AdjTag">каша•р</st>
          </stg>
       </lg>
-}}}
+```
 
 ... and then delete the stressmark in all present applications, but have it on hold for TTs.
 
-
-!!! Derived verbs as separate POS (myv, Erzia Mordvin)
+#  Derived verbs as separate POS (myv, Erzia Mordvin)
 
 Revision 66621.
 
-We do not want separate POS for derived lemmata. Rather than {{DV_N}} we want {{+V...+Der/...+N...}}
+We do not want separate POS for derived lemmata. Rather than `DV_N` we want `+V...+Der/...+N...`
 The point is that also derived lemmata deserve a fresh start.
-
-
-

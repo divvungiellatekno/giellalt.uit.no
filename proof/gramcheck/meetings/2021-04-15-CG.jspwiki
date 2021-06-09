@@ -3,12 +3,12 @@
 
 Linda, Inga
 
-
 subj-verb-kongrueansanjuolggadusat:
 
 "j" váljju:
  --- li>lij --- Prs Pl3> Prs Sg3
  --- bælosti >bælostij -- Prs Pl3 > Prs Sg3
+
  
  --- i>ij --- Prs Sg2>Prs Sg3
  --- viertti>vierttij --- Prs Sg2> Prs Sg3
@@ -44,6 +44,7 @@ Prt Sg2> Prt Sg3
 ij
 
     # left subj
+
     
 ADD:real-PrsPl3-PrsSg3 (&real-PrsPl3-PrsSg3) TARGET IT-V - Gram/3syll OR ( "liehket" )  IF (0 (Prs Pl3)) (*-1 (Pron Nom Sg3) OR (N Nom Sg) OR (Pron Nom Sg) LINK NEGATE *-1 CC BARRIER NOT-NPMOD LINK -1 (Nom Sg))  (NEGATE *1 (Pron Nom Pl3) OR (N Nom Pl))(NEGATE 0 (Prs Sg3)) ;
 
@@ -59,15 +60,13 @@ ADD:real-PrsPl3-PrsSg3 (&real-PrsPl3-PrsSg3) TARGET IT-V - Gram/3syll OR ( "lieh
     #$ Suv mielas li Inga ja suv vielja ilá materialistisk.
     #$ Suv mielas Inga ja suv vielja li ....
 
-
 echo "Suv mielas sån li ilá materalistisk." | tools/grammarcheckers/modes/trace-smjgram-dev.mode
-
 
     # real word error, missing j for -it verbs
     # ----------------------------------------
+
     
 LIST IT-V = (".*it"r);
-
 
 ADD:real-ActioGen-PrtPl1 (&real-ActioGen-PrtPl1) TARGET IT-V - Gram/3syll IF (0 (Actio Gen)) (NEGATE *0 VFIN BARRIER S-BOUNDARY-OPEN ) ; 
 
@@ -78,6 +77,5 @@ COPY:real-ActioGen-PrtPl1 (Ind Prt Pl1 &SUGGEST) EXCEPT (Actio Gen) TARGET (&rea
 
 Sávvan son boahtá odne.
 VFIN SUBJ/Pcle VFIN
-
 
 ADD:syn-number_congruence-subj-verb (&syn-number_congruence-subj-verb) TARGET

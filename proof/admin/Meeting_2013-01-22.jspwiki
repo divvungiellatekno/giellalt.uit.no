@@ -1,104 +1,109 @@
-!!!Speller meeting
+# Speller meeting
 
 What is needed for a new release:
 * a working installer
 * working plx conversion
 
-!!!Installer
+# Installer
 
 Tino has mailed us about his latest finding: his WiX installer works if the user has never opened MS Office before, but after the first invocation of any Office application, it doesn't work anymore using HKLM. Instead the tools must be registered for each user. He is working on a solution.
 
-__DONE:__
+**DONE:**
 
-__TODO:__
-* test Tino's analysis of the installer problem (__Børre__)
-* look at combinations of Windows XP and Office (__Børre__)
-* get a proper MS certificate, to remove the warning users get when installing (__Børre__)
+**TODO:**
+* test Tino's analysis of the installer problem (**Børre**)
+* look at combinations of Windows XP and Office (**Børre**)
+* get a proper MS certificate, to remove the warning users get when installing (**Børre**)
 
-__POSTPONED:__
-* find an outsourcing option (__Børre, Sjur__)
-* next week: try updating NSIS ourselves (__Børre, Sjur__)
-** using Tino's documentation & old docu's from PLX
-* send a request to an NSIS developer e-mail list (__Sjur__)
-* try to find an NSIS script for building MSI packages (__Børre__)
+**POSTPONED:**
+* find an outsourcing option (**Børre, Sjur**)
+* next week: try updating NSIS ourselves (**Børre, Sjur**)
+    - using Tino's documentation & old docu's from PLX
+* send a request to an NSIS developer e-mail list (**Sjur**)
+* try to find an NSIS script for building MSI packages (**Børre**)
 * add Windows 8 support to our installer (if possible)
 
 Remaining PLX bugs:
 
-!!First PRI
-||REGRESSIONS
-| cases not recognized | čikčiin, bahkkejeaddjit, geavaheddjiide, buvttadeddjiide, láidesteaddjin | 376,412,426,452,932 | FIXED already
+## First PRI
+|  REGRESSIONS
+| --- 
+|  cases not recognized | čikčiin, bahkkejeaddjit, geavaheddjiide, buvttadeddjiide, láidesteaddjin | 376,412,426,452,932 | FIXED already
 
-||REGRESSIONS
-| doesn't follow cmp-tags | sámedikkepresideanta, ránubiellu, eaŋkiladoaibma  etc etc etc         | 489,535,359,1544
+|  REGRESSIONS
+| --- 
+|  doesn't follow cmp-tags | sámedikkepresideanta, ránubiellu, eaŋkiladoaibma  etc etc etc         | 489,535,359,1544
 
+## Second PRI
+|  prop-cmp-suggestions	  | Anar-julggaštusa>ASA-julggaštusa (Anár-)| 609
+|  right cmp-tags		  | muorrajogamuorra not accepted           | 840		   | FIXED	
+|  suggestions			  | dábálaš0:in					   	        | 642
 
-!!Second PRI
-| prop-cmp-suggestions	  | Anar-julggaštusa>ASA-julggaštusa (Anár-)| 609
-| right cmp-tags		  | muorrajogamuorra not accepted           | 840		   | FIXED	
-| suggestions			  | dábálaš0:in					   	        | 642
+|  REGRESSIONS - compounds
+| --- 
+|  alph+clitic             | `*sbat`  - we don't want clitics here     | 1544          | FIXED
+|  alph+clitic             | `*gčhan` - we don't want clitics here     | 1544
 
-||REGRESSIONS - compounds
-| alph+clitic             | {{*sbat}}  - we don't want clitics here     | 1544          | FIXED
-| alph+clitic             | {{*gčhan}} - we don't want clitics here     | 1544
-
-
-!!Second Last PRI
+## Second Last PRI
 
 Bugs from here on can be left out of the next release if we are short on time.
 
-||Compounds
-| num cmp:s on 0-         | 051-nummarat             | 631
-| multipart/long cmps Left| stobustávrrádilli        | 786          | FIXED
-| multipart/long cmps Left| Ássanrievttijođiheaddjái | 819          | FIXED
+|  Compounds
+| --- 
+|  num cmp:s on 0-         | 051-nummarat             | 631
+|  multipart/long cmps Left| stobustávrrádilli        | 786          | FIXED
+|  multipart/long cmps Left| Ássanrievttijođiheaddjái | 819          | FIXED
 
-!!Last PRI
+## Last PRI
+
  
-||Capitals
-| doesn't understand caps | 1700-LOHKU | 647
+|  Capitals
+| --- 
+|  doesn't understand caps | 1700-LOHKU | 647
 
 ----
 
-||Low priority regressions
-| single letter suggestions | đ | 461      | FIXED
+|  Low priority regressions
+| --- 
+|  single letter suggestions | đ | 461      | FIXED
 
 Why sámedikkepresideanta is so problematic - it conflicts with other patterns for nouns in the same class/position:
-{{{
+```
 stobustávrrádilli - *NB GaBO NaAE
 stobustávrádilli  - *NB NABO NaAE
-}}}
+```
 
-__DONE:__
-* __Tomi__ has solved almost all PLX bugs
+**DONE:**
+* **Tomi** has solved almost all PLX bugs
 
-__TODO:__
-* solve the remaining PLX bugs: (__Tomi__)
-** fix Anár, even if it means that Sirpmá-skuvla is back
-** block numbers from all compounds except when first (BI)
-** fix sámedikkepresideanta, even if it makes other regressions (they are less important)
-** fix gčhan
+**TODO:**
+* solve the remaining PLX bugs: (**Tomi**)
+    - fix Anár, even if it means that Sirpmá-skuvla is back
+    - block numbers from all compounds except when first (BI)
+    - fix sámedikkepresideanta, even if it makes other regressions (they are less important)
+    - fix gčhan
 
-!!!Release status
+# Release status
 
 We are very close to release quality, there is good hope that the remaining bugs will be fixed this week.
 
-__DONE:__
+**DONE:**
 
-__TODO:__
-# build a new speller with the remaining bug fixes (__Tomi__)
-# test against gold standard corpus (__Sjur__)
-# release RC2 January 21 (__Sjur__)
-# if no new serious bugs are found, release as Divvun 2.3 next week (__all__)
-## update list of known bugs
-## write a short press release emphasising the linguistic updates for North Sámi, and noting that we still have certain problems with Win7/Office2010
+**TODO:**
+1. build a new speller with the remaining bug fixes (**Tomi**)
+1. test against gold standard corpus (**Sjur**)
+1. release RC2 January 21 (**Sjur**)
+1. if no new serious bugs are found, release as Divvun 2.3 next week (**all**)
+    1. update list of known bugs
+    1. write a short press release emphasising the linguistic updates for North Sámi, and noting that we still have certain problems with Win7/Office2010
 
-!!!Updated release plan
+# Updated release plan
 
 * New deadline January 21:
-** PLX bugs solved
+    - PLX bugs solved
 * January 21: RC2, NSIS installer
 * January 25: Divvun 2.3 release, SME linguistic updates, NSIS installer, updated user documents
 
-!!!Next meeting
+# Next meeting
 
 Monday 15.1 at 13.30

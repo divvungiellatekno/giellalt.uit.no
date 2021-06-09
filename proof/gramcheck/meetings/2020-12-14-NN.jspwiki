@@ -14,7 +14,6 @@ python3 -m onmt.bin.preprocess -train_src src-train.txt -train_tgt tgt-train.txt
 [2020-12-14 15:32:14,557 INFO]  * src vocab size: 24997.
 [2020-12-14 15:32:14,741 INFO] Building & saving validation data...
 
-
 mkdir data
 mkdir brnn #bi-directional recurrent neural network
 python3 -m onmt.bin.preprocess -train_src src-train.txt -train_tgt tgt-train.txt -valid_src src-val.txt -valid_tgt tgt-val.txt -save_data data/vocabulary
@@ -24,7 +23,6 @@ python3 -m onmt.bin.train -data data/vocabulary -save_model brnn/nmt-model -enco
 lastmodel=$( ls -t brnn/*.pt | head -1 )
 
 python3 -m onmt.bin.translate -model $lastmodel -src source_test.txt -output brnn_pred.txt -replace_unk
-
 
 * every 10.000 steps there will be results in the brnn-folder
 * and it will be there even if I kill it
@@ -68,7 +66,6 @@ Leansmánni Knut Gullberg ii leat vuos sihkar ovddiduvvo go eaiggáda vuostá r�
 Guovdageainnu/Máze nominašuvdnačoahkkin lea duvdilan Ole Henrik Magga nuppi sadjái sámediggeválgalisttus.
 Bargiidbellodaga joavkojođiheaddji Magnhild Mathisen dovddaha ahte sii meannudedje preassadoarjjaášši beare oktageardánit.
 
-
 [
     [
         {"error":"gáhtta bargit",
@@ -78,7 +75,6 @@ Bargiidbellodaga joavkojođiheaddji Magnhild Mathisen dovddaha ahte sii meannude
 
 Error mark-up:
 https://giellalt.uit.no/proof/spelling/testdoc/error-markup.html
-
 
 earáláhkái --- Err/Unspace > eará láhkái
 

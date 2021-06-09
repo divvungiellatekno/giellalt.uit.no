@@ -1,10 +1,10 @@
-!!!Grammatikkontrollmøte 8.6.2016
+# Grammatikkontrollmøte 8.6.2016
 
-!!Særskrivingsfeil
+## Særskrivingsfeil
 
 atnu Sg Nom + N -- atnuprográmmat = bruksprogrammer
 
-{{{
+```
     * (1 Loc LINK *-1 COPULAS + Sg) - Nom Sg SUBJ - PLACE - 
     ii/sáhttá leat (Pl1 Pl3 Inf ConNeg) atnu programmain 
     * (1 Gen LINK *-1 COPULAS + Sg)
@@ -25,77 +25,72 @@ atnu Sg Nom + N -- atnuprográmmat = bruksprogrammer
     #$ Ándd e-Márgget lei geahččalan cagahit heakkas searvvi , earát sáhtte álkibut dohkkehit ahte diekkárii ii lean     atnu guovllus     .
     ## Danne galggašii leat čielggas ahte giddodaga dábálaš     atnu eana-     ja vuovdedoallun ja mii gullá dákkár doibmii nugo lea dábálaš orohagas , ii galgga mearrádus dábálaččat heađuštit .
 
-
-
 "<Dáža>"
         "dáža" N Sem/Hum Sg Gen @>N MAP:16234:r227 SELECT:17941:r3504 #2->2
-;       "dáža" N Sem/Hum Sg Gen Allegro REMOVE:3387
-;       "dáža" N Sem/Hum Sg Acc @OBJ> MAP:17374:IfNoTransV< SELECT:17941:r3504
-;       "dáža" N Sem/Hum Sg Nom @SUBJ> MAP:17252 SELECT:17941:r3504
+* **"dáža" N Sem/Hum Sg Gen Allegro REMOVE**: 3387
+* **"dáža" N Sem/Hum Sg Acc @OBJ> MAP:17374:IfNoTransV< SELECT:17941**: r3504
+* **"dáža" N Sem/Hum Sg Nom @SUBJ> MAP:17252 SELECT:17941**: r3504
 "<ássanguovlluid>"
         "ássanguovlu" N Sem/Plc Err/Orth Pl Gen @>N MAP:16234:r227 SELECT:17927:r3500 #3->3
         "ássanguovlu" N Sem/Plc Pl Gen @>N MAP:16234:r227 SELECT:17927:r3500 #3->3
-;       "ássanguovlu" N Sem/Plc Err/Orth Pl Acc @OBJ> MAP:17374:IfNoTransV< SELECT:17927:r3500
-;       "ássanguovlu" N Sem/Plc Pl Acc @OBJ> MAP:17374:IfNoTransV< SELECT:17927:r3500
+* **"ássanguovlu" N Sem/Plc Err/Orth Pl Acc @OBJ> MAP:17374:IfNoTransV< SELECT:17927**: r3500
+* **"ássanguovlu" N Sem/Plc Pl Acc @OBJ> MAP:17374:IfNoTransV< SELECT:17927**: r3500
 "<atnu>"
         "atnu" N <TH-Ill-Any> Sem/Dummytag Sg Nom @SUBJ> MAP:17252 &compound-atnu #4->4 ADD:4424:compound-atnu ADD:4424:compound-atnu
 "<Meara>"
         "mearra" N Sem/Plc Sg Gen @>N MAP:16240:r229 #5->5
-;       "mearrat" V TV Ind Prs ConNeg REMOVE:9356:NotConNegNotNeg
-;       "mearrat" V TV Imprt ConNeg REMOVE:9356:NotConNegNotNeg
-;       "mearrat" V TV Imprt Sg2 REMOVE:9395:NotImprtN
-;       "mearrat" V TV VGen REMOVE:9552:r1842
-;       "mearra" N Sem/Plc Sg Acc @OBJ> MAP:17374:IfNoTransV< REMOVE:17735:r3440
+* **"mearrat" V TV Ind Prs ConNeg REMOVE:9356**: NotConNegNotNeg
+* **"mearrat" V TV Imprt ConNeg REMOVE:9356**: NotConNegNotNeg
+* **"mearrat" V TV Imprt Sg2 REMOVE:9395**: NotImprtN
+* **"mearrat" V TV VGen REMOVE:9552**: r1842
+* **"mearra" N Sem/Plc Sg Acc @OBJ> MAP:17374:IfNoTransV< REMOVE:17735**: r3440
 "<buorre>"
         "buorre" A Sem/Hum Sg Nom @>N MAP:15792:CaseAgrBuorre #6->6
 "<guollebivdu>"
         "guollebivdu" N Sem/Act Sg Nom @SUBJ> MAP:17252 #7->7
 "<dat>"
         "dat" Pcle @PCLE SELECT:4821:r895 MAP:15543:r16 #8->8
-;       "dat" Pron Dem Sg Nom SELECT:4821:r895
-;       "dat" Pron Dem Pl Nom SELECT:4821:r895
-}}}
+* **"dat" Pron Dem Sg Nom SELECT:4821**: r895
+* **"dat" Pron Dem Pl Nom SELECT:4821**: r895
+```
 
-!!Strategiar for å disambiguera særskriving vs å unngå falske alarmar
+## Strategiar for å disambiguera særskriving vs å unngå falske alarmar
 
 1. Leksikaliser alle særskrivingskandidatar i korpuset:
 
-# lag monogram og bigram av korpuset med frekvensinfo
-# monogram med høgare frekvens enn tilsvarande bigram (for særskriving) blir leksikalisert
-# bigram med høgare frekvens enn tilsvarande monogram er moglege falske alarmar, og går inn i eit cg-sett for ein forsiktig-modus
+1. lag monogram og bigram av korpuset med frekvensinfo
+1. monogram med høgare frekvens enn tilsvarande bigram (for særskriving) blir leksikalisert
+1. bigram med høgare frekvens enn tilsvarande monogram er moglege falske alarmar, og går inn i eit cg-sett for ein forsiktig-modus
 
 alternativ formulering:
 * finn frekvenslister med bigram og unigram frå sme-korpus
 * lag ei liste der unigramfrekvens>>bigramfrekvens>1, desse bør leksikaliserast slik at dei blir plukka opp av tokenise
 * lag éi liste der bigramfrekvens>>unigramfrekvens>1, desse bør inn i ei LIST farlege-bigram = "ord1 ord2" … ; i mwe-disamb.cg3
 
-
-
 leksikaliserte sammensetninger som er mindre frekvente en den særskrevne varianten
 
-
-!! Litt feilanalyse, ting som må ordnast i lexc
+##  Litt feilanalyse, ting som må ordnast i lexc
 
 Kvifor får denne Err/SpaceCmp??
-{{{
+```
 "<ovddasvástádus go>"
         "ovddasvástádus" Err/Orth N Sem/Perc-emo Sg Nom Qst Err/Spellrelax Err/SpaceCmp <W:0>
-}}}
+```
 Skjer òg med Foc/ge.
 
 Kommando for å laga enkel frekvensliste over ting som får særskrivingsanalysar
 frå hfst-tokenise:
 
-{{{
+```
 $ cat sme.corpus.txt | hfst-tokenise \
 --giella-cg $GTHOME/langs/sme/tools/preprocess/tokeniser-gramcheck-gt-desc.pmhfst \
-| cg-conv -N 2>/dev/null |grep -v $'Qst\|Foc\|^\t'|grep Err/SpaceCmp \
-| cut -f1 | sort | uniq -c | sort -nr 
-}}}
+|  cg-conv -N 2>/dev/null |grep -v $'Qst\|Foc\|^\t'|grep Err/SpaceCmp \
+|  cut -f1 | sort | uniq -c | sort -nr 
+```
 
 t.d. [http://sprunge.us/LZIK] der dei mest frekvente (og dermed sannsynlege
 falske alarmar) er:
-{{{
+```
   55 Dasa lassin
   42 boahtte jagi
   40 dán jagáš
@@ -112,7 +107,7 @@ falske alarmar) er:
   13 Dán jagáš
   12 mannan vahkku
   12 guhkit áigge
-}}}
+```
 
 Merk at minst 481 av 1431 har Err/Spellrelax – Err/Spellrelax bør kanskje ikkje kunna stå saman med Err/Spacecmp? Eventuelt fjern tidleg i CG. 
 

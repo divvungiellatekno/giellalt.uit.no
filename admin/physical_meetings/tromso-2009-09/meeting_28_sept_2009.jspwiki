@@ -1,4 +1,4 @@
-!!!HFST-orientering
+# HFST-orientering
 
 * Krister orienterade om situationen för HFST; nästa huvudversion lanseras nästa vecka, men kod finns att tillgå på hfst.sourceforge.net
 * Måns orienterade om Foma
@@ -11,25 +11,25 @@
 * ta fram de engelska lexikonen (Wordnet-lexikonet och Arizona-leksikonet) (Måns)
 * göra en första skiss till ProofingLib som diskussionsunderlag för nästa möte (Sjur)
 
-!!!HFST
+# HFST
 Next main release this week (hfst.sourceforge.net), Oct. 1.
 * It works cross-platform autoconf, automake etc. twolc, lexc, xfst-type compilers
 * They are not compatible in the sense that you can use the own commands.
 *ou need a new Makefile.
 * support for flag diacritics
 
-!!!Foma
+# Foma
 For all languages that don't use twolc, we may just replace xfst with foma. 
 *  But beware lexc - you have to replace calls to the lexc tool to equivalent operations in xfst/foma.
 
 Issues:
-{{{
+```
 foma[1]: save-source ../bin/ipk-lex.save 
 Unknown command. Ignoring until end of line.
 foma[1]: quit 
-}}}
+```
 
-!!!FSTs in OOo etc. proofing tools
+# FSTs in OOo etc. proofing tools
 
 IXA Group:
 
@@ -42,40 +42,39 @@ Possibly involve them in the discssion about a new generation proofing/correctio
 
 ftyers@prompsit.com
 
-
-!!!Agenda
+# Agenda
 
 * Iñupiaq - make it compile both with foma and xfst (an excercise in foma compatibility)
 
-
-!!Changes between xfst/lexc and foma
+## Changes between xfst/lexc and foma
 
 * Comments -- foma does not like comments in regex [[ ... ] -- need to be removed
 * echo statements -- foma does not like blank echo statements.
 * in read regex [[ ... ] the compose .o. operator needs a _space_ both sides, so
 
-{{{
+```
     read regex [
      Foo
     .o. Bar
+
     
     ] ;
-}}}
+```
 is not ok unless there is a space after Foo.
 
 * redirection: foma does not accept < in front of filenames when reading files
 * the 'read regex' command needs to be terminated with a semicolon - ;
 
-!!Foma feature requests
+## Foma feature requests
 
 * Warnings upon attempting to load binaries compiled with Xerox tools.
 * better and more error messages
 
-!!Pending questions
+## Pending questions
 
 What is wrong with this: 
-{{{
+```
     LEXICON f
     < "@D.[IT]V.ON@" >  # ; ! Deletes unwated iv/tv combinations xfst style
-}}}
+```
 We get a syntax error message with double quotes, removing the quotes removes the error message, but leaves the flag diacritic in a wrong form, and it does not appear in the alphabet.

@@ -1,4 +1,3 @@
-
 CG-workshop 18.11.2020
 
 dii. 10:30-12:15
@@ -7,28 +6,27 @@ Linda, Inga, Marja-Liisa
 
 * fáddá: adjeaktiivva attributiiva ja predikatiiva hámit
 
-
 ássje l gássjelis (attr) munji > ássje l gássjel munji
 Mij tjuovojma roaŋkok (pred) bálggáv > Mij tjuovojma roaŋkogis bálggáv
-
 
 Anársámegiel akkusatijva passiivacealkagiid subjektii.
 kásusmeattáhus man ollu konstrukšuvnnas
 
     ## Mii leat dávjá ságastallan dán golmma alit, rukses, ruoná ja ihána stuorra diŋgga birra.
 
-
     ## Su namma lea Emma Elliane, lea beare 16 jagi {boares} ja lea ge jo almmuhan vuosttaš CD-skearru.
 
 SET CASE = Nom OR Gen OR Acc OR Ine OR Ill OR Ela OR Com OR Ess ;
 
 LIST &msyn-pred-attr = &msyn-pred-attr ;
+
     
 ADD:msyn-pred-attr (&msyn-pred-attr) TARGET  A + CASE  IF (NEGATE 0 Attr) (*1 N + CASE OR A + CASE BARRIER (A Attr)) ;
 COPY:msyn-pred-attr (Attr &SUGGEST) EXCEPT (Sg Nom &msyn-pred-attr) TARGET (&msyn-pred-attr) ;
 COPY:msyn-pred-attr (Attr &SUGGEST) EXCEPT (Sg Gen &msyn-pred-attr) TARGET (&msyn-pred-attr) ;
     ## Mij tjuovojma roaŋkok bálggáv
         we followed a curvy path
+
         
 alit
 alit	alidit+V+TV+Imprt+ConNeg	0,000000
@@ -47,12 +45,12 @@ EOS = end of sentence
 
 "<Mij>"
 	"mån" Pron <smj> <smj> Pers Pl1 Nom <W:0.0> SELECT:1740 SUBSTITUTE:4018 SUBSTITUTE:4017
-;	"mij" Pron Interr Sg Nom <W:0.0> SELECT:1740
-;	"mij" Pron Rel Sg Nom <W:0.0> SELECT:1740
+* **	"mij" Pron Interr Sg Nom <W:0.0> SELECT**: 1740
+* **	"mij" Pron Rel Sg Nom <W:0.0> SELECT**: 1740
 : 
 "<tjuovojma>"
 	"tjuovvot" V <smj> <smj> TV Ind Prt Pl1 <W:0.0> SELECT:1737 MAP:3251 SUBSTITUTE:4013 @+FMAINV SUBSTITUTE:4012
-;	"tjuovvot" V TV Ind Prt Du1 <W:0.0> SELECT:1737
+* **	"tjuovvot" V TV Ind Prt Du1 <W:0.0> SELECT**: 1737
 : 
 "<roaŋkok>"
 	"roaŋkok" A <smj> <smj> Sg Nom <W:0.0> SUBSTITUTE:4010 SUBSTITUTE:4009 &msyn-pred-attr ADD:901:msyn-pred-attr
@@ -68,39 +66,37 @@ roaŋkok+A+Attr	?
 	"." CLB <W:0.0>
 :\n
 
-
 "<ássje>"
 	"ássje" N <smj> <smj> Sem/Semcon Sg Nom <W:0.0> SUBSTITUTE:4011 SUBSTITUTE:4010
-;	"ássje" Err/Orth N Sem/Semcon Sg Nom <W:0.0> REMOVE:4004:errsub
-;	"ássje" N Sem/Semcon Pl Nom <W:0.0> REMOVE:3346
-;	"ássje" N Sem/Semcon Sg Gen <W:0.0> REMOVE:3347
+* **	"ássje" Err/Orth N Sem/Semcon Sg Nom <W:0.0> REMOVE:4004**: errsub
+* **	"ássje" N Sem/Semcon Pl Nom <W:0.0> REMOVE**: 3346
+* **	"ássje" N Sem/Semcon Sg Gen <W:0.0> REMOVE**: 3347
 : 
 "<l>"
 	"liehket" V <smj> <smj> IV Ind Prs Sg3 Clt <W:0.0> MAP:3242 SUBSTITUTE:4013 @+FMAINV SUBSTITUTE:4012
-;	"l" N Sem/Sign ABBR"+Gram/TAbbr" Attr <W:0.0> REMOVE:1380:l
-;	"l" N Sem/Sign ABBR"+Gram/TAbbr" Pl Nom <W:0.0> REMOVE:1380:l
-;	"l" N Sem/Sign ABBR"+Gram/TAbbr" Sg Gen <W:0.0> REMOVE:1380:l
-;	"l" N Sem/Sign ABBR"+Gram/TAbbr" Sg Nom <W:0.0> REMOVE:1380:l
+* **	"l" N Sem/Sign ABBR"+Gram/TAbbr" Attr <W:0.0> REMOVE:1380**: l
+* **	"l" N Sem/Sign ABBR"+Gram/TAbbr" Pl Nom <W:0.0> REMOVE:1380**: l
+* **	"l" N Sem/Sign ABBR"+Gram/TAbbr" Sg Gen <W:0.0> REMOVE:1380**: l
+* **	"l" N Sem/Sign ABBR"+Gram/TAbbr" Sg Nom <W:0.0> REMOVE:1380**: l
 : 
 "<gássjelis>"
 	"gássjel" A <smj> <smj> Sg Nom PxSg3 <W:0.0> SELECT:2362 SUBSTITUTE:4010 ADD:8:Err/Orth COPY:9:Err/Orth SUBSTITUTE:4009 &typo &SUGGEST
 gássjel+A+Sg+Nom+PxSg3	?
 	"gássjel" A <smj> <smj> Sg Nom <W:0.0> SELECT:2362 SUBSTITUTE:4010 ADD:8:Err/Orth COPY:9:Err/Orth SUBSTITUTE:4009 &typo &SUGGEST
 gássjel+A+Sg+Nom	?
-;	"gássjel" A <smj> Sg Nom Err/Orth PxSg3 <W:0.0> SELECT:2362 SUBSTITUTE:4010 &typo ADD:8:Err/Orth REMOVE:4003:errsub
-;	"gássjel" Err/Orth A <smj> Sg Nom <W:0.0> SELECT:2362 SUBSTITUTE:4010 &typo ADD:8:Err/Orth REMOVE:4003:errsub
-;	"gássjel" A Attr <W:0.0> REMOVE:2115
-;	"gássjel" A Sg Acc PxSg3 <W:0.0> SELECT:2362
-;	"gássjel" A Sg Ela <W:0.0> SELECT:2362
-;	"gássjel" A Sg Gen PxSg3 <W:0.0> SELECT:2362
-;	"gássjel" Err/Orth A Attr <W:0.0> REMOVE:2115
+* **	"gássjel" A <smj> Sg Nom Err/Orth PxSg3 <W:0.0> SELECT:2362 SUBSTITUTE:4010 &typo ADD:8:Err/Orth REMOVE:4003**: errsub
+* **	"gássjel" Err/Orth A <smj> Sg Nom <W:0.0> SELECT:2362 SUBSTITUTE:4010 &typo ADD:8:Err/Orth REMOVE:4003**: errsub
+* **	"gássjel" A Attr <W:0.0> REMOVE**: 2115
+* **	"gássjel" A Sg Acc PxSg3 <W:0.0> SELECT**: 2362
+* **	"gássjel" A Sg Ela <W:0.0> SELECT**: 2362
+* **	"gássjel" A Sg Gen PxSg3 <W:0.0> SELECT**: 2362
+* **	"gássjel" Err/Orth A Attr <W:0.0> REMOVE**: 2115
 : 
 "<munji>"
 	"mån" Pron <smj> <smj> Pers Sg1 Ill <W:0.0> SUBSTITUTE:4018 SUBSTITUTE:4017
 "<.>"
 	"." CLB <W:0.0>
 :\n
-
 
 LINDA:
 "<roaŋkok>"
@@ -117,11 +113,8 @@ roaŋkok+Area/SE+A+Attr	roaŋkogis,roaŋkogis
 	"roaŋŋkot" Area/SE V <smj> <smj> IV Ind Prs Sg2 Qst <W:0.0> MAP:3251 SUBSTITUTE:4013 @+FMAINV SUBSTITUTE:4012
 	"roaŋŋkot" Area/SE V <smj> <smj> IV VAbess <W:0.0> MAP:3283 SUBSTITUTE:4013 @<ADVL SUBSTITUTE:4012
 
-
-
 -2   -1 0   1
 SUBJ V  A   ./EOS
-
 
 ADD:msyn-attr-pred (&msyn-attr-pred)  TARGET A IF (0 Nom OR Ess) (1 EOS) ;
     ## Son lea beare 16 jagi boares.
@@ -132,18 +125,14 @@ ADD:msyn-attr-pred (&msyn-attr-pred)  TARGET (A Attr) IF (1 EOS) ;
     #% Tot lii hirmâd stuorrâ.
     #$ Tot lii hirmâd styeres.
 
-
 #% Dat lea issoras stuorra.
 #$ Dat lea issoras stuoris. 
 
 stuorra
 stuorra	stuoris+A+Attr	0,000000
 
-
-
 &msyn-attr-pred:  lea attributiiva- galgá predikatiiva
 &msyn-pred-attr:  lea predikatiiva - galgá attributiiva
-
 
 tools/grammarcheckers/grammarchecker.cg3
 
@@ -155,14 +144,11 @@ svhum-hsl-m0266:lang-smj Inga$  echo "Mij tjuovojma roaŋkok bálggáv." | tools
 grammarchecker.cg3: Error: Attempted to reference undefined set 'Ine' on line 897 near `Ine OR Ill OR Ela OR`!
 Error: Grammar could not be parsed - exiting
 
-
 cd lang-smn
 cd tools/grammarcheckers
 make dev
 
-
 echo "Tot lii hirmâd stuorrâ." | tools/grammarcheckers/modes/trace-smngram-dev.mode
-
 
 "<Tot>"
 	"tot" Pron <smn> <smn> Dem Sg Nom <W:0.0> SUBSTITUTE:7295 SUBSTITUTE:7294
@@ -172,7 +158,7 @@ echo "Tot lii hirmâd stuorrâ." | tools/grammarcheckers/modes/trace-smngram-dev
 : 
 "<hirmâd>"
 	"hirmâd" Adv <smn> <smn> <W:0.0> SELECT:3894:AdvModA2 SUBSTITUTE:7289 SUBSTITUTE:7288
-;	"hirmâd" A Attr <W:0.0> SELECT:3894:AdvModA2
+* **	"hirmâd" A Attr <W:0.0> SELECT:3894**: AdvModA2
 : 
 "<stuorrâ>"
 	"styeres" A <smn> <smn> Attr <W:0.0> SUBSTITUTE:7287 SUBSTITUTE:7286 &msyn-adj-attr-pred &msyn-attr-pred ADD:2397:msyn-adj-attr-pred ADD:2414:msyn-attr-pred
@@ -180,11 +166,10 @@ msyn-adj-attr-pred
 msyn-attr-pred
 	"styeres" A <smn> <smn> <W:0.0> SUBSTITUTE:7287 SUBSTITUTE:7286 Sg Nom &msyn-adj-attr-pred &SUGGEST ADD:2397:msyn-adj-attr-pred COPY:2398:msyn-adj-attr-pred
 styeres+A+Sg+Nom	styeres
-;	"Stuorrâ" N Prop Attr <W:0.0> REMOVE:2262:PropAttrIfPropx
+* **	"Stuorrâ" N Prop Attr <W:0.0> REMOVE:2262**: PropAttrIfPropx
 "<.>"
 	"." CLB <W:0.0>
 :\n
-
 
 buohtastahttit smeain:
 
@@ -208,11 +193,13 @@ LIST MODALS = "leat" "šaddat" "fertet" "galgat" "dáidit" "soaitit" "veadjit" "
     #$ Go buot bivdoávdnasat leat gárvásat, ii leat go vuorddašit goas ja gokko buorre loddensuddi šadda.
     #$ Son lea ieš nai máŋgga háve beahtahallan go lea bivdán veahki, ja ávžžuha danin suohkana dál duođas nissonáššiid bearráigeahččagoahtit.
     # in errors.xml
+
   
 #ADD:msyn-attr-not-pred (&msyn-attr-not-pred) TARGET (A) IF (NOT 0 Attr OR Gen OR @<SPRED LINK NOT 0 (Sg Nom) LINK 0 ADJ_ATTR/NOM OR Comp OR Superl LINK 0 (Sg Nom) LINK *1 CNOUN OR A BARRIER GRAMCHK-NPNH)(NOT 1 Rel) (NEGATE 0 ("buorre") OR ("riekta") OR Ord - ("nubbi"))(NEGATE *0 MODALS BARRIER GRAMCHK-S-BOUNDARY OR GRAMCHK-VFIN) (NEGATE 0 A LINK 1 COMMA OR CC LINK NOT 1 Attr OR Gen)(NEGATE 0 (N Sg Ill)) ;
      #D!
 	#$Seamma lea maiddai maŋemus maid dahkká ovddal manná fas sisa vissui.
     #$ Go buot bivdoávdnasat leat gárvásat, ii leat go vuorddašit goas ja gokko buorre loddensuddi šadda.
+
   
 #ADD:msyn-attr-not-pred (&msyn-attr-not-pred) TARGET (A Sg) IF (NOT 0 Attr OR Gen OR @<SPRED LINK NOT 0 (Sg Nom) LINK 0 ADJ_ATTR/NOM OR Comp OR Superl LINK 1 COMMA OR CC LINK *1 CNOUN OR A BARRIER GRAMCHK-NPNHA)(NOT 1 Rel)  (NEGATE 0 ("buorre") OR Ord - ("nubbi") OR (Adv Sem/Time)) (NEGATE *0 MODALS BARRIER GRAMCHK-S-BOUNDARY OR GRAMCHK-VFIN) (NEGATE 0 A LINK 1 COMMA OR CC LINK NOT 1 Attr OR Gen)(NEGATE 0 (N Sg Ill)) ; 
      #D!

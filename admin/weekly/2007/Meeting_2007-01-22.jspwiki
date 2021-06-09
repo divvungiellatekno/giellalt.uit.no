@@ -1,218 +1,206 @@
-!!!Meeting setup
+# Meeting setup
 
 * Date: 22.01.2007
 * Time: 09.00 Norw. time
 * Place: Where we are
 * Tools: SubEthaEdit, iChat
 
-!!!Agenda
+# Agenda
 
-# Opening, agenda review
-# Reviewing the task list from last week
-# Documentation - divvun.no
-# Corpus gathering
-# Corpus infrastructure
-# Infrastructure
-# Linguistics
-# name lexicon infrastructure
-# Spellers
-# Other issues
-# Summary, task lists
-# Closing
+1. Opening, agenda review
+1. Reviewing the task list from last week
+1. Documentation - divvun.no
+1. Corpus gathering
+1. Corpus infrastructure
+1. Infrastructure
+1. Linguistics
+1. name lexicon infrastructure
+1. Spellers
+1. Other issues
+1. Summary, task lists
+1. Closing
 
-!!!1. Opening, agenda review, participants
+# 1. Opening, agenda review, participants
 
 Opened at 9:39.
 
-Present: __Børre, Maaren, Sjur, Steinar, Thomas, Tomi, Trond__
+Present: **Børre, Maaren, Sjur, Steinar, Thomas, Tomi, Trond**
 
-Absent: __Saara__
+Absent: **Saara**
 
 Agenda accepted as is.
 
-!!!2. Updated task status since last meeting
+# 2. Updated task status since last meeting
 
-!! Børre
+##  Børre
 * continue work on script for automatic testing of the spell checker in Word
-** not done
-* fix {{sme}} texts in corpus this month
-** not done
-* find missing {{nob}} parallel texts in corpus
-** not done
-* translate Windows installer text to {{sme}} and {{smj}}
-** some done
+    - not done
+* fix `sme` texts in corpus this month
+    - not done
+* find missing `nob` parallel texts in corpus
+    - not done
+* translate Windows installer text to `sme` and `smj`
+    - some done
 * work on the Polderland data generation (PLX format conversion)
-** Concentrate on compounding
+    - Concentrate on compounding
 * go through other directories, fix parallelity information for other documents
-** not done
-* add {{sma}} texts to the corpus repository
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not done
+    - not done
+* add `sma` texts to the corpus repository
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - not done
 * other:
-** fixed giellatekno.uit.no forrest. It had a strange bug which led to circular building.
+    - fixed giellatekno.uit.no forrest. It had a strange bug which led to circular building.
 
-
-!! Maaren
+##  Maaren
 * tasks according to Thomas
 **done some
 
-!! Saara
-* fix {{sme}} texts in corpus this month
-** fixed handling of msword document arrays.
-* send aligned, xml {{nob}} texts to __Kristen__
-** will be done finally today.
+##  Saara
+* fix `sme` texts in corpus this month
+    - fixed handling of msword document arrays.
+* send aligned, xml `nob` texts to **Kristen**
+    - will be done finally today.
 * fix problems with xml2lexc if needed
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** fixed couple of preprocessor bugs.
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - fixed couple of preprocessor bugs.
 
-
-!! Sjur
+##  Sjur
 * name lexicon:
-** restructure interface code for easier maintenance, coding and use
-*** some work, found a recently introduced bug in Forrest's handling of HTML
+    - restructure interface code for easier maintenance, coding and use
+        - some work, found a recently introduced bug in Forrest's handling of HTML
     source files (fixed and commited)
-** refactor the rest of the SD-terms editor code
-** implement missing propnouns editing functions
-** implement improvements decided upon in Tromsø
+    - refactor the rest of the SD-terms editor code
+    - implement missing propnouns editing functions
+    - implement improvements decided upon in Tromsø
 * hire linguist and programmer
-** contacted one more candidate for the linguist position; started writing
+    - contacted one more candidate for the linguist position; started writing
    specification for the programmer position
 * get an Intel Mac for testing Windows spellers
-** gave spec to __Børre__ - asked him to do the order
+    - gave spec to **Børre** - asked him to do the order
 * publish corpus contracts and project infra on NoDaLi-sta
-** wrote most of the e-mail for the announcement, but found a couple of loose
+    - wrote most of the e-mail for the announcement, but found a couple of loose
    ends in our infra, that needs to be tied up
-* fix stuorra-oslolaš lower case {{o}}
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* fix stuorra-oslolaš lower case `o`
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 * other tasks:
-** Polderland follow-ups
-** several requests to get clarification on Microsoft Sámi language codes in MS
+    - Polderland follow-ups
+    - several requests to get clarification on Microsoft Sámi language codes in MS
    Office / Mac (2004 & 2008)
 
-
-!! Steinar
+##  Steinar
 * Complete the semantic sets in sme-dis.rle
-** done some work
+    - done some work
 * missing lists
-** done some work
-* report conversion errors to __Saara__
-** not done
+    - done some work
+* report conversion errors to **Saara**
+    - not done
 * Look at the actio compound issue when adding from missing lists
-** not done
+    - not done
 * Go through the Num bugs
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not done
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - not done
 
-
-!! Thomas
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-** not this week
+##  Thomas
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+    - not this week
 * work with compounding
-** worked
-* translate Windows installer to {{sme}} and {{smj}}
-** finished with smj, don't want to think about sme
+    - worked
+* translate Windows installer to `sme` and `smj`
+    - finished with smj, don't want to think about sme
 * lexicalise actio compounds
-** not worked personally
+    - not worked personally
 * Lack of lowering before hyphen: Twol rewrite.
-** not done
+    - not done
 * Go through the Num bugs
-** not done
-* fix stuorra-oslolaš lower case {{o}}
-** not done
+    - not done
+* fix stuorra-oslolaš lower case `o`
+    - not done
 * include basic numbers in the non-recursive transducers
-** done
+    - done
 * implement discontinous case inflection for numbers
-** not done
+    - not done
 * produce correct number base forms in the analyzer
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
-** not any bugs this week
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
+    - not any bugs this week
 
-
-!! Tomi
+##  Tomi
 * add compound stems to the PLX generation
-** done (probably not finished yet)
+    - done (probably not finished yet)
 * add closed POS and clitics to PLX generation
-** done with help from __Børre__
+    - done with help from **Børre**
 * add derivations to the PLX generation
-** not done
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+    - not done
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!! Trond
-* update the {{smj}} proper noun lexicon, and refine the morphological analysis,
+##  Trond
+* update the `smj` proper noun lexicon, and refine the morphological analysis,
   cf. the propernoun-smj-lex.txt (not this week)
-** No.  
-* fix {{sme}} texts in corpus this month
-* find missing {{nob}} parallel texts in corpus, go through Saara's list
-** Not done. Discussed the issue with Børre, but no.
-* report conversion errors to __Saara__
-** Done some, but she is so efficient, it is hard to find errors before she has fixed them
-* Write twol rules for {{sme, smj}} on hyphen-triggered lowering with Thomas
-** Done.
+    - No.  
+* fix `sme` texts in corpus this month
+* find missing `nob` parallel texts in corpus, go through Saara's list
+    - Not done. Discussed the issue with Børre, but no.
+* report conversion errors to **Saara**
+    - Done some, but she is so efficient, it is hard to find errors before she has fixed them
+* Write twol rules for `sme, smj` on hyphen-triggered lowering with Thomas
+    - Done.
 * Go through the Num bugs
-** Some
+    - Some
 * Make numeral testbed
-** Some
-* Get input on {{sma}} hyphenations
-** Sent query, still no answer.
-* include numbers in the non-recursive transducers for {{sme, smj}}
-** Work underway, but the automaton may be circular.
+    - Some
+* Get input on `sma` hyphenations
+    - Sent query, still no answer.
+* include numbers in the non-recursive transducers for `sme, smj`
+    - Work underway, but the automaton may be circular.
 * implement discontinous case inflection for numbers
-** Started thinking, nothing done.
+    - Started thinking, nothing done.
 * produce correct base forms in the analyzer
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
 
-
-!!!3. Documentation
+# 3. Documentation
 
 Missing documentation on corpus access: no link to unrestricted part of corpus
 for download, and no page describing how to apply for access to the corpus.
 
 TODO:
-* write form to request corpus user account (__Børre, Sjur, Trond__)
+* write form to request corpus user account (**Børre, Sjur, Trond**)
 * document how to apply for access to closed corpus, and details on the corpus
-  and its use in general (__Børre, Sjur, Trond__)
+  and its use in general (**Børre, Sjur, Trond**)
 * add short description on our front page on anonymous cvs and corpus access,
-  with links to relevant documentation (__Børre__)
+  with links to relevant documentation (**Børre**)
 
+# 4. Corpus gathering
 
-!!!4. Corpus gathering
-
-__Børre__ had a short look at the new {{sma}} files. Nothing else happened.
+**Børre** had a short look at the new `sma` files. Nothing else happened.
 
 TODO:
-* {{sme}} texts: no new additions, fix corpus errors during this month
-  (__Børre, Trond, Saara__)
-* missing {{nob}} parallel texts should be added if such holes are found
-  (__Børre, Trond__)
-* Go through the list of missing or errouneous {{nob}} texts, based upon
-  __Saara's__ perfect list (__Børre, Trond__)
-* add {{sma}} texts to the corpus repository (__Børre__)
+* `sme` texts: no new additions, fix corpus errors during this month
+  (**Børre, Trond, Saara**)
+* missing `nob` parallel texts should be added if such holes are found
+  (**Børre, Trond**)
+* Go through the list of missing or errouneous `nob` texts, based upon
+  **Saara's** perfect list (**Børre, Trond**)
+* add `sma` texts to the corpus repository (**Børre**)
 
+# 5. Corpus infrastructure
 
+## Alignment
 
-!!!5. Corpus infrastructure
-
-!!Alignment
-
-__TODO:__
+**TODO:**
 * go through other directories, fix parallellity information for other documents
-  (__Børre__)
-** not done
-* when aligned, send aligned, xml {{nob}} texts to __Kristin__ (__Saara__)
-** almost ready
+  (**Børre**)
+    - not done
+* when aligned, send aligned, xml `nob` texts to **Kristin** (**Saara**)
+    - almost ready
 
+## Conversion issues
 
-
-!!Conversion issues
-
-Character encoding errors are vanishing, thanks to __Saara.__ What is left as an
+Character encoding errors are vanishing, thanks to **Saara.** What is left as an
 annoying problem is the pdf cutting of wordforms. 
 
-{{{
+```
 đi iešguđet prográmmasurggiin, mat laktásit dear vvašvuhtii, eallindillái ja sám
 n/depts/Mangf027.pdf.xml:    <p>Kultuvra ja dear vvašvuohta Kultuvra ja dearvvaš
 jat johtui dutkama sámiid eallineavttuid ja dear vvašvuođa birra. Galgá vuoruhit
@@ -221,21 +209,20 @@ idfuolahusa doaibmaplánaruđaiguin (ja mielladear vvašvuođa buoridanplánaru�
 
 Another error type found/still not corrected:
  ánáidgárddiide, giellaoahpahussii ja diehtojuo­ hkin-, ovddidan- ja oaivadanbar
-}}}
-
+```
 
 We have two suggestions for fixing some or most of these errors:
 
-# String replacement in the xsl files, like / vva/vva/ etc.
-# testing the string output of the pdf conversion in the morphological analyser:
+1. String replacement in the xsl files, like / vva/vva/ etc.
+1. testing the string output of the pdf conversion in the morphological analyser:
 
-{{{
+```
 - test each string returned for morphological recognisability
 - if string is not recognised, and the following sting is not recognised either:
   - concatenate the to unrecognised strings, and try again
   - if the concatenation is recognised, then use the concatenated string, if
     not, leave the strings as is
-}}}
+```
 
 Pro/con:
 
@@ -246,91 +233,89 @@ Pro/con:
 * morphological testing is safer, have far better error correction performeance, 
   but will be slower. It also takes some time to set up the procedure.
 
-__TODO:__
-* report conversion errors to __Saara__ (__Trond, Steinar__)
-* Have a look at the two suggestions for pdf mending above (__Saara__)
+**TODO:**
+* report conversion errors to **Saara** (**Trond, Steinar**)
+* Have a look at the two suggestions for pdf mending above (**Saara**)
 
-!!!6. Infrastructure
+# 6. Infrastructure
 
 We need to test it for new corpus users, and external users in general, cf the
 e-mail announcement to the NoDaLi mailing list about to be made ready.
 
 Test tasks:
-* check out anonymous cvs, and try to build the {{sme}} analyzer
+* check out anonymous cvs, and try to build the `sme` analyzer
 * download the open section of the corpus, and try to use it as input to the
-  {{sme}} disambiguator
+  `sme` disambiguator
 * try to apply for a corpus user account, and when the account is created, try
   to use it to analyze some closed parts of the corpus
 
 Instructions:
 * only the ones on our web site - no interference from Børre, Trond or others:-)
 * as soon as you hit a road block, write down the problem as detailed as
-  possible, __then__ go and ask for help, or wait until the problem has been
+  possible, **then** go and ask for help, or wait until the problem has been
   fixed
 
-__TODO:__
+**TODO:**
 * test our infrastructure and documentation - follow the documentation exactly,
-  and find problem areas - report problems to __Børre__. Start: At the front
-  page. (__Steinar__)
-* update and fix our documentation and infrastructure as __Steinar__ finds
-  problem areas (__Børre__)
+  and find problem areas - report problems to **Børre**. Start: At the front
+  page. (**Steinar**)
+* update and fix our documentation and infrastructure as **Steinar** finds
+  problem areas (**Børre**)
 
+# 7. Linguistics
 
-!!!7. Linguistics
-
-!!North Sámi
+## North Sámi
 
 TODO:
-* lexicalise actio compounds. Example: ''vuolggasadji''  vs. ''vuolginsadji''
-  (__Thomas, Maaren, Steinar__)
-* Lack of lowering before hyphen: Twol rewrite. (__Thomas, Trond__)
-** done
-* fix stuorra-oslolaš lower case {{o}} (__Sjur, Thomas, Trond__)
+* lexicalise actio compounds. Example: *vuolggasadji*  vs. *vuolginsadji*
+  (**Thomas, Maaren, Steinar**)
+* Lack of lowering before hyphen: Twol rewrite. (**Thomas, Trond**)
+    - done
+* fix stuorra-oslolaš lower case `o` (**Sjur, Thomas, Trond**)
 
-
-!Numbers:
+### Numbers:
 
 We had a meeting last Friday, memo to be found
-[here|/lang/sme/Numerals.html]
+[here](/lang/sme/Numerals.html)
 
 TODO:
 * discontinous case inflection (but only for maximally three-part compound
-  numerals) ({{viđain/goalmmát/logiin}} and {{guvttiin/logiin/viđain}})
-  (__Thomas, Trond__)
-* produce correct number base forms in the analyzer (__Thomas, Trond__)
+  numerals) (`viđain/goalmmát/logiin` and `guvttiin/logiin/viđain`)
+  (**Thomas, Trond**)
+* produce correct number base forms in the analyzer (**Thomas, Trond**)
 * include numbers in the non-recursive transducers (i.e. split the recursive and 
-  the non-recursive part of the numerals) (__Trond, Thomas__)
-** done
-* Set up test bed for numerals, test and revise (__who?__)
-** test bed ready - __Trond__ did it
-* Make a test bed {{make num-paradigm}} (__Trond__)
-** done
-* Go through the Num bugs (__Trond, Thomas, Steinar__)
+  the non-recursive part of the numerals) (**Trond, Thomas**)
+    - done
+* Set up test bed for numerals, test and revise (**who?**)
+    - test bed ready - **Trond** did it
+* Make a test bed `make num-paradigm` (**Trond**)
+    - done
+* Go through the Num bugs (**Trond, Thomas, Steinar**)
 * Preprocessing of ordinals at the end of sentences - reported as bug #368.
-  (__Trond__)
-** discussed
+  (**Trond**)
+    - discussed
 
 Classification of compounding with numerals:
 
-{{{
+```
 Num N   ok golbmafanas
 N   Num R not fanasgolbma
-}}}
+```
 
-{{Num Num}} is a restricted type of compounding, very different from free
-compounding. {{Num Num}} is also already implemented in the transducer, but left
+`Num Num` is a restricted type of compounding, very different from free
+compounding. `Num Num` is also already implemented in the transducer, but left
 out, due to circularity.
 
 Written long numerals are marginal, we may consider generating some. Syntax:
 
-{{{
+```
 * 1-9 + thousand + 1-9 + hundred +
     { 1-9 + ten +  1-9 / 1-9 + teen / 1-9 twenty + 1-9 }
-}}}
+```
 
 From our corpus:
 
-{{{
+```
       1 golmma#beaivásaš
      10 golmma#geardán
       2 golmma#geardásaš
@@ -345,61 +330,57 @@ From our corpus:
       2 golmma#oktasaš
       6 golmma#riika
       5 golmma#čiegat
-}}}
+```
 
-!Hyphenation problem
-
-TODO:
-
-* ask Ove Lorentz to report on our {{sma}} hyphenator (__Trond__)
-** Still waiting for an answer
-
-
-
-!!Lule Sámi
+### Hyphenation problem
 
 TODO:
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt
-  (__Thomas, Trond__)
-* Lack of lowering/fronting before hyphen: Twol rewrite. (__Thomas, Trond__)
-* include numbers in the non-recursive transducers (__Thomas, Trond__)
-** done
-* Set up a test bed for numerals, test and revise (__Trond__)
 
+* ask Ove Lorentz to report on our `sma` hyphenator (**Trond**)
+    - Still waiting for an answer
 
-!!!8. Name lexicon infrastructure
+## Lule Sámi
+
+TODO:
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt
+  (**Thomas, Trond**)
+* Lack of lowering/fronting before hyphen: Twol rewrite. (**Thomas, Trond**)
+* include numbers in the non-recursive transducers (**Thomas, Trond**)
+    - done
+* Set up a test bed for numerals, test and revise (**Trond**)
+
+# 8. Name lexicon infrastructure
 
 Decisions made in Tromsø can be found in [the meeting
 memo.|/admin/physical_meetings/tromso-2006-08-propnoun.html]
 
 Postponed:
-* data synchronisation between [risten.no|http://www.risten.no] and the cvs repo
+* data synchronisation between [risten.no](http://www.risten.no) and the cvs repo
 
 TODO:
-# restructure interface code for easier maintenance, coding and use
-## well under way, still some work
-### continued
-# finish first version of the editing (__Sjur__)
-# test editing of the xml files. If ok, then: (__Sjur, Thomas, Trond__)
-# make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
+1. restructure interface code for easier maintenance, coding and use
+    1. well under way, still some work
+        1. continued
+1. finish first version of the editing (**Sjur**)
+1. test editing of the xml files. If ok, then: (**Sjur, Thomas, Trond**)
+1. make terms-smX.xml <=== automatically from propernoun-sme-lex.xml (add nob as
   well) (the morphological section should be kept intact, in e.g.
-  propernoun-sme-morph.txt) (__Sjur, Saara__)
-# convert propernoun-($lang)-lex.txt to a derived file from common xml files
-  (__Sjur, Tomi, Saara__)
-# start to use the xml file as source file
-# clean terms-sme.xml such that all names have the correct tag for their use
-  (e.g. @type=secondary) (__Thomas, Maaren, linguists__)
-# merge placenames which are errouneously in different entries: e.g. Helsinki,
-  Helsingfors, Helsset (__linguists__)
-# publish the name lexicon on risten.no (__Sjur__)
-# add missing parallel names for placenames (__linguists__)
-# add informative links between first names like Niillas and Nils
-  (__linguists__)
+  propernoun-sme-morph.txt) (**Sjur, Saara**)
+1. convert propernoun-($lang)-lex.txt to a derived file from common xml files
+  (**Sjur, Tomi, Saara**)
+1. start to use the xml file as source file
+1. clean terms-sme.xml such that all names have the correct tag for their use
+  (e.g. @type=secondary) (**Thomas, Maaren, linguists**)
+1. merge placenames which are errouneously in different entries: e.g. Helsinki,
+  Helsingfors, Helsset (**linguists**)
+1. publish the name lexicon on risten.no (**Sjur**)
+1. add missing parallel names for placenames (**linguists**)
+1. add informative links between first names like Niillas and Nils
+  (**linguists**)
 
+# 9. Spellers
 
-!!!9. Spellers
-
-!!Polderland data generation
+## Polderland data generation
 
 PLX conversion made substantial progress, and we now cover most POSes, with the
 exception of numerals. Also derivations are still not covered. We now need to
@@ -408,168 +389,153 @@ a first version of the spellers based on PLX code from us.
 
 Prefixes should be added as separate entries.
 
-__TODO:__
-# add closed POS and clitics to PLX generation (__Børre, Tomi__)
-## done
-# add compound stems to the PLX generation (__Børre, Tomi__)
-## done
-# Include numerals in the speller (__Børre, Tomi__)
-# add prefixes to the PLX (__Børre, Tomi__)
-# add {{smj}} to PLX conversion (__Børre, Tomi__)
-# add derivations to the PLX generation (__Børre, Tomi__)
+**TODO:**
+1. add closed POS and clitics to PLX generation (**Børre, Tomi**)
+    1. done
+1. add compound stems to the PLX generation (**Børre, Tomi**)
+    1. done
+1. Include numerals in the speller (**Børre, Tomi**)
+1. add prefixes to the PLX (**Børre, Tomi**)
+1. add `smj` to PLX conversion (**Børre, Tomi**)
+1. add derivations to the PLX generation (**Børre, Tomi**)
 
-
-!!Aspell
+## Aspell
 
 TODO when the major part of the PLX conversion is done:
-* add Aspell/Hunspell data generation to the lexc2xspell (__Tomi__ - after the
+* add Aspell/Hunspell data generation to the lexc2xspell (**Tomi** - after the
   PLX data generation is finished)
-* study Hunspell, perhaps also Soikko (__Børre, Sjur, Tomi__)
+* study Hunspell, perhaps also Soikko (**Børre, Sjur, Tomi**)
 
+## Testing
 
+**TODO:**
+* get an Intel Mac for testing Windows spellers (**Børre, Sjur**)
+    - **Sjur** has asked **Børre** to order two new MBP
 
-!!Testing
+## Localisation
 
-__TODO:__
-* get an Intel Mac for testing Windows spellers (__Børre, Sjur__)
-** __Sjur__ has asked __Børre__ to order two new MBP
-
-
-
-!!Localisation
-
-{{smj}} is now translated, and should be sent to Polderland.
+`smj` is now translated, and should be sent to Polderland.
 
 TODO:
-* translate Windows installer text to {{sme}} and {{smj}} (__Børre, Thomas__)
-** {{smj}} done
-* send {{smj}} translations to Polderland (__Børre__)
+* translate Windows installer text to `sme` and `smj` (**Børre, Thomas**)
+    - `smj` done
+* send `smj` translations to Polderland (**Børre**)
 
+# 10. Other
 
-
-!!!10. Other
-
-!!Corpus contracts
+## Corpus contracts
 
 TODO:
-* publish corpus contracts and project infra on NoDaLi-sta (__Sjur__)
-** wrote most of the letters, but found some holes (discussed above)
+* publish corpus contracts and project infra on NoDaLi-sta (**Sjur**)
+    - wrote most of the letters, but found some holes (discussed above)
 
+## Bug fixing
 
-!!Bug fixing
+**55** open Divvun/Disamb bugs, and **23** risten.no bugs
 
-__55__ open Divvun/Disamb bugs, and __23__ risten.no bugs
-
-
-!!!11. Next meeting, closing
+# 11. Next meeting, closing
 
 The next meeting is 29.1.2007, 09:30 Norwegian time.
 
 The meeting was closed at 10:53.
 
-!!!Appendix - task lists for the next week
+# Appendix - task lists for the next week
 
-!! Boerre
+##  Boerre
 
-* send {{smj}} translations to Polderland
+* send `smj` translations to Polderland
 * write form to request corpus user account
 * document how to apply for access to closed corpus, and details on the corpus
   and its use in general
 * add short description on our front page on anonymous cvs and corpus access,
   with links to relevant documentation
-* update and fix our documentation and infrastructure as __Steinar__ finds
+* update and fix our documentation and infrastructure as **Steinar** finds
   problem areas
 * continue work on script for automatic testing of the spell checker in Word
-* fix {{sme}} texts in corpus this month
-* find missing {{nob}} parallel texts in corpus
-* translate Windows installer text to {{sme}}
+* fix `sme` texts in corpus this month
+* find missing `nob` parallel texts in corpus
+* translate Windows installer text to `sme`
 * work on the Polderland data generation (PLX format conversion)
-** Concentrate on compounding
+    - Concentrate on compounding
 * go through other directories, fix parallellity information for other documents
-* add {{sma}} texts to the corpus repository
+* add `sma` texts to the corpus repository
 * order Intel Macs
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!! Maaren
+##  Maaren
 
 * tasks according to Thomas
 
-!! Saara
+##  Saara
 
-* fix {{sme}} texts in corpus this month
-* send aligned, xml {{nob}} texts to __Kristen__
+* fix `sme` texts in corpus this month
+* send aligned, xml `nob` texts to **Kristen**
 * fix problems with xml2lexc if needed
 * check the problem with pdf-conversion cutting wordforms.
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!! Sjur
+##  Sjur
 
 * name lexicon:
-** restructure interface code for easier maintenance, coding and use
-** refactor the rest of the SD-terms editor code
-** implement missing propnouns editing functions
-** implement improvements decided upon in Tromsø
+    - restructure interface code for easier maintenance, coding and use
+    - refactor the rest of the SD-terms editor code
+    - implement missing propnouns editing functions
+    - implement improvements decided upon in Tromsø
 * hire linguist and programmer
 * publish corpus contracts and project infra on NoDaLi-sta
-* fix stuorra-oslolaš lower case {{o}}
+* fix stuorra-oslolaš lower case `o`
 * write form to request corpus user account
 * document how to apply for access to closed corpus, and details on the corpus
   and its use in general
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!! Steinar
+##  Steinar
 
 * test our infrastructure and documentation - follow the documentation exactly,
-  and find problem areas - report problems to __Børre__. Start: At the front
+  and find problem areas - report problems to **Børre**. Start: At the front
   page.
 * Complete the semantic sets in sme-dis.rle
 * missing lists
-* report conversion errors to __Saara__
+* report conversion errors to **Saara**
 * Look at the actio compound issue when adding from missing lists
-* lexicalise actio compounds. Example: ''vuolggasadji''  vs. ''vuolginsadji''
+* lexicalise actio compounds. Example: *vuolggasadji*  vs. *vuolginsadji*
 * Go through the Num bugs
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+##  Thomas
 
-!! Thomas
-
-* refine {{smj}} proper noun lexica, cf. the propernoun-smj-lex.txt 
+* refine `smj` proper noun lexica, cf. the propernoun-smj-lex.txt 
 * work with compounding
 * lexicalise actio compounds
 * Lack of lowering before hyphen: Twol rewrite.
 * Go through the Num bugs
-* fix stuorra-oslolaš lower case {{o}}
+* fix stuorra-oslolaš lower case `o`
 * implement discontinous case inflection for numbers
 * produce correct number base forms in the analyzer
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
-
-!! Tomi
+##  Tomi
 
 * add compound stems to the PLX generation
 * include numerals in the speller
 * add prefixes to the PLX
-* add {{smj}} to PLX conversion
+* add `smj` to PLX conversion
 * add derivations to the PLX generation
-* [fix bugs!|http://giellatekno.uit.no/bugzilla]
+* [fix bugs!](http://giellatekno.uit.no/bugzilla)
 
+##  Trond
 
-!! Trond
-
-* update the {{smj}} proper noun lexicon, and refine the morphological analysis,
+* update the `smj` proper noun lexicon, and refine the morphological analysis,
   cf. the propernoun-smj-lex.txt
-* fix {{sme}} texts in corpus this month
-* find missing {{nob}} parallel texts in corpus, go through Saara's list
-* report conversion errors to __Saara__
+* fix `sme` texts in corpus this month
+* find missing `nob` parallel texts in corpus, go through Saara's list
+* report conversion errors to **Saara**
 * Go through the Num bugs
 * Make numeral testbed for smj as well
-* Get input on {{sma}} hyphenations
+* Get input on `sma` hyphenations
 * implement discontinous case inflection for numbers
 * produce correct number base forms in the analyzer
 * write form to request corpus user account
 * document how to apply for access to closed corpus, and details on the corpus
   and its use in general
-* [fix bugs!|http://giellatekno.uit.no/bugzilla].
+* [fix bugs!](http://giellatekno.uit.no/bugzilla).
