@@ -2,4 +2,4 @@
 
 Technical documentation for the GiellaLT infrastructure, specific to Tromsø.
 
-General technical documentation can be found [here](https://github.com/gieklalt/giellalt.github.io).
+General technical documentation can be found [here](https://github.com/giellalt/giellalt.github.io).
