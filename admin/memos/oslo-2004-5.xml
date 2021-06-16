@@ -1,49 +1,99 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
-<document xml:lang="en">
-  <header>
-    <title>Meeting with Text Laboratory, Oslo 10.5.2004</title>
-    <authors>
-      <person email="saara.huhmarniemi@helsinki.fi" name="Saara Huhmarniemi" />
-    </authors>
-  </header>
-  <body>
-    <section>
+<html xmlns:xi="http://www.w3.org/2001/XInclude" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>Meeting with Text Laboratory, Oslo 10.5.2004</title>
+      <authors>
+         <person email="saara.huhmarniemi@helsinki.fi" name="Saara Huhmarniemi"></person>
+      </authors>
+   </head>
+   <body>
+      <h1>Meeting with Text Laboratory, Oslo 10.5.2004</h1>
       <p>Present: Trond, Saara, Lars Nygaard, Kristin Hagen and Janne Bondi Johannessen</p>
-      <p>The discussion was mostly about the technical details of the corpus interface. Also some other issues such as treebanks and cg were mentioned.</p>
-      <p>Treebanks: It is easy to create treebanks with VISL Phrase Structure Grammar Compiler, vislpsg. There are pedagocical programs, where the vislpsg is used: <a href="http://www.visl.sdu.dk/visl/" >Word of VISL</a>, Visual Interactive Syntax Learning and for Norwegian: <a href="http://www.tekstlab.uio.no/grei/GREI-portal.htm" >GREI</a>.</p>
-      <p>The Text Laboratory is using cg1 instead of cg2 and vislcg as we are, so there is not much to share.</p>
-      <p>It was agreed that the tools developed for corpus interface in Textlab are available for the Saami project. Saami project offers help in testing and developing the tools. We decided to share the access to each others' projects.</p>
+      <p>The discussion was mostly about the technical details of the corpus interface. Also
+         some other issues such as treebanks and cg were mentioned.
+      </p>
+      <p>Treebanks: It is easy to create treebanks with VISL Phrase Structure Grammar Compiler,
+         vislpsg. There are pedagocical programs, where the vislpsg is used: <a href="http://www.visl.sdu.dk/visl/">Word of VISL</a>, Visual Interactive Syntax Learning and for Norwegian: <a href="http://www.tekstlab.uio.no/grei/GREI-portal.htm">GREI</a>.
+      </p>
+      <p>The Text Laboratory is using cg1 instead of cg2 and vislcg as we are, so there is
+         not much to share.
+      </p>
+      <p>It was agreed that the tools developed for corpus interface in Textlab are available
+         for the Saami project. Saami project offers help in testing and developing the tools.
+         We decided to share the access to each others' projects.
+      </p>
       <p>The conversion of the plain corpus text to web-searchable format involves three steps:</p>
-      <p>text ----> xml -----> ims -----> web</p>
-      <section>
-        <title>Text to XML: Conversion of vislcg output to xml-notation</title>
-        <p>There was a lenghty discussion about the different corpus encoding standards. The usage of some standard encoding such as TEI or CES was generally preferred. However, TEI was considered to be tangled and too extensive for our needs. CES is simpler but it has some drawbacks: the DTDs are not working properly and we found it dubious that the documentation was last updated in 1996. We thought it is important to have working DTDs; they should not be bypassed. Also there are not many tools available for eithe standard, so they should be written anyway.</p>
-        <p>The conclusion was to avoid both standards, and use our own notation, which is however kept TEI-compatible. This means that the notation and the structure is kept so simple that it is possible convert the format to TEI if necessary in the future.</p>
-        <p>The conversion from text to XML involves appending the header information to the file. Or should the header information be stored to another file, in order the xml version to be more easily regenerated? There is a conversion script written by Lars, which can be modified for converting vislcg output to xml, or the script can easily be rewritten.</p>
-        <p>We have to decide whether the xml format is the base format for annotated corpus, involving analyses and lemmas as xml-entities. The other option would be to stick with the vislcg output, that is the only format of the analysed corpuses we have for Sami. However, with suitable conversion tools, the xml-format is as flexible as the vislcg output. And perhaps more suitable for other possible needs in the future?</p>
-      </section>
-      <section>
-        <title>XML to IMS</title>
-        <p>The disadvantage of having all the analyses in one column is that all the searches are based on regular expressions, which slows down the search, but not unthinkably much. The other possibility suggested was to store the unambiguous words in tag-per-column format and the ambiguous in string format and having one attribute indicating the ambiguity. This would reduce the amount of time-consuming searches but complicate the queries (anyway hidden from the basic user).</p>
-        <p>Another thing which ims does not support is the searches to header information. Ims offers &quot;structural attributes&quot; which indicate e.g. clause boundaries, but does not offer searches to them. The meta-information of the corpus text is however important especially in the Saami project where we have diverse sources of texts e.g. produced by Saami speaking people in different countries.</p>
-        <p>One way to solve the problem would be to extract the header information from the xml-file and store it as a string in one attribute in the ims-format. Another solution is to have an attribute for each piece of header information, when the searches can be done straight to the attributes and not by regexps.</p>
-        <p>Lars has tool for xml-to-ims conversion which can be modified for our needs. There is a perl-module xmltwig for easy parsing xml.</p>
-      </section>
-      <section>
-        <title>IMS to web</title>
-        <p>Lars is developing a new interface for corpus searches, which is adaptable for different needs. The interface is based on xml-definitions, so it can be recreated for different applications.</p>
-        <p>The IMS provides perl modules which should be used in the queries. The interface looked good, but is not yet finished, so we will take part in testing and perhaps developing.</p>
-      </section>
-      <section>
-        <title>Other</title>
-        <p>IMS provides tools for sentence-alignment, the tools are based on the lenght of the sentences, and can (and must) be used without dictionary. For the Sami-Norwegian alignment, the Textlab's tools are available for analysing Norwegian texts. We have to ensure the compatibility of the preprocessors, so that they agree on sentence boundaries.</p>
-        <p>It would be interesting to have a cg2-to-IMS query filter to find the sentences, where a cg2-rule matches in the corpus. The perl-module RecDescent for parsing could be useful.</p>
-        <p>For testing the cq2-rules against correct corpus, it would be useful to have an emacs tool that finds the wrong disambiguation and moves to the rule that caused it in the other window. As in Lingoft. This would require knowledge of Emacs-Lisp.</p>
-        <p>For the creation of correct corpora, Saara will provide a tool in Emacs that makes it easier to mark the correct readings.</p>
-	
-      </section>
-    </section>
-  </body>
-</document>
+      <p>text ----&gt; xml -----&gt; ims -----&gt; web</p>
+      <h2>Text to XML: Conversion of vislcg output to xml-notation</h2>
+      <p>There was a lenghty discussion about the different corpus encoding standards. The
+         usage of some standard encoding such as TEI or CES was generally preferred. However,
+         TEI was considered to be tangled and too extensive for our needs. CES is simpler but
+         it has some drawbacks: the DTDs are not working properly and we found it dubious that
+         the documentation was last updated in 1996. We thought it is important to have working
+         DTDs; they should not be bypassed. Also there are not many tools available for eithe
+         standard, so they should be written anyway.
+      </p>
+      <p>The conclusion was to avoid both standards, and use our own notation, which is however
+         kept TEI-compatible. This means that the notation and the structure is kept so simple
+         that it is possible convert the format to TEI if necessary in the future.
+      </p>
+      <p>The conversion from text to XML involves appending the header information to the file.
+         Or should the header information be stored to another file, in order the xml version
+         to be more easily regenerated? There is a conversion script written by Lars, which
+         can be modified for converting vislcg output to xml, or the script can easily be rewritten.
+      </p>
+      <p>We have to decide whether the xml format is the base format for annotated corpus,
+         involving analyses and lemmas as xml-entities. The other option would be to stick
+         with the vislcg output, that is the only format of the analysed corpuses we have for
+         Sami. However, with suitable conversion tools, the xml-format is as flexible as the
+         vislcg output. And perhaps more suitable for other possible needs in the future?
+      </p>
+      <h2>XML to IMS</h2>
+      <p>The disadvantage of having all the analyses in one column is that all the searches
+         are based on regular expressions, which slows down the search, but not unthinkably
+         much. The other possibility suggested was to store the unambiguous words in tag-per-column
+         format and the ambiguous in string format and having one attribute indicating the
+         ambiguity. This would reduce the amount of time-consuming searches but complicate
+         the queries (anyway hidden from the basic user).
+      </p>
+      <p>Another thing which ims does not support is the searches to header information. Ims
+         offers "structural attributes" which indicate e.g. clause boundaries, but does not
+         offer searches to them. The meta-information of the corpus text is however important
+         especially in the Saami project where we have diverse sources of texts e.g. produced
+         by Saami speaking people in different countries.
+      </p>
+      <p>One way to solve the problem would be to extract the header information from the xml-file
+         and store it as a string in one attribute in the ims-format. Another solution is to
+         have an attribute for each piece of header information, when the searches can be done
+         straight to the attributes and not by regexps.
+      </p>
+      <p>Lars has tool for xml-to-ims conversion which can be modified for our needs. There
+         is a perl-module xmltwig for easy parsing xml.
+      </p>
+      <h2>IMS to web</h2>
+      <p>Lars is developing a new interface for corpus searches, which is adaptable for different
+         needs. The interface is based on xml-definitions, so it can be recreated for different
+         applications.
+      </p>
+      <p>The IMS provides perl modules which should be used in the queries. The interface looked
+         good, but is not yet finished, so we will take part in testing and perhaps developing.
+      </p>
+      <h2>Other</h2>
+      <p>IMS provides tools for sentence-alignment, the tools are based on the lenght of the
+         sentences, and can (and must) be used without dictionary. For the Sami-Norwegian alignment,
+         the Textlab's tools are available for analysing Norwegian texts. We have to ensure
+         the compatibility of the preprocessors, so that they agree on sentence boundaries.
+      </p>
+      <p>It would be interesting to have a cg2-to-IMS query filter to find the sentences, where
+         a cg2-rule matches in the corpus. The perl-module RecDescent for parsing could be
+         useful.
+      </p>
+      <p>For testing the cq2-rules against correct corpus, it would be useful to have an emacs
+         tool that finds the wrong disambiguation and moves to the rule that caused it in the
+         other window. As in Lingoft. This would require knowledge of Emacs-Lisp.
+      </p>
+      <p>For the creation of correct corpora, Saara will provide a tool in Emacs that makes
+         it easier to mark the correct readings.
+      </p>
+   </body>
+</html>

@@ -1,48 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
-"http://forrest.apache.org/dtd/document-v20.dtd">
-<document xml:lang="en">
-  <header>
-    <title>MS Office Hyphenation Documentation</title>
-  </header>
-
-  <body>
-    <p>Hyphenation is provided for both supported languages, North and Lule
-    Sámi, and is installed automatically together with the spellers. See the
-    <a href="http://divvun.no/korrektur/korrektur.html">page dedicated to
-    proofing tools installation</a> for further details.</p>
-
-    <section>
-      <title>Basic architecture</title>
-
+<html xmlns:xi="http://www.w3.org/2001/XInclude" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>MS Office Hyphenation Documentation</title>
+   </head>
+   <body>
+      <p>Hyphenation is provided for both supported languages, North and Lule
+         Sámi, and is installed automatically together with the spellers. See the
+         <a href="http://divvun.no/korrektur/korrektur.html">page dedicated to
+            proofing tools installation</a> for further details.
+      </p>
+      <h1>Basic architecture</h1>
       <p>Technically, the hyphenation engines and lexicons are the same as in
-      the InDesign installation, and the engines are delivered by Polderland.
-      The hyphenation lexicons are compiled by the Divvun project for the
-      Polderland engine.</p>
-
+         the InDesign installation, and the engines are delivered by Polderland.
+         The hyphenation lexicons are compiled by the Divvun project for the
+         Polderland engine.
+      </p>
       <p>The hyphenation tool consists of the following components:</p>
-
       <ul>
-        <li>a hyphenation engine</li>
-
-        <li>a word-list lexicon with compounding support</li>
-
-        <li>a pattern-based fall-back component for unrecognised words</li>
+         <li>a hyphenation engine</li>
+         <li>a word-list lexicon with compounding support</li>
+         <li>a pattern-based fall-back component for unrecognised words</li>
       </ul>
-
       <p>The word-list lexicon is generated from our transducer sources, and
-      is exactly the same as the speller lexicon (which contains hyphenation
-      points). The hyphenation points are mostly added by a rule-based
-      component, with exceptional hyphenation explicitly added to the lexicon
-      entries. The hyphenator can be tested independently on <a
-      href="http://giellatekno.uit.no/cgi/d-smj.eng.html">this page</a>.</p>
-
+         is exactly the same as the speller lexicon (which contains hyphenation
+         points). The hyphenation points are mostly added by a rule-based
+         component, with exceptional hyphenation explicitly added to the lexicon
+         entries. The hyphenator can be tested independently on <a href="http://giellatekno.uit.no/cgi/d-smj.eng.html">this page</a>.
+      </p>
       <p>This means that all words recognised by the speller should hyphenate
-      correctly - always. And all other words should hyphenate correctly in
-      most cases. All in all the hyphenation precision should be around 99,9 %
-      or better. Anything else is a bug, and should be reported to us via <a
-      href="mailto:feedback@divvun.no">e-mail</a> or <a
-      href="http://giellatekno.uit.no/bugzilla">Bugzilla</a>.</p>
-    </section>
-  </body>
-</document>
+         correctly - always. And all other words should hyphenate correctly in
+         most cases. All in all the hyphenation precision should be around 99,9 %
+         or better. Anything else is a bug, and should be reported to us via <a href="mailto:feedback@divvun.no">e-mail</a> or <a href="http://giellatekno.uit.no/bugzilla">Bugzilla</a>.
+      </p>
+   </body>
+</html>

@@ -1,120 +1,93 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
-                          "http://forrest.apache.org/dtd/document-v20.dtd">
-<document xml:lang="en">
-    <header>
-        <title>OpenSource Speller Technical Documentation</title>
-
-	<authors>
-	  <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen" />
-	  <person email="tomi.pieski@samediggi.no" name="Tomi Pieski" />
-	  <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud" />
-	</authors>
-
-    </header>
-    <body>
-
-	  <p>There is a family of open-source speller engines available, namely
-	     <a href="http://aspell.net/">Aspell</a>, <a
-	     href="http://packages.debian.org/experimental/text/hunspell/">hunspell</a>,
-	     <a
-	     href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html">iSpell</a>
-	     and <a href="http://lingucomponent.openoffice.org/">Myspell</a>
-	     (at least). They are inspired
-	     by each other, and partly borrowing code from each other.
-	     </p>
-
-	  <p>Because of these relationships, the expressive power in their
-	     linguistic formalism seems to be more or less identical, and
-	     other projects generate speller dictionaries for all three
-	     engines from the same source code, most notably <a
-	     href="http://www.debian.org/">Debian</a>.
-	     We therefore document these spellers and our implementation
-	     for them under a common umbrella, loosely tagged
-	     <strong>X-spell</strong> (replace X- with your favourite speller).
-	     </p>
-
-	  <section>
-	    <title>Present work</title>
-        <p>Initially we have <a href="aspell.html">worked with Aspell</a>.
-           Documentation and support
-           will be expanded to cover the other ones as well.
-           </p>
-	  </section>
-
-	  <section>
-	    <title>Links</title>
-
-        <section>
-          <title>Aspell</title>
-          <ul>
-            <li><a href="http://aspell.net/">Project Home Page</a></li>
-            <li><a href="http://www.gnu.org/software/aspell/">GNU Aspell Home</a></li>
-            <li><a href="http://aspell.sourceforge.net/man-html/">GNU Aspell
-                   Documentation</a></li>
-            <li><a href="http://www.ict.usc.edu/~leuski/cocoaspell/">cocoAspell
-                   Home</a> (Aspell on MacOS X)</li>
-          </ul>
-        </section>
-
-        <section>
-          <title>hunspell</title>
-          <p>It seems <strong>hunspell</strong> is our friend wrt open-source spellers:
-             real compounding, advanced continuation/inflection lexicons (they can be combined, as
-             opposed to Aspell/MySpell/Ispell), forbidden words, and several other nice features.
-             It is still a far cry from Xerox and similar technologies, but it is a big step forward
-             from the Ispell tradition. Aside from two-level rules to handle complex
-             morphophonology, the biggest problem is integration with host applications.
-             <strong>Hunspell</strong> does
-             however supports the most important one: OpenOffice.org. One nice feature of it
-             is that it can also be used as a morphological analyzer.</p>
-
-          <p>The code is partially based on MySpell, and the dictionary and affix file formats
-             are almost identical to the MySpell formats, with exceptions for extensions to
-             support compounding, circumflexing, a larger continuation class set, etc.
-             </p>
-
-          <ul>
-            <li><a href="http://hunspell.sourceforge.net/">Home</a></li>
-            <li><a href="http://packages.debian.org/experimental/text/hunspell">Debian
-                   Home</a></li>
-            <li><a href="http://www.freshports.org/hungarian/hunspell">FreshPorts</a></li>
-            <li><a
-            href="http://sourceforge.net/docman/display_doc.php?docid=29374&amp;group_id=143754"
-            >Documentation</a></li>
-          </ul>
-        </section>
-
-        <section>
-          <title>Ispell</title>
-
-          <p><strong>Ispell</strong> is the father of all interactive spellers in the
-             Unix world. <strong>Ispell</strong> might be too old, with restricted or
-             lacking support for Unicode (UTF-8), and with more restrictions on the
-             number of continuation lexicons than Aspell/MySpell. It is also targeted
-             at a different set of applications than MySpell and Aspell, mainly command
-             line ones. We might thus decide to skip <strong>Ispell</strong> support,
-             and instead look for new initiatives like hunspell.</p>
-
-          <ul>
-            <li><a href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html">Home</a></li>
-            <li><a href="http://www.gnu.org/software/ispell/ispell.html">GNU Ispell Home</a></li>
-            <li><a href="http://directory.fsf.org/ispell.html">FSF Directory entry</a></li>
-            <li><a href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell-dictionaries.html"
-                   >Dictionaries</a></li>
-            <li><a href="http://www.kdstevens.com/~stevens/ispell-page.html">Emacs
-                   Ispell interface</a></li>
-          </ul>
-        </section>
-
-        <section>
-          <title>MySpell</title>
-          <ul>
-            <li><a href="http://lingucomponent.openoffice.org/">OOo MySpell Home</a></li>
-            <li><a href="http://packages.debian.org/testing/source/myspell">Debian Package</a></li>
-          </ul>
-        </section>
-
-	  </section>
-    </body>
-</document>
+<html xmlns:xi="http://www.w3.org/2001/XInclude" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>OpenSource Speller Technical Documentation</title>
+      <authors>
+         <person email="sjur.moshagen@samediggi.no" name="Sjur N. Moshagen"></person>
+         <person email="tomi.pieski@samediggi.no" name="Tomi Pieski"></person>
+         <person email="trond.trosterud@hum.uit.no" name="Trond Trosterud"></person>
+      </authors>
+   </head>
+   <body>
+      <p>There is a family of open-source speller engines available, namely
+         	     <a href="http://aspell.net/">Aspell</a>, <a href="http://packages.debian.org/experimental/text/hunspell/">hunspell</a>,
+         	     <a href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html">iSpell</a>
+         	     and <a href="http://lingucomponent.openoffice.org/">Myspell</a>
+         	     (at least). They are inspired
+         	     by each other, and partly borrowing code from each other.
+         	     
+      </p>
+      <p>Because of these relationships, the expressive power in their
+         	     linguistic formalism seems to be more or less identical, and
+         	     other projects generate speller dictionaries for all three
+         	     engines from the same source code, most notably <a href="http://www.debian.org/">Debian</a>.
+         	     We therefore document these spellers and our implementation
+         	     for them under a common umbrella, loosely tagged
+         	     <strong>X-spell</strong> (replace X- with your favourite speller).
+         	     
+      </p>
+      <h1>Present work</h1>
+      <p>Initially we have <a href="aspell.html">worked with Aspell</a>.
+         Documentation and support
+         will be expanded to cover the other ones as well.
+         
+      </p>
+      <h1>Links</h1>
+      <h2>Aspell</h2>
+      <ul>
+         <li><a href="http://aspell.net/">Project Home Page</a></li>
+         <li><a href="http://www.gnu.org/software/aspell/">GNU Aspell Home</a></li>
+         <li><a href="http://aspell.sourceforge.net/man-html/">GNU Aspell
+               Documentation</a></li>
+         <li><a href="http://www.ict.usc.edu/~leuski/cocoaspell/">cocoAspell
+               Home</a> (Aspell on MacOS X)
+         </li>
+      </ul>
+      <h2>hunspell</h2>
+      <p>It seems <strong>hunspell</strong> is our friend wrt open-source spellers:
+         real compounding, advanced continuation/inflection lexicons (they can be combined,
+         as
+         opposed to Aspell/MySpell/Ispell), forbidden words, and several other nice features.
+         It is still a far cry from Xerox and similar technologies, but it is a big step forward
+         from the Ispell tradition. Aside from two-level rules to handle complex
+         morphophonology, the biggest problem is integration with host applications.
+         <strong>Hunspell</strong> does
+         however supports the most important one: OpenOffice.org. One nice feature of it
+         is that it can also be used as a morphological analyzer.
+      </p>
+      <p>The code is partially based on MySpell, and the dictionary and affix file formats
+         are almost identical to the MySpell formats, with exceptions for extensions to
+         support compounding, circumflexing, a larger continuation class set, etc.
+         
+      </p>
+      <ul>
+         <li><a href="http://hunspell.sourceforge.net/">Home</a></li>
+         <li><a href="http://packages.debian.org/experimental/text/hunspell">Debian
+               Home</a></li>
+         <li><a href="http://www.freshports.org/hungarian/hunspell">FreshPorts</a></li>
+         <li><a href="http://sourceforge.net/docman/display_doc.php?docid=29374&amp;group_id=143754">Documentation</a></li>
+      </ul>
+      <h2>Ispell</h2>
+      <p><strong>Ispell</strong> is the father of all interactive spellers in the
+         Unix world. <strong>Ispell</strong> might be too old, with restricted or
+         lacking support for Unicode (UTF-8), and with more restrictions on the
+         number of continuation lexicons than Aspell/MySpell. It is also targeted
+         at a different set of applications than MySpell and Aspell, mainly command
+         line ones. We might thus decide to skip <strong>Ispell</strong> support,
+         and instead look for new initiatives like hunspell.
+      </p>
+      <ul>
+         <li><a href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html">Home</a></li>
+         <li><a href="http://www.gnu.org/software/ispell/ispell.html">GNU Ispell Home</a></li>
+         <li><a href="http://directory.fsf.org/ispell.html">FSF Directory entry</a></li>
+         <li><a href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell-dictionaries.html">Dictionaries</a></li>
+         <li><a href="http://www.kdstevens.com/~stevens/ispell-page.html">Emacs
+               Ispell interface</a></li>
+      </ul>
+      <h2>MySpell</h2>
+      <ul>
+         <li><a href="http://lingucomponent.openoffice.org/">OOo MySpell Home</a></li>
+         <li><a href="http://packages.debian.org/testing/source/myspell">Debian Package</a></li>
+      </ul>
+   </body>
+</html>
