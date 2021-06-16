@@ -1,46 +1,35 @@
-<html> <head>
-<title>Managing groups</title>
-</head>
+Managing groups
+===============
 
-<body>
-<h1>Managing groups</h1>
+Managing groups
+---------------
 
+Be root. The group ID number (here called nnn, is for ling 503) is found
+in /etc/group
 
+Add a new group called newname:
 
-<h2>Managing groups</h2>
+/usr/sbin/groupadd -G nnn newname RET
 
-Be root. The group ID number (here called nnn, is for ling 503) is found in
-/etc/group<p>
+Add members to this group: Open the file /etc/group, and add a line that
+lools the same as the line for the groups cvs and ling.
 
-Add a new group called newname:</p><p>
+Check group membership: Be root, and give the command
 
-/usr/sbin/groupadd -G nnn newname RET</p><p>
+groups trond
 
-Add members to this group: Open the file /etc/group, and add a line
-that lools the same as the line for the groups cvs and ling.</p><p>
+to check which groups trond belongs to.
 
-Check group membership: Be root, and give the command</p><p>
+Group attribute for files
+-------------------------
 
-groups trond</p><p>
+The relevant commands are
 
-to check which groups trond belongs to.</p><p>
+chown trond -R directory/  
+chgrp ling -R directory
 
-</p><h2>Group attribute for files</h2>
+to change to owner trond and group owner ling.
 
-The relevant commands are<p>
+------------------------------------------------------------------------
 
-chown trond -R directory/<br/>
-chgrp ling -R directory</p><p>
-
-to change to owner trond and group owner ling.</p><p>
-
-
-
-
-
-</p><hr/>
-<address/>
-<!-- hhmts start -->
 Last modified: Fri Feb 21 09:56:15 GMT 2003
-<!-- hhmts end -->
-</body> </html>

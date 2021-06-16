@@ -1,100 +1,85 @@
-<html> <head>
-<title>Adding and removing users</title>
-</head>
+Adding and removing users on linux
+==================================
 
-<body>
-<h1>Adding and removing users on linux</h1>
+Be root. To add a new user named Laila Sara with laila as the user name,
+do the following:
 
-<p>Be root. To add a new user named Laila Sara with laila as the user
-name, do the following:</p>
+You will need *nnnnn*, the next free uid number, the numbers start with
+10000 for trond. Check out the next number by typing `tail /etc/passwd`.
+Say it is 501.
 
-<p>You will need <i>nnnnn</i>, the next free uid number, the numbers start with
-10000 for trond. Check out the next number by typing <code>tail
-/etc/passwd</code>. Say it is 501.</p><p>
+Then make the group laila:
 
-</p><p>Then make the group laila:</p>
+`/usr/sbin/groupadd -g 501 laila`
 
-<p><code>/usr/sbin/groupadd -g 501 laila</code></p>
+Then make the new user. Write the following command. It shall be written
+in one line, but is here written on multiple lines for readability.
 
-<p>Then make the new user. Write the following command.  It shall be written in one line,
-but is here written on multiple lines for readability. </p>
-<p>
-</p><pre>
- /usr/sbin/useradd
- -u 501 
- -g 501 
- -G cvs 
- -c "Laila Sara, Samisk inst."  
- laila
-</pre>
+     /usr/sbin/useradd
+     -u 501 
+     -g 501 
+     -G cvs 
+     -c "Laila Sara, Samisk inst."  
+     laila
 
-<p>The user must own her own catalogue, but others may want to read it. This is achieved by writing:</p>
+The user must own her own catalogue, but others may want to read it.
+This is achieved by writing:
 
-<p><code>chown laila:laila /home/laila</code></p>
-<p><code>chmod 0755 /home/laila</code></p>
+`chown laila:laila /home/laila`
 
-<p>Then assign the new user a password, by writing:</p>
+`chmod 0755 /home/laila`
 
-<p><code>passwd laila</code></p>
+Then assign the new user a password, by writing:
 
-<p>Remember to copy the .bashrc, .bash_profile and .emacs files to the
+`passwd laila`
+
+Remember to copy the .bashrc, .bash\_profile and .emacs files to the
 laila account while you are still a root user. Remember to run the
-initial "cvs get" command.</p>
+initial "cvs get" command.
 
-<p>If the user has forgot his/her own password, log in as root, and enter
+If the user has forgot his/her own password, log in as root, and enter
 the command "passwd laila". You will not be prompted for the old
-password, and the new one you enters will erase the old one.</p>
+password, and the new one you enters will erase the old one.
 
-<h1>Adding users on mac server</h1>
+Adding users on mac server
+==========================
 
-<p>Use the dscl command. This example would create the user "luser", like so:</p>
+Use the dscl command. This example would create the user "luser", like
+so:
 
+    dscl . -create /Users/luser
+    dscl . -create /Users/luser UserShell /bin/bash
+    dscl . -create /Users/luser RealName "Lucius Q. User"
+    dscl . -create /Users/luser UniqueID "1010"
+    dscl . -create /Users/luser PrimaryGroupID 80
+    dscl . -create /Users/luser NFSHomeDirectory /Users/luser
+    You can then use passwd to change the user's password, or use:
 
-<pre><p>
-dscl . -create /Users/luser
-dscl . -create /Users/luser UserShell /bin/bash
-dscl . -create /Users/luser RealName "Lucius Q. User"
-dscl . -create /Users/luser UniqueID "1010"
-dscl . -create /Users/luser PrimaryGroupID 80
-dscl . -create /Users/luser NFSHomeDirectory /Users/luser
-You can then use passwd to change the user's password, or use:
+    dscl . -passwd /Users/luser password
 
-dscl . -passwd /Users/luser password
+    You'll have to create /Users/luser for the user's home directory and 
+    change ownership so the user can access it, and be sure that the 
+    UniqueID is in fact unique (via the command id 1010 etc.)
 
-You'll have to create /Users/luser for the user's home directory and 
-change ownership so the user can access it, and be sure that the 
-UniqueID is in fact unique (via the command id 1010 etc.)
-</p></pre>
+This line will add the user to the administrator's group:
 
-<p>This line will add the user to the administrator's group:</p>
+    dscl . -append /Groups/admin GroupMembership luser
 
-<p/><pre>
-dscl . -append /Groups/admin GroupMembership luser
-</pre>
+Removing users on linux
+=======================
 
-<h1>Removing users on linux</h1>
+For removing (in this example the user laila), be root, and use this
+command (-r removes the files of the user al well):
 
-<p>For removing (in this example the user laila), be root, and use this
-command (-r removes the files of the user al well):</p>
+    /usr/sbin/userdel -r laila
+    rm -r /export/home/laila
+    cd /var/yp
+    make 
 
-<p/><pre>
-/usr/sbin/userdel -r laila
-rm -r /export/home/laila
-cd /var/yp
-make 
-</pre>
-
-<p>A general warning: The commands that the manuals say should work, do
+A general warning: The commands that the manuals say should work, do
 work, if you just write /sbin/ in front of them, i.e. prbably
-/sbin/userdel instead of userdel.</p>
+/sbin/userdel instead of userdel.
 
+------------------------------------------------------------------------
 
-
-
-
-<hr/>
-<address/>
-<!-- hhmts start -->
 Last modified: Fri Nov 26 15:50:23 2004
-<!-- hhmts end -->
-</body> </html>

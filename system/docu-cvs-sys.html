@@ -1,69 +1,58 @@
-<html> <head>
-<title>
-CVS administration</title>
-</head>
+CVS administration
+==================
 
-<body>
+Note that this info is obsolete, we now use svn. See documentation
+elsewhere.
 
-<h1>CVS administration</h1>
-<warning>Note that this info is obsolete, we now use svn. See documentation elsewhere.</warning>
-<ul>
-  <li>Where is the repository? Type <code> locate repository</code> to see repository location.</li>
+-   Where is the repository? Type ` locate repository` to see repository
+    location.
 
-</ul><p>
+As part of the installation routine, every new user is assigned to the
+group "cvs". Add the new user to the group cvs.
 
+Run the command
 
-As part of the installation routine, every new user is assigned to the group "cvs". 
-Add the new user to the group cvs.</p><p>
+cvs -d /usr/local/cvs/repository/ co gt
 
-Run the command</p><p>
+(This might work for the user, without root privileges, I am not sure).
+What does work is the following:
 
-cvs -d /usr/local/cvs/repository/ co gt </p><p>
+Be root. Go to the home directory of the new user. Write "cvs get gt".
 
-(This might work for the user, without root privileges, I am not sure). What does work is the following:</p><p>
+Cf. Eero's explanation:
 
-Be root. Go to the home directory of the new user. Write "cvs get gt".</p><p>
+    [root@gitek cvsrep]# groups sjur
+    sjur : sjur
+    Aha. Sjur ei ole ryhm�ss� lingsoft, jolla on oikeudet gt-hakemistoon.
 
-Cf. Eero's explanation:</p><p>
+    [root@gitek cvsrep]# groups kristin
+    kristin : kristin
+    [root@gitek cvsrep]# /usr/sbin/usermod -G lingsoft kristin
+    [root@gitek cvsrep]# groups kristin
+    kristin : kristin lingsoft
 
-</p><pre>
-[root@gitek cvsrep]# groups sjur
-sjur : sjur
-Aha. Sjur ei ole ryhm&#65533;ss&#65533; lingsoft, jolla on oikeudet gt-hakemistoon.
+    Nyt pit�isi toimia:
 
-[root@gitek cvsrep]# groups kristin
-kristin : kristin
-[root@gitek cvsrep]# /usr/sbin/usermod -G lingsoft kristin
-[root@gitek cvsrep]# groups kristin
-kristin : kristin lingsoft
+    [root@gitek cvsrep]# su -l sjur
+    [sjur@gitek sjur]$ cvs get gt
+    cvs checkout: Updating gt
+    cvs checkout: Updating gt/doc
+    <......>
 
-Nyt pit&#65533;isi toimia:
-
-[root@gitek cvsrep]# su -l sjur
-[sjur@gitek sjur]$ cvs get gt
-cvs checkout: Updating gt
-cvs checkout: Updating gt/doc
-<......>
-
-Jep, toimii. Nyt Kristinin pit&#65533;isi saada tiedostot ulos komentamalla
-cvs get gt
+    Jep, toimii. Nyt Kristinin pit�isi saada tiedostot ulos komentamalla
+    cvs get gt
 
 
-<hr/>
-
-<p>This is a command that perhaps is irrelevant?</p>
-
-<pre>
-[root@gitek cvsrep]# ls -lart gt
-drwxrwsr-x   10 trond    lingsoft     4096 feb 15 17:42 gt
-</pre>
 
 
-</......></pre>
+    This is a command that perhaps is irrelevant?
 
-<hr/>
-<address>Eero Taipale</address>
-<!-- hhmts start -->
+
+    [root@gitek cvsrep]# ls -lart gt
+    drwxrwsr-x   10 trond    lingsoft     4096 feb 15 17:42 gt
+
+------------------------------------------------------------------------
+
+Eero Taipale
+
 Last modified: Fri Feb 21 09:59:36 GMT 2003
-<!-- hhmts end -->
-</body> </html>
