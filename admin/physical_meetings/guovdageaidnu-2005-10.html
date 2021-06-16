@@ -1,222 +1,217 @@
-<html xmlns:xi="http://www.w3.org/2001/XInclude" lang="">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>guovdageaidnu-2005-10</title>
-   </head>
-   <body>
-      <h1>Agenda</h1>
-      <ol>
-         <li>Directory structure (TBS)</li>
-         <li>Name lexicon (TBMS)</li>
-         <li>Numerals (TMS)</li>
-         <li>Three-part compounds. (TMS(T))</li>
-         <li>Project planning + Árran (TS)</li>
-      </ol>
-      <h1>Directory structure (TBS)</h1>
-      <p>Tuesday afternoon</p>
-      <p>Conversion from original to internal format. Manually add meta-info
-         on writer, mainlang, etc. into the xsl file. Manually (temporarily) edit
-         the int file, adding language info in multilingual docs. Do a xmldiff on
-         this, add the result to the xsl file.
-      </p>
-      <p>Problem with xmldiff: The document structure of the int file could
-         change, thus rendering the generated references in the xmldiff part of
-         the xsl file invalid. Typically xmldiffs contain XPath expressions
-         such as:
-      </p>
-      <pre xml:space="preserve">
-/doc/section[2]/p[3]
-</pre>
-      <p>If a new version of antiword or our DocBook2GT generates a different
-         structure, the p [n] type references will
-         identify the wrong node, or nothing at all.
-      </p>
-      <p>Solution to this problem: Version control of the intermediate xml
-         file. You have two reasons for this: 1) manual addition of language
-         information, 2) new generations of the internal xml file. After this is
-         done, apply the xsl file and generate the final document.
-      </p>
-      <p>We then started to look for free software to do automatic language
-         recognition, and found some alternatives. We picked (TextCat|), a
-         perl-based tool licensed under a GPL license. It is now installed in
-         gt/scripts/, and rudimentary user doc can be found in our <a href="/ling/langrec.html">intranet</a>.
-      </p>
-      <p>What is left to do now, is to integrate language recognition with the
-         corpus processing, adding language information automatically to at least
-         the document (if not existing and correct), but preferably to all
-         elements containing text, and the language of the text is different from
-         the main language of the doc.
-      </p>
-      <h1>Name lexicon (TBMS)</h1>
-      <h2>Semantic classification</h2>
-      <p>The name lexicon meeting turned into a very productive meeting,
-         ending in a new classification for names, as well as a draft XML
-         document. The new classification is:
-      </p>
-      <ul>
-         <li>mal</li>
-         <li>fem</li>
-         <li>sur</li>
-         <li>org</li>
-         <li>plc</li>
-         <li>obj</li>
-      </ul>
-      <p>Each name can have more than one of these classes.</p>
-      <h2>XML format</h2>
-      <p>We made an xml fragment illustrating the suggested document format.
-         The fragment is found at:
-      </p>
-      <pre xml:space="preserve">
-gt/common/src/proper-nouns.xml
-</pre>
-      <p>and contains the following:</p>
-      <pre xml:space="preserve">
-&lt;?xml version='1.1'  encoding="UTF-8"?&gt;
-&lt;!DOCTYPE propndict PUBLIC "-//DIVVUN//DTD Proper Noun Dictionary V1.0//EN"
-"http://www.divvun.no/dtd/prop-noun-dict-v10.dtd"&gt;
-&lt;propndict&gt;
-    &lt;entry id="Guovdageaidnu"&gt;
-        &lt;sem&gt;
-          plc sur
-        &lt;/sem&gt;
-        &lt;form lg="sme"&gt;
-          &lt;cnt&gt;DEATNU&lt;/cnt&gt;
-        &lt;/form&gt;
-        &lt;form lg="smj"&gt;
-          &lt;lm&gt;Guovdageajdno&lt;/lm&gt;
-        &lt;/form&gt;
-        &lt;form lg="sma"&gt;
-          &lt;lm&gt;Goevtegeajno&lt;/lm&gt;
-        &lt;/form&gt;
-        &lt;form lg="fin"&gt;
-          &lt;lm&gt;Koutokeino&lt;/lm&gt;
-        &lt;/form&gt;
-        &lt;form lg="eng nno nob swe"/&gt;
-          &lt;lm&gt;Kautokeino&lt;/lm&gt;
-        &lt;/form&gt;
-    &lt;/entry&gt;
-    &lt;entry id="India"&gt;
-        &lt;sem&gt;
-          fem plc
-        &lt;/sem&gt;
-        &lt;form lg="sme"&gt;
-          &lt;cnt&gt;ACCRA&lt;/cnt&gt;
-        &lt;/form&gt;
-        &lt;form lg="smj"&gt;
-          &lt;cnt&gt;AKKRA&lt;/cnt&gt;
-        &lt;/form&gt;
-        &lt;form lg="sma"&gt;
-          &lt;cnt&gt;IE_PNOUN&lt;/cnt&gt;
-        &lt;/form&gt;
-        &lt;form lg="fin"&gt;
-          &lt;lm&gt;Intia&lt;/lm&gt;
-          &lt;cnt&gt;14&lt;/cnt&gt;
-          &lt;sem&gt;plc&lt;/sem&gt;
-        &lt;/form&gt;
-        &lt;form lg="fin"&gt;
-          &lt;lm&gt;India&lt;/lm&gt;
-          &lt;cnt&gt;14&lt;/cnt&gt;
-          &lt;sem&gt;fem&lt;/sem&gt;
-        &lt;/form&gt;
-        &lt;form lg="eng nno nob swe"/&gt;
-    &lt;/entry&gt;
-&lt;/propndict&gt;
-</pre>
-      <p>Note:</p>
-      <p>The entries above are not necessarily correct, their purpose is to
-         illustrate how to handle some different cases.
-      </p>
-      <p>The following should be noted regarding the above XML document, and
-         it's interpretation:
-      </p>
-      <ul>
-         <li>the <strong>id</strong> attribute contains the name itself in
-            the language of the entity named if known, otherwise the most common
-            form (to reduce space)
-         </li>
-         <li>the <strong>&lt;sem&gt;</strong> element contains one or more of
-            the classification strings listed above
-         </li>
-         <li>the <strong>&lt;form&gt;</strong> element contains
-            language-specific information about a name:
-            
-            
-            <ul>
-               <li><strong>&lt;lm&gt;</strong> - lemma, only needed if different
-                  from the <strong>id</strong> of the entry
-               </li>
-               <li><strong>&lt;stem&gt;</strong> - gives the stem if different
-                  from <strong>&lt;lm&gt;</strong></li>
-               <li><strong>&lt;cont&gt;</strong> - the continuation lexicon. The
-                  string here is concatenated with the strings given in
-                  <strong>&lt;sem&gt;</strong> (one at a time) separated by a
-                  hyphen, forming the set of possible continuation lexicons. If
-                  <em>no</em> &lt;cont&gt; is given, the name is not included in the
-                  compiled lexicon for that language.
-               </li>
-               <li><strong>&lt;sem&gt;</strong> - contains override semantic
-                  classification - see the India example above, Finnish entries, for
-                  a use case
-               </li>
-               <li>if the same information is shared among several languages, the
-                  <strong>@lg</strong> can (or preferably should) contain multiple
-                  entries separated by a space
-               </li>
-               <li>the <strong>&lt;form&gt;</strong> element can be empty if all
-                  information can be deduced from the <strong>@id</strong> of the
-                  entry (such as when there's no known continuation class, and the
-                  form is the same as in the @id)
-               </li>
-            </ul>
-            
-         </li>
-      </ul>
-      <p>The languages we considered were:</p>
-      <ul>
-         <li>sme</li>
-         <li>smj sma fin swe nob nno eng</li>
-      </ul>
-      <p>Others might and could easily be added later.</p>
-      <h2>The next steps</h2>
-      <p>The next steps to be taken are:</p>
-      <ol>
-         <li>classify each name according to the most obvious semantic class
-            - but only one
-         </li>
-         <li>write a DTD or schema (preferably, to enforce limitations on the
-            content of &lt;sem&gt;)
-         </li>
-         <li>write scripts to transform the above format to LEXC format,
-            correction strings for spellers, etc.
-         </li>
-         <li>evaluate the best editing tools for this document (considering
-            that 50 000 names in up to 10 languages must be handled properly);
-            we might need to consider splitting up the file in smaller
-            fragments
-         </li>
-         <li>consider synchronisation issues in case the same material is
-            also stored and updated at risten.no
-         </li>
-         <li>convert existing names to this format</li>
-         <li>test the conversion</li>
-         <li>add additional semantic classes, where such are needed</li>
-         <li>add new names and language forms</li>
-      </ol>
-      <h1>Numerals (TMS)</h1>
-      <p>Not covered.</p>
-      <h1>Three-part compounds. (TMS(Tomi))</h1>
-      <p>Not covered.</p>
-      <h1>Thursday - Project planning + Árran (TS)</h1>
-      <p>We discussed project plans and planning a lot, as well as the possible tools to use.
-         We tried or looked at a few, and settled on Merlin. It has nice OS X integration,
-         but also its drawbacks, the main being that it really is a single-user application.
-         This makes it hard to share and access project files and info among several users,
-         which limits the usefulness of the application quite a lot. Nevertheless, the pros
-         outweight the cons, at least compared to the alternatives.
-      </p>
-      <p>There's an <a href="http://www.projectwizards.net/help">online Handbook</a> for Merlin, as well as a <a href="http://www.projectwizards.net/download/Merlin-Handbook.pdf.zip"> pdf version</a>.
-      </p>
-      <p>Real project plans are (finally!) forthcoming:-)</p>
-      <p>We did not discuss Árran.</p>
-   </body>
-</html>
+Agenda
+======
+
+1.  Directory structure (TBS)
+2.  Name lexicon (TBMS)
+3.  Numerals (TMS)
+4.  Three-part compounds. (TMS(T))
+5.  Project planning + Árran (TS)
+
+Directory structure (TBS)
+=========================
+
+Tuesday afternoon
+
+Conversion from original to internal format. Manually add meta-info on
+writer, mainlang, etc. into the xsl file. Manually (temporarily) edit
+the int file, adding language info in multilingual docs. Do a xmldiff on
+this, add the result to the xsl file.
+
+Problem with xmldiff: The document structure of the int file could
+change, thus rendering the generated references in the xmldiff part of
+the xsl file invalid. Typically xmldiffs contain XPath expressions such
+as:
+
+    /doc/section[2]/p[3]
+
+If a new version of antiword or our DocBook2GT generates a different
+structure, the p \[n\] type references will identify the wrong node, or
+nothing at all.
+
+Solution to this problem: Version control of the intermediate xml file.
+You have two reasons for this: 1) manual addition of language
+information, 2) new generations of the internal xml file. After this is
+done, apply the xsl file and generate the final document.
+
+We then started to look for free software to do automatic language
+recognition, and found some alternatives. We picked (TextCat\|), a
+perl-based tool licensed under a GPL license. It is now installed in
+gt/scripts/, and rudimentary user doc can be found in our
+[intranet](/ling/langrec.html).
+
+What is left to do now, is to integrate language recognition with the
+corpus processing, adding language information automatically to at least
+the document (if not existing and correct), but preferably to all
+elements containing text, and the language of the text is different from
+the main language of the doc.
+
+Name lexicon (TBMS)
+===================
+
+Semantic classification
+-----------------------
+
+The name lexicon meeting turned into a very productive meeting, ending
+in a new classification for names, as well as a draft XML document. The
+new classification is:
+
+-   mal
+-   fem
+-   sur
+-   org
+-   plc
+-   obj
+
+Each name can have more than one of these classes.
+
+XML format
+----------
+
+We made an xml fragment illustrating the suggested document format. The
+fragment is found at:
+
+    gt/common/src/proper-nouns.xml
+
+and contains the following:
+
+    <?xml version='1.1'  encoding="UTF-8"?>
+    <!DOCTYPE propndict PUBLIC "-//DIVVUN//DTD Proper Noun Dictionary V1.0//EN"
+    "http://www.divvun.no/dtd/prop-noun-dict-v10.dtd">
+    <propndict>
+        <entry id="Guovdageaidnu">
+            <sem>
+              plc sur
+            </sem>
+            <form lg="sme">
+              <cnt>DEATNU</cnt>
+            </form>
+            <form lg="smj">
+              <lm>Guovdageajdno</lm>
+            </form>
+            <form lg="sma">
+              <lm>Goevtegeajno</lm>
+            </form>
+            <form lg="fin">
+              <lm>Koutokeino</lm>
+            </form>
+            <form lg="eng nno nob swe"/>
+              <lm>Kautokeino</lm>
+            </form>
+        </entry>
+        <entry id="India">
+            <sem>
+              fem plc
+            </sem>
+            <form lg="sme">
+              <cnt>ACCRA</cnt>
+            </form>
+            <form lg="smj">
+              <cnt>AKKRA</cnt>
+            </form>
+            <form lg="sma">
+              <cnt>IE_PNOUN</cnt>
+            </form>
+            <form lg="fin">
+              <lm>Intia</lm>
+              <cnt>14</cnt>
+              <sem>plc</sem>
+            </form>
+            <form lg="fin">
+              <lm>India</lm>
+              <cnt>14</cnt>
+              <sem>fem</sem>
+            </form>
+            <form lg="eng nno nob swe"/>
+        </entry>
+    </propndict>
+
+Note:
+
+The entries above are not necessarily correct, their purpose is to
+illustrate how to handle some different cases.
+
+The following should be noted regarding the above XML document, and it's
+interpretation:
+
+-   the **id** attribute contains the name itself in the language of the
+    entity named if known, otherwise the most common form (to reduce
+    space)
+-   the **&lt;sem&gt;** element contains one or more of the
+    classification strings listed above
+-   the **&lt;form&gt;** element contains language-specific information
+    about a name:
+    -   **&lt;lm&gt;** - lemma, only needed if different from the **id**
+        of the entry
+    -   **&lt;stem&gt;** - gives the stem if different from
+        **&lt;lm&gt;**
+    -   **&lt;cont&gt;** - the continuation lexicon. The string here is
+        concatenated with the strings given in **&lt;sem&gt;** (one at a
+        time) separated by a hyphen, forming the set of possible
+        continuation lexicons. If *no* &lt;cont&gt; is given, the name
+        is not included in the compiled lexicon for that language.
+    -   **&lt;sem&gt;** - contains override semantic classification -
+        see the India example above, Finnish entries, for a use case
+    -   if the same information is shared among several languages, the
+        **@lg** can (or preferably should) contain multiple entries
+        separated by a space
+    -   the **&lt;form&gt;** element can be empty if all information can
+        be deduced from the **@id** of the entry (such as when there's
+        no known continuation class, and the form is the same as in
+        the @id)
+
+The languages we considered were:
+
+-   sme
+-   smj sma fin swe nob nno eng
+
+Others might and could easily be added later.
+
+The next steps
+--------------
+
+The next steps to be taken are:
+
+1.  classify each name according to the most obvious semantic class -
+    but only one
+2.  write a DTD or schema (preferably, to enforce limitations on the
+    content of &lt;sem&gt;)
+3.  write scripts to transform the above format to LEXC format,
+    correction strings for spellers, etc.
+4.  evaluate the best editing tools for this document (considering that
+    50 000 names in up to 10 languages must be handled properly); we
+    might need to consider splitting up the file in smaller fragments
+5.  consider synchronisation issues in case the same material is also
+    stored and updated at risten.no
+6.  convert existing names to this format
+7.  test the conversion
+8.  add additional semantic classes, where such are needed
+9.  add new names and language forms
+
+Numerals (TMS)
+==============
+
+Not covered.
+
+Three-part compounds. (TMS(Tomi))
+=================================
+
+Not covered.
+
+Thursday - Project planning + Árran (TS)
+========================================
+
+We discussed project plans and planning a lot, as well as the possible
+tools to use. We tried or looked at a few, and settled on Merlin. It has
+nice OS X integration, but also its drawbacks, the main being that it
+really is a single-user application. This makes it hard to share and
+access project files and info among several users, which limits the
+usefulness of the application quite a lot. Nevertheless, the pros
+outweight the cons, at least compared to the alternatives.
+
+There's an [online Handbook](http://www.projectwizards.net/help) for
+Merlin, as well as a [pdf
+version](http://www.projectwizards.net/download/Merlin-Handbook.pdf.zip).
+
+Real project plans are (finally!) forthcoming:-)
+
+We did not discuss Árran.
