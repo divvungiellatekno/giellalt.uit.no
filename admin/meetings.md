@@ -160,15 +160,15 @@ Divvun regular meetings
     [25.08.](divvun/Meeting2020-08-25.html),
     [01.09.](divvun/Meeting2020-09-01.html),
     [08.09.](divvun/Meeting2020-09-08.html),
-    [15.09.](divvun/Meeting2020-09-15.html), [18.09. - sosiale
-    medium](divvun/Meeting2020-09-18_SoMe.html),
+    [15.09.](divvun/Meeting2020-09-15.html),
+    [18.09. - sosiale medium](divvun/Meeting2020-09-18_SoMe.html),
     [22.09.](divvun/Meeting2020-09-22.html),
     [29.09.](divvun/Meeting2020-09-29.html),
     [06.10.](divvun/Meeting2020-10-06.html),
     [13.10.](divvun/Meeting2020-10-13.html),
     [20.10.](divvun/Meeting2020-10-20.html),
-    [27.10.](divvun/Meeting2020-10-27.html), [28.10. -
-    spellertesting](divvun/Meeting2020-10-28-spellertesting.html),
+    [27.10.](divvun/Meeting2020-10-27.html),
+    [28.10. - spellertesting](divvun/Meeting2020-10-28-spellertesting.html),
     [03.11.](divvun/Meeting2020-11-03.html),
     [10.11.](divvun/Meeting2020-11-10.html),
     [17.11.](divvun/Meeting2020-11-17.html),
@@ -320,11 +320,11 @@ Giellatekno meetings
     -   [E-learning, moments for further work. Notes
         from 230915.](giellatekno/150923.html)
 -   **2021:**  
-    [14.01](giellatekno/210114.html) [26.01](giellatekno/210126.html)
-    [17.03](giellatekno/210317.html) [14.04](giellatekno/210414.html)
-    [02.06](giellatekno/210602.html) [10.06](giellatekno/210610.html)
+    [14.01](giellatekno/210114.html), [26.01](giellatekno/210126.html),
+    [17.03](giellatekno/210317.html), [14.04](giellatekno/210414.html),
+    [02.06](giellatekno/210602.html), [10.06](giellatekno/210610.html),
 -   **2020:**  
-    [28.01](giellatekno/200128.html) [20.08](giellatekno/200818.html)
+    [28.01](giellatekno/200128.html), [20.08](giellatekno/200818.html),
     [23.12](giellatekno/201223.html)
 -   **2019:**  
     [23.01](giellatekno/190123.html), [30.01](giellatekno/190130.html),
@@ -393,395 +393,354 @@ Trond + Sjur meetings
     [Mar. 24](weekly/2020/Meeting_2020-03-24.html),
     [Dec. 3](weekly/2020/Meeting_2020-12-03.html)
 -   **2019:**  
-    [Mar. 12](weekly/2019/Meeting_2019-03-12.html), [May
-    7](weekly/2019/Meeting_2019-05-07.html), [May
-    14](weekly/2019/Meeting_2019-05-14.html), [May
-    21](weekly/2019/Meeting_2019-05-21.html), [June
-    4](weekly/2019/Meeting_2019-06-04.html), [June
-    15](weekly/2019/Meeting_2019-06-15.html), [Aug.
-    5](weekly/2019/Meeting_2019-08-05.html), [Aug.
-    13](weekly/2019/Meeting_2019-08-13.html), [Sep.
-    24](weekly/2019/Meeting_2019-09-24.html), [Oct.
-    15](weekly/2019/Meeting_2019-10-15.html), [Nov.
-    20](weekly/2019/Meeting_2019-11-20.html)
+    [Mar. 12](weekly/2019/Meeting_2019-03-12.html),
+    [May 7](weekly/2019/Meeting_2019-05-07.html),
+    [May 14](weekly/2019/Meeting_2019-05-14.html),
+    [May 21](weekly/2019/Meeting_2019-05-21.html),
+    [Jun. 4](weekly/2019/Meeting_2019-06-04.html),
+    [Jun. 15](weekly/2019/Meeting_2019-06-15.html),
+    [Aug. 5](weekly/2019/Meeting_2019-08-05.html),
+    [Aug. 13](weekly/2019/Meeting_2019-08-13.html),
+    [Sep. 24](weekly/2019/Meeting_2019-09-24.html),
+    [Oct. 15](weekly/2019/Meeting_2019-10-15.html),
+    [Nov. 20](weekly/2019/Meeting_2019-11-20.html)
 -   **2018:**  
-    [Jan. 23](weekly/2018/Meeting_2018-01-23.html), [Feb.
-    6](weekly/2018/Meeting_2018-02-06.html), [Feb.
-    13](weekly/2018/Meeting_2018-02-13.html), [Apr.
-    24](weekly/2018/Meeting_2018-04-24.html), [May
-    15](weekly/2018/Meeting_2018-05-15.html), [June
-    6](weekly/2018/Meeting_2018-06-06.html), [June
-    19](weekly/2018/Meeting_2018-06-19.html), [Aug.
-    21](weekly/2018/Meeting_2018-08-21.html), [Aug.
-    28](weekly/2018/Meeting_2018-08-28.html), [Sep.
-    11](weekly/2018/Meeting_2018-09-11.html), [Sep.
-    18](weekly/2018/Meeting_2018-09-18.html), [Oct.
-    1](weekly/2018/Meeting_2018-10-01.html), [Nov.
-    20](weekly/2018/Meeting_2018-11-20.html)
-
-<!-- -->
-
+    [Jan. 23](weekly/2018/Meeting_2018-01-23.html),
+    [Feb. 6](weekly/2018/Meeting_2018-02-06.html),
+    [Feb. 13](weekly/2018/Meeting_2018-02-13.html),
+    [Apr. 24](weekly/2018/Meeting_2018-04-24.html),
+    [May 15](weekly/2018/Meeting_2018-05-15.html),
+    [Jun. 6](weekly/2018/Meeting_2018-06-06.html),
+    [Jun. 19](weekly/2018/Meeting_2018-06-19.html),
+    [Aug. 21](weekly/2018/Meeting_2018-08-21.html),
+    [Aug. 28](weekly/2018/Meeting_2018-08-28.html),
+    [Sep. 11](weekly/2018/Meeting_2018-09-11.html),
+    [Sep. 18](weekly/2018/Meeting_2018-09-18.html),
+    [Oct. 1](weekly/2018/Meeting_2018-10-01.html),
+    [Nov. 20](weekly/2018/Meeting_2018-11-20.html)
 -   **2017:**  
-    [Jan. 17](weekly/2017/Meeting_2017-01-17.html), [Feb.
-    1](weekly/2017/Meeting_2017-02-01.html), [Feb.
-    14](weekly/2017/Meeting_2017-02-14.html), [Feb.
-    28](weekly/2017/Meeting_2017-02-28.html), [Mar.
-    7](weekly/2017/Meeting_2017-03-07.html), [Apr.
-    4](weekly/2017/Meeting_2017-04-04.html), [Apr.
-    11](weekly/2017/Meeting_2017-04-11.html), [May
-    9](weekly/2017/Meeting_2017-05-09.html), [May
-    30](weekly/2017/Meeting_2017-05-30.html), [June
-    13](weekly/2017/Meeting_2017-06-13.html), [June
-    20](weekly/2017/Meeting_2017-06-20.html), [Aug.
-    15](weekly/2017/Meeting_2017-08-15.html), [Sep.
-    7](weekly/2017/Meeting_2017-09-07.html), [Sep.
-    15](weekly/2017/Meeting_2017-09-15.html), [Oct.
-    3](weekly/2017/Meeting_2017-10-03.html), [Oct.
-    10](weekly/2017/Meeting_2017-10-10.html), [Oct.
-    17](weekly/2017/Meeting_2017-10-17.html), [Oct.
-    31](weekly/2017/Meeting_2017-10-31.html), [Nov.
-    7](weekly/2017/Meeting_2017-11-07.html), [Nov.
-    28](weekly/2017/Meeting_2017-11-28.html), [Dec.
-    5](weekly/2017/Meeting_2017-12-05.html), [Dec.
-    12](weekly/2017/Meeting_2017-12-12.html), [Dec.
-    20](weekly/2017/Meeting_2017-12-20.html)
-
-<!-- -->
-
+    [Jan. 17](weekly/2017/Meeting_2017-01-17.html),
+    [Feb. 1](weekly/2017/Meeting_2017-02-01.html),
+    [Feb. 14](weekly/2017/Meeting_2017-02-14.html),
+    [Feb. 28](weekly/2017/Meeting_2017-02-28.html),
+    [Mar. 7](weekly/2017/Meeting_2017-03-07.html),
+    [Apr. 4](weekly/2017/Meeting_2017-04-04.html),
+    [Apr. 11](weekly/2017/Meeting_2017-04-11.html),
+    [May 9](weekly/2017/Meeting_2017-05-09.html),
+    [May 30](weekly/2017/Meeting_2017-05-30.html),
+    [Jun. 13](weekly/2017/Meeting_2017-06-13.html),
+    [Jun. 20](weekly/2017/Meeting_2017-06-20.html),
+    [Aug. 15](weekly/2017/Meeting_2017-08-15.html),
+    [Sep. 7](weekly/2017/Meeting_2017-09-07.html),
+    [Sep. 15](weekly/2017/Meeting_2017-09-15.html),
+    [Oct. 3](weekly/2017/Meeting_2017-10-03.html),
+    [Oct. 10](weekly/2017/Meeting_2017-10-10.html),
+    [Oct. 17](weekly/2017/Meeting_2017-10-17.html),
+    [Oct. 31](weekly/2017/Meeting_2017-10-31.html),
+    [Nov. 7](weekly/2017/Meeting_2017-11-07.html),
+    [Nov. 28](weekly/2017/Meeting_2017-11-28.html),
+    [Dec. 5](weekly/2017/Meeting_2017-12-05.html),
+    [Dec. 12](weekly/2017/Meeting_2017-12-12.html),
+    [Dec. 20](weekly/2017/Meeting_2017-12-20.html)
 -   **2016:**  
-    [Jan. 11](weekly/2016/Meeting_2016-01-11.html), [Mar.
-    15](weekly/2016/Meeting_2016-03-15.html), [Mar.
-    15](weekly/2016/Meeting_2016-03-15.html), [Mar.
-    29](weekly/2016/Meeting_2016-03-29.html), [Sep.
-    14](weekly/2016/Meeting_2016-09-14.html), [Sep.
-    27](weekly/2016/Meeting_2016-09-27.html), [Oct.
-    18](weekly/2016/Meeting_2016-10-18.html)
-
-<!-- -->
-
+    [Jan. 11](weekly/2016/Meeting_2016-01-11.html),
+    [Mar. 15](weekly/2016/Meeting_2016-03-15.html),
+    [Mar. 15](weekly/2016/Meeting_2016-03-15.html),
+    [Mar. 29](weekly/2016/Meeting_2016-03-29.html),
+    [Sep. 14](weekly/2016/Meeting_2016-09-14.html),
+    [Sep. 27](weekly/2016/Meeting_2016-09-27.html),
+    [Oct. 18](weekly/2016/Meeting_2016-10-18.html)
 -   **2015:**  
-    [Jan. 8](weekly/2015/Meeting_2015-01-08.html), [Mar.
-    10](weekly/2015/Meeting_2015-03-10.html), [May
-    22](weekly/2015/Meeting_2015-05-22.html), [Sep.
-    8](weekly/2015/Meeting_2015-09-08.html), [Sep.
-    16](weekly/2015/Meeting_2015-09-16.html), [Sep.
-    22](weekly/2015/Meeting_2015-09-22.html), [Oct.
-    06](weekly/2015/Meeting_2015-10-06.html)
-
-<!-- -->
-
+    [Jan. 8](weekly/2015/Meeting_2015-01-08.html),
+    [Mar. 10](weekly/2015/Meeting_2015-03-10.html),
+    [May 22](weekly/2015/Meeting_2015-05-22.html),
+    [Sep. 8](weekly/2015/Meeting_2015-09-08.html),
+    [Sep. 16](weekly/2015/Meeting_2015-09-16.html),
+    [Sep. 22](weekly/2015/Meeting_2015-09-22.html),
+    [Oct. 06](weekly/2015/Meeting_2015-10-06.html)
 -   **2014:**  
-    [Jan. 28](weekly/2014/Meeting_2014-01-28.html), [Febr.
-    25](weekly/2014/Meeting_2014-02-25.html), [March
-    18](weekly/2014/Meeting_2014-03-18.html), [March
-    28](weekly/2014/Meeting_2014-03-28.html), [April
-    2](weekly/2014/Meeting_2014-04-02.html), [April
-    22](weekly/2014/Meeting_2014-04-22.html), [May
-    6](weekly/2014/Meeting_2014-05-06.html), [May
-    13](weekly/2014/Meeting_2014-05-13.html), [June
-    10](weekly/2014/Meeting_2014-06-10.html), [June
-    11](weekly/2014/Meeting_2014-06-11.html), [June
-    30](weekly/2014/Meeting_2014-06-30.html), [Aug.
-    4](weekly/2014/Meeting_2014-08-04.html), [Oct.
-    7](weekly/2014/Meeting_2014-10-07.html), [Oct.
-    14](weekly/2014/Meeting_2014-10-14.html), [Oct.
-    21](weekly/2014/Meeting_2014-10-21.html), [Nov.
-    4](weekly/2014/Meeting_2014-11-04.html), [Nov.
-    11](weekly/2014/Meeting_2014-11-11.html)
-
-<!-- -->
-
+    [Jan. 28](weekly/2014/Meeting_2014-01-28.html),
+    [Febr. 25](weekly/2014/Meeting_2014-02-25.html),
+    [Mar. 18](weekly/2014/Meeting_2014-03-18.html),
+    [Mar. 28](weekly/2014/Meeting_2014-03-28.html),
+    [Apr. 2](weekly/2014/Meeting_2014-04-02.html),
+    [Apr. 22](weekly/2014/Meeting_2014-04-22.html),
+    [May 6](weekly/2014/Meeting_2014-05-06.html),
+    [May 13](weekly/2014/Meeting_2014-05-13.html),
+    [Jun. 10](weekly/2014/Meeting_2014-06-10.html),
+    [Jun. 11](weekly/2014/Meeting_2014-06-11.html),
+    [Jun. 30](weekly/2014/Meeting_2014-06-30.html),
+    [Aug. 4](weekly/2014/Meeting_2014-08-04.html),
+    [Oct. 7](weekly/2014/Meeting_2014-10-07.html),
+    [Oct. 14](weekly/2014/Meeting_2014-10-14.html),
+    [Oct. 21](weekly/2014/Meeting_2014-10-21.html),
+    [Nov. 4](weekly/2014/Meeting_2014-11-04.html),
+    [Nov. 11](weekly/2014/Meeting_2014-11-11.html)
 -   **2013:**  
-    [Jan. 1](weekly/2013/Meeting_2013-01-18.html), [March
-    25](weekly/2013/Meeting_2013-03-25.html), [April
-    10](weekly/2013/Meeting_2013-04-10.html), [April
-    12](weekly/2013/Meeting_2013-04-12.html), [April
-    16](weekly/2013/Meeting_2013-04-16.html), [April
-    23](weekly/2013/Meeting_2013-04-23.html), [April
-    29](weekly/2013/Meeting_2013-04-29.html), [May
-    07](weekly/2013/Meeting_2013-05-07.html), [May
-    28](weekly/2013/Meeting_2013-05-28.html), [May
-    30](weekly/2013/Meeting_2013-05-30.html), [June
-    04](weekly/2013/Meeting_2013-06-04.html), [Aug.
-    07](weekly/2013/Meeting_2013-08-07.html), [Aug.
-    13](weekly/2013/Meeting_2013-08-13.html), [Sep.
-    02](weekly/2013/Meeting_2013-09-02.html), [Oct.
-    02](weekly/2013/Meeting_2013-10-02.html), [Oct.
-    08](weekly/2013/Meeting_2013-10-08.html), [Oct.
-    16](weekly/2013/Meeting_2013-10-16.html), [Oct.
-    22](weekly/2013/Meeting_2013-10-22.html), [Nov.
-    11](weekly/2013/Meeting_2013-11-11.html), [Nov.
-    13](weekly/2013/Meeting_2013-11-13.html), [Nov.
-    26](weekly/2013/Meeting_2013-11-26.html), [Dec.
-    17](weekly/2013/Meeting_2013-12-17.html)
-
-<!-- -->
-
+    [Jan. 1](weekly/2013/Meeting_2013-01-18.html),
+    [Mar. 25](weekly/2013/Meeting_2013-03-25.html),
+    [Apr. 10](weekly/2013/Meeting_2013-04-10.html),
+    [Apr. 12](weekly/2013/Meeting_2013-04-12.html),
+    [Apr. 16](weekly/2013/Meeting_2013-04-16.html),
+    [Apr. 23](weekly/2013/Meeting_2013-04-23.html),
+    [Apr. 29](weekly/2013/Meeting_2013-04-29.html),
+    [May 07](weekly/2013/Meeting_2013-05-07.html),
+    [May 28](weekly/2013/Meeting_2013-05-28.html),
+    [May 30](weekly/2013/Meeting_2013-05-30.html),
+    [Jun. 04](weekly/2013/Meeting_2013-06-04.html),
+    [Aug. 07](weekly/2013/Meeting_2013-08-07.html),
+    [Aug. 13](weekly/2013/Meeting_2013-08-13.html),
+    [Sep. 02](weekly/2013/Meeting_2013-09-02.html),
+    [Oct. 02](weekly/2013/Meeting_2013-10-02.html),
+    [Oct. 08](weekly/2013/Meeting_2013-10-08.html),
+    [Oct. 16](weekly/2013/Meeting_2013-10-16.html),
+    [Oct. 22](weekly/2013/Meeting_2013-10-22.html),
+    [Nov. 11](weekly/2013/Meeting_2013-11-11.html),
+    [Nov. 13](weekly/2013/Meeting_2013-11-13.html),
+    [Nov. 26](weekly/2013/Meeting_2013-11-26.html),
+    [Dec. 17](weekly/2013/Meeting_2013-12-17.html)
 -   **2012:**  
-    [Jan. 20](weekly/2012/Meeting_2012-01-20.html), [Febr.
-    07](weekly/2012/Meeting_2012-02-07.html), [Febr.
-    14](weekly/2012/Meeting_2012-02-14.html), [Febr.
-    23](weekly/2012/Meeting_2012-02-23.html), [March
-    6](weekly/2012/Meeting_2012-03-06.html), [March
-    26](weekly/2012/Meeting_2012-03-26.html), [May
-    2](weekly/2012/Meeting_2012-05-02.html), [May
-    29](weekly/2012/Meeting_2012-05-29.html)
-
-<!-- -->
-
+    [Jan. 20](weekly/2012/Meeting_2012-01-20.html),
+    [Febr. 07](weekly/2012/Meeting_2012-02-07.html),
+    [Febr. 14](weekly/2012/Meeting_2012-02-14.html),
+    [Febr. 23](weekly/2012/Meeting_2012-02-23.html),
+    [Mar. 6](weekly/2012/Meeting_2012-03-06.html),
+    [Mar. 26](weekly/2012/Meeting_2012-03-26.html),
+    [May 2](weekly/2012/Meeting_2012-05-02.html),
+    [May 29](weekly/2012/Meeting_2012-05-29.html)
 -   **2011:**  
-    [Nov. 7](weekly/2011/Meeting_2011-11-07.html), [Nov.
-    24](weekly/2011/Meeting_2011-11-24.html)
+    [Nov. 7](weekly/2011/Meeting_2011-11-07.html),
+    [Nov. 24](weekly/2011/Meeting_2011-11-24.html)
 
 Weekly Giellatekno + Divvun meetings
 ------------------------------------
 
 Giellatekno and Divvun had regular weekly meetings in the period 2005
 through 2011. They were held at 10 AM Norwegian time each Monday
-morning, unless otherwise agreed upon. The memos for the meetings are
+morning,
+    unless otherwise agreed upon. The memos for the meetings are
 listed below.
 
-It is possible to extract the tasks as
-[iCal](http://en.wikipedia.org/wiki/ICalendar) todo items.
-
 -   **2011:**  
-    [Jan. 31](weekly/2011/Meeting_2011-01-31.html), [Febr.
-    7](weekly/2011/Meeting_2011-02-07.html), [Febr.
-    14](weekly/2011/Meeting_2011-02-14.html), [March
-    7](weekly/2011/Meeting_2011-03-07.html), [March
-    14](weekly/2011/Meeting_2011-03-14.html), [March
-    21](weekly/2011/Meeting_2011-03-21.html), [March
-    28](weekly/2011/Meeting_2011-03-28.html), [April
-    4](weekly/2011/Meeting_2011-04-04.html), [April
-    11](weekly/2011/Meeting_2011-04-11.html), [April
-    26](weekly/2011/Meeting_2011-04-26.html), [May
-    2](weekly/2011/Meeting_2011-05-02.html), [May
-    9](weekly/2011/Meeting_2011-05-09.html), [May
-    23](weekly/2011/Meeting_2011-05-23.html), [June
-    1](weekly/2011/Meeting_2011-06-01.html), [June
-    6](weekly/2011/Meeting_2011-06-06.html)
-
-<!-- -->
-
+    [Jan. 31](weekly/2011/Meeting_2011-01-31.html),
+    [Febr. 7](weekly/2011/Meeting_2011-02-07.html),
+    [Febr. 14](weekly/2011/Meeting_2011-02-14.html),
+    [Mar. 7](weekly/2011/Meeting_2011-03-07.html),
+    [Mar. 14](weekly/2011/Meeting_2011-03-14.html),
+    [Mar. 21](weekly/2011/Meeting_2011-03-21.html),
+    [Mar. 28](weekly/2011/Meeting_2011-03-28.html),
+    [Apr. 4](weekly/2011/Meeting_2011-04-04.html),
+    [Apr. 11](weekly/2011/Meeting_2011-04-11.html),
+    [Apr. 26](weekly/2011/Meeting_2011-04-26.html),
+    [May 2](weekly/2011/Meeting_2011-05-02.html),
+    [May 9](weekly/2011/Meeting_2011-05-09.html),
+    [May 23](weekly/2011/Meeting_2011-05-23.html),
+    [Jun. 1](weekly/2011/Meeting_2011-06-01.html),
+    [Jun. 6](weekly/2011/Meeting_2011-06-06.html)
 -   **2010:**  
-    [Jan. 4](weekly/2010/Meeting_2010-01-04.html), [Jan.
-    11](weekly/2010/Meeting_2010-01-11.html), [Jan.
-    18](weekly/2010/Meeting_2010-01-18.html), [Jan.
-    25](weekly/2010/Meeting_2010-01-25.html), [Febr.
-    8](weekly/2010/Meeting_2010-02-08.html), [Febr.
-    15](weekly/2010/Meeting_2010-02-15.html), [Febr.
-    22](weekly/2010/Meeting_2010-02-22.html), [March
-    1](weekly/2010/Meeting_2010-03-01.html), [March
-    15](weekly/2010/Meeting_2010-03-15.html), [March
-    22](weekly/2010/Meeting_2010-03-22.html), [April
-    7](weekly/2010/Meeting_2010-04-07.html), [April
-    12](weekly/2010/Meeting_2010-04-12.html), [April
-    19](weekly/2010/Meeting_2010-04-19.html), [April
-    26](weekly/2010/Meeting_2010-04-26.html), [May
-    3](weekly/2010/Meeting_2010-05-03.html), [May
-    10](weekly/2010/Meeting_2010-05-10.html), [May
-    18](weekly/2010/Meeting_2010-05-18.html), [May
-    26](weekly/2010/Meeting_2010-05-26.html), [May
-    31](weekly/2010/Meeting_2010-05-31.html), [June
-    14](weekly/2010/Meeting_2010-06-14.html), [June
-    21](weekly/2010/Meeting_2010-06-21.html), [June
-    28](weekly/2010/Meeting_2010-06-28.html), [Aug.
-    10](weekly/2010/Meeting_2010-08-09.html), [Aug.
-    16](weekly/2010/Meeting_2010-08-16.html), [Aug.
-    23](weekly/2010/Meeting_2010-08-23.html), [Sept.
-    6](weekly/2010/Meeting_2010-09-06.html), [Sept.
-    13](weekly/2010/Meeting_2010-09-13.html), [Sept.
-    20](weekly/2010/Meeting_2010-09-20.html), [Sept.
-    27](weekly/2010/Meeting_2010-09-27.html), [Oct.
-    4](weekly/2010/Meeting_2010-10-04.html), [Oct.
-    11](weekly/2010/Meeting_2010-10-11.html), [Oct.
-    18](weekly/2010/Meeting_2010-10-18.html), [Nov.
-    15](weekly/2010/Meeting_2010-11-15.html), [Nov.
-    22](weekly/2010/Meeting_2010-11-22.html), [Nov.
-    29](weekly/2010/Meeting_2010-11-29.html), [Dec.
-    6](weekly/2010/Meeting_2010-12-06.html)
-
-<!-- -->
-
+    [Jan. 4](weekly/2010/Meeting_2010-01-04.html),
+    [Jan. 11](weekly/2010/Meeting_2010-01-11.html),
+    [Jan. 18](weekly/2010/Meeting_2010-01-18.html),
+    [Jan. 25](weekly/2010/Meeting_2010-01-25.html),
+    [Febr. 8](weekly/2010/Meeting_2010-02-08.html),
+    [Febr. 15](weekly/2010/Meeting_2010-02-15.html),
+    [Febr. 22](weekly/2010/Meeting_2010-02-22.html),
+    [Mar. 1](weekly/2010/Meeting_2010-03-01.html),
+    [Mar. 15](weekly/2010/Meeting_2010-03-15.html),
+    [Mar. 22](weekly/2010/Meeting_2010-03-22.html),
+    [Apr. 7](weekly/2010/Meeting_2010-04-07.html),
+    [Apr. 12](weekly/2010/Meeting_2010-04-12.html),
+    [Apr. 19](weekly/2010/Meeting_2010-04-19.html),
+    [Apr. 26](weekly/2010/Meeting_2010-04-26.html),
+    [May 3](weekly/2010/Meeting_2010-05-03.html),
+    [May 10](weekly/2010/Meeting_2010-05-10.html),
+    [May 18](weekly/2010/Meeting_2010-05-18.html),
+    [May 26](weekly/2010/Meeting_2010-05-26.html),
+    [May 31](weekly/2010/Meeting_2010-05-31.html),
+    [Jun. 14](weekly/2010/Meeting_2010-06-14.html),
+    [Jun. 21](weekly/2010/Meeting_2010-06-21.html),
+    [Jun. 28](weekly/2010/Meeting_2010-06-28.html),
+    [Aug. 10](weekly/2010/Meeting_2010-08-09.html),
+    [Aug. 16](weekly/2010/Meeting_2010-08-16.html),
+    [Aug. 23](weekly/2010/Meeting_2010-08-23.html),
+    [Sept. 6](weekly/2010/Meeting_2010-09-06.html),
+    [Sept. 13](weekly/2010/Meeting_2010-09-13.html),
+    [Sept. 20](weekly/2010/Meeting_2010-09-20.html),
+    [Sept. 27](weekly/2010/Meeting_2010-09-27.html),
+    [Oct. 4](weekly/2010/Meeting_2010-10-04.html),
+    [Oct. 11](weekly/2010/Meeting_2010-10-11.html),
+    [Oct. 18](weekly/2010/Meeting_2010-10-18.html),
+    [Nov. 15](weekly/2010/Meeting_2010-11-15.html),
+    [Nov. 22](weekly/2010/Meeting_2010-11-22.html),
+    [Nov. 29](weekly/2010/Meeting_2010-11-29.html),
+    [Dec. 6](weekly/2010/Meeting_2010-12-06.html)
 -   **2009:**  
-    [Jan. 5](weekly/2009/Meeting_2009-01-05.html), [Jan.
-    12](weekly/2009/Meeting_2009-01-12.html), [Jan.
-    19](weekly/2009/Meeting_2009-01-19.html), [Jan.
-    26](weekly/2009/Meeting_2009-01-26.html), [Febr.
-    2](weekly/2009/Meeting_2009-02-02.html), [Febr.
-    9](weekly/2009/Meeting_2009-02-09.html), [March
-    2](weekly/2009/Meeting_2009-03-02.html), [March
-    9](weekly/2009/Meeting_2009-03-09.html), [March
-    16](weekly/2009/Meeting_2009-03-16.html), [March
-    23](weekly/2009/Meeting_2009-03-23.html), [March
-    30](weekly/2009/Meeting_2009-03-30.html), [April
-    20](weekly/2009/Meeting_2009-04-20.html), [April
-    27](weekly/2009/Meeting_2009-04-27.html), [May
-    6](weekly/2009/Meeting_2009-05-06.html), [May
-    11](weekly/2009/Meeting_2009-05-11.html), [May
-    18](weekly/2009/Meeting_2009-05-18.html), [May
-    25](weekly/2009/Meeting_2009-05-25.html), [June
-    2](weekly/2009/Meeting_2009-06-02.html), [June
-    15](weekly/2009/Meeting_2009-06-15.html), [June
-    22](weekly/2009/Meeting_2009-06-22.html), [June
-    29](weekly/2009/Meeting_2009-06-29.html), [Aug.
-    17](weekly/2009/Meeting_2009-08-17.html), [Aug.
-    24](weekly/2009/Meeting_2009-08-24.html), [Aug.
-    31](weekly/2009/Meeting_2009-08-31.html), [Sep.
-    07](weekly/2009/Meeting_2009-09-07.html), [Sep.
-    14](weekly/2009/Meeting_2009-09-14.html), [Sep.
-    21](weekly/2009/Meeting_2009-09-21.html), [Oct.
-    5](weekly/2009/Meeting_2009-10-05.html), [Oct.
-    12](weekly/2009/Meeting_2009-10-12.html), [Oct.
-    19](weekly/2009/Meeting_2009-10-19.html), [Oct.
-    26](weekly/2009/Meeting_2009-10-26.html), [Nov.
-    2](weekly/2009/Meeting_2009-11-02.html), [Nov.
-    9](weekly/2009/Meeting_2009-11-09.html), [Nov.
-    16](weekly/2009/Meeting_2009-11-16.html), [Nov.
-    23](weekly/2009/Meeting_2009-11-23.html), [Nov.
-    30](weekly/2009/Meeting_2009-11-30.html), [Dec.
-    14](weekly/2009/Meeting_2009-12-14.html), [Dec.
-    21](weekly/2009/Meeting_2009-12-21.html)
-
-<!-- -->
-
+    [Jan. 5](weekly/2009/Meeting_2009-01-05.html),
+    [Jan. 12](weekly/2009/Meeting_2009-01-12.html),
+    [Jan. 19](weekly/2009/Meeting_2009-01-19.html),
+    [Jan. 26](weekly/2009/Meeting_2009-01-26.html),
+    [Febr. 2](weekly/2009/Meeting_2009-02-02.html),
+    [Febr. 9](weekly/2009/Meeting_2009-02-09.html),
+    [Mar. 2](weekly/2009/Meeting_2009-03-02.html),
+    [Mar. 9](weekly/2009/Meeting_2009-03-09.html),
+    [Mar. 16](weekly/2009/Meeting_2009-03-16.html),
+    [Mar. 23](weekly/2009/Meeting_2009-03-23.html),
+    [Mar. 30](weekly/2009/Meeting_2009-03-30.html),
+    [Apr. 20](weekly/2009/Meeting_2009-04-20.html),
+    [Apr. 27](weekly/2009/Meeting_2009-04-27.html),
+    [May 6](weekly/2009/Meeting_2009-05-06.html),
+    [May 11](weekly/2009/Meeting_2009-05-11.html),
+    [May 18](weekly/2009/Meeting_2009-05-18.html),
+    [May 25](weekly/2009/Meeting_2009-05-25.html),
+    [Jun. 2](weekly/2009/Meeting_2009-06-02.html),
+    [Jun. 15](weekly/2009/Meeting_2009-06-15.html),
+    [Jun. 22](weekly/2009/Meeting_2009-06-22.html),
+    [Jun. 29](weekly/2009/Meeting_2009-06-29.html),
+    [Aug. 17](weekly/2009/Meeting_2009-08-17.html),
+    [Aug. 24](weekly/2009/Meeting_2009-08-24.html),
+    [Aug. 31](weekly/2009/Meeting_2009-08-31.html),
+    [Sep. 07](weekly/2009/Meeting_2009-09-07.html),
+    [Sep. 14](weekly/2009/Meeting_2009-09-14.html),
+    [Sep. 21](weekly/2009/Meeting_2009-09-21.html),
+    [Oct. 5](weekly/2009/Meeting_2009-10-05.html),
+    [Oct. 12](weekly/2009/Meeting_2009-10-12.html),
+    [Oct. 19](weekly/2009/Meeting_2009-10-19.html),
+    [Oct. 26](weekly/2009/Meeting_2009-10-26.html),
+    [Nov. 2](weekly/2009/Meeting_2009-11-02.html),
+    [Nov. 9](weekly/2009/Meeting_2009-11-09.html),
+    [Nov. 16](weekly/2009/Meeting_2009-11-16.html),
+    [Nov. 23](weekly/2009/Meeting_2009-11-23.html),
+    [Nov. 30](weekly/2009/Meeting_2009-11-30.html),
+    [Dec. 14](weekly/2009/Meeting_2009-12-14.html),
+    [Dec. 21](weekly/2009/Meeting_2009-12-21.html)
 -   **2008:**  
-    [Jan. 7](weekly/2008/Meeting_2008-01-07.html), [Jan.
-    14](weekly/2008/Meeting_2008-01-14.html), [Jan.
-    21](weekly/2008/Meeting_2008-01-21.html), [Jan.
-    28](weekly/2008/Meeting_2008-01-28.html), [Febr.
-    4](weekly/2008/Meeting_2008-02-04.html), [Febr.
-    25](weekly/2008/Meeting_2008-02-25.html), [March
-    3](weekly/2008/Meeting_2008-03-03.html), [March
-    12](weekly/2008/Meeting_2008-03-12.html), [March
-    26](weekly/2008/Meeting_2008-03-26.html), [March
-    31](weekly/2008/Meeting_2008-03-31.html), [April
-    7](weekly/2008/Meeting_2008-04-07.html), [April
-    15](weekly/2008/Meeting_2008-04-15.html), [April
-    21](weekly/2008/Meeting_2008-04-21.html), [April
-    28](weekly/2008/Meeting_2008-04-28.html), [May
-    5](weekly/2008/Meeting_2008-05-05.html), [May
-    13](weekly/2008/Meeting_2008-05-13.html), [May
-    19](weekly/2008/Meeting_2008-05-19.html), [May
-    26](weekly/2008/Meeting_2008-05-26.html), [June
-    2](weekly/2008/Meeting_2008-06-02.html), [June
-    9](weekly/2008/Meeting_2008-06-09.html), [June
-    16](weekly/2008/Meeting_2008-06-16.html), [June
-    23](weekly/2008/Meeting_2008-06-23.html), [June
-    30](weekly/2008/Meeting_2008-06-30.html), [Aug.
-    11](weekly/2008/Meeting_2008-08-11.html), [Aug.
-    18](weekly/2008/Meeting_2008-08-18.html), [Aug.
-    25](weekly/2008/Meeting_2008-08-25.html), [Sept.
-    1](weekly/2008/Meeting_2008-09-01.html), [Sept.
-    8](weekly/2008/Meeting_2008-09-08.html), [Sept.
-    15](weekly/2008/Meeting_2008-09-15.html), [Sept.
-    22](weekly/2008/Meeting_2008-09-22.html), [Sept.
-    29](weekly/2008/Meeting_2008-09-29.html), [Oct.
-    6](weekly/2008/Meeting_2008-10-06.html), [Oct.
-    13](weekly/2008/Meeting_2008-10-13.html), [Oct.
-    20](weekly/2008/Meeting_2008-10-20.html), [Oct.
-    27](weekly/2008/Meeting_2008-10-27.html), [Nov.
-    10](weekly/2008/Meeting_2008-11-10.html), [Nov.
-    17](weekly/2008/Meeting_2008-11-17.html), [Nov.
-    24](weekly/2008/Meeting_2008-11-24.html), [Dec.
-    1](weekly/2008/Meeting_2008-12-01.html), [Dec.
-    8](weekly/2008/Meeting_2008-12-08.html), [Dec.
-    15](weekly/2008/Meeting_2008-12-15.html)
-
-<!-- -->
-
+    [Jan. 7](weekly/2008/Meeting_2008-01-07.html),
+    [Jan. 14](weekly/2008/Meeting_2008-01-14.html),
+    [Jan. 21](weekly/2008/Meeting_2008-01-21.html),
+    [Jan. 28](weekly/2008/Meeting_2008-01-28.html),
+    [Febr. 4](weekly/2008/Meeting_2008-02-04.html),
+    [Febr. 25](weekly/2008/Meeting_2008-02-25.html),
+    [Mar. 3](weekly/2008/Meeting_2008-03-03.html),
+    [Mar. 12](weekly/2008/Meeting_2008-03-12.html),
+    [Mar. 26](weekly/2008/Meeting_2008-03-26.html),
+    [Mar. 31](weekly/2008/Meeting_2008-03-31.html),
+    [Apr. 7](weekly/2008/Meeting_2008-04-07.html),
+    [Apr. 15](weekly/2008/Meeting_2008-04-15.html),
+    [Apr. 21](weekly/2008/Meeting_2008-04-21.html),
+    [Apr. 28](weekly/2008/Meeting_2008-04-28.html),
+    [May 5](weekly/2008/Meeting_2008-05-05.html),
+    [May 13](weekly/2008/Meeting_2008-05-13.html),
+    [May 19](weekly/2008/Meeting_2008-05-19.html),
+    [May 26](weekly/2008/Meeting_2008-05-26.html),
+    [Jun. 2](weekly/2008/Meeting_2008-06-02.html),
+    [Jun. 9](weekly/2008/Meeting_2008-06-09.html),
+    [Jun. 16](weekly/2008/Meeting_2008-06-16.html),
+    [Jun. 23](weekly/2008/Meeting_2008-06-23.html),
+    [Jun. 30](weekly/2008/Meeting_2008-06-30.html),
+    [Aug. 11](weekly/2008/Meeting_2008-08-11.html),
+    [Aug. 18](weekly/2008/Meeting_2008-08-18.html),
+    [Aug. 25](weekly/2008/Meeting_2008-08-25.html),
+    [Sept. 1](weekly/2008/Meeting_2008-09-01.html),
+    [Sept. 8](weekly/2008/Meeting_2008-09-08.html),
+    [Sept. 15](weekly/2008/Meeting_2008-09-15.html),
+    [Sept. 22](weekly/2008/Meeting_2008-09-22.html),
+    [Sept. 29](weekly/2008/Meeting_2008-09-29.html),
+    [Oct. 6](weekly/2008/Meeting_2008-10-06.html),
+    [Oct. 13](weekly/2008/Meeting_2008-10-13.html),
+    [Oct. 20](weekly/2008/Meeting_2008-10-20.html),
+    [Oct. 27](weekly/2008/Meeting_2008-10-27.html),
+    [Nov. 10](weekly/2008/Meeting_2008-11-10.html),
+    [Nov. 17](weekly/2008/Meeting_2008-11-17.html),
+    [Nov. 24](weekly/2008/Meeting_2008-11-24.html),
+    [Dec. 1](weekly/2008/Meeting_2008-12-01.html),
+    [Dec. 8](weekly/2008/Meeting_2008-12-08.html),
+    [Dec. 15](weekly/2008/Meeting_2008-12-15.html)
 -   **2007:**  
-    [Jan. 3](weekly/2007/Meeting_2007-01-03.html), [Jan.
-    8](weekly/2007/Meeting_2007-01-08.html), [Jan.
-    15](weekly/2007/Meeting_2007-01-15.html), [Jan.
-    22](weekly/2007/Meeting_2007-01-22.html), [Jan.
-    29](weekly/2007/Meeting_2007-01-29.html), [Febr.
-    5](weekly/2007/Meeting_2007-02-05.html), [Febr.
-    12](weekly/2007/Meeting_2007-02-12.html), [Febr.
-    19](weekly/2007/Meeting_2007-02-19.html), [Febr.
-    26](weekly/2007/Meeting_2007-02-26.html), [March
-    5](weekly/2007/Meeting_2007-03-05.html), [March
-    12](weekly/2007/Meeting_2007-03-12.html), [March
-    19](weekly/2007/Meeting_2007-03-19.html), [March
-    26](weekly/2007/Meeting_2007-03-26.html), [April
-    2](weekly/2007/Meeting_2007-04-02.html), [April
-    10](weekly/2007/Meeting_2007-04-10.html), [April
-    23](weekly/2007/Meeting_2007-04-23.html), [April
-    30](weekly/2007/Meeting_2007-04-30.html), [May
-    7](weekly/2007/Meeting_2007-05-07.html), [May
-    14](weekly/2007/Meeting_2007-05-07.html), [May
-    21](weekly/2007/Meeting_2007-05-07.html), [May
-    29](weekly/2007/Meeting_2007-05-07.html), [June
-    4](weekly/2007/Meeting_2007-06-04.html), [June
-    11](weekly/2007/Meeting_2007-06-11.html), [June
-    25](weekly/2007/Meeting_2007-06-25.html), [July
-    2](weekly/2007/Meeting_2007-07-02.html), [Aug.
-    13](weekly/2007/Meeting_2007-08-13.html), [Aug.
-    21](weekly/2007/Meeting_2007-08-21.html), [Aug.
-    27](weekly/2007/Meeting_2007-08-27.html), [Sept.
-    3](weekly/2007/Meeting_2007-09-03.html), [Sept.
-    10](weekly/2007/Meeting_2007-09-10.html), [Sept.
-    17](weekly/2007/Meeting_2007-09-17.html), [Oct.
-    1](weekly/2007/Meeting_2007-10-01.html), [Oct.
-    8](weekly/2007/Meeting_2007-10-08.html), [Oct.
-    15](weekly/2007/Meeting_2007-10-15.html), [Oct.
-    22](weekly/2007/Meeting_2007-10-22.html), [Oct.
-    29](weekly/2007/Meeting_2007-10-29.html), [Nov.
-    5](weekly/2007/Meeting_2007-11-05.html), [Nov.
-    12](weekly/2007/Meeting_2007-11-12.html), [Nov.
-    19](weekly/2007/Meeting_2007-11-19.html), [Nov.
-    26](weekly/2007/Meeting_2007-11-26.html), [Dec.
-    3](weekly/2007/Meeting_2007-12-03.html), [Dec.
-    10](weekly/2007/Meeting_2007-12-10.html), [Dec.
-    17](weekly/2007/Meeting_2007-12-17.html)
-
-<!-- -->
-
+    [Jan. 3](weekly/2007/Meeting_2007-01-03.html),
+    [Jan. 8](weekly/2007/Meeting_2007-01-08.html),
+    [Jan. 15](weekly/2007/Meeting_2007-01-15.html),
+    [Jan. 22](weekly/2007/Meeting_2007-01-22.html),
+    [Jan. 29](weekly/2007/Meeting_2007-01-29.html),
+    [Febr. 5](weekly/2007/Meeting_2007-02-05.html),
+    [Febr. 12](weekly/2007/Meeting_2007-02-12.html),
+    [Febr. 19](weekly/2007/Meeting_2007-02-19.html),
+    [Febr. 26](weekly/2007/Meeting_2007-02-26.html),
+    [Mar. 5](weekly/2007/Meeting_2007-03-05.html),
+    [Mar. 12](weekly/2007/Meeting_2007-03-12.html),
+    [Mar. 19](weekly/2007/Meeting_2007-03-19.html),
+    [Mar. 26](weekly/2007/Meeting_2007-03-26.html),
+    [Apr. 2](weekly/2007/Meeting_2007-04-02.html),
+    [Apr. 10](weekly/2007/Meeting_2007-04-10.html),
+    [Apr. 23](weekly/2007/Meeting_2007-04-23.html),
+    [Apr. 30](weekly/2007/Meeting_2007-04-30.html),
+    [May 7](weekly/2007/Meeting_2007-05-07.html),
+    [May 14](weekly/2007/Meeting_2007-05-07.html),
+    [May 21](weekly/2007/Meeting_2007-05-07.html),
+    [May 29](weekly/2007/Meeting_2007-05-07.html),
+    [Jun. 4](weekly/2007/Meeting_2007-06-04.html),
+    [Jun. 11](weekly/2007/Meeting_2007-06-11.html),
+    [Jun. 25](weekly/2007/Meeting_2007-06-25.html),
+    [Jul. 2](weekly/2007/Meeting_2007-07-02.html),
+    [Aug. 13](weekly/2007/Meeting_2007-08-13.html),
+    [Aug. 21](weekly/2007/Meeting_2007-08-21.html),
+    [Aug. 27](weekly/2007/Meeting_2007-08-27.html),
+    [Sept. 3](weekly/2007/Meeting_2007-09-03.html),
+    [Sept. 10](weekly/2007/Meeting_2007-09-10.html),
+    [Sept. 17](weekly/2007/Meeting_2007-09-17.html),
+    [Oct. 1](weekly/2007/Meeting_2007-10-01.html),
+    [Oct. 8](weekly/2007/Meeting_2007-10-08.html),
+    [Oct. 15](weekly/2007/Meeting_2007-10-15.html),
+    [Oct. 22](weekly/2007/Meeting_2007-10-22.html),
+    [Oct. 29](weekly/2007/Meeting_2007-10-29.html),
+    [Nov. 5](weekly/2007/Meeting_2007-11-05.html),
+    [Nov. 12](weekly/2007/Meeting_2007-11-12.html),
+    [Nov. 19](weekly/2007/Meeting_2007-11-19.html),
+    [Nov. 26](weekly/2007/Meeting_2007-11-26.html),
+    [Dec. 3](weekly/2007/Meeting_2007-12-03.html),
+    [Dec. 10](weekly/2007/Meeting_2007-12-10.html),
+    [Dec. 17](weekly/2007/Meeting_2007-12-17.html)
 -   **2006:**  
-    [Jan. 2](weekly/2006/Meeting_2006-01-02.html), [Jan.
-    9](weekly/2006/Meeting_2006-01-09.html), [Jan.
-    16](weekly/2006/Meeting_2006-01-16.html), [Jan.
-    30](weekly/2006/Meeting_2006-01-30.html), [Febr.
-    6](weekly/2006/Meeting_2006-02-06.html), [Febr.
-    13](weekly/2006/Meeting_2006-02-13.html), [Febr.
-    20](weekly/2006/Meeting_2006-02-20.html), [Febr.
-    27](weekly/2006/Meeting_2006-02-27.html), [March
-    6](weekly/2006/Meeting_2006-03-06.html), [March
-    13](weekly/2006/Meeting_2006-03-13.html), [March
-    20](weekly/2006/Meeting_2006-03-20.html), [March
-    27](weekly/2006/Meeting_2006-03-27.html), [April
-    3](weekly/2006/Meeting_2006-04-03.html), [April
-    18](weekly/2006/Meeting_2006-04-18.html), [April
-    24](weekly/2006/Meeting_2006-04-24.html), [May
-    2](weekly/2006/Meeting_2006-05-02.html), [May
-    9](weekly/2006/Meeting_2006-05-09.html), [May
-    15](weekly/2006/Meeting_2006-05-15.html), [May
-    22](weekly/2006/Meeting_2006-05-22.html), [May
-    29](weekly/2006/Meeting_2006-05-29.html), [June
-    6](weekly/2006/Meeting_2006-06-06.html), [June
-    12](weekly/2006/Meeting_2006-06-12.html), [June
-    19](weekly/2006/Meeting_2006-06-19.html), [June
-    26](weekly/2006/Meeting_2006-06-26.html), [Aug.
-    28](weekly/2006/Meeting_2006-08-28.html), [Sept.
-    4](weekly/2006/Meeting_2006-09-04.html), [Sept.
-    11](weekly/2006/Meeting_2006-09-11.html), [Sept.
-    18](weekly/2006/Meeting_2006-09-18.html), [Sept.
-    25](weekly/2006/Meeting_2006-09-25.html), [Oct.
-    2](weekly/2006/Meeting_2006-10-02.html), [Oct.
-    9](weekly/2006/Meeting_2006-10-09.html), [Oct.
-    16](weekly/2006/Meeting_2006-10-16.html), [Oct.
-    23](weekly/2006/Meeting_2006-10-23.html), [Oct.
-    30](weekly/2006/Meeting_2006-10-30.html), [Nov.
-    6](weekly/2006/Meeting_2006-11-06.html), [Nov.
-    13](weekly/2006/Meeting_2006-11-13.html), [Nov.
-    20](weekly/2006/Meeting_2006-11-20.html), [Nov.
-    27](weekly/2006/Meeting_2006-11-27.html), [Dec.
-    4](weekly/2006/Meeting_2006-12-04.html), [Dec.
-    11](weekly/2006/Meeting_2006-12-11.html), [Dec.
-    18](weekly/2006/Meeting_2006-12-18.html)
-
-<!-- -->
-
+    [Jan. 2](weekly/2006/Meeting_2006-01-02.html),
+    [Jan. 9](weekly/2006/Meeting_2006-01-09.html),
+    [Jan. 16](weekly/2006/Meeting_2006-01-16.html),
+    [Jan. 30](weekly/2006/Meeting_2006-01-30.html),
+    [Febr. 6](weekly/2006/Meeting_2006-02-06.html),
+    [Febr. 13](weekly/2006/Meeting_2006-02-13.html),
+    [Febr. 20](weekly/2006/Meeting_2006-02-20.html),
+    [Febr. 27](weekly/2006/Meeting_2006-02-27.html),
+    [Mar. 6](weekly/2006/Meeting_2006-03-06.html),
+    [Mar. 13](weekly/2006/Meeting_2006-03-13.html),
+    [Mar. 20](weekly/2006/Meeting_2006-03-20.html),
+    [Mar. 27](weekly/2006/Meeting_2006-03-27.html),
+    [Apr. 3](weekly/2006/Meeting_2006-04-03.html),
+    [Apr. 18](weekly/2006/Meeting_2006-04-18.html),
+    [Apr. 24](weekly/2006/Meeting_2006-04-24.html),
+    [May 2](weekly/2006/Meeting_2006-05-02.html),
+    [May 9](weekly/2006/Meeting_2006-05-09.html),
+    [May 15](weekly/2006/Meeting_2006-05-15.html),
+    [May 22](weekly/2006/Meeting_2006-05-22.html),
+    [May 29](weekly/2006/Meeting_2006-05-29.html),
+    [Jun. 6](weekly/2006/Meeting_2006-06-06.html),
+    [Jun. 12](weekly/2006/Meeting_2006-06-12.html),
+    [Jun. 19](weekly/2006/Meeting_2006-06-19.html),
+    [Jun. 26](weekly/2006/Meeting_2006-06-26.html),
+    [Aug. 28](weekly/2006/Meeting_2006-08-28.html),
+    [Sept. 4](weekly/2006/Meeting_2006-09-04.html),
+    [Sept. 11](weekly/2006/Meeting_2006-09-11.html),
+    [Sept. 18](weekly/2006/Meeting_2006-09-18.html),
+    [Sept. 25](weekly/2006/Meeting_2006-09-25.html),
+    [Oct. 2](weekly/2006/Meeting_2006-10-02.html),
+    [Oct. 9](weekly/2006/Meeting_2006-10-09.html),
+    [Oct. 16](weekly/2006/Meeting_2006-10-16.html),
+    [Oct. 23](weekly/2006/Meeting_2006-10-23.html),
+    [Oct. 30](weekly/2006/Meeting_2006-10-30.html),
+    [Nov. 6](weekly/2006/Meeting_2006-11-06.html),
+    [Nov. 13](weekly/2006/Meeting_2006-11-13.html),
+    [Nov. 20](weekly/2006/Meeting_2006-11-20.html),
+    [Nov. 27](weekly/2006/Meeting_2006-11-27.html),
+    [Dec. 4](weekly/2006/Meeting_2006-12-04.html),
+    [Dec. 11](weekly/2006/Meeting_2006-12-11.html),
+    [Dec. 18](weekly/2006/Meeting_2006-12-18.html)
 -   **2005:**  
     [13.1.](weekly/2005/Meeting_2005-01-13.html),
     [24.1.](weekly/2005/Meeting_2005-01-24.html),
@@ -792,48 +751,45 @@ It is possible to extract the tasks as
     [28.2.](weekly/2005/Meeting_2005-02-28.html),
     [8.3.](weekly/2005/Meeting_2005-03-08.html),
     [14.3.](weekly/2005/Meeting_2005-03-14.html),
-    [30.3.](weekly/2005/Meeting_2005-03-30.html), [April
-    11](weekly/2005/Meeting_2005-04-11.html), [April
-    18](weekly/2005/Meeting_2005-04-18.html), [April
-    25](weekly/2005/Meeting_2005-04-25.html), [May
-    2](weekly/2005/Meeting_2005-05-02.html), [May
-    10](weekly/2005/Meeting_2005-05-10.html), [May
-    23](weekly/2005/Meeting_2005-05-23.html), [May
-    30](weekly/2005/Meeting_2005-05-30.html), [June
-    6](weekly/2005/Meeting_2005-06-06.html), [June
-    13](weekly/2005/Meeting_2005-06-13.html), [June
-    20](weekly/2005/Meeting_2005-06-20.html), [June
-    27](weekly/2005/Meeting_2005-06-27.html), [July
-    4](weekly/2005/Meeting_2005-07-04.html), [July
-    11](weekly/2005/Meeting_2005-07-11.html), [July
-    18](weekly/2005/Meeting_2005-07-18.html), [July
-    25](weekly/2005/Meeting_2005-07-25.html), [Aug.
-    1](weekly/2005/Meeting_2005-08-01.html), [Aug.
-    8](weekly/2005/Meeting_2005-08-08.html), [Aug.
-    15](weekly/2005/Meeting_2005-08-15.html), [Aug.
-    22](weekly/2005/Meeting_2005-08-22.html), [Sept.
-    5](weekly/2005/Meeting_2005-09-05.html), [Sept.
-    12](weekly/2005/Meeting_2005-09-12.html), [Sept.
-    19](weekly/2005/Meeting_2005-09-19.html), [Sept.
-    26](weekly/2005/Meeting_2005-09-26.html), [Oct.
-    3](weekly/2005/Meeting_2005-10-03.html), [Oct.
-    10](weekly/2005/Meeting_2005-10-10.html), [Oct.
-    17](weekly/2005/Meeting_2005-10-17.html), [Oct.
-    24](weekly/2005/Meeting_2005-10-24.html), [Oct.
-    31](weekly/2005/Meeting_2005-10-31.html), [Nov.
-    7](weekly/2005/Meeting_2005-11-07.html), [Nov.
-    14](weekly/2005/Meeting_2005-11-14.html), [Nov.
-    21](weekly/2005/Meeting_2005-11-21.html), [Nov.
-    28](weekly/2005/Meeting_2005-11-28.html), [Dec.
-    5](weekly/2005/Meeting_2005-12-05.html), [Dec.
-    12](weekly/2005/Meeting_2005-12-12.html), [Dec.
-    19](weekly/2005/Meeting_2005-12-19.html)
-
-<!-- -->
-
+    [30.3.](weekly/2005/Meeting_2005-03-30.html),
+    [Apr. 11](weekly/2005/Meeting_2005-04-11.html),
+    [Apr. 18](weekly/2005/Meeting_2005-04-18.html),
+    [Apr. 25](weekly/2005/Meeting_2005-04-25.html),
+    [May 2](weekly/2005/Meeting_2005-05-02.html),
+    [May 10](weekly/2005/Meeting_2005-05-10.html),
+    [May 23](weekly/2005/Meeting_2005-05-23.html),
+    [May 30](weekly/2005/Meeting_2005-05-30.html),
+    [Jun. 6](weekly/2005/Meeting_2005-06-06.html),
+    [Jun. 13](weekly/2005/Meeting_2005-06-13.html),
+    [Jun. 20](weekly/2005/Meeting_2005-06-20.html),
+    [Jun. 27](weekly/2005/Meeting_2005-06-27.html),
+    [Jul. 4](weekly/2005/Meeting_2005-07-04.html),
+    [Jul. 11](weekly/2005/Meeting_2005-07-11.html),
+    [Jul. 18](weekly/2005/Meeting_2005-07-18.html),
+    [Jul. 25](weekly/2005/Meeting_2005-07-25.html),
+    [Aug. 1](weekly/2005/Meeting_2005-08-01.html),
+    [Aug. 8](weekly/2005/Meeting_2005-08-08.html),
+    [Aug. 15](weekly/2005/Meeting_2005-08-15.html),
+    [Aug. 22](weekly/2005/Meeting_2005-08-22.html),
+    [Sept. 5](weekly/2005/Meeting_2005-09-05.html),
+    [Sept. 12](weekly/2005/Meeting_2005-09-12.html),
+    [Sept. 19](weekly/2005/Meeting_2005-09-19.html),
+    [Sept. 26](weekly/2005/Meeting_2005-09-26.html),
+    [Oct. 3](weekly/2005/Meeting_2005-10-03.html),
+    [Oct. 10](weekly/2005/Meeting_2005-10-10.html),
+    [Oct. 17](weekly/2005/Meeting_2005-10-17.html),
+    [Oct. 24](weekly/2005/Meeting_2005-10-24.html),
+    [Oct. 31](weekly/2005/Meeting_2005-10-31.html),
+    [Nov. 7](weekly/2005/Meeting_2005-11-07.html),
+    [Nov. 14](weekly/2005/Meeting_2005-11-14.html),
+    [Nov. 21](weekly/2005/Meeting_2005-11-21.html),
+    [Nov. 28](weekly/2005/Meeting_2005-11-28.html),
+    [Dec. 5](weekly/2005/Meeting_2005-12-05.html),
+    [Dec. 12](weekly/2005/Meeting_2005-12-12.html),
+    [Dec. 19](weekly/2005/Meeting_2005-12-19.html)
 -   **2004:**  
-    [Dec. 10](weekly/2004/Meeting_2004-12-10.html), [Dec.
-    21](weekly/2004/Meeting_2004-12-21.html)
+    [Dec. 10](weekly/2004/Meeting_2004-12-10.html),
+    [Dec. 21](weekly/2004/Meeting_2004-12-21.html)
 
 Meetings In Real Life (IRL)
 ---------------------------
