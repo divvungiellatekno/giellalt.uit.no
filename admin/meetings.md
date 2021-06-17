@@ -190,10 +190,10 @@ Divvun regular meetings
     [30.10.](divvun/Meeting2019-10-30.html),
     [13.12.](divvun/Meeting2019-12-13.html)
 -   **2018:**  
-    [11.01.](divvun/Meeting2018-01-11.html), [12.01.
-    (Staare)](divvun/Meeting2018-01-12.html), [15.01.
-    (Staare)](divvun/Meeting2018-01-15.html), [19.01.
-    (Staare)](divvun/Meeting2018-01-19.html),
+    [11.01.](divvun/Meeting2018-01-11.html),
+    [12.01.](divvun/Meeting2018-01-12.html) (Staare),
+    [15.01.](divvun/Meeting2018-01-15.html) (Staare),
+    [19.01.](divvun/Meeting2018-01-19.html) (Staare),
     [02.02.](divvun/Meeting2018-02-02.html),
     [13.02.](divvun/Meeting2018-02-13.html),
     [27.02.](divvun/Meeting2018-02-27.html),
@@ -388,8 +388,8 @@ Trond + Sjur meetings
 ---------------------
 
 -   **2020:**  
-    [Mar. 24](weekly/2020/Meeting_2020-03-24.html), [Dec.
-    3](weekly/2020/Meeting_2020-12-03.html),
+    [Mar. 24](weekly/2020/Meeting_2020-03-24.html),
+    [Dec. 3](weekly/2020/Meeting_2020-12-03.html)
 -   **2019:**  
     [Mar. 12](weekly/2019/Meeting_2019-03-12.html), [May
     7](weekly/2019/Meeting_2019-05-07.html), [May
