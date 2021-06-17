@@ -387,6 +387,8 @@ Administrative meetings
 Trond + Sjur meetings
 ---------------------
 
+-   **2021:**  
+    [May  31](weekly/2021/Meeting_2021-05-31.html),
 -   **2020:**  
     [Mar. 24](weekly/2020/Meeting_2020-03-24.html),
     [Dec. 3](weekly/2020/Meeting_2020-12-03.html)
