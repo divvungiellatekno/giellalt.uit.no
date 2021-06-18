@@ -7,7 +7,7 @@
 
 - [Is everything working?](https://status.giellalt.org)
 - [Build status for most repos](https://github.com/divvun/registry)
-- [*__Don't Panic!__*](infra/DontPanic.html) -- a page containing commands you need in case of a crisis
+- *__[Don't Panic!](infra/DontPanic.html)__* -- a page containing commands you need in case of a crisis
 
 These pages contain documentation on the language technology work for Sámi and other indigenous and minority languages, by the [Divvun](https://divvun.no) and [Giellatekno](https://giellatekno.uit.no) groups. It mainly contain information that is specific to UiT work, for more general information see the link at the top.
 
