@@ -21,11 +21,14 @@
 
 Ways of getting in touch with us:
 
--   Skype
--   [SubEthaEdit](see://divvun.no) ([Mac only](https://subethaedit.net))
--   IRC: [irc.freenode.net \#hfst](http://webchat.freenode.net)
--   [Zulip](https://giella.zulipchat.com) (requires invitation to avoid
-    spam, but everyone is welcome, just ask using email)
+- Skype
+- Email: see above; team emails:
+    - Divvun:      divvun at uit no
+    - Giellatekno: giellatekno at uit no
+- [SubEthaEdit](see://divvun.no) ([Mac only](https://subethaedit.net))
+- IRC: [irc.oftc.net \#hfst](https://www.oftc.net)
+- [Zulip](https://giella.zulipchat.com) (requires invitation to avoid
+  spam, but everyone is welcome, just ask using email)
 
 Please use e-mail as a first contact point if you want to use Skype or
 Zulip.
