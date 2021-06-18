@@ -15,6 +15,7 @@ Although this front page is in English, the other pages on the site may be in an
 ## Tromsø Projects
 
 - [ICALL](https://giellalt.uit.no/ped/index.html)
+- Old and finished projects (link forthcoming)
 
 ## Presentations and Papers
 
