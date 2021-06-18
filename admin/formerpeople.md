@@ -16,5 +16,7 @@ Past team members
 | Ryan Johnson                  | Giellatekno          | Programmer                                         |
 | Saara Huhmarniemi             | Giellatekno          | Programming                                        |
 | Sandra Nystø Rahka            | Divvun               | Linguistics                                        |
+| Sara Marja Magga              | Divvun               | Linguistics                                        |
+| Siri Kappfjell Päiviö         | Divvun               | Linguistics                                        |
 | Steinar Nilsen                | Giellatekno          | Linguistics                                        |
 | Tomi Pieski                   | Divvun               | Programming, computational linguistics             |
