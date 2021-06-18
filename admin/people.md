@@ -1,5 +1,4 @@
-Members of the teams
-====================
+# Members of the teams
 
 | Member                 | Group       | Main task                             | e-mail (replace space with dot)   |
 |------------------------|-------------|---------------------------------------|-----------------------------------|
@@ -16,8 +15,7 @@ Members of the teams
 | Thomas Omma            | Divvun      | Linguistics                           | thomas omma at uit no             |
 | Trond Trosterud        | Giellatekno | Head of group, linguistics            | trond trosterud at uit no         |
 
-Former team members, other info
-===============================
+# Former team members, other info
 
 -   [Former team members](formerpeople.html)
 
