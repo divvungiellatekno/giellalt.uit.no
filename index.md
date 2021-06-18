@@ -1,7 +1,7 @@
 # GiellaLT in Tromsø
 
 
-> <img src="images/warning-sign.pngwing.com.png" height="30em" style="float:left; margin-top: 0.5em; margin-right: 0.75em; margin-bottom: 0.5em;"> This site is targeted at people working at [UiT](https://uit.no). For general GiellaLT
+> <img src="images/warning-sign.pngwing.com.png" height="30em" style="float:left; margin-top: 0.5em; margin-right: 0.75em; margin-bottom: 0;"> This site is targeted at people working at [UiT](https://uit.no). For general GiellaLT
 > documentation, see [giellalt.github.io](https://giellalt.github.io). Background information
 > can be found [here](https://indigenous-langtech.uit.no/).
 
