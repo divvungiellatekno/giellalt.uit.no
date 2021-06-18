@@ -11,7 +11,7 @@
 | Linda Wiechetek        | Divvun      | Linguistics                           |                                   |
 | Maja Lisa Kappfjell    | Divvun      | Linguistics                           | maja lisa kappfjell at uit no     |
 | Ritva Nystad           | Divvun      | Linguistics                           | ritva nystad at uit no            |
-| Sjur Nørstebø Moshagen | Divvun      | Head of group, linguistics            | sjur n moshagen at uit no         |
+| Sjur Nørstebø Moshagen | Divvun      | Head of group, comp. linguistics      | sjur n moshagen at uit no         |
 | Thomas Omma            | Divvun      | Linguistics                           | thomas omma at uit no             |
 | Trond Trosterud        | Giellatekno | Head of group, linguistics            | trond trosterud at uit no         |
 
