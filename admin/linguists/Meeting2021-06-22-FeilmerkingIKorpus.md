@@ -33,34 +33,34 @@ Viktig for:
 ## Lulesamiske eksempler
 
 {% raw %}
-### ∞
-- {Wihoo}∞{sla}!
-- IRF= {Institutet för Rymdfysik}∞{swe}. -- burde legges inn i navndatabasen
-- Divtasvuona suohkan - {Tysfjord kommune}∞{nor} 
-- ja uddni gæhttjalijma duokkár {Space Ball’av}∞{eng}.
-- gåvvå váldedum: {weheartit.com}∞{url}
-- Dan namma lij "{sjöhus}∞{swe}",
-- rumáj ittjij dåbddu} nåv "{ready}∞{eng}" {gilppostit}€{infl,inf-sup|gilputjit}.
-- {Åh}∞{sla}
-- {Puss}∞{swe}
-- {Shit}∞{eng} man {kult}∞{nor}!
-- Valla dijstagá lij máj "{fettisdagen}∞{swe}"
-- Dánna hæhttup javllat {Sir, Mr, Miss}∞{eng} jali {Mrs}∞{eng}.
-- {Buörrie urra jáhpie}∞{foreign}
-- Lågå aj: {Avviser plankritikk}∞{nor}
-- {Åjllastit}∞{ume}, mij la suohtastallat {ubmesámegiellaj}${conc,bm-bbm,fin,0-m|ubbmemsámegiellaj}
+### ∞`
+- `{Wihoo}∞{sla}!`
+- `IRF= {Institutet för Rymdfysik}∞{swe}. -- burde legges inn i navndatabasen`
+- `Divtasvuona suohkan - {Tysfjord kommune}∞{nor} `
+- `ja uddni gæhttjalijma duokkár {Space Ball’av}∞{eng}.`
+- `gåvvå váldedum: {weheartit.com}∞{url}`
+- `Dan namma lij "{sjöhus}∞{swe}",`
+- `rumáj ittjij dåbddu} nåv "{ready}∞{eng}" {gilppostit}€{infl,inf-sup|gilputjit}.`
+- `{Åh}∞{sla}`
+- `{Puss}∞{swe}`
+- `{Shit}∞{eng} man {kult}∞{nor}!`
+- `Valla dijstagá lij máj "{fettisdagen}∞{swe}"`
+- `Dánna hæhttup javllat {Sir, Mr, Miss}∞{eng} jali {Mrs}∞{eng}.`
+- `{Buörrie urra jáhpie}∞{foreign}`
+- `Lågå aj: {Avviser plankritikk}∞{nor}`
+- `{Åjllastit}∞{ume}, mij la suohtastallat {ubmesámegiellaj}${conc,bm-bbm,fin,0-m|ubbmemsámegiellaj}`
 
-### €
-- Dán bále lidjiv {utbildningin}€{foreign,swe|åhpadusán}.
-- {skate}€{foreign,eng|salostam} 
-- {{Sjáddiv}${vowc,á-a|Sjaddiv}}¥{redun|} {inspirert}€{foreign,swe|Måvtåstuvviv} 
-- Vuostasj bále {muv}€{w,pers-refl|ietjam} iellemin gå iv diede majt dahkat gå tjaktja boahtá.
-- {museumin}€{foreign,swe|dávvervuorkán}.
-- {{ræjssut}${loan,vowc,æ-ie;vowlat,u-i|riejssit}}€{w|manádit} 
-- valla dåbdåv ahte iv {riek}€{adv-pcle|rat} ájn sidá studerigoahtet.
-- Mån lav nav {nievrre}€{w|lájkke} sjaddam dánna tjállet!
-- Gå mujna ij la {vil}€{w|desti} sámegiella skåvlån
-- {Soajttá}€{w|Márjju} ij huoman sjatta.
+### €`
+- `Dán bále lidjiv {utbildningin}€{foreign,swe|åhpadusán}.`
+- `{skate}€{foreign,eng|salostam} `
+- `{{Sjáddiv}${vowc,á-a|Sjaddiv}}¥{redun|} {inspirert}€{foreign,swe|Måvtåstuvviv} `
+- `Vuostasj bále {muv}€{w,pers-refl|ietjam} iellemin gå iv diede majt dahkat gå tjaktja boahtá.`
+- `{museumin}€{foreign,swe|dávvervuorkán}.`
+- `{{ræjssut}${loan,vowc,æ-ie;vowlat,u-i|riejssit}}€{w|manádit} `
+- `valla dåbdåv ahte iv {riek}€{adv-pcle|rat} ájn sidá studerigoahtet.`
+- `Mån lav nav {nievrre}€{w|lájkke} sjaddam dánna tjállet!`
+- `Gå mujna ij la {vil}€{w|desti} sámegiella skåvlån`
+- `{Soajttá}€{w|Márjju} ij huoman sjatta.`
 
 ### Kommandoar for å konvertera korpustekst til xml, og deretter trekkja ut med 'foreign'
 For å konvertera originaltekst til xml:
@@ -77,7 +77,9 @@ ccat -a -withforeign goldstandard/converted/smj/news/NRK/2012 | gsed 's/¶/\n/g'
 
 For å konvertera mange korpusfiler til tekst:
 ```sh
-for f in $(find ./goldstandard/converted/smj -name '*.correct.*' ) ; do bname=$(basename $f); ccat -a -withforeign $f | gsed 's/¶/\n/g' > tts/$bname; done
+for f in $(find ./goldstandard/converted/smj -name '*.correct.*' ) ; do \
+    bname=$(basename $f); ccat -a -withforeign $f | gsed 's/¶/\n/g' > tts/$bname; \
+    done
 ```
 
 ## Nordsamisk
@@ -96,8 +98,8 @@ slakteriija+N+Err/Lex+Sem/Org:slakteri IIJA ;
 slakteriija+N+Err/Lex+Sem/Org:šlakteri IIJA ;
 ```
 
-noen ord legger vi til til det samiske leksikonet:
-- `lapp`
+noen ord legger vi til til det samiske leksikonet:`
+- `lapp``
 - `finn`
 
 ## Kommenterte/problematiske døme
