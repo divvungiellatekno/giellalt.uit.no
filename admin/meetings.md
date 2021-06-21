@@ -5,10 +5,9 @@ Linguist meetings
 -----------------
 
 -   **2021:**  
-    -   [19.1. Tagger og avgrensing av
-        avleiingar](linguists/210119_Tagger_og_avgrense_avledninger.html)
-    -   [2.3. Cmp-tagger og
-        harmonisering](linguists/210302_Cmp_avledninger.html)
+    - [19.1. Tagger og avgrensing av avleiingar](linguists/210119_Tagger_og_avgrense_avledninger.html)
+    - [2.3. Cmp-tagger og harmonisering](linguists/210302_Cmp_avledninger.html)
+    - [21.6. Feilmerkkng i korpus](linguists/Meeting2021-06-22-FeilmerkingIKorpus.md)
 -   **2020:**  
     -   [23.4. Avgrensing av
         avleiingar](linguists/200423_AvgrenseAvleiing.html)
