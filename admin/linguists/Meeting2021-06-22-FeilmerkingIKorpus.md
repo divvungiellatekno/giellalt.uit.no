@@ -32,6 +32,7 @@ Viktig for:
 
 ## Lulesamiske eksempler
 
+{% raw %}
 ### ∞
 - {Wihoo}∞{sla}!
 - IRF= {Institutet för Rymdfysik}∞{swe}. -- burde legges inn i navndatabasen
@@ -133,3 +134,4 @@ Loahpas de {arvvá}${verb,conc|arvá} {til og med}∞{adv,foreign|vel}.
 
 {#Publisert}∞{nob} 22.11.2012 16:01. {Oppdatert}∞{nob} 22.11.2012 16:21.
 ```
+{% endraw %}
