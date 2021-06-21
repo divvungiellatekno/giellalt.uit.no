@@ -33,7 +33,7 @@ Viktig for:
 ## Lulesamiske eksempler
 
 {% raw %}
-### ∞`
+### ∞
 - `{Wihoo}∞{sla}!`
 - `IRF= {Institutet för Rymdfysik}∞{swe}. -- burde legges inn i navndatabasen`
 - `Divtasvuona suohkan - {Tysfjord kommune}∞{nor} `
@@ -50,7 +50,7 @@ Viktig for:
 - `Lågå aj: {Avviser plankritikk}∞{nor}`
 - `{Åjllastit}∞{ume}, mij la suohtastallat {ubmesámegiellaj}${conc,bm-bbm,fin,0-m|ubbmemsámegiellaj}`
 
-### €`
+### €
 - `Dán bále lidjiv {utbildningin}€{foreign,swe|åhpadusán}.`
 - `{skate}€{foreign,eng|salostam} `
 - `{{Sjáddiv}${vowc,á-a|Sjaddiv}}¥{redun|} {inspirert}€{foreign,swe|Måvtåstuvviv} `
