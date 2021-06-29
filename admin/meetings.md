@@ -9,76 +9,57 @@ Linguist meetings
     - [2.3. Cmp-tagger og harmonisering](linguists/210302_Cmp_avledninger.md)
     - [21.6. Feilmerkkng i korpus](linguists/Meeting2021-06-22-FeilmerkingIKorpus.md)
 -   **2020:**  
-    -   [23.4. Avgrensing av
-        avleiingar](linguists/200423_AvgrenseAvleiing.md)
+    -   [23.4. Avgrensing av avleiingar](linguists/200423_AvgrenseAvleiing.md)
 -   **2019:**  
-    -   [4.6. Arab, acro og abbr i
-        giella-shared](linguists/190604_acro_abbr.md)
+    -   [4.6. Arab, acro og abbr i giella-shared](linguists/190604_acro_abbr.md)
     -   [4.6. Scripting av sem-tagger](linguists/190604_semtags.md)
     -   [6.6. Gramcheck-oppstart](linguists/190606_gramcheck.md)
-    -   [29.10. Analyse av separate og samanskrivne
-        partiklar](linguists/191029Partiklar.md)
+    -   [29.10. Analyse av separate og samanskrivne partiklar](linguists/191029Partiklar.md)
     -   [30.10. Møte om bibel og ordbok](linguists/191030_bibel.md)
 -   **2018:**  
-    -   [20.03. Feilskrevne MWE, tagging av
-        LIA-materiale](linguists/Meeting2018-03-20-MWE.md)
+    -   [20.03. Feilskrevne MWE, tagging av LIA-materiale](linguists/Meeting2018-03-20-MWE.md)
     -   [20.03. sma hyph](linguists/Meeting2018-03-20-SMAhyph.md)
     -   [23.04. Cmp & Cmp/SplitR](linguists/Meeting2018-04-23-Cmp.md)
-    -   [25.04. Nums & Puncts til
-        giellashared](linguists/Meeting2018-04-25-NumsAndPuncts.md)
+    -   [25.04. Nums & Puncts til giellashared](linguists/Meeting2018-04-25-NumsAndPuncts.md)
 -   **2017:**  
-    -   [25.4 Bug 2377 Tagambiguitet, ALT ER IKKE FULGT
-        OPP](corpus/Meeting_2017-04-25.md)
+    -   [25.4 Bug 2377 Tagambiguitet, ALT ER IKKE FULGT OPP](corpus/Meeting_2017-04-25.md)
 -   **2016:**  
-    -   [13.10. CMP, HFST vs XFST,
-        MWE](divvun/LinguistMeeting2016-10-13.md)
-    -   [20.10. Normative
-        Cmp-tagger](divvun/LinguistMeeting2016-10-20.md)
-    -   [04.11. Sammensetninger i sme og
-        sma](divvun/LinguistMeeting2016-11-04.md)
-    -   [15.11. Sammensetninger i sma vs
-        sme](divvun/LinguistMeeting2016-11-15.md)
-    -   [14.12. Sammensetninger (dynamiske vs. leksikalisering,
-        tagging)](divvun/LinguistMeeting2016-12-14.md)
+    -   [13.10. CMP, HFST vs XFST, MWE](divvun/LinguistMeeting2016-10-13.md)
+    -   [20.10. Normative Cmp-tagger](divvun/LinguistMeeting2016-10-20.md)
+    -   [04.11. Sammensetninger i sme og sma](divvun/LinguistMeeting2016-11-04.md)
+    -   [15.11. Sammensetninger i sma vs sme](divvun/LinguistMeeting2016-11-15.md)
+    -   [14.12. Sammensetninger (dynamiske vs. leksikalisering, tagging)](divvun/LinguistMeeting2016-12-14.md)
     -   [15.12. OCR](linguists/ocr_161215.md)
     -   [Møte om navn på korpuset](linguists/Korp-namn.md)
 -   **2015:**  
-    -   [11.12. Tilpasninger til
-        Apertium](linguists/TilpasningerTilApertium_20151211.md)
-    -   [19.3. Morfologisk info i
-        analysen](linguists/DiskusjonOmMorfologiskInfoIAnalysen_20150319.md)
+    -   [11.12. Tilpasninger til Apertium](linguists/TilpasningerTilApertium_20151211.md)
+    -   [19.3. Morfologisk info i analysen](linguists/DiskusjonOmMorfologiskInfoIAnalysen_20150319.md)
 -   **2014:**  
     -   [7.1. Ekstensial- og habitivsetninger](linguists/140107.md)
 -   **2013:**  
-    -   [11.2. Improving CG-file I (from CG2 to
-        vislcg3)](linguists/cg_110213.md)
+    -   [11.2. Improving CG-file I (from CG2 to vislcg3)](linguists/cg_110213.md)
     -   [18.2. Improving CG-file II](linguists/cg_180213.md)
 -   **2012:**  
     -   [19.4. Redefining negation](linguists/negation120419.md)
     -   [19.4. Redefining Actio](linguists/120419.md)
     -   [29.10. Planer for CG-arbeid](linguists/121029.md)
-    -   [19.10. Om å lage arbeidskorpus for
-        syntaks](linguists/121019.md)
+    -   [19.10. Om å lage arbeidskorpus for syntaks](linguists/121019.md)
 -   **2005–2011:**  
-    -   [28.3.11 Om
-        depworkshop](linguists/DiskusjonOmDepworkshop_20110328.md)
+    -   [28.3.11 Om depworkshop](linguists/DiskusjonOmDepworkshop_20110328.md)
     -   [1.5.05 Om disambiguering](memos/disamb/Meeting_2006-01-05.md)
 
 Technical meetings
 ------------------
 
 -   **2020:**  
-    -   [14.10 Mobilvisning av
-        sátni.org](dicts/20201014_satni.org_mobilvisning.jspwiki)
+    -   [14.10 Mobilvisning av sátni.org](dicts/20201014_satni.org_mobilvisning.jspwiki)
     -   [20.5.2020 Flytte til Git](technical/FlytteTilGit200520.md)
 -   **2016-2019:**  
     -   [7.6.2019 GiellaLT](meetings/giellalt-20190607.md)
     -   [25.4.2018 TTS på server](meetings/tts-mote.md)
     -   [10.11.2017 REST](technical/171110.md)
-    -   [10.4.2017 OmegaT: writing
-        documentation](technical/OmegaT170410.md)
-    -   [28.4.2017 OmegaT: FST and
-        glossary](technical/OmegaT170428.md)
+    -   [10.4.2017 OmegaT: writing documentation](technical/OmegaT170410.md)
+    -   [28.4.2017 OmegaT: FST and glossary](technical/OmegaT170428.md)
     -   [15.12.2016 Bugzilla rutiner](bugzilla/161215.md)
 
 Divvun meetings
@@ -318,8 +299,7 @@ Giellatekno meetings
 -   **TODO:**  
     -   [Plan framover](giellatekno/Plan.md)
     -   [Oversikt over ting som skal bli gjort](giellatekno/TODO.md)
-    -   [E-learning, moments for further work. Notes
-        from 230915.](giellatekno/150923.md)
+    -   [E-learning, moments for further work. Notes from 230915.](giellatekno/150923.md)
 -   **2021:**  
     [14.01](giellatekno/210114.md), [26.01](giellatekno/210126.md),
     [17.03](giellatekno/210317.md), [14.04](giellatekno/210414.md),
@@ -799,13 +779,14 @@ We have had and are having physical meetings, that is, meetings IRL. So
 far, the following meetings have been held (links are to notes or
 programme for the meetings):
 
--   [Tromsø, Aug. 2006](physical_meetings/tromso-2006-08.md): Board
-    meeting, and combined seminar for the two projects
-    ([Divvun](http://www.divvun.no/) and
-    [Disamb](http://giellatekno.uit.no))
--   [Tromsø, Jan. 2006](physical_meetings/tromso-2006-01.md): Combined
-    seminar for the two projects ([Divvun](http://www.divvun.no/) and
-    [Disamb](http://giellatekno.uit.no))
+-   [Tromsø, Aug. 2006](physical_meetings/tromso-2006-08.md):
+    Board meeting, and combined seminar for the two projects
+    [Divvun](http://www.divvun.no/) and
+    [Disamb](http://giellatekno.uit.no)
+-   [Tromsø, Jan. 2006](physical_meetings/tromso-2006-01.md):
+    Combined seminar for the two projects
+    [Divvun](http://www.divvun.no/) and
+    [Disamb](http://giellatekno.uit.no)
 -   [Guovdageaidnu, Oct. 2005](physical_meetings/guovdageaidnu-2005-10.md):
     Board meeting combined with a work meeting
 -   [Helsinki, Aug. 2005](physical_meetings/helsinki-2005-08.md):
