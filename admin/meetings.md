@@ -806,14 +806,11 @@ programme for the meetings):
 -   [Tromsø, Jan. 2006](physical_meetings/tromso-2006-01.html): Combined
     seminar for the two projects ([Divvun](http://www.divvun.no/) and
     [Disamb](http://giellatekno.uit.no))
--   [Guovdageaidnu, Oct.
-    2005](physical_meetings/guovdageaidnu-2005-10.html): Board meeting
-    combined with a work meeting
+-   [Guovdageaidnu, Oct. 2005](physical_meetings/guovdageaidnu-2005-10.html):
+    Board meeting combined with a work meeting
 -   [Helsinki, Aug. 2005](physical_meetings/helsinki-2005-08.html):
     Meeting in front of FSMNLP05 in Helsinki
--   [Guovdageaidnu, May
-    2005](physical_meetings/guovdageaidnu-2005-05.html): Half-year
-    evaluation
--   [Guovdageaidnu, Dec.
-    2004](physical_meetings/guovdageaidnu-2004-12.html): Start-up
-    meeting
+-   [Guovdageaidnu, May 2005](physical_meetings/guovdageaidnu-2005-05.html):
+    Half-year evaluation
+-   [Guovdageaidnu, Dec. 2004](physical_meetings/guovdageaidnu-2004-12.html):
+    Start-up meeting
