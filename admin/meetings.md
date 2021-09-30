@@ -314,6 +314,7 @@ Giellatekno meetings
     [14.01](giellatekno/210114.md), [26.01](giellatekno/210126.md),
     [17.03](giellatekno/210317.md), [14.04](giellatekno/210414.md),
     [02.06](giellatekno/210602.md), [10.06](giellatekno/210610.md),
+    [27.09](giellatekno/210927.md), [29.09](giellatekno/210929.md)
 -   **2020:**  
     [28.01](giellatekno/200128.md), [20.08](giellatekno/200818.md),
     [23.12](giellatekno/201223.md)
