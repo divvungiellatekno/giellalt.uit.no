@@ -130,6 +130,7 @@ Divvun regular meetings
     [14.09.](divvun/Meeting2021-09-14.md),
     [21.09.](divvun/Meeting2021-09-21.md),
     [28.09.](divvun/Meeting2021-09-28.md),
+    [05.10.](divvun/Meeting2021-10-05.md),
 -   **2020:**  
     [20.01.](divvun/Meeting2020-01-20.md),
     [05.02.](divvun/Meeting2020-02-05.md),
