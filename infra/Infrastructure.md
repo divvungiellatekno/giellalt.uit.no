@@ -5,6 +5,7 @@ This page gives an overview of our technical documentation.
 * [Directory structure](infraremake/NewinfraCatalogues.html)
 * [Connecting to the computer](offline.html)
 * [SVN repositories](OurSVNRepositories.html)
+- [GitHub Issues](GitHub_Issues.md)
 
 # Compiling (building analysers)
 * [Defining targets for compilation](infraremake/NewInfraMaintenance.html) 
