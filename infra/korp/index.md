@@ -5,7 +5,7 @@ Links to our Korp installations
 -   [Korp for Kven, Meänkieli, Veps, Võro](http://gtweb.uit.no/f_korp/)
 -   [Korp for Komi-Zyrian, Komi-Permyak, Udmur, Moksha, Erzya, Hill
     Mari, Meadow Mari](http://gtweb.uit.no/u_korp/)
--   [Korp ved Artlab: Plains Cree](http://altlab.ualberta.ca/korp/)
+-   [Korp ved Artlab: Plains Cree](https://korp.altlab.app/)
 
 Korp: Plans and notes
 =====================
