@@ -1,10 +1,13 @@
-Two speller server instances run on the [divvun.no](http://divvun.no/) server,
-one for saami languages, the other one for non-saami languages.
+*divvun.no*, the speller server
+===============================
 
-A web editor with the saami spellers is found at [http://divvun.no:3000],
+Two speller server instances run on the [divvun.no](http://divvun.no/) server,
+one for Saami languages, the other one for non-saami languages.
+
+A web editor with the Saami spellers is found at [http://divvun.no:3000],
 and also at [divvun.no](http://divvun.no/korrektur/speller-demo.html)
 
-A web editor with the non-saami spellers is found at [http://divvun.no:3001],
+A web editor with the non-Saami spellers is found at [http://divvun.no:3001],
 and also at [divvun.org](http://divvun.org/proofing/online-speller.html)
 
 The speller servers runs on the [divvun.no](http://divvun.no/) server. The saami
@@ -15,15 +18,17 @@ the account `morespellerservers`. Both have
 The code for the server is found at
 [github](https://github.com/divvun/ck-ospell).
 
-# Log in, attach to screen, exit screen
+# How to restart and work with the sever
+
+**Synopsis:** *Log in, attach to screen, exit screen*
 
 1. Log in to the account.
 1. Attach to the `screen` instance: `screen -RD`
 1. Use nvm: `nvm use stable`
-1. Do whatever work is needed.
+1. Do whatever work is needed (see the rest of this document).
 1. When done, exit `screen` by pressing `Ctrl-a, Shift-d, Shift-d`
 
-# How ck-ospell was installed
+## How ck-ospell was installed
 
 1. `git clone https://github.com/divvun/ck-ospell.git`
 1. `cd ck-ospell`
@@ -32,13 +37,13 @@ The code for the server is found at
 1. Alternatively, change port from 3000 to something else in server.js
 1. `CXX=clang++-mp-3.4 npm install`
 
-# Run server
+## Run server
 
 ```
 npm start
 ```
 
-# How to update a speller
+## How to update a speller
 
 1. Log in to the account, attach to `screen` by screen -RD
 1. Go to the screen where the server is not running `ctrl a SPACE`
@@ -51,14 +56,14 @@ npm start
 1. Start the server with `npm start`
 1. exit `ctrl a SHIFT D shift D`
 
-# How to install a new language
+## How to install a new language
 
 1. Log in to the account, attach to `screen`
 1. `Ctrl-c` (stop the speller server)
 1. Copy a .zhfst file to the etc directory, e.g. `curl -o etc/<newlanguage>.zhfst http://divvun.no/static_files/zhfsts/<newlanguage>.zhfst`
 1. `npm start`
 
-# Update ck-ospell
+## Update ck-ospell
 
 1. Log in to the account, attach to `screen`
 1. `Ctrl-c` (stop the speller server)
@@ -66,12 +71,12 @@ npm start
 1. `npm install`
 1. `npm start`
 
-# Depending on particular branches/commits
+### Depending on particular branches/commits
 
 ck-ospells dependencies are specified in package.json. More info can be found in
 [package.json/npm documentation](https://docs.npmjs.com/files/package.json#git-urls-as-dependencies).
 
-## Depending on a particular commit
+### Depending on a particular commit
 
 ```
     "hfst-ospell-js": "git://github.com/divvun/hfst-ospell-js#c311421b3c9a79bcb5decd482b131dd5883564fb",
@@ -79,7 +84,7 @@ ck-ospells dependencies are specified in package.json. More info can be found in
 
 [Example commit on github](https://github.com/divvun/ck-ospell/commit/062082229d86d7ca0b0878604f764461d0e7428e)
 
-## Depending on a particular branch
+### Depending on a particular branch
 
 ```
     "hfst-ospell-js": "git://github.com/divvun/hfst-ospell-js#alphabet-hack",
