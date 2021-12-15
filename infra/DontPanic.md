@@ -4,12 +4,14 @@ What to do if ...
 
 # The servers are down
 
+Get an overview on the [status monitor for Giellatekno and Divvun servers](https://status.giellalt.org/) The overview is refreshed every 5 minutes.
+
 ## Get them up and running
 
-* For the *gtsvn-01, gtlab, gtoahpa-01, gtweb-01* servers at uit.no
-    - Call *IT, Seksjon for applikasjoner og tjenester* (see plan/admin/emergency.txt)
-* For the xserve, the *divvun.no* server
-    - Call Børre Gaup (the server is in the cellar under the A wing, second door to the left)
+For the *gtsvn-01, gtlab, gtoahpa-01, gtweb-01* servers at uit.no:
+
+* Relevant persons are Børre Gaup, Sjur Moshagen, Trond Trosterud.
+* Ultimately, _IT, Seksjon for applikasjoner og tjenester_ (see `$GTPRIV/admin/emergency.txt`)
 
 ## Restart processes afterward
 
@@ -30,9 +32,7 @@ The following processes need to be restarted, and in the following way.
 
 ## Test that everything is ok
 
-(tbw.)
-
-(We want automatic testing of web service availability.)
+Go back to [the interactive monitor](https://status.giellalt.org/), refresh, and check whether the report has turned greener. (Remember: The monitor tests every 5 minutes).
 
 # A server is very slow
 
