@@ -1,4 +1,9 @@
-The gtsvn server runs our svn service and our git service.
+Instructions for gtsvn
+======================
+
+(the address gtsvn-01.uit.no is aliased to gtsvn.uit.no)
+
+The gtsvn server runs our svn services.
 
 # svn server
 Check whether the termwiki is up and running by clicking [https://gtsvn.uit.no/langtech]

@@ -17,18 +17,18 @@ For the *gtsvn-01, gtlab, gtoahpa-01, gtweb-01* servers at uit.no:
 
 The following processes need to be restarted, and in the following way.
 
-* [instructions for gtweb-01 (interactive web programs, MT, webdicts)](/ped/common/httpdserversgtweb.html)
+* [instructions for gtweb-01 (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
 * [the speller server (divvun.no)](SpellerServer.html)
-* [instructions for gtoahpa-01 (oahpa.no and Konteaksta)](/ped/common/httpdserver.html)
-* [instructions for gtdict (NDS)](/ped/common/httpdserversgtdict.html)
-* [instructions for gtlab (testing.oahpa.no)](/ped/common/GtlabRestart.html)
-* [instructions for restarting nginx](/ped/common/RestartingNginx.html)
+* [instructions for gtoahpa-01 (oahpa.no and Konteaksta)](httpdserver.html)
+* [instructions for gtdict (NDS)](httpdserversgtdict.html)
+* [instructions for gtlab (testing.oahpa.no)](GtlabRestart.html) (this server has been removed (?))
+* [instructions for restarting nginx](RestartingNginx.html)
 * [instructions for Gïelese](../apps/gielese/GieleseRestarting.html) (TODO: Update documentation)
     - Look for commands with *restart...*
 * [Instructions for gtsvn-01](gtsvn.html)
 * [Instructions for the satni.org server](satniorg.html)
 * [When the webpages are not rebuilt](SiteBuildProblems.html)
-* [Instructions for xserve](xserve.html) (SubEthaEdit, Jabber, Bugzilla)
+
 
 ## Test that everything is ok
 

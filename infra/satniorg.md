@@ -1,3 +1,6 @@
+Instructions for the satni.org server
+=====================================
+
 On the `satni.uit.no` server we run the termwiki and the sátni databases.
 
 # satni.org

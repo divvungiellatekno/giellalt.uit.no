@@ -1,3 +1,6 @@
+Restarting Gïelese
+==================
+
 #  Overview
 
 Running the [Gïelese](http://gielese.no/play/) process depends on the following
@@ -20,13 +23,13 @@ sudo password.
     sudo service gielese-mongodb start
 ```
 
-2.) Then if all is good... 
+Then if all is good... 
 
 ```
     sudo service gielese start
 ```
 
-NB: commands accepted by these processes are also stop, and restart; however,
+NB: commands accepted by these processes are also *stop*, and *restart*; however,
 make sure to start mongodb first, otherwise the gielese process will not start.
 
 #  Restarting the services
