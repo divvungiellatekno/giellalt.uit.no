@@ -5,7 +5,7 @@
 > documentation, see [giellalt.github.io](https://giellalt.github.io). Background information
 > can be found [here](https://indigenous-langtech.uit.no/).
 
-- [Is everything working?](https://status.giellalt.org)
+- [Is everything working?](https://status.giellalt.org) - server and service status
 - [Build status for most repos](https://github.com/divvun/registry)
 - *__[Don't Panic!](infra/DontPanic.html)__* -- a page containing commands you need in case of a crisis
 
