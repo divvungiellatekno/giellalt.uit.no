@@ -19,7 +19,7 @@ The following processes need to be restarted, and in the following way.
 
 * [instructions for gtweb-01 (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
 * [the speller server (divvun.no)](SpellerServer.html)
-* [instructions for gtoahpa-01 (oahpa.no and Konteaksta)](httpdserver.html)
+* [instructions for gtoahpa-01 (oahpa.no, Konteaksta, kursa and kuvsje)](httpdserver.html)
 * [instructions for gtdict (NDS)](httpdserversgtdict.html)
 * [instructions for gtlab (testing.oahpa.no)](GtlabRestart.html) (this server has been removed (?))
 * [instructions for restarting nginx](RestartingNginx.html)
