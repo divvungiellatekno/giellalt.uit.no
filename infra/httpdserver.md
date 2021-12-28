@@ -120,3 +120,9 @@ Sometimes the restart of the Tomcat web server is needed as well:
     ./shutdown.sh
     ./startup.sh
 ```
+
+
+## kursa and kuvsje
+
+Documentation to be written.
+
