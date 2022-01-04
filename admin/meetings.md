@@ -271,17 +271,17 @@ Divvun regular meetings
     [17.06.](divvun/Meeting2014-06-17.md),
     [28.10.](divvun/Meeting2014-10-28.md)
 -   **2013:**  
-    [4.01.](divvun/Meeting2013-01-04.md),
+    [04.01.](divvun/Meeting2013-01-04.md),
     [14.01.](divvun/Meeting2013-01-14.md),
     [21.01.](divvun/Meeting2013-01-21.md),
     [28.01.](divvun/Meeting2013-01-28.md),
-    [4.02.](divvun/Meeting2013-02-04.md),
+    [04.02.](divvun/Meeting2013-02-04.md),
     [11.02.](divvun/Meeting2013-02-11.md),
     [25.02.](divvun/Meeting2013-02-25.md),
     [11.03.](divvun/Meeting2013-03-11.md),
     [18.03.](divvun/Meeting2013-03-18.md),
     [26.03.](divvun/Meeting2013-03-26.md),
-    [8.04.](divvun/Meeting2013-04-08.md),
+    [08.04.](divvun/Meeting2013-04-08.md),
     [22.04.](divvun/Meeting2013-04-22.md),
     [29.04.](divvun/Meeting2013-04-29.md),
     [29.04.](divvun/Meeting2013-05-06.md),
@@ -311,7 +311,7 @@ Divvun regular meetings
     [05.11.](divvun/Meeting2012-11-05.md),
     [12.11.](divvun/Meeting2012-11-12.md),
     [26.11.](divvun/Meeting2012-11-26.md),
-    [3.12.](divvun/Meeting2012-12-03.md),
+    [03.12.](divvun/Meeting2012-12-03.md),
     [10.12.](divvun/Meeting2012-12-10.md),
     [17.12.](divvun/Meeting2012-12-17.md)
 
