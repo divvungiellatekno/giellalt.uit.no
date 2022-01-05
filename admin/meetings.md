@@ -93,8 +93,10 @@ Divvun linguist meetings
     [12.12.](divvun/LinguistMeeting2012-12-12.md),
     [19.12.](divvun/LinguistMeeting2012-12-19.md)
 
-Divvun regular meetings
------------------------
+Divvun meetings
+---------------
+
+### Regular meetings, this and last year
 
 -   **2022:**  
     [04.01.](divvun/Meeting2022-01-04.md),
@@ -144,6 +146,14 @@ Divvun regular meetings
     [07.12.](divvun/Meeting2021-12-07.md),
     [14.12.](divvun/Meeting2021-12-14.md),
     [21.12.](divvun/Meeting2021-12-21.md)
+
+### Coordination meetings with The TechnoCreatives, Gothenburg
+
+-   **2022:**  
+    [05.01.](divvun/TTC-sync-2022-01-05.md),
+
+### Older regular meetings
+
 -   **2020:**  
     [20.01.](divvun/Meeting2020-01-20.md),
     [05.02.](divvun/Meeting2020-02-05.md),
