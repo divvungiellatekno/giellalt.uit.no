@@ -101,6 +101,7 @@ Divvun meetings
 -   **2022:**
     [04.01.](divvun/Meeting2022-01-04.md),
     [11.01.](divvun/Meeting2022-01-11.md),
+    [18.01.](divvun/Meeting2022-01-18.md),
 -   **2021:**  
     [05.01.](divvun/Meeting2021-01-05.md),
     [12.01.](divvun/Meeting2021-01-12.md),
