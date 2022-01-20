@@ -153,6 +153,7 @@ Divvun meetings
 
 -   **2022:**  
     [05.01.](divvun/TTC-sync-2022-01-05.md),
+    [20.01.](divvun/TTC-sync-2022-01-20.md),
 
 ### Older regular meetings
 
