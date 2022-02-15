@@ -14,17 +14,17 @@ A crash course in lynx
 Basic commands
 --------------
 
--   **Start lynx::**  
+-   **Start lynx::**
     Write *lynx filename*
--   **Quit lynx::**  
+-   **Quit lynx::**
     Type q
--   **Follow link::**  
+-   **Follow link::**
     Right arrow (or: Enter)
--   **Go back::**  
+-   **Go back::**
     Left arrow
--   **Move to next and previous links in the document::**  
+-   **Move to next and previous links in the document::**
     Down arrow, up arrow
--   **See the link history:**  
+-   **See the link history:**
     Press the Bcksp (Left Delete) key
 
 How to get more help

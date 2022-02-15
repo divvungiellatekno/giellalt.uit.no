@@ -20,13 +20,13 @@
 ## Onsdag: 09.00-16.00
 * Dokumentasjon
 
-Resten av uka brukes til arbeid med merking av feil (man må selvfølgelig samle inn litt tekst slik at man har noe å merke). Når spørsmål dukker opp setter vi av tid til å diskutere disse i felleskap.  
+Resten av uka brukes til arbeid med merking av feil (man må selvfølgelig samle inn litt tekst slik at man har noe å merke). Når spørsmål dukker opp setter vi av tid til å diskutere disse i felleskap.
 
 ## Torsdag: 09.00-16.00
 
 * tekstinnsamling og feilmerking
 
-## Fredag 
+## Fredag
 * Oppsummering
 * Arbeidet framover, kommunikasjon
 * Reiseregninger

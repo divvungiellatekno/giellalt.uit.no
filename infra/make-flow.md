@@ -20,7 +20,7 @@ compilation is still too underdeveloped to really be comparable).
 
     (corresponding to the surface word form *giesemeruavtatjassedh*)
 
-2.  
+2.
 
 The future transducer compilation flow
 ======================================

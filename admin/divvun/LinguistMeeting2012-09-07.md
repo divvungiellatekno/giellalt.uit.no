@@ -4,7 +4,7 @@ Til stades: Inga, Maja, Sjur, Thomas
 
 Saker:
 * Rutinar kring ny infra
-* Referansekorpus- 
+* Referansekorpus-
 * twol-testing
 * lemma-testing (no i sma, snart i smj)
 

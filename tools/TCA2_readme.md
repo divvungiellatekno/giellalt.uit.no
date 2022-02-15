@@ -6,10 +6,10 @@ Home page: [http://gandalf.aksis.uib.no/tca2/](http://gandalf.aksis.uib.no/tca2/
 
 The program is written in Java by **Øystein Reigem**, AKSIS/UNIFOB, University of Bergen
 
-The text files have to be in marked up in XML and well-formed, but they don't have to have a 
-DTD. The texts have to be divided into sentences (or other unit to be aligned) and each 
+The text files have to be in marked up in XML and well-formed, but they don't have to have a
+DTD. The texts have to be divided into sentences (or other unit to be aligned) and each
 sentence has to have an id. See the sample files RS61E.xml and RS61N.xml (ready for
-alignment). 
+alignment).
 
 Two small support programs are included in the directory. One program divides a text
 into senteces. This use punctuation and upper case letters to decide where to split. At the
@@ -25,7 +25,7 @@ Format of the anchor list:
 * A list of words separated with comma in language 1 / language 2
 * The words can be truncated to the left and right with a star
 
-Sample: 
+Sample:
 
 ```
 begin*, began, begun, start* / begyn*, start*
@@ -33,8 +33,8 @@ begin*, began, begun, start* / begyn*, start*
 
 When files are opened in TCA2 then language 1 file has to be open to the left (as file 1).
 
-The program will align <s> and <head> but this can be changed in the 
-Settings panel where you can add other elements like <item> for list 
+The program will align <s> and <head> but this can be changed in the
+Settings panel where you can add other elements like <item> for list
 elements (with ancestor <list>).
 
 The  program is run by opening a command window and executing the alignment.bat file
@@ -48,7 +48,7 @@ settings panel.
 The program require Java 1.5.
 
 |   File                        | Description
-| --- | --- 
+| --- | ---
 |  Om_aligmentprogrammet.doc    | Description of program (in Norwegian)
 |  TCA2_demo_docs_20050706.doc  | some screen dumps of the program (not 100% up to date) with comments
 |  alignment.bat                | bat file to run in a command window (you will then see error messages)

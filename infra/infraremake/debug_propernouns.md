@@ -4,14 +4,14 @@ Bellingmo dukker opp som en feil i propernouns-testinga
 
 Eksisterer den i analysatoren?
 ```
-$ lookup -q src/analyser-gt-desc.xfst 
+$ lookup -q src/analyser-gt-desc.xfst
 Bellingmo
 Bellingmo	Bellingmo	+?
 ```
 
 Hva skjer når vi genererer grunnform av Bellingmo?
 ```
-$ lookup -q src/generator-gt-desc.xfst 
+$ lookup -q src/generator-gt-desc.xfst
 Bellingmo+N+Prop+Sg+Nom
 Bellingmo+N+Prop+Sg+Nom	Bellinkmo
 ```
@@ -36,7 +36,7 @@ Bellingmo+OLang/NOB:Belling9#mo NYSTØ ;
 ```
 
 g9# blir ikkje g#. Det betyr at det er ein feil i skriptet som transformerer
-smi-fila til smj-format: `src/scripts/smi-smj-conversion.pl`. 
+smi-fila til smj-format: `src/scripts/smi-smj-conversion.pl`.
 
 Vi endra skriptet ved å endra frå:
 ```

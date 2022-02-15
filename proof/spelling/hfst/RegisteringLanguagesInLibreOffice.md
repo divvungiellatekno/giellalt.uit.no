@@ -7,5 +7,5 @@ The process of adding languages in LibreOffice is documented here:
 Save the resulting xml file  in the techdoc/proof/spelling/hfst/locale folder.
 
 Thereafter, the new language must be added to LO. Register at
-[https://bugs.freedesktop.org/], and file a bug saying the language is missing, 
+[https://bugs.freedesktop.org/], and file a bug saying the language is missing,
 with the xml file as an attachment.

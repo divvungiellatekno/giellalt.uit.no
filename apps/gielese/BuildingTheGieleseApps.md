@@ -55,7 +55,7 @@ This will take a little while. It does the following:
 
 #  Phonegap dependencies
 
-PhoneGap system dependencies: 
+PhoneGap system dependencies:
 
 *For building with Android*
 
@@ -141,7 +141,7 @@ Invites must be managed within the Group, as it is not listed as public.
 
 ###  Beta tester enrollment
 
-As a beta tester, follow this procedure: 
+As a beta tester, follow this procedure:
 
 1. Join the group
 1. If necessary, make sure an admin can confirm you are enrolled
@@ -150,7 +150,7 @@ As a beta tester, follow this procedure:
 
 NB: Since it may take a few hours for APKs to be deployed to all of google
 Play's servers, it may be so that you will be able to enroll in the beta
-program, but not access the beta. If this is so, try back in a couple hours. 
+program, but not access the beta. If this is so, try back in a couple hours.
 
 #  Deploying an iOS app
 
@@ -172,7 +172,7 @@ on your own machine through the Keychain Access app.
 1. Add your Apple Dev Center account (which could be different from iTunes Store)
 1. Account must be an admin in order to have access to provisioning profiles
 1. In Xcode preferences, look at Accounts tab
-1. Add the account, or if the account is already added, click on Details, and then click the refresh icon. 
+1. Add the account, or if the account is already added, click on Details, and then click the refresh icon.
 
 ##  Uploading
 
@@ -192,7 +192,7 @@ Apple's side within iTunes Connect.
 
 #  Upgrading cordova
 
-Follow the documentation, but also make sure that you: 
+Follow the documentation, but also make sure that you:
 
  * cordova platform upgrade ios
 
@@ -207,10 +207,10 @@ Review process returns:
 ```
     Missing Push Notification Entitlement - Your app appears to include API used to
     register with the Apple Push Notification service, but the app signature's
-    entitlements do not include the "aps-environment" entitlement. 
+    entitlements do not include the "aps-environment" entitlement.
 ```
 
-But, we don't use push notifications. 
+But, we don't use push notifications.
 
 1. https://github.com/meteor/meteor/issues/2974
 1. http://forum.ionicframework.com/t/missing-push-notification-entitlement/5436/4
@@ -221,7 +221,7 @@ to use a push notification plugin... Building the XCode project from PhoneGap
 results in the inclusion of the following lines in
 *Gielese/Classes/AppDelegate.m*. Apple is warning that the certificate does
 not include these entitlements. One way would be to regenerate a provisioning
-profile with these entitlements, but keeping the app simpler seems to be a better idea. 
+profile with these entitlements, but keeping the app simpler seems to be a better idea.
 
 ```
     // repost all remote and local notification using the default NSNotificationCenter so multiple plugins may respond

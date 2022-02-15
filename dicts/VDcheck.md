@@ -5,7 +5,7 @@
 
 ```
 grep '<l ' adjective_smenob.xml | grep -v vmax | tr "<" ">" | cut -d ">" -f3 |
- sed 's/$/+A+Sg+Nom/' | dsmeNorm | grep -v "?" | sed 's/^$/€/' | tr "\n" " " | 
+ sed 's/$/+A+Sg+Nom/' | dsmeNorm | grep -v "?" | sed 's/^$/€/' | tr "\n" " " |
  tr "€" "\n" | grep 'A+.*A+' | l
 ```
 

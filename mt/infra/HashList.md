@@ -19,5 +19,5 @@ Don sáhtát juogo geahččat kommandolinnjás:
 * `cat otpt_dir/* | less`
 
 Dahje don sáhtát ráhkádit ovtta stuorra html-fiila ja rahpat dan omd. Safaris.
-1. `cat otpt_dir/* > buotfiillat.html` 
+1. `cat otpt_dir/* > buotfiillat.html`
 1. `open buotfiillat.html` (åpnes i Safari)

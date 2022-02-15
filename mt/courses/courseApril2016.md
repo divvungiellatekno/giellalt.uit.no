@@ -1,4 +1,4 @@
-# MT-beaivvit cuoŋománus 
+# MT-beaivvit cuoŋománus
 
 ## Praktihkalaččat
 bistá 5 beaivvi, mii álgit mánnodaga dii. 9
@@ -12,7 +12,7 @@ Trond, ML ja Lene leat hupman MT-vahku sisdoalu birra. Dát lea evttohus:
 * Doaibmágo? `echo ja | apertium -d. sme-smX`
 * Leago HFST ok? Kevina gohččumat ođasmahttit HFST:
     - `wget http://apertium.projectjj.com/osx/install-nightly.sh`
-    - `sudo bash install-nightly.sh` 	  				 	 	 	    		  	   		  		
+    - `sudo bash install-nightly.sh`
 * Mii kompileregoahtit sme + smX + sme-smX
     - [kompileren ja configure](../infra/Compilation.html)
 * Vahku prográmma
@@ -21,10 +21,10 @@ Trond, ML ja Lene leat hupman MT-vahku sisdoalu birra. Dát lea evttohus:
 
 ## 1 Evalueret sme-teavstta MT-jorgalusa
 ### Jorgalit guokte oanehis teavstta: čáppagirjjálašvuođa teavstta ja čoahkkingirjji:
-1. `python check_mt-otpt.py -f pseudo_tmx_data/cahceravgga_sme2smn.tmx` 
-1. `open otpt_dir/cahceravgga_sme2smn.html` 
-1. `python check_mt-otpt.py -f pseudo_tmx_data/SP-18-2012_sme2smn.tmx` 
-1. `open otpt_dir/SP-18-2012_sme2smn.html` 
+1. `python check_mt-otpt.py -f pseudo_tmx_data/cahceravgga_sme2smn.tmx`
+1. `open otpt_dir/cahceravgga_sme2smn.html`
+1. `python check_mt-otpt.py -f pseudo_tmx_data/SP-18-2012_sme2smn.tmx`
+1. `open otpt_dir/SP-18-2012_sme2smn.html`
 
 * geahččat násttiid ja hash
 * árvvoštallat gielalaš meattáhusaid
@@ -37,9 +37,9 @@ Trond, ML ja Lene leat hupman MT-vahku sisdoalu birra. Dát lea evttohus:
 ### Mo gávdnat jorgalanfeailla siva
 Bargat ieš, oažžut bagadeami
 
-## Bargat násttiid ja hash 
+## Bargat násttiid ja hash
 ### Missing (násti)
-Ovdalgo sáhttá árvvoštallat cealkaga syntávssa dahje váilevaš genererema, de eai galgga leat missing-sánit cealkagis 
+Ovdalgo sáhttá árvvoštallat cealkaga syntávssa dahje váilevaš genererema, de eai galgga leat missing-sánit cealkagis
 * Lasit missing sániid bidixii, ja sánit fertejit leat leksikaliserejuvvon sihke sme- ja smX-FST:s
 * [bidix-bargu](../infra/BidixWork.html)
 
@@ -47,13 +47,13 @@ Ovdalgo sáhttá árvvoštallat cealkaga syntávssa dahje váilevaš genererema,
 * `echo 'cealkka' | apertium -d. sme-smn-dgen` , omd.\\
 `#Pariisa<np><top><sg><loc>`
     - buohtastahte analysáhtoriin (`usmX` ja `dsmXNorm`)
-``` 
-usmn 
-Pariisa 
-Pariisa	Pariisa+N+Prop+Sem/Plc+Sg+Nom 
+```
+usmn
+Pariisa
+Pariisa	Pariisa+N+Prop+Sem/Plc+Sg+Nom
 
-dsmnNorm 
-Pariisa+N+Prop+Sem/Plc+Sg+Loc 
+dsmnNorm
+Pariisa+N+Prop+Sem/Plc+Sg+Loc
 Pariisa+N+Prop+Sem/Plc+Sg+Loc	Pariisa+N+Prop+Sem/Plc+Sg+Loc	+?
 ```
 
@@ -62,13 +62,13 @@ Ferte lasihit/divvut FST (omd. addit +Sg+Loc leksikonii masa Pariisa manná)
 **Nubbi ovdamearka**:
 * `#lávluđ<vblex><der_nomag><n><pl><nom>`
 *  buohtastahte analysáhtoriin (`usmX` ja `dsmXNorm`)
-``` 
-usmn 
-lávluđ 
+```
+usmn
+lávluđ
 lávluđ	lávluđ+V+Inf
 
-dsmnNorm  
-lávluđ+V+Der/NomAg+N+Sg+Nom 
+dsmnNorm
+lávluđ+V+Der/NomAg+N+Sg+Nom
 lávluđ+V+Der/NomAg+N+Sg+Nom	lávluđ+V+Der/NomAg+N+Sg+Nom	+?
 ```
 Ferte lasihit/divvut FST (addit +Der/NomAg  leksikonii masa lávluđ manná)
@@ -77,11 +77,11 @@ Ferte lasihit/divvut FST (addit +Der/NomAg  leksikonii masa lávluđ manná)
 
 ### Geahččat input:
 * `echo 'cealkka' | apertium -d. sme-smn-biltrans`
-    - bidix ráddje biltrans-analysa. Jus omd. dihto sátni lea bidixis dušše adjektiivan, 
+    - bidix ráddje biltrans-analysa. Jus omd. dihto sátni lea bidixis dušše adjektiivan,
 dalle dat ii sáhte oažžut Adv-analysa, vaikko dat livččii rivttes analysa cealkagis.
     - `usme` čájeha sáni vejolaš analysaid olggobealde bidix
     - jus sátni oažžu boasttu kásusa, omd. genitiivva dan sajis go akkusatiivva, de feaila lea sme syntávssalaš analysas
-    - dieđit sme-feailla Lenii, Trondii dahje Duommái 
+    - dieđit sme-feailla Lenii, Trondii dahje Duommái
 
 ### Geahččat sme syntávssalaš analysa apertiumas:
 * `echo 'cealkka' | apertium -d. sme-smn-disam`
@@ -101,7 +101,7 @@ Jus buot sánit eai leat mielde bidixis, de lea buoret geavahit dán gohččuma:
 * Makkár formáhtat
 * Man dihte erohusat
 * dáinna gohččumiin oainnát tággaid: \\
-`echo 'cealkka' | apertium -d. sme-smn-biltrans` 
+`echo 'cealkka' | apertium -d. sme-smn-biltrans`
 
 Dahje don sáhtát iskat eaŋkilsániid:
 * `echo "lohkan" | hfst-lookup .deps/sme.automorf.hfst`
@@ -110,33 +110,33 @@ Dahje don sáhtát iskat eaŋkilsániid:
 ## 4 Testenbargu: python skriptat
 Mis leat dákkár teaksta-máhpat:
 1. **texts**  : fiillat dábálaš txt-formáhtas. _sme.txt ja _smX.txt
-1. __tmx_data__ : sihke sme ja smX seammá fiillas, okta cealkka háválassii. 
+1. __tmx_data__ : sihke sme ja smX seammá fiillas, okta cealkka háválassii.
 tmx-formáhtain lea vejolaš genereret html-fiilla.
-1. **fi.samediggi** : sihke sme ja smn seammá fiillas, okta cealkka háválassii. 
+1. **fi.samediggi** : sihke sme ja smn seammá fiillas, okta cealkka háválassii.
 tmx-formáhtain lea vejolaš genereret html-fiilla.
-1. __pseudo_tmx_data__ : dušše sme, okta cealkka háválassii. 
+1. __pseudo_tmx_data__ : dušše sme, okta cealkka háválassii.
 tmx-formáhtain lea vejolaš genereret html-fiilla.
-1. __otpt_dir/__ : output-directory mas leat fiillat mat leat genererejuvvon python-skriptain.  
+1. __otpt_dir/__ : output-directory mas leat fiillat mat leat genererejuvvon python-skriptain.
 
 * python-skripta ovttagielat teavsttaide: `check_mt-otpt.py`
 * python-skripta guovttegielat teavsttiade, ja mas lea WER: `wercheck_mt-otpt.py`
 
 ## Jorgalit teavstta mii lea juo jorgaluvvon, ja buohtastahttit jorgalusaid:
 Jorgalit dihto fiilla, ja rahpat bohtosa:
-1. `python wercheck_mt-otpt.py -f tmx_data/100writers_sme2smn.tmx` 
+1. `python wercheck_mt-otpt.py -f tmx_data/100writers_sme2smn.tmx`
 1. `open otpt_dir/` - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
 
 Jorgalit olles máhpa, ja rahpat bohtosa:
-1. `python wercheck_mt-otpt.py -d tmx_data/` 
+1. `python wercheck_mt-otpt.py -d tmx_data/`
 1. `open otpt_dir/` - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
 
 ## Jorgalit teavstta mii ii leat jorgaluvvon ovdal:
 Jorgalit dihto fiilla, ja rahpat bohtosa:
-1. `python check_mt-otpt.py -f mappe/file` 
+1. `python check_mt-otpt.py -f mappe/file`
 1. `open otpt_dir/` - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
 
 Jorgalit olles máhpa, ja rahpat bohtosa:
-1. `python check_mt-otpt.py -d tmx_data/` 
+1. `python check_mt-otpt.py -d tmx_data/`
 1. `open otpt_dir/` - de rahpasa finder-láse. Vállje fiilla maid háliidat rahpat.
 
 ## 5 Buoridit jorgalanfeaillaid
@@ -148,19 +148,19 @@ Jorgalit olles máhpa, ja rahpat bohtosa:
 
 ## Lexical selection
 Jus lea eanet go okta vejolaš jorgalus, de sáhttá ráhkadit njuolggadusaid -lrx-fiillas. \\
-omd. sämikielâlâš + human vs sämikiel 
+omd. sämikielâlâš + human vs sämikiel
 
 Lasit bidixii
 * sámegielat = sämikielâlâš
 * sámegielat = sämikiel
 
 Geavat dán gohččuma vai oainnát taggaid
-* `echo 'Doppe lea ollu sámegielat olbmot.' | apertium -d. sme-smn-biltrans` 
+* `echo 'Doppe lea ollu sámegielat olbmot.' | apertium -d. sme-smn-biltrans`
 ```
-^Doppe<adv><sem_plc><@ADVL→>/Tobbeen<adv><sem_plc><@ADVL→>$ 
-^leat<vblex><iv><indic><pres><p3><pl><@+FMAINV>/leđe<vblex><indic><pres><p3><pl><@+FMAINV>$ 
-^ollu<adv><@←ADVL>/ennuv<adv><@←ADVL>$ 
-^sámegielat<adj><sem_hum><attr><@→N>/sämikiel<adj><sem_hum><attr><@→N>/sämikielâlâš<adj><sem_hum><attr><@→N>$ 
+^Doppe<adv><sem_plc><@ADVL→>/Tobbeen<adv><sem_plc><@ADVL→>$
+^leat<vblex><iv><indic><pres><p3><pl><@+FMAINV>/leđe<vblex><indic><pres><p3><pl><@+FMAINV>$
+^ollu<adv><@←ADVL>/ennuv<adv><@←ADVL>$
+^sámegielat<adj><sem_hum><attr><@→N>/sämikiel<adj><sem_hum><attr><@→N>/sämikielâlâš<adj><sem_hum><attr><@→N>$
 ^olmmoš<n><sem_hum><pl><nom><←ext→><@←SUBJ>/olmooš<n><sem_hum><pl><nom><←ext→><@←SUBJ>$
 ^.<sent>/.<sent>$^.<sent>/.<sent>$ ```
 
@@ -176,7 +176,7 @@ Lasit -lrx-fiilii:
   <rule weight="0.5">
     <match lemma="sámegielat">
       <select lemma="sämikielâlâš"/>
-    </match> 
+    </match>
   </rule>
 
   <rule weight="0.6">
@@ -186,7 +186,7 @@ Lasit -lrx-fiilii:
 <or>
    <match tags="n.sem_hum.*"/>     (omd. olmmoš<n><sem_hum><pl><nom>)
    <match tags="n.*.sem_hum.*"/>   (omd. oahpaheaddji<n><nomag><sem_hum><pl><nom>)
- </or>  
+ </or>
   </rule>
 ```
 
@@ -230,10 +230,10 @@ cat dev/hash-report.freq |egrep -v '(cmp|<np>|<top>|der_)'|see
 ## 7 Bidix-sanity
 Bidix-sanity listu ráhkaduvvo bidix-listtu vuođul. **Čuolmmat sorterejuvvojit alfabehtalaččat**.
 
-`sh bidix-sanity.sh > sanityoutput` 
+`sh bidix-sanity.sh > sanityoutput`
 
-Lea vejolaš heivehit sanityoutput nu ahte oaččut listtu mas eai leat namat, 
-ja mas smX-sánit leat sorterejuvvon sáni loahpa mielde. 
+Lea vejolaš heivehit sanityoutput nu ahte oaččut listtu mas eai leat namat,
+ja mas smX-sánit leat sorterejuvvon sáni loahpa mielde.
 Dalle lea álkit árvvoštallat sániid (seammá sánit bohtet maŋŋálaga) ja maiddái kopieret sániid FST:i.
 
 Go leat `dev`-máhpas:
@@ -262,7 +262,7 @@ Loga eanet [bidix-sanity birra](../infra/bidixsanity.html).
 * Der/InchL, Der/Caus (Der/ahtte smj)
 
 Forslag om nye tagger som forteller funksjon:
-* pass: Der/halla Der/PassD => Der/PassH Der/PassD Der/PassT 
+* pass: Der/halla Der/PassD => Der/PassH Der/PassD Der/PassT
 
 ### Andre harmoniserte tagger:
 * Der/st, Der/l, Der/d , Der/lasj, Der/sasj, Der/vuota
@@ -280,33 +280,33 @@ Forslag om nye harmoniserte tagger:
 `fuomášit+V+TV+Der/NomAct+N+Sg+Nom` : fuomášeapmi
 
 Resten av sme-taggene - ikke diskutert, og mange av dem er ikke så viktige for MT
-* Der/meahttun 
+* Der/meahttun
 * Der/heapmi +Der/ahtes
 * Der/jagaš Der/jagáš => Der/jagasj
-* Der/keahtta <=== marginal ikke-normativ derivasjon for substantiver, samme form som VAbess 
-* Der/adda 
-* Der/amoš 
-* Der/asti 
-* Der/at 
-* Der/dáfot 
-* Der/eamoš 
-* Der/easti 
-* Der/geahtes 
-* Der/has 
-* Der/heapmi 
-* Der/huhtti 
-* Der/huvva 
-* Der/muš 
-* Der/nuolus 
-* Der/náittot 
-* Der/seagat 
-* Der/stuvva 
+* Der/keahtta <=== marginal ikke-normativ derivasjon for substantiver, samme form som VAbess
+* Der/adda
+* Der/amoš
+* Der/asti
+* Der/at
+* Der/dáfot
+* Der/eamoš
+* Der/easti
+* Der/geahtes
+* Der/has
+* Der/heapmi
+* Der/huhtti
+* Der/huvva
+* Der/muš
+* Der/nuolus
+* Der/náittot
+* Der/seagat
+* Der/stuvva
 * Der/stávval
-* Der/supmi 
-* Der/suttat 
-* Der/veara 
-* Der/viđi 
-* Der/viđá 
+* Der/supmi
+* Der/suttat
+* Der/veara
+* Der/viđi
+* Der/viđá
 * Der/ár
 
 ## 10 Missinglisttuiguin bargat
@@ -333,7 +333,7 @@ Derivašuvnnat MT perspektiivvas
 
 ### smn
 
-Adjektiivvat, Px, 
+Adjektiivvat, Px,
 
 ## MT
 

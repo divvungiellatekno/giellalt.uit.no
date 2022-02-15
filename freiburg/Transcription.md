@@ -20,9 +20,9 @@ In the case of transcribed spoken texts, is up to the taste of the annotator whe
 
 In the case of written texts, the original orthography, incl. capitalization and punctuation is preserved as in the original.
 
-If punctuation marks are used always write a whitespace before them (in order to tokenize them)! Note the (syntactic) difference between PUNCT vs. CLB in the punctuation marks! 
+If punctuation marks are used always write a whitespace before them (in order to tokenize them)! Note the (syntactic) difference between PUNCT vs. CLB in the punctuation marks!
 
-## Other conventions 
+## Other conventions
 
 Non-comprehensible speech
 * (…) = one unclear word

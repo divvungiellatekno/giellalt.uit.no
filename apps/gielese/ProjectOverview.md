@@ -1,4 +1,4 @@
-Following is a quick technical overview of the project. 
+Following is a quick technical overview of the project.
 
 Gïelese is split into two major parts, the client and the server. The server is
 very simple, and mainly serves media, but also maintains account information
@@ -25,7 +25,7 @@ temporarily during the media install process to package media information into
 JSON.
 
 We use Gunicorn to handle serving FastCGI data to the web server, which in this
-case is nginx. 
+case is nginx.
 
 Dependencies are tracked in *requirements.txt*, with which you should use
 *virtualenv* and *pip* to install and manage a local environment.
@@ -46,6 +46,6 @@ See [Client Development](ClientDevelopment.html) for more information.
 
 ###  Client + PhoneGap
 
-Phonegap is used to manage the build process. 
+Phonegap is used to manage the build process.
 
 See [Building the Gielese Apps](BuildingTheGieleseApps.html) for more information.

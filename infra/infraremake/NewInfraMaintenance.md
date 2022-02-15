@@ -6,7 +6,7 @@ Below there are a couple of example tasks, and steps to take to realise them.
 
 If you want to change the build procedure (e.g. to add or remove a new feature from a specific fst for all languages), work through this task.
 
-Here is the procedure, with `dictionary-include.am` in 
+Here is the procedure, with `dictionary-include.am` in
 `am-shared` as an example.
 The local directory `am-shared` is an exact copy of:
 `$GTCORE/langs-templates/und/am-shared/`
@@ -14,7 +14,7 @@ The local directory `am-shared` is an exact copy of:
 1. Change `dictionary-include.am` locally (for your test language)
   and make sure everything works.
 1. copy your local `dictionary-include.am` to the `und/am-shared/` directory
-1. write a checkin message in `und/und.timestamp` 
+1. write a checkin message in `und/und.timestamp`
 1. check in **both** `dictionary-include.am` and `und.timestamp`.
 1. `cd $GTHOME/langs`
 1. `./update-all-from-core.sh -t und`

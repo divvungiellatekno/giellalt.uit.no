@@ -19,32 +19,32 @@ with other tags. Here is an example:
 
 
     "<Muitaleastte>"
-        "muitalit" V* TV Der2 Der/easti <mv> V Imprt Sg2 @FMV #1->0 
+        "muitalit" V* TV Der2 Der/easti <mv> V Imprt Sg2 @FMV #1->0
     "<fal>"
-        "fal" Adv @<ADVL #2->1 
+        "fal" Adv @<ADVL #2->1
     "<munnje>"
-        "mun" Pron Pers Sg1 Ill @<ADVL #3->1 
+        "mun" Pron Pers Sg1 Ill @<ADVL #3->1
     "<goas>"
-        "goas" Adv @ADVL> #4->7 
+        "goas" Adv @ADVL> #4->7
     "<doavttir>"
-        "doavttir" N Sg Nom @SUBJ> #5->6 
+        "doavttir" N Sg Nom @SUBJ> #5->6
     "<sáhttá>"
-        "sáhttit" <aux> V IV Ind Prs Sg3 @FS-STA #6->1 
+        "sáhttit" <aux> V IV Ind Prs Sg3 @FS-STA #6->1
     "<boahtit>"
-        "boahtit" <mv> V IV Inf @FS-IMV #7->6 
+        "boahtit" <mv> V IV Inf @FS-IMV #7->6
     "<.>"
-        "." CLB #8->8 
+        "." CLB #8->8
 
-     
+
         Muitaleastte
-         /    \     \     
+         /    \     \
        fal  munnje   \
                     sáhttá
                     /   \
             doavttir    boahtit.
                             \
-                            goas     
-       
+                            goas
+
 
 Our dependency structure is based upon a compromise between the Saami
 grammatical tradition and the conventions used within [the visl
@@ -84,575 +84,575 @@ Dependency tags alphabetically
 
 Dependency tags look different than syntactic grammar tags.
 
--   **@&gt;A:**  
+-   **@&gt;A:**
     Modifier of an adjective to the left.
-    -   **nu (Adv):**  
+    -   **nu (Adv):**
         *Gulahallan Sámedikkiin dán gažaldagas šaddá *nu*
         konkrehtalažžan go vejolaš. - 'The discussion in the Saami
         Parliament about this issue gets *as* concrete as possible.'*
--   **@A&lt;:**  
+-   **@A&lt;:**
     Modifier of an adjective to the right.
-    -   **:**  
--   **@&gt;Adv:**  
+    -   **:**
+-   **@&gt;Adv:**
     Modifier of an adverb.
-    -   **:**  
--   **@Adv&lt;:**  
+    -   **:**
+-   **@Adv&lt;:**
     Complement of an adverb.
-    -   **:**  
--   **@ADVL:**  
+    -   **:**
+-   **@ADVL:**
     Sentence adverbial.
-    -   **dál (Adv):**  
+    -   **dál (Adv):**
         **Dál* lea Bireha vuorru. - 'It is Biret's turn *now*.'*
--   **@&gt;ADVL:**  
+-   **@&gt;ADVL:**
     Modifier of an adverbial.
-    -   **Man (Pron):**  
+    -   **Man (Pron):**
         **Man* dávjá don lávet fitnat doppe? - '*How* often do you
         usually go there?'*
--   **@&lt;ADVL:**  
+-   **@&lt;ADVL:**
     adverbial to the right of the finite verb
-    -   **beaivvážis (N):**  
+    -   **beaivvážis (N):**
         *Gávpot ii dárbbaš čuovgga *beaivvážis* ii ge mánus. - 'The city
         does not need light *from the sun* and not the from the moon
         either.*
--   **@ADVL&lt;:**  
+-   **@ADVL&lt;:**
     Complement of an adverbial.
-    -   **vahkus (N):**  
+    -   **vahkus (N):**
         *Mun málestan guktii *vahkus*. - 'I make food twice a *week*.'*
--   **@ADVL&gt;:**  
+-   **@ADVL&gt;:**
     Adverbial to the left of the finite verb.
-    -   **lasttain (N):**  
+    -   **lasttain (N):**
         *Ja muora *lasttain* ožžot álbmogat dearvvašvuođa. - 'And from
         the tree's *leaves*, the people get health.'*
--   **@ADVL&gt;CS:**  
+-   **@ADVL&gt;CS:**
     adverbial modifying a conjunction
-    -   **dallah (Adv):**  
+    -   **dallah (Adv):**
         **Dallah* goh Jeesuse tjaetseste tjuedtjele, dellie vuajna Elmie
         rihpesåvva jih Voejkene altasasse goh ledtie suaja. - '*Right*
         after Jesus stood up from the water, he sees that heaven opens
-        and the holy spirit flies to him like a bird.'  
+        and the holy spirit flies to him like a bird.'
         (*sma*)*
-    -   **dan dihte (Adv):**  
+    -   **dan dihte (Adv):**
         *Muhto go lassánedje olbmot, de bohte čáhppesbivttasolbmot fas
         dohko, gosa ledje sámit vuohččan ballán, ja dahke orohagaid jur
         dasa gos sámit ledje orrume, *dan dihte* go sii oidne, ahte das
         leai čáppa gieddi, maid ledje bohccot dutken, gožžan ja baikán —
         gos ledje sámit orron mánga olmmošbuolvva.*
--   **@ADVL&lt;OBJ:**  
-    -   **:**  
--   **@ADVL&gt;SUBJ:**  
-    -   **:**  
--   **@AGENS&gt;:**  
+-   **@ADVL&lt;OBJ:**
+    -   **:**
+-   **@ADVL&gt;SUBJ:**
+    -   **:**
+-   **@AGENS&gt;:**
     kal
-    -   **atorfilittanit:**  
+    -   **atorfilittanit:**
         *Attartortumiit piginnittumut aaqqissuussineq
         namminersornerusuni atorfilittanit politikerinillu nuimasunit
         isertortumik atornerlunneqarsimammat illoqarfinni anginerni
         pingasuni attartortut nalinginnaasut pillarneqartussanngorput.*
--   **@APP-ADVL&lt;:**  
+-   **@APP-ADVL&lt;:**
     Apposition to an adverbial to the left. If the apposition consists
     of more than one word, the head will get this tag.
-    -   **ovdal (Pr):**  
+    -   **ovdal (Pr):**
         *Dolin, *ovdal* soađi, olbmot lávejedje vuovdit joŋaid. - 'In
         old times, *before* the war, people used to sell cowberries.'*
--   **@APP-N&lt;:**  
+-   **@APP-N&lt;:**
     Apposition to a noun to the left of it. If the apposition is more
     than one constituent, the head will get this tag.
-    -   **eatnigiela (N):**  
+    -   **eatnigiela (N):**
         *Viimmat mun ohppen čállit sámegiela, mu *eatnigiela*. -
         'Finally, I learned to write in Sámi, my *mother tongue*.'*
--   **@APP-Num&lt;:**  
+-   **@APP-Num&lt;:**
     Apposition to a numeral to the left.
-    -   **suinniid (N):**  
+    -   **suinniid (N):**
         *Juohke heasta borrá sullii 6 kilu *suinniid* beaivái. - 'Every
         horse eats approximately 6 kilograms of *grass* a day.'*
--   **@APP&gt;Pron:**  
+-   **@APP&gt;Pron:**
     Apposition to a pronoun to the right. If the apposition is more than
     one constituent, the head will get this tag.
-    -   **Turner (N Prop):**  
+    -   **Turner (N Prop):**
         *Muhto diet Will *Turner*, son nai lea fiinna olmmái. - 'But
         this Will *Turner*, he is also a nice guy.'*
--   **@APP-Pron&lt;:**  
+-   **@APP-Pron&lt;:**
     Apposition to a pronoun to the left. If the apposition is more than
     one constituent, the head will get this tag.
-    -   **olbmái (N):**  
+    -   **olbmái (N):**
         *Dan mun muitalan dušše dutnje, mu buoremus *olbmái*. - 'This I
         tell only you, my best *friend*.'*
--   **@&gt;CC:**  
+-   **@&gt;CC:**
     modifier of CC
-    -   **sihke (CC):**  
--   **@&gt;CC:**  
+    -   **sihke (CC):**
+-   **@&gt;CC:**
     modifier of CC
-    -   **sihke (CC):**  
--   **@CL-ADVL&gt;:**  
-    -   **:**  
--   **@CL-&lt;ADVL:**  
-    -   **:**  
--   **@CMPND:**  
+    -   **sihke (CC):**
+-   **@CL-ADVL&gt;:**
+    -   **:**
+-   **@CL-&lt;ADVL:**
+    -   **:**
+-   **@CMPND:**
     First part of a compound followed by a hyphen
-    -   **skaehtie-:**  
+    -   **skaehtie-:**
         *Reerenasse galka båetije stoerredigkieboelhkesne jåerhkedh dam
         *skaehtie-* jïh åasadaltesem mij lea daelie, jïh daennie
         daltesisnie hov lea nuepie buerebe joekedimmiem darjodh.*
--   **@CNP:**  
+-   **@CNP:**
     Local conjunction or subjunction.
-    -   **ja (CC):**  
+    -   **ja (CC):**
         *Sihke Mázes *ja* Guovdageainnus leat boarrásat viššalit finadan
         doaibmaguovddážiin. - 'Both in Máze *and* Guovdageaidnu, the
         oldest people frequently got to the activitycentre.'*
-    -   **go (CS):**  
+    -   **go (CS):**
         *Sámi geavaheaddjit hállet dávjá metaforaiguin ja sis leat ollu
         eará gulahallanvuogit *go* giella. - 'Saami users speak often in
         metaphores and the have many other ways of comunicating *than*
         by means of language.'*
--   **@COMPL-CS&lt;:**  
+-   **@COMPL-CS&lt;:**
     Complement of subjunction.
-    -   **vejolaš (A):**  
+    -   **vejolaš (A):**
         *Gulahallan Sámedikkiin dán gažaldagas šaddá nu konkrehtalažžan
         go *vejolaš*. - 'The contact with the Saami Parliament about
         this issue gets as concrete as *possible*.'*
--   **@CVP:**  
+-   **@CVP:**
     Conjunction or subjunction that conjoins finite verb phrases
-    -   **ja (CC):**  
+    -   **ja (CC):**
         *Bealatjogas leat dološ rájes leamaš bálvvossajit *ja* dát
         golbma sieiddi ledje dovddus gitta olgoriikii. - 'Long since,
         there have been sacrificial sites at Bealatjohka *and* the three
         'sieidi' (cult images) were known even abroad.*
-    -   **go (CS):**  
+    -   **go (CS):**
         *Leago guhkes áigi dassá *go* Máreha oidnet? - 'Has it been a
         long time *since* you have seen Máret?'*
--   **@FAUX:**  
+-   **@FAUX:**
     finite auxiliary
-    -   **ledje (V):**  
+    -   **ledje (V):**
         *Gávpotmuvrra vuođđogeađggit *ledje* čiŋahuvvon juohke lágán
         divrras geđggiiguin. - \`The cornerstones of the wall *were*
         decorated with every kind of expensive stones.'*
--   **@-F&lt;ADVL:**  
+-   **@-F&lt;ADVL:**
     Adverbial of infinite verb outside of the predicate
-    -   **árbbolaččain (N):**  
+    -   **árbbolaččain (N):**
         *Danne dárbbašit mii oažžut lobi Nils Aslak Valkeapää
         *árbbolaččain* almmuhit dán guokte lávlaga min sálbma-CD:s. -
         \`Therefore we need to get permission from Nils Aslak
         Valkeapää's *heirs* to release these two songs on our
         psalm-CD.'*
--   **@-FADVL&gt;:**  
+-   **@-FADVL&gt;:**
     Adverbial of infinite verb outside the predicate
-    -   **várrogasat (Adv):**  
+    -   **várrogasat (Adv):**
         *Dihkkadeaddji rávve skohtervuddjiid *várrogasat* mátkkoštit.
         \`The roadman warns snowscooter drivers to drive *carefully*.'*
--   **@FMV:**  
+-   **@FMV:**
     finite mainverb
-    -   **lei (V):**  
+    -   **lei (V):**
         *Gávpot lei njealječiegat, seammá guhkki go govdat. - \`The city
         *was* a square, same width as length.'*
--   **@FMVdic:**  
-    -   **muitala (V):**  
+-   **@FMVdic:**
+    -   **muitala (V):**
         *Ja go geassit eret dábálaš goluid, de lea buhtes sisaboahtu
         sullii 100 000 ruvnnu, *muitala* Eriksen. - \`And when we take
         away/subtract? the regular expenses, there is a remaining income
         of about 100 000 crowns, *says* Eriksen.'*
--   **@-F&lt;OBJ:**  
+-   **@-F&lt;OBJ:**
     Object of infinite verb outside the verbal to the right of it.
-    -   **govaid (N):**  
+    -   **govaid (N):**
         *Boađe mu lusa geahččat *govaid*! - \`Come to me and look *at
         the pictures*!'*
--   **@-FOBJ&gt;:**  
+-   **@-FOBJ&gt;:**
     Object of infinite verb outside the verbal to the left of it.
-    -   **váldovuoittuid (N):**  
+    -   **váldovuoittuid (N):**
         *Valáštallanhálla lei njealjehas dievva olbmuiguin geat vurde
         *váldovuoittuid* fasket. - \`The gymn was to a quarter full of
         people that wait to grab *the main prizes*.'*
--   **@-F&lt;SPRED:**  
-    -   **duhtavaččat (A):**  
+-   **@-F&lt;SPRED:**
+    -   **duhtavaččat (A):**
         *IL Nordlysa beaivválaš jođiheaddji, Nils Peder Eriksen, lohká
         iežaset leat oalle *duhtavaččat* dán jagáš básárdoaluin.*
--   **@FM-SPRED&lt;:**  
+-   **@FM-SPRED&lt;:**
     main clause functioning as a subject predicate to the right of
     another main clause
-    -   **ii (V):**  
+    -   **ii (V):**
         *Ja dasa lea dát sivva: go sápmelaš boahtá moskkus gámmirii, de
         son ii *ii* ipmir ii báljo maidege, go ii biegga beasa bossut
         njuni vuostá. - \`And this is the reason: if a Saami comes ...,
         then he does *not* understand ...'*
--   **@FS-ADVL&gt;:**  
+-   **@FS-ADVL&gt;:**
     subclause functioning as an adverbial to the finite verb of the main
     clause to the right of it.
-    -   **bohtet (V):**  
+    -   **bohtet (V):**
         *Ja mo jos Muhtinlágan Stálu ustibat *bohtet* fitnat. - \`And
         what if the friends of some-kind-of troll *come* for a visit.'*
--   **@FS-&lt;ADVL:**  
+-   **@FS-&lt;ADVL:**
     subclause functioning as an adverbial to the finite verb of the main
     clause to the left of it.
-    -   **galggai (V):**  
+    -   **galggai (V):**
         *Go *galggai* bargat rehkenastimiin sus šattai álo
         oaivvebávččas. - \`When they *should* work with arithmetics, she
         always got a headache.'*
--   **@FS-IAUX:**  
+-   **@FS-IAUX:**
     subclause infinite auxiliary
-    -   **sáhte:**  
+    -   **sáhte:**
         *Mun in *sáhte* muitalit dán dutnje. - \`I *can*not tell you
         this.'*
--   **@FS-IMV:**  
+-   **@FS-IMV:**
     subclause infinite mainverb
-    -   **ohcamin (V):**  
+    -   **ohcamin (V):**
         *Naba jos eadni lea sudno *ohcamin*, iige gávnna. - \`And if
         mother is *searching* for them, she will not find them.'*
--   **@FS-N&lt;:**  
+-   **@FS-N&lt;:**
     finite verb (either an auxiliary or main verb) of a relative
     subclause (with a noun (N) antecedent)
-    -   **lea (V):**  
+    -   **lea (V):**
         *De son viežžá liegga liema ruittus mii *lea* oapmana alde.
         \`Then he fetched warm broth from the pot that *is* on the
         stove.'*
--   **@FS-N&lt;IAUX:**  
+-   **@FS-N&lt;IAUX:**
     infinite auxiliary of a (relative) subclause
-    -   **sáhttán (V):**  
+    -   **sáhttán (V):**
         *Mun oidnen nieidda gii ii *sáhttán* boahtit. - \`I saw the girl
         that *could* not come.'*
--   **@FS-N&lt;IMV:**  
+-   **@FS-N&lt;IMV:**
     infinite mainverb of a (relative) subclause
-    -   **bargan (V):**  
+    -   **bargan (V):**
         *Mon lean okta sápmelaš, guhte lean *bargan* visot sámi bargguid
         ja mon dovddan visot sámi dili. - \`I am a Sámi, who has
         *worked* in all Saami occupations and I know all Saami
         affairs.'*
--   **@FS-OBJ:**  
+-   **@FS-OBJ:**
     finite verb of the subclause that has an object function
-    -   **leahkkasii (V):**  
+    -   **leahkkasii (V):**
         *Arne ii fuobmán ahte uksa *leahkkasii*. - \`Arne did not notice
         that the door *opened*.'*
--   **@FS-OBJ&gt;:**  
+-   **@FS-OBJ&gt;:**
     finite verb of a subclause that has object function used for kal
     e.g.
-    -   **pigilissagaa (V):**  
+    -   **pigilissagaa (V):**
         *Nunani issittuni sila pillugu tunngaviusumik ilisimasalernissaq
         silamut ilisimatusarfiup pigilissagaa ministerit marluullutik
         isumaqatigiipput, silallu allanngoriartornerata sunniutai
         maluginiarneqassasut.*
--   **@FS-P&lt;:**  
+-   **@FS-P&lt;:**
     finite verb of a subclause
-    -   **eru (V):**  
+    -   **eru (V):**
         *Tað er ikki longur pláss fyri, at lutir og kenslur bara eru. -
         'There is no longer any space for that things and feelings
         simply are.'*
-    -   **:**  
+    -   **:**
         *(fao)*
--   **@FS-P&lt;IMV:**  
+-   **@FS-P&lt;IMV:**
     finite verb of a subclause in fao
-    -   **:**  
--   **@-F&lt;OPRED:**  
-    -   **:**  
--   **@-FSUBJ&gt;:**  
+    -   **:**
+-   **@-F&lt;OPRED:**
+    -   **:**
+-   **@-FSUBJ&gt;:**
     subject of a verbal infinitival object
-    -   **mánáid (N):**  
+    -   **mánáid (N):**
         *Muhtinlágan Stállu cáhpá goikebierggu sudnuide ja dáhttu
         *mánáid* boradit. - 'Some-sort-of troll cuts dried meat for them
         and asks *the children* to eat.'*
--   **@FS-SUBJ:**  
+-   **@FS-SUBJ:**
     finite verb head of a subordinate clause functioning as a subject
-    -   **boađát (V):**  
+    -   **boađát (V):**
         *Dehálaš lea ahte don maid *boađát*. - 'It is important that you
         *come* too.'*
--   **@FS-VFIN&lt;:**  
-    -   **eai (V):**  
+-   **@FS-VFIN&lt;:**
+    -   **eai (V):**
         *Idja ii leat šat, *eai* ge sii dárbbaš lámppá dahje beaivváža
         čuovgga, dasgo Hearrá Ipmil lea sin čuovga. - \`The night is not
         anymore, they do *not* need the lamp- or day- light either,
         because God the Lord is their light.'*
--   **@HAB:**  
+-   **@HAB:**
     Habitive, for a human target in illative or locative in a habitive
     construction (copula), is translated as "have". Possible verbs in a
     habitive construction are "boahtit" 'come', "leat" 'be', "goallut"
     'pass', "heaŋgát", 'hang', "jápmit" 'die', "šaddat" 'become'.
-    -   **Máhtes (N):**  
+    -   **Máhtes (N):**
         **Máhtes* lea beana. - '*Máhtte* has a dog.'*
-    -   **sus (Pron):**  
+    -   **sus (Pron):**
         **Sus* šattai álo oaivvebávččas go galggai bargat
         rehkenastimiin. - '*She* always got a headache when she was
         supposed to work with arithmetics.'*
--   **@HNOUN:**  
+-   **@HNOUN:**
     Stray noun in sentence fragments.
-    -   **boddu (N):**  
+    -   **boddu (N):**
         *Vuosttaš *boddu*. - 'First *lesson*.'*
--   **@IAUX:**  
+-   **@IAUX:**
     non-finite auxiliary
-    -   **veaje (V):**  
+    -   **veaje (V):**
         *Dattetge ii *veaje* oađđit. - \`Still she did not *manage* to
         sleep.'*
--   **@ICL-ADVL:**  
+-   **@ICL-ADVL:**
     infinitival clause adverbial
-    -   **árvvoštallat (V):**  
+    -   **árvvoštallat (V):**
         *Son namuha ahte sii leat gal ávžžuhan olbmuid geat dihtet ahte
         dárbbašit jođánit beassat buohccevissui, nugo ovdamearkka dihte
         áhpehis nissonolbmuid geain lahkona riegádahttináigi,
         *árvvoštallat* galget go ovdal go buohccájit juo vuolgit
         buohccevissui.*
--   **@ICL-OBJ:**  
+-   **@ICL-OBJ:**
     infinitival clause object
-    -   **boradit (V):**  
+    -   **boradit (V):**
         *Muhtinlágan Stállu cáhpá goikebierggu sudnuide ja dáhttu mánáid
         *boradit*. - 'Some-sort-of troll cuts dried meat for them and
         asks the children *to eat*.'*
--   **@ICL-P&lt;:**  
+-   **@ICL-P&lt;:**
     infinitival complement of a preposition
-    -   **skriva (V):**  
+    -   **skriva (V):**
         *Kenslan gav Unn íblástur til at skriva nakrar yrkingar um
         næstrakærleika.*
-    -   **:**  
+    -   **:**
         *(fao)*
--   **@ICL-SUBJ:**  
+-   **@ICL-SUBJ:**
     infinitival subject
-    -   **sløkkja (V):**  
+    -   **sløkkja (V):**
         *Men tað er líka skjótt at sløkkja ljósið, lata eygu og oyru
         aftur og rista ábyrgdina av okkum.*
-    -   **:**  
+    -   **:**
         *(fao)*
--   **@IM:**  
+-   **@IM:**
     fao
-    -   **at (IM):**  
+    -   **at (IM):**
         *Tá koyrdi Harrin Guð hann út úr aldingarðinum í Eden og setti
         hann til at dyrka ta jørð, sum hann var sjálvur tikin av.*
--   **@IMV:**  
+-   **@IMV:**
     non-finite mainverb
-    -   **čiŋahuvvon (V):**  
+    -   **čiŋahuvvon (V):**
         *Gávpotmuvrra vuođđogeađggit ledje *čiŋahuvvon* juohke lágán
         divrras geđggiiguin. - \`The cornerstones of the wall were
         *decorated* with every kind of expensive stones.'*
--   **@INF-&gt;N:**  
+-   **@INF-&gt;N:**
     kal
-    -   **pillugu (V):**  
+    -   **pillugu (V):**
         *Nunani issittuni sila pillugu tunngaviusumik ilisimasalernissaq
         silamut ilisimatusarfiup pigilissagaa ministerit marluullutik
         isumaqatigiipput, silallu allanngoriartornerata sunniutai
         maluginiarneqassasut.*
--   **@INTERJ:**  
+-   **@INTERJ:**
     Interjection.
-    -   **maid (Interj):**  
+    -   **maid (Interj):**
         **Maid*, iigo leat boahtán? - '*What*, hasn't he/she come?'*
--   **@&lt;IOBJ:**  
+-   **@&lt;IOBJ:**
     indirect object to the right of the finite verb.
-    -   **(N):**  
--   **@IOBJ&gt;:**  
+    -   **(N):**
+-   **@IOBJ&gt;:**
     Indirect object to the left of the finite verb.
-    -   **(N):**  
--   **@MIK-OBJ:**  
+    -   **(N):**
+-   **@MIK-OBJ:**
     kal
-    -   **illunik (N):**  
+    -   **illunik (N):**
         *Namminersornerusut Nuummi illunik ima amerlatigisunik
         tunisaqarsimalerput aningaasanut inatsit
         iluatsitaariniarfigisariaqalerlugu inissianik isatereriarlutik
         nutaanik sanaartortariaqaleramik atorfilittatik naammaginartunik
         inissaqartissinnaajumallugit.*
--   **@&gt;N:**  
+-   **@&gt;N:**
     Prenominal modifier to the left
-    -   **geavatlaš (A):**  
+    -   **geavatlaš (A):**
         *Ráđđehussii lea *geavatlaš* politihkka deaŧalaš. - 'For the
         government, *practical* politics is important.'*
-    -   **oahppo-:**  
+    -   **oahppo-:**
         **Oahppo-* ja dutkanministtar dat lea ráhkadan dieđáhusa alit
         sámi oahpu ja dutkama birra. - 'The secretary for *education*
         and research has given a notice about Saami higher education and
         research.'*
-    -   **rektor (N):**  
+    -   **rektor (N):**
         **Rektor* Tove Bull álgaga mielde... - 'According to *principal*
         Tove Bull ...'*
-    -   **Tove (N Prop):**  
+    -   **Tove (N Prop):**
         *Rektor *Tove* Bull álgaga mielde... - 'According to principal
         *Tove* Bull ...'*
--   **@N&lt;:**  
+-   **@N&lt;:**
     Modifier of the noun to the left.
-    -   **33 (Num):**  
+    -   **33 (Num):**
         *Mun lean ilus go beasan ovdanbuktit St.dieđ. nr. *33*. - 'I am
         happy that I get the opportunity to present the parliament
         notice number *33*.'* (In this case *33* modifies *St.dieđ.*.)
-    -   **vihtta (Num):**  
+    -   **vihtta (Num):**
         *Mun boađán diibmu *vihtta*. - 'I will come at *five* o'clock.'*
--   **@&gt;Num:**  
+-   **@&gt;Num:**
     Attributes of numeral to the right.
-    -   **nr (N):**  
+    -   **nr (N):**
         *Mun lean ilus go beasan ovdanbuktit St.dieđ. *nr.* 33. - 'I am
         happy that I get the opportunity to present the parliament
         notice *number* 33.'*
--   **@Num&lt;:**  
+-   **@Num&lt;:**
     Attributes of numeral to the left.
-    -   **jagi (N):**  
+    -   **jagi (N):**
         *Son lea guoktelogi *jagi* boaris. - 'She/he is twenty *years*
         old.'*
--   **@&lt;OBJ:**  
+-   **@&lt;OBJ:**
     Direct object to the right of the finite verb.
-    -   **áiggi (N):**  
+    -   **áiggi (N):**
         *Dat gáibida ollu *áiggi*. - 'That demands a lot of *time*.'*
--   **@OBJ&gt;:**  
+-   **@OBJ&gt;:**
     Direct object to the left of the finite verb.
-    -   **maid:**  
+    -   **maid:**
         *Filbma lea oassi prošeavttas *maid* Sámi instituhtta lea
         ruthadan. - 'The film is a part of the project that the Saami
         institute has financed.'*
--   **@OPRED&gt;:**  
+-   **@OPRED&gt;:**
     Object predicative to the left of the finite verb.
-    -   **luoikkasin (N):**  
+    -   **luoikkasin (N):**
         *Gaup dojii stivrrana hárjehallamiin, muhto oaččui *luoikkasin*
         eará stivrrana. - 'Gaup broke the handlebars during the
         practises, but got to *borrow* another steering.'*
--   **@&lt;OPRED:**  
+-   **@&lt;OPRED:**
     Object predicative.
-    -   **buriid (A):**  
+    -   **buriid (A):**
         *Gáhkkuid son ráhkada hui *buriid*. - 'Cakes, she/he makes
         really *good ones*.'*
-    -   **sámegielhállin (N):**  
+    -   **sámegielhállin (N):**
         *Dagat iežat *sámegielhállin*. - 'You make yourself *a Saami
         speaker*.'*
--   **@&gt;P:**  
+-   **@&gt;P:**
     Complement of postposition to the left of it.
-    -   **oahpu (N), dutkama (N):**  
+    -   **oahpu (N), dutkama (N):**
         *Oahppo- ja dutkanministtar dat lea ráhkadan dieđáhusa alit sámi
         *oahpu* ja *dutkama* birra. - 'The secretary for education and
         research has given a notice about Saami higher *education* and
         *research*.'*
--   **@P&lt;:**  
+-   **@P&lt;:**
     Complement of preposition to the right of it.
-    -   **oasálaččaid (N):**  
+    -   **oasálaččaid (N):**
         *Finnmárkkus ii goassige leat leamaš ságastallan gaskal muhtun
         muddui seammadássásaš *oasálaččaid*. - 'There has never been a
         discussion in Finnmark between somehow equal *parts*.'*
--   **@PCLE:**  
+-   **@PCLE:**
     Particle.
-    -   **amma (Pcle):**  
+    -   **amma (Pcle):**
         **Amma* mii eat leat máksán? - 'We haven't paid, *have we*?'*
--   **@POSS&gt;:**  
+-   **@POSS&gt;:**
     kal
-    -   **Jiisusi-Kristusip (N):**  
+    -   **Jiisusi-Kristusip (N):**
         **Jiisusi-Kristusip*, Daavip ernerata, Aaperaap ernerata,
         eqqarliisa allassimaffiat.*
--   **@PPRED:**  
+-   **@PPRED:**
     a predicative with a predicative as its head
-    -   **reaŋgan (N):**  
+    -   **reaŋgan (N):**
         *Máhtes lea Jovnna *reaŋgan*. - 'Máhtte has Jovnna *as a
         searvant*.'*
--   **@&gt;Pron:**  
+-   **@&gt;Pron:**
     Modifier of a pronoun to the left of it.
-    -   **buot (Pron):**  
+    -   **buot (Pron):**
         *Mun, Johanas, lean dat guhte lean gullan ja oaidnán *buot*
         dán. - 'I, Johanas, am the one who has heard and seen *all* of
         it.'*
--   **@Pron&lt;:**  
+-   **@Pron&lt;:**
     Modifier of pronoun to the right of it.
-    -   **ipmašiid (N):**  
+    -   **ipmašiid (N):**
         *Maid *ipmašiid* doppe dagat? - 'What *the heck* are you doing
         there?'*
-    -   **golmmas (N):**  
+    -   **golmmas (N):**
         *Mii *golmmas* oktan du vieljain finaimet Niillas-čeazi
         geahčen. - 'We *three* together with your brother visited uncle
         Niillas.'*
--   **@SPRED:**  
+-   **@SPRED:**
     Subject predicative in elliptical sentences.
-    -   **nommh (N):**  
+    -   **nommh (N):**
         *Die maa onterligksh nommh, ih goh tuhtjh, men die ligan
         onterligksh nierretjh aaj. - ' '*
-    -   **:**  
+    -   **:**
         *(sma)*
--   **@&lt;SPRED:**  
+-   **@&lt;SPRED:**
     Subject predicative to the right of the finite verb.
-    -   **galbmasat (A):**  
+    -   **galbmasat (A):**
         *Mus leat gieđat nu *galbmasat*. - 'My hands are so *cold*.'*
-    -   **beana (N):**  
+    -   **beana (N):**
         *Mus lea *beana*. - 'I have *a dog*.'*
--   **@SPRED&gt;:**  
+-   **@SPRED&gt;:**
     Subject predicative to the right of the finite verb.
-    -   **vuođđun (N):**  
+    -   **vuođđun (N):**
         *Kommišuvnna evttohusaid *vuođđun* lea guohtundilalašvuođaid
         vuđolaš čielggadeapmi, man fágalávdegotti ášše-dovdit dahke.*
--   **@SPRED&lt;OBJ:**  
-    -   **:**  
--   **@SUBJ:**  
+-   **@SPRED&lt;OBJ:**
+    -   **:**
+-   **@SUBJ:**
     Elliptical subject.
-    -   **ålma (N):**  
+    -   **ålma (N):**
         *Dennie synnagovgesne jis akte ålma maam doenh-aajmoe
         doerelamme. - ' '*
--   **@SUBJ&gt;:**  
+-   **@SUBJ&gt;:**
     Subject to the left of the finite verb.
-    -   **son (Pron):**  
+    -   **son (Pron):**
         **Son* lea mu oabbá. - '*She* is my sister.'*
-    -   **luopmánat (N):**  
+    -   **luopmánat (N):**
         *Jeakkis leat *luopmánat*. - 'There are *cloudberries* in the
         swamp.'*
--   **@&lt;SUBJ:**  
+-   **@&lt;SUBJ:**
     Subject to the right of the finite verb.
-    -   **ollusat (Pron):**  
+    -   **ollusat (Pron):**
         *...ja dan vejolašvuođa orro gal *ollusat* geavahan. - '...and
         this opportunity, *many* seem to make use of.'*
--   **@SUBJ&lt;ADVL:**  
-    -   **:**  
--   **@SUBJ\_COMP:**  
+-   **@SUBJ&lt;ADVL:**
+    -   **:**
+-   **@SUBJ\_COMP:**
     fao
-    -   **:**  
--   **@&lt;SUBJ\_COMP:**  
+    -   **:**
+-   **@&lt;SUBJ\_COMP:**
     predicate of a subject/ subject complement (kal)
-    -   **:**  
--   **@SUBJ&lt;OBJ:**  
-    -   **:**  
--   **@tSUBJ:**  
+    -   **:**
+-   **@SUBJ&lt;OBJ:**
+    -   **:**
+-   **@tSUBJ:**
     Elliptical subject.
-    -   **tað (Pron):**  
+    -   **tað (Pron):**
         **Tað* er ikki longur pláss fyri, at lutir og kenslur bara eru.*
--   **@i-ADVL&gt;:**  
+-   **@i-ADVL&gt;:**
     kal
-    -   **Babylonimut (N):**  
+    -   **Babylonimut (N):**
         *Josijap Jekonja qatanngutaalu Babylonimut aallarussaanerup
         nalaani.*
--   **@i-&gt;&lt;ADVL:**  
+-   **@i-&gt;&lt;ADVL:**
     kal
-    -   **pruffiitikkut (N):**  
+    -   **pruffiitikkut (N):**
         *Tamakku tamarmik pipput Naalakkap pruffiitikkut oqaaserisaa
         eqquuteqqullugu, oqarmat: »Takuat, niviarsiaq naartulissaaq
         ernertaassallunilu, atsissavaallu Immanuelimik« – imaappoq:
         Guuti ilagaarput.*
--   **@i-&gt;N:**  
+-   **@i-&gt;N:**
     kal
-    -   **naammaginartunik (N):**  
+    -   **naammaginartunik (N):**
         *Namminersornerusut Nuummi illunik ima amerlatigisunik
         tunisaqarsimalerput aningaasanut inatsit
         iluatsitaariniarfigisariaqalerlugu inissianik isatereriarlutik
         nutaanik sanaartortariaqaleramik atorfilittatik naammaginartunik
         inissaqartissinnaajumallugit.*
--   **@i-&gt;V:**  
+-   **@i-&gt;V:**
     kal
-    -   **tutinneq (N):**  
+    -   **tutinneq (N):**
         *Ernertaartinnaguli tutinneq ajorpaa.*
--   **&gt;@V:**  
+-   **&gt;@V:**
     kal
-    -   **:**  
--   **@VOC:**  
+    -   **:**
+-   **@VOC:**
     Vocative.
-    -   **hearrá:**  
+    -   **hearrá:**
         **Hearrá*, du ráhkis ustit lea buohcci. - '*Lord*, your beloved
         friend is ill.'*
--   **&lt;ctjHead&gt;:**  
+-   **&lt;ctjHead&gt;:**
     coordinated head, can be of different PoS' (V, A, N ...). The PoS
     taking part in coordination do not necessarily be of the same kind.
     The tag is useful if the coordinated part does not directly follow
     it's predecessor.
-    -   **geahččá:**  
+    -   **geahččá:**
         *Dat *geahččá* nuppiid stáluide girkes čalmmiiguin ja reašká
         romet. - \`He/she *looks* at the other trolls with clear eyes
         and laughs hideously.'*
-    -   **stuorrát:**  
+    -   **stuorrát:**
         *Gieđat leat *stuorrát* dego steaikabánnot ja guolgan. - \`The
         hands are as *big* as fryingpans and covered with hair.'*
-    -   **soalsin:**  
+    -   **soalsin:**
         *Skávžá lea buot *soalsin* ja njuoskkas. - \`The beard is all
         *covered with spit* and wet.'*
--   **&lt;mv&gt;:**  
+-   **&lt;mv&gt;:**
     main verb, especially useful in cases where the verb can be both a
     main verb and an auxiliary
-    -   **dárbbašit, oažžut:**  
+    -   **dárbbašit, oažžut:**
         *Danne *dárbbašit* mii *oažžut* lobi Nils Aslak Valkeapää
         árbbolaččain almmuhit dán guokte lávlaga min sálbma-CD:s. -
         \`Therefore we *need* to *get* permission from Nils Aslak
         Valkeapää's heirs to release these two songs on our psalm-CD.'*
--   **&lt;vdic&gt;:**  
+-   **&lt;vdic&gt;:**
     verba dicendi, those that introduce direct speech, typically words
     of communication such as lohkat, cealkat, dadjat, oaivildit
-    -   **celkkii:**  
+    -   **celkkii:**
         *Eŋgel *celkkii* munnje: Dát leat luohtehahtti ja duohta
         sánit. - \`The angel *told* me: These are trustworthy and true
         words.'*
@@ -665,31 +665,31 @@ Here are some examples of our coordination-analysis:
     "Náhkiin sii gorro roavgguid, dorkkaid ja gápmagiid."
     From the skin they were sewing furs, coats and shoes.
 
-             
+
                        gorro
-                      /  |  \     
+                      /  |  \
                 Náhkiin  sii roavgguid,
                               /   \
                       doarkkaid  gápmagiid.
                            /
-                         ja 
-     
+                         ja
 
-             
+
+
      "Bárdni válddii niibbi ja čuohpai ráiggi sehkkii ja luittii mánáid olggos."
      The boy took the knife and cut a hole in the bag and let the children out.
-     
+
                        válddii_____
                       /   /   \    \
                 Bárdni niibbi  \   luittii
                          |   čuohpai  |   \
                         ja    /  |  mánáid olggos.
-                             /   |     
+                             /   |
                         ráiggi sehkkii
-                                |  
+                                |
                                ja
 
-                                    
+
 
 Complex sentences
 =================
@@ -701,7 +701,7 @@ Here are some examples:
 
                          vuoitá,__
                        / |    \   \
-                    Jus stállu de  \ 
+                    Jus stállu de  \
                                   goddá
                                  /   \
                                son   olbmo.
@@ -711,8 +711,8 @@ Here are some examples:
 
                                        it __
                                      / |    \
-                                  don beasa  \         
-                                     /   \    \ 
+                                  don beasa  \
+                                     /   \    \
                                 Dasto ruoktot  borat
                                                |  \
                                              jus luhtte.
@@ -731,9 +731,9 @@ Here are some examples:
                                             |       /  |  \
                                            ja     iđeda fas dan.
                                                    /
-                                                nuppi    
+                                                nuppi
 
-    No verb in the main clause: 
+    No verb in the main clause:
     "Ovdal buorida Ipmil dálkkiidis go neavrres olmmoš dábiidis."
     Rather does God improve the weather than a miserable person his habits.
 

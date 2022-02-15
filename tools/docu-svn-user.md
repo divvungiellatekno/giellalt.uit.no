@@ -87,7 +87,7 @@ There are also other svn repositories that may be checked out, with the
 same command. Some of them are closed, and you need a password to access
 them. Here are the open ones:
 
-    svn co https://gtsvn.uit.no/freecorpus freecorpus  # corpus files for many languages, mainly Saami 
+    svn co https://gtsvn.uit.no/freecorpus freecorpus  # corpus files for many languages, mainly Saami
     svn co https://gtsvn.uit.no/rusfree rusfree        # corpus files for languages in Russia
     svn co https://gtsvn.uit.no/biggies/trunk biggies        # large files
 
@@ -106,37 +106,37 @@ files inside the repository. A brief overview of the commands needed for
 these actions is given below, for further details see the references at
 the end of this document.
 
--   **Update your working copy:**  
+-   **Update your working copy:**
     svn up
--   **Schedule a file for addition:**  
+-   **Schedule a file for addition:**
     svn add filename
--   **Schedule a file for deletion:**  
+-   **Schedule a file for deletion:**
     svn delete filename
 -   **You may also copy and move files and directories with these two
-    commands, but read about them in the svn book first::**  
-    svn copy filename  
+    commands, but read about them in the svn book first::**
+    svn copy filename
     svn move filename
--   **Examine your changes:**  
+-   **Examine your changes:**
     svn status
--   **Examine the file history:**  
+-   **Examine the file history:**
     `svn log FILE`
--   **Change the commit message for a specific revision:**  
-    `svn propedit svn:log --revprop -r REV FILE`  
+-   **Change the commit message for a specific revision:**
+    `svn propedit svn:log --revprop -r REV FILE`
     This will bring up the existing log text for the specified revision
     in your default editor (typically Emacs), where you can edit and
     change it as you want. This is useful if you accidentally committed
     some changes with an empty or uninformative log message.
--   **Compare your modified file to the version in the repository:**  
+-   **Compare your modified file to the version in the repository:**
     `svn diff FILE`
--   **Compare some earlier versions, say here versions 123 and 120:**  
+-   **Compare some earlier versions, say here versions 123 and 120:**
     `svn diff -r 123:120 FILE`
--   **Undo your local changes (ie revert to the repository status):**  
+-   **Undo your local changes (ie revert to the repository status):**
     `svn revert FILE`
--   **Resolve Conflicts (Merge Others' Changes):**  
-    svn update  
+-   **Resolve Conflicts (Merge Others' Changes):**
+    svn update
     svn resolved
--   **Commit your changes:**  
-    `svn ci -m "Your description of the changes here." FILE`  
+-   **Commit your changes:**
+    `svn ci -m "Your description of the changes here." FILE`
     (Note that the above changes, add, delete, copy, move, must all be
     committed by ci in order to take effect)
 

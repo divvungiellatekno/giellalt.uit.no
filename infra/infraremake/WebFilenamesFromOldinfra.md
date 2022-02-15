@@ -1,6 +1,6 @@
 This table matches old and new filenames in /opt/smi/LANG/bin
 
- 
+
 
 ```
 Namn i gamal infra         | Namn i ny infra/på server langs/LANG/src

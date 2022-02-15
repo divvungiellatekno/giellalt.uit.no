@@ -2,14 +2,14 @@ Møte om samansetjingar i språka våre
 
 * samansetjingar og leksikonet FirstComponent - kva skal vi ha der, og kvifor?
 * taggar for kortformer (-joh- for johka, -kultur- for kultuvra,
-  sma: aamhtese-aamhtes,tjengkere-tjengker- 
+  sma: aamhtese-aamhtes,tjengkere-tjengker-
   (Hasselbrink:ellision av siste vokal= ca. 2000 noun som peker til N_ODD, 2 )
   også kultur for kultuvre, )
 * samansetjingsrestriksjonar: taggar vs leksikqon
   (+CmpNP/* vs FirstComponent & MiddleNouns) q- Xerox-kompatibilitet
     - skal vi ha same restriksjonar i norm-analysatoren som i stavekontrollen?
 * kva er rett samansetjingsform? Attr, kort, SgNom, SgGen, PlNom, PlGen?
-  Korleis skal det spesifiserast i leksikonet? sma: PLGen også i sma? - 
+  Korleis skal det spesifiserast i leksikonet? sma: PLGen også i sma? -
 * Hyph-tagger
 * feilanalyse (Err/SpaceCmp)
 * lingvistiske stammer i compounding.lexc: LEXICON Prefixes, gir sammensetning
@@ -52,7 +52,7 @@ Kategoriar:
 ##  hfst vs xerox
 
 xfst vs. hfst
-Normativ analysator (analyser-gt-norm.*) tillet meir enn stavekontrollen 
+Normativ analysator (analyser-gt-norm.*) tillet meir enn stavekontrollen
 (tools/spellcheckers/fstbased/desktop/analyser-desktopspeller-gt-norm.hfst)
 
 stavekontrollen har to typar avgrensingar:
@@ -78,7 +78,7 @@ $ ./configure --with-hfst --without-xfst --enable-reversed-intersect --enable-al
 
 ### Normativitet
 
-Alle -norm-fst-ar bortsett frå med Xerox skal ha same oppførsel som stavekontrollane, 
+Alle -norm-fst-ar bortsett frå med Xerox skal ha same oppførsel som stavekontrollane,
 dvs at +CmpN-taggane blir teke omsyn til.
 Dette betyr at Hfst og Xerox-fst-ane ikkje lenger er like, fordi Hfst vil bli
 meir restriktiv enn Xerox.
@@ -103,7 +103,7 @@ msyn-compound
 illuboddu+N+Sg+Ill      illuboddui
 * **       "boddu" N Sem/Time Sg Ill <W**: 0> "<boddui>"
 * **               "illu" N Sem/Perc-emo Sg Nom <W**: 0> "<illu>"
-: 
+:
 ```
 
 Analyse for samansetjingsfeil bør vi køyre gjennom heile korpuset, for dels å sjå
@@ -114,7 +114,7 @@ sammenlikne resultatet og evt. finne ting som må rettes opp.
 ## preprocess vs ap-preprocess (=hfst-proc)
 
 * Hos oss (grammatikkontroll): hfst-tokenize (eit supersett av xfst-formalismen)
-* I Apertium: hfst-proc 
+* I Apertium: hfst-proc
 
 Sjur har meir sans for gramktrl-klitikonhandsaming enn det som blir gjort i
 Apertium, men ut over det veit vi for lite om skilnadene.

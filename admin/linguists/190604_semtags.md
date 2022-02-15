@@ -22,7 +22,7 @@ LIST Sem/Tool = Sem/Tool Sem/Tool-catch Sem/Tool-write Sem/Body_Obj_Tool-catch .
 LIST Sem/Tool-catch = Sem/Body_Obj_Tool-catch ;
 LIST Sem/Build = Sem/Build Sem/Build_Org Sem/Build-room ;  #ikke Sem/Buildpart
 
-Syntaks: Ein tagg er definert som: 
+Syntaks: Ein tagg er definert som:
 
 1. bokstavstreng mellom [[/_] og taggslutt
 1. bokstavstreng mellom [[/_] og -
@@ -64,7 +64,7 @@ MAP (Sem/Sur) (cog) ;
 
 ```
 cat allsemtags | tr '/' '_' |tr '[A-Z]' '[a-z]' > semtags_apertiumstyle
-cat semtags_apertiumstyle | sed 's/^/(/' |sed 's/$/) ;/'> aperallsemtags 
+cat semtags_apertiumstyle | sed 's/^/(/' |sed 's/$/) ;/'> aperallsemtags
 cat allsemtags | sed 's/^/MAP (/' |sed 's/$/)/' > first
 paste -d ' ' first aperallsemtags  > relabel_apertiumstyle.txt
 cat semtags_apertiumstyle |sed 's/^/      <attr-item tags="/' |sed 's/$/"\/>/' > apertiumtx1.txt

@@ -13,19 +13,19 @@ The originally planned status for the Divvun project as of beginning
 
 Relevant for this overview is also the next milestones:
 
--   **Jul. 1st, 2006::**  
+-   **Jul. 1st, 2006::**
     First testversion of Northern Saami and Lule Saami spellchecker for
     office programs (MSOffice-ALPHA, OpenOffice.org-ALPHA), first
     testversion of Northern Saami hyphenator (InDesign-ALPHA). Text
     collection is done.
--   **Jan. 1st, 2007::**  
+-   **Jan. 1st, 2007::**
     The second testversions of all the spellcheckers are ready
     (aSpell-BETA, MSOffice-BETA, OpenOffice.org-BETA, InDesign-BETA).
--   **Jul. 1st, 2007::**  
+-   **Jul. 1st, 2007::**
     The spellchechers are ready, and version 1.0 is released
     (aSpell-FINAL, MSOffice-FINAL, OpenOffice.org-FINAL,
     InDesign-FINAL).
--   **sep. 30tt, 2007:**  
+-   **sep. 30tt, 2007:**
     The project is terminated, all documentation and project information
     is finished and delivered to a permanent maintenance organisation.
     Eventual errors from the 1.0 version are corrected.
@@ -60,24 +60,24 @@ Updated milestones
 As a consequence of the delays with the subcontractors, we need to
 modify our schedule a bit. Here's the suggested changes:
 
--   **Jul. 1st, 2006::**  
+-   **Jul. 1st, 2006::**
     Text collection is done. sme-aSpell-BETA is finished, we open our
     public testing, small-scale as a start, to get some experience and
     feedback on the testing procedure and user experience and
     cooperation. smj-aSpell-ALPHA finished.
--   **Oct. (Nov.?) 1st, 2006::**  
+-   **Oct. (Nov.?) 1st, 2006::**
     First testversion of Northern Saami and Lule Saami spellchecker for
     office programs (MSOffice-ALPHA, OpenOffice.org-ALPHA), first
     testversion of Northern Saami hyphenator (InDesign-ALPHA).
--   **Feb. 1st, 2007::**  
+-   **Feb. 1st, 2007::**
     The second testversions of all the spellcheckers are ready
     (smj-aSpell-BETA, MSOffice-BETA, OpenOffice.org-BETA,
     InDesign-BETA).
--   **Jul. 1st, 2007::**  
+-   **Jul. 1st, 2007::**
     The spellchechers are ready, and version 1.0 is released
     (aSpell-FINAL, MSOffice-FINAL, OpenOffice.org-FINAL,
     InDesign-FINAL).
--   **sep. 30tt, 2007:**  
+-   **sep. 30tt, 2007:**
     The project is terminated, all documentation and project information
     is finished and delivered to a permanent maintenance organisation.
     Eventual errors from the 1.0 version are corrected.

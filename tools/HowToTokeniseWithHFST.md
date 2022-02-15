@@ -11,7 +11,7 @@ First off, update your HFST+vislcg3 by running
 ```
 
 This should give you the most recent SVN versions (as of last night) of HFST
-and vislcg3. 
+and vislcg3.
 
 (Packages exist for pretty much all Unix operating systems; the Prequisites
 links under

@@ -25,14 +25,14 @@ You need the Apertium dixtools:
     1. ant jar
     1. sudo ant install
 
-Then convert the Giellatekno xml format into Apertium xml format 
+Then convert the Giellatekno xml format into Apertium xml format
 (we assume you stand in `$GTHOME/words/dicts/scripts/`):
 
 (For an example of commands, see below)
 
 * collect all relevant entries in a single file (this script does only that)
     - in issue the following command (where `INPUT_DIR` is
-   `../LANG1LANG2/src/`): 
+   `../LANG1LANG2/src/`):
     - `java -Xmx2048m -Dfile.encoding=UTF8 net.sf.saxon.Transform -it:main collect-dict-parts.xsl inDir=INPUT_DIR/ > PATH_TO_OUTPUT_FILE`
     - different filters for different language pair are possible/needed
     - filtering takes place both in `collect-dict-parts.xsl` and
@@ -45,7 +45,7 @@ Then convert the Giellatekno xml format into Apertium xml format
     - In the file `gtdict2simple-apertiumdix.xsl`, edit the variables `inFile`
    and `outDir`, so that the former points to the input file and the latter to
    a directory we make for this.
-    - Then, issue the command: 
+    - Then, issue the command:
     - `java -Xmx2048m -Dfile.encoding=UTF8 net.sf.saxon.Transform -it:main gtdict2simple-apertiumdix.xsl`
 * compile the file using the apertium tools (see above), with this command
   (`INPUT_FILE` is last command's output):
@@ -57,10 +57,10 @@ Here comes an exampls, again assuming you stand in
 `$GTHOME/words/dicts/scripts/`, and want to convert sme-fin:
 
 ```
-java -Xmx2048m -Dfile.encoding=UTF8 net.sf.saxon.Transform -it:main collect-dict-parts.xsl inDir=../smefin/src > tull/out_simple-apertium/tull.xml 
-see tull/out_simple-apertium/tull.xml 
+java -Xmx2048m -Dfile.encoding=UTF8 net.sf.saxon.Transform -it:main collect-dict-parts.xsl inDir=../smefin/src > tull/out_simple-apertium/tull.xml
+see tull/out_simple-apertium/tull.xml
     THEN DELETE THE LINES BETWEEN THE FIRST LINE AND THE <r> NODE
 java -Xmx2048m -Dfile.encoding=UTF8 net.sf.saxon.Transform -it:main gtdict2simple-apertiumdix.xsl
-tail tull/ut/tull.xml 
+tail tull/ut/tull.xml
 apertium-dixtools dix2trie tull/ut/tull.xml lr ../../../apps/dicts/apertium_dict/dics/fin-smn-lr-trie.xml
 ```

@@ -12,7 +12,7 @@ Den er i bruk for fkv, sma, sme, smj, smn.
 
 ### Strategi for fellesfiler
 
-Vi bør evaluere og harmonisere namnekonvensjonar for 
+Vi bør evaluere og harmonisere namnekonvensjonar for
 
 * nob: 34+Det+Qnt+Pl   (legge til +Arab her?) fire+Det+Qnt+Pl
 * fkv: 34+Num+Arab+Sg+Nom

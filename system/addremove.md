@@ -16,10 +16,10 @@ Then make the new user. Write the following command. It shall be written
 in one line, but is here written on multiple lines for readability.
 
      /usr/sbin/useradd
-     -u 501 
-     -g 501 
-     -G cvs 
-     -c "Laila Sara, Samisk inst."  
+     -u 501
+     -g 501
+     -G cvs
+     -c "Laila Sara, Samisk inst."
      laila
 
 The user must own her own catalogue, but others may want to read it.
@@ -57,8 +57,8 @@ so:
 
     dscl . -passwd /Users/luser password
 
-    You'll have to create /Users/luser for the user's home directory and 
-    change ownership so the user can access it, and be sure that the 
+    You'll have to create /Users/luser for the user's home directory and
+    change ownership so the user can access it, and be sure that the
     UniqueID is in fact unique (via the command id 1010 etc.)
 
 This line will add the user to the administrator's group:
@@ -74,7 +74,7 @@ command (-r removes the files of the user al well):
     /usr/sbin/userdel -r laila
     rm -r /export/home/laila
     cd /var/yp
-    make 
+    make
 
 A general warning: The commands that the manuals say should work, do
 work, if you just write /sbin/ in front of them, i.e. prbably

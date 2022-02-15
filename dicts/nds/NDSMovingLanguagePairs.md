@@ -12,17 +12,17 @@ and dictionaries are as follows:
 * *Dictionaries*: move the dictionary definitions
 
 2. dicts/Makefile
-* move FST targets in the variables. For example: 
+* move FST targets in the variables. For example:
 
 ```
     SANAT_LANGS_ANALYSERS    :=  olo izh liv fin fkv
 
-        -> 
+        ->
     SANAT_LANGS_ANALYSERS    :=  olo         fin fkv
     SONAD_LANGS_ANALYSERS    :=      izh liv fin
 ```
 
-* Do the same for *_WORDS_DICTS_LEXICA* and any customized lexicon targets. 
+* Do the same for *_WORDS_DICTS_LEXICA* and any customized lexicon targets.
 
 3. User-friendly tags
 * This is not obligatory given the more open structure of the tag files, but

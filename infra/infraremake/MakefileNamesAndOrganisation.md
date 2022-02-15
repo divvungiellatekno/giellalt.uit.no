@@ -51,7 +51,7 @@ file naming scheme:
 
 Summary: it is possible to programmatically identify all three types:
 * main include files contain the string ` -dir- `
-* configure option include files contain **underscore** (` _ `) 
+* configure option include files contain **underscore** (` _ `)
 * general compilation file names based on source type include neither
 
 # Other (regular) dirs

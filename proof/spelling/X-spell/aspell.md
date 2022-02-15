@@ -12,30 +12,30 @@ File Overview
 The files are in the gt/sme/aspell directory. Cf. the list with
 explanation:
 
--   **Makefile.pre:**  
+-   **Makefile.pre:**
     This file is used when generating Makefile in distribution package
--   **configure:**  
+-   **configure:**
     Used for generating the Makefile in distribution package
--   **info:**  
+-   **info:**
     The info file is the main file which contains most of the
     information.
--   **sme.cmap:**  
+-   **sme.cmap:**
     File contains the mappings of the characters into aspell internal
     format used in our wordlist.
--   **sme.cset :**  
+-   **sme.cset :**
     File contains the characterset of the characters used in aspell
     internal format.
--   **sme.cwl :**  
+-   **sme.cwl :**
     This is compressed form of the wordlist.
--   **sme.dat :**  
+-   **sme.dat :**
     Data file of the language.
--   **sme.multi:**  
+-   **sme.multi:**
     Listing of the dictionary files
--   **sme.wl :**  
+-   **sme.wl :**
     Wordlist
--   **sme\_affix.dat:**  
+-   **sme\_affix.dat:**
     Contains the affixes of the language.
--   **sme\_phonet.dat ???:**  
+-   **sme\_phonet.dat ???:**
     It is possible to define some substitution sequences as more likely
     than others.
 
@@ -91,29 +91,29 @@ The remaining lines describe the information for the 5 entries.
 
 The suffix lexica are
 
--   **PFX A:**  
+-   **PFX A:**
     North-, South-, prefixes to proper nouns
--   **PFX B:**  
+-   **PFX B:**
     ii-, the negative prefix
--   **SFX E:**  
+-   **SFX E:**
     the suffixes for the Prop lexica ACCRA (V-final) and LONDON
     (odd-syll C-final)
--   **SFX F:**  
+-   **SFX F:**
     suffixes for the Prop lexica NYSTØ (heavy vow), C-FI-NEN and CNAME
     (C-final)
--   **SFX G:**  
+-   **SFX G:**
     suffixes for the Prop lexicon BERN (even-syll C-final)
--   **SFX H:**  
+-   **SFX H:**
     suffixes for GOAHTI etc, even-syll nouns
--   **SFX I:**  
+-   **SFX I:**
     suffixes for STAHTA, IIJA, even-syll nouns without illative vow alt
--   **SFX J:**  
+-   **SFX J:**
     suffixes for SEAMU
--   **SFX K:**  
+-   **SFX K:**
     suffixes for MALIS, BU/MUS
--   **SFX L:**  
+-   **SFX L:**
     suffixes for DIMINC
--   **SFX N:**  
+-   **SFX N:**
     suffixes for verbs.
 
 At present, the status is
@@ -131,9 +131,9 @@ At present, the status is
 
 Status quo:
 
--   **Implemented:**  
+-   **Implemented:**
     Proper nouns, nouns, even-syllabic verbs, contracted verbs (??)
--   **Missing:**  
+-   **Missing:**
     Adjectives are missing completely. Three-syllabic nouns and
     three-syllabic verbs are missing.
 

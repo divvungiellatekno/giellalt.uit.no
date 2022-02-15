@@ -6,7 +6,7 @@ Bibliographical notes on language technology for minority languages
 
 ### Basque
 
-* Presenting a twol-based spellchecer: 
+* Presenting a twol-based spellchecer:
 * Agirre E., Alegria I., Arregi X., Artola X., Diaz de Ilarraza A., Maritxalar M., Sarasola K., Urkia M. 1992: [XUXEN: a spelling checker/corrector for basque based on two-level morphology
 | https://dl.acm.org/citation.cfm?id=974520]
 
@@ -29,4 +29,4 @@ Bibliographical notes on language technology for minority languages
 
 * [SALTMIL workshops](http://ixa2.si.ehu.es/saltmil/index.php/en/activities-mainmenu-73/saltmil-workshops-mainmenu-77.1.html)
 
- 
+

@@ -17,8 +17,8 @@ Opplegg:
 
 * annotering av feil i oversettinga (hvem? Øystein? Sjur? Bjørn L?)
 (SD pressemelding, Ávvir-artikkel, SA-kursbeskrivelse)
-* informanter, som svarer på: 
-    - Kvaliteten på oversatte setninger, evaluert 1-5, etter hvor forståelige de er, evt. etter 
+* informanter, som svarer på:
+    - Kvaliteten på oversatte setninger, evaluert 1-5, etter hvor forståelige de er, evt. etter
    hvor god de er rent språklig
     - tekst, spørsmål til innholdet
 

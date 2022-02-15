@@ -1,6 +1,6 @@
 There are typically two maintenance cases. You want to:
 
-* set some (default) `svn:ignore` on a new directory 
+* set some (default) `svn:ignore` on a new directory
 * change the `svn:ignore` on a directory from the default/existing to
   something new
 
@@ -16,7 +16,7 @@ In your `*langs/` catalogue, do the following:
 
 ```
 ./autogen.sh && ./configure
-``` 
+```
 
 Then you should be ready to begin.
 

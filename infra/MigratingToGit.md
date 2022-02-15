@@ -1,9 +1,9 @@
 A
-This document tells you how to migrate your giella language files from svn to the new repository at github (the migration happened 13.5.2020). 
+This document tells you how to migrate your giella language files from svn to the new repository at github (the migration happened 13.5.2020).
 
 # How to check out & continue work
 
-We recommend you continue to work with the files using the usual **svn commands**. If you are more familiar with git, scroll down to the section **Git users** below. 
+We recommend you continue to work with the files using the usual **svn commands**. If you are more familiar with git, scroll down to the section **Git users** below.
 
 ##  SVN users
 
@@ -15,7 +15,7 @@ The new check-out URL is specific to each language, and follows this pattern:
 1. Thereafter, make a folder for containing your language models, you may call it `lang` or `langtech` or `git` or whatever.
 1. Go into that folder, and check out the language you want (Replace XXX with the 3-letter ISO code of your language):
 `svn co https://github.com/giellalt/lang-XXX.git/trunk lang-XXX`
-1. After you have checked out, cd into lang-XXX, and run: 
+1. After you have checked out, cd into lang-XXX, and run:
 
 `./autogen.sh`
 
@@ -78,9 +78,9 @@ If you are using git, I assume you know what you are doing, but just to repeat, 
 1. Thereafter, make a folder for containing your language models, you may call it `lang` or `langtech` or `git` or whatever.
 1. Go into that folder, and git clone the language(s) you want (replace XXX with your language code)
 `git clone git@github.com:giellalt/lang-XXX.git`
-1. After you have checked out, cd into lang-XXX, and run: 
+1. After you have checked out, cd into lang-XXX, and run:
 `./autogen.sh`
-This will automatically clone giella-shared and giella-core parallel to lang-XXX. You need to cd into each of these directories, and run `./autogen.sh && ./configure && sudo make install` there. 
+This will automatically clone giella-shared and giella-core parallel to lang-XXX. You need to cd into each of these directories, and run `./autogen.sh && ./configure && sudo make install` there.
 
 When done, cd back to lang-XXX, and run:
 
@@ -149,7 +149,7 @@ You then need to `cd` into each of these directories, and run `./autogen.sh && .
 
 ## Checkin rights
 
-In git, you need to be *menber of the team* of each git repository 
+In git, you need to be *menber of the team* of each git repository
 (each language). If you are not, go to the page, e.g. for fao:
 
 [https://github.com/giellalt/lang-fao]

@@ -55,7 +55,7 @@ LEXICON STOERE_COMP
          :stuerie EVENCOMPONLY ;
  +Err/Sub:stuerie EVENSUPONLY ;
          :stööre  MES ;
-         :stuerie DIMCOMP ;  
+         :stuerie DIMCOMP ;
 ```
 
 **GJERELISTE:**

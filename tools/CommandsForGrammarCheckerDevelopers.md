@@ -13,7 +13,7 @@ Ctrl-D
 ```sudo curl https://raw.githubusercontent.com/divvun/libdivvun/master/scripts/mac-build | bash
 ```
 
-OR 
+OR
 
 ```cd divvun-suggest
 git pull
@@ -91,7 +91,7 @@ http://localhost:8888/tools/CommandsForGrammarCheckerDevelopers.html
 
 * Get newest version: (Link from Sjur in Zulip)
 * Open LibreOffice
-* Tools>Extension Manager>Writing aids based on Divvun 5.0 
+* Tools>Extension Manager>Writing aids based on Divvun 5.0
 * Remove
 * Restart LibreOffice
 * Tools>Extension Manager>Add>Downloads>divvun-...oxt (newest downloaded version)

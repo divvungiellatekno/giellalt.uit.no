@@ -35,7 +35,7 @@ bihtjas
 Eks: det kan vera avvikande attributtformer - det betyr ikkje at resten av
 formene ikkje fylgjer same system som andre adjektiv. I sma:
 ```
-	sjuejmieh; pred. sjåajman	bedåret, forgapt 
+	sjuejmieh; pred. sjåajman	bedåret, forgapt
           ies -an
 ```
 
@@ -49,7 +49,7 @@ bitjes+Use/-Spell:bihttja ATTR ; # Olavi Korhonen XXX har denne forma, som bryt
 # dele opp leksikonene for å få fram avledningsmønstrene bedre
 
 ```
-  galme:galm e_ES_EVEN: 
+  galme:galm e_ES_EVEN:
   galme:galm es_ES_ODD ;
 ```
 
@@ -69,11 +69,11 @@ Saami Languages (Sammallahti s.71-73)
 
 Eksempel på slike adjektiv:
 ```
-   attr     pred         
+   attr     pred
 galme   - galmes ->
-galmes  - galmes  -> 
+galmes  - galmes  ->
 
-baahke  - baahkes - 
+baahke  - baahkes -
 baahkes - baahkes ->
 baahkebe -baahkemes
 baahkesåbpoe -baahkesommes

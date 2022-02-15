@@ -43,7 +43,7 @@ r97047:
 Added WANT_OAHPA option for analysers for all languages (until now only generator)
 ```
 
-Then you check in the edited und.timestamp and the files that were changed in 
+Then you check in the edited und.timestamp and the files that were changed in
 `giella-templates/langs-templates/und/`, preferabely **in the same commit**
 and **with the same message** as you added to und.timestamp.
 

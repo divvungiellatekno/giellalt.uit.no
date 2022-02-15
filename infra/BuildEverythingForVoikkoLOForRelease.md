@@ -194,9 +194,9 @@ home dir. This will greatly reduce the size of the final oxt:
 
 ```
 mkdir ~/alibs/
-lipo /usr/local/lib/libarchive.a    -output alibs/libarchive.a    -extract i386 
-lipo /usr/local/lib/libhfstospell.a -output alibs/libhfstospell.a -extract i386 
-lipo /usr/local/lib/libtinyxml2.a   -output alibs/libtinyxml2.a   -extract i386 
+lipo /usr/local/lib/libarchive.a    -output alibs/libarchive.a    -extract i386
+lipo /usr/local/lib/libhfstospell.a -output alibs/libhfstospell.a -extract i386
+lipo /usr/local/lib/libtinyxml2.a   -output alibs/libtinyxml2.a   -extract i386
 lipo /usr/local/lib/libvoikko.a     -output alibs/libvoikko.a     -extract i386
 ```
 

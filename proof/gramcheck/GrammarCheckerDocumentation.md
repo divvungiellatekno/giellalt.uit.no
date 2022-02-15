@@ -52,7 +52,7 @@ This is [the original plan for the North Saami grammar checker](doc/GrammarCheck
   [2018-04-27](meetings/2018-04-27.html) //
   [2018-06-29](meetings/2018-06-29.html) //
   [2018-09-05](meetings/2018-09-05.html) //
-  [2018-09-07](meetings/2018-09-07.html) 
+  [2018-09-07](meetings/2018-09-07.html)
 
 ### 2017
 * [2017-12-18](meetings/2017-12-18.html) //
@@ -63,7 +63,7 @@ This is [the original plan for the North Saami grammar checker](doc/GrammarCheck
   [2017-08-23](meetings/2017-08-23.html) //
   [2017-06-09](meetings/2017-06-09.html) //
   [2017-04-26](meetings/2017-04-26.html) //
-  [2017-03-07](meetings/2017-03-07.html) 
+  [2017-03-07](meetings/2017-03-07.html)
 
 ### 2015-16
 * [2016-11-23](meetings/2016-11-23.html)

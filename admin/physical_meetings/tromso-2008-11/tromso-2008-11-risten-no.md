@@ -34,7 +34,7 @@ Framtida:
 * kven skal gjere det
 
 Problem:
-* prøver å tilfredsstilla to ulike målgrupper samtidig: 
+* prøver å tilfredsstilla to ulike målgrupper samtidig:
   språkarbeidarar og studentar/elevar
 
 Stadnamn

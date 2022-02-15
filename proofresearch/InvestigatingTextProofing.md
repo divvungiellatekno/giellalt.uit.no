@@ -6,8 +6,8 @@ In addition to developing proofing tools, Divvun and Giellatekno also conducts r
 
 # Our proofing tools (for downloading and online use)
 
-* [North, Lule and South Saami proofing tools](http://divvun.no/korrektur/korrektur.html) 
-* [Inari and Skolt Saami and Kven proofing tools](http://divvun.no/korrektur/otherlangs.html) 
+* [North, Lule and South Saami proofing tools](http://divvun.no/korrektur/korrektur.html)
+* [Inari and Skolt Saami and Kven proofing tools](http://divvun.no/korrektur/otherlangs.html)
 * [Beta versions of tools for various Uralic languages](http://divvun.org/proofing/proofing.html)
 
 # Commented bibliographies, relevant research by others, tools

@@ -56,7 +56,7 @@ The language pairs are of three types:
 1. Add glossaries (**done for nobsmX**)
 1. Improve mt  (**done for nobsmX**)
 1. Develop segmentation.conf (**in progress for sme**)
-1. Test and evaluate 
+1. Test and evaluate
 
 ### Future plans
 

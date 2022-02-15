@@ -12,7 +12,7 @@ At least three points for each category:
 
 Improvements:
 * **Ilona**:
-    - the lack of information has been my problem beacuse I haven't always read 
+    - the lack of information has been my problem beacuse I haven't always read
    the cvs logs. One thing is that I don't always understand if some problem
    affects my work.
 * **Børre**:
@@ -46,8 +46,8 @@ Satisfactory:
 * **Linda**:
     - feels very comfortable in the project(s) and with her work
 * **Trond**:
-    - the cooperation between [divvun ](http://divvun.no/) and 
-   [disamb ](http://giellatekno.uit.no ) 
+    - the cooperation between [divvun ](http://divvun.no/) and
+   [disamb ](http://giellatekno.uit.no )
 is good
 * **Sjur**:
     - overall progress is good
@@ -74,7 +74,7 @@ Improvements:
    programming level
 * **Trond**:
     - there has been some double work
-    - the linguists do not know what is going on (solution: have a session on the 
+    - the linguists do not know what is going on (solution: have a session on the
    common corpus during this week).
     - the xsl procedure is not working as intended.
 

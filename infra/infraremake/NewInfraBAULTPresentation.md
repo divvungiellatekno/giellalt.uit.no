@@ -243,9 +243,9 @@ Most test scripts are located within the `test/` directory, within which there i
 
 ```
   Adjective - gielak: # AGAdj
-    gielak+A+Attr: gielak 
-    gielak+A+Sg+Nom: gielak 
-    gielak+A+Sg+Acc: gielagav 
+    gielak+A+Attr: gielak
+    gielak+A+Sg+Nom: gielak
+    gielak+A+Sg+Acc: gielagav
     gielak+A+Comp+Sg+Nom: []
     gielak+A+Superl+Sg+Nom: []
 ```

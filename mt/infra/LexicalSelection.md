@@ -15,15 +15,15 @@
 Omd.
 
 ```
-    <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>orniđ<s n="n"/></r></p></e> 
-    <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>lääččiđ<s n="n"/></r></p></e> 
+    <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>orniđ<s n="n"/></r></p></e>
+    <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>lääččiđ<s n="n"/></r></p></e>
 ```
 
-## lrx-fiillaid struktuvra 
+## lrx-fiillaid struktuvra
 
 Sátneválljennjulgadusat čálát dan fiilii: `apertium-sme-smn.sme-smn.metalrx`
 
-Dáppe lea metalrx-fiilla ovdamearka. Default lea *láhčit = orniđ* 
+Dáppe lea metalrx-fiilla ovdamearka. Default lea *láhčit = orniđ*
 (1.0 > 0.5). Jos láhčit-vearbba máŋŋel boahtá `sem_furn`, de mis lea *lääččiđ*
 (0.5 + 0.6 = 1.1 > 1.0).
 
@@ -34,7 +34,7 @@ Dáppe lea metalrx-fiilla ovdamearka. Default lea *láhčit = orniđ*
     </match>
   </rule>
 
-  
+
   <rule weight="0.5">
     <match lemma="láhčit">
       <select lemma="lääččiđ"/>

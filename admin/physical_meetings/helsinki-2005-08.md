@@ -52,7 +52,7 @@ We will get (wireless) Internet access to all throughout the week.
     1.   Work out all chapters and all the info that should go in there
 1. B) Machine finetuning
     1. Make sure all machines work the way they are intended to (=the same way).
-   List of known problems: 
+   List of known problems:
         1. The perl locale bug in 10.4. (bug #xxx)
         1. BCKSP in UTF-8 mode.
 
@@ -86,7 +86,7 @@ We will get (wireless) Internet access to all throughout the week.
     1. linguistic brainstorming on blocking problems (3-part compounds, Oslolaš)
     1. vowel shortening in compounds
     1. numerals (get the facts right - and make a generator)
-    1. indefinite pronouns 
+    1. indefinite pronouns
     1. facultative vowel simplification in compounds
 
 1. Linguistic issues - Lule Sámi

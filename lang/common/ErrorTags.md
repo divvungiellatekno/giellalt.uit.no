@@ -17,7 +17,7 @@ normativ skrivemåte.
 ## +Err/Lex (tidlegare +Err/LexSub)
 
 * Ord som ikke har en normert form, oftest lånord:
-  *fløypartiija*, *spesiála–*, *husmor*, *Amazonsletta* 
+  *fløypartiija*, *spesiála–*, *husmor*, *Amazonsletta*
 * Ord som har samiske alternativer: *brievva*, *komuvnna*, *byddja*
   (helst ikkje, sjå lengst ned under **Andre taggar**)
 * ikkje noko normativt lemma til venstre for stammen.
@@ -70,7 +70,7 @@ til tagger! Gå gjennom alle deksriviptive sammensetningstaggene og sjekk om de
 er lagt til.
 
 Det er endel åpne sp.mål om dette i sma, vanskelig å vite hva som er
-sammensettingsreglene i sma i noen tilfeller. Nom, Gen eller attr. 
+sammensettingsreglene i sma i noen tilfeller. Nom, Gen eller attr.
 Deskriptive sammensettingstagger aktuelle for sma.
    SgGenCmp SgNomCmp PlGenCmp
 

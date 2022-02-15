@@ -1,18 +1,18 @@
 # Wikipedia as a corpus
 
-For some of our languages we use Wikipedia as a corpus. This may be 
-done in several ways, here is a documentation of how to make a 
-text-only version of a wikipedia edition. 
+For some of our languages we use Wikipedia as a corpus. This may be
+done in several ways, here is a documentation of how to make a
+text-only version of a wikipedia edition.
 
 ## Procedure
 
-We use Moksha Mordvin (ISO code mdf) as an example, replace mdf 
+We use Moksha Mordvin (ISO code mdf) as an example, replace mdf
 with the language of your choice.
 
-Download the wikipedia from `http://dumps.wikimedia.org/mdfGwiki/latest/`, 
+Download the wikipedia from `http://dumps.wikimedia.org/mdfGwiki/latest/`,
 see [Moksha Mordvin](http://dumps.wikimedia.org/mdfwiki/latest/) for
 an example. The version relevant to plain-text corpus is called
-`$LANGwiki-latest-pages-articles.xml.bz2`. 
+`$LANGwiki-latest-pages-articles.xml.bz2`.
 
 Unzip the .bz2 file, and save the resulting .xml file somewhere.
 

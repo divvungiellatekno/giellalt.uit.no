@@ -247,11 +247,11 @@ prestable/tmx/fin2sme//facta/samediggi.fi/puhe_heikki_paltto170812_suomi.pdf.tmx
 
 prestable/tmx/fin2sme//admin/sd/dahpahusat_fi/seminaari_saamelaiskarajien_toiminnan_perusteista_ja_saamelaisten_tamanhetkisesta_asemasta_suomessa.pdf.tmx.html
     Muđui ok, muhto suomagielat teavsttas váillui okta bajilčála.
-2017.03.22: Divvojuvvon 
+2017.03.22: Divvojuvvon
 
 prestable/tmx/fin2sme//admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html
     Cealkagat ledje botkejuvvon ja sierra ráidduin. Oasit cealkagiin váilo.
-2017.03.20: Divvojuvvon 
+2017.03.20: Divvojuvvon
 
 prestable/tmx/fin2sme//admin/sd/educational_material_fi/mus_saannot_2012_suomi.pdf.tmx.html
     Vuosttas ráiddut eai vástiidan nubbi nuppi.
@@ -293,7 +293,7 @@ prestable/tmx/fin2sme//admin/sd/inaugurations_fi/egil_olli_puhe_3.4._2012_suomi.
      Fiilla loahpas ráiddut eai vástiidan nubbi nuppi.
  2017.03.29: Paralleliseremis ii lean meattáhus, originalafiillat leat earáláganat.
 
- 
+
  prestable/tmx/fin2sme//admin/sd/plenum_fi/sakael12016.pdf.tmx.html
      Muhtin cealkagiin váilo oasit.
  2017.03.29: Divvojuvvon
@@ -304,17 +304,17 @@ prestable/tmx/fin2sme//admin/sd/inaugurations_fi/egil_olli_puhe_3.4._2012_suomi.
      Suomagielat teavsttas váillui bájilčála, muđui ok.
  2017.03.29: Divvojuvvon
 
- 
+
  prestable/tmx/fin2sme//admin/sd/press_releases_fi/tiedote_2009_saamsote.pdf.tmx.html
      Suomagielat teavsttas váillui bajilčála. Gaskkas sámegielat teavsttas váillui 	cealkka   "Koltansaamenkielinen - -".
  2017.03.29: Divvojuvvon
 
- 
+
  prestable/tmx/fin2sme//admin/sd/press_releases_fi/tiedote_polura.pdf.tmx.html
      Muđui ok, dušše vuosttas ráiddut eai vástiidan nubbi nuppi.
  2017.03.29: Divvojuvvon
 
- 
+
  prestable/tmx/fin2sme//admin/sd/projects_fi/loppuraportti_musa.pdf.tmx.html
      Muhtumin cealkagat ledje boatkanan ja sirdásan boahtte ráidui.
  2017.03.29: Divvojuvvon
@@ -328,12 +328,12 @@ prestable/tmx/fin2sme//admin/sd/inaugurations_fi/egil_olli_puhe_3.4._2012_suomi.
      "Artihkal 7." ja "Artihkal 10." vuolde váilo teavsttat.
  2017.03.29: Divvojuvvon
 
- 
+
  prestable/tmx/fin2sme//admin/sd/sami_parlamentarals_raddi_fi/sprjulggastusfin.pdf.tmx.html
      Ok, dušše vuosttas ráidu ii lean seamma goappašagat gielain.
  2017.03.29: Divvojuvvon
 
- 
+
  prestable/tmx/fin2sme//facta/samediggi.fi/21211puhe_laestadiusseminaarisuomi.pdf.tmx.html
      Juvvá Lemeha oktavuohtadieđut ledje fas gaskkas, mudui teaksta lei ok.
  2017.03.31: Divvojuvvon
@@ -345,7 +345,7 @@ prestable/tmx/fin2sme//admin/sd/inaugurations_fi/egil_olli_puhe_3.4._2012_suomi.
      Jorgalus lei ok, muhto teavstta cealkagat eai lean albma ráidduin.
  2017.03.31: Divvojuvvon
 
- 
+
  prestable/tmx/fin2sme//facta/samediggi.fi/kn_kansallispaivapuhe_suomi.pdf.tmx.html
      Gaskkas lei fas oktavuohtadieđut. Loahpas okta cealkka ii lean jorgaluvvon ja dan sajis 	lei oassi   boahtte cealkkagas.
  2017.03.31: Divvojuvvon
@@ -377,7 +377,7 @@ prestable/tmx/fin2sme//facta/samediggi.fi/puhe_kansallispv2009.pdf.tmx.html
      One whole sentence was missing and once a sentence was cut next to an abbreviation.
  2017.03.31: Divvojuvvon
 
- 
+
  prestable/tmx/fin2sme//facta/samediggi.fi/tevehdys_saamelaisnuorten_konferenssi.pdf.tmx.html
      Otherwise ok, only one Finnish sentence was missing and instead there was contact 	information.
  2017.04.03: Divvojuvvon
@@ -400,7 +400,7 @@ prestable/tmx/fin2sme//facta/samediggi.fi/puhe_kansallispv2009.pdf.tmx.html
      Something was missing in the beginning and the sentences hadn't aligned but again cut in 	the middle.
  2017.04.03: Divvojuvvon
 
- 
+
  prestable/tmx/fin2sme//facta/samediggi.fi/saamelaisetsuomi.pdf.tmx.html
      Some sentences were cut and missing parts.
  2017.04.03: Divvojuvvon (Pdf-fiilla designa dihte ii šaddan áibbas perfeakta)
@@ -409,7 +409,7 @@ prestable/tmx/fin2sme//facta/samediggi.fi/puhe_kansallispv2009.pdf.tmx.html
  2017.03.29: Šattai buoret, muhto loahpas suomagielat teavsttas leat vel bárra meattahusa.
  2017.04.05: Divvojuvvon
 
- 
+
 
 ## Ii ok
 
@@ -427,7 +427,7 @@ prestable/tmx/fin2sme//admin/sd/dahpahusat_fi/3_varhaiskasvatus.pdf.tmx.html
 
 prestable/tmx/fin2sme//admin/sd/dahpahusat_fi/rajaseminaari_250215_ohjelma.pdf.tmx.html
     Fiilla gaskkas muhtin ráiddut eai vástiidan nubbi nuppi ja dain váilo cealkagat.
-2017.03.22: konverterenprogramma ii dovdda listubustáva: o 
+2017.03.22: konverterenprogramma ii dovdda listubustáva: o
 
 prestable/tmx/fin2sme//admin/sd/educational_material_fi/koltans_raportt_2015_minim.pdf.tmx.html
     Seamma suomagielat teaksta goappašiin beliin ja diesnai lei visot mannan endorii.
@@ -443,7 +443,7 @@ prestable/tmx/fin2sme//admin/sd/educational_material_fi/raporta_2013_pieni.pdf.t
 
 prestable/tmx/fin2sme//admin/sd/educational_material_fi/raporta_2014_minim..pdf.tmx.html
     Seamma suomagielat teaksta goappašiin beliin. Dasa lassin eai lean oppa cealkkagat.
-2017.03.24: Seamma hommá go ovddit fiillas. 
+2017.03.24: Seamma hommá go ovddit fiillas.
 
 prestable/tmx/fin2sme//admin/sd/explanations_and_stories_fi/koulutusraportti_web_2_.pdf.tmx.html
     Ollu ráiddut eai vástiidan nubbi nuppi.
@@ -451,11 +451,11 @@ prestable/tmx/fin2sme//admin/sd/explanations_and_stories_fi/koulutusraportti_web
 
 prestable/tmx/fin2sme//admin/sd/ohcan_lahkai_fi/giellagaldu_haettavana_projektisihteeri_suomi.pdf.tmx.html
     Sámegielat teavsttas váilo oasit cealkagiin.
-2017.03.29: Šattai veahá buoret, muhto muhtin linját leat sámegielat teavsttas vel botkejuvvon. 
+2017.03.29: Šattai veahá buoret, muhto muhtin linját leat sámegielat teavsttas vel botkejuvvon.
 
 prestable/tmx/fin2sme//admin/sd/ohcan_lahkai_fi/giellagaldu_kielityontekijat_haettavana_suomi.pdf.tmx.html
     Sámegielat teavsttas váilo oasit cealkagiin iige ráiddut danne vástiidan nubbi nuppi.
-	2017.03.29: Šattai veahá buoret, muhto muhtin linját leat sámegielat teavsttas vel botkejuvvon. 
+	2017.03.29: Šattai veahá buoret, muhto muhtin linját leat sámegielat teavsttas vel botkejuvvon.
 
 prestable/tmx/fin2sme//admin/sd/ohcan_lahkai_fi/kieliasiainsihteeri.pdf.tmx.html
     Loahpas váillui okta cealkka.
@@ -483,7 +483,7 @@ prestable/tmx/fin2sme//admin/sd/ohcan_lahkai_fi/materiaalipankki_hakuilm12.2.pdf
 prestable/tmx/fin2sme//admin/sd/ohcan_lahkai_fi/pohjoisaamen_kaantajan_vuorotteluvapaan_sijainen_davvisamegiela_jorgaleaddji_vurohallanfriijavuo_273_a_sadjasa.pdf.tmx.html
     Loahpas váillui okta cealkka.
 
-	
+
 
 prestable/tmx/fin2sme//admin/sd/ohcan_lahkai_fi/saamelaiskarajat_hakee_maaraaikaista_projektityontekijaa_saamelaismusiikkikeskukselle.pdf.pdf.tmx.html
     Leago ulbmil ahte goappašat teakstat leat suomagillii?

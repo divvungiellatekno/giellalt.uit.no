@@ -5,7 +5,7 @@
 * logs? useful, please add!
 * dump the lang-xml files to local files when compiling (if newer than yesterday)
 * batch editing of a selection? yes, but at best such that one can mark exceptions
-* source language to indicate which language a name is typically used with/in 
+* source language to indicate which language a name is typically used with/in
 <entry id="Helsingfors" type="secondary">
 * (non-)application (speller, disamb, IR, etc) <appl ...>
 * link/merge/group two (or more IDs) => button in c-record entry edit (with a search option/multiple choice list)

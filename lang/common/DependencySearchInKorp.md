@@ -16,7 +16,7 @@ b:[lemma="liikot" & msd="V.*"]::a.dephead=b.ref
 
 Explanation:
 
-This group of commands 
+This group of commands
 
 ```
 [lemma="liikot" & msd="V.*"]
@@ -37,7 +37,7 @@ and its dependency relation.
 [msd="N.*.Ill" & deprel="OBJ"]
 ```
 
-Then you have to bind these groups to some variable names, 
+Then you have to bind these groups to some variable names,
 the syntax is name:expression, as follows:
 
 ```
@@ -51,7 +51,7 @@ then you state the joint condition
 ::a.dephead=b.ref
 ```
 
-which declares that the dependeny head of a shall be 
+which declares that the dependeny head of a shall be
 the ref value of b. In our context, the dependency
 head of the illative noun shall be the value of
 the verb *liikot*.

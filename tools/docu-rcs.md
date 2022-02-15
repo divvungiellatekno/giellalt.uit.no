@@ -78,33 +78,33 @@ the file goes to RCS with the access 444, or r--r--r--.
 Reference: List over RCS commands
 ---------------------------------
 
--   **ci *filename* :**  
+-   **ci *filename* :**
     Check in RCS revisions. Note that the file you had in the working
     directory is deleted with this command
--   **ci -l *filename* :**  
+-   **ci -l *filename* :**
     Check in RCS revisions, and keep a **locked** version of the file.
     This is the command that should be used for the cgi-bin scripts.
--   **ci -u *filename* :**  
+-   **ci -u *filename* :**
     Check in RCS revisions, and keep an **unlocked** version of the
     file. This is a wise move only if you intend to keep on working on
     the file.
--   **co:**  
+-   **co:**
     Check out (read-only) RCS revisions
--   **co -l:**  
+-   **co -l:**
     Check out RCS revisions that you may edit yourself
--   **ident:**  
+-   **ident:**
     Identify files
--   **merge:**  
+-   **merge:**
     Three-way file merge
--   **rcs:**  
+-   **rcs:**
     Change RCS file attributes
--   **rcsclean:**  
+-   **rcsclean:**
     Clean up working files
--   **rcsdiff:**  
+-   **rcsdiff:**
     Compare RCS revisions
--   **rcsmerge:**  
+-   **rcsmerge:**
     Merge RCS revisions
--   **rlog:**  
+-   **rlog:**
     Print log messages and other info on RCS files
 
 Of these, I have used ci, co, and rlog.

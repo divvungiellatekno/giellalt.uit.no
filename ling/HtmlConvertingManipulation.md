@@ -5,7 +5,7 @@
 Select contains comma separated xpath path pairs.
 A path pair is separated by a semicolon.
 
-In this:  
+In this:
 ``` <xsl:variable name="skip_elements" select="''"/> ```
 
 Each path should start with .//body \\
@@ -72,11 +72,11 @@ other markup, as such markup otherwise will be removed.
 
 ```
 
-    <xsl:template match="span[text()]">                 <= 
+    <xsl:template match="span[text()]">                 <=
         <xsl:variable name="text" select='current()' />
         <xsl:variable name="type" select='@type' />
         <xsl:variable name="lang" select='@xml:lang' />
-        <xsl:element name="span">                        <= 
+        <xsl:element name="span">                        <=
             <xsl:if test="$type">
                 <xsl:attribute name="type">
                     <xsl:value-of select="$type"/>

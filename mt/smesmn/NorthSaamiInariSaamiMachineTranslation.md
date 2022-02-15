@@ -45,24 +45,24 @@ Cf. also
        [20.6.](meetings/170620.html),
        [8.8.](meetings/170808.html),
 
-* 2016: [4.1.](meetings/160104.html),   
-        [2.6.](meetings/160602.html),  
-        [8.8.](meetings/160808.html),  
+* 2016: [4.1.](meetings/160104.html), 
+        [2.6.](meetings/160602.html), 
+        [8.8.](meetings/160808.html), 
         [15.12.](meetings/161215.html)
 
-* 2015: [12.1.](meetings/150112.html),  
-        [ 7.5.](meetings/150507.html),  
-        [19.5.](meetings/150519.html),  
-        [26.5.](meetings/150526.html),  
-        [27.5.](meetings/150527.html),  
-        [16.6.](meetings/150616.html),  
-        [18.6.](meetings/150618.html),  
-        [26.6.](meetings/150626.html),  
-        [29.6.](meetings/150629.html),  
-         [3.7.](meetings/150703.html),  
-         [13.8.](meetings/150813.html),  
-         [14.10.](../../admin/giellatekno/151014.html),  
-         [21.10.](../../admin/giellatekno/151021.html),  
+* 2015: [12.1.](meetings/150112.html),
+        [ 7.5.](meetings/150507.html),
+        [19.5.](meetings/150519.html),
+        [26.5.](meetings/150526.html),
+        [27.5.](meetings/150527.html),
+        [16.6.](meetings/150616.html),
+        [18.6.](meetings/150618.html),
+        [26.6.](meetings/150626.html),
+        [29.6.](meetings/150629.html),
+         [3.7.](meetings/150703.html),
+         [13.8.](meetings/150813.html),
+         [14.10.](../../admin/giellatekno/151014.html),
+         [21.10.](../../admin/giellatekno/151021.html),
          [22.10.](meetings/151022.html),
          [04.11.](../../admin/giellatekno/151104.html),
          [10.11.](meetings/151110.html),
@@ -76,6 +76,6 @@ Cf. also
 * [Inarisaamen kieliteknologian kurssi Inarissa 31.8.-3.9. 2014](Inarinkieliteknologiakurssinohjelma.html)
 * [Inarisaamen kieliteknologian viikko Inarissa 17.11.-20.11. 2014](InarinKieliteknologianViikkoMarraskuussa2014.html)
 
- 
 
- 
+
+

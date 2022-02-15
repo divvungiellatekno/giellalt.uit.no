@@ -10,8 +10,8 @@ nginx is fine.
 
 
 Updates to code do not normally require restarting nginx, unless updating configuration
-files specifically for nginx. However, should the system reboot and nginx not 
-survive this reboot, here is what you need to do: 
+files specifically for nginx. However, should the system reboot and nginx not
+survive this reboot, here is what you need to do:
 
 
 ```

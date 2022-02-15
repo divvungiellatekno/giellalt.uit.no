@@ -325,7 +325,7 @@ As an alternative to the yaml tests, one can specify similar test data within
 the source files:
 
 ```
-LEXICON MUORRA !!= @CODE@ Standard even stems with cg (note Q1). OBS: Nouns with invisible 3>2 cg (as bus'sa) go to this lexicon. 
+LEXICON MUORRA !!= @CODE@ Standard even stems with cg (note Q1). OBS: Nouns with invisible 3>2 cg (as bus'sa) go to this lexicon.
  +N:   MUORRAInfl ;
  +N:%> MUORRACmp  ;
 

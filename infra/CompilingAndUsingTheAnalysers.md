@@ -1,4 +1,4 @@
-When you have set up the prerequisites in the [Getting Started](GettingStarted.html) documentation, 
+When you have set up the prerequisites in the [Getting Started](GettingStarted.html) documentation,
 you want to compile the linguistic analysers and use them.
 
 # The minimun build option
@@ -7,7 +7,7 @@ You build the analysers in the '*language folder*'. If you have checked out the 
 
 ```
 cd $GTHOME/langs/sje
-``` 
+```
 
 First set up the files required to build the analysers (if you get error messages saying that some required files are missing you have probebly skipped some steps on the [Getting started](GettingStarted.html) pages):
 
@@ -48,18 +48,18 @@ The Giella infrastructure can build scores of different linguistic analysers and
  ./configure --with-hfst --enable-spellers
  ```
 
- 
+
  A full list of the options is given by writing
 
- 
+
  ```
  ./configure --help
  ```
 
- 
+
  Your current ./configure setting (which is valid until you change it) is shown by writing
 
- 
- ```	
- head config.log 
+
+ ```
+ head config.log
  ```

@@ -9,7 +9,7 @@ Compilation is documented elsewhere, for [Interactive dictionaries|InteractiveDi
 
 Script is in main/words/dicts/upside2down/
 
-1. Collect all LANG1 files into one with main/words/dicts/scripts/collect-dict-parts.xsl 
+1. Collect all LANG1 files into one with main/words/dicts/scripts/collect-dict-parts.xsl
 1. Run the conversion with the scommand below (exchange sjdrus with whatever)
 
 ```

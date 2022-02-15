@@ -6,7 +6,7 @@ People working on the first phase of the project: *Børre, Ciprian, Francis, Tro
 
 Project 08431 from FAD for work on **Forvaltningsordboken**. The [Prosjektskisse](fad_bakgrunn.html) is the original project outline.
 
-## Revised deadlines 
+## Revised deadlines
 
 (forthcoming)
 

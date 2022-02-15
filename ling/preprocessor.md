@@ -244,11 +244,11 @@ expressions are treated as abbreviations only when they are in the
 middle of the sentence, that is, when followed by lowercased letter or
 punctuation. In sum:
 
--   **TRAB:**  
+-   **TRAB:**
     abbreviations that take an object: 'Mr. Peters'
--   **ITRAB:**  
+-   **ITRAB:**
     abbreviations that do not take an object: 'Lloyds Ltd.'
--   **TRNUMAB:**  
+-   **TRNUMAB:**
     abbreviations that take NUM objects: 'Downing Str. 10') There is
     sentence boundary after TRNUMAB only for the capital+small
     combinations and all small-initial strings that consist of more than
@@ -257,7 +257,7 @@ punctuation. In sum:
 
 <!-- -->
 
--   **NOAB:**  
+-   **NOAB:**
     abbreviations such as 'du.' (dual) which is also a common noun and
     not treated as an abbreviation at the end of a sentence.
 

@@ -35,14 +35,14 @@ cat texts/TextB_smj_mt.txt |preprocess > list/smj_mt.list
 2 = difference in generation (same wordform, but different shape)
 3 = difference in choice of form (different wordform selected) (ax-ay)
 4 = word order changed (ab-ba)
-5 = punctuation 
+5 = punctuation
 6 = word added (0-a)
 7 = word deleted (a-o) ```
 
 Mierkki riekta lågujn sæmmi linjan gå rievddadus. Jus li avtan bágon moadda rievddadusá laseduvvi divna lågå dan sæmmi linnjaj:
 
 ```1        Buore	 |	Vuogas
-1           ållo	 |	enap  
+1           ållo	 |	enap
 4,3         merrasáme	 <
 -        	 	>	merrasámij
 6        	 	>	dáfojn ```
@@ -50,10 +50,10 @@ Mierkki riekta lågujn sæmmi linjan gå rievddadus. Jus li avtan bágon moadda 
 Diff lissta ij agev vatte riekta gåvåv rievddadusájs. Vuogas le de divodasstet diff listav vaj tjielggasap vuojnná jur mij la rievdaduvvam ja gåktu:
 
 ```1        Dav	 |	Boados
-4,3         guoradallama <		
+4,3         guoradallama <
 1           vuosedi |	boahtá
 6               >	åvddån
--        		>	guoradallamin 
+-        		>	guoradallamin
 3            maj	|	majt  ```
 
 Diff-lista divna báhkopáraj (aj daj ma ælla rievdaduvvam):

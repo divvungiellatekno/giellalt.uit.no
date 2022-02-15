@@ -4,20 +4,20 @@
 
 The resulting spellers are available both for OpenOffice/LibreOffice, and for command-line tools. The command-line tools and the test bench require that you also [build and install libvoikko](../infra/CompilingVoikkoWithHfst.html).
 
-Languages with analysers working to some degree or better are: 
+Languages with analysers working to some degree or better are:
 
 North Saami, South Saami, Lule Saami, Inari Saami, Kven,
 Komi Zyrian, Erzya Mordvin, Meadow Mari, Hill Mari, Kven, Faroese, Greenlandic, Tundra Nenets.
 
-* Download and install 
+* Download and install
   [LibreOffice 5.0 or newer (the newest version)](http://www.libreoffice.org/download/)
    - it knows about several FU languages,
   e.g. both Komi Zyrian, Komi Permyak, Erzya Mordvin and Meadow Mari.
-* (If you already have this LibreOffice, make sure you do not have Voikko 3.x from 2010 
+* (If you already have this LibreOffice, make sure you do not have Voikko 3.x from 2010
   installed, if you do, uninstall it from the menu)
   Tools > Extension manager > Voikko (Remove). You should have Voikko 4.1 (or newer)
-* Download and install Voikko LibreOffice plugin with hfst support - either the 
-  Finnish, Greenlandic or North Sámi Oxt file from: 
+* Download and install Voikko LibreOffice plugin with hfst support - either the
+  Finnish, Greenlandic or North Sámi Oxt file from:
   [divvun.no/libreofficeoxt.html](http://divvun.no/libreofficeoxt.html)
 
 This is enough to enable hfst-based spell-checkers in LibreOffice (tested).
@@ -36,7 +36,7 @@ To build and test:
 (The new speller will then turn up in `/usr/local/share/voikko/3/` as *kpv.zhfst* with today's date.)
 
 2. in LibreOffice, open `Preferences > Language Settings > Voikko`
-   and check that the newly installed language is listed 
+   and check that the newly installed language is listed
    (and thus known to Voikko+LibreOffice).
 
 ## Using the spellers in OpenOffice / LibreOffice
@@ -71,7 +71,7 @@ This is **Beta quality, at best**
 Både hfst som ein del av Voikko og hfst-transdusarane våre er langt i frå ferdige! Det kan finnast problem, og det er kjende feil. Alle lingvistiske problem skal meldast til Bugzilla (eller rettast direkte), alle tekniske feil med Voikko, HFST eller OOo-tillegget skal meldast til Sjur eller til Libvoikko-e-postlista (http://lists.puimula.org/listinfo/libvoikko).
 
 **Known errors:**
-* OOo-tillegget fungerer BERRE på MacOS X 10.6. og seinare. Det er *ikkje* støtte 
+* OOo-tillegget fungerer BERRE på MacOS X 10.6. og seinare. Det er *ikkje* støtte
 for eldre operativsystem
 * hfst-stavekontrollen har ein svært rudimentær forslagsmekanisme - oftast vil det ikkje koma forslag i det heile, og når dei kjem er den korrekte rettinga nesten aldri fyrste forslag
 

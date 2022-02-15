@@ -74,8 +74,8 @@ Coordination meetings every Tuesday morning, 9:30 unless agreed otherwise.
 	Cooperative development (e.g., form of lexical material)
 	Staff availability
 
-	
-	Spelling Checker: 
+
+	Spelling Checker:
 		* can internal spelling lexicon be based on Polderland PLX format,
 			or is an extension with e.g. automata necessary?
 		==> requires analysis of sample material:
@@ -83,7 +83,7 @@ Coordination meetings every Tuesday morning, 9:30 unless agreed otherwise.
 			- sound / letter changes in agglutination
 			- agglutination vs. compounding
 
-		
+
 	Hyphenator:
 		* are lists of hyphenated words available?
 		* there are rule sets in the XFST formalism that will insert
@@ -138,7 +138,7 @@ These tags will get a common prefix (`+Der/` replacing +) in a near future.
 +upmi
 +supmi
 +us
-+vuohta  
++vuohta
 +lágan
 
 +Dimin
@@ -150,7 +150,7 @@ These tags will get a common prefix (`+Der/` replacing +) in a near future.
 +vuolle
 +vuollai
 +vuolde
-+š <== Dim 
++š <== Dim
 +goahti <== inchoative
 
 ### Output from the disambiguator

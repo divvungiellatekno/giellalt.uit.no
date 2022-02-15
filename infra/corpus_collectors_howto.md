@@ -46,7 +46,7 @@ forandres slik at man har de rette dataene.
                 <tr><td>Adresse:</td>                 <td> </td></tr>
                 <tr><td>Postnummer og -stad:</td>     <td> </td></tr>
               </table>
-          
+
 
 ... her er et eksempel med en forfatter, en oversetter og forlag:
 
@@ -56,22 +56,22 @@ forandres slik at man har de rette dataene.
               <tr><td>Adresse:</td>                 <td>Diergeheavva 14</td></tr>
               <tr><td>Postnummer og -stad:</td>     <td>9520 Kautokeino</td></tr>
               </table>
-              
+
               <table>
               <tr><th>Rolle:</th>                   <th>Omsetjar</th></tr>
               <tr><td>Namn:</td>                    <td>Dagmar Kronstad</td></tr>
               <tr><td>Adresse:</td>                 <td>Nypeveien 283</td></tr>
               <tr><td>Postnummer og -stad:</td>     <td>9500 Alta</td></tr>
               </table>
-              
-              
+
+
               <table>
               <tr><th>Rolle:</th>                   <th>Forleggjar</th></tr>
               <tr><td>Namn:</td>                    <td>Girji Davvi</td></tr>
               <tr><td>Adresse:</td>                 <td>Ávvir Ávvir jorgu</td></tr>
               <tr><td>Postnummer og -stad:</td>     <td>9730 Karasjok</td></tr>
               </table>
-          
+
 
 Her er et annet med *to forfattere*, en oversetter og forlag.
 
@@ -81,29 +81,29 @@ Her er et annet med *to forfattere*, en oversetter og forlag.
               <tr><td>Adresse:</td>                 <td>Diergeheavva 14</td></tr>
               <tr><td>Postnummer og -stad:</td>     <td>9520 Kautokeino</td></tr>
               </table>
-              
+
               <table>
               <tr><th>Rolle:</th>                   <th>Forfattar</th></tr>
               <tr><td>Namn:</td>                    <td>Nils Ove Krojk</td></tr>
               <tr><td>Adresse:</td>                 <td>Kulmans Doktorgatan 24</td></tr>
               <tr><td>Postnummer og -stad:</td>     <td>SE-900 31 Kålmården</td></tr>
               </table>
-              
+
               <table>
               <tr><th>Rolle:</th>                   <th>Omsetjar</th></tr>
               <tr><td>Namn:</td>                    <td>Dagmar Kronstad</td></tr>
               <tr><td>Adresse:</td>                 <td>Nypeveien 283</td></tr>
               <tr><td>Postnummer og -stad:</td>     <td>9500 Alta</td></tr>
               </table>
-              
-              
+
+
               <table>
               <tr><th>Rolle:</th>                   <th>Forleggjar</th></tr>
               <tr><td>Namn:</td>                    <td>Girji Davvi</td></tr>
               <tr><td>Adresse:</td>                 <td>Ávvir Ávvir jorgu</td></tr>
               <tr><td>Postnummer og -stad:</td>     <td>9730 Karasjok</td></tr>
               </table>
-          
+
 
 Få pdf versjonen og utskrift
 ============================

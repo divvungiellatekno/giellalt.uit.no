@@ -29,7 +29,7 @@ The variables are defined by expressions as the following:
     <xsl:variable name="translated-from" select="''"/>
 
     <xsl:variable name="mainlang" select="'sme'"/>
-                
+
 
 The information is updated by adding the new value to the
 "select"-field, inside single quotes. Most of the fields, such as the

@@ -16,7 +16,7 @@ Dokumentasjon av grammatikkontroll:
 
 * [Grammatikkontrolldokumentasjon](/proof/gramcheck/GrammarCheckerDocumentation.html)
 * i `sme/tools/grammarcheckers/grammarchecker.cg3` (HOW TO)
-* artikler (IWCLUL, COMPUTEL, SALTMIL), 
+* artikler (IWCLUL, COMPUTEL, SALTMIL),
 
 Sjå òg dokumentasjonen for
 [maskinomsetjing](/mt/MachineTranslation.html).

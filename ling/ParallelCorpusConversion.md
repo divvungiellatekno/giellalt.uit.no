@@ -95,7 +95,7 @@ Add metadata
 
         <xsl:variable name="filename" select="'http://innsyn.e-kommune.no/innsyn_sametinget_samisk/wfdocument.aspx?journalpostid=2012006934&amp;dokid=368243&amp;versjon=1&amp;variant=P&amp;ct=RA-PDF'"/>
 
-                            
+
 
     --&gt;NB!! This is the full link, note that you have to replace some
     characters in the link. (Paste the link into a clean SubEthaEdit
@@ -110,7 +110,7 @@ Add metadata
         <xsl:variable name="genre" select="'admin'"/>
         <xsl:variable name="translated_from" select="'nob'"/>
 
-                            
+
 
     ---&gt;NB! Only use translated\_from if it is a translated document!
 
@@ -123,7 +123,7 @@ Add metadata
         <xsl:variable name="parallel_texts" select="'1'"/>
         <xsl:variable name="para_nob" select="'sp2012-1.pdf'"/>
 
-                            
+
 
     Save!
 
@@ -173,7 +173,7 @@ Move the converted documents to prestable/converted
 
 1.  In the SME Terminal, write:
 
-    `cd`  
+    `cd`
     `cd freecorpus/converted/sme/admin/sd/other_files`
 
 2.  Write this:
@@ -183,7 +183,7 @@ Move the converted documents to prestable/converted
 
 3.  Write this:
 
-    `cd`  
+    `cd`
     `cd freecorpus`
 
 4.  Write svn stat and the result is:

@@ -31,25 +31,25 @@ Any problems should be reported to [feedback@divvun.no](mailto:feedback@divvun.n
 
 ## Speller
 |   Office version | Windows XP | Windows Vista | Windows 7 32bit | Windows 7 64bit
-| --- | --- | --- | --- | --- 
-|   Office 2000    |      —      |      —         |      —           |      —     
+| --- | --- | --- | --- | ---
+|   Office 2000    |      —      |      —         |      —           |      —
 |   Word   2002    |    PASS     |      —         |      —           |     FAIL
-|   Office 2003    |    PASS     |      —         |      —           |      —     
+|   Office 2003    |    PASS     |      —         |      —           |      —
 |   Office 2007    |      —      |      —         |      —           |     PASS (?)
 |   Office 2010    |    PASS     |      —         |     PASS         |     PASS/FAIL
 
 ## Hyphenator
 |   Office version | Windows XP | Windows Vista | Windows 7 32bit | Windows 7 64bit
-| --- | --- | --- | --- | --- 
-|   Office 2000    |      —      |      —         |      —           |      —     
+| --- | --- | --- | --- | ---
+|   Office 2000    |      —      |      —         |      —           |      —
 |   Word   2002    |    PASS     |      —         |      —           |     FAIL
-|   Office 2003    |    PASS     |      —         |      —           |      —     
-|   Office 2007    |      —      |      —         |      —           |      —     
-|   Office 2010    |      —      |      —         |     FAIL         |      —     
+|   Office 2003    |    PASS     |      —         |      —           |      —
+|   Office 2007    |      —      |      —         |      —           |      —
+|   Office 2010    |      —      |      —         |     FAIL         |      —
 
 ## Installation & uninstallation
 |   Windows version | Installer | Uninstaller | Unsupervised install
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |   Windows XP      |    PASS     |     PASS    |     PASS
 |   Windows Vista   |      —      |      —      |      —
 |   Windows 7 32b   |    PASS     |     FAIL    |     PASS
@@ -62,7 +62,7 @@ the Mac. The table below covers both tools. If just one of them fails, the whole
 test fails.
 
 |   Office version | MacOS 10.3 | MacOS 10.4 | MacOS 10.5 | MacOS 10.6 | MacOS 10.7
-| --- | --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- | ---
 |   Office 2004    |      —      |      —      |      —      |    PASS     |     N/A
 |   Office 2008    |     N/A     |      —      |      —      |    PASS     |     PASS
 |   Office 2011    |     N/A     |     N/A     |      —      |    PASS     |     PASS

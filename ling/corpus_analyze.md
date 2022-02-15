@@ -88,7 +88,7 @@ The XML format of the analyzed text is basically the following:
       <w form="The">
       <reading lemma="the" POS="DET" />
       </w>
-      <w form="flies"> 
+      <w form="flies">
       <reading lemma="fly" POS="N" />
       </w>
      </s>
@@ -113,7 +113,7 @@ exclulded as well.
 The following options regulate the exclusion and inclusion of elements:
 
     --tables      Take also <table> -elements, which are excluded by default.
-    -T  
+    -T
     --lists       Take also <list> -elements, which are excluded by default.
     -L
     --all         Take all elements.

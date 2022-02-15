@@ -28,7 +28,7 @@ FLAGS:
 
 GENERAL OPTIONS (most subcommands):
     -o, --organisation <organisation>
-    -r, --regex <regex>                  
+    -r, --regex <regex>
 
 SUBCOMMANDS:
     add         Add users, repos to an organisation/a team
@@ -59,13 +59,13 @@ SUBCOMMANDS:
     invite      Invite users to an organisation by emails
         users       - Invite users to an organisation by emails
     make        Make repositories that match a regex become public/private
-        private    
-        public     
+        private
+        public
     merge       Merge a branch to the current branch for all repositories that match a pattern
     pull        Pull the current branch of all local repositories that match a regex
     push        Push the provided branch to remote server for all repositories that match a pattern or a topic
     remove      Remove users, repos from an organisation/a team
-        repositories    
+        repositories
         users       - Remove users by users' usernames from an organisation
     set         Set information, secret for repositories or permission for a team
         info        - Set description and/or website for all repositories that match regex, plain text or using a script
@@ -75,7 +75,7 @@ SUBCOMMANDS:
         secret      - Set a secret all repositories that match regex
     show        Show config, list of repositories or users
         config      - Print configuration
-        repositories- Show all repos matching regex   
+        repositories- Show all repos matching regex
         users       - Show all users in an organisation
     status      Show git status of all repositories that match a pattern
     template    Apply changes or generate new template

@@ -8,14 +8,14 @@
 1. inc/Todo_jan2011/20110113_001-200_noun_not_in_dict.csv  (**Cip** til xml-format og legge til noun-fila) -- status=done
 1. xxx i smanob/src-filene (**Maja**) OK!
 1. parenteser i smanob/src
-    1. adv (**Maja**) OK! 
+    1. adv (**Maja**) OK!
     1. num (**Cip**) -- status=done
     1. po  (**Maja**) OK!
     1. pr  (**Maja**) OK!
     1. pronIndef (**Cip**) -- status=done
     1. pronPers (**Cip**) -- status=done
     1. pronRel (**Cip**) -- status=done
-    1. VNeg (**Cip**) -- status=done 
+    1. VNeg (**Cip**) -- status=done
 
 =====
 Bare for moros skuld og å bevise Trond at det fins entrien som IKKE har noe
@@ -28,7 +28,7 @@ t*-elemente med dict="yes"
 @trond: ignore them both!!!
 =====
 
-@cip: Slash, eller, el. problem. Hva skal vi gjør? 
+@cip: Slash, eller, el. problem. Hva skal vi gjør?
 ```
 src>grep 'n/' *xml
 a_smanob.xml:               <xt>Han/Hun den lykkelige!</xt>

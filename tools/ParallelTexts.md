@@ -9,7 +9,7 @@ meeting agendas and protocols, etc.
 
 In order to facilitate the use of translation memories, we here
 offer open sentence pair collections for Saami and other Nordic
-minority languages. 
+minority languages.
 
 The collections are in the so-called tmx format, and can be found below
 (control-click (right-click) on the tmx file and download it).
@@ -31,7 +31,7 @@ The collections are in the so-called tmx format, and can be found below
 
 The translation memory may be used in programs like the following
 
-* [OmegaT](omegat.eng.html) 
+* [OmegaT](omegat.eng.html)
 * [Autshumato](autshumato.html)
 * [Trados](https://sv.wikipedia.org/wiki/Trados) (commercial software)
 * ... and many others.

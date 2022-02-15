@@ -43,5 +43,5 @@ additions on top of Xfst. That is, Xfst-based source
 files are always compatible with Foma.
 
 There are a couple of exceptions, they are listed here as they are found:
-* do not start an `echo` string with the character "=" - this turns `echo` 
+* do not start an `echo` string with the character "=" - this turns `echo`
   into a defined net with the name *echo*.

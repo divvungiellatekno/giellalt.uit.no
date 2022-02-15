@@ -22,13 +22,13 @@ Start the mode by typing
 
 The keystrokes are:
 
--   **C-c f:**  
+-   **C-c f:**
     Looks for the next cohort with several readings
--   **C-c c:**  
+-   **C-c c:**
     Adds a correct tag and proceeds to the next cohort
--   **C-c x:**  
+-   **C-c x:**
     Adds a correct tag and proceeds to the next line in the same cohort
--   **C-c t:**  
+-   **C-c t:**
     Passes by already marked cohorts (not fully working)
 
 namelex-mode
@@ -45,27 +45,27 @@ Start the mode by typing
 
 The keystrokes are:
 
--   **a:**  
+-   **a:**
     adds tag -ani
--   **b:**  
+-   **b:**
     -obj
--   **f:**  
+-   **f:**
     -fem
--   **m:**  
+-   **m:**
     -mal
--   **n:**  
+-   **n:**
     For (skipping and) searching the next NAME
--   **o:**  
+-   **o:**
     -org
--   **p:**  
+-   **p:**
     -plc
--   **r:**  
+-   **r:**
     -surplc
--   **s:**  
+-   **s:**
     -sur
--   **t:**  
+-   **t:**
     -tit
--   **u:**  
+-   **u:**
     -surmal
 
 Note that when using the namelex-mode, its difficult to do anything else
@@ -90,11 +90,11 @@ Start the mode by typing
 
 The keystrokes are:
 
--   **f:**  
+-   **f:**
     feminines
--   **m:**  
+-   **m:**
     masculines
--   **n:**  
+-   **n:**
     Neuters
--   **x:**  
+-   **x:**
     next xxx string

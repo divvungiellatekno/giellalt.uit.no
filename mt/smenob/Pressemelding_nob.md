@@ -1,4 +1,4 @@
-Program som gjør det enklere for både for den som ikke kan samisk og den som kan samisk 
+Program som gjør det enklere for både for den som ikke kan samisk og den som kan samisk
 
 Giellatekno ved UiT Norges arktiske universitet lanserer et program for maskinoversetting fra nordsamisk til norsk. «Vi håper programmet kan være til hjelp for dem som vil forstå nordsamisk tekst, men ikke kan nordsamisk selv. Og vi håper også at programmet dermed gjør det lettere for samisktalende å velge å skrive på samisk,» sier Lene Antonsen, forsker og lingvist ved Giellatekno. «Programmet er tilgjengelig via internett og gratis å bruke. Det støtter maskinoversetting av nettsider ved å bruke nettadressen, man kan laste opp dokumenter for oversetting og man kan skrive eller kopiere inn tekst og få det oversatt umiddelbart.»
 
@@ -13,7 +13,7 @@ Trond Trosterud drar fram noen eksempler på hva man skal være oppmerksomme på
 Programmets nettadresse er: https://gtweb.uit.no/jorgal
 
 Foto: Bjørn Hatteng
-Bildetekst: 
+Bildetekst:
 Nå kan flere følge med i debattene i samiske medier. På veggen bak Kevin Unhammer, ser vi en maskinoversatt versjon av en artikkel i den samiske avisa Ávvir.
 
 =====

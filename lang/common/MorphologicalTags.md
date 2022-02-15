@@ -5,7 +5,7 @@ Se also seperate pages on [compound|CompoundTags.html], [semantic|SemanticTags.h
 docu-deptags.xml
 
 |   Tag | Explanation | Comment
-| --- | --- | --- 
+| --- | --- | ---
 |  +A			  | Adjective |  -
 |  +ABBR			  | Abbreviation | -
 |  +ACR			  | Acronym |  -

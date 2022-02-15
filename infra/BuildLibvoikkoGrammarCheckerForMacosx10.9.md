@@ -84,7 +84,7 @@ PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/local/lib/pkgconfig \
 make CXXFLAGS=" -arch i386 -arch x86_64" \
      CPPFLAGS="-I/usr/local/include -I/opt/local/include" \
      CFLAGS="-I/usr/local/include -I/opt/local/include \
-             -L/usr/local/lib -L/opt/local/lib 
+             -L/usr/local/lib -L/opt/local/lib
              -arch i386 -arch x86_64 " \
      LDFLAGS=" -L/opt/local/lib -L/usr/local/lib -arch i386 -arch x86_64 \
                -framework CoreFoundation -framework Cocoa \

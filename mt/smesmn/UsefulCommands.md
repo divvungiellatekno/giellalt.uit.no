@@ -7,7 +7,7 @@ echo "Nu lea." | apertium -d . sme-smn
 ```
 
 The program actually goes through 9 steps
-in order to make the translation 
+in order to make the translation
 (cf. [this picture of the overall process](http://wiki.apertium.org/wiki/Apertium_for_Dummies),
 if you are a visual person).
 
@@ -27,14 +27,14 @@ In order to see what goes on, we may stop on any of the 9 steps:
 
 We thus write `echo "Nu lea." | apertium -d . sme-smn-morph`
 etc. instead of only `sme-smn`, to get the output we want.
-With all the tags the output may be messy. A practical advice 
+With all the tags the output may be messy. A practical advice
 is to output one word on each line:
 
 ```
 echo "Nu lea." | apertium -d . sme-smn-morph | tr ' ' '\n'
 ```
 
-[Here is the documentation for these modes](http://wiki.apertium.org/wiki/Modes)	
+[Here is the documentation for these modes](http://wiki.apertium.org/wiki/Modes)
 
 # The regression test
 

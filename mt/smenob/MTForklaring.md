@@ -5,11 +5,11 @@ Oversikt over filene
 Filen smecg.nor.cg er en præ-cg fil, der indføjger ægte sets som <%...> sekundære tags i kohorten, så de kan ses af sme.nor.dict.
 
 ## sme.nor.dict
-skal lave oversættelsesopslag, semantisk disambiguering og tag-tilpasning på én gang, således at man hurtigt kan overskue og ændre alt relevant ved det enkelte opslag. 
+skal lave oversættelsesopslag, semantisk disambiguering og tag-tilpasning på én gang, således at man hurtigt kan overskue og ændre alt relevant ved det enkelte opslag.
 
 cg-regler for semantisk disambiguering er inde i sme.nor.dict (søg på fx P1=)
 
-Problemet er konteksterne. Der var heldigvis ofte bare nor target og sme i 0-kontekst, og det går sådan set fint for +1/-1 kontekster også, og jeg har endda håndteret mange LINKs som omskrivning til tal-kontekster. 
+Problemet er konteksterne. Der var heldigvis ofte bare nor target og sme i 0-kontekst, og det går sådan set fint for +1/-1 kontekster også, og jeg har endda håndteret mange LINKs som omskrivning til tal-kontekster.
 
 Men der er et problem - formalismen er lavet til dependens-træer (D=daughter GD=granddaughter, H=head, GM=grandmother), og de er ikke brugt i cglex. I stedet er der *-kontekster og BARRIER i cglex. Jeg kan muligvis tilføje * i formalismen, men hvis det kombinere med LINK og BARRIER bliver det svært. Løsningen må, for mig at se, snarere være at omskrive disse relativ få steder til dependens, fx D=(<H> @OBJ) for et humant objekt i et verbumsopslag, i stedet for *1 (<H> @OBJ BARRIER CLB OR V). Kan I prøve at se, om og i hvilken grad det er muligt, i sme.nor.dict filen?
 
@@ -20,10 +20,10 @@ En sidste ting: Normalt har jeg altid en POS for et .dict opslag (som _POS efter
 ## replace_patternsE.txt
 Det andet problem er pardefs, som jeg blankt indrømmer, jeg ikke helt har fattet endnu :)
 
-`replace_patternsE.txt` er en liste af de pardefs der forekom i cgdix i forbindelse med oversættelsesopslag (replace_patternsE). Min idé er at erstatte disse med en replace/insert-opskrift i sme.nor.dict: 
+`replace_patternsE.txt` er en liste af de pardefs der forekom i cgdix i forbindelse med oversættelsesopslag (replace_patternsE). Min idé er at erstatte disse med en replace/insert-opskrift i sme.nor.dict:
 
 ```
-[from->to], 
+[from->to],
 der kan være flere end én: [sg_m_RL_f__n] [pl->sg][n->n±m]
 ```
 

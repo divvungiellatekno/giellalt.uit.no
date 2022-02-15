@@ -37,11 +37,11 @@ TODO: example crk entry
 
 ``` TODO: example entry with <t /> ```
 
-###  <te /> - An explanation: a sentence which explains the meaning of a word, but can't be used in the translation. 
+###  <te /> - An explanation: a sentence which explains the meaning of a word, but can't be used in the translation.
 
 ``` TODO: example entry with <t /> ```
 
-###  <re /> - Restriction 
+###  <re /> - Restriction
 
 * <re> gives a restriction for the translation, f.ex. norwegian *vest* has the restriction *of clothes*, to separate it from the navigational direction.
 
@@ -49,9 +49,9 @@ TODO: example crk entry
 
 ###  <lg /> level
 
-TODO: 
+TODO:
 
-###  <audio /> 
+###  <audio />
 
 Audio specifications fall under the <lg /> node in an <audio /> node. Within
 this node are <a /> nodes, which contain the following attributes:
@@ -110,11 +110,11 @@ It is also used to display the inflectional class alongside the POS.
 ```
 
 See the userfriendly tag relabels file for `crk` to adjust how any of these
-appear in the interface. 
+appear in the interface.
 
 ###  <l /> level
 
-TODO: any attributes 
+TODO: any attributes
 
 ###  <stem /> node
 
@@ -138,21 +138,21 @@ The stem will also be used in analyses along the right side.
     PV/nitawi + √ kiskinwahamâkosi- + Intransitive Animate Verb + Independent + Past + 1s
 ```
 
-TODO: 
+TODO:
 
 ###  <t /> attribute documentation
 
-TODO: 
+TODO:
 
 ###  <xg /> Example sentences
 
-TODO: 
+TODO:
 
 ###  Other files
 
 TODO:
 
-##  Generated miniparadigms 
+##  Generated miniparadigms
 
 Miniparadigms are generated in lexicon entries in order to help users. They
 vary from POS to POS and sometimes within POS.
@@ -174,13 +174,13 @@ For now generation relies purely on animacy tags in the FST.
 
 **TA**
 
-|  person            |INDEPENDENT   |tag                        |CONJUNCT     |tag                        
-| --- | --- | --- | --- | --- 
-| 1s → 3s	        | niwâpamâw	    | V+TA+Ind+Prs+1Sg+3SgO      | wâpamak      | V+TA+Cnj+Prs+1Sg+3SgO      
-| 2s → 3s	        | kiwâpamâw	    | V+TA+Ind+Prs+2Sg+3SgO      | wâpamat      | V+TA+Cnj+Prs+2Sg+3SgO      
-| 1p exclusive → 3s	| niwâpamânân	| V+TA+Ind+Prs+1Pl+3SgO      | wâpamâyâhk   | V+TA+Cnj+Prs+1Pl+3SgO      
-| 1p inclusive → 3s	| kiwâpamânaw	| V+TA+Ind+Prs+12Pl+3SgO     | wâpamâyahk   | V+TA+Cnj+Prs+12Pl+3SgO     
-| 2p → 3s	        | kiwâpamâwâw	| V+TA+Ind+Prs+2Sg+3SgO      | wâpamâyêk    | V+TA+Cnj+Prs+2Sg+3SgO      
+|  person            |INDEPENDENT   |tag                        |CONJUNCT     |tag
+| --- | --- | --- | --- | ---
+| 1s → 3s	        | niwâpamâw	    | V+TA+Ind+Prs+1Sg+3SgO      | wâpamak      | V+TA+Cnj+Prs+1Sg+3SgO
+| 2s → 3s	        | kiwâpamâw	    | V+TA+Ind+Prs+2Sg+3SgO      | wâpamat      | V+TA+Cnj+Prs+2Sg+3SgO
+| 1p exclusive → 3s	| niwâpamânân	| V+TA+Ind+Prs+1Pl+3SgO      | wâpamâyâhk   | V+TA+Cnj+Prs+1Pl+3SgO
+| 1p inclusive → 3s	| kiwâpamânaw	| V+TA+Ind+Prs+12Pl+3SgO     | wâpamâyahk   | V+TA+Cnj+Prs+12Pl+3SgO
+| 2p → 3s	        | kiwâpamâwâw	| V+TA+Ind+Prs+2Sg+3SgO      | wâpamâyêk    | V+TA+Cnj+Prs+2Sg+3SgO
 
 (Example table for now, but copy format for other tables)
 
@@ -204,7 +204,7 @@ Independent pronouns are included for context.
 
 ###  Personal pronouns
 
-##  Pregenerated paradigms 
+##  Pregenerated paradigms
 
 Plains Cree currently does not reply on pregenerated entries in NDS.
 

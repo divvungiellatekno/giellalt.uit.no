@@ -6,7 +6,7 @@ In order to activate paradigm generation the following things must be in place:
 * paradigm.min.LANG.txt
 * paradigm.LANG.txt
 
-These files should be created and kept up to date in svn in 
+These files should be created and kept up to date in svn in
 `$GTHOME/langs/LANG/test/data/`, and then copied to /opt
 
 The paradigm option must be turned "on" for the language you

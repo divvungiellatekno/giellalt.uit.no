@@ -249,6 +249,6 @@ follow the default setup procedure). To test, stand in the $LANG (langs/sme,
 etc) directory and write:
 
 ```
-sh devtools/test_voikkospell_suggestions.sh 
+sh devtools/test_voikkospell_suggestions.sh
 open -a Safari devtools/speller_result_typos.vk.xml
 ```

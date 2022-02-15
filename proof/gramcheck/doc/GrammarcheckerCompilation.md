@@ -8,9 +8,9 @@ Get the divvun-gramcheck packega
  cd divvun-gramcheck
  scripts/get-pugixml-and-build
  sudo make install
-``` 
+```
 
- 
+
 ## Set up and compile the grammarchecker
 
 Have a look at [these course notes](https://gtsvn.uit.no/langtech/trunk/courses/grc/helsinki_2018/notes.txt)

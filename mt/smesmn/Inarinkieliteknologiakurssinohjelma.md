@@ -85,7 +85,7 @@ jälkeen ja siten suorittaa 3 op.
 <span id="h.88cshjkwr9p1"></span> Kurssiohjelma
 ===============================================
 
-<span id="h.mgdrbd8qehu1"></span> Sunnuntai 
+<span id="h.mgdrbd8qehu1"></span> Sunnuntai
 -------------------------------------------
 
 10.00 - 17.00

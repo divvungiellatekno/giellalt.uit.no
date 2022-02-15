@@ -4,9 +4,9 @@ Documentation still not written. While waiting, here are the principles:
 
 So far, we have compiled dictionaries for North and South Sami, and for Kven (but Kven without morphology).
 
-The dictionary content is based upon the dictionary files in our 
+The dictionary content is based upon the dictionary files in our
 words/dicts/smenob/src/ catalogues (see the source files, and replace
-"smenob" with the language pair of your choice). 
+"smenob" with the language pair of your choice).
 
 For each lemma, we generate the corresponding workforms.
 The makefile for generating the dictionary paradigms is found in $LANG/testing/.

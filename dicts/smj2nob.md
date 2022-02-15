@@ -11,6 +11,6 @@ av [Anders Kintel si lulesamisk - norsk - lulesamiske ordbok](http://gtweb.uit.n
 * 2013:
    [20.8.](smj/Planlegging.html)
 
-   
 
-   
+
+

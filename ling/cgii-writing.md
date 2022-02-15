@@ -82,15 +82,15 @@ CC
 
 #### phrase structure philosophy
 
-SET S-BOUNDARY = CP \| CS \| SEMICOL \| COL ;  
+SET S-BOUNDARY = CP \| CS \| SEMICOL \| COL ;
 \# remember that (",") and CC are potential sentence boundaries, too
 
-SET NP-BOUNDARY = CC \| COMMA ;  
+SET NP-BOUNDARY = CC \| COMMA ;
 \# remember that those are potential sentence boundaries, too
 
 SET BOUNDARY = S-BOUNDARY OR NP-BOUNDARY ;
 
-SET CRD = COMMA \| CC \| NEGFOC \| XGO ;  
+SET CRD = COMMA \| CC \| NEGFOC \| XGO ;
 \# coordinators
 
 #### formalism oriented
@@ -99,10 +99,10 @@ Since we get formalism caused problems, such as eingschobene phrases,
 that again fullfill other barrier criteria and therefore have the
 consequence that a certain construction is not recognized.
 
-SET INTR = REL \| MO \| PUNCT-LEFT ;  
+SET INTR = REL \| MO \| PUNCT-LEFT ;
 \# interupters
 
-SET NPNH:  
+SET NPNH:
 This set - a negation of the set PRE-NP-HEAD - originally denotes words,
 that are no possible modifiers of an NP. But: sometimes NPNH is used as
 a BARRIER at a point of time (or rather order) in the rule file we still

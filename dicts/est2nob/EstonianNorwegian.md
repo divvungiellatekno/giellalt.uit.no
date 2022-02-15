@@ -1,4 +1,4 @@
-This page contains links to the documentation of the structure of the dictionary 
+This page contains links to the documentation of the structure of the dictionary
 Farbregd, Turid, Sigrid Kangur, og Ülle Viks Norsk-estisk-norsk ordbok.
 
 * [Norra skeemid (Explaining the dictionary structure, in Estonian](norra_skeemid.txt)

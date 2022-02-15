@@ -1,5 +1,5 @@
 # Questionnaire
-The evaluators got two texts, A and B. They got MT-translation of text B. One of the evaluators hadn't time to translate text B. 
+The evaluators got two texts, A and B. They got MT-translation of text B. One of the evaluators hadn't time to translate text B.
 
 ## Questions
 
@@ -14,7 +14,7 @@ Anslå forskjellen, f.eks. 2 ganger mer, 1,5 mer osv., eller du kan oppgi antall
     1. _ A var vanskeligere
     1. _ omtrent like vanskelige
     1. _ B var vanskeligere
-Anslå forskjellen: 
+Anslå forskjellen:
 1. Hvordan vurderer du den maskinoversatte teksten? – ett kryss
     1. _ veldig nyttig
     1. _ litt nyttig
@@ -29,9 +29,9 @@ Anslå forskjellen:
     1. _ den inneholdt flere dårlige termer enn nyttige termer
 1. Gi eksempler på nyttige termer i den maskinoversatte teksten:
 1. Gi eksempler på dårlig termer i den maskinoversatte teksten:
-1. Andre kommentarer til den maskinoversatte teksten:  
+1. Andre kommentarer til den maskinoversatte teksten:
 1. Tror du at et slikt oversettingsprogram være nyttig for deg som oversetter?
     1. _ ja, til og med et så pass dårlig program kan være nyttig
     1. _ ja, men bare hvis det er en god del bedre enn dette programmet
-    1. _ ja, men bare hvis det gir nesten perfekt oversettelse  
+    1. _ ja, men bare hvis det gir nesten perfekt oversettelse
     1. _ nei, dette tror jeg ikke vil være nyttig. Hvorfor?

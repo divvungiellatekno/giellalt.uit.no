@@ -33,23 +33,23 @@ Wednesday after lunch
     -   Lule Sámi: Discussion on how to proceed, make a task overview
         for the programmers
     -   Linguistic issues in Northern Sámi
-        -   **The missing list:**  
+        -   **The missing list:**
             Routines for making 4(?) lists: typos, lexical omissions,
             morphological problems, preprocessor errors. Discuss
             implementation with programmers.
-        -   **The testing tools:**  
+        -   **The testing tools:**
             Make a specification of what we want.
-        -   **the names:**  
+        -   **the names:**
             Names to add and how to encode them
-        -   **The loan words:**  
-        -   **Káráš\*jot\*olmmoš:**  
+        -   **The loan words:**
+        -   **Káráš\*jot\*olmmoš:**
             Getting the facts right (but I think they are already).
-        -   **Case agreement within numerals:**  
+        -   **Case agreement within numerals:**
             Today, we have guoktelogiviđas.
         -   **Vowel shortening of compounds with short 1st syllable
-            (bivdo- pro bivdu-):**  
+            (bivdo- pro bivdu-):**
             Check whether it works
-        -   **other...:**  
+        -   **other...:**
     -   Bugzilla bugs
 
 Thursday before lunch

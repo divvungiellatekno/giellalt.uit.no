@@ -16,11 +16,11 @@ Tne Error Detection Algorithm runs as follows:
     1. Count the missing ones
     1. Register the missing/total ratio, and pick the worst files
 1. Look at the worst files, and figure out how to mend them, or move them,
- e.g. to an OCR gold standard 
+ e.g. to an OCR gold standard
 
- 
 
- 
+
+
 ### Results of finding errors for North Sami
 
 Here is a list of errors per file in each folder in the admin directory. For each file we list *error/total ratio - total number of words - words not recognized - filename*, and we sort the file list according to error/total ratio:
@@ -40,7 +40,7 @@ Here is a list of errors per file in each folder in the admin directory. For eac
 * [smj corpus errors](corpus_errors_smj.txt)
 * [smj corpus error analysis](corpus_errors_smj_analysis.txt)
 
- 
+
 
 A list of error analyses can be found from [corpus error analysis](corpus_errors_analysis.txt).
 
@@ -67,7 +67,7 @@ Error typology (summarising the corpus error analysis):
 **TODO:**
 * Improve conversion according to error type, as sketched above
 
- 
+
 
 ### Results of finding errors for South Sami
 
@@ -76,16 +76,16 @@ Error typology (summarising the corpus error analysis):
 **TODO:**
 * Sma improvement of the test results above
 
- 
+
 ### Finding catalogue errors:
 
 List all files in langX-catalogue with more non-langX content than
 langX-content.
 
-**TODO:** 
+**TODO:**
 * Still not done.
 
 ### Correcting OCR errors
 
-Develop algorithms for automatic correction of OCR errors. This 
+Develop algorithms for automatic correction of OCR errors. This
 work must be done separately for each language.

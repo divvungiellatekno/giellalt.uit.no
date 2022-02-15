@@ -12,7 +12,7 @@ Tema:
 # web demo
 
 * Correct regel men ikkje forslag - melde ifra til Kevin
-* Gi Kevin gode testeksempler 
+* Gi Kevin gode testeksempler
 
 # grammarchecker developer test
 

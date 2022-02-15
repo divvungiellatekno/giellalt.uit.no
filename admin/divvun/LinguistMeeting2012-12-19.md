@@ -9,15 +9,15 @@ Saker:
 
 Det finst ca 40 adjektiv med omlyd i SMA. Dei blir i dag koda i LexC, som gjer at dei aller fleste adjektiva får kvart sitt leksikon, og det er ingen abstraksjon over omlyd og bøyingsklasse. Dette er eit forsøk på å sjå om det er mogleg å setja opp eit system som kan gje slik abstrahering.
 
-*  omlyd i ie-stammer 
-* Umlaut doesn't hold for some ie-stem-verbs vedtedh > *vidtim (but:vedtim) 
+*  omlyd i ie-stammer
+* Umlaut doesn't hold for some ie-stem-verbs vedtedh > *vidtim (but:vedtim)
 olution is a lex for these words, without %^iUML for these forms
-* oeh -oeh/an 
+* oeh -oeh/an
 
 Adjektiv med omlyd:
 
 |   Lemma  | PosAttr | PosPred | PosIll | Comp | Superl
-| --- | --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- | ---
 |  buerie    | ue-ie  |  ue-ie   | ua - an | ue    | öö
 |  leevles   | ee-es  |  ee-es   | ee-asse | ie    | öö
 |  leevles   | yö-es  |  ee-es   | yö-asse | ie    | öö
@@ -50,17 +50,17 @@ Adjektiv med omlyd:
 |  suvhtjies | u-ies  | å-an     | å-an    |  -    |  -
 |  haerries  | ae-ies | aa-an    | aa-an   |  -    |  -
 |  haeltjies | ae-ies | aa-an    | aa-an   |  -    |  -
-|  såebries  | åe-ies | åa-an    | åa-an   |  -    |  - 
-|  pliejhkies| ie-ies | ea-an    | ea-an   |  -    |  - 
-|  gijmies   | i-ies  | æ-an     | æ-an    |  -    |  - 
-|  gijmies   | æ-ah   | æ-oen    | æ-an    |  -    |  - 
-|  gijmies   | æ-as   | æ-a      | æ-an    |  -    |  - 
-|  gijmies   | æ-oeh  | æ-oe     | æ-an    |  -    |  - 
-|  gijmies   | æ-oes  | æ-oe     | æ-an    |  -    |  - 
+|  såebries  | åe-ies | åa-an    | åa-an   |  -    |  -
+|  pliejhkies| ie-ies | ea-an    | ea-an   |  -    |  -
+|  gijmies   | i-ies  | æ-an     | æ-an    |  -    |  -
+|  gijmies   | æ-ah   | æ-oen    | æ-an    |  -    |  -
+|  gijmies   | æ-as   | æ-a      | æ-an    |  -    |  -
+|  gijmies   | æ-oeh  | æ-oe     | æ-an    |  -    |  -
+|  gijmies   | æ-oes  | æ-oe     | æ-an    |  -    |  -
 |  vilnjies  | i-ies  | æ-an     | æ-an    |  -    |  -
 |  njerries  | e-ies  | a-an     | a-an    |  -    |  -
 |  skiemtjies| ie-ies | ea-an    | ea-an   |  -    |  -
-|  mujvies   | u-ies  | u-ie     | å-an?   |  -    |  - 
+|  mujvies   | u-ies  | u-ie     | å-an?   |  -    |  -
 |  staeries  | ae-ies | aa-an    | aa-an   |  -    |  -
 |  hujnies   | u-ies  | å-an     | u-an    |  -    |  -
 |  hujnies   | u-ies  | å-oen    | å-oen   |  -    |  -
@@ -71,7 +71,7 @@ Adjektiv med omlyd:
 
 Problemadjektiv:
 |   Lemma  | PosAttr | PosPred | PosIll | Comp | Superl
-| --- | --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- | ---
 |  gïevte ?
 |  tjoevkes ?
 |  åehpies | åe-ies | åe-ies | - gieries -gearehke, aeblehts -aebliehtadtje | - | -

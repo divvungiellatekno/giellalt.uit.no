@@ -6,7 +6,7 @@ in the path on launch. The configuration file contains:
  * Main application settings: localisations, application subdomain/hostname, etc.
  * FST path and format definitions (compounding, tag structure, etc.)
  * Languages available
- * XML dictionary paths 
+ * XML dictionary paths
 
 Further configuration beyond this, formatting of lexicon entries, is covered
 by other parts of the system.
@@ -70,7 +70,7 @@ The `Morphology` key contains a list of languages by ISO 639-2 code. Each langua
  * `tool` - path to the morphological tool
  * `file` - path to the morphological analysis file
  * `inverse_file` - path to the morphological generation file
- * `format` - format name ('xfst' currently only supported, but this value would probably also cover hfst) 
+ * `format` - format name ('xfst' currently only supported, but this value would probably also cover hfst)
  * `options` - defined below
 
 The options setting may contain the following keys:
@@ -104,7 +104,7 @@ Tools:
   xfst_lookup: &LOOKUP '/usr/bin/lookup'
   opt: &OPT '/opt/smi/'
 
- 
+
 Morphology:
   olo:
     tool: *LOOKUP
@@ -143,7 +143,7 @@ definitions possible: a single direction dictionary, and a reversable
 dictionary. The reasoning here is that some languages may have lexica
 optimised for different directions. This is controlled by the key 'reversable'.
 
-Dictionaries is a list of dictionaries, each dictionary defining the following keys: 
+Dictionaries is a list of dictionaries, each dictionary defining the following keys:
 
  * `source` - source language ISO (3 characters)
  * `target` - target language ISO

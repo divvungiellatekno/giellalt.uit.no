@@ -1,7 +1,7 @@
 1 alphabetically
 2 by probabilities
 
-1 rel freqency WP 
+1 rel freqency WP
 2 rel freq actual corpus
 
 only words with higher frequency in fo than in wp
@@ -24,7 +24,7 @@ the reason they are removed is to get a smaller vocabulary size
 lemma for compound
 	ok for sme
 
-	
+
 
 updated, with all nouns, not the ones with high
 containing also absolute freq

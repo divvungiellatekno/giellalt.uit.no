@@ -47,7 +47,7 @@ These two main types can have variants according to the following parameters:
      sma   sme
      PLX   PLX
 
-  
+
   ▥ = precision
   ▤ = recall
   ▦ = accuracy
@@ -69,7 +69,7 @@ These two main types can have variants according to the following parameters:
      sma   sme
      PLX   PLX
 
-  
+
   ▣ = only wrong suggestions
   ▢ = no suggestion
   ▩ = >5. position

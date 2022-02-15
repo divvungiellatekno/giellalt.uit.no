@@ -3,11 +3,11 @@ Instead of compiling the tools yourself (as described elsewhere on these pages),
 When you have downloaded the files (cf. the **Download...** links below), you should run the following command in a terminal window:
 
 ```
-cat yourtextfile.txt | hfst-tokenise -cg fin.pmhfst | vislcg3 -g fin.cg3 
+cat yourtextfile.txt | hfst-tokenise -cg fin.pmhfst | vislcg3 -g fin.cg3
 ```
 
-The textfile is sent through a two-step analysis: First through the morphological analyser **fin.pmhfst**, 
-by using the support program **hfst-tokenise**. The flag *-cg* ensures constraint grammar output format. 
+The textfile is sent through a two-step analysis: First through the morphological analyser **fin.pmhfst**,
+by using the support program **hfst-tokenise**. The flag *-cg* ensures constraint grammar output format.
 Thereafter the output is disambiguated with the disambiguator fin.cg3, by using the support program vislcg3.
 The flag *-g* identifies the file *fin.cg3* as the grammar file. In order to see more options, you may write
 *hfst-tokenise -h* and *vislcg3 -h*.
@@ -31,12 +31,12 @@ sudo apt-get -f install apertium-all-dev
 
 You will need both morphology and syntax. We use fin as an example:
 
-**Morphological analyser:** 
+**Morphological analyser:**
 ```
 curl http://divvun.no/static_files/tokeniser-disamb-gt-desc-fin.pmhfst > fin.pmhfst
 ```
 
-**Syntactic disambiguator:** 
+**Syntactic disambiguator:**
 ```
 curl http://divvun.no/static_files/disambiguator-fin.cg3 > fin.cg3
 ```

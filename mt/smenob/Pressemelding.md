@@ -13,7 +13,7 @@ Trond Trosterud drar fram noen eksempler på hva man skal være oppmerksomme på
 Programmets nettadresse er: https://gtweb.uit.no/jorgal
 
 Foto: Bjørn Hatteng
-Bildetekst: 
+Bildetekst:
 Nå kan flere følge med i debattene i samiske medier. På veggen bak Kevin Unhammer, ser vi en maskinoversatt versjon av en artikkel i den samiske avisa Ávvir.
 
 =====

@@ -1,21 +1,21 @@
 Autshumato is an open-source computer-aided translation program.
-It works on any language pair, but requires a translation memory 
-(a set of parallel sentences), as can be found below for Norwegian 
+It works on any language pair, but requires a translation memory
+(a set of parallel sentences), as can be found below for Norwegian
 Bokmål - North Saami.
 
-The purpose of Autsumato is to suggest phrases during the translation process, 
+The purpose of Autsumato is to suggest phrases during the translation process,
 thereby making translation easier and more consistent.
 
 # Documenting the Autshumato platform
 
 * [The Autshumato page on SourceForge](http://autshumato.sourceforge.net/)
 
-You may [download the last Authsumato version here](http://sourceforge.net/projects/autshumatoite/files/latest/download). 
+You may [download the last Authsumato version here](http://sourceforge.net/projects/autshumatoite/files/latest/download).
 
 Start the program by doubleclicking
 the **Autshumato.jar** file. Help files are behind the **?** symbol to the right.
 
-##  For the impatient: 
+##  For the impatient:
 
 1. Install translation memory
 1. Make a new translation project
@@ -47,7 +47,7 @@ the **Autshumato.jar** file. Help files are behind the **?** symbol to the right
 1. The Project Files dialog appears
 1. Press Import Source Files...
 1. Choose the file that you want to translate
-    1. **Note** Your safest bet are .odt and .docx files. 
+    1. **Note** Your safest bet are .odt and .docx files.
     1. Known problems: .txt files are ok on Windows, but problematic on Mac.
    .doc files are ok on mac, but Windows only handles .docx files, not .doc ones.
 1. Press Close in the Project Files dialog

@@ -1,7 +1,7 @@
-For analysis of Norwegian we may use either the Oslo-Bergen tagger 
-(obt) or the nob finite state transducer (nob.fst) from Giellatekno. 
-The Giellatekno fst is based 
-upon a wordform list and contains approximately 2000 unclassified 
+For analysis of Norwegian we may use either the Oslo-Bergen tagger
+(obt) or the nob finite state transducer (nob.fst) from Giellatekno.
+The Giellatekno fst is based
+upon a wordform list and contains approximately 2000 unclassified
 verbs and 2700 unclassified nouns. At the outset, the obt pipeline
 is thus better. On the positive side for the gt fst is its flexibility.
 For Neahttadigisánit we use the gt fst, and therefore we lexicalise
@@ -23,7 +23,7 @@ dynamic compounding is ON, if only the former is accepted, it is OFF.
 The behaviour is regulated by commenting in and out 3 lines of the
 lexicon R in `src/morphology/root.lexc`.
 
-Turn dynamic compounding off (if needed), and find unknown verbs 
+Turn dynamic compounding off (if needed), and find unknown verbs
 for example as follows:
 
 ```
@@ -31,6 +31,6 @@ cat file|preprocess|rev|sort|rev|uniq|unob|grep '?'|cut -f1
 ```
 
 Add words to the files in `src/morphology/stems/` by following
-the pattern indicated on the top of each file. When words may be 
+the pattern indicated on the top of each file. When words may be
 both masculine and feminine (like *boka* vs. *boken*), choose
 feminine. The analyser treats all feminines as potential masculines.

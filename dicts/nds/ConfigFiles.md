@@ -9,7 +9,7 @@ launch. The configuration file contains:
  * Main application settings: localisations, application subdomain/hostname, etc.
  * FST path and format definitions (compounding, tag structure, etc.)
  * Languages available
- * XML dictionary paths 
+ * XML dictionary paths
  * Reader configuration
 
 Further configuration beyond this, formatting of lexicon entries, is covered
@@ -46,7 +46,7 @@ These features may not be entirely finished, so use with care.
 
  * `new_style_templates` - This enables the template
    system in configs/language_specific_options/ for local project-based control
-   of dictionary appearance. 
+   of dictionary appearance.
  * `new_mobile_nav` - To be used with `grouped_nav`: this enables a new
    navigation style with submenus for language groups. Once this is complete,
    this setting will go away and be the default option in all projects.
@@ -93,7 +93,7 @@ defined. Each language contains the following keys:
  * `tool` - path to the morphological tool
  * `file` - path to the morphological analysis file
  * `inverse_file` - path to the morphological generation file
- * `format` - format name ('xfst' currently only supported, but this value would probably also cover hfst) 
+ * `format` - format name ('xfst' currently only supported, but this value would probably also cover hfst)
  * `options` - defined below
 
 The options setting may contain the following keys:
@@ -131,7 +131,7 @@ Tools:
   xfst_lookup: &LOOKUP '/usr/bin/lookup'
   opt: &OPT '/opt/smi/'
 
- 
+
 Morphology:
   olo:
     tool: *LOOKUP
@@ -170,7 +170,7 @@ definitions possible: a single direction dictionary, and a reversable
 dictionary. The reasoning here is that some languages may have lexica
 optimised for different directions. This is controlled by the key 'reversable'.
 
-Dictionaries is a list of dictionaries, each dictionary defining the following keys: 
+Dictionaries is a list of dictionaries, each dictionary defining the following keys:
 
  * `source` - source language ISO (or other short code, i.e., spellrelax variant)
  * `target` - target language ISO
@@ -277,7 +277,7 @@ variant may have its own input system.
           - "č"
           - "ʒ"
           - "ǯ"
-          # etc ... 
+          # etc ...
 
 ```
 
@@ -300,19 +300,19 @@ and INPUT_LEMMA for the lemma search links.
     #
     # Here, whatever the user input is will be replaced into the
     # following string, marked by USER_INPUT
-    wordform_search_url: 
+    wordform_search_url:
       "http://gtweb.uit.no/korp/#search=word%7CUSER_INPUT&page=0"
     #
     # Here, whatever the input lemma is will be replaced into the
     # following string, marked by INPUT_LEMMA
     #
     # cqp|[lemma = "INPUT_LEMMA"]
-    lemma_search_url: 
+    lemma_search_url:
       "http://gtweb.uit.no/korp/#page=0&search-tab=2&search=cqp%7C%5Blemma%20%3D%20%22INPUT_LEMMA%22%5D"
 
     # Specify a word delimiter for when there are many.
     # "] [word = "
-    lemma_multiword_delimiter: &korp_lemma_delim 
+    lemma_multiword_delimiter: &korp_lemma_delim
       "%22%5D%20%5Bword%20%3D%20%22"
 ```
 

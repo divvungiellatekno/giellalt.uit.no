@@ -4,8 +4,8 @@ Til stades: Inga, Maja, Sjur, Thomas
 
 Saker:
 * samansette ord: kva slags reglar gjeld? mánnágárdde, mánájgárdde
-* twolregler for adjektiver ies (attr) og vokal (pred)? se bug 1463 
-* liste over verb, sub og adj - en oppdatert liste alá Tronds lister på ...sma/etc. 
+* twolregler for adjektiver ies (attr) og vokal (pred)? se bug 1463
+* liste over verb, sub og adj - en oppdatert liste alá Tronds lister på ...sma/etc.
 * sjekk opp f.eks 'tjidtj'-aahka.
 * låneord på -e i SMJ: uttalt -e: premie, serie; stum -e: skype, megabyte
 

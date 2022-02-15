@@ -14,10 +14,10 @@ Forklaring på noder i .dict:
 Eksempel frå Bick 2005.
 
 ```
->A = 
+>A =
 meget_ADV :a_lot; # default
-S=(>A) :very; # meget (>A) stor  ==> very big     
-D=(>A) :much  # svært (>A) meget  ==> very much  
+S=(>A) :very; # meget (>A) stor  ==> very big
+D=(>A) :much  # svært (>A) meget  ==> very much
 ```
 
 I leksikon ser det slik ut:

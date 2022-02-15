@@ -29,7 +29,7 @@ The output is then smX-entries which are not possible to generate with the infor
 
 ## Sorteret listtu
 
-Lea vejolaš heivehit sanityoutput nu ahte oaččut listtu mas eai leat namat, ja mas smX-sánit leat sorterejuvvon sáni loahpa mielde. 
+Lea vejolaš heivehit sanityoutput nu ahte oaččut listtu mas eai leat namat, ja mas smX-sánit leat sorterejuvvon sáni loahpa mielde.
 Dalle lea álkit árvvoštallat sániid (seammá sánit bohtet maŋŋálaga) ja maiddái kopieret sániid FST:i.
 
 Go leat `dev`-máhpas:

@@ -34,7 +34,7 @@ Steps to install `opatgen` (we have a local copy of the code):
 
 1.  `cd $GTHOME/tools/patlib`
 
-2.  `make`  
+2.  `make`
     **NB!** At the moment the C compilation is broken, because the code
     rely on a number of old, non-conformant coding practices. `gcc 2.95`
     is required, which is not available on any modern systems anymore.

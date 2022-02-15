@@ -32,7 +32,7 @@ North, Julev and South Sámi have more elaborate test scripts for all of these
 parts-of-speeches. Have a look there for inspiration.
 
 Note that this setup does not work for languages with gender systems, dividing
-nouns into different classes. 
+nouns into different classes.
 
 # Yaml tests
 

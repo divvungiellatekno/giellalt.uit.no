@@ -18,7 +18,7 @@
                                     baseform/
                                     wordtype/
 
-                                    
+
 20100507-Markansluska.correct.doc.summary.html
 ```
 

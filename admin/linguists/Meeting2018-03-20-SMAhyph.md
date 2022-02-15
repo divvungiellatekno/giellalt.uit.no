@@ -7,7 +7,7 @@ Saka blei  diskutert på epost 16.01.2018, og løsninga var da å bruke hfst bå
 
 Det har vært gjort et vedtak i Giellagáldu og vi ser på saka på nytt.
 
-### Vi vil ikke vise #=- i 
+### Vi vil ikke vise #=- i
 * som forslag i Divvun-programmet
 * i paradigme på web-generering
 * i paradigme på NDS
@@ -19,16 +19,16 @@ jåvle-biejjien
 jåvle-biejjieh  osv.
 ```
 
-### Når skal vi ikke bruke # ? 
+### Når skal vi ikke bruke # ?
 * Ikke i propernoun, istedenfor bruker vi ^ (vi må oppdatere dokumentasjonen)
-    - smi-proper-fila inneheld 9992 
+    - smi-proper-fila inneheld 9992
 
-## Giellagáldu sitt vedtak fra 06.02.2018 
+## Giellagáldu sitt vedtak fra 06.02.2018
 * er uklart og må følges opp med flere spørsmål (**Maja**). Men man kan tolke det som at det ikke skal brukes hyph i vanlige sammensatte ord.
 * opphopning av 3 like vokaler (konsonanter?) som i jåvle-eejehtalleme: skal heller skrives i to ord, jåvle eejehtalleme, hvis vi tolker GG vedtak riktig
-* guhkie-guhkiebasse   vs. guhkieguhkiebasse: iflg. muntlig tilbakemelding skulle det _ikke_ være bindestrek. 
+* guhkie-guhkiebasse   vs. guhkieguhkiebasse: iflg. muntlig tilbakemelding skulle det _ikke_ være bindestrek.
 
-### Vårt vedtak 
+### Vårt vedtak
 
 Vi fjerner skriptet som endrer # til hyph, og bruker heller samme løsning som vi har for sme også for sma (**Sjur**), for da vil Divvun-programmet godta hyph, men bare i dynamisk cmp, men hyph vil ikke bli synlig i paradigmer (dvs fst Norm).
 Vi avventer avklaring om dette fra Giellagáldu for evt. andre tiltak.

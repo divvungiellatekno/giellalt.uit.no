@@ -5,23 +5,23 @@ Tilstede: Sjur, Inga, Sara Marja, Siri
 Sørsamisk lånordstilpasning: Siste to stavelser er "sørsamiske" resten er sitat.
 Normering er at det brukes svensk ö og norsk æ
 
- 
 
- 
-Gïelegaaltije har normert disse på sörsamisk: 
+
+
+Gïelegaaltije har normert disse på sörsamisk:
 sma: euro
 
-sma: curry < lånemønster fra svensk: curry. Problemet oppstår at "c" er ikke i bruk i norsk "karri". samtidig for de som også kan nordsamisk, leses bokstaven "c" etter nordsamisk uttale. 
+sma: curry < lånemønster fra svensk: curry. Problemet oppstår at "c" er ikke i bruk i norsk "karri". samtidig for de som også kan nordsamisk, leses bokstaven "c" etter nordsamisk uttale.
 
 sma: cappuccino <
-sma: ecstasy < 
-sma: CDe < 
-sma: jury >>> juryjre? 
-sma: saerniesbyrå - byrå- burde komme som et tillegg under -yr i Ove Lorentz dokument. -yrå >>> byjrove? 
+sma: ecstasy <
+sma: CDe <
+sma: jury >>> juryjre?
+sma: saerniesbyrå - byrå- burde komme som et tillegg under -yr i Ove Lorentz dokument. -yrå >>> byjrove?
 
 sv:  ekonomi
 nob: økonomi
-sma: ekonomije - dette er fornuftig vedtak. Dels unngår man ö/ø problemet som vi ser oppstår bl. a i bokutgivelser som ikke fölger normeringsvedtak i bruken av svensk ö. 
+sma: ekonomije - dette er fornuftig vedtak. Dels unngår man ö/ø problemet som vi ser oppstår bl. a i bokutgivelser som ikke fölger normeringsvedtak i bruken av svensk ö.
 
 nob: kiosk >>> tjååske
 
@@ -33,7 +33,7 @@ nob: matematikk
 sv:  matematik
 sme: matematihkka
 smj. matematijkka
-smj. matematihkka  
+smj. matematihkka
 sma: mattematihke - denne avviker jr. Lorenz låneord
 
 To typer forskjeller i SMJ
@@ -55,7 +55,7 @@ appelsijnna+Area/SE+CmpN/SgN+CmpN/SgG+Sem/Fruit:apels BENSIJNNA ;
 sv:  budjett > budjæhtta
 nob: budsjett > budsjæhtta
 
-budsjæhtta+Area/NO+Sem/Money:budsj TABLÆHTTA ; ! 
+budsjæhtta+Area/NO+Sem/Money:budsj TABLÆHTTA ; !
 budsjæhtta+Area/SE+Sem/Money:budjæhtta MUORRA_LOAN ; !
 
 sv:  ekolog > ekolåvggå

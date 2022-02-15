@@ -26,7 +26,7 @@ Det finst [eit eige dokument for arbeidet framover](../../lang/smi/AvgrenseAvlei
 
 # Testing av (over)generering
 
-Sjur har laget et verktøy som følger alle stier for lemmaer, slik at vi får lister med alle ordformer våre system produserer. 
+Sjur har laget et verktøy som følger alle stier for lemmaer, slik at vi får lister med alle ordformer våre system produserer.
 
 Kommando for "miehttse" og "bårråt" som kan kjøres i smj.
 
@@ -58,7 +58,7 @@ bårrådahttásappusjvuodada	bårrådahttásappusjvuodada+?	inf
 
 Sjur har no ein betre versjon som tar omsyn til det, og ikkje inneheld desse formene (nedanfor)
 
-#  Hvordan skal våre verktøy fungere? 
+#  Hvordan skal våre verktøy fungere?
 
 Lage flest mulig ordformer, eller innskrenke etter bruk?
 
@@ -70,7 +70,7 @@ Komparinger som derivasjon?
 
 ##  Vi bør uansett gjøre litt vårrenskning. smj:
 
-* Substantivene ser ganske greie ut. 
+* Substantivene ser ganske greie ut.
     - Litt vel mye Px
     - Der/Car (-dibme) kompareres, dette syns jeg er rart:  fra nickel, lihkuheabbo	lihkku+N+Der/Car+A+Comp+v1+Sg+Nom
         - mánádabbo	mánná+N+Der/Car+A+Comp+Sg+Nom
@@ -142,16 +142,16 @@ I smj har Inga sjekket inn tre kortere lister:
 * fil-med-alle-ordformer-miehttse.txt
 * fil-med-alle-ordformer-nuorra.txt
 
-I disse det bare Sg1, Nom og Com, og alle Px er fjernet. Det er da enklere å se gjennom listene. 
+I disse det bare Sg1, Nom og Com, og alle Px er fjernet. Det er da enklere å se gjennom listene.
 
 Dette er eit resultat av Der12345-grammatikken, dvs. derivasjonar må vere av
 typen Der(n) > Der(n+1), strengar som Der1 ... Der1 eller Der4 ... Der3 er ugrammatisk.
-NB! Sjølv om dein tagg står under Der1 her (+Der1+Der/st) kan han vere tagga som 
+NB! Sjølv om dein tagg står under Der1 her (+Der1+Der/st) kan han vere tagga som
 +Der2+Der/st i lexc, og dermed bli analysert som høyrande til kolonne 2 (for det leksikonet).
 
 Sitat frå smj/src/fst/root.lexc (her ommøblert litt under diskusjonen):
 
-``` 
+```
 +Der1           +Der2           +Der3            +Der4       +Der5       - positional tags
 
 +Der/PassL                                                            VV - long passive láhpeduvvat
@@ -183,10 +183,10 @@ Sitat frå smj/src/fst/root.lexc (her ommøblert litt under diskusjonen):
 +Der/k                                                                NN / NA
 +Der/r                                                                VN  - AA?
 
-+Der/n                                                                NA 
-+Der/Car                                                              NA 
-+Der/ferjak                                                           NA 
-+Der/lasj                                                             NA 
++Der/n                                                                NA
++Der/Car                                                              NA
++Der/ferjak                                                           NA
++Der/lasj                                                             NA
 +Der/A                                                                NA
 +Der/ravak                                                            NA
 +Der/sasj                                                             NA
@@ -214,7 +214,7 @@ Sitat frå smj/src/fst/root.lexc (her ommøblert litt under diskusjonen):
                                                 +Der/ahtes            NA ! only odd
 ##  !Der#5 tags - tags in fifth position
                                                              Der/AAdv NA AAdv, previously +Der/at
-                                                             Der/vuotaNA AN 
+                                                             Der/vuotaNA AN
 ```
 
 Oversy over Der-taggane i bårråt (etter Sjurs script nr. 2):
@@ -228,28 +228,28 @@ Tagg                Der-nummer
 5828 Der/mus        3
 1443 Der/InchL      3
  986 Der/stahtte    1
- 986 Der/Caus       
- 980 Der/stasste    
- 980 Der/dasste     
- 980 Der/asste      
- 972 Der/stalla     
- 972 Der/dalla      
- 952 Der/PassL      
- 948 Der/dahtte     
- 868 Der/lis        
- 747 Der/ahkes      
- 698 Der/d          
- 696 Der/st         
- 493 Der/lahtte     
- 490 Der/lasste     
- 486 Der/ladda      
- 486 Der/alla       
- 486 Der/adda       
- 449 Der/NomAg      
- 444 Der/PassS      
- 382 Der/AAdv       
- 350 Der/l          
- 348 Der/u/a/åd     
- 296 Der/PassD      
-  93 Der/Dimin      
+ 986 Der/Caus
+ 980 Der/stasste
+ 980 Der/dasste
+ 980 Der/asste
+ 972 Der/stalla
+ 972 Der/dalla
+ 952 Der/PassL
+ 948 Der/dahtte
+ 868 Der/lis
+ 747 Der/ahkes
+ 698 Der/d
+ 696 Der/st
+ 493 Der/lahtte
+ 490 Der/lasste
+ 486 Der/ladda
+ 486 Der/alla
+ 486 Der/adda
+ 449 Der/NomAg
+ 444 Der/PassS
+ 382 Der/AAdv
+ 350 Der/l
+ 348 Der/u/a/åd
+ 296 Der/PassD
+  93 Der/Dimin
 ```

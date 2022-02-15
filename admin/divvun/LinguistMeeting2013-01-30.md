@@ -24,8 +24,8 @@ Ei yaml-fil ser slik ut:
 
 ```
 Tests:
-  Adjective - båadtsah: # 
-    båadtsah+A+Attr: båadtsah 
+  Adjective - båadtsah: #
+    båadtsah+A+Attr: båadtsah
     båadtsah+A+Sg+Nom: [ båadtsan, båadtsa, båadtsode]
 ```
 

@@ -125,22 +125,22 @@ After merge:
 
 <entry id="Göteborg">
   <sem>plc</sem>
-  <langentry lang="eng" ref="Gothenburg">  
+  <langentry lang="eng" ref="Gothenburg">
 </entry>
 
 <entry id="Stockholm">
   <sem>plc</sem>
-  <langentry lang="fin" ref="Tukholma">  
+  <langentry lang="fin" ref="Tukholma">
 </entry>
 
 <entry id="Nils">
   <sem>mal</sem>
-  <related ref="Niillas">  
+  <related ref="Niillas">
 </entry>
 
 <entry id="Niillas">
   <sem>mal</sem>
-  <related ref="Nils">  
+  <related ref="Nils">
 </entry>
 
 =====

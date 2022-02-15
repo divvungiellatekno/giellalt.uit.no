@@ -14,7 +14,7 @@ In order to see the dictionary files in XMLEditor, do the following:
 
 # For all users, update
 
-Every time the gt_dictionary dtd or css are updated, the 
+Every time the gt_dictionary dtd or css are updated, the
 following procedure must be gone through:
 
 1. open XMLEditor
@@ -25,7 +25,7 @@ following procedure must be gone through:
 
 # For all users who want to edit forrest documentation files
 
-1. Contact someone at Giellatekno/Divvun and get a **forrest** folder. 
+1. Contact someone at Giellatekno/Divvun and get a **forrest** folder.
 1. The forrest folder can be found here: *home folder / Library / Application Support / XMLMind /XMLEditor4 / addon* (note that the folder "library" might be called **Bibliotek** or **Kirjasto**, etc., dependent upon your language choice).
 1. Put the forrest folder in the same location at the reciever's folder
 1. Restart XMLEditor
@@ -36,7 +36,7 @@ following procedure must be gone through:
 
 1. Change the dtd and/or css in `$GTHOME/words/dicts/scripts` and check in.
 1. `cd $GTHOME/tools/xxe/`
-1. Add new version change descriptions in the file `gtdict-config/gtdict-config.xxe_addon` (Remember to add new version number **both** in the node `a:version` **and** in the description!) 
+1. Add new version change descriptions in the file `gtdict-config/gtdict-config.xxe_addon` (Remember to add new version number **both** in the node `a:version` **and** in the description!)
 1. Check in the new version of the gtdict-config.xxe_addon file
 1. in `$GTHOME/tools/xxe/`, give the command `make`
  - **NB!** requires password for the sd user on divvun.no

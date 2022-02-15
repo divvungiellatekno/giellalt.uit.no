@@ -21,6 +21,6 @@ Cf. also
 ## Work plan
 
 ## Meetings
-* 2016: 
+* 2016:
  [05.01.16](meetings/160105.html)  //
  [08.01.16](meetings/160108.html)

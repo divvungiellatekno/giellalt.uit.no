@@ -23,11 +23,11 @@ a genre-based catalogue structure, accessing files catalogue-wise:
          /Assu
 ```
 
-a2. alternative a. extended with a command-line xml-aware grep tool (sgrep, 
+a2. alternative a. extended with a command-line xml-aware grep tool (sgrep,
     xmlstarlet)
 
 b.  an xml-database, accessing text via the information in the xml files
-    This will be an alternative if the corpus grows to be an unwieldy mass, and 
+    This will be an alternative if the corpus grows to be an unwieldy mass, and
     if our current tools are not able to cope with that amount of data.
 
 Structure of the corp/sme/ catalogue
@@ -55,7 +55,7 @@ Responsibilities
 * lexc requires the following parts:
     - lemma
     - stem (if different from lemma)
-    - continuation_class 
+    - continuation_class
     - mother_lexicon
 * spellers need:
     - compound first part
@@ -96,7 +96,7 @@ Non-xml formatting:
 
 ## Proofing tools public tender
 
-Technical specification delayed till after 
+Technical specification delayed till after
 
 ## Computer issues
 
@@ -118,8 +118,8 @@ Technical specification delayed till after
 * number generator works only in nominative
 * indefinite pronouns
 
-1. Discussion: 
-    1. Should we sort the lexica alphabetically? 
+1. Discussion:
+    1. Should we sort the lexica alphabetically?
 
 * Groups:
 
@@ -129,9 +129,9 @@ Technical specification delayed till after
 
 * g4 currency sign ilona, børre
 
-numeral compounds 
+numeral compounds
 
-* Open: 
+* Open:
 3-part compounds sáme-gielLA-prošeakta, kárášjoga olmmoš = kárášjohkalaš
 indefinite pronouns
 
@@ -150,22 +150,22 @@ indefinite pronouns
     - Theories: It blocks consonant gradation, it blocks diphthong simplification, it is there to distinguish between animate and inanimate nouns
     - Hint: Check out the first versions of sme-lex
 
-* 3-part compounds, 
+* 3-part compounds,
     - Here, we need lingustic input, but first and foremost we need a computational linguistic treatment.
 
 * Oslola≈°)
     - Here, the flag diacritic solution should work (TM). The facts here are clear, and the linguists do not need to discuss them, it is solely an issue for computational linguists.
 
 * vowel shortening in compounds
-    - 6 of the rules in the twol file are relevant to this issuee, viz. 
+    - 6 of the rules in the twol file are relevant to this issuee, viz.
 ```
 "Optional Vowel Shortening after Short 1st Syllable"
 "Optional Shortening of á in Compounds after Long 1st Syllable 1"
 "Optional Shortening of á in Compounds after Long 1st Syllable 2"
 "Vowel Shortening in Vowel-Final Compounds after Long 1st Syllable 1"
 "Optional Vowel Shortening in Cns-Final Compounds after Long 1st Syllable 1"
-"Vowel Shortening in Compounds of Contract Stems"          
-```            
+"Vowel Shortening in Compounds of Contract Stems"
+```
 * facultative vowel simplification in compounds
     - Linked to the weakening issue.
     - Also an issue how to do simplificatrion in twol.

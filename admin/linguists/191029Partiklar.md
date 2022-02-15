@@ -21,11 +21,11 @@ Ord med tvetydig eller problematisk fokuspartikkelanalyse:
 Ny analyse, berre `hfst-tokenise`:
 
 ```
-echo "Son čohkkáhan dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst 
+echo "Son čohkkáhan dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst
 "<Son>"
 	"son" Pcle <W:0.0>
 	"son" Pron Pers Sg3 Nom <W:0.0>
-: 
+:
 "<čohkkáhan>"
 	"čohkkáhit" V TV Actio Gen <W:0.0>
 	"čohkkáhit" V TV Actio Nom <W:0.0>
@@ -44,7 +44,7 @@ echo "Son čohkkáhan dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pm
 		"čohkkát" V IV Ind Prs Sg3 <W:0.0> "<čohkká>"
 	"#" Foc/han <W:0.0> "<han>"
 		"čohkkát" V IV VGen <W:0.0> "<čohkká>"
-: 
+:
 "<dáppe>"
 	"dáppe" Adv Sem/Plc <W:0.0>
 "<.>"
@@ -55,11 +55,11 @@ echo "Son čohkkáhan dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pm
 Ny analyse etter `cg-mwesplit`, klitisert:
 
 ```
-$ echo "Son čohkkáhan dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst | vislcg3 -t -g mwe-dis.cg3 | cg-mwesplit 
+$ echo "Son čohkkáhan dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst | vislcg3 -t -g mwe-dis.cg3 | cg-mwesplit
 "<Son>"
 	"son" Pcle <W:0.0>
 	"son" Pron Pers Sg3 Nom <W:0.0>
-: 
+:
 "<čohkká>"
 	"čohkkát" V IV Ind Prs Sg3 <W:0.0> SELECT:2146
 "<han>"
@@ -79,7 +79,7 @@ $ echo "Son čohkkáhan dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.
 * **		"čohkkát" V IV Ind Prs ConNeg <W:0.0> "<čohkká>" SELECT**: 2146
 * **	"#" Foc/han <W**: 0.0> "<han>"
 * **		"čohkkát" V IV VGen <W:0.0> "<čohkká>" SELECT**: 2146
-: 
+:
 "<dáppe>"
 	"dáppe" Adv Sem/Plc <W:0.0>
 "<.>"
@@ -90,11 +90,11 @@ $ echo "Son čohkkáhan dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.
 Ny analyse etter `cg-mwesplit`, ikkje klitisert:
 
 ```
-$ echo "Son čohkká han dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst | vislcg3 -t -g mwe-dis.cg3 | cg-mwesplit 
+$ echo "Son čohkká han dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst | vislcg3 -t -g mwe-dis.cg3 | cg-mwesplit
 "<Son>"
 	"son" Pcle <W:0.0>
 	"son" Pron Pers Sg3 Nom <W:0.0>
-: 
+:
 "<čohkká>"
 	"čohkkát" V IV Ind Prs Sg3 <W:0.0> SELECT:2146
 "< han>"
@@ -105,7 +105,7 @@ $ echo "Son čohkká han dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc
 * **		"čohkkát" V IV Ind Prs ConNeg <W:0.0> "<čohkká>" SELECT**: 2146
 * **	" " Foc/han <W**: 0.0> "< han>"
 * **		"čohkkát" V IV VGen <W:0.0> "<čohkká>" SELECT**: 2146
-: 
+:
 "<dáppe>"
 	"dáppe" Adv Sem/Plc <W:0.0>
 "<.>"
@@ -116,7 +116,7 @@ $ echo "Son čohkká han dáppe." | hfst-tokenise -g tokeniser-gramcheck-gt-desc
 Gamal analyse:
 
 ```
-$ echo "Son čohkká han dáppe." | preprocess | hfst-lookup -q ../../src/analyser-disamb-gt-desc.hfst| cut -f1-2 | lookup2cg 
+$ echo "Son čohkká han dáppe." | preprocess | hfst-lookup -q ../../src/analyser-disamb-gt-desc.hfst| cut -f1-2 | lookup2cg
 "<Son>"
 	"son" Pcle
 	"son" Pron Pers Sg3 Nom
@@ -137,7 +137,7 @@ $ echo "Son čohkká han dáppe." | preprocess | hfst-lookup -q ../../src/analys
 Spørsmål:
 
 * Kva skal vera lemma? "han" osb.
-* Kva skal vera taggen? 
+* Kva skal vera taggen?
 
 Svar:
 * Viss vi ser "leahan" som er samansetjing (som biila i láibebiila) blir "han"
@@ -149,13 +149,13 @@ Jf. analysen av desse to — *láibebiila* og *čohkkáhan*:
 usme:
 láibebiila	láibi+N+Cmp/SgNom+Cmp#biila+N+Sg+Nom
 
-echo "láibebiila" | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst 
+echo "láibebiila" | hfst-tokenise -g tokeniser-gramcheck-gt-desc.pmhfst
 "<láibebiila>"
 	"biila" N Sem/Veh Sg Nom <W:10.0>
 		"láibi" N Sem/Food Cmp/SgNom Cmp <W:10.0>
 
 usme:
-čohkkáhan	čohkkát+V+IV+Ind+Prs+Sg3+Foc/han 
+čohkkáhan	čohkkát+V+IV+Ind+Prs+Sg3+Foc/han
 
 hfst-tokenise:
 	"han" Pcle <W:0.0> "<han>"
@@ -189,15 +189,15 @@ Partikler:
 
 ```
 ---------------------------------------
-Pcle: 
+Pcle:
 2. posisjon eller fokus/polaritet: Pcle
-leago  +Pcle+Qst <cl> evt: +Pcle+Qst+Clt 
+leago  +Pcle+Qst <cl> evt: +Pcle+Qst+Clt
 lea go +Pcle+Qst
 
 leage  +Pcle+Pol <cl>
-lea ge +Pcle+Pol 
+lea ge +Pcle+Pol
 leago  +Pcle+Qst <cl>
-lea go +Pcle+Qst 
+lea go +Pcle+Qst
 leaba  +Pcle+Foc <cl>
 lea ba +Pcle+Foc
 -------------------------------------
@@ -247,7 +247,7 @@ Dette er måten å referere til underlesingar på:
 	# SUBREADINGS:
 	# ------------
 	bil            0, -3
-	   kake        1, -2 
+	   kake        1, -2
 	       oste    2, -1
 #	oste#kake#bil
 #	0 = bil

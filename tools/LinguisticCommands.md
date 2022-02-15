@@ -23,22 +23,22 @@ cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]'
 ### How many compounds with noun in the first part
 We don't want Der/NomAct as N:
 ```
-cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | egrep 'N\+.*Cmp' | grep -v 'NomAct.*Cmp' | cut -f1 | uniq  
+cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | egrep 'N\+.*Cmp' | grep -v 'NomAct.*Cmp' | cut -f1 | uniq
 ```
 
 ### How many compounds with verb in the first part
-We don't want Der/NomAg as V. 
+We don't want Der/NomAg as V.
 ```
-cat <analysedtext>| grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | egrep 'V\+.*Cmp' | grep -v 'NomAg.*Cmp' | cut -f1 | uniq  
+cat <analysedtext>| grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | egrep 'V\+.*Cmp' | grep -v 'NomAg.*Cmp' | cut -f1 | uniq
 ```
 
 ### How many compounds with adjective the in first part
 We don't want +N as A:
 ```
-cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | sed 's/^$/¢/' | tr "\n" "€" | tr "¢" "\n" | egrep 'A\+[A-Za-z\+]*Cmp' ]( egrep -v 'N\+[A-Za-z\+)*Cmp' |cut -f1 |tr -d "€"  | uniq 
+cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | sed 's/^$/¢/' | tr "\n" "€" | tr "¢" "\n" | egrep 'A\+[A-Za-z\+]*Cmp' ]( egrep -v 'N\+[A-Za-z\+)*Cmp' |cut -f1 |tr -d "€"  | uniq
 ```
 
 ### How many compounds with adverb in the first part
 ```
-cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | egrep 'Adv\+.*Cmp' | grep -v 'NomAct.*Cmp' | cut -f1 | uniq  
+cat <analysedtext> | grep -v '"<' | cut -d '"' -f2 | grep '[a-záčžA-ZÁČŽ]' | usme | egrep 'Adv\+.*Cmp' | grep -v 'NomAct.*Cmp' | cut -f1 | uniq
 ```

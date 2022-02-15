@@ -25,11 +25,11 @@ To fix this, one has to:
 
 1.  Find the names of the [metadata](corpus_xsl_file.html) files
     belonging to the above file. Run the command
-    `realign --files prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html`  
+    `realign --files prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html`
     Note the metadata names that are printed to the terminal.
 2.  Open the metadata files, change the line
     `<xsl:variable name="linespacing" select="''"/>` to become
-    `<xsl:variable name="linespacing" select="'all=2'"/>`  
+    `<xsl:variable name="linespacing" select="'all=2'"/>`
     Save the files.
 3.  Run the command
     `realign prestable/tmx/fin2sme/admin/lansstyrelsen.se/faktablad_finska.pdf.tmx.html`
@@ -70,15 +70,15 @@ and setting various variables that are specific to pdf files.
 The following variables in the [metadata](corpus_xsl_file.html) file
 affect the content of the converted file:
 
--   **skip\_pages:**  
+-   **skip\_pages:**
     skip specific pages that are not wanted in the converted file
--   **right\_margin, left\_margin, top\_margin, bottom\_margin:**  
+-   **right\_margin, left\_margin, top\_margin, bottom\_margin:**
     remove text above, below, to the right and left of the main content.
     This is typically removes page numbers, foot notes, reoccuring page
     headers and footers, etc.
--   **inner\_\*\_margin:**  
+-   **inner\_\*\_margin:**
     remove a rectangle shaped part of the page
--   **linespacing:**  
+-   **linespacing:**
     as the above example shows, if line spacing in a document is larger
     than the default 1.5, text lines will be converted to paragraphs. To
     improve this, set a larger value for this.

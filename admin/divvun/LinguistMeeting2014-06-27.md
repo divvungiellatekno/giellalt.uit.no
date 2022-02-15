@@ -25,7 +25,7 @@ Moglege fordelar:
 Andre taggar:
 * Dial/Sub
     - Vi har:
-    - Inga vil ha dei med i normative fst-ar, men samtidig tagga slik at vi veit at 
+    - Inga vil ha dei med i normative fst-ar, men samtidig tagga slik at vi veit at
    dei er marginale dialektformer
     - `+Dial/` merker av dialektformer, vi kunne ha `+DialN/` for å merka av
    former som øbryt med norma?
@@ -35,7 +35,7 @@ Andre taggar:
 
 Døme på dialektvariantar:
 * abessiv: både gahperahtá og gahperahti
-* pronomen: munje munji mune, suv suvva 
+* pronomen: munje munji mune, suv suvva
     - i sma:   munnjien, munnjan (den siste er Sub-a)
 
 Forslag: vi legg ikkje på nye taggar, men dokumenterer variasjonen i pronomen
@@ -50,10 +50,10 @@ Dial/-SW
 visionerra
 visjonerra
 
-akklamasjåvnnå+Dial/-SW:ak^klama INSTITUTION "acclamation N" ; 
-akklamasjåvnnå+Dial/-NOR:ac^klama INSTITUTION ;  
-illusjonissma+Dial/-SW:illusjoni FANATISM ; ! 
-illusjonissma+Dial/-NOR:illutioni FANATISM ; 
+akklamasjåvnnå+Dial/-SW:ak^klama INSTITUTION "acclamation N" ;
+akklamasjåvnnå+Dial/-NOR:ac^klama INSTITUTION ;
+illusjonissma+Dial/-SW:illusjoni FANATISM ; !
+illusjonissma+Dial/-NOR:illutioni FANATISM ;
 ```
 
 Korleis tagga desse slik at svenskane får både *acklamasjon* og

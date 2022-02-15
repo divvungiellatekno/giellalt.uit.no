@@ -20,6 +20,6 @@ Vi tenker videre på dette, ikke minst før møte med FAD 20.4.12. Møte i neste
 
 ## Ryan sine tilleggskommentarar
 
-Ein tanke kunne vera å lage ein service som står utafor Oahpa men kan då nyttast i Oahpa eller ein mobil app eller kor som helst (eg tenkjer ogso litt som ein erstatning til webdict, men med meir features). Men dersom ein app bør fungera på ein mobil utan nett tilkopling, hadde ein sånn API ikkje vore ein god idé. Ein offline app må ogso innehalda alle paradigmer, som kan vera ganske stor, avhengig av kor mange ord er inne. 
+Ein tanke kunne vera å lage ein service som står utafor Oahpa men kan då nyttast i Oahpa eller ein mobil app eller kor som helst (eg tenkjer ogso litt som ein erstatning til webdict, men med meir features). Men dersom ein app bør fungera på ein mobil utan nett tilkopling, hadde ein sånn API ikkje vore ein god idé. Ein offline app må ogso innehalda alle paradigmer, som kan vera ganske stor, avhengig av kor mange ord er inne.
 
 Ein kul feature kunne vera at ordboka nyttar ein FST ogso for å leite i ordboka, eller om nokon skriv inn ei ordform som ikkje er grunnformen, hadde det vore mogleg enno å finne ordet. Eg såg at nob-ordbok fungerer sånn, og eg hev laga ein liten somalisk ordbok app som hev dette kapabilitetet :)

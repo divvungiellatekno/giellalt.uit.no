@@ -5,7 +5,7 @@ Jorgalit:
 * Jorgalit olles fiilla: ```cat texts/tarina.sme.txt | apertium -d. sme-sma | less```
 * Jorgalit olles fiilla hash ja nástti haga (omd. evaluerejeddjiide): ```cat texts/tarina.sme.txt | apertium -d. -u sme-sma```
 * Jorgalit nu ahte oainnát maid prográmma ii máhte genereret, omd: ```#pyeri<adj><comp><der_avt><adv> ```
- \\```cat texts/tarina.sme.txt | apertium -d. sme-sma-dgen | less``` 
+ \\```cat texts/tarina.sme.txt | apertium -d. sme-sma-dgen | less```
 ## Debuggen:
 * Boađus ovdal transfernjuolggadusaid: \\
 ```echo "Don galggat boahtit skuvlii." | apertium -d. sme-sma-biltrans | tr ' ' '\n'```
@@ -52,7 +52,7 @@ echo "Don galggat boahtit skuvlii." | apertium -d. sme-sma
 Input: tmx-máhppa.
 
 * (text-máhpa sisdoallu)
-    - `python check_mt-otpt.py -d tmx_data` 
+    - `python check_mt-otpt.py -d tmx_data`
 * (sámedikki siiddut)
     - `python check_mt-otpt.py -d fi.samediggi`
 * časkit buot output-fiillaid oktii ja rahpat daid fierbmelohkkis:

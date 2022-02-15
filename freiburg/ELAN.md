@@ -1,4 +1,4 @@
-This page documents conventions, standards and relevant workflows used for ELAN annotations created by the [Freiburg-Tromsø Speech Corpora](freiburg.html). 
+This page documents conventions, standards and relevant workflows used for ELAN annotations created by the [Freiburg-Tromsø Speech Corpora](freiburg.html).
 
 # ELAN
 
@@ -23,12 +23,12 @@ The name extension for ELAN files is **.eaf**. These are basically XML files (an
 ## Planned extension
 * Exporting transcribed data from ELAN into the [FST](FST.html)-analyzer
 * Morphological analyzis
-* Back-importing lemmatized/pos-tagged/glossed wordforms into ELAN 
+* Back-importing lemmatized/pos-tagged/glossed wordforms into ELAN
 
 There is a script for this , at the [langdoc/elan-fst](https://github.com/langdoc/elan-fst) page at github, maintained by Niko Partanen, Joshua Wilbur and Mihael Rießler. The pipeline has been used for Komi (the Freiburg project), Pite Saami (Joshua Wilbur) and North Saami (in Oulu).
 
-## Planned external project (Zhivotova) 
-* Morphological analyzis using [Toolbox](Toolbox.html) 
+## Planned external project (Zhivotova)
+* Morphological analyzis using [Toolbox](Toolbox.html)
 * Back-importing pos-tagged/glossed wordforms into ELAN
 
 # Annotation Conventions

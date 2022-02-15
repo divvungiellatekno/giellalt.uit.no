@@ -34,7 +34,7 @@ Blir ikkje lenger laga.
 * svn: Cornerstone
 * git: det finst mange, krev ein eigen runde.
 
-# manglande dokumentasjon 
+# manglande dokumentasjon
 
 Dokumentet *MigratingToGit.jspwiki* er ein start. For å ta ein
 titt og redigere i løpet av dette møtet, sjå Untitled 7 i see.
@@ -63,7 +63,7 @@ I vår dokumentasjon er den tilsvarande fila doc/WhatIsThis.jspwiki.
 **Støy:** Ikkje abonner på det du ikkje er interessert i. Vel
 alternativet *Mute the topic*. Mappa blir grå, og du får ikkje melding.
 
-**Innsjekkingsmeldingane:** Zulip viser berre innsjekkingsmelding, 
+**Innsjekkingsmeldingane:** Zulip viser berre innsjekkingsmelding,
 ikkje filnamn. Vi bør (så lenge dette ikkje er fiksa) skrive filnamnet.
 
 # Neste møte

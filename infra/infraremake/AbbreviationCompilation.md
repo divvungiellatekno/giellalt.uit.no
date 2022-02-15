@@ -49,4 +49,4 @@ make abbr
 ```
 
 The result should be a file `abbr.txt` in `tools/tokenisers`, and
-you may test it with the `preprocess` command as given above. 
+you may test it with the `preprocess` command as given above.

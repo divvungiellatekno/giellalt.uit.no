@@ -6,4 +6,4 @@ Inflected forms are listed as lemmas of its own (with translations) if they occu
 
 # Open question
 
-Is it useful to handle inflected forms like this? 
+Is it useful to handle inflected forms like this?

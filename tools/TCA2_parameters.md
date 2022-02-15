@@ -9,12 +9,12 @@ The 2011 TCA2 version is installed in two versions (GUI and command line).
 
 All involved parties need to have a look-and-feel of the alignment in order to see what is going on.
 
-* **Responsible**: Børre 
+* **Responsible**: Børre
 * **Deadline**: 10.6.2011.
 
 # Improving the anchor list
 
-We might parametrise the anchor list into one general part, and one thematic 
+We might parametrise the anchor list into one general part, and one thematic
 part, e.g. along the division in the corpus catalogue structure.
 
 The existing anchor list should be both trimmed and extended.
@@ -47,10 +47,10 @@ This parameter should be given to TCA2. It is measured in characters, not in wor
 
 Ciprian used the pre-set parameter for the last run.
 
-1. Take the corpus, 
-1. divide it in sentences, 
-1. count the number of sentences, 
-1. count the number of characters, 
+1. Take the corpus,
+1. divide it in sentences,
+1. count the number of sentences,
+1. count the number of characters,
 1. calculate number ov char / sent.
 
 ```
@@ -82,7 +82,7 @@ The weight of TCA2 is preset at the following values ("for no scientific reason"
 Investigate whether these values are sensible.
 
 * **Responsible**: All
-* **Deadline**: First round, 
+* **Deadline**: First round,
 
 ## Dice similarity
 
@@ -94,8 +94,8 @@ Now, the question is how to find the coefficient. It is probably far smaller tha
 
 # Preprocessing
 
-The two languages entering the preprocessing procedure might be preprocessed 
-according to different principles. The difference might be subtle: One common 
+The two languages entering the preprocessing procedure might be preprocessed
+according to different principles. The difference might be subtle: One common
 abbreviation oder initial letter classified differently in language A and language B
 might be enough to eschew the result.
 

@@ -162,7 +162,7 @@ GUID FCB2A3DD99D14BF47A819BBF6F2CA6E7 er id til nordsamisk lex-orddelingskompone
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Components\D3BE92CC2CB71D119A12000A9CE1A22A]
 "1135\\Normal"=hex(7):0~I(UKe@%?VLsC]-zz*ZSpeller>'*Akm8UGZ8GqjxROvY4a
 
-                                                  
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Components\F3BE92CC2CB71D119A12000A9CE1A22A]
 "1135\\Normal"=hex(7):0~I(UKe@%?VLsC]-zz*ZSpeller>AMr47YOyx=8&f'K*!i$K
 

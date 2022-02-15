@@ -51,7 +51,7 @@ If the order of the text from the above content is different from the content of
 
 ## Most of the text lines in the pdf documents are interpreted as paragraphs <p>
 
-Have a look at the documentation on linespacing below. 
+Have a look at the documentation on linespacing below.
 
 ## Variables specific to pdf documents
 

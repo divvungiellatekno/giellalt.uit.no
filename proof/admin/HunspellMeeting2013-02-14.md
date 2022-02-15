@@ -7,7 +7,7 @@ What is needed for a new Hunspell release:
 1085
 Feil i Hunspell-konverteringa:
 |   Bug#|Severity|Priority|Summary
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  1355 | blo | P5 | still numerals missing
 |  1358 | nor | P5 | hotealla is missing - G3
 |  1574 | enh | P5 | no particles in Hunspell

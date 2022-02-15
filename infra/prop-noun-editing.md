@@ -216,7 +216,7 @@ Samisk høgskole - Sámi Állaskuvla = Absolute equivalence = org
 
 Strategy summary:
 |   Equiv. strength <=> sem. tag | compilation action
-| --- | --- 
+| --- | ---
 | Weak   <=> mal, fem, sur | Export all langentries to the sme transducer.
 | Strong <=> plc| Export all langentries to sme (but perhaps discard when needed)
 | Absolute <=> org | Export only the explicit sme entries to the sme transducer

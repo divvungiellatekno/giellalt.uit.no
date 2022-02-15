@@ -7,7 +7,7 @@ This is a table over software tools to parse source code in a number of formats,
 The table is sorted according to 1. *Any With Comments*, 2. *Mac OS X*, 3. *Software License*. This is to get the most likely candidates on top. There are of course also other considerations, like maturity and community (= future support and updates). More discussion below the table.
 
 |   Name | Creator | Latest stable version | Software license | Windows | MacOS X | Linux | C/C++ | Java | C# | VB / VBScript | Ada | D | IDL | .NET1 | Access | PHP | Perl | Python | Ruby | JavaScript | Any With Comments
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 |  Natural Docs | Greg Valure | 1.51 | GPL | Yes | Yes | Yes | Partial | Partial | Yes | Partial | Partial | No | No | No | No | Partial | Yes | Partial | Partial | Partial | Yes
 |  ROBODoc | Frans Slothouber | 4.99.36 | GPL | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No | No | Yes | Yes | No | Yes | Yes | Yes
 |  Universal Report | Universal Software | 9.0 | Free Education / Proprietary | Yes | No | No | Yes | Yes | Yes | Yes | Yes | No | No | Yes | Yes | Yes | Yes | Yes | No | Yes | Yes

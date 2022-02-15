@@ -8,7 +8,7 @@ The following presents an inventory of both the linguistic and the tier types us
 # ELAN Linguistic Types
 
 |   Name    |  Stereotype              |  Controlled Vocabulary   |  Purpose
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |   refT    |   -                       |   -                       |   used for ref-tiers; no stereotype because it ref-tiers are independent, root nodes, and time-alignable
 |   orthT   |   symbolic association    |   -                       |   used for orth-tiers, exact time-aligned copy of the superordinate ref-tier
 |   wordT   |   symbolic subdivision    |   -                       |   used for word-tiers, overall time-aligned copy of the orth-tier (and thus the ref-tier), but able to be divided into multiple equal parts
@@ -23,7 +23,7 @@ The following presents an inventory of both the linguistic and the tier types us
 
 ## Required for each speaker:
 |   Level   |  Name    |  Parent Tier |  Linguistic Type |  Language        |  Purpose
-| --- | --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- | ---
 |   0       |   ref     |   -           |   refT            |   - (numbered)    |   root node, time-aligned annotation units are set here, each annotation is provided with a unique number here
 |   -1      |   orth    |   ref         |   orthT           |   vernacular      |   an orthographic transcription is provided here; this provides the input for the FST engine
 |   -2      |   word    |   orth        |   wordT           |   vernacular      |   tokenized version of the orth-tier; automatically created by ELAN-FST-script
@@ -33,13 +33,13 @@ The following presents an inventory of both the linguistic and the tier types us
 
 ### Optional for each speaker:
 |   Level   |  Name    |  Parent Tier |  Linguistic Type |  Language                    |  Purpose
-| --- | --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- | ---
 |   -2      |   ft-XYZ  |   orth        |   ftT             |   a relevant lingua franca    |   provides a free translation of the annotated text; XYZ is replaced with a language code (e.g. eng, rus, etc.); can occur multiple times for multiple lingua francas
 |   -2      |   lang    |   orth        |   langT           |   English                     |   indicates the language being used in an annotated utterance or part of an annotated utterance; the language name is in English; adheres to 'languages'-list of controlled vocabulary
 
 ## Optional for any tier or as a root node with its own time-alignment:
 |   Level   |  Name    |  Parent Tier |  Linguistic Type |  Language                    |  Purpose
-| --- | --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- | ---
 |   ***       |   note-XYZ|   XYZ         |   noteT           |   anything                    |   provide unstructured text-based notes for any given parent tier XYZ
 *all tiers for a given speaker are named using the tier name plus the @ symbol plus an short form referring to the relevant speaker, such as ref@JKW, lemma@JKW
 

@@ -4,9 +4,9 @@ your local machine.
 
 #  Use your Windows computer as a terminal for a remote linux machine
 
-If you don't have Linux yourself, you may use a linux server somewhere else, 
+If you don't have Linux yourself, you may use a linux server somewhere else,
 and log onto it from your own Windows machine. In order to do that, you need
-an account on a linux machine. Getting one is not too difficult: 
+an account on a linux machine. Getting one is not too difficult:
 
 * All universities have linux servers
 * Various unix user fora probably offer access to their members

@@ -33,5 +33,5 @@ cat *_smefin.xml|grep '<l '|tr '<' '>'|cut -d">" -f3|usme|grep '?'|wc -l
 smaller as the parentheses are removed, but some will remain. Todo:
 
 1. First remove parentheses to <re> (above)
-1. Then take out entries where all translations contain spaces, 
+1. Then take out entries where all translations contain spaces,
 1. Then  look at they separately, and try to add one-word translations if possible

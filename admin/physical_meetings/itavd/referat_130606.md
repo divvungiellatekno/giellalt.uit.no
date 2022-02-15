@@ -48,7 +48,7 @@ eitt eller anna på den maskinen (gtoahpa) har gått fint
 
 #  OS-endring og felles heimekatalog
 
-synkronisere gtoahpa med gtsvn -- 
+synkronisere gtoahpa med gtsvn --
 og deretter montere ny heimekatalog -- og sjekke!!
 
 `/export/home` vart home
@@ -107,7 +107,7 @@ kvar vår maskin og så prøver vi å gjere det
 make -j er ein balanserar
 viss du har noko som kan lage ei makefil er det det enklaste.
 
-gangen i det: 
+gangen i det:
 Børre lagar ei makefil
 subdomener av dokumentsamlinga i kvar makefil
 noko som er enkelt å starte

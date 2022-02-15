@@ -41,7 +41,7 @@ Jus teavsttat eai leat jorgaluvvon
 tr -d '.,():;?!' | grep '\*' |sort | uniq -c | sort -nr |tr -d '\*' | usme > dev/missinglist.txt```
 
 ## Missinglist, mii lea ráhkaduvvon stuorra sme-korpusis
- fra relevante tekster i hele korpuset 
+ fra relevante tekster i hele korpuset
 * prioriterer substantiv-lister uten sammensetning, og verb- og adjektiv-lister uten derivasjon
 * kommando for å fornye missinglista (ordene som får analyse kan fjernes), eksempel fra smj: \\
 `cat dev/sikor.sme.V.freq.noder.missing |hfst-proc sme-smj.automorf.hfst |less `
@@ -57,4 +57,4 @@ Missinglist-barggus lea vejolaš geavahit min sátnegirjjiid (ovdamearka sma-kat
   `see make-bildict` \\
   (... ja bija SLANG ja TLANG , linjjus 27, 28 dego háliidat, sme + nob lea default) \\
   `make -f make-bildict` \\
-  ... ja de dus lea sátnegirji 
+  ... ja de dus lea sátnegirji

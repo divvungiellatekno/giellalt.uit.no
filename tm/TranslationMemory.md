@@ -10,7 +10,7 @@ above. For easy access we have listed them below (control-click
 pairs are mainly taken from official documents.
 
 |   Language pair | Updated (dd.mm.yyyy)
-| --- | --- 
+| --- | ---
 |  [Finnish - Inari Saami](https://gtsvn.uit.no/biggies/trunk/mt/omegat/fin-smn/tm/)	  | 08.03.2017
 |  [Finnish - North Saami](https://gtsvn.uit.no/biggies/trunk/mt/omegat/fin-sme/tm/)	  | 08.03.2017
 |  [Finnish - Norwegian](https://gtsvn.uit.no/biggies/trunk/mt/omegat/fin-nob/tm/)	      | 01.03.2019
@@ -53,4 +53,4 @@ For **OmegaT**, add the file to the `glossary` folder.
 
 # Segmentation file
 
-If you translate from North Saami and use **OmegaT**, you may download a [segmentation file](https://gtsvn.uit.no/biggies/trunk/mt/omegat/sme-nob/omegat/segmentation.conf), and put it in the `omegat` folder. 
+If you translate from North Saami and use **OmegaT**, you may download a [segmentation file](https://gtsvn.uit.no/biggies/trunk/mt/omegat/sme-nob/omegat/segmentation.conf), and put it in the `omegat` folder.

@@ -4,26 +4,26 @@ Meetings on specific topics
 Linguist meetings
 -----------------
 
--   **2021:**  
+-   **2021:**
     - [19.1. Tagger og avgrensing av avleiingar](linguists/210119_Tagger_og_avgrense_avledninger.md)
     - [2.3. Cmp-tagger og harmonisering](linguists/210302_Cmp_avledninger.md)
     - [21.6. Feilmerkkng i korpus](linguists/Meeting2021-06-22-FeilmerkingIKorpus.md)
--   **2020:**  
+-   **2020:**
     -   [23.4. Avgrensing av avleiingar](linguists/200423_AvgrenseAvleiing.md)
--   **2019:**  
+-   **2019:**
     -   [4.6. Arab, acro og abbr i giella-shared](linguists/190604_acro_abbr.md)
     -   [4.6. Scripting av sem-tagger](linguists/190604_semtags.md)
     -   [6.6. Gramcheck-oppstart](linguists/190606_gramcheck.md)
     -   [29.10. Analyse av separate og samanskrivne partiklar](linguists/191029Partiklar.md)
     -   [30.10. Møte om bibel og ordbok](linguists/191030_bibel.md)
--   **2018:**  
+-   **2018:**
     -   [20.03. Feilskrevne MWE, tagging av LIA-materiale](linguists/Meeting2018-03-20-MWE.md)
     -   [20.03. sma hyph](linguists/Meeting2018-03-20-SMAhyph.md)
     -   [23.04. Cmp & Cmp/SplitR](linguists/Meeting2018-04-23-Cmp.md)
     -   [25.04. Nums & Puncts til giellashared](linguists/Meeting2018-04-25-NumsAndPuncts.md)
--   **2017:**  
+-   **2017:**
     -   [25.4 Bug 2377 Tagambiguitet, ALT ER IKKE FULGT OPP](corpus/Meeting_2017-04-25.md)
--   **2016:**  
+-   **2016:**
     -   [13.10. CMP, HFST vs XFST, MWE](divvun/LinguistMeeting2016-10-13.md)
     -   [20.10. Normative Cmp-tagger](divvun/LinguistMeeting2016-10-20.md)
     -   [04.11. Sammensetninger i sme og sma](divvun/LinguistMeeting2016-11-04.md)
@@ -31,20 +31,20 @@ Linguist meetings
     -   [14.12. Sammensetninger (dynamiske vs. leksikalisering, tagging)](divvun/LinguistMeeting2016-12-14.md)
     -   [15.12. OCR](linguists/ocr_161215.md)
     -   [Møte om navn på korpuset](linguists/Korp-namn.md)
--   **2015:**  
+-   **2015:**
     -   [11.12. Tilpasninger til Apertium](linguists/TilpasningerTilApertium_20151211.md)
     -   [19.3. Morfologisk info i analysen](linguists/DiskusjonOmMorfologiskInfoIAnalysen_20150319.md)
--   **2014:**  
+-   **2014:**
     -   [7.1. Ekstensial- og habitivsetninger](linguists/140107.md)
--   **2013:**  
+-   **2013:**
     -   [11.2. Improving CG-file I (from CG2 to vislcg3)](linguists/cg_110213.md)
     -   [18.2. Improving CG-file II](linguists/cg_180213.md)
--   **2012:**  
+-   **2012:**
     -   [19.4. Redefining negation](linguists/negation120419.md)
     -   [19.4. Redefining Actio](linguists/120419.md)
     -   [29.10. Planer for CG-arbeid](linguists/121029.md)
     -   [19.10. Om å lage arbeidskorpus for syntaks](linguists/121019.md)
--   **2005–2011:**  
+-   **2005–2011:**
     -   [28.3.11 Om depworkshop](linguists/DiskusjonOmDepworkshop_20110328.md)
     -   [1.5.05 Om disambiguering](memos/disamb/Meeting_2006-01-05.md)
 
@@ -53,10 +53,10 @@ Technical meetings
 
 -   **2021:**
     -   [Samarbeid mellom Divvun og Giellatekno](technical/2021-06-30-GT-Divvun-samarbeid.md)
--   **2020:**  
+-   **2020:**
     -   [14.10 Mobilvisning av sátni.org](dicts/20201014_satni.org_mobilvisning.jspwiki)
     -   [20.5.2020 Flytte til Git](technical/FlytteTilGit200520.md)
--   **2016-2019:**  
+-   **2016-2019:**
     -   [7.6.2019 GiellaLT](meetings/giellalt-20190607.md)
     -   [25.4.2018 TTS på server](meetings/tts-mote.md)
     -   [10.11.2017 REST](technical/171110.md)
@@ -70,13 +70,13 @@ Divvun meetings
 Divvun linguist meetings
 ------------------------
 
--   **2017:**  
+-   **2017:**
     [5.10. keyboards smj sma](divvun/keyboards_171005.md),
--   **2014:**  
+-   **2014:**
     [24.01.](divvun/LinguistMeeting2014-01-24.md),
     [15.05.](divvun/LinguistMeeting2014-05-15.md),
     [27.06.](divvun/LinguistMeeting2014-06-27.md)
--   **2013:**  
+-   **2013:**
     [30.01.](divvun/LinguistMeeting2013-01-30.md),
     [13.02.](divvun/LinguistMeeting2013-02-13.md),
     [10.04.](divvun/LinguistMeeting2013-04-10.md),
@@ -84,7 +84,7 @@ Divvun linguist meetings
     [24.04.](divvun/LinguistMeeting2013-04-24.md),
     [08.05.](divvun/LinguistMeeting2013-05-08.md),
     [13.06.](divvun/LinguistMeeting2013-06-13.md)
--   **2012:**  
+-   **2012:**
     [07.09.](divvun/LinguistMeeting2012-09-07.md),
     [20.09.](divvun/LinguistMeeting2012-09-20.md),
     [04.10.](divvun/LinguistMeeting2012-10-04.md),
@@ -106,7 +106,7 @@ Divvun meetings
     [02.02.](divvun/Meeting2022-02-02.md),
     [08.02.](divvun/Meeting2022-02-08.md),
     [15.02.](divvun/Meeting2022-02-15.md),
--   **2021:**  
+-   **2021:**
     [05.01.](divvun/Meeting2021-01-05.md),
     [12.01.](divvun/Meeting2021-01-12.md),
     [19.01.](divvun/Meeting2021-01-19.md),
@@ -155,14 +155,14 @@ Divvun meetings
 
 ### Coordination meetings with The TechnoCreatives, Gothenburg
 
--   **2022:**  
+-   **2022:**
     [05.01.](divvun/TTC-sync-2022-01-05.md),
     [20.01.](divvun/TTC-sync-2022-01-20.md),
     [03.02.](divvun/TTC-sync-2022-02-03.md),
 
 ### Older regular meetings
 
--   **2020:**  
+-   **2020:**
     [20.01.](divvun/Meeting2020-01-20.md),
     [05.02.](divvun/Meeting2020-02-05.md),
     [04.03.](divvun/Meeting2020-03-04.md),
@@ -200,7 +200,7 @@ Divvun meetings
     [03.12.](divvun/Meeting2020-12-03.md),
     [09.12.](divvun/Meeting2020-12-09.md),
     [15.12.](divvun/Meeting2020-12-15.md)
--   **2019:**  
+-   **2019:**
     [18.01.](divvun/Meeting2019-01-18.md),
     [31.01.](divvun/Meeting2019-01-31.md),
     [07.02.](divvun/Meeting2019-02-07.md),
@@ -213,7 +213,7 @@ Divvun meetings
     [16.10.](divvun/Meeting2019-10-16.md),
     [30.10.](divvun/Meeting2019-10-30.md),
     [13.12.](divvun/Meeting2019-12-13.md)
--   **2018:**  
+-   **2018:**
     [11.01.](divvun/Meeting2018-01-11.md),
     [12.01.](divvun/Meeting2018-01-12.md) (Staare),
     [15.01.](divvun/Meeting2018-01-15.md) (Staare),
@@ -236,7 +236,7 @@ Divvun meetings
     [20.11.](divvun/Meeting2018-11-20.md),
     [04.12.](divvun/Meeting2018-12-04.md),
     [17.12.](divvun/Meeting2018-12-17.md)
--   **2017:**  
+-   **2017:**
     [18.01.](divvun/Meeting2017-01-18.md),
     [02.02.](divvun/Meeting2017-02-02.md),
     [15.02.](divvun/Meeting2017-02-15.md),
@@ -259,7 +259,7 @@ Divvun meetings
     [23.11.](divvun/Meeting2017-11-23.md),
     [07.12.](divvun/Meeting2017-12-07.md),
     [19.12.](divvun/Meeting2017-12-19.md)
--   **2016:**  
+-   **2016:**
     [23.02.](divvun/Meeting2016-02-23.md),
     [11.03.](divvun/Meeting2016-03-11.md),
     [03.05.](divvun/Meeting2016-05-03.md),
@@ -271,11 +271,11 @@ Divvun meetings
     [24.11.](divvun/Meeting2016-11-24.md),
     [07.12.](divvun/Meeting2016-12-07.md),
     [13.12.](divvun/Meeting2016-12-13.md)
--   **2015:**  
+-   **2015:**
     [14.01.](divvun/Meeting2015-01-14.md),
     [01.06.](divvun/Meeting2015-06-01.md),
     [18.06.](divvun/Meeting2015-06-18.md)
--   **2014:**  
+-   **2014:**
     [22.01.](divvun/Meeting2014-01-22.md),
     [10.02.](divvun/Meeting2014-02-10.md),
     [13.03.](divvun/Meeting2014-03-13.md),
@@ -290,7 +290,7 @@ Divvun meetings
     [10.06.](divvun/Meeting2014-06-10.md),
     [17.06.](divvun/Meeting2014-06-17.md),
     [28.10.](divvun/Meeting2014-10-28.md)
--   **2013:**  
+-   **2013:**
     [04.01.](divvun/Meeting2013-01-04.md),
     [14.01.](divvun/Meeting2013-01-14.md),
     [21.01.](divvun/Meeting2013-01-21.md),
@@ -316,7 +316,7 @@ Divvun meetings
     [26.08.](divvun/Meeting2013-08-26.md),
     [30.09.](divvun/Meeting2013-09-30.md),
     [17.12.](divvun/Meeting2013-12-17.md)
--   **2012:**  
+-   **2012:**
     [12.06.](divvun/Meeting2012-06-12.md),
     [06.08.](divvun/Meeting2012-08-06.md),
     [13.08.](divvun/Meeting2012-08-13.md),
@@ -338,20 +338,20 @@ Divvun meetings
 Giellatekno meetings
 ====================
 
--   **TODO:**  
+-   **TODO:**
     -   [Plan framover](giellatekno/Plan.md)
     -   [Oversikt over ting som skal bli gjort](giellatekno/TODO.md)
     -   [E-learning, moments for further work. Notes from 230915.](giellatekno/150923.md)
--   **2021:**  
+-   **2021:**
     [14.01](giellatekno/210114.md), [26.01](giellatekno/210126.md),
     [17.03](giellatekno/210317.md), [14.04](giellatekno/210414.md),
     [02.06](giellatekno/210602.md), [10.06](giellatekno/210610.md),
     [27.09](giellatekno/210927.md), [29.09](giellatekno/210929.md),
     [29.10](giellatekno/211029.md), [03.11](giellatekno/211103.md)
--   **2020:**  
+-   **2020:**
     [28.01](giellatekno/200128.md), [20.08](giellatekno/200818.md),
     [23.12](giellatekno/201223.md)
--   **2019:**  
+-   **2019:**
     [23.01](giellatekno/190123.md), [30.01](giellatekno/190130.md),
     [22.02](giellatekno/190222.md), [06.03](giellatekno/190306.md),
     [03.04](giellatekno/190403.md), [13.05](giellatekno/190513.md),
@@ -362,7 +362,7 @@ Giellatekno meetings
     [25.09](giellatekno/190925.md), [14.10](giellatekno/191014.md),
     [24.10](giellatekno/191024.md), [20.11](giellatekno/191120.md),
     [13.12](giellatekno/191213.md),
--   **2018:**  
+-   **2018:**
     [22.01](giellatekno/180122.md), [12.02](giellatekno/180212.md),
     [15.03](giellatekno/180315.md), [03.04](giellatekno/180403.md),
     [12.04](giellatekno/180412.md), [26.04](giellatekno/260412.md),
@@ -373,7 +373,7 @@ Giellatekno meetings
     [26.09](giellatekno/180926.md), [03.10](giellatekno/181003.md),
     [01.11](giellatekno/181101.md), [21.11](giellatekno/181121.md),
     [28.11](giellatekno/181128.md), [10.12](giellatekno/181210.md),
--   **2017:**  
+-   **2017:**
     [11.01](giellatekno/170111.md), [02.02](giellatekno/170202.md),
     [24.02](giellatekno/170224.md), [23.03](giellatekno/170323.md),
     [26.04](giellatekno/170426.md), [28.04](giellatekno/170428.md),
@@ -382,13 +382,13 @@ Giellatekno meetings
     [08.09](giellatekno/170908.md), [13.09](giellatekno/170913.md),
     [27.09](giellatekno/170927.md), [12.10](giellatekno/171012.md),
     [10.11](giellatekno/171110.md), [13.12](giellatekno/171213.md),
--   **2016:**  
+-   **2016:**
     [16.03](giellatekno/160316.md), [03.06](giellatekno/160603.md),
     [20.06 (Summer plans)](giellatekno/160620.md),
     [08.09](giellatekno/160908.md), [14.09](giellatekno/160914.md),
     [19.10](giellatekno/161019.md), [16.11](giellatekno/161116.md),
     [02.12](giellatekno/161202.md), [07.12](giellatekno/161207.md),
--   **2015:**  
+-   **2015:**
     [14.01](giellatekno/150114.md), [18.02](giellatekno/150218.md),
     [25.02](giellatekno/150225.md), [18.03](giellatekno/150318.md),
     [25.03](giellatekno/150325.md), [22.04](giellatekno/150422.md),
@@ -399,7 +399,7 @@ Giellatekno meetings
     [09.10](giellatekno/151009.md), [14.10](giellatekno/151014.md),
     [21.10](giellatekno/151021.md), [04.11](giellatekno/151104.md),
     [17.12](giellatekno/151217.md)
--   **2014:**  
+-   **2014:**
     [08.10](giellatekno/141008.md), [22.10](giellatekno/141022.md),
     [29.10](giellatekno/141029.md), [05.11](giellatekno/141105.md),
     [12.11](giellatekno/141112.md), [19.11](giellatekno/141119.md),
@@ -412,12 +412,12 @@ Administrative meetings
 Trond + Sjur meetings
 ---------------------
 
--   **2021:**  
+-   **2021:**
     [May  31](weekly/2021/Meeting_2021-05-31.md),
--   **2020:**  
+-   **2020:**
     [Mar. 24](weekly/2020/Meeting_2020-03-24.md),
     [Dec. 3](weekly/2020/Meeting_2020-12-03.md)
--   **2019:**  
+-   **2019:**
     [Mar. 12](weekly/2019/Meeting_2019-03-12.md),
     [May 7](weekly/2019/Meeting_2019-05-07.md),
     [May 14](weekly/2019/Meeting_2019-05-14.md),
@@ -429,7 +429,7 @@ Trond + Sjur meetings
     [Sep. 24](weekly/2019/Meeting_2019-09-24.md),
     [Oct. 15](weekly/2019/Meeting_2019-10-15.md),
     [Nov. 20](weekly/2019/Meeting_2019-11-20.md)
--   **2018:**  
+-   **2018:**
     [Jan. 23](weekly/2018/Meeting_2018-01-23.md),
     [Feb. 6](weekly/2018/Meeting_2018-02-06.md),
     [Feb. 13](weekly/2018/Meeting_2018-02-13.md),
@@ -443,7 +443,7 @@ Trond + Sjur meetings
     [Sep. 18](weekly/2018/Meeting_2018-09-18.md),
     [Oct. 1](weekly/2018/Meeting_2018-10-01.md),
     [Nov. 20](weekly/2018/Meeting_2018-11-20.md)
--   **2017:**  
+-   **2017:**
     [Jan. 17](weekly/2017/Meeting_2017-01-17.md),
     [Feb. 1](weekly/2017/Meeting_2017-02-01.md),
     [Feb. 14](weekly/2017/Meeting_2017-02-14.md),
@@ -467,7 +467,7 @@ Trond + Sjur meetings
     [Dec. 5](weekly/2017/Meeting_2017-12-05.md),
     [Dec. 12](weekly/2017/Meeting_2017-12-12.md),
     [Dec. 20](weekly/2017/Meeting_2017-12-20.md)
--   **2016:**  
+-   **2016:**
     [Jan. 11](weekly/2016/Meeting_2016-01-11.md),
     [Mar. 15](weekly/2016/Meeting_2016-03-15.md),
     [Mar. 15](weekly/2016/Meeting_2016-03-15.md),
@@ -475,7 +475,7 @@ Trond + Sjur meetings
     [Sep. 14](weekly/2016/Meeting_2016-09-14.md),
     [Sep. 27](weekly/2016/Meeting_2016-09-27.md),
     [Oct. 18](weekly/2016/Meeting_2016-10-18.md)
--   **2015:**  
+-   **2015:**
     [Jan. 8](weekly/2015/Meeting_2015-01-08.md),
     [Mar. 10](weekly/2015/Meeting_2015-03-10.md),
     [May 22](weekly/2015/Meeting_2015-05-22.md),
@@ -483,7 +483,7 @@ Trond + Sjur meetings
     [Sep. 16](weekly/2015/Meeting_2015-09-16.md),
     [Sep. 22](weekly/2015/Meeting_2015-09-22.md),
     [Oct. 06](weekly/2015/Meeting_2015-10-06.md)
--   **2014:**  
+-   **2014:**
     [Jan. 28](weekly/2014/Meeting_2014-01-28.md),
     [Febr. 25](weekly/2014/Meeting_2014-02-25.md),
     [Mar. 18](weekly/2014/Meeting_2014-03-18.md),
@@ -501,7 +501,7 @@ Trond + Sjur meetings
     [Oct. 21](weekly/2014/Meeting_2014-10-21.md),
     [Nov. 4](weekly/2014/Meeting_2014-11-04.md),
     [Nov. 11](weekly/2014/Meeting_2014-11-11.md)
--   **2013:**  
+-   **2013:**
     [Jan. 1](weekly/2013/Meeting_2013-01-18.md),
     [Mar. 25](weekly/2013/Meeting_2013-03-25.md),
     [Apr. 10](weekly/2013/Meeting_2013-04-10.md),
@@ -524,7 +524,7 @@ Trond + Sjur meetings
     [Nov. 13](weekly/2013/Meeting_2013-11-13.md),
     [Nov. 26](weekly/2013/Meeting_2013-11-26.md),
     [Dec. 17](weekly/2013/Meeting_2013-12-17.md)
--   **2012:**  
+-   **2012:**
     [Jan. 20](weekly/2012/Meeting_2012-01-20.md),
     [Febr. 07](weekly/2012/Meeting_2012-02-07.md),
     [Febr. 14](weekly/2012/Meeting_2012-02-14.md),
@@ -533,7 +533,7 @@ Trond + Sjur meetings
     [Mar. 26](weekly/2012/Meeting_2012-03-26.md),
     [May 2](weekly/2012/Meeting_2012-05-02.md),
     [May 29](weekly/2012/Meeting_2012-05-29.md)
--   **2011:**  
+-   **2011:**
     [Nov. 7](weekly/2011/Meeting_2011-11-07.md),
     [Nov. 24](weekly/2011/Meeting_2011-11-24.md)
 
@@ -546,7 +546,7 @@ morning,
     unless otherwise agreed upon. The memos for the meetings are
 listed below.
 
--   **2011:**  
+-   **2011:**
     [Jan. 31](weekly/2011/Meeting_2011-01-31.md),
     [Febr. 7](weekly/2011/Meeting_2011-02-07.md),
     [Febr. 14](weekly/2011/Meeting_2011-02-14.md),
@@ -562,7 +562,7 @@ listed below.
     [May 23](weekly/2011/Meeting_2011-05-23.md),
     [Jun. 1](weekly/2011/Meeting_2011-06-01.md),
     [Jun. 6](weekly/2011/Meeting_2011-06-06.md)
--   **2010:**  
+-   **2010:**
     [Jan. 4](weekly/2010/Meeting_2010-01-04.md),
     [Jan. 11](weekly/2010/Meeting_2010-01-11.md),
     [Jan. 18](weekly/2010/Meeting_2010-01-18.md),
@@ -599,7 +599,7 @@ listed below.
     [Nov. 22](weekly/2010/Meeting_2010-11-22.md),
     [Nov. 29](weekly/2010/Meeting_2010-11-29.md),
     [Dec. 6](weekly/2010/Meeting_2010-12-06.md)
--   **2009:**  
+-   **2009:**
     [Jan. 5](weekly/2009/Meeting_2009-01-05.md),
     [Jan. 12](weekly/2009/Meeting_2009-01-12.md),
     [Jan. 19](weekly/2009/Meeting_2009-01-19.md),
@@ -638,7 +638,7 @@ listed below.
     [Nov. 30](weekly/2009/Meeting_2009-11-30.md),
     [Dec. 14](weekly/2009/Meeting_2009-12-14.md),
     [Dec. 21](weekly/2009/Meeting_2009-12-21.md)
--   **2008:**  
+-   **2008:**
     [Jan. 7](weekly/2008/Meeting_2008-01-07.md),
     [Jan. 14](weekly/2008/Meeting_2008-01-14.md),
     [Jan. 21](weekly/2008/Meeting_2008-01-21.md),
@@ -680,7 +680,7 @@ listed below.
     [Dec. 1](weekly/2008/Meeting_2008-12-01.md),
     [Dec. 8](weekly/2008/Meeting_2008-12-08.md),
     [Dec. 15](weekly/2008/Meeting_2008-12-15.md)
--   **2007:**  
+-   **2007:**
     [Jan. 3](weekly/2007/Meeting_2007-01-03.md),
     [Jan. 8](weekly/2007/Meeting_2007-01-08.md),
     [Jan. 15](weekly/2007/Meeting_2007-01-15.md),
@@ -724,7 +724,7 @@ listed below.
     [Dec. 3](weekly/2007/Meeting_2007-12-03.md),
     [Dec. 10](weekly/2007/Meeting_2007-12-10.md),
     [Dec. 17](weekly/2007/Meeting_2007-12-17.md)
--   **2006:**  
+-   **2006:**
     [Jan. 2](weekly/2006/Meeting_2006-01-02.md),
     [Jan. 9](weekly/2006/Meeting_2006-01-09.md),
     [Jan. 16](weekly/2006/Meeting_2006-01-16.md),
@@ -766,7 +766,7 @@ listed below.
     [Dec. 4](weekly/2006/Meeting_2006-12-04.md),
     [Dec. 11](weekly/2006/Meeting_2006-12-11.md),
     [Dec. 18](weekly/2006/Meeting_2006-12-18.md)
--   **2005:**  
+-   **2005:**
     [13.1.](weekly/2005/Meeting_2005-01-13.md),
     [24.1.](weekly/2005/Meeting_2005-01-24.md),
     [31.1.](weekly/2005/Meeting_2005-01-31.md),
@@ -812,7 +812,7 @@ listed below.
     [Dec. 5](weekly/2005/Meeting_2005-12-05.md),
     [Dec. 12](weekly/2005/Meeting_2005-12-12.md),
     [Dec. 19](weekly/2005/Meeting_2005-12-19.md)
--   **2004:**  
+-   **2004:**
     [Dec. 10](weekly/2004/Meeting_2004-12-10.md),
     [Dec. 21](weekly/2004/Meeting_2004-12-21.md)
 

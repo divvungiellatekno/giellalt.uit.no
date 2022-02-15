@@ -52,7 +52,7 @@ morphological tags. The compounds are problematic in this respect; in
 the lookup output, the analysis of a compound expression contains also
 the complete analyses of its parts. For example,
 
-    $ echo "bohccobiergobuktagiid" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst 
+    $ echo "bohccobiergobuktagiid" | lookup -flags mbTT -utf8 ~/main/gt/sme/bin/sme.fst
     0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
     bohccobiergobuktagiid   boazu+N+SgGenCmp+Cmp#buvtta+N+Sg+Acc
     bohccobiergobuktagiid   boazu+N+SgGenCmp+Cmp#buvtta+N+Sg+Gen
@@ -140,7 +140,7 @@ This bug seems to be solved (?) also without lexicalising the word:
     "<vealgeetniin>"
          "vealge#eadni" Hum N Pl Loc
          "vealge#eadni" Hum N Sg Com
-             
+
 
 Clearly, the basic string-comparison operations are not satisfactory
 method for producing base forms for compounds. The alternative would be
@@ -256,17 +256,17 @@ morphological process, and find the stem.
 
 These ones do not induce consonant gradation in the stem:
 
--   **Der/alla:**  
+-   **Der/alla:**
     Remove the -it part from the basic form and the and insert "alla"
--   **Der/ahtti:**  
+-   **Der/ahtti:**
     Remove the -it part from the basic form and the and insert "ahtti"
--   **Der/NomAg:**  
+-   **Der/NomAg:**
     Remove the -it part from the basic form and the and insert "eaddji"
--   **Der/NomAct:**  
+-   **Der/NomAct:**
     Remove the -it part from the basic form and the and insert "eapmi"
--   **Der/l:**  
+-   **Der/l:**
     Remove the -t part from the basic form and insert "l"
--   **Der/vuohta:**  
+-   **Der/vuohta:**
     Just add vuohta to the basic form, removing the intervening A tag.
     Problem: there is often a tag 'las1' to the left of 'vuohta', this
     tag causes CG. In these cases, vuohta cannot be added easily.

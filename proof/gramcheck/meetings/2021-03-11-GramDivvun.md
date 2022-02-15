@@ -1,8 +1,8 @@
 11.3.2021
 meattáhusmerken/GramDivvun
-Duommá, Linda ja Ritva 
+Duommá, Linda ja Ritva
 
-    1. Mun jáhkán gullat eambbo ahte’ eambbo biehkuma, mađi eambbo ovddasvástadusa šadda sáhka ahte sámi servodat sáhtta oažžut. 
+    1. Mun jáhkán gullat eambbo ahte’ eambbo biehkuma, mađi eambbo ovddasvástadusa šadda sáhka ahte sámi servodat sáhtta oažžut.
 * NB!! Divvu "aht'", muhto ii sihko apostrofamearkka teavsttas: ahte'
 
 "<ahte>"
@@ -16,15 +16,15 @@ Duommá, Linda ja Ritva
 "<’>"
         "’" PUNCT RIGHT <W:0.0> #6->6
 
- 
- Duommá lásihii "aht´Err/Orth", nu ahte dál goit doaibmá:       
+
+ Duommá lásihii "aht´Err/Orth", nu ahte dál goit doaibmá:
 "<aht’>"
         "ahte" CC Err/Orth <W:0.0> @CVP MAP:13510:r12 &typo #5->5 ADD:8896:Err/Orth-any
 typo
         "ahte" CC <W:0.0> @CVP MAP:13510:r12 &typo &SUGGEST #5->5 ADD:8896:Err/Orth-any COPY:8905:Err/Orth-any
 ahte+CC ahte
 * **"ahte" CC Err/Orth <W:0.0> @CNP MAP:13510:r12 REMOVE:13712**: r1466
-: 
+:
 
 echo "Teaksta." | tools/grammarcheckers/modes/trace-smegramrelease-dev.mode | less
 
@@ -35,7 +35,7 @@ iešválljejuvvon - mon jáhkán dat lea norpma mielde
 
 Korp ohcan:
 
-omd. 
+omd.
 "in vuolggán"
 biehttalanvearba finihtta hápmi
 biehttalanvearba + finihttavearbahápmi
@@ -51,7 +51,7 @@ NEG + FIN-V
 dađi ... dađi
 [word = "dađi"][]{1,20}[word = "dađi"]
 
-Linda evttoha ahte ohcat modusaid mielde 
+Linda evttoha ahte ohcat modusaid mielde
 
 doppe lea veháš info dien birra:
 https://corp.hum.sdu.dk/cqp_help.html

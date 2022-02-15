@@ -1,4 +1,4 @@
-Changing the look of Forrest is not easy. There is a [tutorial on how to use Forrest](http://forrest.apache.org/docs_0_100/your-project.html). 
+Changing the look of Forrest is not easy. There is a [tutorial on how to use Forrest](http://forrest.apache.org/docs_0_100/your-project.html).
 
 Forrest offers two ways to build the layout, themes and skins. Themes are a new mechanism that offers greater flexibility wrt both the content and the layouut, whereas skins are the old mechanism. Themes depend on the `dispatcher` plugin, whereas skins do not depend on anything but forrest.
 
@@ -35,7 +35,7 @@ Here we give style to the elements that have a separate styling for print. This 
 
 This stylesheet formats elements for printing output. E.g. tabs, menus and TOC's are covered here (they are not displayed at all), as well as some other parts that has a printing-specific styling.
 
- 
+
 **profile.css.xslt:**
 
 This is formally an XSLT stylesheet, but it produces a CSS stylesheet. The main point of going through the hassle of XSLT to arrive at CSS is to be able to specify sizes and colours and other CSS values programmatically.

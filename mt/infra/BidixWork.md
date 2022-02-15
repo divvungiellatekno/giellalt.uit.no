@@ -9,15 +9,15 @@ Iskka leago fiila ortnegis ovdalgo šekket sisa, jus Apertium lea sajáiduhtton 
 ## Golbma bargovuogi, daidda geat máhttet smX-giela bures, ja njealját vuohki mii heive earáide
 * 1. **Systemáhtalaččat** bargat: Mii divvut ja buoridit sátnepáraid dan ortnega mielde go leat dix-fiillas.
     - Mii fertet gulaskuddat earáiguin nu ahte mii juohkit barggu, eatgo loga seammá sátnepáraid.
-    - Mii bidjat kommentára daidda osiide maid leat divvon (omd 
+    - Mii bidjat kommentára daidda osiide maid leat divvon (omd
 ``` <!-- NN has corrected from here --> <!-- NN has corrected to here --> ```
 
-Láset: dán bargui dárbbašit dušše ovtta subetha-edit-láse, mas mii divvut dix-fiilla. Sáhttá leat buorre iskat analyseret sániid terminálaláses dahje interneahtas. 
+Láset: dán bargui dárbbašit dušše ovtta subetha-edit-láse, mas mii divvut dix-fiilla. Sáhttá leat buorre iskat analyseret sániid terminálaláses dahje interneahtas.
 
 * 2. **Missing-list** ektui: Mii lasihit davvisámi sániid mat leat missinglisttus, ja lasihit smX-jorgalusa. Lasihit sátnepáraid dix-fiilla vuosttaš oassái. Missing-listtut leat dev-máhpas.  \\ Loga eanet [missinglisttu birra](/mt/infra/MissingList.html)
 
 * 3. **Teavsttaid** ektui: Mii jorgalit teavsttaid MT-vuogádagain, ja lasihit sátnepáraid sme-sániide mat ožžot nástti.
-    - jorgal teavstta iežat mášiinnas: `cat text/xxxxxxx.sme.txt | apertium -d . sme-smn ` 
+    - jorgal teavstta iežat mášiinnas: `cat text/xxxxxxx.sme.txt | apertium -d . sme-smn `
     - dahje jorgal teavstta [interneahtas](https://gtweb.uit.no/mt/testing/) . Interneahtta-veršuvdna ođasmahttojuvvo dušše oktii jándoris, ja dat mearkkaša ahte it oainne seammás sániid maid leat lasihan.
 * Sánit mat ožžot #: Mii iskat analyseret smX-sáni (omd. `usmn`, dahje neahttasiiddus, omd. [anársámegiela](http://giellatekno.uit.no/cgi/d-smn.sme.html)), vejolaččat dix-fiillas ii leat rivttes sátneluohkká. Lasihit sátnepáraid dix-fiilla vuosttaš oassái.
 
@@ -29,7 +29,7 @@ Dán bargovuohkái mii dárbbašit bálddalasteavsttaid, dahje teavsttaid mat le
 
 **Korpus**: Muhtumin sáhttá leat ávkin geahččat mo sánit geavahuvvojit [korpusis](http://gtweb.uit.no/korp/)
 
-## Go jorgalusas lea eanet go okta sátni 
+## Go jorgalusas lea eanet go okta sátni
 Muhtumin lea eanet go okta sátni jorgalusas, nugo Sveerjen raedtesne. Dalle sáhttit geavahit <b/> sániid gaskkas :
 ```
 <e><p><l>ruotabealde<s n="adv"/></l><r>Sveerjen<b/>raedtesne<s n="adv"/></r></p></e>
@@ -39,7 +39,7 @@ Muhtumin lea eanet go okta sátni jorgalusas, nugo Sveerjen raedtesne. Dalle sá
 Vearbbat: `iv` ja `tv` lea dárbbašlaččat dušše sme-bealde, nugo dán ovdamearkkas. doallat+V+TV ja toollâđ+V
 ```<e><p><l>doallat<s n="vblex"/><s n="tv"/></l><r>toollâđ<s n="vblex"/></r></p></e>```
 
-## Eai leat seamma gilkorat, omd. sme-sánis lea G3 
+## Eai leat seamma gilkorat, omd. sme-sánis lea G3
 Go eai leat seamma gilkorat, omd. G3, de galgat daid lasihit sme-beallái
 ```$ usme
 ášši	ášši+N+G3+Sg+Nom ```
@@ -55,18 +55,18 @@ oahpaheaddji	oahpaheaddji+N+NomAg+Sg+Nom```
 ```
     <e><p><l>oahpaheaddji<s n="n"/><s n="nomag"/></l><r>xxxxxxx<s n="n"/></r></p></e> ```
 
-## Special cases - and how to handle them 
+## Special cases - and how to handle them
 
-## sme lemma is Pl, smX lemma is Sg 
+## sme lemma is Pl, smX lemma is Sg
 Muhtumin sme lemma is Pl and smX lemma is Sg – or the other way round. \\
-Some lemmas are lexicalised as plurals. As long as it is the same for sme and smX, it is no problem. But if the number is not the same for these two languages, then the number tags must be given to the dix-file.  
+Some lemmas are lexicalised as plurals. As long as it is the same for sme and smX, it is no problem. But if the number is not the same for these two languages, then the number tags must be given to the dix-file.
 
 E.g. `ávvodoalut+N+Pl` vs. `juhlálâšvuotâ+N+Sg`. Add plural and singular tags to the dix-file:
 ```
 <e><p><l>ávvodoalut<s n="n"/><s n="pl"/></l><r>juhlálâšvuotâ<s n="n"/><s n="sg"/></r></p></e>
 ```
 
-## sme lemma is an adverb, smX lemma is not lexicalised as adverb, but a noun in locative. 
+## sme lemma is an adverb, smX lemma is not lexicalised as adverb, but a noun in locative.
 Many adverbs are really inflected nouns, usually locatives, illatives or genetives. Sometimes the lemma can be lexicalised as an adverb in one of the languages, but not in the other language. One could consider if the word should be lexicalised also in the other language. If the bidix-worker is not responsible for the FST for the language in question, she should just leave a comment about it.
 
 E.g. `iđđes` vs. `iđedist`. Give correct tags, and a comment:
@@ -83,8 +83,8 @@ E.g. `háldui+Po` vs. `haaldun+Po`. Add a comment:
 <e><p><l>háldui<s n="po"/></l><r>haaldun<s n="po"/></r></p></e> <!-- not in sme -->
 ```
 
-## sme lemma has no counterpart in smX, in stead smn has an inflection of the noun: 
-e.g. `haga+Po` vs. abessive case in smn. 
+## sme lemma has no counterpart in smX, in stead smn has an inflection of the noun:
+e.g. `haga+Po` vs. abessive case in smn.
 
 Give explanations and examples at the wiki-pages, and quasicode in the transfer file and a comment about it in the dix-file:
 
@@ -115,11 +115,11 @@ Guokte sme-adjektiivva (guoskevaš, gulavaš) + guokte <prsprc> anárašgielas. 
         1. ..
     1. In that case, you do the following:
         1. Keep **both** lines
-        1. Open the file `apertium-sme-smn.sme-smX.lrx`, and *make a rule* 
+        1. Open the file `apertium-sme-smn.sme-smX.lrx`, and *make a rule*
     (see documentation on [lexical selection](LexicalSelection.html))
         1. Note that if we are not able to formalise the difference, we should just keep one pair.
 
 Omd.
 ```
-    <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>orniđ<s n="n"/></r></p></e> 
+    <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>orniđ<s n="n"/></r></p></e>
     <e><p><l>láhčit<s n="n"/><s n="tv"/></l><r>lääččiđ<s n="n"/></r></p></e> ```

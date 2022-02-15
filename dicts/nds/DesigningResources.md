@@ -32,7 +32,7 @@ right?)
 
 The reason more time should be spent on the lexicon, is because you'll see
 fairly quickly whether you have too much or not enough information. From a
-design perspective, too much can be a problem too. 
+design perspective, too much can be a problem too.
 
 With Irish, since my primary source was a wordnet, there were a lot of
 definitions coming up, sometimes very obscure. The first iteration ended up
@@ -40,7 +40,7 @@ looking something like the following, for a search for When the user searched
 for *ól* 'drink'.
 
 ```
-     ól (n) - 
+     ól (n) -
         drink
         drinking
         boozing
@@ -55,7 +55,7 @@ for *ól* 'drink'.
         hard drink
         hard liquor
         John Barleycorn         *
-        strong drink  
+        strong drink
 ```
 
 With a wordnet, I probably have automated ways of resolving this-- but with a
@@ -81,7 +81,7 @@ preserve rarer definition if providing a reference tool.
 The dictionary may serve as a quick way to test your morphology for both
 generation and analysis.
 
-###  Discovered issues 
+###  Discovered issues
 
  * Words do not generate
  * Generation is surprisingly slow (9 forms for a paradigm may add up if
@@ -136,13 +136,13 @@ drill down into various categories:
 
 TODO: images
 
-This requires some specific formatting in the XML: 
+This requires some specific formatting in the XML:
 
 ```
 
     - <l til_ref="hverandre" />
     - <re fra_ref="omtopersoner">
-    - <l orig_entry="hverandre"> 
+    - <l orig_entry="hverandre">
 
 ```
 
@@ -266,9 +266,9 @@ This requires some specific formatting in the XML:
   500
 
 Whoops! There was some kind of error.
-Invalid tagset <pos>. Choose one of: 
+Invalid tagset <pos>. Choose one of:
 ```
- - create and add the language-corresponding tagset-file 
+ - create and add the language-corresponding tagset-file
    with the name xxx.tagset (xxx=three-letter-code of the language, e.g. for Russian rus.tagset) in
 ```
  neahtta/configs/language_specific_rules/tagsets
@@ -284,7 +284,7 @@ Invalid tagset <pos>. Choose one of:
    with only part of it:
 
    an t-éas
-     - user expects ` an t-éas `, but the user gets ` t- ` or ` éas `. 
+     - user expects ` an t-éas `, but the user gets ` t- ` or ` éas `.
 
 ##  Niceties
 

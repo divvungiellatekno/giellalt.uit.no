@@ -9,10 +9,10 @@ Det meste skjer i t1x (legge til tagger) og t4x (skrive ut):
 
 ### Bestemthet
 * Macro set_defnes: arg.1: noun/adj, with syn_label
-    - Default to indefinite, guess definite for certain GF's, genitives, 
-Locatives only indefinite in first position with leat. 
+    - Default to indefinite, guess definite for certain GF's, genitives,
+Locatives only indefinite in first position with leat.
 Adjectives given to this macro will be (predicative and) indefinite
-    - ubestemt ved 
+    - ubestemt ved
         - unc, som legges til i bidix (uncountable)
         - HNOUN, acr, ←ext→
         - sem_domain - gen
@@ -77,7 +77,7 @@ Adjectives given to this macro will be (predicative and) indefinite
     - annen + nom
     - det.sp.def + nom
 
-###  Legg til ubestemt artikkel når 
+###  Legg til ubestemt artikkel når
 * maydetind
 * not neverdet
 * not ess
@@ -87,9 +87,9 @@ Adjectives given to this macro will be (predicative and) indefinite
 
 # OVERSIKT
 
-Her kjem ei døfting av *prinsippa* attom bestemtheit for substantiv 
+Her kjem ei døfting av *prinsippa* attom bestemtheit for substantiv
 omsett frå nordsamisk til norsk. Konkrete døme på feilomsetjingar skal
-til [Transfer problems-fila](TransferProblems.html). Vi delar oversynet 
+til [Transfer problems-fila](TransferProblems.html). Vi delar oversynet
 inn i *Nominalfraser* (uavhengig av funksjon), *Setningsledd* og *Preposisjonsfraser* (uavhengig av funksjon).
 
 # Nominalfraser
@@ -99,14 +99,14 @@ inn i *Nominalfraser* (uavhengig av funksjon), *Setningsledd* og *Preposisjonsfr
 * s-konstruksjon: Possessor er bestemt, possessum ubestemt: \\
   mannens bil / *manns *bilen
 * til-konstruksjon: Begge er bestemt \\
-  bilen til mannen 
+  bilen til mannen
 
 ## Kvantorkonstruksjonar
 
 Visse kvantorar tar helst bestemt form, andre helst ubestemt:
 
 * bestemt: \\
-  alle bilene, 
+  alle bilene,
 * ubestemt: \\
   mange, flere, noen,  enkelte, diverse, atskillige, få, ingen \\
   hver, hvilken
@@ -151,21 +151,21 @@ Døme:
 
 ### Subjekt i eksistensial- og habitivsetningar (E-subjekt)
 
-**E-subjekt er ubestemt.** 
+**E-subjekt er ubestemt.**
 
 Dei kan opptre med og utan utestemt artikkel:
 
 * Mus lea beana --  Jeg har en hund / Jeg har hund
 * Gilis lea gávpi -- I bygda er det en butikk / (?) I bygda er det butikk
 
-Vi har *en N* som default, men bør vurdere kva slags N som ikkje skal ha N. 
+Vi har *en N* som default, men bør vurdere kva slags N som ikkje skal ha N.
 
 Taggen maydetind i bidix gir ubestemt art (hvis ikke regel mot). Dette fungerer
 for *Mus lea mielki*, men ikkje for *Mus lea beana*. Her treng vi ei
 eiga liste for *beana*, som er eit individ, men som kan bli referert til
 som *type* (av individ).
 
-### Subjekt til venstre for det finitte verbet 
+### Subjekt til venstre for det finitte verbet
 
 Subjekt til venstre for det finitte verbet (sg og pl) skal vere bestemt:
 
@@ -175,7 +175,7 @@ Subjekt til venstre for det finitte verbet (sg og pl) skal vere bestemt:
 ### Subjektet mellom det finitte og det infinitte verbet
 Subjektet mellom det finitte og det infinitte verbet skal vere bestemt:
 
-### Subjektet til høgre for hovudverbet 
+### Subjektet til høgre for hovudverbet
 Subjektet til høgre for hovudverbet skal vere bestemt:
 
 * Odne geavahit ásahusat ja earát servodagas sámegiela beaivválaččat.
@@ -267,7 +267,7 @@ def og indef er ca 50/50
 ###  Q N.Pl.Loc = Q av N-defpl
 
 ```
-Unnimustá okta čállosiin galgá gieđahallat lohkama 
+Unnimustá okta čállosiin galgá gieđahallat lohkama
 Minst i en tekst skal behandle studien
 Minst en av tekstene skal behandle skriving
 ```
@@ -281,5 +281,5 @@ Slik var regelen:
 
 Her må vi ha ubestemt *samisklærer*:
 
- 
+
 * Sámi oahpaheaddji masteroahput besset álggahuvvot → Masterutdanninger som samisk lærer får startes. (nom.gen nom.gen nom_head)

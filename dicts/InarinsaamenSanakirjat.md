@@ -7,7 +7,7 @@ Tavoitteena on saada sanakirjan korjattu versio valmiiksi syksyksi 2016.
 
 ##  Työtiedostot / Bargofiillat
 
-### Sanakirjan lemmat, jotka puuttuvat FST:s / 
+### Sanakirjan lemmat, jotka puuttuvat FST:s /
 
 * [Missing A](smndict/A_missing_nom.txt)
 * [Missing N](smndict/N_missing_nom.txt)
@@ -17,21 +17,21 @@ Tavoitteena on saada sanakirjan korjattu versio valmiiksi syksyksi 2016.
 
 * smnfin-sanakirjan sanat / smnfin-sátnegirjji sánit:
     - Aakkosjärjestyksessä / Alfabehtalaččat
- [A](smndict/gen/adjsmnfintabell.html)  -  
- [N](smndict/gen/nounsmnfintabell.html)  -  
+ [A](smndict/gen/adjsmnfintabell.html)  - 
+ [N](smndict/gen/nounsmnfintabell.html)  - 
  [V](smndict/gen/verbsmnfintabell.html)
     - Käänteisessä järjestyksessä:
- [A](smndict/gen/adjsmnfintabellrev.html)  -  
- [N](smndict/gen/nounsmnfintabellrev.html)  -  
+ [A](smndict/gen/adjsmnfintabellrev.html)  - 
+ [N](smndict/gen/nounsmnfintabellrev.html)  - 
  [V](smndict/gen/verbsmnfintabellrev.html)
 * finsmn-sanakirjan sanat / finsmn-sátnegirjji sánit
     - Aakkosjärjestyksessä / Alfabehtalaččat:
- [A](smndict/gen/adjfinsmntabell.html)  -  
- [N](smndict/gen/nounfinsmntabell.html)  -  
+ [A](smndict/gen/adjfinsmntabell.html)  - 
+ [N](smndict/gen/nounfinsmntabell.html)  - 
  [V](smndict/gen/verbfinsmntabell.html)
     - Käänteisessä järjestyksessä:
- [A](smndict/gen/adjfinsmntabellrev.html)  -  
- [N](smndict/gen/nounfinsmntabellrev.html)  -  
+ [A](smndict/gen/adjfinsmntabellrev.html)  - 
+ [N](smndict/gen/nounfinsmntabellrev.html)  - 
  [V](smndict/gen/verbfinsmntabellrev.html)
 
 ## Tehtävälista / Action points

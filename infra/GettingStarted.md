@@ -34,15 +34,15 @@ You may also set up the core and single languages on a multiuser server. To use 
 * check out your language -
   [instructions for linguists](GettingStartedOnAServer.html)
 
-You may also setup the full structure on a server. Follow the instructions under (b). 
+You may also setup the full structure on a server. Follow the instructions under (b).
 
 # 3. Compile the analysers
 
-The page [Compiling And Using The Analysers](CompilingAndUsingTheAnalysers.html) 
-tells you how to do just that. Thereafter you can start using the analysers and/or 
+The page [Compiling And Using The Analysers](CompilingAndUsingTheAnalysers.html)
+tells you how to do just that. Thereafter you can start using the analysers and/or
 do the the development work…
 
-For the full range of possibilities, there is 
+For the full range of possibilities, there is
 [an overview of the technical documentation](infrastructure.html) for details on how to use our
 infrastructure to develop your morphologies, lexicons and more to create tools
 for yourself and your language community.

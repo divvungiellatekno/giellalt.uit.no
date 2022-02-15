@@ -19,7 +19,7 @@ echo "Svein Holmestrand ozai doarjjaolbmo guovtti diibmui vahkkui, Kárášjoga 
 Testsetning endra til ei kasusform av *Kárášjoga gielda*, slik at vi får testa
 at kasusbøygde former fungerer som dei skal:
 ```
-echo "Svein Holmestrand ozai doarjjaolbmo guovtti diibmui vahkkui, Kárášjoga gielddas biehttalii dán veahki addimis. Holmestrand váiddii biehttaleami Finnmárkku Fylkkamánnái, ja oažžu dál logi diimmu doarjjaolbmoveahki." | hfst-proc2 --xerox -w tools/preprocess/preprocessor-gt-desc.pmhfst 
+echo "Svein Holmestrand ozai doarjjaolbmo guovtti diibmui vahkkui, Kárášjoga gielddas biehttalii dán veahki addimis. Holmestrand váiddii biehttaleami Finnmárkku Fylkkamánnái, ja oažžu dál logi diimmu doarjjaolbmoveahki." | hfst-proc2 --xerox -w tools/preprocess/preprocessor-gt-desc.pmhfst
 ```
 
 For meir systematisk testing, bruk gullkorpuset:
@@ -85,7 +85,7 @@ lea
 vs.
 
 ```
-echo "Fitnodat lea A.S. Nu dat lea." | hfst-proc2 --xerox tools/preprocess/preprocessor-gt-desc.pmhfst 
+echo "Fitnodat lea A.S. Nu dat lea." | hfst-proc2 --xerox tools/preprocess/preprocessor-gt-desc.pmhfst
 Fitnodat	fitnodat+N+Sg+Nom
 
 lea	leat+V+IV+Ind+Prs+Sg3
@@ -167,7 +167,7 @@ Mii háliidit leat a.s.!
 ≠```
 
 Fleire døme:
-* Erenomážit boazosápmelaččaid mielas lei dát oahppu dušši, go sin mánát han galggašedje viidásat bargat boazodoaluin. Ja maid vel boazodoalus ge dárogielain, norgga historjjáin, matematihkain jna.? 
+* Erenomážit boazosápmelaččaid mielas lei dát oahppu dušši, go sin mánát han galggašedje viidásat bargat boazodoaluin. Ja maid vel boazodoalus ge dárogielain, norgga historjjáin, matematihkain jna.?
 * Gámasgoikademiin, bassamiin, neaskimiin, vuoidamiin, galle gottura gápmasat ja galle gápmasa ovtta gotturis jna.?
 
 ## Bug i hfst-proc2 eller i pmatch-skriptet vårt
@@ -184,7 +184,7 @@ válggain
 
 og:
 ```
-rehket-bihtáid 
+rehket-bihtáid
 =>
 
 rehket-	rehket+N+Sem/Money_Txt+SgGenCmp+RCmpnd	0
@@ -218,7 +218,7 @@ Handtering av skilnadene:
 
 Døme på mogleg utformat:
 ```
-echo borrojuvvojin | usme 
+echo borrojuvvojin | usme
 borrojuvvojin	borrat+V+TV+Der/PassL+V+IV+Ind+Prt+Sg1
 
 correct$ echo borrojuvvojin | usme | lookup2cg
@@ -232,7 +232,7 @@ Slik, men det er ikke mulig (?):
 ```
 "<borrojuvvojin>"
 	 "borrojuvvot" V IV Ind Prt Sg1
-    	 "borrat" V* TV* Der/PassL 
+    	 "borrat" V* TV* Der/PassL
 ```
 Slik er to etasjar:
 ```
@@ -258,10 +258,10 @@ Tre prinsipp:
 1. **Vis leksikon**: Bruk leksikaliserte former, men vis dynamisk avleiing og ikkje lag dynamisk leksikalisering
 
 praktiske bruk:
-1. ordbok: 
+1. ordbok:
     1. vi bruker leksikaliserte former i den grad det finnes som ord i XXX-smX
     1. vi bruker Der-taggen og dens lemma for å gi oversetting når vi ikke har ordparet i ordboka
-1. MT: 
+1. MT:
     1. vi bruker leksikaliserte former i den grad det finnes som ord i bidix
     1. for dem det ikke finnes, bruker vi Der-taggene for å generere tilsvarende i målspråket
 1. Korp

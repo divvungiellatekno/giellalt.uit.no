@@ -13,7 +13,7 @@ Don oainnát sihke WER (Word Error Rate -- galle sáni leat rievdaduvvon) ja tea
 
 Geavat kommando:
 
-perl ~/apertium/trunk/apertium-eval-translator/apertium-eval-translator-line.pl -r MTOUTPUT.txt -t DIVVOJUVVON_MTOUTPUT.txt 
+perl ~/apertium/trunk/apertium-eval-translator/apertium-eval-translator-line.pl -r MTOUTPUT.txt -t DIVVOJUVVON_MTOUTPUT.txt
 
 Jos dus ii leat apertium/trunk, gávnnat fiilla *apertium-eval-translator-line.pl* dás:
 

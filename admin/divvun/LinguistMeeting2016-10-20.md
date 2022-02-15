@@ -49,7 +49,7 @@ Formfrekvens:
 Dvs. 11,3% av samansetjingane har eit genitivforledd
 
 * +CmpNP/None: vil ikke kunne inngå i sammensetning, som for máŋggas
-‘mange (om mennesker)’  
+‘mange (om mennesker)’
 * +CmpNP/Last: kan bare være etterledd, som for <i>gaskka</i>  ‘ildstål’. Som forledd vil ordene bli leksikalisert, Dette for å unngå uønskede sammensetninger med gaskka istedenfor gaska og slik dekke over skrivefeil
 * som ordretteprogrammet ikke bør finne igjen, f.eks. gaskkavahkku pro gaskavahkku ‘onsdag’­
 * +CmpNP/First: kan bare være forledd 4-čiegahas
@@ -60,14 +60,14 @@ Frå `sma/*/root.exc`:
 
 This entry / word should be in the following position(s):
 |  Tag         | Meaning                                                            |Exmpl.| Explanation
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  +CmpNP/All  | … in all positions,  default, this tag does not have to be written |   -
 |  +CmpNP/First| … only be first part in a compound or alone                        | huvva |  to prevent dáhpáhuvva
 |  +CmpNP/Pref | … only  first part in a compound, NEVER alone                      | eahpe-| eahpeipmil = a no god
 |  +CmpNP/Last | … only be last part in a compound or alone                         | ráigi+N+CmpNP/Last+Sem/Route+Sg+Gen+Allegro:rái K ;
 |  +CmpNP/Suff | … only  last part in a compound, NEVER alone                       |  lohka+CmpNP/Suff+Sem/Dummytag:loh'ka GOAHTI-A ;
 |  +CmpNP/None | … does not take part in compounds                                  |  váhku+CmpNP/None+Sem/Dummytag:váh'ku GOAHTI-U ;  | because it resembles vahkku
-|  +CmpNP/Only | … only be part of a compound, i.e. can never be used alone, but can appear in any position 
+|  +CmpNP/Only | … only be part of a compound, i.e. can never be used alone, but can appear in any position
 
 Pref:
 ```
@@ -217,9 +217,9 @@ Case of first part is dependent of second part:
 
 # What kind of words get +Left compound-tags?
 
-Some very few specific words where the meaning of the compound alters with the case of the first part (for example Ahki, Dilli, Heahti, Duohki, Vuolli, Geahči. 
+Some very few specific words where the meaning of the compound alters with the case of the first part (for example Ahki, Dilli, Heahti, Duohki, Vuolli, Geahči.
 
-* **Skuvlaahki vs. Skuvllaahki**:  school-age vs. age of school, 
+* **Skuvlaahki vs. Skuvllaahki**:  school-age vs. age of school,
 * **Stohpodilli vs. Stobudilli**:  housing situation vs. situation in the house
 * **Uksageahči vs. Uvssageahči**:  end of the door vs. end of the room where the door is)
 
@@ -228,14 +228,14 @@ In North Sami: Deverbal nouns like actios and actors stemming from transitive ve
 [/lang/sme/root-morphology.html]
 
 ```
-+CmpN/SgNomLeft Singular Nominative 
-+CmpN/SgGenLeft Singular Genitive 
-+CmpN/PlGenLeft Plural Genitive 
++CmpN/SgNomLeft Singular Nominative
++CmpN/SgGenLeft Singular Genitive
++CmpN/PlGenLeft Plural Genitive
 ```
 
 SMJ- eksempel:
 ```
-åvddånbuktem+CmpN/SgN+CmpN/DefSgGen+CmpN/DefPlGen+CmpN/SgNomLeft+CmpN/SgGenLeft+CmpN/PlGenLeft+Sem/Dummytag:åvddån#buktem VSBST-ODD  
+åvddånbuktem+CmpN/SgN+CmpN/DefSgGen+CmpN/DefPlGen+CmpN/SgNomLeft+CmpN/SgGenLeft+CmpN/PlGenLeft+Sem/Dummytag:åvddån#buktem VSBST-ODD
 ```
 
 Kor mange forledd er det i korpus?

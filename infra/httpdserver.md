@@ -23,7 +23,7 @@ The following is the list of Oahpas on gtoahpa-01 as of 14.04.2020:
 
 
 |  Oahpa name|  Language|  URL
-| --- | --- | --- 
+| --- | --- | ---
 | crk_oahpa   | Plains Cree       | [oahpa.no/nehiyawetan](http://oahpa.no/nehiyawetan)
 | est_oahpa   | Estonian          | [oahpa.no/eesti](http://oahpa.no/eesti)
 | fkv_oahpa   | Kven              | [oahpa.no/kveeni](http://oahpa.no/kveeni)

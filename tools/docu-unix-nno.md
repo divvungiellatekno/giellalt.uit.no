@@ -42,7 +42,7 @@ terminalvindauget i Mac og Linux skriv du **ctrl-d** (held ned
 ctr-tasten og trykker på d), eller du kan berre lukke vindauget på
 vanleg vis.
 
-Oppsummering:  
+Oppsummering:
 
 -   Opne terminalvindauget (eller logg inn).
 -   For å avslutte frå terminal, skriv **logout** i alle vindauge du har
@@ -111,7 +111,7 @@ Kommandoar kan også modifiserast, dei har adverb. Kva adverb
 varierer frå kommando til kommando. Kommandoen *cal* har t.d. flagga -m
 (la måndag vere første dag i veka) og -3 (vis månaden før og månaden
 etter). Kommandoen *cal -m 2000* gjev t.d. kalendaren for år 2000, med
-måndag som første dag i veka. Oppsummering:  
+måndag som første dag i veka. Oppsummering:
 
 -   Kommando-syntaks: *kommandonamn* eller *kommandonamn argument ENTER*
 -   Kommandoar: **date**, **cal**, **mkdir**
@@ -180,7 +180,7 @@ Viss du lurer på kor du er kan du forresten skrive **pwd**, "print
 working directory". Då får du som svar stien frå rotkatalogen til
 katalogen du sjølv står i akkurat no.
 
-Oppsummering:  
+Oppsummering:
 
 -   Katalogstruktur: morkatalog, dotterkatalog, notasjonen **..**
 -   Kommandoar: **cd** (flytt meg heim), **cd ..** (flytt meg ein
@@ -207,7 +207,7 @@ skrive **ls /home/trond/kurs/**, uansett kva katalog du sjølv står i.
 Referansen til katalogen kurs er ikkje lenger relativ, men absolutt, han
 er forankra i rotkatalogen.
 
-Oppsummering:  
+Oppsummering:
 
 -   Relativ referanse, avhengig av kor du sjølv står i systemet
 -   Absolutt referanse, refererer via rotkatalogen
@@ -230,7 +230,7 @@ n-liste**. Då får du lista opp innhaldet i fila. Til slutt står det END
 i invers video. For å kome seg ut av less og attende til kommandolina
 trykker du på q-tasten.
 
-Oppsummering:  
+Oppsummering:
 
 -   Kommandoar: **cat**, **cat &gt; filnamn**, **less**
 -   Kome seg ut av less-funksjonen og attende til kommandolina: skriv
@@ -257,7 +257,7 @@ og argumentet. I staden for **sort n-liste** kan de skrive **sort -r
 n-liste**. Flagget -r tyder "reversert", og fila blir altså sortert i
 omvend rekkjefølgje.
 
-Oppsummering:  
+Oppsummering:
 
 -   Flagg, flagget -r
 -   Kommando: **sort**
@@ -287,7 +287,7 @@ Såg du det? Alle namna er no skrive baklengs. Det i seg sjølv er ikkje
 så spennande, kanskje, men når det blir kombinert med andre kommandoar
 blir det svært nyttig for oss.
 
-Oppsummering:  
+Oppsummering:
 
 -   Kommando: **rev**, reverser line ('far' blir 'raf')
 
@@ -306,7 +306,7 @@ sortert den reverserte lista, og reversert attende til vanleg
 venstre-til-høgre-tekst. Resultatet er ei *baklengssortert liste* over
 dei namna vi starta ut med.
 
-Oppsummering:  
+Oppsummering:
 
 -   Kommando: **rev**, reverser line ('far' blir 'raf')
 
@@ -334,7 +334,7 @@ Viss du berre vil sjå eitt av dei tre svara, kan du gjere det med flagga
 -l, -w og -c, slik: wc -l. Flagga kan og kombinerast: **wc -lw** fortel
 kor mange liner og ord fila inneheld.
 
-Oppsummering:  
+Oppsummering:
 
 -   Kommando: **wc**, tel kor mange liner, ord og teikn ei fil har
 -   Flagg: wc-kommandoen har flagga -l, -w og -c (liner, ord og teikn)
@@ -559,54 +559,54 @@ kwic - key words in context
 Liste over kommandoar
 =====================
 
--   **cat (cat filnamn):**  
-    skriv innhaldet av filnamn ut på skjermen  
+-   **cat (cat filnamn):**
+    skriv innhaldet av filnamn ut på skjermen
     "cat &gt; filnamn" tar det som blir skrive på skjermen og skriv det
     inn i fila filnamn.
--   **diff (diff fil1 fil2):**  
+-   **diff (diff fil1 fil2):**
     samanlikne innhaldet i to filer
--   **cp (cp fråfil tilfil):**  
+-   **cp (cp fråfil tilfil):**
     kopier fil
--   **finger (finger brukarnamn):**  
+-   **finger (finger brukarnamn):**
     fortel kven som skjuler seg bak brukarnamn
--   **grep søkestreng filnamn:**  
+-   **grep søkestreng filnamn:**
     listar opp liner i 'filnamn' som inneheld 'søkestreng'.
--   **history:**  
+-   **history:**
     listar opp alle kommandoane du har gjeve systemet
--   **man (man kommando):**  
+-   **man (man kommando):**
     skriv ut hjelpfila til kommando
--   **mkdir (mkdir katalognamn):**  
+-   **mkdir (mkdir katalognamn):**
     lagar ny katalog
--   **more (more filnamn):**  
+-   **more (more filnamn):**
     viser ein skjermfull av gangen
--   **mv (mv fil tilkatalog/) (mv gammaltnamn nyttnamn):**  
+-   **mv (mv fil tilkatalog/) (mv gammaltnamn nyttnamn):**
     gje fil nytt namn; flytt fil
--   **ll (ll katalognamn):**  
+-   **ll (ll katalognamn):**
     list innhaldet i katalognamn, evt i katalogen der du står (langt
     format)
--   **ls:**  
+-   **ls:**
     list innhaldet i katalog
--   **lt (lt katalognamn):**  
+-   **lt (lt katalognamn):**
     list innhaldet i katalognamn, ordna etter dato
--   **pwd:**  
+-   **pwd:**
     skriv stien til den katalogen du står i no
--   **rev:**  
+-   **rev:**
     reverser linene ('far' blir 'raf')
--   **rm (rm filnamn):**  
+-   **rm (rm filnamn):**
     slett fila filnamn
--   **rmdir (rmdir katalognamn):**  
+-   **rmdir (rmdir katalognamn):**
     slett katalogen katalognamn. Merk at katalogen må vere tom for at
     rmdir skal virke. Viss du vil slette ein full katalog kan du skrive
     **rm -f katalognamn**. Dette er ein skummel kommando, tenk deg om to
     gonger før du brukar han.
--   **sort:**  
+-   **sort:**
     sorter linene i ei fil alfabetisk
--   **uniq:**  
+-   **uniq:**
     slå saman like liner som står etter kvarandre (uniq -c fortel kor
     mange eksemplar det var av kvar line)
--   **wc (wc filnamn) (wc -l filnamn):**  
+-   **wc (wc filnamn) (wc -l filnamn):**
     wc = wordcount, som tel liner (-l) ord (-w) og teikn (-c) i fila
--   **who:**  
+-   **who:**
     kven er logga på akkurat no
--   **whoami:**  
+-   **whoami:**
     fortel kva brukarnamn du har, i tilfelle du har gløymt det.

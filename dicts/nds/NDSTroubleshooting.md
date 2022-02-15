@@ -1,6 +1,6 @@
 ﻿!! Troubleshooting frequent problems
 
-###  500 error: Invalid tagset <pos>. Choose one of: 
+###  500 error: Invalid tagset <pos>. Choose one of:
 
 This means the tagset file is missing, or `pos` is not a valid category in that file.
 
@@ -28,7 +28,7 @@ For more information on tagsets, see [NDS Linguistic settings](NDSLinguisticSett
 This usually means there's a problem with the path variable, on gtdict, the correct versions of automake should be installed. Observe the
 output of *which automake*, and check that it leads to the proper version.
 
- 
+
 
 ###  HTML appears in templates
 
@@ -56,11 +56,11 @@ updates within `giella-core`. Occasionally the problems can be fixed by using
 and then compiling.  Sometimes this will not work.
 
 Since these problems arise in a deployment situation, it is usually best to
-delete the language catalog and check it out again. 
+delete the language catalog and check it out again.
 
-###  String compilation failed, aborting:  babel.core.UnknownLocaleError: unknown locale 'hdn' 
+###  String compilation failed, aborting:  babel.core.UnknownLocaleError: unknown locale 'hdn'
 
-There are two possible problems: 
+There are two possible problems:
 
  * Compile with a more specific version of this command, i.e., `fab PROJNAME compile`
  * A locale is not installed in the project environment
@@ -80,9 +80,9 @@ Fix:
 * Run the following:
 ```
     	chown neahtta:neahtta /opt/smi/ISO/bin/*
-``` 
+```
 
-Cause: The FSTs have not actually compiled. 
+Cause: The FSTs have not actually compiled.
 
 Fix:
 * Check that running `make` in the language directory in `$GTHOME/langs/` actually works as expected.
@@ -108,9 +108,9 @@ Fix:
   `fab PROJECT compile_strings` and restarting the service
 
 * If there is still a problem, then likely one of the translation strings is
-  misformatted. For the affected locale, search through the `.po` file for 
-  the affected template, and doublecheck that all translations marked with 
-  `#, python-format` have variables with the correct syntax. 
+  misformatted. For the affected locale, search through the `.po` file for
+  the affected template, and doublecheck that all translations marked with
+  `#, python-format` have variables with the correct syntax.
 
     OR:
 

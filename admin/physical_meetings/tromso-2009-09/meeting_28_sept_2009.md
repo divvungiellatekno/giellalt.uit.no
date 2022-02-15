@@ -19,14 +19,14 @@ Next main release this week (hfst.sourceforge.net), Oct. 1.
 * support for flag diacritics
 
 # Foma
-For all languages that don't use twolc, we may just replace xfst with foma. 
+For all languages that don't use twolc, we may just replace xfst with foma.
 *  But beware lexc - you have to replace calls to the lexc tool to equivalent operations in xfst/foma.
 
 Issues:
 ```
-foma[1]: save-source ../bin/ipk-lex.save 
+foma[1]: save-source ../bin/ipk-lex.save
 Unknown command. Ignoring until end of line.
-foma[1]: quit 
+foma[1]: quit
 ```
 
 # FSTs in OOo etc. proofing tools
@@ -57,7 +57,7 @@ ftyers@prompsit.com
      Foo
     .o. Bar
 
-    
+
     ] ;
 ```
 is not ok unless there is a space after Foo.
@@ -72,7 +72,7 @@ is not ok unless there is a space after Foo.
 
 ## Pending questions
 
-What is wrong with this: 
+What is wrong with this:
 ```
     LEXICON f
     < "@D.[IT]V.ON@" >  # ; ! Deletes unwated iv/tv combinations xfst style

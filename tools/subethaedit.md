@@ -58,12 +58,12 @@ efficient tool. Here are some hints:
 
 -   Most basic emacs commands work in SubEthaEdit. Cf. the list below,
     where "C-a" means "hold down the `ctrl `key and press `A`"
-    -   **C-a, C-e, C-p, C-n:**  
+    -   **C-a, C-e, C-p, C-n:**
         Beginning of line, end of line, previous line, next line
 
     <!-- -->
 
-    -   **C-k, C-d:**  
+    -   **C-k, C-d:**
         Delete the rest of the line, delete the next character
 -   Ordinary Macintosh commands work (command and then x, c, v, z, a for
     cut, copy, paste, undo and select all

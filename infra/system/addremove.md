@@ -46,15 +46,15 @@ Adding users on Mac servers
 Mac servers have other commands. Use the dscl command. This example
 would create the user "luser", like so:
 
-    dscl . -create /Users/luser                             
+    dscl . -create /Users/luser
 
-    dscl . -create /Users/luser UserShell /bin/bash         
+    dscl . -create /Users/luser UserShell /bin/bash
 
-    dscl . -create /Users/luser RealName "Lucius Q. User"   
+    dscl . -create /Users/luser RealName "Lucius Q. User"
 
-    dscl . -create /Users/luser UniqueID "1010"             
+    dscl . -create /Users/luser UniqueID "1010"
 
-    dscl . -create /Users/luser PrimaryGroupID 80           
+    dscl . -create /Users/luser PrimaryGroupID 80
 
     dscl . -create /Users/luser NFSHomeDirectory /Users/luser
 

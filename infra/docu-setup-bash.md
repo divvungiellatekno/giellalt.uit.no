@@ -36,7 +36,7 @@ or when we open a new Terminal.app window.
     export LANG=no_NO.UTF-8
     export LOCALE=UTF-8
     export LESSCHARSET='utf-8'
-        
+
 
 Examples to add to the .profile file
 ------------------------------------
@@ -59,14 +59,14 @@ Examples to add to the .profile file
     alias lS="ls -lS"
     alias up="cvs -q up"
     alias who="who | sort"
-        
+
 
 Tweaking the shell
 ==================
 
     # Will display all alternatives for completion after one tab keypress
     set show-all-if-ambiguous On
-          
+
 
 \[the last command has nothing to do with 8-bit processing, but is a
 great timesaver compared to the default behaviour\]

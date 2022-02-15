@@ -2,10 +2,10 @@ Møte om Korpusnamn
 
 'Sámi korpus' fungerer dårlig som navn i tekst
 Eksempler på problemer (fra Jussi):
-...originally published within about the past three decades and made available 
+...originally published within about the past three decades and made available
 by Sámi Korpus at UiT The Arctic University of Norway...
 ...texts made available by the Sámi korpus corpus at UiT...
-...the more than two thousand occurrences of illudit ‘rejoice; celebrate’ 
+...the more than two thousand occurrences of illudit ‘rejoice; celebrate’
 in the available North Saami corpus (Sámi korpus) also include...
 
 "Samte" er ikkje bra, pga -mt-. Problem med -mt-:
@@ -24,7 +24,7 @@ Dette er alle -VmtV- i sme-substantivfila:
 * viessotomta
 
 Lese som bokstavar
-Reine akronym: 
+Reine akronym:
 STK, ESSTEEKOO, BNC
 SIC <== sits
 ==> Saami international corpus ;-)
@@ -46,12 +46,12 @@ ciko c_korp cree (crk)
 jeg begynner å bli siko-pat, synes ikke at det leder til psyko
 sikori
 
-Æ liker SIKO eller SIKOR best til no, kanskje SIKOR, fordi det leder mer til 'korpus' 
+Æ liker SIKO eller SIKOR best til no, kanskje SIKOR, fordi det leder mer til 'korpus'
 
-...originally published within about the past three decades and made available 
+...originally published within about the past three decades and made available
 in SIKOR, UiT The Arctic University of Norway and the Norwegian Sámi Parliament’s Sámi text collection....
 ...texts made available in the SIKOR corpus at UiT...
-...the more than two thousand occurrences of illudit ‘rejoice; celebrate’ 
+...the more than two thousand occurrences of illudit ‘rejoice; celebrate’
 in the available North Saami corpus (SIKOR) also include...
 Materiála lea vižžojuvvon SIKORis, UiT Norgga árktalaš universitehta ja Norgga Sámedikki sámi teakstačoakkáldagas.
 Materialet er hentet fra SIKOR, UiT Norges arktiske universitets og det norske Sametingets samiske tekstsamling.
@@ -72,7 +72,7 @@ Trond: for i. siko eller sikor?
 
 Forslag:
 * SIKOR: Ciprian, Trond, Lene, Sjur
-* SIKO: 
+* SIKO:
 * SAKOR: Sjur
 * SAiKOR: nei
 
@@ -101,13 +101,13 @@ I magiske kretser blir sikori brukt til å fjerne alle hindringer som måtte kom
 
 men den er ikke så kjent
 
-Hvis man skal ha samme navn til flere, så ville det vært bedre med samme forbokstav/første stavelse, det er lettere å assosiere sammen, 
+Hvis man skal ha samme navn til flere, så ville det vært bedre med samme forbokstav/første stavelse, det er lettere å assosiere sammen,
 
 eller ha KO først
 KISA
 KOSA
 KOFI Anan
-KOCREE :-D 
+KOCREE :-D
 
 Corpus International de Sámi => KOSI
 

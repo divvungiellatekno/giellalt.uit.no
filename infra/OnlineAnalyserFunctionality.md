@@ -4,19 +4,19 @@ This page reports on functionality of our online analser. It measures alpha qual
 
 The first column contains the programs our pages contain (and therefore claim that should work). The goal is to have all of them working.
 
-## sme				    
-|   Prog    | 22.11.13.    | 23.11.13. 
-| --- | --- | --- 
+## sme
+|   Prog    | 22.11.13.    | 23.11.13.
+| --- | --- | ---
 |  fst      | ok		    | ok
 |  dis      | ok		    | ok
 |  distrans | NOTWORK    | NOTWORK
 |  hyph     | ok		    | ok
 |  trans    | ok		    | ok
 
-					    
-## smj				    
-|   Prog | 22.11.13.    | 23.11.13. 
-| --- | --- | --- 
+
+## smj
+|   Prog | 22.11.13.    | 23.11.13.
+| --- | --- | ---
 |  fst  | ok			    | ok
 |  dis | NOTSUPP		    | ok
 |  dep | NOTSUPP		    | NOTSUPP
@@ -24,189 +24,189 @@ The first column contains the programs our pages contain (and therefore claim th
 
 Note: dep not working even though the fsie is there.
 
-					    
-## sma				    
-|   Prog | 22.11.13.    | 23.11.13. 
-| --- | --- | --- 
+
+## sma
+|   Prog | 22.11.13.    | 23.11.13.
+| --- | --- | ---
 |  fst   | ok		    | ok
 |  dis   | ok		    | ok
 |  dep   | NOTSUPP	    | NOTSUPP
 |  hyph  | ok		    | ok
 |  trans | ok		    | ok
 
-					    
+
 Note: The sma-dep.bin is in /opt/smi/sma, but it still does not work.
 
-					    
-## smn				    
+
+## smn
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## sje				    
+
+## sje
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## sjd				    
+
+## sjd
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## sms				    
+
+## sms
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
 
-					    
-## myv				    
+
+
+## myv
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## fin				    
+
+## fin
 |   Prog      | fst | dis | hyph
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  22.11.13.   | ok  |   ok | ok
 |  23.11.13.   | ok  |   ok | ok
 
-					    
-## mrj				    
+
+## mrj
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | NOT
 |  23.11.13.   | ok
 
-					    
-## izh				    
+
+## izh
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## kca				    
+
+## kca
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## fkv				    
+
+## fkv
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## kom			
+
+## kom
 |   Prog      | fst | dis | hyph
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  22.11.13.   | NOT  | NOT | NOT
 |  23.11.13.   | ok  |   ok | NOT
 
-	    
+
 
 * 22.11.13: Note: Text he |ading says Buriat analyser, directs to kom.fst (**fixed**)
-* 23.11.13: Note: No Cyrillic hyph works.					    
+* 23.11.13: Note: No Cyrillic hyph works.
 
-					    
-## liv				    
+
+## liv
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## mhr				    
+
+## mhr
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## mdf				    
+
+## mdf
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## yrk				    
+
+## yrk
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## nio				    
+
+## nio
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## olo				    
+
+## olo
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## udm				    
+
+## udm
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## vep				    
+
+## vep
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-					    
-## bxr				    
+
+## bxr
 |   Prog      | fst
-| --- | --- 
+| --- | ---
 |  22.11.13.   | ok
 |  23.11.13.   | ok
 
-## cor				    
+## cor
 |   Prog      | fst | dis | hyph
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  22.11.13.   | NOT  | NOT | NOT
 |  23.11.13.   | NOT  | NOT | NOT
 
 This is a non-trivial error: the fst works on the server:
-`lookup /opt/smi/cor/bin/cor.fst`					    
+`lookup /opt/smi/cor/bin/cor.fst`
 
-					    
-## fao				    
+
+## fao
 |   Prog      | fst | dis | dep
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  22.11.13.   | ok  | ok | NOT
 |  23.11.13.   | ok  | ok | NOT
 
-					    
+
 dep error is non-trivial, the fao-dep.bin works on gtweb.
 
-					    
-## kal				    
-|   Prog    | 22.11.13.    | 23.11.13. 
-| --- | --- | --- 
+
+## kal
+|   Prog    | 22.11.13.    | 23.11.13.
+| --- | --- | ---
 |  fst 	   | ok		    | ok
 |  dis 	   | ok		    | ok
 |  distrans | NOTWORK    | NOTWORK
@@ -215,37 +215,37 @@ dep error is non-trivial, the fao-dep.bin works on gtweb.
 |  convert  | NOTWORK    | NOTWORK
 |  transcr  | NOTWORK    | ok
 
-					    
+
 * Note: the fst is **very** slow
 * Note: Makefile to convert (transcription) must be fixed
 
-					    
-## ipk				    
-|   Prog | 22.11.13.    | 23.11.13. 
-| --- | --- | --- 
+
+## ipk
+|   Prog | 22.11.13.    | 23.11.13.
+| --- | --- | ---
 |  fst   | ok  		    | ok
 |  convert | NOTWORK	    | NOTWORK
 
 * Note: Makefile to convert (transcription) must be fixed
 
-					    
-## hdn				    
-|   Prog | 22.11.13.    | 23.11.13. 
-| --- | --- | --- 
+
+## hdn
+|   Prog | 22.11.13.    | 23.11.13.
+| --- | --- | ---
 |  fst   | ok 		    | ok
 
-					    
-## ciw				    
-|   Prog | 22.11.13.    | 23.11.13. 
-| --- | --- | --- 
+
+## ciw
+|   Prog | 22.11.13.    | 23.11.13.
+| --- | --- | ---
 |  fst   | NOTWORK 	    | NOTWORK
 
 Note: Works on server
 
-					    
-## rus				    
-|   Prog | 22.11.13.    | 23.11.13. 
-| --- | --- | --- 
+
+## rus
+|   Prog | 22.11.13.    | 23.11.13.
+| --- | --- | ---
 |  fst   | ok 		    | ok
 
 # Numra
@@ -254,5 +254,5 @@ Note: Works on server
 
 ### fkv
 |   numra | clock
-| --- | --- 
+| --- | ---
 |  2.4.14 |  NOT

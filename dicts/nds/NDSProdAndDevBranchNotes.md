@@ -44,7 +44,7 @@
    sudo service nds-baakoeh stop
 ```
 
- 
+
  * then
 
 ```

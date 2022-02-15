@@ -22,7 +22,7 @@ Merk at det øverst til høgre i sida du får i nettlesaren skal stå **Python3*
 
 [https://github.com/Yoonsen/Seminar_NB_september_2019]
 
-Døme: 
+Døme:
 
 I denne mappa, opme fila:
 
@@ -69,19 +69,19 @@ Søke i bokhylla som korpus:
 nb.urn_concordance(word = 'giella', urns = korpusFriis, before = 10, after = 10, size = 20)
 ```
 
-Lemma	
-ID	
-Eng Gloss	
-POS	
-Level	
-Word source	
-Ex. ID	
-Form	
-Analysis	
-Example Sentence	
-Translation	
-Reference	
-Topic(s)	
+Lemma
+ID
+Eng Gloss
+POS
+Level
+Word source
+Ex. ID
+Form
+Analysis
+Example Sentence
+Translation
+Reference
+Topic(s)
 
 ----
 
@@ -98,7 +98,7 @@ Til: Trond Trosterud
 Kopi: Chiara Argese
 Emne: SV: Oppfølgjing av jupyter for Nasjonalbiblioteket
 
- 
+
 
 Hei Trond og Chiara
 
@@ -112,7 +112,7 @@ Rediger fila i excel og last inn igjen:
 
 nb.restore_metadata_from_excel("korpus.xls")
 
-Lagringskommandoen sikrer først og fremst at 'korpus.xls' ikke blir skrevet over om den allerede fins. Surt å miste to dagers korpus-redigering! Viktig at kommandoen ikke utføres om det kjøres en "run all" på alle cellene og korpuset finnes under filnavnet. 
+Lagringskommandoen sikrer først og fremst at 'korpus.xls' ikke blir skrevet over om den allerede fins. Surt å miste to dagers korpus-redigering! Viktig at kommandoen ikke utføres om det kjøres en "run all" på alle cellene og korpuset finnes under filnavnet.
 
 For å telle antall ord er det to måter, avhengig av størrelsen. Hvis korpus er under 300 urner bare kjør den her:
 
@@ -139,7 +139,7 @@ dok_term_matrise = nb.get_corpus_text(nb.pure_urn(korpus)
 
 for sortering på første kolonne (kan velges - bruk shift-tab i notebook f.eks. for å se parametrene)
 
-nb.frame_sort(dok_term_matrise) 
+nb.frame_sort(dok_term_matrise)
 
 dok_term_matrise inneholder frekvenser for alle ordene fordelt på hver bok i korpuset.
 
@@ -162,7 +162,7 @@ Til: Lars Johnsen
 Kopi: Chiara Argese
 Emne: Oppfølgjing av jupyter for Nasjonalbiblioteket
 
- 
+
 Hei, og takk for fin gjennomgang i Tromsø.
 
 Eg ser no gjennom opplegget, og får til å repetere opptil fleire av dei tinga vi gjord. Eg ahr likevel mange spørsmål. Nokre av dei står kanskje i kommandoane vi fekk, andre står ikkje. Det overordna er at det eg manglar er dokumentasjon: Oversikt ov er kva kommandoar som finst, kva vi vkan gjere og kva vi ikkje dkan gjere.
@@ -192,7 +192,7 @@ Eg vil telje kor mange ord det er i korpuset
 Eg vil la ein kwic-konkordans for det
 nb.urn_concordance(word = 'giella', urns = korpus, before = 10, after = 10, size = 20)
 
-Viss eg vil ha det for eit spesifikt korpus, gjer eg: 
+Viss eg vil ha det for eit spesifikt korpus, gjer eg:
 nb.urn_concordance(word = 'go', urns = korpusBR, before = 10, after = 10, size = 200)
 
 Men korleis får eg kalt korpusBR inn i minnet att?

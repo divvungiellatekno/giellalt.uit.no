@@ -3,7 +3,7 @@ Translation doc
 Julie:
 Alle burde ha fjernarbeidskontrakt. Ikke skrevet ut.
 
-fordi 
+fordi
 dykkar sikkerheit
 ville ha 5 medarb no er det 6 vi har ikkje snakka om dette
 vuss de har ønskje kan vi snakke om kontraktane
@@ -12,7 +12,7 @@ vi må diskutere innan eit år med d
 th og b har vi ikkje diskutert med, viss de har ønskje kan vi diskutere
 
 kontr er skrive berre på n, må omsetje til s
-eg har kontr med viss de kan fylle ut i dag og sende 
+eg har kontr med viss de kan fylle ut i dag og sende
 er det ok
 b: vi kan sjå på den
 e: det er berre 5 eks her, det var den saka
@@ -48,7 +48,7 @@ andre tema:
 tomi har ikkje arbstad, no har vi skrive (fredag) om å få eit kontor
 viss det skjer noko åpå arbeidet må t også formelt arbeide her.
 
-tr har fått spm frå univ om 
+tr har fått spm frå univ om
 
 maja-lisa er ikkje ferdig med hoppg
 også for henne er det aktuelt med kontorstad på univ

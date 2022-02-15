@@ -40,11 +40,11 @@ lexc ja twolc yhdessä
 * i-vaihtelu
 * lisäboonuksena vesi-sanojen mallintaminen
 
-## Unix-järjestelmän hakemistojen hallitseminen 
+## Unix-järjestelmän hakemistojen hallitseminen
 
 * komentorivi, komennot ja miten ne liitetään yhteen
 * cat, tr, grep, sort, rev, cut, sed
-* säännölliset lausekkeet: 
+* säännölliset lausekkeet:
 
 ```
 ^, $, ., *, +, (...), [...], ...

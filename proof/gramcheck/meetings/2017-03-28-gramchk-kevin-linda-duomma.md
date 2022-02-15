@@ -11,7 +11,7 @@ Du kan no skriva
 i errors.xml og ha
 
 ```
-ADD (&syn-blah-not-meh) TARGET ("kake") IF (*); 
+ADD (&syn-blah-not-meh) TARGET ("kake") IF (*);
 ADDRELATION ($2) (&blah) TO (1 ("meh" Pcle)) ;
 ```
 
@@ -29,7 +29,7 @@ t.d.
       <description xml:lang="en">there should not be "dego"</description>
       <description xml:lang="se">ii galgga leat "dego"</description>
     <examples>
-      <ex xml:lang="se">SNF doaibmá dál juo {dego} resursaguovddážin.</ex> 
+      <ex xml:lang="se">SNF doaibmá dál juo {dego} resursaguovddážin.</ex>
     </examples>
     </body>
   </error>
@@ -49,7 +49,7 @@ DELETE
 * **"dego" CS <W:0> @CVP MAP:7695:r10 REMOVE:7830**: r1451
 * **"go" Pcle Qst <W**: 0> "<go>"
 * **"de" Adv <W:0> "<de>" REMOVE:2072**: longest-match
-: 
+:
 "<resursaguovddážin>"
          "resursaguovddáš" N Sem/Plc Ess <W:0> @COMP-CS< MAP:7583:r432  &syn-dego-nom #6->6 ID:6 ADD:9597:syn-dego-ess
 syn-dego-nom
@@ -78,7 +78,7 @@ ADDRELATION (RIGHT) (&syn-not-dego) TO (1 &syn-dego-nom)
 "<dego>"
     "dego" CS @CVP &syn-not-dego ID:1 R:RIGHT:2
     "dego" CS @CVP &syn-not-dego &DELETE ID:1 R:RIGHT:2
-: 
+:
 "<lávvomuorran>"
     "lávvomuorra" N Sem/Dummytag Ess @COMP-CS< &syn-dego-nom ID:2
     "lávvomuorra" N Sem/Dummytag @COMP-CS< Nom Sg &syn-dego-nom &SUGGEST ID:2
@@ -109,7 +109,7 @@ Det kan òg vera at me vil foreslå endring i begge ord, men «gruppert» slik a
 
 input:      forslagsalternativ:
 ord1 ord2 →  (ord1 ord3)
-                      (ord4 ord5) 
+                      (ord4 ord5)
 men me vil *ikkje* foreslå «ord1 ord5» eller «ord4 ord3».
 
 T.d.
@@ -203,17 +203,17 @@ begge orda)
       [wordform] ADDRELATIONS <name> <name> <target> [contextual_tests]
           TO|FROM <contextual_target> [contextual_tests] ;
 
-    
-      ADDRELATION creates a one-way named relation from the current cohort to the found cohort.       The name must be an alphanumeric string with no whitespace.     
+
+      ADDRELATION creates a one-way named relation from the current cohort to the found cohort.       The name must be an alphanumeric string with no whitespace.
       ADDRELATION (name) targetset (-1* ("someword"))
         TO (1* (@candidate)) (2 SomeSet) ;
 
-    
-      ADDRELATIONS creates two one-way named relation; one from the current cohort to the found cohort,       and one the other way. The names can be the same if so desired.     
+
+      ADDRELATIONS creates two one-way named relation; one from the current cohort to the found cohort,       and one the other way. The names can be the same if so desired.
       ADDRELATIONS (name) (name) targetset (-1* ("someword"))
         TO (1* (@candidate)) (2 SomeSet) ;
 
-    
+
 ```
 
 ##  SETRELATION, SETRELATIONS
@@ -223,15 +223,15 @@ begge orda)
       [wordform] SETRELATIONS <name> <name> <target> [contextual_tests]
           TO|FROM <contextual_target> [contextual_tests] ;
 
-    
-      SETRELATION removes all previous relations with the name,       then creates a one-way named relation from the current cohort to the found cohort.       The name must be an alphanumeric string with no whitespace.     
+
+      SETRELATION removes all previous relations with the name,       then creates a one-way named relation from the current cohort to the found cohort.       The name must be an alphanumeric string with no whitespace.
       SETRELATION (name) targetset (-1* ("someword"))
         TO (1* (@candidate)) (2 SomeSet) ;
 
-    
-      SETRELATIONS removes all previous relations in the respective cohorts with the respective names,       then creates two one-way named relation; one from the current cohort to the found cohort,       and one the other way. The names can be the same if so desired.     
+
+      SETRELATIONS removes all previous relations in the respective cohorts with the respective names,       then creates two one-way named relation; one from the current cohort to the found cohort,       and one the other way. The names can be the same if so desired.
       SETRELATIONS (name) (name) targetset (-1* ("someword"))
         TO (1* (@candidate)) (2 SomeSet) ;
 
-    
+
 ```

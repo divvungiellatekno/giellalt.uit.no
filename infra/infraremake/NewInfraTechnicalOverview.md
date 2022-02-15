@@ -12,7 +12,7 @@ Building is done (e.g. for *sme*) in the $GTHOME/langs/sme folder, with:
 
 ```
 ./autogen.sh -l
-./configure 
+./configure
 make
 sudo make install
 ```
@@ -34,7 +34,7 @@ In order to see what installation you have set just now, write:
 head config.log
 ```
 
-The answer will read  **Invocation command line was**, and thereafter 
+The answer will read  **Invocation command line was**, and thereafter
 the `./configure` command, with the current settings displayed. A situation
 where `make` will build fsts for dictionaries, but otherwise just give the
 default values, will show as follows:
@@ -45,14 +45,14 @@ default values, will show as follows:
 Default options may be turned off with *disable*, e.g. by writing:
  ```./configure --disable-generators```
 
- 
-or, to turn off the *--with* options, write *--without*, and then what you do not want: 
+
+or, to turn off the *--with* options, write *--without*, and then what you do not want:
 ```
  ./configure --without-xfst
  ```
 
- 
-Several options may be stacked after each other, in any order. 
+
+Several options may be stacked after each other, in any order.
 
 ## Note about the build and configure directories
 

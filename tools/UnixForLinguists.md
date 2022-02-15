@@ -12,16 +12,16 @@ In order to use Unix on macOS or Linux just open the terminal program. On the Ma
 
 ## Commands, not mouse click
 
-The Unix Shell differs from most other operating systems in that it has no graphical user interface. Instead, it has what we call a command line, i.e. the cursor is waiting for you to enter a command. Right after you have logged into your home directory you are in your home directory. To the left of the cursor there is a short text which tells you which directory you are in right now. 
+The Unix Shell differs from most other operating systems in that it has no graphical user interface. Instead, it has what we call a command line, i.e. the cursor is waiting for you to enter a command. Right after you have logged into your home directory you are in your home directory. To the left of the cursor there is a short text which tells you which directory you are in right now.
 
-You will now learn many commands. Commands must be written in a certain way. A unix command has two mandatory parts: The command must start with the name of a program, and it is completed when you press the ENTER key. 
+You will now learn many commands. Commands must be written in a certain way. A unix command has two mandatory parts: The command must start with the name of a program, and it is completed when you press the ENTER key.
 
-* Let's try a simple command: 
-    - Write date and press ENTER. 
-    - In response, you should get the current date and time. 
-* Another command: 
-    - Write cal and press ENTER. 
-    - The answer should be a small calendar. 
+* Let's try a simple command:
+    - Write date and press ENTER.
+    - In response, you should get the current date and time.
+* Another command:
+    - Write cal and press ENTER.
+    - The answer should be a small calendar.
 
 From now on we will assume that you always press ENTER after a command. "type ls" therefore means "type ls and press ENTER", and similarly for the other commands.
 
@@ -31,7 +31,7 @@ From a linguistic point of view, we can look at the commands as verbs. Since all
 
 In the same way as regular verbs, Unix commands also operate with implicit objects. The interpretation depends on the context. When we say "eat!" we usually mean "Eat the food that is in front of you". The Unix command **ls** also has such a context-dependent, implicit object. What you're really saying is "list the contents of the directory I am standing now." If you want to list the content of a specific directory, you must state the name of the directory (see below). The same applies to **cal**. By typing `cal`, you get this year's calendar. If you want to know which day of the week we started a new millenium, type cal 2000.  We will later look at commands with two objects, the Unix version of ditransitive verbs.
 
-Commands can also be modified. We may call these modifiers adverbs, but programmers call them options or flags. Different commands take different adverbs, or flags, and the meaning of the flag varies from command to command. Flags typically consist of one letter or number, and they begin with a hyphen. On some systems, the flags **-m** causes Monday to be the first day of the week, instead of Sunday and **-3** - to show the calendar of the 3rd month - March. 
+Commands can also be modified. We may call these modifiers adverbs, but programmers call them options or flags. Different commands take different adverbs, or flags, and the meaning of the flag varies from command to command. Flags typically consist of one letter or number, and they begin with a hyphen. On some systems, the flags **-m** causes Monday to be the first day of the week, instead of Sunday and **-3** - to show the calendar of the 3rd month - March.
 
 Summary:
 
@@ -67,14 +67,14 @@ Summary:
 
 Directory structure: parent directory, daughter directory, the notation ..
 
-Commands: 
-* cd (moves me home) 
+Commands:
+* cd (moves me home)
 * cd .. (moves me one directory up)
 * cd name (moves me to the directory "name")
 
 ## Relative and absolute reference
 
-There are two ways to refer to files and directories in Unix. One is absolute and the other is relative. The way we have used so far is the relative one. When we use the relative reference the reference depends on where we stand. Suppose you are in the home directory, and there is a directory called "unixcourse". Then it is possible to write `ls unixcourse`. But if you stand in the sister directory `Documents`, it is not possible, then you must write `ls ../unixcourse` to see the content. Relative reference is thus relative to where in the system you are when you write the command. 
+There are two ways to refer to files and directories in Unix. One is absolute and the other is relative. The way we have used so far is the relative one. When we use the relative reference the reference depends on where we stand. Suppose you are in the home directory, and there is a directory called "unixcourse". Then it is possible to write `ls unixcourse`. But if you stand in the sister directory `Documents`, it is not possible, then you must write `ls ../unixcourse` to see the content. Relative reference is thus relative to where in the system you are when you write the command.
 
 When you use absolute reference it plays no role where you stand, because the absolute reference shows you where the file or directory is located by referring to the root directory, which is called **/**. If your user name is trond, typing `ls /Users/trond/unixcourses/` will work, no matter what directory you are in. The reference to the directory unixcourse is no longer relative, but absolute, it is given in relation to the root directory.
 
@@ -93,7 +93,7 @@ If the file had been very long, you would have preferred having it one screenful
 
 Summary:
 
-Commands: 
+Commands:
 * `cat`, `cat > filename`, `less`
 * Get out of the `less` program and return to the command line: type `q`
 
@@ -101,7 +101,7 @@ Commands:
 
 **sort**
 
-The contents of the file "n-list" in the previous section may be used as an example in order to learn some very important commands. We would like to sort the lines of a file. Write `sort n-list` and you get the names in the file in the alphabetical order. An easier way would be to write `sort n` and then press **Tab**. If "n-list" is the only file in the directory that has n as its first letter, Unix will fill out the rest for you. We may then modify this command with flags (our "adverbs"). Flags are written with an initial hyphen (-) first, and placed between the command word and argument(s). Instead of writing `sort n-list` you may write `sort -r n-list`. 
+The contents of the file "n-list" in the previous section may be used as an example in order to learn some very important commands. We would like to sort the lines of a file. Write `sort n-list` and you get the names in the file in the alphabetical order. An easier way would be to write `sort n` and then press **Tab**. If "n-list" is the only file in the directory that has n as its first letter, Unix will fill out the rest for you. We may then modify this command with flags (our "adverbs"). Flags are written with an initial hyphen (-) first, and placed between the command word and argument(s). Instead of writing `sort n-list` you may write `sort -r n-list`.
 
 The flag **-r** means "reversed", and the file is thus sorted in reverse order.
 
@@ -167,7 +167,7 @@ The command **tr** changes a character to another. This command differs from oth
 cat n-list | tr 'e' 'x' | less
 ```
 
-(Remember that you leave the program less by pressing q). This command gives you the result on the screen. If you want to save the results to a new file type instead you may type 
+(Remember that you leave the program less by pressing q). This command gives you the result on the screen. If you want to save the results to a new file type instead you may type
 
 ```
 cat n-list | tr 'e' 'x' > newfile
@@ -175,11 +175,11 @@ cat n-list | tr 'e' 'x' > newfile
 
 The new file is then saved as "newfile". Note that you can not use the same name on source file and destination file.
 
-A very useful tr command is the one that turns a text into a list with one word per line. In order to achieve that we will replace all spaces with the newline character. The newline character we write as 
+A very useful tr command is the one that turns a text into a list with one word per line. In order to achieve that we will replace all spaces with the newline character. The newline character we write as
 
 ```
 '\n'
-``` 
+```
 
 Since what we have is a list, we start by turning it into a text:
 
@@ -202,7 +202,7 @@ If you then write history, you get a list of all the commands you have done. Eac
 Long commands may also be edit. Let us say that you have written the command
 
 ```
-grep e n-list | rev | sort | rev 
+grep e n-list | rev | sort | rev
 ```
 
 The result was a reverse sorted list of all names that contains an e. You may now press the Up Arrow, get the command again, and press the left arrow key until you reach the e. You then delete it, and write a instead, and thereafter you press ENTER. The result is a reverse sorted glossary of all the names containing the vowel a.
@@ -217,7 +217,7 @@ Exclamation mark plus rule number gives the same command again.
 
 ## Copy, move and rename files
 
-Files are copied with the command **cp** (for "copy"). To copy the file n-list to a new file, which you may call the n-list2, type `cp n-list n-list2`. The order is thus "cp from to". To give a file a new name, use the command **mv** (move). The syntax is the same: `mv old name new name`. The name mv really means move. Try first making a new directory: 
+Files are copied with the command **cp** (for "copy"). To copy the file n-list to a new file, which you may call the n-list2, type `cp n-list n-list2`. The order is thus "cp from to". To give a file a new name, use the command **mv** (move). The syntax is the same: `mv old name new name`. The name mv really means move. Try first making a new directory:
 
 ```
 mkdir oldfiles
@@ -293,7 +293,7 @@ More information on regular expressions is found on Wikipedia:
 
 ## Unix's built-in help system: man, apropos and info
 
-Unix has a very good help system built-in. If you know the name of the command and want more information, you may write **man** and the command name (e.g. `man grep`). 
+Unix has a very good help system built-in. If you know the name of the command and want more information, you may write **man** and the command name (e.g. `man grep`).
 
 There are two problems with this information: You must know the name of the command before you can ask, and the text is often a bit cryptic. The man pages are most suited to find out what flags to use with a command, and how they work.
 

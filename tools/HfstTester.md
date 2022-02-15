@@ -150,7 +150,7 @@ Test 1 - Passes: 23, Fails: 3, Total: 26
 To get the most compact test report, run it as follows:
 
 ```
-$ HfstTester.py -C -x -i -c ./sma/testing/sma-tests.yaml 
+$ HfstTester.py -C -x -i -c ./sma/testing/sma-tests.yaml
 Testing Xerox FST dictionaries
 [PASS] - Test 0: Noun - gåetie (Lexical/Generation)
 [FAIL] - Test 1: Noun - gåetie (Surface/Analysis)
@@ -176,7 +176,7 @@ Total fails: 38
 To see the details of why it failed in each test, rerun it as above using the `-t, --test` option and the test ID for the test you want to investigate. E.g.:
 
 ```
-$ HfstTester.py -x -i -c -f -t "Noun - nïejte" ./sma/testing/sma-tests.yaml 
+$ HfstTester.py -x -i -c -f -t "Noun - nïejte" ./sma/testing/sma-tests.yaml
 Testing Xerox FST dictionaries
 ------------------------------------------
 Test 0: Noun - nïejte (Lexical/Generation)

@@ -72,12 +72,12 @@
   correctness issues. We need their lists, but we also need a more direct
   involvement from their side (after all, our program will decide what's
   correct)
-* The overall project planning, schedules, milestones 
+* The overall project planning, schedules, milestones
 * Sometimes our weekly meetings are not focused enough, too much
   coffetableish...
 
 ### Sjur
-* project plan & details, 
+* project plan & details,
 * more time on the project (= term db has been a problem)
 * documentation
 * more frequent physical meetings?
@@ -110,7 +110,7 @@
   perhaps a feeling of it being too wide and not focused enough, e.g. when it
   comes to negotiations, etc.
 
-  
+
 ## Feedback
 * Good.
 

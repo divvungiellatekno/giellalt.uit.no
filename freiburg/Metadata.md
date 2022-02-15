@@ -35,7 +35,7 @@ All publicely available metadata is stored in files separated from the [ELAN|ELA
 As a label for this category we use _Modality_ and mean here the way by which signs are transmitted by a sender. This catory has two values:
 
 *oral (e.g. speech which we have recorded on audio or audio+video and transcribed or speech which is transcribed, but where there is no audio available because it is lost or the speech was transcribed without being recorded)
-*written (e.g. handwritten or printed texts, texts published online)  
+*written (e.g. handwritten or printed texts, texts published online)
 
 Another potential values (not relevant for our projects) are:
 
@@ -70,7 +70,7 @@ The-letter code in accordance with ISO 639-3
 
 ## Medium
 
-# Other conventions 
+# Other conventions
 
 Note that also file names used by us inlcude some metadata already. For instance:
 *sms19610000lagercrantz318

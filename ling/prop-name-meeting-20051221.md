@@ -29,14 +29,14 @@ Work process:
         - one sem, inherited from common
         - and we will decide a default declension class for each lg
         - we may leave a tag in place saying "untouched by human hands"
-* Helsinki: - same case, but here we need heavy manual editing          
-    - make a tag saying "now touched (by native speaker)" 
+* Helsinki: - same case, but here we need heavy manual editing
+    - make a tag saying "now touched (by native speaker)"
 
 Conclusions:
 
 Double linking, iconic id
 Iconic id decided by the following principle:
-* Place names: pick Norwegian, Swedish, Finnish, English names. 
+* Place names: pick Norwegian, Swedish, Finnish, English names.
 * Other names: pick the most common (the one which give most "identical" hits among our lgs:
                sme, smj, sma, nor/nob/nno, swe, fin, eng (sms, smn) )
 
@@ -44,16 +44,16 @@ With the princ of inheritance (lemma inherited from common file):
 * inherit right away / at creation time (= larger files, more duplicate info)
 
 ```
-common        |     swe          |    fin           |    
-India_2       |     India        |    Intia         |    
-->lg=a        |     ->India_2    |    ->India_2     |    
-(->lg=b Intia)|     ->India      |                  |    
+common        |     swe          |    fin           |
+India_2       |     India        |    Intia         |
+->lg=a        |     ->India_2    |    ->India_2     |
+(->lg=b Intia)|     ->India      |                  |
 sem plc
 ...
 
-Timbuktu      |     Timbuktu     |    Timbuktu      |    
-->lg=a id     |     ->Timbuktu   |    ->Timbuktu    |    
-->lg=b id     |                  |                  |    
+Timbuktu      |     Timbuktu     |    Timbuktu      |
+->lg=a id     |     ->Timbuktu   |    ->Timbuktu    |
+->lg=b id     |                  |                  |
 sem plc       |     <ab>Tmb.</ab>|
 ...
 
@@ -112,9 +112,9 @@ Different aspects of abbreviations and acronyms:
    (intermediate) expansion)
 * linguistic analysis/properties:
     - the preprocessor is concerned about abbr's behaviour wrt. sentence delimitation (TRAB, ITRAB)
-    - speller programs want to correct them whenever wrongly spelled (possibly 
+    - speller programs want to correct them whenever wrongly spelled (possibly
    storing misspellings of abbrs)
-    - disambiguators want their underlying POS analysis (in addition to their ABBR 
+    - disambiguators want their underlying POS analysis (in addition to their ABBR
    tag)
     - they have inflections of their own
         - St.dieđ. 10 / St. dieđáhus OR St. dieđáhusa... (implicit case)
@@ -130,7 +130,7 @@ Lexicon conclusion:
   more than one entry/language in the common file)
 
 Transducer conclusions:
-* Leave things at status quo for the abbreviations and the acr generator 
+* Leave things at status quo for the abbreviations and the acr generator
 * We will return to the issue of double abbrs if they turn up (They probably don't)
 * Double acrs arelaready taken care of in the sme-dis.rle urle set (lexical acronyms
   are preferred over generated ones)

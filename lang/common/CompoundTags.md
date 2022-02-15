@@ -125,7 +125,7 @@ added as comments (see examples below).
 Suggested tags (these are all the same as presently used in the analyzer):
 
 ```
-+CmpN/SgCmp    (=sealg-) i prinsippet kultur- kultuvra 
++CmpN/SgCmp    (=sealg-) i prinsippet kultur- kultuvra
 +CmpN/SgNCmp (alternations between full and redused final vowel is coded
            in the lexicon / twolc)
 +CmpN/SgGCmp (alternations between full and redused final vowel is free)
@@ -208,7 +208,7 @@ C     = ; ! +CmpN/SgGCmp +CmpN/PlGCmp +CmpN/SgNCmp
 A     = ; ! +CmpN/AllCmp
 ... for all combinations
 OR:
-One or more of: NGPSA  
+One or more of: NGPSA
 N = ; ! +CmpN/SgNCmp
 G = ; ! +CmpN/SgGCmp
 P = ; ! +CmpN/PlGCmp
@@ -256,7 +256,7 @@ Suggested tags:
             PLX class Np)
 ```
 
-Thus, by default all compound forms of a word is 
+Thus, by default all compound forms of a word is
 
 # Conflicts between specified compound form and required left-part form
 
@@ -359,8 +359,8 @@ Nouns denoting:
 
 # What kind of words get +CmpN/Left compound-tags?
 
-* Some very few specific words where the meaning of the compound alters with the case of the first part (for example Ahki, Dilli, Heahti, Duohki, Vuolli, Geahči. 
-Skuvlaahki vs. Skuvllaahki = school-age vs. age of school, 
+* Some very few specific words where the meaning of the compound alters with the case of the first part (for example Ahki, Dilli, Heahti, Duohki, Vuolli, Geahči.
+Skuvlaahki vs. Skuvllaahki = school-age vs. age of school,
 Stohpodilli vs. Stobudilli = housing situation vs. situation in the house
 Uksageahči vs. Uvssageahči = end of the door vs. end of the room where the door is)
 

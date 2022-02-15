@@ -88,9 +88,9 @@ Each lexicon is documented **below** the keyword *LEXICON*. It is possible to us
 LEXICON N_ODD
 ##  !!Inflection for odd-syllable nouns: lexicon @LEXNAME@
 ###  -------------------------------------------------------
-### 
+###
 ##  Short descrioption of this lexicon, and its purpose.
-### 
+###
  +N+Sg: N_ODD_SG ;
  +N+Pl: N_ODD_PL ;
  +N:    N_ODD_ESS ;

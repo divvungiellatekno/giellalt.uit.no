@@ -8,7 +8,7 @@ forms are used to standardise the representation.
 1. NFKD = Normalization Form Compatibility Decomposition
 1. NFKC = Normalization Form Compatibility Composition
 
-The first, NFKD, **decomposes** the characters (á as two characters), 
+The first, NFKD, **decomposes** the characters (á as two characters),
 whereas the second, NFKC, **composes it** (á as one character).
 
 Our North Sami analysers use the **composed** representation.

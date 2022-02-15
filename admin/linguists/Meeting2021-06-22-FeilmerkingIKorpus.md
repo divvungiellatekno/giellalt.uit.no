@@ -17,7 +17,7 @@ Korleis kan ein skilja på foreign (∞) og leksikalsk (€) feil?
 ## Problematiske tilfelle å passe på
 - et sitat?
 - navn som kan bestå av flere ord - f.eks. Feelings-álbuma.
-- har vi ordan i leksikon, og blir dem merka som feil eller 
+- har vi ordan i leksikon, og blir dem merka som feil eller
 - vi må være konsekvent i feiloppmerking og leksikon
 
 Inga er veldig fornøyd med systemet hun bruker for SMJ.
@@ -65,7 +65,7 @@ Viktig for:
 ### Kommandoar for å konvertera korpustekst til xml, og deretter trekkja ut med 'foreign'
 For å konvertera originaltekst til xml:
 ```sh
-$ convert2xml --goldstandard orig/smj/ficti/other_files/dan-le-danna-infonuorra.correct.txt.xsl 
+$ convert2xml --goldstandard orig/smj/ficti/other_files/dan-le-danna-infonuorra.correct.txt.xsl
 ```
 
 For å konvertera éi korpusfil til tekst:
@@ -122,7 +122,7 @@ Mii leat vásihan ahte leat áidna sámi NGO (eaktodáhtolaš organisašuvdna) g
 --- Struktur for likestilling --- namn
 
 Duogáš Son lea oahppan sosiálaekonoma, ja bargan ovdal {Norges}€{foreign|} {Rederiforbund:as}${prop,suf|Rederiforbundas} ja {Norges}€{foreign|} {Industriforbund:as}${prop,suf|Industriforbundas}.
---- burde blitt merka opp som ett ord: {Norges Rederiforbund:as}${prop,suf|Norges Rederiforbundas} 
+--- burde blitt merka opp som ett ord: {Norges Rederiforbund:as}${prop,suf|Norges Rederiforbundas}
 
 
 Enodaga gielddas ledje jagi 2010 loahpas 187, Gihttelis 11, {Muonios}∞{prop,foreign|Muonás} 5 ja Kolaris 2 sámegielaga.

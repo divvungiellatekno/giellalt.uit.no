@@ -5,7 +5,7 @@ TCA2 is a program for *sentence alignment*, developed by Knut Hofland and Øyste
 ### Workflow
 
 * [Workflow/Bargovuohki](Bargovuohki.html)
-* Files for alignment 2019: 
+* Files for alignment 2019:
     - [nob2sma/admin/sd/samediggi.no](lists/nobsma_admin_sd_samediggi_no.txt)
     - [nob2sma/admin/sd/samediggi.no PRM-filer](lists/nobsma_admin_sd_samediggi_no_prmfiler.txt)
 
@@ -38,7 +38,7 @@ TCA2 is a program for *sentence alignment*, developed by Knut Hofland and Øyste
 ## Meetings
 
 * 2017:   [21.6.](../admin/corpus/Meeting_2017-06-21.html)  //
-  [4.7.](../admin/corpus/Meeting_2017-07-04.html)  
+  [4.7.](../admin/corpus/Meeting_2017-07-04.html) 
 
 * 2012:
   [12.1.](../admin/corpus/Meeting_2012-01-12.html)  //

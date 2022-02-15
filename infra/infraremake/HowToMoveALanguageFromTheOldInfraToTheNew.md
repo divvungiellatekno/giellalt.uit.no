@@ -59,8 +59,8 @@ Into `src/filters` go various language specific filters.
 
 These keep the same name as before, after being moved:
 
-* derivation-filter.regex 
-* focus-filter.regex 
+* derivation-filter.regex
+* focus-filter.regex
 
 ## Yaml files
 

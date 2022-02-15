@@ -68,7 +68,7 @@ ReaderConfig:
     # slash.
     api_host: "sanit.oahpa.no/reader/kyv"
     # URL to serve media from, minus scheme, and no trailing slash.
-    media_host: "sanit.oahpa.no" 
+    media_host: "sanit.oahpa.no"
 ```
 
 2.) A setup within nginx to allow proxying of specific requests to the non-SSL
@@ -81,6 +81,6 @@ inspect nginx config files, I will not paste them here for sikkerhets skyld.
 
 TODO: sprinkle some debug log statements throughout the code
 
-##  Testing 
+##  Testing
 
 ##  Where there be dragons

@@ -29,7 +29,7 @@ The source for the above is:
 
 ```
 [link]     = create a hyperlink to an internal WikiPage called 'Link'.
-[this is also a link] = create a hyperlink to an internal WikiPage called 
+[this is also a link] = create a hyperlink to an internal WikiPage called
                         'ThisIsAlsoALink' but show the link as typed with spaces.
 [a sample](link) = create a hyperlink to an internal WikiPage called
                     'Link', but display the text 'a sample' to the
@@ -176,12 +176,12 @@ The following code:
 
 ```
 |   table | header
-| --- | --- 
+| --- | ---
 |   normal | cell
 ```
 
 gives this table:
 
 |   table | header
-| --- | --- 
+| --- | ---
 |   normal | cell

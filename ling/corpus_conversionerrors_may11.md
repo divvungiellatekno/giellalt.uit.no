@@ -11,8 +11,8 @@
     - đ-som ó, osv.
 * bad sentence-delimitation: one real sentence is one fragment in one language,
   3 fragments in the other -> alignment goes bunk
-* files `freecorpus/converted/sme/admin/others/` 
-    - `STM200420050011000SE_PDFS.pdf.xml` 
+* files `freecorpus/converted/sme/admin/others/`
+    - `STM200420050011000SE_PDFS.pdf.xml`
   `STM200420050044000SE_PDFS.pdf.xml`
   have encoding errors that đ is represented as &nbsp; and the document is full of
   &nbsp;'s; thus these files should be deleted

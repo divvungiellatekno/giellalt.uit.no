@@ -7,7 +7,7 @@ these in order:
 
  # tagsets
  # user_friendly_tags
- # paradigms 
+ # paradigms
  # Contexts
  # paradigm layouts
 
@@ -72,7 +72,7 @@ Here's an example of some tagsets from *sme*:
      - "verb"
      - "adj."
      - "konj."
-    type: 
+    type:
      - "NomAg"
      - "G3"
      - "aktor"
@@ -171,7 +171,7 @@ list, if necessary.
     Relabel:
       - source_morphology: 'kpv'
         target_ui_language: 'eng'
-        tags: 
+        tags:
           <<: *some_alias_name
 
 ```
@@ -180,7 +180,7 @@ list, if necessary.
 
 The dictionary paradigms are managed by a file and directory structure based
 around the language code for the language in question. This way multiple
-projects may share language paradigm code. 
+projects may share language paradigm code.
 
 ###  The paradigm folder structure
 
@@ -235,7 +235,7 @@ The rules may be very simple, but here is one that combines *morphology* and
     lexicon:
       XPATH:
         sem_type: ".//l/@type"
-      sem_type: 
+      sem_type:
         - "Prop"
         - "prop"
     --
@@ -254,7 +254,7 @@ YAML settings:
 ###  Conditions together
 
 Operating together, what the conditions essentially say is that for any
-user-inputted wordform, if the analyzer rules find a matching analysis, 
+user-inputted wordform, if the analyzer rules find a matching analysis,
 and the lexicon rules find a matching lexicon entry, then the paradigm
 will be used for the entries where these align.
 
@@ -278,7 +278,7 @@ Above we see that either a string value *"V"* may be specified, or boolean
 be specified, meaning that any of those values must be present for the
 condition to be true. For example, tagset *infinitive* is defined to be the
 set *Inf1*, *Inf2*, *Inf3*, but we only want to match the first two, and
-not the third: 
+not the third:
 
 ```
     morphology:
@@ -290,11 +290,11 @@ not the third:
 
 The *morphology* condition also supports matching of whole tags, using the
 *tag* keyword, so for example, the above example may be reformulated in this
-way: 
+way:
 
 ```
     morphology:
-      tag: 
+      tag:
         - "V+Inf1"
         - "V+Inf2"
 ```
@@ -344,11 +344,11 @@ Note that you may also specify lists, as with the above:
 
 ```
 
-      
+
     lexicon:
       XPATH:
         sem_type: ".//l/@sem_type"
-      sem_type: 
+      sem_type:
         - "Plc"
         - "Something"
 ```
@@ -441,17 +441,17 @@ In the example above, the first half shows that the paradigm is applied when
 the morphological analyses for the entry match two [tagsets](#tagsets): `pos` and
 `animacy`, where `pos` is exactly "V", and `animacy` is either "AI" or
 "TI". For this to work, these two tagsets must also be defined in the language
-project's tagset file. 
+project's tagset file.
 
 Some additional information about the layout is also defined, the `name`, and
 the layout `type`: layout type is relevant if multiple layouts are matched for
 the word and corresponding rule. Multiple layouts will be rendered in the entry
 with a tabbed navigation menu at the top.
 
-Next is the actual layout: 
+Next is the actual layout:
 
- # spacing is important, - columns must match up 
- # columns are marked with the pipe character ` | `. 
+ # spacing is important, - columns must match up
+ # columns are marked with the pipe character ` | `.
  # leave one space between the pipe character and any content
  # each row must begin with and end with ` | `
  # the first row should not include any cells spanning multiple columns
@@ -503,7 +503,7 @@ YAML has several conventions for specifying strings: [YAML strings](https://en.w
 ###  Optional settings within *layout*
 
 The following settings do not need to be defined at all, but help determine the
-presentation of data within the table. 
+presentation of data within the table.
 
  # *type* - (string) specify the type of the layout and thus its title in the tab menu if multiple layouts are matched.
 
@@ -601,7 +601,7 @@ allowed in the first column, because this is used to set the layout.
 
 As long as the pipe is missing, the value may be anywhere within.
 
-###  Cell text alignment 
+###  Cell text alignment
 
 Aligning text or values within the cell is Value alignment is a matter
 of using the character {:} next to the cell border character {|}. Make
@@ -638,7 +638,7 @@ do so, and one *.context* file could be used for everything.
 Context files are simply a YAML list, and each item is a dictionary
 with the following keys:
 
- 
+
 * *entry_context* - (string) matches the *@context* attribute on each *<l />*
    node. Set to a string, or None
 * *tag_context* - (string) matches the tag used in generation. Must be

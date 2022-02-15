@@ -7,7 +7,7 @@ Setting up a development or testing environment goes in three major steps.
 
 #  Install virtualenv
 
-The easiest way is: 
+The easiest way is:
 
 ```
     pip install virtualenv

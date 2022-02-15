@@ -8,13 +8,13 @@ Thanks to the open-source community, there are numerous resources available
 which make it easy to produce designs with good cross-browser compatibility.
 Previously, troubleshooting these issues for each individual browser would take
 time, when one would rather focus on implementation and basically, producing
-usable software. 
+usable software.
 
-In this case, we used [Twitter Bootstrap](http://twitter.github.com/bootstrap) 
+In this case, we used [Twitter Bootstrap](http://twitter.github.com/bootstrap)
 to get the most
-for less, and it has resulted in an easy to use and very minimal layout. 
+for less, and it has resulted in an easy to use and very minimal layout.
 The layout works simultaneously on all the major browsers
-for desktop operating systems, as well as the most popular mobile browsers. 
+for desktop operating systems, as well as the most popular mobile browsers.
 Thus, there is no real need to produce code specific to
 Apple's iOS or the Android operating system, or pay for the licensing setup
 involved with iOS development, and we get all of these things for free.
@@ -24,7 +24,7 @@ involved with iOS development, and we get all of these things for free.
 Having to not worry about the design meant that there was more time left for
 developing functionality. Our dictionary is based on
 [Flask](http://flask.pocoo.org/), a light, and flexible web
-framework for Python. 
+framework for Python.
 
 As mentioned above, the lexical data used in this application is stored in an
 XML format, with one file per language pair, per direction (thus making
@@ -33,8 +33,8 @@ These files range in size from 2MB to 5MB, and are used in the live site,
 without the need for a relational database to store the data.  On our server,
 queries end up being quite fast, but to ensure that this continues to be true
 for larger dictionaries, we have also used one of the quickest XML libraries
-for Python currently available, [lxml](http://lxml.de), 
-[benchmarks](http://lxml.de/performance.html). 
+for Python currently available, [lxml](http://lxml.de),
+[benchmarks](http://lxml.de/performance.html).
 This allows us to
 simply update the files, and restart the service, and any new lexical entries
 are immediately available to users.
@@ -111,7 +111,7 @@ Two of the learning tools already constructed for North Saami are $Kursa$ and
 $Oahpa$.  $Kursa$ is a free, multimedia-rich set of online course materials in North Saami,
 containing lessons with text, and audio recordings, which are implemented in
 [WordPress](http://www.wordpress.org/), a free and open-source
-blogging tool. 
+blogging tool.
 
 To go with these learning materials, we have created a plugin for WordPress
 written in JavaScript, jQuery, and Twitter Bootstrap, which provides access to
@@ -128,7 +128,7 @@ into several other potential situations with ease. For example, it could be
 included on a specific page or website, or inserted via a web browser plugin in
 any page.  We have ensured that the library works in the most commonly used,
 and current web browsers, as such, this functionality is available on Windows,
-Mac OS X and Linux; in Internet Explorer, Firefox, Chrome, Opera, and Safari. 
+Mac OS X and Linux; in Internet Explorer, Firefox, Chrome, Opera, and Safari.
 
 In addition to plugin for *Kursa*, we have produced a cross-browser solution
 which is similar to a browser extension, but instead, is accessible via a

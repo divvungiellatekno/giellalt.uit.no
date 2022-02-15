@@ -15,7 +15,7 @@ We will use vislcg3 as an example on how to use checkinstall
 
 1.  [Check out
     vislcg3](https://giellalt.uit.no/tools/docu-vislcg3.html#Commands+to+check+out+and+install+vislcg3),
-    and replace `sudo make install` with `sudo checkinstall -R`  
+    and replace `sudo make install` with `sudo checkinstall -R`
 
 2.  This appears:
 

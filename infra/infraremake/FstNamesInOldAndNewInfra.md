@@ -1,6 +1,6 @@
 # FST's and other compiled files working in new infra
 |  Name in old infra         |Name in new infra
-| --- | --- 
+| --- | ---
 | clock-LANG.fst             | transcriptor-clock2text-desc.xfst
 | date-LANG.fst              | transcriptor-date2text-desc.xfst
 | dict-iLANG-norm.fst        | generator-dict-gt-norm.xfst
@@ -24,7 +24,7 @@
 
 # Paradigm data sources
 |  Name in old infra         |Name in new infra
-| --- | --- 
+| --- | ---
 | paradigm_full.LANG.txt     | ../test/data/paradigm_full.LANG.txt (temporary place)
 | paradigm_min.LANG.txt      | ../test/data/paradigm_min.LANG.txt (temporary place)
 | paradigm.LANG.txt          | ../test/data/paradigm.LANG.txt (temporary place)
@@ -33,7 +33,7 @@
 
 # Not yet in place
 |  Name in old infra         |Name in new infra
-| --- | --- 
+| --- | ---
 | abbr.txt                   | (ikkje i ny infra enno)
 | corr.txt                   | (ikkje i ny infra enno)
 | hyph-LANG.fst              | (ikkje i ny infra enno)

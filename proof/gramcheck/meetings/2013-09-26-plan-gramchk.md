@@ -34,7 +34,7 @@ grammar checker project plan
     - move SME (and GC) from old to new infrastructure
     - meetings with Francis
 
-* maintenance: 
+* maintenance:
     - add/change/update semantic/syntactic tags
 
 * work on things started:
@@ -68,8 +68,8 @@ Samansetjingsfeil - særskriving:
 
 ```
 [N Nom]         [N ...] ===== kasusfeil (Gen not Nom) / sammensettingsfeil
-[N Nom/N Gen]   [N ...] ===== 
-[N Gen]         [N ...] ===== 
+[N Nom/N Gen]   [N ...] =====
+[N Gen]         [N ...] =====
 [N Nom+VR]      [N ...] ===== med vokalreduksjon (VR) - alltid feil
 [N Nom/N Gen+VR][N ...] ===== --"--
 [N Gen+VR]      [N ...] ===== --"--
@@ -79,7 +79,7 @@ VR = Vokalreduksjon
 
 what is one word?
 * stavekontroll - space before and after
-* tokenizer: 
+* tokenizer:
     - space as a possible sign in a compound (in the case:
   [[N Nom] [[N ...] the error tag can get annotated right away)
     - CG needs to clean up - disambiguate

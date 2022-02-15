@@ -27,7 +27,7 @@ Samlet 14 urfolk mater til ei bok
 
 Bokmålsordboka bøyer *mat* i fleirtal, og det finst
 (heilt marginale) døme på nett. Sjølv vil eg gjerne ha det
-berre i eintal i nob-morfologi, men problemet vi har må 
+berre i eintal i nob-morfologi, men problemet vi har må
 løysast i transfer: Paradigme for *mat* utan +Pl
 gjev oss #, og paradigme med sg = pl for *mat* vil
 gje oss former med adjektiv i fleirtal
@@ -47,7 +47,7 @@ Samlet 14 urfolks matretter til ei bok.
 ### Verb imperativ
 
 ```
-echo Raba uvssa! | apertium -d. sme-nob 
+echo Raba uvssa! | apertium -d. sme-nob
 Åpn døra! => Åpne
 ```
 
@@ -68,7 +68,7 @@ Skal dette løses i norsk morfologi (dvs aldri publikumer) eller i transfer (pl 
 
 ### mange navn til feil paradigme slik at vi får genitiv s lagt til -s, /// LØYST ///
 
-f.eks. 
+f.eks.
 
 Iver Jåkss hus er i ferd med å ødelegges
 
@@ -120,10 +120,10 @@ echo Kvaløya | apertium -d. unob-sme-morph
 ```
 apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | \
 apertium -d. sme-nob-postchunk
-^Den<det><dem><m><sg>$ ^rømme<adj><pp><sg><def>$ ^laks<n><m><sg><def>$ 
-^være<vblex><pres>$ ^påvirkning<n><m><sg><ind>$ ^på<pr>$ 
+^Den<det><dem><m><sg>$ ^rømme<adj><pp><sg><def>$ ^laks<n><m><sg><def>$
+^være<vblex><pres>$ ^påvirkning<n><m><sg><ind>$ ^på<pr>$
 ^laks<n><m><sg><def>$^..<sent><clb>$
-apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. | 
+apertium-sme-nob$ echo Gárgidan luosa lea váikkuheapmi lussii. |
 apertium -d. sme-nob
 Den rømmede laksen er påvirkning på laksen.
 ```
@@ -136,7 +136,7 @@ Den rømmede laksen er påvirkning på laksen.
 
 ###  Genitivs-s + ubestemt form
 
-*Redaktørens bøkene* er alltid feil  /// LØYST 
+*Redaktørens bøkene* er alltid feil  /// LØYST
 
 **Generaliseringa er:** \\
 Possessor med -s + bar N
@@ -170,22 +170,22 @@ Nå må ta sant samebarn- og ungdommer når de behøver lesestoff på sitt språ
 
 ```
 Lea illusáhka ahte suohkanstivra mearridii álggahit giellaguovddáža
-Det er gladsak at kommunestyret bestemte å starte språksentret, 
-Det er ei gladsak at kommunestyret bestemte å starte språksentret, 
+Det er gladsak at kommunestyret bestemte å starte språksentret,
+Det er ei gladsak at kommunestyret bestemte å starte språksentret,
 ```
 
 **Generaliseringa er:** \\
 Samisk *Lea N ahte S* skal vere *Det er en/ei/et N at S*
 
 **Løsninga er:** \\
-Dette avhenger av substantivet. Ved å legge til maydetind til substantivet i bidix, får vi: 
+Dette avhenger av substantivet. Ved å legge til maydetind til substantivet i bidix, får vi:
 
 Det er en gladsak at kommunestyret bestemte å starte språksentret. /// LØYST ///
 
 Trond: Poenget mitt var at *Lea N ahte S* gjeld **alle** N, ikkje berre
 ei undergruppe av substantiva. Eg vil tru at *maydetind* er
 settet av substantiv som kan ha det ind der andre substantiv ikkje
-kan ha det. Generealiseringa av dette drøftar vi i 
+kan ha det. Generealiseringa av dette drøftar vi i
 [bestemtheitsdokumentet](Bestemtheit.html).
 
 ### Ubestemt form etter ii veaháge
@@ -223,17 +223,17 @@ nom<SN><@SUBJ^pre_nom<SN><@→N><ind><pl><gen>{^5<det><qnt><un><pl><guio>$^årin
 ## Illativ
 
 ```
-Emil ja su viellja Felix (3) áddeba sámegiela, muhto dábálaččat vástideaba dárogillii. 
-Emil og h_ns bror Felix (3) de to forstår samisk, men vanligvis svarer de to til norsk. 
+Emil ja su viellja Felix (3) áddeba sámegiela, muhto dábálaččat vástideaba dárogillii.
+Emil og h_ns bror Felix (3) de to forstår samisk, men vanligvis svarer de to til norsk.
 
-Muhto dábálaččat vástideaba dárogillii. 
-men vanligvis svarer de to på norsk. 
+Muhto dábálaččat vástideaba dárogillii.
+men vanligvis svarer de to på norsk.
 ```
 
-Med berre *vástideaba* får vi *på norsk*, men med heile setninga 
+Med berre *vástideaba* får vi *på norsk*, men med heile setninga
 får vi korrekt *til norsk*.
 
-Regelen i t2x treff på ulik preposisjon, av grunnar 
+Regelen i t2x treff på ulik preposisjon, av grunnar
 
 Lene: fikset i regelen for caseprep /// LØYST ///
 * Emil og h_ns bror Felix (3) de to forstår samisk, men vanligvis svarer de to på norsk.
@@ -279,7 +279,7 @@ Derfor er sterk matematikkkompetanse en betingelse for samfunnets utvikling.
 
 ## cmp: sakte-TV /// LØYST ///
 ```
-Minuvttas minuktii prográmmaid gohčodit hiljes-TV:n. 
+Minuvttas minuktii prográmmaid gohčodit hiljes-TV:n.
 Minutt for minutt de kaller programmene #sakte<adj><sint><pst><mf><sg><ind><guio>TV.
 ```
 
@@ -308,7 +308,7 @@ istedenfor duohta adj /// LØYST ///
 
 ## Pers pronomen
 
- su mielas - 
+ su mielas -
 Løses med cg-regler i lex
 
 ```
@@ -323,7 +323,7 @@ Sara Pettersen forklarer at hun ivrer i denne saken, fordi etter hennes oppfatni
 Legge til en tagg for dette i t1x /// LØYST ///
 
 ```
-echo Suoma Sámedikki presideanta, Tiina Sanila-Aikio lea duhtavaš konvenšuvnnain 
+echo Suoma Sámedikki presideanta, Tiina Sanila-Aikio lea duhtavaš konvenšuvnnain
 presidenten I Finland sameting, Tiina Sanila Aikio er fornøyd med en konvensjon
 => konvensjonen
 ```
@@ -367,7 +367,7 @@ Possessor med -s + bar N
  det har ikke blitt vant å ta i mot slike.
  ```
 
- 
+
 #  KVANTORFRASER
 
 ```
@@ -396,12 +396,12 @@ Liste over ting som må forbedres i transfer filene
 Fenomena er lauseleg gruppert etter type (med store bokstavar på nivå 3)
 For å få betre oversikt flyttar vi ting som er ok over i dokumentet [Solved Transfer Problems](SolvedTransferProblems.html)
 
-Skriv slik: 
+Skriv slik:
 * Øverste overskrift: store bokstavar, tema
 * Midtre overskrift: Små bokstavar, undergruppe
 * Lågaste overskrift: Einskildsaker, disponer gjerne slik:
-    - eksempel: sme + mt + korrekt (evt store bokst for nøkkelord), 
-    - deretter drøfting 
+    - eksempel: sme + mt + korrekt (evt store bokst for nøkkelord),
+    - deretter drøfting
     - deretter generalisering
 
 #  NORSK MORFOLOGI
@@ -416,16 +416,16 @@ Eilif Aslaksen har mange ganger vunnet Finnmarks journalistklubbs journalistprem
 
 *samisks*
 
-Problemet er at *samisk* blir analysert som substantiv. 
+Problemet er at *samisk* blir analysert som substantiv.
 
-Lene: delvis løst i transferregler (t4x). Men fordi det er 
-mange ord med samisk, engelsk osv som får substantivbøyning i nob, 
-så bør dette løses i nob, dvs at substantiver som ender på -sk, 
+Lene: delvis løst i transferregler (t4x). Men fordi det er
+mange ord med samisk, engelsk osv som får substantivbøyning i nob,
+så bør dette løses i nob, dvs at substantiver som ender på -sk,
 ikke får en genetiv s.
 
-Trond: Problemet med ei slik løysing er at det finst ord på -sk som har -s, som i 
+Trond: Problemet med ei slik løysing er at det finst ord på -sk som har -s, som i
 (det autentiske dømet) *Norsk arktisk torsks dumpingssalg gjennom årtider.*
-Derimot finn eg ikkje *engelsks* på Google. Eg skal sjå om det er 
+Derimot finn eg ikkje *engelsks* på Google. Eg skal sjå om det er
 mogleg å dele -sk opp i to grupper.
 
 ### manglende bindestrek guio mellom acro og substantiv
@@ -454,10 +454,10 @@ Desse var leksikalisert i bidix men ikkje i nob, dei er no leksikalisert
 (og sølv og bronse kjem).
 
 Akronym + substantiv med bindestrek er delvis løyst:
-Det fungerer for akronym med contlex 
+Det fungerer for akronym med contlex
 
 ```
-VM__n 
+VM__n
 ```
 
 i nob.dix. Det er det dei færreste akronyma som har, så
@@ -483,7 +483,7 @@ Alt ok, ventar på fleire feil :-)
 #  SUBSTANTIV OG SUBSTANTIVFRASER
 ## Ubestemtheit
 ```
- på latinen 
+ på latinen
 ```
 
 språknamn.ILL = på språknomn.ubestemtform
@@ -510,7 +510,7 @@ H_n er i arbeidet.
 H_n er i arbeid.
 ```
 
-Vi treng ei liste over slike (og undersøke unntaka der *i arbeidet* er ok). 
+Vi treng ei liste over slike (og undersøke unntaka der *i arbeidet* er ok).
 
 FIXED for sem_act når hovedverbet er til venstre og er *leat*.
 
@@ -602,7 +602,7 @@ Norge Sametinget har deltatt i til møter delegasjonen i Norges regjering via.
 * oassálastit = delta i
 * čoahkkimiidda = til møter
 
-Vi må med andre ord fjerne i (fjerne preposisjonar introdusert av verb) 
+Vi må med andre ord fjerne i (fjerne preposisjonar introdusert av verb)
 når dei står foran preposisjonar frå kasus.
 
 Fleire døme:
@@ -652,9 +652,9 @@ Neg: De to savnet totaltbildet av alle hendelser i Sameland, og da de to ikke fa
 Pos: De to savnet totaltbildet av alle hendelser i Sameland, og da de to fant et slikt, ble de glade
 ```
 
-Tanken er altså at dakkára skal vere 
+Tanken er altså at dakkára skal vere
 
-* sii leat gávdnan dakkára = et slikt 
+* sii leat gávdnan dakkára = et slikt
 * sii eai leat gávdnan dakkára = noe slikt ///LØST
 
 **Generaliseringa er:**
@@ -716,10 +716,10 @@ Konstruksjonen `passivsubjekt + lea + V-juvvon` skal ha *være* som hjelpeverb, 
 ## Refleksive verb må bli bunde til rett person \\LØST
 
 ```
-Jurddašan ahte mii galggašeimmet leat čoahkkanan 
+Jurddašan ahte mii galggašeimmet leat čoahkkanan
 Jeg tenker at vi skulle ha samlet oss
 ```
-... men *vi samlet seg* -> oss 
+... men *vi samlet seg* -> oss
 
 ## -huvvon-passiv er partisipp, ikkje Sg1  /// LØYST ///
 
@@ -728,7 +728,7 @@ Sámekonvenšuvdna almmuhuvvon ja gaskaboddosaččat dohkkehuvvon
 En samekonvensjon blitt annonsert og midlertidig blitt vedtatt
 ```
 
-*jeg* kjem pga Sg1 på -huvvon, som kjem fordi det ikkje er 
+*jeg* kjem pga Sg1 på -huvvon, som kjem fordi det ikkje er
 andre finitte verb der. ==> HMAINV eller noko.
 
 #  KOORDINERING
@@ -740,9 +740,9 @@ andre finitte verb der. ==> HMAINV eller noko.
 Dát lea leamašan guhkes ja áddjás proseassa
 Dette har vært en lang og tidkrevende prosess
 
-^adj<SA><@→N><ind><GD><ND>{^lang<adj><sint><pst><GD><ND><3>$}$ 
-^conj<@CNP><cnjcoo>{^og<cnjcoo>$}$ 
-^pre_nom<SN><@←SPRED><ind><m><sg><nom><impers>{^tidkrevende<adj><pst><mf><sg><3>$ 
+^adj<SA><@→N><ind><GD><ND>{^lang<adj><sint><pst><GD><ND><3>$}$
+^conj<@CNP><cnjcoo>{^og<cnjcoo>$}$
+^pre_nom<SN><@←SPRED><ind><m><sg><nom><impers>{^tidkrevende<adj><pst><mf><sg><3>$
 ^prosess<n><m><sg><3>$}$^default<default>{^.<sent><clb>$}
 ```
 
@@ -805,7 +805,7 @@ Generalisering i transfer er at verbet er leat og får @←ADVL eller @←OBJ
 
 H_n tror kulturkompetansen er et argument. /// LØST
 
-#  LEGGE TIL cnjsub/pr 
+#  LEGGE TIL cnjsub/pr
 
 ##  om
 lage regler i t4x for å legge til "om". Eksempler, X markerer innsetting av om
@@ -847,7 +847,7 @@ Alle adverbial som blir til fraser på norsk skal flyttast etter objektet
 ```
 In munge sáhte sárdnut ruoššagillii.
 Ikke jeg heller kan tale på russisk.
-Jeg kan heller ikke tale på russisk. 
+Jeg kan heller ikke tale på russisk.
 
 Lene synes denne tolkningen er bedre:
 Heller ikke jeg kan tale på russisk. \\\ LØST \\\
@@ -871,10 +871,10 @@ Heller ikke kunstnerstipendet er blitt flyttet til Sametinget. \\\ LØST \\\
 
 ## Leddsetning
 
-###  go til om 
+###  go til om
 
 ```
-Sámediggi áigu guorahallat lea go vejolaš rievdadit ohcanalmmuheami. 
+Sámediggi áigu guorahallat lea go vejolaš rievdadit ohcanalmmuheami.
 Sametinget skal undersøke er  det mulig å forandre søknadspubliseringa.
 Sametinget skal undersøke om det er mulig å forandre søknadspubliseringa.
 ```
@@ -900,10 +900,10 @@ Eilif Andreas Aslaksen (53) lea bajásšaddan Hilláguras Deanus
 Einar Andreas Aslaksen (53) har vokst opp i Hillagurra i Tana
 ```
 
-**Problemet er:** 
+**Problemet er:**
 Vi klarer ikkje å sjå det eigentlege subjektet attom apposisjonen. /// LØST for numeraler ala (53) etter navn, i nominativ. Arbeider videre med andre syntaktiske sammenhenger etterhvert som de dukker opp.
 
-### Topikalisert objekt 
+### Topikalisert objekt
 
 ```
 Journalistihka lea lohkan Norgga journalistaallaskuvllas Oslos (1989–1991)
@@ -967,7 +967,7 @@ Relativsetningar, med relativt pronomen i nominativ (eller for e-setningar, i lo
 ```
 
 **Generaliseringa er:** \\
-Ei relativsetning med relativisert objekt må på norsk ha eksplisitt subjekt \\   
+Ei relativsetning med relativisert objekt må på norsk ha eksplisitt subjekt \\
 Her: Hab lea NP maid Aux Inf — skal ha subjektspronomen koreferent med Hab      /// LØYST her
 
 ### Topikalisert nektingsverb (overskrift)
@@ -1088,7 +1088,7 @@ Det kan innimellom arbeide, men hver dag slik arbeide jeg har begynt å kjenne �
 Det kan man innimellom gjøre, men hver dag slik arbeide jeg har begynt å kjenne å være umulig
 ```
 
-Vi har eit topikalisert objekt, og treng eit dummy-subjekt "man" rett etter det finitte verbet. 
+Vi har eit topikalisert objekt, og treng eit dummy-subjekt "man" rett etter det finitte verbet.
  \\\ LØST med innsetting av DET, se lenger opp
 
 # VERBVALENS
@@ -1132,7 +1132,7 @@ diehtojuohkki:informasjonssjef
 # FORMELT SUBJEKT "det"
 ## Ein "det" for mykje
 
-### Apposisjon 
+### Apposisjon
 
 /// LØST for numeraler ala (53) etter navn, i nominativ. Arbeider videre med andre syntaktiske sammenhenger etterhvert som de dukker opp.
 
@@ -1165,8 +1165,8 @@ gitta blir chunka inni NP-en og kjem derfor etter P
 
 ```
 Dan dihte fertejit dál bidjat ođđa gaskaboddosaš šalddi billahuvvon šaldi báldii.
-Derfor må  man sette nå ny midlertidig bru ved siden av den ødelagte brua. 
-Derfor må  man nå sette ny midlertidig bru ved siden av den ødelagte brua. 
+Derfor må  man sette nå ny midlertidig bru ved siden av den ødelagte brua.
+Derfor må  man nå sette ny midlertidig bru ved siden av den ødelagte brua.
 ```
 
 **Generaliseringa er:** //

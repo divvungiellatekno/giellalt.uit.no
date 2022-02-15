@@ -1,6 +1,6 @@
 [Norsk|KyrilliskSamiskTastatur.html] ~ [Русский](SaamskajaKlaviatura.html)
 
-Information is forthcoming. While waiting: 
+Information is forthcoming. While waiting:
 
 # Old page
 

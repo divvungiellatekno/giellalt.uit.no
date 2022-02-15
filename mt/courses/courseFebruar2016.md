@@ -26,9 +26,9 @@ Missinglist-barggus lea vejolaš geavahit min sátnegirjjiid (ovdamearka sma-kat
   `see make-bildict` \\
   (... ja bija SLANG ja TLANG , linjjus 27, 28 dego háliidat, sme + nob lea default) \\
   `make -f make-bildict` \\
-  ... ja de dus lea sátnegirji 
+  ... ja de dus lea sátnegirji
 
-Vær OBS på tagger i bidix:  
+Vær OBS på tagger i bidix:
 * ordklasse
 * `NomAg, G3, G7`
 * `Sg` vs `Pl` (andre vegen er ikke nødvendig å merke)
@@ -36,10 +36,10 @@ Vær OBS på tagger i bidix:
     - mellomrom merkes med `<b/>`
     - MWE må legges til i FST, gjerne merkes med `Use/MT`
 
-### Parallelltekster: 
+### Parallelltekster:
 * hva og hvordan bruke dem (når du er i apertium-sme-smX)
-    - `python check_mt-otpt.py -d tmx_data/ ` 
-    - `cat otpt_dir/* > allefiler.html` 
+    - `python check_mt-otpt.py -d tmx_data/ `
+    - `cat otpt_dir/* > allefiler.html`
     - `open allefiler.html` (åpnes i Safari)
 
 ### Lex-sel
@@ -52,7 +52,7 @@ Derivasjoner fra kildespråk til målspråk, diskusjon om harmonisering, se nede
 
 ##  Onsdag
 
-### Stille diagnose, med eksempler fra Majas og MLs lister 
+### Stille diagnose, med eksempler fra Majas og MLs lister
 
 ### Testing (regression og pending)
 Viktig å legge inn eksempelsetninger for lexical selection og transfer
@@ -62,13 +62,13 @@ Viktig å legge inn eksempelsetninger for lexical selection og transfer
 * sammensetninger fra kildespråk til målspråk, harmonisering
 * omorganisering av transferregler (skal gjøres)
 
-### sme-disambigueren 
+### sme-disambigueren
 * forbedre konvertering fra divvun/gt til apertium (Sjur)
 * oppdatere regler (Lene)
 
 ### hva andre enn Maja og Sandra kan gjøre i MT og lexc-koden
-* legge til sme-propernouns 
-* transferregler 
+* legge til sme-propernouns
+* transferregler
 
 ## Torsdag
 ## Forskningsspørsmål for MT-prosjektet
@@ -78,7 +78,7 @@ Viktig å legge inn eksempelsetninger for lexical selection og transfer
 * hvor god er lrx-modellen kontra lex-modellen?
 * hvor god er Apertium systemet for språkpar med stor syntaktisk forskjell (sme-sma)?
 * forskjell mellom idiomer og språkbilder mellom de samiske språkene?
-* sme-smn: tekster skrevet på norsk side vs finsk side 
+* sme-smn: tekster skrevet på norsk side vs finsk side
 * hvilke samfunnsmessige konsekvenser kan dette ha?
     - er rele-modellen en brukbar modell? (for hvert språkpar, hvorfor?)
     - hvor stor interesse/nytte for intersamiske ordbøker osv.
@@ -112,7 +112,7 @@ Viktig å legge inn eksempelsetninger for lexical selection og transfer
 
 ###  FST
 * harmonisering av tagger (Der): Der/voete, Der/vuohta, Der/vuota
-Der/AN  Der/AdjN (denne uka)\\ **Lene**: lager liste over flere 
+Der/AN  Der/AdjN (denne uka)\\ **Lene**: lager liste over flere
     - Cmp (**Lene** skriver bugzilla)
     - teste med pronomensetninger i texts/ (**Maja, Sandra**)
     - partikkel vs. adverb (kan være forskjellig PoS i bidix, men man bør vurdere harmonisering i FST) (**Maja, Sandra, ML**)
@@ -127,14 +127,14 @@ Der/AN  Der/AdjN (denne uka)\\ **Lene**: lager liste over flere
 
 ###  LexSel
 * lage regler utfra behov man ser i bidix, legge eksempelsetninger i pending test, (**Maja, Sandra, ML**)
-###  Transfer 
-Løse de mest frekvente problemene: 
+###  Transfer
+Løse de mest frekvente problemene:
 * reorganisering: merke chunking med syntaktiske tagger, endre klitika, lage et mønster for navning av chunkene, skal dokumenteres på nett (**Lene, Trond**)
 * sjekke konstruksjonstyper: (**alle** samler eksempler og dokumentasjon)
     - objekt- og adverbialplassering
     - NP-intern kongruens
     - numeral-fraser
-    - kasusbruk 
+    - kasusbruk
     - hjelpeverb
 
 ###  Forbedre sme-analyse inn i apertium
@@ -158,7 +158,7 @@ Dagens tagger som forteller funksjon:
 * Der/A
 * Der/Adv
 * Der/Dimin
-* Der/NomAct 						 
+* Der/NomAct
 * Der/NomAg
 * Der/PassL
 * Der/PassS
@@ -166,13 +166,13 @@ Dagens tagger som forteller funksjon:
 Forslag om nye tagger som forteller funksjon:
 * kaus: Der/ahtti Der/ahtte  Der/dehte => Der/Caus
 * inch: Der/goahti => Der/InchL
-* pass: Der/halla Der/PassD => Der/PassH Der/PassD Der/PassT 
+* pass: Der/halla Der/PassD => Der/PassH Der/PassD Der/PassT
 * Der/at Der/at Der/avt => Der/AAdv
 
 Forslag om nye tagger som med suffikser:
 * Der/st Der/stidh => Der/st
 * Der/l Der/lidh => Der/l
-* Der/laš => Der/lasj 
+* Der/laš => Der/lasj
 * Der/alla -  Der/alle (sma) => Der/alla
 * kaus: Der/h Der/d Der/htidh => Der/h Der/ht Der/d Der/tt
 * Der/d Der/didh => Der/d
@@ -188,31 +188,31 @@ Forslag om nye tagger som med suffikser:
 `fuomášit+V+TV+Der/NomAct+N+Sg+Nom` : fuomášeapmi
 
 Resten av sme-taggene - ikke diskutert, og mange av dem er ikke så viktige for MT
-* Der/meahttun 
+* Der/meahttun
 * Der/heapmi +Der/ahtes
 * Der/jagaš Der/jagáš => Der/jagasj
-* Der/keahtta <=== marginal ikke-normativ derivasjon for substantiver, samme form som VAbess 
-* Der/adda 
-* Der/amoš 
-* Der/asti 
-* Der/at 
-* Der/dáfot 
-* Der/eamoš 
-* Der/easti 
-* Der/geahtes 
-* Der/has 
-* Der/heapmi 
-* Der/huhtti 
-* Der/huvva 
-* Der/muš 
-* Der/nuolus 
-* Der/náittot 
-* Der/seagat 
-* Der/stuvva 
+* Der/keahtta <=== marginal ikke-normativ derivasjon for substantiver, samme form som VAbess
+* Der/adda
+* Der/amoš
+* Der/asti
+* Der/at
+* Der/dáfot
+* Der/eamoš
+* Der/easti
+* Der/geahtes
+* Der/has
+* Der/heapmi
+* Der/huhtti
+* Der/huvva
+* Der/muš
+* Der/nuolus
+* Der/náittot
+* Der/seagat
+* Der/stuvva
 * Der/stávval
-* Der/supmi 
-* Der/suttat 
-* Der/veara 
-* Der/viđi 
-* Der/viđá 
+* Der/supmi
+* Der/suttat
+* Der/veara
+* Der/viđi
+* Der/viđá
 * Der/ár

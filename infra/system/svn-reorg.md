@@ -92,7 +92,7 @@ cd scripts
 ```
 
 Files relevant to all (script etc) aside, for all
-big files aside 
+big files aside
  - then paths acc to type, and subpathsa acc to lg (possible to do only kal, but easy to do all lgs)
  - then paths acc to lang, and subpaths acc to type
 private aside
@@ -112,7 +112,7 @@ acc to lg
 acc to app/
 
 procon analysis
-pro a: 
+pro a:
 uniform treatment for insiders and outsiders alike
 con a:
 vulnerable and difficult, conceptually complex

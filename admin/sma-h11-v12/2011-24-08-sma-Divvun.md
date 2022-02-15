@@ -181,7 +181,7 @@ Opplæring på Røros 20.10? Etter sma-oahpa-lanseringa.
 
 Få på plass innspurten til 19.10.
 
-Oahpa 2 startar etter Oahpa 1 og er meir knytt til læringsstiar. 
+Oahpa 2 startar etter Oahpa 1 og er meir knytt til læringsstiar.
 Det blir med andre ord ein parallell til (delar av innhaldet i) nu-oapha.
 
 # Divvun

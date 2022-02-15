@@ -12,8 +12,8 @@ After 75 initial lines of definitions, the bidix contains, in this order:
 1. **The initial bidix chapter A** starts at appr line 75
     1. Manual additions from text + some loanwords
 1. **tEQ1 chapter B** starts at appr line 670
-    1. words from Cip's bidix run having a  1-1 match sme-smn 
-1. **1-m chapter C**  - starts at appr line 5500 
+    1. words from Cip's bidix run having a  1-1 match sme-smn
+1. **1-m chapter C**  - starts at appr line 5500
     1. Word pairs with one sme and more than one smn, ordered according
    to POS and thereafter sme frequency \\
 1. **Names chapter F** line 9500 appr
@@ -21,7 +21,7 @@ After 75 initial lines of definitions, the bidix contains, in this order:
 
 **Todo**: Choose the right smn for each sme in chapter C.
 
-# Procedures 
+# Procedures
 
 use xml or xsl mode in SubEthaEdit.
 
@@ -90,18 +90,18 @@ Be aware of that some verbs are IV, other verbs are TV. At the time being we add
 <e><p><l>birget<s n="vblex"/><s n="iv"/></l><r>piergiđ<s n="vblex"/></r></p></e>
 ```
 
-## Special cases - and how to handle them 
+## Special cases - and how to handle them
 
 ### sme lemma is Pl, smn lemma is Sg – or the other way round
 
-Some lemmas are lexicalised as plurals. As long as it is the same for sme and smn, it is no problem. But if the number is not the same for these two languages, then the number tags must be given to the bidix.  
+Some lemmas are lexicalised as plurals. As long as it is the same for sme and smn, it is no problem. But if the number is not the same for these two languages, then the number tags must be given to the bidix.
 
 E.g. `ávvodoalut+N+Pl` vs. `juhlálâšvuotâ+N+Sg`. Add plural and singular tags to the bidix:
 ```
 <e><p><l>ávvodoalut<s n="n"/><s n="pl"/></l><r>juhlálâšvuotâ<s n="n"/><s n="sg"/></r></p></e>
 ```
 
-### sme lemma is an adverb, smn lemma is not lexicalised as adverb, but a noun in locative. 
+### sme lemma is an adverb, smn lemma is not lexicalised as adverb, but a noun in locative.
 
 Many adverbs are really inflected nouns, usually locatives, illatives or genetives. Sometimes the lemma can be lexicalised as an adverb in one of the languages, but not in the other language. One could consider if the word should be lexicalised also in the other language. If the bidix-worker is not responsible for the FST for the language in question, she should just leave a comment about it.
 
@@ -121,9 +121,9 @@ E.g. `háldui+Po` vs. `haaldun+Po`. Add a comment:
 <e><p><l>háldui<s n="po"/></l><r>haaldun<s n="po"/></r></p></e> <!-- not in sme -->
 ```
 
-### sme lemma has no counterpart in smn, in stead smn has an inflection of the noun: 
+### sme lemma has no counterpart in smn, in stead smn has an inflection of the noun:
 
-e.g. `haga+Po` vs. abessive case in smn. 
+e.g. `haga+Po` vs. abessive case in smn.
 
 Give explanations and examples in the contrastive grammar (or another common file for such notes) and a comment about it in the bidix:
 
@@ -133,18 +133,18 @@ Give explanations and examples in the contrastive grammar (or another common fil
 
 ## For historical reference: This was done to create the bidix:
 
-1. Diff the manual work done for 
+1. Diff the manual work done for
   nursery/apertium-sme-smn/apertium-sme-smn.sme-smn.dix
   since r62163, and put that aside - DONE
 1. build a new bidix from fresh data, as follows:
     1. take the 1-1 pair from  words/finsmn/trans-dict/all_sme2smn.csv - DONE
-    1. for the 1-m (one-to-many) pairs, 
-        1. take the cognates (= Levenshtein =< 3) from 
+    1. for the 1-m (one-to-many) pairs,
+        1. take the cognates (= Levenshtein =< 3) from
   words/finsmn/trans-dict/all_sme2smn_lsd_pseudo-sme_v4.xml - DONE
-        1. take the remaining 1-m sme words, and order them after sme POS, 
-    and thereafter according to sme frequency for manual inspection. 
+        1. take the remaining 1-m sme words, and order them after sme POS,
+    and thereafter according to sme frequency for manual inspection.
     This last group should be kept separate - DONE
 
-    
 
-    
+
+

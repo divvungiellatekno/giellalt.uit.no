@@ -20,7 +20,7 @@ There are of course, other important libraries, but those listed above are the
 most critical. They are also very easy for developers unfamiliar with them to
 pick up.
 
-Of secondary interest are the Flask modules: 
+Of secondary interest are the Flask modules:
 
 1. [flask marrow mailer](http://flask-marrowmailer.readthedocs.org/en/latest/) -
   a library for generating and sending emails.
@@ -99,7 +99,7 @@ In order to use the transifex client, you need two things:
  * the gïelese virtual environment enabled
  * a user-specific configuration file for transifex in your own home
    directory: ~/.transifexrc, otherwise, the
-   project-specific configuration is already checked in in 
+   project-specific configuration is already checked in in
    `src/media-serv/.tx/config`
 
 Transifex Documentation: http://support.transifex.com/customer/portal/articles/1000855-configuring-the-client
@@ -113,7 +113,7 @@ is necessary, refer to docs. Token must be left blank.
     [https://www.transifex.com]
     hostname = https://www.transifex.com
     password = yourpasswordgoeshere!
-    token = 
+    token =
     username = aajegebot
 ```
 
@@ -127,7 +127,7 @@ should need to be concerned with for fetching new translations is:
     tx pull
 ```
 
-A specific language can be specified also: 
+A specific language can be specified also:
 
 ```
     tx pull -l sma
@@ -148,7 +148,7 @@ Further documentation on the command line tool's various options is here:
 
 http://support.transifex.com/customer/portal/articles/960804-overview
 
-##  Additional docs: 
+##  Additional docs:
 
 ```
  * http://support.transifex.com/customer/portal/topics/440187-transifex-client/articles

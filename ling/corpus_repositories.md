@@ -72,7 +72,7 @@ used.
         YLE
         other
     science/
-         
+
 
 If you run the [conversion process](corpus_conversion.html) the
 directory *converted* is created. It has the same structure as *orig*,
@@ -85,20 +85,20 @@ Goldstandard corpus files
 
 These 7 overarching genres should be understood as follows:
 
--   **admin/ :**  
+-   **admin/ :**
     Texts from administrative bodies
--   **bible/ :**  
+-   **bible/ :**
     The bible and other religious texts.
--   **facta/ :**  
+-   **facta/ :**
     Factual texts, e.g. teaching books, descriptive texts. Sakprosa.
--   **ficti/ :**  
+-   **ficti/ :**
     Prose, lyrics, plays and other fiction, political text.
     Skjønnlitteratur.
--   **laws/ :**  
+-   **laws/ :**
     Laws and similar juridical texts.
--   **news/ :**  
+-   **news/ :**
     Newspaper text
--   **science/:**  
+-   **science/:**
     Scientific articles
 
 Todo: Write more about this.

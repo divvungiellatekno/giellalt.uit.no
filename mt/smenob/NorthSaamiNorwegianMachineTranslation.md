@@ -4,8 +4,8 @@ Her ligg lingvistisk og teknisk dokumentasjon for sme-nob mt. Online MT: [jorgal
 
 ## Planer og lingvistisk dokumentasjon
 * [Arbeidsplan haust 2018](Arbeidsplan2018.html)
-* [Lingvistiske problem som skal fikses i transferfilene](TransferProblems.html) 
-  ... og når dei er fiksa blir merknadene [flytta hit](SolvedTransferProblems.html) 
+* [Lingvistiske problem som skal fikses i transferfilene](TransferProblems.html)
+  ... og når dei er fiksa blir merknadene [flytta hit](SolvedTransferProblems.html)
 * [Når har vi (u)bestemte nominalfraser?](Bestemtheit.html)
 * [Korleis handsame akronym](Akronym.html)
 
@@ -35,7 +35,7 @@ Sjå [sme/tools/mt/cgbased/README](http://gtsvn.uit.no/langtech/trunk/langs/sme/
  [14.2.](meetings/170214.html)  //
  [28.2.](meetings/170228.html)   //
  [24.3.](meetings/170324.html)    //
- [31.5.](meetings/170531.html)  
+ [31.5.](meetings/170531.html) 
 * 2016:
  [19.12](meetings/161219.html)  //
 * 2014:

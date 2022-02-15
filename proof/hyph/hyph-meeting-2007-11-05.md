@@ -12,13 +12,13 @@ sme $ lookup -flags mbTT -utf8 bin/hyph-sme.fst
 oslolaš
 oslolaš Os^lolaš
 
-sme$lookup -flags mbTT -utf8 bin/hyphrules-sme.fst 
+sme$lookup -flags mbTT -utf8 bin/hyphrules-sme.fst
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 100%
 oslolaš
 oslolaš os^lo^laš
 ```
 
-Marker for derivational suffix (and, by extension to other languages, also 
+Marker for derivational suffix (and, by extension to other languages, also
 prefix):
 
 * > - suffix
@@ -35,7 +35,7 @@ C+   VC*  CVC
 
 l u  tags, stem
 l l  diacr  here
-= 
+=
 g u  diacr  here
 g l  wordform (w or w/o hyphen)
 ```
@@ -63,21 +63,21 @@ sme-norm.fst        johtolat+N+Sg+Ill  <======== 1
 hyphrules-sme.fst   joh^to^lah^kii
                     johtolahkii
 
-xfst[0]: load sme-norm.fst 
+xfst[0]: load sme-norm.fst
 Opening 'sme-norm.fst'
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 November 05, 2007 12:44:54 GMT
 Closing 'sme-norm.fst'
 apply up> johtolahkii       <==================== 1
 johtolat+N+Sg+Ill
-xfst[1]: load hyph-isme.save 
+xfst[1]: load hyph-isme.save
 Opening 'hyph-isme.save'
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 November 05, 2007 12:43:40 GMT
 Closing 'hyph-isme.save'
 apply up> johtolat+N+Sg+Ill  <==================== 2
 johtolahkii
-xfst[2]: load hyphrules-sme.fst 
+xfst[2]: load hyphrules-sme.fst
 Opening 'hyphrules-sme.fst'
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 100%
 November 05, 2007 12:31:20 GMT
@@ -149,7 +149,7 @@ johtolahkii joh^to^lahkii
 Rules only:
 ```johtolahkii     joh^to^lah^kii```
 
--bash-3.00$ echo "johto^lahkii" | lookup -flags mbTT -utf8 bin/hyphrules-sme.fst 
+-bash-3.00$ echo "johto^lahkii" | lookup -flags mbTT -utf8 bin/hyphrules-sme.fst
 johto^lahkii    joh^to^lah^kii
 
 Lines 52+53 above:
@@ -184,14 +184,14 @@ variable flag-is-epsilon = ON
         - Warning: label '@U.Cap.Obl@:@U.Cap.Opt@' is illegal: flag diacritics  on both sides of the symbol pair.
         - Warning: label '@U.Cap.Opt@:@U.Cap.Obl@' is illegal: flag diacritics  on both sides of the symbol pair.
 19.5 Mb. 212213 states, 1342959 arcs, Circular. Label Map: Default.
-xfst[3]: up johtolahkii                                   
+xfst[3]: up johtolahkii
 joh^to^lah^k@C.NeedNoun@@C.NeedNoun@ii@D.NeedNoun.ON@@D.NeedNoun.ON@
-xfst[3]: set show-flags OFF                               
+xfst[3]: set show-flags OFF
 variable show-flags = OFF
-xfst[3]: up johtolahkii    
+xfst[3]: up johtolahkii
 joh^to^lah^kii
 
-a88-114-120-101:gt sjur$ echo "johtolahkii" | lookup -flags mbTT -utf8 sme/bin/hyph-sme.fst 
+a88-114-120-101:gt sjur$ echo "johtolahkii" | lookup -flags mbTT -utf8 sme/bin/hyph-sme.fst
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 johtolahkii	joh^to^lah^kii
 ```

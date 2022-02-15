@@ -15,17 +15,17 @@
 ## Lingvistikk
 
 ### Dekningsgrad
-Spesielt bruke NRK- og Ávvir-tekster fra nett 
+Spesielt bruke NRK- og Ávvir-tekster fra nett
 
 ### Leksikal selection
 * legg inn eksempler i regression/pendingtest
 * fulle setninger
 
 ### Behandling av acr
-* Bestemt/ubestemt er ok, men tillegg av artikkel er eit problem. 
+* Bestemt/ubestemt er ok, men tillegg av artikkel er eit problem.
 eks. NRL (NBR)
 
-###  Adverb, ordrekkefølge 
+###  Adverb, ordrekkefølge
 finne eksempler og sortere i typer
 
 Er det kanskje ein slik skilnad:
@@ -36,14 +36,14 @@ Vi bør tagge adverbene forskjellig i sme-syntaksen, <dsf>
 * tids/steds adverbial
 * måtesadverbial
 
-### Propernoun 
-* dynamiske propernoun må endres i sme, eks. Davvi-Oslo 
+### Propernoun
+* dynamiske propernoun må endres i sme, eks. Davvi-Oslo
 
-###  Innsetting av pro 
+###  Innsetting av pro
 * innsetting av pro (t4x), forbedre
 Bedre med for få innsettinger enn for mange
 
-###  Defness 
+###  Defness
 t1x: vi kan bruke både lister av semantiske tagger, lister av substantiver og verbet (i liste)
 
 ###  Innsetting av artikler

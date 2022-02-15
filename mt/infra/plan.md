@@ -39,7 +39,7 @@ Today we have the catalogues:
 * grantapplications
 * script
 
-Needed: 
+Needed:
 
 * change giza to wordalign, make one for sentencealign.
 * have catalogues for the language pairs, and for the machine runs

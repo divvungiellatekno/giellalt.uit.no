@@ -37,14 +37,14 @@ In .bashrc add:
     export LANG=no_NO.utf8
     export LOCALE=UTF-8
     export LESSCHARSET='utf-8'
-            
+
 
 , and comment out other LANG, LOCALE and LESSCHARSET variables, e.g:
 
     #export LANG=no_NO
     #export LOCALE=latin-1
     #export LESSCHARSET=""
-            
+
 
 Terminal
 --------
@@ -196,25 +196,25 @@ Makefiles
 In makefiles define static variables in the beginning of the file and
 use these variables where they apply.
 
-E.g:  
+E.g:
 XFST = xfst -utf8
 
 xfst
 ----
 
-Invoke xfst tool using the UTF-8 switch:  
+Invoke xfst tool using the UTF-8 switch:
 xfst -utf8
 
 lexc
 ----
 
-Invoke lexc tool using the UTF-8 switch:  
+Invoke lexc tool using the UTF-8 switch:
 lexc -utf8
 
 twolc
 -----
 
-Invoke twolc tool using the UTF-8 switch:  
+Invoke twolc tool using the UTF-8 switch:
 twolc -utf8
 
 preprocess
@@ -225,7 +225,7 @@ Preprocessor is a Perl -tool, so only Perl has to be UTF-8 compatible.
 lookup
 ------
 
-Invoke lookup tool using the UTF-8 switch:  
+Invoke lookup tool using the UTF-8 switch:
 lookup -utf8
 
 vislcg
@@ -242,7 +242,7 @@ iconv
 From iconv manual pages:
 
     iconv - character set conversion
-            
+
     iconv [-c] [-s] [-f encoding] [-t encoding] [inputfile ...]
     iconv -l
 

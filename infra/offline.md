@@ -77,10 +77,10 @@ Troubleshooting
 What may go wrong?
 
 -   **I connect via putty or NiftyTelnet, but do not get any "username"
-    prompt:**  
+    prompt:**
     1.  There may be a firewall active. Contact your system
         administrator
     2.  Perhaps you forgot to use SSH instead of Telnet
     3.  Perhaps you are not on the internet
--   **More trouble..?:**  
+-   **More trouble..?:**
     ..must be

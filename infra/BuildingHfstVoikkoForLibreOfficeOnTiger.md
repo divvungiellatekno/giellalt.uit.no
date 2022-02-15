@@ -4,7 +4,7 @@
   Apple|https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=19907]
   - free membership required)
 1. Install [Macports](http://macports.org/) (select the precompiled Tiger binary/dmg)
-1. Install the svn binary package from 
+1. Install the svn binary package from
   [http://svnbinaries.open.collab.net/files/documents/153/2715/file_2715.dat/Subversion%201.6.6%20Universal.dmg] (available on the page [http://svnbinaries.open.collab.net/servlets/ProjectDocumentList?folderID=164&expandFolder=164&folderID=171])
 1. Install the git binary package for Tiger from
   [http://metastatic.org/source/git-osx.html]

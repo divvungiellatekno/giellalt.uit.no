@@ -30,8 +30,8 @@ Dette skil vi ikkje mellom no, det blir tema på eit seinare møte.
 
 Se [Bz 2296](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2296)
 
-Spørsmålet er om vi vil ha som mål å alltid ha ein representasjon 
-av samansetjingar som viser den interne strukturen til ordet, 
+Spørsmålet er om vi vil ha som mål å alltid ha ein representasjon
+av samansetjingar som viser den interne strukturen til ordet,
 eller om vi ikkje vil ha det.
 
 ```
@@ -69,14 +69,14 @@ Neste samansetjingsmøte: **11.1. kl. 10.00**
 Saker til neste møte:
 
 * Full analyse av samansetjingar
-    - Vi vurderer kva vi gjer med den delen av dei 4% som står att etter at 
-   Duommá har opna for meir dynamisk samansetjing, og etter at Lene/Trond 
+    - Vi vurderer kva vi gjer med den delen av dei 4% som står att etter at
+   Duommá har opna for meir dynamisk samansetjing, og etter at Lene/Trond
    har sett på samansetjingsmaterialet (4%) på nytt
 
 Saker til seinare møte
 
-* Samansetjingar med substantiv vs. adjektiv 
-    - Jf. bug [2303](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2303). 
+* Samansetjingar med substantiv vs. adjektiv
+    - Jf. bug [2303](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2303).
 * Andre lingvistiske saker
 * Harmonisering språk til språk
 * Skilje mellom kortformer i lånord og kortformer i samiske ord

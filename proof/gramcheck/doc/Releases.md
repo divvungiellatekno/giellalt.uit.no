@@ -8,7 +8,7 @@ regler som er med:
 #  GramDivvun 1.0 (11.02.2020)
 
 regler som var med:
-* generelle realword error: &real-Derh-Inf, &real-ImprtPl2-Inf 
+* generelle realword error: &real-Derh-Inf, &real-ImprtPl2-Inf
 
 #  GramDivvun 1.0beta ()
 

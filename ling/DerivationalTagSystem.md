@@ -33,7 +33,7 @@ LEXICON BÅETEDH
  +Der1+Der/ldahke:%»%^1UMLaldahk LDAHKE ;
  +Der1+Der/ldh+N+SgNomCmp:%»%^1UMLeldh R ;
  +Der1+Der/ldh+N+Sg+Nom:%»%^1UMLeldh FINAL1 ;
- +Der1+Der/ldh+N+Sg+Nom+Err/Sub:%»%^1UMLeld FINAL1 ; 
+ +Der1+Der/ldh+N+Sg+Nom+Err/Sub:%»%^1UMLeld FINAL1 ;
 ```
 
 LexC-koden tillater en ikkje helt ufri kombinasjon av ulike derivasjoner, som vil gi kombinasjonar som er ugrammatiske. Posisjonsklassifiseringa er eit forsøk på å avgrensa overgenereringa, ved å seia at det er ugrammatisk å bruka posisjon 1-derivasjonar *etter* posisjon 2-derivasjonar.

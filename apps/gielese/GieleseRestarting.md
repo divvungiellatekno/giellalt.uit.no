@@ -23,7 +23,7 @@ sudo password.
     sudo service gielese-mongodb start
 ```
 
-Then if all is good... 
+Then if all is good...
 
 ```
     sudo service gielese start

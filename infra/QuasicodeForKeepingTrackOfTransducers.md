@@ -1,30 +1,30 @@
-This document follows the `cgi-interface.xsl` and 
-`cgi-index.xsl` document. They document what cgi-bin processes 
+This document follows the `cgi-interface.xsl` and
+`cgi-index.xsl` document. They document what cgi-bin processes
 each and every language is subject to. The processes themselves are
 governed by `conf.pl` and other cgi-bin scripts in the www directory.
 
 The source files are compiled in the maintainer's home directory
-on gtweb (and for oahpa, on gtoahpa). A suitable command for 
-compiling the fsts might be to 
+on gtweb (and for oahpa, on gtoahpa). A suitable command for
+compiling the fsts might be to
 run `makeall.sh` (and thereafter go for a cup of coffee).
 
-After the fsts are compiled they should be copied manually or 
+After the fsts are compiled they should be copied manually or
 semi-manually to the /opt/smi catalogue by the person who compiled them.
 
-The reason why this is not done automatically (say, by a cronjob) 
+The reason why this is not done automatically (say, by a cronjob)
 is that we want to be sure
 fsts are checked before they are put online. With the large number
 of fsts we still need to make the process semi-automatic, with scripts
 a la *update mhr*. This documents paves the way for such a setup.
 
-In short: *We want to have a selective button to press*, 
+In short: *We want to have a selective button to press*,
 called e.g. **web-update LANG**.
 
 A (now outdated) script to do this, and to get inspiration, is:
 
 `$GTLANG/gt/script/fst2opt`
 
-Source files are in these catalogues: 
+Source files are in these catalogues:
 ```
 $GTHOME/langs/LANG
 $GTHOME/gt/sme/src
@@ -79,9 +79,9 @@ typos.fst                  = ../test/data/typos.fst
 We have analysis and paradigm for all languages
 
 ```
-LANG.fst       = src/analyser-gt-desc.xfst	    
-iLANG.fst      = src/src/generator-gt-desc.xfst	
-iLANG-norm.fst = src/src/generator-gt-norm.xfst	
+LANG.fst       = src/analyser-gt-desc.xfst
+iLANG.fst      = src/src/generator-gt-desc.xfst
+iLANG-norm.fst = src/src/generator-gt-norm.xfst
 ```
 
 # Language-specific files
@@ -101,7 +101,7 @@ LANG/src/syntax/dependency.cg3 /opt/smi/LANG/bin/LANG-dep.rle
 if nodisamb="0", copy:
 LANG/src/syntax/disambiguation.bin /opt/smi/LANG/bin/LANG-dis.bin
 LANG/src/syntax/disambiguation.cg3 /opt/smi/LANG/bin/LANG-dis.rle
-LANG/src/...	/opt/smi/LANG/bin/abbr.txt	
+LANG/src/...	/opt/smi/LANG/bin/abbr.txt
 
 if nohyph="0", copy:
 LANG/src/hyphenation/hyphenation.xfst  /opt/smi/LANG/bin/hyph-LANG.fst

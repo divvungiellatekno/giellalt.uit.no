@@ -16,9 +16,9 @@ a documentation on how the issues  below are treated at GiellaLT.
 * [Corpus collector's manual](/ling/corpus_conversion.html)  //
   [Corpus conversion (technical)|/ling/corpus_conversion_tech.html]   //  [Corpus conversion (for users)](/ling/corpus_intro.html)
 * [Language recognition](/ling/langrec.html)  //
-  [Unicode Normalisation](/ling/UnicodeNormalisation.html)  
+  [Unicode Normalisation](/ling/UnicodeNormalisation.html)
 * [Sentence alignment](/tools/tca2.html)   //
-  [OCR](/tools/ocr.html) 
+  [OCR](/tools/ocr.html)
 
 # Keyboards and proofing
 

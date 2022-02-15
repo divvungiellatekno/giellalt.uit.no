@@ -45,7 +45,7 @@ The XML format of the analyzed text is basically the following:
           <section title="Gud skaper verda">
             <p>
               <verse number="1"> I opphavet skapte Gud himmelen og jorda.   </verse>
-              <verse number="2"> Jorda var aud og tom, og mørker låg over havdjupet. 
+              <verse number="2"> Jorda var aud og tom, og mørker låg over havdjupet.
                                  Men Guds Ande sveiv over vat net. </verse>
               ...
             </p>
@@ -72,22 +72,22 @@ Most of the bible texts are under standard license conditions, which are
 explained in... At the moment, the corpus hierarchy contains the
 following bible texts:
 
--   **sme and smj:**  
+-   **sme and smj:**
     New Testament
 
 <!-- -->
 
--   **nno and nob :**  
+-   **nno and nob :**
     Genesisi and Psalms
 
 <!-- -->
 
--   **swe:**  
+-   **swe:**
     New Testament, Genesis and Psalms
 
 <!-- -->
 
--   **fin:**  
+-   **fin:**
     New and Old Testaments, 1938 edition
 
 The tool for converting bibles to text: `bible2xml.pl`

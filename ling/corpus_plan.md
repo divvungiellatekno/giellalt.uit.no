@@ -143,7 +143,7 @@ Optionally, one can
 
 -   use a paragraph-tag enclosing several sentence-s
 
--   use more attibutes:  
+-   use more attibutes:
     -   on all elements: type and language
     -   on tokens: morphology, syntax etc.
 
@@ -153,7 +153,7 @@ Optionally, one can
                <reading lemma="fly" POS="N" />
                <reading lemma="fly" POS="V" />
                </token>
-              
+
 
 There is a first version of the dtd corpus.dtd for the format. In
 addition, there is a file sme\_tagset.ent which contains the names of

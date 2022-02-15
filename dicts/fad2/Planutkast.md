@@ -1,7 +1,7 @@
 # Ord:
 
 ## ordkandidatar:
-finne norske ord i vår nob-sme som har høgare frekvens i fad-korp enn i nowac   
+finne norske ord i vår nob-sme som har høgare frekvens i fad-korp enn i nowac
 
 * GTHOME/words/dicts/nobsme/src, fad-ord merka med src="fad"
 * [http://sanit.oahpa.no]
@@ -52,11 +52,11 @@ finne fleire ressursar:
 # notat og idear
 
 * mogleg å laga ein «sub-ord-omsetjar» a la nno-nob s/leg$/lig/ for å laga kandidatlister?
-* finst for sme→smj 
+* finst for sme→smj
 * mogleg å normalisera litt? [/dicts/10000.html] har t.d. «register» og «registtar» som to ulike ord på sme-sida
-* finst andre smj/sma-bidix som me kan samordna med? a la 
-  [http://wiki.apertium.org/wiki/Bilingual_dictionary_discovery] 
+* finst andre smj/sma-bidix som me kan samordna med? a la
+  [http://wiki.apertium.org/wiki/Bilingual_dictionary_discovery]
 * Sjå etter lakuner i omsetjingar
-    - smenob har duogi→bak, smanob har duekie→bak/rommet bak – 
-   er «rommet bak» då kandidat for ekstra <tg> til duogi? 
+    - smenob har duogi→bak, smanob har duekie→bak/rommet bak –
+   er «rommet bak» då kandidat for ekstra <tg> til duogi?
    (no blei det smenob, men går nok oftare andre vegen)

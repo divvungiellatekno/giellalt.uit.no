@@ -8,7 +8,7 @@ This page gives an overview of our technical documentation.
 - [GitHub Issues](GitHub_Issues.md)
 
 # Compiling (building analysers)
-* [Defining targets for compilation](infraremake/NewInfraMaintenance.html) 
+* [Defining targets for compilation](infraremake/NewInfraMaintenance.html)
 * [Makefile names and organisation](infraremake/MakefileNamesAndOrganisation.html)
 * [How to compile our abbreviation handler abbr.txt](infraremake/AbbreviationCompilation.html)
 * [List of defined automake conditionals](infraremake/ListOfDefinedAutomakeConditionals.html)

@@ -4,9 +4,9 @@ Her dokumenterer vi SEG sitt prosjekt //  Dáppe lea SEG:a prošeavtta dokument
 
 # Bakgrunn ~  Duogaš
 
-kjem / boahtá… 
+kjem / boahtá…
 
 #  Møtereferat ~ Čoahkkinreferáhtat
 
-* 2012: 
+* 2012:
 [19.1.2012](jus/120119.html)

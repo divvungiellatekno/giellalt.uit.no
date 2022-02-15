@@ -29,7 +29,7 @@ Content structure
                 place
                 publDesc (publisher, idno)
                   idno
-        
+
 
 
         body (text)

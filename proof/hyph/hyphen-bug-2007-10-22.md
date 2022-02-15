@@ -1,7 +1,7 @@
 # Bug 545
 
 |  Result      |  ok  | bad
-|  hyphenation |  yes | no 
+|  hyphenation |  yes | no
 |  spelling    |  no  | yes
 
 láhka^tektsta - wrong spelling, correct hyphen
@@ -16,7 +16,7 @@ tæks^ta NIR
 tæks^ta-        NALX
 tæks^ta-        NIAL
 tæks^ta NAL
-tæks^tas        NIR                                                             
+tæks^tas        NIR
 
 láh^kaj NIR
 láh^ka  NIR
@@ -27,7 +27,7 @@ láh^kan NIR
 láh^ka- NIAL
 láh^ka  NAL
 láh^kas NIR
-láh^kas^ka      NIR                                                             
+láh^kas^ka      NIR
 
 láh^ka#tæks^tam NIR
 láh^ka#tæks^tat NIR
@@ -49,7 +49,7 @@ hard-coded compounds only (no dynamic analysis in fst): hyphenation is correct
 
 That is: it looks like the hyphenator prefers dynamic compounds, and that these are consequenctly hyphenated one char to the right of the word boundary.
 
-láhkatæksta x  
+láhkatæksta x
 
 Julev-sáme, public beta 2, 2007-10-16:
 ```

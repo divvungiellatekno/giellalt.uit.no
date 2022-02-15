@@ -19,22 +19,22 @@ cd $GTHOME/langs/sme/
 ./configure --with-hfst --enable-apertium --enable-reverse-intersect
 ```
 
-Estonian is set up in the same way, but in $GTHOME/startup-langs/est/ 
+Estonian is set up in the same way, but in $GTHOME/startup-langs/est/
 (do not use langs/est). Compile as usual:
 
 ```
 time make -j
 ```
 
-Now, be prepared to **wait**, from 15 minutes to several hours depending upon 
-the language and your computer.  The compilation procedure will store the binary 
-files in `tools/mt/apertium` in 
-each language folder and the apertium compilers will read them from that location.  
+Now, be prepared to **wait**, from 15 minutes to several hours depending upon
+the language and your computer.  The compilation procedure will store the binary
+files in `tools/mt/apertium` in
+each language folder and the apertium compilers will read them from that location.
 
 While waiting, do the same for the other language(s) you want. Go to the
-folder of the other language you want to translate as well (*sma, smj, smn*), 
+folder of the other language you want to translate as well (*sma, smj, smn*),
 so that one for e.g. *sme-sma* must compile *sme* **and** *sma*.
-Remember to reset the .configure option afterwards, e.g. to 
+Remember to reset the .configure option afterwards, e.g. to
 `./configure` if that is what you use for FST work.
 
 To chech the file, write:
@@ -61,7 +61,7 @@ make -j
 
 ## Compiling the MT program itself
 
-All language pairs (also the Giellatekno/Divvun ones, e.g. sme-sma) are 
+All language pairs (also the Giellatekno/Divvun ones, e.g. sme-sma) are
 stored on Apertium github:
 
 * [https://github.com/apertium/apertium-sme-nob]
@@ -113,10 +113,10 @@ cg-proc --version
 
 If the number you get (**0.9.9.10195**) is lower than the error message
 requires, you should update vislcg3. It may be, however, that the version number
-is ok but you still get the error message. In that case, you have old 
+is ok but you still get the error message. In that case, you have old
 binary files although you have updated your compeler. In that case,
 
-* in the apertium-LANG1-LANG2 folder, write *make clean* 
+* in the apertium-LANG1-LANG2 folder, write *make clean*
 * in the $GTHOME/langs/LANG/ folder, delete the tools/mt/apertium/*.gz files
 
 Thereafter, repeat the installation procedure.

@@ -7,7 +7,7 @@ Opne tema:
 Jf [http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=2162]
 
 Bakgrunn: Vi bruker perl-script
-* preprocess 
+* preprocess
 * lookup2cg (som omformer formatet for vislcg3 og rydder lingvistisk: fjerner analyse med # når det er analyse uten #)
 
 Vi kan ikkje ha perl-skript i korkje grammatikkontrollen eller i
@@ -56,7 +56,7 @@ sme$ echo 'borragoahtit' | usmedis | lookup2cg
          "borrat" V* TV Der/InchL V Inf
 ```
 
-      
+
 Preprosess: problem er flertydighet ved MWE. Eks:
 
 ```
@@ -78,7 +78,7 @@ Særskriving - døme frå norsk:
 ```
     folk gjer alt slags [allslags] rare ting:
 
-    Etter som [ettersom]      vi alle er forskjille 
+    Etter som [ettersom]      vi alle er forskjille
 
     Folk kan ha ulike vaner og leve måter [levemåter]
 
@@ -140,7 +140,7 @@ beavdebiigá        beavdebiigá+N+Sg+Nom
 
 Forslag til prosessering:
 
-INPUT: 
+INPUT:
 
 * `Ta 3. Også`
 
@@ -270,9 +270,9 @@ Fleire døme:
   Define token [ morphoword ]( morphowords ) EndTag(token);
 regex token ;
 
-<vaikko> <mii> bođiimet = 
+<vaikko> <mii> bođiimet =
 sjølom     vi  kom
-doppe lei <vaikko mii> = 
+doppe lei <vaikko mii> =
 der   var   hva som helst
 
 vaikko mii

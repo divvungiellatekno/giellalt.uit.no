@@ -9,17 +9,17 @@ and support lots of handy packages.
 
         echo 'alias emacs="open -a /Applications/Emacs.app"' >> ~/.bashrc
         echo 'alias em="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"' >> ~/.bashrc
-          
+
 
 to make the "emacs" start your newly downloaded Emacs.app in GUI, and
-"em" start it in terminal.  
+"em" start it in terminal.
 Close the terminal and start a new one.
 
 If you have a file \~/.emacs, first move it to \~/.emacs.d/init.el
 
         mkdir ~/.emacs.d
             mv ~/.emacs ~/.emacs.d/init.el
-          
+
 
 In a new terminal, do
 
@@ -28,7 +28,7 @@ In a new terminal, do
         mkdir ~/.emacs.d
         echo '(load "~/apertium-tools-emacs/init-apertium.el")' >>  ~/.emacs.d/init.el
         emacs
-          
+
 
 Note: If you've already checked out the full apertium SVN tree, you
 already have the init-apertium.el file and you might want to just refer
@@ -37,7 +37,7 @@ to that:
         mkdir ~/.emacs.d
         echo '(load "/path/to/where/you/have/apertium-svn/trunk/apertium-tools/emacs/init-apertium.el")' >>  ~/.emacs.d/init.el
         emacs
-          
+
 
 On first run, Emacs should download some packages for you, then you
 should be ready for editing CG, XML, lexc and twolc with syntax
@@ -79,6 +79,6 @@ following lines to that file.
 
           ;; Turn on syntax colouring in all modes supporting it:
           (global-font-lock-mode t)
-        
+
 
 Save and close the file.

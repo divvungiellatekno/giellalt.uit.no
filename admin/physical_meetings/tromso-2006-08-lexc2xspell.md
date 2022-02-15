@@ -54,7 +54,7 @@ The following output was generated to try out different strategies for
 generating the compounding stem.
 
 ```
-hum-tf4-ans157:~ trond$ lookup -flags mbTT -utf8 gt/sme/bin/isme.fst 
+hum-tf4-ans157:~ trond$ lookup -flags mbTT -utf8 gt/sme/bin/isme.fst
 0%>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100%
 eadni+N+SgNomCmp#giella+N+Sg+Nom
 eadni+N+SgNomCmp#giella+N+Sg+Nom        eadnegiella

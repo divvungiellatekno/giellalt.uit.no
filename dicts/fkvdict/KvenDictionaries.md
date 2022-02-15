@@ -37,7 +37,7 @@ cd words/dicts/nobfkv/
 sh nobfkv.sh
 ```
 
-usage: 
+usage:
 * cat listofnobwords.txt | nobfkv
 
 ## Dictionary entries
@@ -76,7 +76,7 @@ Dictionary entry example
             <t pos="N">taitet</t>
          </tg>
       </mg>
-   </e>   
+   </e>
 ```
 
 # fkvnob

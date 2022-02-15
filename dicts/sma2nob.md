@@ -13,7 +13,7 @@
 # Norsk-sørsamisk ordbok
 
 * Kjeldefilene ligg i [words/dicts/nobsma/src/](https://gtsvn.uit.no/langtech/trunk/words/dicts/nobsma/src/)
-* Kandidatar for å utvide ordlista ligg i [words/dicts/nobsma/inc/](https://gtsvn.uit.no/langtech/trunk/words/dicts/nobsma/inc/), 
+* Kandidatar for å utvide ordlista ligg i [words/dicts/nobsma/inc/](https://gtsvn.uit.no/langtech/trunk/words/dicts/nobsma/inc/),
   dei filene bør nok oppdaterast, det er missing-filer frå 2012.
 
 ##  Dokumentasjon

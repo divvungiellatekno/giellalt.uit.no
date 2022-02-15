@@ -30,15 +30,15 @@ IF(LATEX_COMPILE)
   ADD_CUSTOM_COMMAND(
     OUTPUT    ${Document_BINARY_DIR}/TDocument.dvi
     DEPENDS   ${Document_BINARY_DIR}/TDocument.tex
-    COMMAND   ${LATEX_COMPILE}  
-    ARGS      ${Document_SOURCE_DIR}/TDocument.tex 
+    COMMAND   ${LATEX_COMPILE}
+    ARGS      ${Document_SOURCE_DIR}/TDocument.tex
     )
 ENDIF(LATEX_COMPILE)
 
 IF(DVIPDF_COMPILE)
   ADD_CUSTOM_COMMAND(
     OUTPUT    ${Document_BINARY_DIR}/TDocument.pdf
-    DEPENDS   ${Document_BINARY_DIR}/TDocument.dvi 
+    DEPENDS   ${Document_BINARY_DIR}/TDocument.dvi
     COMMAND   ${DVIPDF_COMPILE}
     ARGS      ${Document_SOURCE_DIR}/TDocument.dvi
     )

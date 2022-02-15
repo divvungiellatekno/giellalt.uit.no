@@ -18,26 +18,26 @@ Overskrift: *Utvikling av dependensanalysator for samisk - workshop*
 * sendes mail med overskrift og link til webside til IS-ansatte
 
 I invitasjonen: Dette er ein *arbeids*-workshop (sic). Ikkje forvent foredrag.
-Forutsetning: analysere settet av setninger med en form for dependensanalyse 
+Forutsetning: analysere settet av setninger med en form for dependensanalyse
 påmelding fredag 8. april
 
 Referanse å vise til:
 
 * [Dependency grammar på wikipedia](http://en.wikipedia.org/wiki/Dependency_grammar)
 * Ref. til giellawiki
-* Relevant litteratur - 
-    - Melčuk, 
+* Relevant litteratur -
+    - Melčuk,
     - Sammallahti
 
 http://gtweb.uit.no/cgi-bin/wiki/index.php/Dependency_Treebank_Documentation
 
 * lete etter vanskelige setninger - sende ut før work-shop
-* setninger til hvert tema - deltakerne skal analysere dem med dependensanalyse 
+* setninger til hvert tema - deltakerne skal analysere dem med dependensanalyse
   før workshopen
 * referanse til relevant litteratur
 
 * UiT: mastergradsstudentan, ansatte på samisk,  andre som forsker på samisk
-* Samisk høgskole? 
+* Samisk høgskole?
 * Helsingfors, Uleåborg, Umeå
 
 # Språk
@@ -55,7 +55,7 @@ Arbeidsspråk blir nordsamisk. Deltakarar kan snakke ad lib. Flerspråklig milj�
     - forskjeller
     - likheter
 * Spesifikke tema
-    - ellipse, koordinasjon, postmodifikasjon av substantiv, hvem er mor? 
+    - ellipse, koordinasjon, postmodifikasjon av substantiv, hvem er mor?
 (finitt hjelpeverb vs infinitt hovedverb), infinitte setninger
 * tegnsetting (dependens)
 * (nesten) språkuavhengig dependensanalysator
@@ -67,7 +67,7 @@ Arbeidsspråk blir nordsamisk. Deltakarar kan snakke ad lib. Flerspråklig milj�
 #  Forberedning
 
 * lete etter vanskelige setninger - sende ut før work-shop
-* setninger til hvert tema - deltakerne skal analysere dem med 
+* setninger til hvert tema - deltakerne skal analysere dem med
   dependensanalyse før workshopen
 * referanse til relevant litteratur
 
@@ -75,7 +75,7 @@ smx.dis.rle -> smi-syn.rle -> dep.rle
 * bra å ikkje ha semantiske set innafor dep.rle
 
 @SUBJ<OBJ - dependensen går fra objektet til subjektet pga av ellipse - denne taggen legges til før vi kommer til dep
-* Giellawiki - litteratur - 
+* Giellawiki - litteratur -
     - Eckhard
     - Melčuk
     - Tesnière
@@ -83,17 +83,17 @@ smx.dis.rle -> smi-syn.rle -> dep.rle
     - baskisk
     - Tysk...
 
-* innlegg 
+* innlegg
     - Beahkká: Presentasjon
         - Beahkkás annotasjonsfilosofi og interessante annotasjonseksempler
-    - Gt: Presentasjon 
+    - Gt: Presentasjon
         - Malta
         - MT/ Dep intro
         - Deep Dict
 
 # Arbeidsfordeling
 
-* Trond: nettsida, sende ut e-posten (samisk, norsk), bestille rom, lunsj - 
+* Trond: nettsida, sende ut e-posten (samisk, norsk), bestille rom, lunsj -
   Malta-foredraget
 * Linda: litteraturliste på [Giellawiki](http://gtweb.uit.no/cgi-bin/wiki/index.php/Main_Page), lete etter setninger, begynne å lage program - MT og Dep intro
 * Lene: evtl. legge til setninger, skrive e-posten, forberede å si noe om Deep Dict

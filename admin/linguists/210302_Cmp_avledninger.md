@@ -15,11 +15,11 @@ Tilstede: Sjur, Trond, Inga, Lene, Thomas
 Eksempler med ny tagg +Cmp/Unass
 * asylårdnik     +Cmp/Unass   asyl+ådnik (asyl er ikke produktiv)
 * asijllaårdnik  +Cmp/SgNom  asijlla+årdnik
-+CmpNP/Pref (Prefiks) Normativ Posisjon 
++CmpNP/Pref (Prefiks) Normativ Posisjon
 
 balkong og kultur er produktive:
 * balkoaŋŋa+årdnik  +Cmp/SgNom
-* balkong+årdnik                +Cmp/Unass   
+* balkong+årdnik                +Cmp/Unass
 * balkoaŋŋa+N+Sem/Dummytag+Cmp/Unass:balkong%> R ;
 * balkoaŋ+årdnik                +Cmp/Sh
 * +CmpNP/Pref+Cmp/SgNom:r%> R ; !short cmp, "kulturskåvllå"  , fra affix-fila, KULTUVRRA:
@@ -92,5 +92,5 @@ Oversikt fra smj root:
  +Cmp/SoftHyph !!≈ * **@CODE@** - Tags compounds containing SOFT HYPHENS (U+00AD)
  +Cmp/Cit      !!≈ * **@CODE@** - Tags citation compounds, which can in principle
 
- 
+
  ```

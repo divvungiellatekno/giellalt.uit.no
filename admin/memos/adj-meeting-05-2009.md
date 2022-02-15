@@ -2,7 +2,7 @@
 
 * to ulike leksikonnemningsstrategiar
 * inndelinga av adjektiva?
-* Normativity issue - møte mandag 25/05 -      
+* Normativity issue - møte mandag 25/05 -
     - to-stava adjektiv til normeringsnemnda (SGM)
     - systemet er ikkje det same som Bergsland sitt
 * Tekniske ting
@@ -30,7 +30,7 @@ Inndeling etter tre hovudkriterium:
 
 ### System2
 ### Attr= 0, Pred= s
-###  e(1) 
+###  e(1)
 ###  e(2)   !raajne-raajnes (2)
 
 ### system3
@@ -45,17 +45,17 @@ Inndeling etter tre hovudkriterium:
 ### ie -> a
 ### oe -> a
 
-###  leevles, löövles = e(3) - lievlies- lievlie -> lievliedidh 
+###  leevles, löövles = e(3) - lievlies- lievlie -> lievliedidh
 ###  lïevles  -stamme e(1) - (system 2= attr=0, pred=s)
-### lyövles  -stamme e(2) -(system 2= attr=0, pred=s ) 
+### lyövles  -stamme e(2) -(system 2= attr=0, pred=s )
 
 skaajmes:skaajme GIJMIES ;
 
 ###   --question--
-###  ??   frååpmes:frååpme NULL-S-EVEN ; =  attr=0, pred=s= EVEN, 
+###  ??   frååpmes:frååpme NULL-S-EVEN ; =  attr=0, pred=s= EVEN,
 ###  ??   fraapmas:fraapma NULL-S-EVEN ;
 ###  ??   geamhpes:geamhp RAAJNES ;
-###  ??   gïemhpes:gïemhp E-ES-EVEN ; = lïene attr= lïenes pred=2 
+###  ??   gïemhpes:gïemhp E-ES-EVEN ; = lïene attr= lïenes pred=2
 
 ###  ??   njoektjes:njoektj NJOEKTSES ;
 ###  ??   sajkes:sajk NJOEKTSES ; sajkebe/sajkemes
@@ -65,25 +65,25 @@ skaajmes:skaajme GIJMIES ;
 ###  ??   njoektses:njoekts NJOEKTSES ;
 
 LEXICON NJOEKTSES
- :e  ATTR-S ;! Attr=s, Pred= Ø, Comp= EVEN(ebe, emes), case/substantiv= EVEN 
+ :e  ATTR-S ;! Attr=s, Pred= Ø, Comp= EVEN(ebe, emes), case/substantiv= EVEN
      NJOEKTSEScase ;
 +A+Pred:e FINAL1 ;
 +A:e  EVENCOMP ;
 
-frååpme attr- frååpmes pred. 
-1=attr  = pred - alle st.? ie, a, u, e (alle e?) e(3) 
+frååpme attr- frååpmes pred.
+1=attr  = pred - alle st.? ie, a, u, e (alle e?) e(3)
 2=attr=Ø, pred=s  - e1, e2 (KB: berre e2) ebe/emes
 
- 
-3=attr=s, pred=Ø  - ie, e (1,2,3)?  ebe/emes  
+
+3=attr=s, pred=Ø  - ie, e (1,2,3)?  ebe/emes
 kor er det ie? giehpies A4 +A+Attr:giehpies/+A+Pred:giehpie
 
 attr     /  pred   = advl     = cmp                / superl
-snaehpies/ snaehpie= snaebpie = snaebpebe          / snaebpemes            =S3 AAAA/5 
-raajne/raajnes                = raajnebe           / raajnemes             =S2 DDDD/5 
-raejnies/raejnie              = raajnebe           / raajnemes             =S3 AADD/5 
-skeabtjoeh/skeabtjan          = skeabtjahkåbpoe    / skeabtjahkommes       =S4 CBBB/4 
-skïebtje/skïemtjes            = skïebtjebe         / skïebtjemes           =S2 DDDD/4 
+snaehpies/ snaehpie= snaebpie = snaebpebe          / snaebpemes            =S3 AAAA/5
+raajne/raajnes                = raajnebe           / raajnemes             =S2 DDDD/5
+raejnies/raejnie              = raajnebe           / raajnemes             =S3 AADD/5
+skeabtjoeh/skeabtjan          = skeabtjahkåbpoe    / skeabtjahkommes       =S4 CBBB/4
+skïebtje/skïemtjes            = skïebtjebe         / skïebtjemes           =S2 DDDD/4
 
 skåalloeh  4  -> skoelle 2
 skeabtjoeh 4 -> skïebtje 2
@@ -98,18 +98,18 @@ viehkies/viehkies : *veehkes
 kor er det e3? geehpes  F4 +A+Attr:geehpes/+A+Pred:geehpes
 viehkies -> veehkes??
 
-4 OMLYD = - ie, oe (attr) -> a (pred) 
+4 OMLYD = - ie, oe (attr) -> a (pred)
 
 LEXICON ES_E-ES_E-ODD ! as ES-ES_E-ODD, but with ATTR-0 =avledning
        ATTR-0 ;
        ES-ES_E-ODD ;
 
-       
+
 LEXICON ES-ES_E-ODD
 :e     ATTR-S;
 :e     PRED-S;
 :e     PRED-0;
-+A:    ODDCOMP ; 
++A:    ODDCOMP ;
 
 bïjveles+A+Pred:bïjvele ; ! bïjvedh IV-      e(1)-stamme
 bïjveles:bïjvel ES-ES_E-ODD ; ! bïjvedh IV-      e(1)-stamme
@@ -122,7 +122,7 @@ morfologisk = står i sma-lex
 
 lohkije LOHKIJE ;
 
-LEXICON 
+LEXICON
 
 lohkije = attr og pred av lohkije
 lohkijes = attr og pred av lohkije
@@ -147,49 +147,49 @@ E - y  o  o  yö  åå  åå (åå) +    e2 mørk               u
 F - i  i  u  ee  ee  öö  öö  +    e3 (eller i) lys      i
 
 ATTR OG PRED HAR RAD X
-KOMPARATIV   HAR RAD Y 
+KOMPARATIV   HAR RAD Y
 
 Klassifisering maja-72
 
 System 1:
 stammetype: ie, a, u, e, (alle e?)
- a: 
- p: 
+ a:
+ p:
  c:
- s: 
+ s:
 
 System 2:
 stammetype: e1, e2
- a: 
- p: 
- c: 
- s: 
+ a:
+ p:
+ c:
+ s:
 
 System 3:
 attr=A/pred=F
- a: 
- p: 
- c: 
- s: 
+ a:
+ p:
+ c:
+ s:
 
 System 4:
 attr=A/pred=B, attr=C/pred=B
 attr
- a: 
- p: 
- c: 
- s: 
+ a:
+ p:
+ c:
+ s:
 
-attr: C  A  
-pred: E  B  
+attr: C  A
+pred: E  B
 
-pos: 
+pos:
 cmp: F
 
 Klassifisering stamme:
 ie: S1, S4
-a:  S1, 
-oe: S4, 
+a:  S1,
+oe: S4,
 e1: s2
 e2: s2
 e3: s1 a=-s/p=-s
@@ -201,7 +201,7 @@ rööpeses - rååpsehke
 
 MLK:
 ATTR     - pred     -  AVLEIING (adj > adj)
-tjeehpes - tjeehpes -  tjååhpehke -aktig - 
+tjeehpes - tjeehpes -  tjååhpehke -aktig -
 rööpeses - rööpses  -  rååpsehke
 
 Det finst døme på at begge adjektiva blir brukt både attr og pred.

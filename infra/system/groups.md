@@ -22,7 +22,7 @@ Group attribute for files
 
 The relevant commands are
 
-chown trond -R directory/  
+chown trond -R directory/
 chgrp ling -R directory
 
 to change to owner trond and group owner ling.

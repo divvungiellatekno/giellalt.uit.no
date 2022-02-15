@@ -12,7 +12,7 @@ Running the applescript
 
 The script takes the following three input parameters:
 
--   **LANGUAGE code:**  
+-   **LANGUAGE code:**
     a three-letter language code identifying the language of the text to
     be proofread. The codes are automatically mapped to the
     corresponding language identifiers used by MS Word. The following
@@ -28,14 +28,14 @@ The script takes the following three input parameters:
     -   eng
     -   ger
     -   deu
--   **INPUT file:**  
+-   **INPUT file:**
     The text to be proofread. It must be encoded in UTF-16. Presently
     the script expects the text to be preprocessed and filtered, such
     that all words are on one line, and words containing any of
     `[-.:                ]` are removed (these chars "breaks" the input
     strings into separate "words" in MS Word - it might be possible to
     work around, but it isn't worth the effort right now.
--   **OUTPUT file:**  
+-   **OUTPUT file:**
     The result of the spell-check is stored in this file, in a format
     described below. The output is as well encoded in UTF-16.
 
@@ -66,9 +66,9 @@ The suggestions are themselves TAB-separated.
 
 The SpellerStatus field can have two values:
 
--   **SplCor:**  
+-   **SplCor:**
     The speller thinks that the input is correct
--   **SplErr:**  
+-   **SplErr:**
     The speller thinks that the input is incorrect, ie a misspelling
 
 The AppleScript

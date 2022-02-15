@@ -39,9 +39,9 @@ Eit grovt overslag kunne vere ca 6 månadsverk pr språk.
     1. Check for relevant vocabulary (nob frequency deviant from normal, i.e. nob words with higher frequency in the material than in a big reference corpus. What we would expect is (freq in big ref corpus / wordcount of ref corpus) x wordcount of material
 1. Manual lexicographic work (**Lexicographers**)
     1. Go through the word pair lists and evaluate them
-    1. The goal here is not a normative evaluation, but a descriptive: 
+    1. The goal here is not a normative evaluation, but a descriptive:
         1. Remove erroneous alignments and keep good ones
-    1. A normative term collection (*these are the term pairs we want*) is outside 
+    1. A normative term collection (*these are the term pairs we want*) is outside
    the scope of this phase of the project.
 1. Integrate the resulting list into Autshumato (**Ciprian, etc.**)
 
@@ -59,7 +59,7 @@ nob-sme files are in the folder `$BIGGIES/gt/sme/corp/forvaltningsordbok/`.
 ## December
 
 1. Collect files, for each smX with parallel texts in nob (nno, eng, swe, smX?) (**Børre**)
-    1. sme: 
+    1. sme:
         1. [Governmental whitepapers](../ling/corpus_norwegianwhitepapers.html) -
     16 documents, 948384 words (in the pdfs mentioned in the above doc)
         1. Governmental web page documents,  `freecorpus/converted/sme/admin/depts/regjeringen.no/` -
@@ -82,9 +82,9 @@ nob-sme files are in the folder `$BIGGIES/gt/sme/corp/forvaltningsordbok/`.
     1. Check for relevant vocabulary (nob frequency deviant from normal, i.e. nob words with higher frequency in the material than in a big reference corpus. What we would expect is (freq in big ref corpus / wordcount of ref corpus) x wordcount of material
 1. Manual lexicographic work (**Lexicographers**)
     1. Go through the word pair lists and evaluate them
-    1. The goal here is not a normative evaluation, but a descriptive: 
+    1. The goal here is not a normative evaluation, but a descriptive:
         1. Remove erroneous alignments and keep good ones
-    1. A normative term collection (*these are the term pairs we want*) is outside 
+    1. A normative term collection (*these are the term pairs we want*) is outside
    the scope of this phase of the project.
 1. Integrate the resulting list into Autshumato (**Ciprian, etc.**)
 

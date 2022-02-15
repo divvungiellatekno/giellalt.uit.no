@@ -73,7 +73,7 @@ libvoikko needs python3
 
 ```
 sudo port install python35
-sudo port select --set python3 python35  
+sudo port select --set python3 python35
 ```
 
 ## Install libvoikko

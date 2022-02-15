@@ -2,7 +2,7 @@
 
 This is a check-point list for setting up new users in our teams. Please add missing points as needed. See also [the checklist](../admin/checklist.html) for what new users should know. There is some overlap, but this doc is for the sys admin, the other one is for the new user.
 
-People not working in our projects, but using our infrastructure, may look at [the shortlist](GettingStarted.html). 
+People not working in our projects, but using our infrastructure, may look at [the shortlist](GettingStarted.html).
 
 # Hardware
 

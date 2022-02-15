@@ -20,7 +20,7 @@ Sjur Moshagen & Trond Trosterud, UiT The Arctic University of Norway
 
 ## The problem
 
-* Our original ("old") infrastructure 
+* Our original ("old") infrastructure
     - was based upon copy and paste from language to language
     - treated different languages differently, for historical reasons
 * new languages was added all the time
@@ -259,7 +259,7 @@ lexicon names, a line of code, etc.
 * take text
 * preprocess it (sentences, words)
 * give all morphological analyses
-* pick the correct ones 
+* pick the correct ones
 * add grammatical functions
 * add dependency relations
 
@@ -268,15 +268,15 @@ lexicon names, a line of code, etc.
 * take text
 * preprocess it (sentences, words)
 * give all morphological analyses
-* make a sloppy disambiguation ("do not trust the input") 
+* make a sloppy disambiguation ("do not trust the input")
 * find error patterns
-* mark them 
+* mark them
 * give message to the writer
 
 ## Two startup scenarios
 
 * Add a new language that does not have machine-readable resources ("Blackfoot")
-* Add an existing morphological analyser in an incompatible format, 
+* Add an existing morphological analyser in an incompatible format,
   in order to generate the full range of tools offered here ("Innu")
 
 In the latter case it could be possible and even preferable to script the
@@ -285,7 +285,7 @@ reimport or update the data.
 
 # Summary
 
-1. This infrastructure makes it possible to 
+1. This infrastructure makes it possible to
     1. work with several languages
     1. get several tools and programs out of one and the same source code
 1. It is continuously under development

@@ -196,7 +196,7 @@ There are several small scripts for corpus database maintenance and
 cleaning. They reside in `gt/script `-catalog. The most important ones
 are listed here:
 
--   **corpus\_summarize.sh:**  
+-   **corpus\_summarize.sh:**
     The script is used for generating summarizing information of the
     corpus files and storing them to cvs, under the catalog
     `gt/doc/lang/corp`. The script calls the Perl-script
@@ -208,28 +208,28 @@ are listed here:
     documents as well as the number of the documents in different
     subdirectories. The xml-files are further transformed to forrest
     documentation.
--   **corpus\_zip.sh:**  
+-   **corpus\_zip.sh:**
     The script copies the free-catalog from the corpus database and
     creates zipped tar-archives of it. An archive is created of both the
     xml files and the files that contain only the extracted text in the
     selected language. The archives are copied to the download area.
--   **corpus\_chmod.sh:**  
+-   **corpus\_chmod.sh:**
     The script is used for correcting the group ids and permissions of
     the corpus files in different catalogs. Running the script requires
     sudo rights.
--   **change\_xsl\_generic.py:**  
-    for i in \`find . -name \\\*.xsl\`  
-    do  
+-   **change\_xsl\_generic.py:**
+    for i in \`find . -name \\\*.xsl\`
+    do
     change\_xsl\_generic.py translator\_fn Pirjo translator\_ln
-    Paavaniemi  
-    translator\_gender fem translator\_nat FI $i  
-    done  
--   **gt2ga.sh:**  
+    Paavaniemi
+    translator\_gender fem translator\_nat FI $i
+    done
+-   **gt2ga.sh:**
     Copies the selected files to G5 for analysis, compiles the latest
     versions of the tools and runs the analysis for the whole corpus.
     The analyzed files are stored under ga/lang/genre, the whole genre
     in one file. The script is currently used only in G5.
--   **corpus\_fix\_meta.sh:**  
+-   **corpus\_fix\_meta.sh:**
     Some of the corpus directories contain several files with similar
     metainformation, e.g. all the newspaper texts may have the same
     collection information, the name of the newspaper. This script is
@@ -241,7 +241,7 @@ are listed here:
     to the script changed. The version control of the xsl-files is
     handled automatically, although sometimes stealing a lock is
     necessary and requires some typing.
--   **corpus\_rename.sh:**  
+-   **corpus\_rename.sh:**
     The names of the corpus files have to face some basic requirements:
     They should be in utf-8 encoding, in NFC, not contain any special
     characters that would harm the shell ("´? etc.), have spaces
@@ -250,13 +250,13 @@ are listed here:
     directories for filenames and changed them to confront these
     requirements. If the file already has some extension, it is not
     changed.
--   **corpus\_bad\_encoding.sh:**  
+-   **corpus\_bad\_encoding.sh:**
     Some of the character set conversions do not succeed well enough for
     the purposes of linguistic analysis. The files may contain different
     encodings in different parts of the file, single unrecognized
     characters or the character set is not recognized at all. Those
     files can be located using this script.
--   **Makefile:**  
+-   **Makefile:**
     There is a Makefile in /usr/local/share/corp for converting files
     that are not up-to-date concerning the original or file-specific
     xsl-file. Usage: `make LANGUAGE=sme GENRE=facta` or
@@ -278,52 +278,52 @@ The document is divided into to elements: header that contains the
 metainformation and body for the document content. The header contains
 the following fields:
 
--   **`title`:**  
+-   **`title`:**
     The title of the document
--   **`genre`:**  
+-   **`genre`:**
     The document genre can be one of the following: admin, bible, facta,
     ficti or news.
--   **`author+`:**  
+-   **`author+`:**
     The author of the document is either person or "unknown".
-    -   **`person`:**  
+    -   **`person`:**
         Person consist of following attributes: firstname, lastname,
         born, sex and nationality.
--   **`translator*`:**  
+-   **`translator*`:**
     If the document is translated, the translator is either "unknown" or
     person.
--   **`translated from*`:**  
--   **`year?`:**  
+-   **`translated from*`:**
+-   **`year?`:**
     Publishing year, or if the document is unpublished, the year the
     document was written.
--   **`place?`:**  
+-   **`place?`:**
     Publishing place, or if the document is unpublished, the country or
     place where the document was written.
--   **`publChannel`:**  
+-   **`publChannel`:**
     Either publication or unpublished
-    -   **`publication`:**  
+    -   **`publication`:**
         Consists of elements publisher, ISBN and ISSN.
--   **`collection`:**  
+-   **`collection`:**
     The name of the journal, book or article collection.
--   **`wordcount`:**  
--   **`availability`:**  
+-   **`wordcount`:**
+-   **`availability`:**
     Either free or license
-    -   **`license`:**  
+    -   **`license`:**
         License type is "standard" or "other". The type "standard"
         indicates a license agreed with the basic contract
--   **`submitter?`:**  
+-   **`submitter?`:**
     The person or instance who stored the document to the database.
     Contains elements for name and email address.
--   **`multilingual?`:**  
+-   **`multilingual?`:**
     If the document is multilingual, this element describes the
     languages that occur in the document.
-    -   **`language+`:**  
+    -   **`language+`:**
         Language is given as an xml:lang attribute.
--   **`origFileName?`:**  
+-   **`origFileName?`:**
     The original name of the file. The filename may change during the
     conversion to xml.
--   **`metada`:**  
+-   **`metada`:**
     Either "complete" or "uncomplete".
--   **`version`:**  
+-   **`version`:**
     Contains version information of different conversion tools.
 
 body
@@ -331,28 +331,28 @@ body
 
 The document body contains sections and text-entities (`%text.ent`):
 
--   **`%text.ent`:**  
+-   **`%text.ent`:**
     Basic text-entites are list, table, p and pre.
--   **`section `:**  
+-   **`section `:**
     Contains sections and text-entities.
--   **`list`:**  
+-   **`list`:**
     Consists of paragraphs `p` with type "listitem".
--   **`table`:**  
+-   **`table`:**
     Consist of rows:
-    -   **row:**  
+    -   **row:**
         Contains paragraphs `p` with type "tablecell".
--   **`p`:**  
+-   **`p`:**
     The paragraph type is given as an attribute: title, listitem, text
     or tablecell. Paragraph contains text and elements em, hyph and
     error:
-    -   **`em`:**  
+    -   **`em`:**
         Emphasis type: bold, italic, underline or delimited.
-    -   **`hyph`:**  
+    -   **`hyph`:**
         Empty hyphenation tag
-    -   **`error`:**  
+    -   **`error`:**
         Error marking in the text, has the correct replacement as an
         attribute.
--   **`pre`:**  
+-   **`pre`:**
     Programlisting or other unformatted text.
 
 Character decoding: samiChar::Decode.pm

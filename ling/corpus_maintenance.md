@@ -20,7 +20,7 @@ into that specific sub-part of the corpus maintenance.
 * [Suggestions for detecting (flaws in) parallel texts](corpus_parallel_maintenance.html)
 * [How to manipulate the conversion of different file formats, in xsl, to get the correct language](CorpusConvertingManipulation.html)
 
-# Meetings in the corpus improvement project 
+# Meetings in the corpus improvement project
 
 * 2019:
 [  7.6.](../admin/corpus/Meeting_2019-06-07.html)
@@ -35,7 +35,7 @@ into that specific sub-part of the corpus maintenance.
   [ 16.11.](../admin/corpus/Meeting_2016-11-16.html)//
   [ 25.11.](../admin/corpus/Meeting_2016-11-25.html)
 * 2014:
-[ 12.3.](../admin/corpus/Meeting_2014-03-12.html) 
+[ 12.3.](../admin/corpus/Meeting_2014-03-12.html)
 * 2012:
 [ 12.1.](../admin/corpus/Meeting_2012-01-12.html) //
   [ 19.1.](../admin/corpus/Meeting_2012-01-19.html) //

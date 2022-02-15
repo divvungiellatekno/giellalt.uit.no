@@ -2,13 +2,13 @@ Se also seperate pages on [compound|CompoundTags.html], [syntax|docu-sme-syntaxt
 
 ## Guidelines for semantic tagging of proper nouns
 
-The tags used are the following: 
-* +Sem/Ani 
-* +Sem/Fem 
-* +Sem/Mal 
-* +Sem/Obj 
+The tags used are the following:
+* +Sem/Ani
+* +Sem/Fem
+* +Sem/Mal
+* +Sem/Obj
 * +Sem/Org
-* +Sem/Plc 
+* +Sem/Plc
 * +Sem/Sur
 
 If +Sem/Plc, then +Sem/Sur is added in the affixfile, except for Saami placenames
@@ -16,7 +16,7 @@ If +Sem/Plc, then +Sem/Sur is added in the affixfile, except for Saami placename
 Other combination tags (objplc, femsur, malfem, objplc, orgsur,
       malplc, surmal, femplc) are lexical.
 
-      
+
 ## Semantic tagging of other lemmas
 
 ### Format

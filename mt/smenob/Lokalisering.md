@@ -67,7 +67,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 # Språknamna
 
 |   lg | fin          | nob        | sma               | sme                | smj              | smn
-| --- | --- | --- | --- | --- | --- | --- 
+| --- | --- | --- | --- | --- | --- | ---
 |  eng | Finnish       | Norwegian   | South Saami        | North Saami         | Lule Saami        | Inari Saami
 |  fin | suomi         | norja       | eteläsaame         | pohjoissaame        | luulajansaame     | inarinsaame
 |  nob | finsk         | norsk       | sørsamisk          | nordsamisk          | lulesamisk        | enaresamisk
@@ -79,19 +79,19 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 #  Dei andre termane på sida
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Back
 |  nob | Tilbake
 |  sme | Ruovttoluotta
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Translate a webpage
 |  nob | Oversett en internettside
 |  sme | Jorgal neahttasiiddu
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | A free/open-source machine translation platform
 |  fin | Vapaa avoimen lähdekoodin konekäännösalusta
 |  nob | En fri/åpen kildekode maskinoversettelsesplattform
@@ -101,7 +101,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Translate a document
 |  fin | Käännä dokumentti
 |  nob | Oversett et dokument
@@ -111,7 +111,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Choose file
 |  fin | Valitse tiedosto
 |  nob | Velg fil
@@ -121,7 +121,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | No file is selected
 |  fin | Yhtään tiedostoa ei ole valittu
 |  nob | Ingen fil er markert
@@ -131,7 +131,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Translate
 |  fin | Käännä
 |  nob | Oversett
@@ -141,7 +141,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | About
 |  fin | Tietoja
 |  nob | Om
@@ -151,7 +151,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Contact information
 |  fin | Yhteystiedot
 |  nob | Ta kontakt
@@ -161,7 +161,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Spotted a mistake? Help us improve the system!
 |  fin | Löysitkö virheen? Auta meitä parantamaan järjestelmää!!
 |  nob | Fant du en feil? Hjelp oss å forbedre systemet!
@@ -171,7 +171,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Cancel
 |  fin | Peruuta
 |  nob | Avbryt
@@ -181,7 +181,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Download
 |  fin | Lataa
 |  nob | Last ned
@@ -191,7 +191,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | For developers
 |  fin | Kehittäjille
 |  nob | For utviklere
@@ -201,7 +201,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Unknown words are marked
 |  fin | Merkitse tuntemattomat sanat
 |  nob | Ukjente ord markeres
@@ -211,7 +211,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Instant translation
 |  fin | Välitön käännös
 |  nob | Oversetting mens du skriver
@@ -221,7 +221,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 |  smn | x
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Format not supported
 |  fin | Tiedostomuotoa ei tueta.
 |  nob | Det formatet er ikke støttet!
@@ -233,7 +233,7 @@ Prográmma ii máhte jorgalit Word 97 .doc-fiillaid iige pdf-fiillaid.
 <meta> description:
 
 |   Språk | Term
-| --- | --- 
+| --- | ---
 |  eng | Giellatekno provides free translation systems for Saami (and other) languages, using the Apertium rule-based machine translation platform. The code and data is free software and released under the terms of the GNU General Public License.
 |  fin | x
 |  nob | Giellatekno utvikler frie oversettelsessystem for samiske (og andre) språk, ved hjelp av den regelbaserte maskinoversettelsesplattformen Apertium. All kode og data er fri programvare, utgitt under GNU General Public License.

@@ -74,6 +74,6 @@ Open the start page of this new application by entering http://http://localhost:
 * Goto the searchtmx directory
 * Write ant to build the app. You'll now have a .xar file in build
 * Goto to the app-repository (see documentation in http://exist-db.org/exist/quickstart.xml#app-repository)
-* Click the upload tab 
+* Click the upload tab
 * Click the Choose file button, browse your way to the searchtmx-0.1.xar file, then click Upload. The page changes focus to the Installed tab, the app exists as Searchtmx (0.1). (if an error is reported, repeat the previous and this step)
 * Click the Paper box icon above the label Searchtmx (0.1), then click the local url and you are presented with the startup page of the app.

@@ -44,7 +44,7 @@ Trond parallellkorpus
 % == i halvparten av tilfella hálddašanváldi, i andre halvpart hálddašaneiseváldi.
 %  forskrift
 % == det er nesten alltid láhkaásahus (litt for ofte skrive láhkaasahus)
-% == men i nestsiste tilfelle på 1. s. er det njuolggadus 
+% == men i nestsiste tilfelle på 1. s. er det njuolggadus
 %  part
 % == korpus: bealli, juridisk ordliste: osolaš
 
@@ -90,7 +90,7 @@ Finansiering: forslag frå BOM om å slå i hop divvun-drift og sørsamisk til e
 * Etablere språkteknologisk senter med to tilsette frå 1.1.08 (3 tilsette 1.1.09)
 * Prosjekt ut over det:
     - Pedagogisk programvare 2007-2008 (UiT/Sametinget)
-    - MT-prosjekt? 
+    - MT-prosjekt?
 
 * parallellkorpus
     - terminologi-utvikling
@@ -107,7 +107,7 @@ Finansiering: forslag frå BOM om å slå i hop divvun-drift og sørsamisk til e
     - Middel: Lage eit program for å omsetje frå nord- til lulesamisk
         - Programmet skal bli godt nok til at det blir mogleg å spare myke tid på å korrekturlese maskinomsett lulesamisk tekst, heller enn å omsetje på nytt
     - Sideeffektar: Prosjektet vil...
-        - gje grunnstammen i ei nordsamisk-lulesamisk ordbok 
+        - gje grunnstammen i ei nordsamisk-lulesamisk ordbok
         - gje lulesamisk terminologisk arbeid eit løft
         - sikre harmonisering i terminologiutviklingsarbeidet mellom nord- og lulesamisk
         - utvikle lulesamisk språkteknologi
@@ -117,7 +117,7 @@ Finansiering: forslag frå BOM om å slå i hop divvun-drift og sørsamisk til e
         - Eigentleg er språka svært nære, dei fleste skilnadene kjem av ulik stavemåte og bøying
         - Dette er regelmessige skilnader som ein datamaskin kan finne ut av
 
- 
+
 ==>
 
 * pedagogisk programvare 1.6.07-31.12.08

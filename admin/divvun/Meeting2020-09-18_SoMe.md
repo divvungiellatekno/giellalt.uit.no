@@ -23,12 +23,12 @@ Det som postes på fb må være nyhetsrelatert
 
 * Facebook-personen vår: https://www.facebook.com/divvun.nuvvid - for at
   Duommá, Linda, Sjur skal kunna logga inn
-    - gjøre Divvun Nuvvid så anonym som mulig. 
+    - gjøre Divvun Nuvvid så anonym som mulig.
     - I beskrivelsen: tar ikke i mot venneforespørsler, kommunikasjon på sida vår
     - [endre navn](https://www.facebook.com/help/312721188838183) på Divvun_nuvvid
     til  Admin-Divvun Nuvvid
 
-Inga ryddar opp alt i FB. har du alle tilgangan Inga? 
+Inga ryddar opp alt i FB. har du alle tilgangan Inga?
 
 Vi trenger en mindre skalert bilde av "logoen" våres, slik at det får plass inni
 "ringen" av profilen vår. Gjelder både facebook og insta.
@@ -90,7 +90,7 @@ Sara vil gjerne at sia har favicon :-) — det skal sida ha (og har hatt). Bør
 sjekkast.
 
 * utformingen sender folk til nedlastinger som vi ikke vil de skal bruke
-  (utdatert). 
+  (utdatert).
 * disse utdaterte lenkene fungerer ikke
 
 Målsetjing: finna ny nettsidegenerator som gjer det lett å halda ved like og

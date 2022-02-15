@@ -58,7 +58,7 @@ Man skiller mellom synonymer og meningsgrupper. Synonymer har samme <mg> (meanin
 </e>
 ```
 
-   
+
 ## Oversettelsesgrupper <tg> i xml
 
 Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller translation group) som igjen kan inneholde:
@@ -77,7 +77,7 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
 </e>
 ```
 
-<t> - en frase 
+<t> - en frase
 ```
  <e usage="vd">
   <lg>
@@ -158,7 +158,7 @@ brukeren at dette er en ikke-normativ skrivemåte.
 <e usage="vd">
    <lg>
       <l pos="N">balloŋŋa</l>
-      <lsub extrapage="yes" pos="N">balluvdna</lsub> 
+      <lsub extrapage="yes" pos="N">balluvdna</lsub>
       <!!-- extrapage="yes" er default -->
       <!!-- the extrapage attribute is now obsolete when v1,v2 is implemented:-->
       <!!-- 1. lsub is alway extrapage="no" (no need of the extrapage attribute anymore)-->
@@ -225,7 +225,7 @@ Man kan legge inn kildetilvisning som attributt for x og xt, f.eks. hvis ordet
 ikke er vanlig i bruk:
 
 ```
-<x src="S.B. Johansen 2010: Sárá beaivegirji s. 21">... dakkár ilgadis 
+<x src="S.B. Johansen 2010: Sárá beaivegirji s. 21">... dakkár ilgadis
 olmmošlágan filbmasivdnádus, mii lea eambbo robohtalágan go olbmolágan.</x>
 ```
 
@@ -292,7 +292,7 @@ grunnform (*alccesan* peker til *iežan*).
 I entryene for de flekterte formene, blir det en entry for hver sideform.
 
 Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av
-filene. Dette kan unngås med å oppgi type (f.eks. 'dem') og sg/pl, f.eks.       
+filene. Dette kan unngås med å oppgi type (f.eks. 'dem') og sg/pl, f.eks.
 
 ```
 <l pos="pron" type="dem" nr="sg">dat</l> vs
@@ -333,7 +333,7 @@ vCop_stat_smanob.xml
 vNeg_stat_smanob.xml
 ```
 
-## Andre filer 
+## Andre filer
 I disse filene genereres ikke lemmaene, og de behøver heller ikke være i
 norm-fst.
 
@@ -358,7 +358,7 @@ pr_smanob.xml
 
 Miniparadigmene i leksikonoppslaget er hjelp for brukeren. De vil variere fra
 POS til POS. Man velger former som gir nyttig informasjon til brukeren om hele
-paradigmet. 
+paradigmet.
 
 ## Use/NGminip og Allegro i lexc
 
@@ -374,7 +374,7 @@ allegroformen for Sg Gen, som er merka med Allegro-tag:
 *viesu viessu+N+Sg+Gen* versus *vieso viessu+N+Sg+Gen+Allegro*  .
 
 |   Bøyning	| Eksempel
-| --- | --- 
+| --- | ---
 |            | viessu
 |  Sg+Gen    | viesu	(ikke Allegro)
 |  Sg+Ill    | 	vissui
@@ -384,7 +384,7 @@ allegroformen for Sg Gen, som er merka med Allegro-tag:
 Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadigmet
 
 |   Bøyning	| Kontekst | Eksempel    | Oversettelse
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |    -       |  -        | Norga        |  Norge
 |  Sg+Gen    | X bokte   | Norgga bokte |  via Norge
 |  Sg+Ill    |  -        | Norgii       |  til Norge
@@ -394,7 +394,7 @@ Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadi
 Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadigmet
 
 |   Bøyning	| Kontekst	| Eksempel 	| Oversettelse
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  - 		| 		-	| Iččát 		| Ingøy
 |  Pl+Gen 	| X bokte 	|  Iččáid bokte | via Ingøy
 |  Pl+Ill 	| 	-		|  Iččáide 		| til Ingøy
@@ -404,7 +404,7 @@ Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadi
 Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadigmet
 
 |   Bøyning	| Kontekst	| Eksempel 		| Oversettelse
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  -		 	|	-		| Nöörje  			|  Norge
 |  Sg+Gen 	| X baaktoe |  Nöörjen baaktoe 	| via Norge
 |  Sg+Ill 	| 		-	|  Nöörjese 		| til Norge
@@ -415,7 +415,7 @@ Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadi
 Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadigmet
 
 |   Bøyning	| Kontekst	| Eksempel 			| Oversettelse
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  - 		|		-	|  Bealjehkh  			|  Sylan
 |  Pl+Gen 	| X baaktoe |  Bealjehki baaktoe 	| via Sylan
 |  Pl+Ill 	| 		-	|  Bealjehkidie 		| til Sylan
@@ -423,34 +423,34 @@ Hvis det er flere mg, brukes <t> fra den første mg som oversetting i miniparadi
 |  Pl+Ela 	| 	-		|  Bealjehkijstie 		| fra Sylan
 
 ## verb sme:
-For verb har vi lagt til kontekst til bøyningsformene. Det er merket i leksikonet hvilken type kontekst som skal brukes, f.eks. context:"mun" 
+For verb har vi lagt til kontekst til bøyningsformene. Det er merket i leksikonet hvilken type kontekst som skal brukes, f.eks. context:"mun"
 
 |   Bøyning        | Kontekst           | Eksempel
-| --- | --- | --- 
+| --- | --- | ---
 |                  |  context:"mun"      | boahtit
 |  Ind+Prs+Sg1     |     (odne mun) X    | (odne mun) boađán
-|  Ind+Prt+Sg1     |    (ikte mun) X     | (ikte mun) bohten	
+|  Ind+Prt+Sg1     |    (ikte mun) X     | (ikte mun) bohten
 |  Ind+Prs+ConNeg  |       (in) X        | (in) boađe
 
 For verb som det ikke er naturlig med menneskelig subjekt for:
 |   Bøyning	     | Kontekst	| Eksempel
-| --- | --- | --- 
+| --- | --- | ---
 |  -               | context:"dat"   | ciellat
 |  Ind+Prs+Pl3     |  (Plural)  X    | (Plural) cillet
-|  Ind+Prt+Sg3     |  (ikte dat)  X  | (ikte dat) cielai	
+|  Ind+Prt+Sg3     |  (ikte dat)  X  | (ikte dat) cielai
 |  Ind+Prs+ConNeg  |  (ii) X         | (ii) ciela
 
 For verb som bare brukes i Sg3 (vær-verb):
 |   Bøyning        | Kontekst       | Eksempel
-| --- | --- | --- 
+| --- | --- | ---
 |  -               | context:"upers" |  bieggat
-|  Ind+Prs+Sg3	  | (odne) X        | (odne) bieggá	
+|  Ind+Prs+Sg3	  | (odne) X        | (odne) bieggá
 |  Ind+Prt+Sg3	  | (ikte) X        | (ikte) biekkai
 |  Ind+Prs+ConNeg  | (ii) X          | (ii) biekka
 
 For resiproke verb :
 |   Bøyning        | Kontekst     | Eksempel
-| --- | --- | --- 
+| --- | --- | ---
 |   -              | context:"sii" | deaivvadit
 |  Ind+Prs+Pl3     | (odne sii) X  | (odne sii) deaivvadit
 |  Ind+Prt+Pl3     | (ikte sii) X  | (ikte sii) deaivvadedje
@@ -458,46 +458,46 @@ For resiproke verb :
 
 ## verb sma:
 |   Bøyning		  | Kontekst				| Eksempel
-| --- | --- | --- 
+| --- | --- | ---
 |  Inf             |   		-	        	| båetedh
 |  Ind+Prs+Sg1	  | (daan biejjien manne) X | (daan biejjien manne) båatam
 |  Ind+Prs+Sg3	  | (daan biejjien dïhte) X | (daan biejjien dïhte) båata
 |  Ind+Prs+Pl3	  | (daan biejjien dat) X   | (daan biejjien dat) båetieh
-|  Ind+Prt+Sg1	  | (jååktan manne) X     	| (jååktan manne) böötim båetiejim	
+|  Ind+Prt+Sg1	  | (jååktan manne) X     	| (jååktan manne) böötim båetiejim
 |  Ind+Prs+ConNeg  | (ij) X        			| (ij) båetieh
 |  PrfPrc		  | (lea) X 				| (lea) båateme
-|  Ger			  | (lea) X  				| (lea) båetieminie 
-|  VGen			  | X  						| båetien 
+|  Ger			  | (lea) X  				| (lea) båetieminie
+|  VGen			  | X  						| båetien
 
 ## adjektiver:
 
 Ved å legge til +Use/NGminip i fst, kan man velge bort en del bøyningsformer når man ikke vil presentere alle i miniparadigmet. Dette er ikke minst aktuelt for adjektiver.
 
 |   Bøyning           | Uten +Use/NGminip            | Med +Use/NGminip
-| --- | --- | --- 
+| --- | --- | ---
 |   A+Sg+Nom          | heittot                       | heittot
 |  A+Attr             | heittogis heittohis (bivttas) | heittogis (bivttas)
 |  A+Pl+Nom           | heittogat heittohat           | heittogat
-|  A+Comp+Attr        | heittogit heittogut heittoget heittogat heittohit heittohut heittohet heittohat | heittoget heittogat 
-|  A+Comp+Sg+Nom      | heittogit heittogut heittoget heittogeabbo heittogat heittogabbo heittohit heittohut heittohet heittoheabbo heittohat heittohabbo | heittogeabbo heittogabbo 
+|  A+Comp+Attr        | heittogit heittogut heittoget heittogat heittohit heittohut heittohet heittohat | heittoget heittogat
+|  A+Comp+Sg+Nom      | heittogit heittogut heittoget heittogeabbo heittogat heittogabbo heittohit heittohut heittohet heittoheabbo heittohat heittohabbo | heittogeabbo heittogabbo
 |  A+Superl+Sg+Nom    | heittogeamos heittogamos heittoheamos heittohamos | heittogeamos heittogamos
 
 For adjektiver har vi lagt til kontekst til attributtformen bare for sme. Det er merket i leksikonet hvilken  kontekst som skal brukes, f.eks. context:"olmmoš". Hvis  context="", så vil det ikke bli oppgitt attributtform.
 
 |   Bøyning           | Kontekst bare for sme	| Eksempel
-| --- | --- | --- 
+| --- | --- | ---
 |  -                  | context:"báddi"          | guhkki
 |  A+Attr             | X (báddi)                | guhkes (báddi)
 |  A+Pl+Nom           | -                        | guhkit
-|  A+Comp+Attr        | -                        | guhkit 
-|  A+Comp+Sg+Nom      | -                        | guhkit 
+|  A+Comp+Attr        | -                        | guhkit
+|  A+Comp+Sg+Nom      | -                        | guhkit
 |  A+Superl+Sg+Nom    | -                        | guhkimus
 
 ## numeraler:
 For numeraler har vi lagt til kontekst til pl bare for sme. Alle har den samme konteksten:
 
 |   Bøyning	 | Kontekst bare for sme | Eksempel
-| --- | --- | --- 
+| --- | --- | ---
 |  -          | context:"gápmagat"	  | guokte
 |  Num+Pl+Nom | X (gápmagat)           | guovttit (gápmagat)
 |  Num+Pl+Gen | X (gápmagiid)          | guvttiid (gápmagiid)
@@ -506,11 +506,11 @@ For numeraler har vi lagt til kontekst til pl bare for sme. Alle har den samme k
 
 (samme miniparadigme som for substantiver)
 |   Bøyning	| Eksempel
-| --- | --- 
+| --- | ---
 |  -  	    | muhtun
-|  Sg+Gen    | muhtuma	 
+|  Sg+Gen    | muhtuma
 |  Sg+Ill    | muhtumii
-|  Pl+Ill    | muhtumiidda      
+|  Pl+Ill    | muhtumiidda
 
 # Innskrevne paradigmer (mest for VD, men kan også brukes for NDS)
 
@@ -519,8 +519,8 @@ pron Pers, Refl, Rec, Rel og Dem . Vi skriver paradigmet inn i filen:
 
 ```
 Singular for seg:
-Sg+Akk	
-Sg+Gen	
+Sg+Akk
+Sg+Gen
 Sg+Ill
 Sg+Loc
 Sg+Com
@@ -549,21 +549,21 @@ Pl2
 Pl3
 ```
 
-# Homonyme entrier 
-Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene (dette gjelder bare VD). Vær OBS på at det kan være homonymi med lemmaer i norm-fst, uten at begge er med i dict. For å få generert riktig bøyningsparadigme til dict-entryen, må de behandles på samme måte, selv om bare det ene lemmaer er med i dict. 
+# Homonyme entrier
+Det må ikke være noen homonyme entryer (lemma + POS) innafor eller på tvers av filene (dette gjelder bare VD). Vær OBS på at det kan være homonymi med lemmaer i norm-fst, uten at begge er med i dict. For å få generert riktig bøyningsparadigme til dict-entryen, må de behandles på samme måte, selv om bare det ene lemmaer er med i dict.
 
- 
+
 ## Ikke-systematisk homonymi - eksempel fra sma
 <l> elementet får attributten hid="Hom1" eller hid="Hom2". Lemmaene er merka tilsvarende i norm-fst.
 
- 
 
- 
+
+
 ## Systematisk homonymi - ekesmpler fra sme
 
- 
-|   Nom   | Gen  	| norsk 	| norm-fst-analyse	 
-| --- | --- | --- | --- 
+
+|   Nom   | Gen  	| norsk 	| norm-fst-analyse
+| --- | --- | --- | ---
 |  lohkki |  lohki  	|  lokk		| lohkki+N+Sg+Nom
 |  lohkki |  lohkki 	|  lesar 	| lohkki+N+NomAg+Sg+Nom
 
@@ -586,18 +586,18 @@ Her må den ene merkes med tag (actor) i genereringa fra norm-fst. Med denne tag
       </lg>
       <mg>
          <tg>
-            <t pos="N">leser</t> 
+            <t pos="N">leser</t>
 ```
 
 En annen systematisk homonymi:
-|   Nom  	| Gen  | norsk 	| norm-fst-analyse	 
-| --- | --- | --- | --- 
+|   Nom  	| Gen  | norsk 	| norm-fst-analyse
+| --- | --- | --- | ---
 |   beassi 	| beasi  |  reir	| beassi+N+Sg+Nom
 |   beassi  	| beassi |  never	| beassi+N+G3+Sg+Nom
 
 Vi har følgende tagger for substantiver:
 |   tagger | fil
-| --- | --- 
+| --- | ---
 |  N+NomAg |  -
 |  N		  |  -
 |  N+G3	  |  -

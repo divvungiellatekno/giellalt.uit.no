@@ -13,7 +13,7 @@ TODO: example sms entry
 Man skiller mellom synonymer og meningsgrupper. Synonymer har samme <mg>
 (meaning group / meningsgruppe) og samme <tg> (translation group /
 oversettelsesgruppe). Hvis en entry har flere betydninger, så skilles disse som
-forskjellige <mg>. 
+forskjellige <mg>.
 
 ###  <tg /> level
 
@@ -27,11 +27,11 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
 
 ``` TODO: example entry with <t /> ```
 
-###  <te /> - An explanation: a sentence which explains the meaning of a word, but can't be used in the translation. 
+###  <te /> - An explanation: a sentence which explains the meaning of a word, but can't be used in the translation.
 
 ``` TODO: example entry with <t /> ```
 
-###  <re /> - Restriction 
+###  <re /> - Restriction
 
 * <re> gives a restriction for the translation, f.ex. norwegian *vest* has the restriction *of clothes*, to separate it from the navigational direction.
 
@@ -39,11 +39,11 @@ Elementet <mg> inneholder en eller flere <tg> (oversettelsesgruppe eller transla
 
 ###  <l /> attribute documentation
 
-TODO: 
+TODO:
 
 ###  <t /> attribute documentation
 
-TODO: 
+TODO:
 
 ###  <lemma_ref /> for references
 
@@ -62,7 +62,7 @@ provide ad-hoc analyses that don't come from the FST.
       </lg>
 ```
 
-Leads to ... 
+Leads to ...
 
 ```
 <e>
@@ -76,7 +76,7 @@ These are found in *Pron_references_sms2x.xml*.
 
 ###  <xg /> Example sentences
 
-TODO: 
+TODO:
 
 In sms these can come in under either <mg /> or <tg />, for good reasons.
 
@@ -103,7 +103,7 @@ be displayed in NDS.
 ###  Other files
 
 TODO:
-##  Generated miniparadigms 
+##  Generated miniparadigms
 
 Miniparadigms are generated in lexicon entries in order to help users. They
 vary from POS to POS and sometimes within POS.
@@ -119,12 +119,12 @@ NB: judicious use of +Use/NGminip from sme to clean up many possibilities into
 one.
 
 |   Inflection         | Without +Use/NGminip         | With +Use/NGminip
-| --- | --- | --- 
+| --- | --- | ---
 |   A+Sg+Nom| heittot                       | heittot
 |   A+Attr             | heittogis heittohis (bivttas) | heittogis (bivttas)
 |   A+Pl+Nom           | heittogat heittohat           | heittogat
-|   A+Comp+Attr        | heittogit heittogut heittoget heittogat heittohit heittohut heittohet heittohat | heittoget heittogat 
-|   A+Comp+Sg+Nom      | heittogit heittogut heittoget heittogeabbo heittogat heittogabbo heittohit heittohut heittohet heittoheabbo heittohat heittohabbo | heittogeabbo heittogabbo 
+|   A+Comp+Attr        | heittogit heittogut heittoget heittogat heittohit heittohut heittohet heittohat | heittoget heittogat
+|   A+Comp+Sg+Nom      | heittogit heittogut heittoget heittogeabbo heittogat heittogabbo heittohit heittohut heittohet heittoheabbo heittohat heittohabbo | heittogeabbo heittogabbo
 |   A+Superl+Sg+Nom    | heittogeamos heittogamos heittoheamos heittohamos | heittogeamos heittogamos
 
 ###  Nouns
@@ -136,7 +136,7 @@ separate these cases out to display them across one column.
 TODO: Noun attributes that affect miniparadigms ?
 
 |   Bøyning	| Eksempel
-| --- | --- 
+| --- | ---
 |  Sg+Nom	 | võrr
 |  Sg+Gen	 | võõr
 |  Sg+Acc	 | võõr
@@ -173,11 +173,11 @@ EX: Äʹnnjääuʹraž
 TODO: determine how to display these in sms
 
 |   Form   	| Context  | Example     | Translation
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |    -        |  -        |              |       
-|  Sg+Gen     | X pääiʹǩ	 |              |          
-|  Sg+Ill     | 	-        |              |           
-|  Sg+Loc     |  -        |              |             
+|  Sg+Gen     | X pääiʹǩ	 |              |       
+|  Sg+Ill     | 	-        |              |       
+|  Sg+Loc     |  -        |              |       
 
 TODO: Any plural-only proper nouns?
 
@@ -193,7 +193,7 @@ provide an attributive adjective example with a noun.
 TODO: determine some good contexts for adjs
 
 |   Inflection        | Context         | Example
-| --- | --- | --- 
+| --- | --- | ---
 |  A+Pred+Sg           |                 | oođâs
 |  A+Attr              | context:"??"    | ođđ (??)
 |  A+Comp              |                 | ođđsab
@@ -203,7 +203,7 @@ TODO: +A+Pred+Pl ?
 
 ###  numerals
 
-TODO: 
+TODO:
 
 ###  Pronouns
 
@@ -218,7 +218,7 @@ This also requires the *type="Pers"* attribute on the *<l />* node, and the
 adjust the paradigm rules.
 
 |   Inflection | Example
-| --- | --- 
+| --- | ---
 |  Sg+Nom	  | mon
 |  Sg+Gen	  | muu
 |  Sg+Acc	  | muu
@@ -237,7 +237,7 @@ måtam Måtmin
 
 TODO:
 
-##  Pregenerated paradigms 
+##  Pregenerated paradigms
 
 ###  pronouns
 
@@ -272,16 +272,16 @@ analyses with the meanings.
 
 TODO: jokk is homonymous in sms, find examples for documentation from there.
 
-###  Non-systematic homonymy 
+###  Non-systematic homonymy
 
 TODO:
 
 <l> element gets an attribute hid="1" or hid="2". The lemmas are marked
-similarly in the norm FST. Thus, 
+similarly in the norm FST. Thus,
 
- 
-|   Nom  | Gen  	| norsk 	| norm-fst-analyse	 
-| --- | --- | --- | --- 
+
+|   Nom  | Gen  	| norsk 	| norm-fst-analyse
+| --- | --- | --- | ---
 |  lohkki |  lohki  	|  lokk		| lohkki+N+Sg+Nom
 |  lohkki |  lohkki 	|  lesar 	| lohkki+N+Actor+Sg+Nom
 

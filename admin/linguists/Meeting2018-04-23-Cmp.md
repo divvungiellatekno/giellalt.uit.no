@@ -22,13 +22,13 @@ Vi såg òg kort på samansetjingar med sitatform i fyrstelekken, dvs utan
 vokalreduksjon av stammevokal (i nordsamisk):
 
 ```
-$ echo oahppu- | lookup -q src/analyser-gt-norm.xfst 
+$ echo oahppu- | lookup -q src/analyser-gt-norm.xfst
 oahppu-	oahppu-	+?
 ```
 
 Men:
 ```
-$ echo oahppu-sátni | lookup -q src/analyser-gt-norm.xfst 
+$ echo oahppu-sátni | lookup -q src/analyser-gt-norm.xfst
 oahppu-sátni	oahppu	+N+Sg+Nom+Cmp/Cit+Cmp/Hyph+Cmp#sátni+N+Sg+Nom
 oahppu-sátni	oahppu	+N+Cmp/SgNom+Cmp/Hyph+Cmp#sátni+N+Sg+Nom
 oahppu-sátni	oahppat	+V+TV+Imprt+Du1+Cmp/Cit+Cmp/Hyph+Cmp#sátni+N+Sg+Nom

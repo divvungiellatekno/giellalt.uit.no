@@ -167,7 +167,7 @@ GitHub allows checkout via svn, allowing people most familiar with svn to
 continue working as before. The only caveat is that git submodules, which is
 planned to be used for the internal dependencies (giella-core, giella-shared,
 etc) will not work using the svn checkout method. For those users we need an
-alternative, possibly a shell script checking out the dependent repos using svn 
+alternative, possibly a shell script checking out the dependent repos using svn
 in a suitable subdir. The shell script should be called from `./autogen.sh`,
 which people are used to run in any case.
 

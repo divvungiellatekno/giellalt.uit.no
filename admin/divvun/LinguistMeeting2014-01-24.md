@@ -12,18 +12,18 @@ narkotihkka:narkotihkka MUORRA ; !LOAN Not in ANTIKK because it's ending on -a
             +SgNomCmp+Dial/-SW:kk%>     R                    ;
            +SgNomCmp+Dial/-NOR:k%>      R                    ;
 
-           
 
-           
+
+
            narkotikkgássjelisvuohta
            narkotik
 
-           
 
-           
 
-           
-LEXICON FirstComponent           
+
+
+
+LEXICON FirstComponent
 koncentrations+N+CmpN/Pref+CmpN/SgN:koncentrations%> R ;
 koncern+Use/+N+CmpN/Pref+CmpN/SgN:koncern%> R ;
 konsern+OLang/NOB+N+CmpN/Pref+CmpN/SgN:konsern%> R ;
@@ -31,9 +31,9 @@ koncessions+N+CmpN/Pref+CmpN/SgN:koncessions%> R ;
 
 prosænnta:prosænnta MUORRA ; !LOAN Not in PATENT because of SW procent
 
-prosænnta:pros              PATENT ; 
-prosænnta+OLang/SWE:procent R ; ! procænnta procentav 
-prosentåhtsåmus 
+prosænnta:pros              PATENT ;
+prosænnta+OLang/SWE:procent R ; ! procænnta procentav
+prosentåhtsåmus
 
 LEXICON PATENT
 ### +SgNomCmp+OLangNOB:ent%>      R                    ;
@@ -52,7 +52,7 @@ norsk (koncentrations-konsentrasjons).
  +N+OLang/NOB:   MUORRAInfl ;
  +N+OLang/NOB:%> MUORRACmp  ;
 
-### sma må også se på dette - cmp - 
+### sma må også se på dette - cmp -
 
 konsentrasjåvnnå:kon   KONCENTRATION ;
 
@@ -66,18 +66,18 @@ LEXICON KONCENTRATION
 
 Rånotatar:
 ```
-mange leksikon - omlydsleksikoner 
+mange leksikon - omlydsleksikoner
 
-4 grupper: maja - 
+4 grupper: maja -
 
 s-s -system 3-klasser (Bergsland) morfolgisk
-                                  syntaktisk 
-+ klasse (OHM 2012)  =   
+                                  syntaktisk
++ klasse (OHM 2012)  =
 
 se bare på ss-system.
 
-Ikke gjør noe med oeh-an-gruppen. - 
-7-8 leksikon oeh-an/oen  og ies/oes-as-an - 
+Ikke gjør noe med oeh-an-gruppen. -
+7-8 leksikon oeh-an/oen  og ies/oes-as-an -
 
 oeh:(?)
 ```
@@ -91,7 +91,7 @@ son lea álásoivviid
 álás	álás+A+Attr
 oivviid	oaivi+Sem/Body+N+Pl+Gen
 
-ávon 
+ávon
 ávon	ávvo+N+Sg+Ine
 ávon	ávon+Adv
 

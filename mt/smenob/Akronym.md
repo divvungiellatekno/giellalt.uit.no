@@ -4,10 +4,10 @@ Akronym treng synkron handsaming i sme.fst, bidix og nob.dix
 
 Pga. Divvun leksikaliserer vi alle akronym vi registerer.
 
-Vi gjev akronym som fungerer som substantiv, taggen +N, 
+Vi gjev akronym som fungerer som substantiv, taggen +N,
 og alle andre akronym +N+Prop.
 
-Dynamiske (genererte) akronym får +N+Prop+Sem/Org, leksikaliserte 
+Dynamiske (genererte) akronym får +N+Prop+Sem/Org, leksikaliserte
 akronym får ulike taggar.
 
 Dagens output fra FST:

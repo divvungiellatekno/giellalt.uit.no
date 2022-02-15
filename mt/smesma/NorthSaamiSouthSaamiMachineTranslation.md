@@ -37,8 +37,8 @@ Cf. also the [Apertium page for sme-sma MT](http://wiki.apertium.org/wiki/North_
 * 2013:
  [Aug.12](meetings/130812.html)  //
  [Aug.15](meetings/130815.html)  //
- [Aug.28](meetings/130828.html) 
+ [Aug.28](meetings/130828.html)
 
- 
 
- 
+
+

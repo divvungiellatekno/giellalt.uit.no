@@ -5,7 +5,7 @@
 # Språk & medarbeidarar
 
 |   Language/role | Project member
-| --- | --- 
+| --- | ---
 |   ISL           |  Hulda Óladóttir
 |   KAL           |  Elin Neshamar
 |   SME           |  Thomas Omma
@@ -24,7 +24,7 @@ Maja Kappfjell has worked with SMA, but is formally not part of the project. We 
 ## Status as of now
 
 |   Language | No Typos |No of running words |% typos of all words
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |   ISL      |       915 |             149 532 |  0,61 %
 |   KAL      |       224 |              21 723 |  1,03 %
 |   SMA      |      9074 |              41 682 | 21,77 %
@@ -95,7 +95,7 @@ The testing done so far is only done on the freely available texts.
 ## Speed & memory
 
 |  Language | Speed               | Memory use
-| --- | --- | --- 
+| --- | --- | ---
 |  ISL      |  37,31 words/second  |  17 172 Kb
 |  KAL      | 990,2  words/second  |  58 952 Kb
 |  SMA      |  24,11 words/second  |   4 480 Kb

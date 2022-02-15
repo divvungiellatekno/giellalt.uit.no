@@ -3,20 +3,20 @@ Felles kurs for sme-smn, sme-sma, sme-smj
 
 **Tidspunkt: 7-10. desember**
 
-**Sted: Tromsø** 
+**Sted: Tromsø**
 
 ## Innhald:
 * Kva er MT, om prosjektet
 * Teknisk: Maskiner skal fungere
 * Metodisk: Arbeidsrutiner
-* Lingvistisk: 
-    - Arbeide med bidix 
+* Lingvistisk:
+    - Arbeide med bidix
     - Arbeide med generering
     - Arbeide med MT-transfer (syntaks)
 
 ## Forarbeid
 
-* Installere Apertium 
+* Installere Apertium
 * Setje opp pending tests - på Apertium-wiki
 * Sikre oss at vi har eit fungerande system
 * Legge til tilgjengelig materiale i bidix-filene
@@ -28,19 +28,19 @@ Felles kurs for sme-smn, sme-sma, sme-smj
 
 **Tidspunkt: 7-10. desember**
 
-**Sted: Tromsø** 
+**Sted: Tromsø**
 
 ## Innhald:
 * Teknisk: Maskiner skal fungere
 * Metodisk: Arbeidsrutiner
-* Lingvistisk: 
-    - Arbeide med bidix 
+* Lingvistisk:
+    - Arbeide med bidix
     - Arbeide med generering
     - Arbeide med MT-transfer (syntaks)
 
 ## Forarbeid
 
-* Installere Apertium 
+* Installere Apertium
 * Setje opp pending tests - på Apertium-wiki
 * Sikre oss at vi har eit fungerande system
 * Legge til tilgjengelig materiale i bidix-filene
@@ -65,7 +65,7 @@ Felles kurs for sme-smn, sme-sma, sme-smj
     - apertium -d . sme-sma
     - apertium -d . sme-sma-TILLEGG (morph, biltrans, postchunk)
     - analyse, generering av morfologi hfst-proc sma-sme.automorf.hfst
-* Prøve å oversette tekst 
+* Prøve å oversette tekst
 * Evaluering (Fran)
 * definere problemer (i hvilken modul) - Lene
 * Begynne å redigere bidix - Trond
@@ -76,7 +76,7 @@ Felles kurs for sme-smn, sme-sma, sme-smj
 ###  Dag 2
 * Bidix: Arbeid i praksis (Trond)
     - Arbeid med grunnlag i tekst som ikke har parallell
-    - Arbeid med grunnlag i parallelle tekster 
+    - Arbeid med grunnlag i parallelle tekster
 * Lexical selection - Trond/Fran (*eks)
 * Dynamisk sammensetning - Lene
 * Missinglist - Lene
@@ -87,7 +87,7 @@ Felles kurs for sme-smn, sme-sma, sme-smj
     - Ikke-samsvar i taggene i sme, smn, sma, smj
 * Derivasjoner (Lene)
 * Syntaks: kvasikode for transferregler (Lene)
-    - Posisjon 
+    - Posisjon
     - Om hver posisjon: tag, lemma/sett av lemma (positiv/negativ)
     - Referanse til SL eller TL
 
@@ -97,7 +97,7 @@ Felles kurs for sme-smn, sme-sma, sme-smj
 * Mer praktisk arbeid
 * Ny evaluering
 * Planlegge arbeidet videre, arbeidsdeling
-1. bidix - 
+1. bidix -
     1. revisjon (smj?)
     1. bidix - frekvenssortering
     1. bidix - legge til ord fre frekvsortert missinglist
@@ -114,9 +114,9 @@ Felles kurs for sme-smn, sme-sma, sme-smj
         - Støttetekst
         - Redigerbar tekst
         - hva er viktigst
-    - kontrastiv grammatikk 
+    - kontrastiv grammatikk
         - For artikkel: t.d. hjelpeverb
 * Arbeidsmetode
     - Konkret mål for sme2smX Spesifikt korpus
-   samfunnsfag for mellomtrinnet, 
+   samfunnsfag for mellomtrinnet,
    til redigerbar tekst

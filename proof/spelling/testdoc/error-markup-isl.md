@@ -23,7 +23,7 @@ detected and corrected. In the resulting xml, the element is named
 such that a speller should be able to detect them.
 
 -   ****Position - used when describing error types vow, con, typo, cap
-    and meta.**:**  
+    and meta.**:**
     -   stem - stem
     -   suff - suffix
     -   der - derivation
@@ -32,7 +32,7 @@ such that a speller should be able to detect them.
 <!-- -->
 
 -   ****Word classes - used when describing compounded words that should
-    not be compounded (cmp).**:**  
+    not be compounded (cmp).**:**
     -   noun - noun
     -   verb - verb
     -   adv - adverb
@@ -42,7 +42,7 @@ such that a speller should be able to detect them.
 <!-- -->
 
 -   ****Compound type - used when describing incorrectly compounded
-    words (cmp).**:**  
+    words (cmp).**:**
     -   st - stem
     -   gensg - genitive singular
     -   genpl - genitive plural

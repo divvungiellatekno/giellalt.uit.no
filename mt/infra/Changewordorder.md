@@ -1,6 +1,6 @@
 # Change wordorder
 
-##  From pr to post 
+##  From pr to post
 Example sme:maŋŋel can be both pr and post, maŋa is post
 
 Bidix:
@@ -66,7 +66,7 @@ sme-smn t2x: REGLA: PR_PO - here we change the order from 1 2 to 2 1
 
 ##  From SOV to SVO
 
- 
+
 sme-smn t1x: category obj_l (object to left) when function tag is @OBJ→. All the other function tags are category nom. \\ see REGLA: OBJ to left
 
 sme-smn t2x: REGLA: OBJ - here we change the order from 1 2 to 2 1

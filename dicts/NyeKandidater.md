@@ -2,7 +2,7 @@ Arbeidsmåte, eksempel nobsme
 
 ##  Arbeid i inc/kandidatar.csv
 
-Legg til PoS, restriksjon, oversetting, eksempelsetning, oversetting av eksempelsetning. 
+Legg til PoS, restriksjon, oversetting, eksempelsetning, oversetting av eksempelsetning.
 Viktig at alle disse linjene har fem underscore.
 
 Restriksjon skrives i parantes for å gjøre csv-lista mer lesbar.

@@ -29,7 +29,7 @@ How to test for this:
 * list the result (should be empty)
 
 This test one should be able to set up language-independently.
-In case we get 
+In case we get
 
 ## Test for phonotactically illegal strings
 

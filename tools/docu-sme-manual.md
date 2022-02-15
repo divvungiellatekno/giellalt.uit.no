@@ -37,14 +37,14 @@ contain a pipeline combining perl pre- and postprocessing with xfst
 transducers and constraint grammar. These aliases may be written
 anywhere (replace "sme" with your own language code).
 
--   **smedis:**  
+-   **smedis:**
     Gives a sentence analysis of North Saami
--   **smedep:**  
+-   **smedep:**
     Gives a dependency analysis of North Saami
--   **smedist:**  
+-   **smedist:**
     Gives a sentence analysis of North Saami, in trace mode (showing
     which dis rules work)
--   **smedept:**  
+-   **smedept:**
     Gives a dependency analysis of North Saami, in trace mode (showing
     which dep rules work)
 
@@ -88,16 +88,16 @@ Instead of just showing the result on the screen as running text (as
 above), much can be done to manipulate it. Here are some examples, all
 the textstrings should be added after the *smedis* etc. above.
 
-`| grep '+N+Pl' > plnouns`  
+`| grep '+N+Pl' > plnouns`
 (to get all plural nouns and save them to the file *plnouns*)
 
-`| grep -v '\?' | cut -f2 | sort | uniq -c | sort -nr | less `  
+`| grep -v '\?' | cut -f2 | sort | uniq -c | sort -nr | less `
 (to get a frequency list of the lexemes that the parser recognizes.
 
-`| grep '\?' | sort | uniq -c | sort -nr | less `  
+`| grep '\?' | sort | uniq -c | sort -nr | less `
 (to get a frequency list of the **words** that the parser does not
 recognize)
 
-`| grep '\+\?' | sort | uniq -c | sort -nr | less `  
+`| grep '\+\?' | sort | uniq -c | sort -nr | less `
 (to get a frequency list of the **word forms** that the parser does not
 recognize)

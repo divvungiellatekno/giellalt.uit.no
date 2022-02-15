@@ -20,7 +20,7 @@ Alt ok, ventar på fleire feil :-)
 LØST:
 ```
 Mii divodit suohkana visttiid.
-Vi reparerer kommunens hus.  
+Vi reparerer kommunens hus.
 
 Mii divodit suohkana visttiid ja infrastruktuvrra
 Vi reparerer kommunens hus og infrastruktur.
@@ -35,7 +35,7 @@ Unike substantiv: rektor, verden
 # AKRONYM
 
 ## Bestemtheit for akronyt
-###  ikke bestemt form for acr 
+###  ikke bestemt form for acr
 
 ```
 Dán jagi lea gehččiin vejolašvuohta TV ja neahta bokte čuovvut giđđajohtima
@@ -43,8 +43,8 @@ Dette året er det på publikumene en mulighet via TV-EN og nettet følge vårfl
 Dette året er det hos publikum mulighet via TV og nettet følge vårflyttinga.
 ```
 
-ACR treng opprydding: Vi vil ha to typar: **namn** (Det er NRK, jeg snakker om NRK) 
-og **substantiv**  (Det er en SUV, jeg snakker om en SUV). Det finst tvetydige akronym: 
+ACR treng opprydding: Vi vil ha to typar: **namn** (Det er NRK, jeg snakker om NRK)
+og **substantiv**  (Det er en SUV, jeg snakker om en SUV). Det finst tvetydige akronym:
 (Det er (en) BMW, jeg snakker om (en) BMW).
 
 ## Habitiv
@@ -100,7 +100,7 @@ Problemet er når det er et adverb eller noe annet mellom. Her må vi tenke ut e
 # FORMELT SUBJEKT "det"
 ## Ein "det" for mykje
 
-### Apposisjon 
+### Apposisjon
 Alt ok, ventar på fleire feil :-)
 
 ## Manglande "det"
@@ -137,7 +137,7 @@ Alt ok, ventar på fleire feil :-)
 ## Ordstilling i NP
 Alt ok, ventar på fleire feil :-)
 
-## Ordstilling for setningsadverb i  Leddsetning 
+## Ordstilling for setningsadverb i  Leddsetning
 
 ```
 Mii gáibidit, ahte olmmoš liikkáge galgá dan giela hállat.
@@ -262,7 +262,7 @@ sjekka hit
 ## Vi trenger case tag på OPRED-chunken
 
 Denne skal få "være" i t3x fordi den er både OPRED og Acc
-* Gáhkuid son ráhkada buriid. 
+* Gáhkuid son ráhkada buriid.
 * Kakene han lager er gode.
 
 Denne skal ikke få "være" i t3x fordi den er OPRED, men ikke Acc
@@ -275,12 +275,12 @@ Denne skal ikke få "være" i t3x fordi den er OPRED, men ikke Acc
 
 ### bargat
 
-* med objekt: gjøre 
-* utan objekt: arbeid 
+* med objekt: gjøre
+* utan objekt: arbeid
 
 LØST:
 ```
-Dan lohpidii Morales bargat. 
+Dan lohpidii Morales bargat.
 Det lovde Morales å gjøre.
 
 Boazodoallohálddahus lea bargan boazodoalu váikkuhanfámu buoridemiin daid gaskaomiid bokte mat stivrejit areálageavaheami.
@@ -301,20 +301,20 @@ Dalle go mun álgen ledje mis 4200 diŋgojeaddji, sihke bábiráviissa lohkkit j
 
 LØST:
 ```
-Dan ipmirda Anton Dahl bures 
+Dan ipmirda Anton Dahl bures
 Det forstår Anton Dahl godt.
 
 Munnje dat heive bures.
 Til meg høver det bra.
 ```
 
-## Subjunksjon 
+## Subjunksjon
 
 ### go
 
 Su mielas lea ártet go dakkár áššit sáhttet dáhpáhuvvat
 
-I dag: 
+I dag:
 ```
 SELECT ("fordi"i) (0 ("<go>"i)) (-1 a + nom) ;
 ```

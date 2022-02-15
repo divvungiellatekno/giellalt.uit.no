@@ -295,13 +295,13 @@ serve as an example:
 		# store it:
 		sed 's/$/+N+Sg+Nom/' nouns.txt | $lookuptool $generatorfile.$f \
 			| cut -f2 | fgrep -v "+N+Sg" | grep -v "^$" | sort -u \
-			> analnouns.$f.txt 
+			> analnouns.$f.txt
 		# Generate nouns, extract those that do not generate in singular,
 		# generate the rest in plural:
 		sed 's/$/+N+Sg+Nom/' nouns.txt | $lookuptool $generatorfile.$f \
 			| cut -f2 | grep "N+" | cut -d "+" -f1 | sed 's/$/+N+Pl+Nom/' \
 			| $lookuptool $generatorfile.$f | cut -f2 \
-			| grep -v "^$" >> analnouns.$f.txt 
+			| grep -v "^$" >> analnouns.$f.txt
 ```
 
 The full test script file can be found

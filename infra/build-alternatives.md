@@ -35,7 +35,7 @@ The main drawback to replacing GNU make is that we become dependent of yet anoth
 * every file should be defined only once
 
 Question to Saara:
-Can we override 
+Can we override
 
 # The alternatives
 

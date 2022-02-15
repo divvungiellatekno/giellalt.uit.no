@@ -113,7 +113,7 @@ Fleire døme:
 ```
 Ervasti PIPPI-sur ; - for smj
 Ervasti ACRRA-sur ; - for sma
-Vimpari NYSTØ-sur ; 
+Vimpari NYSTØ-sur ;
 Gemini ACCRA-mal ;
 Caspari ACCRA-sur ;
 ```

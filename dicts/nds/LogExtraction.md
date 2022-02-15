@@ -1,6 +1,6 @@
 #  User logs
 
-NDS contains a few means of logging user interaction with the system: 
+NDS contains a few means of logging user interaction with the system:
 
  * Google Analytics
  * Dictionary Lookup Log

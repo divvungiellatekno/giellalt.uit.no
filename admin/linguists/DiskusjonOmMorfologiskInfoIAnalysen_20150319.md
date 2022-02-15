@@ -1,6 +1,6 @@
 Diskusjonen startet på møte 19. mars 2015.
 
-# Morfologisk informasjon i korpusanalysen 
+# Morfologisk informasjon i korpusanalysen
 
 Status i dag: mye informasjon blir fjerna
 
@@ -27,9 +27,9 @@ Fordeler med leksikalisering:
 
 Alternativer:
 1. Bruke kompleks analyse istedenfor leksikalisering
-1. Legge til tagger om derivasjon til dagens analyse. I dag har vi en slik i sme: +NomAg 
+1. Legge til tagger om derivasjon til dagens analyse. I dag har vi en slik i sme: +NomAg
 1. Ta vare på kompleks analyse som underlesning
-1. Legge til definerte underlesninger i et skript, mellom FST og cg3 
+1. Legge til definerte underlesninger i et skript, mellom FST og cg3
 
 **1. Bruke kompleks analyse istedenfor leksikalisering:**
 
@@ -44,7 +44,7 @@ vuovdi	vuovdi+N+NomAg+Sg+Nom  <= info i tagg til det leksikaliserte lemmaet
 vuovdi	vuovdit+V+TV+Der/NomAg+N+Sg+Nom <= kompleks analyse
 ```
 
-pga av homonymi med vuovdi+N = skog som har ulikt bøyningsparadigme 
+pga av homonymi med vuovdi+N = skog som har ulikt bøyningsparadigme
 
 For derivasjonen Der/NomAct har vi det ikke
 
@@ -73,7 +73,7 @@ $ echo čorgejeaddji | hfst-proc2 --xerox tools/preprocess/tokeniser-disamb-gt-d
 "<čorgejeaddji>"
 	"čorgejeaddji" N NomAg Sem/Hum Sg Nom
 	"čorgejeaddji" Der/NomAg N Sg Nom
-		"čorget" V TV 
+		"čorget" V TV
 
 ```
 
@@ -113,7 +113,7 @@ borahahtti	borahahtti+A+Sg+Gen
 borahahtti	borahahtti+A+Sg+Acc
 
 $ usmj
-nuorttal	nuorttal+Adv + 
+nuorttal	nuorttal+Adv +
 nuorttal	nuorttal+Po
 nuorttal	nuorttal+Pr
 
@@ -131,7 +131,7 @@ geahppaseappot  geahppaseappot+Adv  <== denne vinner i dis.cg3
 ```
 
 ## Bz 1308:
-Eksempler på ikke veldig produktive deriverte verb hvor derivasjonen ikke kommer fram i FST. 
+Eksempler på ikke veldig produktive deriverte verb hvor derivasjonen ikke kommer fram i FST.
 Spørsmålet er om vi skal synliggjøre slik derivasjon.
 
 Spesielt gjelder det verb på -lit (i parantes er mulig analyse som FST ikke gir idag):

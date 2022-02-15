@@ -39,7 +39,7 @@ Korhon:
 * eksábma m examen eksáminánnda nd examinand eksáminásjåvnnå vn examination
 * sosiála social sosiálalasj sosiálalattj- social
 * åhpadusinstitusjåvnnå vn undervisningsinstitution
-* evolutionissma+Dial/-NOR:evolutioni FANATISM ; 
+* evolutionissma+Dial/-NOR:evolutioni FANATISM ;
 * kautionissta+CmpN/SgN+CmpN/SgG+CmpN/PlG:kautioni TURIST ;
 
 **Å gjera:**

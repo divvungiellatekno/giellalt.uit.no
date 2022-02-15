@@ -18,12 +18,12 @@ davvi-	davvi+N+Cmp/SgNom+Err/Orth+Cmp/SplitR
 davvi-	davvi+N+Cmp/SgNom+Cmp/SplitR
 davvi-	davvi+N+Cmp/SgNom+Cmp/SplitR
 davvi-	davvi+N+Cmp/SgNom+Cmp/SplitR
-```	
+```
 
 ```
 	## Eará ortnegatge vuoruhuvvojit , nugo fievrridandoarjja visot dehálaš buvttademiide eanadoalus , ja dat mearkkašit ollu davvi Norgga fylkkaide .
 	davvi Norgga should be Davvi-Norgga, but how should it be generated if both davvi- and Davvi- get the same analysis??
-```	
+```
 
 ```
 ADD:double-inchoative (&syn-double-inchoative) TARGET ("álgit") IF (*1 (VV TV Der/InchL) BARRIER GRAMCHK-S-BOUNDARY OR VFIN);
@@ -36,7 +36,7 @@ COPY:double-inchoative-part2 (&SUGGEST) EXCEPT (Der/InchL &syn-double-inchoative
 	# álgen mun ballat
 	# mun ballagohten
 	# HOW TO DISPLAY BOTH WAYS?
-```	
+```
 
 ```
 	ADD:compound (&msyn-compound) TARGET (Actio Sg Nom) IF (1 CNOUN) ;

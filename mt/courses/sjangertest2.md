@@ -1,32 +1,32 @@
 # Šáŋŋertest geassemánus
 
-Mii leat jorgalan teavsttaid main lea su 6100 sáni. Dán tabealla logut 
-muitalit man ollu leat missing-sánit. Oassi teavsttain leat čállojuvvon 
+Mii leat jorgalan teavsttaid main lea su 6100 sáni. Dán tabealla logut
+muitalit man ollu leat missing-sánit. Oassi teavsttain leat čállojuvvon
 Norgga bealde, oassi leat čállojuvvon Suoma bealde.
 
 * Sámed. = Norgga Sámedikki beavdegirjjit
 * dieđahus = Norgga Sámedikki dieđáhus sámegielaid birra
-* Vars ja Saara = nuoraid geahppalohkangirjjit 
+* Vars ja Saara = nuoraid geahppalohkangirjjit
 * IMA = mánáidgirji
-* Vest = rávesolbmuid romána 
+* Vest = rávesolbmuid romána
 
 Cuoŋománu evalueren:
-|  Teaksta  | Riika    | sme-smn | pros | list  | sme-sma | pros | list | sme-smj | pros | list 
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+|  Teaksta  | Riika    | sme-smn | pros | list  | sme-sma | pros | list | sme-smj | pros | list
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 |  Sámediggi | Norggas | 124 |  2 % | (76)  |  188  | 3 %  | (102) |  282 |  5 % | (138)
-|  Dieđahus  | Norggas | 158 |  3 % | (109)  |   91 |  1 % |  (77) |  211 |  3 % | (148) 
-|  Vars      | Norggas | 235 |  4 % | (188)  |  406 |  7 % | (300) |  588 | 10 % | (388)	
-|  Saara     | Norggas | 245 |  4 % | (185)  |  500 |  8 % | (351) |  685 | 11 % | (449)	
+|  Dieđahus  | Norggas | 158 |  3 % | (109)  |   91 |  1 % |  (77) |  211 |  3 % | (148)
+|  Vars      | Norggas | 235 |  4 % | (188)  |  406 |  7 % | (300) |  588 | 10 % | (388)
+|  Saara     | Norggas | 245 |  4 % | (185)  |  500 |  8 % | (351) |  685 | 11 % | (449)
 |  IMA       | Suomas  | 654 | 11 % | (386)  | 1079 | 18 % | (646) | 1193 | 20 % | (724)
 |  Vest      | Suomas  | 379 |  6 % | (327)  |  719 | 12 % | (585) |  972 | 16 % | (734)
 
 Geassemánu evalueren:
-|  Teaksta  | Riika    | sme-smn | pros | list  | sme-sma | pros | list | sme-smj | pros | list 
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+|  Teaksta  | Riika    | sme-smn | pros | list  | sme-sma | pros | list | sme-smj | pros | list
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 |  Sámediggi | Norggas | 112  | 2  % | (70)  | 164 | 3  %  | (90) | 108| 2   % | (71 )
-|  Dieđahus  | Norggas | 138  | 2  % | (94)  | 80 |  1 % |  (67) | 39   |  1  % | (35 ) 
-|  Vars      | Norggas | 222  | 4  % | (183)  | 377 | 6  % | (270) | 302  | 5  % | (249)	
-|  Saara     | Norggas | 230  | 4  % | (182)  | 478 | 8  % | (338) | 392  | 6  % | (323)	
+|  Dieđahus  | Norggas | 138  | 2  % | (94)  | 80 |  1 % |  (67) | 39   |  1  % | (35 )
+|  Vars      | Norggas | 222  | 4  % | (183)  | 377 | 6  % | (270) | 302  | 5  % | (249)
+|  Saara     | Norggas | 230  | 4  % | (182)  | 478 | 8  % | (338) | 392  | 6  % | (323)
 |  IMA       | Suomas  | 616  | 10  % | (384)  | 1012| 17  % | (612) | 899  | 14  % | (581)
 |  Vest      | Suomas  | 366  | 6  % | (319)  | 697 | 11  % | (568) | 712 | 12  % | (612)
 
@@ -296,7 +296,7 @@ Geassemánu evalueren:
 *   3 dákko
 *   3 doškkodii
 
-   
+
 ##  smj
 
 ###  Sámediggi
@@ -431,4 +431,4 @@ Geassemánu evalueren:
 *   2 verdde
 *   2 vehážiid
 
-      
+

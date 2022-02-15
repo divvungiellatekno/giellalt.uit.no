@@ -8,9 +8,9 @@ The normative form on the left side, and so the lemma in the analysis will be a 
 `fáláhas:fáláhass JOHTOLAT ; ` \\
 `fáláhas+Err/Orth:fálahass JOHTOLAT ; `
 
-The descriptive FST will inflect both fálahas and fáláhas, but the line with the tag Err/Orth is removed from the normative analyser/generator during the compilation prosess. 
+The descriptive FST will inflect both fálahas and fáláhas, but the line with the tag Err/Orth is removed from the normative analyser/generator during the compilation prosess.
 ```
-fáláhasat 
+fáláhasat
 fáláhasat	fáláhas+N+Pl+Nom
 
 fálahasat
@@ -19,7 +19,7 @@ fálahasat	fáláhas+Err/Orth+N+Pl+Nom
 
 The normative analyser:
 ```
-fáláhasat 
+fáláhasat
 fáláhasat	fáláhas+N+Pl+Nom
 
 fálahasat
@@ -39,9 +39,9 @@ Ex. brillefutterála which is a slightly adapated loanword from Norwegian to Nor
 
 `brillefutterála+Err/Lex:brille#futterál SOSIAL`
 
-The descriptive FST will inflect brillefutterála, but the line with the tag Err/Lex is removed from the normative analyser/generator during the compilation prosess. 
+The descriptive FST will inflect brillefutterála, but the line with the tag Err/Lex is removed from the normative analyser/generator during the compilation prosess.
 ```
-brillefutterálat 
+brillefutterálat
 brillefutterálat	brillefutterála+N+Pl+Nom
 ```
 
@@ -52,15 +52,15 @@ brillefutterálat	brillefutterálat	+?
 ```
 
 ## Lexical homonymi: how to identify the correct lemma e.g. in a dictionary
-Two lemmas, which base forms are homonyms, have different paradigms and semantics. 
+Two lemmas, which base forms are homonyms, have different paradigms and semantics.
 
 ### The lemmas belong to different stem-categories: Add morphogical tags
-Example from North Saami. G3 tag for Grade 3 for consonantgradation with geminate in lemma, e.g. ss: 
+Example from North Saami. G3 tag for Grade 3 for consonantgradation with geminate in lemma, e.g. ss:
 
 `beassi:beassi BEARRI "reir" ;` \\
 `beassi+G3:beas'si AIGI "never" ; `
 
- 
+
 Analysis:
 ```
 beassi
@@ -74,10 +74,10 @@ beasi	beassi+N+Sg+Gen
 beasi	beassi+N+Sg+Acc
 ```
 
- 
 
- 
-Example from North Saami. NomAg tag for derivation Nomen Agent 
+
+
+Example from North Saami. NomAg tag for derivation Nomen Agent
 
 `vuovdi+NomAg:vuovdi ACTOR "salesman" ;` \\
 `vuovdi:vuov'di AIGI "forest" ; `
@@ -95,7 +95,7 @@ vuovddi	vuovdi+N+Sg+Gen
 vuovddi	vuovdi+N+Sg+Acc
 ```
 
- 
+
 
 ### There is no reason for adding morphogical tags: Add homonymi tags
 Example from South Saami:
@@ -117,7 +117,7 @@ govloe	govledh+Hom2+V+IV+Ind+Prs+Sg3
 
 Orthograpic variants of the same lemma, for base form and at least parts of the inflection paradigm, should be under the same lemma. But we can add a variants tag as a help to recognize the correct base form for the paradigm.
 
-Example from North Saami. 
+Example from North Saami.
 
 `mandáhta+v2:mandáhtta GOAHTI-A ; ` \\
 `mandáhta+v1:mandáhta STAHTA ;`

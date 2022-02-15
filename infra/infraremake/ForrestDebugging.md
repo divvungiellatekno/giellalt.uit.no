@@ -1,7 +1,7 @@
 # Build problems in $GTHOME/xtdoc/gtuit
 
 Our documentation should be **validated** before checking in.
-Do the following 
+Do the following
 
 * cd $GTHOME/xtdoc/gtuit # (for the giellatekno docu):
 * cd $GTHOME/ped/ # (for the icall documentation)

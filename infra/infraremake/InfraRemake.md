@@ -2,7 +2,7 @@
 
 * divide and conquer - split dirs and source files to contain one and only one type of content
     - e.g. $GTLANG/src/ now contains both lexc, twolc, cg3 and other source files
-    - some regex filters contains filtering both for normative and generation 
+    - some regex filters contains filtering both for normative and generation
 purposes - these are not necessarily the same!
     - etc.
 * use a commonly found build system - autotools or CMake
@@ -37,7 +37,7 @@ that language should be built. Probably obvious, but I just wanted to
 put it in print.
 
     - This should indeed work like that. If we use autotools it'll add the
-configure phases, and the initial autogen.sh. 
+configure phases, and the initial autogen.sh.
         - I don't know about CMake, but something similar should be possible there as well. I believe that CMake produces make-files (on a *nix system, in any case), such that you would in the end do the same make command in that case as well. And on Windows, CMake would construct build files usable in that environment, that would in effect produce the same end results. At least that is my understanding.
 
 * Another question is how to handle the growing size of $GTMAIN. We are

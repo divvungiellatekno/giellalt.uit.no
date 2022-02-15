@@ -30,10 +30,10 @@ The degree of sloppiness is governed by two conflicting goals (as always):
 
 ### Two target groups:
 
-* L2 writers: 
+* L2 writers:
     - We know what errors they make, and model them
   (subptype: L1 writers that break the norm in ways we can anticipate)
-* L1 writers: 
+* L1 writers:
     - We cast a web as wide as possible, identifying  grammatical constructions, hoping to capture realword errors
 
 In minority language settings, differing between L1 and L2 is hard,
@@ -103,9 +103,9 @@ Interesting points:
   cf. also [http://giellalt.uit.no/tools/docu-vislcg3.html]
 * divvun-gramcheck (see [https://github.com/divvun/divvun-gramcheck])
 
- 
 
- 
+
+
 ## Compiling:
 
 For the languages

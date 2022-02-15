@@ -13,13 +13,13 @@ mens store deler var og skulle være enspråklig.
 Begge sitene blir bygget med skriptet
 `$GTHOME/gt/script/static-divvun.py`.
 
-Kommandoen  
-`             static-divvun.py --sitehome $GTHOME/xtdoc/sd --destination sd@divvun.no:Sites/ fi             no se smj sma sv en             `  
+Kommandoen
+`             static-divvun.py --sitehome $GTHOME/xtdoc/sd --destination sd@divvun.no:Sites/ fi             no se smj sma sv en             `
 lager en site med sju forskjellige metaspråk og sørger for å koble filer
 med likt metaspråk og innholdsspråk sammen.
 
-Kommandoen  
-`             static-divvun.py --sitehome $GTHOME/xtdoc/techdoc --destination sd@divvun.no:Sites/             en             `  
+Kommandoen
+`             static-divvun.py --sitehome $GTHOME/xtdoc/techdoc --destination sd@divvun.no:Sites/             en             `
 lager en site med engelsk som metaspråk.
 
 Disse to sitene ser ut som de er samme forrest site ved at de har samme
@@ -64,13 +64,13 @@ Flytte mapper fra sd til techdoc
 Det ble bestemt at alt som var "techdoc" skulle flyttes til
 techdoc-siten. Det som ble flyttet var disse mappene:
 
--   **doc:**  
+-   **doc:**
     symlink til `$GTHOME/techdoc`
--   **ped:**  
+-   **ped:**
     symlink til `$GTHOME/ped/doc`
--   **ttsdoc:**  
+-   **ttsdoc:**
     symlink til `$GTHOME/tts/doc/`
--   **wordsdoc:**  
+-   **wordsdoc:**
     symlink til `$GTHOME/words/doc`
 
 Flytte innhold i `site.xml` og `tabs.xml` fra sd til techdoc
@@ -114,7 +114,7 @@ En artikkel finnes på alle språkene vi støtter. De har disse filnavnene:
 -   abba.sv.xml
 
 Vi har sørget for at forrest vet om dem ved å legge inn en peker til den
-i site.xml:  
+i site.xml:
 `<abba description="Abba rules!" href="abba.html" label="Abba, the swedish pop band"/>`.
 
 Alt ettersom hvilket språk som er valgt, vil den artikkelen som hører
@@ -124,8 +124,8 @@ til det språket vises.
 
 Dersom man av en eller grunn ikke vil oversette en artikkel til alle
 metaspråkene man bygger siten for *må* man likevel sørge for at man har
-en «fil» for hvert språk.  
-  
+en «fil» for hvert språk.
+
 Om vi har en artikkel som er på engelsk og nordsamisk, f.eks.
 `julenissen.en.xml` og `julenissen.se.xml` og vi ikke har tenkt å
 oversette den til de andre språkene vi støtter så lager vi en symlink
@@ -142,7 +142,7 @@ Oversettelse av metaspråk
 Filene nedenfor har blitt oversatt for å støtte
 `fi no se smj sma sv en`.
 
--   **$GTHOME/sd/src/documentation/translations/tabs\_$LANG.xml:**  
+-   **$GTHOME/sd/src/documentation/translations/tabs\_$LANG.xml:**
     oversettelser for
     $GTHOME/sd/src/documentation/content/xdocs/tabs.xml
 
@@ -150,7 +150,7 @@ Filene nedenfor har blitt oversatt for å støtte
     tabs-frag.xml-filene vi har). Man må manuelt legge alle «id» man vil
     ha oversettelse for inn i tabs\_$LANG.xml-filene.
 
--   **$GTHOME/sd/src/documentation/translations/menu\_$LANG.xml:**  
+-   **$GTHOME/sd/src/documentation/translations/menu\_$LANG.xml:**
     oversettelser for
     $GTHOME/sd/src/documentation/content/xdocs/site.xml
 
@@ -158,7 +158,7 @@ Filene nedenfor har blitt oversatt for å støtte
     alle site-frag.xml-filene vi har). Man må manuelt legge alle «label»
     man vil ha oversettelse for inn i menu\_$LANG.xml-filene.
 
--   **$GTHOME/sd/src/documentation/translations/ContractsMessages\_$LANG.xml:**  
+-   **$GTHOME/sd/src/documentation/translations/ContractsMessages\_$LANG.xml:**
     oversettelser for "systemmeldinger" i forrest
 
 tabs-id-er, site-label-tekst og systemmeldinger uten oversettelse i

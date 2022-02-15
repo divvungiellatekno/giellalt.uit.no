@@ -22,14 +22,14 @@ CGI-scripts
 
 The relevant scripts cgi-bin scripts are:
 
--   smi.cgi  
+-   smi.cgi
     Language-independent cgi-script for calling different language
     technology applications: analysis, disambiguation, hyphenation and
     paradigm generation.
--   conf.pl  
+-   conf.pl
     Configuration file that contains most of the variable definitons and
     their initial values.
--   LANG-num.cgi  
+-   LANG-num.cgi
     (where LANG = the languages for which there are numeral generators:
     fin, kom, mhr, nno, rus, sjd, sma, sme, smj, smn, sms, yrk.
 

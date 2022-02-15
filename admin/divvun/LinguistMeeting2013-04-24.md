@@ -39,7 +39,7 @@ Bjerkli:Bjerk^li ACCRA-sur ;
 Dubaias Pippijis
 Dubaiaj Pippijij
 
-Dubai    - Dubaiesne? - Dubajesne (?) sjekk opp! 
+Dubai    - Dubaiesne? - Dubajesne (?) sjekk opp!
 Pippi    - Pippijasse - ODD - Pippijasse
 Bergli   - Berglijesne   - li - lijesne
 Avaldsli - Avaldslijesne - lijesne

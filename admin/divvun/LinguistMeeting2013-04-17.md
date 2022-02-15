@@ -34,7 +34,7 @@ uavhengig av uttalen hjå den enkelte. I SMA og SMJ bør dei delast i to, etter 
 
 I SMA mener Maja det er klart, da i-navn må bli ODD, de vil tilsvare -ije-stammen i sørsamisk. HVis det skulle være EVEN, med -ie-stamme, blir det en omlydsregel som ikke passer til NAVN, f.eks navntet 'Vivi’- skulle da bli 'Vævan'(som høres helt rart ut!:-). Maja mener at i-navn får samme paradigme som 'rovkije'. 'rovkije' kan høres ut som et likestavelsessubstantiv 'rovkie', men det er egentlig et ODD-substantiv 'rovkije'.  Men, denne kan være litt vrien, fordi -ss- i illativ, kan nesten høres ut som enkel -s- jfr. diskusjonen om "skiebtjeles" :-)
 
-I SMJ bøyes noen som like og noen som odd. De fleste er odd. 
+I SMJ bøyes noen som like og noen som odd. De fleste er odd.
 
 SMJ-klassifisering:
 ```
@@ -51,7 +51,7 @@ Vivvi ACCRA-fem ;                      ! odd Vivvijij
 
 Aakenusjärvi
 Aakenusjärvia
-Aakenusjärviav 
+Aakenusjärviav
 Aakenusjärvijin
 Aakenusjärvijis/Aakenusjärvis
 Aakenusjärvijijn
@@ -59,13 +59,13 @@ Aakenusjärvijijn
 ```
 
 SMA-klassifisering: OK   rivgu --> rovkije
-```                 ie - 
+```                 ie -
 Aakenusjärvi:Aakenus^järvi ACCRA-plc ; ! ODD  -EVEN     Sølvi -> Selvie -> Selvijasse
 Ahomäki:Aho^mäki ACCRA-sur ;           ! ODD
 Akurey-ri ACCRA-plc ;                   ! ODD
-Vivi ACCRA-fem ;                       ! odd  
+Vivi ACCRA-fem ;                       ! odd
 Vivvi ACCRA-fem ;                      ! odd
-Ås-li:Ås^li ACCRA-fem ;                 ! EVEN - 
+Ås-li:Ås^li ACCRA-fem ;                 ! EVEN -
 Över-sti:Över^sti ACCRA-sur ;           ! EVEN  - tid -tïjje
 Øfs-ti:Øf^sti ACCRA-sur ;               ! EVEN  - ijese
 Ørnhøi:Ørn^hø DUBAI-sur ;              ! odd

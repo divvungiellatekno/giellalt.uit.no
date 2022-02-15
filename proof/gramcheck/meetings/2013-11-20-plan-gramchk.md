@@ -23,7 +23,7 @@ possible frequent errors + possible reasons (R) + possible solutions (S):
 * postposition and locative: Dás rájes ii leat ovttasge lohpi dadjat sáni "eadni"! - R: no idea - S: partial dependencies of postpositions
 * agent-less passive + agent (illative case): Oahpaheaddjit, stuorát skuvllain, vásihedje ahte sii ledje máŋgii fillehallojuvvon ohppiide. - R: other passive with agent
 * nom instead of gen: Oppalaččat sáhttá čuoččuhit ahte buot čuolbmabeali dán kápihttalis ánssášit eanet dutkama.
-* pl instead of sg: 
+* pl instead of sg:
 
 samarbeid med Francis:
 * meningsfulle kommentarer/hjelpetekstar for brukere

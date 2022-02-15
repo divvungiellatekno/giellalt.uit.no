@@ -25,8 +25,8 @@ Dáinna oažžu sihke dábálaš norm- ja desc-xfst, ja MT-heivejuvvon analysáh
 
 Dát kompileremat ádjánit guhká, erenoamážit sme. Muhto sáhtát beare álgit bargat eará terminálaláses.
 
-3. Go kompileremat leat geargan, de berrešit kompileret ođđasit apertium-máhpas,\\  
-`apertium/nursery/apertium-sme-smX`, dahje geavat alias `apsmX` 
+3. Go kompileremat leat geargan, de berrešit kompileret ođđasit apertium-máhpas,\\
+`apertium/nursery/apertium-sme-smX`, dahje geavat alias `apsmX`
 * `svn up` (álo buorre dahkat vaikko ii leat dárbu dán oktavuođas)
 * `make`
 

@@ -46,7 +46,7 @@ that.
 ## Never having to type a password again
 
 Most modern operating systems offer to save your ssh keypair password for you,
-unlocking it when you log in to your local machine. 
+unlocking it when you log in to your local machine.
 
 On a Mac, you can do
 ```

@@ -25,7 +25,7 @@ real-Pl3-not-Inf            | 350 | 200 |  250 | 2000 |           |      |
 real-ActioNom-PrfPrc        | 370 | 200 |  240 | 2000 |           |      |
 real-PrtPl3-PrsSg3          | 550 | 500 | 2140 |  180 |           | x    |
 
-    1. real-Derh-Inf.yaml 
+    1. real-Derh-Inf.yaml
 
 Total passes: 661, Total fails: 2, Total: 663
 True positive: 171

@@ -1,7 +1,7 @@
 *Korp* is a Corpus tool and *Karp* a Lexicon tool from the Swedish
 [Språkbanken](http://sprakbanken.gu.se). We want to install them locally.
 
-# Links 
+# Links
 
 The Korp code:
 
@@ -34,10 +34,10 @@ Links to the Karp code are forthcoming.
 
 # Interface
 Menu:
-1. search for sme wordforms (kwic-snt in corpus ccat) – corpus: smesme 
+1. search for sme wordforms (kwic-snt in corpus ccat) – corpus: smesme
 1. search for sme lemmas (kwic-snt? in analysed corpus syn) – corpus choices: smesme, nob2sme
 1. search for sme and nob in translations (lemma search in sentence aligned sentences) – corpus: nob2sme
-1. deepdict sme (lemma search -> dependency daughters in corpus dep) – corpus: smedep 
+1. deepdict sme (lemma search -> dependency daughters in corpus dep) – corpus: smedep
 
 # Lemgram
 
@@ -53,19 +53,19 @@ Generation of lemgrams from lexc:
 
 Use *dict-isme-norm.fst* or *generator-dict-gt-norm.xfst* or *generator-dict-gt-norm.hfst*. We remove the tags v1, v2.. from the fst. It is better for the user that all variants of the same paradigm are in the same lemgram. Many fst-lemmas have more than one entry in lexc, so the list should be uniqed before generating forms. I suggest that we start with these files:
 
-For nouns, we pick different 3 lists: The ordinary nouns, the actors (NomAg), and the G3-marked nouns. 
+For nouns, we pick different 3 lists: The ordinary nouns, the actors (NomAg), and the G3-marked nouns.
 For the other parts of speech, one command is enough. Commands to filter (ir)relevant forms:
 
-### noun-sme-lex.txt: 
+### noun-sme-lex.txt:
 *Ordinary words:
 ```
 egrep -v "(G3|ACTOR|CmpN/Only|ShCmp|RCmpnd|\+V\+|^\!)"
 ```
-* ACTOR: 
+* ACTOR:
 ```
 grep N+NomAg
 ```
-* G3: 
+* G3:
 ```
 grep N+G3
 ```
@@ -73,7 +73,7 @@ grep N+G3
 ```
 egrep -v "(ENDLEX|\+V|^\!)"
 ```
-### adj-sme-lex.txt: 
+### adj-sme-lex.txt:
 ```
 egrep -v "(LEXICON|Der| Rreal | R |^\!)"
 ```
