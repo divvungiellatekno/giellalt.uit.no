@@ -1,3 +1,7 @@
+# Building Mac Voikko
+
+Gjer dette:
+
 ```
 $ git clone --recursive https://github.com/divvun/MacVoikko.git
 $ cd MacVoikko

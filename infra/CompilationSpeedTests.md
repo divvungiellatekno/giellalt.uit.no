@@ -1,3 +1,5 @@
+# Compilation Speed Tests
+
 Tested using `sma` - various configurations & compilation times for the
 default set of fst's.
 

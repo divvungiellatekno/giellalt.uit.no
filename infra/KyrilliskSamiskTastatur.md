@@ -1,3 +1,6 @@
+# Kyrillisk samisk tastatur
+
+
 [English|CyrillicSaamiKeyboard.html] ~ [Русский](SaamskajaKlaviatura.html)
 
 Her kommer det mer informasjon senere.

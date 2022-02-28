@@ -1,3 +1,5 @@
+# Editing the propernoun files
+
 This document describes the main tasks involved with editing proper nouns, first
 laying out all steps as detailed as possible, then trying to generalise and
 abstract somewhat. The end result will be used as a guideline for developing the

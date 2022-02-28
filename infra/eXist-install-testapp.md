@@ -1,4 +1,5 @@
 #  eXist installation (from svn)
+
 * Checkout eXist: svn checkout svn://svn.code.sf.net/p/exist/code/trunk/eXist exist-code
 * Build eXist: cd exist-code, ./build.sh
 * Start eXist: bin/startup.sh

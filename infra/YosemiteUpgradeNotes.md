@@ -1,3 +1,5 @@
+# Yosemint upgrade notes
+
 34 hovudspråk (=UI-språk)
 
 143 andre språk

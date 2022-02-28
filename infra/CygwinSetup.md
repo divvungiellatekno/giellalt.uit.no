@@ -1,3 +1,5 @@
+# Cygwin setup
+
 These notes are not complete at the moment, but contains a number of things observed when helping a Cygwin user.
 
 # Installing Cygwin

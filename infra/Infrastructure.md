@@ -1,3 +1,5 @@
+# Infrastructure
+
 This page gives an overview of our technical documentation.
 
 # Getting started

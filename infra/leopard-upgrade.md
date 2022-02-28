@@ -1,3 +1,5 @@
+# Leopard upgrade
+
 # Background
 
 [Apple|http://www.apple.com/] has now released their next major version of Mac OS X, version 10.5, called [Leopard](http://www.apple.com/macosx). This page goes through a few points for updating to Leopard within the Divvun and University projects.

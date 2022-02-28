@@ -1,3 +1,5 @@
+# Lucene
+
 This information is useful only to project members and others having
 access to our cvs repository. Do not try to update or create a lucene
 index on the public site. It won't do any harm, but it won't do any good

@@ -1,3 +1,5 @@
+# Building Hfst-ospell For Inclusion In Voikko
+
 If you want to build hfst-ospell for inclusion in libvoikko (for further inclusions in the different packages of Voikko, like the LibreOffice-Voikko extension) the MacOSX systems, you should build your binary as a universal binary, and most likely as a *static* universal binary (required at least for the LibreOffice-Voikko extension). The MacOSX Voikko system speller should only need the dynamic libraries.
 
 You also need to ensure backwards compatibility, which means that you most likely will have to build on a system with the minimum OS version you want to support. Apple's SDK's are mostly not backwards compatible, but usually forward compatible.

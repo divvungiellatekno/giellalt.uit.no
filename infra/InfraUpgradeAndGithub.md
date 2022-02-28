@@ -1,3 +1,5 @@
+# Infra Upgrade And Github
+
 The present GiellaLT infrastructure has been serving us well in terms of
 scalability and maintainability. But over the years, a number of limiting issues
 have popped up, both from linguists and external groups we are cooperating with,

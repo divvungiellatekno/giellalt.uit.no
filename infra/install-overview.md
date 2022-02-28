@@ -1,4 +1,5 @@
 # Introduction
+# Install overview
 
 This is a check-point list for setting up new users in our teams. Please add missing points as needed. See also [the checklist](../admin/checklist.html) for what new users should know. There is some overlap, but this doc is for the sys admin, the other one is for the new user.
 

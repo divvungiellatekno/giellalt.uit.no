@@ -1,3 +1,5 @@
+# Paradigm generation
+
 In order to activate paradigm generation the following things must be in place:
 
  The /opt/smi/LANG/bin catalogue on gtweb must contain the files

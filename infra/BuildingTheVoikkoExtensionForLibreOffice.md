@@ -1,4 +1,6 @@
-# Gory details - how to compile hfst-ospell and libvoikko as static universal binaries
+# Building The Voikko Extension For LibreOffice
+
+Gory details - how to compile hfst-ospell and libvoikko as static universal binaries
 
 **NB!** This documentation is likely outdated, and should be taken as a guide to new efforts only. Please update the document as necessary when building the extension again.
 

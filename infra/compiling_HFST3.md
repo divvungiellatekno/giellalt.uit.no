@@ -1,3 +1,5 @@
+# Compiling HFST3
+
 **NB!** The information below is up-to-date as of **HFST 3.11**.
 
 Presently, HFST3 supports three different backends, all enabled by default:

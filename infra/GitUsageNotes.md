@@ -1,3 +1,5 @@
+# Git usage notes
+
 This document contains some useful notes for those wanting to start using Git
 with the GiellaLT infra (when we have moved to GitHub, planned for May 2020).
 

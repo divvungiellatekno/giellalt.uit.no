@@ -1,3 +1,5 @@
+# Getting Started
+
 '*NOTE!*' Giellatekno and Divvun recently (May 2020) moved the linguistic source code and its core support files from *svn* to *github*. Our other pages (documentation, icall, administrative pages ...) are still in svn. These documentation pages are still lagging behind. Eventual references to linguistic resources on svn are probably outdated. Otherwise, the pages should still be ok.
 
 This page documents how be able to **building, use and  developing the grammatical tools** yourself. If you only want to use the ready-made grammatical analysers, see the [Linguistic analysis page](ling/LinguisticAnalysis.html). You should first ensure the *Hardware and operative system requirements* are set, thereafter you should *get the Giella source code*, and finally you should *compile the analysers*. Each of these three steps are presented below, with links to relevant routines. Return to this page for the next step after each step 1-2-3.

@@ -1,3 +1,5 @@
+# Setting up a Multiuse Server
+
 This page is a part of the overall [Getting started](GettingStarted.html) page.
 It describes the steps you as a system administrator need to do to prepare the
 server for the work done by the linguists, by installing the Giellatekno/Divvun

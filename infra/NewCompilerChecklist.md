@@ -1,3 +1,5 @@
+# New Compiler Checklist
+
 We want to use the noncommercial compilers on gtlab (earlier victorio).
 In order to do list, we must change the compilers, the lookup program,
 and recompile the fsts. The process is:

@@ -1,3 +1,5 @@
+# Virtual servers
+
 Here we document our servers and common machines. If some servers are down, see our [in case of a crisis document](DontPanic.html)
 
 # List over the machines

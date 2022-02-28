@@ -1,3 +1,9 @@
+Update bash
+===========
+
+This info is obsolete.
+
+
 Introduction
 ============
 

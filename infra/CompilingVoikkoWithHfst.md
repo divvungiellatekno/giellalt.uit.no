@@ -1,4 +1,4 @@
-# Overview
+# Compiling Voikko With Hfst
 
 These instructions are based on LibVoikko 3.6 on Lion (MacOS X 10.7.5). Other systems and older versions of LibVoikko *have not been tested!*
 

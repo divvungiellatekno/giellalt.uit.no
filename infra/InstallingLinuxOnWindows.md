@@ -1,3 +1,5 @@
+# Installing Linux On Windows
+
 This page is a short version of [this longer introduction](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/). It explains how to get the Linux command line on Windows 10.
 
 1. Open **Control Panel > Programs > Turn Windows Features On Or Off**.

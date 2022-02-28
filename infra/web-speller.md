@@ -1,3 +1,5 @@
+# Web-speller
+
 This documents the first encounter with [hfst-ospell-js|https://github.com/killercup/hfst-ospell-js] and [ck-ospell](https://github.com/killercup/ck-ospell) as encountered by a nodejs/npm newbie.
 
 # Install a current npm/nodejs

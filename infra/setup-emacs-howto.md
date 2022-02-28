@@ -1,3 +1,5 @@
+# Set up Emacs
+
 For modern Emacs versions (might need a download first)
 =======================================================
 

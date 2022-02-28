@@ -1,3 +1,5 @@
+# Installing Foma
+
 **NB!** Support for building fst's using Foma is experimental, and only works
 with a few languages at the moment. Specifically, the following is required:
 
