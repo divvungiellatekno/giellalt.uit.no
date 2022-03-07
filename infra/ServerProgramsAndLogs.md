@@ -105,11 +105,11 @@ for sme, sma
 
 [Cf. documentation](http://giellatekno.uit.no/ped/common/logextraction.html)
 
-## Webservice
+## Webservice (cgi-bin)
 
 ### log
+The log is access_log at `/var/log/httpd/`
 
-tbw.
 
 # gtlab
 
