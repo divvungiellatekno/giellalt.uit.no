@@ -2,145 +2,115 @@
 
 This is an overview over our servers, their services, and log data.
 
-# gtsvn
 
- svn
 
-# gtweb
+# divvun server
+
+tbw.
+
+## Speller downloads
+
+
+
+# gtdict server
+
+This is the server for the NDS dictionary
 
 ## NDS
 
 ### NDS dictionaries on gtweb
 
-```
-chr-all, chreng, crk-all, crkeng, deumyv, engcrk, engmyv, finizh, finkpv, finliv, fin-liv, finliv, finmdf, finmrj, fin-mrj, finmrj, finmyv, fin-myv, finmyv, finolo, fin-sme, finsmn, finsms, finudm, finyrk, fin-yrk, finyrk, fkvnob, fkv-nob, fkvnob, hdneng, izh-all, izh-fin, kom2X, kpv-all, lavliv, liv-all, liv-all, mdf-all, mdfeng, mhr-all, mrj-all, myv-all, myvdeu, nobfkv, nob-fkv, nobfkv, nob-sma, nob-sme, nobsms, olo-all, olo-fin, rusmyv, russms, sma-nob, sme-fin, sme-nob, smesmn, smnfin, smnsme, sms2X, sms-all, udm-all, udmfin, udmkpv, vep-all, vot-all, vro-all, yrk-all
-```
+The list of dictionaries is found on `neahtta/neahtta/dicts` (also locally, in svn).
 
 ### NDS log
 
 * NDSlog full: neahtta/logs
 * NDSlog pruned: neahtta/neahtta/user_log.txt
 
-TODO: Document procedure logs -> user_log.txt
-
-## WebDicts
-
-/var/www/html/webdict/
-
-## Korp
-
-/var/www/html/...
-
-Korp instances
-
-* korp
-* c_korp
-* f_korp
-* u_korp
-
-pite-lex
-
-risten
-
-iwclul2015
-sigur
-
-## MT
-
-smenob: /var/www/html/mt
-smeX: /var/www/html/mt/testing
-
-Sti på gtweb: /opt/mt/
-
-gielese
-
-## Online analysis
-
-cgi-smi
-wiki
-
-# gtoahpa
-
-## NDS
-
-### NDS dictionaries on gtoahpa
-
-fin-sme
-lemmacount
-Makefile
-nob-sma
-nob-sme
-sma-nob
-sme-fin
-sme-nob
-
-for sme, sma
-
-* NDSlog full: neahtta/logs
-* NDSlog pruned: neahtta/neahtta/user_log.txt
-
-## Oahpa
-
-[http://giellatekno.uit.no/ped/index.html]
-
-### Oahpaversions
-
-* crk_oahpa
-* fkv_oahpa
-* hdn_oahpa
-* kpv_oahpa
-* myv_oahpa
-* oahpa
-* rup_oahpa
-* rus_oahpa
-* sjd_oahpa
-* smaoahpa
-* smn_oahpa
-* sms_oahpa
-* udm_oahpa
-* univ_oahpa
-* yrk_oahpa
-
-### Oahpalog
-
-[Cf. documentation](http://giellatekno.uit.no/ped/common/logextraction.html)
-
-## Webservice (cgi-bin)
-
-### log
-The log is access_log at `/var/log/httpd/`
+**TODO:** Document procedure logs -> user_log.txt
 
 
-# gtlab
+# gtweb server
 
-## Oahpa
+This is the server for our (other) web services.
 
-### Oahpa versions
-
-These are the more experimental Oahpas, with a testing. prefix in their url.
-
-* bxr_oahpa
-* est_oahpa
-* izh_oahpa
-* liv_oahpa
-* mdf_oahpa
-* mhr_oahpa
-* mrj_oahpa
-* olo_oahpa
-* rusoahpa
-* vep_oahpa
-* vro_oahpa
-
-### Oahpa log
-
-[Cf. documentation](http://giellatekno.uit.no/ped/common/logextraction.html)
 
 ## Konteaksta
 
 ruskonteaksta
 
-Log?
+Log? tbw.
 
-# divvun
 
-## Speller downloads
+## Korp
+
+Log is in `/var/log/nginx`
+
+
+Korp instances, at (http://gtweb.uit.no/korp/), replace `korp` with:
+
+- korp (Saami)
+- f_korp (Baltic Finnic + Faroese)
+- u_korp (other Uralic)
+- tyv_korp (Tuvin)
+
+## MT
+
+- smenob: /var/www/html/mt
+- smeX: /var/www/html/mt/testing
+
+Sti på gtweb: /opt/mt/
+
+gielese - tbw.
+
+## Online analysis (cgi-bin)
+
+The services are the ones linked to here: (https://giellatekno.uit.no/cgi/index.sme.eng.html) (cf. all [Saami](https://giellatekno.uit.no/smilang.eng.html) and [other](https://giellatekno.uit.no/all-lang.eng.html) languages, linking to similar cgi-bin services).
+
+The log is access_log at `/var/log/httpd/`
+
+
+
+## Other resources (?)
+
+- pite-lex (??)
+- risten (tbw.)
+- iwclul2015 (tbw.)
+- sigur (tbw.)
+
+
+## WebDicts
+
+`/var/www/html/webdict/`
+
+Log: tbw.
+
+
+# gtoahpa server
+
+## Oahpa
+
+Technical documentation is here:
+
+(http://giellatekno.uit.no/ped/index.html)
+
+### Oahpaversions
+
+
+The overview of oahpa versions is (https://giellalt.uit.no/ped/oahpa_projects.html)
+
+Clicking on each language gives the url to the different Oahpa versions. The one with an url containing *testing* do not work. The oahpa versions are found in `/home/oahpa/orig_gtoahpa` on the gtoahpa server.
+
+- Oahpas in orig_gtoahpa that do **not** work: hdn, kpv, mdf, rus, sjd, udm, yrk
+- These **did** work in March 2022: crk, fkv, myv, sma, sme, smn, sms, vro.
+
+### Oahpalog
+
+[Cf. documentation](http://giellatekno.uit.no/ped/common/logextraction.html)
+
+
+# gtsvn server
+
+Here we find svn.
+
+
