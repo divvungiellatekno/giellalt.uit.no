@@ -6,6 +6,7 @@ vi ventar på det kan vi lage ei lenkje på sida som gjer det mogleg å
 lage (viser korleis ein kan lage) eit bokmerkesymbol på skrivebordet
 på telefonen.
 
+Ei mogleg løysing: https://github.com/docluv/add-to-homescreen
 ##  Ordbok for nordsamisk-spansk
 Status: Demoversjon ligg ute
 
@@ -30,6 +31,21 @@ Status: TODO
 Det hadde vore betre å lenkje direkte til artikkelen, men for å få til det må vi hente sanue_id-nummeret frå databasen. Vi kan t.d. legge det inn som ein id i kjeldekoden:
 
 [http://kaino.kotus.fi/algu/index.php?t=sanue&lekseemi_id=6976&hakusana=sátni&sanue_id=2912]
+
+Status: i gang
+
+## Flytte re-node framfor omsetjing
+
+## Fjerne korp-lenkjer frå paradime
+
+Då vi har lagt til lenkjer frå adjektivparadigme til smi.cgi, vert det forvirrande å ha lenkjer frå verbparadigme til Korp. Vi fjerner Korp-lenkjene, sidan det likevel finst lenkje til Korp i analyseboken til høgre.
+
+## Synleggjera alternative skrivemåtar
+
+t.d. diftoŋga/diftoŋŋa, tomáhtá/tomáhtta, tunealla/tunnealla
+
+Vi legg variantane til i xml-fila under lg (l_var?) med ein attributt som viser kva variant det er for generering (v2, v3, ...).
+Så vert det generert ulikt paradigme avhengig av kva variant ein trykkar på. Vi legg berre til variantar av lemma, ikkje av omsetjingar.
 
 ## DONE
 ###  Etymologi
