@@ -51,6 +51,8 @@ Linguist meetings
 Technical meetings
 ------------------
 
+-   **2022:**
+    -   [21.3.2022 Infra-arbeid](meetings/infra-arbeid-2022-03-21.md)
 -   **2021:**
     -   [Samarbeid mellom Divvun og Giellatekno](technical/2021-06-30-GT-Divvun-samarbeid.md)
 -   **2020:**
