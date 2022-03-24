@@ -38,7 +38,7 @@ Denne taggen blei inført for å skille mellom homonymi i sme, mellom likestavel
 
 Det har etterhvert blitt leksikalisert mange ord i adverbfila som kanskje ikke burde være der.
 
-Iflg. Sammallahti 2007 er adverb bl.a. ord som ikke har lenger har fullt substantivparadigme. Vi bør derfor fjerne ord som har omtrent samme betydning som substantivet, f.eks. ´ruovttus´, som i PS ordbok ikke er oppslagsord, mens ruoktot er det. Dette må følges opp i CG3-filer, dict og MT-filer.
+Iflg. Sammallahti 2007 er adverb bl.a. ord som ikke har lenger har fullt substantivparadigme. Vi bør derfor fjerne ord som har omtrent samme betydning som substantivet, f.eks. `ruovttus`, som i PS ordbok ikke er oppslagsord, mens ruoktot er det. Dette må følges opp i CG3-filer, dict og MT-filer.
 
 TILTAK:
 * **Inga** og **Lene** fjerner adverb som hører til et fullt substantivparadigme og som har omtrent samme betydning som substantivet (for sme kan vi bruke PS ordbok som referanse)
