@@ -5,7 +5,7 @@ Linguist meetings
 -----------------
 
 -   **2022:**
-    - [24.3. Taggene +Use/-Spell, +G3 og +G7 og leksikalisering av adverber](linguists/240322_Tagger_Adverber.md)
+    - [24.3. Taggene +Use/-Spell, +G3 og +G7 og leksikalisering av adverber](linguists/220324_Tagger_Adverber.md)
 -   **2021:**
     - [19.1. Tagger og avgrensing av avleiingar](linguists/210119_Tagger_og_avgrense_avledninger.md)
     - [2.3. Cmp-tagger og harmonisering](linguists/210302_Cmp_avledninger.md)
