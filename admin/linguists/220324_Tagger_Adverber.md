@@ -30,6 +30,7 @@ TILTAK:
 
 * **Inga** ser på bruken i smj, **Lene** ser på og samler dokumentasjon i et felles dokument som **Inga** oppretter. De fjerner tagger som ikke har funksjon lenger, dvs at vi har andre løsninger. 
 * Deretter skal vi diskutere denne taggen på nytt.
+[Dokumentasjonsdokument](https://giellalt.github.io/lang/smi/minusspelltag.html)
 
 ##  +G3  
 Denne taggen blei inført for å skille mellom homonymi i sme, mellom likestavelsesstammer som som vuorru og vuor'ru, og deretter utvida til også ord som ikke har homonymer, hvor det ikke skilles i skriftspråk mellom G2 og G3. Tilsvarende +G7 for dem som har G3 uten stadieveksling. I smj er den brukt på alle ord med slike geminater, uansett stamme. Dette var med tanke på TTS. Det blir ikke bruk for taggen for TTS, og derfor kan den fjernes, og beholdes kun for ord som trenger den for å skille mellom homonymer i Sg Nom.
