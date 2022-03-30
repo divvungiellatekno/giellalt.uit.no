@@ -22,7 +22,7 @@ Til stades: Duommá, Inga, Lene, Sjur, Trond
 1. Legge Der/ til Comp/Superl
 1. Deretter dei andre stega ovafor
 
-Det finst [eit eige dokument for arbeidet framover](../../lang/smi/AvgrenseAvleiing.html)
+Det finst [eit eige dokument for arbeidet framover](https://giellalt.github.io/lang/smi/AvgrenseAvleiing.html)
 
 # Testing av (over)generering
 
@@ -62,7 +62,7 @@ Sjur har no ein betre versjon som tar omsyn til det, og ikkje inneheld desse for
 
 Lage flest mulig ordformer, eller innskrenke etter bruk?
 
-Tidligere arbeid: [https://giellalt.uit.no/lang/common/DerivationOverview.html]
+(Tidligere arbeid)[https://giellalt.github.io/lang/common/DerivationOverview.html]
 
 Sammensetninger: heller leksikalisere
 

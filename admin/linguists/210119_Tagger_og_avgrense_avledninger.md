@@ -130,7 +130,7 @@ Sjå [dette dokumentet](200423_AvgrenseAvleiing.html) (frå 23.4. 2020)
 
 Smj: Har fjerna Der/Comp og Der/Superl fra leksikonene DIBME og AHTES. Der/Dimin er endret fra Der1 til Der2. (Har også lagt til ny Der/NomInstr)
 
-Se ellers liste i [dette dokumentet](../../lang/smi/AvgrenseAvleiing.html).
+Se ellers liste i [dette dokumentet](https://giellalt.github.io/lang/smi/AvgrenseAvleiing.html).
 
 ```
 bálkkáhit
@@ -152,7 +152,6 @@ náhkehit	náhkki+N+Der/Car+A+Der/Comp+A+Attr	0,000000  OBS, denne skulle vært 
 náhkehit	náhkki+N+Der/Car+A+Der/Comp+A+Sg+Nom	0,000000
 ```
 
-Dekker over skrivefeil, se liste i [dette dokumentet](../../lang/smi/AvgrenseAvleiing.html).
 
 Eksempel på ekte infinitiv som blir analysert som Comp (Lene har forbetra dis, desse blir Inf i neste korpus)
 ```
