@@ -10,26 +10,34 @@ Get an overview on the [status monitor for Giellatekno and Divvun servers](https
 
 ## Get them up and running
 
-For the *gtsvn-01, gtlab, gtoahpa-01, gtweb-01* servers at uit.no:
+For the *divvun.no, gtdict.uit.no, gtoahpa-01.uit.no, gtsvn-01.uit.no, gtweb-01.uit.no, satni.org* servers at uit.no:
 
 * Relevant persons are Børre Gaup, Sjur Moshagen, Trond Trosterud.
 * Ultimately, _IT, Seksjon for applikasjoner og tjenester_ (see `$GTPRIV/admin/emergency.txt`)
 
+Note that *gtsvn.uit.no* redirects to *gtsvn-01.uit.no*, etc for all *-01*.
+
+
 ## Restart processes afterward
+
+### Instructions for each server:
 
 The following processes need to be restarted, and in the following way.
 
-* [instructions for gtweb-01 (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
-* [the speller server (divvun.no)](SpellerServer.html)
-* [instructions for gtoahpa-01 (oahpa.no, Konteaksta, kursa and kuvsje)](httpdserver.html)
-* [instructions for gtdict (NDS)](httpdserversgtdict.html)
-* [instructions for gtlab (testing.oahpa.no)](GtlabRestart.html) (this server has been removed (?))
-* [instructions for restarting nginx](RestartingNginx.html)
-* [instructions for Gïelese](../apps/gielese/GieleseRestarting.html) (TODO: Update documentation)
+* [**divvun.no** instructions (the speller server)](SpellerServer.html)
+* [**gtdict.uit.no**  (NDS)](httpdserversgtdict.html)
+* [**gtoahpa-01** instructions (oahpa.no, Konteaksta, kursa and kuvsje)](httpdserver.html)
+* [**gtsvn.uit.no** instructions (svn)](gtsvn.html)
+* [**gtweb-01** instructions (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
+* [**satni.org** instructions](satniorg.html)
+
+
+### Specific processes
+
+- [instructions for restarting nginx](RestartingNginx.html)
+- [instructions for Gïelese](../apps/gielese/GieleseRestarting.html) (TODO: Update documentation)
     - Look for commands with *restart...*
-* [Instructions for gtsvn-01](gtsvn.html)
-* [Instructions for the satni.org server](satniorg.html)
-* [When the webpages are not rebuilt](SiteBuildProblems.html)
+- [When the webpages are not rebuilt](SiteBuildProblems.html)
 
 
 ## Test that everything is ok
