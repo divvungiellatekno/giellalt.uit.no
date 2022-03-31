@@ -6,7 +6,7 @@ What to do if ...
 
 # The servers are down
 
-Get an overview on the [status monitor for Giellatekno and Divvun servers](https://status.giellalt.org/) The overview is refreshed every 5 minutes.
+Get an overview on the [status monitor for Giellatekno and Divvun **services** running on our servers](https://status.giellalt.org/) The overview is refreshed every 5 minutes.
 
 ## Get them up and running
 
@@ -24,12 +24,31 @@ Note that *gtsvn.uit.no* redirects to *gtsvn-01.uit.no*, etc for all *-01*.
 
 The following processes need to be restarted, and in the following way.
 
-* [**divvun.no** instructions (the speller server)](SpellerServer.html)
-* [**gtdict.uit.no**  (NDS)](httpdserversgtdict.html)
-* [**gtoahpa-01** instructions (oahpa.no, Konteaksta, kursa and kuvsje)](httpdserver.html)
-* [**gtsvn.uit.no** instructions (svn)](gtsvn.html)
-* [**gtweb-01** instructions (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
-* [**satni.org** instructions](satniorg.html)
+- **Server: api-giellalt.uit.no**
+	- Domain on server: *api-giellalt.uit.no*
+	- TODO: Write documentation on this server
+- **Server: divvun.uit.no**
+	- Domains on server: *divvun.uit.no, divvun.no, divvun.org, indigenous-langtech.uit.no, giellalt.uit.no*
+	- [Restart instructions for **divvun.no** (the speller server)](SpellerServer.html)
+- **Server: giellatekno.uit.no**
+	- Domain on server: *giellatekno.uit.no*
+	- Services: cgi-bin, webpages (?)
+	- TODO: Write documentation on this server
+- **Server: gtdict.uit.no**
+	-  Domains on server: *\*.oahpa.no* (all NDS versions)
+	-  [Restart instructions for **gtdict.uit.no**  (NDS)](httpdserversgtdict.html)
+- **Server: gtoahpa.uit.no** 
+	- Domain on server: *oahpa.no*
+	- [Restart instructions for **gtoahpa.uit.no** (oahpa.no, Konteaksta, kursa and kuvsje)](httpdserver.html)
+- **Server: gtsvn.uit.no**
+	- Domain on server: *pahkat.uit.no*
+	- [Restart instructions for **gtsvn.uit.no** (svn)](gtsvn.html)
+-	Server: **gtweb.uit.no**
+	- Domain on server: *jorgal.uit.no*
+	- [Restart instructions for **gtweb-01** (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
+- Serve: **satni.uit.no**
+	- Domains on server: *satni.org, sátni.org, bahko.org, báhko.org, baakoe.org*
+	- [Restart instructions for **satni.org**](satniorg.html)
 
 
 ### Specific processes
