@@ -54,6 +54,7 @@ Technical meetings
 ------------------
 
 -   **2022:**
+    -   [13.4.2022 Korpus-flytting til GitHub](corpus/Meeting_2022-04-13.md)
     -   [21.3.2022 Infra-arbeid](meetings/infra-arbeid-2022-03-21.md)
     -   [23.3.2022 Markdown & DocComments](2022-03-23-MarkdownDocComments.md)
 -   **2021:**
