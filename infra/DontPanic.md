@@ -38,7 +38,7 @@ The following processes need to be restarted, and in the following way.
 	-  Domains on server: *\*.oahpa.no* (all NDS versions)
 	-  [Restart instructions for **gtdict.uit.no**  (NDS)](httpdserversgtdict.html)
 - **Server: gtoahpa.uit.no** 
-	- Domain on server: *oahpa.no*
+	- Domain on server: *oahpa.no, kursa.oahpa.no, kuvsje.oahpa.no*
 	- [Restart instructions for **gtoahpa.uit.no** (oahpa.no, Konteaksta, kursa and kuvsje)](httpdserver.html)
 - **Server: gtsvn.uit.no**
 	- Domain on server: *pahkat.uit.no*
