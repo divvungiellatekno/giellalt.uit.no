@@ -28,12 +28,8 @@ The following processes need to be restarted, and in the following way.
 	- Domain on server: *api-giellalt.uit.no*
 	- TODO: Write documentation on this server
 - **Server: divvun.uit.no**
-	- Domains on server: *divvun.uit.no, divvun.no, divvun.org, indigenous-langtech.uit.no, giellalt.uit.no*
+	- Domains on server: *divvun.uit.no, divvun.no, divvun.org, indigenous-langtech.uit.no, giellalt.uit.no, giellatekno.uit.no*
 	- [Restart instructions for **divvun.no** (the speller server)](SpellerServer.html)
-- **Server: giellatekno.uit.no**
-	- Domain on server: *giellatekno.uit.no*
-	- Services: cgi-bin, webpages (?)
-	- TODO: Write documentation on this server
 - **Server: gtdict.uit.no**
 	-  Domains on server: *\*.oahpa.no* (all NDS versions)
 	-  [Restart instructions for **gtdict.uit.no**  (NDS)](httpdserversgtdict.html)
@@ -43,10 +39,11 @@ The following processes need to be restarted, and in the following way.
 - **Server: gtsvn.uit.no**
 	- Domain on server: *pahkat.uit.no*
 	- [Restart instructions for **gtsvn.uit.no** (svn)](gtsvn.html)
--	Server: **gtweb.uit.no**
-	- Domain on server: *jorgal.uit.no*
+- **Server: gtweb.uit.no**
+	- Domain on server: *jorgal.uit.no, gtweb.uit.no*
+	- Services on server: MT, korp, cgi-bin
 	- [Restart instructions for **gtweb-01** (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
-- Serve: **satni.uit.no**
+- **Server: satni.uit.no**
 	- Domains on server: *satni.org, sátni.org, bahko.org, báhko.org, baakoe.org*
 	- [Restart instructions for **satni.org**](satniorg.html)
 
