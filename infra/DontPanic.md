@@ -28,7 +28,7 @@ The following processes need to be restarted, and in the following way.
 	- Domain on server: *api-giellalt.uit.no*
 	- TODO: Write documentation on this server
 - **Server: divvun.uit.no**
-	- Domains on server: *divvun.uit.no, divvun.no, divvun.org, indigenous-langtech.uit.no, giellalt.uit.no, giellatekno.uit.no*
+	- Domains on server: *divvun.uit.no, divvun.no, divvun.org, indigenous-langtech.uit.no, giellalt.uit.no, giellatekno.uit.no, dicts.uit.no*
 	- [Restart instructions for **divvun.no** (the speller server)](SpellerServer.html)
 - **Server: gtdict.uit.no**
 	-  Domains on server: *\*.oahpa.no* (all NDS versions)
