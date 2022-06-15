@@ -124,6 +124,9 @@ Divvun meetings
     [26.04.](divvun/Meeting2022-04-26.md),
     [03.05.](divvun/Meeting2022-05-03.md),
     [18.05.](divvun/Meeting2022-05-18.md),
+    [24.05.](divvun/Meeting2022-05-24.md),
+    [31.05.](divvun/Meeting2022-05-31.md),
+    [07.06.](divvun/Meeting2022-06-07.md),
 -   **2021:**
     [05.01.](divvun/Meeting2021-01-05.md),
     [12.01.](divvun/Meeting2021-01-12.md),
@@ -445,6 +448,7 @@ Trond + Sjur meetings
     [Apr. 12](weekly/2022/Meeting_2022-04-12.md),
     [May   3](weekly/2022/Meeting_2022-05-03.md),
     [May  18](weekly/2022/Meeting_2022-05-18.md),
+    [June  1](weekly/2022/Meeting_2022-06-01.md),
 -   **2021:**
     [May  31](weekly/2021/Meeting_2021-05-31.md),
 -   **2020:**
