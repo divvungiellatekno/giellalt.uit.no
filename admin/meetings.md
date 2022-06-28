@@ -452,6 +452,7 @@ Trond + Sjur meetings
     [May  18](weekly/2022/Meeting_2022-05-18.md),
     [June  1](weekly/2022/Meeting_2022-06-01.md),
     [June 14](weekly/2022/Meeting_2022-06-14.md),
+    [June 21](weekly/2022/Meeting_2022-06-21.md),
 -   **2021:**
     [May  31](weekly/2021/Meeting_2021-05-31.md),
 -   **2020:**
