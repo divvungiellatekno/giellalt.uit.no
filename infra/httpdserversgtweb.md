@@ -1,7 +1,9 @@
-# Restarting the httpd server on gtweb-01
+# Restarting the httpd server on *gtweb-01*
 
 
 (For interactive linguistic analysers' malfunctioning, see the bottom of the page)
+
+This is the server with the web address *gtweb.uit.no*. It runs the interactive services of Giellatekno and Divvun, most notably **machine translation**, **corpus search** (Korp) and the grammatical analysis on [http://giellatekno.uit.no](giellatekno.uit.no) (running cgi-bin scripts). 
 
 
 On `gtweb-01`, two httpd services are used. `nginx` is the primary system
@@ -14,16 +16,52 @@ internally.
 
 ##  In case of emergencies...
 
+### Get an overview
+
+#### Are the processes running?
+
+Try (e.g.) [http://jorgal.uit.no](jorgal.uit.no) (write "ja" and translate, the answer should be "og"). If you get no answer, the system is malfunctioning.
+
+#### If machine translation is down, look at the *apy* process
+
+Check whether `apy` runs and look at the log:
+
+```
+ ssh gtweb # log into gtweb
+ sudo journalctl -u apy -n100 # 100 last lines
+```
+When things are working, you should get strings in some Saami language. When things are **not** working, you could e.g. get a message saying that the disc is full. This is the most likely error, as the disc has only 111GB space (**TODO**: ask IT to get a bigger one). When the disc is full other things could go wrong. Have a look at that:
+
+```
+systemctl --state=failed
+```
+
+If the disc is full, at least the following files may be removed (followed by a restart of `apy`:
+
+```
+sudo rm -rf /var/cache/apy/*    # remove files (be careful with sudo and -rf!
+sudo systemctl restart apy      # restart apy
+```
+
+
+
+
+### Investigating whether the process do run or not (internally).
+
 
 On gtweb-01, if for some reason the processes do not restart via chkconfig,
 inspect via
+
 ```
     ps aux
 ```
+
 or
+
 ```
     top
 ```
+
 to find out what is or isn't running.
 
 
@@ -31,14 +69,15 @@ Once missing processes have been identified, the proper order that all services
 should be started in (given dependencies between them) is:
 
 
-  * mysqld
-  * nginx
-  * httpd
-  * gielese-mongodb
-  * gielese
+  1. mysqld
+  1. nginx
+  1. httpd
+  1. gielese-mongodb
+  1. gielese
 
 
 For this use the command
+
 ```
     sudo service NAME start
 ```
@@ -61,7 +100,7 @@ For further documentation on this, see the various sections in [common httpdserv
 ## Restarting the mt processes on gtweb-01
 
 
-Restart is still not documented, but have a look at
+Restart is still not documented (but see above), but have a look at
 [the page for installing mt on gtweb](https://giellalt.uit.no/mt/infra/UpdatingApertiumOnGtweb.html)
 
 
