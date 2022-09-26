@@ -376,7 +376,7 @@ Giellatekno meetings
     -   [Oversikt over ting som skal bli gjort](giellatekno/TODO.md)
     -   [E-learning, moments for further work. Notes from 230915.](giellatekno/150923.md)
 -   **2022:**
-    [15.03](giellatekno/220315.md)
+    [15.03](giellatekno/220315.md) [26.09](giellatekno/210926.md),
 -   **2021:**
     [14.01](giellatekno/210114.md), [26.01](giellatekno/210126.md),
     [17.03](giellatekno/210317.md), [14.04](giellatekno/210414.md),
