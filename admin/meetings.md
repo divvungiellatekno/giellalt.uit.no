@@ -1,8 +1,7 @@
 Meetings on specific topics
 ===========================
 
-Linguist meetings
------------------
+## Linguist meetings
 
 -   **2022:**
     - [24.3. Taggene +Use/-Spell, +G3 og +G7 og leksikalisering av adverber](linguists/220324_Tagger_Adverber.md)
@@ -50,8 +49,7 @@ Linguist meetings
     -   [28.3.11 Om depworkshop](linguists/DiskusjonOmDepworkshop_20110328.md)
     -   [1.5.05 Om disambiguering](memos/disamb/Meeting_2006-01-05.md)
 
-Technical meetings
-------------------
+## Technical meetings
 
 -   **2022:**
     -   [13.4.2022 Korpus-flytting til GitHub](corpus/Meeting_2022-04-13.md)
@@ -70,11 +68,9 @@ Technical meetings
     -   [28.4.2017 OmegaT: FST and glossary](technical/OmegaT170428.md)
     -   [15.12.2016 Bugzilla rutiner](bugzilla/161215.md)
 
-Divvun meetings
-===============
+# Divvun meetings
 
-Divvun linguist meetings
-------------------------
+## Divvun linguist meetings
 
 -   **2017:**
     [5.10. keyboards smj sma](divvun/keyboards_171005.md),
@@ -99,8 +95,7 @@ Divvun linguist meetings
     [12.12.](divvun/LinguistMeeting2012-12-12.md),
     [19.12.](divvun/LinguistMeeting2012-12-19.md)
 
-Divvun meetings
----------------
+## Divvun meetings
 
 ### Regular meetings, this and last year
 
@@ -371,7 +366,8 @@ Divvun meetings
     [10.12.](divvun/Meeting2012-12-10.md),
     [17.12.](divvun/Meeting2012-12-17.md)
 
-# Divvun physical gatherings
+Divvun physical gatherings
+==========================
 
 - **2022**
   [v41](physical_meetings/2022-v41-Tromsø.md)
@@ -452,8 +448,7 @@ Giellatekno meetings
 Administrative meetings
 =======================
 
-Trond + Sjur meetings
----------------------
+## Trond + Sjur meetings
 
 -   **2022:**
     [Mar.  8](weekly/2022/Meeting_2022-03-08.md),
@@ -592,8 +587,7 @@ Trond + Sjur meetings
     [Nov. 7](weekly/2011/Meeting_2011-11-07.md),
     [Nov. 24](weekly/2011/Meeting_2011-11-24.md)
 
-Weekly Giellatekno + Divvun meetings
-------------------------------------
+## Weekly Giellatekno + Divvun meetings
 
 Giellatekno and Divvun had regular weekly meetings in the period 2005
 through 2011. They were held at 10 AM Norwegian time each Monday
