@@ -371,6 +371,11 @@ Divvun meetings
     [10.12.](divvun/Meeting2012-12-10.md),
     [17.12.](divvun/Meeting2012-12-17.md)
 
+# Divvun physical gatherings
+
+- **2022**
+  [v41](physical_meetings/2022-v41-Tromsø.md)
+
 Giellatekno meetings
 ====================
 
