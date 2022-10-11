@@ -369,7 +369,7 @@ Meetings on specific topics
 Divvun physical gatherings
 ==========================
 
-- **2022**
+- **2022:**
   [v41](physical_meetings/2022-v41-Tromsø.md)
 
 Giellatekno meetings
