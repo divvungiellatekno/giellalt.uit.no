@@ -14,14 +14,14 @@ Eit tredje punkt er å få oppdatert analysatorane som smi.cgi brukar automatisk
 
 ## smi.cgi i dag
 
-tekstanalyse 1 = ordanalyse
-tekstanalyse 2 = disambiguering
-tekstanalyse 3 = dependens
-orddeling
-lydskrift
+* tekstanalyse 1 = ordanalyse
+* tekstanalyse 2 = disambiguering
+* tekstanalyse 3 = dependens
+* orddeling
+* lydskrift
 
-ordformgenerering
-paradigmegenerering
+* ordformgenerering
+* paradigmegenerering
 
 x 50 språk x 5 brukargrensesnittspråk
 
@@ -31,8 +31,8 @@ Vi landa på å utsetja Forrest-migreringa fordi det fort kan ta lengre tid enn 
 
 Gangen framover
 
-- Flytte main/gt/script over til GitHub.com/giellatekno (Børre) og låse svn
-- Bytte ut cgi-bin / perl med nytt-og-fint (django, flask, javascript, ...)
-- Bytte ut gtweb /opt/smi med /tino og operasjonalisere testregime
-- linke til det nye fine i forrest
-- vente med å bytte ut forrest
+* Flytte main/gt/script over til GitHub.com/giellatekno (Børre) og låse svn
+* Bytte ut cgi-bin / perl med nytt-og-fint (django, flask, javascript, ...)
+* Bytte ut gtweb /opt/smi med /tino og operasjonalisere testregime
+* linke til det nye fine i forrest
+* vente med å bytte ut forrest
