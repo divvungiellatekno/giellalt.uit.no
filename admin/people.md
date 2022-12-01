@@ -3,7 +3,7 @@
 | Member                 | Group       | Main task                             | e-mail (replace space with dot)   |
 |------------------------|-------------|---------------------------------------|-----------------------------------|
 | Børre Gaup             | Divvun      | Everything but project management :-) | borre gaup at uit no              |
-| Flammie Pirinen        | Divvun      | Computational linguistics             | tommi pirinen at uit no           |
+| Flammie Pirinen        | Divvun      | Computational linguistics             | flammie pirinen at uit no         |
 | Inga Mikkelsen         | Divvun      | Linguistics                           | inga l mikkelsen at uit no        |
 | Katri Hiovain-Asikainen| Divvun      | Linguistics, speech technology        | katri hiovain-asikainen at uit no |
 | Lene Antonsen          | Giellatekno | Linguistics                           | lene antonsen at uit no           |
