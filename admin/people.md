@@ -13,6 +13,7 @@
 | Sjur Nørstebø Moshagen | Divvun      | Head of group, comp. linguistics      | sjur n moshagen at uit no         |
 | Thomas Omma            | Divvun      | Linguistics                           | thomas omma at uit no             |
 | Trond Trosterud        | Giellatekno | Head of group, linguistics            | trond trosterud at uit no         |
+| Trond Tynnøl           | Giellatekno | Programming                           | trond tynnol at uit no            |
 
 # Former team members, other info
 
