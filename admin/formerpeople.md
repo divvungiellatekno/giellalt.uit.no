@@ -5,6 +5,7 @@ Past team members
 |-------------------------------|----------------------|----------------------------------------------------|
 | Berit Merete Nystad Eskonsipo | Giellatekno & Divvun | Linguistics                                        |
 | Biret Ánne Bals Baal          | Giellatekno & Divvun | Linguistics                                        |
+| Chiara Argese                 | Giellatekno          | Programmer                                         |
 | Ciprian Gerstenberger         | Giellatekno          | Programming / Linguistics                          |
 | Elena Paulsen                 | Divvun               | Linguistics                                        |
 | Heli Uibo                     | Giellatekno          | Programmer                                         |
