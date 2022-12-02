@@ -2,6 +2,7 @@
 
 | Member                 | Group       | Main task                             | e-mail (replace space with dot)   |
 |------------------------|-------------|---------------------------------------|-----------------------------------|
+| Anders Lorentsen       | Giellatekno | Programming                           | anders lorentsen at uit no        |
 | Børre Gaup             | Divvun      | Everything but project management :-) | borre gaup at uit no              |
 | Flammie Pirinen        | Divvun      | Computational linguistics             | flammie pirinen at uit no         |
 | Inga Mikkelsen         | Divvun      | Linguistics                           | inga l mikkelsen at uit no        |
