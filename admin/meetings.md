@@ -381,12 +381,9 @@ Divvun physical gatherings
 Giellatekno meetings
 ====================
 
--   **TODO:**
-    -   [Plan framover](giellatekno/Plan.md)
-    -   [Oversikt over ting som skal bli gjort](giellatekno/TODO.md)
-    -   [E-learning, moments for further work. Notes from 230915.](giellatekno/150923.md)
 -   **2022:**
     [15.03](giellatekno/220315.md) [26.09](giellatekno/220926.md),
+    [02.12](giellatekno/221202.md)
 -   **2021:**
     [14.01](giellatekno/210114.md), [26.01](giellatekno/210126.md),
     [17.03](giellatekno/210317.md), [14.04](giellatekno/210414.md),
@@ -406,7 +403,8 @@ Giellatekno meetings
     [11.09](giellatekno/190911.md), [18.09](giellatekno/190918.md),
     [25.09](giellatekno/190925.md), [14.10](giellatekno/191014.md),
     [24.10](giellatekno/191024.md), [20.11](giellatekno/191120.md),
-    [13.12](giellatekno/191213.md),
+    [13.12](giellatekno/191213.md), [Plan](giellatekno/Plan.md),
+    [Oversikt](giellatekno/TODO.md)
 -   **2018:**
     [22.01](giellatekno/180122.md), [12.02](giellatekno/180212.md),
     [15.03](giellatekno/180315.md), [03.04](giellatekno/180403.md),
@@ -443,13 +441,15 @@ Giellatekno meetings
     [09.09](giellatekno/150909.md), [30.09](giellatekno/150930.md),
     [09.10](giellatekno/151009.md), [14.10](giellatekno/151014.md),
     [21.10](giellatekno/151021.md), [04.11](giellatekno/151104.md),
-    [17.12](giellatekno/151217.md)
+    [17.12](giellatekno/151217.md), [E-learning](giellatekno/150923.md)
 -   **2014:**
     [08.10](giellatekno/141008.md), [22.10](giellatekno/141022.md),
     [29.10](giellatekno/141029.md), [05.11](giellatekno/141105.md),
     [12.11](giellatekno/141112.md), [19.11](giellatekno/141119.md),
     [26.11](giellatekno/141126.md), [03.12](giellatekno/141203.md),
     [17.12](giellatekno/141217.md)
+
+
 
 Administrative meetings
 =======================
