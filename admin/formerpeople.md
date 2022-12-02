@@ -14,6 +14,7 @@ Past team members
 | Marit Julien                  | Giellatekno          | Linguistics, syntactic disambiguation and analysis |
 | Marja Eira                    | Giellatekno          | Linguistics                                        |
 | Per-Eric Kuoljok              | Divvun               | Lule Saami Linguistics                             |
+| Ritva Nystad                  | Divvun               | Linguistics                                        |
 | Ryan Johnson                  | Giellatekno          | Programmer                                         |
 | Saara Huhmarniemi             | Giellatekno          | Programming                                        |
 | Sandra Nystø Rahka            | Divvun               | Linguistics                                        |
