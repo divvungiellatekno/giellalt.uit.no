@@ -140,6 +140,7 @@ Meetings on specific topics
     [15.11.](divvun/Meeting2022-11-15.md),
     [24.11.](divvun/Meeting2022-11-24.md),
     [06.12.](divvu2/Meeting2022-12-06.md),
+    [20.12.](divvu2/Meeting2022-12-20.md)
 -   **2021:**
     [05.01.](divvun/Meeting2021-01-05.md),
     [12.01.](divvun/Meeting2021-01-12.md),
