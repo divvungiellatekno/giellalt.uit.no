@@ -100,6 +100,8 @@ Meetings on specific topics
 
 ### Regular meetings, this and last year
 
+-   **2023:**
+    [03.01.](divvun/Meeting2023-01-03.md),
 -   **2022:**
     [04.01.](divvun/Meeting2022-01-04.md),
     [11.01.](divvun/Meeting2022-01-11.md),
@@ -141,6 +143,20 @@ Meetings on specific topics
     [24.11.](divvun/Meeting2022-11-24.md),
     [06.12.](divvun/Meeting2022-12-06.md),
     [20.12.](divvun/Meeting2022-12-20.md)
+
+### Coordination meetings with The TechnoCreatives, Gothenburg
+
+-   **2022:**
+    [05.01.](divvun/TTC-sync-2022-01-05.md),
+    [20.01.](divvun/TTC-sync-2022-01-20.md),
+    [03.02.](divvun/TTC-sync-2022-02-03.md),
+    [17.02.](divvun/TTC-sync-2022-02-17.md),
+    [03.03.](divvun/TTC-sync-2022-03-03.md),
+    [28.04.](divvun/TTC-sync-2022-04-28.md),
+    [18.05.](divvun/TTC-sync-2022-05-18.md),
+
+### Older regular meetings
+
 -   **2021:**
     [05.01.](divvun/Meeting2021-01-05.md),
     [12.01.](divvun/Meeting2021-01-12.md),
@@ -187,20 +203,6 @@ Meetings on specific topics
     [07.12.](divvun/Meeting2021-12-07.md),
     [14.12.](divvun/Meeting2021-12-14.md),
     [21.12.](divvun/Meeting2021-12-21.md)
-
-### Coordination meetings with The TechnoCreatives, Gothenburg
-
--   **2022:**
-    [05.01.](divvun/TTC-sync-2022-01-05.md),
-    [20.01.](divvun/TTC-sync-2022-01-20.md),
-    [03.02.](divvun/TTC-sync-2022-02-03.md),
-    [17.02.](divvun/TTC-sync-2022-02-17.md),
-    [03.03.](divvun/TTC-sync-2022-03-03.md),
-    [28.04.](divvun/TTC-sync-2022-04-28.md),
-    [18.05.](divvun/TTC-sync-2022-05-18.md),
-
-### Older regular meetings
-
 -   **2020:**
     [20.01.](divvun/Meeting2020-01-20.md),
     [05.02.](divvun/Meeting2020-02-05.md),
