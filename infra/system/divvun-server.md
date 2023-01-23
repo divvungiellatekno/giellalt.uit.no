@@ -1,3 +1,10 @@
+The divvun server
+=================
+
+(**NB!** this may be outdated)
+
+## Restarting the divvun server
+
 The divvun.no web service is automatically restarted by the script
 `trunk/gt/script/restart-divvun`. Sometimes this script fails, and a
 manual restart of the service has to be done. This is how to do it.
@@ -5,8 +12,8 @@ manual restart of the service has to be done. This is how to do it.
 To do this operation smoothly, you would probably like to set up
 [password less login](auto-pass.html)
 
-Restarting the divvun server
-============================
+
+## Procedure for restarting
 
 -   Log in as sd
 -   Issue the command `screen -A -r`

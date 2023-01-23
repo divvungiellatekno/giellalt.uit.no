@@ -1,3 +1,7 @@
+Service Checks After System Restarts
+====================================
+
+
 Services to keep an eye on after system restarts - because they need to be operative all the time:
 
 * svn-server
@@ -36,12 +40,12 @@ Front-end resides on the same server as neahttadigisánit. Restarting nginx shou
 
 The sites
 
-* http://giellatekno.uit.no
-* http://dicts.uit.no
-* http://oahpa.no
-* http://divvun.no
-* https://giellalt.uit.no
-* http://divvun.org
+* [http://giellatekno.uit.no]
+* [http://dicts.uit.no]
+* [http://oahpa.no]
+* [http://divvun.no]
+* [https://giellalt.uit.no]
+* [http://divvun.org]
 
 Have a look at [the info about the xserve](../xserve.html#Web+sites).
 
@@ -53,14 +57,15 @@ Have a look at [the info about gtsvn](../gtsvn.html).
 
 # bugzilla
 
-If http://giellatekno.uit.no/bugzilla does not work, then one must restart mysql.
-
-Have a look at [the info about the xserve](../xserve.html#Restart+mysql+on+the+xserve).
+Bugzilla is no longer in use, we use **Issues** in git.
 
 # iChat/Jabber
 
-Have a look at [the info about the xserve](../xserve.html#Jabber).
+We do not use Jqabber, but **Zulip**.
 
 # SubEthaEdit
 
 Have a look at [the info about the xserve](../xserve.html#SubEthaEdit).
+
+
+

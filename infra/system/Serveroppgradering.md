@@ -1,4 +1,7 @@
-# Oversyn over prosessar og tenester vi har eller planlegg
+# Serveroppgradering
+
+
+Dette er eit oversyn over prosessar og tenester vi har eller planlegg.
 
 Her står først oversyn over maskinene vi har **no** (denne lista må bli oppdatert kontinuerleg),
 situasjonen i april 2018, deretter kravspesifikasjonar ("Serveroppdateringar") for oppdatering,

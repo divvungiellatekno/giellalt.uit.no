@@ -28,12 +28,12 @@ only to readers with access to the servers.
 
 # Serveroppgradering
 * [Serveroppgradering)](system/Serveroppgradering.html)
-* [Møte om oppgradering](../admin/technical/2018-03-09Servers.html)
+* [Møte om serveroppgradering - 9.3.2018](../admin/technical/2018-03-09Servers.html)
 
 # System Administration
 * [Add and remove users to the servers](system/addremove.html)
 * [Adding users to svn and svnmail](system/addsvn-users.html)
 * [Manually send svnmail](system/manually-send-svn-email.html)
 * [Group administration](system/groups.html)
-* [Maintaining users and access administration](system/system/UsersAndAccessAdministration.html)
+* [Maintaining users and access administration](system/UsersAndAccessAdministration.html)
 * [Setting up Access To Private Git](system/AccessToPrivateGit.html)

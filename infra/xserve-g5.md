@@ -1,5 +1,7 @@
 # Arbeidsfordeling xserve-G5
 
+(**NB!** This info is obsolete, this server broke down around 2015)
+
 ## G5
 
 Hovudfunksjon: eksterne, nettbaserte tenester

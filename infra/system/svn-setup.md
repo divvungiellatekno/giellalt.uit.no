@@ -1,4 +1,7 @@
-# Requirements
+svn setup
+=========
+
+## Requirements
 
 The svn setup requires a few things on the server:
 
@@ -16,7 +19,7 @@ Access methods:
 
 ## Users
 
-* from the OS (such that users in a certain group is automatically included)
-* from an AuthUser list/file (to allow "random" external users write access)
+- from the OS (such that users in a certain group is automatically included)
+- from an AuthUser list/file (to allow "random" external users write access)
 
 Find out what httpd modules are needed to support such a setup.
