@@ -91,9 +91,9 @@ How to see the parameters which are set: `head config.log`
 
 Some of the parameters:
 
--   --enable-spellers (build any/all spellers \[default=no\])
--   --enable-grammarchecker (enable grammar checker \[default=no\])
--   --enable-dicts (enable dictionary transducers \[default=no\])
--   --enable-oahpa (enable all tranducers with adjective-oahpa.lexc file
+-   `--enable-spellers` (build any/all spellers \[default=no\])
+-   `--enable-grammarchecker` (enable grammar checker \[default=no\])
+-   `--enable-dicts` (enable dictionary transducers \[default=no\])
+-   `--enable-oahpa` (enable all tranducers with adjective-oahpa.lexc file
     instead of adjective.lexc \[default=no\])
--   --enable-apertium (enable apertium transducers \[default=no\])
+-   `--enable-apertium` (enable apertium transducers \[default=no\])
