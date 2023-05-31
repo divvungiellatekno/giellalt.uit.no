@@ -35,7 +35,7 @@ Then convert the Giellatekno xml format into Apertium xml format
 
 (For an example of commands, see below)
 
-## Collect the entries in a single file
+## 1. Collect the entries in a single file
 
 Collect all relevant entries in a single file (this script does only that) by typing the following command (where `INPUT_DIR` is `../LANG1LANG2/src/`):
 
@@ -54,7 +54,7 @@ collect-dict-parts.xsl inDir=../smenob/src/ \
 
 Different filters for different language pair are possible/needed. Filtering takes place both in *collect-dict-parts.xsl* and *gtdict2simple-apertiumdix.xsl* so before using these scripts check both your input and the code to assure the output you expect.
 
-## Convert the gt format into the apertium xml format
+## 2. Convert the gt format into the apertium xml format
 
 The output file from last command shall be the INPUT_FILE here, hence called *inndir* in the command above.
     
@@ -74,7 +74,7 @@ For command with edited variables, change tha values for *inFile* and *outDir* a
 
 `java -Xmx2048m -Dfile.encoding=UTF8 net.sf.saxon.Transform -it:main gtdict2simple-apertiumdix.xsl`
 
-## Convert the apertium xml format into apertium webdict format
+## 3. Convert the apertium xml format into apertium webdict format
 
 In order to get the autocopletion behaviour of the dictionary (type 2-3 letters) we need the *lr-trie* format. To get this, compile the file using the apertium tools describet above, with this command  (`INPUT_FILE` is last command's output):
 
