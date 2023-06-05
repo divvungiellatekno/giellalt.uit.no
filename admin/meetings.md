@@ -403,8 +403,10 @@
 
 # Giellatekno meetings
 
+- **2023**
+  [14.04](giellatekno/230414.md)
 - **2022:**
-  [15.03](giellatekno/220315.md) [26.09](giellatekno/220926.md),
+  [15.03](giellatekno/220315.md), [26.09](giellatekno/220926.md),
   [02.12](giellatekno/221202.md)
 - **2021:**
   [14.01](giellatekno/210114.md), [26.01](giellatekno/210126.md),
