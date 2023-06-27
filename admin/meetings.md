@@ -125,6 +125,7 @@
   [06.06.](divvun/Meeting2023-06-06.md),
   [13.06.](divvun/Meeting2023-06-13.md),
   [20.06.](divvun/Meeting2023-06-20.md),
+  [27.06.](divvun/Meeting2023-06-27.md),
 - **2022:**
   [04.01.](divvun/Meeting2022-01-04.md),
   [11.01.](divvun/Meeting2022-01-11.md),
