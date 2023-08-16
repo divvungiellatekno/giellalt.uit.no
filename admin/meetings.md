@@ -483,6 +483,8 @@
 
 ## Trond + Sjur meetings
 
+- **2023:**
+  [Mar. 21](weekly/2023/Meeting_2023-03-21.md),
 - **2022:**
   [Mar. 8](weekly/2022/Meeting_2022-03-08.md),
   [Mar. 15](weekly/2022/Meeting_2022-03-15.md),
@@ -494,7 +496,7 @@
   [May 18](weekly/2022/Meeting_2022-05-18.md),
   [June 1](weekly/2022/Meeting_2022-06-01.md),
   [June 14](weekly/2022/Meeting_2022-06-14.md),
-  [June 21](weekly/2022/Meeting_2022-06-21.md),
+  [June 21](weekly/2022/Meeting_2022-06-21.md)
 - **2021:**
   [May 31](weekly/2021/Meeting_2021-05-31.md),
 - **2020:**
