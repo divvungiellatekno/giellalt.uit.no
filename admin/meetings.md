@@ -264,6 +264,7 @@
   [14.03.](divvun/Meeting2019-03-14.md),
   [16.05.](divvun/Meeting2019-05-16.md),
   [06.06.](divvun/Meeting2019-06-06.md),
+  [05.08.](divvun/Meeting2019-08-05.md) (berre med Børre, teknisk planlegging),
   [27.08.](divvun/Meeting2019-08-27.md),
   [03.09.](divvun/Meeting2019-09-03.md),
   [16.10.](divvun/Meeting2019-10-16.md),
