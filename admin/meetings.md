@@ -518,6 +518,7 @@
   [Aug. 28](weekly/2018/Meeting_2018-08-28.md),
   [Sep. 11](weekly/2018/Meeting_2018-09-11.md),
   [Sep. 18](weekly/2018/Meeting_2018-09-18.md),
+  [Sep. 25](weekly/2018/Meeting_2018-09-25.md),
   [Oct.  1](weekly/2018/Meeting_2018-10-01.md),
   [Oct.  8](weekly/2018/Meeting_2018-10-08.md),
   [Nov. 20](weekly/2018/Meeting_2018-11-20.md)
