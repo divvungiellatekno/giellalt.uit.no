@@ -508,12 +508,13 @@
   [Nov. 20](weekly/2019/Meeting_2019-11-20.md)
 - **2018:**
   [Jan. 23](weekly/2018/Meeting_2018-01-23.md),
-  [Feb. 6](weekly/2018/Meeting_2018-02-06.md),
+  [Feb.  6](weekly/2018/Meeting_2018-02-06.md),
   [Feb. 13](weekly/2018/Meeting_2018-02-13.md),
   [Apr. 24](weekly/2018/Meeting_2018-04-24.md),
-  [May 15](weekly/2018/Meeting_2018-05-15.md),
-  [Jun. 6](weekly/2018/Meeting_2018-06-06.md),
+  [May  15](weekly/2018/Meeting_2018-05-15.md),
+  [Jun.  6](weekly/2018/Meeting_2018-06-06.md),
   [Jun. 19](weekly/2018/Meeting_2018-06-19.md),
+  [Jun. 25](weekly/2018/Meeting_2018-06-25.md),
   [Aug. 21](weekly/2018/Meeting_2018-08-21.md),
   [Aug. 28](weekly/2018/Meeting_2018-08-28.md),
   [Sep. 11](weekly/2018/Meeting_2018-09-11.md),
