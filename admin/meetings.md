@@ -139,6 +139,7 @@
   [01.03.](divvun/Meeting2022-03-01.md),
   [08.03.](divvun/Meeting2022-03-08.md),
   [15.03.](divvun/Meeting2022-03-15.md),
+  [22.03.](divvun/Meeting2022-03-22-Institutt.md) (med instituttleiinga),
   [22.03.](divvun/Meeting2022-03-22.md),
   [29.03.](divvun/Meeting2022-03-29.md),
   [05.04.](divvun/Meeting2022-04-05.md),
