@@ -491,6 +491,7 @@
 - **2020:**
   [Jan.  1](weekly/2020/Meeting_2020-01-07.md),
   [Mar. 24](weekly/2020/Meeting_2020-03-24.md),
+  [Aug. 10](weekly/2020/Meeting_2020-08-10.md),
   [Dec.  3](weekly/2020/Meeting_2020-12-03.md)
 - **2019:**
   [Mar. 12](weekly/2019/Meeting_2019-03-12.md),
