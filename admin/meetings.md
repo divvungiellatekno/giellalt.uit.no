@@ -169,17 +169,6 @@
   [06.12.](divvun/Meeting2022-12-06.md),
   [20.12.](divvun/Meeting2022-12-20.md)
 
-### Coordination meetings with The TechnoCreatives, Gothenburg
-
-- **2022:**
-  [05.01.](divvun/TTC-sync-2022-01-05.md),
-  [20.01.](divvun/TTC-sync-2022-01-20.md),
-  [03.02.](divvun/TTC-sync-2022-02-03.md),
-  [17.02.](divvun/TTC-sync-2022-02-17.md),
-  [03.03.](divvun/TTC-sync-2022-03-03.md),
-  [28.04.](divvun/TTC-sync-2022-04-28.md),
-  [18.05.](divvun/TTC-sync-2022-05-18.md),
-
 ### Older regular meetings
 
 - **2021:**
