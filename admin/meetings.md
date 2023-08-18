@@ -472,7 +472,7 @@
 
 # Administrative meetings
 
-## Trond + Sjur meetings
+## Sjur + Trond meetings
 
 - **2023:**
   [Mar. 21](weekly/2023/Meeting_2023-03-21.md),
@@ -523,7 +523,8 @@
   [Sep. 25](weekly/2018/Meeting_2018-09-25.md),
   [Oct.  1](weekly/2018/Meeting_2018-10-01.md),
   [Oct.  8](weekly/2018/Meeting_2018-10-08.md),
-  [Nov. 20](weekly/2018/Meeting_2018-11-20.md)
+  [Nov. 20](weekly/2018/Meeting_2018-11-20.md),
+  [Dec. 11](weekly/2018/Meeting_2018-12-11.md)
 - **2017:**
   [Jan. 17](weekly/2017/Meeting_2017-01-17.md),
   [Feb. 1](weekly/2017/Meeting_2017-02-01.md),
