@@ -27,7 +27,7 @@ only to readers with access to the servers.
 * [Update content on online Speller Server](SpellerServer.html)
 
 # Serveroppgradering
-* [Serveroppgradering)](system/Serveroppgradering.html)
+* [Serveroppgradering](system/Serveroppgradering.html)
 * [Møte om serveroppgradering - 9.3.2018](../admin/technical/2018-03-09Servers.html)
 
 # System Administration
