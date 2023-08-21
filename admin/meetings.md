@@ -14,6 +14,7 @@
   - [4.6. Arab, acro og abbr i giella-shared](linguists/190604_acro_abbr.md)
   - [4.6. Scripting av sem-tagger](linguists/190604_semtags.md)
   - [6.6. Gramcheck-oppstart](linguists/190606_gramcheck.md)
+  - [26.6. grramcheck](divvun/LinguistMeeting2019-06-26.md)
   - [29.10. Analyse av separate og samanskrivne partiklar](linguists/191029Partiklar.md)
   - [30.10. Møte om bibel og ordbok](linguists/191030_bibel.md)
 - **2018:**
