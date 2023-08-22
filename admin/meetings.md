@@ -59,7 +59,8 @@
 - **2021:**
   - [Samarbeid mellom Divvun og Giellatekno](technical/2021-06-30-GT-Divvun-samarbeid.md)
 - **2020:**
-  - [14.10 Mobilvisning av sátni.org](dicts/20201014_satni.org_mobilvisning.jspwiki)
+  - [12.11. Arbeidsflyt, Github og Bugzilla](meetings/2020-11-12-ArbeidsflytGithubBugzilla.md)
+  - [14.10. Mobilvisning av sátni.org](dicts/20201014_satni.org_mobilvisning.jspwiki)
   - [20.5.2020 Flytte til Git](technical/FlytteTilGit200520.md)
 - **2016-2019:**
   - [7.6.2019 GiellaLT](meetings/giellalt-20190607.md)
