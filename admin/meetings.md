@@ -9,6 +9,7 @@
   - [2.3. Cmp-tagger og harmonisering](linguists/210302_Cmp_avledninger.md)
   - [21.6. Feilmerkkng i korpus](linguists/Meeting2021-06-22-FeilmerkingIKorpus.md)
 - **2020:**
+  - [4.2. Møte om klitika](linguists/200204_Partiklar.md)
   - [23.4. Avgrensing av avleiingar](linguists/200423_AvgrenseAvleiing.md)
 - **2019:**
   - [4.6. Arab, acro og abbr i giella-shared](linguists/190604_acro_abbr.md)
