@@ -398,6 +398,8 @@
 
 # Divvun physical gatherings
 
+- **2023:**
+  [v35](physical_meetings/2023-v35-Tromsø.md)
 - **2022:**
   [v41](physical_meetings/2022-v41-Tromsø.md)
 
