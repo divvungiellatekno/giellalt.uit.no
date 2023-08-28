@@ -482,6 +482,7 @@
 
 - **2023:**
   [Mar. 21](weekly/2023/Meeting_2023-03-21.md),
+  [Aug. 28](weekly/2023/Meeting_2023-08-28.md),
 - **2022:**
   [Mar. 8](weekly/2022/Meeting_2022-03-08.md),
   [Mar. 15](weekly/2022/Meeting_2022-03-15.md),
