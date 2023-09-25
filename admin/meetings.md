@@ -52,6 +52,8 @@
 
 ## Technical meetings
 
+- **2023:**
+  - [30.8.2023 Infra-status](meetings/2023-08-30-infra-status.md)
 - **2022:**
   - [8.11.2022 Erstatning for smi.cgi](meetings/2022-11-08-erstatning-for-smi.cgi.md)
   - [13.4.2022 Korpus-flytting til GitHub](corpus/Meeting_2022-04-13.md)
