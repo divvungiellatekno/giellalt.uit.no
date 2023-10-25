@@ -55,12 +55,13 @@
 ## Technical meetings
 
 - **2023:**
+  - [25.10.2023 Infra-status](meetings/2023-10-25-infra.md)
   - [30.8.2023 Infra-status](meetings/2023-08-30-infra-status.md)
 - **2022:**
   - [8.11.2022 Erstatning for smi.cgi](meetings/2022-11-08-erstatning-for-smi.cgi.md)
   - [13.4.2022 Korpus-flytting til GitHub](corpus/Meeting_2022-04-13.md)
-  - [21.3.2022 Infra-arbeid](meetings/infra-arbeid-2022-03-21.md)
   - [23.3.2022 Markdown & DocComments](2022-03-23-MarkdownDocComments.md)
+  - [21.3.2022 Infra-arbeid](meetings/infra-arbeid-2022-03-21.md)
 - **2021:**
   - [Samarbeid mellom Divvun og Giellatekno](technical/2021-06-30-GT-Divvun-samarbeid.md)
 - **2020:**
