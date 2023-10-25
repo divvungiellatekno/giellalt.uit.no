@@ -1,22 +1,20 @@
-Corpus plan
-===========
-
-# Introduction
-
+Introduction
+============
 
 This document describes corpus work until september 2004, as found in
 the catalogue gt/cwb/. In 2005 we have made a separate corpus. This
 should be documented as well.
 
-# Implementation plan for corpus interfaces
-
+Implementation plan for corpus interfaces
+=========================================
 
 The document is partly based on the discussion with the people in
 Textlaboratoriet ([the memo](../admin/memos/oslo-2004-5.html)), and
 discussions in [Saletek seminar, July
 2004](http://www.ling.helsinki.fi/uhlcs/saletek/jokkmokk.shtml).
 
-## Overview and introduction
+Overview and introduction
+-------------------------
 
 The main goal of the corpus subproject is to build an extensive and
 versatile source of text materials for Saami languages. The main goals
@@ -40,7 +38,8 @@ and the query system.
 All the material concerning the corpus project is currently stored in
 the directory `gt/cwb/` under cvs.
 
-## The corpus database
+The corpus database
+-------------------
 
 The morphologically analyzed texts are stored in XML-format, which forms
 the corpus database. The XML-format is used as the base format for
@@ -144,7 +143,7 @@ Optionally, one can
 
 -   use a paragraph-tag enclosing several sentence-s
 
--   use more attibutes:  
+-   use more attibutes:
     -   on all elements: type and language
     -   on tokens: morphology, syntax etc.
 
@@ -154,7 +153,7 @@ Optionally, one can
                <reading lemma="fly" POS="N" />
                <reading lemma="fly" POS="V" />
                </token>
-              
+
 
 There is a first version of the dtd corpus.dtd for the format. In
 addition, there is a file sme\_tagset.ent which contains the names of
@@ -210,7 +209,8 @@ workbench, provided by Textlaboratory.
 
 The web-interface will be provided by Textlaboratory.
 
-## Files and directories
+Files and directories
+---------------------
 
 The corpus files themselves will be placed to `/usr/local/share/corp/`
 for now. The subdirectory `doc` contains the original texts in their
@@ -253,7 +253,8 @@ in one place, perhaps in the same place as the corporal, in directory
 `/corpora/registry`. The environment variable `CORPUS_REGISTRY` has to
 be set.
 
-## Information in the corpus
+Information in the corpus
+-------------------------
 
 ### Morphological information in the corpus
 
@@ -324,7 +325,8 @@ bulletpoint lists is clearly a valuable resource, if we can write rules
 that rely on such information (demand finite verbs form sentences, not
 from titles, parenthesis fragments or bulletpoint items).
 
-## IMS Corpus Workbench demo
+IMS Corpus Workbench demo
+-------------------------
 
 IMS Corpus Workbench is now installed to victorio and can be tested with
 two demo corpuses. There is English demo corpus which consists of
@@ -374,7 +376,8 @@ directory `/usr/local/cwb/demo/stme1029` for example. The coversion from
 CG2 output to word-list format is done automatically by using script
 `convert2cwb`.
 
-## Some not so relevant documentation
+Some not so relevant documentation
+----------------------------------
 
 ### XCES
 

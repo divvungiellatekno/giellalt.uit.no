@@ -1,9 +1,6 @@
-# FST names before and after the 2014 revision
-
-## FST's and other compiled files working in new infra
-
-|  Name in old infra         | Name in new infra
-| --- | --- 
+# FST's and other compiled files working in new infra
+|  Name in old infra         |Name in new infra
+| --- | ---
 | clock-LANG.fst             | transcriptor-clock2text-desc.xfst
 | date-LANG.fst              | transcriptor-date2text-desc.xfst
 | dict-iLANG-norm.fst        | generator-dict-gt-norm.xfst
@@ -25,22 +22,18 @@
 | LANG-num.fst               | transcriptor-numbers2text-desc.xfst
 | smi-syn.rle                | syntax/syntax.cg3
 
-
-## Paradigm data sources
-
-|  Name in old infra         | Name in new infra
-| --- | --- 
+# Paradigm data sources
+|  Name in old infra         |Name in new infra
+| --- | ---
 | paradigm_full.LANG.txt     | ../test/data/paradigm_full.LANG.txt (temporary place)
 | paradigm_min.LANG.txt      | ../test/data/paradigm_min.LANG.txt (temporary place)
 | paradigm.LANG.txt          | ../test/data/paradigm.LANG.txt (temporary place)
 | paradigm_standard.LANG.txt | ../test/data/paradigm_standard.LANG.txt (temporary place)
 | korpustags.LANG.txt        | ../test/data/korpustags.LANG.txt (temporary place)
 
-
-## Not yet in place
-
-|  Name in old infra         | Name in new infra
-| --- | --- 
+# Not yet in place
+|  Name in old infra         |Name in new infra
+| --- | ---
 | abbr.txt                   | (ikkje i ny infra enno)
 | corr.txt                   | (ikkje i ny infra enno)
 | hyph-LANG.fst              | (ikkje i ny infra enno)

@@ -1,10 +1,6 @@
 ```
 
-
 UiT                 Divvun/ÁBČ
-
-
-
 
 Heim | Korrektur | Tastatur | Tale | Ordbøker | Oversettelse | Språklæring | Giellatekno
 ---------------------------------------------------------------------------
@@ -24,36 +20,29 @@ Meny    |  Språk1 • Språk2 • Språk3 • Språk4 • Språk5           | N
 --------
 • SoMeL
 
-
-
-
 ---------------------------------------------------------------------------
 Fot
 ---------------------------------------------------------------------------
 ```
 
-
 Kategori-innhald:
 * Korrektur
-** retteprogram & orddeling
+    - retteprogram & orddeling
 * Tastatur
-** mobiltastatur
-** datamaskintastatur
+    - mobiltastatur
+    - datamaskintastatur
 * Tale
-** tts
+    - tts
 * Ordbøker
-** lenke til sátni.org
-** lenke til alle andre ordbøker
+    - lenke til sátni.org
+    - lenke til alle andre ordbøker
 * Oversettelse
-** lenke til omsetjingsminne
-** lenke til MT-sider
+    - lenke til omsetjingsminne
+    - lenke til MT-sider
 * Språklæring
-** lenke til gielese-nettapp
-** lenke til gielese i App Store og Google Play
-** lenke til Oahpa
-
-
-
+    - lenke til gielese-nettapp
+    - lenke til gielese i App Store og Google Play
+    - lenke til Oahpa
 
 Små/smale skjermar/mobil:
 * menyen forsvinn
@@ -61,13 +50,11 @@ Små/smale skjermar/mobil:
 * nyhende blir lagt over teksten
 * språkval blir sprett-opp-meny
 
-
 Gjennomføringsplan:
 * omstrukturera innhaldet
 * laga nytt skinn med fleksibel nettbunad
 * byta til dispatcher for å få nyhende på høgresida
 * laga dispatcher-skinn med fleksibel nettbunad
-
 
 Andre endringar:
 * tydelegare underflikar

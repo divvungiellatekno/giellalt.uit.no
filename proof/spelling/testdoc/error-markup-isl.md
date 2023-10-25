@@ -1,30 +1,29 @@
-
-Error markup for ISL - Icelandic 
-======================
-
 We want to extend (some of) the corpus files with markup for spelling
 and other errors, to use them as gold standards for testing our spellers
 (and in the future other tools as well). The markup is done manually,
 and needs to follow certain rules.
 
+ISL - Icelandic markup
+======================
+
 Description of *the error classification* for ISL:
 
-## 1. Unclassified errors
- - ``{wrong}§{correct}``
+1. Unclassified errors - {wrong}§{correct}
+==========================================
 
-These are errors of an unknown type.
+Errors of an unknown type.
 
-## 2. Orthographic errors, non-words
- - ``{wrong}${error classification\|correct}``
+2. Orthographic errors, non-words - {wrong}${error classification\|correct}
+===========================================================================
 
-These are traditional misspellings confined to single (error) strings, that is,
+Traditional misspellings confined to single (error) strings, that is,
 errors that don't need an analysis of the surrounding words to be
 detected and corrected. In the resulting xml, the element is named
 &lt;errorort&gt;. These errors do always lead to non-words in the text,
 such that a speller should be able to detect them.
 
 -   ****Position - used when describing error types vow, con, typo, cap
-    and meta.**:**  
+    and meta.**:**
     -   stem - stem
     -   suff - suffix
     -   der - derivation
@@ -33,7 +32,7 @@ such that a speller should be able to detect them.
 <!-- -->
 
 -   ****Word classes - used when describing compounded words that should
-    not be compounded (cmp).**:**  
+    not be compounded (cmp).**:**
     -   noun - noun
     -   verb - verb
     -   adv - adverb
@@ -43,7 +42,7 @@ such that a speller should be able to detect them.
 <!-- -->
 
 -   ****Compound type - used when describing incorrectly compounded
-    words (cmp).**:**  
+    words (cmp).**:**
     -   st - stem
     -   gensg - genitive singular
     -   genpl - genitive plural

@@ -5,24 +5,24 @@ We now have a test bench for automatic testing of the spellers, using
 different data sets. The data sets/tests serve different purposes, and
 are the following:
 
--   **regression-test:**  
+-   **regression-test:**
     tests the speller against a set of known problematic misspellings
     and correct words, to check that newer versions don't break earlier
     fixes; the data set will often contain "constructed" words made to
     highlight certain morphological constructions
--   **typos-test:**  
+-   **typos-test:**
     tests the speller against a collection of real typographic errors
     and their corrections, as found in our corpus documents or elsewhere
     in real texts — the purpose of the test is to see how well the
     speller handles real errors, both when it comes to detecting them,
     and to give the correct suggesion; the data set should *never*
     contain constructed errors
--   **baseform-test:**  
+-   **baseform-test:**
     extracts all baseforms (=nominative singular, infinitive) found in
     our lexicons, and send them through the speller; to ensure that the
     lexicon is well-formed and that the speller actually recognises all
     (baseforms of the) words it should
--   **correct-test:**  
+-   **correct-test:**
     runs complete documents manually marked up with error/correction
     tags through the speller; this test will check both lexical
     coverage, calculate precision, recall and coverage, as well as give
@@ -55,9 +55,9 @@ In addition, it is possible to specify the tool used for the actual
 testing, that is, the speller engine, by giving `make` the parameter
 `TESTTOOL`, with one of the following values:
 
--   **pl:**  
+-   **pl:**
     polderland command-line speller
--   **mw:**  
+-   **mw:**
     Microsoft Word as the engine, iterating over each of the words in
     the input data, and asking Word about its spelling status;
     AppleScript is used to tell Word what to do, and to collect the
@@ -203,13 +203,13 @@ The test report for `typos-test` contains the same first five sections
 as the regression-test report. The most important things to look at are
 the following points:
 
--   **true positives without (correct) suggestions:**  
+-   **true positives without (correct) suggestions:**
     why are the suggestion(s) missing?
--   **false negatives:**  
+-   **false negatives:**
     any pattern in the undetected misspellings
--   **false positives:**  
+-   **false positives:**
     any pattern in the wrongly flagged words
--   **overall statistics:**  
+-   **overall statistics:**
     our target is to detect and correct as many of the known typos as
     possible
 
@@ -235,12 +235,12 @@ The test report for `baseform-test` contains the same first five
 sections as the regression-test report. The most important things to
 look at are the following points:
 
--   **number of false negatives:**  
+-   **number of false negatives:**
     this should really go down to zero
--   **false negative patterns:**  
+-   **false negative patterns:**
     use any patterns to try to identify why groups of baseforms are
     rejected.
--   **single entries:**  
+-   **single entries:**
     a substantial part of the unrecognised baseforms will be undetected
     errors in the lexicon; they should just be corrected
 
@@ -275,17 +275,17 @@ The test report for `baseform-test` contains the same first five
 sections as the regression-test report. The most important things to
 look at are the following points:
 
--   **test statistics:**  
+-   **test statistics:**
     in the `correct-test`, the precision and recall figures are real
     measures of the quality of our speller, and should be thoroughly
     followed between speller versions.
--   **false negatives:**  
+-   **false negatives:**
     that is, undetected spelling errors - these should be as few as
     possible
--   **false positives:**  
+-   **false positives:**
     this number should also be low, although it is normally not possible
     to get down to zero
--   **true positives without (correct) suggestions:**  
+-   **true positives without (correct) suggestions:**
     we want to be able to correct as many of the detected misspellings
     as possible, which makes this category an interesting study object;
     it should be as small as possible
@@ -299,13 +299,13 @@ Program Settings
 In order to obtain measurable results, we set up the programs in the
 same way:
 
--   **Common settings:**  
+-   **Common settings:**
     -   Check Upper case words (turn off "Ignore Upper case")
     -   Check words with numbers (turn off "Ignore words with numbers")
     -   Ignore words with numbers (leave this options on)
--   **MS Off/Mac:**  
+-   **MS Off/Mac:**
     Word&gt;Preferences&gt;Spelling and Grammar
--   **MS Off/Win:**  
+-   **MS Off/Win:**
     In the same location?
 
 Types of testing
@@ -338,17 +338,17 @@ measures into account
 
 To obtain these measures we need the following data:
 
--   **words (wds):**  
+-   **words (wds):**
     The number of words in the text
--   **true positives (tp):**  
+-   **true positives (tp):**
     The number of true errors found by the spellers (red errors)
--   **false positives (fp):**  
+-   **false positives (fp):**
     The number of correctly written words claimed to be errors by the
     program (correct words in red)
--   **true negatives (tn):**  
+-   **true negatives (tn):**
     The number of correctly written words recognised as such (correct
     word, no red line)
--   **false negatives (fn):**  
+-   **false negatives (fn):**
     The numbers of errors not found by the speller (misspelling without
     redline)
 
@@ -367,13 +367,13 @@ Also here, we test for `precision`, `recall` and `accuracy`.
 
 To obtain these measures we need the following data:
 
--   **errors (err):**  
+-   **errors (err):**
     The number of errors in the text
--   **true positives (tp):**  
+-   **true positives (tp):**
     The number of true suggestions
--   **false positives (fp):**  
--   **true negatives (tn):**  
--   **false negatives (fn):**  
+-   **false positives (fp):**
+-   **true negatives (tn):**
+-   **false negatives (fn):**
 
 <!-- -->
 

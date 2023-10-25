@@ -1,5 +1,7 @@
 # How to write your own shell scripts for testing
 
+# Overview
+
 * Requirements
 * Writing the test scripts
 * How to run the tests and interpret the results
@@ -8,7 +10,7 @@ What this is NOT: this is NOT an overview of the YAML testing framework. You can
 find a description of YAML testing on a
 [separate page](AddingMorphologicalTestData.html#Yaml+tests).
 
-## Requirements
+# Requirements
 
 * be **robust** - check that all prerequisites are met, and bail out if not
 * overall goal: all scripts should be **portable**
@@ -18,7 +20,7 @@ find a description of YAML testing on a
 * should use both xfst and hfst, depending on what has been configured
 * test only modules that have been built
 
-### Robustness
+## Robustness
 
 Check that all prerequisites are met, and bail out if not (exit 77/SKIP)
 
@@ -26,7 +28,7 @@ Check that all prerequisites are met, and bail out if not (exit 77/SKIP)
 * do we find the input data files
 * do we have all tools needed?
 
-### Portability
+## Portability
 
 Portability means it should:
 * work on all systems (except Windows)
@@ -37,7 +39,7 @@ Portability means it should:
 * work for different flavours of the same tool (e.g. for both `awk`
   and `gawk`)
 
-### Exit values
+## Exit values
 
 Must be **0 - 255**, where some have a special meaning:
 * **0**:  everything went ok = PASS
@@ -45,16 +47,16 @@ Must be **0 - 255**, where some have a special meaning:
 * **99**:  hard error - we can't continue - STOP
 * **everything else**:  FAIL (usually just **1**)
 
-### Do not rely on anything outside the own language dir
+## Do not rely on anything outside the own language dir
 
 * all paths should be relative to the local dir
 * do not reference `$GTHOME` and similar variables
 * the only variables you can trust are:
-** `$srcdir` - the directory in which the original test script is located
-** the variables defined and exported by `configure.ac` - but **ONLY** if you
+    - `$srcdir` - the directory in which the original test script is located
+    - the variables defined and exported by `configure.ac` - but **ONLY** if you
    process the testing script with `configure.ac` (details about this later)
 
-### should use variables for configured tools
+## should use variables for configured tools
 
 Most of the tools we need (and in principle all of them) are (should be)
 declared in `configure.ac` or related files (found in `$GTLANG/m4/`.
@@ -70,7 +72,7 @@ By following this practice, the system becomes more robust and portable.
 
 Details of how to actually do this is given further down.
 
-### It should use both xfst and hfst
+## It should use both xfst and hfst
 
 ... depending on what has been configured.
 
@@ -83,22 +85,24 @@ available on the system, and use the one or both that is available or configured
 
 We'll return to the details further down.
 
-### Test only modules that have been built
+## Test only modules that have been built
 
 Example:
+1. test only spellers if speller building have been turned on
 
-* test only generators if generator building have been turned on
-* How do we do this? By using Automake conditionals:
+How do we do this?
+1. By using Automake conditionals:
 
-```make
+```
 TESTS=
 
-# Add your shell scripts for running tests requiring only a generator:
 if WANT_GENERATION
+1. Add your shell scripts for running tests requiring only a generator:
 TESTS+=test-noun-generation.sh \
 	   test-verb-generation.sh \
 	   test-adj-generation.sh \
 	   test-propernoun-generation.sh
+
 endif # WANT_GENERATION
 ```
 
@@ -131,7 +135,7 @@ Here are some ideas:
 * test that the hyphenation patterns are correct (this could probably be easily
   done using the YAML testing framework)
 
-### What programming languages can I use?
+## What programming languages can I use?
 
 Anything that can return an exit value. Common choices are:
 * shell scripts
@@ -144,20 +148,20 @@ Anything that can return an exit value. Common choices are:
 
 Typically you start a shell script by defining variables:
 
-```sh
+```
 ###### Variables: #######
 sourcefile=${srcdir}/../../../src/morphology/stems/nouns.lexc
 generatorfile=./../../../src/generator-gt-norm
 resultfile=missingNounLemmas
 ```
 
-The variable `${srcdir}` refers to the source dir of the test script, that is,
+The variable `${srcdir``` refers to the source dir of the test script, that is,
 the directory in which the test script is located.
 
 Here is another variable assignment:
 
-```sh
-# Get external Mac editor for viewing failed results from configure:
+```
+1. Get external Mac editor for viewing failed results from configure:
 EXTEDITOR=@SEE@
 ```
 
@@ -172,7 +176,7 @@ things to remember:
 * the testing script must be processed by `configure.ac` — this is done by
   adding two lines as follows to that file:
 
-```M4
+```
 AC_CONFIG_FILES([test/src/morphology/test-noun-generation.sh], \
       [chmod a+x test/src/morphology/test-noun-generation.sh])
 ```
@@ -196,7 +200,7 @@ value as identifed during the configuration phase. Such variables look like
 That is, in a hypothetic test file `test-lemmas.sh.in` we could write
 something like:
 
-```sh
+```
 LOOKUP=@LOOKUP@
 ```
 
@@ -215,12 +219,12 @@ NB! Sometimes the variable is not empty when the tool is not found, but could
 contain strings like `false` or `no` instead. Check the actual value if the
 test for the tool doesn't fall out as expected.
 
-## Test that all tools and data are found
+## test that all tools and data are found
 
 We need to test that the data sources used in the test are actually found:
 
-```sh
-# Check that the source file exists:
+```
+1. Check that the source file exists:
 if [ ! -f "$sourcefile" ]; then
 	echo Source file not found: $sourcefile
 	exit 1
@@ -230,25 +234,24 @@ fi
 Here we use the variable we defined, and if it does not exist, we exit with an
 error.
 
-## Make a loop for xfst and hfst if relevant
+## make a loop for xfst and hfst if relevant
 
-When doing morphological tests, we want to test both hfst, xfst and foma, as long as they are used. First we define a variable `fsttype`:
+When doing morphological tests, we want to test both xfst and hfst. First we define a variable `fsttype`:
 
-```sh
-# Use autotools mechanisms to only run the configured fst types in the tests:
+```
+1. Use autotools mechanisms to only run the configured fst types in the tests:
 fsttype=
 @CAN_HFST_TRUE@fsttype="$fsttype hfst"
 @CAN_XFST_TRUE@fsttype="$fsttype xfst"
-@CAN_FOMA_TRUE@fsttype="$fsttype foma"
 ```
 
-The strings `@CAN_HFST_TRUE@`, `@CAN_XFST_TRUE@` and `@CAN_FOMA_TRUE@` come from autoconf, and
+The strings `@CAN_HFST_TRUE@` and `@CAN_XFST_TRUE@` come from autoconf, and
 will tell us what they say.
 
 The we check that the variable is not empty:
 
-```sh
-# Exit if both hfst and xerox have been shut off:
+```
+1. Exit if both hfst and xerox have been shut off:
 if test -z "$fsttype"; then
     echo "All transducer types have been shut off at configure time."
     echo "Nothing to test. Skipping."
@@ -258,24 +261,24 @@ fi
 
 Finally, the actual loop looks like:
 
-```sh
+```
 for f in $fsttype; do
-    # Add your test commands here...
+...
 done
 ```
 
-## Read in test data if needed
+## read in test data if needed
 
-```sh
+```
 ###### Extraction: #######
-# extract non-compounding lemmas:
+1. extract non-compounding lemmas:
 grep ";" $sourcefile | grep -v "^\!" \
 	| egrep -v '(CmpN/Only|\+Gen\+|\+Der\+| R )' | sed 's/% /€/g' \
 	| sed 's/%:/¢/g' | tr ":+" " " \
 	| cut -d " " -f1 | tr -d "#" | tr "€" " " | tr "¢" ":" \
 	| sort -u | grep -v '^$' > nouns.txt
 
-# extract compounding lemmas:
+1. extract compounding lemmas:
 grep ";" $sourcefile | grep -v "^\!" \
 	| grep ' R '| tr ":+" " " | cut -d " " -f1 | tr -d "#" \
 	| sort -u > Rnouns.txt
@@ -286,39 +289,42 @@ grep ";" $sourcefile | grep -v "^\!" \
 This is an excerpt from the `sma` test file mentioned earlier, and should only
 serve as an example:
 
-```sh
-###### Test non-compunds: #######
-# generate nouns in Singular, extract the resulting generated lemma, store it:
-sed 's/$/+N+Sg+Nom/' nouns.txt | $lookuptool $generatorfile.$f \
-  | cut -f2 | fgrep -v "+N+Sg" | grep -v "^$" | sort -u \
-  \> analnouns.$f.txt # remove backlash!
-  
-# Generate nouns, extract those that do not generate in singular,
-# generate the rest in plural:
-sed 's/$/+N+Sg+Nom/' nouns.txt | $lookuptool $generatorfile.$f \
-  | cut -f2 | grep "N+" | cut -d "+" -f1 | sed 's/$/+N+Pl+Nom/' \
-  | $lookuptool $generatorfile.$f | cut -f2 \
-  | grep -v "^$" >> analnouns.$f.txt 
+```
+###### Test non-comopunds: #######
+		# generate nouns in Singular, extract the resulting generated lemma,
+		# store it:
+		sed 's/$/+N+Sg+Nom/' nouns.txt | $lookuptool $generatorfile.$f \
+			| cut -f2 | fgrep -v "+N+Sg" | grep -v "^$" | sort -u \
+			> analnouns.$f.txt
+		# Generate nouns, extract those that do not generate in singular,
+		# generate the rest in plural:
+		sed 's/$/+N+Sg+Nom/' nouns.txt | $lookuptool $generatorfile.$f \
+			| cut -f2 | grep "N+" | cut -d "+" -f1 | sed 's/$/+N+Pl+Nom/' \
+			| $lookuptool $generatorfile.$f | cut -f2 \
+			| grep -v "^$" >> analnouns.$f.txt
 ```
 
 The full test script file can be found
-[here](https://github.com/giellalt/lang-sma/blob/develop/test/src/morphology/generate-noun-lemmas.sh.in).
+[here](https://gtsvn.uit.no/langtech/trunk/langs/sma/test/src/morphology/test-noun-generation.sh.in).
 
 ## Add the test script to Makefile.am
 
-```make
-# List here (space separated) all test scripts that should be run
-# unconditionally:
+```
+1. List here (space separated) all test scripts that should be run
+1. unconditionally:
 TESTS=
+
 if WANT_GENERATION
-# Add your shell scripts for running tests requiring only a generator:
+1. Add your shell scripts for running tests requiring only a generator:
 TESTS+=test-noun-generation.sh \
 	   test-verb-generation.sh \
 	   test-adj-generation.sh \
 	   test-propernoun-generation.sh
+
 endif # WANT_GENERATION
-# List tests that are presently (expected) failures here, ie things that should
-# be fixed *later*, but is not critical at the moment:
+
+1. List tests that are presently (expected) failures here, ie things that should
+1. be fixed *later*, but is not critical at the moment:
 XFAIL_TESTS=generate-noun-lemmas.sh \
             test-propernoun-generation.sh
 ```
@@ -330,7 +336,7 @@ with configure to replace `@VARIABLE@` style variables with their `configure`
 values. To do that, you need to add two lines like the following to
 `configure.ac`:
 
-```M4
+```
 AC_CONFIG_FILES([test/src/morphology/test-noun-generation.sh], \
       [chmod a+x test/src/morphology/test-noun-generation.sh])
 ```
@@ -359,13 +365,13 @@ and its subdirectories will be run.
 (**NB!** Advanced topic - skip if not relevant)
 
 When using
-[out-of-source builds](../MultipleConfigurationsAndOutOfSourceBuilding.md) (aka
+[out-of-source builds](MultipleConfigurationsAndOutOfSourceBuilding.html) (aka
 VPATH builds), running single tests like above will not work, due to the way
 Automake treats the `TESTS` variable when there are subdirs with their own
 tests. To make it work, you need to restrict `make` to only run in the
 local directory where you have the test script you want to run:
 
-```sh
+```
 cd to/dir/with/test/script/in/build/tree/
 make check TESTS=a-test-script.sh SUBDIRS=.
 ```
@@ -394,11 +400,11 @@ message can easily scroll out of view before `make` is done.
 Testing within the Automake framework can have five outcomes:
 
 * **PASS**:  everything is ok
-* **FAIL**:  some condition in the test was NOT met, and make will STOP
+* **FAIL**:  some condition in the test was NOT met
 * **XFAIL**:  some condition in the test was NOT met, but we are aware of the
           issue, and will handle it later => testing will CONTINUE despite
           the FAIL
 * **XPASS**:  everything is ok but we didn't know - we expected a FAIL, but got
-          a PASS (an uneXpected PASS) => testing will STOP because of this,
+          a PASS (an uneXpected PASS) => testing will STOP baecause of this,
           to ensure that the developer notices the new state of affairs
 * **SKIP**:  some precondition was not met, and the test was not performed.

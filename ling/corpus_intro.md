@@ -1,6 +1,3 @@
-Introduction to working on corpora at Giellalt
-==============
-
 This document will teach the user how to convert files in the corpus
 repositories to xml, and how to extract text from these documents.
 
@@ -50,6 +47,8 @@ Divvun/Giellatekno corpus documentation
 =======================================
 
 -   The tagged corpus files
+    -   [How the daily xserve corpus analysis is
+        made](corpus_analysis_for_xserve.html)
     -   [How to create an analyzed corpus](corpus_analyze.html)
     -   [A plan for building our external corpus](corpus_plan.html)
     -   [The &lt;Correct!&gt; corpora](correct-dir.html)

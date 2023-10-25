@@ -1,3 +1,5 @@
+# Forrest howto
+
 Introduction
 ============
 
@@ -76,14 +78,14 @@ Open the file
 for editing. The line that reads:
 
                     <user-config>/Users/sd/trunk/xtdoc/sd/src/documentation/resources/fonts/config.xml</user-config>
-                
+
 
 has to be changed so that forrest will find the config.xml file.
 Assuming that svn has been checked out to `$HOME/Documents` and that
 your username is niillas, the correct replacement will be:
 
                     <user-config>/Users/niillas/Documents/trunk/xtdoc/sd/src/documentation/resources/fonts/config.xml</user-config>
-                
+
 
 Save and close the file.
 
@@ -163,4 +165,4 @@ commands:
     cd main
     ./build.sh clean
     ./build.sh
-                
+

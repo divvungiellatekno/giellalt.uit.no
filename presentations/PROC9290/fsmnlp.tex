@@ -1,0 +1,121 @@
+\documentclass[dvips,psamsfonts,10pt,runningheads]{lib/llncs-fsmnlp-final}
+
+\usepackage[english]{babel}           % for English hyphenation
+
+\pagestyle{headings}                  % switches on printing of heads
+
+\usepackage{makeidx}                  % allows for index generation
+\makeindex                            % in the preamble to create an .idx file
+\makeatletter                         % handle @-commands
+  \def\indexspace{\par                % slightly condensed line heights
+    \vskip 5\p@ plus5\p@ minus3\p@\relax}
+\makeatother                          % no more @-commands
+\renewcommand\indexname{Author Index} % the index will contain author names
+
+%% These standard packages are used made use of in several contributions 
+\usepackage[mathscr]{eucal}           % math script font
+\usepackage{amsmath}                  % AMS-Latex amsmath
+\usepackage[psamsfonts]{amsfonts}     % AMS-Latex amsfonts
+\usepackage[psamsfonts]{amssymb}      % AMS-Latex amssymb
+\usepackage[dvips]{graphicx}          % The infamous graphics package
+\usepackage{epsfig}                   % Another method for loading EPS figures
+\usepackage{inputenc}                 % To support input encoding setting
+\usepackage{ucs}                      % Unicode support for utf8x inputencoding
+%% 
+%% In the beginning of fsmnlp-abst.tex, fsmnlp-body.tex and
+%% fsmnlp-bib.tex, add 
+%% \inputencoding{xxxx} specifying the encoding (except if you are
+%% using hangulj.sty that requires that inputencoding is not
+%% defined).  
+%% If you do not need any special input encoding, specify the
+%% strictest one,
+%% namely ``ascii'' with the command \inputencoding{ascii}. For
+%% example:
+%% \inputencoding{ansinew} % 9069
+%% \inputencoding{utf8x}   % 9003,9290
+%% \inputencoding{latin1}  % 9145,9156,9191
+
+%% This standard package extends the verbatim environment and 
+%% provides comment environment
+\usepackage{verbatim}
+
+%% Used to make an entry that will span multiple rows of a table
+\usepackage{multirow}
+
+%% Provides support for the inclusion of small, `sub', figures and
+%% tables.  It
+%% simplifies the positioning, captioning and labeling of them within
+%% a single figure or table environment.
+%% In addition, this package allows such subcaptions to be written to
+%% the List of Figures or List of% tables if desired.
+\usepackage{subfigure}
+
+%% The following package provides \url command that is better than
+%% \verb and allows linebreaks at certain characters.  Use
+%% recommended. 
+%% (e.g.  \url{http://pauillac.inria.fr/~huet/} )
+\usepackage{url}
+
+%% PSTrics and Vaucanson-G
+%% (Vaucanson-G loads also pst-node.sty and color.sty)
+\usepackage[dvips,usenames]{pstcol}   
+\usepackage{lib/vaucanson-g}          
+
+\usepackage[noend]{lib/algorithmic}   
+%% 9087 re-re-names \algorithmiccomment and \algorithmicforall.
+%% 9109 used to contain a name clash: \RETURN
+
+%% The \explicitpage command can be used to control explicit pagination
+%% This command is to be used in the beginning of fsmnlp-abst.tex. 
+\newcommand\explicitpage[1]{\clearpage}
+%% \newcommand\explicitpage[1]{\clearpage\setcounter{page}{#1}}
+
+
+%% Uncomment the following lines (with one %) if you need these fonts:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% TIPA fonetic alphabet fonts:
+%%%%%%%%%%%%%%
+%% The following package is dangerous, but can be handled correctly:
+%% (We need to restore \; and \! that are commonly used in math
+%%  environment.)
+%\usepackage{lib/tipa}         
+%\tipasafemode   
+
+%% Korean Hangul fonts:
+%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{lib/hangulj.ini}
+%% ``hangulj.sty'' messes up other definitions, but we solved this
+%% by splitting ``hangulj.sty'' into two parts: ``hangulj.ini'' and
+%% ``hangulj.more''.  The latter file must be read and used inside a 
+%% block as follows:
+%%    { \makeatletter\input{lib/hangulj.more} \makeatother 
+%%      my text comes here... }
+
+\begin{document}
+
+\mainmatter                    % arabic page numbers
+{                              % encapsulate the local definitions
+\def\pagerange{, p. {\thepage}}% the abstract would make only one page
+\input fsmnlp-abst             % the title, the authors and the abstract
+
+\def\pagerange{, pp. {\thepage}% at least two pages are normally needed
+  { }-- \pageref{mylastpage}}
+\input fsmnlp-body             % the body of the article
+\bibliographystyle{lib/splncs} % Springer LNCS bibtex style
+\input fsmnlp-bibl             % bibliography
+\input fsmnlp-appx             % optional appendixes
+\label{mylastpage}             % close the page range
+}
+
+\clearpage
+\explicitpage{295}             % tentative, ``guess''
+\addtocmark[2]{Author Index}   % additional numbered TOC entry
+\markboth{}{}\printindex
+
+%% we moved the toc temporarily to the end for convenience of authors
+\frontmatter                   % latin page numbers
+\tableofcontents
+
+\end{document}
+

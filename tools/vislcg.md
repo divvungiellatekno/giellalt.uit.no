@@ -1,4 +1,5 @@
-# WARNING!
+WARNING!
+========
 
 This documentation is obsolete, and for the time being kept as
 reference. We now use vislcg3 (cf. separate documentation)
@@ -49,62 +50,62 @@ Flags
 The command vislcg --help will list all supported parameters and flags,
 and a brief description of each:
 
--   **--check-only:**  
+-   **--check-only:**
     Test the syntax of the rules file and exit before performing any
     mappings or disambiguations.
--   **--debug:**  
+-   **--debug:**
     Run compiler in debug mode.
--   **--grammar=rulesfile or:**  
--   **--grammar rulesfile:**  
+-   **--grammar=rulesfile or:**
+-   **--grammar rulesfile:**
     Specifies which rules file to use. This option must be specified if
     any parsing is to be done.
--   **--help:**  
+-   **--help:**
     Print this text.
--   **--minimal:**  
+-   **--minimal:**
     Equivalent to --verbosity=minimal
--   **--no-corrections:**  
+-   **--no-corrections:**
     Do not apply any correction rules.
--   **--no-mappings:**  
+-   **--no-mappings:**
     Do not apply any mapping rules. This corresponds to CG-2's dis
     module
--   **--prefix=marker or --prefix marker:**  
+-   **--prefix=marker or --prefix marker:**
     This changes the special marker for ambiguity and mappings. The
     marker may be more than one character. The default marker is the '@'
     character.
--   **--quiet:**  
+-   **--quiet:**
     Do not output any messages. This option overrides any debug and
     trace options.
--   **--reorder:**  
+-   **--reorder:**
     Attempt to reorder rules in a way similar to CG-2, using
     PREFERRED-TARGETS and rules of thumb. \[ The default is to apply
     rules in the strict order they appear in the rules file and ignore
     PREFERRED-TARGETS \]
--   **--sections=n or --sections n:**  
+-   **--sections=n or --sections n:**
     This sets the number (n) of CONSTRAINT sections that are applied.
     The default is to apply all sections.
--   **--trace:**  
+-   **--trace:**
     Equivalent to --trace-mappings --trace-constraints.
--   **--trace-constraints:**  
+-   **--trace-constraints:**
     Trace which constraints were applied and the order of application.
--   **--trace-mappings:**  
+-   **--trace-mappings:**
     Trace which mappings were applied and the order of application.
--   **--unsafe:**  
+-   **--unsafe:**
     Allow the compiler to remove the last reading of a cohort.
--   **--verbose:**  
+-   **--verbose:**
     Equivalent to --verbosity=verbose
--   **--verbosity=level or --verbosity level:**  
+-   **--verbosity=level or --verbosity level:**
     This option causes extra or less information to be printed in trace
     mode. Valid levels are:
-    -   **'minimal':**  
+    -   **'minimal':**
         - Line numbers of applied rules are attached to the output
         cohorts. The output in minimal mode is similar to that of CG-2's
         mdis.trace module.
-    -   **'normal':**  
+    -   **'normal':**
         - Instead of attaching line numbers to readings, each rule (the
         full specification - not just the line number) is printed each
         time it is applied. \[ 'normal' is the DEFAULT trace mode
         verbosity.\]
-    -   **'verbose':**  
+    -   **'verbose':**
         - As normal mode, but the cohort to which each rule was applied
         is printed as well. This will also cause vislcg to print all
         sets, mappings and constraints before processing any input.
@@ -202,11 +203,11 @@ Syntax
         7.  an optional keyword IF,
         8.  possibly several contextual tests.
     -   For APPEND
-        9.  an optional wordform,
-        10. the APPEND keyword,
-        11. an insertion tag list,
-        12. an optional keyword IF,
-        13. possibly several contextual tests.
+        1.  an optional wordform,
+        2.  the APPEND keyword,
+        3.  an insertion tag list,
+        4.  an optional keyword IF,
+        5.  possibly several contextual tests.
 -   The list may extend over several lines.
 -   The correction rule is terminated by the semicolon ";".
 -   There may be several correction rules.
@@ -221,26 +222,26 @@ Symbols
 
 vislcg supports all the position and search features of CG-2:
 
--   **Relative position::**  
+-   **Relative position::**
     0 = same cohort.
--   **:**  
+-   **:**
     1 = the next cohort to the right.
--   **:**  
+-   **:**
     -2 = the second cohort to the left.
--   **Absolute position::**  
+-   **Absolute position::**
     @1 = the first cohort in the context.
--   **:**  
+-   **:**
     @-2 = the second to last cohort in the context.
--   **Search::**  
+-   **Search::**
     Continous search: (NOTE: see 2.4.5.2)
--   **:**  
+-   **:**
     \*\*1 = search right, handling links specially.
--   **:**  
+-   **:**
     \*\*-1 = search left, handling links specially.
--   **:**  
+-   **:**
     \*\*-2 = search left, starting from the second cohort to the left,
     handling links specially.
--   **Careful mode::**  
+-   **Careful mode::**
     Any position followed by the letter C will cause "careful" checking,
     i.e. every reading of the cohort has to belong to the given set.
     E.g.: (-1C (P)) will test whether all readings of the preceding
@@ -267,7 +268,7 @@ However, there may be subtle differences.
 
 E.g: In vislcg, the following two sets are equivalent:
 
-SET I1 = (A B) \_ (C D) ;  
+SET I1 = (A B) \_ (C D) ;
 SET I2 = (C D) \_ (A B) ;
 
 Because the \_ operation is the intersection operation in vislcg, the

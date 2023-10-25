@@ -1,0 +1,38 @@
+\inputencoding{utf8}
+
+\section{Introduction}
+
+Our demo presents work from a joint project with a twofold goal: To build a parser and disambiguator for North and Lule S\'{a}mi, and to make a practical spell-checker for the same languages. The core analyser is written with the Xerox tools \texttt{twolc}, \texttt{lexc} and \texttt{fst} (\cite{Beesley03}), and the disambiguator uses constraint grammar (\texttt{vislcg}). Cf. \cite{Trosterud03} for a presentation.
+
+The spell-checker is intended to work on 3 platforms, for a wide range of programs. One of the speller engines we will have to cover is thus the \texttt{spell} family of spell-checkers (here represented by \texttt{Aspell}). This implies making a finite state automaton, rather than a transducer.
+
+\section{Aspell}
+
+Aspell (\url{http://aspell.net/})is a simple list-based speller with its roots in the iSpell tradition (\url{http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html}), but with an improved spelling error detection and replacement algorithm. Its improved correction capability comes from merging Lawrence Philips Metaphone algorithm \url{http://aspell.net/metaphone/} with Ispell's near miss strategy of changing the input word within an editing distance of one. Aspell is nowadays recognised as a better speller than iSpell, but has several linguistic and technical limitations. It also has a reputation for being tuned for English, but our initial tests show good results for North S\'{a}mi as well. Aspell is interface compatible with iSpell, and is intended as a direct replacement.
+
+% Do we need a reference to the Metaphone algorithm, or to Lawrence Philips? Also a link to the Aspell and iSpell home pages? % How to link? Trond? hmm They said something on the instructions page, wait a second: Yes, Bibtex references is the way to go
+
+
+Building on the iSpell code means that the linguistic expressive power is equally limited, and our challenge have been to find an automated way of transferring our FST to a simpler, one-level model.
+
+
+\section{The S\'{a}mi speller}
+
+Our present (alpha) version of the speller uses the Xerox tools to generate a fullform list of the whole lexicon (we exclude all circular entries), which initially created a whopping 580 Mb text file, corresponding to 150 million word forms. Aspell took that whole wordlist and could use it as it was, but it was hardly practical (it worked, though!). After some modifications our present transducer creates ''only'' 290 Mb of data. This list is then reduced to a set of inflection stems with the Aspell \texttt{munch-list} option. It works by passing the \texttt{munch-list} option a file of available inflection lexicons, and Aspell will then \textit{munch} through the fullform wordlist and reduce all wordforms that fits an inflectional lexicon to one stem plus the identified inflection lexicon. Finally we compress the lexicon into an Aspell specific binary format. Its size is at the moment about 48 Mb.
+
+This way of creating a finite state automaton is quite different from how the transducer itself works. Just like Finnish, S\'{a}mi has consonant gradation, but unlike in Finnish, the S\'{a}mi consonant gradation affects almost all consonant groups of the stressed syllable, in most stem classes (some stem classes are never altered). Moreover, in several word forms, the diphthong of the stressed syllable is altered as well. This gives us as much as 4 surface stems for one and the same lexeme. For the two-level transducer, this is not a problem, since these morphophonological processes are handled by our two-level rules, but it becomes a complicating factor when reverting to the single-level model of Aspell.
+
+The Aspell munch-list way of creating stems and inflectional suffixes isn't very satisfying, for at least two reasons: we already have an excellent morphological description of North S\'{a}mi, and duplicating it in the form of the Aspell inflectional lexicon isn't very elegant and requires redoing the same work; and by having two parallel morphological descriptions the whole system requires more maintenance work and is more error-prone. But for the reasons cited above regarding S\'{a}mi morphophonology, we have at present not found an easy way to generate the correct inflectional stems directly from the Xerox tools.
+
+Aspell is not the optimal speller architecture from a linguistic point of view, but it provides nice testing facilities (a command line interface with several options) and is one of the target spellers of the project. For some users the limited, word-list approach is even the preferred model over a linguistically more powerful one. It is also an interesting project in itself to make a decent Aspell, both academically and practically. Even though our alpha version shows the limitations of the simple automaton, it shows that it is powerful enough to represent even a morphophonologically complex language like S\'{a}mi.
+
+For these reasons we targeted Aspell as our first application of our S\'{a}mi finite state transducer.
+
+% \item Discussing the value of aspell vs. two-level speller in general
+% \item Future plans and closing remarks
+
+
+
+
+\bibliography{9290}
+%\bibliography{fsmnlp-bibl}

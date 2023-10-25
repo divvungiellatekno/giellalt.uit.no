@@ -1,0 +1,245 @@
+[root@frontend-0 gnatsweb]# perl -MCPAN -e 'install MIME::Base64'
+We have to reconfigure CPAN.pm due to following uninitialized parameters:
+
+cpan_home, keep_source_where, build_dir, build_cache, scan_cache, index_expire, gzip, tar, unzip, make, pager, makepl_arg, make_arg, make_install_arg, urllist, inhibit_startup_message, ftp_proxy, http_proxy, no_proxy, prerequisites_policy
+
+/usr/lib/perl5/5.6.0/CPAN/Config.pm initialized.
+
+
+CPAN is the world-wide archive of perl resources. It consists of about
+100 sites that all replicate the same contents all around the globe.
+Many countries have at least one CPAN site already. The resources
+found on CPAN are easily accessible with the CPAN.pm module. If you
+want to use CPAN.pm, you have to configure it properly.
+
+If you do not want to enter a dialog now, you can answer 'no' to this
+question and I'll try to autoconfigure. (Note: you can revisit this
+dialog anytime later by typing 'o conf init' at the cpan prompt.)
+
+Are you ready for manual configuration? [yes] no
+
+
+The following questions are intended to help you with the
+configuration. The CPAN module needs a directory of its own to cache
+important index files and maybe keep a temporary mirror of CPAN files.
+This may be a site-wide directory or a personal directory.
+
+
+
+First of all, I'd like to create this directory. Where?
+
+CPAN build and cache directory? [/home/eero-root/.cpan]
+
+
+
+If you want, I can keep the source files after a build in the cpan
+home directory. If you choose so then future builds will take the
+files from there. If you don't want to keep them, answer 0 to the
+next question.
+
+
+
+How big should the disk cache be for keeping the build directories
+with all the intermediate files?
+
+Cache size for build directory (in MB)? [10]
+
+
+
+By default, each time the CPAN module is started, cache scanning
+is performed to keep the cache size in sync. To prevent from this,
+disable the cache scanning with 'never'.
+
+Perform cache scanning (atstart or never)? [atstart]
+
+
+
+The CPAN module can detect when a module that which you are trying to
+build depends on prerequisites. If this happens, it can build the
+prerequisites for you automatically ('follow'), ask you for
+confirmation ('ask'), or just ignore them ('ignore'). Please set your
+policy to one of the three values.
+
+Policy on building prerequisites (follow, ask or ignore)? [follow]
+
+
+
+The CPAN module will need a few external programs to work
+properly. Please correct me, if I guess the wrong path for a program.
+Don't panic if you do not have some of them, just press ENTER for
+those.
+
+Where is your gzip program? [/bin/gzip]
+
+Where is your tar program? [/bin/tar]
+
+Warning: unzip not found in PATH
+Where is your unzip program? []
+
+Where is your make program? [/usr/bin/make]
+
+Where is your lynx program? [/usr/bin/lynx]
+
+Where is your ncftpget program? [/usr/bin/ncftpget]
+
+Where is your ftp program? [/usr/bin/ftp]
+
+What is your favorite pager program? [/usr/bin/less]
+
+What is your favorite shell? [/bin/bash]
+
+
+
+Every Makefile.PL is run by perl in a separate process. Likewise we
+run 'make' and 'make install' in processes. If you have any parameters
+(e.g. PREFIX, INSTALLPRIVLIB, UNINST or the like) you want to pass to
+the calls, please specify them here.
+
+If you don't understand this question, just press ENTER.
+
+Parameters for the 'perl Makefile.PL' command? []
+
+Parameters for the 'make' command? []
+
+Parameters for the 'make install' command? []
+
+
+
+Sometimes you may wish to leave the processes run by CPAN alone
+without caring about them. As sometimes the Makefile.PL contains
+question you're expected to answer, you can set a timer that will
+kill a 'perl Makefile.PL' process after the specified time in seconds.
+
+If you set this value to 0, these processes will wait forever. This is
+the default and recommended setting.
+
+Timeout for inactivity during Makefile.PL? [0]
+
+
+
+If you're accessing the net via proxies, you can specify them in the
+CPAN configuration or via environment variables. The variable in
+the $CPAN::Config takes precedence.
+
+Your ftp_proxy? []
+
+Your http_proxy? []
+
+Your no_proxy? []
+
+
+
+WAIT support is available as a Plugin. You need the CPAN::WAIT module
+to actually use it.  But we need to know your favorite WAIT server. If
+you don't know a WAIT server near you, just press ENTER.
+
+Your favorite WAIT server?
+   [wait://ls6.informatik.uni-dortmund.de:1404]
+
+
+
+commit: wrote /usr/lib/perl5/5.6.0/CPAN/Config.pm
+
+  Please, install Net::FTP as soon as possible. CPAN.pm installs it for you
+  if you just type
+      install Bundle::libnet
+
+
+Trying with "/usr/bin/lynx -source" to get
+    ftp://ftp.perl.org/pub/CPAN/authors/01mailrc.txt.gz
+
+gzip: /home/eero-root/.cpan/sources/authors/01mailrc.txt: not in gzip format
+Going to read /home/eero-root/.cpan/sources/authors/01mailrc.txt.gz
+
+Trying with "/usr/bin/lynx -source" to get
+    ftp://ftp.perl.org/pub/CPAN/modules/02packages.details.txt.gz
+
+gzip: /home/eero-root/.cpan/sources/modules/02packages.details.txt: not in gzip format
+Going to read /home/eero-root/.cpan/sources/modules/02packages.details.txt.gz
+Scanning cache /home/eero-root/.cpan/build for sizes
+
+  There's a new CPAN.pm version (v1.59) available!
+  [Current version is v1.52]
+  You might want to try
+    install Bundle::CPAN
+    reload cpan
+  without quitting the current session. It should be a seamless upgrade
+  while we are running...
+
+
+Trying with "/usr/bin/lynx -source" to get
+    ftp://ftp.perl.org/pub/CPAN/modules/03modlist.data.gz
+
+gzip: /home/eero-root/.cpan/sources/modules/03modlist.data: not in gzip format
+Going to read /home/eero-root/.cpan/sources/modules/03modlist.data.gz
+Running make for G/GA/GAAS/MIME-Base64-2.12.tar.gz
+
+Trying with "/usr/bin/lynx -source" to get
+    ftp://ftp.perl.org/pub/CPAN/authors/id/G/GA/GAAS/MIME-Base64-2.12.tar.gz
+CPAN: MD5 loaded ok
+
+Trying with "/usr/bin/lynx -source" to get
+    ftp://ftp.perl.org/pub/CPAN/authors/id/G/GA/GAAS/CHECKSUMS
+Checksum for /home/eero-root/.cpan/sources/authors/id/G/GA/GAAS/MIME-Base64-2.12.tar.gz ok
+MIME-Base64-2.12/
+MIME-Base64-2.12/t/
+MIME-Base64-2.12/t/quoted-print.t
+MIME-Base64-2.12/t/base64.t
+MIME-Base64-2.12/t/unicode.t
+MIME-Base64-2.12/QuotedPrint.pm
+MIME-Base64-2.12/Changes
+MIME-Base64-2.12/Base64.xs
+MIME-Base64-2.12/MANIFEST
+MIME-Base64-2.12/Base64.pm
+MIME-Base64-2.12/Makefile.PL
+MIME-Base64-2.12/README
+
+  CPAN.pm: Going to build G/GA/GAAS/MIME-Base64-2.12.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Writing Makefile for MIME::Base64
+mkdir blib
+mkdir blib/lib
+mkdir blib/lib/MIME
+mkdir blib/arch
+mkdir blib/arch/auto
+mkdir blib/arch/auto/MIME
+mkdir blib/arch/auto/MIME/Base64
+mkdir blib/lib/auto
+mkdir blib/lib/auto/MIME
+mkdir blib/lib/auto/MIME/Base64
+mkdir blib/man3
+cp Base64.pm blib/lib/MIME/Base64.pm
+cp QuotedPrint.pm blib/lib/MIME/QuotedPrint.pm
+/usr/local/bin/perl -I/usr/lib/perl5/5.6.0/i386-linux -I/usr/lib/perl5/5.6.0 /usr/lib/perl5/5.6.0/ExtUtils/xsubpp  -typemap /usr/lib/perl5/5.6.0/ExtUtils/typemap Base64.xs > Base64.xsc && mv Base64.xsc Base64.c
+gcc -c  -fno-strict-aliasing -O2 -march=i386 -mcpu=i686     -DVERSION=\"2.12\" -DXS_VERSION=\"2.12\" -fPIC -I/usr/lib/perl5/5.6.0/i386-linux/CORE  Base64.c
+Running Mkbootstrap for MIME::Base64 ()
+chmod 644 Base64.bs
+LD_RUN_PATH="" gcc -o blib/arch/auto/MIME/Base64/Base64.so  -shared -L/usr/local/lib Base64.o     
+chmod 755 blib/arch/auto/MIME/Base64/Base64.so
+cp Base64.bs blib/arch/auto/MIME/Base64/Base64.bs
+chmod 644 blib/arch/auto/MIME/Base64/Base64.bs
+Manifying blib/man3/MIME::Base64.3pm
+Manifying blib/man3/MIME::QuotedPrint.3pm
+  /usr/bin/make  -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/local/bin/perl -Iblib/arch -Iblib/lib -I/usr/lib/perl5/5.6.0/i386-linux -I/usr/lib/perl5/5.6.0 -e 'use Test::Harness qw(&runtests $verbose); $verbose=0; runtests @ARGV;' t/*.t
+t/base64............ok                                                       
+t/quoted-print......ok                                                       
+t/unicode...........skipped test on this platform
+All tests successful, 1 test skipped.
+Files=3, Tests=306,  0 wallclock secs ( 0.06 cusr +  0.01 csys =  0.07 CPU)
+  /usr/bin/make test -- OK
+Running make install
+Installing /usr/lib/perl5/site_perl/5.6.0/i386-linux/auto/MIME/Base64/Base64.so
+Installing /usr/lib/perl5/site_perl/5.6.0/i386-linux/auto/MIME/Base64/Base64.bs
+Files found in blib/arch: installing files in blib/lib into architecture dependent library tree
+Installing /usr/lib/perl5/site_perl/5.6.0/i386-linux/MIME/Base64.pm
+Installing /usr/lib/perl5/site_perl/5.6.0/i386-linux/MIME/QuotedPrint.pm
+Installing /usr/share/man/man3/MIME::Base64.3pm
+Installing /usr/share/man/man3/MIME::QuotedPrint.3pm
+Writing /usr/lib/perl5/site_perl/5.6.0/i386-linux/auto/MIME/Base64/.packlist
+Appending installation info to /usr/lib/perl5/5.6.0/i386-linux/perllocal.pod
+  /usr/bin/make install  -- OK
+[root@frontend-0 gnatsweb]#

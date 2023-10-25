@@ -1,4 +1,4 @@
-Morpheme border markup
+Morfeme border markup
 =====================
 
 We want to separate the following types of morfeme borders:
@@ -16,14 +16,14 @@ continuation lexica, not in the stem lexica.
 
       LEXCICON Adjectives
       stor cont ; ikkje stammemerke her!!!
-      
+
       LEXICON cont
       +Def+Pl:%>e # ; ! men her
       +Der:%»aktig # ; ! and here
-      
+
 
 Other examples:
 
       stor»aktig>es
       ráhkis»vuođa>id
-      
+

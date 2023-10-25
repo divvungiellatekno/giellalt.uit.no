@@ -1,4 +1,4 @@
-# Setup Emacs for GiellaLT
+# Set up Emacs
 
 For modern Emacs versions (might need a download first)
 =======================================================
@@ -9,40 +9,37 @@ and support lots of handy packages.
 **If you're using a Mac**, first download a fresh Emacs from
 <https://emacsformacosx.com/> and then run
 
-```
         echo 'alias emacs="open -a /Applications/Emacs.app"' >> ~/.bashrc
         echo 'alias em="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"' >> ~/.bashrc
-```
+
 
 to make the "emacs" start your newly downloaded Emacs.app in GUI, and
-"em" start it in terminal.  
+"em" start it in terminal.
 Close the terminal and start a new one.
 
 If you have a file \~/.emacs, first move it to \~/.emacs.d/init.el
 
         mkdir ~/.emacs.d
             mv ~/.emacs ~/.emacs.d/init.el
-          
+
 
 In a new terminal, do
 
-```
         cd
         svn co https://svn.code.sf.net/p/apertium/svn/trunk/apertium-tools/emacs apertium-tools-emacs
         mkdir ~/.emacs.d
         echo '(load "~/apertium-tools-emacs/init-apertium.el")' >>  ~/.emacs.d/init.el
         emacs
-```          
+
 
 Note: If you've already checked out the full apertium SVN tree, you
 already have the init-apertium.el file and you might want to just refer
 to that:
 
-```
         mkdir ~/.emacs.d
         echo '(load "/path/to/where/you/have/apertium-svn/trunk/apertium-tools/emacs/init-apertium.el")' >>  ~/.emacs.d/init.el
         emacs
-```
+
 
 On first run, Emacs should download some packages for you, then you
 should be ready for editing CG, XML, lexc and twolc with syntax
@@ -69,7 +66,6 @@ Setting up
 After this is done, open the file $HOME/.emacs.d/init.el. Add the
 following lines to that file.
 
-```
           ;; Make the nxml-mode you downloaded available to emacs
           (load "~/Documents/nxml-mode-20041004/rng-auto.el")
 
@@ -85,7 +81,6 @@ following lines to that file.
 
           ;; Turn on syntax colouring in all modes supporting it:
           (global-font-lock-mode t)
-        
-```
+
 
 Save and close the file.

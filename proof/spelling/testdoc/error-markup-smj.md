@@ -6,7 +6,7 @@ and needs to follow certain rules.
 SMJ
 ===
 
--   **Posisjon: a-kt-i-j-v-uo-d-a-jn:**  
+-   **Posisjon: a-kt-i-j-v-uo-d-a-jn:**
     -   a - vokalsentrum - *vowc*
     -   kt - konsonantsentrum - *conc*
     -   i - latus - *vowlat*
@@ -17,7 +17,7 @@ SMJ
     -   a - latus - *vowlat*
     -   jn - finis - *fin*
 
--   **Posisjon::**  
+-   **Posisjon::**
     -   b - initium - *coninit*
     -   e - vokalsentrum - *vowc*
     -   dn - konsonantsentrum - *conc*
@@ -26,7 +26,7 @@ SMJ
     -   a - vokalmargo - *vowm*
     -   v - finis - *fin*
 
--   **Posisjon::**  
+-   **Posisjon::**
     -   m - initium - *coninit*
     -   a - vokalsentrum - *vowc*
     -   sk - initium - *coninit*
@@ -35,7 +35,7 @@ SMJ
     -   a - latus - *vowlat*
     -   v - finis - *fin*
 
--   **Feiltyper $ – eksempler::**  
+-   **Feiltyper $ – eksempler::**
     -   typo = tastefeil, eks.
         -   {behi}${typo\|vehi}
         -   {dábábalsj}${typo\|dábálasj}
@@ -98,7 +98,7 @@ SMJ
     -   abbr = punktmarkeringen er feil i forkortelser eks.
         -   {dr}${abbr,0-punct\|dr.}
 
--   **Feiltyper ¢ – eksempler::**  
+-   **Feiltyper ¢ – eksempler::**
 
     -   ¢ merkes på samme måte som $ pluss disse:
     -   min = skal være liten bokstav, eks.
@@ -114,7 +114,7 @@ SMJ
     har skrevet en substantiv med feil grad, kan de ha blitt essiv i
     stede for inessiv, det er vanskelig å vite om dette da er £ eller ¢.
 
--   **Feiltyper € – eksempler::**  
+-   **Feiltyper € – eksempler::**
     -   der = feil deivasjon, eks.
         -   {hiervvidam}€{der,aktiv-pass\|hiervvidum}
         -   {unnaoabbáj}€{der\|unnaoappátjij}
@@ -133,7 +133,7 @@ SMJ
         -   {álgijma bårråt}€{phr\|bårrågådijma}
         -   {ienep låhpaladtjan}}€{phr\|låhpalabbon}
 
--   **Feiltyper £ – eksempler::**  
+-   **Feiltyper £ – eksempler::**
     -   skulle ha vært kondisjonalis, eks.
         -   {gåktu lij sjaddat jus}£{infl,ind-cond\|gåktu luluj sjaddat
             jus}
@@ -152,7 +152,7 @@ SMJ
         -   {iv dádjadum}£{x\|ittjiv dádjada}
         -   {iv la nav ålojt dahkam}£{x\|iv la nav ålov dahkam}
 
--   **Feiltyper ¥ – eksempler::**  
+-   **Feiltyper ¥ – eksempler::**
     -   missing = det mangler et ord eks.
         -   {åvddål}¥{missing\|åvddål gå}
         -   {Riebij álu sluogas}¥{missing\|Riebij la álu sluogas}
@@ -174,7 +174,7 @@ SMJ
     -   x = andre feil, eks.
         -   {Stuorsebrudak viertti}¥{x\|Stuorsebrudahka viertti}
 
--   **Feiltyper ∞ – eksempler::**  
+-   **Feiltyper ∞ – eksempler::**
     -   ord eller setning på annet språk, slang, webadresse, eller
         samisk suffiks som står alene som eksempel i tekst eks.
         -   {Red Matter, Native American Studies}∞{eng}
@@ -184,7 +184,7 @@ SMJ
         -   {ll-l}∞{abbr}
         -   {www.an.no}∞{url}
 
--   **Comments to some *pos* values:**  
+-   **Comments to some *pos* values:**
     -   typo = typical typo — as a POS value?
     -   ; = typical typo — as a POS value?
     -   mix = lots of errors.

@@ -113,9 +113,9 @@ the pipe. The second command (**preprocess --abbr=abbr.txt**) uses the
 program preprocess to separate commmas, etc., and make the file into a
 list of words. Thus, the string "No, todyay." becomes
 
-No  
-,  
-today  
+No
+,
+today
 .
 
 The third command, **lookup -flags mbTT sme.fst** uses the lookup

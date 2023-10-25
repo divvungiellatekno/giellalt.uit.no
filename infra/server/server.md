@@ -51,23 +51,23 @@ hyphenator:
 
 The structure is explained in detail below:
 
--   **`action`:**  
+-   **`action`:**
     Contains the name of the tool, and command line arguments
-    -   **tool:**  
+    -   **tool:**
         The available values are: anl, hyph, gen, para, dis and prep.
         They correspond analyzer, hyphenator, generator, paradigm
         generator, disambiguator and preprocessor.
 
     <!-- -->
 
-    -   **fst:**  
+    -   **fst:**
         The transducer file can be given as an attribute to the server.
         The fst can be given as attribute to all the other tools but
         disambiguator. If the fst is not given, default file is used.
 
     <!-- -->
 
-    -   **args:**  
+    -   **args:**
         This attribute contains the other command line arguments. If not
         given, the default arguments are used. For lookup, they are
         `-flags mbTT -utf8`. Generation and paradigm generation have
@@ -75,7 +75,7 @@ The structure is explained in detail below:
 
     <!-- -->
 
-    -   **filter, filter\_script:**  
+    -   **filter, filter\_script:**
         Hyphenator output may be filtered so that double lines are
         removed, compounding boundaries rated and some
         lowercase/uppercase distinctions removed. The flter is used
@@ -85,7 +85,7 @@ The structure is explained in detail below:
 
     <!-- -->
 
-    -   **mode:**  
+    -   **mode:**
         The attribute "mode" is available only for the paradigm
         generator. The mode describes the extent of the generated
         paradigm: whether it is minimum: containing just enough
@@ -95,20 +95,20 @@ The structure is explained in detail below:
 
     <!-- -->
 
-    -   **abbr, corr:**  
+    -   **abbr, corr:**
         These attributes are available for the preprocessor. They
         contain the pointer to the files "abbr.txt" and "corr.txt".
 
 <!-- -->
 
--   **`language`:**  
+-   **`language`:**
     The languages that have most of the tools available are: sme, smj,
     sma. The other languages may be requested as well, then the compiled
     fsts may have to be given as command line.
 
 <!-- -->
 
--   **`xml_in, xml_out`:**  
+-   **`xml_in, xml_out`:**
     These elements correspond of requests of input and/or output being
     in xml. If the element(s) are not present the input and/or output is
     assumed to be plain text.

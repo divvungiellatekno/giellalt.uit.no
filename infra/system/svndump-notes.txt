@@ -1,0 +1,342 @@
+http://svnbook.red-bean.com/en/1.5/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering
+* dump the whole repository
+** svnadmin dump repos_backup > repos_backup_dumpfile
+*** No problem, reports on dumping from revision 1 to x
+
+* svndumpfilter --drop-empty-revs --renumber-revs include plan < repos_backup_dumpfile >plan_dumpfile
+** Gives a file with the size 3890 bytes
+Nothing extracted, because I wrote the wrong path
+
+* svndumpfilter --drop-empty-revs --renumber-revs include trunk/plan < repos_backup_dumpfile > plan_dumpfile2
+** gives a file with size 18049903. Contains the plan directory
+* bzip2 the dumpfile
+* copy it to my machine
+* sudo svnadmin create plan
+* svnadmin load --ignore-uuid plan < /home/boerre/klovn/plan_dumpfile2
+** svnadmin: Fant ikke filen: Transaksjon «12-c», sti «trunk/plan»
+     * legger til sti : trunk/plan ...
+*** so stops on revision 12. Last Revision-number: in the file is 263 ...
+
+New stab at producing a plan_dumpfile.
+* svndumpfilter include trunk/plan < repos_backup_dumpfile > plan_dumpfile3
+** Gives a file with size 21671787
+* svnadmin load --ignore-uuid plan < /home/boerre/klovn/plan_dumpfile3
+** svnadmin: Fant ikke filen: Transaksjon «5874-4j7», sti «trunk/plan»
+     * legger til sti : trunk/plan
+	 
+The reason for the error is that the trunk directory isn't made in the beginning. Adding the following block to the plan_dumpfile2 below Revision-number: 1 fixed the error (output of diff):
+
+33a34,41
+> Node-path: trunk
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+>
+> PROPS-END
+>
+
+* svnadmin load --ignore-uuid plan < /home/boerre/klovn/plan_dumpfile2
+** the command works perfectly
+
+Now exclude trunk/plan 
+* svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan < repos_backup_dumpfile > everything_else_dumpfile
+** this fails because revision 21676 contains this:
+Revision-number: 21676     
+Prop-content-length: 104   
+Content-length: 104
+
+K 7
+svn:log
+V 5
+moved
+K 10
+svn:author
+V 5
+trond
+K 8
+svn:date
+V 27
+2008-10-29T22:53:08.218285Z
+PROPS-END
+
+Node-path: trunk/plan/tts
+Node-action: delete
+
+Trying to delete a path that doesn't exist
+
+*** grep -n Revision-number: 21676: 281632738
+*** grep -n Revision-number: 21677: 281632760
+*** wc -l repos_backup_dumpfile: 360453542
+*** head -281632737 repos_backup_dumpfile > head_repos_backup_dumpfile
+*** tail -78820783 repos_backup_dumpfile > tail_repos_backup_dumpfile
+
+New try:
+* cat head_repos_backup_dumpfile tail_repos_backup_dumpfile | svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan > everything_else_dumpfile
+** fails the same place, revision 21677 contains this:
+Node-path: trunk/tts
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 21675
+Node-copyfrom-path: trunk/plan/tts
+
+Probably the two last lines are the culprit, when we exclude trunk/plan we can't copy from that place.
+
+removing them this way:
+* head -21 tail_repos_backup_dumpfile > tail1
+* tail -78820760 tail_repos_backup_dumpfile > tail2
+
+New try
+* cat head_repos_backup_dumpfile tail1 tail2 | svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan > everything_else_dumpfile
+** fail with:
+Revision 23604 committed as 23125.
+svndumpfilter: Invalid copy source path '/trunk/plan/mt'
+
+Revision 23605 contains this:
+52484487:Revision-number: 23605                                                            
+52484488-Prop-content-length: 135                                                          
+52484489-Content-length: 135                                                               
+52484490-
+52484491-K 7
+52484492-svn:log
+52484493-V 35
+52484494-Moved the mt from plan to reality.
+52484495-
+52484496-K 10
+52484497-svn:author
+52484498-V 5
+52484499-trond
+52484500-K 8
+52484501-svn:date
+52484502-V 27
+52484503-2009-01-20T12:10:38.618571Z
+52484504-PROPS-END
+52484505-
+52484506-Node-path: trunk/mt
+52484507-Node-kind: dir
+52484508-Node-action: add
+52484509-Node-copyfrom-rev: 23598
+52484510-Node-copyfrom-path: trunk/plan/mt
+52484511-
+52484512-
+
+Lines 52484509 and 52484510 refers to a directory which doesn't exist, must be removed
+
+* head -52484508 tail2 > tail3
+tail3 now doesn't contain these lines
+
+* wc -l tail2: 78820760
+* tail -26336250 tail2 > tail4
+
+new try
+* cat head_repos_backup_dumpfile tail1 tail3 tail4 | svndumpfilter --drop-empty-revs --renumber-revs exclude trunk/plan > everything_else_dumpfile 2> everything.log
+
+Now everything works
+
+Now a more realistic scenario, pick out everything deemed secret from all paths, and dump it to private.dump
+
+* svndumpfilter --drop-empty-revs --renumber-revs include branches/make-redo/plan/admin branches/make-redo/plan/art branches/make-redo/plan/barents branches/make-redo/plan/cat branches/make-redo/plan/cooperation branches/make-redo/plan/dict branches/make-redo/plan/digivariet branches/make-redo/plan/faoproof branches/make-redo/plan/grc branches/make-redo/plan/mt branches/make-redo/plan/ped branches/make-redo/plan/strat branches/make-redo/plan/t9 trunk/plan/admin trunk/plan/art trunk/plan/barents trunk/plan/cat trunk/plan/cooperation trunk/plan/dict trunk/plan/digivariet trunk/plan/faoproof trunk/plan/grc trunk/plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt < repos_backup.dump > private.dump
+** failed with: Revision 20226 skipped.
+svndumpfilter: Invalid copy source path '/trunk/gt/doc/admin/applications/komsjdyrk.jspwiki'
+
+Include this path, as it won't matter if we include it.
+
+* svndumpfilter --drop-empty-revs --renumber-revs include branches/make-redo/plan/admin branches/make-redo/plan/art branches/make-redo/plan/barents branches/make-redo/plan/cat branches/make-redo/plan/cooperation branches/make-redo/plan/dict branches/make-redo/plan/digivariet branches/make-redo/plan/faoproof branches/make-redo/plan/grc branches/make-redo/plan/mt branches/make-redo/plan/ped branches/make-redo/plan/strat branches/make-redo/plan/t9 trunk/plan/admin trunk/plan/art trunk/plan/barents trunk/plan/cat trunk/plan/cooperation trunk/plan/dict trunk/plan/digivariet trunk/plan/faoproof trunk/plan/grc trunk/plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos_backup.dump > private.dump
+** This command worked
+
+Then, exclude these very paths. Try the first command, with exclude instead of include, without the --drop-empty-revs --renumber-revs options. This is done in the hope that this will work as a drop-in replacement for the original repos.
+
+* svndumpfilter exclude branches/make-redo/plan/admin branches/make-redo/plan/art branches/make-redo/plan/barents branches/make-redo/plan/cat branches/make-redo/plan/cooperation branches/make-redo/plan/dict branches/make-redo/plan/digivariet branches/make-redo/plan/faoproof branches/make-redo/plan/grc branches/make-redo/plan/mt branches/make-redo/plan/ped branches/make-redo/plan/strat branches/make-redo/plan/t9 trunk/plan/admin trunk/plan/art trunk/plan/barents trunk/plan/cat trunk/plan/cooperation trunk/plan/dict trunk/plan/digivariet trunk/plan/faoproof trunk/plan/grc trunk/plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt < repos_backup.dump > public2.dump
+** Worked without problems
+
+Next steps 
+* import the original repos from repos_backup.dump to /home/svn/repos
+* sudo svnadmin create repos
+* sudo svnadmin load --ignore-uuid repos < /home/boerre/klovn/repos_backup.dump
+** worked without a hitch
+* check out from that
+** works
+* delete the original /home/svn/repos, replace it by public.dump
+* sudo svn rm -rf repos
+* sudo svnadmin create repos
+* sudo svnadmin load --ignore-uuid repos < /home/boerre/klovn/public2.dump
+** 
+* update from that (go into repos, do a svn update, hope everything works)
+* import the private part to /home/svn/private
+* sudo svnadmin create private
+* sudo svnadmin load private < /home/boerre/klovn/private.dump
+** funker ikke
+
+The errors are caused by directories that don't exist. Added the following to the private.dump file, and then the load worked.
+
+280a281,297
+> Node-path: trunk
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> Node-path: trunk/plan
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+5181a5199,5244
+> Node-path: trunk/gt
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+> Node-path: trunk/gt/sme
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+> Node-path: trunk/gt/smj
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+> 
+> Node-path: trunk/gt/smj/polderland
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+> Node-path: trunk/gt/sme/polderland
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> 
+25279a25343,25367
+> 
+> Node-path: trunk/gt/doc
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> Node-path: trunk/gt/doc/admin
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+> Node-path: trunk/gt/doc/admin/applications
+> Node-action: add
+> Node-kind: dir
+> Prop-content-length: 10
+> Content-length: 10
+> 
+> PROPS-END
+> 
+
+3rd time:
+private according to tronds newsposting on the 2nd of April
+svndumpfilter --drop-empty-revs --renumber-revs include branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt branches/make-redo/plan/admin trunk/plan/admin branches/make-redo/plan/art trunk/plan/art branches/make-redo/plan/barents trunk/plan/barents branches/make-redo/plan/cat trunk/plan/cat branches/make-redo/plan/cooperation trunk/plan/cooperation branches/make-redo/plan/dict trunk/plan/dict branches/make-redo/plan/faoproof trunk/plan/faoproof branches/make-redo/plan/grc trunk/plan/grc branches/make-redo/plan/ped trunk/plan/ped branches/make-redo/plan/strat trunk/plan/strat branches/make-redo/plan/t9 trunk/plan/t9 /plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos_backup.dump > private.dump
+
+biggies:
+svndumpfilter --drop-empty-revs --renumber-revs include branches/make-redo/gt/sme/corp branches/gt-UTF-8-conversion-branch/gt/sme/corp trunk/gt/sme/corp tags/Root-of-gt-UTF-8-conversion/gt/sme/corp tags/gt-before-utf-8-merge/gt/sme/corp Root_gt-UTF-8-conversion-branch/gt/sme/corp branches/make-redo/techdoc/proof/testing branches/make-redo/gt/doc/proof/testing trunk/techdoc/proof/testing branches/make-redo/tts trunk/tts trunk/plan/tts trunk/gt/doc/admin/applications/smespeech.bib trunk/gt/doc/admin/applications/smespeechpre.tex trunk/gt/doc/admin/applications/.cvsignore trunk/gt/doc/proof/testing < repos_backup.dump > biggies.dump
+
+the rest, aka repos:
+svndumpfilter --drop-empty-revs --renumber-revs exclude  branches/make-redo/techdoc/proof/testing branches/make-redo/gt/doc/proof/testing trunk/techdoc/proof/testingbranches/make-redo/tts trunk/tts trunk/plan/tts trunk/gt/doc/admin/applications/smespeech.bib trunk/gt/doc/admin/applications/smespeechpre.tex trunk/gt/doc/admin/applications/.cvsignore trunk/gt/doc/proof/testing branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt branches/make-redo/plan/admin trunk/plan/admin branches/make-redo/plan/art trunk/plan/art branches/make-redo/plan/barents trunk/plan/barents branches/make-redo/plan/cat trunk/plan/cat branches/make-redo/plan/cooperation trunk/plan/cooperation branches/make-redo/plan/dict trunk/plan/dict branches/make-redo/plan/faoproof trunk/plan/faoproof branches/make-redo/plan/grc trunk/plan/grc branches/make-redo/plan/ped trunk/plan/ped branches/make-redo/plan/strat trunk/plan/strat branches/make-redo/plan/t9 trunk/plan/t9 /plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos_backup.dump > therest.dump
+
+
+Make the private repo
+sudo svnadmin create /usr/local/svn/private
+* Add the lacking dirs.
+* save them in private.add
+* find where revision 2 starts: grep -n "Revision-number: 2$" private.dump
+* find how many lines private.dump has: wc -l private.dump
+
+cat private.head private.add private.tail | svnadmin load --ignore-uuid private
+
+sudo svnadmin create /usr/local/svn/therest
+sudo svnadmin load --ignore-uuid /usr/local/svn/therest < 
+
+
+sudo svnadmin create /usr/local/svn/biggies
+cat biggies.head biggies.add biggies.tail | svnadmin load --ignore-uuid biggies
+* Add trunk/gt/sme using the method above
+* Add trunk/gt/doc/proof
+* Add trunk/gt/doc/admin
+* Add trunk/gt/doc/admin/applications
+* Add trunk/plan
+* Add trunk/techdoc
+
+The real deal:
+* Comment out the original part
+* Restart apache
+Now the original svn is closed down
+* svnadmin dump /usr/local/svn/repos > repos.dump
+* svndumpfilter --drop-empty-revs --renumber-revs include branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt branches/make-redo/plan/admin trunk/plan/admin branches/make-redo/plan/art trunk/plan/art branches/make-redo/plan/barents trunk/plan/barents branches/make-redo/plan/cat trunk/plan/cat branches/make-redo/plan/cooperation trunk/plan/cooperation branches/make-redo/plan/dict trunk/plan/dict branches/make-redo/plan/faoproof trunk/plan/faoproof branches/make-redo/plan/grc trunk/plan/grc branches/make-redo/plan/ped trunk/plan/ped branches/make-redo/plan/strat trunk/plan/strat branches/make-redo/plan/t9 trunk/plan/t9 /plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos.dump > private.dump
+* svndumpfilter --drop-empty-revs --renumber-revs include branches/make-redo/gt/sme/corp branches/gt-UTF-8-conversion-branch/gt/sme/corp trunk/gt/sme/corp tags/Root-of-gt-UTF-8-conversion/gt/sme/corp tags/gt-before-utf-8-merge/gt/sme/corp Root_gt-UTF-8-conversion-branch/gt/sme/corp branches/make-redo/techdoc/proof branches/make-redo/gt/doc/proof trunk/techdoc/proof branches/make-redo/tts trunk/tts trunk/plan/tts trunk/gt/doc/admin/applications/smespeech.bib trunk/gt/doc/admin/applications/smespeechpre.tex trunk/gt/doc/admin/applications/.cvsignore trunk/gt/doc/proof < repos.dump > biggies.dump
+* svndumpfilter --drop-empty-revs --renumber-revs exclude  trunk/gt/doc/proof branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt branches/make-redo/plan/admin trunk/plan/admin branches/make-redo/plan/art trunk/plan/art branches/make-redo/plan/barents trunk/plan/barents branches/make-redo/plan/cat trunk/plan/cat branches/make-redo/plan/cooperation trunk/plan/cooperation branches/make-redo/plan/dict trunk/plan/dict branches/make-redo/plan/faoproof trunk/plan/faoproof branches/make-redo/plan/grc trunk/plan/grc branches/make-redo/plan/ped trunk/plan/ped branches/make-redo/plan/strat trunk/plan/strat branches/make-redo/plan/t9 trunk/plan/t9 /plan/ped trunk/plan/strat trunk/plan/studentwork trunk/plan/t9 branches/Public_Beta_release_1/gt/smj/polderland/phonrules-smj.txt branches/Public_Beta_release_1/gt/sme/polderland/phonrules-sme.txtbranches/make-redo/gt/smj/polderland/phonrules-smj.txt trunk/gt/smj/polderland/phonrules-smj.txt trunk/gt/sme/polderland/phonrules-sme.txt trunk/gt/doc/admin/applications/komsjdyrk.jspwiki < repos.dump > therest.dump
+* grep -n "Revision-number: 2$" private.dump
+** 34:Revision-number: 2
+* head -33 private.dump > private.head
+* wc -l private.dump
+* tail -738935 private.dump > private.tail
+* cp ../test_repo/private.add .
+* svnadmin create private
+* cat private.head private.add private.tail | svnadmin load --ignore-uuid private
+* grep -n "Revision-number: 2$" biggies.dump
+** 34:Revision-number: 2
+* head -33 biggies.dump > biggies.head
+* wc -l biggies.dump
+** 56640915 biggies.dump
+* tail -56640882 biggies.dump > biggies.tail
+* cp ../test_repo/biggies.add .
+* svnadmin create biggies
+* cat biggies.head biggies.add biggies.tail | svnadmin load --ignore-uuid biggies
+* grep -n "Revision-number: 11342$"  therest.dump
+** 133516992:Revision-number: 11342
+* head -133516991 therest.dump > therest.head
+* wc -l therest.dump
+** 303963966 therest.dump
+* tail -170446975 therest.dump > therest.tail
+* svnadmin create therest
+* cat therest.head therest.add therest.tail | svnadmin load --ignore-uuid therest
+
+* sudo mv biggies /usr/local/svn/.
+* sudo mv -v private /usr/local/svn/.
+
+Copied the /etc/subversion/svn-auth-file to /etc/subversion/svn-auth-file-private
+Removed every user except those belonging to the divvun and giellatekno projects.
+
+Edited /etc/httpd/conf.d/subversion.conf
+The private repository is authorized against /etc/subversion/svn-auth-file-private
+
+* sudo chown -R apache:apache /usr/local/svn/biggies/
+* sudo chown -R apache:apache /usr/local/svn/private/
+* sudo chown -R apache:apache /usr/local/svn/therest/

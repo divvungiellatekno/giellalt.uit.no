@@ -257,22 +257,22 @@ me!](mailto:sjurnm@mac.com)
 
 The following built-in variables are used:
 
--   **$@:**  
+-   **$@:**
     Contains the name of the target, is often used to redirect output to
     a file named the same as the target.
--   **%:**  
+-   **%:**
     (Strictly speaking not a variable:) Wildcard in target and
     dependency statements. When used as a wildcard in a target, the
     string it represents will be inserted in its place in names of
     dependencies. Often used to make one target for many similarly named
     files/targets.
--   **$&lt; :**  
+-   **$&lt; :**
     Represents the **first** element in a list of dependencies.
--   **$^:**  
+-   **$^:**
     Holds the name of **all** dependencies.
--   **$\*:**  
+-   **$\*:**
     Holds the string matched by % in a target name.
--   **MAKE:**  
+-   **MAKE:**
     Holds the pathname of the `make` program used. This is useful f.ex.
     when starting a `make` command in another directory from within a
     Makefile, to ensure they are using the same `make`.
@@ -281,32 +281,32 @@ The following built-in variables are used:
 
 The following variables defined by me are used:
 
--   **SHELL:**  
+-   **SHELL:**
     The location of the shell program. The use of this variable (set to
     this value) is recommended in the `make` documentation. That's why.
--   **BINDIR:**  
+-   **BINDIR:**
     The location of the directory that holds the scripts used in
     testing.
--   **TEMP:**  
+-   **TEMP:**
     The location of the directory for storing temporary files (so that
     it can easily be redefined).
--   **SAVEFILE:**  
+-   **SAVEFILE:**
     A variable containing the (computed) name of the save file used
     during testing. The computed content of this variable makes the
     reference to the save file language independent.
--   **UMASK:**  
+-   **UMASK:**
     Something I have copied from a Lingsoft makefile. I do not
     understand exactly what it does, and whether we need it. It does not
     seem to do any harm, so it is left for the time being.
--   **WORD:**  
+-   **WORD:**
     An empty variable to be filled/set by the user (on the command line)
     when generating a paradigm.
--   **NGenFiles  
-    NAnaFiles  
-    VGenFiles  
-    VAnaFiles  
-    AGenFiles  
-    AAnaFiles:**  
+-   **NGenFiles
+    NAnaFiles
+    VGenFiles
+    VAnaFiles
+    AGenFiles
+    AAnaFiles:**
     Variables whose content is a list of target names (one for each POS,
     analysis and generation) calculated from (existing) file names. This
     is to circumvent a problem with being able to trigger the making of

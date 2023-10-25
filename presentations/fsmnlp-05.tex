@@ -1,0 +1,59 @@
+\documentclass[a4paper,english]{article}
+\usepackage{babel}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{psfrag} % don't remember
+\usepackage{a4wide}
+
+\begin{document}
+
+\title{From Xerox to Aspell: A first prototype of a North Saami speller
+ based on TWOL technology}
+
+%\date{}
+
+\author{Børre Gaup\\ The Saami Parliament\\ Norway
+\and Sjur Moshagen\\ The Saami Parliament\\ Norway
+\and Thomas Omma\\ The Saami Parliament\\ Norway
+\and Maaren Palismaa\\ The Saami Parliament\\ Norway
+\and Tomi Pieski\\ The Saami Parliament\\ Norway
+\and Trond Trosterud\\ Faculty of the humanities\\ University of Tromsø}
+
+\maketitle
+
+\textbf{Keywords:} Sámi, transducers, language technology, spelling,
+ proofing, minority languages
+
+\section{Introduction}
+
+Our demo presents work from a joint project with a twofold goal: To build a parser and disambiguator for North and Lule Sámi, and to make a practical spellchecker for the same languages. The core analyser is written with the Xerox tools \texttt{twolc}, \texttt{lexc} and \texttt{fst}, and the disambiguator uses constraint grammar (\texttt{vislcg}).
+
+The spellchecker is intended to work on 3 platforms, for a wide range of programs. One of the speller engines we will have to cover is thus the \texttt{spell} family of spellcheckers (here represented by \texttt{Aspell}). This implies making a finite state automaton, rather than a transducer.
+
+\section{The speller}
+
+In  the present (alpha) version of the speller, we use the Xerox tools to generate a fullform list of the whole lexicon (we exclude all circular entries), which initially created a whopping 580 Mb text file, corresponding to 150 mill word forms. Aspell took that whole wordlist and could use it as it was, but it was hardly practical (it worked, though!). After some modifications our present transducer creates «only» 290 Mb of data. This list is then reduced to a set of inflection stems with the Aspell \texttt{munch-list} option. It works by passing the \texttt{munch-list} option a file of available inflection lexicons, and Aspell will then \textit{munch} through the fullform wordlist and reduce all wordforms that fits an inflectional lexicon to one stem plus the identified inflection lexicon. Finally we compress the lexicon into an Aspell specific binary format. Its size is at the moment about 65 Mb.
+
+This way of creating a finite state automaton is quite different from how the transducer itself works. Just like Finnish, Saami has consonant gradation, but unlike in Finnish, the Saami consonant gradation affects almost all consonant groups of the stressed syllable, in most stem classes (some stem classes are never altered). Moreover, in several word forms, the diphthong of the stressed syllable is altered as well. This gives us as much as 4 surface stems for one and the same lexeme. For the two-level transducer, this is not a problem, since these morphophonological processes are handled by our two-level rules, but it becomes a complicating factor when reverting to the single-level model of Aspell.
+
+The Aspell munch-list way of creating stems and inflectional suffixes isn't very satisfying, for at least two reasons: we already have an excellent morphological description of North Sámi, and duplicating it in the form of the Aspell inflectional lexicon isn't very elegant and requires redoing the same work; and by having two parallel morphological descriptions the whole system requires more maintenance work and is more error-prone. But for the reasons cited above regarding Saami morphophonology, we have at present not found an easy way to generate the correct inflectional stems directly from the Xerox tools.
+
+Aspell is not the optimal speller architecture, but since we need to have an alpha version running in order to test our lexicon (and since Aspell is one of the target spellers of the projecct), it turned out to be a working solution.
+
+\section{Disp.}
+
+Note to Sjur and Tomi: I try to structure the rest of the article (total of 2 pages) here:
+
+\begin{enumerate}
+\item Presenting the speller (above, but including present developement results)
+\item Discussing different munching techniques
+\item Discussing the value of aspell vs. two-level speller in general
+\item Future plans and closing remarks
+\end{enumerate}
+
+
+
+
+
+\end{document}

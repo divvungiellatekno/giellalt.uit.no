@@ -1,0 +1,240 @@
+Dette er min huskeliste.
+
+Husk! >> hvis du vil legge til noe i et dokument
+       > lager nytt dokument eller overskriver
+       
+
+uniq: slår sammen linjer som står etter hverandre (uniq -c forteller hvor mange eksemplarer det var av hver linje)
+
+pwd: skriv stien til den katalogen du står i nå
+
+open: 
+
+less: 
+
+sme - nordsamisk
+
+svn up
+
+svn stat
+
+svn ci -m "message" filnavn
+
+xmllint filnavn
+
+
+Skriv om det er delvis parallellisert eller noe…
+
+
+"Wolf rule"
+f2:f <=> _ (e) .#. ;
+
+
+1 DELIMITERS = "<$.>" "<$!>" "<$?>" "<$\;>" "<$:>" "<$-->" "<$>" "<$start>" "<$START>" ;
+2 MAPPING-PREFIX = @ ;
+3 
+4 SETS
+5 LIST V = V ;
+6 LIST N = N ;
+7 LIST ART = ART ;
+8 LIST ADV = ADV ;
+9 LIST INF = INF ;
+10 LIST INFM = INFM ;
+11 LIST PRP = PRP ;
+12 LIST 3S = 3S ;
+13 LIST S = S ;
+14 LIST AUX-V = "can" "will" "should" "shall" "must" "could" "might" ;
+15 LIST WORD = N V ART ADV PRP A ;
+16 SET NOT-ADV = WORD - ADV ;
+17 
+18 CORRECTIONS
+19 
+20 MAPPINGS
+21 
+22 CONSTRAINTS
+23 SELECT N IF (-1  ART) ;
+24 	
+25 SELECT INF IF (*-1 AUX-V BARRIER NOT-ADV) ;
+26 
+27 REMOVE INFM IF (NEGATE 1 ADV LINK 1 INF) ;
+28 REMOVE INFM IF (NOT 1 INF) ;
+29 SELECT PRP IF (0 ("to") LINK 1 ART) ;
+30 
+31 #SELECT PRP IF (1 ART) ;
+32 SELECT V IF (0 AUX-V LINK *1 INF BARRIER NOT-ADV) ;
+33 SELECT 3S IF (-1 N + S) ;
+34 MAP (@GRAM-ERR) TARGET V (NOT 0 3S LINK -1 N + S)(NOT *1 V) ;
+35 #MAP (@SUBJ) TARGET N (0 N + S LINK 1 V + 3S) ;
+36 #MAP (@V) TARGET V (0 V + 3S LINK -1 N + S) ;
+
+
+Det er generelt et stort problem med datoer eller andre ord som inneholder «.». Der blir det ofte linjeskift selv om det ikke skal være det, f.eks.: 23.12.2015 —> 23.
+12.2015 (prestable/tmx/nob2sma/admin/sd/samediggi.no/sametinget-inviterer-til-duodjikonferanse-27.-28.-januar-2016.html.tmx.html)
+
+
+Derfor er det fullstendig tåpelig å holde barna	borte	fra skolen .
+Danin lea áibbas jallodat doallat mánáid eret skuvllas .
+
+Agibeaivái	jávkan	.
+Borte for alltid .
+
+Báddemat leat dađi bahábut	jávkan	, muhto čállosiid mánusat lea áimmuin ja leat dehálaš muitaleamit mearrasámiid kulturárbbi birra .
+Opptakene er dessverre borte
+
+
+Dáid	lassin	ferte guovddáš ieš ohcat Norgga dutkanráđis ruđaid dutkanprojeavttaide .
+Utover dette må senteret søke Norges forskningsråd om midler til forskningsprosjekter .
+
+lea departemeanta válljen namuhit álbmotrievtti	sierra	paragráfas .
+Av lovtekniske årsaker har departementet valgt å omtale forholdet til folkeretten i en egen paragraf .
+
+Sámediggi hálddaša	sierra	doarjjaortnega mánáid bajásšaddandiliide .
+Sametinget forvalter en egen tilskuddsordning for barns oppvekstvilkår .
+
+Sámediggi lea ráhkadan	sierra	Sámi eanadoalloplána .
+Sametinget har utarbeidet en egen Samisk jordbruksplan .
+
+
+Det er	forholdsvis	store kjønnsforskjeller .
+Sohkabeliid gaskkas leat oalle stuora erohusat .
+
+Det er behov for å styrke denne typen informasjon	ytterligere	.
+Lea dárbu nannet diekkár diehtojuohkima ain eambbo .
+
+
+<div class="published-date">
+        13. Njukčamánnu 2014
+    </div>
+
+<div class="published-date">
+        20. Juovlamánnu 2013
+    </div>
+
+
+
+
+Sma: 
+<div>
+				<div class="file">
+			<img src="/share/icons/crystal/16x16/mimetypes/binary.png" width="16" height="16" alt="" title="" />
+	<a href=/content/download/9243/79699/version/1/file/S%C3%B8knadsskjema+2016.docx>Søknadsskjema 2016</a>
+			<span>(96,63 kB)</span>
+		
+		</div>			</div>
+					<div>
+				<div class="file">
+			<img src="/share/icons/crystal/16x16/mimetypes/pdf.png" width="16" height="16" alt="" title="" />
+	<a href=/content/download/9244/79703/version/1/file/Regelverk+for+tilskudd+til+kulturminnevern+2016.pdf>Regelverk for tilskudd til kulturminnevern 2016</a>
+			<span>(148,10 kB)</span>
+		
+		</div>			</div>
+					<div>
+				<div class="file">
+			<img src="/share/icons/crystal/16x16/mimetypes/pdf.png" width="16" height="16" alt="" title="" />
+	<a href=/content/download/9246/79711/version/1/file/D%C3%A5arjoenjoelkedassh+2016+-+kultuvrevaarjelimmie.pdf>Dåarjoenjoelkedassh 2016 - kultuvrevaarjelimmie</a>
+			<span>(152,84 kB)</span>
+		
+		</div>			</div>
+					<div>
+				<div class="file">
+			<img src="/share/icons/crystal/16x16/mimetypes/binary.png" width="16" height="16" alt="" title="" />
+	<a href=/content/download/9253/79746/version/1/file/Ohtseme+d%C3%A5arjoen+b%C3%AFjre+kultuvremojhtesevaarjel%C3%A6mman.docx>Ohtseme dåarjoen bïjre kultuvremojhtesevaarjelæmman</a>
+			<span>(95,78 kB)</span>
+		
+		</div>			</div>
+
+
+Nob:
+<div>
+				<div class="file">
+			<img src="/share/icons/crystal/16x16/mimetypes/binary.png" width="16" height="16" alt="" title="" />
+	<a href=/content/download/9243/79699/version/1/file/S%C3%B8knadsskjema+2016.docx>Søknadsskjema 2016</a>
+			<span>(96,63 kB)</span>
+		
+		</div>			</div>
+					<div>
+				<div class="file">
+			<img src="/share/icons/crystal/16x16/mimetypes/pdf.png" width="16" height="16" alt="" title="" />
+	<a href=/content/download/9244/79703/version/1/file/Regelverk+for+tilskudd+til+kulturminnevern+2016.pdf>Regelverk for tilskudd til kulturminnevern 2016</a>
+			<span>(148,10 kB)</span>
+		
+		</div>			</div>
+					<div>
+				<div class="file">
+			<img src="/share/icons/crystal/16x16/mimetypes/pdf.png" width="16" height="16" alt="" title="" />
+	<a href=/content/download/9246/79711/version/1/file/D%C3%A5arjoenjoelkedassh+2016+-+kultuvrevaarjelimmie.pdf>Dåarjoenjoelkedassh 2016 - kultuvrevaarjelimmie</a>
+			<span>(152,84 kB)</span>
+		
+		</div>			</div>
+					<div>
+				<div class="file">
+			<img src="/share/icons/crystal/16x16/mimetypes/binary.png" width="16" height="16" alt="" title="" />
+	<a href=/content/download/9253/79746/version/1/file/Ohtseme+d%C3%A5arjoen+b%C3%AFjre+kultuvremojhtesevaarjel%C3%A6mman.docx>Ohtseme dåarjoen bïjre kultuvremojhtesevaarjelæmman</a>
+			<span>(95,78 kB)</span>
+		
+		</div>			</div>
+
+
+
+
+Sma: 31.b – ruffien 2.b. 2013
+bearjadahken, suehpeden 31.b. ts.
+ruffien 2.b.
+
+
+Sma: <table id="TwoDim" summary="Tabell for å navigere i veiledningen til lærerplanen">
+        <tr>
+            <th class="colStepHead">Dal-<br />tese</th>
+            <th class="colSubjectHead"></th>
+
+
+
+<address>
+Powered by <a href="http://ez.no/ezpublish" title="eZ Publish&trade; CMS Open Source Web Content Management">eZ Publish&trade; CMS Open Source Web Content Management</a>. Copyright &copy; 1999-2014 <a href="http://ez.no" title="eZ Systems AS">eZ Systems AS</a> (except where otherwise noted). All rights reserved.
+</address>
+
+
+
+<language xml:lang="nob"/><language xml:lang="eng"/><language xml:lang="sme"/>
+
+<language xml:lang="nob"/><language xml:lang="eng"/><language xml:lang="sma"/><language xml:lang="sme"/>
+
+
+
+
+
+Čoahkkin korpusbarggu birra
+
+Mielde: Lene, Reetta, Risten, Trond
+
+!!Barggut
+* Reetta: fin-sme, fin-smn, fin-sms
+* Risten: nob-sma
+* Trond hukse anchor-fiillaid
+
+!!Bargovuohki
+
+Mannat buot nob2sma/fin2smX-tmx-katalogaid alfabehtalaččat
+čađa (vuos admin/depts/other_files jna):
+
+Jos .tmx-fiillas ii leat parallealla sisdoallu, de geahččal rievdadit xsl-fiilla.
+
+Mo rievddadit xsl-fiilla:
+
+* jos paralleallafiila ii leatge parallealla, de váldde liŋkka eret
+* jos multilingual/monolingual ii leat riekta, de divu
+* mlangs galgá leat ok (dušše gielat, mat leat dokumeanttas)
+* lasit almmuhanjagi (jus ii leat), jus lea vejolaš dan oaidnit
+* geavahit iešguđetlágan skip-funkšuvnnaid (Reetta diehtá)
+
+Parallellisere ođđasit:
+
+jus lea rievdadan xsl-fiilla de vuos {{realign --convert fiillanamma}}
+ja dan maŋŋel {{realign fiillanamma}}
+
+Jos ii veahket, de váldde tmx-fiilla eret prestable-katalogas:
+
+{{{
+svn rm fiila.tmx
+svn ci -m "ii lean parallealla" fiila.tmx
+}}}

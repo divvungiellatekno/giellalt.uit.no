@@ -1,0 +1,39 @@
+
+2-2016
+
+Denne mappa inneheld:
+
+
+Filer:
+======
+* README (denne fila)
+* Reiva_jurgaleijeid_vaalmas.docx
+  Fila inneheld:
+  - Brev til evaluerarane,
+  - original sme,
+  - MT-versjon til smn
+
+Mapper:
+=======
+orignaltexts
+Dette er filene vi fekk frå evaluatorane, urørt, med originale namn.
+
+revisedtexts
+- Her har vi endra namn på filene
+- vi har konvertert frå docx til doc,
+- vi har løyst opp sporingsfunksjonen i word
+Elles er dei identiske.
+
+Desse filene er så konvertert med antiword, og deretter laga om til ei setning per linje
+(både sme, smn-mt og evaluatorane sine).
+
+Dei tekstfilene som kom ut av den prosessen ligg i
+apertium/nursery/apertium-sme-smn/eval/1-2016/
+
+
+Kommandoen som vart brukt for å rekne ut WER og PER:
+====================================================
+
+perl ~/apertium/trunk/apertium-eval-translator/apertium-eval-translator-line.pl -r smn.mt -t MTtext_miina.txt 
+
+

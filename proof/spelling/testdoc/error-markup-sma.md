@@ -1,16 +1,16 @@
-Error markup for SMA - South Sámi
-================
 We want to extend (some of) the corpus files with markup for spelling
 and other errors, to use them as gold standards for testing our spellers
 (and in the future other tools as well). The markup is done manually,
 and needs to follow certain rules.
 
+SMA - South Sámi
+================
 
--   **Possible values for *errtype*::**  
+-   **Possible values for *errtype*::**
     ( ??? )
--   **Comments to each *errtype* value:**  
+-   **Comments to each *errtype* value:**
     -   ???
--   **Comments to some *pos* values:**  
+-   **Comments to some *pos* values:**
     -   typo = typical typo — as a POS value?
     -   mix = used with errtype=ncmp, since the correct form is made of
         several words/POS's. Problem: there is no such *errtype* value,

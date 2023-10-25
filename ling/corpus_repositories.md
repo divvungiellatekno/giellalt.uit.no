@@ -1,11 +1,9 @@
-Corpus repositories
-===================
-
 The corpus is divided in a free part, where texts that we can
 redistribute are gathered (essentially, texts in the public domain), and
 a bound part, where we gather texts that we can't redistribute.
 
-# The free part
+The free part
+=============
 
 The free part is available in an svn repository that is world readable
 available on the address <https://gtsvn.uit.no/freecorpus/>.
@@ -14,7 +12,8 @@ Check out a working copy either by adding the above address to your svn
 program, or use the command line program like this:
 `svn checkout https://gtsvn.uit.no/freecorpus`.
 
-# The bound part
+The bound part
+==============
 
 The bound part is available in an svn repository that is accessible only
 from the machine gtsvn.uit.no. This repository is readable by people
@@ -29,7 +28,8 @@ command `svn co             svn://gtsvn.uit.no/boundcorpus `.
 If you would like to have access to the bound corpus, contact us at
 [feedback@divvun.no](mailto:feedback@divvun.no?subject=Corpus%20access)
 
-# The directory structure
+The directory structure
+=======================
 
 The main directory in the corpus repository is *orig*. *orig* contains
 the original files with the original names (bar spaces replaced with \_)
@@ -72,7 +72,7 @@ used.
         YLE
         other
     science/
-         
+
 
 If you run the [conversion process](corpus_conversion.html) the
 directory *converted* is created. It has the same structure as *orig*,
@@ -80,29 +80,31 @@ but contains the files converted from the original format to our
 internal xml-format. The converted directory contains copies of all the
 files in the corpus database.
 
-## Goldstandard corpus files
+Goldstandard corpus files
+-------------------------
 
 These 7 overarching genres should be understood as follows:
 
--   **admin/ :**  
+-   **admin/ :**
     Texts from administrative bodies
--   **bible/ :**  
+-   **bible/ :**
     The bible and other religious texts.
--   **facta/ :**  
+-   **facta/ :**
     Factual texts, e.g. teaching books, descriptive texts. Sakprosa.
--   **ficti/ :**  
+-   **ficti/ :**
     Prose, lyrics, plays and other fiction, political text.
     Skjønnlitteratur.
--   **laws/ :**  
+-   **laws/ :**
     Laws and similar juridical texts.
--   **news/ :**  
+-   **news/ :**
     Newspaper text
--   **science/:**  
+-   **science/:**
     Scientific articles
 
 Todo: Write more about this.
 
-## Goldstandard corpus files
+Goldstandard corpus files
+-------------------------
 
 Some parts of our corpus are used as test data for different purposes,
 presently mainly for proofing tools. These files have additional markup
@@ -125,7 +127,8 @@ before you add it to the repository, and make sure it is added in only
 one location. A goldstandard document can always be demoted to a regular
 corpus document, but the other way around is not possible.
 
-# Adding content
+Adding content
+==============
 
 To add all files found in a directory to a working copy of a corpus, you
 can use the

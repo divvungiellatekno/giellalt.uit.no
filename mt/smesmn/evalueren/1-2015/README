@@ -1,0 +1,30 @@
+
+
+Denne mappa inneheld:
+
+orignaltexts
+Dette er .docx-filene vi fekk frå evaluatorane, urørt.
+
+revisedtexts
+Dette er .doc-filer, dei er endra på to måtar
+a. frå docx til doc pga antiword
+b. løyst opp sporingsfunksjonen i word (ei av filene fekk alle retta ord som både "før" og "etter")
+Elles er dei identiske
+
+smetext.docx er den originale sme-fila
+MTtext.docx er den originale mt-fila
+
+Sjølve tekstfilene vi samanlikna ligg i
+apertium/nursery/apertium-sme-smn/eval/1-2016/
+
+Desse filene er konvertert med antiword, og deretter laga om til ei setning per linje
+(både sme, smn-mt og evaluatorane sine).
+
+
+
+Kommandoen som vart brukt for å rekne ut WER og PER:
+====================================================
+
+perl ~/apertium/trunk/apertium-eval-translator/apertium-eval-translator-line.pl -r smn.mt -t MTtext_miina.txt 
+
+

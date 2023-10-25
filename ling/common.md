@@ -20,7 +20,6 @@ Linguistic issues
 -   Documentation of tags
     -   [Compoundtags](../lang/common/CompoundTags.html)
     -   [Morphological tags](../lang/common/MorphologicalTags.html)
-    -   [Derivational tags in Sámi](../lang/common/DerivationOverview.html)
     -   [How the different tags are interacting with the
         FSTs](../lang/common/DifferentFSTs.html)
     -   [Syntax tags](../lang/common/docu-sme-syntaxtags.html)
@@ -42,8 +41,8 @@ Outdated documentation
 [Analyzed corpus,](corpus_analyze.html) [Correct
 corpus,](correct-dir.html) [Corpus plan,](corpus_plan.html) [The tools
 in the testing directory,](docu-testing.html) [The original sme
-flowchart over the old infra,](/lang-sme/docu-sme-flowchart.html) [The
-makefile setup in our old infra,](/lang-sme/docu-sme-makefile.html)
+flowchart over the old infra,](../lang/sme/docu-sme-flowchart.html) [The
+makefile setup in our old infra,](../lang/sme/docu-sme-makefile.html)
 [Our old infrastructure system for flag
-diacritics,](/lang-sme/docu-sme-flag-diacritics.html) [Some old
-discussions with colleagues](/lang-sme/xerox-discussion.html)
+diacritics,](../lang/sme/docu-sme-flag-diacritics.html) [Some old
+discussions with colleagues](/lang/sme/xerox-discussion.html)

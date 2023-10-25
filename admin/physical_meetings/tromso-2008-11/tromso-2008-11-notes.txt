@@ -1,0 +1,39 @@
+adj-bøying:
+
+klassifisering
+
+attr-pred
+id
+u/suff -s -s -sebie
+m/suff -s -s -be
+
+ulik
+ A    P
+ suf  Ø
+ Ø    suf
+ suf1 suf2  <====== omlydsskilnad
+
+
+
+
+attr/pred
+
+substantivisk
+
+komparasjon
+
+
+cat MINEADJ-sept.csv | grep '^[^;]*;[^;]*;s;[^;]*;[^;]*;[^;]*;;' | cut -d";" -f2,3,6,7 | wc -l
+
+
+cat MINEADJ-sept.csv | grep '^[^;]*;[^;]*;s;[^;]*;[^;]*;[^;]*;V' | cut -d";" -f2,3,6,7 | l
+
+
+cat MINEADJ-sept.csv | grep '^[^;]*;[^;]*;V;[^;]*;[^;]*;[^;]*;s' | cut -d";" -f2 > fil1
+cat MINEADJ-sept.csv | grep '^[^;]*;[^;]*;V;[^;]*;[^;]*;[^;]*;s' | cut -d";" -f6 > fil2
+paste -d":" fil1 fil2 | sed 's/$/ s-null-even ; /g' | see
+
+
+
+cat MINEADJ-sept.csv | grep -v '^[^;]*;[^;]*;V;[^;]*;[^;]*;[^;]*;s' |grep -v '^[^;]*;[^;]*;s;[^;]*;[^;]*;[^;]*;V' | cut -d";" -f2 > fil1
+cat MINEADJ-sept.csv | grep -v '^[^;]*;[^;]*;V;[^;]*;[^;]*;[^;]*;s' |grep -v '^[^;]*;[^;]*;s;[^;]*;[^;]*;[^;]*;V' | cut -d";" -f6 > fil2

@@ -1,6 +1,5 @@
 # Dir structure
 
-
 ```
 /doc/proof/spelling/testing/
                             sme/ - index: list sme engines
@@ -19,16 +18,13 @@
                                     baseform/
                                     wordtype/
 
-                                    
+
 20100507-Markansluska.correct.doc.summary.html
 ```
 
-
 # M. Reynaert's 5-level tests
 
-
 Reynaert, Martin (2008): *All, and only, the errors: more complete and consistent spelling and OCR-error correction evaluation*:
-
 
 1. Core-correction mechanism: how well is the algorithm capable of handling all
   the types of errors the system is said to be able to tackle? This amounts to

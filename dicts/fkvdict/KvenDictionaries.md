@@ -1,37 +1,24 @@
-
-
 Bnotes on the Kven dictionaries
 
-
 # nobfkv
-
 
 * words/dicts/nobfkv/src = the dictionary
 * words/dicts/nobfkv/inc = incoming words
 * words/dicts/nobfkv/bin = generated files
 * words/dicts/nobfkv/scripts = conversion scripts
 
-
-
-
 ## Commands
-
 
 To get the dictionary as a finite state transducer
 (in order to check large amounts of words)
 
-
 cat log_nob_fkv.151010.csv |sort|uniq -c|sort -nr|less
-
 
 cat log_nob_fkv.151010.csv |grep -v True|sort|uniq -c|sort -nr|less
 
-
 cat ../../fkvnob/inc/log_fkv_nob.151010.csv |grep -v True|sort|uniq -c|sort -nr|less
 
-
 cat fkv/lemma_fkv_20150830.csv |cut -c6-|cut -d" " -f1|fkvnob|grep "?"|less
-
 
 ```
 svn up ../../fkvnob
@@ -43,22 +30,17 @@ kauvas
 kauvas  kauvas+Adv
 ```
 
-
 Compiling fst-dictionary:
-
 
 ```
 cd words/dicts/nobfkv/
 sh nobfkv.sh
 ```
 
-
-usage: 
+usage:
 * cat listofnobwords.txt | nobfkv
 
-
 ## Dictionary entries
-
 
 * e = entry
 * lg = lemma group
@@ -71,14 +53,12 @@ usage:
 * xt = example translation
 * src = source
 * Source types:
-** ai = aikamatka
-** ta = terje aronsen
-** yr = yr
-** ki = kvensk institutt
-
+    - ai = aikamatka
+    - ta = terje aronsen
+    - yr = yr
+    - ki = kvensk institutt
 
 Dictionary entry example
-
 
 ```
    <e src="ai">
@@ -96,17 +76,9 @@ Dictionary entry example
             <t pos="N">taitet</t>
          </tg>
       </mg>
-   </e>   
+   </e>
 ```
-
-
-
 
 # fkvnob
 
-
 tbw.
-
-
-
-

@@ -1,8 +1,4 @@
-LS Finnish grammarchecker categories
-===================================
-
 # Talet på CG-reglar pr feiltype
-
 
 ```
  274 Adjektiiviattribuutin taipuminen pääsanan mukaan
@@ -35,18 +31,14 @@ LS Finnish grammarchecker categories
    2 Paljon sivulauseita
 ```
 
-
 # Kategoriserte feiltypar
-
 
 ```
 NP-intern kongruens
  274 Adjektiiviattribuutin taipuminen pääsanan mukaan
 
-
 Subjekt-verb-kongruens
  152 Subjektin ja predikaatin mukautuminen
-
 
 Verbkjeder
   24 Verbirakenteet: muita verbirakenteita
@@ -58,10 +50,8 @@ Verbkjeder
    4 Pääverbien määrä
    2 Verbirakenteet: "lienee"-muodon käyttö
 
-
 Samansette ord
   54 Yhdyssanat
-
 
 Koordinering
   15 Sanalla "ja" tai "sekä" yhdistetyt subjektit
@@ -70,57 +60,43 @@ Koordinering
    5 Sana "ja" kieltosanan yhteydessä
    3 Rinnastuskonjunktiolla alkava virke
 
-
 Komparering
   24 Vertailumuodot
-
 
 Klitika
   20 Liitepartikkelien turha käyttö tai toisto
 
-
 Talord
   11 Numeroiden tarpeettomat sijapäätteet
    4 Subjektina lukusana
-
 
 Småord
    4 Konjunktio "josko" epäsuorassa kysymyslauseessa
    3 Subjektina sana "kumpikin"
    2 Sanan "kaikista" käyttö superlatiivin yhteydessä
 
-
 Stilistikk
    4 Arkikielinen tai murteellinen sana
    2 Ylätyylinen tai vanhahtava sana
    2 Paljon sivulauseita
 
-
 Punktuering
    3 Välimerkit
 ```
 
-
 # Oppsummering av dei finske CG-reglane
-
 
 Slåande:
 * Det manglar retting av kasus for argument.
 
-
 NP-kongruens:
 * Hienossa puusta tehdyssä tuvvassa.
-
 
 Oblikve argument:
 * Minä pidän Turusta.
 * Turusta minä pidän Helsingissä.
 
-
-
-
 Nektingsverb og positiv verbform:
-
 
 * @OK Mun in boađe.
 * @OK Mun in boahtán.

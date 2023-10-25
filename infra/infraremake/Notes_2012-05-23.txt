@@ -1,0 +1,17 @@
+Common/shared regex filters/xfst files
+- where to store them?
+- how to include them?
+
+=> use $GTCORE in *.am files
+
+AC_ARG_VAR([GTCORE], [use gtsetup.sh to declare])
+
+in subfilter.am e.g.:
+
+sub-filter.hfst: $(GTCORE)/gtshared/.../sub-filter.regex
+    $(HFSTREGEX2FST) $(HFSTFLAGS) -i $< -o $@
+
+morphology.nosubs.hfst: morphology.default.hfst sub-filter.hfst
+    $(HFSTCOMPOSE) $(HFSTFLAGS) -1 sub-filter.hfst -2 morphology.default.hfst
+
+?

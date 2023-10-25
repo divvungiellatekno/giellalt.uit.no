@@ -1,16 +1,15 @@
 # The evaluators' translations
 
-
 |   MT | Eval. A | Eval. B | Eval. C
-| --- | --- | --- | --- 
+| --- | --- | --- | ---
 |  Lïerehtæjjan | = | = | Lex: Learohken
 |  reaktah jïh dïedth | = | = | =
 |  Dov lea reakta | = | = | =
 |  x | Synt:Pron Dem dam (also in nob-text)  | x | x
 |  åadtjodh | Synt: OV | Synt: OV | Synt: OV
-|  ööhpehtimmiem | Lex: lïerehtimmiem   | =  | = 
+|  ööhpehtimmiem | Lex: lïerehtimmiem   | =  | =
 |  mieriesovveme | NotTranslated | = | =
-|  learoesoejkesjen | = | = | = 
+|  learoesoejkesjen | = | = | =
 |  mietelen, | Synt: Rel maam learoesoejkesje vïhteste | = | Lex: mietie
 |  mohte | Lex: men  | = | Lex: men
 |  dov lea | Synt Poss: utnedh Acc | Synt: no Copulas | =
@@ -19,12 +18,12 @@
 |  eadtjohkelaakan | = | = | =
 |  vyöjhkesadtedh  | NotTranslated | = | =
 |  x | x | x | ööhpehtimmien
-|  ulmiej jaksemasse Gen + NomAct Ill (sme non-accusative object) | NotTranslated | Synt: ulmide jaksedh Acc + Inf  | Synt: ulmieh jaksedh Acc + Inf 
+|  ulmiej jaksemasse Gen + NomAct Ill (sme non-accusative object) | NotTranslated | Synt: ulmide jaksedh Acc + Inf  | Synt: ulmieh jaksedh Acc + Inf
 |  jïh | NotTranslated | = | =
 |  vyöjhkesadtedh | Lex: meatan årrodh | = | =
 |  jïjtjedh Sg2 | Morph: Sg3 | = | =
 |  lïeremebarkoen  | Lex: lïerehtimmiebarkoem | = | =
-|  soejkesjæmman jïh vierhtiedæmman Gen + NomAct Ill (sme non-accusative object) | Synt: Acc + Inf soejkesjidh jïh Lex: vuarasjidh | Synt: Acc + Inf soejkesjidh jïh vierhtiedidh | Synt: Gen + NomAct Ine soejkesjemisnie jïh vierhtiedimmesne 
+|  soejkesjæmman jïh vierhtiedæmman Gen + NomAct Ill (sme non-accusative object) | Synt: Acc + Inf soejkesjidh jïh Lex: vuarasjidh | Synt: Acc + Inf soejkesjidh jïh vierhtiedidh | Synt: Gen + NomAct Ine soejkesjemisnie jïh vierhtiedimmesne
 |  Datne | = | = | =
 |  edtjh | = | = | Lex: galkh
 |  leah mietelen | Lex1: viehkiehtidh | Lex2: meatan årrodh | Lex2: meatan årrodh
@@ -38,11 +37,11 @@
 |  barkoetsiehkide. PlAcc | Morph: PlNom | Morph: PlNom  | Morph: SgAcc
 |  Datne | = | = | =
 |  edtjh | Lex: tjoerh | Lex: tjoerh | Lex: tjoerh
-|  båetedh | =  | Synt: SAdvlV |  Synt: SAdvlV  
+|  båetedh | =  | Synt: SAdvlV |  Synt: SAdvlV
 |  x | Synt: Pron Dem dan (also in nob-text) | x | Synt: Pron Dem dan (also nob)
 |  faagen-/svennepryövenassese, | Morph: Nom faage- | Morph: Nom faage- | =
-|  mïsse | = | = | = 
-|  learoesïelte | = | = | = 
+|  mïsse | = | = | =
+|  learoesïelte | = | = | =
 |  dov Gen  (sme dis-error) | Synt: Rel | Morph: Acc | Morph: Acc
 |  bæjjohte. |  Lex: bieljelamme | = | =
 |  Learoeaejkie | Synt: Rel | Lex1: Learoetïjje | Lex2: Learoeboelhke
@@ -54,8 +53,8 @@
 |  x | x | x | Synt: Pron Dem dennie
 |  faagese Ill | Synt: Ine  | Synt: Gen  | Synt: Ine
 |  x | Synt: Art (also in nob-text) | x | x
-|  sïejhme  | Lex: iemie | = | = 
-|  barkoetïjjen  | = | = |  Synt: Rel Nom 
+|  sïejhme  | Lex: iemie | = | =
+|  barkoetïjjen  | = | = |  Synt: Rel Nom
 |  dïere. | Lex1: mietie | Lex2: mietelen | x
 |  Datne | = | = | =
 |  leah | = | x Copulas | =
@@ -108,7 +107,7 @@
 |  dan Pron Dem    | =  |  = |  x
 |  jåarhkeskuvlen Gen | Synt: Ine  |  = |  =
 |  programmensuarkan Ill | =  |  Synt: Gen + Po | Synt: Ela
-|  maam Acc Sg | Synt: mestie Ela  | = | Morph: Pl 
+|  maam Acc Sg | Synt: mestie Ela  | = | Morph: Pl
 |   datne | = | = | =
 |   x | x | x | juo
 |  tjïrrehtamme. TV | Lex Synt: båatah IV | = | =
@@ -119,7 +118,7 @@
 |  gåhkese | = | = | jis
 |  goh | x  | x | x
 |  x | x | man | jis .. dellie
-|  gåarede  | = | = | = 
+|  gåarede  | = | = | =
 |  åvtese buektedh | Lex1: vuesiehtidh | = | Lex2: buakta
 |  datnem Acc | = | Synt: Ill | =
 |  dan faagem Pron Dem Acc | Synt: Art Ine (also in nob-text)  | Synt: Pron Dem Ine | Synt: Pron Dem Ine
@@ -170,9 +169,9 @@
 |  mobïjlenummerem, | = | = | =
 |  jïh  | = | = | Vihkeles aaj
 |  ahte CS  | Synt: x | Synt: x | Synt: x
-|  leah | Synt: Pass | Synt: not Copulas |  Synt: Pass 
+|  leah | Synt: Pass | Synt: not Copulas |  Synt: Pass
 |  reebleminie | Lex: datnem gåarede jaksedh| = | Lex: gåarede datnem jaksedh
-|  dennie boelhkesne Ine | Synt: Gen  | =   | =  
+|  dennie boelhkesne Ine | Synt: Gen  | =   | =
 |  goh | Lex: gosse | Lex: gosse | x
 |  sijjieh | Lex1: learoesijjieh | Lex2: lïerehtimmiesijjide | x
 |  åvtese | Lex  | x| x
@@ -202,7 +201,7 @@
 |  x | Synt: Aux | x | x
 |  vaeltieh vuasta |  Synt: OV Lex: sïjhth | Synt: OV  Lex: vaeltieh	| Synt: OV  Lex: dåastohth
 |  x | Synt: Art (also in nob-text) | x | x
-|  learoesïelten Gen | Synt: Ela | Synt: Ela | = 
+|  learoesïelten Gen | Synt: Ela | Synt: Ela | =
 |  faalenassem, | = | = | =
 |  maam   | = | = | =
 |  fylhketjïelte  | = | = | =
@@ -218,7 +217,5 @@
 |  x  | x | x | Synt: Pron Dem
 |  seamma  | = | = | =
 |  skuvlejaepien. Gen | = | Morph: Acc | =
-
- 
 
 

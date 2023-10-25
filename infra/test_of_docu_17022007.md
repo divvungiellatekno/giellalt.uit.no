@@ -260,5 +260,5 @@ have reported problems to Børre and I will follow this up and come back
 with a second report later. I will also continue to try out some details
 in the instructions and include comments about them in the next report.
 
-17.02.2007  
+17.02.2007
 Steinar Nilsen

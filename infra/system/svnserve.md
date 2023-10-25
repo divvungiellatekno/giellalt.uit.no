@@ -33,17 +33,17 @@ In the `[general]` section of
 `/var/repositories/boundcorpus/conf/svnserve.conf` the following
 variables have been set:
 
--   **anon-access = none:**  
+-   **anon-access = none:**
     This means that nobody but the users defined in the user and
     password file `/var/repositories/boundcorpus/conf/passwd` have
     access to this repository.
--   **auth-access = write:**  
+-   **auth-access = write:**
     This means that users defined in the user and password file by
     default have write access to the repository.
--   **password-db = passwd:**  
+-   **password-db = passwd:**
     The file `passwd` in `/var/repositories/boundcorpus/conf` contains
     users and their passwords
--   **authz-db = authz:**  
+-   **authz-db = authz:**
     This file sets up path based restrictions, which means that some
     users are allowed to read and write to this repository, others have
     only read access.

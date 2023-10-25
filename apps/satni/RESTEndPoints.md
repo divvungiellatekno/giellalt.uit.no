@@ -1,7 +1,6 @@
 # REST API
 REST points are called in file at $GTHOME/apps/risten2/frontend/assets/js/components/satni/satni.rest.js
 
-
 ## Dictionaries
 [https://satni.uit.no/satnibackend/dictionaries] returns list of dictionaries and terminilogies in satni database. It also returns localized names for diciotnaries and terminologies in north sami, julev sami, south sami, swedish and norwegian. Below is the response given today:
 ```
@@ -669,13 +668,11 @@ REST points are called in file at $GTHOME/apps/risten2/frontend/assets/js/compon
 ]
 ```
 
-
 ## Search
 https://satni.uit.no/satnibackend/search returns search result for queries that are three character long or longer.
 There are two query parameters for search:
 *query= Query string sent to the database, which compiles a regex "^<query>*"
 *dict= Optional parameter to specify which dictionary or terminiology to query. If no dictionary is specified, all dictionaries are queried.
-
 
 *Example:
 [https://satni.uit.no/satnibackend/search?query=muna]
@@ -724,7 +721,6 @@ There are two query parameters for search:
 ]
 ```
 
-
 *Example with dictionaries specified
 [https://satni.uit.no/satnibackend/search?query=lin&dict=smanob]
 ```
@@ -740,7 +736,6 @@ There are two query parameters for search:
   }
 }
 ```
-
 
 [https://satni.uit.no/satnibackend/search?query=lin&dict=nobsma]
 ```
@@ -831,7 +826,6 @@ There are two query parameters for search:
   }
 ]
 ```
-
 
 [https://satni.uit.no/satnibackend/search?query=lin&dict=smenob]
 ```
@@ -974,7 +968,6 @@ There are two query parameters for search:
 ]
 ```
 
-
 [https://satni.uit.no/satnibackend/search?query=lin&dict=nobsme]
 ```
 [
@@ -1103,7 +1096,6 @@ There are two query parameters for search:
   }
 ]
 ```
-
 
 [https://satni.uit.no/satnibackend/search?query=linj&dict=termwiki]
 ```
@@ -1459,9 +1451,6 @@ There are two query parameters for search:
 ]
 ```
 
-
-
-
 *Example with all dictionaries
 [https://satni.uit.no/satnibackend/search?query=hele&dict=all]
 ```
@@ -1534,10 +1523,8 @@ There are two query parameters for search:
 ]
 ```
 
-
 ## Article search
 https://satni.uit.no/satnibackend/article/<article> returns article or articles.
-
 
 *Example
 [https://satni.uit.no/satnibackend/article/munanleikkuri]
@@ -1613,12 +1600,8 @@ https://satni.uit.no/satnibackend/article/<article> returns article or articles.
 }
 ```
 
-
-
-
 ## Dictionary metadata
 Fourth REST point returns metadata information about a dictionary or terminology. Difference is that this REST address returns an XML fragment.
-
 
 *Example
 [https://satni.uit.no/satnibackend/dictionary/termwiki]

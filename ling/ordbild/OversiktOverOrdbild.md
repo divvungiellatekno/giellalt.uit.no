@@ -1,31 +1,26 @@
 Oppsett av *Ordbild*, oversyn.
 
-
 ```
  V*, N*, osb: **Søkeordet**
 |  = liste over treff, ordna i liste nedover.
 ```
 
- 
-## Verb
 
+## Verb
 
 ### Verb + objekt og oblike objekt / adverbial:
 
-
-``` 
+```
          OBJ         ADVL  ADVL  ADVL  ADVL
 SUBJ V*  ACC/Inf..   ILL   LOC   COM   ESS
-|       |            |     |     |     |     
+|       |            |     |     |     |
 ```
-
 
 Eksempler (her ser vi at @<ADVL burde ha en ekstra tagg.
 borrá kantiinnas er ikke så interessant som ballá kantiinnas.
 Dette burde tagges. Forslag: vente med ADVL til vi har en tilleggstagg for dette?
 
-
-``` 
+```
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
 "<liiko>"
@@ -34,7 +29,6 @@ Dette burde tagges. Forslag: vente med ADVL til vi har en tilleggstagg for dette
 	"áhkku" N Sem/Hum Sg Ill @<ADVL #3->2
 "<.>"
 	"." CLB #4->2
-
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -47,7 +41,6 @@ Dette burde tagges. Forslag: vente med ADVL til vi har en tilleggstagg for dette
 "<.>"
 	"." CLB #5->2
 
-
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
 "<ballá>"
@@ -56,7 +49,6 @@ Dette burde tagges. Forslag: vente med ADVL til vi har en tilleggstagg for dette
 	"kantiidna" N Sem/Org Sg Loc @<ADVL #3->2
 "<.>"
 	"." CLB #4->2
-
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -68,19 +60,12 @@ Dette burde tagges. Forslag: vente med ADVL til vi har en tilleggstagg for dette
 	"." CLB #4->2
 ```
 
-
-
-
-
-
-Note: 
+Note:
 * Infinitivsobjekt blir presentert som infinitiv
 * Viss ei kolonne er tom blir ho ikkje realisert
 
-
 Eksempler
-``` 
-
+```
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -93,35 +78,24 @@ Eksempler
 "<.>"
 	"." CLB #5->2
 
-
 ```
-
-
-
-
-
 
 Vi ventar med finitte objekt. Når vi evt. tar dei kan vi kanskje
 presentere dei som (infinitiv (fin) // pres ind sg3)
 
-
 ### Verb + andre argument
-
 
 ```
        ADVL  ADVL  Adverbial
  V*    ACC   GEN   Po+N/Pr+N/Adv
-|     |     | 
+|     |     |
 ```
 
-
-Her slår vi saman alle p-posisjonar (som dei gjer i Sverige), 
+Her slår vi saman alle p-posisjonar (som dei gjer i Sverige),
 men modellerer dei som heilheit: "i skola" "biilla haga", ...
 
-
 Eksempler
-``` 
-
+```
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -133,7 +107,6 @@ Eksempler
 	"haga" Po @<ADVL #4->2
 "<.>"
 	"." CLB #5->2
-
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -146,7 +119,6 @@ Eksempler
 "<.>"
 	"." CLB #5->2
 
-
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
 "<goarru>"
@@ -155,7 +127,6 @@ Eksempler
 	"duorastat" N Sem/Time Sg Gen @<ADVL #3->2
 "<.>"
 	"." CLB #4->2
-
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -166,34 +137,25 @@ Eksempler
 "<.>"
 	"." CLB #4->2
 
-
 ```
-
-
-
 
 ### Verb + p-posisjonar
 
-
-Dette er alternativ 2. Vi **ventar** med det til vi har sett på 
+Dette er alternativ 2. Vi **ventar** med det til vi har sett på
 korleis *verb + andre argument* ovafor ser ut.
 
-
-Her listar vi substantiv for kvar postposisjon til kvart verb, 
+Her listar vi substantiv for kvar postposisjon til kvart verb,
 for dei ... 5 (?) vanlegaste p-posisjonane.
-
 
 ```
  V    N Po1      N Po2 ...
 |           |
 
-
  V    Pr1 N      Pr2   N ...
 |             |
 ```
 
-
-``` 
+```
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
 "<goarru>"
@@ -206,27 +168,20 @@ for dei ... 5 (?) vanlegaste p-posisjonane.
 	"." CLB #5->2
 ```
 
-
-
-
 ## Substantiv
 
-
 Klarer vi å pine dette inn på ei linje?
-
 
 ### Sentrale argument i NP
 ```
     @>N   @>N      @N<
-	GenN  Adj  N*  N   
+	GenN  Adj  N*  N
 |     |        |
-```     
-
+```
 
 Mu fiskes girji oahpahusas (mi gule bok om undervisning)
 
-
-``` 
+```
 "<Mu>"
 	"mun" Pron Pers Sg1 Gen @>N #1->3
 "<fiskes>"
@@ -237,7 +192,6 @@ Mu fiskes girji oahpahusas (mi gule bok om undervisning)
 	"oahpahus" N Sem/Edu Sg Loc @N< #4->3
 "<.>"
 	"." CLB #5->3
-
 
 "<Muhtun>"
 	"muhtun" Pron Indef Attr @>N #1->2
@@ -258,46 +212,33 @@ Mu fiskes girji oahpahusas (mi gule bok om undervisning)
 "<.>"
 	"." CLB #9->5
 
-
 ```
 
-
-
-
 ### Perifere argument i NP (dvs. N PP)
-
 
 Her listar vi Pr + N, N + Po som heilskap ("i skola", "biilla haga")
 ```
  @N<      @N<
- Pr   N*   Po   
+ Pr   N*   Po
 |          |
-```     
+```
 
 
-
-
-
-     
 ## Preposisjonar
-
 
 Vi viser kva verb og substantiv som preposisjonen *står til*:
 Eller vil vi det?
-
 
 ```
   V   N   Pr*  GEN
 |    |         |
 ```
 
-
 * Mun vuolggán birra gávpoga.
 * Girji .
 * Ovdal bearjadaga.
 
-
-``` 
+```
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
 "<vázzá>"
@@ -308,7 +249,6 @@ Eller vil vi det?
 	"máilbmi" N Sem/Plc Sg Gen @P< #4->3
 "<.>"
 	"." CLB #5->2
-
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -321,32 +261,22 @@ Eller vil vi det?
 "<.>"
 	"." CLB #5->2
 
-
 ```
-
-
-
-
-
 
 ## Postposisjonar
 
-
 ... som preposisjonar:
-
 
 ```
   V   N   GEN   Po*
-|    |    |     
+|    |    |
 ```
-
 
 * Mun vuolggán dihtora haga.
 * Girji soađi birra.
 * Spábbačiekčama dihte.
 
-
-``` 
+```
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
 "<vulggii>"
@@ -357,7 +287,6 @@ Eller vil vi det?
 	"haga" Po @<ADVL #4->2
 "<.>"
 	"." CLB #5->2
-
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -371,17 +300,14 @@ Eller vil vi det?
 	"." CLB #5->2
 ```
 
-
 ## Adjektiv
-
 
 ```
  Adv  A*  N
 |        |
 ```
 
-
-``` 
+```
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
 "<goarru>"
@@ -395,27 +321,20 @@ Eller vil vi det?
 "<.>"
 	"." CLB #6->2
 
-
 ```
-
-
-
 
 ## Adverb
 
-
 ```
   V  Adv Adv*  N
-|    |        | 
+|    |        |
 ```
-
 
 * gå mycket
 * svä
 lyckligtvis
 
-
-``` 
+```
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
 "<goarru>"
@@ -428,7 +347,6 @@ lyckligtvis
 	"gákti" N Sem/Clth Sg Acc @<OBJ #5->2
 "<.>"
 	"." CLB #6->2
-
 
 "<Nieida>"
 	"nieida" N Sem/Hum Sg Nom @SUBJ> #1->2
@@ -443,33 +361,20 @@ lyckligtvis
 "<.>"
 	"." CLB #6->2
 
-
 ```
 
-
 ## Andre ordklasser?
-
 
 Talord, ...
 Seinare
 
+## Treff
 
-
-
-## Treff 
-
-
-SUBJ ...? = 
-# pron separat
-# pron som ein kategori
-# utan pron
-
-
-
+SUBJ ...? =
+1. pron separat
+1. pron som ein kategori
+1. utan pron
 
 ## Seinare utvikling
 
-
 Ordbild med sem-taggar
-
-

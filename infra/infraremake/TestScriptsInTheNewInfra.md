@@ -1,11 +1,12 @@
-# Testscripts for use in the Giellalt infrastructure
+Testing in the new infra relies on the testing infrastructure provided by
+Autotools (Automake, Autoconf, etc., see [1]). It is actually pretty simple:
 
-Testing relies on the testing infrastructure provided by
-Autotools (Automake, Autoconf, etc., see [[1]](#footnote1)). It is actually pretty simple:
-
-1. write a shell script, perl script, or other executable, and return correct exit values
-1. add that executable to the `TESTS` variable in the `Makefile.am` file in the dir where the executable is located
-1. run the command `make check` - this will also rebuild any targets not up-to-date
+1. write a shell script, perl script, or other executable, and return correct
+  exit values
+1. add that executable to the `TESTS` variable in the `Makefile.am` file in
+  the dir where the executable is located
+1. run the command `make check` - this will also rebuild any targets not
+  up-to-date
 
 # Existing shell scripts for testing
 
@@ -13,19 +14,17 @@ Presently (January 2014) there are quite a few shell scripts for testing the
 morphology and the lexicon, and nothing else. The following shell scripts are
 found for all languages:
 
-|  Shell script                      | Explanation
-|:---------------------------------- |:---
-| `generate-noun-lemmas.sh`          | will check that the lemma can generate itself
-| `run-gt-desc-yaml-testcases.sh`    | will run all yaml tests written for the *descriptive* analyser/generator
-| `run-gt-norm-anayaml-testcases.sh` | will run yaml test for *analysis only* against the normative analyser
-| `run-gt-norm-genyaml-testcases.sh` | will run yaml test for *generation only* against the normative generator
-| `run-gt-norm-yaml-testcases.sh`    | will run all yaml tests written for the *normative* analyser/generator
-| `run-lexc-testcases.sh`            | will run tests written as part of the lexc source files
+* `generate-noun-lemmas.sh         ` - will check that the lemma can generate itself
+* `run-gt-desc-yaml-testcases.sh   ` - will run all yaml tests written for the *descriptive* analyser/generator
+* `run-gt-norm-anayaml-testcases.sh` - will run yaml test for *analysis only* against the normative analyser
+* `run-gt-norm-genyaml-testcases.sh` - will run yaml test for *generation only* against the normative generator
+* `run-gt-norm-yaml-testcases.sh   ` - will run all yaml tests written for the *normative* analyser/generator
+* `run-lexc-testcases.sh           ` - will run tests written as part of the lexc source files
 
 Many languages have an extensive set of so called YAML tests,
-[test data written in the yaml format](AddingMorphologicalTestData.html#yaml-tests).
+[test data written in the yaml format](AddingMorphologicalTestData.html#Yaml+tests).
 Some also have tests written
-[directly in the lexc source code](AddingMorphologicalTestData.html#lexc-tests).
+[directly in the lexc source code](AddingMorphologicalTestData.html#Lexc+tests).
 But we need more tests. Please use the receipt here to add more tests for
 all sorts of testing needs.
 
@@ -37,12 +36,10 @@ we only assign test scripts to this variable inside a conditional for building
 the corresponding target. An example from
 `test/tools/spellcheckers/Makefile.am`:
 
-The philosopy is *Only test spellers if we build spellers*. The **if** conditinal is as follows: 
-
-```make
+```
 TESTS=
 
-# Only test spellers if we build spellers:
+1. Only test spellers if we build spellers:
 if WANT_SPELLERS
 TESTS+=test-zhfst-file.sh
 endif # WANT_SPELLERS
@@ -74,7 +71,7 @@ the same.
 # Naming conventions for yaml tests
 
 Some parts of the naming conventions are described on
-[this page](AddingMorphologicalTestData.html#filenames-for-yaml-tests). There are
+[this page](AddingMorphologicalTestData.html#Filenames+for+Yaml+tests). There are
 a couple of additional things to note:
 
 * the name of the shell script is completely free form, but should for clarity
@@ -124,14 +121,13 @@ fullfills the basic requirements:
 * all path and file references are relative to the local dir, specified using
   `$srcdir`
 
-Here is an example of a very simpe test script (a shell script, starting with `#!/bin/sh`):
+Here is an example of a very simpe test script (a shell script):
 
 ```
 #!/bin/sh
 TOOLDIR=$srcdir/../../tools/src
-for i in .sfst .ofst .foma; do
-    if ((test -z "$i") || $TOOLDIR/hfst-format --list-formats \
-           | grep $i > /dev/null); then
+for i in "" .sfst .ofst .foma; do
+    if ((test -z "$i") | $TOOLDIR/hfst-format --list-formats | grep $i > /dev/null); then
         if test -f cat2dog$i ; then
             if ! $TOOLDIR/hfst-invert cat2dog$i > test ; then
                 exit 1
@@ -142,6 +138,7 @@ for i in .sfst .ofst .foma; do
             rm test;
         fi
     fi
+
 done
 ```
 
@@ -158,4 +155,4 @@ suggestion, etc.
 
 # Footnotes
 
-<a name="footnote1">[1]</a>: <https://www.gnu.org/software/automake/manual/html_node/Scripts_002dbased-Testsuites.html>
+[#1] [https://www.gnu.org/software/automake/manual/html_node/Scripts_002dbased-Testsuites.html]

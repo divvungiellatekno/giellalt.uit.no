@@ -45,7 +45,7 @@ Bør vi ha ei sperre av noko slag på rotnivåfila? Korleis?
       65 lang-yrk/.gitignore <== korrekt i høve til templatet
 
 
-      
+
 
 fao:
 > tools/grammarcheckers/filters/make-desktopspeller-CG-tags.regex

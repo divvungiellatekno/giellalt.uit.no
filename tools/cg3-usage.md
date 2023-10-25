@@ -24,13 +24,13 @@ command:
 i.e., by using the flag *--help*. The most relevant flags for our use
 are the following:
 
--   **-g src/sme-dis.rle:**  
+-   **-g src/sme-dis.rle:**
     This flag selects the grammar file
--   **--sections n:**  
+-   **--sections n:**
     This flag sets the number of CONSTRAINT sections that are applied.
     In this way it is possible to study the effects of one rule set at a
     time.
--   **--trace:**  
+-   **--trace:**
     This flag tells the parser to include information of what constraint
     rules are invoked in each concrete case. The flag is crucial for
     studying the effects of the different rules.

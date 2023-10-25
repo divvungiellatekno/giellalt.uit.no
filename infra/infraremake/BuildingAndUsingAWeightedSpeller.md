@@ -1,7 +1,5 @@
-# Building And UsingA Weighted Speller
-
 This document and the hfst speller setup in our infra was inspired by
-[https://github.com/hfst/hfst/wiki/HfstSpellCheckerBuilding]
+[https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstSpellCheckerBuildingTutorialFsmnlp2012]
 (in English).
 
 # Weights in spellers
@@ -9,10 +7,9 @@ This document and the hfst speller setup in our infra was inspired by
 ## Weight classes
 
 The weights should be restricted to signed integers in the range
-`0 - +32 000`. Weights are always positive, with a higher weight
-meaning less likelyhood of being relevant. Negative weights are technically possible,
-but experience has shown that they have a very bad impact on speller behavior,
-and should be avoided by all means. The weights have no influence on whether a word is
+`-32 000 - +32 000`. Weights are usually positive, with a higher weight
+meaning less likelyhood of being relevant. Negative weights are usually used to
+promote a candidate. The weights have no influence on whether a word is
 accepted, only on the ranking of suggestions.
 
 To make the interaction of the weights more predictable, we group types of
@@ -24,7 +21,7 @@ weights into classes of power of tens:
 * **10^3 (1000-9000)**:  Heavy-handed weights
 * **10^4 (10000-...)**:  Most heavy demotion - do not suggest. Although not yet
                    implemented, there will probably be a hard-coded limit of
-                   10 000 - anything with this or a higher weight will **never**
+                   20 000 - anything with this or a higher weight will **never**
                    be suggested.
 
 It is possible to use fractions (the weighted hfst format allow any real as
@@ -52,7 +49,7 @@ The actual weight for any given suggestion is the sum of all the weights.
 
 1. feilskrive ord inn
 1. vi bruker ein feilmodell til å generera mange ulike forslag
-	 - kvart forslag får ei vekt ut i frå kva slags endringar vi gjer i høve til
+    1. kvart forslag får ei vekt ut i frå kva slags endringar vi gjer i høve til
    inn-ordet
 1. alle forslag blir sjekka mot stavekontrollen
 1. ikkjeeksisterande ord blir fjerna
@@ -77,28 +74,29 @@ til 2.
 
 Utrekning av straffepoeng i vektinga av rettekandidatar:
 
-| regel       | vekt    |
-| ----------- | -------:|
-| øø -> öö    | 0.2 |
-| + l  -> 0   | 1.0 |
-| Samla vekt: | 1.2 |
+```
+    regel    vekt
+    -------------
+    øø -> öö 0.2
+  + l  -> 0  1.0
+-----------------
+Samla vekt = 1.2
+=================
+```
 
 Vi kan testa feilmodellen med denne kommandoen (`errmodel.default.hfst` er
 namnet på den ferdige feilmodellfila, fila ligg i
 `$GTLANG/tools/spellcheckers/fstbased/hfst/`):
 
-```sh
-hfst-lookup errmodel.default.hfst
 ```
+hfst-lookup errmodel.default.hfst
 
 eller - for å sjekka genererte forslag for eitt ord:
 
-```sh
 echo "gøølli" | hfst-lookup errmodel.default.hfst | less
 ```
 
 Då får vi slike forslag:
-
 ```
 gøølli  göölli  0.200195
 gøølli  göølli  0.500000
@@ -111,8 +109,6 @@ gøølli  øølli   1.000000
 ...
 gøølli  gööli   1.200195 # forslag nr 989 av i alt 873 169 forslag.
 ```
-
-Andre døme:
 
 ```
 eksempler dublering:
@@ -131,15 +127,18 @@ geakti -> geatki
 # Stavekontroll i nye infra
 
 I mappa
-`$GTLANG/tools/spellcheckers/`
+`$GTLANG/tools/spellcheckers/fstbased/hfst/`
 
-er det nokre viktige filer:
+er det no to nye filer:
 
 * `strings.default.txt`
 * `words.default.txt`
+
+I tillegg til:
+
 * `editdist.default.txt`
 
-## `words.default.txt`
+## words.default.txt
 
 Namnet på fila har tre delar, vi kan ha ei anna
 fil `words.ocr.txt` for å rette ord i ocr.
@@ -156,13 +155,12 @@ Formatet er:
 ```
 ordinn:ordut<tab>vekt
 ```
-
 Mellomrom i staden for tabulator gjev syntaksfeil.
 
 Vekting: Talverdiar frå 0.0 og oppover.
 Ord med lågt tal vinn.
 
-## `strings.default.txt`
+## strings.default.txt
 
 ```
 øø:öö   0.2
@@ -174,20 +172,23 @@ Fila skal innehalda bokstavsekvensar for typiske feil som ikkje elles blir retta
 med den vanlege feilmodellen. Enkeltbokstav til annan enkeltbokstav kan ein gje
 høgare prioritet i neste fil:
 
-## `editdist.default.txt`
+## editdist.default.txt
 
-Denne fila inneheld ei liste over teikn og bokstavar som ein *vil* ha
+Denne fila inneheld ei liste over teikn og bokstavar som ein *ikkje* vil ha
 med i standardfeilmodellen, og ei liste over bokstavpar som ein vil gje ei anna
 vekt enn standardvekta på 1.0.
 
 I lag med stavekontrolltransduceren blir denne fila brukt for å laga ein feilmodell for å retta alle feil med redigeringsavstand 1 og 2. Feilmodellen
 blir laga slik:
 
-1. lag ein modell med redigeringsavstand 1 for enkeltsymbola i fila `editdist.default.txt`
-1. for symbolpar/bokstavpar som er lista opp i `editdist.default.txt` med anna
+1. hent ut alle symbol frå stavekontroll-fst-en
+1. fjern alle symbol som er på meir enn eitt teikn
+1. fjern alle enkeltteikn som er lista opp i fila `editdist.default.txt`
+1. lag ein modell med redigeringsavstand 1 for symbola som vi no står att med
+    1. for symbolpar/bokstavpar som er lista opp i `editdist.default.txt` med anna
    vekt, bruk vekta spesifisert der
 
-## `errmodel.default.hfst`
+## errmodel.default.hfst
 
 Denne fila blir laga slik:
 
@@ -201,33 +202,42 @@ Ein kan testa feilmodellen slik det er skildra ovanfor.
 
 # Kommandoer
 
-Om ein står i katalogen `$GTLANG/tools/spellcheckers/` og vil
+Om ein står i katalogen `$GTLANG/tools/spellcheckers/fstbased/hfst/` og vil
 testa ein nylaga stavekontroll:
 
-```sh
-echo test | divvunspell suggest -a se.zhfst 
-Reading from stdin...
-Input: test		[INCORRECT]
-tesat		40.3018
-tesa		49.301758
-teste		50.3018
-desit		61.3018
-leat		64.075195
-geat		66.618164
-eat		69.03418
-desi		71.3018
-deste		71.3018
-desto		71.3018
+```
+voikkospell -p . -d sma-x-standard -s
+```
+
+Dersom ein har installert stavekontrollen med `sudo make install` er det nok
+med:
+
+```
+voikkospell -d sma-x-standard -s
 ```
 
 Det er lett å køyra ein heil tekst gjennom stavekontrollen:
 
-```sh
-echo filnamn | tr ' ' '\n' | divvunspell suggest -a se.zhfst 
+```
+$ echo "Gueli lij bueries" | preprocess | voikkospell -p . \
+  -d sma-x-standard -s
+W: Gueli
+S: Gurli
+S: Garli
+S: Gulen
+S: Vulli
+S: Vuelie
+C: lij
+W: bueries
+S: buerie
+S: Dåeries
+S: fuerie
+S: tjueries
+S: suepies
 ```
 
-For meir informasjon om korleis ein bruker `divvunspell`, bruk kommandoen
+For meir informasjon om korleis ein bruker `voikkospell`, bruk kommandoen
 
 ```
-divvunspell suggest -h
+man voikkospell
 ```

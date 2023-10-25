@@ -1,20 +1,14 @@
 # History of changes
 
-
 ## 1.1
-
 
 Changes since the 1.0.1 release:
 
-
 The Divvun tools now support Microsoft Office 2008
-
 
 ### Bug fixes
 
-
 The list is not yet complete:
-
 
 * [676](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=676) – guovttenuppelot--Čoarvvegiin - both rejected and suggested
 * [677](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=677) – Wrongly hyphenated ending -danidja
@@ -24,52 +18,36 @@ The list is not yet complete:
 * [699](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=699) – Hunspell-marking and j Surfacing for short passives
 * [697](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=697) – +N+Der1+Der/laš+A+Der3+Der/vuohta
 
-
 ## 1.0.1
-
 
 Changes since the 1.0 release:
 
-
 ### Bug fixes
-
 
 * [602](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=602) – Hyphenation doesn't work in Office 2007 for North Sámi Finland/Sweden
 * [605](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=605) – Proofing tools do not work in Office 2003 for North Sámi Finland/Sweden
 
-
 ### Other improvements and changes
-
 
 A limited number of linguistic corrections.
 
-
 ## 1.0
-
 
 Changes since Public beta 2:
 
-
 ### Bug fixes
 
-
 List is forthcoming.
-
 
 ### Other improvements and changes
 
-
 List is forthcoming.
-
 
 ## Public beta 2
 
-
 Changes since Public beta 1:
 
-
 ### Bug fixes
-
 
 * [525](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=525) – Nom+hyphen compounds should never be suggested
 * [520](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=520) – 9:s do not work in abbr- and interj-files
@@ -138,10 +116,6 @@ Changes since Public beta 1:
 * [56](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=56) – -headdjiid and -heddjiid
 * [50](http://giellatekno.uit.no/bugzilla/show_bug.cgi?id=50) – LEXICON-GEARGGUS and others
 
-
-
-
 ### Other improvements and changes
-
 
 * updated speller libraries and engine

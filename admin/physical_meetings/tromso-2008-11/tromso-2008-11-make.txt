@@ -1,0 +1,102 @@
+Targets/binaries/applications:
+
+- analysers
+    - inverted analysers
+    - normative/descrptive
+i intermediate
+x on the product list
+o obosolete
+
+i    tag-not-save.fst \  # 
+i	downcase.fst \       # downcasing compounds Oslo > oslolaš
+i	caseconv.fst \       # downcasing initial letter Dat > dat
+x	ifst-norm \          # normative (inverted) analyser
+x	ifst-restr \         # restrictive (inverted) analyser
+	common \             # - see below
+x	abbr \               # fetching a list of abbrs from the source
+i	nohardhyphen.fst \   # 
+i	allcaps.fst \        # downcasing all DAT > dat
+o	typos.fst \          # fst of list of common typos
+x	pos.fst \            # fst giving pos only
+x	dis-bin \            # syntax: disambiguation analysis
+x	dep-bin \            # syntax: dependency analysis
+o	sme-dis.rle \        # 
+x	phon.fst \           # text-to-ipa
+x	clock.fst \          # 10:30 -> half past ten
+x	iclock.fst           # ... and vice versa
+x	n-sme.fst \          # sme with Norw tags
+x	s-sme.fst \          # sme with Sámi tags
+x	d-sme.fst \          # sme taylored for dis (not in use)
+x	hyph-sme.fst         # 
+
+i   hi-norm
+i   nonrec                   # nonrecursive transducer used for spellers
+
+x   common: fst \            # The core morph fst
+x	inverse.fst \        # ... and its inverse
+o	foreign.fst \        # a list of non-Sámi words (for lex addition, obs?)
+x	num.fst \            # number-to-text
+i	webadr.fst \         # recognise web addresses
+o	missing              # superset of foreign and typos (obsolete?)
+
+spellers:
+x	pl-spellers         # M$
+x	hunspell            # OOo
+x	aspell (in theory)  # ...
+
+hyphenators:
+x	PL
+
+x   wordlist    # make a list of all possible words in a nonrec net
+x	verblist
+	etc.
+
+testing:
+	cgtests
+	distest
+	deptest
+	speller testing (x 6)
+	hyphenation testing (x 2)
+
+sme/testing/:
+	paradigm-generation
+	paradigm testing
+	twol-test (neg and pos)
+
+clean
+
+
+=================
+
+
+
+overall products:
+
+morphological analysers (and inverted ones)
+    - specialised varieties
+      - hyphenated, normative, dialectal, nonrec, ...
+      - with localised tags
+    - figure2string converters (num, clock)
+    - text converters (orth2orth, txt2ipa)
+disambiguators
+hyphenators
+spellers
+
+
+derived data:
+
+wordlists
+paradigms
+
+
+
+included data (common to products):
+
+
+Order of procedure:
+
+1. Restructure, not change:
+	a. split the makefile into logical blocks (=files)
+	b. include these blocks in an umbrella Makefile
+2. add support for language-specific makefiles (in $(TARGET)/*.mk
+3. rewrite small parts, mv language specific processing into lang-spec mk-files

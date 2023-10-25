@@ -1,5 +1,3 @@
-[How to run the cgi programs locally](docu-cgi-bin-locally.md) for development.
-
 CGI-setup
 =========
 
@@ -24,18 +22,19 @@ CGI-scripts
 
 The relevant scripts cgi-bin scripts are:
 
--   smi.cgi  
+-   smi.cgi
     Language-independent cgi-script for calling different language
     technology applications: analysis, disambiguation, hyphenation and
     paradigm generation.
--   conf.pl  
+-   conf.pl
     Configuration file that contains most of the variable definitons and
     their initial values.
--   num.cgi
-    Numeral generators
+-   LANG-num.cgi
+    (where LANG = the languages for which there are numeral generators:
+    fin, kom, mhr, nno, rus, sjd, sma, sme, smj, smn, sms, yrk.
 
 All the scripts are developed in the svn-directory, under the module
-`gt/script/cgi-scripts`. The official location of cg-scripts is on
+`gt/scripts/cgi-scripts`. The official location of cg-scripts is on
 gtweb, at the cgi-bin directory under /var/www. The latest versions are
 moved to the official directory. There is a script doing this,
 `cgi-export` exporting the latest version of the release-tagged

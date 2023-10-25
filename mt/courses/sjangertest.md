@@ -1,31 +1,26 @@
 # Šáŋŋertest
 
-
-Mii leat jorgalan teavsttaid main lea su 6100 sáni. Dán tabealla logut 
-muitalit man ollu leat missing-sánit. Oassi teavsttain leat čállojuvvon 
+Mii leat jorgalan teavsttaid main lea su 6100 sáni. Dán tabealla logut
+muitalit man ollu leat missing-sánit. Oassi teavsttain leat čállojuvvon
 Norgga bealde, oassi leat čállojuvvon Suoma bealde.
 
+* Sámed. = Norgga Sámedikki beavdegirjjit
+* dieđahus = Norgga Sámedikki dieđáhus sámegielaid birra
+* Vars ja Saara = nuoraid geahppalohkangirjjit
+* IMA = mánáidgirji
+* Vest = rávesolbmuid romána
+* filosofi = Filosofiija ja etihka oahpaheaddjirávagirji
+* Historjá = Suoma joatkkaskuvla oahppogirji
+* uno info = Ruoŧa stáhta dieđáhus nuoraide givssideami ja sohkabeali birra
+* Tanapioner = Skuvlahistorjá, Deanu skuvlahistorjjá birra
+* matematihkka = Multi 1 ja 2 - mánáidskuvlla várás
 
-- Sámed. = Norgga Sámedikki beavdegirjjit
-- dieđahus = Norgga Sámedikki dieđáhus sámegielaid birra
-- Vars ja Saara = nuoraid geahppalohkangirjjit 
-- IMA = mánáidgirji
-- Vest = rávesolbmuid romána 
-- filosofi = Filosofiija ja etihka oahpaheaddjirávagirji
-- Historjá = Suoma joatkkaskuvla oahppogirji
-- uno info = Ruoŧa stáhta dieđáhus nuoraide givssideami ja sohkabeali birra
-- Tanapioner = Skuvlahistorjá, Deanu skuvlahistorjjá birra
-- matematihkka = Multi 1 ja 2 - mánáidskuvlla várás
-
-
-
-
-|  Teaksta  | Riika    | sme-smn | pros | list  | sme-sma | pros | list | sme-smj | pros | list 
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+|  Teaksta  | Riika    | sme-smn | pros | list  | sme-sma | pros | list | sme-smj | pros | list
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 |  Sámediggi | Norggas | 124 |  2 % | (76)  |  188  | 3 %  | (102) |  282 |  5 % | (138)
-|  Dieđahus  | Norggas | 158 |  3 % | (109)  |   91 |  1 % |  (77) |  211 |  3 % | (148) 
-|  Vars      | Norggas | 235 |  4 % | (188)  |  406 |  7 % | (300) |  588 | 10 % | (388)	
-|  Saara     | Norggas | 245 |  4 % | (185)  |  500 |  8 % | (351) |  685 | 11 % | (449)	
+|  Dieđahus  | Norggas | 158 |  3 % | (109)  |   91 |  1 % |  (77) |  211 |  3 % | (148)
+|  Vars      | Norggas | 235 |  4 % | (188)  |  406 |  7 % | (300) |  588 | 10 % | (388)
+|  Saara     | Norggas | 245 |  4 % | (185)  |  500 |  8 % | (351) |  685 | 11 % | (449)
 |  IMA       | Suomas  | 654 | 11 % | (386)  | 1079 | 18 % | (646) | 1193 | 20 % | (724)
 |  Vest      | Suomas  | 379 |  6 % | (327)  |  719 | 12 % | (585) |  972 | 16 % | (734)
 |  filosofi  | Norggas | 263 |  4 % | (240)  |  436 |  7 % | (387) |  567 |  7 % | (476)
@@ -34,16 +29,9 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
 |  Tanapioner| Norggas | 263 |  4 % | (399)  |  555 |  9 % | (478) |  664 | 10 % | (539)
 |  matematihkka | Norggas | 612 | 10 % | (180)  | 1243 | 20 % |  (341) | 1118 | 18 % | (325)
 
-
-
-
-
-
 ##  Juohke teavstta dábáleamos missing-sánit:
 
-
-### sme-smn
-
+## sme-smn
 ```
 ==> dev/Sámed.txt <== 76 sáni
    5 *eanedit (eanet A)
@@ -67,7 +55,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *ovddasguvlui
    2 *oaivadit
 
-
 ==> dev/dieđahus.txt <==
    5 *mielddisbuktá
    4 *tearpmaid
@@ -89,7 +76,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *rekrutterema
    2 *oktiiheivehit
    2 *oktiiheiveheamis
-
 
 ==> dev/Vars.txt <==
   17 *Busi
@@ -113,7 +99,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *algebra
    2 *Njáv
 
-
 ==> dev/Saara.txt <==
   11 *tuneallas
    6 *tunellii
@@ -135,7 +120,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *termosa
    2 *skurdnjasat
    2 *savkkástalle
-
 
 ==> dev/IMA.txt <== 386 sáni
   48 *Aurelia (ii leat smeFST:s)
@@ -159,7 +143,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *Čárás
    3 *váiddui
 
-
 ==> dev/Vest.txt <==
    5 *guovllos (ii leat smeFST:s, = guovllus)
    4 *čoakkalmasaide
@@ -181,7 +164,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *rásken
    2 *rándahis
    2 *ruvtto
-
 
 ==> historia <==
   18 *goittot
@@ -205,7 +187,7 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *čehpet
    2 *Ötzi
 
-   
+
 ==> filosofiija <==
    8 *guottuid
    6 *morála
@@ -228,7 +210,7 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    1 *čuoldit
    1 *čanastagat
 
-   
+
 ==> uno.se <==
   16 *p-pillara
   13 *geavtit
@@ -251,7 +233,7 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    4 *geavtá
    4 *geardu
 
-   
+
 ==> Tanapioner <==
    8 *internáhta
    6 *og
@@ -273,7 +255,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *Soffa
    3 *Ravne
    3 *Lile
-
 
 ==> apertium-sme-smn/dev/matematihkka.txt <== 180 sáni
   32 *govvosiid
@@ -297,18 +278,14 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    6 *sirkeliid
    6 *sihkoniin
 
-
    ```
 
 
 
-   
 
-   
 
-   
-### sme-sma
 
+## sme-sma
 ```
 ==> dev/Sámed.txt <==
    9 *geatnegahttojuvvon
@@ -332,7 +309,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *váldesuorggis
    2 *ulbmileamos
 
-
 ==> dev/dieđahus.txt <==
    3 *čovdosat
    3 *makkárge
@@ -354,7 +330,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    1 *vuođđoelemeanttain
    1 *vuolláičállán
    1 *vuollelis
-
 
 ==> dev/Vars.txt <==
   12 *Na
@@ -378,7 +353,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *feara
    3 *dakkaviđe
 
-
 ==> dev/Saara.txt <==
   17 *han
   11 *tuneallas
@@ -400,7 +374,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *ulda
    3 *njávgá
    3 *huošši (ii leat smeFST:s)
-
 
 ==> dev/IMA.txt <==
   48 *Aurelia (ii leat smeFST:s)
@@ -424,7 +397,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    5 *Gea
    4 *čáhcerávga
 
-
 ==> dev/Vest.txt <==
  10 *vuot
   10 *Na
@@ -446,7 +418,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *gámmáris
    3 *goittot
    3 *geasehii
-
 
 ==> historia <==
   18 *goittot
@@ -470,7 +441,7 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    4 *bronsaáiggi
    4 *arkeologa
 
-   
+
 ==> filosofiija <==
    8 *guottuid
    6 *morála
@@ -492,7 +463,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *servodatlaš
    2 *sekuleara
    2 *seksuála
-
 
 ==> uno.se <==
   16 *p-pillara
@@ -516,7 +486,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    6 *ovttaskasa
    6 *Kondoma
 
-
 ==> tanapioner <==
    6 *og
    6 *Heimen
@@ -537,8 +506,7 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *evakuerejuvvui
    3 *Soffa
    3 *Ravne
-   3 *Lile   
-
+   3 *Lile
 
 ==> apertium-sme-sma/dev/matematihkka.txt <==
   69 *Tevdne
@@ -562,12 +530,10 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
   12 *ruvttus
   12 *rehketbihtá
 
+   ```
 
-   ```   
 
-   
-### sme-smj
-
+## sme-smj
 ```
 ==> dev/Sámed.txt <==
  12 *vuođul
@@ -591,7 +557,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *gosa
    3 *einnostan
 
-
 ==> dev/dieđahus.txt <==
   7 *váilot
    6 *rávisolbmuide
@@ -613,7 +578,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    2 *ovttagielat
    2 *oktiiheivehit
    2 *oktiiheiveheamis
-
 
 ==> dev/Vars.txt <==
   11 *oktage
@@ -637,7 +601,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    4 *sihkkarit
    4 *oanehaš
 
-
 ==> dev/Saara.txt <==
   17 *han
   12 *goit
@@ -660,13 +623,12 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    4 *speadjalis
    4 *oktage
 
-
 ==> dev/IMA.txt <==
   48 *Aurelia  (ii leat smeFST:s)
   47 *Čárrá  (ii leat smeFST:s)
   31 *Čárá  (ii leat smeFST:s)
   15 *jo
-  14 *goittot 
+  14 *goittot
   10 *ah’  (ii leat smeFST:s)
    9 *goassige
    9 *Viimmat
@@ -682,7 +644,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    6 *oktage
    6 *Fáhkka
    5 *vuoktaráidalasa
-
 
 ==> dev/Vest.txt <==
   10 *vuot
@@ -706,7 +667,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    4 *láhttestii
    4 *hoahkalii
 
-
 ==> historia <==
   18 *goittot
    9 *OKr
@@ -729,7 +689,7 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    4 *ruhkku
    4 *lagabui
 
-   
+
 ==> filosofiija <==
    8 *smiehttat
    7 *olmmošlaš
@@ -752,7 +712,7 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *bissovaš
    3 *OEE
 
-   
+
 ==> uno.se <==
   15 *áŧestusa
   14 *iešdovdu
@@ -774,7 +734,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    7 *got
    6 *veadjit
    6 *vardá
-
 
 ==> tanapioner <==
    7 *váccii
@@ -798,7 +757,6 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
    3 *ánsomedáljja
    3 *vázze
 
-
 ==> apertium-sme-smj/dev/matematihkka.txt <==
   69 *Tevdne
   50 *Rehkenastte
@@ -821,44 +779,20 @@ Norgga bealde, oassi leat čállojuvvon Suoma bealde.
   10 *Speallu
    9 *minstara
 
-
    ```
 
+# Jorgalanprográmmaid status
 
-
-
-## Jorgalanprográmmaid status
-
-
-* bidix = 
-```
-cat apertium-sme-sma.sme-sma.dix |grep '<e>'|grep -v '"np"'|tr '<' '>'|cut -d">" -f7|sort|uniq|wc -l 
-```
-* transfer = 
-```
-cat apertium-sme-smj.sme-smj.t?x|grep '^ *<rule'|wc -l
-```
-* lexsel = 
-```
-cat apertium-sme-sma.sme-sma.lrx|grep '^ *<rule'|wc -l
-```
-
-
-
+* bidix = `cat apertium-sme-sma.sme-sma.dix |grep '<e>'|grep -v '"np"'|tr '<' '>'|cut -d">" -f7|sort|uniq|wc -l `
+* transfer = `cat apertium-sme-smj.sme-smj.t?x|grep '^ *<rule'|wc -l`
+* lexsel = cat apertium-sme-sma.sme-sma.lrx|grep '^ *<rule'|wc -l
 
 |   Sisdoallu | sme-smn | sme-sma | sme-smj
-| --- | --- | --- | --- 
-|  Bidix       |    7897  |    4384  | 12208*) 
+| --- | --- | --- | ---
+|  Bidix       |    7897  |    4384  | 12208*)
 |  Transfer    |      67  |      69  |    32
 |  Lexsel      |     139  |     322  |     9
-
 
 (*) Stuorra oassi sme-smj-bidixas lea genererejuvvon
 
 
-
-
-
-
-
-   

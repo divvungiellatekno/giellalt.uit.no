@@ -1,10 +1,8 @@
-Application infrastructure
-=====================
+# Application Infrastructure
 
-This page contains information on more technical aspects of our applications. For more linguistic aspects,
-see the [proofing](../proof/index.html) and [grammarchecker](../proof/gramcheck/GrammarCheckerDocumentation.html)
+This page contains information on technical aspects. For more linguistic aspects,
+see the [proofing|proof/index.html] and [grammarchecker](proof/gramcheck/GrammarCheckerDocumentation.html)
 pages.
-
 
 # Spellers
 ## Compile spellers
@@ -17,7 +15,6 @@ pages.
 * [Installing and updating the online demo speller server](SpellerServer.html)
 * [Hunspell howto](hunspell.html)
 
-
 ## CompilingLibreoffice Voikko extension
 * [Preparations and final steps](BuildingTheVoikkoExtensionForLibreOffice.html)
 * [Building hfst-ospell for inclusion in Voikko](BuildingHfst-ospellForInclusionInVoikko.html)
@@ -25,8 +22,6 @@ pages.
 * [Build a release version of Voikko+hfst oxt](BuildEverythingForVoikkoLOForRelease.html)
 * [LO-Voikko libraries](LibreOfficeVoikkoLibraries.html" label)
 
-
 # Grammarcheckers
-
 
 Some documentation is found on Divvun's github page.

@@ -1,4 +1,4 @@
-# Infrastructure maintenance
+# New infra - infra maintenance
 
 Below there are a couple of example tasks, and steps to take to realise them.
 
@@ -6,7 +6,7 @@ Below there are a couple of example tasks, and steps to take to realise them.
 
 If you want to change the build procedure (e.g. to add or remove a new feature from a specific fst for all languages), work through this task.
 
-Here is the procedure, with `dictionary-include.am` in 
+Here is the procedure, with `dictionary-include.am` in
 `am-shared` as an example.
 The local directory `am-shared` is an exact copy of:
 `$GTCORE/langs-templates/und/am-shared/`
@@ -14,7 +14,7 @@ The local directory `am-shared` is an exact copy of:
 1. Change `dictionary-include.am` locally (for your test language)
   and make sure everything works.
 1. copy your local `dictionary-include.am` to the `und/am-shared/` directory
-1. write a checkin message in `und/und.timestamp` 
+1. write a checkin message in `und/und.timestamp`
 1. check in **both** `dictionary-include.am` and `und.timestamp`.
 1. `cd $GTHOME/langs`
 1. `./update-all-from-core.sh -t und`
@@ -43,29 +43,28 @@ steps to go through:
 
 1. edit `am-shared/dictionary-incluce.am` - the following steps will tell the
   system **how** to build the fst:
-	1. add a new target `analyser-dict-gt-desc.tmp.hfst` 
-		2.  it is important that
+    1. add a new target `analyser-dict-gt-desc.tmp.hfst` - it is important that
    the target is named `*.tmp.*` to allow local overrides.
-	1. write the build instructions for the *language neutral parts* of the build
-   1. if language specific additions, changes or filters are required, these
+    1. write the build instructions for the *language neutral parts* of the build
+   - if language specific additions, changes or filters are required, these
    should be added to a separate `*.tmp.hfst -> *.hfst` target in the local
    Makefile.am (if no such changes are needed, `*.tmp.hfst` will just be
    copied to `*.hfst`).
-	1. ensure that all filters required are actually built in the `filters/` dir,
+    1. ensure that all filters required are actually built in the `filters/` dir,
    and add dependencies to them all (such that the build will break properly if
    a filter is not available, and all required filters are rebuilt if needed).
 1. edit `src/Makefile.am` - the following steps will tell the system **when**
   to build the fst target:
-	1. to tell the build system that we want a target to be built, it must be added
+    1. to tell the build system that we want a target to be built, it must be added
    to the variable `GT_ANALYSERS_HFST` (for hfst transducers).
-	1. ... but since we only want this transducer to be built when the user has
+    1. ... but since we only want this transducer to be built when the user has
    explicitly requested dictionary fst's, we need to wrap that variable
    assignment within a conditional: \\ find the text
    `if WANT_DICTIONARIES` and within that `if` block, write the following:\\
    `GT_ANALYSERS_HFST+=analyser-dict-gt-desc.hfst`\\
    (the `+=` part will add the new fst to the list of fst's already assigned
    to the variable)
-	1. if you need to make use of a new conditional, that requires some `M4` work
+    1. if you need to make use of a new conditional, that requires some `M4` work
    and will be covered in a separate tutorial
 1. test - remember to `./configure` with the proper option
 1. if everything works as it should, copy to the `und` template, add a note in

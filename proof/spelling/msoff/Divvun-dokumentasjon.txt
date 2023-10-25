@@ -1,0 +1,39 @@
+Dokument som skal skrivast:
+* ny framside
+* pressemelding
+
+Dokument som skal oppdaterast:
+* install_use
+
+Delast opp i to dokument:
+- installering + kjende feil
+- bruk + FAQ
+
+
+Ting som må dokumenterast:
+
+hyphenation? kan mangla orddeling ved visse endingar
+northsami (Sweden and Finland) triggers lulesami - gjeld berre Office 2007, bruk Norge inntil vidare
+suggest same word - allment om forslag og manglande forslag
+number-compounds - kanskje noko her, i fall det finst i den siste versjonen
+Suggestions unexpectedly containing hyphens - ja
+
+New issues to document:
+* acronyms longer than 3 chars will get suggestions with case endings in capital letters. The correct form with lower case case endings will of course be accepted (and the forms with upper case case endings is of course correct in places where the whole text is in upper case). This is a compromise to be able to also correct words like "SáMI" to "SÁMI". Earlier "SáMI" was corrected to "Sámi". The speller behaviour in this case will be evaluated based on user feedback.
+* when upgrading on Windows, the installer language choice have no effect - the language choice of the previous installation will be used. If you want to run the installer in another language, then please first deinstall the previous installation, then install again, choosing your preferred language.
+* when upgrading on Windows, the installation is NOT upgraded. The only solution is to first deinstall, either using the installer or the regular software removal tool, and then install regularly.
+* in Windows, it may look like you also have proofing tools for Skolt, Inari and South Sámi. This is not the case. Due to Microsoft's way of grouping the Sámi languages together (which might be good in some cases), Office will automatically fall back to proofing tools for other variants in a group when nothing is found for a specific language. This leads to Office falling back to Lule or North (most likely the alphabetically first language, ie Lule) for the Sámi languages which do not have proofing tools of their own. It doesn't do any harm, but it can be annoying if you have told MS Word that the language is one of the three mentioned above, and you get a lot of red underlinings. One long-term solution is to develop proofing tools even for these languages. South Sámi is already planned.
+
+
+
+* stavekontrollen kan av og til vera sein ved lange, feilskrivne ord - berre vent
+* skifta språk i Excel:
+
+Excel works a different way:
+The Language option in the Tools menu is not installed, by default. In the help function, one may, after some poking around, find the following text:
+
+Check spelling in another language
+1. Open the worksheet that contains text written in another language.
+2. On the Tools menu, click Language.
+If you don't see Language on the Tools menu, select the Set Language check box on the Add-ins dialog box (Tools menu, Add-ins command). If you don't see Set Language listed in the Add-ins dialog box, install the Excel Add-ins component, and then quit and restart Microsoft Excel. For step 5 (Installation) of the Setup Assistant, expand Office Tools by clicking the arrow next to it, and then select the Excel Add-ins check bo3. In the Language to use to check spelling box, click the language you want to check, and then click OK. 
+Note   Excel can only check spelling by using one language at a time. If you need to check spelling by using multiple languages, you must quit and restart Excel before choosing another languag4. To have your changes take effect, quit and restart Excel

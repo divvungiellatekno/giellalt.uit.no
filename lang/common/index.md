@@ -1,20 +1,22 @@
 Working with LEXC, TWOLC and Constraint Grammar
 ===============================================
 
--   [Tutorials for lexc, twolc and constraint grammar](Tutorials.html)
--   [Test scripts and routines for use when working on the tools](developingwork.html)
--   [Handling morphological variation in lexc](Variation_in_lexc.html)
--   [Principles for common (language-independent) lexicon entries](PrinciplesForCommonTagsAndLexiconEntries.html)
+-   [Tutorials](Tutorials.html)
+-   [Handling variation in LEXC](Variation_in_lexc.html)
+-   [Principles for common (language-independent) lexicon
+    entries](PrinciplesForCommonTagsAndLexiconEntries.html)
+-   [Testscripts](developingwork.html)
+-   Constraint grammar
 
 Documentation of tags
 =====================
-These links document the different types of tags used in the grammar models.
 
--   [How the different tags are interacting with the FSTs](DifferentFSTs.html)
--   [Harmonising the most frekvent derivations in Saami languages](DerivationOverview.html)
+-   [How the different tags are interacting with the
+    FSTs](DifferentFSTs.html)
+-   [Harmonising the most frekvent derivations in Saami
+    languages](DerivationOverview.html)
 -   [Compoundtags](CompoundTags.html)
 -   [Morphological tags](MorphologicalTags.html)
--   [Derivational tags](DerivationOverview.html)
 -   [Syntax](docu-sme-syntaxtags.html)
 -   [Dependency](docu-deptags.html)
 -   [Semantic tags](SemanticTags.html)
@@ -22,8 +24,9 @@ These links document the different types of tags used in the grammar models.
 Language-specific documentation
 ===============================
 
--   [Work on each languages is  documented on their respective pages](https://giellalt.github.io/LanguageModels.html)
--   [Page for improving our linguistic analysis for the Saami languages](../smi/index.html)
+-   [The different languages are documented separately](../index.html)
+-   [Improving our linguistic analysis for Saami
+    languages](../smi/index.html)
 
 Obsolete documentation
 ======================

@@ -57,7 +57,7 @@ example is fetched from the `tabs-frag.xml` file.
         <tab dir="doc/ling"  id="ling"  label="Linguistics" indexfile="common.html" />
         <tab dir="doc/tools" id="tools" label="Tools" indexfile="tools.html" />
     </tab>
-                    
+
 
 This stanza defines the tab labeled "Tech. Doc", with the subtabs
 "Admin", "Infrastucture", "Languages", "Linguistics" and "Tools".

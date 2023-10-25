@@ -42,7 +42,7 @@ The basic outline of the file is as follows:
       <contexts>
        <context id="code" title="Changes to the Code Base"/>
        <context id="docs" title="Changes to Documentation"/>
-      </contexts> 
+      </contexts>
 
       <changes>
         <!-- Add new releases here -->
@@ -93,7 +93,7 @@ following:
        <context id="admin"  title="Changes to Project Administration"/>
        <context id="design" title="Changes to Design"/>
        <context id="build"  title="Changes to Build"/>
-      </contexts> 
+      </contexts>
 
 This is a reasonable set, but we are of course free to add, remove or
 redefine this list at will.
@@ -105,12 +105,12 @@ All changes are found within the `<changes>` element, and further
 encapsulated in one or more `<release>` elements. The following
 attributes are available:
 
--   **changes/@title:**  
+-   **changes/@title:**
     If used, will give the title of the page. If not, the text "History
     of Changes" will be used.
--   **release/@version:**  
+-   **release/@version:**
     The version number of the release.
--   **release/@date:**  
+-   **release/@date:**
     The date of the release.
 
 action
@@ -119,9 +119,9 @@ action
 Within each release, action elements describe each change or action
 taken. The following attributes are available:
 
--   **@context:**  
+-   **@context:**
     One of the contexts defined earlier
--   **@type:**  
+-   **@type:**
     The type of change. By default, the following action types are
     recognised by Forrest:
     -   add
@@ -135,13 +135,13 @@ taken. The following attributes are available:
     look for jpeg images named after the action type, thus
     `images/type.jpg`, where `type` should be replaced by the actual
     type string.
--   **@dev:**  
+-   **@dev:**
     The ID of the developer behind the action.
--   **@due-to:**  
+-   **@due-to:**
     The name of an external person helping out with an issue.
--   **@due-to-email:**  
+-   **@due-to-email:**
     The e-mail of an external person helping out with an issue.
--   **@fixes-bug:**  
+-   **@fixes-bug:**
     The ID of the bug(s) fixed as numbered in Bugzilla, separated with
     commas. If forrest.properties is configured correctly (it is now),
     Forrest will automatically create links to the bugs listed. We only
@@ -154,10 +154,10 @@ All todo items are found within the `<todo>` element, and further
 encapsulated in one or more `<actions>` elements. The following
 attributes are available:
 
--   **todo/@title:**  
+-   **todo/@title:**
     If used, will give the title of the page. If not, the text "Todo
     List" will be used.
--   **actions/@priority:**  
+-   **actions/@priority:**
     An arbitrary string describing the priority. Will be used as section
     title for all contained actions.
 
@@ -167,7 +167,7 @@ action
 Only the following attributes are available for `<action>` elements
 within the `<todo>` element:
 
--   **@context:**  
+-   **@context:**
     One of the contexts defined, or an arbitrary string.
--   **@dev:**  
+-   **@dev:**
     The developer responsible for the task.

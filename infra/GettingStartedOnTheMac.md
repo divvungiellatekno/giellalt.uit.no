@@ -1,71 +1,114 @@
-# Getting started with the GiellaLT infrastructure on the Mac
+# Getting Started On The Mac
 
 This page is a part of the overall [Getting started](GettingStarted.html) page.
 It describes what you need to install on the **Mac** to be ready to develop
 language tools for your language.
 
-> Note that this documentation is relevant when you want to participate in **building and developing the grammatical tools yourself** . If you only want to use the ready-made grammatical analysers, skip this and see the [Linguistic analysis page](ling/LinguisticAnalysis.html) instead.
+Note that this documentation is relevant when you want to participate in '*building and developing the grammatical tools*' yourself. If you only want to use the ready-made grammatical analysers, see the [Linguistic analysis page](ling/LinguisticAnalysis.html).
 
-# System setup of your Mac before GiellaLT installation
+# System setup
 
-You must first prepare the Mac, by first installing XCode: 
+* You need a **text editor** - we recommend
+   [SubEthaEdit](https://apps.apple.com/us/app/subethaedit/id728530824) - then
+   you can collaborate with us over the net straight from your hard disk (only the
+   things you explicitly share or invite peope to). Try [see://divvun.no] and see if
+   you find someone to code or write with!
+* Basic programming tools (in this order):
+    - [Xcode](InstallingXCode.html)
+    - [MacPorts](http://www.macports.org) (to install other tools, see below; if you
+   already use HomeBrew, install the tools below using that one instead)
 
-1. [Xcode](InstallingXCode.html)
+Then you need a number of tools for the build chain.
+On the Mac, you can get them by running the following commands:
 
-Proceed with installing a number of command line tools, using one of:
+##  Catalina and newer (macOS 10.15+)
 
-- [HomeBrew](GettingStartedUsingHomebrew.md)
-- [MacPorts](GettingStartedUsingMacPorts.md)
+Catalina comes with Python 3.7 built-in, and also Perl 5.18. By default, that should
+be good enough, and the commands below work with the pre-installed versions of
+both. If you require newer versions of Perl or Python, you probably know what you
+need to do.
 
-# Installing HFST, our linguistic compiler
+###  Minimal install
 
-You need tools to convert your linguistic source code (lexicons, morphology, phonology, syntax, etc.) into usefull tools like analysers, generators, hyphenators and spellers. 
+```
+sudo port install autoconf automake pkgconfig libtool python39 py39-pip py39-yaml wget \
+bison cmake gawk saxon antiword wv libxslt poppler tidy subversion
 
-Run these commands:
-
-```sh
-curl http://apertium.projectjj.com/osx/install-nightly.sh \
-     > install-nightly.sh
-
-chmod a+x install-nightly.sh
-
-sudo ./install-nightly.sh
+sudo port select --set pip3 pip39
+sudo port select --set python3 python39
 ```
 
-This downloads a shell script (1), makes it executable (2), and runs it (3). The shell script in turn will download and install prebuilt binaries for programs for morphology, syntax, machine translation and grammar checking:
+You also need to ensure that the following is set in `.profile` or similar:
 
-- hfst
-- vislcg3
-- apertium
-- libdivvun (divvun grammar checker components + command line tool)
+```
+export LC_ALL=no_NO.UTF-8
+export LANG=no_NO.UTF-8
+export LOCALE=no_NO.UTF-8
+```
 
-You get the latest version of all required tools in one go.
-**Rerun these 3 commands with regular intervals to get the latest updates.**
+Adapt the actual locale to whatever you want, but the variables MUST be set, and the locale MUST be UTF-8.
 
-HFST is our default compiler, and it builds all our tools. It is open source, and it is needed for turning your morphology and lexicon into spellcheckers and other useful programs.
+# Linguistic software
 
-# Some alternative compilers, strictly speaking not needed
- 
-The following two programs are **not needed**, we just refer to them since the source code is compatible with them:
+You need tools to convert your linguistic source code (lexicons, morphology,
+phonology, syntax, etc.) into usefull tools like analysers, generators,
+hyphenators and spellers. Install the following
+**linguistic programming tools:**
 
-- If you need a fast compiler for development work you may also install the [Xerox tools](https://web.archive.org/web/20220303052838/https://web.stanford.edu/~laurik/fsmbook/home.html).
-   It is freely available but is not open source and can not turn the analysers into spellers. The software itself is found under the link
-   [NewSoftware](https://web.archive.org/web/20220303052838/https://web.stanford.edu/~laurik/.book2software/),
+* One or more of:
+    - [Xerox tools](http://www.fsmbook.com) -
+   Freely available, faster compilation, but not open source and no spellers.
+   The software is found under the link
+   [NewSoftware](https://web.stanford.edu/~laurik/.book2software/),
    **Binaries Only** is enough. Unpack the files and store them in e.g.
-   `/usr/local/bin/`.
-   - **Update:** Lauri Karttunen died in the spring of 2022, and his home page at Standford — with the downloadable software — is not available anymore. The software is still available via the [Wayback Machine](https://web.archive.org). The download links above are updated accordingly.
-- You may also use [Foma](https://fomafst.github.io/), but for most languages on this site you will in any case need the program *hfst-twolc* (a program in the hfst family) for the morphophonology.
+   /usr/local/bin/.
+    - [HFST tools, vislcg3, foma](compiling_HFST3.html) -
+   Open source. Needed for turning your morphology and lexicon into a
+   spellchecker
 
-# Installing an editor
+Now go back to to [Getting Started page](GettingStarted.html) for the next step towards building, using and developing the linguistic analysers.
 
-You will need a *text editor* for writing the source files. One of the following
- 
-- [SubEthaEdit](https://apps.apple.com/us/app/subethaedit/id728530824) is our preferred editor at UiT (Mac only). It has nice syntax modes:
-    - modes for [*lexc*, *twolc* and more](https://github.com/divvun/see-modes)
-    - mode for [Makefiles](https://github.com/subethaedit/SubEthaEdit-Modes/tree/master/Modes)
-- [Atom](http://atom.io) is also a good editor, which works for all operating systems. It has *lexc* and *twolc* modes.
-    - Atom is no longer being supported or developed, it has been archived.
-- [Textmate](https://macromates.com/) is another good editor. Remember to install the *mate* command line tool for opening files from the command line.
-- If you are familiar with **Emacs** or **vim** you might as well continue with what you are used to.
+There is also [a page giving the overview for linguistic download](anonymous-svn.html) in order to download and compile the analysers. TODO (write these two together).
 
-**Now go back to the [Getting Started page](GettingStarted.md) for the next step towards building, using and developing the linguistic analysers.**
+# Additional software
+
+Developing special tools in addition to the core linguistic analysers can require
+additional software. Here's some additional software
+you might need depending on what you need to do.
+
+## Software for proofing development
+
+If you want to work with proofing tools, see
+*Proofing tools to install* [here](install-overview.html)
+
+##  Documentation web server locally
+
+If you want to have documentation pages locally on your own machine, you need Forrest:
+
+* [Forrest](http://forrest.apache.org) to validate the documentation comments.
+  You get it by following [these instructions](forrest-howto.html).
+    - Forrest requires Java which can be downloaded from
+   [java.com](http://java.com/en/download/mac_download.jsp).
+
+### Article authoring using LaTeX
+
+```sudo port install \
+TeXShop3      \
+texlive-basic \
+texlive-bin-extra \
+texlive-latex-extra
+```
+
+## Note for Java avoiders
+
+Some of the tools above require or use Java, notably Saxon and Forrest. Saxon is
+used to convert XML-based source files into Lexc files, and Forrest is used to
+validate documentation extracted from the source files.
+
+None of these functions are strictly required for developing language tools. The
+lexc files converted from XML are stored in svn, and if Saxon is not available,
+the lexc files will be used as is. And if Forrest is not available, the step for
+building documentation out of source code comments will just be skipped.
+
+That is, **Java is not required** to do development using the Divvun/Giellatekno
+infrastructure, **unless** you specifically work with xml-based lexicons.

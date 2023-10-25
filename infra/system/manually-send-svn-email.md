@@ -20,7 +20,7 @@ Sending a sequence of langtech mails
         ~/svn/langtech/hooks/post-commit ~/svn/langtech $i
         i=$((i+1))
     done
-                    
+
 
 To send svn e-mails for other repositories, just exchange "langtech"
 found in the commands above with one of the other repositories found in

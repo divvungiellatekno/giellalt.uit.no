@@ -1,12 +1,8 @@
-Naming and organisation of the makefiles
-========
-
-The directory structure is described in [this document](NewinfraCatalogues.html). Almost every
+The directory structure is described in [NewinfraCatalogues.html]. Almost every
 directory has one `make` file, named `Makefile.am`. The `.am` suffix is
 there to indicate that the files are going to be processed by `automake`, to
 produce `Makefile.in` files, which are processed by `configure` to produce
 the final `Makefile`'s that `make` can process.
-
 
 Most of the `Makefile.am` files have an `include` statement at the end, by
 which they include shared build instructions, These shared build instructions
@@ -14,13 +10,10 @@ are common to all languages (thus *shared*), and they are always located in
 `$top_srcdir/am-shared` (`$top_srcdir` refers to the language dir, like
 `sme`, `sma`, etc.).
 
-
-## The "am-shared" dir
-
+# The "am-shared" dir
 
 There are three types of files in the **am-shared** dir, each with their own
 file naming scheme:
-
 
 1. named after the dir of the including file (these files should always be
    included by the `Makefile.am` files, then these included files can further
@@ -32,7 +25,6 @@ file naming scheme:
 * `tools-grammarcheckers-dir-include.am`
 * `tools-spellcheckers-fstbased-hfst-dir-include.am`
 * `tools-spellcheckers-dir-include.am`
-
 
 2. named after the type of source file to be processed by the makefile. These
    are utility include files, so to speak, in the sense that they will process
@@ -46,7 +38,6 @@ file naming scheme:
 * `twolc-include.am  ` => compile twolc files
 * `regex-include.am  ` => compile regex files
 
-
 3. named after configure option/application-specific targets, and after the
    including file. These files are always included by another include file, and
    the purpose is to avoid filling up the main include file by all sorts of
@@ -58,15 +49,12 @@ file naming scheme:
 * `src_oahpa-include.am`
 * `src_mt-include.am`
 
-
 Summary: it is possible to programmatically identify all three types:
 * main include files contain the string ` -dir- `
-* configure option include files contain **underscore** (` _ `) 
+* configure option include files contain **underscore** (` _ `)
 * general compilation file names based on source type include neither
 
-
-## Other (regular) dirs
-
+# Other (regular) dirs
 
 The Automake files are everywhere else named `Makefile.am`.
 These do always include the Automake include files in `am-shared/`, and always
@@ -74,9 +62,7 @@ and only the include file named after the directory which the `Makefile.am` is
 located in. That is, the file `tools/spellcheckers/fstbased/Makefile.am`
 includes the file `am-shared/tools-spellcheckers-fstbased-dir-include.am`.
 
-
-There are a couple of conventions to observe:
-
+Therer are a couple of conventions to observe:
 1. the target `clean-local:` should always be defined in the local
   `Makefile.am` - not in the include files; if there is a need to define
   clean operations in the include files, it should be through the use of the
@@ -85,7 +71,6 @@ There are a couple of conventions to observe:
 1. the include file `am-shared/silent_build-include.am` should only be included
   by the `*-dir-include.am` files to avoid double inclusion and subsequent
   double definitions of the same variables
-
 
 There might be some violations of these conventions, they should be cleaned up
 as they are found.

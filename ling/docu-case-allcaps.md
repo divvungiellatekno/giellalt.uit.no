@@ -58,9 +58,9 @@ Note that the files have absolute, and not relative reference (relative
 reference would here have been `../bin/sme.fst` etc.). Xerox has been
 notified, and has answered, cf.
 
-(quote)  
-Päiväys: onsdag, 12. februar 2003 18:39:06 +0100  
-paths in lookup scripts.  
+(quote)
+Päiväys: onsdag, 12. februar 2003 18:39:06 +0100
+paths in lookup scripts.
 Vastaus: tamas.gaal@xrce.xerox.com
 
 Trond,
@@ -77,5 +77,5 @@ setenv LOOKUP\_SCRIPT\_BASE ...
 
 If it is not of enough then the interface should be improved. While it
 is not a complicated matter, we are short of able people now so you may
-have to use the full pathnames in your scripts until it gets improved.  
+have to use the full pathnames in your scripts until it gets improved.
 (end of quote)

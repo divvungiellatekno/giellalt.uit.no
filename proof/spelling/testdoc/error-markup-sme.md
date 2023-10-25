@@ -1,6 +1,3 @@
-Error markup for sme
-====================
-
 We want to extend (some of) the corpus files with markup for spelling
 and other errors, to use them as gold standards for testing our spellers
 (and in the future other tools as well). The markup is done manually,
@@ -9,11 +6,11 @@ and needs to follow certain rules.
 SME
 ===
 
--   **Ordklasse (ikke obligatorisk, ikke for Nordplus)::**  
-    loan \| prop \| num \| acro  
+-   **Ordklasse (ikke obligatorisk, ikke for Nordplus)::**
+    loan \| prop \| num \| acro
     (dette fordi noen typer ord har mer feilskriving enn andre typer)
--   **Spesielle forhold ved ordet (ikke obligatorisk)::**  
-    cmp \| nomag \| px \| der \| infl \| foc  
+-   **Spesielle forhold ved ordet (ikke obligatorisk)::**
+    cmp \| nomag \| px \| der \| infl \| foc
     Feilen er relatert til dette. Eks.
     -   *cmp*: sammensetningsfeil - largo istedenfor allegro, eller
         motsatt, eller samskriving der det skulle vært to ord, eller
@@ -31,7 +28,7 @@ SME
         brukt isteden for positiv, sammenblandinger i verbbøying og
         verbmodus etc
     -   *foc*: skrivefeil knytta til enklitisering
--   **Posisjon: b-ea-tn-a-g-i-in:**  
+-   **Posisjon: b-ea-tn-a-g-i-in:**
     -   b - initium - *coninit*
     -   ea - vokalsentrum - *vowc*
     -   tn - konsonantsentrum - *conc*
@@ -40,7 +37,7 @@ SME
     -   i - vokalmargo - *vowm*
     -   in - finis - *fin*
 -   **Posisjon i sammensatte hvor første ord ender på konsonant:
-    b-a-j-á-sš-a-dd-a-n:**  
+    b-a-j-á-sš-a-dd-a-n:**
     -   b - initium - *coninit*
     -   a - vokalsentrum - *vowc*
     -   j - konsonantsentrum - *conc*
@@ -50,7 +47,7 @@ SME
     -   dd - konsonantsentrum - *conc*
     -   a - latus - *vowlat*
     -   n - finis - *fin*
--   **Feiltyper – eksempler::**  
+-   **Feiltyper – eksempler::**
     -   typo = tastefeil, eks.
         -   {laet}${typo\|leat}
     -   a-á = skrevet a istedenfor á, eks.
@@ -105,7 +102,7 @@ SME
         har jeg merka av posisjon også fordi det er snakk om
         assimilasjon. Eks.
         -   {áššin}${infl,com,fin,n-in\|áššiin}
--   **Flere feil i samme ord skilles med ( ; ), eks.:**  
+-   **Flere feil i samme ord skilles med ( ; ), eks.:**
     -   {Filkamánne}${loan,vowc,i-y;conc,lk-lkk;vowlat,e-i\|Fylkkamánni},
         Nordplus:
         {Filkamánne}${vowc,i-y;conc,lk-lkk;vowlat,e-i\|Fylkkamánni}

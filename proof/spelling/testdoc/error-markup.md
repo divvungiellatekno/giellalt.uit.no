@@ -1,6 +1,3 @@
-Error markup
-============
-
 We want to extend (some of) the corpus files with markup for spelling
 and other errors, to use them as gold standards for testing our spellers
 (and in the future other tools as well). The markup is done manually,
@@ -22,21 +19,6 @@ We differentiate between different types of errors that people make,
 depending on the type of analysis needed to detect and correct the
 error. We also use the annotation for errors in learner texts.
 
-Synopsis (explanations, see below)
-----------------------------------
-
-- **§** = Unclassified errors
-- **$** = Orthographic errors, non-words
-- **¢** = Orthographic errors, real-words
-- **£** = Morpho-syntactic errors 
-- **¥** = Syntactic errors
-- **€** = Lexical errors
-- **‰** = Formatting errors
-- **∞** = Foreign language errors
-
-
-
- 
 Unclassified errors
 -------------------
 
@@ -46,15 +28,13 @@ Errors of unknown type. By default such errors will be treated as
 spelling errors (see below). In the resulting xml, the name of the
 element will be &lt;error&gt;.
 
--   **Examples:**  
+-   **Examples:**
 
-```
 {% raw %}
-    Hm. maahta {son}${pcle,vowc|sån} ahte tjoeverem {{daab}${dem,con|daam} bloggen
-    {{darjoedh}${verb,vow|darjodh}}}£{noun,x,acksg,gensg,case|daam bloggem darjodh}
-    {{vytnije}${noun,mix|vætnoe} {bloggine}}§{x,x|vætnoebloggine}.
+        Hm. maahta {son}${pcle,vowc|sån} ahte tjoeverem {{daab}${dem,con|daam} bloggen
+        {{darjoedh}${{}verb,vow|darjodh}}}£{noun,x,acksg,gensg,case|daam bloggem darjodh}
+        {{vytnije}${noun,mix|vætnoe} {bloggine}}§{x,x|vætnoebloggine}.
 {% endraw %}
-```
 
 Orthographic errors, non-words
 ------------------------------
@@ -67,18 +47,18 @@ detected and corrected. In the resulting xml, the element is named
 &lt;errorort&gt;. These errors do always lead to non-words in the text,
 such that a speller should be able to detect them.
 
--   **Mark-up attributes:**  
-    -   **pos:**  
+-   **Mark-up attributes::**
+    -   **pos:**
         { noun \| verb \| adj \| adv \| num \| interj \| pp \| cc \| cs
         \| pers \| refl \| dem \| resip \| indef \| pcle \| prop \| typo
         \| mix \| x }
-    -   **errtype:**  
+    -   **errtype:**
         The value of this attribute is language specific. For details,
         see below.
 
 <!-- -->
 
--   **Examples for mark-up:**  
+-   **Examples for mark-up:**
     -   Acronym errors:
         -   Detailed mark-up:
 
@@ -89,40 +69,40 @@ Orthographic errors, real-words
 
     TEMPLATE: {wrong}¢{error classification|correct} (almost same as for non-words, see above)
 
-Misspellings confined to single words, but still need an analysis of
+Misspellings confined to single words, but stilll need an analysis of
 the surrounding words to be detected and corrected. In the resulting
 xml, the element is named &lt;errorortreal&gt; These errors, although
 orthographical in nature, lead to other. real words, such that a
 traditional speller is unable to detect them.
 
--   **Mark-up attributes:**  
+-   **Mark-up attributes::**
     **pos** { noun \| verb \| adj \| adv \| num \| interj \| pp \| cc \|
     cs \| pers \| refl \| dem \| resip \| indef \| pcle \| prop \| typo
-    \| x }  
+    \| x }
     **errtype** { a \| á \| conc \| svow \| vowc \| vow \| con \| mono
     \| diph \| lime \| meta \| suf \| cmp \| ascii \| typo \| cap \| min
-    \| mix }  
-    **errcase** { gen }  
+    \| mix }
+    **errcase** { gen }
     **corrcase** { nom }
--   **Some explanations:**  
-    a = should be a instead of á  
-    á = should be á instead of a  
-    conc = consonant centre  
-    vowc = vowel centre  
-    svow = soggevokála  
-    vow = some other wrong vowel  
-    con = some other wrong consonant  
-    mono = diphthong, but should be monophtong  
-    diph = wrong diphthong  
+-   **Some explanations::**
+    a = should be a instead of á
+    á = should be á instead of a
+    conc = consonant centre
+    vowc = vowel centre
+    svow = soggevokála
+    vow = some other wrong vowel
+    con = some other wrong consonant
+    mono = diphthong, but should be monophtong
+    diph = wrong diphthong
     lime = consonant between two unstressed syllables, *vuovddášis* vs
-    *vuovddážis*  
-    meta = metathesis  
-    suf = wrong suffixing, e.g. *gievkani* vs. *gievkkanii*  
-    cmp = incorrect compounding, e.g. *beavdiguorra* vs *beavdeguorra*  
-    ascii = not used sámi letter  
-    typo = typical typo  
-    cap = should be capital letter  
-    min = should be minuscle  
+    *vuovddážis*
+    meta = metathesis
+    suf = wrong suffixing, e.g. *gievkani* vs. *gievkkanii*
+    cmp = incorrect compounding, e.g. *beavdiguorra* vs *beavdeguorra*
+    ascii = not used sámi letter
+    typo = typical typo
+    cap = should be capital letter
+    min = should be minuscle
     mix = more than one errortype in the same word
 
 Morpho-syntactic errors
@@ -134,50 +114,50 @@ Errors that require an analysis of (parts of) the sentence or
 surrounding words to be detected and corrected. In the resulting xml,
 the element is named &lt;errormorphsyn&gt;.
 
--   **Mark-up attributes:**  
+-   **Mark-up attributes::**
     **pos** { noun \| verb \| adj \| adv \| num \| interj \| pp \| cc \|
-    cs \| pcle \| prop \|pers \| refl \| dem \| resip \| indef \| x }  
+    cs \| pcle \| prop \|pers \| refl \| dem \| resip \| indef \| x }
     **gf** { subj \| obj \| advl \| fin \| infin \| spred \| opred \|
-    pcle \| interj \| app \| conj \| pph \| x \| attr }  
+    pcle \| interj \| app \| conj \| pph \| x \| attr }
     **cat** { nomsg \| nompl \| gensg \| genpl \| akksg \| akkpl \|
     illsg \| illpl \| locsg \| locpl \| comsg \| compl \| ess \| sg1prt
     \| sg2prt \| sg3prt \| du1prt \| du2prt \| du3prt \| pl1prt \|
     pl2prt \| pl3prt \| sg1prs \| sg2prs \| sg3prs \| du1prs \| du2prs
     \| du3prs \| pl1prs \| pl2prs \| pl3prs \| attr \| pred \| word \|
     comp \| superl \| cmp \| imprt \| pot \| inf \| prfprc \| cond \|
-    conneg \| ger \| vgen \| x }  
+    conneg \| ger \| vgen \| x }
     **orig** { nomsg \| nompl \| gensg \| genpl \| akksg \| akkpl \|
     illsg \| illpl \| locsg \| locpl \| comsg \| compl \| ess \| sg1prt
     \| sg2prt \| sg3prt \| du1prt \| du2prt \| du3prt \| pl1prt \|
     pl2prt \| pl3prt \| sg1prs \| sg2prs \| sg3prs \| du1prs \| du2prs
     \| du3prs \| pl1prs \| pl2prs \| pl3prs \| attr \| pred \| word \|
     comp \| superl \| imprt \| pot \| inf \| prfprc \| cond \| conneg \|
-    ger \| vgen \| x }  
+    ger \| vgen \| x }
     **errtype** { agr \| case \| tense \| mode \| number \| mix \| x }
--   **Some explanations:**  
-    gf = grammatical function  
-    subj = subject  
-    fin = finite verb  
-    infin = infinite verb  
-    obj = object  
-    spred = subjectpredicative  
-    opred = objectpredicative  
+-   **Some explanations::**
+    gf = grammatical function
+    subj = subject
+    fin = finite verb
+    infin = infinite verb
+    obj = object
+    spred = subjectpredicative
+    opred = objectpredicative
     advl = adverbial, e.g. *Mun boađán 'sotnabeaivi'* vs. *Mun boađán
-    'sotnabeaivve'*  
-    pph = pp phrace, e.g. *sullo guovdu* vs. *guovdu sullo*  
-    conj = conjunction/subjunction  
-    pcle = particle  
-    interj = interjection  
-    app = apposition  
-    attr = attribute  
-    x = unknown  
-    nump = numeral phrase  
-    gensg = acc/gen sg  
+    'sotnabeaivve'*
+    pph = pp phrace, e.g. *sullo guovdu* vs. *guovdu sullo*
+    conj = conjunction/subjunction
+    pcle = particle
+    interj = interjection
+    app = apposition
+    attr = attribute
+    x = unknown
+    nump = numeral phrase
+    gensg = acc/gen sg
     genpl = acc/gen pl
 
 <!-- -->
 
--   **Examples for mark-up:**  
+-   **Examples for mark-up:**
     -   Case errors:
         -   Simple mark-up:
 
@@ -230,7 +210,7 @@ Also these errors require a partial or full analysis of (parts of) the
 sentence or surrounding words to be detected and corrected. In the
 resulting xml, the element is named &lt;errorsyn&gt;.
 
--   **Examples for mark-up:**  
+-   **Examples for mark-up:**
     -   Unneccessary words:
         -   SNF doaibmá dál juo {dego}¥{cs,redun\|} resursaguovddážin.
         -   NOT: SNF doaibmá dál juo {dego}¥{cs\|0} resursaguovddážin.
@@ -267,7 +247,7 @@ resulting xml, the element is named &lt;errorsyn&gt;.
 
 <!-- -->
 
--   **Examples:**  
+-   **Examples:**
 
         gitta dii. {16:00}¥{missing|16:00 rádjai}.
 
@@ -278,22 +258,22 @@ resulting xml, the element is named &lt;errorsyn&gt;.
 
 <!-- -->
 
--   **Mark-up attributes:**  
+-   **Mark-up attributes::**
     **pos** { noun \| verb \| adj \| adv \| num \| interj \| pp \| cc \|
     cs \| pcle \| prop \| pers \| refl \| dem \| det \| resip \| indef
-    \| punct \| x }  
-    **errtype** { wo \| pph \| redun \| missing \| cmp \| x }  
+    \| punct \| x }
+    **errtype** { wo \| pph \| redun \| missing \| cmp \| x }
     **clause type** { indirect \| acc\_inf \| acc\_prfprc \| relative \|
     negfoc \| main \| x }
--   **Some explanations:**  
-    wo = word order  
-    pph = pp-phrase  
-    redun = redundant word  
-    dupl = duplicate  
+-   **Some explanations::**
+    wo = word order
+    pph = pp-phrase
+    redun = redundant word
+    dupl = duplicate
     missing = missing word, or punctation when it is crucial for the
-    interpretation  
-    cmp = should be compound  
-    clause = wrong clause type  
+    interpretation
+    cmp = should be compound
+    clause = wrong clause type
     x = unknown
 
 Lexical errors
@@ -311,7 +291,7 @@ not in the nearest future, but the need to mark up texts for these
 errors is real now. In the resulting xml, the element is named
 &lt;errorlex&gt;.
 
--   **Examples for mark-up:**  
+-   **Examples for mark-up:**
     -   Used an adjective instead of an adverb:
         -   {ovddimus}€{adv-adj\|ovddimusat}
     -   Used wrong verb:
@@ -323,17 +303,17 @@ errors is real now. In the resulting xml, the element is named
 
 <!-- -->
 
--   **Mark-up attributes:**  
+-   **Mark-up attributes::**
     **pos** { noun \| verb \| adj \| adv \| num \| interj \| pp \| cc \|
-    cs \| pcle \| prop \| pers \| refl \| dem \| resip \| indef \| x }  
+    cs \| pcle \| prop \| pers \| refl \| dem \| resip \| indef \| x }
     **orig** { noun \| verb \| adj \| adv \| num \| interj \| ppan \| cc
     \| cs \| pcle \| prop \| pers \| refl \| dem \| resip \| indef \| x
-    }  
+    }
     **errtype** { der \| w \| foreign \| x }
--   **Some explanations:**  
-    der = wrong derivation  
-    w = wrong word  
-    foreign = foreign word  
+-   **Some explanations::**
+    der = wrong derivation
+    w = wrong word
+    foreign = foreign word
     x = unknown
 
 Formatting errors
@@ -344,22 +324,22 @@ Formatting errors
 Formatting errors include punctuation, hyphens, citation marks and
 spacing.
 
--   **Annotation: Attributes:**  
+-   **Annotation: Attributes::**
     **errtype** { space \| notspace \| hyph \| nothyph \| cit \| punct
-    \| notpunct \| }  
+    \| notpunct \| }
 
--   **Some explanations:**  
-    space = there should be a space  
-    notspace = there should not be any space  
-    singlespace = there should only be a single space  
-    hyph = hyphenation is missing  
-    nothyph = hyphenation should not be used  
-    cit = citation  
-    punct = punctuation  
+-   **Some explanations::**
+    space = there should be a space
+    notspace = there should not be any space
+    singlespace = there should only be a single space
+    hyph = hyphenation is missing
+    nothyph = hyphenation should not be used
+    cit = citation
+    punct = punctuation
     notpunct = there should not be punctuation
 
 -   **Space before a comma, perioid, exclamation mark or question
-    mark:**  
+    mark::**
 
     mark previous word and following word or token:
 
@@ -371,41 +351,31 @@ spacing.
 
         odne{ ,}‰{notspace|,} ihttin.
 
--   **too many spaces, where there should be a single space:**  
+-   **too many spaces, where there should be a single space::**
 
         {1.  Skovvi}‰{singlespace|1. Skovvi}
 
         {1.         Skovvi}‰{singlespace|1. Skovvi}
 
--   **no space between ranges:**  
+-   **no space between ranges::**
 
         {2009- 2010}‰{notspace|2009-2010}
 
--   **no space before and after brackets  (single errors and one word enclosed in  brackets with two space errors):**  
+-   **citation mark errors::**
 
-        {( Musea )}‰{(Musea)}
-        
-        {( Museas}‰{(Museas} leat ollu {mánát )}‰{mánát)}
+        Nordkapp Sámiid Searvvi ovdaolmmoš: {«}‰{cit|”}{Mearrasameakšuvdna}${noun,á|Mearrasámeakšuvdna}{»}‰{cit|”} ii leat ávkin sámiide
 
--   **citation mark errors (single errors and one word enclosed in two erroneous citation marks):**  
-
-        Nordkapp Sámiid Searvvi ovdaolmmoš: {«{Mearrasameakšuvdna}${noun,á|Mearrasámeakšuvdna}»}‰{cit|”Mearrasámeakšuvdna”} ii leat ávkin sámiide
-        
-        Olmmáivákkis, Gáivuonas, lea visti mii lea ožžon nama {"Biru"}‰{cit|”Biru”} viessun.
-        
-        Olmmáivákkis, Gáivuonas, lea visti mii lea ožžon nama {"}‰{cit|”}Biru baika{"}‰{cit|”} viessun.
-
--   **punctuation mark errors:**  
+-   **punctuation mark errors::**
 
         — Leaibevuona sápmelaččaid váttisvuođaid{.}‰{punct|,} muhto dat lea sis boastut gáđaštit boazosápmelaččaid {dušse}${adv,typo|dušše} dainna go sii leat veaháš doarjaga ožžon.
 
         Su mielas váttisvuođaid {buvttalii}${verb,á|buvttálii} ee. gieldda mearehis stuora viidodaga lassin maid sámegielat bálvalusaid {ollašuhttin}‰{punct|ollašuhttin.}
 
--   **No comma:**  
+-   **No comma::**
 
         {Maŋŋel doaluid, fertebehtet}‰{notcomma|Maŋŋel doaluid fertebehtet} {rehkenastit dietnasa ja čállet dan unna girjjážii}£{verb,infin,infinite,pl3prs,number|rehkenastit dietnasa ja čállit dan unna girjjážii} mii lea ruhta-kássas.
 
--   **NOT a formatting error:**  
+-   **NOT a formatting error::**
 
         {1980 logus}‰{hyph|1980-logus}
 
@@ -422,13 +392,13 @@ Foreign language errors
 
 Formatting errors include text in foreign language and urls.
 
--   **Annotation: Attributes:**  
-    **errtype** { url \| }  
+-   **Annotation: Attributes::**
+    **errtype** { url \| }
 
--   **Some explanations:**  
-    url = this is an url  
+-   **Some explanations::**
+    url = this is an url
 
--   **Url format:**  
+-   **Url format::**
 
     mark url and say it's an url:
 
@@ -454,25 +424,23 @@ when the error is followed by punctuation that is not part of the error
 or correction - the parenthesis will make sure the punctuation stays
 outside the error correction markup.
 
--   **Examples:**  
+-   **Examples::**
 
     Here is a nested spelling error and a syntactic compound error:
 
+{% raw %}
         {njuolggo {linjás}${noun,conc|linjjás}}¥{noun,cmp|njuolggolinjjás}
 
     Here are two morpho-syntactic errors with the same scope:
 
-{% raw %}
         {{Sis geas lea ovddasvástádus}£{pers,subj,nompl,locpl,case|Sii geas lea ovddasvástádus}}£{rel,hab,nompl,nomsg,kongr|Sii geain lea ovddasvástádus} lágidit kaféa bohtet dii. 12.00 ja {kaféa {rahppasa}¢{verb,conc|rahpasa}}€{der|kaféa rahppojuvvo} dii. 13.00.
-{% endraw %}
 
     Two types of spelling errors and a lexical error:
 
-{% raw %}
         dat maid dovddan ii leat diet ráhkisvuođa dovdu maid {{{áittoráhkistan}${vowc,á-a|aittoráhkistan}}${verb,notcmp|aitto ráhkistan}}€{verb,trans|aitto ráhkásmuvvan} olmmoš {dovda}${verb,á|dovdá}
 {% endraw %}
 
--   **How to check the hierarchy of nesting:**  
+-   **How to check the hierarchy of nesting::**
 
     run the following commands in the terminal:
 
@@ -495,13 +463,13 @@ outside the error correction markup.
     2.  spelling error (linjás)
     3.  compound error (outermost)
 
--   **Other types:**  
+-   **Other types::**
 
     Here is a nested morpho-syntactic error, a lexical error and a word
     order error (syntactic):
 
 {% raw %}
-        {{vuordedahtte {sjaddá}£{ind-pot|sjattasj}}€{w|dávk sjattasj}}¥{wo|sjattasj dávk} 
+        {{vuordedahtte {sjaddá}£{ind-pot|sjattasj}}€{w|dávk sjattasj}}¥{wo|sjattasj dávk}
 {% endraw %}
 
 What is a token?
@@ -551,7 +519,7 @@ converted to xml:
 
     {nourra}${a,meta|nuorra}
 
-    <errorort pos="n" errtype="meta" corr="nuorra">nourra</errorort> 
+    <errorort pos="n" errtype="meta" corr="nuorra">nourra</errorort>
 
     {Nieiddat leat nuorra}£{a,spred,nompl,nomsg,agr|Nieiddat leat nuorat}.
 
@@ -594,7 +562,7 @@ Markup CHALLENGES
 -   **How should this be marked up? As an orthographic error (non-word
     or realword)? A formatting error (missing space)? "oahppoja" is
     analyzed as a dynamic compound of "oahppu" and "idja", so we get an
-    analysis.:**  
+    analysis.:**
 
         Guovdageaidnu lea guovddáš sámi {oahppoja}${x,cmp|oahppo- ja} dutkanbáiki.
 
@@ -606,17 +574,17 @@ Markup CHALLENGES
 
 -   **Should this be a formatting error, because of the space and the
     hyphen or should this be a syntactic error because sámiid should be
-    a split compound?:**  
+    a split compound?:**
 
         ahte sii gozihit {sámiid - ja eamiálbmogiid beliid}‰{notspace| sámiid- ja eamiálbmogiid beliid}
 
     We decided on the following way
 
--   **Spelling error or something else?:**  
+-   **Spelling error or something else?:**
 
         {ge-}${space|ge -} dávjá čuhcet sidjiide, dadjá sámedikki {politihkakálaš}${adj,typo|politihkalaš} ráđđeaddi Johan Vasara.
 
--   **Syntactic error or formatting error?:**  
+-   **Syntactic error or formatting error?:**
 
         {Jus lea mii nu mii váilu kássas- de fertebehtet čálistit unna {girjážii}${noun,conc|girjjážii}}¥{noun,nothyph|Jus lea mii nu mii váilu kássas, de fertebehtet čálistit unna girjjážii} mii lea ruhta-kássas.
 
@@ -766,24 +734,24 @@ Summary + new error types
 (xml element name after conversion to xml is specified after the symbol
 used for the actual markup)
 
--   **§ - &lt;error&gt; - unclassified :**  
+-   **§ - &lt;error&gt; - unclassified :**
     Unclassified errors, never used, kept for backwards compatibility
--   **$ - &lt;errorort&gt; - orthorgraphic/non-word errors:**  
+-   **$ - &lt;errorort&gt; - orthorgraphic/non-word errors:**
     Traditional typos resulting in non-words, typically targeted by
     spelling checkers
--   **¢ - &lt;errorortreal&gt; - orthorgraphic/real-word errors:**  
+-   **¢ - &lt;errorortreal&gt; - orthorgraphic/real-word errors:**
     Spelling errors resulting in another, real word, impossible to
     target by traditional spelling checkers
--   **£ - &lt;errormorphsyn&gt; - morpho-syntactic errors:**  
+-   **£ - &lt;errormorphsyn&gt; - morpho-syntactic errors:**
     Errors involving the morpho-syntax of the language
--   **¥ - &lt;errorsyn&gt; - syntactic errors:**  
+-   **¥ - &lt;errorsyn&gt; - syntactic errors:**
     Purely syntactic errors
--   **€ - &lt;errorlex&gt; - lexical errors:**  
+-   **€ - &lt;errorlex&gt; - lexical errors:**
     Errors due to wrong or bad lexeme chosen
--   **∞ - &lt;errorlang&gt; - foreign language:**  
+-   **∞ - &lt;errorlang&gt; - foreign language:**
     Text written in a foreign or technical language, irrelevant for
     testing (text marked up as this will be ignored during testing)
--   **‰ - &lt;errorformat&gt; - formatting errors:**  
+-   **‰ - &lt;errorformat&gt; - formatting errors:**
     Errors due to wrong or bad formatting: extra spaces, wrong quote
     marks, etc.
 

@@ -1,9 +1,6 @@
-# List of defined automake conditionals
-
 This is a list of presently defined Automake conditionals in our infrastructure.
 They can be used to enable / disable build steps such as testing and enabling or
 disabling build targets depending on the user's configuration.
-
 
 * **WANT_MORPHOLOGY**:  `--enable-analysers`, default=yes\\
                     Used to enable the default set of analysers, which is:
@@ -44,9 +41,7 @@ disabling build targets depending on the user's configuration.
                     Used to enable building of transducers and constraint
                     grammar files used for machine translation in Apertium
 
-
 Example of how to use them:
-
 
 ```
 if WANT_MORPHOLOGY
@@ -55,7 +50,6 @@ GT_ANALYSERS_HFST+=analyser-gt-desc.hfst \
 				   analyser-disamb-gt-desc.hfst
 endif # WANT_MORPHOLOGY
 ```
-
 
 This ensures that we build Hfst analysers only if the user has enabled
 analysers. Analysers are enabled by default, so the usefulness of this is rather

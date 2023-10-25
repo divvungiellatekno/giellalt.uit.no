@@ -1,4 +1,4 @@
-Testing tools for the Sámi language technology project
+Testing tools for the sámi language technology project
 ======================================================
 
 1. Purpose
@@ -259,17 +259,17 @@ gives the expected output (taken from the `*.facit` file), and the
 The difference indicators in the middle column should be read as
 follows:
 
--   **&lt;:**  
+-   **&lt;:**
     This line is only found in the test output, not in the facit file,
     there is likely more forms than expected in the output
--   **&gt;:**  
+-   **&gt;:**
     This line is only found in the facit file, not in the test output.
     It is likely that there are some missing forms in the output.
--   **\|:**  
+-   **\|:**
     This line was found in both the facit file and the test output, but
     with differences between the two. It is likely that there are errors
     in the codes or in the baseform of the output.
--   **(nothing):**  
+-   **(nothing):**
     This line was found in both the facit and the test output, and they
     are identical. This line is correct.
 

@@ -1,5 +1,3 @@
-# Adding morphological test data
-
 Presently we have three types of morphology testing:
 
 * lemma generation
@@ -34,7 +32,7 @@ North, Julev and South Sámi have more elaborate test scripts for all of these
 parts-of-speeches. Have a look there for inspiration.
 
 Note that this setup does not work for languages with gender systems, dividing
-nouns into different classes. 
+nouns into different classes.
 
 # Yaml tests
 
@@ -42,7 +40,7 @@ The most widely used morphological testing are the Yaml tests. The data format
 is simple and straightforward, with a simple header followed by the actual test
 data:
 
-```yml
+```
 Config:
   hfst:
     Gen: ../../../src/generator-gt-norm.hfst
@@ -73,8 +71,8 @@ the notation `analysis string` followed by colon, followed by
 `wordform string`. If there are more than one possible wordform, they are all
 on the same line, separated by comma and space, and enclosed in square brackets:
 
-```yml
-ненэцьʼ+N+Sg+Loc: [ненэцяӈгана, ненэцяӈгна]
+```
+     ненэцьʼ+N+Sg+Loc: [ненэцяӈгана, ненэцяӈгна]
 ```
 
 Remember to always indent properly!
@@ -82,14 +80,14 @@ Remember to always indent properly!
 ## Negative Yaml tests
 
 Sometimes it can be valuable to specify negative tests. Usually they should
-not be needed, since any overgeneration will be reported as a FAIL. It might
+notbe needed, since any overgeneration will be reported as a FAIL. It might
 still be a good idea to test for word forms that are known to have caused
 problems.
 
 To specify a negative test, add a tilde in front of the word form in the Yaml
 data, as follows:
 
-```yml
+```
 gierehtse+N+Sg+Acc: [gierehtsem, ~gieriehtsem]
 ```
 
@@ -122,11 +120,11 @@ parsed and tested by the same machinery that uses the yaml files), and looks
 like the following:
 
 ```
-!!€gt-norm: adjectives
-!!€ isvelihks:    isvelihks+A+Attr
-!!€ isveligs:     isvelihks+A+Attr
-!!€ isvelihks:    isvelihks+A+Sg+Nom
-!!€ isveligs:     isvelihks+A+Sg+Nom
+## €gt-norm: adjectives
+## € isvelihks:    isvelihks+A+Attr
+## € isveligs:     isvelihks+A+Attr
+## € isvelihks:    isvelihks+A+Sg+Nom
+## € isveligs:     isvelihks+A+Sg+Nom
 ```
 
 The first line specifies which transducer to run the test data against, followed
@@ -148,13 +146,13 @@ the beginning of the line. Then both are followed by a space, then the word
 form, then a colon followed by whitespace, and finally the lemma+tags:
 
 ```
-! Test data:
-!!€gt-norm: gierehtse # Odd-syllable test
-!!€ gierehtse:           gierehtse+N+Sg+Nom
-!!€ gierehtsen:          gierehtse+N+Sg+Gen
-!!€ gieriehtsasse:       gierehtse+N+Sg+Ill
-!!€ gierehtsem:          gierehtse+N+Sg+Acc
-!!$ gieriehtsem:         gierehtse+N+Sg+Acc     ! Block diphthongues in odd syll
+###  Test data:
+## €gt-norm: gierehtse # Odd-syllable test
+## € gierehtse:           gierehtse+N+Sg+Nom
+## € gierehtsen:          gierehtse+N+Sg+Gen
+## € gieriehtsasse:       gierehtse+N+Sg+Ill
+## € gierehtsem:          gierehtse+N+Sg+Acc
+## $ gieriehtsem:         gierehtse+N+Sg+Acc     ! Block diphthongues in odd syll
 ```
 
 Note the last line, where we explicitly check that the illegal word form
@@ -180,8 +178,8 @@ or only generation tests. This is **required** when testing specialised fst's
 that do not exist in pairs. Here is one example (from Inari Sámi):
 
 ```
-!!€dict-gt-norm.gen:  # Even-syllable test, generation only
-!!€ raattâđ:         raattâđ+V+Inf
+## €dict-gt-norm.gen:  # Even-syllable test, generation only
+## € raattâđ:         raattâđ+V+Inf
 ```
 
 The `dict-gt-norm` fst is only used for generation (the dictionary analyser

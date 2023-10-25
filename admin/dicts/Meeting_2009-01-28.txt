@@ -1,0 +1,269 @@
+Notes -- dictionary meeting
+
+Laila Susanne Oskarsson, teacher of bachelor "Saami as a foreign language", is sitting beside Lene - she has had a look at the layout and the miniparadigms.
+
+To all of you:
+The end user documentation is here:
+http://129.242.102.175:8888/dict.eng.html
+this is the last version
+... and in need of improvement
+
+so, video?
+
+Two-part meeting:
+
+a. with l&l
+0. status quo (short)
+1. evaluating the look-and-feel
+-----
+b. without l&l
+2. status quo (more technical)
+3. how to get what we want
+4. the documentation
+boerregaup
+
+
+
+formatting
+
+=> what to have
+=> in what order
+=> how displayed
+
+
+too much air
+too big letters
+=> 
+
+ahkidat in SME>NOB
+
+you get:
++---------+
+| ahkidat |
++---------+------------+
+| gramm analysis	   |
+| wordform translation |
++-----------------More-+
+
+you press "more"
+... and get the same in the big window
+
+you press/click
+"ahkit"
+
+and you get
+ +----------------+
+ | ahkit		  |
+ | adj			  |
+ | kjedelig	      |
+ | utrivelig	  |
+ |'mus lea ahkit' |
+ |"Jeg kjeder meg"| 
+ |                |
+ | Examples:      |
+ | attr		      |
+ | plnm		      |
+ | comp		      |
+ | superl		  |
+ | ... flags	  |
+ +----------------+
+
+Laila:
+
+Here and below discussing what we want to have:
+
+Rule of life:
+Underline only if hyperlink, not as a graphical feature.
+Lene and Trond get confused (this concerns the popup window).
+
+The text pop-up window:
+=======================
+
+Plan A
+at least trond would have liked this
+if we were able to put content in the upper border
+
++-wordform-+
++-the lemma, POS-------------------------------+ boldf (emph via border)
+| the first two g-analyses                     | smaller 
+| 1 first, meaning, group, kjedelig, utrivelig  | normal
+| 2 second, meaning, gr, whatever, translation |
+| (flere former:) the rest of the analyses     |  
++------------------------------------------Mer-+
+
+Plan B
+we go for this if Plan A is impossible
++-wordform-+
++--------------------------------------------+
+| POS                                        |
+| the first two g-analyses (-> flere former) |
+| the lemma                                  | mg1 kjedelig, utrivelig
+| 1 first, meaning, group, kjedelig, utrivelig                                           | 2 second, meaning, gr, whatever, translation mg2 whatever, translation
+| the rest of the analyses                   |
++----------------------------------------Mer-+
+
+
++  giela	
++==giella +N ================+
+|    +Sg+Acc eller +Sg+Gen   |                       klein, also qwatsch
+|  1. språk					 |
+|  2. zunge					 |
+
+agálašvuođa
+
+niidii
+(lemmas: nieida, niidet)
+
+murrii
+(lemmas: muorra, murret)
+
+bak
+(lemmas: bake, bak) norw.
+
+The two-lemma-issue: Wait until after ped-release.
++-wordform-+
++-the lemma, POS-------------------------------+ boldf (emph via border)
+| the first two g-analyses (-> flere former)   | smaller 
+| 1 first, meaning, group, kjedelig, utrivelig | normal
+| 2 second, meaning, gr, whatever, translation |
+| the rest of the analyses                     |
+|                                              |
+| the lemma2 POS                               |
+| the first two g-analyses (-> flere former)   |
+|                                              | mg1 kjedelig, utrivelig
+| 1 first, meaning, group, kjedelig, utrivelig                                           
+| 2 second, meaning, gr, whatever, translation mg2 whatever, translation
+| the rest of the analyses                   |
++----------------------------------------Mer-+
+
+
+
+
++-lemma-+
++------------------------------------+
+| POS                                |
+| the lemma, all translations        |
++-------------------------------More-+
+
+walk 
+
+Compare with 'ahkidat'
+
+The dict window:
+================
+ +---------------+
+ | ahkit		 |
+ | adj			 |
+ | 1. kjedelig, utrivelig	     |
+ | 2. another, meaning, group, translation	 |
+ | mus lea ahkit |
+ | exSnt + trans jeg kjeder meg | 
+ |               |
+ | Nøkkelformer: | >= (or no header at all)
+ | attr		     | <=== These are not examples as expected
+ | plnm		     | <=== These are not examples as expected
+ | comp		     | <=== These are not examples as expected
+ | superl		 | <=== These are not examples as expected
+ | ... flags	 |
+ |
+ |
+ | lemma2
+ |
+ |
+ +---------------+
+
+
+
+
+
+come
+the 
+
+lemmata
+
+
+beassat
+
+T
+came 
+come
+
+
++----------------------------+
+
+
+
+a pedagogical(?) way would be:
+-------------
+ahkidat
+
+pl.nom av
+ahkit  kjedelig, utrivelig
+kan også være: sg.nom2p-sg, sg.gen.pos...... (all with poss.suff)
+----------------------more--info----------------------------------
+Eksempel (if there is any)
+
+norm-isme.fst (use this one for paradigm generation)
+restr-isme.fst (not use this one)
+
+Nøkkelformer:
+           ahkidis (dilli)
+ (Plural:) ahkidat
+  (Komp.:) ahkidet, ahkideabbo, ahkidat, ahkidabbo
+(Superl.:) ahkideamos, ahkidamos
+-----------------
+
+formatting:
+
+adjectives
+
+           ahkidis (dilli)
+ (Plural:) ahkidat
+  (Komp.:) ahkidet, ahkideabbo, ahkidat, ahkidabbo
+(Superl.:) ahkideamos, ahkidamos
+
+nouns:
+
+(Gen.:) 	X
+(Ill.:) 	X
+(Pl.Ill.:)  X  (only for the nouns marked with PI in the smenob)
+
+
+propernouns
+
+(Gen.:) X
+(Ill.:) X
+
+
+=> possible to move all but the first m-information down under the wordform?
+
+
+the essentials in the text-version of the dict.
+
+
+
+
+Ciprians letter of today:
+
+
+Hi,
+now I have the informations in place for the different pos. I made a small dict with just one pos sample
+
+<l pos="a" >ahkit</l>  ahkidat SME>NOB (SME:NOB)
+<l pos="n">agálašvuohta</l>
+<l pos="prop">Deatnu</l>
+<l pos="num">golbma</l>
+<l pos="v">deaivvadit</l>
+
+Action points:
+
+1. to refine the output for the miniparadigm
+2. to decide upon the analysis infos of the word forms (X ind. pres. pers. 3. ELLER blablabla ELLER blablabla AV Y)
+3. to decide upon formating of the miniparadigm
+
+Please find attached the sample dictionary.
+
+
+
+
+

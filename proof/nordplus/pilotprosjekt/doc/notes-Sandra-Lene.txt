@@ -1,0 +1,19 @@
+Felles dokument
+
+Testbenk-arbeidet går i fleire steg:
+
+1. konverter korpusfil til xml (convert2xml.pl)
+
+convert2xml.pl --no-decode --lang=sme --corpdir=/Users/sandramarjawest/freecorpus nps-001_kafealagideapmi.correct.txt
+
+1a. sjekk konverteringa for feil
+
+2. køyr testbenken på xml-fila
+
+cd $GTHOME/gt
+make correct-test TARGET=sme DOC=../../freecorpus/goldstandard/converted/sme/admin/nps-001_kafealagideapmi.correct.txt.xml
+
+3. sjekk resultata:
+3.a start Forrest (f8)
+3.b gå til http://localhost:8888/doc/proof/spelling/testing/sme/pl/
+
