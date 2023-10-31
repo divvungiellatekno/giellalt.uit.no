@@ -4,6 +4,7 @@
 
 - **2023:**
   - [25.9. Dårlege forslag frå staekontrollen i grammatikkontrollen](linguists/230925_Gramcheck_speller.md)
+  - [26.10. Korpus](corpus/Meeting_2023-10-26.md)
 - **2022:**
   - [24.3. Taggene +Use/-Spell, +G3 og +G7 og leksikalisering av adverber](linguists/220324_Tagger_Adverber.md)
 - **2021:**
