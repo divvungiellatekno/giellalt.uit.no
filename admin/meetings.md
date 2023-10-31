@@ -145,6 +145,7 @@
   [10.10.](divvun/Meeting2023-10-10.md),
   [17.10.](divvun/Meeting2023-10-17.md),
   [24.10.](divvun/Meeting2023-10-24.md),
+  [31.10.](divvun/Meeting2023-10-31.md),
 - **2022:**
   [04.01.](divvun/Meeting2022-01-04.md),
   [11.01.](divvun/Meeting2022-01-11.md),
