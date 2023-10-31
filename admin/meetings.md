@@ -56,6 +56,7 @@
 ## Technical meetings
 
 - **2023:**
+  - [26.10.2023 Pahkat](meetings/2023-10-26-pahkat.md)
   - [25.10.2023 Infra-status](meetings/2023-10-25-infra.md)
   - [30.8.2023 Infra-status](meetings/2023-08-30-infra-status.md)
 - **2022:**
