@@ -1,4 +1,5 @@
 Møte om klitika 29.10.2019
+==========================
 
 Til stades: Lene, Linda, Sara (i starten), Thomas, Trond, Sjur
 
