@@ -1,20 +1,14 @@
 TODO-liste
+==========
 
 Dette er ei liste over ting som skal bli gjort. Målet er å ha betre oversikt.
 Fjern liner etter kvart. For ting som er feil og skal bli retta opp
-bruker vi Bz.
+bruker vi feilbasane Bugzilla eller Github issues.
 
-# Nyinfra
-
-(tom)
 
 # NDS
 
-(sjekk om sakene (nedanfor) verkeleg er avslutta)
-
-| Dato | Emne | Ansv.  | Status | Ref/Bz | Kommentar
-| --- | --- | --- | --- | --- | ---
-|  x | x | x | x | x | x
+Sjå [Nye eigenskapar i NDS](https://giellalt.github.io/dicts/NewFeatures.html)
 
 # Forrest
 
@@ -30,13 +24,6 @@ Denne lista bør vi ordne i logisk rekkefølgje:
 | --- | --- | --- | --- | --- | ---
 |  x | Flytte alt til github | x | x | x | Der er vi ikkje enno
 
-# Webtjenester på giellateknosidene
-
-|   Dato | Emne | Ansv. | Status | Ref/Bz | Kommentar
-| --- | --- | --- | --- | --- | ---
-|  [19.11.14.](141119.html) | Paradigmegenerering cgi-bin: presentasjon | Anders | Ferdig versjon lokalt | x | Vi ventar på ny servar
-|  [19.11.14.](141119.html) | Tagglokalisering på fleire språk i database i techdoc/lang/common | TT | Startfilen er MDS-filen for Korp | x | x
-
 # Korpus
 
 |Dato | Emne | Ansv. | Status | Ref/Bz | Kommentar
@@ -48,6 +35,14 @@ Denne lista bør vi ordne i logisk rekkefølgje:
 |   Dato               | Emne   | Ansv. | Status                       | Ref/Bz | Kommentar
 | --- | --- | --- | --- | --- | ---
 |  [14.1](150114.html) | Møterom | Sjur   | Vi ventar på svar frå IT (0519)    | x      | x
+
+# Webtjenester på giellateknosidene
+
+|   Dato | Emne | Ansv. | Status | Ref/Bz | Kommentar
+| --- | --- | --- | --- | --- | ---
+|  [19.11.14.](141119.html) | Paradigmegenerering cgi-bin: presentasjon | Anders | Ferdig versjon lokalt | x | Vi ventar på ny servar
+|  [19.11.14.](141119.html) | Tagglokalisering på fleire språk i database i techdoc/lang/common | TT | Startfilen er MDS-filen for Korp | x | x
+
 
 # Diverse
 
