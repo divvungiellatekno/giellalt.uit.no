@@ -433,6 +433,9 @@ newest year first. ToC to the left.
 
 # Giellatekno meetings
 
+
+- **Plandokument**
+- [Plan](giellatekno/Plan.md), [Hugseliste](giellatekno/TODO.md)
 - **2023**
   [14.04](giellatekno/230414.md), [05.06](giellatekno/230605.md), 
   [29.06](giellatekno/230629.md), [23.08](giellatekno/230823.md) 
@@ -458,8 +461,7 @@ newest year first. ToC to the left.
   [11.09](giellatekno/190911.md), [18.09](giellatekno/190918.md),
   [25.09](giellatekno/190925.md), [14.10](giellatekno/191014.md),
   [24.10](giellatekno/191024.md), [20.11](giellatekno/191120.md),
-  [13.12](giellatekno/191213.md), [Plan](giellatekno/Plan.md),
-  [Oversikt](giellatekno/TODO.md)
+  [13.12](giellatekno/191213.md), 
 - **2018:**
   [22.01](giellatekno/180122.md), [12.02](giellatekno/180212.md),
   [15.03](giellatekno/180315.md), [03.04](giellatekno/180403.md),
