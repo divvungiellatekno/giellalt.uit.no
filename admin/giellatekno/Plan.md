@@ -1,6 +1,18 @@
+Plandokument for Giellatekno
+============================
+
 Dette dokumentet gir en plan for Giellaekno-arbeidet. Dokumentet er ordna først etter tema, så etter person. Se også [lista over ting som skal gjøres](TODO.html).
 
-# Liste over saker, hausten 2019
+
+# Plan 2024
+
+(... kjem)
+
+
+# Eldre planar
+
+## 2019
+
 
 * Samarbeid informatikk ved UiT
 * Korp (Gøteborg, oppdatering, nye språk, ordbild)
@@ -69,10 +81,7 @@ Dette dokumentet gir en plan for Giellaekno-arbeidet. Dokumentet er ordna først
 
  
 
-
-
-
-# Eldre planar
+## 2018
 
 |   Namn    | 2018-I | 2018-II | 2018-III | 2018-IV
 | --- | --- | --- | --- | ---
