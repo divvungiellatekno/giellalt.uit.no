@@ -1,3 +1,12 @@
+Meeting memos
+=============
+
+This page contains meeting memos related to Sámi language technology
+held by Divvun and/or Giellatekno. The memos are orered by topic or 
+research group and thereafter chronologically by date but with 
+newest year first. ToC to the left.
+
+
 # Meetings on specific topics
 
 ## Linguist meetings
