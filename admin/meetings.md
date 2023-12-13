@@ -65,6 +65,7 @@ newest year first. ToC to the left.
 ## Technical meetings
 
 - **2023:**
+  - [05.12.2023 Infra-status](meetings/2023-12-05-infra.md)
   - [26.10.2023 Pahkat](meetings/2023-10-26-pahkat.md)
   - [25.10.2023 Infra-status](meetings/2023-10-25-infra.md)
   - [30.8.2023 Infra-status](meetings/2023-08-30-infra-status.md)
