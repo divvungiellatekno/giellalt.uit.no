@@ -13,6 +13,7 @@ Personnamn:
 
 Samiske stadnamn:
 - sisteleddet blir tilpassa mottakarspråket
+
 Sitat:
 - får `Err/Lex` slik at dei kan analyserast, men blir ikkje med elles
 
