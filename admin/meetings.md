@@ -170,7 +170,7 @@ newest year first. ToC to the left.
   [21.11.](divvun/Meeting2023-11-21.md),
   [28.11.](divvun/Meeting2023-11-28.md),
   [05.12.](divvun/Meeting2023-12-05.md),
-  [19.12.](divvun/Meeting2023-12-19.md),
+  [19.12.](divvun/Meeting2023-12-19.md)
 
 ### Older regular meetings
 
