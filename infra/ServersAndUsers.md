@@ -6,7 +6,6 @@ only to readers with access to the servers.
 
 # System administration
 * [Packaging software for victorio](system/checkinstall.html)
-* [Setup of svnserve on victorio](system/svnserve.html)
 * [Setting up Access To Private Git](system/AccessToPrivateGit.html)
 * [Add and remove users to the servers](system/addremove.html)
 * [Adding users to svn and svnmail](system/manually-send-svn-email.html)
