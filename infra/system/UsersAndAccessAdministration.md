@@ -1,5 +1,4 @@
-Users and access administration
-===============================
+# Users and access administration
 
 These links are relevant for administrators only.
 
