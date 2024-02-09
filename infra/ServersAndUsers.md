@@ -15,7 +15,6 @@ only to readers with access to the servers.
 
 - [Our servers gtsvn, gtlab, gtoahpa and gtweb](VirtualServers.html)
 - [Server Programs and Logs](ServerProgramsAndLogs.html)
-- [Subversion conversion](system/svn-setup.html)
 - [Service Checks After System Restarts](system/ServiceChecksAfterSystemRestarts.html)
 - [Automatic login by using ssh](system/auto-pass.html)
 - [How to set up signing certificates](system/SettingUpSigningCertificates.html)
