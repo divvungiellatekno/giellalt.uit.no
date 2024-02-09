@@ -12,7 +12,6 @@ Here we document our servers and common machines. If some servers are down, see 
 - gtsvn.uit.no
 - gtweb-01.uit.no
 - satni.uit.no
-- stallo.uit.no (shared server)
 
 Each machine is documented below.
 
@@ -100,8 +99,6 @@ Each machine is documented below.
     - webdicts
 
 ## satni.uit.no (oppgradert)
-
-## stallo.uit.no
 
 ## Other documentation
 
