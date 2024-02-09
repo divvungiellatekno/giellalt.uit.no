@@ -27,8 +27,6 @@ The sites
 - [https://giellalt.uit.no]
 - [http://divvun.org]
 
-Have a look at [the info about the xserve](../xserve.html#Web+sites).
-
 To manually update the sites, run the commands found above in the crontab entries.
 
 ## bugzilla
