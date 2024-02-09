@@ -33,8 +33,7 @@ build systems, and is based on [Fastlane](https://fastlane.tools).
 
 When done, and you are a member of the team, you need to install certificates.
 When doing **iOS** development, the easiest is to use Fastlane to retrieve and
-save the shared credentials using a private git repository. The start is
-described [here](AccessToPrivateGit.html), for further details ask Børre or Sjur.
+save the shared credentials using a private git repository. For details ask Børre or Sjur.
 
 For **macOS** development, you need some certificates and signing identities
 that can only be created by the Team Agent, others you can create yourself. You

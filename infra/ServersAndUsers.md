@@ -6,7 +6,6 @@ only to readers with access to the servers.
 
 ## System administration
 
-- [Setting up Access To Private Git](system/AccessToPrivateGit.html)
 - [Add and remove users to the servers](system/addremove.html)
 - [Adding users to svn and svnmail](system/manually-send-svn-email.html)
 - [Group administration](system/groups.html)
@@ -38,4 +37,3 @@ only to readers with access to the servers.
 - [Manually send svnmail](system/manually-send-svn-email.html)
 - [Group administration](system/groups.html)
 - [Maintaining users and access administration](system/UsersAndAccessAdministration.html)
-- [Setting up Access To Private Git](system/AccessToPrivateGit.html)
