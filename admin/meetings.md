@@ -1,18 +1,16 @@
-Meeting memos
-=============
+# Meeting memos
 
 This page contains meeting memos related to Sámi language technology
-held by Divvun and/or Giellatekno. The memos are orered by topic or 
-research group and thereafter chronologically by date but with 
+held by Divvun and/or Giellatekno. The memos are orered by topic or
+research group and thereafter chronologically by date but with
 newest year first. ToC to the left.
 
+## Meetings on specific topics
 
-# Meetings on specific topics
-
-## Linguist meetings
+### Linguist meetings
 
 - **2023:**
-  - [25.9. Dårlege forslag frå staekontrollen i grammatikkontrollen](linguists/230925_Gramcheck_speller.md)
+  - [25.9. Dårlege forslag frå stavekontrollen i grammatikkontrollen](linguists/230925_Gramcheck_speller.md)
   - [26.9. Delte Lexc-ressursar](meetings/2023-09-26-shared-lexc.md)
   - [26.10. Korpus](corpus/Meeting_2023-10-26.md)
   - [8.12. Delte Lexc-ressursar](meetings/2023-12-08-shared-lexc.md)
@@ -64,7 +62,7 @@ newest year first. ToC to the left.
   - [28.3.11 Om depworkshop](linguists/DiskusjonOmDepworkshop_20110328.md)
   - [1.5.05 Om disambiguering](memos/disamb/Meeting_2006-01-05.md)
 
-## Technical meetings
+### Technical meetings
 
 - **2023:**
   - [05.12.2023 Infra-status](meetings/2023-12-05-infra.md)
@@ -90,9 +88,9 @@ newest year first. ToC to the left.
   - [28.4.2017 OmegaT: FST and glossary](technical/OmegaT170428.md)
   - [15.12.2016 Bugzilla rutiner](bugzilla/161215.md)
 
-# Divvun meetings
+## Divvun meetings
 
-## Divvun linguist meetings
+### Divvun linguist meetings
 
 - **2017:**
   [5.10. keyboards smj sma](divvun/keyboards_171005.md),
@@ -117,9 +115,7 @@ newest year first. ToC to the left.
   [12.12.](divvun/LinguistMeeting2012-12-12.md),
   [19.12.](divvun/LinguistMeeting2012-12-19.md)
 
-## Divvun meetings
-
-### Regular meetings this year
+### Divvun regular meetings this year
 
 - **2024:**
   [02.01.](divvun/Meeting2024-01-02.md),
@@ -128,8 +124,9 @@ newest year first. ToC to the left.
   [30.01.](divvun/Meeting2024-01-30.md),
   [06.02.](divvun/Meeting2024-02-06.md),
   [13.02.](divvun/Meeting2024-02-13.md),
+  [20.02.](divvun/Meeting2024-02-20.md),
 
-### Regular meetings last year
+### Divvun regular meetings last year
 
 - **2023:**
   [03.01.](divvun/Meeting2023-01-03.md),
@@ -441,7 +438,7 @@ newest year first. ToC to the left.
   [10.12.](divvun/Meeting2012-12-10.md),
   [17.12.](divvun/Meeting2012-12-17.md)
 
-# Divvun physical gatherings
+## Divvun physical gatherings
 
 - **2023:**
   [v35](physical_meetings/2023-v35-Tromsø.md)
@@ -449,14 +446,13 @@ newest year first. ToC to the left.
 - **2022:**
   [v41](physical_meetings/2022-v41-Tromsø.md)
 
-# Giellatekno meetings
-
+## Giellatekno meetings
 
 - **Plandokument**
 - [Plan](giellatekno/Plan.md), [Hugseliste](giellatekno/TODO.md)
 - **2023**
-  [14.04](giellatekno/230414.md), [05.06](giellatekno/230605.md), 
-  [29.06](giellatekno/230629.md), [23.08](giellatekno/230823.md) 
+  [14.04](giellatekno/230414.md), [05.06](giellatekno/230605.md),
+  [29.06](giellatekno/230629.md), [23.08](giellatekno/230823.md)
 - **2022:**
   [15.03](giellatekno/220315.md), [26.09](giellatekno/220926.md),
   [02.12](giellatekno/221202.md)
@@ -479,7 +475,7 @@ newest year first. ToC to the left.
   [11.09](giellatekno/190911.md), [18.09](giellatekno/190918.md),
   [25.09](giellatekno/190925.md), [14.10](giellatekno/191014.md),
   [24.10](giellatekno/191024.md), [20.11](giellatekno/191120.md),
-  [13.12](giellatekno/191213.md), 
+  [13.12](giellatekno/191213.md),
 - **2018:**
   [22.01](giellatekno/180122.md), [12.02](giellatekno/180212.md),
   [15.03](giellatekno/180315.md), [03.04](giellatekno/180403.md),
@@ -524,9 +520,9 @@ newest year first. ToC to the left.
   [26.11](giellatekno/141126.md), [03.12](giellatekno/141203.md),
   [17.12](giellatekno/141217.md)
 
-# Administrative meetings
+## Administrative meetings
 
-## Sjur + Trond meetings
+### Sjur + Trond meetings
 
 - **2024:**
   [Feb. 13](weekly/2024/Meeting_2024-02-13.md)
@@ -549,10 +545,10 @@ newest year first. ToC to the left.
 - **2021:**
   [May 31](weekly/2021/Meeting_2021-05-31.md),
 - **2020:**
-  [Jan.  1](weekly/2020/Meeting_2020-01-07.md),
+  [Jan. 1](weekly/2020/Meeting_2020-01-07.md),
   [Mar. 24](weekly/2020/Meeting_2020-03-24.md),
   [Aug. 10](weekly/2020/Meeting_2020-08-10.md),
-  [Dec.  3](weekly/2020/Meeting_2020-12-03.md)
+  [Dec. 3](weekly/2020/Meeting_2020-12-03.md)
 - **2019:**
   [Mar. 12](weekly/2019/Meeting_2019-03-12.md),
   [May 7](weekly/2019/Meeting_2019-05-07.md),
@@ -567,11 +563,11 @@ newest year first. ToC to the left.
   [Nov. 20](weekly/2019/Meeting_2019-11-20.md)
 - **2018:**
   [Jan. 23](weekly/2018/Meeting_2018-01-23.md),
-  [Feb.  6](weekly/2018/Meeting_2018-02-06.md),
+  [Feb. 6](weekly/2018/Meeting_2018-02-06.md),
   [Feb. 13](weekly/2018/Meeting_2018-02-13.md),
   [Apr. 24](weekly/2018/Meeting_2018-04-24.md),
-  [May  15](weekly/2018/Meeting_2018-05-15.md),
-  [Jun.  6](weekly/2018/Meeting_2018-06-06.md),
+  [May 15](weekly/2018/Meeting_2018-05-15.md),
+  [Jun. 6](weekly/2018/Meeting_2018-06-06.md),
   [Jun. 19](weekly/2018/Meeting_2018-06-19.md),
   [Jun. 25](weekly/2018/Meeting_2018-06-25.md),
   [Aug. 21](weekly/2018/Meeting_2018-08-21.md),
@@ -579,8 +575,8 @@ newest year first. ToC to the left.
   [Sep. 11](weekly/2018/Meeting_2018-09-11.md),
   [Sep. 18](weekly/2018/Meeting_2018-09-18.md),
   [Sep. 25](weekly/2018/Meeting_2018-09-25.md),
-  [Oct.  1](weekly/2018/Meeting_2018-10-01.md),
-  [Oct.  8](weekly/2018/Meeting_2018-10-08.md),
+  [Oct. 1](weekly/2018/Meeting_2018-10-01.md),
+  [Oct. 8](weekly/2018/Meeting_2018-10-08.md),
   [Nov. 20](weekly/2018/Meeting_2018-11-20.md),
   [Dec. 11](weekly/2018/Meeting_2018-12-11.md)
 - **2017:**
@@ -677,7 +673,7 @@ newest year first. ToC to the left.
   [Nov. 7](weekly/2011/Meeting_2011-11-07.md),
   [Nov. 24](weekly/2011/Meeting_2011-11-24.md)
 
-## Weekly Giellatekno + Divvun meetings
+### Weekly Giellatekno + Divvun meetings
 
 Giellatekno and Divvun had regular weekly meetings in the period 2005
 through 2011. They were held at 10 AM Norwegian time each Monday
@@ -955,7 +951,7 @@ listed below.
   [Dec. 10](weekly/2004/Meeting_2004-12-10.md),
   [Dec. 21](weekly/2004/Meeting_2004-12-21.md)
 
-## Meetings In Real Life (IRL)
+### Meetings In Real Life (IRL)
 
 We have had and are having physical meetings, that is, meetings IRL. So
 far, the following meetings have been held (links are to notes or
