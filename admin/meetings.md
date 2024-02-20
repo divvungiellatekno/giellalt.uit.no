@@ -115,9 +115,7 @@ newest year first. ToC to the left.
   [12.12.](divvun/LinguistMeeting2012-12-12.md),
   [19.12.](divvun/LinguistMeeting2012-12-19.md)
 
-### Divvun meetings
-
-#### Regular meetings this year
+### Divvun regular meetings this year
 
 - **2024:**
   [02.01.](divvun/Meeting2024-01-02.md),
@@ -128,7 +126,7 @@ newest year first. ToC to the left.
   [13.02.](divvun/Meeting2024-02-13.md),
   [20.02.](divvun/Meeting2024-02-20.md),
 
-#### Regular meetings last year
+### Divvun regular meetings last year
 
 - **2023:**
   [03.01.](divvun/Meeting2023-01-03.md),
@@ -176,7 +174,7 @@ newest year first. ToC to the left.
   [05.12.](divvun/Meeting2023-12-05.md),
   [19.12.](divvun/Meeting2023-12-19.md)
 
-#### Older regular meetings
+### Older regular meetings
 
 - **2022:**
   [04.01.](divvun/Meeting2022-01-04.md),
