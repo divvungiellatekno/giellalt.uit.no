@@ -10,7 +10,7 @@ newest year first. ToC to the left.
 ### Linguist meetings
 
 - **2023:**
-  - [25.9. Dårlege forslag frå staekontrollen i grammatikkontrollen](linguists/230925_Gramcheck_speller.md)
+  - [25.9. Dårlege forslag frå stavekontrollen i grammatikkontrollen](linguists/230925_Gramcheck_speller.md)
   - [26.9. Delte Lexc-ressursar](meetings/2023-09-26-shared-lexc.md)
   - [26.10. Korpus](corpus/Meeting_2023-10-26.md)
   - [8.12. Delte Lexc-ressursar](meetings/2023-12-08-shared-lexc.md)
