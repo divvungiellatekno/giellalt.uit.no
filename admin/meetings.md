@@ -958,6 +958,12 @@ We have had and are having physical meetings, that is, meetings IRL. So
 far, the following meetings have been held (links are to notes or
 programme for the meetings):
 
+#### Meetings 2024 - 
+
+- [ISOF og Kvensk institutt i Tromsø 12.-16.3. 2024](physical_meetings/isof/program.md) 
+
+#### Meetings 2004-2006
+
 - [Tromsø, Aug. 2006](physical_meetings/tromso-2006-08.md):
   Board meeting, and combined seminar for the two projects
   [Divvun](http://www.divvun.no/) and
