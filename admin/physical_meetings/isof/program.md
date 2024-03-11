@@ -24,11 +24,11 @@ Deltakarar
     
 ### Tysdag 12.3.:
 - 09.00-10.00 B1003: Presentasjonsmøte, alle
-- 10.15-11.00 A3021 talesyntese fkv/fit (KI/ISOF (Harald, Lina, Magnus, Rickard, Elina) + Trond, Sjur, Katri)
+- 10.15-11.00 A3021 talesyntese fkv/fit (KI/ISOF (Harald, Lina, Magnus, Rickard, Elina, Anna-Kaisa, Aili, Thomas) + Trond, Sjur, Katri)
 - 11.15-12.00 A3021 Borealium A3021 (KI/ISOF, Sjur, Trond)
 - **Lunsj**
 - Etter lunsj ulike tema, 
-	- lingvistisk / leksikografisk samarbeid fkv/fit (KI, Elina, Lina, Rickard, Trond)
+	- lingvistisk / leksikografisk samarbeid fkv/fit (KI, Elina, Lina, Rickard, Trond), to grupper+
  - 12.00-14.00 A3021 
  - 14.00-16.00 D2020 
 
