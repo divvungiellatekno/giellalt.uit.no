@@ -37,24 +37,27 @@ Deltakarar:
  - 13.00-14.30 Computel-føredrag (Linda, Flammie, Sjur, Trond(?))
  - 14.00-16.00 D2020 
 
-### Onsdag: (A3021 formiddagen; A2021 13-16)
-- langsiktig planlegging - information/kommande händelser
+### Onsdag: (A3021 Heile dagen; A2021 13-16)
+- simhallen kl 06.15..? (sosialt, frivillig)
+- 09.00 - 12.00 **A2021** Kvensk og meänkieli fst
+- 09.00 - 12.00 **A3121** Infra, testing av stavekontroll
 - **Lunsj**
-- 13.00-14.30 A2021 infra (ISOF, Trond, Sjur, Flammie)
-- 14.30-16.00 Computel-føredrag (Linda, Flammie, Sjur, Trond(?))
-- meir lingvistikk og leksikografi (parallelt med infra)
-- stoda for romsk
+- 13.00 - 14.30 **A3021** langsiktig planlegging - information/kommande händelser
+- 13.00 - 14.00 **D2020** Andre tema?
+- 14.00 - 15.00 Stoda for romsk? Fjellheis?
+- 15.00 -> Fjellheisen? Meir infra?
 
 ### Torsdag: (A3021 Heile dagen ; D2020 13-16)
-- lingvistisk samarbeid fkv/fit
-- meir taleteknologi, inkl ASR?
+
 - NDS, Anders, Jacob
 - korpus og Korp Anders, Børre, Jacob, 
+- meir lingvistisk samarbeid fkv/fit
+- meir taleteknologi, inkl ASR?
 
 ## Sosialt program
 
  - Måndag 11.3. Kveld: Slalåm (mogleg å leige utstyr, friviljug) 
- - Tysdag 12.3. 19.00 - Felles middag, Vervet?
+ - Tysdag 12.3. 19.00 - Felles middag, Maskinverkstedet
  - Onsdag 13.3. 06.30 - Tromsøbaded (Tromsøbadet også mogleg tysdag og torsdag 06.30)
  - Onsdag kveld ad lib
 
