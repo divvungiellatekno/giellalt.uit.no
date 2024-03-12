@@ -1,12 +1,11 @@
 ISOF og Kvensk institutt i Tromsø 11-15 mars 2024
 =================================================
 
-
-Deltakarar
+Deltakarar:
 
 - ISOF: Jacob, Magnus, Harald, Gunnar, Elina, Rickard, Lina, Baki (via Zoom)
 - Giellatekno: Trond, Anders, Lene, Trond
-- Divvun: Sjur, Børre, Katri, ...
+- Divvun: Sjur, Børre, Katri, Flammie, Inga, Maja, Linda
 - Kvensk institutt: Aili, Anna-Kaisa, Thomas
 
 
@@ -21,6 +20,11 @@ Deltakarar
 # Timeplan
 
 ## Fagleg:
+
+### Måndag 11.3.:
+- 10.30-11.30 A3021 Divvun-møte (alle i Divvun)
+- 13.00-14.30 A3021 LREC-artikkel ferdig (Linda, Børre, Flammie, Maja, Trond, Sjur)
+- 14.30-15.30 A3021 TTS-prosjektmøte (Katri, Inga, Flammie, Sjur)
     
 ### Tysdag 12.3.:
 - 09.00-10.00 B1003: Presentasjonsmøte, alle
@@ -30,13 +34,14 @@ Deltakarar
 - Etter lunsj ulike tema, 
 	- lingvistisk / leksikografisk samarbeid fkv/fit (KI, Elina, Lina, Rickard, Trond), to grupper+
  - 12.00-14.00 A3021 
+ - 13.00-14.30 Computel-føredrag (Linda, Flammie, Sjur, Trond(?))
  - 14.00-16.00 D2020 
 
-### Onsdag: (A3021 Heile dagen; A2021 13-16)
-- simhallen kl 06.15..? (sosialt, frivillig)
+### Onsdag: (A3021 formiddagen; A2021 13-16)
 - langsiktig planlegging - information/kommande händelser
 - **Lunsj**
-- infra
+- 13.00-14.30 A2021 infra (ISOF, Trond, Sjur, Flammie)
+- 14.30-16.00 Computel-føredrag (Linda, Flammie, Sjur, Trond(?))
 - meir lingvistikk og leksikografi (parallelt med infra)
 - stoda for romsk
 
@@ -52,8 +57,6 @@ Deltakarar
  - Tysdag 12.3. 19.00 - Felles middag, Vervet?
  - Onsdag 13.3. 06.30 - Tromsøbaded (Tromsøbadet også mogleg tysdag og torsdag 06.30)
  - Onsdag kveld ad lib
-
-
 
 # Tema
 
