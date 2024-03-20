@@ -64,6 +64,8 @@ newest year first. ToC to the left.
 
 ### Technical meetings
 
+- **2024:**
+  - [20.03.2024 Pontoon & co](meetings/2024-03-20-pontoon.md)
 - **2023:**
   - [05.12.2023 Infra-status](meetings/2023-12-05-infra.md)
   - [26.10.2023 Pahkat](meetings/2023-10-26-pahkat.md)
@@ -961,9 +963,9 @@ We have had and are having physical meetings, that is, meetings IRL. So
 far, the following meetings have been held (links are to notes or
 programme for the meetings):
 
-#### Meetings 2024 - 
+#### Meetings 2024 -
 
-- [ISOF og Kvensk institutt i Tromsø 12.-16.3. 2024](physical_meetings/isof/program.md) 
+- [ISOF og Kvensk institutt i Tromsø 12.-16.3. 2024](physical_meetings/isof/program.md)
 
 #### Meetings 2004-2006
 
