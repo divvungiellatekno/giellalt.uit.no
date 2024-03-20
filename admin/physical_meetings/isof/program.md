@@ -39,7 +39,7 @@ Deltakarar:
 
 ### Onsdag: (A3021 Heile dagen; A2021 13-16)
 - 09.00 - 12.00 **A2021** Kvensk og meänkieli fst
-- 09.00 - 12.00 **A3121** Infra, testing av stavekontroll
+- 09.00 - 12.00 **A3121** [Infra, testing av stavekontroll](infra.md)
 - **Lunsj**
 - 13.00 - 14.30 **A3021** langsiktig planlegging - information/kommande händelser
 - 13.00 - 14.00 **D2020** Andre tema?
