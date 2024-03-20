@@ -38,7 +38,6 @@ Deltakarar:
  - 14.00-16.00 D2020 
 
 ### Onsdag: (A3021 Heile dagen; A2021 13-16)
-- simhallen kl 06.15..? (sosialt, frivillig)
 - 09.00 - 12.00 **A2021** Kvensk og meänkieli fst
 - 09.00 - 12.00 **A3121** Infra, testing av stavekontroll
 - **Lunsj**
@@ -56,7 +55,9 @@ Deltakarar:
 
 ## Sosialt program
 
- - Måndag 11.3. Kveld: Slalåm (mogleg å leige utstyr, friviljug) 
+Alt er frivillig. Middagen krev at ein seier frå på førehand om ein skal vera med.
+
+ - Måndag 11.3. 18.00 (ca) - Slalåm (mogleg å leige utstyr) 
  - Tysdag 12.3. 19.00 - Felles middag, Maskinverkstedet
  - Onsdag 13.3. 06.30 - Tromsøbaded (Tromsøbadet også mogleg tysdag og torsdag 06.30)
  - Onsdag kveld ad lib
