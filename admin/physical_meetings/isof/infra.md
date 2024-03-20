@@ -38,6 +38,11 @@ C --> D[PC/Mac-klient]
 D --> E[Installert]
 ```
 
+Utfordringar:
+- Windows-signering
+- språkregistrering på Windows
+- heilautomatisert installering og aktivering på Windows
+
 ## Stavekontroll
 
 `tools/spellcheckers`
