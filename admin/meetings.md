@@ -473,7 +473,7 @@ newest year first. ToC to the left.
 - [Plan](giellatekno/Plan.md), [Hugseliste](giellatekno/TODO.md)
 - **2024**
   [04.04](giellatekno/240404.md), [15.04](giellatekno/240415.md)
-  [28.05](giellatekno/240528.md)
+  [28.05](giellatekno/240528.md), [12.08](giellatekno/240812.md)
 - **2023**
   [14.04](giellatekno/230414.md), [05.06](giellatekno/230605.md),
   [29.06](giellatekno/230629.md), [23.08](giellatekno/230823.md),
