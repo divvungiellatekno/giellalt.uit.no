@@ -553,7 +553,8 @@ newest year first. ToC to the left.
 ### Sjur + Trond meetings
 
 - **2024:**
-  [Feb. 13](weekly/2024/Meeting_2024-02-13.md)
+  [Feb. 13](weekly/2024/Meeting_2024-02-13.md),
+  [Aug. 21](weekly/2024/Meeting_2024-08-21.md)
 - **2023:**
   [Mar. 21](weekly/2023/Meeting_2023-03-21.md),
   [Aug. 28](weekly/2023/Meeting_2023-08-28.md),
