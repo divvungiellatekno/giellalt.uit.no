@@ -463,6 +463,8 @@ newest year first. ToC to the left.
 
 ## Divvun physical gatherings
 
+- **2024:**
+  [v35](physical_meetings/2024-v35-Tromsø.md)
 - **2023:**
   [v35](physical_meetings/2023-v35-Tromsø.md)
   [v49](physical_meetings/2023-v49-Tromsø.md)
