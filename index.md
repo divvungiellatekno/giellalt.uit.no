@@ -1,5 +1,10 @@
-# GiellaLT in Tromsø
+# Language technology in Tromsø
 
+[![Facebook @Divvun](https://img.shields.io/badge/Facebook-Divvun-brightgreen?style=for-the-badge&labelColor=black&logo=facebook)](https://facebook.com/Divvun)
+[![Instagram @Divvun](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/divvun.no/)
+<br/>
+![Twitter URL](https://img.shields.io/twitter/url?logo=twitter&style=for-the-badge&url=https%3A%2F%2Ftwitter.com%2Fdivvun)
+[![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCT-1MTFDubjQBr4h1fpEQ0Q?style=social&label=Language)](https://www.youtube.com/channel/UCT-1MTFDubjQBr4h1fpEQ0Q)
 
 > <img src="images/warning-sign.pngwing.com.png" height="30em" style="float:left; margin-top: 0.5em; margin-right: 0.75em; margin-bottom: 0;"> This site is targeted at people working at [UiT](https://uit.no). For general GiellaLT
 > documentation, see [giellalt.github.io](https://giellalt.github.io). Background information
