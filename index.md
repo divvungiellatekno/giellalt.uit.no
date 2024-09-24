@@ -20,7 +20,7 @@ Although this front page is in English, the other pages on the site may be in an
 
 ## Events
 
-* [Constraint Grammar and ... workshop at Nodalida 2025]()
+* [Constraint Grammar and ... workshop at Nodalida 2025](events/2025-cg/)
 * [Earlier events](events/)
 
 ## Tromsø Projects
