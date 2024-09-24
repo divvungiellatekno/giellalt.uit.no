@@ -18,6 +18,11 @@ These pages contain documentation on the language technology work for Sámi and 
 
 Although this front page is in English, the other pages on the site may be in any of the Sámi languages, in Norwegian or some other language.
 
+## Events
+
+* [Constraint Grammar and ... workshop at Nodalida 2025]()
+* [Earlier events](events/)
+
 ## Tromsø Projects
 
 - [ICALL](https://giellalt.uit.no/ped/index.html)
