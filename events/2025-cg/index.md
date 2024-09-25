@@ -1,6 +1,6 @@
-# CG workshop in nodalida 2025
+# Constraint Grammar and Finite State NLP -- Rule-based and hybrid methods and tools for user communities
 
-Workshop at [NoDaLiDa, ](https://www.nodalida-bhlt2025.eu/).
+Workshop at [NoDaLiDa, 2025](https://www.nodalida-bhlt2025.eu/).
 
 ## Programme (provisional)
 
