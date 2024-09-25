@@ -1,4 +1,3 @@
-2025 NODALIDA WORKSHOP (March 5 2005) - CALL FOR PAPERS
 
 Constraint Grammar and Finite State NLP – Rule-based and hybrid methods and tools for user communities
 =========
@@ -8,7 +7,7 @@ Constraint Grammar and Finite State NLP – Rule-based and hybrid methods and to
 ## The workshop
 
 
-We are happy to anounce that our workshop has been accepted to the Nodalida/Baltic-HLT conference 2025 (March 2-5,2025) in Tallinn, Estonia (https://www.nodalida-bhlt2025.eu).
+We are happy to announce that our workshop has been accepted to the Nodalida/Baltic-HLT conference 2025 (March 2-5,2025) in Tallinn, Estonia (https://www.nodalida-bhlt2025.eu).
 
 Traditionally, there has always been a strong user-oriented focus in the Constraint Grammar and Finite State Transducer communities. We would like to strengthen this work by providing a venue for their developers and researchers. In practice, NLP is nothing without its users, nevertheless most of the work presented in international conferences does not even mention a group of users or the reception of the tools. We therefore consider it important to continue the long work being done in this field and make user aspect of NLP more visible in our workshop. Both applications and new methods that benefit a large user community of low, middle and high resource languages are intended to be the focus of this year's workshop.
 
@@ -59,4 +58,3 @@ We invite paper submissions of three types:
 - Kaili Müürisep
 - Daniel Swanson
 - Francis Tyers
-
