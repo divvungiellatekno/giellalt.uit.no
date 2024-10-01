@@ -9,13 +9,15 @@ Constraint Grammar and Finite State NLP – Rule-based and hybrid methods and to
 
 We are happy to announce that our workshop has been accepted to the [Nodalida/Baltic-HLT conference 2025 (March 2-5,2025) in Tallinn, Estonia](https://www.nodalida-bhlt2025.eu).
 
-Traditionally, there has always been a strong user-oriented focus in the Constraint Grammar and Finite State Transducer communities. We would like to strengthen this work by providing a venue for their developers and researchers. In practice, NLP is nothing without its users, nevertheless most of the work presented in international conferences does not even mention a group of users or the reception of the tools. We therefore consider it important to continue the long work being done in this field and make user aspect of NLP more visible in our workshop. Both applications and new methods that benefit a large user community of low, middle and high resource languages are intended to be the focus of this year's workshop.
+We welcome all papers on Constraint Grammar and Finite State NLP – Rule-based and hybrid methods, tools and applications.
+
+Traditionally, there has always been a strong user-oriented focus in the Constraint Grammar and Finite State Transducer communities. We would like to strengthen this work by providing a venue for their developers and researchers. In practice, NLP is nothing without its users, nevertheless most of the work presented in international conferences does not even mention a group of users or the reception of the tools. We therefore consider it important to continue the long work being done in this field and make the user aspect of NLP more visible in our workshop. Both applications and new methods that benefit a large user community of low, middle and high resource languages are intended to be the focus of this year's workshop.
 
 We hope to cover not only the traditional field of NLP (morphological, syntactic and semantic analysis), but also the growing plethora of applicational work, where CG and FST provide an important part of end user-oriented systems in various areas of language technology. Those are spell-, grammar and comma correction, ICALL, machine translation, speech technology, lexicography, corpus-based sociolinguistics and literary studies, and others. We call for papers on both rule-based and hybrid systems.
 
 While we invite for papers on high and middle resource languages, we are especially looking forward to papers targeting under-resourced or less-resourced languages. There will also be room for methodological contributions on the FST and CG formalisms themselves regarding either their expressive power or improvements in compiler implementation.
 
-The workshop will be organized as a full-day, on-site only event on March 5. All contributions will be peer-reviewed and we would again welcome the possibility of publishing them as a NoDaLiDa proceedings volume.
+The workshop will be organized as a full-day, on-site only event on March 5. All contributions will be peer-reviewed and published as a NoDaLiDa proceedings volume.
 
 ## Timeline
 
