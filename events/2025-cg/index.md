@@ -4,7 +4,7 @@ Constraint Grammar and Finite State NLP – Rule-based and hybrid methods and to
 
 [Topics](topics.md) ◊ [Program](program.md) ◊ [Submission](submission.md) ◊ [Dates](dates.md) ◊ [Program committee](programcommittee.md) ◊ [Registration](registration.md)
 
-## The workshop
+## Call for Papers
 
 
 We are happy to announce that our workshop has been accepted to the [Nodalida/Baltic-HLT conference 2025 (March 2-5,2025) in Tallinn, Estonia](https://www.nodalida-bhlt2025.eu).
@@ -27,10 +27,6 @@ All times end of day in [the AoE timezone]()
 * Camera-readies: February 3th, 2025
 * Workshop: March 5th, 2025
 
-Main conference:
-* Paper submission deadline: October 21, 2024
-* Notification for paper submissions: December 9, 2024
-* Camera-ready manuscripts due: January 13, 2025
 
 ## Submission of papers
 
@@ -50,7 +46,7 @@ We invite paper submissions of three types:
 2. short papers on smaller, focused contributions, work in progress, negative results, surveys, or opinion pieces; and
 3. demonstration papers on software or resource demonstrations, e.g. of systems, interfaces, infrastructures, data collections, or annotations. Demonstration papers do not need to be anonymous, and will not be published in the proceedings afterwards.
 
-## The workshop organising committee
+## Program committee
 
 - Trond Trosterud
 - Linda Wiechetek
