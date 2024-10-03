@@ -1,4 +1,7 @@
-# Submission of papers
+# Submission of papers for the CG and FST NLP Workshop 2025
+
+*[Workshop](index.md) ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ Submission ◊ [Program](program.md) ◊ [Registration](registration.md) ◊ [Committee](programcommittee.md)*
+
 
 All submissions must follow the NoDaLiDa 2025 style files, which will be available for LaTeX (preferred) and MS Word and can be retrieved here. You can also directly open the Overleaf template.
 

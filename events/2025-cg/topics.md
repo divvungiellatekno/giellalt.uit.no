@@ -1,5 +1,7 @@
 # Topics for CG and FST NLP Workshop 2025
 
+*[Workshop](index.md) ◊ Topics ◊ [Timeline](dates.md) ◊ [Submission](submission.md) ◊ [Program](program.md) ◊ [Registration](registration.md) ◊ [Committee](programcommittee.md)*
+
 This workshop provides a platform for works on:
 
 - Constraint Grammar and Finite State NLP
