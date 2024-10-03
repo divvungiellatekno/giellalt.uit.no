@@ -45,6 +45,7 @@ We invite paper submissions of three types:
 1. regular papers on substantial, original, and unpublished research, including empirical evaluation results, where appropriate;
 2. short papers on smaller, focused contributions, work in progress, negative results, surveys, or opinion pieces; and
 3. demonstration papers on software or resource demonstrations, e.g. of systems, interfaces, infrastructures, data collections, or annotations. Demonstration papers do not need to be anonymous, and will not be published in the proceedings afterwards.
+They will be made available on the workshop site.
 
 ## Program committee
 
