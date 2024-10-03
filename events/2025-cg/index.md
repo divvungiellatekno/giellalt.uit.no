@@ -2,7 +2,7 @@
 Constraint Grammar and Finite State NLP – Rule-based and hybrid methods and tools for user communities
 =========
 
-[Topics](topics.md) ◊ [Program](program.md) ◊ [Submission](submission.md) ◊ [Dates](dates.md) ◊ [Program committee](programcommittee.md) ◊ [Registration](registration.md)
+[Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Submission](submission.md) ◊ [Program](program.md) ◊ [Registration](registration.md) ◊ [Program committee](programcommittee.md)
 
 ## Call for Papers
 
