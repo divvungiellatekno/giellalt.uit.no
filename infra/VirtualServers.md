@@ -4,14 +4,35 @@ Here we document our servers and common machines. If some servers are down, see 
 
 ## List over the machines
 
+All new machines are Ubuntu 22.04.
+
+Machine | Managed by | Age | Specs | Services
+---|---|---|---|---
+divvun.uit.no     | Divvun      | old | | ?
+divvun-02.uit.no  | Divvun      | new | | ?
+satni.uit.no      | Divvun      | old | | ?
+satni-02.uit.no   | Divvun      | new | | ?
+gtsvn-01.uit.no   | Divvun      | old | | svn server
+gtsvn-02.uit.no   | Divvun      | new | | svn server
+gtdict.uit.no     | Giellatekno | old | 32GB RAM, 8 CPUs | Neahttadigisanit
+gtdict-02.uit.no  | Giellatekno | new | 32GB RAM, 8 CPUs | Neahttadigisanit
+gtweb-01.uit.no   | Giellatekno | old | | webpipeline, apertium, korp, webdict, metadict
+gtweb-02.uit.no   | Giellatekno | new | 16GB RAM, 4 CPUs | webpipeline, apertium, korp, webdict, metadict
+gtoahpa-01.uit.no | Giellatekno | old | | oahpa.no
+gtoahpa-02.uit.no | Giellatekno | new | 16GB RAM, 4 CPUs | oahpa.no, kuvsje, kursa, oahpa instances
+gtlab.uit.no      | (?)         | old | | (not in use)
+
 - divvun.uit.no
-- gtlab.uit.no
-- gtoahpa-01.uit.no
-- gtdict.uit.no
-- gtsvn-01.uit.no
-- gtsvn.uit.no
-- gtweb-01.uit.no
 - satni.uit.no
+- gtsvn-01.uit.no
+- gtsvn-02.uit.no
+- gtdict.uit.no
+- gtdict-02.uit.no
+- gtweb-01.uit.no
+- gtweb-02.uit.no
+- gtoahpa-01.uit.no
+- gtoahpa-02.uit.no
+- gtlab.uit.no
 
 Each machine is documented below.
 
