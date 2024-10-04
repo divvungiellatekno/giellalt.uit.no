@@ -119,6 +119,11 @@ Each machine is documented below.
     - cgi-bin
     - webdicts
 
+## gtweb-02.uit.no
+
+Same services as gtweb-01. Services are managed by a service script, see
+<https://github.com/giellatekno/gtweb-service-script>.
+
 ## satni.uit.no (oppgradert)
 
 ## Other documentation
