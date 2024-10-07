@@ -10,10 +10,11 @@ Log in to *gtdict.uit.no*, switch to user neahtta, go to /home/neahtta/neahtta a
 
 
 ```
-    fab DICT restart-service
+    nds restart DICT
 ```
 
-where DICT is the relevant name for the dictionary to restart:
+where DICT is the relevant name for the dictionary to restart (or `all`
+to restart all instances):
 
 ```
     sanit
