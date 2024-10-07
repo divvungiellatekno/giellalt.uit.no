@@ -22,18 +22,6 @@ gtoahpa-01.uit.no | Giellatekno | old | | oahpa.no
 gtoahpa-02.uit.no | Giellatekno | new | 16GB RAM, 4 CPUs | oahpa.no, kuvsje, kursa, oahpa instances
 gtlab.uit.no      | (?)         | old | | (not in use)
 
-- divvun.uit.no
-- satni.uit.no
-- gtsvn-01.uit.no
-- gtsvn-02.uit.no
-- gtdict.uit.no
-- gtdict-02.uit.no
-- gtweb-01.uit.no
-- gtweb-02.uit.no
-- gtoahpa-01.uit.no
-- gtoahpa-02.uit.no
-- gtlab.uit.no
-
 Each machine is documented below.
 
 ## divvun.uit.no
@@ -74,13 +62,19 @@ Each machine is documented below.
     - kuvsje (<https://kuvsje.oahpa.no/>)
     - kursa (<https://kursa.oahpa.no/>)
 
+## gtoahpa-02.uit.no
+
+The new gtoahpa. Same services as gtweb-01. Services are managed by
+a service script, see
+<https://github.com/giellatekno/gtoahpa-service-script>.
+
 ## gtdict.uit.no
 
 - Specifications:
 
   - OS: Centos 7
   - CPU: 8
-  - Minne: 16GB
+  - Minne: 32GB
 
 - Running services:
   - NDS:
@@ -96,6 +90,13 @@ Each machine is documented below.
     - <https://sanj.oahpa.no>
     - <https://sonad.oahpa.no>
     - <https://valks.oahpa.no>
+
+## gtdict-02.uit.no
+
+The new gtdict. Running the same services as gtdict (the old one).
+Setup is the same as on gtdict (old). Maintenance is done with the
+the nds maintenance script, see
+<https://giellalt.github.io/dicts/nds/nds_commands.html>.
 
 ## gtsvn-01.uit.no
 
