@@ -12,7 +12,7 @@ Get an overview on the [status monitor for Giellatekno and Divvun **services** r
 
 For the *divvun.no, gtdict.uit.no, gtoahpa-01.uit.no, gtsvn-01.uit.no, gtweb-01.uit.no, satni.org* servers at uit.no:
 
-* Relevant persons are Børre Gaup, Sjur Moshagen, Trond Trosterud.
+* Relevant persons are Børre Gaup, Anders Lorentsen, Sjur Moshagen, Trond Trosterud.
 * Ultimately, _IT, Seksjon for applikasjoner og tjenester_ (see `$GTPRIV/admin/emergency.txt`)
 
 Note that *gtsvn.uit.no* redirects to *gtsvn-01.uit.no*, etc for all *-01*.
@@ -62,12 +62,19 @@ The following processes need to be restarted, and in the following way.
 
 Go back to [the interactive monitor](https://status.giellalt.org/), refresh, and check whether the report has turned greener. (Remember: The monitor tests every 5 minutes).
 
+
 # A server is very slow
 
-* Log in to the machine via ssh and find out which processes are using most CPU resource by giving the command:
+Log in to the machine via ssh and find out which processes are using most CPU resource by giving the command:
+
 ```
-    top
+    htop
 ```
+
+The top part of the screen shows CPU usage per core, as well as memory usage.
+Sort by CPU or Memory in the process list below, by typing **shift-p** or 
+**shift-m**, respectively. Processes that seem to use a lot of either CPU
+or Memory should be restarted.
 
 The output looks something like
 ```
