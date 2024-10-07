@@ -43,6 +43,8 @@ The following processes need to be restarted, and in the following way.
 	- Domain on server: *jorgal.uit.no, gtweb.uit.no*
 	- Services on server: MT, korp, cgi-bin
 	- [Restart instructions for **gtweb-01** (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
+- **Server: gtweb-02.uit.no**
+    - [Troubleshooting gtweb-02](gtweb-02-troubleshooting.md)
 - **Server: satni.uit.no**
 	- Domains on server: *satni.org, sátni.org, bahko.org, báhko.org, baakoe.org*
 	- [Restart instructions for **satni.org**](satniorg.html)
