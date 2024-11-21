@@ -11,8 +11,14 @@ lagringsplass i Azure.
 
 __TL;DR__
 
-`scp` kan brukes som vanlig til og laste opp og ned. Husk å bruke riktig key.
-F.eks, for å laste ned ei fil:
+`scp` kan brukes som vanlig til og laste opp og ned filer. Addressen er
+
+```
+gtlabbackuplrs.CONTAINER.BRUKERNAVN@gtlabbackuplrs.blob.core.windows.net
+```
+
+Husk å bruke riktig ssh-nøkkel (med `-i ~/.ssh/KEY`). F.eks, for å laste ned ei
+fil:
 
 ```
 scp -i ~/.ssh/SSH_KEY gtlabbackuplrs.CONTAINER.BRUKERNAVN@gtlabbackuplrs.blob.core.windows.net:/FIL FIL
@@ -27,8 +33,12 @@ Alle må ha en bruker. Brukeren identifiseres med et navn, f.eks `anders`, eller
 `trond`. Brukeren har en tilhørende SSH-nøkkel. SSH-nøkkelen består av to
 filer som plasseres i `~/.ssh`-mappa.
 
+
+### Containers og filer
+
 Hver server (_gtweb_, _gtdict_, osv) har sin egen `container`, som vil si
-at den har sin egen ssh addresse.
+at den har sin egen ssh addresse (erstatt `CONTAINER` med `gtdict1` eller
+`gtoahpa1`).
 
 | Container  | Fil                   | Inneholder |
 | :--------- | :-------------------- | :--------- |
@@ -60,3 +70,5 @@ __Husk å gi brukeren rettigheter til alle containere!__
 _Anders: I tutorialene jeg leste når jeg satt opp dette, så kan jeg ikke huske
 å ha lest noe om passord-basert tilgang, men det virker som om webgrensesnittet
 tillatter det nå. Så det er et alternativ til å bruke SSH-key._
+
+https://learn.microsoft.com/nb-no/azure/storage/blobs/secure-file-transfer-protocol-support
