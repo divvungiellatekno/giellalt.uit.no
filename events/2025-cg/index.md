@@ -30,7 +30,7 @@ All times end of day in [the AoE timezone](https://www.timeanddate.com/time/zone
 
 ## Submission of papers
 
-Submission is done through OpenReview.
+Submission is done through [OpenReview](https://openreview.net/group?id=NoDaLiDa/Baltic-HLT/2025/Workshop/CG-FST_NLP).
 
 All submissions must follow the NoDaLiDa 2025 style files, which will be available for LaTeX (preferred) and MS Word and can be retrieved [here](https://drive.google.com/file/d/1VuzuZ-KwJ5zOV7RPsbuje7hRMSN1EfwC/view).
 You can also directly open [the Overleaf template](https://www.overleaf.com/latex/templates/instructions-for-nodalida-baltic-hlt-2025-submissions/vntbxsmmzyqj).
