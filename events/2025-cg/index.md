@@ -23,7 +23,7 @@ The workshop will be organized as a full-day, on-site only event on March 5. All
 
 All times end of day in [the AoE timezone](https://www.timeanddate.com/time/zones/aoe).
 
-* Submission deadline: December 16th, 2024
+* Submission deadline: ~~December 16th,~~December 23rd, 2024
 * Camera-readies: February 3th, 2025
 * Workshop: March 5th, 2025
 
