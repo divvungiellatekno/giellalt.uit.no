@@ -4,7 +4,7 @@
 
 All times end of day in [the AoE timezone]()
 
-* Submission deadline: December 16th, 2024
+* Submission deadline: ~~December 16th,~~December 22nd, 2024
 * Camera-readies: February 3th, 2025
 * Workshop: March 5th, 2025
 
