@@ -13,12 +13,12 @@ Først litt terminologi:
 - Azure Arc
 
   Registrer egen VM (våre servere) som en "hybrid-VM" som er registrert hos
-  Azure. Azure får tilgang til noe data og kan styre maskinen noe, men
-  helt like inngående som en faktisk VM i Azure. Derfor kalles den "hybrid".
+  Azure. Azure får tilgang til noe data og kan styre maskinen noe, så den
+  kalles en "hybrid VM".
 
 - Azure Arc Agent (AAA)
 
-  Programvaren på "hybride", on-premise VM, som integrer den mot Azure.
+  Programvaren som integrerer en "hybrid VM" mot Azure.
 
 - Azure Monitor Agent (AMA)
 
@@ -62,16 +62,6 @@ For å få podman containers til å skrive stdout og stderr til Syslog,
 har de fått feltene "SyslogFacility=local4" og "SyslogIdentifier=CONTAINER"
 i "[Service]"-seksjonen i .service fila til tjenesten.
 
---- 
-
-- Vår VM legges inn som "Azure Arc Machine" (med "Azure Arc Agent")
-  [en arc machine er som en "hybdid-kontroller azure vm", en vm som er vår
-  egen, men "litt" eller "liksom" med som en hybrid vm som azure har litt
-  kontroll over.]
-- Installerer også Azure Monitor Agent (AMA), for å kunne monitorere logger på
-  VMet og sende de til Azure (denne krever Azure Arc Agent, over)
-  (se INSTALL_AMA)
-
 
 ## Se loggene
 
@@ -94,35 +84,12 @@ Account. Lagring her **BØR** være billigere....
 
 ---
 
-For at Azure Monitor Agent skal kunne samle data, må det ligge en regel
-i Azure om hvordan data den skal samle, og hvor disse loggene skal sendes.
-Dette er en Data Collection Rule (DCR).
-For gtweb-02:
-  syslog (altså log fra systemd)
-
-
-
 
 
 DCR docs: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-overview
 
-azure monitor
-syslog?
-nginx log to syslog server -> syslog server -> azure monitor/azure log workspace?
 
-# command to create a log analytics workspace in azure
-
-$ az monitor log-analytics workspace create \
-    --resource-group rg1 \
-    --workspace-name workspace1
-
-
-
-azure arc agent:
-  legger til en VM vi kontroller (altså f.eks våre servere)
-  til å bli inkludert som en "hybrid" vm i Azure, hvor man kan
-  få serveren "managed" av azure, f.eks få logger sendt til
-  log analytics
+# Temp temp..
 
 logg over hva jeg har gjort:
 
@@ -141,7 +108,7 @@ N. I portalen: Log analytics workspace "mock-chatuit-logs", Settings -> Tables,
 
 
 
-INSTALL_ARC_AGENT_SCRIPT:
+# INSTALL_ARC_AGENT_SCRIPT:
 
 scripet gjør følgende, i følge azure portal:
 
@@ -152,8 +119,75 @@ scripet gjør følgende, i følge azure portal:
     Create the Azure Arc-enabled server resource and associate it with the agent.
 
 
+# Setup on Azure
 
-INSTALL_AMA:
+- Subscription: Lab subscription Anders.
+- Resource group: **gtlab-arcmachines**.
+- Log analytics workspace: **vm-logs**. (See *Create log analytics workspace*)
+- Data collection rule
+
+
+# Create log analytics workspace
+
+The command I ran to create the log analytics workspace in use:
+
+    az monitor log-analytics workspace create --resource-group gtlab-arcmachines --workspace-name vm-logs
+
+**Anders: This took a long time to be able to do, as it turns out the az cli
+is bugged in the newest version on debian sid (2.67.0-1~bookworm is bugged,
+2.66.0-1~bookworm works.** *(Microsoft claimed user error in the bug reports,
+so finding the fix took me a long time.)*
+
+
+# Create data collection rule
+
+    az monitor data-collection rule create \
+        --resource-group gtlab-arcmachines \
+        --name gtweb02-local4-syslog \
+        --rule-file local4syslog_rule.json
+
+
+## Create data collection rule (without rulefile)
+
+An example of creating a data collection rule without using a rulefile.
+
+    az monitor data-collection rule create \
+        --resource-group rg1 \
+        --name dcr1 \
+        --data-flow \
+            streams="Microsoft-Syslog" \
+            destinations="logAnalytics1" \
+        --log-analytics \
+            resource-id=$(az monitor log-analytics workspace show \
+                --resource-group rg1 \
+                --workspace-name workspace1) \
+            name="logAnalytics1" \
+        --syslog \
+            name="syslog1" \
+            streams="Microsoft-Syslog" \
+            facility-names="local4" \
+            log-levels="Debug" \
+            log-levels="Info" \
+            log-levels="Notice" \
+            log-levels="Warning" \
+            log-levels="Error" \
+            log-levels="Critical" \
+            log-levels="Alert" \
+            log-levels="Emergency"
+
+While this would be for adding a syslog to a DCR (but we probably don't need
+that, since we add it at creation time).
+
+    az monitor data-collection rule syslog add \
+        --data-collection-rule-name \
+       --name \
+       --resource-group \
+       [--facility-names local4 \
+       [--log-levels] \
+       [--streams] \
+       [--transform-kql]
+
+# INSTALL_AMA:
 
 Kjørte denne kommandoen, LOKALT PÅ MIN LAPTOP:
 
@@ -161,7 +195,7 @@ Kjørte denne kommandoen, LOKALT PÅ MIN LAPTOP:
 
 Her er hele seansen, med resultatet:
 
-    anders@debian:~/projects/webpipeline/api_tester/src$ az connectedmachine extension create --name AzureMonitorLinuxAgent --publisher Microsoft.Azure.Monitor --type AzureMonitorLinuxAgent --machine-name gtweb-02 --resource-group gtlab-arcmachines --location norwayeast --enable-auto-upgrade true
+    anders@debian:~/$ az connectedmachine extension create --name AzureMonitorLinuxAgent --publisher Microsoft.Azure.Monitor --type AzureMonitorLinuxAgent --machine-name gtweb-02 --resource-group gtlab-arcmachines --location norwayeast --enable-auto-upgrade true
     id: /subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.HybridCompute/machines/gtweb-02/extensions/AzureMonitorLinuxAgent
     location: norwayeast
     name: AzureMonitorLinuxAgent
