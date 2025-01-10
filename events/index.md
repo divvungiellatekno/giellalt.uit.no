@@ -1,6 +1,6 @@
 # List of earlier events
 
-
+- 2024 [Språk og KI i Norden](https://www.ntnu.edu/norwai/sprak-og-ai-i-norden/)
 - 2022 [Svonniseminára](https://giellatekno.uit.no/conf/svonni/Program.html)
 - 2018 [Workshop at Oulu Sámi symposium](https://giellatekno.uit.no/courses/korp/KorpOulu.html)
 - 2017 [Workshop for grammar model building in the Giella infrastructure](https://giellatekno.uit.no/conf/gt17/Romsa.html)
@@ -16,4 +16,3 @@
 - 2009 [Workshop i samisk leksikografi 2009](https://giellatekno.uit.no/conf/lex09/index.html)
 - 2009 [Workshop at the NoDaLiDa 2009 conference in Odense](https://giellatekno.uit.no/cg/09/index.html)
 - 2007 [Workshop at the NoDaLiDa 2007 conference in Tarto](https://giellatekno.uit.no/cg/ee07/index.html)
-
