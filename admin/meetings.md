@@ -119,6 +119,12 @@ newest year first. ToC to the left.
 
 ### Divvun regular meetings this year
 
+- **2025:**
+  [07.01.](divvun/Meeting2025-01-07.md),
+  [14.01.](divvun/Meeting2025-01-14.md),
+
+### Divvun regular meetings last year
+
 - **2024:**
   [02.01.](divvun/Meeting2024-01-02.md),
   [09.01.](divvun/Meeting2024-01-09.md),
@@ -165,7 +171,7 @@ newest year first. ToC to the left.
   [10.12.](divvun/Meeting2024-12-10.md),
   [17.12.](divvun/Meeting2024-12-17.md)
 
-### Divvun regular meetings last year
+### Older regular meetings
 
 - **2023:**
   [03.01.](divvun/Meeting2023-01-03.md),
@@ -212,9 +218,6 @@ newest year first. ToC to the left.
   [28.11.](divvun/Meeting2023-11-28.md),
   [05.12.](divvun/Meeting2023-12-05.md),
   [19.12.](divvun/Meeting2023-12-19.md)
-
-### Older regular meetings
-
 - **2022:**
   [04.01.](divvun/Meeting2022-01-04.md),
   [11.01.](divvun/Meeting2022-01-11.md),
