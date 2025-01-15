@@ -63,28 +63,35 @@ fra *LAW*-et til *SA*-en. *Storage Account*-en har *Cold access tier*.
 
 TODO: Sette opp storage account auto-archive policy?
 
-For å få podman containers til å skrive stdout og stderr til Syslog,
+For å få systemd services til å skrive stdout og stderr til Syslog,
 har de fått feltene "SyslogFacility=local4" og "SyslogIdentifier=CONTAINER"
-i "[Service]"-seksjonen i .service fila til tjenesten.
+i "[Service]"-seksjonen i .service fila til tjenesten. *DCR* er satt til å
+sende nettopp local4 til *LAW*en.
 
 
 ## Se loggene
 
-Loggene kan man se i Log Analytics i portalen. Tabellen heter `Syslog`, så
-den enkleste spørringa man kan gjøre er `Syslog`. Denne henter alt, altså
-alle logglinjer. For å kun se noen av linjene, kan man spørre etter
-`Syslog | limit 50`.
+### I log analytics workspace
+
+Logger fra opp til 30 dager siden ligger i log analytics workspacet, og kan
+sees på i azure portal. Tabellen heter `Syslog` så den enkleste spørringa man
+kan gjøre er `Syslog`. Denne henter alt, altså alle logglinjer. For å kun se
+noen av linjene, kan man spørre etter `Syslog | limit 50`.
+
+Man kan også filtrere på `MachineName` for kun å se enkelte maskiner, eller
+på `ProcessName` for å kun se logger fra en enkelt tjeneste.
 
 Jeg har også et script som bruker `az` internt for å få loggene tilsendt
 lokal teriminal. Det ligger i `giellatekno/gtweb-service-script`.
 
 
-## Lagringsperiode
+### I storage account
 
 Det er slik at i Azure Monitor har loggene en standard "retention period" på
-30 dager. Vi har to valg: Sette "archive period" opp til 12 år - men også,
-eller heller, eksportere loggene fra Azure Monitor til blobs i en Storage
-Account. Lagring her **BØR** være billigere....
+30 dager. Permanent lagring skjer med at loggdata kontinuerlig lagres som en
+blob i storage accounten. Filene ligger der, men pr nå finnes ingen script
+for å forenkle det å se på inneholdet i de. Bruk portalen for å laste ned
+enkelfiler for å se, inntil videre.
 
 
 ---
@@ -101,18 +108,17 @@ satt opp.
 
 1. Opprettet **resource group: gtlab-arcmachines**.
 1. Opprettet log analytics workspace: **vm-logs**. (Create log analytics workspace)
-1. In the Azure portal, navigate to Arc Machines, and clicked Add.
-   Selected to generate a script to use for a single machine.
-   Downloaded the script to
-   /home/anders/gut/giellatekno/gtweb-service-script/install_arc_script.sh
-1. Uploaded the script to gtweb-02 and gtoapa, and ran it there.
-   (Install Azure Arc Agent script)
+1. Install Azure Arc Agent on the VMs (Install Azure Arc Agent)
 1. Installed AMA on the servers. (Install AMA)
 1. Opprettet data collection rule. (Create data collection rule)
 
 
 
-# Install Azure Arc Agent script:
+# Install Azure Arc Agent:
+
+In the Azure portal, navigate to Arc Machines, and clicked Add. Selected to
+generate a script to use for a single machine. Downloaded the script to
+/home/anders/gut/giellatekno/gtweb-service-script/install_arc_script.sh
 
 It's a small script, which does the following (quote from the portal):
 
@@ -122,8 +128,8 @@ It's a small script, which does the following (quote from the portal):
     Install the agent on the server.
     Create the Azure Arc-enabled server resource and associate it with the agent.
 
-After running it, the server shows up in the portal, under Arc Machines.
-But, the monitoring software, the AMA, has not yet been installed.
+After running it on the servers, the server shows up in the portal, under
+Arc Machines. But, the monitoring software, the AMA, has not yet been installed.
 
 
 # Install AMA:
@@ -133,7 +139,7 @@ and can control the VM. It is done by an `az` command, locally on my (the
 developers) machine:
 
 I have ran this command with `MACHINE_NAME` set to `gtweb-02`, `gtoahpa-02`,
-to set up AMA on those servers.
+`gtdict-02`, to set up AMA on those servers.
 
     az connectedmachine extension create \
         --resource-group gtlab-arcmachines \
@@ -261,6 +267,13 @@ one for `gtweb-02`, and one for `gtoahpa-02`:
         --data-collection-rule-id /subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.Insights/dataCollectionRules/gtweb02-local4-syslog
 
 anders: accidentally used the same `association-name` - is that actually ok?
+
+For gtdict-02, this command was used:
+
+    az monitor data-collection rule association create \
+        --association-name gtdict02syslog-vmlogs \
+        --resource /subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.HybridCompute/machines/gtdict-02 \
+        --data-collection-rule-id /subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.Insights/dataCollectionRules/gtweb02-local4-syslog
 
 
 # Set up exporting log analytics data to storage account
