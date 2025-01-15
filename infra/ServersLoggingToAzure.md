@@ -247,7 +247,8 @@ To find the `RULE_ID`, we use
 
     /subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.Insights/dataCollectionRules/gtweb02-local4-syslog
 
-Finally we have all information we need to create the association:
+Finally we have all information we need to create the association. Have created
+one for `gtweb-02`, and one for `gtoahpa-02`:
 
     az monitor data-collection rule association create \
         --association-name gtweb02syslog-vmlogs \
@@ -258,6 +259,8 @@ Finally we have all information we need to create the association:
         --association-name gtweb02syslog-vmlogs \
         --resource /subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.HybridCompute/machines/gtoahpa-02 \
         --data-collection-rule-id /subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.Insights/dataCollectionRules/gtweb02-local4-syslog
+
+anders: accidentally used the same `association-name` - is that actually ok?
 
 
 # Set up exporting log analytics data to storage account
