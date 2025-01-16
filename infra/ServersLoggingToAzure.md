@@ -457,4 +457,7 @@ destination, and syslog local4 facility as the source.
 
 ## Documentation
 
+- **Very** useful introduction to the entire thing:
+  https://trstringer.com/azure-monitor-agent-linux-syslog-systemd-journal/
 - DCR: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-overview
+- ... Search azure on any of the buzzwords!
