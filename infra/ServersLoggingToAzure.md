@@ -1,82 +1,56 @@
 # Sending server logs to Azure
 
-**Dette dokumentet er under utarbeiding etter hvert som jeg finner ut
-av det, det er ikke linket til av noen andre dokumenter i dokumentasjonssida
-pr nå.**
+By *Anders Lorentsen*, January 2025.
 
-We send the logs of the services running on our virtual machines (servers)
-to Azure, for permanent storage.
+## Motivation
 
-First some terminology:
+We want to save the logs from our applications for later analysis, both to
+make the services themselves better (technnical debugging), as well as to
+learn from them (academically).
 
-- Azure Arc
+Servers are not emphemeral, but they also cannot be trusted to never crash
+or fail. It is there paramount that the logs are stored also outside of the
+servers. For us, *outside* means *Azure*. Most services we have in use, send
+most of their logging data to Azure, and this document describes how that is
+done. It gets quite detailled, so beware.
 
-  Register our VMs as "hybrid VMs" in Azure. Azure gets access to the server,
-  and can control some aspects of the machine, but not full, like a VM from
-  Azure.
-
-- Azure Arc Agent (AAA)
-
-  The software that integrates a "hybrid VM" with Azure.
-
-- Azure Monitor Agent (AMA)
-
-  Software installed on an Azure Arc-VM (which is a VM with the AAA installed),
-  that can upload logs (among other things) to Azure.
-
-- Azure Monitor
-
-  Samlingsprodukt for alt av monitorering og logging i Azure. Alle
-  Azure-tjenester er integrert mot Azure Monitor, for overvåking og logging.
-
-- Log Analytics workspace (here: unofficial abbreviation: LAW)
-
-  A place for gathering logs in Azure. Contains analysis and presentation tools
-  for viewing the logs as well.
-
-- Storage Account (SA)
-
-  Gathering of many related storage solutions in Azure. The overall skeleton
-  allows for many kinds of storage. Blobs, File Shares, etc.
-
-- Data Collection Rule (DCR) [Azure Monitor]
-
-  *What* should be logged, AND *where* it should be sent, as a rule that can
-  be applied for multiple resources.
-
-- Data collection rule associations (DCRA) [Azure Monitor]
-
-  Assosiere en regel (DCR) med en ressurs som skal overvåkes. En regel kan
-  assoseres med flere ressurser, og en ressurs kan assosieres med flere regler.
-  Altså er det en mange-til-mange-relasjon mellom overvåkingsregler (DCR) og
-  ressurser som overvåkes. Hver assosiasjon er en DCRA.
+*In this document, the __portal__ refers to the __azure portal__ website. If
+not otherwise specified, __the cli__ refers to the __az cli__ tool. A full list
+of all abbreviations and terminology used in this document is found towards the
+end.*
 
 
-## Hvordan det fungerer
+## Overview
 
-Våre VMer installerer *AAA* og *AMA*. Vi setter opp en *Azure Monitor* med en
-*LAW*, og lager en *DCR* som sier at *Syslog* skal til *LAW*-en. Vi setter
-opp en *DCRA* mellom VM og *LAW*, slik at loggene fra VMet går dit.
+Our VMs has installed *Azure Arc Agent* (*AAA*), software that registers the VM
+with azure. To gather logs from systemd services running on the VMs, and send
+those to azure from the VM, software called *Azure Monitor Agent* (*AMA*) is also
+installed on the VMs.
 
-Videre setter vi opp en *Storage Account*, og setter opp en *data export*
-fra *LAW*-et til *SA*-en. *Storage Account*-en har *Cold access tier*.
+The logging framework in Azure is called *Azure Monitor*, and it contains a
+*Log Analytics Workspace* (*LAW*), which is where logs are conceptually sent.
+The logs can be viewed for 30 days in the portal, or through the *az cli*.
 
-TODO: Sette opp storage account auto-archive policy?
-
-For å få systemd services til å skrive stdout og stderr til Syslog,
-har de fått feltene "SyslogFacility=local4" og "SyslogIdentifier=CONTAINER"
-i "[Service]"-seksjonen i .service fila til tjenesten. *DCR* er satt til å
-sende nettopp local4 til *LAW*en.
+To archive the logs, the logs are also sent directly to a *storage account*,
+from the *LAW* by an export rule. A *storage account* can retain data
+indefinetely.
 
 
-## Se loggene
 
-### I log analytics workspace
+## Viewing the logs
+
+### In log analytics workspace
 
 Logger fra opp til 30 dager siden ligger i log analytics workspacet, og kan
 sees på i azure portal. Tabellen heter `Syslog` så den enkleste spørringa man
-kan gjøre er `Syslog`. Denne henter alt, altså alle logglinjer. For å kun se
-noen av linjene, kan man spørre etter `Syslog | limit 50`.
+kan gjøre er `Syslog`. Denne henter alt, altså alle logglinjer. Ei mer reell
+spørring, som henter ut kun spesifikke kolonner (`project`), og ordner
+meldingene etter tidspunkt, vil være:
+
+    Syslog
+    | project TimeGenerated, HostName, SyslogMessage, ProcessName
+    | order by TimeGenerated
+    | limit 100
 
 Man kan også filtrere på `MachineName` for kun å se enkelte maskiner, eller
 på `ProcessName` for å kun se logger fra en enkelt tjeneste.
@@ -98,26 +72,54 @@ enkelfiler for å se, inntil videre.
 
 
 
-DCR docs: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-overview
 
 
-# Oppsett
+## Setup
 
-Denne punktlista fungerer som logg over hva jeg har gjort, og hvordan det er
-satt opp.
+This is a step by step guide on what has been done to set this up. Each step
+is documented more throughly in its own section, below.
 
-1. Opprettet **resource group: gtlab-arcmachines**.
-1. Opprettet log analytics workspace: **vm-logs**. (Create log analytics workspace)
-1. Install Azure Arc Agent on the VMs (Install Azure Arc Agent)
-1. Installed AMA on the servers. (Install AMA)
-1. Opprettet data collection rule. (Create data collection rule)
+1. Created **resource group: gtlab-arcmachines**.
+2. Created **log analytics workspace: vm-logs**
+3. Install Azure Arc Agent on the VMs
+4. Install AMA on the VMs.
+5. Create data collection rule (DCR)
+6. Associate the rule with our resources
+7. Setup data export rule from LAW to Storage Account
+    1. Storage account
+    2. Set up automatic blob archival
+
+
+### 1. Creating resource group
+
+All related resource is grouped by a *resource group* in Azure, and we have
+everything related to sending logs from the VMs to azure in a resource group
+called **gtlab-arcmachines**.
+
+Use the cli command `az group create` to create a resource group, or use
+the portal.
+
+
+### 2. Create log analytics workspace
+
+The log analytics workspace is named **gtlab-arcmachines**, andd was created
+using the command:
+
+    az monitor log-analytics workspace create \
+        --resource-group gtlab-arcmachines \
+        --workspace-name vm-logs
+
+**Anders: This took a long time to be able to do, as it turns out the az cli
+is bugged in the newest version on debian sid (2.67.0-1~bookworm is bugged,
+2.66.0-1~bookworm works.** *(Microsoft claimed user error in the bug reports,
+so finding the fix took me a long time.)*
 
 
 
-# Install Azure Arc Agent:
+### 3. Install Azure Arc Agent:
 
-In the Azure portal, navigate to Arc Machines, and clicked Add. Selected to
-generate a script to use for a single machine. Downloaded the script to
+In the Azure portal, navigate to Arc Machines, and click Add. Select the option
+to generate a script to use for a single machine. Downloaded the script to
 /home/anders/gut/giellatekno/gtweb-service-script/install_arc_script.sh
 
 It's a small script, which does the following (quote from the portal):
@@ -132,7 +134,7 @@ After running it on the servers, the server shows up in the portal, under
 Arc Machines. But, the monitoring software, the AMA, has not yet been installed.
 
 
-# Install AMA:
+### 4. Install AMA on the VMs:
 
 To install the AMA on the servers is simple, now that the AAA has been installed
 and can control the VM. It is done by an `az` command, locally on my (the
@@ -151,21 +153,7 @@ I have ran this command with `MACHINE_NAME` set to `gtweb-02`, `gtoahpa-02`,
         --enable-auto-upgrade true
 
 
-# Create log analytics workspace
-
-The command I ran to create the log analytics workspace in use:
-
-    az monitor log-analytics workspace create \
-        --resource-group gtlab-arcmachines \
-        --workspace-name vm-logs
-
-**Anders: This took a long time to be able to do, as it turns out the az cli
-is bugged in the newest version on debian sid (2.67.0-1~bookworm is bugged,
-2.66.0-1~bookworm works.** *(Microsoft claimed user error in the bug reports,
-so finding the fix took me a long time.)*
-
-
-# Create data collection rule
+### 5. Create data collection rule
 
 Command I ran to create the data collection rule. Most of the data is in
 the rule file.
@@ -175,48 +163,19 @@ the rule file.
         --name gtweb02-local4-syslog \
         --rule-file local4syslog_rule.json
 
+The rule file specifies the *LAW* as the destination, and the *local4* facility
+of the *syslog* as the source.
 
-## Create data collection rule (without rulefile)
+This also means that all systemd services will have to specify that they will
+log to the *local4* syslog name. This is done by adding `SyslogFacility=local4`
+and `SyslogIdentifier=CONTAINER_NAME` in the `[Service]` section in the systemd
+`.service` files.
 
-An example of creating a data collection rule without using a rulefile.
+Conveniently, this also allows us to filter our logs on the syslog identifer,
+to easily retrive logs for any of our services.
 
-    az monitor data-collection rule create \
-        --resource-group rg1 \
-        --name dcr1 \
-        --data-flow \
-            streams="Microsoft-Syslog" \
-            destinations="logAnalytics1" \
-        --log-analytics \
-            resource-id=$(az monitor log-analytics workspace show \
-                --resource-group rg1 \
-                --workspace-name workspace1) \
-            name="logAnalytics1" \
-        --syslog \
-            name="syslog1" \
-            streams="Microsoft-Syslog" \
-            facility-names="local4" \
-            log-levels="Debug" \
-            log-levels="Info" \
-            log-levels="Notice" \
-            log-levels="Warning" \
-            log-levels="Error" \
-            log-levels="Critical" \
-            log-levels="Alert" \
-            log-levels="Emergency"
 
-While this would be for adding a syslog to a DCR (but we probably don't need
-that, since we add it at creation time).
-
-    az monitor data-collection rule syslog add \
-        --data-collection-rule-name \
-       --name \
-       --resource-group \
-       [--facility-names local4 \
-       [--log-levels] \
-       [--streams] \
-       [--transform-kql]
-
-# Associate rule with resource
+### 6. Associate the rule with resource
 
 Next step is to associate the rule with the resource.
 
@@ -276,14 +235,14 @@ For gtdict-02, this command was used:
         --data-collection-rule-id /subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.Insights/dataCollectionRules/gtweb02-local4-syslog
 
 
-# Set up exporting log analytics data to storage account
+### 7. Setup data export rule from LAW to Storage Account
 
 It's possible to send logs coming in to log analytics directly to a storage
 account. This of course means that we need a storage account, so lets first
 look through that.
 
 
-## Storage account
+#### 7.1 Storage account
 
 To create a storage account, we use the command:
 
@@ -306,14 +265,6 @@ To create a storage account, we use the command:
         --location norwayeast \
         --access-tier Cold \
         --sku Standard_LRS 
-
-
-## Archiving the blobs
-
-Blobs in a storage account can be moved periodically to an even colder access
-tier, called _archive_. This is done by adding a policy rule.
-
-https://learn.microsoft.com/en-us/azure/storage/blobs/archive-blob?tabs=azure-cli
 
 
 ## Where logs are stored
@@ -355,8 +306,155 @@ So, in our case, we will use the command:
         --tables Syslog
 
 
+### Misc: Set up automatic blob archival
 
-# Remaining work to do...
+Blobs in a storage account can be moved periodically to an even colder access
+tier, called _archive_. This is done by adding a policy rule.
 
-Install on the other servers. Set up all required thigns to make everything
-work on the other servers.
+https://learn.microsoft.com/en-us/azure/storage/blobs/archive-blob?tabs=azure-cli
+
+
+### Misc: Create data collection rule (without rulefile)
+
+An example of creating a data collection rule without using a rulefile.
+
+    az monitor data-collection rule create \
+        --resource-group rg1 \
+        --name dcr1 \
+        --data-flow \
+            streams="Microsoft-Syslog" \
+            destinations="logAnalytics1" \
+        --log-analytics \
+            resource-id=$(az monitor log-analytics workspace show \
+                --resource-group rg1 \
+                --workspace-name workspace1) \
+            name="logAnalytics1" \
+        --syslog \
+            name="syslog1" \
+            streams="Microsoft-Syslog" \
+            facility-names="local4" \
+            log-levels="Debug" \
+            log-levels="Info" \
+            log-levels="Notice" \
+            log-levels="Warning" \
+            log-levels="Error" \
+            log-levels="Critical" \
+            log-levels="Alert" \
+            log-levels="Emergency"
+
+While this would be for adding a syslog to a DCR (but we probably don't need
+that, since we add it at creation time).
+
+    az monitor data-collection rule syslog add \
+        --data-collection-rule-name \
+       --name \
+       --resource-group \
+       [--facility-names local4 \
+       [--log-levels] \
+       [--streams] \
+       [--transform-kql]
+
+
+### local4syslog_rule
+
+The actual contents of the rule file, which specifies log analytics as the
+destination, and syslog local4 facility as the source.
+
+    {
+        "description": "send local4 facility of syslog to the syslog table",
+        "kind": "Linux",
+        "destinations": {
+            "logAnalytics": [
+                {
+                    "workspaceResourceId": "/subscriptions/6748c55c-5151-4849-a9a3-b3ff1841caa1/resourceGroups/gtlab-arcmachines/providers/Microsoft.OperationalInsights/workspaces/vm-logs",
+                    "workspaceId": "27d9513f-059e-4762-a795-0f6117c74bc2",
+                    "name": "loganalytics-vm-logs"
+                }
+            ]
+        },
+        "dataSources": {
+            "syslog": [
+                {
+                    "streams": [
+                        "Microsoft-Syslog"
+                    ],
+                    "facilityNames": [
+                        "local4"
+                    ],
+                    "logLevels": [
+                        "Debug",
+                        "Info",
+                        "Notice",
+                        "Warning",
+                        "Error",
+                        "Critical",
+                        "Alert",
+                        "Emergency"
+                    ],
+                    "name": "do-i-need-this"
+                }
+            ]
+        },
+        "dataFlows": [
+            {
+                "streams": [
+                    "Microsoft-Syslog"
+                ],
+                "destinations": [
+                    "loganalytics-vm-logs"
+                ],
+                "transformKql": "source",
+                "outputStream": "Microsoft-Syslog"
+            }
+        ]
+    }
+
+
+## Terminology
+
+- Azure Arc
+
+  Register our VMs as "hybrid VMs" in Azure. Azure gets access to the server,
+  and can control some aspects of the machine, but not full, like a VM from
+  Azure.
+
+- Azure Arc Agent (AAA)
+
+  The software that integrates a "hybrid VM" with Azure.
+
+- Azure Monitor Agent (AMA)
+
+  Software installed on an Azure Arc-VM (which is a VM with the AAA installed),
+  that can upload logs (among other things) to Azure.
+
+- Azure Monitor
+
+  Samlingsprodukt for alt av monitorering og logging i Azure. Alle
+  Azure-tjenester er integrert mot Azure Monitor, for overvåking og logging.
+
+- Log Analytics workspace (here: unofficial abbreviation: LAW)
+
+  A place for gathering logs in Azure. Contains analysis and presentation tools
+  for viewing the logs as well.
+
+- Storage Account (SA)
+
+  Gathering of many related storage solutions in Azure. The overall skeleton
+  allows for many kinds of storage. Blobs, File Shares, etc.
+
+- Data Collection Rule (DCR) [Azure Monitor]
+
+  *What* should be logged, AND *where* it should be sent, as a rule that can
+  be applied for multiple resources.
+
+- Data collection rule associations (DCRA) [Azure Monitor]
+
+  Assosiere en regel (DCR) med en ressurs som skal overvåkes. En regel kan
+  assoseres med flere ressurser, og en ressurs kan assosieres med flere regler.
+  Altså er det en mange-til-mange-relasjon mellom overvåkingsregler (DCR) og
+  ressurser som overvåkes. Hver assosiasjon er en DCRA.
+
+
+## Documentation
+
+- DCR: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-overview

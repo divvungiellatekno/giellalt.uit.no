@@ -20,6 +20,7 @@ only to readers with access to the servers.
 - [How to set up signing certificates](system/SettingUpSigningCertificates.html)
 - [Setup of svnserve on victorio](system/svnserve.html)
 - [Update content on online Speller Server](SpellerServer.html)
+- [Sending server logs to Azure](ServersLoggingToAzure.html)
 
 ## Serveroppgradering
 
