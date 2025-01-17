@@ -36,42 +36,56 @@ from the *LAW* by an export rule. A *storage account* can retain data
 indefinetely.
 
 
-
 ## Viewing the logs
 
 ### In log analytics workspace
 
-Logger fra opp til 30 dager siden ligger i log analytics workspacet, og kan
-sees på i azure portal. Tabellen heter `Syslog` så den enkleste spørringa man
-kan gjøre er `Syslog`. Denne henter alt, altså alle logglinjer. Ei mer reell
-spørring, som henter ut kun spesifikke kolonner (`project`), og ordner
-meldingene etter tidspunkt, vil være:
+Logs from up to 30 days ago is available in the log analytics workspace. They
+can be viewed in the portal, or through the cli. I have a script which wraps
+an `az` command to simplify looking at logs. It is found in
+`giellatekno/gtweb-service-script`.
+
+#### Query language
+
+The query language for looking the tables in a log analytics workspace, is
+called *Kusto Query Language (KQL)*, learn about it on its documentation:
+[learn.microsoft.com/en-us/kusto/query/](https://learn.microsoft.com/en-us/kusto/query/)
+
+The simplest query is to just mention the table: `Syslog`. To contrast it, here
+is a more useful query:
 
     Syslog
     | project TimeGenerated, HostName, SyslogMessage, ProcessName
     | order by TimeGenerated
     | limit 100
 
-Man kan også filtrere på `MachineName` for kun å se enkelte maskiner, eller
-på `ProcessName` for å kun se logger fra en enkelt tjeneste.
 
-Jeg har også et script som bruker `az` internt for å få loggene tilsendt
-lokal teriminal. Det ligger i `giellatekno/gtweb-service-script`.
+### In storage account
 
+The logs in the log analytics workspace is a default retention period of 30
+days. To keep the logs permanently, we use the ability to send logs to blob
+files in a storage account.
 
-### I storage account
+## Where logs are stored
 
-Det er slik at i Azure Monitor har loggene en standard "retention period" på
-30 dager. Permanent lagring skjer med at loggdata kontinuerlig lagres som en
-blob i storage accounten. Filene ligger der, men pr nå finnes ingen script
-for å forenkle det å se på inneholdet i de. Bruk portalen for å laste ned
-enkelfiler for å se, inntil videre.
+The logs will be stored in blobs, split up by the hour, so logs for
+every hour is stored in a separate file. The hourly logs will have names of
+the format:
 
+    insights-logs-{log category name}/resourceId=/SUBSCRIPTIONS/{subscription ID}/RESOURCEGROUPS/{resource group name}/PROVIDERS/{resource provider name}/{resource type}/{resource name}/y={four-digit numeric year}/m={two-digit numeric month}/d={two-digit numeric day}/h={two-digit 24-hour clock hour}/m=00/PT1H.json
 
----
+So, for us, that means logs will be
 
+    insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/RESOURCEGROUPS/TESTRESOURCEGROUP/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUP/TESTNSG/y=2016/m=08/d=22/h=18/m=00/PT1H.json
 
+Currently, there is no script to automate the process of looking at logs from
+the storage account. Use the portal to download individual files, to take a
+look at them.
 
+As an aside, the time period where logs can be actively searched through, can
+be extended. Additionally, the log analytics workspace can be set up to also
+retain the logs, in an *archival period*, which can be up to 12 years. Still,
+these possibilities has not been selected for our system.
 
 
 ## Setup
@@ -267,20 +281,41 @@ To create a storage account, we use the command:
         --sku Standard_LRS 
 
 
-## Where logs are stored
+### Further work
 
-The logs will be stored in blobs, split up by the hour, so logs for
-every hour is stored in a separate file. The hourly logs will have names of
-the format:
+#### Logging nginx
 
-    insights-logs-{log category name}/resourceId=/SUBSCRIPTIONS/{subscription ID}/RESOURCEGROUPS/{resource group name}/PROVIDERS/{resource provider name}/{resource type}/{resource name}/y={four-digit numeric year}/m={two-digit numeric month}/d={two-digit numeric day}/h={two-digit 24-hour clock hour}/m=00/PT1H.json
+Nginx can send its access- and error logs directly to the syslog, see the
+nginx
+[guide article](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/),
+and the [reference](https://nginx.org/en/docs/http/ngx_http_log_module.html).
 
-So, for us, that means logs will be
+For us, this means that we add an `access_log` directive to our configuration
+files of nginx, which may look like the following:
 
-    insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/RESOURCEGROUPS/TESTRESOURCEGROUP/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUP/TESTNSG/y=2016/m=08/d=22/h=18/m=00/PT1H.json
+    access_log syslog:server=unix:///dev/log,facility=local4,tag=nginx,severity=debug;
+
+This should be done on for all nginx servers of NDS instances, in other words,
+all files `/etc/nginx/sites-available/*.conf` (`*` is `sanit`, `sanat`, etc).
 
 
-## Create data export
+#### Logging text files
+
+There are many services which writes to log files on disk. These can be sent
+to the log analytics workspace, using the ability of the *monitor agent* to
+send text files directly, see the azure documentation site on logging text
+files: [azure-monitor/agents/data-collection-log-text](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/data-collection-log-text)
+
+For `gtdict`, the `NDS` processes themselves are not really logging any useful.
+We should use the text file logging functionality to set up logging of the
+`morph_log` files.
+
+We should also set up logging of the global nginx. Here we could log stdout
+of the nginx process, but instead we can also here use the access and error
+*.log* files that nginx writes to.
+
+
+#### Create data export
 
 To create a data export, use the following command:
 
@@ -306,7 +341,7 @@ So, in our case, we will use the command:
         --tables Syslog
 
 
-### Misc: Set up automatic blob archival
+#### Set up automatic blob archival
 
 Blobs in a storage account can be moved periodically to an even colder access
 tier, called _archive_. This is done by adding a policy rule.
@@ -314,7 +349,7 @@ tier, called _archive_. This is done by adding a policy rule.
 https://learn.microsoft.com/en-us/azure/storage/blobs/archive-blob?tabs=azure-cli
 
 
-### Misc: Create data collection rule (without rulefile)
+#### Create data collection rule (without rulefile)
 
 An example of creating a data collection rule without using a rulefile.
 
@@ -355,7 +390,7 @@ that, since we add it at creation time).
        [--transform-kql]
 
 
-### local4syslog_rule
+#### local4syslog_rule
 
 The actual contents of the rule file, which specifies log analytics as the
 destination, and syslog local4 facility as the source.
@@ -410,7 +445,7 @@ destination, and syslog local4 facility as the source.
     }
 
 
-## Terminology
+### Terminology
 
 - Azure Arc
 
@@ -455,7 +490,7 @@ destination, and syslog local4 facility as the source.
   ressurser som overvåkes. Hver assosiasjon er en DCRA.
 
 
-## Documentation
+### Documentation
 
 - **Very** useful introduction to the entire thing:
   https://trstringer.com/azure-monitor-agent-linux-syslog-systemd-journal/
