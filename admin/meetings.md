@@ -496,6 +496,9 @@ newest year first. ToC to the left.
 
 - **Plandokument**
 - [Plan](giellatekno/Plan.md), [Hugseliste](giellatekno/TODO.md)
+
+- **2025**
+  [21.01](giellatekno/250121.md)
 - **2024**
   [04.04](giellatekno/240404.md), [15.04](giellatekno/240415.md)
   [28.05](giellatekno/240528.md), [12.08](giellatekno/240812.md)
