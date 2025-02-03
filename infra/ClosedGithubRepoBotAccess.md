@@ -37,6 +37,14 @@ The command to run to set the config in git is:
 Where `XXXXXXXX` is replaced by the actual token, of course.
 
 
+## Current usage
+
+A token is used on `gtdict` (both in the `gut` config, as well as for private
+language repositories. The same token is being used on `pyttymac`. It expires
+`Wed, Mar 5 2025.`. When it does, click to regenerate it, and enter the command
+above with the new token, to refresh it on the servers.
+
+
 ## Resources
 
 - https://coolaj86.com/articles/vanilla-devops-git-credentials-cheatsheet/
