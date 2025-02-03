@@ -21,6 +21,7 @@ only to readers with access to the servers.
 - [Setup of svnserve on victorio](system/svnserve.html)
 - [Update content on online Speller Server](SpellerServer.html)
 - [Sending server logs to Azure](ServersLoggingToAzure.html)
+- [Accessing private repos from the servers](ClosedGithubRepoBotAccess.html)
 
 ## Serveroppgradering
 
