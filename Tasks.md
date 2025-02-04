@@ -14,7 +14,7 @@ Allmenne, personlege lenkjer (inkluderer òg ting som ikkje gjeld Divvun og Giel
 
 ## Lenkjer for kvar og ein
 
-Saker som ein har andsvar for i relevante GitHub-organisasjonar. Det kan vera fleire andsvarlege for kvar sak.
+Saker som ein har andsvar for i Divvun og Giellatekno. Det kan vera fleire andsvarlege for kvar sak.
 
 - [Phaqui](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3APhaqui+&type=issues)
 - [Trondtr](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3ATrondtr+&type=issues)
