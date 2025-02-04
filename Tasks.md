@@ -18,18 +18,18 @@ Saker som ein har andsvar for i relevante GitHub-organisasjonar. Det kan vera fl
 
 ### Divvun
 
-- [Børre](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Aalbbas+&type=issues)
-- [Flammie](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Aflammie+&type=issues)
-- [Inga](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Ailm024+&type=issues)
-- [Katri](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Akathiasi+&type=issues)
-- [Linda](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Alynnda-hill+&type=issues)
-- [Maja](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Amka055+&type=issues)
-- [Mikko](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Awerewug+&type=issues)
-- [Sjur](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Asnomos+&type=issues)
+- [albbas](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Aalbbas+&type=issues)
+- [flammie](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Aflammie+&type=issues)
+- [ilm024](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Ailm024+&type=issues)
+- [kathiasi](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Akathiasi+&type=issues)
+- [lynnda-hill](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Alynnda-hill+&type=issues)
+- [mka055](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Amka055+&type=issues)
+- [snomos](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Asnomos+&type=issues)
+- [werewug](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Awerewug+&type=issues)
 
 ### Giellatekno
 
-- [TrondTr](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3ATrondtr+&type=issues)
-- [Anders](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3APhaqui+&type=issues)
-- [TrondTy](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Atrondtynnol+&type=issues)
-- [Lene](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Aleneantonsen+&type=issues)
+- [Phaqui](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3APhaqui+&type=issues)
+- [Trondtr](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3ATrondtr+&type=issues)
+- [leneantonsen](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Aleneantonsen+&type=issues)
+- [trondtynnol](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Atrondtynnol+&type=issues)
