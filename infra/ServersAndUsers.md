@@ -22,6 +22,7 @@ only to readers with access to the servers.
 - [Update content on online Speller Server](SpellerServer.html)
 - [Sending server logs to Azure](ServersLoggingToAzure.html)
 - [Accessing private repos from the servers](ClosedGithubRepoBotAccess.html)
+- [Automatic updates](ServersUnattendedUpgrades.md)
 
 ## Serveroppgradering
 
