@@ -2,5 +2,5 @@
 
 *[Workshop](index.md) ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Submission](submission.md) ◊ [Program](program.md) ◊ Registration ◊ [Committee](programcommittee.md)  ◊ [Earlier workshops](../cgworkshoplist.md) *
 
-Details forthcoming.
+Registration is done via the [main conference](https://www.nodalida-bhlt2025.eu/registration).
 

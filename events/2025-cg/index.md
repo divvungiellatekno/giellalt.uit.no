@@ -2,9 +2,66 @@
 Constraint Grammar and Finite State NLP – Rule-based and hybrid methods and tools for user communities
 =========
 
-*Workshop ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Submission](submission.md) ◊ [Program](program.md) ◊ [Registration](registration.md) ◊ [Committee](programcommittee.md) ◊ [Earlier workshops](../cgworkshoplist.md)* 
+# Program for the NoDaLiDa workshop on CG and FST 2025
 
-## Call for Papers
+*[Workshop](index.md) ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Submission](submission.md) ◊ Program ◊ [Registration](registration.md) ◊ [Committee](programcommittee.md)  ◊ [Earlier workshops](../cgworkshoplist.md)* 
+
+
+
+- **08:45 - 09:00**
+Workshop opening, welcome and technical check
+
+- **09:00 - 09:30**
+Eckhard Bick: *An Annotated Error Corpus for Esperanto*
+
+- **09:30 - 10:00**
+Flammie A Pirinen and Sjur Nørstebø Moshagen: *Divvunspell - Finite State Spell-Checking and Correction on Modern Platforms*
+
+- **10:00 - 10:30 Coffee break**
+
+-	**10:30 - 11:00**
+Csilla Horváth, Jack Rueter and Trond Trosterud: *A Mansi FST and spellchecker*
+
+- **11:00 - 11:30** 
+Judithe Denbæk: *Case error corrections for noun phrases containing deverbal attributive nouns in Greenlandic*
+
+- **11:30 - 12:00**
+Ciprian Gerstenberger: *Rule-based Surface Realization of Romanian Weak Pronouns*
+
+- **12:00 - 13:30 Lunch**
+
+- **13:30 - 14:00** Trond Trosterud and Arnfinn Muruvik Vonen: *A grammatical analyser for Tokelau*
+
+- **14:00 - 14:30**   Olle Torstensson and Oskar Holmström: *A Grammar-Based Method for Instilling Empirical Dependency Structure in LLMs*
+
+- **14:30 - 15:00**
+Daniel Glen Swanson: *Towards Natural Language Explanations of Constraint Grammar Rules*
+
+- **15:00 - 15:30 Coffee break**
+
+- **15:30 - 16:00**
+Linda Wiechetek and Kevin Brubeck Unhammer: *Drawing Blue Lines - What can Constraint Grammar do for GEC?*
+
+- **16:00 - 17:00**
+Discussion: *Constraint Grammar and FST: Cooperation and future projects*
+
+
+# Venue
+
+The venue can be found [here](https://www.nodalida-bhlt2025.eu/venue)
+
+Room to be announced
+
+# Instructions for presenters
+
+Please mail your presentation to the following email adress (to be announced) by March 4th 2025.
+
+# Registration
+
+Registration is done via the [main conference](https://www.nodalida-bhlt2025.eu/registration).
+
+
+# Call for Papers
 
 
 We are happy to announce that our workshop has been accepted to the [Nodalida/Baltic-HLT conference 2025 (March 2-5,2025) in Tallinn, Estonia](https://www.nodalida-bhlt2025.eu).
@@ -47,7 +104,26 @@ We invite paper submissions of three types:
 3. demonstration papers on software or resource demonstrations, e.g. of systems, interfaces, infrastructures, data collections, or annotations. Demonstration papers do not need to be anonymous, and will not be published in the proceedings afterwards.
 They will be made available on the workshop site.
 
-## Program committee
+Submission
+
+The submission itself will be done via **OpenReview**.
+
+# Topics 
+
+Topics include but are not restricted to:
+
+- traditional field of NLP (morphological, syntactic and semantic analysis), 
+- applicational work
+	- Those are spelling, 
+	- grammar and comma correction, 
+	- CALL, 
+	- machine translation, 
+	- speech technology, 
+	- lexicography, 
+	- corpus-based sociolinguistics 
+	- literary studies
+
+# Program committee
 
 - Trond Trosterud
 - Linda Wiechetek
@@ -57,3 +133,8 @@ They will be made available on the workshop site.
 - Kaili Müürisep
 - Daniel Swanson
 - Francis Tyers
+
+
+# Earlier workshops
+
+[Earlier workshops](../cgworkshoplist.md)
