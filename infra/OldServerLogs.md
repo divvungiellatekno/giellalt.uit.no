@@ -7,6 +7,18 @@ servere. I den forbindelse ble alt av logger tatt vare på, og lagt i en
 lagringsplass i Azure.
 
 
+## OPPDATERING: SFTP-tilgang slått av
+
+Oppdatert 2025-02-18: Det å ha sftp-tilgang slått på, viser seg å koste mye
+penger. Derfor er den slått av. Når vi skal ha tilgang til filene, kan den
+slåes på igjen. Dette gjøres i portalen. Etter bruk skrur man tilgang til sftp
+av igjen.
+
+*Husk til senere: Om denne azure-ressursen legges inn under ITA, må vi fortsatt
+ha mulighet (rettigheter) til å skru av/på sftp-tilgang - samt selvfølgelig
+legge til brukere, og alt annet.*
+
+
 ## Hvordan bruke
 
 __TL;DR__
