@@ -4,6 +4,8 @@ _[Workshop](index.md) ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Subm
 
 - **08:45 - 09:00**
   Workshop opening, welcome and technical check
+  
+- **Chair**: Linda Wiechetek  
 
 - **09:00 - 09:30**
   Eckhard Bick: _An Annotated Error Corpus for Esperanto_
@@ -13,6 +15,8 @@ _[Workshop](index.md) ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Subm
 
 - **10:00 - 10:30 Coffee break**
 
+- **Chair**: Eckhard Bick  
+
 - **10:30 - 11:00**
   Csilla Horváth, Jack Rueter and Trond Trosterud: _A Mansi FST and spellchecker_
 
@@ -20,11 +24,13 @@ _[Workshop](index.md) ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Subm
   Judithe Denbæk: _Case error corrections for noun phrases containing deverbal attributive nouns in Greenlandic_
 
 - **11:30 - 12:00**
-  Ciprian Gerstenberger: _Rule-based Surface Realization of Romanian Weak Pronouns_
+  Trond Trosterud and Arnfinn Muruvik Vonen: _A grammatical analyser for Tokelau_
 
 - **12:00 - 13:30 Lunch**
 
-- **13:30 - 14:00** Trond Trosterud and Arnfinn Muruvik Vonen: _A grammatical analyser for Tokelau_
+- **Chair**: Sjur Nørstebø Moshagen  
+
+- **13:30 - 14:00** Ciprian Gerstenberger: _Rule-based Surface Realization of Romanian Weak Pronouns_
 
 - **14:00 - 14:30** Olle Torstensson and Oskar Holmström: _A Grammar-Based Method for Instilling Empirical Dependency Structure in LLMs_
 
@@ -32,6 +38,8 @@ _[Workshop](index.md) ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Subm
   Daniel Glen Swanson: _Towards Natural Language Explanations of Constraint Grammar Rules_
 
 - **15:00 - 15:30 Coffee break**
+
+- **Chair**: Trond Trosterud  
 
 - **15:30 - 16:00**
   Linda Wiechetek and Kevin Brubeck Unhammer: _Drawing Blue Lines - What can Constraint Grammar do for GEC?_
