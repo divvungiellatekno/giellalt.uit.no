@@ -65,8 +65,6 @@ newest year first. ToC to the left.
 ### Technical meetings
 
 - **2024:**
-  - [27.03.2025 Pontoon & co](technical/2025-03-27-BrendanPlanning.md)
-- **2024:**
   - [20.03.2024 Pontoon & co](meetings/2024-03-20-pontoon.md)
 - **2023:**
   - [05.12.2023 Infra-status](meetings/2023-12-05-infra.md)
