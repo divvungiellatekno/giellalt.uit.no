@@ -66,11 +66,12 @@ newest year first. ToC to the left.
 
 - **2024:**
   - [20.03.2024 Pontoon & co](meetings/2024-03-20-pontoon.md)
+  - [19.01.2024 Ordbøker og Lexc](technical/2024-01-19-Dict-LexC.md)
 - **2023:**
   - [05.12.2023 Infra-status](meetings/2023-12-05-infra.md)
   - [26.10.2023 Pahkat](meetings/2023-10-26-pahkat.md)
   - [25.10.2023 Infra-status](meetings/2023-10-25-infra.md)
-  - [30.8.2023 Infra-status](meetings/2023-08-30-infra-status.md)
+  - [30.08.2023 Infra-status](meetings/2023-08-30-infra-status.md)
 - **2022:**
   - [8.11.2022 Erstatning for smi.cgi](meetings/2022-11-08-erstatning-for-smi.cgi.md)
   - [13.4.2022 Korpus-flytting til GitHub](corpus/Meeting_2022-04-13.md)
@@ -591,6 +592,7 @@ newest year first. ToC to the left.
 
 - **2024:**
   [Feb. 13](weekly/2024/Meeting_2024-02-13.md),
+  [Aug. 12](weekly/2024/Meeting_2024-08-12.md)
   [Aug. 21](weekly/2024/Meeting_2024-08-21.md)
 - **2023:**
   [Mar. 21](weekly/2023/Meeting_2023-03-21.md),
