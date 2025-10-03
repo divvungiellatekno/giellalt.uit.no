@@ -25,7 +25,6 @@
 
 # For infrastructure developers
 * [New infra maintenance](infraremake/NewInfraMaintenance.html)
-* [How to merge updates from the core](infraremake/HowToMergeUpdatesFromCore.html)
 * [In-source documentation specification](infraremake/In-sourceDocumentationSpecification.html)
 * [Transducer names in the new infra](infraremake/TransducerNamesInTheNewInfra.html)
 * [Makefile names and organisation](infraremake/MakefileNamesAndOrganisation.html)

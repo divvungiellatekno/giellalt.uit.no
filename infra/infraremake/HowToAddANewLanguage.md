@@ -39,12 +39,6 @@ everything compiles, run `make`. Run `make check` to ensure that all defined
 tests are passed. Remember to update the test suits as you enhance the
 linguistic model!
 
-## Setting up the documentation page for the new language
-
-The new language must also be added to
-[the language documentation page](/lang/index.html).
-[Here we document how to set up language documentation for new languages](HowToSetUpLanguageDocumentation.html).
-
 # Adding a new language to the $GTBIG/prooftesting dir
 
 The procedure is the same as above, but by adding a template to the command:

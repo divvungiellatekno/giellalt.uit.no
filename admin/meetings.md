@@ -89,7 +89,7 @@ newest year first. ToC to the left.
   - [10.11.2017 REST](technical/171110.md)
   - [10.4.2017 OmegaT: writing documentation](technical/OmegaT170410.md)
   - [28.4.2017 OmegaT: FST and glossary](technical/OmegaT170428.md)
-  - [15.12.2016 Bugzilla rutiner](bugzilla/161215.md)
+  - [15.12.2016 Bugzilla rutiner](bugzilla_161215.md)
 
 ## Divvun meetings
 

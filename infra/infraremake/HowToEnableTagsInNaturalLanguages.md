@@ -1,3 +1,5 @@
+# How To Enable Tags In Natural Languages
+
 To enable tags in a natural language instead of the quite cryptic tags we
 normally use (like `+N` etc.), you need to do the following:
 
@@ -12,9 +14,9 @@ such that `tagsets/foo.regex` corresponds to `analyser-foo-desc.hfst` etc.
 Typically you would want to use the language code of the natural language the
 tags are written in.
 
-# In more detail
+## In more detail
 
-## Add a regex file
+### Add a regex file
 
 Since the natural language of the tags will vary a lot depending on the
 language of the analyser, the regex is language specific. But to get a starting
@@ -28,7 +30,7 @@ Replace `YOURLANG` and `LANGCODE` with the relevant language codes.
 Then start to edit the file to get what you want. For North Sami (`sme`) we
 have tags in Norwegian Bokmål (`nob`).
 
-## Specify renaming regex and fst files
+### Specify renaming regex and fst files
 
 For the build system to properly build the fst's that are going to change the
 tags, you need to tell it that there is a source file and some targets to be
@@ -41,7 +43,7 @@ variable `GT_TAGSETS`.
 In the North Sami case, these files are named: `nob.regex`, `nob.hfst` and
 `nob.xfst`.
 
-## Specify the new analysers and generators
+### Specify the new analysers and generators
 
 You also need to tell the build system that you have a new set of analysers and
 generators you want to build. This is done in the file

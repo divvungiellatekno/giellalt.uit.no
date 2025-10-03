@@ -1,4 +1,6 @@
-# Introduction
+# How To Control Compounding In Spellers
+
+## Introduction
 
 Speller development requires a lot of fine-tuning to become good. This is¨
 especially the case when it comes to compounding. The Giella infrastructure
@@ -20,7 +22,7 @@ there might be more, but that should then be handled from case to case. But
 this how-to should provide general inspiration on how to go about implementing
 other restrictions.
 
-# Position restrictions
+## Position restrictions
 
 The present set of supported tags and their definition (i.e. positions) is:
 
@@ -35,7 +37,7 @@ There is another logical possibility, namely being allowed in the middle and
 nowhere else (+/- standalone), but in practice this is very rarely needed if at
 all. If the support arise, it should not be a problem adding it in the future.
 
-## How to encode
+### How to encode
 
 There are a couple of steps to take. They are:
 
@@ -43,7 +45,7 @@ There are a couple of steps to take. They are:
 1. add some flag diacritics to certain lexicons
 1. add tags to lexical entries needing restrictions
 
-### Multichar symbols required
+#### Multichar symbols required
 
 There are two types:
 
@@ -62,7 +64,7 @@ Multichar tags:
 +CmpN/Suff      !!≈ * @CODE@ - ... only **last** part in a compound, NEVER alone
 +CmpN/None      !!≈ * @CODE@ - ... can not take part in compounds
 +CmpN/Only      !!≈ * @CODE@ - ... can only be part of a compound, i.e. can never
-##                  be used alone, but can appear in any position
+###                  be used alone, but can appear in any position
 ```
 
 The flag diacritic symbols that go along with the tags above:
@@ -82,7 +84,7 @@ The flag diacritic symbols that go along with the tags above:
 In both cases the code can just be copied and pasted directly in the
 `root.lexc` file if it is missing.
 
-### Multichar symbols required in lexicons
+#### Multichar symbols required in lexicons
 
 There are two types of lexicons requiring flag diacritics that go along with the
 tags already mentioned: the compounding lexicon(s) (typically named `R` or
@@ -106,13 +108,13 @@ The `ENDLEX` lexicon has a much shorter list of required flag diacritics:
 
 ```
 LEXICON EndLex
-  @D.CmpOnly.FALSE@@D.CmpPref.TRUE@  # ;
+  @D.CmpOnly.FALSE@@D.CmpPref.TRUE@  ## ;
 ```
 
 (There might be other needs and requirements on this lexicon, what is listed
 here is only what is needed for the compounding restrictions.)
 
-### Example code of lexical entries
+#### Example code of lexical entries
 
 Here is some example code from North Sámi (`sme`):
 
@@ -126,7 +128,7 @@ With this `LexC` code, the two first words above will only be allowed to be
 used alone, or as the first part of compounds. The third word will only be
 accepted as the last part of a compound or when being used alone. Etc.
 
-## How it works
+### How it works
 
 The tags on each lexical entry are converted to flag diacritics.
 This is done by two filters in the core, and is the same for all languages.
@@ -139,6 +141,6 @@ make compounds in accordance with the semantics of the tags originally in the
 Those tags are somewhat shorter, and much easier to read and maintain. They can
 also be easily removed in descriptive and non-speller fst's without trouble.
 
-# Form restrictions
+## Form restrictions
 
 To be written.
