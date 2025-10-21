@@ -151,6 +151,8 @@ section {
   overflow-y: auto;
   /* Remove old width */
   width: 550px !important;
+  /* Make section focusable for keyboard navigation */
+  outline: none;
 }
 
 /* Sitemap in column 3, spanning both rows */
@@ -262,7 +264,7 @@ pre {
   overflow: auto;
 }
 
-pre code {
+pre code, p code {
   background: none;
   border: none;
   padding: 0;
@@ -329,6 +331,7 @@ header #left_toc {
   color: var(--menu-text);
   width: 100%; /* Bruk full breidd i header */
   overflow-y: auto; /* Rullefelt når innhaldet er for langt */
+  overflow-x: hidden; /* Hindra horisontal scroll */
   padding: 0;
   margin-bottom: 0;
   min-height: 0; /* Kritisk for flexbox-krymping */
@@ -345,6 +348,8 @@ header #left_toc {
   text-align: left;
   border-style: none;
   height: auto;
+  word-wrap: break-word; /* Bryt lange ord i lenker */
+  overflow-wrap: break-word; /* Moderne versjon av word-wrap */
 }
 
 #left_toc a:hover, #sitemap a:hover {
@@ -361,6 +366,8 @@ header #left_toc {
   margin: 0;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden; /* Hindra horisontal scroll */
+  word-wrap: break-word; /* Bryt lange ord */
 }
 
 #left_toc > ul {
@@ -589,6 +596,31 @@ details {
   :root:not([data-theme="light"]) .mermaid {
     --mermaid-theme: dark;
   }
+}
+
+/* TopoJSON og GeoJSON støtte */
+.language-topojson, .language-geojson {
+  background: var(--code-bg);
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.topojson-map, .geojson-map {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px;
+  margin: 1em 0;
+  min-height: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.topojson-map svg, .geojson-map svg {
+  width: 100%;
+  height: auto;
 }
 
 /* Gøym hamburgermenyen på store skjermar */
