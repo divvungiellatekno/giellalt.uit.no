@@ -7,8 +7,41 @@ description: The Divvun and Giellatekno teams build language technology aimed at
 plugins:
   - jemoji
   - jekyll-include-cache
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
 
 markdown: kramdown
 kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
   syntax_highlighter_opts:
     disable: true
+
+# GitHub Pages kompatibilitet
+repository: divvungiellatekno/giellalt.uit.no
+
+# Exclude problematic files from Jekyll processing
+exclude:
+  - "package.json"
+  - "package-lock.json"
+  - "node_modules/"
+  - "vendor/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - ".git/"
+  - ".github/"
+  - ".gitignore"
+  - ".sass-cache/"
+  - ".jekyll-cache/"
+  - ".bundle/"
+
+# Keep raw Slidev files accessible
+keep_files:
+  - "*-slidev"

@@ -1,10 +1,13 @@
 name: Build in-code documentation
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           repository: divvungiellatekno/giellalt.uit.no
 
@@ -12,50 +15,40 @@ jobs:
         run: |
           which realpath
 
-# Mermaid processing starts here:
-      - name: get list of files
-        id: getfile
-        run: |
-          echo "::set-output name=files::$(grep -rli --include=\*.md '^```mermaid' . | xargs)"
-
-      - name: print list of files for debugging
-        run: |
-          echo ${{ steps.getfile.outputs.files }}
-
-      - name: print working dir
-        run: |
-          pwd
-
-      - name: print working dir content
-        run: |
-          ls -la
-
-# The actual Mermaid compilation
-      - name: compile mermaid
-        uses: divvun/compile-mermaid-markdown-action@main
+      - name: Setup Node.js for Slidev
+        uses: actions/setup-node@v4
         with:
-          files: ${{ steps.getfile.outputs.files }}
-          output: 'mermaid-svgs'
+          node-version: '20'
+          
+      - name: Install Slidev and dependencies
+        run: |
+          npm install -g @slidev/cli
+          npm install -g @slidev/theme-default
+          npm install -g playwright-chromium
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Build Slidev presentations
         env:
-          HIDE_CODEBLOCKS: 1
-# The next one must be declared, with an empty value, for paths to work for us:
-          ABSOLUTE_IMAGE_LINKS:
-          OUTPUT_FILE_TYPE: "svg"
-
-
-      - name: list generated svg fils
+          CI: true
+          NODE_ENV: production
         run: |
-          ls -l mermaid-svgs
+          chmod +x build-slidev.sh
+          ./build-slidev.sh
 
-      - name: show changes
+      - name: Build Jekyll site
+        env:
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GIELLALT_DOCS_GH_TOKEN }}
         run: |
-          git status
-
-# Mermaid processing ends here
+          bundle exec jekyll build
 
       - name: deploy gh pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          enable_jekyll: true
+          publish_dir: _site
+          enable_jekyll: false
