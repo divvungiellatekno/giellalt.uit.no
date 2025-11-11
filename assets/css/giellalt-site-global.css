@@ -9,6 +9,7 @@ html, body {
   
   /* Standardfargar for ljos modus */
   --bg-color: #fff;
+  --active-sitem-bg-color: rgba(0, 0, 0, 0.1);
   --text-color: #222;
   --bold-color: #222; /* Ny variabel for halvfeit tekst */
   --mermaid-bg: #fff;
@@ -17,10 +18,10 @@ html, body {
   --header-bg: #fff;
   --link-color: #0066cc;
   --link-hover-bg: #efefef;
-  --link-hover-color: #222;
+  --link-hover-color: #06c;
   --border-color: #e0e0e0;
   --heading-color: #222;
-  --code-bg: #f8f8f8;
+  --code-bg: #eee;
   --menu-bg: #fff;
   --menu-text: #222;
   --menu-hover-bg: #f0f0f0;
@@ -31,6 +32,7 @@ html, body {
   --content-text: #222;
   --content-border: #e0e0e0;
   --table-header-bg: #f8f8f8;
+  --table-row-even: #fafafa;
   --table-border: #ddd;
   --blockquote-border: #e5e5e5;
   --blockquote-text: #666;
@@ -41,6 +43,7 @@ html, body {
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     --bg-color: #0d1117;
+    --active-sitem-bg-color: rgba(222, 222, 222, 0.3);
     --text-color: #e6edf3;
     --bold-color: #e6edf3; /* Ny variabel for halvfeit tekst */
     --mermaid-bg: #0d1117;
@@ -79,6 +82,7 @@ html, body {
 /* Eksplisitt mørkt tema */
 :root[data-theme='dark'] {
   --bg-color: #0a0a0a;
+  --active-sitem-bg-color: rgba(222, 222, 222, 0.3);
   --text-color: #e0e0e0;
   --bold-color: #e0e0e0; /* Ny variabel for halvfeit tekst */
   --header-bg: #000;
@@ -105,7 +109,6 @@ div.twocolumn {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.42857143;
   color: var(--text-color);
   background-color: var(--bg-color);
   margin: 0;
@@ -201,12 +204,13 @@ section table th {
   background-color: var(--table-header-bg);
   border-color: var(--table-border);
   color: var(--heading-color);
-  padding: 0.5em 1em;
+  padding: 0.25em;
 }
 
 section table td {
   border-color: var(--table-border);
-  padding: 0.5em 1em;
+  padding: 0.25em;
+  line-height: 1.0em;
 }
 
 section table tr:nth-child(odd) {
@@ -243,20 +247,26 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
 }
 
+/* Overskrifter som lenke når peikaren flyt over */
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: var(--heading-color);
+  font-weight: bold;
+}
+
 strong, b, strong em {
   color: var(--bold-color) !important ;
 }
 
 /* Kodeblokkar */
 pre, code {
-  background-color: var(--code-bg);
+  background-color: var(--code-bg) !important;
   border: 1px solid var(--code-border);
   border-radius: 6px;
   color: var(--code-text);
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 13px;
   line-height: 1.5;
-  padding: 0.2em 0.4em;
+  padding: 0 !important;
 }
 
 pre {
@@ -264,10 +274,10 @@ pre {
   overflow: auto;
 }
 
-pre code, p code {
+pre code, p code, li code {
+  background-color: var(--code-bg) !important;
   background: none;
   border: none;
-  padding: 0;
 }
 
 div.twocolumn ul {
@@ -293,6 +303,16 @@ div.threecolumn ul {
 
 div.threecolumn ul li {
   break-inside: avoid;
+}
+
+/* Ikkje sprei kode-fragment (=kart) over to kolonner: */
+div.code-toolbar {
+  break-after: column;
+}
+
+/* div med lappar til høgre for kart skal ha same øvre kant som kartet */
+.badges {
+  padding-top: 1em;
 }
 
 /* Hovudlayout for sideinnhald */
@@ -499,7 +519,7 @@ details {
 }
 
 #sitemap:hover, #sitemap:active, #sitemap:focus {
-  opacity: 60%;
+  opacity: 1;
 }
 
 #sitemap h1 {
@@ -526,9 +546,7 @@ details {
 }
 
 #sitemap li li {
-  border-left-color: rgba(0, 0, 0, 0.50);
-  border-left-style: solid;
-  border-left-width: 1px;
+  border-left: 1px solid var(--border-color);
 }
 
 #sitemap ul a {
@@ -560,7 +578,7 @@ details {
 
 /* Aktiv sitemap-lenke */
 .active-sitemap-item > a {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--active-sitem-bg-color);
   font-weight: bold;
 }
 
