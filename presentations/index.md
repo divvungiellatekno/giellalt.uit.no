@@ -1,5 +1,5 @@
-The following is a list of presentations about our infrastructure, given by Divvun or Giellatehcno. The
-list is not complete.
+The following is a list of presentations about our infrastructure and our work,
+given by Divvun or Giellatekno. The list is not complete.
 
 * [Presentation held at the UNPFII-18 in 2019](https://indigenous-langtech.uit.no/UNPFII18_pres.pdf)
 * [Møte med Giellagáldu 2017](Giellagáldu-møte2017.html) —
