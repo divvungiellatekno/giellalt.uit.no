@@ -265,29 +265,6 @@ build_slidev() {
             log_success "Copied images to dist directory"
         fi
         
-        # Create 404.html for SPA routing with explicit redirect
-        if [ -f "dist/index.html" ]; then
-            cat > dist/404.html << EOF
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <script>
-        // Redirect to base presentation URL for SPA routing
-        // Extract base path and redirect to root of presentation
-        var basePath = '${base_path}';
-        window.location.replace(basePath);
-    </script>
-</head>
-<body>
-    <p>Redirecting to presentation...</p>
-</body>
-</html>
-EOF
-            log_success "Created 404.html with redirect to base path"
-        fi
-        
         # Prepare for deployment if in CI environment
         prepare_for_deployment "$(pwd)"
     else
