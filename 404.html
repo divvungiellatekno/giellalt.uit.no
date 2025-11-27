@@ -1,0 +1,23 @@
+---
+layout: default
+permalink: /404.html
+---
+
+<h1>404 - Page Not Found</h1>
+<p>The page you're looking for doesn't exist.</p>
+<p><a href="/">Go back to the homepage</a></p>
+
+<script>
+// Check if this is a Slidev presentation path
+(function() {
+    var path = window.location.pathname;
+    
+    // Check if this is a Slidev presentation with slide number or other sub-path
+    var slidevMatch = path.match(/^(\/.*-slidev\/)(.+)$/);
+    if (slidevMatch) {
+        // Redirect to the base presentation URL (without the sub-path)
+        window.location.replace(slidevMatch[1]);
+        return;
+    }
+})();
+</script>
