@@ -51,7 +51,7 @@ Both formalisms should be easily recognisable by linguists.
 
 ### Example — twolc
 
-```
+```text
 Alphabet m p ;
 
 Rules
@@ -76,7 +76,7 @@ kammat
 
 The same changes written using rewrite rules:
 
-```
+```text
 [ N -> m || _ p ]
 .o.
 [ p -> m || m _ ];
