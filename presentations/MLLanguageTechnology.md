@@ -386,8 +386,9 @@ error candidate, subject to further disambiguation and error detection rules.
     - reuse is essential - one can not afford to do the same job multiple times
 
 ---
+layout: image
 image: ./images/gtlangs_circumpolar_names.png
-backgroundSize: 30em 70%
+backgroundSize: contain
 ---
 
 ## Language coverage
