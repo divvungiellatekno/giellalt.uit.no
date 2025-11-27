@@ -1,6 +1,25 @@
+---
+theme: seriph
+background: https://unsplash.com/photos/clear-blue-running-water-at-daytime-OR_3rbIv5yI
+class: text-center
+highlighter: shiki
+lineNumbers: false
+info: |
+  Divvun-presentasjon for Giellagáldu-møte 2017
+drawings:
+  persist: false
+title: Divvun-presentasjon
+---
+
 # Divvun-presentasjon
 
+Giellagáldu-møte 2017
+
+---
+
 # Om Divvun
+
+---
 
 ## Folk i Divvun
 
@@ -12,6 +31,8 @@
 1. **Tomi** – programmerar
 1. **Sjur** – leiar, datalingvist
 
+---
+
 ## Bakgrunnen til Divvun
 
 * Starta som eit prosjekt ved Sametinget hausten 2004
@@ -21,6 +42,8 @@
 * Divvun-gruppa vart flytta frå Sametinget til UiT i 2011, og gruppa vart samtidig gjort permanent
 * Divvun er no fullfinansiert av det norske departementet med ansvar for samisk (KMD)
 
+---
+
 ## Divvun sine oppgåver
 
 * Levera språkteknologiske verkty til det samiske samfunnet
@@ -29,6 +52,8 @@
 * ... og Divvun har alltid inkludert Sverige og Finland i arbeidet sitt
 * All teknologi vi lagar er språkuavhengig, slik at det vi gjer for eitt språk kan enkelt bli brukt for andre språk
 * Divvun har morsmålslingvistar for nord-, lule- og sørsamisk
+
+---
 
 ## Divvun sine oppgåver (2)
 
@@ -41,6 +66,8 @@
     - mobil
     - datamaskin
 
+---
+
 # Frå Divvun
 
 Dei ulike Divvun-verktya etter kategori:
@@ -51,6 +78,8 @@ Dei ulike Divvun-verktya etter kategori:
 * Ordbøker og terminologi
 * Oversetting
 
+---
+
 ## Retteprogram
 
 * starten på Divvun-gruppa
@@ -59,6 +88,8 @@ Dei ulike Divvun-verktya etter kategori:
 * krev eit normert skriftspråk - retteprogrammet rettar alltid i forhold til ei norm
     - Divvun normerer ikkje sjølv, men lagar alltid verktya etter dei normeringsvedtaka som finst
     - dvs at vi fylgjer vedtaka til Giellagáldu (og dei tilsvarande tidlegare organa)
+
+---
 
 ## Retteprogram (2)
 
@@ -75,6 +106,8 @@ Språk under arbeid:
 
 Alle språk kan enkelt lagast til ein stavekontroll, som er så bra som det morfologien og leksikonet er.
 
+---
+
 ## Retteprogram (3)
 
 Fungerer i:
@@ -83,6 +116,8 @@ Fungerer i:
 * på heimesida vår
 
 Vi arbeider med å utvida rekkja med program som vi støttar.
+
+---
 
 ## Stavekontroll
 
@@ -98,6 +133,8 @@ Ord -> Feil/rett? -> Dersom feil, vis raud strek
 Brukar klikkar på ord med raud strek -> lag forslag -> vis forslaga
 ```
 
+---
+
 ## Stavekontroll (2)
 
 Ein stavekontroll er så god som:
@@ -107,6 +144,8 @@ Ein stavekontroll er så god som:
 * hastigheita
 
 Vi har verkty for å måla ulike kvaliteter ved stavekontrollane.
+
+---
 
 ## Grammatikkontroll
 
@@ -118,6 +157,8 @@ Vi har verkty for å måla ulike kvaliteter ved stavekontrollane.
 
 Demo
 
+---
+
 ## Retteprogram og normering
 
 * Giellagaldu normerer
@@ -128,6 +169,8 @@ Demo
     - og GG kan jo sjølvsagt sjå i Korp sjølve :-)
 
 Det heile blir ein sirkel.
+
+---
 
 ## Tastatur
 
@@ -142,6 +185,8 @@ Alt frå same base.
 
 Målsetjing: å gjera det lett og effektiv å skriva dei ulike samiske språka.
 
+---
+
 ## Tastatur (2)
 
 * Kan òg eksportera til CLDR-format
@@ -153,11 +198,15 @@ Målsetjing: å gjera det lett og effektiv å skriva dei ulike samiske språka.
 * vil gjerne gjera det same med skoltesamisk
 * har laga tastatur for lule- og sørsamisk
 
+---
+
 ## Tastatur (3)
 
 Sørsamisk tastatur:
 
-[images/sma_NO-mac-layout.png]
+![Sørsamisk tastatur](./images/sma_NO-mac-layout.svg)
+
+---
 
 ## Tekst-til-tale
 
@@ -165,11 +214,15 @@ Sørsamisk tastatur:
 * (kort demo)
 * vi vil i framtida standardisera tekstprosesseringa slik at alle språk i infrastrukturen vår har den biten på plass
 
+---
+
 ## Språklæring
 
 * Det meste gjort av Giellatekno
 * men vi har ein mobilapp for å læra seg grunnleggjadne sørsamisk, utvikla i lag med Aajege på Røros
 * [gielese.no](http://gielese.no)
+
+---
 
 ## Oversettelse
 
@@ -180,6 +233,8 @@ Sørsamisk tastatur:
 * vi jobbar med å få på plass ein arbeidsbenk for omsetjarar
 * termar og tilgang på termsamlingar viktig for omsetjarane
 
+---
+
 ## Ordbøker og terminologi
 
 * Giellatekno har NDS
@@ -188,6 +243,8 @@ Sørsamisk tastatur:
 * Dei to webappane har ulik filosofi og fungerer delvis ulikt -> ulike målgrupper og bruksområde
 
 Demo
+
+---
 
 ## Ordbøker og terminologi (2)
 
@@ -199,6 +256,8 @@ Demo
     - dei blir lagt inn i analysatorane / stavekontrollane
     - dei blir lagt inn i maskinomsetjinga
 
+---
+
 ## Ordbøker og terminologi (3)
 
-[images/TermWikiProcess.png]
+![TermWiki-prosessen](./images/TermWikiProcess.png)
