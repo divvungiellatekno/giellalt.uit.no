@@ -26,6 +26,15 @@
 
 ## Børre Gaup
 
+### jobb
+
+- presentasjon av meg
+
+- bilde av tester i terminal
+- bilde av sátni.org
+- bilde av divvun.uit.no
+- bilde av Korp
+
 ---
 
 ## Flammie Pirinen

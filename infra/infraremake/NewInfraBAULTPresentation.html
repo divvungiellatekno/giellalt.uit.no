@@ -20,10 +20,10 @@
 {"description":"The Divvun and Giellatekno teams build language technology aimed at minority and indigenous languages","headline":"The Giellatekno &amp; Divvun infrastructure","url":"/giellalt.uit.no/infra/infraremake/NewInfraBAULTPresentation.html","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/giellalt.uit.no/assets/css/style.css?v=43450a40b9bd44ab09c1732c6511e80e5dbe3c0c">
+    <link rel="stylesheet" href="/giellalt.uit.no/assets/css/style.css?v=40c87d8ae54648609710bd0bec3f2557f47ca4f6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
-    <script src="/giellalt.uit.no/assets/js/sitemap-highlight.js?v=43450a40b9bd44ab09c1732c6511e80e5dbe3c0c"></script>
+    <script src="/giellalt.uit.no/assets/js/sitemap-highlight.js?v=40c87d8ae54648609710bd0bec3f2557f47ca4f6"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
       // Initialiser Mermaid med rett tema
@@ -102,7 +102,7 @@
         
         <div id="toc">
           <h2 class="tocheader">Page Content</h2>
-          <ul class="left_toc" id="left_toc"><li><a href="#templates-for-data-and-build-files">Templates For Data And Build Files</a></li><li><a href="#shared-data">Shared Data</a></li><li><a href="#other-shared-items">Other shared items</a></li><li><a href="#template-content">Template Content</a></li><li><a href="#template-content-layout">Template content layout</a></li><li><a href="#template-content-layout-as-ascii-art">Template content layout as ASCII art</a></li><li><a href="#template-content-ii">Template Content (II)</a></li><li><a href="#merging-the-template">Merging The Template</a></li><li><a href="#and-more-languages">And more languages</a></li><li><a href="#build-tools">Build tools</a><ul><li><a href="#language-specific-adaptions-in-the-build-process">Language Specific Adaptions In The Build Process</a></li></ul></li><li><a href="#test-directory">Test directory</a></li><li><a href="#yaml-tests">Yaml tests</a></li><li><a href="#lexc-tests">Lexc tests</a></li><li><a href="#twolc-tests">Twolc tests</a></li><li><a href="#documentation-example">Documentation example</a></li><li><a href="#coming-and-future-tools-and-packages">Coming and future tools and packages</a></li></ul>
+          <ul class="left_toc" id="left_toc"><li><a href="#schematic-overview">Schematic overview</a></li><li><a href="#templates-for-data-and-build-files">Templates For Data And Build Files</a></li><li><a href="#shared-data">Shared Data</a></li><li><a href="#other-shared-items">Other shared items</a></li><li><a href="#template-content">Template Content</a></li><li><a href="#template-content-layout">Template content layout</a></li><li><a href="#template-content-layout-2">Template content layout (2)</a></li><li><a href="#template-content-layout-as-ascii-art">Template content layout as ASCII art</a></li><li><a href="#template-content-ii">Template Content (II)</a></li><li><a href="#merging-the-template">Merging The Template</a></li><li><a href="#and-more-languages">And more languages</a></li><li><a href="#build-tools">Build tools</a><ul><li><a href="#language-specific-adaptions-in-the-build-process">Language Specific Adaptions In The Build Process</a></li></ul></li><li><a href="#test-directory">Test directory</a></li><li><a href="#yaml-tests">Yaml tests</a></li><li><a href="#yaml-test-output">Yaml test output</a></li><li><a href="#lexc-tests">Lexc tests</a></li><li><a href="#twolc-tests">Twolc tests</a></li><li><a href="#documentation-example">Documentation example</a></li><li><a href="#coming-and-future-tools-and-packages">Coming and future tools and packages</a></li></ul>
 
         </div>
       </header>
@@ -113,7 +113,10 @@
 
 <p>Sjur Nørstebø Moshagen, Divvun, UiT Norgga árktalaš universitehta</p>
 
+<hr />
+
 <h1 id="content">Content</h1>
+
 <ul>
   <li>overview</li>
   <li>the core</li>
@@ -126,6 +129,8 @@
   <li>the tools we produce</li>
   <li>concluding remarks</li>
 </ul>
+
+<hr />
 
 <h1 id="overview">Overview</h1>
 
@@ -144,9 +149,15 @@
 
 <p>Developed by Tommi Pirinen and Sjur Moshagen.</p>
 
+<hr />
+
+<h2 id="schematic-overview">Schematic overview</h2>
+
 <p>A schematic overview of the main components of the infrastructure:</p>
 
-<p>[../images/newinfra.png]</p>
+<p><img src="/giellalt.uit.no/infra/images/newinfra.png" alt="Main components" /></p>
+
+<hr />
 
 <h1 id="the-core">The Core</h1>
 
@@ -162,11 +173,15 @@
 <pre><code>svn co https://gtsvn.uit.no/langtech/trunk/giella-core
 </code></pre>
 
+<hr />
+
 <h2 id="templates-for-data-and-build-files">Templates For Data And Build Files</h2>
 
 <p>The template contains template data for the actual linguistic content. The idea is that when initialising a new language, you should get a working setup, with a working set of tools (analysers, generators, spell checkers, etc) for a toy language, and from there on you add your own, real content. The reality isn’t quite there, but not too far away either.</p>
 
 <p>The template also contains configuration and build instructions, both language independent parts, and support for language specific build steps. The language independent parts are kept in a separate directory, to avoid accidental changes and easy reuse of general build instructions.</p>
+
+<hr />
 
 <h2 id="shared-data">Shared Data</h2>
 
@@ -190,6 +205,8 @@
 
 <p>There are presently 52 such regexes.</p>
 
+<hr />
+
 <h2 id="other-shared-items">Other shared items</h2>
 
 <ul>
@@ -197,12 +214,16 @@
   <li>Document Schemas</li>
 </ul>
 
+<hr />
+
 <h1 id="templates-and-merging">Templates And Merging</h1>
 
 <ul>
   <li>template content</li>
   <li>merging the template</li>
 </ul>
+
+<hr />
 
 <h2 id="template-content">Template Content</h2>
 
@@ -216,10 +237,19 @@
 
 <p>… or in a picture:</p>
 
+<hr />
+
 <h2 id="template-content-layout">Template content layout</h2>
 
-<p>[../images/newinfralayout.png]
-[../images/newinfralayout2.png]</p>
+<p><img src="/giellalt.uit.no/infra/images/newinfralayout.png" alt="Layout" /></p>
+
+<hr />
+
+<h2 id="template-content-layout-2">Template content layout (2)</h2>
+
+<p><img src="/giellalt.uit.no/infra/images/newinfralayout2.png" alt="Layout 2" /></p>
+
+<hr />
 
 <h2 id="template-content-layout-as-ascii-art">Template content layout as ASCII art</h2>
 
@@ -227,45 +257,47 @@
 ├── am-shared
 ├── doc
 ├── src
-│   ├── filters
-│   ├── hyphenation
-│   ├── morphology
-│   │   ├── affixes
-│   │   └── stems
-│   ├── orthography
-│   ├── phonetics
-│   ├── phonology
-│   ├── syntax
-│   ├── tagsets
-│   └── transcriptions
+│   ├── filters
+│   ├── hyphenation
+│   ├── morphology
+│   │   ├── affixes
+│   │   └── stems
+│   ├── orthography
+│   ├── phonetics
+│   ├── phonology
+│   ├── syntax
+│   ├── tagsets
+│   └── transcriptions
 ├── test
-│   ├── data
-│   ├── src
-│   │   ├── dict-gt-yamls
-│   │   ├── gt-desc-yamls
-│   │   ├── gt-norm-yamls
-│   │   ├── morphology
-│   │   ├── phonology
-│   │   └── syntax
-│   └── tools
-│       ├── mt
-│       │   └── apertium
-│       └── spellcheckers
+│   ├── data
+│   ├── src
+│   │   ├── dict-gt-yamls
+│   │   ├── gt-desc-yamls
+│   │   ├── gt-norm-yamls
+│   │   ├── morphology
+│   │   ├── phonology
+│   │   └── syntax
+│   └── tools
+│       ├── mt
+│       │   └── apertium
+│       └── spellcheckers
 └── tools
     ├── grammarcheckers
     ├── mt
-    │   └── apertium
-    │       ├── filters
-    │       └── tagsets
+    │   └── apertium
+    │       ├── filters
+    │       └── tagsets
     ├── preprocess
     ├── shellscripts
     └── spellcheckers
         ├── fstbased
-        │   ├── foma
-        │   └── hfst
+        │   ├── foma
+        │   └── hfst
         └── listbased
             └── hunspell
 </code></pre>
+
+<hr />
 
 <h2 id="template-content-ii">Template Content (II)</h2>
 
@@ -277,6 +309,8 @@
   <li>AUTHORS, LICENSE and README etc.</li>
   <li>Makefile.am files</li>
 </ul>
+
+<hr />
 
 <h2 id="merging-the-template">Merging The Template</h2>
 
@@ -290,6 +324,8 @@
   <li>depending on network conditions (the incoming merge data is fetched from the svn repository) and the number of files to be merged, merging 40+ languages can be done in a couple of minutes (+ some time to manually verify that everything worked as intended)</li>
   <li>This merge system is also used to propagate new features and support for new tools. E.g. adding build support for a foma-based speller used by Greenlandic took a couple of hours to figure out the details for one language, and when done, it took just minutes to propagate to all languages.</li>
 </ol>
+
+<hr />
 
 <h1 id="languages">Languages</h1>
 
@@ -309,9 +345,13 @@
 
 <p>(replace <code>ISO639-3-CODE</code> with the actual ISO code)</p>
 
+<hr />
+
 <h2 id="and-more-languages">And more languages</h2>
 
 <p>We still have a number of languages located in an older infrastructure system - these will be moved to the new infra as time permits.</p>
+
+<hr />
 
 <h1 id="linguistic-data">Linguistic data</h1>
 
@@ -330,6 +370,8 @@
   <li>“namespace”-like prefix for certain domains, e.g. <code>+Err/</code> and <code>+Sem/</code></li>
 </ul>
 
+<hr />
+
 <h1 id="build-structure">Build Structure</h1>
 
 <p>Support for:</p>
@@ -344,6 +386,8 @@
   <li>all builds are language independent, but most (eventually all) build steps allow a language specific post-build step</li>
 </ul>
 
+<hr />
+
 <h2 id="build-tools">Build tools</h2>
 
 <ul>
@@ -354,11 +398,15 @@
   <li>support for out-of-source builds and multiple parallel configurations</li>
 </ul>
 
+<hr />
+
 <h3 id="language-specific-adaptions-in-the-build-process">Language Specific Adaptions In The Build Process</h3>
 
 <p>This is done by first building a <code>*.tmp</code> file, and using a fall-back target that just copies the <code>*.tmp</code> file to the final target. By overriding the copy step, one can do whatever one needs to do for a specific target after the default, language-independent processing is done.</p>
 
 <p>The language-specific build steps are specified in a (mostly) clearly marked section in the Makefile.am files.</p>
+
+<hr />
 
 <h1 id="testing">Testing</h1>
 
@@ -372,10 +420,15 @@ a specific fst</li>
 
 <p>In addition, there is the general support for testing in Autotools (or more specifically in <code>automake</code>), meaning that it is possible to add test scripts for whatever you like.</p>
 
+<hr />
+
 <h2 id="test-directory">Test directory</h2>
+
 <p>Most test scripts are located within the <code>test/</code> directory, within which there is a mirror copy of the language’s directory tree, to keep the tests for different parts of the grammar separate from each other:</p>
 
-<p>[../images/newinfratestinglayout.png]</p>
+<p><img src="/giellalt.uit.no/infra/images/newinfratestinglayout.png" alt="Test layout" /></p>
+
+<hr />
 
 <h2 id="yaml-tests">Yaml tests</h2>
 
@@ -394,6 +447,10 @@ a specific fst</li>
 
 <p>Tests both generation (absolute match) and analysis (ignoring homonymy) for the specified fst (specified in the filename of the yaml file). The test runner will loop over all matching yaml files, run all tests in each file, and if one file fails, it will print out a command to copy &amp; paste to repeat the test with all details visible.</p>
 
+<hr />
+
+<h2 id="yaml-test-output">Yaml test output</h2>
+
 <p>Example (line wraps added for readability):</p>
 
 <pre><code>YAML test 37: analyser-gt-norm.xfst + gt-norm-yamls/N-aambaz_gt-norm.yaml - 30/0/30 PASS
@@ -409,6 +466,8 @@ $GTHOME/giella-core/scripts/morph-test.py -c -i -v -S xerox \
 --gen ././../../src/generator-gt-norm.xfst \
 ../../../../test/src/gt-norm-yamls/N-aandam_gt-norm.yaml; popd
 </code></pre>
+
+<hr />
 
 <h2 id="lexc-tests">Lexc tests</h2>
 
@@ -429,6 +488,8 @@ with “<code>!!€ </code>”, whereas negative test lines start with “<code>
 and run against the specified fst. The feedback to the developer is the same as
 for the yaml tests, including the command to repeat in case of fails.</p>
 
+<hr />
+
 <h2 id="twolc-tests">Twolc tests</h2>
 
 <p>If one wants to test specific two-level rules one can add test pairs to the
@@ -448,6 +509,8 @@ knowledge of the alphabet).</p>
 <p>The yaml and lexc tests will also de facto test the correctness of the two-level
 rules.</p>
 
+<hr />
+
 <h1 id="documentation">Documentation</h1>
 
 <p>The infrastructure supports extraction of in-source documentation written as
@@ -461,6 +524,8 @@ more likely kept up-to-date than external documentation.</p>
 <p>The format supports the use of a couple of variables to extract such things as
 lexicon names, a line of code, etc. The extracted documentation must follow the
 <a href="http://www.jspwiki.org/wiki/TextFormattingRules">jspwiki syntax</a>.</p>
+
+<hr />
 
 <h2 id="documentation-example">Documentation example</h2>
 
@@ -491,6 +556,8 @@ LEXICON MUORRA !!= @CODE@ Standard even stems here. 2syll stem with cg (note Q1)
 <p>which can be seen rendered online as html here:
 [/lang/smj/nouns-affixes.html].</p>
 
+<hr />
+
 <h1 id="the-targets-tools-and-packages-produced-by-the-infrastructure">The Targets, Tools And Packages Produced By The Infrastructure</h1>
 
 <p>The list is constantly growing and contains roughly the following at present:</p>
@@ -514,6 +581,8 @@ LEXICON MUORRA !!= @CODE@ Standard even stems here. 2syll stem with cg (note Q1)
   <li>a simple command-line tool to use installed fst’s from anywhere on the system</li>
 </ul>
 
+<hr />
+
 <h2 id="coming-and-future-tools-and-packages">Coming and future tools and packages</h2>
 
 <p>Projects being worked on right now that will lead to new tools for all languages
@@ -531,6 +600,8 @@ in the future:</p>
   <li>support for speech based applications (speech synthesis)</li>
 </ul>
 
+<hr />
+
 <h1 id="concluding-remarks">Concluding remarks</h1>
 
 <ul>
@@ -546,6 +617,8 @@ circumpolar languages, but also others</li>
 
 <p>More info at [https://giellalt.uit.no/infra/GettingStarted.html] <br />
 and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
+
+<hr />
 
 <h1 id="thank-you-kiitos">Thank you! Kiitos!</h1>
 
@@ -6163,6 +6236,11 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
                 <li>
                     <a href="/giellalt.uit.no/admin/ClosedCooperationProjects.html">Closedcooperationprojects</a>
                 </li>
+            
+        
+            
+            
+            
             
         
             
@@ -13447,11 +13525,6 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
             
             
-        
-            
-            
-            
-            
                 <li>
                     <a href="/giellalt.uit.no/admin/plan-sms.html">Samisk SMS?</a>
                 </li>
@@ -14817,6 +14890,10 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -24070,14 +24147,14 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/apps/gielese.html">Gïelese documentation</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/apps/gielese.html">Gïelese documentation</a>
+                </li>
             
         
             
@@ -40850,6 +40927,10 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
         
             
+        
+            
+        
+            
                 
                 
                 
@@ -53515,6 +53596,10 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
         
             
+        
+            
+        
+            
                 
                 
                 
@@ -53522,6 +53607,11 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
         <a href="/giellalt.uit.no/events/">events/ - List of earlier events:</a>
         <ul>
         
+        
+            
+            
+            
+            
         
             
             
@@ -63581,11 +63671,6 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
             
         
-            
-            
-            
-            
-        
 
         
         
@@ -63597,6 +63682,10 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -73370,6 +73459,11 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
             
             
+        
+            
+            
+            
+            
                 <li>
                     <a href="/giellalt.uit.no/infra/DontPanic.html">Don’t Panic</a>
                 </li>
@@ -79099,11 +79193,6 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
             
             
-        
-            
-            
-            
-            
                 <li>
                     <a href="/giellalt.uit.no/infra/QuasicodeForKeepingTrackOfTransducers.html">Quasicode For Keeping Track Of Transducers</a>
                 </li>
@@ -83704,6 +83793,11 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
                 
                     
                     <li>
+                        <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation.html">Divvun and Giellatekno infrastructure</a>
+                    </li>
+                
+                    
+                    <li>
                         <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation2015.html">Edmonton presentation</a>
                     </li>
                 
@@ -83844,11 +83938,6 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
                 
                     
                     <li>
-                        <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation.html">Presentation of the Divvun and Giellatekno infrastructure</a>
-                    </li>
-                
-                    
-                    <li>
                         <a href="/giellalt.uit.no/infra/infraremake/BuildingSpellingCheckers.html">Spellers in the Giella infrastructure</a>
                     </li>
                 
@@ -83859,7 +83948,7 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
                 
                     
                     <li>
-                        <a href="/giellalt.uit.no/infra/infraremake/NewInfraBAULTPresentation.html">The Giellatekno &amp; Divvun infrastructure</a>
+                        <a href="/giellalt.uit.no/infra/infraremake/NewInfraBAULTPresentation.html">The Giellatekno & Divvun infrastructure</a>
                     </li>
                 
                     
@@ -97593,14 +97682,14 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/lang/parallel_names.html">Names and multilinguality</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/lang/parallel_names.html">Names and multilinguality</a>
+                </li>
             
         
             
@@ -108281,6 +108370,11 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
             
             
+        
+            
+            
+            
+            
                 <li>
                     <a href="/giellalt.uit.no/presentations/Personalseminar2025.html">Divvun-gruppa ved ISK</a>
                 </li>
@@ -110796,11 +110890,6 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
                 <li>
                     <a href="/giellalt.uit.no/presentations/MLLanguageTechnology.html">Language technology for low-resource languages</a>
                 </li>
-            
-        
-            
-            
-            
             
         
             
@@ -124735,14 +124824,14 @@ and [https://giellalt.uit.no/infra/infraremake/index.html]</p>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/proof/GeneralTesting.html">Linguistic testing</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/proof/GeneralTesting.html">Linguistic testing</a>
+                </li>
             
         
             

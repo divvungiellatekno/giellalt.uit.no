@@ -20,10 +20,10 @@
 {"description":"The Divvun and Giellatekno teams build language technology aimed at minority and indigenous languages","headline":"Language technology for low-resource languages","url":"/giellalt.uit.no/presentations/MLLanguageTechnology.html","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/giellalt.uit.no/assets/css/style.css?v=43450a40b9bd44ab09c1732c6511e80e5dbe3c0c">
+    <link rel="stylesheet" href="/giellalt.uit.no/assets/css/style.css?v=40c87d8ae54648609710bd0bec3f2557f47ca4f6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
-    <script src="/giellalt.uit.no/assets/js/sitemap-highlight.js?v=43450a40b9bd44ab09c1732c6511e80e5dbe3c0c"></script>
+    <script src="/giellalt.uit.no/assets/js/sitemap-highlight.js?v=40c87d8ae54648609710bd0bec3f2557f47ca4f6"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
       // Initialiser Mermaid med rett tema
@@ -162,7 +162,7 @@ redo things.</p>
 
 <h3 id="example--twolc">Example — twolc</h3>
 
-<pre><code>Alphabet m p ;
+<pre><code class="language-text">Alphabet m p ;
 
 Rules
 
@@ -185,9 +185,9 @@ kammat
 
 <p>The same changes written using rewrite rules:</p>
 
-<pre><code>[ N -&gt; m ]( _ p )
+<pre><code class="language-text">[ N -&gt; m || _ p ]
 .o.
-[ p -&gt; m ]( m _ );
+[ p -&gt; m || m _ ];
 </code></pre>
 
 <p>Rewrite rules are ordered, twolc rules are not.</p>
@@ -306,8 +306,12 @@ give valuable feedback about the grammar model, and the assumptions built in.</l
 </ul>
 
 <hr />
+<p>layout: two-cols-header
+—</p>
 
 <h2 id="use-model-to-process-analyse-text">Use Model To Process (Analyse) Text</h2>
+
+<p>::left::</p>
 
 <ul>
   <li>The most important use of a morphological analyser is to analyse text.
@@ -318,6 +322,8 @@ patterns.</li>
 
 <p>=&gt; <a href="http://gtweb.uit.no/korp/">Korp</a>
    (searchable corpus of analysed texts)</p>
+
+<p>::right::</p>
 
 <p><img src="/giellalt.uit.no/presentations/images/Korp.png" alt="Korp" /></p>
 
@@ -357,8 +363,8 @@ optimally for the language community. Actually building the installation
 packages is a matter of minutes.</p>
 
 <ul>
-  <li><a href="/keyboards/kbdlangdocs/sms/doc/layout.html">Skolt Sami desktop keyboard</a></li>
-  <li><a href="/giellalt.uit.no/presentations/images/android_writing.no.png">Inari Sami mobile keyboard</a></li>
+  <li><a href="https://giellalt.github.io/keyboard-sms/layout.html">Skolt Sami desktop keyboard</a></li>
+  <li><img src="/giellalt.uit.no/presentations/images/android_writing.no.png" alt="Inari Sami mobile keyboard" /></li>
 </ul>
 
 <hr />
@@ -385,7 +391,7 @@ longpress:
 </code></pre>
 
 <ul>
-  <li><a href="https://gtsvn.uit.no/langtech/trunk/keyboards/sms/sms-macos.yaml">Skolt Sami desktop keyboard</a></li>
+  <li><a href="https://github.com/giellalt/keyboard-sms/blob/main/sms.kbdgen/layouts/sms.yaml">Skolt Sami desktop keyboard</a></li>
 </ul>
 
 <p>(Demo: Skolt Sámi macOS keyboard)</p>
@@ -459,7 +465,7 @@ targeted CG rules for error detection and correction</li>
 spaces, and try to analyse the result. If we get an analysis, it is given as an
 error candidate, subject to further disambiguation and error detection rules.</p>
 
-<p>(Demo: <a href="http://gtweb.uit.no/gc/">grammar checker</a>)</p>
+<p>(Demo: <a href="http://divvun.uit.no/">grammar checker</a>)</p>
 
 <hr />
 
@@ -539,6 +545,10 @@ possible to do</li>
 </ul>
 
 <hr />
+<p>layout: image
+image: ./images/gtlangs_circumpolar_names.png
+backgroundSize: 30em 50%
+—</p>
 
 <h2 id="language-coverage">Language coverage</h2>
 
@@ -6169,6 +6179,11 @@ possible to do</li>
                 <li>
                     <a href="/giellalt.uit.no/admin/ClosedCooperationProjects.html">Closedcooperationprojects</a>
                 </li>
+            
+        
+            
+            
+            
             
         
             
@@ -13453,11 +13468,6 @@ possible to do</li>
             
             
             
-        
-            
-            
-            
-            
                 <li>
                     <a href="/giellalt.uit.no/admin/plan-sms.html">Samisk SMS?</a>
                 </li>
@@ -14823,6 +14833,10 @@ possible to do</li>
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -24076,14 +24090,14 @@ possible to do</li>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/apps/gielese.html">Gïelese documentation</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/apps/gielese.html">Gïelese documentation</a>
+                </li>
             
         
             
@@ -40856,6 +40870,10 @@ possible to do</li>
             
         
             
+        
+            
+        
+            
                 
                 
                 
@@ -53521,6 +53539,10 @@ possible to do</li>
             
         
             
+        
+            
+        
+            
                 
                 
                 
@@ -53528,6 +53550,11 @@ possible to do</li>
         <a href="/giellalt.uit.no/events/">events/ - List of earlier events:</a>
         <ul>
         
+        
+            
+            
+            
+            
         
             
             
@@ -63587,11 +63614,6 @@ possible to do</li>
             
             
         
-            
-            
-            
-            
-        
 
         
         
@@ -63603,6 +63625,10 @@ possible to do</li>
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -73376,6 +73402,11 @@ possible to do</li>
             
             
             
+        
+            
+            
+            
+            
                 <li>
                     <a href="/giellalt.uit.no/infra/DontPanic.html">Don’t Panic</a>
                 </li>
@@ -79105,11 +79136,6 @@ possible to do</li>
             
             
             
-        
-            
-            
-            
-            
                 <li>
                     <a href="/giellalt.uit.no/infra/QuasicodeForKeepingTrackOfTransducers.html">Quasicode For Keeping Track Of Transducers</a>
                 </li>
@@ -83710,6 +83736,11 @@ possible to do</li>
                 
                     
                     <li>
+                        <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation.html">Divvun and Giellatekno infrastructure</a>
+                    </li>
+                
+                    
+                    <li>
                         <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation2015.html">Edmonton presentation</a>
                     </li>
                 
@@ -83850,11 +83881,6 @@ possible to do</li>
                 
                     
                     <li>
-                        <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation.html">Presentation of the Divvun and Giellatekno infrastructure</a>
-                    </li>
-                
-                    
-                    <li>
                         <a href="/giellalt.uit.no/infra/infraremake/BuildingSpellingCheckers.html">Spellers in the Giella infrastructure</a>
                     </li>
                 
@@ -83865,7 +83891,7 @@ possible to do</li>
                 
                     
                     <li>
-                        <a href="/giellalt.uit.no/infra/infraremake/NewInfraBAULTPresentation.html">The Giellatekno &amp; Divvun infrastructure</a>
+                        <a href="/giellalt.uit.no/infra/infraremake/NewInfraBAULTPresentation.html">The Giellatekno & Divvun infrastructure</a>
                     </li>
                 
                     
@@ -97599,14 +97625,14 @@ possible to do</li>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/lang/parallel_names.html">Names and multilinguality</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/lang/parallel_names.html">Names and multilinguality</a>
+                </li>
             
         
             
@@ -108287,6 +108313,11 @@ possible to do</li>
             
             
             
+        
+            
+            
+            
+            
                 <li>
                     <a href="/giellalt.uit.no/presentations/Personalseminar2025.html">Divvun-gruppa ved ISK</a>
                 </li>
@@ -110802,11 +110833,6 @@ possible to do</li>
                 <li>
                     <a href="/giellalt.uit.no/presentations/MLLanguageTechnology.html">Language technology for low-resource languages</a>
                 </li>
-            
-        
-            
-            
-            
             
         
             
@@ -124741,14 +124767,14 @@ possible to do</li>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/proof/GeneralTesting.html">Linguistic testing</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/proof/GeneralTesting.html">Linguistic testing</a>
+                </li>
             
         
             

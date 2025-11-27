@@ -7,23 +7,23 @@
     <link rel="shortcut icon" type="image/png" href="/giellalt.uit.no/favicon.png?">
 
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Presentation of the Divvun and Giellatekno infrastructure | Language Technology at UiT</title>
+<title>Divvun and Giellatekno infrastructure | Language Technology at UiT</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Presentation of the Divvun and Giellatekno infrastructure" />
+<meta property="og:title" content="Divvun and Giellatekno infrastructure" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The Divvun and Giellatekno teams build language technology aimed at minority and indigenous languages" />
 <meta property="og:description" content="The Divvun and Giellatekno teams build language technology aimed at minority and indigenous languages" />
 <meta property="og:site_name" content="Language Technology at UiT" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Presentation of the Divvun and Giellatekno infrastructure" />
+<meta property="twitter:title" content="Divvun and Giellatekno infrastructure" />
 <script type="application/ld+json">
-{"description":"The Divvun and Giellatekno teams build language technology aimed at minority and indigenous languages","headline":"Presentation of the Divvun and Giellatekno infrastructure","url":"/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"description":"The Divvun and Giellatekno teams build language technology aimed at minority and indigenous languages","headline":"Divvun and Giellatekno infrastructure","url":"/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation.html","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/giellalt.uit.no/assets/css/style.css?v=43450a40b9bd44ab09c1732c6511e80e5dbe3c0c">
+    <link rel="stylesheet" href="/giellalt.uit.no/assets/css/style.css?v=40c87d8ae54648609710bd0bec3f2557f47ca4f6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
-    <script src="/giellalt.uit.no/assets/js/sitemap-highlight.js?v=43450a40b9bd44ab09c1732c6511e80e5dbe3c0c"></script>
+    <script src="/giellalt.uit.no/assets/js/sitemap-highlight.js?v=40c87d8ae54648609710bd0bec3f2557f47ca4f6"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
       // Initialiser Mermaid med rett tema
@@ -113,6 +113,8 @@
 
 <p>Sjur Moshagen &amp; Trond Trosterud, UiT The Arctic University of Norway</p>
 
+<hr />
+
 <h1 id="content">Content</h1>
 
 <ul>
@@ -127,7 +129,11 @@
   <li>Summary</li>
 </ul>
 
+<hr />
+
 <h1 id="background">Background</h1>
+
+<hr />
 
 <h2 id="the-problem">The problem</h2>
 
@@ -153,6 +159,8 @@
   <li>it was way too time-consuming and boring to maintain (mainly by Sjur)</li>
 </ul>
 
+<hr />
+
 <h2 id="the-plan">The plan</h2>
 
 <p>To create an infrastructure that:</p>
@@ -165,11 +173,15 @@
   languages</li>
 </ol>
 
+<hr />
+
 <h2 id="the-solution">The solution</h2>
 
-<p>[../images/S_curve.png]</p>
+<p><img src="/giellalt.uit.no/infra/images/S_curve.png" alt="S-curve" /></p>
 
 <p>Details in the rest of the presentation.</p>
+
+<hr />
 
 <h1 id="introduction">Introduction</h1>
 
@@ -177,7 +189,9 @@
 
 <p>A schematic overview of the main components of the infrastructure:</p>
 
-<p>[../images/newinfra.png]</p>
+<p><img src="/giellalt.uit.no/infra/images/newinfra.png" alt="Infrastructure overview" /></p>
+
+<hr />
 
 <h2 id="general-principles">General principles</h2>
 
@@ -192,6 +206,8 @@
   <li>Possibility for all tools to be built for all languages</li>
   <li>Parametrise the build process</li>
 </ol>
+
+<hr />
 
 <h2 id="what-is-the-infrastructure">What is the infrastructure?</h2>
 
@@ -208,6 +224,8 @@
   <li>a fixed directory structure</li>
   <li>a shared build system</li>
 </ul>
+
+<hr />
 
 <h2 id="conventions">Conventions</h2>
 
@@ -227,6 +245,8 @@
   <li>affix files: <code>nouns.lexc, verbs.lexc</code></li>
 </ul>
 
+<hr />
+
 <h2 id="directory-structure">Directory structure</h2>
 
 <p>In detail:</p>
@@ -235,56 +255,60 @@
 ├── doc
 ├── misc
 ├── src
-│   ├── filters
-│   ├── hyphenation
-│   ├── morphology
-│   │   ├── affixes
-│   │   └── stems
-│   ├── orthography
-│   ├── phonetics
-│   ├── phonology
-│   ├── syntax
-│   ├── tagsets
-│   └── transcriptions
+│   ├── filters
+│   ├── hyphenation
+│   ├── morphology
+│   │   ├── affixes
+│   │   └── stems
+│   ├── orthography
+│   ├── phonetics
+│   ├── phonology
+│   ├── syntax
+│   ├── tagsets
+│   └── transcriptions
 ├── test
-│   ├── data
-│   ├── src
-│   └── tools
+│   ├── data
+│   ├── src
+│   └── tools
 └── tools
     ├── grammarcheckers
     ├── mt
-    │   └── apertium
+    │   └── apertium
     ├── preprocess
     ├── shellscripts
     └── spellcheckers
 </code></pre>
 
+<hr />
+
 <h2 id="explaining-the-directory-structure">Explaining the directory structure</h2>
 
 <pre><code>.
 ├── src                  = source files
-│   ├── filters          = adjust fst's for special purposes
-│   ├── hyphenation      = nikîpakwâtik &gt;  ni-kî-pa-kwâ-tik
-│   ├── morphology       =
-│   │   ├── affixes      = prefixes, suffixes
-│   │   └── stems        =
-│   ├── orthography      = latin &lt;-&gt; syllabics, spellrelax
-│   ├── phonetics        = conversion to IPA
-│   ├── phonology        = morphophonological rules
-│   ├── syntax           = disambiguation, synt. functions, dependency
-│   ├── tagsets          = get your tags as you want them
-│   └── transcriptions   = convert number expressions to text or v.v.
+│   ├── filters          = adjust fst's for special purposes
+│   ├── hyphenation      = nikîpakwâtik &gt;  ni-kî-pa-kwâ-tik
+│   ├── morphology       =
+│   │   ├── affixes      = prefixes, suffixes
+│   │   └── stems        =
+│   ├── orthography      = latin &lt;-&gt; syllabics, spellrelax
+│   ├── phonetics        = conversion to IPA
+│   ├── phonology        = morphophonological rules
+│   ├── syntax           = disambiguation, synt. functions, dependency
+│   ├── tagsets          = get your tags as you want them
+│   └── transcriptions   = convert number expressions to text or v.v.
 ├── test                 =
-│   ├── data             = test data
-│   ├── src              = tests for the fst's in the src/ dir
+│   ├── data             = test data
+│   ├── src              = tests for the fst's in the src/ dir
 └── tools                =
     ├── grammarcheckers  =
     ├── mt               = machine translation
-    │   └── apertium     = ... for certain MT platforms
+    │   └── apertium     = ... for certain MT platforms
     ├── preprocess       = split text in sentences and words
     ├── shellscripts     = shell scripts to use the modules we create
     └── spellcheckers    = spell checkers are built here
 </code></pre>
+
+<hr />
 
 <h1 id="the-core">The core</h1>
 
@@ -301,6 +325,8 @@ It contains:</p>
     </ul>
   </li>
 </ul>
+
+<hr />
 
 <h2 id="shared-resources">Shared resources</h2>
 
@@ -323,6 +349,8 @@ in all languages:</p>
   <li>remove morphological boundary symbols from the lower/surface side</li>
   <li>etc.</li>
 </ul>
+
+<hr />
 
 <h1 id="languages">Languages</h1>
 
@@ -348,6 +376,8 @@ on them, and their license:</p>
 
 <p>(replace <code>ISO639-3-CODE</code> with the actual ISO code)</p>
 
+<hr />
+
 <h1 id="build-structure">Build Structure</h1>
 
 <p>Support for:</p>
@@ -362,6 +392,8 @@ on them, and their license:</p>
   <li>all builds are language independent, but most (eventually all) build steps
 allow a language specific post-build step</li>
 </ul>
+
+<hr />
 
 <h1 id="testing">Testing</h1>
 
@@ -378,6 +410,8 @@ a specific fst</li>
 specifically in <code>automake</code>), meaning that it is possible to add test scripts
 for whatever you like.</p>
 
+<hr />
+
 <h1 id="documentation">Documentation</h1>
 
 <p>The infrastructure supports extraction of in-source documentation written as
@@ -388,6 +422,8 @@ more likely to be kept up-to-date than external documentation.</p>
 
 <p>The format supports the use of a couple of variables to extract such things as
 lexicon names, a line of code, etc.</p>
+
+<hr />
 
 <h1 id="the-tools">The tools</h1>
 
@@ -402,6 +438,8 @@ lexicon names, a line of code, etc.</p>
   <li>Grammar checkers</li>
 </ul>
 
+<hr />
+
 <h2 id="the-pipeline-for-analysis">The pipeline for analysis</h2>
 
 <ul>
@@ -412,6 +450,8 @@ lexicon names, a line of code, etc.</p>
   <li>add grammatical functions</li>
   <li>add dependency relations</li>
 </ul>
+
+<hr />
 
 <h2 id="the-pipeline-for-grammar-checking">The pipeline for grammar checking</h2>
 
@@ -425,6 +465,8 @@ lexicon names, a line of code, etc.</p>
   <li>give message to the writer</li>
 </ul>
 
+<hr />
+
 <h2 id="two-startup-scenarios">Two startup scenarios</h2>
 
 <ul>
@@ -436,6 +478,8 @@ in order to generate the full range of tools offered here (“Innu”)</li>
 <p>In the latter case it could be possible and even preferable to script the
 conversion from the original format to the lexc format, to make it possible to
 reimport or update the data.</p>
+
+<hr />
 
 <h1 id="summary">Summary</h1>
 
@@ -6067,6 +6111,11 @@ reimport or update the data.</p>
                 <li>
                     <a href="/giellalt.uit.no/admin/ClosedCooperationProjects.html">Closedcooperationprojects</a>
                 </li>
+            
+        
+            
+            
+            
             
         
             
@@ -13351,11 +13400,6 @@ reimport or update the data.</p>
             
             
             
-        
-            
-            
-            
-            
                 <li>
                     <a href="/giellalt.uit.no/admin/plan-sms.html">Samisk SMS?</a>
                 </li>
@@ -14721,6 +14765,10 @@ reimport or update the data.</p>
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -23974,14 +24022,14 @@ reimport or update the data.</p>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/apps/gielese.html">Gïelese documentation</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/apps/gielese.html">Gïelese documentation</a>
+                </li>
             
         
             
@@ -40754,6 +40802,10 @@ reimport or update the data.</p>
             
         
             
+        
+            
+        
+            
                 
                 
                 
@@ -53419,6 +53471,10 @@ reimport or update the data.</p>
             
         
             
+        
+            
+        
+            
                 
                 
                 
@@ -53426,6 +53482,11 @@ reimport or update the data.</p>
         <a href="/giellalt.uit.no/events/">events/ - List of earlier events:</a>
         <ul>
         
+        
+            
+            
+            
+            
         
             
             
@@ -63485,11 +63546,6 @@ reimport or update the data.</p>
             
             
         
-            
-            
-            
-            
-        
 
         
         
@@ -63501,6 +63557,10 @@ reimport or update the data.</p>
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -73274,6 +73334,11 @@ reimport or update the data.</p>
             
             
             
+        
+            
+            
+            
+            
                 <li>
                     <a href="/giellalt.uit.no/infra/DontPanic.html">Don’t Panic</a>
                 </li>
@@ -79003,11 +79068,6 @@ reimport or update the data.</p>
             
             
             
-        
-            
-            
-            
-            
                 <li>
                     <a href="/giellalt.uit.no/infra/QuasicodeForKeepingTrackOfTransducers.html">Quasicode For Keeping Track Of Transducers</a>
                 </li>
@@ -83608,6 +83668,11 @@ reimport or update the data.</p>
                 
                     
                     <li>
+                        <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation.html">Divvun and Giellatekno infrastructure</a>
+                    </li>
+                
+                    
+                    <li>
                         <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation2015.html">Edmonton presentation</a>
                     </li>
                 
@@ -83748,11 +83813,6 @@ reimport or update the data.</p>
                 
                     
                     <li>
-                        <a href="/giellalt.uit.no/infra/infraremake/EdmontonInfrastructurePresentation.html">Presentation of the Divvun and Giellatekno infrastructure</a>
-                    </li>
-                
-                    
-                    <li>
                         <a href="/giellalt.uit.no/infra/infraremake/BuildingSpellingCheckers.html">Spellers in the Giella infrastructure</a>
                     </li>
                 
@@ -83763,7 +83823,7 @@ reimport or update the data.</p>
                 
                     
                     <li>
-                        <a href="/giellalt.uit.no/infra/infraremake/NewInfraBAULTPresentation.html">The Giellatekno &amp; Divvun infrastructure</a>
+                        <a href="/giellalt.uit.no/infra/infraremake/NewInfraBAULTPresentation.html">The Giellatekno & Divvun infrastructure</a>
                     </li>
                 
                     
@@ -97497,14 +97557,14 @@ reimport or update the data.</p>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/lang/parallel_names.html">Names and multilinguality</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/lang/parallel_names.html">Names and multilinguality</a>
+                </li>
             
         
             
@@ -108185,6 +108245,11 @@ reimport or update the data.</p>
             
             
             
+        
+            
+            
+            
+            
                 <li>
                     <a href="/giellalt.uit.no/presentations/Personalseminar2025.html">Divvun-gruppa ved ISK</a>
                 </li>
@@ -110700,11 +110765,6 @@ reimport or update the data.</p>
                 <li>
                     <a href="/giellalt.uit.no/presentations/MLLanguageTechnology.html">Language technology for low-resource languages</a>
                 </li>
-            
-        
-            
-            
-            
             
         
             
@@ -124639,14 +124699,14 @@ reimport or update the data.</p>
             
             
             
-                <li>
-                    <a href="/giellalt.uit.no/proof/GeneralTesting.html">Linguistic testing</a>
-                </li>
-            
         
             
             
             
+            
+                <li>
+                    <a href="/giellalt.uit.no/proof/GeneralTesting.html">Linguistic testing</a>
+                </li>
             
         
             
