@@ -33,7 +33,7 @@ Although this front page is in English, the other pages on the site may be in an
 
 ## Presentations and Papers
 
-- [Presentations](presentations/PresentationsAboutInfra.md)
+- [Presentations](presentations/index.md)
 - [Articles](https://giellatekno.uit.no/publications/index.html)
 
 ## Infrastructure
