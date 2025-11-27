@@ -1,3 +1,24 @@
+---
+theme: seriph
+background: https://unsplash.com/photos/clear-blue-running-water-at-daytime-OR_3rbIv5yI
+class: text-center
+highlighter: shiki
+lineNumbers: false
+info: |
+  Greenland 2017 - Infra overview and training
+drawings:
+  persist: false
+title: Greenland 2017 - Infra overview and training
+---
+
+# Greenland 2017
+
+Infra overview and training
+
+---
+
+## Overview
+
 This document contains an overview of the topics and training given in Nuuk in
 June, 2017. It contains links to the relevant parts of the existing
 documentation. The idea is that this page can be used as an overview document
@@ -6,8 +27,12 @@ also in other cases.
 Basic organisation: presentation of topic, followed by excercises. Roughly one
 topic + excercise before lunch and one topic after.
 
-Topics (with a roughly schedule with time left at the end - to be adjusted as
-needed):
+---
+
+## Schedule
+
+Topics (with a roughly schedule with time left at the end - to be adjusted as needed):
+
 * Day 1:
     - presentation of all tools
     - introduction to the infrastructure
@@ -23,6 +48,8 @@ needed):
     - developer tools
 * Day 4:
     - refactoring the code
+
+---
 
 #  Presentation Of All Tools
 
@@ -53,7 +80,11 @@ needed):
     - [L2 learning](http://oahpa.no)
     - [L1 grammar excercises](http://oahpa.no/sme/usevisl/VISL_spealut.nob.html)
 
+---
+
 #  Introduction To The Infrastructure
+
+---
 
 ##  Overall goals
 
@@ -75,15 +106,23 @@ needed):
     - shared lexical data
     - one fst starting point for every tool
 
+---
+
 ##  Means for achieving the goals
 
 * [shared directory structure](../infra/infraremake/NewinfraCatalogues.html)
+
+---
 
 #  Unix Crash Course
 
 See [Unix for Linguists](/tools/UnixForLinguists.html)
 
+---
+
 #  Dependencies On External Tools
+
+---
 
 ##  Language technology tools
 
@@ -93,6 +132,8 @@ See [Unix for Linguists](/tools/UnixForLinguists.html)
 Optional:
 * Apertium (MT)
 
+---
+
 ##  Infrastructure support tools
 
 * Autotools
@@ -101,6 +142,8 @@ Optional:
 * Subversion
 * a number of other tools
   [listed on a separate page](../infra/GettingStartedOnTheMac.html)
+
+---
 
 ##  External dependencies for final products
 
@@ -112,6 +155,8 @@ everything installed and correctly configured for building the end user products
 
 The exact details for each product is listed separately in each case, on
 individual pages.
+
+---
 
 #  In-Source Documentation
 
@@ -131,14 +176,20 @@ forrest run -Dforrest.jvmargs="-Dfile.encoding=utf-8 -Djava.awt.headless=true"
 To debug, edit the generated jspwiki file till the error is found, then correct
 it in lexc.
 
+---
+
 #  Tag conventions in the Giella infrastructure
 
 * [Language Independent Tags In The Giella
   Infra|../ling/LanguageIndependentTagsInTheGiellaInfra.html]
 
+---
+
 #  Morpheme boundaries
 
 * [Morfeme border markup](../ling/morfem-borders.html)
+
+---
 
 #  Clean code
 
@@ -147,13 +198,19 @@ Guidelines for clean code:
 * all analyses should be consistent - same tags for the same feaure, in the same order
 * consistent use of whitespace for increased readability
 
+---
+
 #  Testing
 
 See [this document](../infra/infraremake/AddingMorphologicalTestData.html)
 
+---
+
 #  Debugging
 
 * [Issues in KAL](/lang//kal/IssuesInGreenlandic.html)
+
+---
 
 #  Developer Tools
 
@@ -165,6 +222,8 @@ generate-*-wordforms.sh
 test_ospell-office_suggestions.sh
 ```
 
+---
+
 #  Refactoring the code
 
 When the Yaml files are covering the relevant parts of lexc, one can rewrite the
@@ -174,6 +233,8 @@ also use one of the `devtools/` tools to help in that process.
 This can also be seen the other way: when you know what area of the grammar you
 want to change, you write yaml tests to specify the intended output, and work on
 the grammar until you get there.
+
+---
 
 # Excercises and practical work
 

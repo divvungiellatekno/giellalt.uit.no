@@ -8,7 +8,7 @@ given by Divvun or Giellatekno. The list is not complete.
 * [Møte med Giellagáldu 2017](Giellagaldu-mote2017.md) - [as slideshow](Giellagaldu-mote2017-slidev/)
 * [Guest lecture presentation at HU 2017](MLLanguageTechnology.html) —
   [as slideshow](slidy/MLLanguageTechnology.html)
-* [Greenland 2017 - Infra overview and training](Greenland2017.html)
+* [Greenland 2017 - Infra overview and training](Greenland2017.md) - [as slideshow](Greenland2017-slidev/)
 * [Kurs i ny infra](../infra/infraremake/KursINyInfra.html)
 * [New infra BAULT presentation](../infra/infraremake/NewInfraBAULTPresentation.html)
   - as [slidehow](../infra/infraremake/slidy/NewInfraBAULTPresentation.html)
