@@ -10,5 +10,4 @@ given by Divvun or Giellatekno. The list is not complete.
 * [Greenland 2017 - Infra overview and training](Greenland2017.md) - [as slideshow](Greenland2017-slidev/)
 * [Kurs i ny infra](../infra/infraremake/KursINyInfra.html)
 * [New infra BAULT presentation](../infra/infraremake/NewInfraBAULTPresentation.md) - [as slideshow](../infra/infraremake/NewInfraBAULTPresentation-slidev/)
-* [Edmonton infrastructure presentation](../infra/infraremake/EdmontonInfrastructurePresentation.html)
-  - as [slidehow](../infra/infraremake/slidy/EdmontonInfrastructurePresentation.html)
+* [Edmonton infrastructure presentation](../infra/infraremake/EdmontonInfrastructurePresentation.md) - [as slideshow](../infra/infraremake/EdmontonInfrastructurePresentation-slidev/)

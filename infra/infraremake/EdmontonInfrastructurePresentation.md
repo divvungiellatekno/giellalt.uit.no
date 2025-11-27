@@ -1,8 +1,23 @@
+---
+theme: seriph
+background: https://unsplash.com/photos/clear-blue-running-water-at-daytime-OR_3rbIv5yI
+class: text-center
+highlighter: shiki
+lineNumbers: false
+info: |
+  Presentation of the Divvun and Giellatekno infrastructure - University of Alberta, Edmonton, June 19th
+drawings:
+  persist: false
+title: Divvun and Giellatekno infrastructure
+---
+
 # Presentation of the Divvun and Giellatekno infrastructure
 
 University of Alberta, Edmonton, June 19th
 
 Sjur Moshagen & Trond Trosterud, UiT The Arctic University of Norway
+
+---
 
 # Content
 
@@ -16,7 +31,11 @@ Sjur Moshagen & Trond Trosterud, UiT The Arctic University of Norway
 * The tools we produce
 * Summary
 
+---
+
 # Background
+
+---
 
 ## The problem
 
@@ -31,6 +50,8 @@ Sjur Moshagen & Trond Trosterud, UiT The Arctic University of Norway
     - (Xerox = the first fst compiler; Hfst = an open-source implementation)
 * it was way too time-consuming and boring to maintain (mainly by Sjur)
 
+---
+
 ## The plan
 
 To create an infrastructure that:
@@ -41,11 +62,15 @@ To create an infrastructure that:
 1. ... while still being flexible enough to handle variation between the
   languages
 
+---
+
 ## The solution
 
-[../images/S_curve.png]
+![S-curve](../images/S_curve.png)
 
 Details in the rest of the presentation.
+
+---
 
 # Introduction
 
@@ -53,7 +78,9 @@ Developed by Tommi Pirinen and Sjur Moshagen.
 
 A schematic overview of the main components of the infrastructure:
 
-[../images/newinfra.png]
+![Infrastructure overview](../images/newinfra.png)
+
+---
 
 ## General principles
 
@@ -67,6 +94,8 @@ A schematic overview of the main components of the infrastructure:
 1. Possibility for all tools to be built for all languages
 1. Parametrise the build process
 
+---
+
 ## What is the infrastructure?
 
 * a systematic way to go from source code to compiled modules
@@ -78,6 +107,8 @@ For this to work for many languages in parallel and at the same time, we need:
 * conventions
 * a fixed directory structure
 * a shared build system
+
+---
 
 ## Conventions
 
@@ -93,6 +124,8 @@ E.g., your source files are located in `src/`:
 * stem files: `nouns.lexc, verbs.lexc, particles.lexc`, ...
 * affix files: `nouns.lexc, verbs.lexc`
 
+---
+
 ## Directory structure
 
 In detail:
@@ -102,57 +135,61 @@ In detail:
 ├── doc
 ├── misc
 ├── src
-│   ├── filters
-│   ├── hyphenation
-│   ├── morphology
-│   │   ├── affixes
-│   │   └── stems
-│   ├── orthography
-│   ├── phonetics
-│   ├── phonology
-│   ├── syntax
-│   ├── tagsets
-│   └── transcriptions
+│   ├── filters
+│   ├── hyphenation
+│   ├── morphology
+│   │   ├── affixes
+│   │   └── stems
+│   ├── orthography
+│   ├── phonetics
+│   ├── phonology
+│   ├── syntax
+│   ├── tagsets
+│   └── transcriptions
 ├── test
-│   ├── data
-│   ├── src
-│   └── tools
+│   ├── data
+│   ├── src
+│   └── tools
 └── tools
     ├── grammarcheckers
     ├── mt
-    │   └── apertium
+    │   └── apertium
     ├── preprocess
     ├── shellscripts
     └── spellcheckers
 ```
+
+---
 
 ## Explaining the directory structure
 
 ```
 .
 ├── src                  = source files
-│   ├── filters          = adjust fst's for special purposes
-│   ├── hyphenation      = nikîpakwâtik >  ni-kî-pa-kwâ-tik
-│   ├── morphology       =
-│   │   ├── affixes      = prefixes, suffixes
-│   │   └── stems        =
-│   ├── orthography      = latin <-> syllabics, spellrelax
-│   ├── phonetics        = conversion to IPA
-│   ├── phonology        = morphophonological rules
-│   ├── syntax           = disambiguation, synt. functions, dependency
-│   ├── tagsets          = get your tags as you want them
-│   └── transcriptions   = convert number expressions to text or v.v.
+│   ├── filters          = adjust fst's for special purposes
+│   ├── hyphenation      = nikîpakwâtik >  ni-kî-pa-kwâ-tik
+│   ├── morphology       =
+│   │   ├── affixes      = prefixes, suffixes
+│   │   └── stems        =
+│   ├── orthography      = latin <-> syllabics, spellrelax
+│   ├── phonetics        = conversion to IPA
+│   ├── phonology        = morphophonological rules
+│   ├── syntax           = disambiguation, synt. functions, dependency
+│   ├── tagsets          = get your tags as you want them
+│   └── transcriptions   = convert number expressions to text or v.v.
 ├── test                 =
-│   ├── data             = test data
-│   ├── src              = tests for the fst's in the src/ dir
+│   ├── data             = test data
+│   ├── src              = tests for the fst's in the src/ dir
 └── tools                =
     ├── grammarcheckers  =
     ├── mt               = machine translation
-    │   └── apertium     = ... for certain MT platforms
+    │   └── apertium     = ... for certain MT platforms
     ├── preprocess       = split text in sentences and words
     ├── shellscripts     = shell scripts to use the modules we create
     └── spellcheckers    = spell checkers are built here
 ```
+
+---
 
 # The core
 
@@ -164,6 +201,8 @@ It contains:
 * shared resources
     - linguistic resources shared among several languages
     - language independent fst manipulation
+
+---
 
 ## Shared resources
 
@@ -182,6 +221,8 @@ in all languages:
 * remove semantic tags from fst's where they are not used
 * remove morphological boundary symbols from the lower/surface side
 * etc.
+
+---
 
 # Languages
 
@@ -206,6 +247,8 @@ svn co https://gtsvn.uit.no/langtech/trunk/langs/ISO639-3-CODE/
 
 (replace `ISO639-3-CODE` with the actual ISO code)
 
+---
+
 # Build Structure
 
 Support for:
@@ -218,6 +261,8 @@ Support for:
 * separation of language independent and language specific features
 * all builds are language independent, but most (eventually all) build steps
   allow a language specific post-build step
+
+---
 
 # Testing
 
@@ -232,6 +277,8 @@ In addition, there is the general support for testing in Autotools (or more
 specifically in `automake`), meaning that it is possible to add test scripts
 for whatever you like.
 
+---
+
 # Documentation
 
 The infrastructure supports extraction of in-source documentation written as
@@ -242,6 +289,8 @@ more likely to be kept up-to-date than external documentation.
 
 The format supports the use of a couple of variables to extract such things as
 lexicon names, a line of code, etc.
+
+---
 
 # The tools
 
@@ -254,6 +303,8 @@ lexicon names, a line of code, etc.
 * Spellers
 * Grammar checkers
 
+---
+
 ## The pipeline for analysis
 
 * take text
@@ -262,6 +313,8 @@ lexicon names, a line of code, etc.
 * pick the correct ones
 * add grammatical functions
 * add dependency relations
+
+---
 
 ## The pipeline for grammar checking
 
@@ -273,6 +326,8 @@ lexicon names, a line of code, etc.
 * mark them
 * give message to the writer
 
+---
+
 ## Two startup scenarios
 
 * Add a new language that does not have machine-readable resources ("Blackfoot")
@@ -282,6 +337,8 @@ lexicon names, a line of code, etc.
 In the latter case it could be possible and even preferable to script the
 conversion from the original format to the lexc format, to make it possible to
 reimport or update the data.
+
+---
 
 # Summary
 
