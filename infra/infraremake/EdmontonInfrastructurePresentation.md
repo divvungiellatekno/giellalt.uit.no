@@ -66,7 +66,7 @@ To create an infrastructure that:
 
 ## The solution
 
-![S-curve](../images/S_curve.png)
+![S-curve](../../images/S_curve.png)
 
 Details in the rest of the presentation.
 
@@ -78,7 +78,7 @@ Developed by Tommi Pirinen and Sjur Moshagen.
 
 A schematic overview of the main components of the infrastructure:
 
-![Infrastructure overview](../images/newinfra.png)
+![Infrastructure overview](../../images/newinfra.png)
 
 ---
 

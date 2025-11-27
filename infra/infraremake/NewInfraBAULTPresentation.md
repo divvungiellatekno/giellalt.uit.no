@@ -52,7 +52,7 @@ Developed by Tommi Pirinen and Sjur Moshagen.
 
 A schematic overview of the main components of the infrastructure:
 
-![Main components](../images/newinfra.png)
+![Main components](../../images/newinfra.png)
 
 ---
 
@@ -127,13 +127,13 @@ Briefly described earlier, this is what you will find:
 
 ## Template content layout
 
-![Layout](../images/newinfralayout.png)
+![Layout](../../images/newinfralayout.png)
 
 ---
 
 ## Template content layout (2)
 
-![Layout 2](../images/newinfralayout2.png)
+![Layout 2](../../images/newinfralayout2.png)
 
 ---
 
@@ -298,7 +298,7 @@ In addition, there is the general support for testing in Autotools (or more spec
 
 Most test scripts are located within the `test/` directory, within which there is a mirror copy of the language's directory tree, to keep the tests for different parts of the grammar separate from each other:
 
-![Test layout](../images/newinfratestinglayout.png)
+![Test layout](../../images/newinfratestinglayout.png)
 
 ---
 
