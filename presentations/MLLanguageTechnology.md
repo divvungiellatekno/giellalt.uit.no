@@ -189,8 +189,12 @@ enough work).
   give valuable feedback about the grammar model, and the assumptions built in.
 
 ---
+layout: two-cols-header
+---
 
 ## Use Model To Process (Analyse) Text
+
+::left::
 
 * The most important use of a morphological analyser is to analyse text.
   Together with disambiguation and syntactic analysis, this can be used to
@@ -199,6 +203,8 @@ enough work).
 
 => [Korp](http://gtweb.uit.no/korp/)
    (searchable corpus of analysed texts)
+
+::right::
 
 ![Korp](./images/Korp.png)
 
@@ -233,8 +239,8 @@ effort should be put into the desing of the keyboard such that it will work
 optimally for the language community. Actually building the installation
 packages is a matter of minutes.
 
-* [Skolt Sami desktop keyboard](/keyboards/kbdlangdocs/sms/doc/layout.html)
-* [Inari Sami mobile keyboard](images/android_writing.no.png)
+* [Skolt Sami desktop keyboard](https://giellalt.github.io/keyboard-sms/layout.html)
+* ![Inari Sami mobile keyboard](images/android_writing.no.png)
 
 ---
 
@@ -260,7 +266,7 @@ longpress:
   a: å   á à â ã ạ
 ```
 
-* [Skolt Sami desktop keyboard](https://gtsvn.uit.no/langtech/trunk/keyboards/sms/sms-macos.yaml)
+* [Skolt Sami desktop keyboard](https://github.com/giellalt/keyboard-sms/blob/main/sms.kbdgen/layouts/sms.yaml)
 
 (Demo: Skolt Sámi macOS keyboard)
 
@@ -319,7 +325,7 @@ To handle wrongly split compounds, we convert word boundaries in compounds into
 spaces, and try to analyse the result. If we get an analysis, it is given as an
 error candidate, subject to further disambiguation and error detection rules.
 
-(Demo: [grammar checker](http://gtweb.uit.no/gc/))
+(Demo: [grammar checker](http://divvun.uit.no/))
 
 ---
 
@@ -375,6 +381,10 @@ error candidate, subject to further disambiguation and error detection rules.
     - as long as there are speakers, there are language workers
     - reuse is essential - one can not afford to do the same job multiple times
 
+---
+layout: image
+image: ./images/gtlangs_circumpolar_names.png
+backgroundSize: 30em 50%
 ---
 
 ## Language coverage
