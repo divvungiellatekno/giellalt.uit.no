@@ -226,7 +226,7 @@ The listed tools are all supported by the Giella infrastructure.
 ---
 layout: image-right
 image: ./images/android_writing.no.png
-backgroundSize: 50% 50%
+backgroundSize: contain
 ---
 
 ## Keyboards
