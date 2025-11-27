@@ -9,5 +9,5 @@ given by Divvun or Giellatekno. The list is not complete.
 * [Guest lecture presentation at HU 2017](MLLanguageTechnology.md) - [as slideshow](MLLanguageTechnology-slidev/)
 * [Greenland 2017 - Infra overview and training](Greenland2017.md) - [as slideshow](Greenland2017-slidev/)
 * [Kurs i ny infra](../infra/infraremake/KursINyInfra.html)
-* [New infra BAULT presentation](../infra/infraremake/NewInfraBAULTPresentation.md) - [as slideshow](../infra/infraremake/NewInfraBAULTPresentation-slidev/)
+* [New infra BAULT presentation, 2014](../infra/infraremake/NewInfraBAULTPresentation.md) - [as slideshow](../infra/infraremake/NewInfraBAULTPresentation-slidev/)
 * [Edmonton infrastructure presentation](../infra/infraremake/EdmontonInfrastructurePresentation.md) - [as slideshow](../infra/infraremake/EdmontonInfrastructurePresentation-slidev/)
