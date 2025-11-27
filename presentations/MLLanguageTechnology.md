@@ -1,6 +1,21 @@
+---
+theme: seriph
+background: https://unsplash.com/photos/clear-blue-running-water-at-daytime-OR_3rbIv5yI
+class: text-center
+highlighter: shiki
+lineNumbers: false
+info: |
+  Language technology for low-resource languages - Guest lecture at HU 2017
+drawings:
+  persist: false
+title: Language technology for low-resource languages
+---
+
 # Language technology for low-resource languages
 
 Jack Rueter and Sjur Moshagen
+
+---
 
 # Rule-based language technology
 
@@ -21,6 +36,8 @@ Actual implementations:
 Open source is important, to avoid being locked in or spend much more money to
 redo things.
 
+---
+
 ## Word-level technology
 
 * Morphophonology:
@@ -29,6 +46,8 @@ redo things.
 * Morphology: lexc
 
 Both formalisms should be easily recognisable by linguists.
+
+---
 
 ### Example — twolc
 
@@ -51,6 +70,8 @@ kaNpat
 kammat
 ```
 
+---
+
 ### Example — rewrite rules
 
 The same changes written using rewrite rules:
@@ -62,6 +83,8 @@ The same changes written using rewrite rules:
 ```
 
 Rewrite rules are ordered, twolc rules are not.
+
+---
 
 ### Example — lexc
 
@@ -89,10 +112,14 @@ LEXICON V-suff
      +Pres:    # ;
 ```
 
+---
+
 ### Summary
 
 End result: computer model of morphology and morphophonology. This model can
 analyse and generate word forms.
+
+---
 
 ## Sentence level technology
 
@@ -122,6 +149,8 @@ Constraint grammars require a lot of manual work, but will generally achieve
 substantially higher scores than similar tools using other techniques (given
 enough work).
 
+---
+
 # Tools for linguistic research
 
 * explicit grammars
@@ -130,6 +159,8 @@ enough work).
 * analysed text
 * try out different phonological models of a language
 * use model to process (analyse) text
+
+---
 
 ## Explicit Grammars
 
@@ -142,16 +173,22 @@ enough work).
     - phonological alternations in Inari Sami
     - North Sámi syntax
 
+---
+
 ## Analysers
 
 * morphological analysers can themselves be used as a tool for resarch (see
   "Analysing text", next)
 * a full-size lexicon can be used as source material for lexical research
 
+---
+
 ## Generators
 
 * morphological generators will ruthlessly display all overgenerations, and thus
   give valuable feedback about the grammar model, and the assumptions built in.
+
+---
 
 ## Use Model To Process (Analyse) Text
 
@@ -163,7 +200,9 @@ enough work).
 => [Korp](http://gtweb.uit.no/korp/)
    (searchable corpus of analysed texts)
 
-[images/Korp.png]
+![Korp](./images/Korp.png)
+
+---
 
 # Tools for speakers of minority languages
 
@@ -177,6 +216,8 @@ The listed tools are all supported by the Giella infrastructure.
 * Machine translation
 * iCALL
 * text-to-speech
+
+---
 
 ## Keyboards
 * Desktop (Windows, macOS, Linux/X11)
@@ -194,6 +235,8 @@ packages is a matter of minutes.
 
 * [Skolt Sami desktop keyboard](/keyboards/kbdlangdocs/sms/doc/layout.html)
 * [Inari Sami mobile keyboard](images/android_writing.no.png)
+
+---
 
 ### Layout definition
 
@@ -221,6 +264,8 @@ longpress:
 
 (Demo: Skolt Sámi macOS keyboard)
 
+---
+
 ## Spell Checkers
 
 * The next tool to develop is typically a spell checker.
@@ -238,11 +283,15 @@ longpress:
 
 (Demo: gaelic)
 
+---
+
 ## Morphologically Aware Hyphenators
 
 * especially important for compounding languages
 * built just like spellers using the lexical fst, but such that word boundaries
   + hyphenation rules converts input strings to the hyphenated counterparts
+
+---
 
 ## Morphologically Aware Dictionaries
 
@@ -253,6 +302,8 @@ longpress:
 * this is very important for languages with complex morphophonology or a lot of
   prefixation, but is generally helpful for all languages with a decent amount
   of morphology
+
+---
 
 ## Grammar Checkers
 
@@ -270,6 +321,8 @@ error candidate, subject to further disambiguation and error detection rules.
 
 (Demo: [grammar checker](http://gtweb.uit.no/gc/))
 
+---
+
 ## Machine translation
 
 * morphological analysis -> disambiguation -> transfer dictionary -> lexical
@@ -286,11 +339,15 @@ error candidate, subject to further disambiguation and error detection rules.
 
 (Demo using Ávvir)
 
+---
+
 ## Icall
 
 * language technology is used in several places to
     - analyse student input
     - analyse text to generate new excercises
+
+---
 
 ## Text-To-Speech
 
@@ -301,6 +358,8 @@ error candidate, subject to further disambiguation and error detection rules.
     - synthesis probably using the Festival system
 
 (Demo using Ávvir)
+
+---
 
 # Conclusions
 
@@ -316,9 +375,13 @@ error candidate, subject to further disambiguation and error detection rules.
     - as long as there are speakers, there are language workers
     - reuse is essential - one can not afford to do the same job multiple times
 
+---
+
 ## Language coverage
 
-[images/gtlangs_circumpolar_names.png]
+![Language coverage](./images/gtlangs_circumpolar_names.png)
+
+---
 
 # Hands-on on Thursday
 
