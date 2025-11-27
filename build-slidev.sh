@@ -267,15 +267,17 @@ build_slidev() {
         
         # Create 404.html for SPA routing with explicit redirect
         if [ -f "dist/index.html" ]; then
-            cat > dist/404.html << 'EOF'
+            cat > dist/404.html << EOF
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-        // Redirect to base presentation for SPA routing
-        window.location.replace('./index.html');
+        // Redirect to base presentation URL for SPA routing
+        // Extract base path and redirect to root of presentation
+        var basePath = '${base_path}';
+        window.location.replace(basePath);
     </script>
 </head>
 <body>
@@ -283,7 +285,7 @@ build_slidev() {
 </body>
 </html>
 EOF
-            log_success "Created 404.html with explicit redirect"
+            log_success "Created 404.html with redirect to base path"
         fi
         
         # Prepare for deployment if in CI environment
