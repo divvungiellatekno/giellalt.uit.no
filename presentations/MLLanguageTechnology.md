@@ -76,7 +76,7 @@ kammat
 
 The same changes written using rewrite rules:
 
-```text
+```bash
 [ N -> m || _ p ]
 .o.
 [ p -> m || m _ ];
@@ -224,8 +224,13 @@ The listed tools are all supported by the Giella infrastructure.
 * text-to-speech
 
 ---
+layout: two-cols-header
+---
 
 ## Keyboards
+
+::left::
+
 * Desktop (Windows, macOS, Linux/X11)
 * Mobile, soon with spellers
 
@@ -240,7 +245,10 @@ optimally for the language community. Actually building the installation
 packages is a matter of minutes.
 
 * [Skolt Sami desktop keyboard](https://giellalt.github.io/keyboard-sms/layout.html)
-* ![Inari Sami mobile keyboard](images/android_writing.no.png)
+
+::right::
+
+![Inari Sami mobile keyboard](images/android_writing.no.png)
 
 ---
 
@@ -382,14 +390,11 @@ error candidate, subject to further disambiguation and error detection rules.
     - reuse is essential - one can not afford to do the same job multiple times
 
 ---
-layout: image
 image: ./images/gtlangs_circumpolar_names.png
-backgroundSize: 30em 50%
+backgroundSize: 30em 70%
 ---
 
 ## Language coverage
-
-![Language coverage](./images/gtlangs_circumpolar_names.png)
 
 ---
 
