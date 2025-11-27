@@ -224,12 +224,12 @@ The listed tools are all supported by the Giella infrastructure.
 * text-to-speech
 
 ---
-layout: two-cols-header
+layout: image-right
+image: ./images/android_writing.no.png
+backgroundSize: 30em 50%
 ---
 
 ## Keyboards
-
-::left::
 
 * Desktop (Windows, macOS, Linux/X11)
 * Mobile, soon with spellers
@@ -245,10 +245,6 @@ optimally for the language community. Actually building the installation
 packages is a matter of minutes.
 
 * [Skolt Sami desktop keyboard](https://giellalt.github.io/keyboard-sms/layout.html)
-
-::right::
-
-![Inari Sami mobile keyboard](images/android_writing.no.png)
 
 ---
 
