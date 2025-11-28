@@ -78,7 +78,7 @@ The same changes written using rewrite rules:
 
 <div v-pre>
 
-```
+```text
 [ N -> m || _ p ]
 .o.
 [ p -> m || m _ ];
