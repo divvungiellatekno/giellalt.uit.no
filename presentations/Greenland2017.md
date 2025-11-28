@@ -64,7 +64,6 @@ layout: two-cols-header
 
 ::left::
 
-* analysers & generators
 * [Korp](http://gtweb.uit.no/korp/)
     - infra component: Korpus processing pipeline (converson & analysis)
 * dictionaries:
@@ -82,6 +81,7 @@ layout: two-cols-header
 
 ::right::
 
+* analysers & generators
 * [MT](http://jorgal.uit.no/index.sme.html?dir=sme-nob#translation)
 * keyboards:
     - [mobile phone keyboards](http://divvun.no/keyboards/mobileindex.html)
@@ -114,10 +114,10 @@ layout: two-cols-header
     - with a new language, you get whatever all the other languages have
     - with a new tool, all languages get a basic version of the tool
 * predictable - same thing is called the same in different languages
-* understandable - names should be understandable as is
 
 ::right::
 
+* understandable - names should be understandable as is
 * modular
 * technology neutral (but rule-based by default - the only thing that works with
   the languages we work with)
