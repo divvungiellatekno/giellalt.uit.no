@@ -28,10 +28,14 @@ Basic organisation: presentation of topic, followed by excercises. Roughly one
 topic + excercise before lunch and one topic after.
 
 ---
+layout: two-cols-header
+---
 
 ## Schedule
 
 Topics (with a roughly schedule with time left at the end - to be adjusted as needed):
+
+::left::
 
 * Day 1:
     - presentation of all tools
@@ -42,6 +46,9 @@ Topics (with a roughly schedule with time left at the end - to be adjusted as ne
     - in-source documentation
     - tag conventions in the Giella infrastructure
     - morpheme boundaries
+
+::right::
+
 * Day 3:
     - testing
     - debugging
@@ -50,8 +57,12 @@ Topics (with a roughly schedule with time left at the end - to be adjusted as ne
     - refactoring the code
 
 ---
+layout: two-cols-header
+---
 
 #  Presentation Of All Tools
+
+::left::
 
 * analysers & generators
 * [Korp](http://gtweb.uit.no/korp/)
@@ -68,6 +79,9 @@ Topics (with a roughly schedule with time left at the end - to be adjusted as ne
    [here](http://divvun.no/korrektur/speller-demo.html)
     - hyphenators
     - [grammar checker](http://gtweb.uit.no/gc/)
+
+::right::
+
 * [MT](http://jorgal.uit.no/index.sme.html?dir=sme-nob#translation)
 * keyboards:
     - [mobile phone keyboards](http://divvun.no/keyboards/mobileindex.html)
@@ -85,8 +99,12 @@ Topics (with a roughly schedule with time left at the end - to be adjusted as ne
 #  Introduction To The Infrastructure
 
 ---
+layout: two-cols-header
+---
 
 ##  Overall goals
+
+::left::
 
 * language independent, while still adaptable to the needs of each language
 * separation of concerns - build structure vs linguistic work
@@ -97,6 +115,9 @@ Topics (with a roughly schedule with time left at the end - to be adjusted as ne
     - with a new tool, all languages get a basic version of the tool
 * predictable - same thing is called the same in different languages
 * understandable - names should be understandable as is
+
+::right::
+
 * modular
 * technology neutral (but rule-based by default - the only thing that works with
   the languages we work with)
@@ -110,13 +131,13 @@ Topics (with a roughly schedule with time left at the end - to be adjusted as ne
 
 ##  Means for achieving the goals
 
-* [shared directory structure](../infra/infraremake/NewinfraCatalogues.html)
+* [shared directory structure](https://giellalt.github.io/infra/infraremake/NewinfraCatalogues.html)
 
 ---
 
 #  Unix Crash Course
 
-See [Unix for Linguists](/tools/UnixForLinguists.html)
+See [Unix for Linguists](https://giellalt.github.io/tools/UnixForLinguists.html)
 
 ---
 
@@ -141,7 +162,7 @@ Optional:
 * Python
 * Subversion
 * a number of other tools
-  [listed on a separate page](../infra/GettingStartedOnTheMac.html)
+  [listed on a separate page](https://giellalt.github.io/infra/GettingStartedOnTheMac.html)
 
 ---
 
@@ -160,7 +181,7 @@ individual pages.
 
 #  In-Source Documentation
 
-See [a separate document](../infra/infraremake/In-sourceDocumentation.html).
+See [a separate document](https://giellalt.github.io/infra/infraremake/In-sourceDocumentation.html).
 
 Tips for in-surce documentation:
 * open two terminal widows
@@ -180,14 +201,13 @@ it in lexc.
 
 #  Tag conventions in the Giella infrastructure
 
-* [Language Independent Tags In The Giella
-  Infra|../ling/LanguageIndependentTagsInTheGiellaInfra.html]
+* [Language Independent Tags In The Giella Infra](https://giellalt.github.io/ling/LanguageIndependentTagsInTheGiellaInfra.html)
 
 ---
 
 #  Morpheme boundaries
 
-* [Morfeme border markup](../ling/morfem-borders.html)
+* [Morfeme border markup](https://giellalt.github.io/ling/morfem-borders.html)
 
 ---
 
@@ -202,13 +222,13 @@ Guidelines for clean code:
 
 #  Testing
 
-See [this document](../infra/infraremake/AddingMorphologicalTestData.html)
+See [this document](https://giellalt.github.io/infra/infraremake/AddingMorphologicalTestData.html)
 
 ---
 
 #  Debugging
 
-* [Issues in KAL](/lang//kal/IssuesInGreenlandic.html)
+* [Issues in KAL](https://giellalt.github.io/lang-kal/IssuesInGreenlandic.html)
 
 ---
 
