@@ -78,7 +78,7 @@ The same changes written using rewrite rules:
 
 <div v-pre>
 
-```text
+```bash
 ----
 [ N -> m || _ p ]
 .o.
