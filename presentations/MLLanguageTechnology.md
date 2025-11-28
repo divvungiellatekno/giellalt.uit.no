@@ -77,9 +77,10 @@ kammat
 The same changes written using rewrite rules:
 
 ```text
-&#91; N -> m || _ p &#93;
+
+[ N -> m || _ p ]
 .o.
-&#91; p -> m || m _ &#93;;
+[ p -> m || m _ ];
 ```
 
 Rewrite rules are ordered, twolc rules are not.
