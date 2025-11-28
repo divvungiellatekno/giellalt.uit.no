@@ -76,15 +76,11 @@ kammat
 
 The same changes written using rewrite rules:
 
-<div v-pre>
-
 ```text
-[ N -> m || _ p ]
+&#91; N -> m || _ p &#93;
 .o.
-[ p -> m || m _ ];
+&#91; p -> m || m _ &#93;;
 ```
-
-</div>
 
 Rewrite rules are ordered, twolc rules are not.
 
