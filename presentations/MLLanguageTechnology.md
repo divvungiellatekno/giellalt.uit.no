@@ -78,12 +78,11 @@ The same changes written using rewrite rules:
 
 <div v-pre>
 
-```sh
-----
+```text
+# Rewrite rules syntax:
 [ N -> m || _ p ]
 .o.
 [ p -> m || m _ ];
-----
 ```
 
 </div>
