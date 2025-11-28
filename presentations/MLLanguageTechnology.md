@@ -76,10 +76,9 @@ kammat
 
 The same changes written using rewrite rules:
 
-<div v-pre>
+<div v-pre markdown="1">
 
 ```sh
-
 # Rewrite rules syntax:
 [ N -> m || _ p ]
 .o.
