@@ -389,7 +389,7 @@ rules.
 
 The infrastructure supports extraction of in-source documentation written as
 comments in a specific format. The exact format is specified on a
-[separate page](In-sourceDocumentation.html), and will in the end produce html
+[separate page](https://giellalt.github.io/infra/infraremake/In-sourceDocumentation.html), and will in the end produce html
 pages.
 
 The basic idea is that documentation that is part of the actual source code is
@@ -397,7 +397,7 @@ more likely kept up-to-date than external documentation.
 
 The format supports the use of a couple of variables to extract such things as
 lexicon names, a line of code, etc. The extracted documentation must follow the
-[jspwiki syntax](http://www.jspwiki.org/wiki/TextFormattingRules).
+[jspwiki syntax](https://jspwiki-wiki.apache.org/Wiki.jsp?page=TextFormattingRules).
 
 ---
 
@@ -429,14 +429,18 @@ This will produce the jspwiki code:
  LEXICON MUORRA  Standard even stems here. 2syll stem with cg (note Q1)
 ```
 
-which can be seen rendered online as html here:
-[/lang/smj/nouns-affixes.html].
+which can be [seen rendered online as html here](https://giellalt.github.io/lang-smj/src-fst-morphology-affixes-nouns.lexc.html).
 
+---
+layout: two-cols-header
 ---
 
 # The Targets, Tools And Packages Produced By The Infrastructure
 
 The list is constantly growing and contains roughly the following at present:
+
+::left::
+
 * morphological analysers for different purposes
 * morphological generators for different purposes
 * syllabification transducers
@@ -444,6 +448,9 @@ The list is constantly growing and contains roughly the following at present:
 * number-to-text and vv transducers
 * tagset converters
 * disambiguators
+
+::right::
+
 * syntactic parsers
 * dependency parsers
 * spell checkers:
@@ -480,8 +487,8 @@ On a slightly longer scale there are plans for:
 * it is scalable and extendable
 * it provides a short distance from development to tools for the language community
 
-More info at [https://giellalt.uit.no/infra/GettingStarted.html] \\
-and [https://giellalt.uit.no/infra/infraremake/index.html]
+More info at <https://giellalt.github.io/infra/GettingStarted.html>
+and <https://giellalt.uit.no/infra/infraremake/index.html>
 
 ---
 
