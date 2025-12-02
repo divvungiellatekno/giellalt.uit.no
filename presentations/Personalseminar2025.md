@@ -55,11 +55,6 @@
 
 ## Linda Wiechetek
 
-- Starta i Giellatekno i 2005
-- Fastansatt i Divvun siden 2019
-- Phd fra 2017 "When grammar can't e trusted - Valency and semantic categories in North Sámi syntactic analysis and error detection"
-- Jobber mest med grammatikk, feilretting og syntaks for nord-, sør-, lule- og enaresamisk, litt irsk og litt grønnlandsk
-- Liker ellers å klatre, gå lange fjellturer og å male fjell
 
 ---
 
