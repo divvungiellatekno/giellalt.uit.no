@@ -47,7 +47,7 @@
 
 ---
 
-![Korpus](images/korp.png)
+![Korpus](images/ruonagalla.png)
 
 ---
 
