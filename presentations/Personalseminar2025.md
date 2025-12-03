@@ -10,11 +10,7 @@ drawings:
   persist: false
 title: Divvun-gruppa ved ISK
 defaults:
-  layout: default
   background: ./images/uit-pp-bakgrunn.png
-themeConfig:
-  default:
-    background: ./images/uit-pp-bakgrunn.png
 ---
 
 # Divvun-gruppa ved ISK
