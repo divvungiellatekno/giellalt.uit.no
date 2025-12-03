@@ -60,6 +60,13 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Flammie Pirinen
 
+* vokst opp i 🇫🇮Finland
+* har studert i Universitet i ❄️Joensuu (informatik BSc, Finsk lingvistik),
+  Universitet i 🌧️Helsingfors (språkteknologi Msc og Phd)
+* Postdoc i 🇮🇪DCU (Dublin) og 🇩🇪UHH (Hamburg)
+* jobbet i divvun 🇳🇴 siden 2020 mest med programmering og sånt
+* norsk er ca 6.–7. språk ä har lärt meg
+
 ---
 
 ## Helena Omma
@@ -92,9 +99,9 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Maja Lisa Kappfjell
 
-- Gaebpien Maajja Læjsa, Voengel Njaarke sïjteste // Maja Lisa Kappfjell - fra Maajehjaevrie/Majavatn i Sør-Helgeland. 
+- Gaebpien Maajja Læjsa, Voengel Njaarke sïjteste // Maja Lisa Kappfjell - fra Maajehjaevrie/Majavatn i Sør-Helgeland.
 - Mastergrad i sørsamisk språkvitenskap fra UiT, UiT Norges Arktiske Universitet, fra 2010: «Åarjelsaemien attribuhte-predikatijve systeeme».
-- Overingeniør ved Divvun/UiT 
+- Overingeniør ved Divvun/UiT
 - Har vært med i utviklingen av grammatiske språkmodeller for sørsamisk siden 2009.
 
 ---
