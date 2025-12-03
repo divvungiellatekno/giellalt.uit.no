@@ -1,3 +1,16 @@
+---
+theme: seriph
+background: ./images/uit-pp-bakgrunn-front-nn.png
+class: text-center
+highlighter: shiki
+lineNumbers: false
+info: |
+  Divvun-gruppa ved ISK - Personalseminar 2025
+drawings:
+  persist: false
+title: Divvun-gruppa ved ISK
+---
+
 # Divvun-gruppa ved ISK
 
 ---
