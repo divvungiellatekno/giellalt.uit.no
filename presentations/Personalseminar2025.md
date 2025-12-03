@@ -55,7 +55,11 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Børre Gaup
 
+<br/>
+
 ### jobb
+
+<br/>
 
 - jobbet siden november 2004
 
@@ -96,6 +100,8 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Helena Omma
 
+<br/>
+
 - nordsamisk lingvist
 - grammatikkontroll
 - byrja ved UiT og Divvun-gruppa i august
@@ -103,6 +109,8 @@ Actio av verbet `divvut` == `å reparera`
 ---
 
 ## Inga Mikkelsen
+
+<br/>
 
 - lulesamisk lingvist
 - grammatikkontroll
@@ -158,6 +166,8 @@ Actio av verbet `divvut` == `å reparera`
 ---
 
 ## Oppsummering
+
+<br/>
 
 - lita men allsidig gruppe
 - dekkjer mange språk, både samiske og andre
