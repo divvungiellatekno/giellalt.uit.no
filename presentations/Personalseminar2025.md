@@ -110,10 +110,6 @@ Actio av verbet `divvut` == `å reparera`
 
 ---
 
-![Korp.png](images/Korp.png)
-
----
-
 ## Oppsummering
 
 - lita men allsidig gruppe
