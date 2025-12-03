@@ -9,6 +9,8 @@ info: |
 drawings:
   persist: false
 title: Divvun-gruppa ved ISK
+defaults:
+  background: ./images/uit-pp-bakgrunn.png
 ---
 
 # Divvun-gruppa ved ISK
