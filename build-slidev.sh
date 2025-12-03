@@ -121,7 +121,7 @@ process_images() {
     mkdir -p "$slidev_dir/images"
     
     # Find all image references in the markdown file
-    grep -E '!\[.*\]\([^)]+\)|image:\s*[^[:space:]]+' "$md_file" | while IFS= read -r line; do
+    grep -E '!\[.*\]\([^)]+\)|image:\s*[^[:space:]]+|background:\s*[^[:space:]]+' "$md_file" | while IFS= read -r line; do
         # Extract image path
         img_path=""
         if echo "$line" | grep -q '!\[.*\]'; then
@@ -130,6 +130,9 @@ process_images() {
         elif echo "$line" | grep -q 'image:'; then
             # YAML image property: image: path
             img_path=$(echo "$line" | sed -n 's/.*image:[[:space:]]*\([^[:space:]]*\).*/\1/p')
+        elif echo "$line" | grep -q 'background:'; then
+            # YAML background property: background: path
+            img_path=$(echo "$line" | sed -n 's/.*background:[[:space:]]*\([^[:space:]]*\).*/\1/p')
         fi
         
         if [ -n "$img_path" ]; then
