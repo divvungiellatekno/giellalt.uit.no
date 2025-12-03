@@ -17,8 +17,7 @@
 
 ## Divvun
 
-- Actio av `divvut` (verb)
-- `divvut` betyr å reparera
+Actio av verbet `divvut` == `å reparera`
 
 ---
 
