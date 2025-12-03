@@ -96,9 +96,18 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Helena Omma
 
+- nordsamisk lingvist
+- grammatikkontroll
+- byrja ved UiT og Divvun-gruppa i august
+
 ---
 
 ## Inga Mikkelsen
+
+- lulesamisk lingvist
+- grammatikkontroll
+- talesyntese
+- for tida frikjøpt frå gruppa for å jobba med doktorgraden sin
 
 ---
 
