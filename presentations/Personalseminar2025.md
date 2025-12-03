@@ -166,3 +166,9 @@ Actio av verbet `divvut` == `å reparera`
 - har mykje samarbeid med andre institusjonar og folk, i Noreg og utanfor
 - fokus på verktøy til det samiske samfunnet
 - men gjer i praksis mykje forsking òg, for å kunna levera slike verktøy
+
+---
+
+## Alle språk i repoa våre
+
+![Kart over alle språk](images/Kart-alle-språk.png)
