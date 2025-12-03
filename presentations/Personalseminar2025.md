@@ -10,8 +10,15 @@
 - Inga Mikkelsen
 - Katri Hiovain-Asikainen
 - Linda Wiechetek
-- Maja Kappfjell
+- Maja Lisa Kappfjell
 - Sjur Nørstebø Moshagen
+
+---
+
+## Divvun
+
+- Actio av `divvut` (verb)
+- `divvut` betyr å reparera
 
 ---
 
@@ -57,6 +64,8 @@
 - jobbet med samisk taleteknologi ca. 10 år i Helsinki og Tromsø, i Divvun 5 år
 - Er ansvarlig for taleteknologi i Divvun og vi har produsert talesyntese for nord-, lule og sørsamisk og jobber nå med enaresamisk og karelsk, også arbeid med talegjenkjenning
 
+---
+
 ## Linda Wiechetek
 
 ![gramdivvun-nettside.png](images/gramdivvun-nettside.png)
@@ -64,7 +73,7 @@
 
 ---
 
-## Maja Kappfjell
+## Maja Lisa Kappfjell
 
 ---
 
@@ -76,6 +85,10 @@
 - arbeidd for to ulike firma som har levert norske korrekturverktøy til MS
 - er ein av to hovudarkitektar bak noverande infrastruktur for samisk språkteknologi
 - har leidd Divvun-gruppa sidan starten for 21 år sidan
+
+---
+
+![Korp.png](images/Korp.png)
 
 ---
 
