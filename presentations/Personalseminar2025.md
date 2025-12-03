@@ -15,9 +15,13 @@ defaults:
 
 # Divvun-gruppa ved ISK
 
+![Divvun-logo](images/Divvun-logo.png)
+
 ---
 
 ## Heile gruppa
+
+<br/>
 
 - Børre Gaup
 - Flammie Pirinen
@@ -32,11 +36,15 @@ defaults:
 
 ## Divvun
 
+<br/>
+
 Actio av verbet `divvut` == `å reparera`
 
 ---
 
 ## Kva vi gjer
+
+<br/>
 
 - språteknologi for samisk
 - basert på grammatikk
@@ -75,6 +83,8 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Flammie Pirinen
 
+<br/>
+
 * vokst opp i 🇫🇮Finland
 * har studert i Universitet i ❄️Joensuu (informatik BSc, Finsk lingvistik),
   Universitet i 🌧️Helsingfors (språkteknologi Msc og Phd)
@@ -94,11 +104,13 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Katri Hiovain-Asikainen
 
+<br/>
+
 - fra Finland og Estland
 - studert samisk i Helsinki Universitet
 - PhD i fonetikk og taleteknologi, avhandling om nordsamisk fonetikk
 - jobbet med samisk taleteknologi ca. 10 år i Helsinki og Tromsø, i Divvun 5 år
-- Er ansvarlig for taleteknologi i Divvun og vi har produsert talesyntese for nord-, lule og sørsamisk og jobber nå med enaresamisk og karelsk, også arbeid med talegjenkjenning
+- Er ansvarlig for taleteknologi i Divvun og vi har produsert talesyntese for nord-, lule- og sørsamisk og jobber nå med enaresamisk og karelsk, også arbeid med talegjenkjenning
 
 ---
 
@@ -114,6 +126,8 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Maja Lisa Kappfjell
 
+<br/>
+
 - Gaebpien Maajja Læjsa, Voengel Njaarke sïjteste // Maja Lisa Kappfjell - fra Maajehjaevrie/Majavatn i Sør-Helgeland.
 - Mastergrad i sørsamisk språkvitenskap fra UiT, UiT Norges Arktiske Universitet, fra 2010: «Åarjelsaemien attribuhte-predikatijve systeeme».
 - Overingeniør ved Divvun/UiT
@@ -122,6 +136,8 @@ Actio av verbet `divvut` == `å reparera`
 ---
 
 ## Sjur Nørstebø Moshagen
+
+<br/>
 
 - nordisk, lingvistikk og programmering som grunnutdanning
 - arbeidd med datalingvistikk og språkteknologi i over 30 år
