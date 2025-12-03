@@ -89,10 +89,10 @@
 
 ## Maja Lisa Kappfjell
 
- Jeg er Gaebpien Maajja Læjsa/ Maja Lisa Kappfjell fra Maajehjaevrie/Majavatn, Voengel Njaarke sïjteste 
-- Sørsamisk lingvist v/ Divvun siden 2009
-- Sørsamisk fra Nord Universitet,  Informatikk fra NTNU Trondheim,  sørsamisk mellomfag, PPU og masteravhandling i sørsamisk fra 2010 v/ UiT
-- Har vært med å utvikle stavekontroll, 
+- Gaebpien Maajja Læjsa - Maja Lisa Kappfjell - fra Maajehjaevrie/Majavatn, Voengel Njaarke sïjteste 
+- Mastergrad i sørsamisk språkvitenskap fra UiT, Tromsø arktiske universitet, fra 2010: «Åarjelsaemien attributhte-predikatijve systeeme».
+- Overfingeniør ved Divvun/UiT 
+- Har vært med i utviklingen av grammatiske språkmodeller for sørsamisk siden 2009.
 
 ---
 
