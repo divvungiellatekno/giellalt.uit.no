@@ -51,7 +51,11 @@
 
 ## Katri Hiovain-Asikainen
 
----
+- fra Finland og Estland
+- studert samisk i Helsinki Universitet
+- PhD i fonetikk og taleteknologi, avhandling om nordsamisk fonetikk
+- jobbet med samisk taleteknologi ca. 10 år i Helsinki og Tromsø, i Divvun 5 år
+- Er ansvarlig for taleteknologi i Divvun og vi har produsert talesyntese for nord-, lule og sørsamisk og jobber nå med enaresamisk og karelsk, også arbeid med talegjenkjenning
 
 ## Linda Wiechetek
 
