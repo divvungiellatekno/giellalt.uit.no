@@ -35,12 +35,23 @@
 
 ### jobb
 
-- presentasjon av meg
+- jobbet siden november 2004
 
-- bilde av tester i terminal
-- bilde av sátni.org
-- bilde av divvun.uit.no
-- bilde av Korp
+---
+
+[Testing](images/make-check.png)
+
+---
+
+[Ordbok](images/satni.png)
+
+---
+
+[Korpus](images/korp.png)
+
+---
+
+[Grammatikkontroll](images/gramdivvun-nettside.png)
 
 ---
 
