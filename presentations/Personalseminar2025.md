@@ -69,6 +69,9 @@
 ## Linda Wiechetek
 
 ![gramdivvun-nettside.png](images/gramdivvun-nettside.png)
+
+---
+
 ![gramdivvun-word.png](images/gramdivvun-word.png)
 
 ---
