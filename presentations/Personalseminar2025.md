@@ -92,7 +92,8 @@ Actio av verbet `divvut` == `å reparera`
 
 ## Maja Lisa Kappfjell
 
-- Gaebpien Maajja Læjsa, Voengel Njaarke sïjteste // Maja Lisa Kappfjell - fra Maajehjaevrie/Majavatn i Sør-Helgeland.  - Mastergrad i sørsamisk språkvitenskap fra UiT, Tromsø arktiske universitet, fra 2010: «Åarjelsaemien attribuhte-predikatijve systeeme».
+- Gaebpien Maajja Læjsa, Voengel Njaarke sïjteste // Maja Lisa Kappfjell - fra Maajehjaevrie/Majavatn i Sør-Helgeland. 
+- Mastergrad i sørsamisk språkvitenskap fra UiT, UiT Norges Arktiske Universitet, fra 2010: «Åarjelsaemien attribuhte-predikatijve systeeme».
 - Overingeniør ved Divvun/UiT 
 - Har vært med i utviklingen av grammatiske språkmodeller for sørsamisk siden 2009.
 
