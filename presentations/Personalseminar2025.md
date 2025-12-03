@@ -39,6 +39,10 @@
 
 ---
 
+![Hjemmekontor](images/borrehus.png)
+
+---
+
 ![Testing](images/make-check.png)
 
 ---
