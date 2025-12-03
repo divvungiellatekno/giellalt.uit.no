@@ -179,6 +179,6 @@ Actio av verbet `divvut` == `å reparera`
 
 ---
 
-## Alle språk i repoa våre
+## Alle språka i repoa våre
 
 ![Kart over alle språk](images/Kart-alle-språk.png)
