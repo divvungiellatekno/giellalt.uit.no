@@ -19,6 +19,16 @@ defaults:
 
 ---
 
+## Divvun
+
+<br/>
+
+Actio av verbet `divvut` == `å reparera`
+
+Samarbeid med Giellatekno heilt sidan starten.
+
+---
+
 ## Heile gruppa
 
 <br/>
@@ -34,14 +44,6 @@ defaults:
 
 ---
 
-## Divvun
-
-<br/>
-
-Actio av verbet `divvut` == `å reparera`
-
----
-
 ## Kva vi gjer
 
 <br/>
@@ -49,7 +51,7 @@ Actio av verbet `divvut` == `å reparera`
 - språteknologi for samisk
 - basert på grammatikk
 - for dei samiske språksamfunna
-- internasjonalt samarbeid med andre urfolk og minoritetsspråk
+- internasjonalt samarbeid med andre urfolk og språklege minoritetar
 
 ---
 
@@ -157,11 +159,49 @@ Actio av verbet `divvut` == `å reparera`
 <br/>
 
 - nordisk, lingvistikk og programmering som grunnutdanning
-- arbeidd med datalingvistikk og språkteknologi i over 30 år
+- har arbeidd med datalingvistikk og språkteknologi i over 30 år
 - samisk språkteknologi nesten like lenge
-- arbeidd for to ulike firma som har levert norske korrekturverktøy til MS
+- har arbeidd for to ulike firma som har levert norske korrekturverktøy til MS
 - er ein av to hovudarkitektar bak noverande infrastruktur for samisk språkteknologi
 - har leidd Divvun-gruppa sidan starten for 21 år sidan
+
+---
+layout: two-cols-header
+---
+
+## Verktøya vi lagar
+
+<br/>
+
+::left::
+
+- mobiltastatur med stavekontroll
+- datamaskintastatur
+- [stavekontroll](https://divvun.uit.no)
+- [grammatikkontroll](https://divvun.uit.no)
+- [elektroniske ordbøker](https://satni.org)
+- maskinomsetjing
+- omsetjingsminne
+- [tekstkorpus](https://gtweb.uit.no/korp/)
+- [talesyntese](https://borealium.org/nn/category/text-to-speech/)
+- talegjenkjenning (eksperiment)
+
+::right::
+
+For desse systema:
+
+- Android
+- iOS
+- macOS
+- Windows
+- Linux
+- ChromeOS
+
+---
+
+## Alle språka i repoa våre
+
+![Kart over alle språk](images/Kart-alle-språk.png)
 
 ---
 
@@ -176,9 +216,3 @@ Actio av verbet `divvut` == `å reparera`
 - har mykje samarbeid med andre institusjonar og folk, i Noreg og utanfor
 - fokus på verktøy til det samiske samfunnet
 - men gjer i praksis mykje forsking òg, for å kunna levera slike verktøy
-
----
-
-## Alle språka i repoa våre
-
-![Kart over alle språk](images/Kart-alle-språk.png)
