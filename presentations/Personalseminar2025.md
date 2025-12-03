@@ -39,19 +39,19 @@
 
 ---
 
-[Testing](images/make-check.png)
+![Testing](images/make-check.png)
 
 ---
 
-[Ordbok](images/satni.png)
+![Ordbok](images/satni.png)
 
 ---
 
-[Korpus](images/korp.png)
+![Korpus](images/korp.png)
 
 ---
 
-[Grammatikkontroll](images/gramdivvun-nettside.png)
+![Grammatikkontroll](images/gramdivvun-nettside.png)
 
 ---
 
