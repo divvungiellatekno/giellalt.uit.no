@@ -59,33 +59,15 @@ Samarbeid med Giellatekno heilt sidan starten.
 
 <br/>
 
-### jobb
-
-<br/>
-
-- jobbet siden november 2004
-
----
-
-![Hjemmekontor](images/borrehus.png)
+- har vært med siden prosjektet ble startet opp i 2004
+- [tekstkorpus](https://gtweb.uit.no/korp/)
+- Giellagáldus termwiki
+- [elektroniske ordbøker m/talesyntese](https://sátni.org/grønnkål)
+- [grammatikkontroll m/integrert stavekontroll + talesyntese](https://divvun.uit.no)
 
 ---
 
-![Testing](images/make-check.png)
-
----
-
-![Ordbok](images/satni.png)
-
----
-
-![Korpus](images/ruonagalla.png)
-
----
-
-![Grammatikkontroll](images/gramdivvun-nettside.png)
-
----
+::image[images/make-check.png]{class="mx-auto"}
 
 ## Flammie Pirinen
 
@@ -178,7 +160,7 @@ layout: two-cols-header
 - mobiltastatur med stavekontroll
 - datamaskintastatur
 - [stavekontroll](https://divvun.uit.no)
-- [grammatikkontroll](https://divvun.uit.no)
+- [grammatikkontroll m/integrert stavekontroll](https://divvun.uit.no)
 - [elektroniske ordbøker](https://satni.org)
 - maskinomsetjing
 - omsetjingsminne
