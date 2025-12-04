@@ -137,7 +137,7 @@ Flytta til UiT og vart ein del av ISK 1.7.2011.
 
 <br/>
 
-- Gaebpien Maajja Læjsa, Voengel Njaarke sïjteste // Maja Lisa Kappfjell - fra Maajehjaevrie/Majavatn i Sør-Helgeland.
+- Gaebpien Maajja Læjsa, Maajehjaevrien bealeste jïh Voengel Njaarke sïjteste // Maja Lisa Kappfjell - fra Maajehjaevrie/Majavatn og Voengel Njaarke sïjte i Sør-Helgeland. 
 - Mastergrad i sørsamisk språkvitenskap fra UiT, UiT Norges Arktiske Universitet, fra 2010: «Åarjelsaemien attribuhte-predikatijve systeeme».
 - Overingeniør ved Divvun/UiT
 - Har vært med i utviklingen av grammatiske språkmodeller for sørsamisk siden 2009.
