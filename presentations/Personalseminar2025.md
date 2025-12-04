@@ -214,5 +214,5 @@ For desse systema:
 - gjer veldig mykje forskjellig
 - eksternt finansiert av KDD
 - har mykje samarbeid med andre institusjonar og folk, i Noreg og utanfor
-- fokus på verktøy til det samiske samfunnet
+- fokus på *verktøy* til det samiske samfunnet
 - men gjer i praksis mykje forsking òg, for å kunna levera slike verktøy
