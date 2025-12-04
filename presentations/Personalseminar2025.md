@@ -207,3 +207,9 @@ For desse systema:
 - har mykje samarbeid med andre institusjonar og folk, i Noreg og utanfor
 - fokus på *verktøy* til det samiske samfunnet
 - men gjer i praksis mykje forsking òg, for å kunna levera slike verktøy
+
+–––
+layout: end
+–––
+
+Giitu! Gijto! Gæjtoe! Takk!
