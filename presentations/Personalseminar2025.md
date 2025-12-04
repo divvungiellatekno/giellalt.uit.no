@@ -90,6 +90,8 @@ Flytta til UiT og vart ein del av ISK 1.7.2011.
 
 <br/>
 
+«Från Gällivare - ett området där nord- och lulesamiska möts. Bor i Lannavaara och har en familj som flyttar till Målselv kommune med renarna om sommaren. Har snart doktorgrad i samiskt språk, där hon har forskat på renskötarnas landskapsterminologi utifrån kognitiv och kulturell lingvistik, som teoretiskt ramverk. Är särskilt intresserad av hur språket speglar mänskligt tänkande. Andra intresseområden mht till samiska språk är dialektologi och hur dialektala framkommer i svårigheter med den samiska ortografin. Är även med i Giellagáldu - det samiska språknormeringsorganet.»
+
 - nordsamisk lingvist
 - grammatikkontroll
 - byrja ved UiT og Divvun-gruppa i august
