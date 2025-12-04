@@ -27,6 +27,10 @@ Actio av verbet `divvut` == `å reparera`
 
 Samarbeid med Giellatekno heilt sidan starten.
 
+Starta ved Sametinget hausten 2004.
+
+Flytta til UiT og vart ein del av ISK 1.7.2011.
+
 ---
 
 ## Heile gruppa
