@@ -173,6 +173,7 @@ layout: two-cols-header
 - [tekstkorpus](https://gtweb.uit.no/korp/)
 - [talesyntese](https://borealium.org/nn/category/text-to-speech/)
 - talegjenkjenning (eksperiment)
+- installerings- og oppdateringsprogram
 
 ::right::
 
