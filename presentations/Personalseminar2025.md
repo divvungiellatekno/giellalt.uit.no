@@ -71,7 +71,9 @@ Flytta til UiT og vart ein del av ISK 1.7.2011.
 
 ---
 
-::image[images/make-check.png]{class="mx-auto"}
+![make check](images/make-check.png)
+
+---
 
 ## Flammie Pirinen
 
