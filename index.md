@@ -44,6 +44,5 @@ Although this front page is in English, the other pages on the site may be in an
 
 - [The persons behind GiellaLT in Tromsø](admin/people.md)
 - [Meetings](admin/meetings.md)
-- [Bugzilla](https://giellatekno.uit.no/bugzilla)
 
 Remember that you may also use the search field to the left of the text.
