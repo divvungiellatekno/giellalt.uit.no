@@ -1,5 +1,5 @@
 Each language catalogues has the same internal structures, [described
-here](../infra/infraremake/NewinfraCatalogues.html). Languages with no
+here](https://giellalt.github.io/infra/infraremake/NewinfraCatalogues.html). Languages with no
 work done so far are marked with an asterisk (\*). There are
 [tutorials](common/Tutorials.html) explaining the grammar format.
 

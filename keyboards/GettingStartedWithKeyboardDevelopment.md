@@ -1,6 +1,6 @@
 Below is a short description of what you need to install to be able to work with
 the keyboard build system. We assume that you have already installed
-[the packages needed for general linguistic work](../infra/GettingStarted.html).
+[the packages needed for general linguistic work](https://giellalt.github.io/infra/GettingStarted.html).
 
 # Preparations
 

@@ -24,12 +24,12 @@ Corpus collection and maintenance
 Sentence alignment
 ==================
 
--   [Overview](../tools/tca2.html)
--   [Workflow](../tools/Bargovuohki.html)
+-   [Overview](https://giellalt.github.io/tools/tca2.html)
+-   [Workflow](https://giellalt.github.io/tools/Bargovuohki.html)
 -   [Improving PDF-files](../ling/corpus_improve_alignment.html)
--   [TCA2 parameters](../tools/TCA2_parameters.html)
+-   [TCA2 parameters](https://giellalt.github.io/tools/TCA2_parameters.html)
 -   [Graph. interface](../ling/corpus_analyze.html)
--   [Alternatives](../tools/other_aligners.html)
+-   [Alternatives](https://giellalt.github.io/tools/other_aligners.html)
 
 Meetings
 --------
