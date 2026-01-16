@@ -1,5 +1,4 @@
- Passwordless login by using ssh
- ===============================
+# Passwordless login by using ssh
  
 These instructions will work for Linux, and probably MacOS.
 
