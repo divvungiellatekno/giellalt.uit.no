@@ -7,6 +7,11 @@ newest year first. ToC to the left.
 
 ## Meetings on specific topics
 
+### Lexicography meetings
+
+- **2026:**
+  - [16.1. Strategimøte](dicts/260116.md)
+  
 ### Linguist meetings
 
 
