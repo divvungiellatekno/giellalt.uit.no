@@ -11,9 +11,10 @@ Service | Server
 ---|---
 [SVN Server](services/svn-server.html) | [gtsvn](servers/gtsvn.html)
 [sátni.org](services/satni.html)| ?? [satni](servers/satni.html)
-[giellatekno.uit.no](services/giellatekno-page.html) | ?? [divvun](servers/divvun.html)
-[dicts.uit.no](services/dicts-portal.html) | ?? [divvun](servers/divvun.html)
-[gielese.no](services/gielese.html) | ?? [divvun](servers/divvun.html)
+[Online grammarchecker](services/divvun-grammarcheker.html) | [divvun](servers/divvun.html)
+[giellatekno.uit.no](services/giellatekno-page.html) | [divvun](servers/divvun.html)
+[dicts.uit.no](services/dicts-portal.html) | [divvun](servers/divvun.html)
+[gielese.no](services/gielese.html) | ??
 [Neahttadigisanit](services/nds.html) | [gtdict](servers/gtdict.html)
 [Apertium](services/apertium.html) | [gtweb](servers/gtweb.html)
 [Korp](services/korp.html) | [gtweb](servers/gtweb.html)
@@ -22,6 +23,7 @@ Service | Server
 [Old Webdict](services/old-webdict.html) | [gtweb](servers/gtweb.html)
 [webpipelines](services/webpipelines.html) | [gtweb](servers/gtweb.html)
 [Metadict](services/metadict.html) | [gtweb](servers/gtweb.html)
+[OCR service](services/ocr.html) | [gtweb](servers/gtweb.html)
 [Kursa and Kuvsje](services/kursa-kuvsje.html) | [gtoahpa](servers/gtoahpa.html)
 [Oahpa portal](oahpa-portal.html) | [gtoahpa](servers/gtoahpa.html)
 [Oahpa programs](services/oahpa-programs.html) | [gtoahpa](servers/gtoahpa.html)

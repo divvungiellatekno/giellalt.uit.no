@@ -1,7 +1,15 @@
 # Apache Forrest
 
-This is the portal to all documents we have on Apache Forrest. Expect a lot of
-overlap, and potentially even documents that were out-dated when written.
+[Apache Forrest](https://forrest.apache.org/) is a retired, Java- and XML-based
+static site building framework, whose last release was in 2011. We use Forrest
+in some of our pages, notably the dicts.uit.no and giellatekno.uit.no sites.
+
+This is the portal to all documents we have on Apache Forrest. As Forrest is
+old software, these documents are also quite dated.
+
+We also have a Container image in our container registry with Forrest.
+It should be at gtlabcontainerregistry.azurecr.io/forrest.
+
 
 ## Documents from giellalt.github.io
 
