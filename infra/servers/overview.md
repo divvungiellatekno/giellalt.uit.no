@@ -64,7 +64,7 @@ All our servers use `systemd`. Service files are at `/etc/systemd/system/NAME.se
 
 ### TLS (SSL) certificates
 
-All servers only expose TLS-enabled web endpoints (`http://` works for the users, by sending `301 Permanent Redirect` to the same url).
+All servers only expose TLS-enabled web endpoints (`http://` works for the users, by sending `301 Permanent Redirect` to the `https://` address with the same url).
 
 Most servers and services use **LetsEncrypt** to handle automatically setup and
 update certificates, but for some servers, we use certificates that ITA sends us.
