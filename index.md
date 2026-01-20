@@ -38,7 +38,7 @@ Although this front page is in English, the other pages on the site may be in an
 
 ## Infrastructure
 
-- [Servers, users and access](infra/ServersAndUsers.md)
+- [Infrastructure portal](infra/index.html)
 
 ## Administration
 

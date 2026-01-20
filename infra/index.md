@@ -1,7 +1,7 @@
-# Servers and Users
+# Infrastructure
 
-These pages document our services, servers, and administration of those.
-This documentation is relevant only to readers with access to our servers.
+These pages document our infrastructure, services, servers, and administration of
+those. This documentation is relevant only to readers with access to our servers.
 
 ## Services and Servers
 
@@ -9,11 +9,15 @@ Some setup is common for all our servers, take a look at the [Overview](servers/
 
 Service | Server
 ---|---
+[SVN Server](services/svn-server.html) | [gtsvn](servers/gtsvn.html)
+[sátni.org](services/satni.html)| ?? [satni](servers/satni.html)
+[giellatekno.uit.no](services/giellatekno-page.html) | ?? [divvun](servers/divvun.html)
+[dicts.uit.no](services/dicts-portal.html) | ?? [divvun](servers/divvun.html)
+[gielese.no](services/gielese.html) | ?? [divvun](servers/divvun.html)
 [Neahttadigisanit](services/nds.html) | [gtdict](servers/gtdict.html)
 [Apertium](services/apertium.html) | [gtweb](servers/gtweb.html)
 [Korp](services/korp.html) | [gtweb](servers/gtweb.html)
 [cgi-bin](services/cgi-bin.html) | [gtweb](servers/gtweb.html)
-[SVN Server](services/svn-server.html) | [gtsvn](servers/gtsvn.html)
 [Webdict](services/webdict.htm) | [gtweb](servers/gtweb.html)
 [Old Webdict](services/old-webdict.html) | [gtweb](servers/gtweb.html)
 [webpipelines](services/webpipelines.html) | [gtweb](servers/gtweb.html)
@@ -21,10 +25,6 @@ Service | Server
 [Kursa and Kuvsje](services/kursa-kuvsje.html) | [gtoahpa](servers/gtoahpa.html)
 [Oahpa portal](oahpa-portal.html) | [gtoahpa](servers/gtoahpa.html)
 [Oahpa programs](services/oahpa-programs.html) | [gtoahpa](servers/gtoahpa.html)
-[sátni.org](services/satni.html)| ?? [satni](servers/satni.html)
-[giellatekno.uit.no](services/giellatekno-page.html) | ?? [divvun](servers/divvun.html)
-[dicts.uit.no](services/dicts-portal.html) | ?? [divvun](servers/divvun.html)
-[gielese.no](services/gielese.html) | ?? [divvun](servers/divvun.html)
 [Konteaksta](services/konteaksta.html) | **not running!**
 
 
