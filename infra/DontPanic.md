@@ -17,6 +17,8 @@ For the *divvun.no, gtdict.uit.no, gtoahpa-01.uit.no, gtsvn-01.uit.no, gtweb-01.
 
 Note that *gtsvn.uit.no* redirects to *gtsvn-01.uit.no*, etc for all *-01*.
 
+**If you cannot ssh to the server, contact ITA immediately.**
+
 
 ## Restart processes afterward
 
@@ -32,7 +34,7 @@ The following processes need to be restarted, and in the following way.
 	- [Restart instructions for **divvun.no** (the speller server)](SpellerServer.html)
 - **Server: gtdict.uit.no**
 	-  Domains on server: *\*.oahpa.no* (all NDS versions)
-	-  [Restart instructions for **gtdict.uit.no**  (NDS)](httpdserversgtdict.html)
+	-  [Restart instructions for **gtdict.uit.no**  (NDS)](servers/gtdict.html)
 - **Server: gtoahpa.uit.no** 
 	- Domain on server: *oahpa.no, kursa.oahpa.no, kuvsje.oahpa.no*
 	- [Restart instructions for **gtoahpa.uit.no** (oahpa.no, Konteaksta, kursa and kuvsje)](httpdserver.html)

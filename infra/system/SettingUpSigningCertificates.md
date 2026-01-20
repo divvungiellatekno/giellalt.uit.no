@@ -1,5 +1,4 @@
-Setting Up Signing Certificates
-============================
+# Setting Up Signing Certificates
 
 Modern operating systems require that software is signed, or at least will the
 signature make the user experience better and more trustworthy. The details vary

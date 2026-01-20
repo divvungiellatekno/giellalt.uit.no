@@ -129,7 +129,6 @@ is bugged in the newest version on debian sid (2.67.0-1~bookworm is bugged,
 so finding the fix took me a long time.)*
 
 
-
 ### 3. Install Azure Arc Agent:
 
 In the Azure portal, navigate to Arc Machines, and click Add. Select the option
@@ -290,13 +289,11 @@ nginx
 [guide article](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/),
 and the [reference](https://nginx.org/en/docs/http/ngx_http_log_module.html).
 
-For us, this means that we add an `access_log` directive to our configuration
-files of nginx, which may look like the following:
+So, on `gtdict`, on all instance configs in `/etc/nginx/sites-available/`, that
+is `sanit.conf`, `sanat.conf`, etc, two lines of the following format has been
+added, one for `access`, and one for `error`:
 
-    access_log syslog:server=unix:///dev/log,facility=local4,tag=nginx,severity=debug;
-
-This should be done on for all nginx servers of NDS instances, in other words,
-all files `/etc/nginx/sites-available/*.conf` (`*` is `sanit`, `sanat`, etc).
+    access_log syslog:server=unix:///dev/log,facility=local4,tag=sanit_access,severity=debug;
 
 
 #### Logging text files
@@ -306,13 +303,37 @@ to the log analytics workspace, using the ability of the *monitor agent* to
 send text files directly, see the azure documentation site on logging text
 files: [azure-monitor/agents/data-collection-log-text](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/data-collection-log-text)
 
-For `gtdict`, the `NDS` processes themselves are not really logging any useful.
-We should use the text file logging functionality to set up logging of the
-`morph_log` files.
+For `gtdict`, the `NDS` processes log to a `user_log.txt` and a
+`morph_log.txt` file. We have set it up so that this also goes to Azure.
 
-We should also set up logging of the global nginx. Here we could log stdout
-of the nginx process, but instead we can also here use the access and error
-*.log* files that nginx writes to.
+1: We need to create a data collection endpoint, which is required for a
+   data collection rule to take logs from text files. Here is the command I
+   ran:
+
+    az monitor data-collection endpoint create \
+        --resource-group gtlab-arcmachines \
+        --location norwayeast \
+        --data-collection-endpoint-name ndslogs \
+        --kind Linux \
+        --public-network-access Disabled
+
+2: With a data collection endpoint in place, we need to create the data
+   collection rule. The rule needs to specify the path to the text file,
+   TODO: Is it enough with a rule-file, or do I need to specify the endpoint
+   here?
+
+    az monitor data-collection rule create \
+        --resource-group gtlab-arcmachines \
+        --data-collection-rule-name gtdict-ndslogs \
+        --rule-file XXXXXXXXXXXXXXX
+
+3: Associate the newly created rule, with the gtdict machine, so that the AMA
+   starts listening to that file.
+
+
+**Note**: I will have to use logrotate on that old file, and set it up so that
+it will renew thew file every day, as per recommended by the azure docs for
+file logging to azure.
 
 
 #### Create data export
@@ -494,5 +515,7 @@ destination, and syslog local4 facility as the source.
 
 - **Very** useful introduction to the entire thing:
   https://trstringer.com/azure-monitor-agent-linux-syslog-systemd-journal/
+- On Ubuntu Server, `rsyslog` is the name of the syslog program that we have
+  to configure.
 - DCR: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-overview
 - ... Search azure on any of the buzzwords!
