@@ -52,7 +52,9 @@ is rarely needed. When changing the configuration files,
 
 ### apache
 
-(Common apache config files here). (Log files for apache). (Restarting).
+In Ubuntu, the main configuration file for apache is located at
+`/etc/apache2/apache2.conf`. Log files are usually at `/var/log/apache2/`.
+To restart apache, if necessary, run `sudo systemctl restart apache2`.
 
 
 ### systemd
@@ -67,4 +69,93 @@ All servers only expose TLS-enabled web endpoints (`http://` works for the users
 Most servers and services use **LetsEncrypt** to handle automatically setup and
 update certificates, but for some servers, we use certificates that ITA sends us.
 
-TODO: document TLS certificates for the servers who needs them.
+
+#### Wildcard certificates
+
+ITA sends us new certificates regularly for the certificates we need for
+wildcard domains, this is mainly `*.oahpa.no`. This is used on both
+[gtdict](gtdict.html), for Neahttadigisanit domains, such as `sanit.oahpa.no`
+and `baakoeh.oahpa.no`, but also for the `kursa.oahpa.no` and `kuvsje.oahoa.no`
+domains, which are handled by the [gtoahpa](gtoahpa.html) server.
+
+The certificate consists of several files with names ending in `.pem`, and a
+single file whose name ends with `.key`.
+
+A `.key` file looks something like this:
+
+```
+-----BEGIN EC PARAMETERS-----
+<...ascii data...>
+-----END EC PARAMETERS-----
+-----BEGIN EC PRIVATE KEY-----
+<...lines of ascii data...>
+-----END EC PRIVATE KEY-----
+```
+
+The path to this `.key` file is what nginx expects as its value to the
+`ssl_certificate_key` directive, such as this example from gtdict's
+`/etc/nginx/nginx.conf` file:
+
+```
+ssl_certificate_key /etc/nginx/ssl/wildcard.gtdict-02.uit.no.key;
+```
+
+The `.pem` files look similar, for example:
+
+```
+-----BEGIN CERTIFICATE-----
+<...lines of ascii data...>
+-----END CERTIFICATE-----
+```
+
+The reason why there are many `.pem` files, is that each certificate only
+"certificates" certain entities. How does your computer trust `sanit.oahpa.no`?
+Just because we have a cryptographic certificate, doesn't mean that we should
+trust it. Who issued it? Who does it prove that issued it? If you ever encountered
+a webpage giving you security warnings due to a _self-signed certificate_, this
+is exactly that: A certificate signed by oneself. And hence, what good is it,
+if there are nobody else to "vouch" for trusting that page?
+
+Certificates forms chains. Our certificates are verified by our certificate
+provider. They are "just a company", but have their own certificate, and are
+verified by a "root level certificate provider". The root level certificate
+is built into all computers. So, your computer trusts `sanit.oahpa.no`, because
+we have been vouched by our certifcate provider, which is trusted by a root
+level certificate provider, which our computer knows that it trusts. This was
+of course just a _hand-wavey_ explanation, but it explains why there are more
+than one `.pem` file. Each will "point" to each other, up the chain of trust,
+so to speak.
+
+The way you make these certificate chains, is that you literally just write
+out the certificate text data, from top to bottom, in a file. **NOTE:** It is
+important that the certificates goes from top to bottom, starting with _our_
+certificate, and works down to the root.
+
+For example, our full chain certificate looks like the following. It is located
+in `/etc/nginx/ssl/wildcard.oahpa.no.fullchain.pem`. This path is also set in
+the nginx config file:
+
+```
+ssl_certificate /etc/nginx/ssl/wildcard.oahpa.no.fullchain.pem;
+```
+
+```
+-----BEGIN CERTIFICATE-----
+<...lines of ascii data...>
+[sanit.oahpa.no-certificate, trusted by "certificate provider"]
+<...lines of ascii data...>
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+<...lines of ascii data...>
+["certificate provider"'s certificate, trusted by the root provider]
+<...lines of ascii data...>
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+<...lines of ascii data...>
+[root provider's certificate, trusted "instinctively" by your operating system]
+<...lines of ascii data...>
+-----END CERTIFICATE-----
+```
+
+So, what we do when we get a new certificate, is replace the top one. The other
+certificates in the chain are valid for many, many years.
