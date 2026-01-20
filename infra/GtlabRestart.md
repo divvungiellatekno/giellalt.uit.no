@@ -12,7 +12,7 @@ All Oahpa instances and Konteaksta have been moved to gtoahpa-01.
 
 
 Should the system reboot and nginx not
-survive this reboot, see [how to restart nginx itself](RestartingNginx.html).
+survive this reboot, restart it with `sudo service nginx stop && sudo service nginx start`.
 
 
 There have been problems with rebooting gtlab. If you after (re)starting nginx do not see the nginx test page when opening [testing.oahpa.no](http://testing.oahpa.no) then try restarting iptables as well:

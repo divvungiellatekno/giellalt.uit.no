@@ -2,8 +2,7 @@
 
 `gtweb.uit.no` is an alias for `gtweb-02.uit.no`.
 
-
-The list of services and pages:
+The list of services and websites run on gtweb:
 
 - apertium
   - <https://gtweb.uit.no/jorgal/>
@@ -52,7 +51,7 @@ located in `/etc/nginx/default.d/SERVICE.conf`. The nginx service file will
 `proxy_pass` to the webserver in the container.
 
 The images for the containers are built on a developer's machine, and uploaded
-to our container registry, [gtlabcontainerregistry.azurecr.io](gtlabcontainerregistry.html).
+to our container registry, [gtlabcontainerregistry](../gtlabcontainerregistry.html).
 
 
 ### Usage
@@ -143,7 +142,7 @@ into its container.
 
 (The korp configuration is in `/home/services/korp/config` (MOVE THIS TO THE KORP DOCUMENTATION?)).
 
-## Apache
 
+## Apache
 
 Cgi-bin is run from Apache. Nginx proxies to Apache for those routes.

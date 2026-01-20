@@ -2,29 +2,22 @@
 
 **This page is for people with access to the Tromsø servers!**
 
-What to do if ...
-
-# The servers are down
-
 Get an overview on the [status monitor for Giellatekno and Divvun **services** running on our servers](https://status.giellalt.org/) The overview is refreshed every 5 minutes.
 
-## Get them up and running
-
-For the *divvun.no, gtdict.uit.no, gtoahpa-01.uit.no, gtsvn-01.uit.no, gtweb-01.uit.no, satni.org* servers at uit.no:
+For the *divvun.no, gtdict.uit.no, gtoahpa.uit.no, gtsvn.uit.no, gtweb.uit.no, satni.org* servers at uit.no:
 
 * Relevant persons are Børre Gaup, Anders Lorentsen, Sjur Moshagen, Trond Trosterud.
 * Ultimately, _IT, Seksjon for applikasjoner og tjenester_ (see `$GTPRIV/admin/emergency.txt`)
 
-Note that *gtsvn.uit.no* redirects to *gtsvn-01.uit.no*, etc for all *-01*.
 
-**If you cannot ssh to the server, contact ITA immediately.**
+# The servers are down
 
+**If you cannot ssh to a server, contact ITA immediately.**
 
-## Restart processes afterward
+The general route is to `ssh` into the server, and restart the service that is
+not working.
 
-### Instructions for each server:
-
-The following processes need to be restarted, and in the following way.
+## Restart procedures for each server
 
 - **Server: api-giellalt.uit.no**
 	- Domain on server: *api-giellalt.uit.no*
@@ -37,27 +30,28 @@ The following processes need to be restarted, and in the following way.
 	-  [Restart instructions for **gtdict.uit.no**  (NDS)](servers/gtdict.html)
 - **Server: gtoahpa.uit.no** 
 	- Domain on server: *oahpa.no, kursa.oahpa.no, kuvsje.oahpa.no*
-	- [Restart instructions for **gtoahpa.uit.no** (oahpa.no, Konteaksta, kursa and kuvsje)](httpdserver.html)
+	- [Restart instructions for **gtoahpa.uit.no** (oahpa.no, Konteaksta, kursa and kuvsje)](servers/gtoahpa.html)
 - **Server: gtsvn.uit.no**
 	- Domain on server: *pahkat.uit.no*
-	- [Restart instructions for **gtsvn.uit.no** (svn)](gtsvn.html)
+	- [Restart instructions for **gtsvn.uit.no** (svn)](servers/gtsvn.html)
 - **Server: gtweb.uit.no**
 	- Domain on server: *jorgal.uit.no, gtweb.uit.no*
 	- Services on server: MT, korp, cgi-bin
-	- [Restart instructions for **gtweb-01** (interactive web programs, MT, webdicts)](httpdserversgtweb.html)
+	- [Restart instructions for **gtweb-01** (interactive web programs, MT, webdicts)](servers/gtweb.html)
 - **Server: gtweb-02.uit.no**
     - [Troubleshooting gtweb-02](gtweb-02-troubleshooting.md)
 - **Server: satni.uit.no**
 	- Domains on server: *satni.org, sátni.org, bahko.org, báhko.org, baakoe.org*
-	- [Restart instructions for **satni.org**](satniorg.html)
+	- [Restart instructions for **satni.org**](servers/satni.html)
 
 
 ### Specific processes
 
-- [instructions for restarting nginx](RestartingNginx.html)
+**nginx** is the web server on most servers. It is very robust, but in the event
+that it is down, run `sudo systemctl restart nginx` to restart it.
+
 - [instructions for Gïelese](../apps/gielese/GieleseRestarting.html) (TODO: Update documentation)
     - Look for commands with *restart...*
-- [When the webpages are not rebuilt](SiteBuildProblems.html)
 
 
 ## Test that everything is ok
@@ -95,7 +89,7 @@ Observe the column **%CPU**. If some of the processes remains in the top of the 
 
 where you replace *PID* by the concrete number, e.g. 15221 in the given example.
 
-If it is an Oahpa (python2.7) process then you can see from this output which Oahpa it is. First, you can try to [restart the particular Oahpa instance](http://giellatekno.uit.no/ped/common/httpdserver.html). After doing that check with command **top** if the problem has disappeared. If not then you can stop the process using the command
+If it is an Oahpa (python2.7) process then you can see from this output which Oahpa it is. First, you can try to [restart the particular Oahpa instance](services/oahpa-programs.html). After doing that check with command **top** if the problem has disappeared. If not then you can stop the process using the command
 
 ```
     kill *PID*

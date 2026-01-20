@@ -41,6 +41,7 @@ Service | Server
 - [Guide: Automatic login by using ssh](system/auto-pass.html)
 - [Guide: Containers (norwegian)](system/guide-containers.md)
 - [Cheat sheet: Common server admin tools](server/common-tools.html)
+- [Apache Forrest](forrest/index.html)
 - [Testing tools for the sámi LT project](docu-testing.html)
 
 
@@ -57,3 +58,8 @@ Service | Server
 - [Manually send svn e-mail](manually-send-svn-email.html)
 - [Service Checks After System Restarts](system/ServiceChecksAfterSystemRestarts.html)
 - [Maintaining users and access administration](system/UsersAndAccessAdministration.html)
+- [Restarting Gtlab](Gtlabrestart.html)
+- [Byte til Markdown](Byte_til_Markdown.html)
+- [Korpusinnsamling, kontrakter](corpus_collectors_howto.md)
+- [CyrillicSaamiKeyboard.md](CyrillicSaamiKeyboard.md)
+- [The interface for our web pages.](docu-webinterface.md)
