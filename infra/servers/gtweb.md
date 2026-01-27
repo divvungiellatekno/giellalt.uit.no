@@ -7,7 +7,7 @@ The list of services and websites run on gtweb:
 - apertium
   - <https://gtweb.uit.no/jorgal/>
   - <https://gtweb.uit.no/mt/>
-  - <https://gtweb.uit.no/mt-testing/>)
+  - <https://gtweb.uit.no/mt-testing/>
 - "cgi-bin" <https://gtweb.uit.no/cgi-bin/>
 - korp
   - portal/index: <https://gtweb.uit.no/korp/>
@@ -75,7 +75,7 @@ will both be accepted as is by the script, but also tab-expand to `metadict-api`
 Finally, commands themselves are also completable.
 
 
-#### --help is your friend!
+#### \-\-help is your friend!
 
 All commands and arguments takes an optional `--help` argument, which will
 show useful help for that command or argument.
