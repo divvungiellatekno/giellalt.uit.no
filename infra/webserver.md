@@ -1,5 +1,8 @@
-Configuration of the web server
-===============================
+# Configuration of the web server
+
+_anders, 2026-01-21: TODO: This document appears to be very old. Still not
+possible to determine if some aspects are still in use in some old project,
+or not._
 
 Debian stable has been installed on the server, and suns java sdk 1.5
 has been installed on it. tomcat5 packages aren't available for debian

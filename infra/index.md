@@ -5,7 +5,9 @@ those. This documentation is relevant only to readers with access to our servers
 
 ## Services and Servers
 
-Some setup is common for all our servers, take a look at the [Overview](servers/overview.html).
+Some setup is common for all our servers, take a look at the
+[Overview](servers/overview.html). Also take a look at the [common server admin
+tools](servers/common-tools.html).
 
 Service | Server
 ---|---
@@ -14,6 +16,7 @@ Service | Server
 [Online grammarchecker](services/divvun-grammarcheker.html) | [divvun](servers/divvun.html)
 [giellatekno.uit.no](services/giellatekno-page.html) | [divvun](servers/divvun.html)
 [dicts.uit.no](services/dicts-portal.html) | [divvun](servers/divvun.html)
+[indigenous-langtech.uit.no](services/indigenous-langtech.html) | [divvun](servers/divvun.html)
 [gielese.no](services/gielese.html) | ??
 [Neahttadigisanit](services/nds.html) | [gtdict](servers/gtdict.html)
 [Apertium](services/apertium.html) | [gtweb](servers/gtweb.html)
@@ -42,7 +45,6 @@ Service | Server
 - [Azure: Logger fra de gamle serverne](OldServerLogs.html)
 - [Guide: Automatic login by using ssh](system/auto-pass.html)
 - [Guide: Containers (norwegian)](system/guide-containers.md)
-- [Cheat sheet: Common server admin tools](server/common-tools.html)
 - [Apache Forrest](forrest/index.html)
 - [Testing tools for the sámi LT project](docu-testing.html)
 
@@ -60,8 +62,12 @@ Service | Server
 - [Manually send svn e-mail](manually-send-svn-email.html)
 - [Service Checks After System Restarts](system/ServiceChecksAfterSystemRestarts.html)
 - [Maintaining users and access administration](system/UsersAndAccessAdministration.html)
-- [Restarting Gtlab](Gtlabrestart.html)
 - [Byte til Markdown](Byte_til_Markdown.html)
-- [Korpusinnsamling, kontrakter](corpus_collectors_howto.md)
-- [CyrillicSaamiKeyboard.md](CyrillicSaamiKeyboard.md)
-- [The interface for our web pages.](docu-webinterface.md)
+- [Korpusinnsamling, kontrakter](corpus_collectors_howto.html)
+- [CyrillicSaamiKeyboard.md](CyrillicSaamiKeyboard.html)
+- [The interface for our web pages.](docu-webinterface.html)
+- [Github Issues](GitHub_Issues.html)
+- [Webserver, Tomcat](webserver.html)
+- [Web-speller](web-speller.html)
+- [Jsp-wiki Howto](jspwiki-howto.html)
+- [Reworking The Divvun Web](ReworkingTheDivvunWeb.html)
