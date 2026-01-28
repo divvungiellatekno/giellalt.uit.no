@@ -1,5 +1,6 @@
 # List of earlier events
 
+- 2025 [Constraint Grammar and Finite State NLP -- Rule-based and hybrid methods and tools for user communities](2025-cg/)
 - 2024 [Språk og KI i Norden](https://www.ntnu.edu/norwai/sprak-og-ai-i-norden/)
 - 2022 [Svonniseminára](https://giellatekno.uit.no/conf/svonni/Program.html)
 - 2018 [Workshop at Oulu Sámi symposium](https://giellatekno.uit.no/courses/korp/KorpOulu.html)
