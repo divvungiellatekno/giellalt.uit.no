@@ -20,9 +20,8 @@ These pages contain documentation on the language technology work for Sámi and 
 Although this front page is in English, the other pages on the site may be in any of the Sámi languages, in Norwegian or some other language.
 
 ## Events
-
-* [Constraint Grammar and Finite State NLP -- Rule-based and hybrid methods and tools for user communities](events/2025-cg/)
-* [Earlier events](events/)
+- Planned events (none at the moment)
+- [Earlier events](events/)
 
 ## Tromsø Projects
 
