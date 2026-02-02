@@ -3,8 +3,7 @@
 The source code is distributed partly under the GPL-license, and partly
 under CC-BY. There is a license statement at the beginning of each file.
 
-Preparation
-===========
+## Preparation
 
 Anyone can download the source code via anonymous SVN. Using anonymous
 svn you will not be able to directly add your changes to our svn
@@ -76,7 +75,7 @@ documentation off-line, you are best off installing and running
 **[Forrest](http://forrest.apache.org/)**. You will find it at [our
 server](http://divvun.no/static_files/divvun_forrest.tar.bz2).
 
-We have made a [document](forrest-howto.html) on how to install and use
+We have made a [document](/infra/forrest/index.html) on how to install and use
 forrest, follow the instructions there to use forrest on your private
 machine
 

@@ -2,7 +2,7 @@
 
 *[Workshop](index.md) ◊ [Topics](topics.md) ◊ Timeline ◊ [Submission](submission.md) ◊ [Program](program.md) ◊ [Registration](registration.md) ◊ [Committee](programcommittee.md)*
 
-All times end of day in [the AoE timezone]()
+All times end of day in the AoE timezone.
 
 * Submission deadline: ~~December 16th,~~December 22nd, 2024
 * Camera-readies: February 3th, 2025

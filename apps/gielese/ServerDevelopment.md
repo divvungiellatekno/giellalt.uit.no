@@ -8,7 +8,7 @@ to be aware of and work with:
 1. [itsdangerous](http://pythonhosted.org/itsdangerous/) - a library for encoding data for transport
 1. [schematics](https://schematics.readthedocs.org/en/latest/) - A JSON encoding, decoding, and validation library
 1. [babel](http://babel.pocoo.org/) - i18n library
-1. [transifex]() - not entirely a package, but worth knowing about here-- this is
+1. transifex - not entirely a package, but worth knowing about here-- this is
   used for maintaining translations that non-technical users can have access to
   and translate. A python library is used to fetch these and install them in the server.
 1. [sqlalchemy](http://sqlalchemy.org/) - a database ORM for managing database models, querying, etc.
