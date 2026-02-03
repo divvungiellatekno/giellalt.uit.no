@@ -4,7 +4,7 @@ Constraint Grammar and Finite State NLP – Rule-based and hybrid methods and to
 
 # Program for the NoDaLiDa workshop on CG and FST 2025
 
-*[Workshop](index.md) ◊ [Topics](topics.md) ◊ [Timeline](dates.md) ◊ [Submission](submission.md) ◊ Program ◊ [Registration](registration.md) ◊ [Committee](programcommittee.md)  ◊ [Earlier workshops](../cgworkshoplist.md)* 
+*[Workshop](index.html) ◊ [Topics](topics.html) ◊ [Timeline](dates.html) ◊ [Submission](submission.html) ◊ Program ◊ [Registration](registration.html) ◊ [Committee](programcommittee.html)  ◊ [Earlier workshops](../cgworkshoplist.html)* 
 
 
 

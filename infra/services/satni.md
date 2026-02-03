@@ -6,7 +6,7 @@ On the `satni.uit.no` server we run the termwiki and the sátni databases.
 
 **TODO:** Write what to do in case of an emergency.
 
-Some information can be found [here](../apps/satni/Setup.html).
+Some information can be found [here](satni-setup.html).
 
 # termwiki
 The termwiki stops once in a while because the root disk is filled with log files and such.

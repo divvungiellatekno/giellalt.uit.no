@@ -25,7 +25,7 @@ not on campus physically, you must use the **VPN** before that ssh endpoint
 becomes reachable. See the UiT IT departments user manuals for info on how to
 connect to the VPN, at <https://uit.no/it-brukerstotte/art?p_document_id=801127>.
 
-**See also:** [Passwordless login using ssh-key](/infra/system/system/auto-pass.html)
+**See also:** [Passwordless login using ssh-key](system/auto-pass.html)
 
 
 ## Common setup

@@ -53,8 +53,7 @@ write this command in your terminal(s):
 
 ## Installing the documentation
 
-Follow the instructions on [svn checkout](/tools/docu-svn-user.html) to
-get our documentation.
+Follow the instructions on svn checkout to get our documentation.
 
 To keep your documentation up to date, you will have to do a `svn up`
 regularly in the directory were you have checked out our repository.

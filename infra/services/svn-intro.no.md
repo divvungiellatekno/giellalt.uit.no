@@ -10,7 +10,7 @@ Nokre punkt om versjonskontroll:
 * vi endrar på ei fil ...
 * ... og sender endringane tilbake til sentralen
 
-[Bilete: Lene sjekkar inn og Maja oppdaterer](images/svn-server-client.png)
+[Bilete: Lene sjekkar inn og Maja oppdaterer](/infra/images/svn-server-client.png)
 
 * og sentralen (gtsvn) sender ut endringane til alle andre -
   *når dei ber om det!*

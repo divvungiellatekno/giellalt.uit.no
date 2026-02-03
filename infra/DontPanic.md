@@ -39,7 +39,7 @@ not working.
 	- Services on server: MT, korp, cgi-bin
 	- [Restart instructions for **gtweb-01** (interactive web programs, MT, webdicts)](servers/gtweb.html)
 - **Server: gtweb-02.uit.no**
-    - [Troubleshooting gtweb-02](gtweb-02-troubleshooting.md)
+    - [Troubleshooting gtweb-02](servers/gtweb.html)
 - **Server: satni.uit.no**
 	- Domains on server: *satni.org, sátni.org, bahko.org, báhko.org, baakoe.org*
 	- [Restart instructions for **satni.org**](servers/satni.html)
@@ -99,10 +99,22 @@ If it is an Oahpa (python2.7) process then you can see from this output which Oa
 
 # Analysers do not work
 
-* The analysers are in /opt/smi. Check that they work, and recompile if they don't.
-    - One possible error source is mismatch between compiled programs and compilers that
-   use them. The pipeline is documented in [the cgi-bin documentation](docu-cgi-bin.html).
-    - The naming conventions for fsts when compiled ("new") and in the web directories ("old") [are found here](infraremake/FstNamesInOldAndNewInfra.html)
+The analysers are installed via the package manager (`apt` for our Ubuntu servers), from
+apertium nightly, and is located in `/usr/share/giella/XXX` (where `XXX` is replaced by
+the 3-letter language code. Any additional FSTs not stemming from apertium nightly is
+also placed in these directories.
+
+If an FST is missing, you may have to install the FSTs for that language, if it hasn't
+been installed yet. Try `apt-get install giella-XXX`, or install them manually if they
+are not available in apertium nightly (which they _should_ be, unless it's a brand new
+language).
+
+If FSTs are not being updated, there is a build error in that language's source code.
+Check the build logs for that language, at <https://apertium.projectjj.com/apt/logs/>,
+for example, for the `sme` logs: <https://apertium.projectjj.com/apt/logs/giella-sme/build.log>. Consult the relevant people for that language to resolve the issue. Notice that it
+may take some time before the build system will build the language, and the server pulls
+the new version.
+
 
 # The svn application is down, yet the gtsvn server is up-n-running (test it by logging into the server)
 

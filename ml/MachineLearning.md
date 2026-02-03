@@ -1,4 +1,0 @@
-Background
-==========
-
--   [Background](Background.html)

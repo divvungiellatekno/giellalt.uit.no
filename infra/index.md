@@ -69,5 +69,4 @@ Service | Server
 - [Github Issues](GitHub_Issues.html)
 - [Webserver, Tomcat](webserver.html)
 - [Web-speller](web-speller.html)
-- [Jsp-wiki Howto](jspwiki-howto.html)
 - [Reworking The Divvun Web](ReworkingTheDivvunWeb.html)

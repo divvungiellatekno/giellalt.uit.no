@@ -12,14 +12,14 @@ These sites are built on the <divvun.uit.no>
 
 ## giellatekno.uit.no
 
-[giellatekno.uit.no](https://giellatekno.uit.no/) is a [Forrest](../forrest/index.md) site.
+[giellatekno.uit.no](https://giellatekno.uit.no/) is a [Forrest](../forrest/index.html) site.
 
 
 ## dicts.uit.no
 
-[dicts.uit.no](https://dicts.uit.no/) is a [Forrest](../forrest/index.md) site.
+[dicts.uit.no](https://dicts.uit.no/) is a [Forrest](../forrest/index.html) site.
 
 
 ## oahpa.no
 
-[oahpa.no](https://oahpa.no/) is a [Forrest](../forrest/index.md) site.
+[oahpa.no](https://oahpa.no/) is a [Forrest](../forrest/index.html) site.
