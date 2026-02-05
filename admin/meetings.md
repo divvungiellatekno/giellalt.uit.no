@@ -9,8 +9,16 @@ newest year first. ToC to the left.
 
 ### Lexicography meetings
 
-- **2026:**
-  - [16.1. Strategimøte](dicts/260116.md)
+- **2026:** [
+  16.1](dicts/260116.md), 
+  [5.2.](dcits/260205.md)
+- **2009-2020:** 
+  [14.10.2020](20201014_satni.org_mobilvisning.md), 
+  [5.9.2018](dicts/Meeting_2018-09-05.md),
+  [3.11.2011](dicts/Meeting_2011-11-03.md),
+  [23.8.2011](dicts/Meeting_2011-08-23.md), 
+  [18.3.2009](dicts/Meeting_2009-03-18.md), 
+  [18.3.2009](dicts/Meeting_2009-01-28.md), 
   
 ### Linguist meetings
 
