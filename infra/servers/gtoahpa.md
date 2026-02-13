@@ -5,8 +5,10 @@
 Services are managed by a service script, see
 <https://github.com/giellatekno/gtoahpa-service-script>.
 
+The Oahpa! programs may however be started manually as well using systemctl: `sudo systemctl start oahpa_all`
+
 - Running services:
-  - oahpa
+  - oahpa 
     - sme_oahpa_project (<https://oahpa.no/davvi/>)
     - sms_oahpa_project (<https://oahpa.no/nuorti/>)
     - sma_oahpa_project (<https://oahpa.no/aarjel/>)
