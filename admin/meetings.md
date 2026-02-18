@@ -562,6 +562,8 @@ newest year first. ToC to the left.
 - **Plandokument**
 - [Plan](giellatekno/Plan.md), [Hugseliste](giellatekno/TODO.md)
 
+- **2026**
+  [10.02](giellatekno/260210.md))
 - **2025**
   [21.01](giellatekno/250121.md)
 - **2024**
@@ -597,7 +599,7 @@ newest year first. ToC to the left.
 - **2018:**
   [22.01](giellatekno/180122.md), [12.02](giellatekno/180212.md),
   [15.03](giellatekno/180315.md), [03.04](giellatekno/180403.md),
-  [12.04](giellatekno/180412.md), [26.04](giellatekno/260412.md),
+  [12.04](giellatekno/180412.md), [26.04](giellatekno/180416.md),
   [09.05](giellatekno/180509.md), [16.05](giellatekno/180516.md),
   [25.05](giellatekno/180525.md), [30.05](giellatekno/180530.md),
   [14.06](giellatekno/180614.md), [22.08](giellatekno/180822.md),
