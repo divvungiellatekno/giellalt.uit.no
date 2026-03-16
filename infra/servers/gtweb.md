@@ -24,6 +24,36 @@ The list of services and websites run on gtweb:
 - ocr service <https://gtweb.uit.no/ocr/>
 
 
+## Automatic package updates (unattended-upgrades)
+
+The server is set up to do an update at 01:00, and then upgrade 02:00.
+If a restart is required, it will be done at 04:00.
+
+These are the configuration files that defines this setup:
+
+```text
+file: /etc/systemd/system/apt-daily.timer
+contents (only relevant lines shown):
+OnCalendar=
+OnCalendar=*-*-* 1:00
+
+file: /etc/systemd/system/apt-daily-upgrade.timer
+contents (only relevant lines shown):
+OnCalendar=
+OnCalendar=*-*-* 2:00
+
+file: /etc/apt/apt.conf.d/50unattended-upgrades
+contents (only relevant lines shown):
+Unattended-Upgrade::Automatic-Reboot-Time "04:00";
+```
+
+The log files for `unattended-upgrades` are at `/var/log/unattended-upgrades/`
+
+Other potentially useful tips is to look at the modification times on the package
+files. e.g. `ls -l /usr/share/giella/sme/` to look at when the `lang-sme` (called
+`giella-sme` in _apertium nightly_) was updated.
+
+
 ## Management
 
 Almost all services on gtweb are run in podman containers. These services are
