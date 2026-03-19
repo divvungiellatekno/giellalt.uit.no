@@ -10,8 +10,9 @@ newest year first. ToC to the left.
 ### Lexicography meetings
 
 - **2026:** [
-  16.1](dicts/260116.md), 
-  [5.2.](dicts/260205.md)
+  16.01](dicts/260116.md), 
+  [05.02.](dicts/260205.md),
+  [19.03](dicts/260319.md)
 - **2009-2020:** 
   [14.10.2020](20201014_satni.org_mobilvisning.md), 
   [5.9.2018](dicts/Meeting_2018-09-05.md),
