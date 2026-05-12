@@ -9,8 +9,7 @@ newest year first. ToC to the left.
 
 ### Lexicography meetings
 
-- **2026:** [
-  16.01](dicts/260116.md), 
+- **2026:** [16.01](dicts/260116.md), 
   [05.02.](dicts/260205.md),
   [19.03](dicts/260319.md), 
   [26.03](dicts/260319.md)
