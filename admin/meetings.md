@@ -158,6 +158,7 @@ newest year first. ToC to the left.
   [05.05.](divvun/Meeting2026-05-05.md),
   [12.05.](divvun/Meeting2026-05-12.md),
   [19.05.](divvun/Meeting2026-05-19.md),
+  [26.05.](divvun/Meeting2026-05-26.md),
 
 ### Divvun regular meetings last year
 
