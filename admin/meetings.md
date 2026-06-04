@@ -581,6 +581,7 @@ newest year first. ToC to the left.
   [10.02](giellatekno/260210.md), [18.03](giellatekno/260318.md),
   [24.03](giellatekno/260324.md), [08.04](giellatekno/260408.md),
   [21.04](giellatekno/260421.md), [05.05](giellatekno/260505.md)
+  [04.06](giellatekno/260604.md)
 - **2025**
   [21.01](giellatekno/250121.md)
 - **2024**
