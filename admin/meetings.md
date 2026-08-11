@@ -13,7 +13,9 @@ newest year first. ToC to the left.
   [05.02.](dicts/260205.md),
   [19.03](dicts/260319.md), 
   [26.03](dicts/260319.md),
-  [22.06](dicts/260622.md)
+  [22.06](dicts/260622.md),
+  [11.08](dicts/260811.md)
+
 - **2009-2020:** 
   [14.10.2020](20201014_satni.org_mobilvisning.md), 
   [5.9.2018](dicts/Meeting_2018-09-05.md),
