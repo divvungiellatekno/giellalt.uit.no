@@ -17,7 +17,7 @@ Service | Server
 [giellatekno.uit.no](services/giellatekno-page.html) | [divvun](servers/divvun.html)
 [dicts.uit.no](services/dicts-portal.html) | [divvun](servers/divvun.html)
 [indigenous-langtech.uit.no](services/indigenous-langtech.html) | [divvun](servers/divvun.html)
-[gielese.no](services/gielese.html) | ??
+[gielese.no](services/gielese.html) | Azure static web app
 [Neahttadigisanit](services/nds.html) | [gtdict](servers/gtdict.html)
 [Apertium](services/apertium.html) | [gtweb](servers/gtweb.html)
 [Korp](services/korp.html) | [gtweb](servers/gtweb.html)
@@ -45,6 +45,7 @@ Service | Server
 - [Azure: Logger fra de gamle serverne](OldServerLogs.html)
 - [Guide: Automatic login by using ssh](system/auto-pass.html)
 - [Guide: Containers (norwegian)](system/guide-containers.md)
+- [nginx logs searching tool](system/nginx-logs-searching-tool.md)
 - [Apache Forrest](forrest/index.html)
 - [Testing tools for the sámi LT project](docu-testing.html)
 
