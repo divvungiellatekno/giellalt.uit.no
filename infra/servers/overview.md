@@ -13,7 +13,7 @@ Domain name | Managed by | Services
 [satni.uit.no](satni.html)     | Divvun      | satni.org (?)
 [gtsvn.uit.no](gtsvn.html)     | Divvun      | svn server
 [gtdict.uit.no](gtdict.html)   | Giellatekno | Neahttadigisanit
-[gtweb.uit.no](gtweb.html)     | Giellatekno | apertium, korp, webdict, webpipeline, metadict
+[gtweb.uit.no](gtweb.html)     | Giellatekno | apertium, korp, webdict, lingtools, metadict
 [gtoahpa.uit.no](gtoahpa.html) | Giellatekno | oahpa.no, kuvsje, kursa, oahpa instances
 
 

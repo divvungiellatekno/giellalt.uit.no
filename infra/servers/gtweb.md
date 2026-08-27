@@ -18,7 +18,7 @@ The list of services and websites run on gtweb:
     - Other Uralic: <https://gtweb.uit.no/u_korp/>
     - (missing ?? tyv_korp) <https://gtweb.uit.no/tyv_korp/>
 - metadict <https://gtweb.uit.no/metadict/>
-- webpipeline <https://gtweb.uit.no/webpipeline>
+- lingtools <https://gtweb.uit.no/lingtools>
 - webdict <https://gtweb.uit.no/webdict/>
 - old webdict <https://gtweb.uit.no/old-webdict/>
 - ocr service <https://gtweb.uit.no/ocr/>

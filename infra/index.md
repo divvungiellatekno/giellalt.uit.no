@@ -24,7 +24,7 @@ Service | Server
 [cgi-bin](services/cgi-bin.html) | [gtweb](servers/gtweb.html)
 [Webdict](services/webdict.htm) | [gtweb](servers/gtweb.html)
 [Old Webdict](services/old-webdict.html) | [gtweb](servers/gtweb.html)
-[webpipelines](services/webpipelines.html) | [gtweb](servers/gtweb.html)
+[lingtools](services/lingtools.html) | [gtweb](servers/gtweb.html)
 [Metadict](services/metadict.html) | [gtweb](servers/gtweb.html)
 [OCR service](services/ocr.html) | [gtweb](servers/gtweb.html)
 [Kursa and Kuvsje](services/kursa-kuvsje.html) | [gtoahpa](servers/gtoahpa.html)
