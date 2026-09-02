@@ -170,6 +170,7 @@ newest year first. ToC to the left.
   [11.08.](divvun/meeting2026-08-11.md)
   [18.08.](divvun/meeting2026-08-18.md)
   [25.08.](divvun/meeting2026-08-25.md)
+  [01.09.](divvun/meeting2026-09-01.md)
 
 ### Divvun regular meetings last year
 
