@@ -32,7 +32,6 @@
 .slidev-layout h2 { font-size: 2.35rem; line-height: 1.08; margin-bottom: 1rem; }
 .slidev-layout p, .slidev-layout li { color: var(--muted); }
 .slidev-layout strong { color: var(--ink); }
-.kicker { color: var(--red); font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
 .small { font-size: .78rem; color: var(--muted); }
 .mono { font-family: 'DM Mono', monospace; }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
@@ -48,17 +47,14 @@ svg { max-width: 100%; }
 </style>
 
 ## Samisk språkteknologi og språklege data
-### Møte med Nasjonalbiblioteket
 
-<div class="rule"></div>
+Møte med Nasjonalbiblioteket 15.9.2026
 
 > hva er deres oppdrag, hvilke behov har dere, hva slags modeller jobber dere med (enten det er utvikling eller bruk), hvilke språk jobber dere med, hva er deres ønsker for samarbeid.
 
 ----
 
 ## Samfunnsoppdrag
-
-<span class="kicker">01 · Oppdrag</span>
 
 Frå tildelingsbrevet:
 
@@ -80,8 +76,6 @@ Det vi lagar
 
 ## "Vi" = Divvun
 
-<span class="kicker">01 · Oppdrag</span>
-
 - 3 lingvistar og morsmålstalarar (nord-, lule-, sørsamisk)
 - 1 ekspert på grammatisk og semantisk analyse, grammatikkontroll
 - 1 ekspert på taleteknologi (TTS + ASR)
@@ -95,16 +89,21 @@ I tillegg: Giellatekno og senter for samisk leksikografi
 
 ## Oversikt over språk og verktøy (Divvun & Giellatekno)
 
-<span class="kicker">02 · Verktøy & tenester</span>
-
 | Verktøy | Nordsamisk | Lulesamisk | Sørsamisk | Enaresamisk | Skoltesamisk |
 | ------- |:----------:|:----------:|:---------:|:-----------:|:------------:|
 | Datamaskintastatur (4 OS)| ✅ | ✅ |   ✅    |     ✅      |      ✅      |
 | Mobiltastatur      (2 OS)| ✅ | ✅ |   ✅    |     ✅      |      ✅      |
 | Stavekontroll      | ✅ |   ✅   |     ✅    |     ✅      |      ✅      |
 | Grammatikkontroll  | ✅ |   ✅   |     ✅    |     ✅      |      ⚠️      |
-| Orddeling          | ✅ |   ✅   |     ✅    |     ✅      |      ⚠️      |
+| Orddeling          | ✅ |   ✅   |     ✅    |     ✅      |      🚫      |
 | Tekstanalyse m. dep| ✅ |   ✅   |     ✅    |     ✅      |      ✅      |
+
+---
+
+## Oversikt over språk og verktøy (Divvun & Giellatekno) (framh.)
+
+| Verktøy | Nordsamisk | Lulesamisk | Sørsamisk | Enaresamisk | Skoltesamisk |
+| ------- |:----------:|:----------:|:---------:|:-----------:|:------------:|
 | TTS-tekstpros.     | ✅ |   ✅   |     ✅    |     🚫      |      🚫      |
 | E-ordbok, terminologi|✅|   ✅   |     ✅    |     ✅      |      ✅      |
 | Maskinomsetjing (H)| ✅ |   ✅   |     ✅    |     ✅      |      🚫      |
@@ -115,8 +114,6 @@ I tillegg: Giellatekno og senter for samisk leksikografi
 ---
 
 ## Nettbaserte tenester
-
-<span class="kicker">02 · Verktøy & tenester</span>
 
 Dvs tilgjengeleg med nett-API.
 
@@ -135,8 +132,6 @@ Vi vil tilby ASR òg så snart ASR-en er god nok.
 
 ## Data er alltid ein flaskehals
 
-<span class="kicker">03 · behov</span>
-
 Vi treng rådata, både tekst og tale:
 
 - Tale: ASR (og seinare: dialogsystem)
@@ -149,8 +144,6 @@ Vi treng rådata, både tekst og tale:
 ---
 
 ## To slags modellar
-
-<span class="kicker">04 · modellar</span>
 
 ### ML-modellar
 
@@ -173,8 +166,6 @@ layout: two-cols-header
 
 ## Språk vi arbeider med
 
-<span class="kicker">05 · språk</span>
-
 ::left::
 
 - alle samiske språk
@@ -192,8 +183,6 @@ layout: two-cols-header
 ---
 
 ## Divvun + Giellatekno + NB
-
-<span class="kicker">06 · samarbeid</span>
 
 Tekst:
 - vi treng all tekst vi kan få (jf over)
@@ -213,8 +202,6 @@ Tale:
 
 ## Konkret samarbeid
 
-<span class="kicker">06 · samarbeid</span>
-
 - samarbeidsavtale som gjer datadeling lettare
 - tilgang til NB sine maskiner (jf førre punkt)
 - forsking knytt til hybride metodar for ASR, OCR, generative språkmodellar for språk med lite data
@@ -224,8 +211,6 @@ layout: center
 ---
 
 ## Det viktigaste først
-
-<span class="kicker">06 · samarbeid</span>
 
 Samarbeid, ikkje konkurranse
 
