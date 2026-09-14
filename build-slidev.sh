@@ -238,7 +238,12 @@ build_slidev() {
     # Log Node.js and npm environment info for debugging
     log_info "Node.js version: $(node --version)"
     log_info "npm version: $(npm --version)"
-    log_info "Slidev location: $(which slidev)"
+    if [ -x "$SCRIPT_DIR/node_modules/.bin/slidev" ]; then
+        SLIDEV_BIN="$SCRIPT_DIR/node_modules/.bin/slidev"
+    else
+        SLIDEV_BIN="slidev"
+    fi
+    log_info "Slidev location: $SLIDEV_BIN"
 
     # Extract the relative path from project root for GitHub Pages
     relative_path=$(echo "$slidev_dir" | sed 's|^\./||')
@@ -259,7 +264,7 @@ build_slidev() {
     
     # Build the presentation with correct base path for GitHub Pages
     log_info "Running: slidev build slides.md --base \"$base_path\" --out dist"
-    if echo "yes" | slidev build slides.md --base "$base_path" --out dist 2>&1; then
+    if "$SLIDEV_BIN" build slides.md --base "$base_path" --out dist 2>&1; then
         log_success "Slidev build completed successfully"
         
         # Copy images to dist for runtime access
