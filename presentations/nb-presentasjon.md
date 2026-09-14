@@ -187,7 +187,7 @@ layout: two-cols-header
 
 ::right::
 
-![Kart over alle språk](images/Kart-alle-språk.png)
+![Kart over alle språk](images/kart-alle-sprak.png)
 
 ---
 

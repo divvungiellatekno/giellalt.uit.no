@@ -157,6 +157,11 @@ process_images() {
                     src_path="$md_dir/$img_path"
                     ;;
             esac
+
+            # Keep generated Slidev imports ASCII while retaining the source asset name.
+            if [ "$img_path" = "images/kart-alle-sprak.png" ]; then
+                src_path="$md_dir/images/Kart-alle-språk.png"
+            fi
             
             # Copy the image if it exists
             if [ -f "$src_path" ]; then
@@ -238,19 +243,24 @@ build_slidev() {
     # Log Node.js and npm environment info for debugging
     log_info "Node.js version: $(node --version)"
     log_info "npm version: $(npm --version)"
-    if [ -x "$SCRIPT_DIR/node_modules/.bin/slidev" ]; then
+    if command -v slidev >/dev/null 2>&1; then
+        SLIDEV_BIN="$(command -v slidev)"
+    elif [ -x "$SCRIPT_DIR/node_modules/.bin/slidev" ]; then
         SLIDEV_BIN="$SCRIPT_DIR/node_modules/.bin/slidev"
     else
         SLIDEV_BIN="slidev"
     fi
     log_info "Slidev location: $SLIDEV_BIN"
 
+    # Remove a previous deployed build so Vite uses slides.md as the entry.
+    rm -rf index.html assets
+
     # Extract the relative path from project root for GitHub Pages
     relative_path=$(echo "$slidev_dir" | sed 's|^\./||')
 
     # Read baseurl from _config.yml if it exists
     if [ -f "$SCRIPT_DIR/_config.yml" ]; then
-        baseurl=$(grep "^baseurl:" "$SCRIPT_DIR/_config.yml" | sed 's/baseurl:[[:space:]]*//' | tr -d '\r')
+        baseurl=$(grep "^baseurl:" "$SCRIPT_DIR/_config.yml" | sed 's/baseurl:[[:space:]]*//' | tr -d '\r"')
         if [ -n "$baseurl" ]; then
             base_path="$baseurl/$relative_path/"
         else

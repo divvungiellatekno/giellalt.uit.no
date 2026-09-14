@@ -192,7 +192,7 @@ For desse systema:
 
 ## Alle språka i repoa våre
 
-![Kart over alle språk](images/Kart-alle-språk.png)
+![Kart over alle språk](images/kart-alle-sprak.png)
 
 ---
 
