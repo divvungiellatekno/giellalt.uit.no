@@ -166,6 +166,7 @@ Vi har:
 
 - jo mindre ressursar, jo meir kunnskapsbaserte modellar treng ein
 - betre ML-modellar dersom ein kombinerer med kunnskapsbaserte modellar
+- normative verktøy som kanskje kan brukast til automatisk evaluering
 
 ---
 layout: two-cols-header
