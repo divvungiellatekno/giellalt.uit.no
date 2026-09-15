@@ -85,6 +85,8 @@ Det vi lagar
 
 I tillegg: Giellatekno og senter for samisk leksikografi
 
+Divvun-gruppa etabliert i 2004, Giellatekno starta i 2001
+
 ----
 
 ## Oversikt over språk og verktøy (Divvun & Giellatekno)
@@ -140,6 +142,11 @@ Vi treng rådata, både tekst og tale:
 	- betre korpus til samfunnet (gje tilbake til samfunnet det forskarar tidlegare har samla inn, og det samfunnet har produsert)
 	- for å testa alle verktøy mot
 	- fleirspråklege/parallelle tekstar ekstra verdefulle
+
+Vi har:
+- TTS-data (3 SME, 3, SMJ, 1 SMA, 2 SMN)
+- transkiberte ASR-data (SME, SMJ, SMA)
+- godt organiserte tekstdata, inkl gullstandarddata for normative verkøty
 
 ---
 
