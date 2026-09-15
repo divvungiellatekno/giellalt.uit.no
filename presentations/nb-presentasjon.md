@@ -146,6 +146,7 @@ Vi treng rådata, både tekst og tale:
 Vi har:
 - TTS-data (3 SME, 3, SMJ, 1 SMA, 2 SMN)
 - transkiberte ASR-data (SME, SMJ, SMA)
+- samlar inn meir taledata for ASR no i samarbeid med NRK, SVTm, YLE m.fl.
 - godt organiserte tekstdata, inkl gullstandarddata for normative verkøty
 
 ---
