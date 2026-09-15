@@ -207,7 +207,7 @@ Tale:
 - forsking knytt til hybride metodar for ASR, OCR, generative språkmodellar for språk med lite data
 - nyheitsmateriale er allereie dekt av frikjøpet til regjeringa, lat oss starta med det:
 	- tale: ca 1500 timar med Ođđasat sidan starten i 2001
-	- tekst: historisk material frå forgjenganare til Ávvir (frå 2008): Min Áigi (frå 1993) og Áššu (òg frå 1993)
+	- tekst: historisk materiale frå forgjengarane til Ávvir (frå 2008): Min Áigi (frå 1993) og Áššu (òg frå 1993)
 
 ---
 layout: center
