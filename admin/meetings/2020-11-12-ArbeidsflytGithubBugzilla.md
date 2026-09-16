@@ -118,13 +118,13 @@ Men: alle e-postar frå github ser like ut, vanskeleg å sjå kva som er kva, og
 	- Teksten blir __søkbar på Google__. Så her er det ein skilnad mellom Bz og Github Issues 
 	- I verste fall blir det for ustrukturert
 
-###Zulip
+### Zulip
 - Eg har alle straumane for alle språka, og det er svært nyttig.
 - Status-meldingane i Zulip og i Github er svært positive (*lang-xxx/checks* og *lang-xxx/develop*)
 	- Trykk på develop, og på nummeret (b9a6615). Det som manglar er filnamnet, men diffen er __mykje__ betre enn i svn.
 	- Det er ikkje alltid eg ser meldingar, nei..
 
-###Erfaringar med GitHub:
+### Erfaringar med GitHub:
 Eg bruker git, ikkje svn. Det har vore ein stor overgang og ei bratt læringskurve.
 Det er mykje positivt med Git, men det meste av det positive er ikkje avhengig av å bruke git og ikkje svn. 
 
