@@ -22,11 +22,12 @@ newest year first. ToC to the left.
 
 - **2009-2020:** 
   [14.10.2020](20201014_satni.org_mobilvisning.md), 
-  [5.9.2018](dicts/Meeting_2018-09-05.md),
-  [3.11.2011](dicts/Meeting_2011-11-03.md),
-  [23.8.2011](dicts/Meeting_2011-08-23.md), 
-  [18.3.2009](dicts/Meeting_2009-03-18.md), 
-  [18.3.2009](dicts/Meeting_2009-01-28.md), 
+  [05.09.2018](dicts/Meeting_2018-09-05.md),
+  [06.12.2017](https://giellalt.github.io/dicts/Meeting_2017-12-06.html),
+  [03.11.2011](dicts/Meeting_2011-11-03.md),
+  [23.08.2011](dicts/Meeting_2011-08-23.md), 
+  [18.03.2009](dicts/Meeting_2009-03-18.md), 
+  [18.03.2009](dicts/Meeting_2009-01-28.md)
   
 ### Linguist meetings
 
