@@ -16,7 +16,8 @@ newest year first. ToC to the left.
   [22.06](dicts/260622.md),
   [11.08](dicts/260811.md),
   [28.08](dicts/260828.md),
-  [03.09](dicts/260309.md)
+  [03.09](dicts/260309.md),
+  [21.09](https://giellalt.github.io/dict-sme-nob/meetings/260921.html)
   
 
 - **2009-2020:** 
