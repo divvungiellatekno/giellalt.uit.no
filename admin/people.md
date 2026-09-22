@@ -4,12 +4,15 @@
 |------------------------|-------------|---------------------------------------|-----------------------------------|
 | Anders Lorentsen       | Giellatekno | Programming                           | anders lorentsen at uit no        |
 | Børre Gaup             | Divvun      | Everything but project management :-) | borre gaup at uit no              |
+| Elisabeth Scheller     | Giellatekno | Lexicography                          | elisabeth scheller at uit no      |
 | Flammie Pirinen        | Divvun      | Computational linguistics             | flammie pirinen at uit no         |
-| Helena Omma            | Divvun      | Linguistics                           | helena omma at uit no             |
+| Helena Omma            | Giellatekno | Lexicography                          | helena omma at uit no             |
 | Inga Mikkelsen         | Divvun      | Linguistics                           | inga l mikkelsen at uit no        |
 | Katri Hiovain-Asikainen| Divvun      | Linguistics, speech technology        | katri hiovain-asikainen at uit no |
+| Lena Susanne Gaup      | Giellatekno | Lexicography                          | lena s gaup at uit no             |
 | Lene Antonsen          | Giellatekno | Linguistics                           | lene antonsen at uit no           |
 | Linda Wiechetek        | Divvun      | Linguistics                           |                                   |
+| Risten West            | Giellatekno | Lexicography                          | risten west at uit no             |
 | Maja Lisa Kappfjell    | Divvun      | Linguistics                           | maja lisa kappfjell at uit no     |
 | Sjur Nørstebø Moshagen | Divvun      | Head of group, comp. linguistics      | sjur n moshagen at uit no         |
 | Thomas Omma            | Divvun      | Linguistics                           | thomas omma at uit no             |
