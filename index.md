@@ -20,7 +20,9 @@ These pages contain documentation on the language technology work for Sámi and 
 Although this front page is in English, the other pages on the site may be in any of the Sámi languages, in Norwegian or some other language.
 
 ## Events
-- Planned events (none at the moment)
+
+<!-- - Planned events (none at the moment) -->
+- [Einspråklige samiske ordbøker (28.09.-02.10.2026)](https://giellalt.github.io/dicts/samileks/seminarprogram_2026.html)
 - [Earlier events](events/)
 
 ## Tromsø Projects
