@@ -16,6 +16,7 @@ Allmenne, personlege lenkjer (inkluderer òg ting som ikkje gjeld Divvun og Giel
 
 Saker som ein har andsvar for i Divvun og Giellatekno. Det kan vera fleire andsvarlege for kvar sak.
 
+<div class="twocolumn" markdown="1">
 - [Phaqui](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3APhaqui+&type=issues)
 - [Trondtr](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3ATrondtr+&type=issues)
 - [albbas](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Aalbbas+&type=issues)
@@ -28,3 +29,4 @@ Saker som ein har andsvar for i Divvun og Giellatekno. Det kan vera fleire andsv
 - [snomos](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Asnomos+&type=issues)
 - [trondtynnol](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Atrondtynnol+&type=issues)
 - [werewug](https://github.com/search?q=org%3Agiellalt+org%3Adivvungiellatekno+org%3Adivvun+org%3Aborealium+is%3Aopen+is%3Aissue+assignee%3Awerewug+&type=issues)
+</div>
