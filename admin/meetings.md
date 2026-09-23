@@ -687,7 +687,7 @@ newest year first. ToC to the left.
 - **2025:**
   [Jan. 10](weekly/2025/Meeting_2025-01-10.md),
   [Mar. 11](weekly/2025/Meeting_2025-03-11.md),
-  [Sep. 17](weekly/2025/Meeting_2025-09-17.md),
+  [Sep. 17](weekly/2025/Meeting_2025-09-17.md)
 - **2024:**
   [Feb. 13](weekly/2024/Meeting_2024-02-13.md),
   [Aug. 12](weekly/2024/Meeting_2024-08-12.md),
