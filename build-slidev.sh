@@ -252,6 +252,10 @@ build_slidev() {
     fi
     log_info "Slidev location: $SLIDEV_BIN"
 
+    # Slidev's generated CSS breaks lightningcss minification; skip CSS minify.
+    # No imports: the globally installed slidev cannot resolve "vite" from here.
+    printf 'export default {\n  build: { cssMinify: false },\n}\n' > vite.config.ts
+
     # Remove a previous deployed build so Vite uses slides.md as the entry.
     rm -rf index.html assets
 
