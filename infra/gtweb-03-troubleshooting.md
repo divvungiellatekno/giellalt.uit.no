@@ -1,6 +1,6 @@
-# Troubleshooting gtweb-02
+# Troubleshooting gtweb-03
 
-All services on gtweb-02 are managed by our service script.
+All services on gtweb-03 are managed by our service script.
 See <github.com/giellatekno/gtweb-service-script> (in Norwegian)
 for more information.
 
@@ -55,7 +55,7 @@ A long `podman` command will be printed. As of writing, the exact
 command for `mdapi` is
 
 ```
-/usr/bin/podman run --name metadict-api --rm --replace -p 3516:3000 --env PG__HOST=gtweb-02 --env FRONTEND=https://gtweb-02.uit.no/metadict --stop-signal=SIGINT --privileged --security-opt seccomp=unconfined gtlabcontainerregistry.azurecr.io/metadict-api:latest
+/usr/bin/podman run --name metadict-api --rm --replace -p 3516:3000 --env PG__HOST=gtweb-03 --env FRONTEND=https://gtweb-03.uit.no/metadict --stop-signal=SIGINT --privileged --security-opt seccomp=unconfined gtlabcontainerregistry.azurecr.io/metadict-api:latest
 ```
 
 Add `-it` to the start of this command, after the `/usr/bin/podman run`,

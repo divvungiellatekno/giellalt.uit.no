@@ -1,6 +1,6 @@
 # gtweb
 
-`gtweb.uit.no` is an alias for `gtweb-02.uit.no`.
+`gtweb.uit.no` is an alias for `gtweb-03.uit.no`.
 
 The list of services and websites run on gtweb:
 

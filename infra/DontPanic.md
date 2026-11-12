@@ -38,8 +38,8 @@ not working.
 	- Domain on server: *jorgal.uit.no, gtweb.uit.no*
 	- Services on server: MT, korp, cgi-bin
 	- [Restart instructions for **gtweb-01** (interactive web programs, MT, webdicts)](servers/gtweb.html)
-- **Server: gtweb-02.uit.no**
-    - [Troubleshooting gtweb-02](servers/gtweb.html)
+- **Server: gtweb-03.uit.no**
+    - [Troubleshooting gtweb-03](servers/gtweb.html)
 - **Server: satni.uit.no**
 	- Domains on server: *satni.org, sátni.org, bahko.org, báhko.org, baakoe.org*
 	- [Restart instructions for **satni.org**](servers/satni.html)

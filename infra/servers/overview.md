@@ -5,7 +5,7 @@ Here we document our servers and common machines. If some servers are down, see 
 
 ## Server list
 
-Our servers run Ubuntu 22.04, some have been upgraded to Ubuntu 24.04. The Domain names are _DNS aliases_ to the same name ending in `-02`, e.g. `gtweb.uit.no` is a DNS alias for `gtweb-02.uit.no`. We previously had old CentOS servers with names ending in `-01`.
+Our servers run Ubuntu 22.04, some have been upgraded to Ubuntu 24.04. The Domain names are _DNS aliases_ to the same name ending in `-02` or `-03`, e.g. `gtweb.uit.no` is a DNS alias for `gtweb-03.uit.no`. We previously had old CentOS servers with names ending in `-01`.
 
 Domain name | Managed by | Services
 ---|---|---|---|---

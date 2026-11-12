@@ -33,4 +33,4 @@ look through the logs.
 One of them is [nginx-logs](https://github.com/giellatekno/nginx-logs). On
 gtweb, the `services` user has the binary in the root of the homedirectory.
 
-Run directly, such as e.g.: `services@gtweb-02:~$ ./nginx-logs --help`.
+Run directly, such as e.g.: `services@gtweb-03:~$ ./nginx-logs --help`.
