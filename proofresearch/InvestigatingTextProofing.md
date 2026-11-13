@@ -2,7 +2,7 @@ In addition to developing proofing tools, Divvun and Giellatekno also conducts r
 
 # Our publications and presentations
 
-* [Our publications on proofing research](OurPublicationsOnProofingResearch.html)
+* [Our publications on proofing research](https://giellalt.github.io/proof/proofresearch/OurPublicationsOnProofingResearch.html)
 
 # Our proofing tools (for downloading and online use)
 
@@ -12,5 +12,5 @@ In addition to developing proofing tools, Divvun and Giellatekno also conducts r
 
 # Commented bibliographies, relevant research by others, tools
 
-* [Relevant articles on proofing](BibliographyOnProofing.html)
-* [Overview of proofing tools for different languages](OverviewOfProofingTools.html)
+* [Relevant articles on proofing](https://giellalt.github.io/proof/proofresearch/BibliographyOnProofing.html)
+* [Overview of proofing tools for different languages](https://giellalt.github.io/proof/proofresearch/OverviewOfProofingTools.html)

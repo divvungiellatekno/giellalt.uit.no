@@ -27,7 +27,7 @@ are the following:
     tags through the speller; this test will check both lexical
     coverage, calculate precision, recall and coverage, as well as give
     an idea of the quality of the suggestions; for details on marking up
-    documents to be used as input, see [this page](error-markup.html)
+    documents to be used as input, see [this page](https://giellalt.github.io/proof/spelling/testdoc/error-markup.html)
 
 Below we have briefly described how to run these automatic tests, how to
 read the test reports, and then some more details on each test.

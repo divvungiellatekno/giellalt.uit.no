@@ -24,7 +24,7 @@ a documentation on how the issues  below are treated at GiellaLT.
 
 * Proofing: [technical|/proof/index.html] and [linguistic](/proof/spelling/index.html) aspects  //
   [Research on proofing](/proofresearch/InvestigatingTextProofing.html)
-* [Grammar checking](/proof/gramcheck/GrammarCheckerDocumentation.html)
+* [Grammar checking](https://giellalt.github.io/proof/gramcheck/index.html)
 * Keybords: [Overview|/keyboards/Overview.html] //  [on handheld devices](/appsdoc/mobile/index.html)
 
 # Dictionaries, translation programs and language learning

@@ -14,7 +14,7 @@ Kevin har skrive dokumentasjon på
 
 Dokumentasjon av grammatikkontroll:
 
-* [Grammatikkontrolldokumentasjon](/proof/gramcheck/GrammarCheckerDocumentation.html)
+* [Grammatikkontrolldokumentasjon](https://giellalt.github.io/proof/gramcheck/index.html)
 * i `sme/tools/grammarcheckers/grammarchecker.cg3` (HOW TO)
 * artikler (IWCLUL, COMPUTEL, SALTMIL),
 
