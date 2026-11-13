@@ -183,7 +183,7 @@ ahki ---->  skuvlaahki vs skuvllaahki
 
 *uksa, skuvla:  vanligtvis bara sgnom
 
-[/lang/common/CompoundTags.html]
+[https://giellalt.github.io//lang/common/CompoundTags.html]
 
 # What kind of words gets Gen Cmp?
 
