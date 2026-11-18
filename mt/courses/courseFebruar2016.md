@@ -4,12 +4,12 @@ Marja-Liisa fra onsdag
 
 ##  Mandag
 ### Bidix:
-* bidix-sanity (test som tester generering av alle sma/smj/smn ord i bidix):\\ `sh bidix-sanity.sh > sanityoutput` (når man står i dev). Les mer om [tolking av output](../infra/bidixsanity.html)
+* bidix-sanity (test som tester generering av alle sma/smj/smn ord i bidix):\\ `sh bidix-sanity.sh > sanityoutput` (når man står i dev). Les mer om [tolking av output](https://giellalt.github.io/mt/infra/bidixsanity.html)
     - dette gir grunnlag for å rette lemma i bidix og å legge til ord i FST
     - vanligvis er mesteparten av linjene i sanityoutput propernouns. Start med de viktigste slik: \\ `grep -v "<np>" sanityoutput | less`
     - Francis skal lage bidix-sanity som tester generering sme i bidix
 * missinglister
-    - fra tekstene i texts/ - lag sjøl med denne [kommandoen](../infra//MissingList.html)
+    - fra tekstene i texts/ - lag sjøl med denne [kommandoen](https://giellalt.github.io/mt/infra//MissingList.html)
     - fra relevante tekster i hele korpuset (Trond lager)
         - prioriter substantiv-lister uten sammensetning, og verb- og adjektiv-lister uten derivasjon
         - kommando for å fornye missinglista (ordene som får analyse kan fjernes), eksempel fra smj: \\
@@ -43,7 +43,7 @@ Vær OBS på tagger i bidix:
     - `open allefiler.html` (åpnes i Safari)
 
 ### Lex-sel
-* [lexical selection](../infra/LexicalSelection.html) (eanet go okta vejolaš jorgalus)
+* [lexical selection](https://giellalt.github.io/mt/infra/LexicalSelection.html) (eanet go okta vejolaš jorgalus)
 
 ##  Tirsdag
 Praktisk arbeid med mandagens temaer \\

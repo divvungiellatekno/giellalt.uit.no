@@ -14,7 +14,7 @@ Trond, ML ja Lene leat hupman MT-vahku sisdoalu birra. Dát lea evttohus:
     - `wget http://apertium.projectjj.com/osx/install-nightly.sh`
     - `sudo bash install-nightly.sh`
 * Mii kompileregoahtit sme + smX + sme-smX
-    - [kompileren ja configure](../infra/Compilation.html)
+    - [kompileren ja configure](https://giellalt.github.io/mt/infra/Compilation.html)
 * Vahku prográmma
 * Jorgalanprográmmaid stáhtus
     - [Buohtastahttin](sjangertest.html)
@@ -41,7 +41,7 @@ Bargat ieš, oažžut bagadeami
 ### Missing (násti)
 Ovdalgo sáhttá árvvoštallat cealkaga syntávssa dahje váilevaš genererema, de eai galgga leat missing-sánit cealkagis
 * Lasit missing sániid bidixii, ja sánit fertejit leat leksikaliserejuvvon sihke sme- ja smX-FST:s
-* [bidix-bargu](../infra/BidixWork.html)
+* [bidix-bargu](https://giellalt.github.io/mt/infra/BidixWork.html)
 
 ###  Geahččat dan maid analysáhtor ii máhte genereret (hash):
 * `echo 'cealkka' | apertium -d. sme-smn-dgen` , omd.\\
@@ -190,7 +190,7 @@ Lasit -lrx-fiilii:
   </rule>
 ```
 
-Nubbi ovdamearka dás: [Lexical selection](../infra/LexicalSelection.html)
+Nubbi ovdamearka dás: [Lexical selection](https://giellalt.github.io/mt/infra/LexicalSelection.html)
 
 # GASKAVAHKU
 
@@ -199,9 +199,9 @@ Hash-listu ráhkaduvvo teavsttaid jorgaleami vuođul, ja buot dábáleamos čuol
 Nu ahte **čuolmmat sorterejuvvojit frekveanssa mielde**.
 
 Jus don háliidat ráhkadit ođđa hash-listtu ieš, dahje don háliidat ohcat ovdamearkkaid, de fertet
-genereret ođđa jorgalusaid: [genereret jorgalusaid](../infra/Paralleltexts.html)
+genereret ođđa jorgalusaid: [genereret jorgalusaid](https://giellalt.github.io/mt/infra/Paralleltexts.html)
 
-Loga eanet hash-listtuid birra dás: [hash-listtut](../infra/HashList.html)
+Loga eanet hash-listtuid birra dás: [hash-listtut](https://giellalt.github.io/mt/infra/HashList.html)
 
 dev/hash-fi-report.fi
 
@@ -240,7 +240,7 @@ Go leat `dev`-máhpas:
 
 `sh sortedsanityoutput_withoutprop.txt`
 
-Loga eanet [bidix-sanity birra](../infra/bidixsanity.html).
+Loga eanet [bidix-sanity birra](https://giellalt.github.io/mt/infra/bidixsanity.html).
 
 # BEARJADAGA
 
@@ -251,7 +251,7 @@ Loga eanet [bidix-sanity birra](../infra/bidixsanity.html).
 ### Pending tests
 `./t/pending-tests`
 
-[Loga eanet](../infra/Testing.html)
+[Loga eanet](https://giellalt.github.io/mt/infra/Testing.html)
 
 ## 9 Derivašuvnnat
 * Taggaid harmoniseren (seammá tagga buot gielain)
@@ -310,7 +310,7 @@ Resten av sme-taggene - ikke diskutert, og mange av dem er ikke så viktige for 
 * Der/ár
 
 ## 10 Missinglisttuiguin bargat
-[missinglisttut](/mt/infra/MissingList.html)
+[missinglisttut](https://giellalt.github.io/mt/infra/MissingList.html)
 
 ## 11 Gávdnat meattáhusaid sme-inputas
 * váilevašvuođat FST:s
