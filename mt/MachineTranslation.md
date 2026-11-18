@@ -40,13 +40,6 @@ Apertium
 -   [Maintaining jorgal and mt-testing (the web
     services)](ConfiguringUpdatingMTServer.html)
 
-OmegaT
-------
-
--   [OmegaT](omegat/OmegaT.html)
--   [The OmegaT plugin for Apertium](infra/ApertiumOmegaT.html)
--   [OmegaT Developer Info](omegat/OmegaTTDeveloperInfo.html)
-
 Linguist's work
 ===============
 
